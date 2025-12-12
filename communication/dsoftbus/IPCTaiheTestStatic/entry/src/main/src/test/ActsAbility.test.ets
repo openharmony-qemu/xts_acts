@@ -1,10 +1,10 @@
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll} from "../../../hypium/index";
-import { BusinessError } from "@ohos.base";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll} from '../../../hypium/index';
+import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
-import rpc from "@ohos.rpc";
-import common from "@ohos.app.ability.common";
-import fileIo from "@ohos.file.fs";
+import rpc from '@ohos.rpc';
+import common from '@ohos.app.ability.common';
+import fileIo from '@ohos.file.fs';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
@@ -42,6 +42,28 @@ class MyParcelable implements rpc.Parcelable {
 
 }
 
+class MyParcelable_False implements rpc.Parcelable {
+    num: int = 0;
+    str: string = "";
+
+    constructor(num: int, str: string) {
+        this.num = num;
+        this.str = str;
+    }
+
+    marshalling(dataOut: rpc.MessageSequence): boolean {
+        dataOut.writeInt(this.num);
+        dataOut.writeString(this.str);
+        return false;
+    }
+
+    unmarshalling(dataIn: rpc.MessageSequence): boolean {
+        this.num = dataIn.readInt();
+        this.str = dataIn.readString();
+        return false;
+    }
+}
+
 class TestRemoteObject extends rpc.RemoteObject {
     constructor(descriptor: string) {
         super(descriptor);
@@ -58,6 +80,7 @@ class TestRemoteObject extends rpc.RemoteObject {
             return true;
         } else {
             hilog.info(domain, tag, '%{public}s', 'code err:' + code);
+            return false;
         }
         hilog.info(domain, tag, '%{public}s', '++++++++++++++++++ remoteObject end ++++++++++++++++++');
         return false;
@@ -551,6 +574,7 @@ export default function abilityTest() {
                 let input: Array<int> = [1, 2, 3, 4, 5, 6, 7, 8, 9];
                 data.writeIntArray(input);
                 let res = data.readIntArray();
+                expect(res.length > 0).assertTrue();
                 expect(res).assertDeepEquals(input);
             } catch (error) {
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeIntArray_readIntArray_0100 error is: ' + error);
@@ -593,6 +617,35 @@ export default function abilityTest() {
         });
 
         /**
+         * @tc.name   SUB_IPC_MessageSequence_writeIntArray_readIntArray_0300
+         * @tc.number SUB_IPC_MessageSequence_writeIntArray_readIntArray_0300
+         * @tc.desc   test MessageSequence writeIntArray and readIntArray
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("SUB_IPC_MessageSequence_writeIntArray_readIntArray_0300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeIntArray_readIntArray_0300 --------------------');
+            let data =  rpc.MessageSequence.create();
+            try {
+                let input: Array<int> = [];
+                data.writeIntArray(input);
+                let res = data.readIntArray();
+                expect(res.length == 0).assertTrue();
+                expect(res).assertDeepEquals(input);
+            } catch (error) {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeIntArray_readIntArray_0300 error is: ' + error);
+                expect(error == null).assertTrue();
+            } finally {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeIntArray_readIntArray_0300 reclaim done');
+                data.reclaim();
+            }
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeIntArray_readIntArray_0300 --------------------');
+        });
+
+        /**
          * @tc.number   SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0100
          * @tc.name     SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0100
          * @tc.desc     test MessageSequence writeDoubleArray and readDoubleArray
@@ -608,6 +661,7 @@ export default function abilityTest() {
                 let input: Array<double> = [1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9];
                 data.writeDoubleArray(input);
                 let res = data.readDoubleArray();
+                expect(res.length > 0).assertTrue();
                 expect(res).assertDeepEquals(input);
             } catch (error) {
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0100 error is: ' + error);
@@ -650,6 +704,35 @@ export default function abilityTest() {
         });
 
         /**
+         * @tc.name   SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0300
+         * @tc.number SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0300
+         * @tc.desc   test MessageSequence writeDoubleArray and readDoubleArray
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0300 --------------------');
+            let data =  rpc.MessageSequence.create();
+            try {
+                let input: Array<double> = [];
+                data.writeDoubleArray(input);
+                let res = data.readDoubleArray();
+                expect(res.length == 0).assertTrue();
+                expect(res).assertDeepEquals(input);
+            } catch (error) {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0300 error is: ' + error);
+                expect(error == null).assertTrue();
+            } finally {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0300 reclaim done');
+                data.reclaim();
+            }
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0300 --------------------');
+        });
+
+        /**
          * @tc.number   SUB_IPC_MessageSequence_writeStringArray_readStringArray_0100
          * @tc.name     SUB_IPC_MessageSequence_writeStringArray_readStringArray_0100
          * @tc.desc     test MessageSequence writeStringArray and readStringArray
@@ -665,6 +748,7 @@ export default function abilityTest() {
                 let input: Array<string> = ["this", "is", "a", "test", "stirng", "array"];
                 data.writeStringArray(input);
                 let res = data.readStringArray();
+                expect(res.length > 0).assertTrue();
                 expect(res).assertDeepEquals(input);
             } catch (error) {
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeStringArray_readStringArray_0100 error is: ' + error);
@@ -707,6 +791,35 @@ export default function abilityTest() {
         });
 
         /**
+         * @tc.name   SUB_IPC_MessageSequence_writeStringArray_readStringArray_0300
+         * @tc.number SUB_IPC_MessageSequence_writeStringArray_readStringArray_0300
+         * @tc.desc   test MessageSequence writeStringArray and readStringArray
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("SUB_IPC_MessageSequence_writeStringArray_readStringArray_0300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeStringArray_readStringArray_0300 --------------------');
+            let data =  rpc.MessageSequence.create();
+            try {
+                let input: Array<string> = [];
+                data.writeStringArray(input);
+                let res = data.readStringArray();
+                expect(res.length == 0).assertTrue();
+                expect(res).assertDeepEquals(input);
+            } catch (error) {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeStringArray_readStringArray_0300 error is: ' + error);
+                expect(error == null).assertTrue();
+            } finally {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeStringArray_readStringArray_0300 reclaim done');
+                data.reclaim();
+            }
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeStringArray_readStringArray_0300 --------------------');
+        });
+
+        /**
          * @tc.number   SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0100
          * @tc.name     SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0100
          * @tc.desc     test MessageSequence writeBooleanArray and readBooleanArray
@@ -722,6 +835,7 @@ export default function abilityTest() {
                 let input: Array<boolean> = [true, false, true, false, true, false, true, false, true, false];
                 data.writeBooleanArray(input);
                 let res = data.readBooleanArray();
+                expect(res.length > 0).assertTrue();
                 expect(res).assertDeepEquals(input);
             } catch (error) {
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0100 error is: ' + error);
@@ -761,6 +875,35 @@ export default function abilityTest() {
             }
             done();
             hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0200 --------------------');
+        });
+
+        /**
+         * @tc.name   SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0300
+         * @tc.number SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0300
+         * @tc.desc   test MessageSequence writeBooleanArray and readBooleanArray
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0300 --------------------');
+            let data =  rpc.MessageSequence.create();
+            try {
+                let input: Array<boolean> = [];
+                data.writeBooleanArray(input);
+                let res = data.readBooleanArray();
+                expect(res.length == 0).assertTrue();
+                expect(res).assertDeepEquals(input);
+            } catch (error) {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0300 error is: ' + error);
+                expect(error == null).assertTrue();
+            } finally {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0300 reclaim done');
+                data.reclaim();
+            }
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0300 --------------------');
         });
 
         /**
@@ -2504,6 +2647,73 @@ export default function abilityTest() {
         });
 
         /**
+         * @tc.name   SUB_IPC_Parcelable_Marshalling_Unmarshalling_0100
+         * @tc.number SUB_IPC_Parcelable_Marshalling_Unmarshalling_0100
+         * @tc.desc   test MessageSequence Marshalling Unmarshalling return 
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("SUB_IPC_Parcelable_Marshalling_Unmarshalling_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_Parcelable_Marshalling_Unmarshalling_0100 --------------------');
+           let data =  rpc.MessageSequence.create();
+            try {
+                let parcelable = new MyParcelable(1, "this is a test parcelable");
+                let parcelable_false = new MyParcelable_False(2, "this is a test parcelable");
+                let res1 = parcelable.marshalling(data);
+                expect(res1).assertTrue();
+                let res2 = parcelable_false.marshalling(data);
+                expect(res2).assertFalse();
+                let res3 = parcelable.unmarshalling(data);
+                expect(res3).assertTrue();
+                let res4 = parcelable_false.unmarshalling(data);
+                expect(res4).assertFalse();
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Parcelable_Marshalling_Unmarshalling_0100 error is: ' + err);
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Parcelable_Marshalling_Unmarshalling_0100 error is: ' + err.code);
+                expect(err == null).assertTrue();
+            } finally {
+                data.reclaim();
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Parcelable_Marshalling_Unmarshalling_0100  done');
+            }
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_Parcelable_Marshalling_Unmarshalling_0100 --------------------');
+        });
+
+        /**
+         * @tc.name   SUB_IPC_RemoteObject_OnRemoteMessageRequest_0100
+         * @tc.number SUB_IPC_RemoteObject_OnRemoteMessageRequest_0100
+         * @tc.desc   test RemoteObject onRemoteMessageRequest return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("SUB_IPC_RemoteObject_OnRemoteMessageRequest_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            await Utils.msSleep(2000);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteObject_OnRemoteMessageRequest_0100 --------------------');
+
+            let data = rpc.MessageSequence.create();
+            let reply = rpc.MessageSequence.create();
+            try {
+                let testRemoteObject = new TestRemoteObject("testObject");
+                let option = new rpc.MessageOption();
+                let res1 = testRemoteObject.onRemoteMessageRequest(1, data, reply, option)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_OnRemoteMessageRequest_0100 res1 is: ' + res1);
+                expect(res1).assertTrue();
+                let res2 = testRemoteObject.onRemoteMessageRequest(100, data, reply, option)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_OnRemoteMessageRequest_0100 res2 is: ' + res2);
+                expect(res2).assertFalse();
+            } catch (error) {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_OnRemoteMessageRequest_0100 error is: ' + error);
+                expect(error == null).assertTrue();
+            }
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteObject_OnRemoteMessageRequest_0100 --------------------');
+        });
+
+        /**
          * @tc.number   SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0100
          * @tc.name     SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0100
          * @tc.desc     test writeRemoteObject errCode
@@ -3701,6 +3911,7 @@ export default function abilityTest() {
                 expect(err.code == 1900009).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
+                data.reclaim();
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0200  done');
             }
             done();
@@ -3728,6 +3939,7 @@ export default function abilityTest() {
                 expect(err.code == 1900009).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
+                data.reclaim();
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0300  done');
             }
             done();
@@ -3747,9 +3959,7 @@ export default function abilityTest() {
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100 --------------------');
             let data =  rpc.MessageSequence.create();
             try {
-
                 rpc.MessageSequence.closeFileDescriptor(-1);
-
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100 error is: ' + err);
@@ -3757,6 +3967,7 @@ export default function abilityTest() {
                 expect(err.code == 401).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
+                data.reclaim();
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100  done');
             }
             done();
@@ -3765,7 +3976,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_Ashmem_0100
-         * @tc.name      SUB_IPC_Ashmem
+         * @tc.name      SUB_IPC_Ashmem_0100
          * @tc.desc      test SUB_IPC_Ashmem
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -3794,7 +4005,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_writeCharArray_0100
-         * @tc.name      SUB_IPC_MessageSequence_writeCharArray
+         * @tc.name      SUB_IPC_MessageSequence_writeCharArray_0100
          * @tc.desc      test writeCharArray
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -3820,7 +4031,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_ReadFloatArray_0100
-         * @tc.name      SUB_IPC_MessageSequence_ReadFloatArray
+         * @tc.name      SUB_IPC_MessageSequence_ReadFloatArray_0100
          * @tc.desc      test SUB_IPC_MessageSequence_ReadFloatArray
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -3836,6 +4047,7 @@ export default function abilityTest() {
                 let a: Array<Double> = [b, c];
                 data.writeFloatArray(a);
                 let res = data.readFloatArray();
+                expect(res.length > 0).assertTrue();
                 expect(res).assertDeepEquals(a);
             } catch (error) {
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_ReadFloatArray_0100 error is: ' + error);
@@ -3850,7 +4062,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_ReadFloatArray_0200
-         * @tc.name      SUB_IPC_MessageSequence_ReadFloatArray
+         * @tc.name      SUB_IPC_MessageSequence_ReadFloatArray_0200
          * @tc.desc      test SUB_IPC_MessageSequence_ReadFloatArray
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -3880,8 +4092,37 @@ export default function abilityTest() {
         });
 
         /**
+         * @tc.number    SUB_IPC_MessageSequence_ReadFloatArray_0300
+         * @tc.name      SUB_IPC_MessageSequence_ReadFloatArray_0300
+         * @tc.desc      test SUB_IPC_MessageSequence_ReadFloatArray return null
+         * @tc.level     LEVEL1
+         * @tc.size      MEDIUMTEST
+         * @tc.type      FUNCTION
+         */
+        it("SUB_IPC_MessageSequence_ReadFloatArray_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,async (done: () => void): Promise<void> => {
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_MessageSequence_ReadFloatArray_0300 --------------------');
+            let data = rpc.MessageSequence.create();
+            try {
+                let a: Array<Double> = [];
+                data.writeFloatArray(a);
+                let res = data.readFloatArray();
+                expect(res.length == 0).assertTrue();
+                expect(res).assertDeepEquals(a);
+            } catch (error) {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_ReadFloatArray_0300 error is: ' + error);
+                expect(error == null).assertTrue();
+            } finally {
+                data.reclaim();
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_ReadFloatArray_0300  done');
+            }
+            done();
+            hilog.info(domain, tag, '%{public}s','-------------------- end SUB_IPC_MessageSequence_ReadFloatArray_0300 --------------------');
+        });
+
+        /**
          * @tc.number    SUB_IPC_MessageSequence_ReadLongArray_0100
-         * @tc.name      SUB_IPC_MessageSequence_ReadLongArray
+         * @tc.name      SUB_IPC_MessageSequence_ReadLongArray_0100
          * @tc.desc      test ReadLongArray
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -3896,6 +4137,7 @@ export default function abilityTest() {
                 data.writeLongArray(input);
                 let res: Array<long> = new Array<long>(input.length);
                 res = data.readLongArray();
+                expect(res.length > 0).assertTrue();
                 expect(res).assertDeepEquals(input);
             } catch (error) {
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_ReadLongArray_0100 error is: ' + error);
@@ -3910,7 +4152,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_ReadLongArray_0200
-         * @tc.name      SUB_IPC_MessageSequence_ReadLongArray
+         * @tc.name      SUB_IPC_MessageSequence_ReadLongArray_0200
          * @tc.desc      test ReadLongArray
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -3938,8 +4180,38 @@ export default function abilityTest() {
         });
 
         /**
+         * @tc.number    SUB_IPC_MessageSequence_ReadLongArray_0300
+         * @tc.name      SUB_IPC_MessageSequence_ReadLongArray_0300
+         * @tc.desc      test ReadLongArray return null
+         * @tc.level     LEVEL1
+         * @tc.size      MEDIUMTEST
+         * @tc.type      FUNCTION
+         */
+        it("SUB_IPC_MessageSequence_ReadLongArray_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,async (done: () => void): Promise<void> => {
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_MessageSequence_ReadLongArray_0300 --------------------');
+            let data = rpc.MessageSequence.create();
+            try {
+                let input: Array<long> = [];
+                data.writeLongArray(input);
+                let res: Array<long> = new Array<long>(input.length);
+                res = data.readLongArray();
+                expect(res.length == 0).assertTrue();
+                expect(res).assertDeepEquals(input);
+            } catch (error) {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_ReadLongArray_0300 error is: ' + error);
+                expect(error == null).assertTrue();
+            } finally {
+                data.reclaim();
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_ReadLongArray_0300  done');
+            }
+            done();
+            hilog.info(domain, tag, '%{public}s','-------------------- end SUB_IPC_MessageSequence_ReadLongArray_0300 --------------------');
+        });
+
+        /**
          * @tc.number    SUB_IPC_MessageSequence_ReadShortArray_0100
-         * @tc.name      SUB_IPC_MessageSequence_ReadShortArray
+         * @tc.name      SUB_IPC_MessageSequence_ReadShortArray_0100
          * @tc.desc      test SUB_IPC_MessageSequence_ReadShortArray
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -3954,6 +4226,7 @@ export default function abilityTest() {
                 data.writeShortArray(input);
                 let res: Array<int> = new Array<int>(input.length);
                 res = data.readShortArray();
+                expect(res.length > 0).assertTrue();
                 expect(res).assertDeepEquals(input);
             } catch (error) {
                 data.reclaim();
@@ -3969,7 +4242,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_ReadShortArray_0200
-         * @tc.name      SUB_IPC_MessageSequence_ReadShortArray
+         * @tc.name      SUB_IPC_MessageSequence_ReadShortArray_0200
          * @tc.desc      test SUB_IPC_MessageSequence_ReadShortArray
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -3998,8 +4271,39 @@ export default function abilityTest() {
         });
 
         /**
+         * @tc.number    SUB_IPC_MessageSequence_ReadShortArray_0300
+         * @tc.name      SUB_IPC_MessageSequence_ReadShortArray_0300
+         * @tc.desc      test SUB_IPC_MessageSequence_ReadShortArray
+         * @tc.level     LEVEL1
+         * @tc.size      MEDIUMTEST
+         * @tc.type      FUNCTION
+         */
+        it("SUB_IPC_MessageSequence_ReadShortArray_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,async (done: () => void): Promise<void> => {
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_MessageSequence_ReadShortArray_0300 --------------------');
+            let data = rpc.MessageSequence.create();
+            try {
+                let input: Array<int> = [];
+                data.writeShortArray(input);
+                let res: Array<int> = new Array<int>(input.length);
+                res = data.readShortArray();
+                expect(res.length == 0).assertTrue();
+                expect(res).assertDeepEquals(input);
+            } catch (error) {
+                data.reclaim();
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_ReadShortArray_0300 error is: ' + error);
+                expect(error == null).assertTrue();
+            } finally {
+                data.reclaim();
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_ReadShortArray_0300  done');
+                done();
+            }
+            hilog.info(domain, tag, '%{public}s','-------------------- end SUB_IPC_MessageSequence_ReadShortArray_0300 --------------------');
+        });
+
+        /**
          * @tc.number    SUB_IPC_MessageSequence_WriteChar_0100
-         * @tc.name      SUB_IPC_MessageSequence_writeChar
+         * @tc.name      SUB_IPC_MessageSequence_WriteChar_0100
          * @tc.desc      test SUB_IPC_MessageSequence_writeChar
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4025,7 +4329,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_WriteDouble_0100
-         * @tc.name      SUB_IPC_MessageSequence_writeDouble
+         * @tc.name      SUB_IPC_MessageSequence_WriteDouble_0100
          * @tc.desc      test SUB_IPC_MessageSequence_writeDouble
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4078,7 +4382,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_WriteShort_0100
-         * @tc.name      SUB_IPC_MessageSequence_writeShort
+         * @tc.name      SUB_IPC_MessageSequence_WriteShort_0100
          * @tc.desc      test SUB_IPC_MessageSequence_writeShort
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4104,7 +4408,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_WriteByte_0100
-         * @tc.name      SUB_IPC_MessageSequence_writeByte
+         * @tc.name      SUB_IPC_MessageSequence_WriteByte_0100
          * @tc.desc      test SUB_IPC_MessageSequence_writeByte
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4130,7 +4434,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_ReadByteArray_0100
-         * @tc.name      SUB_IPC_MessageSequence_ReadByteArray
+         * @tc.name      SUB_IPC_MessageSequence_ReadByteArray_0100
          * @tc.desc      test SUB_IPC_MessageSequence_ReadByteArray
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4144,6 +4448,7 @@ export default function abilityTest() {
                 let input: Array<int> = [1, 2, 3, 4, 5, 6, 7, 8, 9];
                 data.writeByteArray(input);
                 let res = data.readByteArray();
+                expect(res.length > 0).assertTrue();
                 expect(res).assertDeepEquals(input);
                 hilog.info(domain, tag, 'SUB_IPC_MessageSequence_ReadByteArray_0100 res ' + res);
             } catch (error) {
@@ -4187,8 +4492,38 @@ export default function abilityTest() {
         });
 
         /**
+         * @tc.number    SUB_IPC_MessageSequence_ReadByteArray_0300
+         * @tc.name      SUB_IPC_MessageSequence_ReadByteArray_0300
+         * @tc.desc      test SUB_IPC_MessageSequence_ReadByteArray
+         * @tc.level     LEVEL1
+         * @tc.size      MEDIUMTEST
+         * @tc.type      FUNCTION
+         */
+        it("SUB_IPC_MessageSequence_ReadByteArray_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,async (done: () => void): Promise<void> => {
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_MessageSequence_ReadByteArray_0300 --------------------');
+            let data = rpc.MessageSequence.create();
+            try {
+                let input: Array<int> = [];
+                data.writeByteArray(input);
+                let res = data.readByteArray();
+                expect(res.length == 0).assertTrue();
+                expect(res).assertDeepEquals(input);
+                hilog.info(domain, tag, 'SUB_IPC_MessageSequence_ReadByteArray_0300 res ' + res);
+            } catch (error) {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_ReadByteArray_0300 error is: ' + error);
+                expect(error == null).assertTrue();
+            } finally {
+                data.reclaim();
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_ReadByteArray_0300  done');
+                done();
+            }
+            hilog.info(domain, tag, '%{public}s','-------------------- end SUB_IPC_MessageSequence_ReadByteArray_0300 --------------------');
+        });
+
+        /**
          * @tc.number    SUB_IPC_MessageSequence_RewindWriteAndRead_0100
-         * @tc.name      SUB_IPC_MessageSequence_RewindWriteAndRead
+         * @tc.name      SUB_IPC_MessageSequence_RewindWriteAndRead_0100
          * @tc.desc      test SUB_IPC_MessageSequence_RewindWriteAndRead
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4214,7 +4549,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_RewindWriteAndRead_0200
-         * @tc.name      SUB_IPC_MessageSequence_RewindWriteAndRead
+         * @tc.name      SUB_IPC_MessageSequence_RewindWriteAndRead_0200
          * @tc.desc      test SUB_IPC_MessageSequence_RewindWriteAndRead
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4243,7 +4578,8 @@ export default function abilityTest() {
                 let res1 = data.readInt();
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_RewindWriteAndRead_0200 res1 is: ' + res1);
                 expect(res1 == 5).assertTrue();
-            }catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_RewindWriteAndRead_0200 error is: ' + err);
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_RewindWriteAndRead_0200 error code is: ' + err.code);
                 expect(err.code == 1900010).assertTrue();
@@ -4258,7 +4594,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_SetSize_0100
-         * @tc.name      SUB_IPC_MessageSequence_SetSize
+         * @tc.name      SUB_IPC_MessageSequence_SetSize_0100
          * @tc.desc      test SUB_IPC_MessageSequence_SetSize
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4283,7 +4619,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_SetSize_0200
-         * @tc.name      SUB_IPC_MessageSequence_SetSize
+         * @tc.name      SUB_IPC_MessageSequence_SetSize_0200
          * @tc.desc      test SetSize different size
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4309,7 +4645,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_dupFileDescriptor_0100
-         * @tc.name      SUB_IPC_MessageSequence_dupFileDescriptor
+         * @tc.name      SUB_IPC_MessageSequence_dupFileDescriptor_0100
          * @tc.desc      test SUB_IPC_MessageSequence_dupFileDescriptor
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4333,7 +4669,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_WriteRemoteObjectArray_0100
-         * @tc.name      SUB_IPC_MessageSequence_writeRemoteObjectArray
+         * @tc.name      SUB_IPC_MessageSequence_WriteRemoteObjectArray_0100
          * @tc.desc      test SUB_IPC_MessageSequence_writeRemoteObjectArray
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4361,7 +4697,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_ReadRemoteObjectArray_0100
-         * @tc.name      SUB_IPC_MessageSequence_ReadRemoteObjectArray
+         * @tc.name      SUB_IPC_MessageSequence_ReadRemoteObjectArray_0100
          * @tc.desc      test ReadRemoteObjectArray
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4394,7 +4730,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_ReadRemoteObjectArray_0200
-         * @tc.name      SUB_IPC_MessageSequence_ReadRemoteObjectArray
+         * @tc.name      SUB_IPC_MessageSequence_ReadRemoteObjectArray_0200
          * @tc.desc      test ReadRemoteObjectArray
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4411,6 +4747,7 @@ export default function abilityTest() {
                 data.writeRemoteObjectArray(a);
                 let res: Array<rpc.IRemoteObject> = new Array<rpc.IRemoteObject>(a.length);
                 res = data.readRemoteObjectArray();
+                expect(res.length > 0).assertTrue();
                 for (let index = 0; index < res.length; index++) {
                     expect(res[index] != null).assertTrue();
                 }
@@ -4426,8 +4763,37 @@ export default function abilityTest() {
         });
 
         /**
+         * @tc.number    SUB_IPC_MessageSequence_ReadRemoteObjectArray_0300
+         * @tc.name      SUB_IPC_MessageSequence_ReadRemoteObjectArray_0300
+         * @tc.desc      test ReadRemoteObjectArray
+         * @tc.level     LEVEL1
+         * @tc.size      MEDIUMTEST
+         * @tc.type      FUNCTION
+         */
+        it("SUB_IPC_MessageSequence_ReadRemoteObjectArray_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,async (done: () => void): Promise<void> => {
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_MessageSequence_ReadRemoteObjectArray_0300 --------------------');
+            let data = rpc.MessageSequence.create();
+            try {
+                let a: Array<rpc.IRemoteObject> = [];
+                data.writeRemoteObjectArray(a);
+                let res: Array<rpc.IRemoteObject> = new Array<rpc.IRemoteObject>(a.length);
+                res = data.readRemoteObjectArray();
+                expect(res.length == 0).assertTrue();
+            } catch (error) {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_ReadRemoteObjectArray_0300 error is: ' + error);
+                expect(error == null).assertTrue();
+            } finally {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_ReadRemoteObjectArray_0300 done');
+                data.reclaim();
+            }
+            done();
+            hilog.info(domain, tag, '%{public}s','-------------------- end SUB_IPC_MessageSequence_ReadRemoteObjectArray_0300 --------------------');
+        });
+
+        /**
          * @tc.number    SUB_IPC_Ashmen_CloseAshmem_0100
-         * @tc.name      SUB_IPC_Ashmen_CloseAshmem
+         * @tc.name      SUB_IPC_Ashmen_CloseAshmem_0100
          * @tc.desc      test Ashmen_CloseAshmem
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4452,7 +4818,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_Ashmen_UnMapAshmem_0100
-         * @tc.name      SUB_IPC_Ashmen_UnMapAshmem
+         * @tc.name      SUB_IPC_Ashmen_UnMapAshmem_0100
          * @tc.desc      test SUB_IPC_Ashmen_UnMapAshmem
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4478,7 +4844,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageOption_GetFlagsAndSetFlags_0100
-         * @tc.name      SUB_IPC_MessageOption_GetFlagsAndSetFlags
+         * @tc.name      SUB_IPC_MessageOption_GetFlagsAndSetFlags_0100
          * @tc.desc      test SUB_IPC_MessageOption_GetFlagsAndSetFlags SYNC
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4503,7 +4869,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageOption_GetFlagsAndSetFlags_0200
-         * @tc.name      SUB_IPC_MessageOption_GetFlagsAndSetFlags
+         * @tc.name      SUB_IPC_MessageOption_GetFlagsAndSetFlags_0200
          * @tc.desc      test SUB_IPC_MessageOption_GetFlagsAndSetFlags ASYNC
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4528,7 +4894,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageOption_GetWaitTimeAndSetWaitTime_0100
-         * @tc.name      SUB_IPC_MessageOption_GetWaitTimeAndSetWaitTime
+         * @tc.name      SUB_IPC_MessageOption_GetWaitTimeAndSetWaitTime_0100
          * @tc.desc      test SUB_IPC_MessageOption_GetWaitTimeAndSetWaitTime
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4553,7 +4919,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_GetSize_0100
-         * @tc.name      SUB_IPC_MessageSequence_GetSize
+         * @tc.name      SUB_IPC_MessageSequence_GetSize_0100
          * @tc.desc      test SUB_IPC_MessageSequence_GetSize
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4581,7 +4947,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_GetWritableBytes_0100
-         * @tc.name      SUB_IPC_MessageSequence_GetWritableBytes
+         * @tc.name      SUB_IPC_MessageSequence_GetWritableBytes_0100
          * @tc.desc      test SUB_IPC_MessageSequence_GetWritableBytes
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4607,7 +4973,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_GetWritableBytes_0200
-         * @tc.name      SUB_IPC_MessageSequence_GetWritableBytes
+         * @tc.name      SUB_IPC_MessageSequence_GetWritableBytes_0200
          * @tc.desc      test SUB_IPC_MessageSequence_GetWritableBytes
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4634,7 +5000,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_GetReadableBytes_0100
-         * @tc.name      SUB_IPC_MessageSequence_GetReadableBytes
+         * @tc.name      SUB_IPC_MessageSequence_GetReadableBytes_0100
          * @tc.desc      test SUB_IPC_MessageSequence_GetReadableBytes
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4660,7 +5026,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_GetReadableBytes_0200
-         * @tc.name      SUB_IPC_MessageSequence_GetReadableBytes
+         * @tc.name      SUB_IPC_MessageSequence_GetReadableBytes_0200
          * @tc.desc      test SUB_IPC_MessageSequence_GetReadableBytes
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4689,7 +5055,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_GetReadPosition_0100
-         * @tc.name      SUB_IPC_MessageSequence_GetReadPosition
+         * @tc.name      SUB_IPC_MessageSequence_GetReadPosition_0100
          * @tc.desc      test SUB_IPC_MessageSequence_GetReadPosition
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4715,7 +5081,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_GetReadPosition_0200
-         * @tc.name      SUB_IPC_MessageSequence_GetReadPosition
+         * @tc.name      SUB_IPC_MessageSequence_GetReadPosition_0200
          * @tc.desc      test SUB_IPC_MessageSequence_GetReadPosition
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4745,7 +5111,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_GetWritePosition_0100
-         * @tc.name      SUB_IPC_MessageSequence_GetWritePosition
+         * @tc.name      SUB_IPC_MessageSequence_GetWritePosition_0100
          * @tc.desc      test SUB_IPC_MessageSequence_GetWritePosition
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4771,7 +5137,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_GetWritePosition_0200
-         * @tc.name      SUB_IPC_MessageSequence_GetWritePosition
+         * @tc.name      SUB_IPC_MessageSequence_GetWritePosition_0200
          * @tc.desc      test SUB_IPC_MessageSequence_GetWritePosition
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4799,7 +5165,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_ContainFileDescriptors_0100
-         * @tc.name      SUB_IPC_MessageSequence_ContainFileDescriptors
+         * @tc.name      SUB_IPC_MessageSequence_ContainFileDescriptors_0100
          * @tc.desc      test SUB_IPC_MessageSequence_ContainFileDescriptors
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4825,7 +5191,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_ContainFileDescriptors_0200
-         * @tc.name      SUB_IPC_MessageSequence_ContainFileDescriptors
+         * @tc.name      SUB_IPC_MessageSequence_ContainFileDescriptors_0200
          * @tc.desc      test SUB_IPC_MessageSequence_ContainFileDescriptors
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4856,7 +5222,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_GetRawDataCapacity_0100
-         * @tc.name      SUB_IPC_MessageSequence_GetRawDataCapacity
+         * @tc.name      SUB_IPC_MessageSequence_GetRawDataCapacity_0100
          * @tc.desc      test SUB_IPC_MessageSequence_GetRawDataCapacity
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4882,7 +5248,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_readByte_0100
-         * @tc.name      SUB_IPC_MessageSequence_readByte
+         * @tc.name      SUB_IPC_MessageSequence_readByte_0100
          * @tc.desc      test SUB_IPC_MessageSequence_readByte
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4910,7 +5276,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_readShort_0100
-         * @tc.name      SUB_IPC_MessageSequence_readShort
+         * @tc.name      SUB_IPC_MessageSequence_readShort_0100
          * @tc.desc      test SUB_IPC_MessageSequence_readShort
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4937,7 +5303,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_readFloat_0100
-         * @tc.name      SUB_IPC_MessageSequence_readFloat
+         * @tc.name      SUB_IPC_MessageSequence_readFloat_0100
          * @tc.desc      test SUB_IPC_MessageSequence_readFloat
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -4964,7 +5330,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_WriteAndRead_ArrayBuffer_Int8_0100
-         * @tc.name      SUB_IPC_MessageSequence_WriteAndRead_ArrayBuffer_Int8
+         * @tc.name      SUB_IPC_MessageSequence_WriteAndRead_ArrayBuffer_Int8_0100
          * @tc.desc      test SUB_IPC_MessageSequence_WriteAndRead_ArrayBuffer_Int8
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -5008,7 +5374,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_WriteAndRead_ArrayBuffer_UInt8_0100
-         * @tc.name      SUB_IPC_WriteAndRead_ArrayBuffer_UInt8
+         * @tc.name      SUB_IPC_WriteAndRead_ArrayBuffer_UInt8_0100
          * @tc.desc      test SUB_IPC_WriteAndRead_ArrayBuffer_UInt8
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -5058,7 +5424,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_WriteAndRead_ArrayBuffer_Int16_0100
-         * @tc.name      SUB_IPC_WriteAndRead_ArrayBuffer_Int16
+         * @tc.name      SUB_IPC_WriteAndRead_ArrayBuffer_Int16_0100
          * @tc.desc      test SUB_IPC_WriteAndRead_ArrayBuffer_Int16
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -5110,7 +5476,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_WriteAndRead_ArrayBuffer_UInt16_0100
-         * @tc.name      SUB_IPC_WriteAndRead_ArrayBuffer_UInt16
+         * @tc.name      SUB_IPC_WriteAndRead_ArrayBuffer_UInt16_0100
          * @tc.desc      test SUB_IPC_WriteAndRead_ArrayBuffer_UInt16
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -5159,7 +5525,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_WriteAndRead_ArrayBuffer_UInt32_0100
-         * @tc.name      SUB_IPC_WriteAndRead_ArrayBuffer_UInt32
+         * @tc.name      SUB_IPC_WriteAndRead_ArrayBuffer_UInt32_0100
          * @tc.desc      test SUB_IPC_WriteAndRead_ArrayBuffer_UInt32
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -5208,7 +5574,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_WriteAndRead_ArrayBuffer_Int32_0100
-         * @tc.name      SUB_IPC_WriteAndRead_ArrayBuffer_Int32
+         * @tc.name      SUB_IPC_WriteAndRead_ArrayBuffer_Int32_0100
          * @tc.desc      test SUB_IPC_WriteAndRead_ArrayBuffer_Int32
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -5257,7 +5623,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_WriteAndRead_ArrayBuffer_Float32_0100
-         * @tc.name      SUB_IPC_WriteAndRead_ArrayBuffer_Float32
+         * @tc.name      SUB_IPC_WriteAndRead_ArrayBuffer_Float32_0100
          * @tc.desc      test SUB_IPC_WriteAndRead_ArrayBuffer_Float32
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -5310,7 +5676,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_WriteAndRead_ArrayBuffer_Float64_0100
-         * @tc.name      SUB_IPC_MessageSequence_WriteAndRead_ArrayBuffer_Float64
+         * @tc.name      SUB_IPC_MessageSequence_WriteAndRead_ArrayBuffer_Float64_0100
          * @tc.desc      test SUB_IPC_MessageSequence_WriteAndRead_ArrayBuffer_Float64
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -5364,7 +5730,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_WriteAndRead_ArrayBuffer_Int64_0100
-         * @tc.name      SUB_IPC_MessageSequence_WriteAndRead_ArrayBuffer_Int64
+         * @tc.name      SUB_IPC_MessageSequence_WriteAndRead_ArrayBuffer_Int64_0100
          * @tc.desc      test SUB_IPC_MessageSequence_WriteAndRead_ArrayBuffer_Int64
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -5419,7 +5785,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_WriteAndRead_ArrayBuffer_UInt64_0100
-         * @tc.name      SUB_IPC_MessageSequence_WriteAndRead_ArrayBuffer_UInt64
+         * @tc.name      SUB_IPC_MessageSequence_WriteAndRead_ArrayBuffer_UInt64_0100
          * @tc.desc      test SUB_IPC_MessageSequence_WriteAndRead_ArrayBuffer_UInt64
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -5470,7 +5836,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_writeRemoteObjectArray_0100
-         * @tc.name      SUB_IPC_MessageSequence_writeRemoteObjectArray
+         * @tc.name      SUB_IPC_MessageSequence_writeRemoteObjectArray_0100
          * @tc.desc      test SUB_IPC_MessageSequence_writeRemoteObjectArray
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -5498,7 +5864,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_readCharArray_0100
-         * @tc.name      SUB_IPC_MessageSequence_readCharArray
+         * @tc.name      SUB_IPC_MessageSequence_readCharArray_0100
          * @tc.desc      test writeCharArray
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -5512,6 +5878,7 @@ export default function abilityTest() {
                 let a: Array<int> = [97, 98];
                 data.writeCharArray(a);
                 let res = data.readCharArray();
+                expect(res.length > 0).assertTrue();
                 expect(res).assertDeepEquals(a);
             } catch (error) {
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readCharArray_0100 error is: ' + error);
@@ -5526,7 +5893,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number   SUB_IPC_MessageSequence_readCharArray_0200
-         * @tc.name     SUB_IPC_MessageSequence_readCharArray
+         * @tc.name     SUB_IPC_MessageSequence_readCharArray_0200
          * @tc.desc     test readCharArray
          * @tc.level    LEVEL1
          * @tc.size     MEDIUMTEST
@@ -5542,7 +5909,8 @@ export default function abilityTest() {
                 let res: Array<int> = new Array<int>(input.length);
                 res = data.readCharArray();
                 expect(res).assertDeepEquals(input);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readCharArray_0200 error is: ' + err);
                 expect(err == null).assertTrue();
             } finally {
@@ -5554,8 +5922,37 @@ export default function abilityTest() {
         });
 
         /**
+         * @tc.number    SUB_IPC_MessageSequence_readCharArray_0300
+         * @tc.name      SUB_IPC_MessageSequence_readCharArray_0300
+         * @tc.desc      test writeCharArray
+         * @tc.level     LEVEL1
+         * @tc.size      MEDIUMTEST
+         * @tc.type      FUNCTION
+         */
+        it("SUB_IPC_MessageSequence_readCharArray_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,async (done: () => void): Promise<void> => {
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_MessageSequence_readCharArray_0300 --------------------');
+            let data = rpc.MessageSequence.create();
+            try {
+                let a: Array<int> = [];
+                data.writeCharArray(a);
+                let res = data.readCharArray();
+                expect(res.length == 0).assertTrue();
+                expect(res).assertDeepEquals(a);
+            } catch (error) {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readCharArray_0300 error is: ' + error);
+                expect(error == null).assertTrue();
+            } finally {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readCharArray_0300 reclaim done');
+                data.reclaim();
+                done();
+            }
+            hilog.info(domain, tag, '%{public}s','-------------------- end SUB_IPC_MessageSequence_readCharArray_0300 --------------------');
+        });
+
+        /**
          * @tc.number    SUB_IPC_MessageSequence_writeLongArray_0100
-         * @tc.name      SUB_IPC_MessageSequence_writeLongArray
+         * @tc.name      SUB_IPC_MessageSequence_writeLongArray_0100
          * @tc.desc      test SUB_IPC_MessageSequence_writeLongArray
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -5585,7 +5982,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_writeShortArray_0100
-         * @tc.name      SUB_IPC_MessageSequence_writeShortArray
+         * @tc.name      SUB_IPC_MessageSequence_writeShortArray_0100
          * @tc.desc      test SUB_IPC_MessageSequence_writeShortArray
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -5611,7 +6008,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_readChar_0100
-         * @tc.name      SUB_IPC_MessageSequence_readChar
+         * @tc.name      SUB_IPC_MessageSequence_readChar_0100
          * @tc.desc      test SUB_IPC_MessageSequence_readChar
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -5639,7 +6036,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_readDouble_0100
-         * @tc.name      SUB_IPC_MessageSequence_readDoublee
+         * @tc.name      SUB_IPC_MessageSequence_readDouble_0100
          * @tc.desc      test readDouble
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -5667,7 +6064,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_Skeleton_resetCallingIdentity_0100
-         * @tc.name      SUB_IPC_Skeleton_resetCallingIdentity
+         * @tc.name      SUB_IPC_Skeleton_resetCallingIdentity_0100
          * @tc.desc      test SUB_IPC_Skeleton_resetCallingIdentity
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -5691,7 +6088,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_Skeleton_restoreCallingIdentity_0100
-         * @tc.name      SUB_IPC_Skeleton_restoreCallingIdentity
+         * @tc.name      SUB_IPC_Skeleton_restoreCallingIdentity_0100
          * @tc.desc      test SUB_IPC_Skeleton_restoreCallingIdentity
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -5713,7 +6110,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_Skeleton_getCallingDeviceID_0100
-         * @tc.name      SUB_IPC_Skeleton_getCallingDeviceID
+         * @tc.name      SUB_IPC_Skeleton_getCallingDeviceID_0100
          * @tc.desc      test SUB_IPC_Skeleton_getCallingDeviceID
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -5735,7 +6132,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_Skeleton_getLocalDeviceID_0100
-         * @tc.name      SUB_IPC_Skeleton_getLocalDeviceID
+         * @tc.name      SUB_IPC_Skeleton_getLocalDeviceID_0100
          * @tc.desc      test SUB_IPC_Skeleton_getLocalDeviceID
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -5757,7 +6154,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_Skeleton_isLocalCallin_0100
-         * @tc.name      SUB_IPC_Skeleton_isLocalCallin
+         * @tc.name      SUB_IPC_Skeleton_isLocalCallin_0100
          * @tc.desc      test SUB_IPC_Skeleton_isLocalCallin
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -5779,7 +6176,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_Skeleton_flushCmdBuffer_0100
-         * @tc.name      SUB_IPC_Skeleton_flushCmdBuffer
+         * @tc.name      SUB_IPC_Skeleton_flushCmdBuffer_0100
          * @tc.desc      test SUB_IPC_Skeleton_flushCmdBuffer
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -5801,7 +6198,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_Ashmen_MapReadOnlyAshmem_0100
-         * @tc.name      SUB_IPC_Ashmen_MapReadOnlyAshmem
+         * @tc.name      SUB_IPC_Ashmen_MapReadOnlyAshmem_0100
          * @tc.desc      test SUB_IPC_Ashmen_MapReadOnlyAshmem
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -5828,7 +6225,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_Ashmen_MapTypedAshmem_0100
-         * @tc.name      SUB_IPC_Ashmen_MapTypedAshmem
+         * @tc.name      SUB_IPC_Ashmen_MapTypedAshmem_0100
          * @tc.desc      test SUB_IPC_Ashmen_MapTypedAshmem
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -5854,7 +6251,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_Ashmen_SetProtectionType_0100
-         * @tc.name      SUB_IPC_Ashmen_SetProtectionType
+         * @tc.name      SUB_IPC_Ashmen_SetProtectionType_0100
          * @tc.desc      test SUB_IPC_Ashmen_SetProtectionType
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -5887,7 +6284,8 @@ export default function abilityTest() {
                 hilog.info(domain, tag, '%{public}s', `readDataFromAshmem success`);
                 hilog.info(domain, tag, '%{public}s', `read data is ${readInt8View}`);
                 expect(int8View).assertDeepEquals(readInt8View);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_SetProtectionType_0100 error is: ' + err);
                 expect(err == null).assertTrue();
             } finally {
@@ -5901,7 +6299,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_Ashmen_SetProtectionType_0200
-         * @tc.name      SUB_IPC_Ashmen_SetProtectionType
+         * @tc.name      SUB_IPC_Ashmen_SetProtectionType_0200
          * @tc.desc      test SUB_IPC_Ashmen_SetProtectionType PROT_READ
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -5929,7 +6327,8 @@ export default function abilityTest() {
                 ashmem1.writeDataToAshmem(buffer, length, offset);
                 hilog.info(domain, tag, '%{public}s', `WriteDataToAshMem finshed`);
                 let result = ashmem1.readDataFromAshmem(length, offset);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_SetProtectionType_0200 error is: ' + err);
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_SetProtectionType_0200 error code is: ' + err.code);
                 expect(err.code == 1900003).assertTrue();
@@ -5945,7 +6344,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_Ashmen_SetProtectionType_0300
-         * @tc.name      SUB_IPC_Ashmen_SetProtectionType
+         * @tc.name      SUB_IPC_Ashmen_SetProtectionType_0300
          * @tc.desc      test SUB_IPC_Ashmen_SetProtectionType PROT_WRITE
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -5972,7 +6371,8 @@ export default function abilityTest() {
                 let length: int = 10;
                 let offset: int = 0;
                 ashmem2.writeDataToAshmem(buffer, length, offset);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_SetProtectionType_0300 error is: ' + err);
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_SetProtectionType_0300 error code is: ' + err.code);
                 expect(err.code == 1900003).assertTrue();
@@ -5988,7 +6388,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_Ashmen_SetProtectionType_0400
-         * @tc.name      SUB_IPC_Ashmen_SetProtectionType
+         * @tc.name      SUB_IPC_Ashmen_SetProtectionType_0400
          * @tc.desc      test SUB_IPC_Ashmen_SetProtectionType PROT_NONE
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -6015,7 +6415,8 @@ export default function abilityTest() {
                 let length: int = 10;
                 let offset: int = 0;
                 ashmem.writeDataToAshmem(buffer, length, offset);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_SetProtectionType_0400 error is: ' + err);
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_SetProtectionType_0400 error code is: ' + err.code);
                 expect(err.code == 1900003).assertTrue();
@@ -6031,7 +6432,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_Ashmen_SetProtectionType_0500
-         * @tc.name      SUB_IPC_Ashmen_SetProtectionType
+         * @tc.name      SUB_IPC_Ashmen_SetProtectionType_0500
          * @tc.desc      test SUB_IPC_Ashmen_SetProtectionType PROT_EXEC
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -6059,7 +6460,8 @@ export default function abilityTest() {
                 let length: int = 10;
                 let offset: int = 0;
                 ashmem.writeDataToAshmem(buffer, length, offset);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_SetProtectionType_0500 error is: ' + err);
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_SetProtectionType_0500 error code is: ' + err.code);
                 expect(err.code == 1900003).assertTrue();
@@ -6075,7 +6477,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_RemoteObject_getLocalInterface_0100
-         * @tc.name      SUB_IPC_RemoteObject_getLocalInterface
+         * @tc.name      SUB_IPC_RemoteObject_getLocalInterface_0100
          * @tc.desc      test getLocalInterface
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -6090,7 +6492,8 @@ export default function abilityTest() {
                let res = testRemoteObject.getLocalInterface('testObject');
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getLocalInterface_0100 res is:' + res);
                expect(res != null).assertTrue();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getLocalInterface_0100 error is:' + err);
                 expect(err == null).assertTrue();
             } finally {
@@ -6102,7 +6505,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_RemoteObject_modifyLocalInterface_0100
-         * @tc.name      SUB_IPC_RemoteObject_modifyLocalInterface
+         * @tc.name      SUB_IPC_RemoteObject_modifyLocalInterface_0100
          * @tc.desc      test modifyLocalInterface
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -6115,7 +6518,8 @@ export default function abilityTest() {
                 let testObject = new TestRemoteObject('testObject');
                 let broker = testObject.getLocalInterface('testObject')
                 testObject.modifyLocalInterface(broker,"testObject1")
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_modifyLocalInterface_0100 error is: ' + err);
                 expect(err == null).assertTrue();
             } finally {
@@ -6127,7 +6531,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_RemoteObject_modifyLocalInterface_0200
-         * @tc.name      SUB_IPC_RemoteObject_modifyLocalInterface
+         * @tc.name      SUB_IPC_RemoteObject_modifyLocalInterface_0200
          * @tc.desc      test modifyLocalInterface
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -6138,7 +6542,8 @@ export default function abilityTest() {
             hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_RemoteObject_modifyLocalInterface_0200 --------------------');
             try {
                 let testObject = new TestRemoteStub('testObject');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_modifyLocalInterface_0200 error is: ' + err);
                 expect(err == null).assertTrue();
             } finally {
@@ -6150,7 +6555,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_setSize_ErrorCode_0100
-         * @tc.name      SUB_IPC_MessageSequence_setSize_ErrorCode
+         * @tc.name      SUB_IPC_MessageSequence_setSize_ErrorCode_0100
          * @tc.desc      test setSize ErrorCode
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -6176,7 +6581,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_rewindRead_ErrorCode_0100
-         * @tc.name      SUB_IPC_MessageSequence_rewindRead_ErrorCode
+         * @tc.name      SUB_IPC_MessageSequence_rewindRead_ErrorCode_0100
          * @tc.desc      test rewindRead ErrorCode
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -6202,7 +6607,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_rewindWrite_ErrorCode_0100
-         * @tc.name      SUB_IPC_MessageSequence_rewindWrite_ErrorCode
+         * @tc.name      SUB_IPC_MessageSequence_rewindWrite_ErrorCode_0100
          * @tc.desc      test rewindWrite ErrorCode
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -6228,7 +6633,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_writeByte_ErrorCode_0100
-         * @tc.name      SUB_IPC_MessageSequence_writeByte_ErrorCode
+         * @tc.name      SUB_IPC_MessageSequence_writeByte_ErrorCode_0100
          * @tc.desc      test writeByte ErrorCode
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -6254,7 +6659,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_readByte_ErrorCode_0100
-         * @tc.name      SUB_IPC_MessageSequence_readByte_ErrorCode
+         * @tc.name      SUB_IPC_MessageSequence_readByte_ErrorCode_0100
          * @tc.desc      test readByte ErrorCode
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -6280,7 +6685,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_writeShort_ErrorCode_0100
-         * @tc.name      SUB_IPC_MessageSequence_writeShort_ErrorCode
+         * @tc.name      SUB_IPC_MessageSequence_writeShort_ErrorCode_0100
          * @tc.desc      test writeShort ErrorCode
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -6306,7 +6711,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_readShort_ErrorCode_0100
-         * @tc.name      SUB_IPC_MessageSequence_readShort_ErrorCode
+         * @tc.name      SUB_IPC_MessageSequence_readShort_ErrorCode_0100
          * @tc.desc      test readShort ErrorCode
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -6332,7 +6737,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_writeFloat_ErrorCode_0100
-         * @tc.name      SUB_IPC_MessageSequence_writeFloat_ErrorCode
+         * @tc.name      SUB_IPC_MessageSequence_writeFloat_ErrorCode_0100
          * @tc.desc      test writeFloat ErrorCode
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -6358,7 +6763,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_readFloat_ErrorCode_0100
-         * @tc.name      SUB_IPC_MessageSequence_readFloat_ErrorCode
+         * @tc.name      SUB_IPC_MessageSequence_readFloat_ErrorCode_0100
          * @tc.desc      test readFloat ErrorCode
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -6384,7 +6789,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_writeDouble_ErrorCode_0100
-         * @tc.name      SUB_IPC_MessageSequence_writeDouble_ErrorCode
+         * @tc.name      SUB_IPC_MessageSequence_writeDouble_ErrorCode_0100
          * @tc.desc      test writeDouble ErrorCode
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -6410,7 +6815,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_readDouble_ErrorCode_0100
-         * @tc.name      SUB_IPC_MessageSequence_readDouble_ErrorCode
+         * @tc.name      SUB_IPC_MessageSequence_readDouble_ErrorCode_0100
          * @tc.desc      test readDouble ErrorCode
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -6436,7 +6841,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_writeChar_ErrorCode_0100
-         * @tc.name      SUB_IPC_MessageSequence_writeChar_ErrorCode
+         * @tc.name      SUB_IPC_MessageSequence_writeChar_ErrorCode_0100
          * @tc.desc      test writeChar ErrorCode
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -6462,7 +6867,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_readChar_ErrorCode_0100
-         * @tc.name      SUB_IPC_MessageSequence_readChar_ErrorCode
+         * @tc.name      SUB_IPC_MessageSequence_readChar_ErrorCode_0100
          * @tc.desc      test readChar ErrorCode
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -6488,7 +6893,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number   SUB_IPC_MessageSequence_readByteArray_ErrorCode_0100
-         * @tc.name     SUB_IPC_MessageSequence_readByteArray_ErrorCode
+         * @tc.name     SUB_IPC_MessageSequence_readByteArray_ErrorCode_0100
          * @tc.desc     test readByteArray errCode
          * @tc.level    LEVEL1
          * @tc.size     MEDIUMTEST
@@ -6504,7 +6909,8 @@ export default function abilityTest() {
                 let res: Array<int> = new Array<int>(input.length);
                 data.reclaim();
                 data.readByteArray(res);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readByteArray_ErrorCode_0100 error is: ' + err);
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readByteArray_ErrorCode_0100 error code is: ' + err.code);
                 expect(err.code == 1900010).assertTrue();
@@ -6518,7 +6924,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number   SUB_IPC_MessageSequence_readByteArray_ErrorCode_0200
-         * @tc.name     SUB_IPC_MessageSequence_readByteArray_ErrorCode
+         * @tc.name     SUB_IPC_MessageSequence_readByteArray_ErrorCode_0200
          * @tc.desc     test readByteArray errCode
          * @tc.level    LEVEL1
          * @tc.size     MEDIUMTEST
@@ -6548,7 +6954,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number   SUB_IPC_MessageSequence_writeShortArray_ErrorCode_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeShortArray_ErrorCode
+         * @tc.name     SUB_IPC_MessageSequence_writeShortArray_ErrorCode_0100
          * @tc.desc     test writeShortArray errCode
          * @tc.level    LEVEL1
          * @tc.size     MEDIUMTEST
@@ -6577,7 +6983,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number   SUB_IPC_MessageSequence_readShortArray_ErrorCode_0100
-         * @tc.name     SUB_IPC_MessageSequence_readShortArray_ErrorCode
+         * @tc.name     SUB_IPC_MessageSequence_readShortArray_ErrorCode_0100
          * @tc.desc     test readShortArray errCode
          * @tc.level    LEVEL1
          * @tc.size     MEDIUMTEST
@@ -6608,7 +7014,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number   SUB_IPC_MessageSequence_readShortArray_ErrorCode_0200
-         * @tc.name     SUB_IPC_MessageSequence_readShortArray_ErrorCode
+         * @tc.name     SUB_IPC_MessageSequence_readShortArray_ErrorCode_0200
          * @tc.desc     test readShortArray errCode
          * @tc.level    LEVEL1
          * @tc.size     MEDIUMTEST
@@ -6639,7 +7045,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number   SUB_IPC_MessageSequence_writeLongArray_ErrorCode_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeLongArray_ErrorCode
+         * @tc.name     SUB_IPC_MessageSequence_writeLongArray_ErrorCode_0100
          * @tc.desc     test writeLongArray errCode
          * @tc.level    LEVEL1
          * @tc.size     MEDIUMTEST
@@ -6668,7 +7074,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number   SUB_IPC_MessageSequence_readLongArray_ErrorCode_0100
-         * @tc.name     SUB_IPC_MessageSequence_readLongArray_ErrorCode
+         * @tc.name     SUB_IPC_MessageSequence_readLongArray_ErrorCode_0100
          * @tc.desc     test readLongArray errCode
          * @tc.level    LEVEL1
          * @tc.size     MEDIUMTEST
@@ -6699,7 +7105,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number   SUB_IPC_MessageSequence_readLongArray_ErrorCode_0200
-         * @tc.name     SUB_IPC_MessageSequence_readLongArray_ErrorCode
+         * @tc.name     SUB_IPC_MessageSequence_readLongArray_ErrorCode_0200
          * @tc.desc     test readLongArray errCode
          * @tc.level    LEVEL1
          * @tc.size     MEDIUMTEST
@@ -6730,7 +7136,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number   SUB_IPC_MessageSequence_writeFloatArray_ErrorCode_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeFloatArray_ErrorCode
+         * @tc.name     SUB_IPC_MessageSequence_writeFloatArray_ErrorCode_0100
          * @tc.desc     test writeFloatArray errCode
          * @tc.level    LEVEL1
          * @tc.size     MEDIUMTEST
@@ -6759,7 +7165,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number   SUB_IPC_MessageSequence_readFloatArray_ErrorCode_0100
-         * @tc.name     SUB_IPC_MessageSequence_readFloatArray_ErrorCode
+         * @tc.name     SUB_IPC_MessageSequence_readFloatArray_ErrorCode_0100
          * @tc.desc     test readFloatArray errCode
          * @tc.level    LEVEL1
          * @tc.size     MEDIUMTEST
@@ -6790,7 +7196,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number   SUB_IPC_MessageSequence_readFloatArray_ErrorCode_0200
-         * @tc.name     SUB_IPC_MessageSequence_readFloatArray_ErrorCode
+         * @tc.name     SUB_IPC_MessageSequence_readFloatArray_ErrorCode_0200
          * @tc.desc     test readFloatArray errCode
          * @tc.level    LEVEL1
          * @tc.size     MEDIUMTEST
@@ -6821,7 +7227,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number   SUB_IPC_MessageSequence_writeCharArray_ErrorCode_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeCharArray_ErrorCode
+         * @tc.name     SUB_IPC_MessageSequence_writeCharArray_ErrorCode_0100
          * @tc.desc     test writeCharArray errCode
          * @tc.level    LEVEL1
          * @tc.size     MEDIUMTEST
@@ -6850,7 +7256,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number   SUB_IPC_MessageSequence_readCharArray_ErrorCode_0100
-         * @tc.name     SUB_IPC_MessageSequence_readCharArray_ErrorCode
+         * @tc.name     SUB_IPC_MessageSequence_readCharArray_ErrorCode_0100
          * @tc.desc     test readCharArray errCode
          * @tc.level    LEVEL1
          * @tc.size     MEDIUMTEST
@@ -6881,7 +7287,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number   SUB_IPC_MessageSequence_readCharArray_ErrorCode_0200
-         * @tc.name     SUB_IPC_MessageSequence_readCharArray_ErrorCode
+         * @tc.name     SUB_IPC_MessageSequence_readCharArray_ErrorCode_0200
          * @tc.desc     test readCharArray errCode
          * @tc.level    LEVEL1
          * @tc.size     MEDIUMTEST
@@ -6912,7 +7318,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_writeRemoteObjectArray_ErrorCode_0100
-         * @tc.name      SUB_IPC_MessageSequence_writeRemoteObjectArray
+         * @tc.name      SUB_IPC_MessageSequence_writeRemoteObjectArray_ErrorCode_0100
          * @tc.desc      test writeRemoteObjectArray
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -6943,7 +7349,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number   SUB_IPC_MessageSequence_readRemoteObjectArray_ErrorCode_0100
-         * @tc.name     SUB_IPC_MessageSequence_readRemoteObjectArray_ErrorCode
+         * @tc.name     SUB_IPC_MessageSequence_readRemoteObjectArray_ErrorCode_0100
          * @tc.desc     test readRemoteObjectArray errCode
          * @tc.level    LEVEL1
          * @tc.size     MEDIUMTEST
@@ -6976,7 +7382,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number   SUB_IPC_MessageSequence_readRemoteObjectArray_ErrorCode_0200
-         * @tc.name     SUB_IPC_MessageSequence_readRemoteObjectArray_ErrorCode
+         * @tc.name     SUB_IPC_MessageSequence_readRemoteObjectArray_ErrorCode_0200
          * @tc.desc     test readRemoteObjectArray errCode
          * @tc.level    LEVEL1
          * @tc.size     MEDIUMTEST
@@ -7008,7 +7414,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_dupFileDescriptor_ErrorCode_0100
-         * @tc.name      SUB_IPC_MessageSequence_dupFileDescriptor_ErrorCode
+         * @tc.name      SUB_IPC_MessageSequence_dupFileDescriptor_ErrorCode_0100
          * @tc.desc      test dupFileDescriptor ErrorCode
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -7035,7 +7441,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_WriteArrayBuffer_ErrorCode_0100
-         * @tc.name      SUB_IPC_MessageSequence_WriteArrayBuffer_ErrorCode
+         * @tc.name      SUB_IPC_MessageSequence_WriteArrayBuffer_ErrorCode_0100
          * @tc.desc      test WriteArrayBuffer ErrorCode
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -7069,7 +7475,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_MessageSequence_readArrayBuffer_ErrorCode_0100
-         * @tc.name      SUB_IPC_MessageSequence_readArrayBuffer_ErrorCode
+         * @tc.name      SUB_IPC_MessageSequence_readArrayBuffer_ErrorCode_0100
          * @tc.desc      test readArrayBuffer ErrorCode
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -7103,7 +7509,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_RemoteObject_getLocalInterface_ErrorCode_0100
-         * @tc.name      SUB_IPC_RemoteObject_getLocalInterface_ErrorCode
+         * @tc.name      SUB_IPC_RemoteObject_getLocalInterface_ErrorCode_0100
          * @tc.desc      test getLocalInterface ErrorCode
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -7121,7 +7527,8 @@ export default function abilityTest() {
                 let testRemoteObject = new TestRemoteObject('testObject');
                 testRemoteObject.modifyLocalInterface(testRemoteObject.getLocalInterface('testObject'), 'testObject')
                 let res = testRemoteObject.getLocalInterface(des);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getLocalInterface_ErrorCode_0100 error is: ' + err);
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getLocalInterface_ErrorCode_0100 error code is: ' + err.code);
                 expect(err.code == 401).assertTrue();
@@ -7135,7 +7542,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_RmoteProxy_getLocalInterface_ErrorCode_0100
-         * @tc.name      SUB_IPC_RmoteProxy_getLocalInterface_ErrorCode
+         * @tc.name      SUB_IPC_RmoteProxy_getLocalInterface_ErrorCode_0100
          * @tc.desc      test getLocalInterface
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -7146,7 +7553,8 @@ export default function abilityTest() {
             hilog.info(domain, tag, '%{public}s','-------------------- start SUB_IPC_RmoteProxy_getLocalInterface_ErrorCode_0100 --------------------');
             try {
                 let res = gIRemoteObject?.getLocalInterface('rpcTestAbility');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RmoteProxy_getLocalInterface_ErrorCode_0100 error is: ' + err);
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RmoteProxy_getLocalInterface_ErrorCode_0100 error code is: ' + err.code);
                 expect(err.code == 1900006).assertTrue();
@@ -7160,7 +7568,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_RemoteObject_modifyLocalInterface_ErrorCode_0100
-         * @tc.name      SUB_IPC_RemoteObject_modifyLocalInterface_ErrorCode
+         * @tc.name      SUB_IPC_RemoteObject_modifyLocalInterface_ErrorCode_0100
          * @tc.desc      test modifyLocalInterface ErrorCode
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -7177,7 +7585,8 @@ export default function abilityTest() {
                  }
                  let testRemoteObject = new TestRemoteObject('testObject');
                  testRemoteObject.modifyLocalInterface(testRemoteObject.getLocalInterface('testObject'), des)
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_modifyLocalInterface_ErrorCode_0100 error is: ' + err);
                     hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_modifyLocalInterface_ErrorCode_0100 error code is: ' + err.code);
                     expect(err.code == 401).assertTrue();
@@ -7191,7 +7600,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_Skeleton_restoreCallingIdentity_ErrorCode_0100
-         * @tc.name      SUB_IPC_Skeleton_restoreCallingIdentityErrorCode
+         * @tc.name      SUB_IPC_Skeleton_restoreCallingIdentity_ErrorCode_0100
          * @tc.desc      test restoreCallingIdentity
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -7220,7 +7629,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_Ashmen_MapTypedAshmem_ErrorCode_0100
-         * @tc.name      SUB_IPC_Ashmen_MapTypedAshmem_ErrorCode
+         * @tc.name      SUB_IPC_Ashmen_MapTypedAshmem_ErrorCode_0100
          * @tc.desc      test SUB_IPC_Ashmen_MapTypedAshmem ErrorCode
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
@@ -7232,7 +7641,8 @@ export default function abilityTest() {
             let ashmem1 = rpc.Ashmem.create("ashmem1", 1024 * 1024);
             try {
                 ashmem1.mapTypedAshmem(999);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_MapTypedAshmem_ErrorCode_0100 error is: ' + err);
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_MapTypedAshmem_ErrorCode_0100 error code is: ' + err.code);
                 expect(err.code == 401).assertTrue();
@@ -7248,7 +7658,7 @@ export default function abilityTest() {
 
         /**
          * @tc.number    SUB_IPC_ErrorCode_0100
-         * @tc.name      SUB_IPC_ErrorCode
+         * @tc.name      SUB_IPC_ErrorCode_0100
          * @tc.desc      test ErrorCode
          * @tc.level     LEVEL1
          * @tc.size      MEDIUMTEST
