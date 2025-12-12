@@ -7786,6 +7786,7 @@ export default function windowPropertiesTest() {
       it('testOnFrameMetricsMeasuredCallbackwithDialogWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         let caseName = 'testOnFrameMetricsMeasuredCallbackwithDialogWindow';
         let driver: Driver = await Driver.create();
+        await sleep(2000)
         let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
         console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
         let windowClass: window.Window | undefined;
@@ -7844,6 +7845,7 @@ export default function windowPropertiesTest() {
       it('testOnFrameMetricsMeasuredCallbackwithUECSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         let caseName = 'testOnFrameMetricsMeasuredCallbackwithUECSubWindow';
         let driver = Driver.create();
+        await sleep(2000)
         let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
         console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
         let windowClass: window.Window | undefined;
@@ -7929,7 +7931,7 @@ export default function windowPropertiesTest() {
           console.log(`${caseName}  callbackIndex 1: ${JSON.stringify(callbackIndex)}`);
           expect(callbackIndex).assertLarger(0)
           callbackIndex = 0;
-          windowStage.setCustomDensity(4.0);
+          windowStage.setCustomDensity(2.0);
           await sleep(3000);
           console.log(`${caseName}  callbackIndex 2: ${JSON.stringify(callbackIndex)}`);
           expect(callbackIndex).assertLarger(0)

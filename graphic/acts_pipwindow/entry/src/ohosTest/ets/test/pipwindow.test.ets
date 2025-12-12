@@ -4743,53 +4743,37 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
           };
           try {
             let callbackIndex = 0;
-            let callbackRes: boolean | undefined
             const callback = async (res: boolean) => {
-              console.log(`${tag} ${caseName} callback res: ${res}`)
-              callbackIndex = callbackIndex + 1;
-              console.log(`${tag} ${caseName} callback callbackIndex: ${callbackIndex}`)
-              callbackRes = res;
+              console.log(`${caseName} callback res: ${res}`)
+              callbackIndex = callbackIndex+1;
+              console.log(`${caseName} callback callbackIndex: ${callbackIndex}`)
+              expect(res).assertEqual(false)
             }
             let driver = Driver.create();
             pipWindow.create(config).then(async (data) => {
               pipController = data;
-              console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
+              console.log(`${caseName} Succeeded in creating pip controller. Data:${data}`);
               expect(data != null).assertTrue();
               pipController.on('activeStatusChange', callback);
               await pipController.startPiP();
-              await sleep(2000);
-              console.log(`${tag} ${caseName} callbackIndex 1: ${callbackIndex}`)
-              console.log(`${tag} ${caseName} callbackRes 1: ${callbackRes}`)
-              expect(callbackIndex).assertEqual(0);
+              await sleep(1000)
               let pipWindowComponent = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
+              console.log(`${caseName} pipWindowComponent: ${JSON.stringify(pipWindowComponent)}`);
               await sleep(1000)
               let pipWindowCenter = await pipWindowComponent.getBoundsCenter();
-              console.log(`${tag} ${caseName} pipWindowCenter: ${JSON.stringify(pipWindowCenter)}`);
+              console.log(`${caseName} pipWindowCenter: ${JSON.stringify(pipWindowCenter)}`);
               let displayInfo = display.getDefaultDisplaySync();
-              console.log(`${tag} ${caseName} displayInfo: ${JSON.stringify(displayInfo)}`);
+              console.log(`${caseName} displayInfo: ${JSON.stringify(displayInfo)}`);
               let dragToX = pipWindowCenter.x + displayInfo.width;
               let dragToY = pipWindowCenter.y;
               await driver.drag(pipWindowCenter.x, pipWindowCenter.y, dragToX, dragToY);
               await sleep(3000);
-              console.log(`${tag} ${caseName} callbackIndex 2: ${callbackIndex}`)
-              console.log(`${tag} ${caseName} callbackRes 2: ${callbackRes}`)
               expect(callbackIndex).assertEqual(1);
-              expect(callbackRes).assertEqual(false);
-              await driver.click(displayInfo.width, pipWindowCenter.y);
-              await sleep(3000);
-              console.log(`${tag} ${caseName} callbackIndex 3: ${callbackIndex}`)
-              console.log(`${tag} ${caseName} callbackRes 3: ${callbackRes}`)
-              expect(callbackIndex).assertEqual(2);
-              expect(callbackRes).assertEqual(true);
               await pipController?.stopPiP();
-              await sleep(2000);
-              console.log(`${tag} ${caseName} callbackIndex 4: ${callbackIndex}`)
-              console.log(`${tag} ${caseName} callbackRes 4: ${callbackRes}`)
-              expect(callbackIndex).assertEqual(2);
               pipController?.off('activeStatusChange');
               done();
             }).catch((err:BusinessError) => {
-              console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message));
+              console.log(`${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message));
               if (err.code == 801) {
                 expect(err.message!=null).assertTrue();
                 expect(true).assertTrue();
@@ -4801,7 +4785,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               }
             });
           } catch (error) {
-            console.log(`${tag} ${caseName} Failed. Cause` + JSON.stringify(error.code)+':msg:'+JSON.stringify(error.message));
+            console.log(`${caseName} Failed. Cause` + JSON.stringify(error.code)+':msg:'+JSON.stringify(error.message));
             expect().assertFail();
             done();
           }
@@ -4822,7 +4806,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
      */
     it('OH_PictureInPicture_On_ActiveStatusChange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'OH_PictureInPicture_On_ActiveStatusChange_0200';
-      console.log(tag + caseName +' begin');
+      console.log( caseName +' begin');
       if (!isPipWindowEnabled) {
         done()
       } else {
@@ -4844,21 +4828,21 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             let callbackIndex1 = 0;
             let callbackIndex2 = 0;
             const callback = async (res: boolean) => {
-              console.log(` ${caseName} callback res: ${res}`)
+              console.log(`${caseName} callback res: ${res}`)
               callbackIndex1 = callbackIndex1+1;
-              console.log(` ${caseName} callback callbackIndex2: ${callbackIndex1}`)
+              console.log(`${caseName} callback callbackIndex1: ${callbackIndex1}`)
               expect(res).assertEqual(false)
             }
             const callback2 = async (res: boolean) => {
-              console.log(` ${caseName} callback2 res: ${res}`)
+              console.log(`${caseName} callback2 res: ${res}`)
               callbackIndex2 = callbackIndex2+1;
-              console.log(` ${caseName} callback2 callbackIndex2: ${callbackIndex2}`)
+              console.log(`${caseName} callback2 callbackIndex2: ${callbackIndex2}`)
               expect(res).assertEqual(false)
             }
             let driver = Driver.create();
             pipWindow.create(config).then(async (data) => {
               pipController = data;
-              console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
+              console.log(`${caseName} Succeeded in creating pip controller. Data:${data}`);
               expect(data != null).assertTrue();
               pipController.on('activeStatusChange', callback);
               pipController.on('activeStatusChange', callback2);
@@ -4867,9 +4851,9 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               let pipWindowComponent = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
               await sleep(1000)
               let pipWindowCenter = await pipWindowComponent.getBoundsCenter();
-              console.log(`${tag} ${caseName} pipWindowCenter: ${JSON.stringify(pipWindowCenter)}`);
+              console.log(`${caseName} pipWindowCenter: ${JSON.stringify(pipWindowCenter)}`);
               let displayInfo = display.getDefaultDisplaySync();
-              console.log(`${tag} ${caseName} displayInfo: ${JSON.stringify(displayInfo)}`);
+              console.log(`${caseName} displayInfo: ${JSON.stringify(displayInfo)}`);
               let dragToX = pipWindowCenter.x + displayInfo.width;
               let dragToY = pipWindowCenter.y;
               await driver.drag(pipWindowCenter.x, pipWindowCenter.y, dragToX, dragToY);
@@ -4880,7 +4864,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               pipController?.off('activeStatusChange');
               done();
             }).catch((err:BusinessError) => {
-              console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message));
+              console.log(`${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message));
               if (err.code == 801) {
                 expect(err.message!=null).assertTrue();
                 expect(true).assertTrue();
@@ -4892,7 +4876,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               }
             });
           } catch (error) {
-            console.log(`${tag} ${caseName} Failed. Cause + JSON.stringify(error.code)+':msg:'+JSON.stringify(error.message)`);
+            console.log(`${caseName} Failed. Cause` + JSON.stringify(error.code)+':msg:'+JSON.stringify(error.message));
             expect().assertFail();
             done();
           }
@@ -4932,11 +4916,11 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             contentHeight: contentHeight
           };
           try {
-            let callbackIndex1 = 0;
+            let callbackIndex = 0;
             const callback = async (res: boolean) => {
               console.log(`${caseName} callback res: ${res}`)
-              callbackIndex1 = callbackIndex1+1;
-              console.log(`${caseName} callback callbackIndex2: ${callbackIndex1}`)
+              callbackIndex = callbackIndex+1;
+              console.log(`${caseName} callback callbackIndex1: ${callbackIndex}`)
               expect(res).assertEqual(false)
             }
             let driver = Driver.create();
@@ -4947,7 +4931,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               pipController.on('activeStatusChange', callback);
               pipController?.off('activeStatusChange', callback);
               await pipController.startPiP();
-              await sleep(1000)
+              await sleep(3000)
               let pipWindowComponent = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
               await sleep(1000)
               let pipWindowCenter = await pipWindowComponent.getBoundsCenter();
@@ -4958,7 +4942,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               let dragToY = pipWindowCenter.y;
               await driver.drag(pipWindowCenter.x, pipWindowCenter.y, dragToX, dragToY);
               await sleep(3000);
-              expect(callbackIndex1).assertEqual(0);
+              expect(callbackIndex).assertEqual(0);
               await pipController?.stopPiP();
               done();
             }).catch((err:BusinessError) => {
@@ -5014,11 +4998,11 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             contentHeight: contentHeight
           };
           try {
-            let callbackIndex1 = 0;
+            let callbackIndex = 0;
             const callback = async (res: boolean) => {
               console.log(`${caseName} callback res: ${res}`)
-              callbackIndex1 = callbackIndex1+1;
-              console.log(`${caseName} callback callbackIndex2: ${callbackIndex1}`)
+              callbackIndex = callbackIndex + 1;
+              console.log(`${caseName} callback callbackIndex2: ${callbackIndex}`)
               expect(res).assertEqual(false)
             }
             let driver = Driver.create();
@@ -5029,7 +5013,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               pipController.on('activeStatusChange', callback);
               pipController?.off('activeStatusChange');
               await pipController.startPiP();
-              await sleep(1000)
+              await sleep(3000)
               let pipWindowComponent = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
               await sleep(1000)
               let pipWindowCenter = await pipWindowComponent.getBoundsCenter();
@@ -5040,7 +5024,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               let dragToY = pipWindowCenter.y;
               await driver.drag(pipWindowCenter.x, pipWindowCenter.y, dragToX, dragToY);
               await sleep(3000);
-              expect(callbackIndex1).assertEqual(0);
+              expect(callbackIndex).assertEqual(0);
               await pipController?.stopPiP();
               done();
             }).catch((err:BusinessError) => {

@@ -1056,13 +1056,12 @@ napi_value TestLockCursorwithoutPermission(napi_env env, napi_callback_info info
             "CreateNativeNode env or info is null");
             return nullptr;
     }
-    size_t argCnt = 1;
-    napi_value args[1] = { nullptr };
-    if (napi_get_cb_info(env, info, &argCnt, args, nullptr, nullptr) != napi_ok) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
-            "CreateNativeNode napi_get_cb_info failed");
-    }
-    if (argCnt != PARAM_1) {
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args,nullptr,nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+    if (argc != PARAM_1) {
         napi_throw_type_error(env, NULL, "Wrong number of arguments");
         return nullptr;
     }
@@ -1128,16 +1127,11 @@ napi_value TestUnLockCursorwithoutPermission(napi_env env, napi_callback_info in
             "CreateNativeNode env or info is null");
             return nullptr;
     }
-    size_t argCnt = 1;
-    napi_value args[1] = { nullptr };
-    if (napi_get_cb_info(env, info, &argCnt, args, nullptr, nullptr) != napi_ok) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
-            "CreateNativeNode napi_get_cb_info failed");
-    }
-    if (argCnt != PARAM_1) {
-        napi_throw_type_error(env, NULL, "Wrong number of arguments");
-        return nullptr;
-    }
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args,nullptr,nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
     int32_t windowId;
     napi_get_value_int32(env, args[0], &windowId);
     

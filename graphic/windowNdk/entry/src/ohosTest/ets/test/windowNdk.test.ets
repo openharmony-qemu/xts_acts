@@ -1793,6 +1793,9 @@ export default function windowNdk() {
         console.info(`${caseName} start`);
         let windowClass = windowStage.getMainWindowSync();
         subWindowClass = await windowStage.createSubWindow('testLockCursorandUnLockCursor');
+        await subWindowClass.setUIContent('testability/pages/subWindow');
+        await subWindowClass.showWindow();
+        await sleep(1000)
         let windowProperties = subWindowClass.getWindowProperties();
         console.info(`${caseName} sub windowProperties: ${JSON.stringify(windowProperties)}`);
         let windowId = windowProperties.id;

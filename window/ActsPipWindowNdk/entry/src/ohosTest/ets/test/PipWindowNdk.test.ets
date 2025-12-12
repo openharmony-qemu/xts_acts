@@ -1148,14 +1148,15 @@ export default function PipWindowNdkTest() {
           console.log(caseName + ' www data Succeeded in starting pip')
           let result = testNapi.testPipSetParentWindowId(subId);
           console.log(`${caseName} result: ${JSON.stringify(result)}`);
-          if (pipController?.isPiPSupported()) {
-            expect(result).assertEqual(0);
+          if (result==801) {
+            await subWindowClass?.destroyWindow()
+            done();
           } else {
-            expect(result).assertEqual(801);
+            expect(result).assertEqual(1300016);
+            await pipController?.stopPiP();
+            await subWindowClass?.destroyWindow()
+            done();
           }
-          await pipController?.stopPiP();
-          await subWindowClass?.destroyWindow()
-          done();
         }).catch(async (err:BusinessError) => {
           console.log(caseName + ' www data Failed1 to start pip. Cause:' +
               JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message));

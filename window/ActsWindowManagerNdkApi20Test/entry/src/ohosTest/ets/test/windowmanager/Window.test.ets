@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeAll, describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
+import { beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
 import windowndkapi20 from 'libwindowndkapi20.so';
 import Utils from "../common/Utils";
 import { Driver, ON } from "@kit.TestKit";
@@ -89,6 +89,19 @@ export default function WindowTest() {
       await ClickButtonDriver();
       await sleep(200);
       await Utils.pushPageNoClear("Window/Window", done);
+    })
+
+    beforeEach(async () => {
+      context = AppStorage.get('context') as common.UIAbilityContext;
+      let mainWindow = windowStage.getMainWindowSync();
+      let mainWindowId = mainWindow.getWindowProperties().id;
+      console.info(`beforeEach mainWindowId: `+ mainWindowId);
+      let thisWindow = await window.getLastWindow(context);
+      let thisWindowId = thisWindow.getWindowProperties().id;
+      console.info(`beforeEach thisWindowId: `+ thisWindowId);
+      if (mainWindowId != thisWindowId) {
+        await thisWindow.destroyWindow();
+      }
     })
     /**
      * @tc.name   testGetWindowAvoidAreaInvalidParam
