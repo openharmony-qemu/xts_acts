@@ -10,7 +10,8 @@
                     "SystemCapability.Driver.DDK.Extension",
                     "SystemCapability.Driver.UsbSerial.Extension",
                     "SystemCapability.Driver.SCSI.Extension",
-                    "SystemCapability.Security.Cert"
+                    "SystemCapability.Security.Cert",
+                    "SystemCapability.Base"
                 ]
             }
         ]
