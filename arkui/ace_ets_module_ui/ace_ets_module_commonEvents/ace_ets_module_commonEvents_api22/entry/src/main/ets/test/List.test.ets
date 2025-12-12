@@ -14,9 +14,11 @@
  */
 
 import HasAxisTest from './HasAxisTest/HasAxisTest.test';
+import responseRegionListTest from "./responseRegion/responseRegionList.test";
 import AllowableMovementTest from "./LongPress/allowableMovement.test";
 
 export default function testsuite() {
   HasAxisTest();
+  responseRegionListTest();
   AllowableMovementTest();
 }
