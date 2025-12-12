@@ -81,12 +81,12 @@ export default function ImageCreatePixelMapFromParcelSupp() {
 
 
     /**
-     * @tc.number    : SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_PARCEL_001
-     * @tc.name      : SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_PARCEL_001
-     * @tc.desc      : sendableImage_createPixelMapFromParcel
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number   SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_PARCEL_001
+     * @tc.name     SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_PARCEL_001
+     * @tc.desc     sendableImage_createPixelMapFromParcel
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
      */
     it('SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_PARCEL_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_PARCEL_001';
@@ -107,12 +107,12 @@ export default function ImageCreatePixelMapFromParcelSupp() {
     })
 
     /**
-     * @tc.number    : SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_PARCEL_002
-     * @tc.name      : SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_PARCEL_002
-     * @tc.desc      : sendableImage_createPixelMapFromParcel
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number   SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_PARCEL_002
+     * @tc.name     SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_PARCEL_002
+     * @tc.desc     sendableImage_createPixelMapFromParcel
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
      */
     it('SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_PARCEL_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_PARCEL_002';
@@ -133,12 +133,12 @@ export default function ImageCreatePixelMapFromParcelSupp() {
     })
 
     /**
-     * @tc.number    : SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_PARCEL_003
-     * @tc.name      : SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_PARCEL_003
-     * @tc.desc      : sendableImage_createPixelMapFromParcel
-     * @tc.size      : MEDIUM
-     * @tc.type      : SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_PARCEL_003
-     * @tc.level     : Level 0
+     * @tc.number   SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_PARCEL_003
+     * @tc.name     SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_PARCEL_003
+     * @tc.desc     sendableImage_createPixelMapFromParcel
+     * @tc.size     MEDIUM
+     * @tc.type     SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_PARCEL_003
+     * @tc.level    Level 0
      */
     it('SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_PARCEL_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_PARCEL_003';
@@ -158,12 +158,12 @@ export default function ImageCreatePixelMapFromParcelSupp() {
       })
     })
     /**
-     * @tc.number    : SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_PARCEL_004
-     * @tc.name      : SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_PARCEL_004
-     * @tc.desc      : sendableImage_createPixelMapFromParcel
-     * @tc.size      : MEDIUM
-     * @tc.type      : SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_PARCEL_004
-     * @tc.level     : Level 0
+     * @tc.number   SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_PARCEL_004
+     * @tc.name     SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_PARCEL_004
+     * @tc.desc     sendableImage_createPixelMapFromParcel
+     * @tc.size     MEDIUM
+     * @tc.type     SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_PARCEL_004
+     * @tc.level    Level 0
      */
     it('SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_PARCEL_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_PARCEL_004';
