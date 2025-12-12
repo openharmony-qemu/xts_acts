@@ -1888,7 +1888,1207 @@ export default function RegExpCombination1Test() {
       expect(exec94_2?.index).assertEqual(3);
     });
 
-    
+    /**
+     * @tc.name   RegExpCombination1Test095
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST9500
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re95 = /(s)(t)(r)/g;
+      const str95 = "strstr";
+      let exec95_1 = re95.exec(str95);
+      expect(exec95_1?.[0]).assertEqual("str");
+      expect(exec95_1?.[1]).assertEqual("s");
+      expect(exec95_1?.[2]).assertEqual("t");
+      expect(exec95_1?.[3]).assertEqual("r");
+      expect(re95.lastIndex).assertEqual(3);
+      let exec95_2 = re95.exec(str95);
+      expect(exec95_2?.index).assertEqual(3);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test096
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST9600
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re96 = /t/g;
+      const str96 = "ttt";
+      const matches96 = str96.matchAll(re96);
+      expect(matches96.next().value?.index).assertEqual(0);
+      expect(matches96.next().value?.index).assertEqual(1);
+      expect(matches96.next().value?.index).assertEqual(2);
+      expect(matches96.next().done).assertTrue();
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test097
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST9700
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re97 = /^u|v$/gm;
+      const str97 = "u1v\nu2v\nu3";
+      let exec97_1 = re97.exec(str97);
+      expect(exec97_1?.[0]).assertEqual("u");
+      expect(re97.lastIndex).assertEqual(1);
+      let exec97_2 = re97.exec(str97);
+      expect(exec97_2?.[0]).assertEqual("v");
+      expect(re97.lastIndex).assertEqual(3);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test098
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST9800
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re98 = /w/g;
+      const str98 = "www";
+      let replace98_1 = str98.replace(re98, () => {
+        re98.lastIndex = 3;
+        return "x";
+      });
+      expect(replace98_1).assertEqual("xxx");
+      let replace98_2 = str98.replace(re98, () => {
+        re98.lastIndex = 0;
+        return "y";
+      });
+      expect(replace98_2).assertEqual("yyy");
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test099
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST9900
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re99w = /\w/g;
+      const re99W = /\W/g;
+      const str99 = "a_1@b#2";
+      expect(re99w.exec(str99)?.[0]).assertEqual("a");
+      expect(re99W.exec(str99)?.[0]).assertEqual("@");
+      expect(re99w.exec(str99)?.[0]).assertEqual("_");
+      expect(re99W.exec(str99)?.[0]).assertEqual("#");
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test100
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST10000
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re100 = /x/g;
+      const str100 = "";
+      expect(re100.exec(str100)).assertNull();
+      expect(re100.test(str100)).assertFalse();
+      expect(str100.match(re100)).assertDeepEquals(null);
+      expect(str100.split(re100)).assertDeepEquals([""]);
+      expect(str100.search(re100)).assertEqual(-1);
+
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test101
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST10100
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re101 = / /y;
+      const str101 = "abc";
+      re101.lastIndex = 0;
+      let exec101_1 = re101.exec(str101);
+      expect(exec101_1?.index).assertEqual(undefined);
+      expect(re101.lastIndex).assertEqual(0);
+      re101.lastIndex = 1;
+      let exec101_2 = re101.exec(str101);
+      expect(exec101_2?.index).assertEqual(undefined);
+      expect(re101.lastIndex).assertEqual(0);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test102
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST10200
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re102 = /😀/g;
+      const str102 = "😀😀a";
+      let exec102_1 = re102.exec(str102);
+      expect(exec102_1?.index).assertEqual(0);
+      expect(re102.lastIndex).assertEqual(2);
+      let exec102_2 = re102.exec(str102);
+      expect(exec102_2?.index).assertEqual(2);
+      expect(re102.lastIndex).assertEqual(4);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test103
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST10300
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re103 = /a(?!b)/g;
+      const str103 = "ac ab ad";
+      let exec103Arr: RegExpExecArray[] = [];
+      let exec103Res: RegExpExecArray | null;
+      while ((exec103Res = re103.exec(str103))) {
+        exec103Arr.push(exec103Res);
+      }
+      expect(exec103Arr.length).assertEqual(2);
+      expect(exec103Arr[0].index).assertEqual(0);
+      expect(exec103Arr[1].index).assertEqual(6);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test104
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST10400
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re104 = /b/g;
+      const str104 = "bb";
+      str104.match(re104);
+      expect(re104.lastIndex).assertEqual(0);
+      re104.test(str104);
+      expect(re104.lastIndex).assertEqual(1);
+      str104.match(re104);
+      expect(re104.lastIndex).assertEqual(0);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test105
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST10500
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re105 = /c.d/sg;
+      const str105 = "c\nd\ncxd";
+      let exec105_1 = re105.exec(str105);
+      expect(exec105_1?.[0]).assertEqual("c\nd");
+      expect(re105.lastIndex).assertEqual(3);
+      let exec105_2 = re105.exec(str105);
+      expect(exec105_2?.[0]).assertEqual("cxd");
+      expect(re105.lastIndex).assertEqual(7);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test106
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST10600
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re106 = /(\d)/g;
+      const str106 = "a1b2c3d";
+      let split106_1 = str106.split(re106, 4);
+      expect(split106_1).assertDeepEquals(["a", "1", "b", "2"]);
+      let split106_2 = str106.split(re106, 2);
+      expect(split106_2).assertDeepEquals(["a", "1"]);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test107
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST10700
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re107 = /(?<user>\w+)@(?<domain>\w+\.\w+)/g;
+      const str107 = "alice@test.com bob@example.org";
+      let exec107_1 = re107.exec(str107);
+      expect(exec107_1?.groups?.user).assertEqual("alice");
+      expect(exec107_1?.groups?.domain).assertEqual("test.com");
+      expect(re107.lastIndex).assertEqual(14);
+      let exec107_2 = re107.exec(str107);
+      expect(exec107_2?.groups?.user).assertEqual("bob");
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test108
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST10800
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re108 = /d/g;
+      const str108 = "ddx";
+      re108.exec(str108);
+      re108.exec(str108);
+      expect(re108.lastIndex).assertEqual(2);
+      let exec108_3 = re108.exec(str108);
+      expect(exec108_3).assertNull();
+      expect(re108.lastIndex).assertEqual(0);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test109
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST10900
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re109 = /e/g;
+      const str109 = "eee";
+      re109.exec(str109);
+      expect(re109.lastIndex).assertEqual(1);
+      str109.search(re109);
+      expect(re109.lastIndex).assertEqual(1);
+      let exec109_2 = re109.exec(str109);
+      expect(exec109_2?.index).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test110
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST11000
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re110 = /f*?/g;
+      const str110 = "ff";
+      let exec110_1 = re110.exec(str110);
+      expect(exec110_1?.[0]).assertEqual("");
+      expect(re110.lastIndex).assertEqual(0);
+      re110.lastIndex = 1;
+      let exec110_2 = re110.exec(str110);
+      expect(exec110_2?.[0]).assertEqual("");
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test111
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST11100
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re111 = /G/ig;
+      const str111 = "gGgG";
+      let match111_1 = str111.match(re111);
+      expect(match111_1).assertDeepEquals(["g", "G", "g", "G"]);
+      let exec111_1 = re111.exec(str111);
+      expect(exec111_1?.[0]).assertEqual("g");
+      expect(re111.lastIndex).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test112
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST11200
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re112 = /h/g;
+      let str112 = "hhh";
+      str112 = str112.replace(re112, "H");
+      expect(str112).assertEqual("HHH");
+      let exec112_1 = re112.exec(str112);
+      expect(exec112_1).assertNull();
+      expect(re112.lastIndex).assertEqual(0);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test113
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST11300
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re113 = /\t/g;
+      const str113 = "a\tb\tc";
+      const matches113_1 = str113.matchAll(re113);
+      let arr113_1 = Array.from(matches113_1);
+      expect(arr113_1.length).assertEqual(2);
+      expect(arr113_1[0].index).assertEqual(1);
+      const matches113_2 = str113.matchAll(re113);
+      let arr113_2 = Array.from(matches113_2);
+      expect(arr113_2[1].index).assertEqual(3);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test114
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST11400
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re114 = /i{2}/y;
+      const str114 = "iiiii";
+      re114.lastIndex = 0;
+      expect(re114.exec(str114)?.[0]).assertEqual("ii");
+      expect(re114.lastIndex).assertEqual(2);
+      re114.lastIndex = 2;
+      expect(re114.exec(str114)?.[0]).assertEqual("ii");
+      expect(re114.lastIndex).assertEqual(4);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test115
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST11500
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re115c = /(j)k/g;
+      const re115n = /(?:j)k/g;
+      const str115 = "jkjk";
+      let replace115c = str115.replace(re115c, "$1");
+      expect(replace115c).assertEqual("jj");
+      let replace115n = str115.replace(re115n, "$1");
+      expect(replace115n).assertEqual("$1$1");
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test116
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST11600
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re116a = /l/g;
+      const re116b = /l/g;
+      const str116 = "lll";
+      re116a.exec(str116);
+      expect(re116a.lastIndex).assertEqual(1);
+      expect(re116b.lastIndex).assertEqual(0);
+      re116b.exec(str116);
+      expect(re116b.lastIndex).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test118
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST11800
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re118 = /m/g;
+      const str118 = "mmm";
+      re118.lastIndex = 2;
+      let search118_1 = str118.search(re118);
+      expect(search118_1).assertEqual(0);
+      expect(re118.lastIndex).assertEqual(2);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test119
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST11900
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re119 = /^n|p$/gm;
+      const str119 = "np\nnpp\nnp";
+      let exec119_1 = re119.exec(str119);
+      expect(exec119_1?.[0]).assertEqual("n");
+      expect(re119.lastIndex).assertEqual(1);
+      let exec119_2 = re119.exec(str119);
+      expect(exec119_2?.[0]).assertEqual("p");
+      expect(re119.lastIndex).assertEqual(2);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test120
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST12000
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(RegExpCombination1.RegExpCombination1Test120()).assertDeepEquals(["qr:q:r:0", "qr:q:r:2"]);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test121
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST12100
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re121 = /\u{263A}/gu;
+      const str121 = "☺☺";
+      let exec121_1 = re121.exec(str121);
+      expect(exec121_1?.[0]).assertEqual("☺");
+      expect(re121.lastIndex).assertEqual(1);
+      let exec121_2 = re121.exec(str121);
+      expect(exec121_2?.index).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test122
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST12200
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re122 = /s+/g;
+      const str122 = "ssss";
+      let exec122_1 = re122.exec(str122);
+      expect(exec122_1?.[0]).assertEqual("ssss");
+      expect(re122.lastIndex).assertEqual(4);
+      let exec122_2 = re122.exec(str122);
+      expect(exec122_2).assertNull();
+      expect(re122.lastIndex).assertEqual(0);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test123
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST12300
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re123 = /,/g;
+      const str123 = "";
+      let split123_1 = str123.split(re123);
+      expect(split123_1).assertDeepEquals([""]);
+      let split123_2 = str123.split(re123, 1);
+      expect(split123_2).assertDeepEquals([""]);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test124
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST12400
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re124 = /(?<=t{2})u/g;
+      const str124 = "ttuttu";
+      let exec124_1 = re124.exec(str124);
+      expect(exec124_1?.index).assertEqual(2);
+      expect(re124.lastIndex).assertEqual(3);
+      let exec124_2 = re124.exec(str124);
+      expect(exec124_2?.index).assertEqual(5);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test125
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST12500
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re125 = /(?<a>v)(?<b>w)/;
+      const str125 = "vwvw";
+      let match125_1 = str125.match(re125);
+      expect(match125_1?.groups?.a).assertEqual("v");
+      expect(match125_1?.groups?.b).assertEqual("w");
+      expect(re125.lastIndex).assertEqual(0);
+      let match125_2 = str125.match(re125);
+      expect(match125_2?.index).assertEqual(0);
+
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test126
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST12600
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re126 = /x/g;
+      const str126a = "xx";
+      const str126b = "x";
+      expect(re126.test(str126a)).assertTrue();
+      expect(re126.lastIndex).assertEqual(1);
+      expect(re126.test(str126b)).assertFalse();
+      expect(re126.test(str126b)).assertTrue();
+      expect(re126.lastIndex).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test127
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST12700
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re127s = /y.z/sg;
+      const re127 = /y.z/g;
+      const str127 = "y\nz y-z";
+      expect(re127s.exec(str127)?.[0]).assertEqual("y\nz");
+      expect(re127.exec(str127)?.[0]).assertEqual("y-z");
+
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test128
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST12800
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re128 = /z/g;
+      re128.lastIndex = 100;
+      expect(re128.lastIndex).assertEqual(100);
+      const str128 = "zz";
+      expect(re128.exec(str128)).assertNull();
+      expect(re128.lastIndex).assertEqual(0);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test129
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST12900
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re129 = /(?=a)b/g;
+      const str129 = "abba";
+      let exec129_1 = re129.exec(str129);
+      expect(exec129_1).assertNull();
+      expect(re129.lastIndex).assertEqual(0);
+      const re129fix = /(?=b)a/g;
+      expect(re129fix.exec(str129)?.index).assertEqual(undefined);
+
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test130
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST13000
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re130 = /A./igm;
+      const str130 = "a1\nb2\nA3";
+      let replace130_1 = str130.replace(re130, "x");
+      expect(replace130_1).assertEqual("x\nb2\nx");
+      let replace130_2 = str130.replace(re130, "y");
+      expect(replace130_2).assertEqual("y\nb2\ny");
+
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test131
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST13100
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re131 = /\u{1F601}/yu;
+      const str131 = "😁😁a";
+      re131.lastIndex = 0;
+      let exec131_1 = re131.exec(str131);
+      expect(exec131_1?.[0]).assertEqual("😁");
+      expect(re131.lastIndex).assertEqual(2);
+      re131.lastIndex = 2;
+      let exec131_2 = re131.exec(str131);
+      expect(exec131_2?.[0]).assertEqual("😁");
+      expect(re131.lastIndex).assertEqual(4);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test132
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST13200
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re132 = /\v/g;
+      const str132 = "a\vb\vc";
+      let exec132_1 = re132.exec(str132);
+      expect(exec132_1?.index).assertEqual(1);
+      expect(re132.lastIndex).assertEqual(2);
+      let exec132_2 = re132.exec(str132);
+      expect(exec132_2?.index).assertEqual(3);
+      expect(re132.lastIndex).assertEqual(4);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test133
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST13300
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re133 = /b/g;
+      const str133 = "bbbb";
+      re133.lastIndex = 2;
+      const matches133_1 = str133.matchAll(re133);
+      let arr133_1 = Array.from(matches133_1);
+      expect(arr133_1.length).assertEqual(2);
+      re133.lastIndex = 0;
+      let exec133_1 = re133.exec(str133);
+      expect(exec133_1?.index).assertEqual(0);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test134
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST13400
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re134 = /c.*?d/gs;
+      const str134 = "c1\nd2c3d";
+      let replace134_1 = str134.replace(re134, "x");
+      expect(replace134_1).assertEqual("x2x");
+      let replace134_2 = str134.replace(re134, "y");
+      expect(replace134_2).assertEqual("y2y");
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test135
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST13500
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re135 = /(?<=[0-9])e/g;
+      const str135 = "e1e2e3e";
+      let exec135_1 = re135.exec(str135);
+      expect(exec135_1?.index).assertEqual(2);
+      expect(re135.lastIndex).assertEqual(3);
+      let exec135_2 = re135.exec(str135);
+      expect(exec135_2?.index).assertEqual(4);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test136
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST13600
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re136 = /f/g;
+      const str136 = "fff";
+      let split136_1 = str136.split(re136);
+      expect(split136_1).assertDeepEquals(["", "", "", ""]);
+      let split136_2 = str136.split(re136, 2);
+      expect(split136_2).assertDeepEquals(["", ""]);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test137
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST13700
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re137 = /g/g;
+      const str137 = "ggg";
+      let match137 = str137.match(re137);
+      let exec137Arr: string[] = [];
+      let exec137Res: RegExpExecArray | null;
+      while ((exec137Res = re137.exec(str137))) {
+        exec137Arr.push(exec137Res[0]);
+      }
+      expect(match137).assertDeepEquals(exec137Arr);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test138
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST13800
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re138 = /h/g;
+      const str138 = "hh";
+      re138.lastIndex = 2;
+      expect(re138.test(str138)).assertFalse();
+      expect(re138.lastIndex).assertEqual(0);
+      expect(re138.test(str138)).assertTrue();
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test139
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST13900
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re139 = /(?<key>\w+)=(?<value>\w+)/g;
+      const str139 = "name=alice age=30";
+      const matches139 = str139.matchAll(re139);
+      let arr139 = Array.from(matches139);
+      expect(arr139[0].groups?.key).assertEqual("name");
+      expect(arr139[0].groups?.value).assertEqual("alice");
+      expect(arr139[1].groups?.key).assertEqual("age");
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test140
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST14000
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re140 = / /g;
+      const str140 = "abc";
+      let split140_1 = str140.split(re140, 3);
+      expect(split140_1).assertDeepEquals(["abc"]);
+      let split140_2 = str140.split(re140, 1);
+      expect(split140_2).assertDeepEquals(["abc"]);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test141
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST14100
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re141s = /^a.*c$/sg;
+      const re141 = /^a.*c$/g;
+      const str141 = "a\nb\nc";
+      expect(re141s.exec(str141)?.[0]).assertEqual("a\nb\nc");
+      expect(re141.exec(str141)).assertNull();
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test142
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST14200
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re142 = /i/g;
+      const str142 = "iiii";
+      expect(re142.test(str142)).assertTrue();
+      expect(re142.lastIndex).assertEqual(1);
+      expect(re142.test(str142)).assertTrue();
+      expect(re142.lastIndex).assertEqual(2);
+      expect(re142.test(str142)).assertTrue();
+      expect(re142.lastIndex).assertEqual(3);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test143
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST14300
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re143 = /中{2}/g;
+      const str143 = "中中中中";
+      let exec143_1 = re143.exec(str143);
+      expect(exec143_1?.[0]).assertEqual("中中");
+      expect(re143.lastIndex).assertEqual(2);
+      let exec143_2 = re143.exec(str143);
+      expect(exec143_2?.[0]).assertEqual("中中");
+      expect(re143.lastIndex).assertEqual(4);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test144
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST14400
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re144 = /j/g;
+      const str144 = "jjj";
+      let replace144_1 = str144.replace(re144, "j");
+      expect(replace144_1).assertEqual("jjj");
+      expect(re144.lastIndex).assertEqual(0);
+      let exec144_1 = re144.exec(str144);
+      expect(exec144_1?.index).assertEqual(0);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test145
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST14500
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re145 = /^k/y;
+      const str145 = "kkk";
+      re145.lastIndex = 0;
+      expect(re145.exec(str145)?.[0]).assertEqual("k");
+      expect(re145.lastIndex).assertEqual(1);
+      re145.lastIndex = 1;
+      expect(re145.exec(str145)).assertNull();
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test146
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST14600
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re146g = /l/g;
+      const re146 = /l/;
+      const str146 = "abc";
+      expect(str146.match(re146g)).assertDeepEquals(null);
+      expect(str146.match(re146)).assertNull();
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test147
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST14700
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re147 = /(?<=m)n/g;
+      const str147 = "mn mnn mmn";
+      let replace147_1 = str147.replace(re147, "x");
+      expect(replace147_1).assertDeepEquals("mx mxn mmx");
+      let replace147_2 = str147.replace(re147, "y");
+      expect(replace147_2).assertDeepEquals("my myn mmy");
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test148
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST14800
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re148 = /p/;
+      const str148 = "a\nb\np\nc";
+      let search148_1 = str148.search(re148);
+      expect(search148_1).assertEqual(4);
+      let search148_2 = str148.search(re148);
+      expect(search148_2).assertEqual(4);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test149
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST14900
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re149 = /q/g;
+      const str149 = "qqxqq";
+      re149.exec(str149);
+      re149.exec(str149);
+      expect(re149.lastIndex).assertEqual(2);
+      let exec149_3 = re149.exec(str149);
+      expect(exec149_3).assertDeepEquals(["q"]);
+      expect(re149.lastIndex).assertEqual(4);
+      let exec149_4 = re149.exec(str149);
+      expect(exec149_4?.index).assertEqual(4);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test150
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST15000
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re150 = /(?:r+s?)/g;
+      const str150 = "rr rs rrr s";
+      const matches150 = Array.from(str150.matchAll(re150));
+      let arr150 = Array.from(matches150);
+      expect(arr150[0][0]).assertEqual("rr");
+      expect(arr150[1][0]).assertEqual("rs");
+      expect(arr150[2][0]).assertEqual("rrr");
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test151
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST15100
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re151 = /\p{Letter}/gu;
+      const str151 = "aA中ァ";
+      let exec151_1 = re151.exec(str151);
+      expect(exec151_1?.[0]).assertEqual("a");
+      let exec151_2 = re151.exec(str151);
+      expect(exec151_2?.[0]).assertEqual("A");
+      let exec151_3 = re151.exec(str151);
+      expect(exec151_3?.[0]).assertEqual("中");
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test152
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST15200
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re152 = /,/g;
+      const str152 = "a,b,c,d";
+      let split152_1 = str152.split(re152, 1);
+      expect(split152_1).assertDeepEquals(["a"]);
+      let split152_2 = str152.split(re152, 1);
+      expect(split152_2).assertDeepEquals(["a"]);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test153
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST15300
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re153 = /t+(?=u)/g;
+      const str153 = "tttu ttu tu";
+      let exec153_1 = re153.exec(str153);
+      expect(exec153_1?.[0]).assertEqual("ttt");
+      expect(re153.lastIndex).assertEqual(3);
+      let exec153_2 = re153.exec(str153);
+      expect(exec153_2?.[0]).assertEqual("tt");
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test154
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST15400
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re154 = /v/g;
+      const str154 = "";
+      expect(re154.test(str154)).assertFalse();
+      expect(re154.lastIndex).assertEqual(0);
+      expect(re154.exec(str154)).assertNull();
+      expect(re154.lastIndex).assertEqual(0);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test155
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST15500
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re155 = /^w/gm;
+      const str155 = "w1\nw2\nw3";
+      let exec155_1 = re155.exec(str155);
+      expect(exec155_1?.index).assertEqual(0);
+      expect(re155.lastIndex).assertEqual(1);
+      let exec155_2 = re155.exec(str155);
+      expect(exec155_2?.index).assertEqual(3);
+      expect(re155.lastIndex).assertEqual(4);
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test156
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST15600
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re156 = /x/g;
+      let str156 = "xxx";
+      str156.replace(re156, () => {
+        str156 = "yyy";
+        return "z";
+      });
+      expect(str156).assertEqual("yyy");
+      let replace156_2 = str156.replace(re156, "z");
+      expect(replace156_2).assertEqual("yyy");
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test157
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST15700
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re157d = /\d+/g;
+      const re157D = /\D+/g;
+      const str157 = "123abc456def";
+      expect(re157d.exec(str157)?.[0]).assertEqual("123");
+      expect(re157D.exec(str157)?.[0]).assertEqual("abc");
+      expect(re157d.exec(str157)?.[0]).assertEqual("456");
+      expect(re157D.exec(str157)?.[0]).assertEqual("def");
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test158
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST15800
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re158 = /z*/y;
+      const str158 = "zzz";
+      re158.lastIndex = 0;
+      expect(re158.exec(str158)?.[0]).assertEqual("zzz");
+      expect(re158.lastIndex).assertEqual(3);
+      re158.lastIndex = 3;
+      expect(re158.exec(str158)?.[0]).assertEqual("");
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test159
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST15900
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re159 = /a/g;
+      const str159 = "aa";
+      const matches159 = str159.matchAll(re159);
+      let arr159 = Array.from(matches159);
+      expect(arr159[0].input).assertEqual("aa");
+      expect(arr159[1].input).assertEqual("aa");
+
+    });
+
+    /**
+     * @tc.name   RegExpCombination1Test160
+     * @tc.number BUILTINS_REGEXP_COMBINATION_TEST16000
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RegExpCombination1Test160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re160 = /b/g;
+      const str160 = "bbbb";
+      re160.test(str160);
+      expect(re160.lastIndex).assertEqual(1);
+      str160.match(re160);
+      expect(re160.lastIndex).assertEqual(0);
+      re160.exec(str160);
+      expect(re160.lastIndex).assertEqual(1);
+      str160.split(re160);
+      expect(re160.lastIndex).assertEqual(1);
+      re160.test(str160);
+      expect(re160.lastIndex).assertEqual(2);
+    });
 
 
   })
