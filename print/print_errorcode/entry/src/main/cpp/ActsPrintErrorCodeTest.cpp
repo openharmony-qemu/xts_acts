@@ -221,7 +221,7 @@ napi_value OH_Print_QueryPrinterList2(napi_env env, napi_callback_info info)
     };
     Print_ErrorCode errorCode = OH_Print_QueryPrinterList(printerIdList);
     napi_value result = nullptr;
-    napi_create_int32(env, errorCode == PRINT_ERROR_INVALID_PRINTER ? 0 : -1, &result);
+    napi_create_int32(env, errorCode == PRINT_ERROR_NONE ? 0 : -1, &result);
     return result;
 }
 
