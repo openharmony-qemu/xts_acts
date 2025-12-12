@@ -37,7 +37,6 @@ import native_gesture_booleanTest from "./InteractiveFramework/native_gesture_bo
 import ui_input_event_booleanTest from "./InteractiveFramework/ui_input_event_boolean.test";
 import native_node_extented_booleanTest from "./InteractiveFramework/native_node_extented_boolean.test";
 import longPressGusture from "./InteractiveFramework/longPressGueture.test";
-import GridFillPolicyTest from "./grid/GridFillPolicyTest.test";
 import gridAttrsTest from "./grid/GridAttrsTest.test";
 import gridEventTest from './grid/GridEventTest.test'
 
