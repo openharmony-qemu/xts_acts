@@ -1,5 +1,7 @@
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { BusinessError } from '@ohos.base';
+import router from '@ohos.router';
+import events_emitter from '@ohos.events.emitter';
 
 const topMargin: number = 20;
 
@@ -7,10 +9,35 @@ const topMargin: number = 20;
 @Component
 struct BindSheetPicker {
   private photoSelectOptions: photoAccessHelper.PhotoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
+  private eventId: number = 0;
+
+  sendEvent(message: Object, eventId: number) {
+    let eventData: events_emitter.EventData = {
+      data: {
+        'msg': message,
+      }
+    }
+    let event: events_emitter.InnerEvent = {
+      eventId: eventId,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.emit(event, eventData)
+  }
 
   aboutToAppear() {
     this.photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
     this.photoSelectOptions.maxSelectNumber = 3;
+    let parameter: object = router.getParams();
+    if (parameter['eventId'] != undefined) {
+      this.eventId = Number(parameter['eventId']);
+    }
+    if (parameter['pickerOptions'] != undefined) {
+      this.photoSelectOptions = parameter['pickerOptions'];
+    }
+  }
+
+  aboutToDisappear(): void {
+    this.sendEvent(this.photoSelectOptions as photoAccessHelper.PhotoViewPicker, this.eventId);
   }
 
   build() {
@@ -32,6 +59,7 @@ struct BindSheetPicker {
         })
       
       Button('select photo')
+        .id('btnSelectPhoto')
         .width(150)
         .margin({ top: topMargin })
         .onClick(() => {
