@@ -48,11 +48,13 @@ export default function TitleOptionsToolOptions() {
     });
 
 
-    /**
-     * @tc.number    TitleOptionsToolOptions_0100
-     * @tc.name      TitleOptionsToolOptions_0100
-     * @tc.desc      Test NavigationTitleOptions and NavigationToolbarOptions
-     * @tc.level     Level 0
+    /**	
+     * @tc.name   TitleOptionsToolOptions_0100	
+     * @tc.number TitleOptionsToolOptions_0100	
+     * @tc.desc   Test NavigationTitleOptions and NavigationToolbarOptions	
+     * @tc.type   FUNCTION	
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TitleOptionsToolOptions_0100', Level.LEVEL0, async (done: Function) => {
       console.info('TitleOptionsToolOptions_0100 START');
@@ -82,11 +84,13 @@ export default function TitleOptionsToolOptions() {
       done();
     });
 
-        /**
-     * @tc.number    TitleOptionsToolOptions_0200
-     * @tc.name      TitleOptionsToolOptions_0200
-     * @tc.desc      Test NavDestinationTitleOptions and NavDestinationToolbarOptions
-     * @tc.level     Level 0
+    /**	
+     * @tc.name   TitleOptionsToolOptions_0200	
+     * @tc.number TitleOptionsToolOptions_0200	
+     * @tc.desc   Test NavDestinationTitleOptions and NavDestinationToolbarOptions	
+     * @tc.type   FUNCTION	
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TitleOptionsToolOptions_0200', Level.LEVEL0, async (done: Function) => {
       console.info('TitleOptionsToolOptions_0200 START');
