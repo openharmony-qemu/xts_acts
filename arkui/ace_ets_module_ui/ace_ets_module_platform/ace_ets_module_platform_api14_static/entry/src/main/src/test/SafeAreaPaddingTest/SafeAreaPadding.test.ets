@@ -25,7 +25,6 @@ import inspector from '@ohos.arkui.inspector';
 import common from '@ohos.app.ability.common';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 let testAbilityContext: common.UIAbilityContext;
-const uiContext = new UIContext();
 export default function SafeAreaPadding1() {
   describe('SafeAreaPadding1', () => {
     beforeAll(() => {
@@ -78,7 +77,7 @@ export default function SafeAreaPadding1() {
       let SafeAreaPaading002 = CommonFunc.getComponentRect('safeAreaPadding_002');
       console.log("[SafeAreaPadding1_static_0100] component safeAreaPadding_002 is: " + SafeAreaPaading002);
       console.log("[SafeAreaPadding1_static_0100] component safeAreaPadding_002 top is: " + SafeAreaPaading002.top);
-      expect(Math.abs(Math.round(SafeAreaPaading001.top - SafeAreaPaading002.top)-Math.round(UIContext.getFocusedUIContext()!.vp2px(5)))<=1).assertTrue()
+      expect(Math.abs(Math.round(SafeAreaPaading001.top - SafeAreaPaading002.top)-Math.round(AppStorage.get<UIContext>('uiContext')!.vp2px(5)))<=1).assertTrue()
 
       console.info('SafeAreaPadding1_static_0100 END');
       done();
