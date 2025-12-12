@@ -1938,6 +1938,667 @@ export default function typeArrayUint16ArrayTest() {
       expect(arr[4]).assertEqual(5);
     })
 
-    
+    /**
+     * @tc.name   TypeArrayUint16Array0109
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0109
+     * @tc.desc   Test map with return value exceeding Uint16 range multiple times
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0109', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Uint16Array([10000, 20000, 30000]);
+      const mapped = arr.map(v => v * 4);
+      expect(mapped.toString()).assertEqual('40000,14464,54464');
+      expect(mapped.length).assertEqual(3);
+      expect(mapped[0]).assertEqual(40000);
+      expect(mapped[1]).assertEqual(14464);
+      expect(mapped[2]).assertEqual(54464);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0110
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0110
+     * @tc.desc   Test filter with empty result
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0110', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Uint16Array([100, 200, 300]);
+      const filtered = arr.filter(v => v > 500);
+      expect(filtered.length).assertEqual(0);
+      expect(filtered instanceof collections.Uint16Array).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0111
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0111
+     * @tc.desc   Test reduce with empty array and initial value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0111', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const emptyArr = new collections.Uint16Array(0);
+      const sum = emptyArr.reduce((acc, val) => acc + val, 100);
+      expect(sum).assertEqual(100);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0112
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0112
+     * @tc.desc   Test every with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0112', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const emptyArr = new collections.Uint16Array(0);
+      expect(emptyArr.every(v => v > 100)).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0113
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0113
+     * @tc.desc   Test some with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0113', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const emptyArr = new collections.Uint16Array(0);
+      expect(emptyArr.some(v => v > 100)).assertEqual(false);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0114
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0114
+     * @tc.desc   Test find with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0114', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const emptyArr = new collections.Uint16Array(0);
+      const found = emptyArr.find(v => v > 100);
+      expect(found).assertUndefined();
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0115
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0115
+     * @tc.desc   Test findIndex with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0115', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const emptyArr = new collections.Uint16Array(0);
+      const index = emptyArr.findIndex(v => v > 100);
+      expect(index).assertEqual(-1);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0116
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0116
+     * @tc.desc   Test includes with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0116', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const emptyArr = new collections.Uint16Array(0);
+      expect(emptyArr.includes(100)).assertEqual(false);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0117
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0117
+     * @tc.desc   Test indexOf with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0117', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const emptyArr = new collections.Uint16Array(0);
+      expect(emptyArr.indexOf(100)).assertEqual(-1);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0118
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0118
+     * @tc.desc   Test lastIndexOf with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0118', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const emptyArr = new collections.Uint16Array(0);
+      expect(emptyArr.lastIndexOf(100)).assertEqual(-1);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0119
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0119
+     * @tc.desc   Test join with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0119', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const emptyArr = new collections.Uint16Array(0);
+      expect(emptyArr.join(',')).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0120
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0120
+     * @tc.desc   Test entries iterator with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0120', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const emptyArr = new collections.Uint16Array(0);
+      const entries = Array.from(emptyArr.entries());
+      expect(entries.length).assertEqual(0);
+    })
+    /**
+     * @tc.name   TypeArrayUint16Array0121
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0121
+     * @tc.desc   Test values iterator with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0121', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const emptyArr = new collections.Uint16Array(0);
+      const values = collections.Uint16Array.from(emptyArr.values());
+      expect(values.length).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0122
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0122
+     * @tc.desc   Test keys iterator with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0122', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const emptyArr = new collections.Uint16Array(0);
+      const keys = collections.Uint16Array.from(emptyArr.keys());
+      expect(keys.length).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0123
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0123
+     * @tc.desc   Test Uint16Array with maximum safe integer length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayUint16Array0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const maxSafe = Number.MAX_SAFE_INTEGER;
+      try {
+        new collections.Uint16Array(maxSafe);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError')
+      }
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0124
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0124
+     * @tc.desc   Test set method with array larger than target
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0124', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Uint16Array(3);
+      let errorThrown = false;
+      try {
+        arr.set([1, 2, 3, 4]);
+      } catch (e) {
+        errorThrown = true;
+      }
+      expect(errorThrown).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0125
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0125
+     * @tc.desc   Test set method with negative offset
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0125', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Uint16Array(3);
+      let errorThrown = false;
+      try {
+        arr.set([1, 2], -1);
+      } catch (e) {
+        errorThrown = true;
+      }
+      expect(errorThrown).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0126
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0126
+     * @tc.desc   Test subarray with start index beyond array length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0126', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Uint16Array([1, 2, 3]);
+      const subArr = arr.subarray(5);
+      expect(subArr.length).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0127
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0127
+     * @tc.desc   Test slice with start index beyond array length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0127', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Uint16Array([1, 2, 3]);
+      const sliced = arr.slice(5);
+      expect(sliced.length).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0130
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0130
+     * @tc.desc   Test filter with function returning non-boolean
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0130', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Uint16Array([100, 200, 300]);
+      const filtered = arr.filter(v => v > 150);
+      expect(filtered.toString()).assertEqual('200,300');
+      expect(filtered.length).assertEqual(2);
+      expect(filtered[0]).assertEqual(200);
+      expect(filtered[1]).assertEqual(300);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0132
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0132
+     * @tc.desc   Test every with function returning non-boolean
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0132', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Uint16Array([100, 200, 300]);
+      const result = arr.every(v => v > 50);
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0136
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0136
+     * @tc.desc   Test Uint16Array with ArrayBuffer of maximum size
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL1
+     */
+    it('TypeArrayUint16Array0136', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, () => {
+      const maxBufferSize = 2**32 - 1;
+      try {
+        const buffer = new ArrayBuffer(maxBufferSize);
+        new collections.Uint16Array(buffer);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.message).assertContain('Out of range');
+      }
+
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0137
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0137
+     * @tc.desc   Test subarray with same start and end indices
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0137', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Uint16Array([1, 2, 3, 4]);
+      const subArr = arr.subarray(2, 2);
+      expect(subArr.length).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0138
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0138
+     * @tc.desc   Test slice with same start and end indices
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0138', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Uint16Array([1, 2, 3, 4]);
+      const sliced = arr.slice(2, 2);
+      expect(sliced.length).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0139
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0139
+     * @tc.desc   Test fill with start index equal to array length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0139', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Uint16Array([1, 2, 3]);
+      arr.fill(9, 3);
+      expect(arr.toString()).assertEqual('1,2,3');
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0140
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0140
+     * @tc.desc   Test map with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0140', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const emptyArr = new collections.Uint16Array(0);
+      const mapped = emptyArr.map(v => v * 2);
+      expect(mapped.length).assertEqual(0);
+      expect(mapped instanceof collections.Uint16Array).assertEqual(true);
+    })
+    /**
+     * @tc.name   TypeArrayUint16Array0141
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0141
+     * @tc.desc   Test filter with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0141', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const emptyArr = new collections.Uint16Array(0);
+      const filtered = emptyArr.filter(v => v > 100);
+      expect(filtered.length).assertEqual(0);
+      expect(filtered instanceof collections.Uint16Array).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0142
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0142
+     * @tc.desc   Test reduce without initial value on non-empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0142', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Uint16Array([10, 20, 30]);
+      const sum = arr.reduce((acc, val) => acc + val);
+      expect(sum).assertEqual(60);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0143
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0143
+     * @tc.desc   Test reduce without initial value on empty array (should throw)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0143', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const emptyArr = new collections.Uint16Array(0);
+      let errorThrown = false;
+      try {
+        emptyArr.reduce((acc, val) => acc + val);
+      } catch (e) {
+        errorThrown = true;
+      }
+      expect(errorThrown).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0144
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0144
+     * @tc.desc   Test includes with value that wraps around
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0144', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Uint16Array([65535]);
+      expect(arr.includes(-1)).assertEqual(false);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0145
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0145
+     * @tc.desc   Test indexOf with value that wraps around
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0145', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Uint16Array([65535, 100, 65535]);
+      expect(arr.indexOf(-1)).assertEqual(-1);
+      expect(arr.indexOf(-1, 1)).assertEqual(-1);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0146
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0146
+     * @tc.desc   Test lastIndexOf with value that wraps around
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0146', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Uint16Array([65535, 100, 65535]);
+      expect(arr.lastIndexOf(-1)).assertEqual(-1);
+      expect(arr.lastIndexOf(-1, 1)).assertEqual(-1);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0147
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0147
+     * @tc.desc   Test join with empty array and custom separator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0147', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const emptyArr = new collections.Uint16Array(0);
+      expect(emptyArr.join('|')).assertEqual('');
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0148
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0148
+     * @tc.desc   Test values iterator with single element array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0148', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Uint16Array([12345]);
+      const values = collections.Uint16Array.from(arr.values());
+      expect(values.length).assertEqual(1);
+      expect(values[0]).assertEqual(12345);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0149
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0149
+     * @tc.desc   Test keys iterator with single element array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0149', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Uint16Array([12345]);
+      const keys = collections.Uint16Array.from(arr.keys());
+      expect(keys.length).assertEqual(1);
+      expect(keys[0]).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0150
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0150
+     * @tc.desc   Test entries iterator with single element array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0150', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Uint16Array([12345]);
+      const entries = Array.from(arr.entries());
+      expect(entries.length).assertEqual(1);
+      expect(entries[0].toString()).assertEqual('0,12345');
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0151
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0151
+     * @tc.desc   Test Array.from with mapping function on empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0151', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const emptyUint16 = new collections.Uint16Array(0);
+      const mapped = collections.Uint16Array.from(emptyUint16, v => v * 2);
+      expect(mapped.length).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0152
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0152
+     * @tc.desc   Test spread operator with single element array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0152', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const uint16Arr = new collections.Uint16Array([54321]);
+      const regArr = [...uint16Arr];
+      expect(regArr.length).assertEqual(1);
+      expect(regArr[0]).assertEqual(54321);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0153
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0153
+     * @tc.desc   Test conversion to Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0153', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const uint16Arr = new collections.Uint16Array([0, 32768, 65535]);
+      const float64Arr = new Float64Array(uint16Arr);
+      expect(float64Arr[0]).assertEqual(0);
+      expect(float64Arr[1]).assertEqual(32768);
+      expect(float64Arr[2]).assertEqual(65535);
+      expect(float64Arr.length).assertEqual(3);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0154
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0154
+     * @tc.desc   Test toString with single element array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0154', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Uint16Array([9876]);
+      expect(arr.toString()).assertEqual('9876');
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0155
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0155
+     * @tc.desc   Test toLocaleString with single element
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0155', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Uint16Array([12345]);
+      expect(arr.toLocaleString()).assertEqual('12,345');
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0156
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0156
+     * @tc.desc   Test JSON.stringify with single element array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0156', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Uint16Array([123]);
+      expect(JSON.stringify(Array.from(arr))).assertEqual('[123]');
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0158
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0158
+     * @tc.desc   Test buffer sharing with different TypedArrays
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('TypeArrayUint16Array0158', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
+      const buffer = new collections.ArrayBuffer(8);
+      const uint16Arr = new collections.Uint16Array(buffer);
+      const float32Arr = new collections.Float32Array(buffer);
+      uint16Arr.set([0x0000, 0x8000, 0xFFFF, 0x7FFF]);
+      expect(float32Arr[0]).assertEqual(0);
+      expect(float32Arr.length).assertEqual(2);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0159
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0159
+     * @tc.desc   Test slice with end index beyond array length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0159', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Uint16Array([10, 20, 30]);
+      const sliced = arr.slice(1, 10);
+      expect(sliced.toString()).assertEqual('20,30');
+      expect(sliced.length).assertEqual(2);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint16Array0160
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0160
+     * @tc.desc   Test fill with end index beyond array length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint16Array0160', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const arr = new collections.Uint16Array([1, 2, 3, 4]);
+      arr.fill(9, 1, 10);
+      expect(arr.toString()).assertEqual('1,9,9,9');
+    })
   })
 }
