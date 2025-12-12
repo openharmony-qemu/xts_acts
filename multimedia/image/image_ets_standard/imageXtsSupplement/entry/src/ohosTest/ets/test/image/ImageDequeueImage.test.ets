@@ -75,12 +75,12 @@ export default function ImageCreatorDequeueImageSuppTest() {
     });
 
     /**
-     * @tc.number    : ImageCreator_dequeueImage_promise_01
-     * @tc.name      : ImageCreator_dequeueImage_promise_01
-     * @tc.desc      : ImageCreator_dequeueImage
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number   ImageCreator_dequeueImage_promise_01
+     * @tc.name     ImageCreator_dequeueImage_promise_01
+     * @tc.desc     ImageCreator_dequeueImage
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
      */
     it('ImageCreator_dequeueImage_promise_01', Level.LEVEL0, async (done: Function, img: image.Image) => {
       const testName = 'ImageCreator_dequeueImage_promise_01';
@@ -111,12 +111,12 @@ export default function ImageCreatorDequeueImageSuppTest() {
     })
 
     /**
-     * @tc.number    : ImageCreator_dequeueImage_promise_02
-     * @tc.name      : ImageCreator_dequeueImage_promise_02
-     * @tc.desc      : ImageCreator_dequeueImage
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number   ImageCreator_dequeueImage_promise_02
+     * @tc.name     ImageCreator_dequeueImage_promise_02
+     * @tc.desc     ImageCreator_dequeueImage
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
      */
     it('ImageCreator_dequeueImage_promise_02', Level.LEVEL0, async (done: Function, img: image.Image) => {
       const testName = 'ImageCreator_dequeueImage_promise_02';
@@ -148,12 +148,12 @@ export default function ImageCreatorDequeueImageSuppTest() {
     })
 
     /**
-     * @tc.number    : ImageCreator_dequeueImage_promise_03
-     * @tc.name      : ImageCreator_dequeueImage_promise_03
-     * @tc.desc      : ImageCreator_dequeueImage
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number   ImageCreator_dequeueImage_promise_03
+     * @tc.name     ImageCreator_dequeueImage_promise_03
+     * @tc.desc     ImageCreator_dequeueImage
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
      */
     it('ImageCreator_dequeueImage_promise_03', Level.LEVEL0, async (done: Function, img: image.Image) => {
       const testName = 'ImageCreator_dequeueImage_promise_03';
@@ -184,12 +184,12 @@ export default function ImageCreatorDequeueImageSuppTest() {
       })
     })
     /**
-     * @tc.number    : ImageCreator_dequeueImage_promise_04
-     * @tc.name      : ImageCreator_dequeueImage_promise_04
-     * @tc.desc      : ImageCreator_dequeueImage
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number   ImageCreator_dequeueImage_promise_04
+     * @tc.name     ImageCreator_dequeueImage_promise_04
+     * @tc.desc     ImageCreator_dequeueImage
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
      */
     it('ImageCreator_dequeueImage_promise_04', Level.LEVEL0, async (done: Function) => {
       const testName = 'ImageCreator_dequeueImage_promise_04';
@@ -221,12 +221,12 @@ export default function ImageCreatorDequeueImageSuppTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATOR_DEQUEUE_IMAGE_CALLBACK_01
-     * @tc.name      : IMAGE_CREATOR_DEQUEUE_IMAGE_CALLBACK_01
-     * @tc.desc      : ImageCreator_dequeueImage
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number   IMAGE_CREATOR_DEQUEUE_IMAGE_CALLBACK_01
+     * @tc.name     IMAGE_CREATOR_DEQUEUE_IMAGE_CALLBACK_01
+     * @tc.desc     ImageCreator_dequeueImage
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
      */
     it('IMAGE_CREATOR_DEQUEUE_IMAGE_CALLBACK_01', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATOR_DEQUEUE_IMAGE_CALLBACK_01';
@@ -260,12 +260,12 @@ export default function ImageCreatorDequeueImageSuppTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATOR_DEQUEUE_IMAGE_CALLBACK_02
-     * @tc.name      : IMAGE_CREATOR_DEQUEUE_IMAGE_CALLBACK_02
-     * @tc.desc      : ImageCreator_dequeueImage
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number   IMAGE_CREATOR_DEQUEUE_IMAGE_CALLBACK_02
+     * @tc.name     IMAGE_CREATOR_DEQUEUE_IMAGE_CALLBACK_02
+     * @tc.desc     ImageCreator_dequeueImage
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
      */
     it('IMAGE_CREATOR_DEQUEUE_IMAGE_CALLBACK_02', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATOR_DEQUEUE_IMAGE_CALLBACK_02';
@@ -300,12 +300,12 @@ export default function ImageCreatorDequeueImageSuppTest() {
       })
     })
       /**
-       * @tc.number    : IMAGE_CREATOR_DEQUEUE_IMAGE_CALLBACK_03
-       * @tc.name      : IMAGE_CREATOR_DEQUEUE_IMAGE_CALLBACK_03
-       * @tc.desc      : ImageCreator_dequeueImage
-       * @tc.size      : MEDIUM
-       * @tc.type      : Function
-       * @tc.level     : Level 0
+       * @tc.number   IMAGE_CREATOR_DEQUEUE_IMAGE_CALLBACK_03
+       * @tc.name     IMAGE_CREATOR_DEQUEUE_IMAGE_CALLBACK_03
+       * @tc.desc     ImageCreator_dequeueImage
+       * @tc.size     MEDIUM
+       * @tc.type     Function
+       * @tc.level    Level 0
        */
       it('IMAGE_CREATOR_DEQUEUE_IMAGE_CALLBACK_03', Level.LEVEL0, async (done: Function) => {
         const testName = 'IMAGE_CREATOR_DEQUEUE_IMAGE_CALLBACK_03';
@@ -340,12 +340,12 @@ export default function ImageCreatorDequeueImageSuppTest() {
         })
       })
         /**
-         * @tc.number    : IMAGE_CREATOR_DEQUEUE_IMAGE_CALLBACK_04
-         * @tc.name      : IMAGE_CREATOR_DEQUEUE_IMAGE_CALLBACK_04
-         * @tc.desc      : ImageCreator_dequeueImage
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.number   IMAGE_CREATOR_DEQUEUE_IMAGE_CALLBACK_04
+         * @tc.name     IMAGE_CREATOR_DEQUEUE_IMAGE_CALLBACK_04
+         * @tc.desc     ImageCreator_dequeueImage
+         * @tc.size     MEDIUM
+         * @tc.type     Function
+         * @tc.level    Level 0
          */
         it('IMAGE_CREATOR_DEQUEUE_IMAGE_CALLBACK_04', Level.LEVEL0, async (done: Function) => {
           const testName = 'IMAGE_CREATOR_DEQUEUE_IMAGE_CALLBACK_04';
