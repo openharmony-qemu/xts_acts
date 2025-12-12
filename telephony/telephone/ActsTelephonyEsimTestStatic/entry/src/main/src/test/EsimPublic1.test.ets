@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/IndexStatic";
+import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import eSIM from '@ohos.telephony.esim';
