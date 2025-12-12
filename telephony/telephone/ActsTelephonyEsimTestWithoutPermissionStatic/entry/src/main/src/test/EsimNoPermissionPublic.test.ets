@@ -61,12 +61,12 @@ const ExpectTrue = (n: boolean) => {
 export default function EsimNoPermissionPublic() {
   describe('EsimNoPermissionPublic', () => {
     /**
-     * @tc.number    : SUB_Telephony_Esim_AddProfile_1700
-     * @tc.name      : testTelephonyEsimAddProfile_static_1700
-     * @tc.desc      : Starts a page through an ability, on which users can touch the button to download a profile.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number    SUB_Telephony_Esim_AddProfile_1700
+     * @tc.name      testTelephonyEsimAddProfile_static_1700
+     * @tc.desc      Starts a page through an ability, on which users can touch the button to download a profile.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
      */
     it("testTelephonyEsimAddProfile_static_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
