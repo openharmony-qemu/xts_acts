@@ -5976,3 +5976,1998 @@ export default function classOperationsTest() {
         done();
         console.log('test_Class_Call_Static_Method_Double_0009 end');
       })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_DOUBLE_1000
+     * @tc.name      test_Class_Call_Static_Method_Double_0010
+     * @tc.desc      test double A null args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Double_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Double_0010 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Double_10();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Double_0010 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Double_0010 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_DOUBLE_1500
+     * @tc.name      test_Class_Call_Static_Method_Double_0015
+     * @tc.desc      test double A null env
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Double_0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Double_0015 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Double_15();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Double_0015 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Double_0015 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_DOUBLE_1600
+     * @tc.name      test_Class_Call_Static_Method_Double_0016
+     * @tc.desc      call static method by name double combine scenes 5
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Double_0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Double_0016 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Double_16();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Double_0016 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Double_0016 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_DOUBLE_1700
+     * @tc.name      test_Class_Call_Static_Method_Double_0017
+     * @tc.desc      call static method by name double combine scenes 6
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Double_0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Double_0017 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Double_17();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Double_0017 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Double_0017 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_DOUBLE_1800
+     * @tc.name      test_Class_Call_Static_Method_Double_0018
+     * @tc.desc      call static method by name double combine scenes 7
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Double_0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Double_0018 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Double_18();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Double_0018 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Double_0018 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_DOUBLE_1900
+     * @tc.name      test_Class_Call_Static_Method_Double_0019
+     * @tc.desc      call static method by name double combine scenes 8
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Double_0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Double_0019 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Double_19();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Double_0019 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Double_0019 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_DOUBLE_2000
+     * @tc.name      test_Class_Call_Static_Method_Double_0020
+     * @tc.desc      call static method by name double combine scenes 9
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Double_0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Double_0020 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Double_20();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Double_0020 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Double_0020 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_DOUBLE_2100
+     * @tc.name      test_Class_Call_Static_Method_Double_0021
+     * @tc.desc      call static method by name double combine scenes 10
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Double_0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Double_0021 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Double_21();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Double_0021 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Double_0021 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_DOUBLE_2200
+     * @tc.name      test_Class_Call_Static_Method_Double_0022
+     * @tc.desc      call static method by name double combine scenes 11
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Double_0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Double_0022 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Double_22();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Double_0022 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Double_0022 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_DOUBLE_2300
+     * @tc.name      test_Class_Call_Static_Method_Double_0023
+     * @tc.desc      call static method by name double combine scenes 12
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Double_0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Double_0023 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Double_23();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Double_0023 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Double_0023 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_FLOAT_0100
+     * @tc.name      test_Class_Call_Static_Method_Float_0001
+     * @tc.desc      call static method by name float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Float_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Float_0001 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Float_01();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Float_0001 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Float_0001 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_FLOAT_0200
+     * @tc.name      test_Class_Call_Static_Method_Float_0002
+     * @tc.desc      call static method by name float v
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Float_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Float_0002 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Float_02();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Float_0002 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Float_0002 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_FLOAT_0300
+     * @tc.name      test_Class_Call_Static_Method_Float_0003
+     * @tc.desc      call static method by name float A
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Float_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Float_0003 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Float_03();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Float_0003 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Float_0003 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_FLOAT_0400
+     * @tc.name      test_Class_Call_Static_Method_Float_0004
+     * @tc.desc      call static method by name float null class
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Float_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Float_0004 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Float_04();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Float_0004 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Float_0004 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_FLOAT_0500
+     * @tc.name      test_Class_Call_Static_Method_Float_0005
+     * @tc.desc      call_static method float by name null name
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Float_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Float_0005 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Float_05();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Float_0005 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Float_0005 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_FLOAT_0600
+     * @tc.name      test_Class_Call_Static_Method_Float_0006
+     * @tc.desc      call static method by name float null result
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Float_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Float_0006 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Float_06();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Float_0006 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Float_0006 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_FLOAT_0700
+     * @tc.name      test_Class_Call_Static_Method_Float_0007
+     * @tc.desc      call_static_method by name float A null class
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Float_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Float_0007 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Float_07();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Float_0007 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Float_0007 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_FLOAT_0800
+     * @tc.name      test_Class_Call_Static_Method_Float_0008
+     * @tc.desc      call static method by name float A null name
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Float_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Float_0008 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Float_08();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Float_0008 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Float_0008 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_FLOAT_0900
+     * @tc.name      test_Class_Call_Static_Method_Float_0009
+     * @tc.desc      float A null result
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Float_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Float_0009 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Float_09();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Float_0009 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Float_0009 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_FLOAT_1000
+     * @tc.name      test_Class_Call_Static_Method_Float_0010
+     * @tc.desc      test float A null args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Float_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Float_0010 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Float_10();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Float_0010 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Float_0010 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_FLOAT_1500
+     * @tc.name      test_Class_Call_Static_Method_Float_0015
+     * @tc.desc      call static method by name float null env
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Float_0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Float_0015 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Float_15();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Float_0015 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Float_0015 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_FLOAT_1600
+     * @tc.name      test_Class_Call_Static_Method_Float_0016
+     * @tc.desc      call static method by name float combine scenes 5
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Float_0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Float_0016 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Float_16();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Float_0016 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Float_0016 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_FLOAT_1700
+     * @tc.name      test_Class_Call_Static_Method_Float_0017
+     * @tc.desc      call static method by name float combine scenes 6
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Float_0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Float_0017 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Float_17();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Float_0017 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Float_0017 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_FLOAT_1800
+     * @tc.name      test_Class_Call_Static_Method_Float_0018
+     * @tc.desc      call static method by name float combine scenes 7
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Float_0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Float_0018 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Float_18();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Float_0018 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Float_0018 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_FLOAT_1900
+     * @tc.name      test_Class_Call_Static_Method_Float_0019
+     * @tc.desc      call static method by name float combine scenes 8
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Float_0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Float_0019 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Float_19();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Float_0019 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Float_0019 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_FLOAT_2000
+     * @tc.name      test_Class_Call_Static_Method_Float_0020
+     * @tc.desc      call static method by name float combine scenes 9
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Float_0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Float_0020 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Float_20();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Float_0020 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Float_0020 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_FLOAT_2100
+     * @tc.name      test_Class_Call_Static_Method_Float_0021
+     * @tc.desc      call static method by name float combine scenes 10
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Float_0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Float_0021 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Float_21();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Float_0021 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Float_0021 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_FLOAT_2200
+     * @tc.name      test_Class_Call_Static_Method_Float_0022
+     * @tc.desc      call static method by name float combine scenes 11
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Float_0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Float_0022 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Float_22();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Float_0022 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Float_0022 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_FLOAT_2300
+     * @tc.name      test_Class_Call_Static_Method_Float_0023
+     * @tc.desc      call static method by name float combine scenes 12
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Float_0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Float_0023 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Float_23();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Float_0023 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Float_0023 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_INT_0100
+     * @tc.name      test_Class_Call_Static_Method_Int_0001
+     * @tc.desc      call static method by name int
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Int_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Int_0001 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Int_01();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Int_0001 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Int_0001 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_INT_0200
+     * @tc.name      test_Class_Call_Static_Method_Int_0002
+     * @tc.desc      call static method by name int v
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Int_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Int_0002 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Int_02();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Int_0002 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Int_0002 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_INT_0300
+     * @tc.name      test_Class_Call_Static_Method_Int_0003
+     * @tc.desc      call static method by name int A
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Int_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Int_0003 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Int_03();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Int_0003 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Int_0003 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_INT_0400
+     * @tc.name      test_Class_Call_Static_Method_Int_0004
+     * @tc.desc      call static method by name int invalid cls
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Int_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Int_0004 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Int_04();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Int_0004 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Int_0004 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_INT_0500
+     * @tc.name      test_Class_Call_Static_Method_Int_0005
+     * @tc.desc      call_static method int by name invalid name
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Int_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Int_0005 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Int_05();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Int_0005 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Int_0005 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_INT_0600
+     * @tc.name      test_Class_Call_Static_Method_Int_0006
+     * @tc.desc      call static method by name int invalid result
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Int_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Int_0006 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Int_06();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Int_0006 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Int_0006 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_INT_0700
+     * @tc.name      test_Class_Call_Static_Method_Int_0007
+     * @tc.desc      call_static_method by name int v invalid cls
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Int_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Int_0007 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Int_07();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Int_0007 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Int_0007 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_INT_0800
+     * @tc.name      test_Class_Call_Static_Method_Int_0008
+     * @tc.desc      call static method by name int V invalid name
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Int_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Int_0008 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Int_08();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Int_0008 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Int_0008 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_INT_0900
+     * @tc.name      test_Class_Call_Static_Method_Int_0009
+     * @tc.desc      test int v invalid result
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Int_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Int_0009 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Int_09();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Int_0009 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Int_0009 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_INT_1000
+     * @tc.name      test_Class_Call_Static_Method_Int_0010
+     * @tc.desc      test int A invalid cls
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Int_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Int_0010 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Int_10();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Int_0010 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Int_0010 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_INT_1100
+     * @tc.name      test_Class_Call_Static_Method_Int_0011
+     * @tc.desc      test int A invalid name
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Int_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Int_0011 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Int_11();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Int_0011 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Int_0011 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_INT_1200
+     * @tc.name      test_Class_Call_Static_Method_Int_0012
+     * @tc.desc      test int A invalid result
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Int_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Int_0012 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Int_12();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Int_0012 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Int_0012 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_INT_1300
+     * @tc.name      test_Class_Call_Static_Method_Int_0013
+     * @tc.desc      test int A invalid args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Int_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Int_0013 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Int_13();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Int_0013 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Int_0013 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_INT_1800
+     * @tc.name      test_Class_Call_Static_Method_Int_0018
+     * @tc.desc      null env
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Int_0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Int_0018 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Int_18();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Int_0018 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Int_0018 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_INT_1900
+     * @tc.name      test_Class_Call_Static_Method_Int_0019
+     * @tc.desc      call static method by name int combine scenes 5
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Int_0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Int_0019 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Int_19();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Int_0019 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Int_0019 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_INT_2000
+     * @tc.name      test_Class_Call_Static_Method_Int_0020
+     * @tc.desc      call static method by name int combine scenes 6
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Int_0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Int_0020 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Int_20();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Int_0020 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Int_0020 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_INT_2100
+     * @tc.name      test_Class_Call_Static_Method_Int_0021
+     * @tc.desc      call static method by name int combine scenes 7
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Int_0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Int_0021 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Int_21();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Int_0021 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Int_0021 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_INT_2200
+     * @tc.name      test_Class_Call_Static_Method_Int_0022
+     * @tc.desc      call static method by name int combine scenes 8
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Int_0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Int_0022 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Int_22();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Int_0022 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Int_0022 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_INT_2300
+     * @tc.name      test_Class_Call_Static_Method_Int_0023
+     * @tc.desc      call static method by name int combine scenes 9
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Int_0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Int_0023 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Int_23();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Int_0023 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Int_0023 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_INT_2400
+     * @tc.name      test_Class_Call_Static_Method_Int_0024
+     * @tc.desc      call static method by name int combine scenes 10
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Int_0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Int_0024 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Int_24();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Int_0024 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Int_0024 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_INT_2500
+     * @tc.name      test_Class_Call_Static_Method_Int_0025
+     * @tc.desc      call static method by name int combine scenes 11
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Int_0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Int_0025 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Int_25();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Int_0025 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Int_0025 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_INT_2600
+     * @tc.name      test_Class_Call_Static_Method_Int_0026
+     * @tc.desc      call static method by name int combine scenes 12
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Int_0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Int_0026 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Int_26();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Int_0026 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Int_0026 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_LONG_0100
+     * @tc.name      test_Class_Call_Static_Method_Long_0001
+     * @tc.desc      call static method by name long
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Long_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Long_0001 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Long_01();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Long_0001 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Long_0001 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_LONG_0200
+     * @tc.name      test_Class_Call_Static_Method_Long_0002
+     * @tc.desc      call static method by name long v
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Long_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Long_0002 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Long_02();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Long_0002 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Long_0002 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_LONG_0300
+     * @tc.name      test_Class_Call_Static_Method_Long_0003
+     * @tc.desc      call static method by name long A
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Long_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Long_0003 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Long_03();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Long_0003 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Long_0003 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_LONG_0400
+     * @tc.name      test_Class_Call_Static_Method_Long_0004
+     * @tc.desc      call static method by name long null class
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Long_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Long_0004 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Long_04();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Long_0004 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Long_0004 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_LONG_0500
+     * @tc.name      test_Class_Call_Static_Method_Long_0005
+     * @tc.desc      call_static method long by name null name
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Long_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Long_0005 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Long_05();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Long_0005 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Long_0005 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_LONG_0600
+     * @tc.name      test_Class_Call_Static_Method_Long_0006
+     * @tc.desc      call static method by name long null result
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Long_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Long_0006 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Long_06();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Long_0006 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Long_0006 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_LONG_0700
+     * @tc.name      test_Class_Call_Static_Method_Long_0007
+     * @tc.desc      call_static_method by name long A null class
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Long_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Long_0007 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Long_07();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Long_0007 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Long_0007 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_LONG_0800
+     * @tc.name      test_Class_Call_Static_Method_Long_0008
+     * @tc.desc      call static method by name long A null name
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Long_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Long_0008 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Long_08();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Long_0008 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Long_0008 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_LONG_0900
+     * @tc.name      test_Class_Call_Static_Method_Long_0009
+     * @tc.desc      long A null result
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Long_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Long_0009 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Long_09();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Long_0009 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Long_0009 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_LONG_1000
+     * @tc.name      test_Class_Call_Static_Method_Long_0010
+     * @tc.desc      test long A null args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Long_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Long_0010 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Long_10();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Long_0010 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Long_0010 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_LONG_1500
+     * @tc.name      test_Class_Call_Static_Method_Long_0015
+     * @tc.desc      call static method by name long null env
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Long_0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Long_0015 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Long_15();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Long_0015 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Long_0015 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_LONG_1600
+     * @tc.name      test_Class_Call_Static_Method_Long_0016
+     * @tc.desc      call static method by name long combine scenes 5
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Long_0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Long_0016 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Long_16();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Long_0016 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Long_0016 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_LONG_1700
+     * @tc.name      test_Class_Call_Static_Method_Long_0017
+     * @tc.desc      call static method by name long combine scenes 6
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Long_0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Long_0017 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Long_17();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Long_0017 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Long_0017 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_LONG_1800
+     * @tc.name      test_Class_Call_Static_Method_Long_0018
+     * @tc.desc      call static method by name long combine scenes 7
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Long_0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Long_0018 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Long_18();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Long_0018 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Long_0018 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_LONG_1900
+     * @tc.name      test_Class_Call_Static_Method_Long_0019
+     * @tc.desc      call static method by name long combine scenes 8
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Long_0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Long_0019 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Long_19();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Long_0019 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Long_0019 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_LONG_2000
+     * @tc.name      test_Class_Call_Static_Method_Long_0020
+     * @tc.desc      call static method by name long combine scenes 9
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Long_0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Long_0020 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Long_20();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Long_0020 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Long_0020 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_LONG_2100
+     * @tc.name      test_Class_Call_Static_Method_Long_0021
+     * @tc.desc      call static method by name long combine scenes 10
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Long_0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Long_0021 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Long_21();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Long_0021 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Long_0021 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_LONG_2200
+     * @tc.name      test_Class_Call_Static_Method_Long_0022
+     * @tc.desc      call static method by name long combine scenes 11
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Long_0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Long_0022 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Long_22();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Long_0022 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Long_0022 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_LONG_2300
+     * @tc.name      test_Class_Call_Static_Method_Long_0023
+     * @tc.desc      call static method by name long combine scenes 12
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Long_0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Long_0023 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Long_23();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Long_0023 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Long_0023 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_REF_0100
+     * @tc.name      test_Class_Call_Static_Method_Ref_0001
+     * @tc.desc      call static method by name ref 1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Ref_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Ref_0001 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Ref_01();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Ref_0001 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Ref_0001 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_REF_0200
+     * @tc.name      test_Class_Call_Static_Method_Ref_0002
+     * @tc.desc      call static method by name ref 2
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Ref_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Ref_0002 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Ref_02();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Ref_0002 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Ref_0002 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_REF_0300
+     * @tc.name      test_Class_Call_Static_Method_Ref_0003
+     * @tc.desc      call static method by name ref V
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Ref_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Ref_0003 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Ref_03();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Ref_0003 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Ref_0003 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_REF_0400
+     * @tc.name      test_Class_Call_Static_Method_Ref_0004
+     * @tc.desc      call static method by name ref a
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Ref_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Ref_0004 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Ref_04();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Ref_0004 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Ref_0004 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_REF_0500
+     * @tc.name      test_Class_Call_Static_Method_Ref_0005
+     * @tc.desc      call static method by name ref invalid cls
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Ref_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Ref_0005 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Ref_05();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Ref_0005 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Ref_0005 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_REF_0600
+     * @tc.name      test_Class_Call_Static_Method_Ref_0006
+     * @tc.desc      call static method by name ref invalid name
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Ref_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Ref_0006 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Ref_06();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Ref_0006 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Ref_0006 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_REF_0700
+     * @tc.name      test_Class_Call_Static_Method_Ref_0007
+     * @tc.desc      call static method by name ref invalid result
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Ref_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Ref_0007 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Ref_07();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Ref_0007 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Ref_0007 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_REF_0800
+     * @tc.name      test_Class_Call_Static_Method_Ref_0008
+     * @tc.desc      call static method by name ref v invalid cls
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Ref_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Ref_0008 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Ref_08();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Ref_0008 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Ref_0008 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_REF_0900
+     * @tc.name      test_Class_Call_Static_Method_Ref_0009
+     * @tc.desc      call static method by name ref v invalid name
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Ref_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Ref_0009 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Ref_09();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Ref_0009 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Ref_0009 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_REF_1000
+     * @tc.name      test_Class_Call_Static_Method_Ref_0010
+     * @tc.desc      call static method by name ref v invalid result
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Ref_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Ref_0010 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Ref_10();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Ref_0010 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Ref_0010 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_REF_1100
+     * @tc.name      test_Class_Call_Static_Method_Ref_0011
+     * @tc.desc      call static method by name ref a invalid cls
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Ref_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Ref_0011 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Ref_11();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Ref_0011 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Ref_0011 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_REF_1200
+     * @tc.name      test_Class_Call_Static_Method_Ref_0012
+     * @tc.desc      call static method by name ref a invalid name
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Ref_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Ref_0012 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Ref_12();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Ref_0012 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Ref_0012 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_REF_1300
+     * @tc.name      test_Class_Call_Static_Method_Ref_0013
+     * @tc.desc      call static method by name ref a invalid result
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Ref_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Ref_0013 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Ref_13();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Ref_0013 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Ref_0013 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_REF_1400
+     * @tc.name      test_Class_Call_Static_Method_Ref_0014
+     * @tc.desc      call static method by name ref a invalid args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Ref_0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Ref_0014 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Ref_14();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Ref_0014 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Ref_0014 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_REF_1900
+     * @tc.name      test_Class_Call_Static_Method_Ref_0019
+     * @tc.desc      call static method by name ref null env
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Ref_0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Ref_0019 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Ref_19();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Ref_0019 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Ref_0019 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_REF_2000
+     * @tc.name      test_Class_Call_Static_Method_Ref_0020
+     * @tc.desc      call static method by name ref combine scenes 5
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Ref_0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Ref_0020 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Ref_20();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Ref_0020 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Ref_0020 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_REF_2100
+     * @tc.name      test_Class_Call_Static_Method_Ref_0021
+     * @tc.desc      call static method by name ref combine scenes 6
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Ref_0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Ref_0021 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Ref_21();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Ref_0021 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Ref_0021 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_REF_2200
+     * @tc.name      test_Class_Call_Static_Method_Ref_0022
+     * @tc.desc      call static method by name ref combine scenes 7
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Ref_0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Ref_0022 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Ref_22();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Ref_0022 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Ref_0022 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_REF_2300
+     * @tc.name      test_Class_Call_Static_Method_Ref_0023
+     * @tc.desc      call static method by name ref combine scenes 8
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Ref_0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Ref_0023 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Ref_23();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Ref_0023 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Ref_0023 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_REF_2400
+     * @tc.name      test_Class_Call_Static_Method_Ref_0024
+     * @tc.desc      call static method by name ref combine scenes 9
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Ref_0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Ref_0024 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Ref_24();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Ref_0024 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Ref_0024 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_REF_2500
+     * @tc.name      test_Class_Call_Static_Method_Ref_0025
+     * @tc.desc      call static method by name ref combine scenes 10
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Ref_0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Ref_0025 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Ref_25();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Ref_0025 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Ref_0025 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_REF_2600
+     * @tc.name      test_Class_Call_Static_Method_Ref_0026
+     * @tc.desc      call static method by name ref combine scenes 11
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Ref_0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Ref_0026 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Ref_26();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Ref_0026 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Ref_0026 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_REF_2700
+     * @tc.name      test_Class_Call_Static_Method_Ref_0027
+     * @tc.desc      call static method by name ref combine scenes 12
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Ref_0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Ref_0027 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Ref_27();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Ref_0027 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Ref_0027 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_SHORT_0100
+     * @tc.name      test_Class_Call_Static_Method_Short_0001
+     * @tc.desc      call static method by name short
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Short_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Short_0001 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Short_01();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Short_0001 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Short_0001 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_SHORT_0200
+     * @tc.name      test_Class_Call_Static_Method_Short_0002
+     * @tc.desc      call static method by name short v
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Short_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Short_0002 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Short_02();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Short_0002 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Short_0002 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_SHORT_0300
+     * @tc.name      test_Class_Call_Static_Method_Short_0003
+     * @tc.desc      call static method by name short A
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Short_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Short_0003 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Short_03();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Short_0003 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Short_0003 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_SHORT_0400
+     * @tc.name      test_Class_Call_Static_Method_Short_0004
+     * @tc.desc      call static method by name short null class
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Short_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Short_0004 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Short_04();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Short_0004 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Short_0004 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_SHORT_0500
+     * @tc.name      test_Class_Call_Static_Method_Short_0005
+     * @tc.desc      call static method by name short null name
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Short_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Short_0005 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Short_05();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Short_0005 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Short_0005 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_SHORT_0600
+     * @tc.name      test_Class_Call_Static_Method_Short_0006
+     * @tc.desc      call static method by name short error name
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Short_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Short_0006 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Short_06();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Short_0006 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Short_0006 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_SHORT_0700
+     * @tc.name      test_Class_Call_Static_Method_Short_0007
+     * @tc.desc      call static method by name short null result
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Short_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Short_0007 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Short_07();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Short_0007 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Short_0007 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_SHORT_0800
+     * @tc.name      test_Class_Call_Static_Method_Short_0008
+     * @tc.desc      call static method by name short v null class
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Short_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Short_0008 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Short_08();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Short_0008 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Short_0008 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_SHORT_0900
+     * @tc.name      test_Class_Call_Static_Method_Short_0009
+     * @tc.desc      call static method by name short v null name
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Short_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Short_0009 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Short_09();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Short_0009 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Short_0009 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_SHORT_1000
+     * @tc.name      test_Class_Call_Static_Method_Short_0010
+     * @tc.desc      call static method by name short v errorname
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Short_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Short_0010 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Short_10();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Short_0010 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Short_0010 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_SHORT_1100
+     * @tc.name      test_Class_Call_Static_Method_Short_0011
+     * @tc.desc      call static method by name short v null result
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Short_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Short_0011 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Short_11();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Short_0011 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Short_0011 end');
+      })
+
+    /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_CALL_STATIC_METHOD_SHORT_1200
+     * @tc.name      test_Class_Call_Static_Method_Short_0012
+     * @tc.desc      call static method by name short A null class
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Class_Call_Static_Method_Short_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Class_Call_Static_Method_Short_0012 start');
+        let cls = new Foo();
+        let result = cls.test_Class_Call_Static_Method_Short_12();
+        expect(result).assertTrue();
+        console.log('test_Class_Call_Static_Method_Short_0012 done');
+        done();
+        console.log('test_Class_Call_Static_Method_Short_0012 end');
+      })
