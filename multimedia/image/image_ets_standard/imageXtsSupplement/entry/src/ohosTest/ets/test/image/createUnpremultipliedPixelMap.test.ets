@@ -462,8 +462,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1500
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1500
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -480,8 +480,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1600
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1600
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -498,8 +498,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1700
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1700
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -516,8 +516,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1800
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1800
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -534,8 +534,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1900
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1900
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -552,8 +552,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_2000
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_2000
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -570,8 +570,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_2100
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_2100
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -588,8 +588,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_2200
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_2200
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -606,8 +606,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_2300
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_2300
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -624,8 +624,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_2400
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_2400
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -642,8 +642,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_2500
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_2500
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -660,8 +660,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_2600
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_2600
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -678,8 +678,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_2800
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_2800
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -696,8 +696,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_3000
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_3000
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -714,8 +714,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_3100
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_3100
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -732,8 +732,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_3200
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_3200
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -750,8 +750,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_3300
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_3300
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -768,8 +768,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_3400
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_3400
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -786,8 +786,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_3500
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_3500
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -804,8 +804,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_3600
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_3600
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -822,8 +822,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_3700
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_3700
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -840,8 +840,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_3800
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_3800
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -858,8 +858,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0100
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0100
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_4000
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_4000
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -876,8 +876,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_4100
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_4100
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -894,8 +894,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_4200
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_4200
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -912,8 +912,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_4400
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_4400
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -930,8 +930,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_4500
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_4500
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -948,8 +948,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_4600
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_4600
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -966,8 +966,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_4700
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_4700
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -984,8 +984,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_4800
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_4800
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1002,8 +1002,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_4900
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_4900
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1020,8 +1020,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_5000
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_5000
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1038,8 +1038,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_5100
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_5100
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1056,8 +1056,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_5200
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_5200
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1074,8 +1074,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0100
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0100
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_5300
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_5300
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1092,8 +1092,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_5400
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_5400
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1110,8 +1110,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_5500
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_5500
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1128,8 +1128,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_5600
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_5600
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1146,8 +1146,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_5700
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_5700
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1164,8 +1164,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_5900
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_5900
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1182,8 +1182,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_6000
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_6000
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1200,8 +1200,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_6100
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_6100
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1218,8 +1218,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_6200
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_6200
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1236,8 +1236,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_6300
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_6300
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1254,8 +1254,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_6400
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_6400
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1272,8 +1272,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_6500
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_6500
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1290,8 +1290,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0100
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0100
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_6600
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_6600
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1308,8 +1308,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_6700
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_6700
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1326,8 +1326,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_6800
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_6800
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1344,8 +1344,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_6900
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_6900
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1362,8 +1362,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_7000
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_7000
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1380,8 +1380,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_7100
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_7100
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1398,8 +1398,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_7200
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_7200
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1416,8 +1416,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_7300
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_7300
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1434,8 +1434,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_7400
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_7400
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1452,8 +1452,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_7500
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_7500
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1470,8 +1470,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_7600
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_7600
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1488,8 +1488,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_7700
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_7700
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1506,8 +1506,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_7800
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_7800
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1524,8 +1524,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0100
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0100
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_7900
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_7900
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1542,8 +1542,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_8000
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_8000
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1560,8 +1560,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_8100
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_8100
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1578,8 +1578,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_8200
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_8200
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1596,8 +1596,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_8300
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_8300
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1614,8 +1614,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_8400
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_8400
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1632,8 +1632,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_8500
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_8500
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1650,8 +1650,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_8600
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_8600
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1668,8 +1668,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_8700
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_8700
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1686,8 +1686,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_8800
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_8800
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1704,8 +1704,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_8900
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_8900
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1722,8 +1722,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_9000
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_9000
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1740,8 +1740,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_9100
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_9100
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1758,8 +1758,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0100
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0100
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_9200
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_9200
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1776,8 +1776,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_9300
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_9300
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1794,8 +1794,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_9400
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_9400
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1812,8 +1812,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_9500
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_9500
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1830,8 +1830,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_9600
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_9600
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1848,8 +1848,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_9700
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_9700
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1866,8 +1866,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_9800
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_9800
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1884,8 +1884,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_9900
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_9900
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1902,8 +1902,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_10000
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_10000
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1920,8 +1920,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1010
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1010
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1938,8 +1938,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1020
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1020
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1956,8 +1956,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1030
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1030
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1974,8 +1974,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1040
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1040
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -1992,8 +1992,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1060
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1060
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2010,8 +2010,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1080
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1080
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2028,8 +2028,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1090
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1090
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2046,8 +2046,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_11000
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_11000
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2064,8 +2064,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_11100
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_11100
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2082,8 +2082,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1120
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1120
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2100,8 +2100,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1130
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1130
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2118,8 +2118,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1140
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1140
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2136,8 +2136,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1150
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1150
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2154,8 +2154,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1160
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_PROMISE_1160
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2424,8 +2424,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1500
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1500
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2442,8 +2442,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1600
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1600
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2460,8 +2460,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1700
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1700
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2478,8 +2478,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1800
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1800
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2496,8 +2496,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1900
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1900
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2514,8 +2514,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_2000
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_2000
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2532,8 +2532,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_2100
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_2100
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2550,8 +2550,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_2200
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_2200
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2568,8 +2568,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_2300
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_2300
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2586,8 +2586,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_2400
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_2400
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2604,8 +2604,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_2500
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_2500
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2622,8 +2622,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_2600
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_2600
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2640,8 +2640,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_2800
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_2800
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2658,8 +2658,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_3000
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_3000
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2676,8 +2676,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_3100
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_3100
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2694,8 +2694,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_3200
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_3200
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2712,8 +2712,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_3300
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_3300
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2730,8 +2730,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_3400
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_3400
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2748,8 +2748,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_3500
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_3500
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2766,8 +2766,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_3600
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_3600
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2784,8 +2784,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_3700
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_3700
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2802,8 +2802,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_3800
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_3800
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2820,8 +2820,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0100
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0100
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_4000
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_4000
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2838,8 +2838,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_4100
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_4100
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2856,8 +2856,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_4200
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_4200
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2874,8 +2874,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_4400
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_4400
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2892,8 +2892,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_4500
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_4500
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2910,8 +2910,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_4600
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_4600
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2928,8 +2928,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_4700
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_4700
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2946,8 +2946,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_4800
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_4800
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2964,8 +2964,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_4900
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_4900
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -2982,8 +2982,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_5000
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_5000
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3000,8 +3000,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_5100
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_5100
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3018,8 +3018,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_5200
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_5200
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3036,8 +3036,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0100
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0100
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_5300
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_5300
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3054,8 +3054,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_5400
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_5400
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3072,8 +3072,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_5500
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_5500
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3090,8 +3090,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_5600
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_5600
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3108,8 +3108,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_5700
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_5700
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3126,8 +3126,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_5900
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_5900
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3144,8 +3144,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_6000
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_6000
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3162,8 +3162,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_6100
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_6100
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3180,8 +3180,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_6200
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_6200
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3198,8 +3198,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_6300
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_6300
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3216,8 +3216,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_6400
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_6400
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3234,8 +3234,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_6500
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_6500
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3252,8 +3252,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0100
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0100
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_6600
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_6600
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3270,8 +3270,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_6700
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_6700
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3288,8 +3288,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_6800
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_6800
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3306,8 +3306,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_6900
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_6900
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3324,8 +3324,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_7000
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_7000
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3342,8 +3342,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_7100
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_7100
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3360,8 +3360,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_7200
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_7200
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3378,8 +3378,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_7300
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_7300
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3396,8 +3396,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_7400
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_7400
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3414,8 +3414,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_7500
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_7500
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3432,8 +3432,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_7600
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_7600
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3450,8 +3450,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_7700
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_7700
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3468,8 +3468,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_7800
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_7800
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3486,8 +3486,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0100
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0100
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_7900
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_7900
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3504,8 +3504,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_8000
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_8000
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3522,8 +3522,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_8100
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_8100
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3540,8 +3540,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_8200
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_8200
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3558,8 +3558,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_8300
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_8300
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3576,8 +3576,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_8400
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_8400
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3594,8 +3594,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_8500
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_8500
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3612,8 +3612,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_8600
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_8600
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3630,8 +3630,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_8700
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_8700
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3648,8 +3648,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_8800
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_8800
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3666,8 +3666,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_8900
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_8900
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3684,8 +3684,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_9000
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_9000
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3702,8 +3702,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_9100
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_9100
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3720,8 +3720,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0100
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0100
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_9200
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_9200
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3738,8 +3738,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_9300
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_9300
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3756,8 +3756,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_9400
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_9400
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3774,8 +3774,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_9500
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_9500
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3792,8 +3792,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_9600
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_9600
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3810,8 +3810,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_9700
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_9700
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3828,8 +3828,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_9800
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_9800
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3846,8 +3846,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_9900
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_9900
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3864,8 +3864,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_10000
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_10000
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3882,8 +3882,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1010
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1010
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3900,8 +3900,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1020
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1020
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3918,8 +3918,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1030
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1030
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3936,8 +3936,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1040
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1040
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3954,8 +3954,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1060
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1060
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3972,8 +3972,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1080
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1080
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -3990,8 +3990,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1090
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1090
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -4008,8 +4008,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_11000
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_11000
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -4026,8 +4026,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_11100
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_11100
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -4044,8 +4044,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1120
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1120
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -4062,8 +4062,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1130
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1130
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -4080,8 +4080,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1140
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1140
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -4098,8 +4098,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1150
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1150
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
@@ -4116,8 +4116,8 @@ export default function createUnpremultipliedPixelMapSyncTest() {
     })
 
     /**
-     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
-     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_0200
+     * @tc.number   SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1160
+     * @tc.name     SUB_IMAGE_CREATE_UN_PREMULTIPLIED_PIXELMAP_1160
      * @tc.desc     image_createUnPremultipliedPixelMap
      * @tc.size     MEDIUM
      * @tc.type     Function
