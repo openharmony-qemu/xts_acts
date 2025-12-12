@@ -54,13 +54,13 @@ const ExpectTrue = (n: boolean) => {
 export default function EsimPublic1() {
   describe('EsimPublic1', () => {
 
-    /*
-     * @tc.number    : SUB_Telephony_Esim_AddProfile_0700
-     * @tc.name      : testTelephonyEsimAddProfile_static_0700
-     * @tc.desc      : Starts a page through an ability, on which users can touch the button to download a profile.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+    /** 
+     * @tc.number    SUB_Telephony_Esim_AddProfile_0700
+     * @tc.name      testTelephonyEsimAddProfile_static_0700
+     * @tc.desc      Starts a page through an ability, on which users can touch the button to download a profile.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("testTelephonyEsimAddProfile_static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -89,13 +89,13 @@ export default function EsimPublic1() {
         }
       });
 
-    /*
-     * @tc.number    : SUB_Telephony_Esim_IsSupported_0100
-     * @tc.name      : testTelephonyEsimIsSupported_static_0100
-     * @tc.desc      : Whether embedded subscriptions are currently supported.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+    /**
+     * @tc.number    SUB_Telephony_Esim_IsSupported_0100
+     * @tc.name      testTelephonyEsimIsSupported_static_0100
+     * @tc.desc      Whether embedded subscriptions are currently supported.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("testTelephonyEsimIsSupported_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -122,13 +122,13 @@ export default function EsimPublic1() {
         }
       });
 
-    /*
-     * @tc.number    : SUB_Telephony_Esim_IsSupported_0200
-     * @tc.name      : testTelephonyEsimIsSupported_static_0200
-     * @tc.desc      : Whether embedded subscriptions are currently supported.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /** 
+     * @tc.number    SUB_Telephony_Esim_IsSupported_0200
+     * @tc.name      testTelephonyEsimIsSupported_static_0200
+     * @tc.desc      Whether embedded subscriptions are currently supported.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
      */
     it("testTelephonyEsimIsSupported_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -149,13 +149,13 @@ export default function EsimPublic1() {
         }
       });
 
-    /*
-     * @tc.number    : SUB_Telephony_Esim_IsSupported_0300
-     * @tc.name      : testTelephonyEsimIsSupported_static_0300
-     * @tc.desc      : Whether embedded subscriptions are currently supported.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.number    SUB_Telephony_Esim_IsSupported_0300
+     * @tc.name      testTelephonyEsimIsSupported_static_0300
+     * @tc.desc      Whether embedded subscriptions are currently supported.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
      */
     it("testTelephonyEsimIsSupported_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -176,13 +176,13 @@ export default function EsimPublic1() {
         }
       });
 
-    /*
-     * @tc.number    : SUB_Telephony_Esim_IsSupported_0400
-     * @tc.name      : testTelephonyEsimIsSupported_static_0400
-     * @tc.desc      : Whether embedded subscriptions are currently supported.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+    /**
+     * @tc.number    SUB_Telephony_Esim_IsSupported_0400
+     * @tc.name      testTelephonyEsimIsSupported_static_0400
+     * @tc.desc      Whether embedded subscriptions are currently supported.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
      */
     it("testTelephonyEsimIsSupported_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
