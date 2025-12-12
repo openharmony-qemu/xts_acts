@@ -452,6 +452,44 @@ export default function builtinsRegExpMatchArrayStringTest() {
         console.info(`${caseName} test end`);
       })
 
+    /**
+     * @tc.name   builtinsRegExpMatchArrayStringTest1200
+     * @tc.number SUB_BUILTINS_REG_EXP_MATCH_ARRAY_STRING_TEST_1200
+     * @tc.desc   Testing RegExpMatchArray string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('builtinsRegExpMatchArrayStringTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+      (done: Function) => {
+        // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
+        const caseName = 'builtinsRegExpMatchArrayStringTest1200';
+        console.info(`${caseName} test start`);
 
+        try {
+          // exp result is match[0] '\a'
+          const exp: string = '\\a';
+          const reg: RegExp = /^\a$/;
+
+          let str = '\\a';
+          let match = str.match(reg);
+
+          if (match) {
+            let result: string = match[0];
+            console.info(caseName + ' result is: ' + result);
+
+            expect(result).assertEqual(exp);
+          } else {
+            console.info(caseName + ' match is: ' + match);
+
+            expect(match === null).assertTrue()
+          }
+        } catch (err) {
+          console.error(`${caseName} failed, error: ${err.message}`);
+          expect().assertFail();
+        }
+        done();
+        console.info(`${caseName} test end`);
+      })
   })
 }
