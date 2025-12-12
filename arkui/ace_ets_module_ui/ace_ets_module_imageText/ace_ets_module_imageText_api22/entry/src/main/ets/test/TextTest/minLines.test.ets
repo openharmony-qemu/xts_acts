@@ -94,7 +94,7 @@ export default function minLines() {
       /**
        * @tc.name   MinLines_0012
        * @tc.number MinLines_0012
-       * @tc.desc   minLines is 10
+       * @tc.desc   minLines is 2
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -108,7 +108,7 @@ export default function minLines() {
       let obj: ESObject = JSON.parse(strJson);
       console.info('[MinLines_0012] strJson is: ' + strJson);
       console.info('[MinLines_0012] MinLines obj is: ' + JSON.stringify(obj.$attrs.minLines));
-      expect(obj.$attrs.minLines).assertEqual('10');
+      expect(obj.$attrs.minLines).assertEqual('2');
       console.info('[MinLines_0012] END')
       done();
     });
@@ -116,7 +116,7 @@ export default function minLines() {
       /**
        * @tc.name   MinLines_0013
        * @tc.number MinLines_0013
-       * @tc.desc   minLines is 5.5
+       * @tc.desc   minLines is 2.5
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL2
@@ -130,7 +130,7 @@ export default function minLines() {
       let obj: ESObject = JSON.parse(strJson);
       console.info('[MinLines_0013] strJson is: ' + strJson);
       console.info('[MinLines_0013] MinLines obj is: ' + JSON.stringify(obj.$attrs.minLines));
-      expect(obj.$attrs.minLines).assertEqual('5');
+      expect(obj.$attrs.minLines).assertEqual('2');
       console.info('[MinLines_0013] END')
       done();
     });
