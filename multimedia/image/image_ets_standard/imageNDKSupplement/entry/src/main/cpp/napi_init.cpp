@@ -14,9 +14,7 @@
  */
 
 #include "ImagePackerCreateTest.h"
-#include "ImagePictureNativeTest.h"
 #include "ImagePixelMapTest.h"
-#include "MediaAssetManagerCancelRequestTest.h"
 #include "napi/native_api.h"
 #include "InitNativePixelMapTest.h"
 #include "ImageEffectSuppTest.h"
@@ -62,7 +60,6 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("CreatePixelMapTest", CreatePixelMapTest),
     DESCRIPTOR("CreatePixelMapWithStrideTest", CreatePixelMapWithStrideTest),
     DESCRIPTOR("CreateAlphaPixelMapTest", CreateAlphaPixelMapTest),
-    DESCRIPTOR("PictureNativeGetMetadataTest", PictureNativeGetMetadataTest),
     DESCRIPTOR("PixelMapGetImageInfoTest", PixelMapGetImageInfoTest),
     DESCRIPTOR("PixelMapAccessPixelsTest", PixelMapAccessPixelsTest),
     DESCRIPTOR("PixelMapUnAccessPixelsTest", PixelMapUnAccessPixelsTest),

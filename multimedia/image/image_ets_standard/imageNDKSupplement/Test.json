@@ -11,7 +11,7 @@
         {
             "test-file-name": [
                 "ActsMediaImageNDKSupplementTest.hap",
-                "ActsMediaImageEffectNDKMainTest.hap"
+                "ActsMediaImageNDKSupplementMainTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
