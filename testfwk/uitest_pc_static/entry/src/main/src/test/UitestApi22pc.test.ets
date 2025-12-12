@@ -44,7 +44,7 @@ export default function UiTest() {
      */
     it('testWindowChangeAddOptionsMonitor_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, testWindowChangeAddOptionsMonitor_static start`);
-      let observer = await driver.createUIEventObserver();
+      let observer = driver.createUIEventObserver();
       let isCallBack = false;
       let callback = (elementInfo : UIElementInfo) => {
         console.log(`${TestTag}, testWindowChangeAddOptionsMonitor_static elementInfo,${JSON.stringify(elementInfo)}`);
@@ -84,7 +84,7 @@ export default function UiTest() {
      */
     it('testWindowChangeAddOptionsMonitor_defaultBundleName_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, testWindowChangeAddOptionsMonitor_defaultBundleName_static start`);
-      let observer = await driver.createUIEventObserver();
+      let observer = driver.createUIEventObserver();
       let isCallBack = false;
       let callback = (elementInfo : UIElementInfo) => {
         console.log(`${TestTag}, testWindowChangeAddOptionsMonitor_defaultBundleName_static elementInfo,${JSON.stringify(elementInfo)}`);
@@ -122,7 +122,7 @@ export default function UiTest() {
      */
     it('testWindowChangeAddOptionsMonitor_defaultTimeout_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, testWindowChangeAddOptionsMonitor_defaultTimeout_static start`);
-      let observer = await driver.createUIEventObserver();
+      let observer = driver.createUIEventObserver();
       let isCallBack = false;
       let callback = (elementInfo : UIElementInfo) => {
         console.log(`${TestTag}, testWindowChangeAddOptionsMonitor_defaultTimeout_static elementInfo,${JSON.stringify(elementInfo)}`);
@@ -161,7 +161,7 @@ export default function UiTest() {
      */
     it('testWindowChangeAddOptionsMonitor_defaultOptions_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, testWindowChangeAddOptionsMonitor_defaultOptions_static start`);
-      let observer = await driver.createUIEventObserver();
+      let observer = driver.createUIEventObserver();
       let isCallBack = false;
       let callback = (elementInfo : UIElementInfo) => {
         console.log(`${TestTag}, testWindowChangeAddOptionsMonitor_defaultOptions_static elementInfo,${JSON.stringify(elementInfo)}`);
@@ -198,7 +198,7 @@ export default function UiTest() {
      */
     it('testWindowChangeAddOptionsMonitor_ErrorBundleName_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, testWindowChangeAddOptionsMonitor_ErrorBundleName_static start`);
-      let observer = await driver.createUIEventObserver();
+      let observer = driver.createUIEventObserver();
       let isCallBack = false;
       let callback = (elementInfo : UIElementInfo) => {
         console.log(`${TestTag}, testWindowChangeAddOptionsMonitor_ErrorBundleName_static elementInfo,${JSON.stringify(elementInfo)}`);
@@ -231,7 +231,7 @@ export default function UiTest() {
      */
     it('testWindowChangeAddOptionsMonitor_timeOut_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, testWindowChangeAddOptionsMonitor_timeOut_static start`);
-      let observer = await driver.createUIEventObserver();
+      let observer = driver.createUIEventObserver();
       let isCallBack = false;
       let callback = (elementInfo : UIElementInfo) => {
         console.log(`${TestTag}, testWindowChangeAddOptionsMonitor_timeOut_static elementInfo,${JSON.stringify(elementInfo)}`);
@@ -267,7 +267,7 @@ export default function UiTest() {
       console.log(`${TestTag}, testWindowChangeRemoveOptionsMonitor_static start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(1000);
-      let observer = await driver.createUIEventObserver();
+      let observer = driver.createUIEventObserver();
       let isCallBack = false;
       let callback = (elementInfo : UIElementInfo) => {
         console.log(`${TestTag}, testWindowChangeRemoveOptionsMonitor_static elementInfo,${JSON.stringify(elementInfo)}`);
@@ -297,46 +297,6 @@ export default function UiTest() {
     })
 
     /**
-     * @tc.name   testWindowChangeRemoveOptionsMonitor_defaultBundleName_static
-     * @tc.number uiTest_API22pc_008
-     * @tc.desc   monitor window add.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testWindowChangeRemoveOptionsMonitor_defaultBundleName_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testWindowChangeRemoveOptionsMonitor_defaultBundleName_static start`);
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(1000);
-      let observer = await driver.createUIEventObserver();
-      let isCallBack = false;
-      let callback = (elementInfo : UIElementInfo) => {
-        console.log(`${TestTag}, testWindowChangeRemoveOptionsMonitor_defaultBundleName_static elementInfo,${JSON.stringify(elementInfo)}`);
-        isCallBack = true;
-        try {
-          expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
-          expect(elementInfo.windowChangeType == WindowChangeType.WINDOW_REMOVED).assertTrue();
-          expect(elementInfo.windowId != 0).assertTrue();
-        } catch (err) {
-          console.log(`${TestTag}, testWindowChangeRemoveOptionsMonitor_defaultBundleName_static callback error ,${JSON.stringify(err)}`);
-        }
-      }
-      try {
-        observer.onceWindowChange(WindowChangeType.WINDOW_REMOVED, {
-          timeout: 9000
-        }, callback);
-      } catch (error) {
-        console.log(`${TestTag}, testWindowChangeRemoveOptionsMonitor_defaultBundleName_static once error ,${JSON.stringify(error)}`);
-        expect().assertFail();
-      }
-      await stopApplication('com.uitestScene.acts');
-      await driver.delayMs(4000);
-      console.log(`${TestTag}, testWindowChangeRemoveOptionsMonitor_defaultBundleName_static isCallBack ,${JSON.stringify(isCallBack)}`);
-      expect(isCallBack).assertTrue();
-      console.log(`${TestTag}, testWindowChangeRemoveOptionsMonitor_defaultBundleName_static end`);
-    })
-
-    /**
      * @tc.name   testWindowChangeRemoveOptionsMonitor_defaultTimeOut_static
      * @tc.number uiTest_API22pc_009
      * @tc.desc   monitor window add.
@@ -348,7 +308,7 @@ export default function UiTest() {
       console.log(`${TestTag}, testWindowChangeRemoveOptionsMonitor_defaultTimeOut_static start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(1000);
-      let observer = await driver.createUIEventObserver();
+      let observer = driver.createUIEventObserver();
       let isCallBack = false;
       let callback = (elementInfo : UIElementInfo) => {
         console.log(`${TestTag}, testWindowChangeRemoveOptionsMonitor_defaultTimeOut_static elementInfo,${JSON.stringify(elementInfo)}`);
@@ -377,44 +337,6 @@ export default function UiTest() {
     })
 
     /**
-     * @tc.name   testWindowChangeRemoveOptionsMonitor_defaultOptions_static
-     * @tc.number uiTest_API22pc_010
-     * @tc.desc   monitor window add.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testWindowChangeRemoveOptionsMonitor_defaultOptions_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testWindowChangeRemoveOptionsMonitor_defaultOptions_static start`);
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(1000);
-      let observer = await driver.createUIEventObserver();
-      let isCallBack = false;
-      let callback = (elementInfo : UIElementInfo) => {
-        console.log(`${TestTag}, testWindowChangeRemoveOptionsMonitor_defaultOptions_static elementInfo,${JSON.stringify(elementInfo)}`);
-        isCallBack = true;
-        try {
-          expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
-          expect(elementInfo.windowChangeType == WindowChangeType.WINDOW_REMOVED).assertTrue();
-          expect(elementInfo.windowId != 0).assertTrue();
-        } catch (err) {
-          console.log(`${TestTag}, testWindowChangeRemoveOptionsMonitor_defaultOptions_static callback error ,${JSON.stringify(err)}`);
-        }
-      }
-      try {
-        observer.onceWindowChange(WindowChangeType.WINDOW_REMOVED, {}, callback);
-      } catch (error) {
-        console.log(`${TestTag}, testWindowChangeRemoveOptionsMonitor_defaultOptions_static once error ,${JSON.stringify(error)}`);
-        expect().assertFail();
-      }
-      await stopApplication('com.uitestScene.acts');
-      await driver.delayMs(4000);
-      console.log(`${TestTag}, testWindowChangeRemoveOptionsMonitor_defaultOptions_static isCallBack ,${JSON.stringify(isCallBack)}`);
-      expect(isCallBack).assertTrue();
-      console.log(`${TestTag}, testWindowChangeRemoveOptionsMonitor_defaultOptions_static end`);
-    })
-
-    /**
      * @tc.name   testWindowChangeRemoveOptionsMonitor_ErrorBundleName_static
      * @tc.number uiTest_API22pc_011
      * @tc.desc   monitor window add.
@@ -426,7 +348,7 @@ export default function UiTest() {
       console.log(`${TestTag}, testWindowChangeRemoveOptionsMonitor_ErrorBundleName_static start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(1000);
-      let observer = await driver.createUIEventObserver();
+      let observer = driver.createUIEventObserver();
       let isCallBack = false;
       let callback = (elementInfo : UIElementInfo) => {
         console.log(`${TestTag}, testWindowChangeRemoveOptionsMonitor_ErrorBundleName_static elementInfo,${JSON.stringify(elementInfo)}`);
@@ -460,7 +382,7 @@ export default function UiTest() {
       console.log(`${TestTag}, testWindowChangeRemoveOptionsMonitor_timeOut_static start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(1000);
-      let observer = await driver.createUIEventObserver();
+      let observer = driver.createUIEventObserver();
       let isCallBack = false;
       let callback = (elementInfo : UIElementInfo) => {
         console.log(`${TestTag}, testWindowChangeRemoveOptionsMonitor_timeOut_static elementInfo,${JSON.stringify(elementInfo)}`);
@@ -493,7 +415,7 @@ export default function UiTest() {
      */
     it('testWindowChangeResizeOptionsMonitor_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, testWindowChangeResizeOptionsMonitor_static start`);
-      let observer = await driver.createUIEventObserver();
+      let observer = driver.createUIEventObserver();
       let isCallBack = false;
       let callback = (elementInfo : UIElementInfo) => {
         console.log(`${TestTag}, testWindowChangeResizeOptionsMonitor_static elementInfo,${JSON.stringify(elementInfo)}`);
@@ -550,7 +472,7 @@ export default function UiTest() {
      */
     it('testWindowChangeResizeOptionsMonitor_defaultBundleName_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, testWindowChangeResizeOptionsMonitor_defaultBundleName_static start`);
-      let observer = await driver.createUIEventObserver();
+      let observer = driver.createUIEventObserver();
       let isCallBack = false;
       let callback = (elementInfo : UIElementInfo) => {
         console.log(`${TestTag}, testWindowChangeResizeOptionsMonitor_defaultBundleName_static elementInfo,${JSON.stringify(elementInfo)}`);
@@ -605,7 +527,7 @@ export default function UiTest() {
      */
     it('testWindowChangeResizeOptionsMonitor_defaultTimeout_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, testWindowChangeResizeOptionsMonitor_defaultTimeout_static start`);
-      let observer = await driver.createUIEventObserver();
+      let observer = driver.createUIEventObserver();
       let isCallBack = false;
       let callback = (elementInfo : UIElementInfo) => {
         console.log(`${TestTag}, testWindowChangeResizeOptionsMonitor_defaultTimeout_static elementInfo,${JSON.stringify(elementInfo)}`);
@@ -660,7 +582,7 @@ export default function UiTest() {
      */
     it('testWindowChangeResizeOptionsMonitor_defaultOptions_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, testWindowChangeResizeOptionsMonitor_defaultOptions_static start`);
-      let observer = await driver.createUIEventObserver();
+      let observer = driver.createUIEventObserver();
       let isCallBack = false;
       let callback = (elementInfo : UIElementInfo) => {
         console.log(`${TestTag}, testWindowChangeResizeOptionsMonitor_defaultOptions_static elementInfo,${JSON.stringify(elementInfo)}`);
@@ -713,7 +635,7 @@ export default function UiTest() {
      */
     it('testWindowChangeResizeOptionsMonitor_errorBundleName_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, testWindowChangeResizeOptionsMonitor_errorBundleName_static start`);
-      let observer = await driver.createUIEventObserver();
+      let observer = driver.createUIEventObserver();
       let isCallBack = false;
       let callback = (elementInfo : UIElementInfo) => {
         console.log(`${TestTag}, testWindowChangeResizeOptionsMonitor_errorBundleName_static elementInfo,${JSON.stringify(elementInfo)}`);
@@ -761,7 +683,7 @@ export default function UiTest() {
      */
     it('testWindowChangeResizeOptionsMonitor_timeout_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, testWindowChangeResizeOptionsMonitor_timeout_static start`);
-      let observer = await driver.createUIEventObserver();
+      let observer = driver.createUIEventObserver();
       let isCallBack = false;
       let callback = (elementInfo : UIElementInfo) => {
         console.log(`${TestTag}, testWindowChangeResizeOptionsMonitor_timeout_static elementInfo,${JSON.stringify(elementInfo)}`);
