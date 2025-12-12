@@ -5675,3 +5675,1996 @@ ani_boolean test_Class_Call_Static_Method_Float_23([[maybe_unused]] ani_env *env
     ASSERT_EQ(valueA, FLOAT_VAL2 - FLOAT_VAL1);
     return ANI_TRUE;
 }
+
+ani_boolean GetMethodDataOfInt(ani_env *env, ani_class *clsResult)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.Operations6", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+    *clsResult = cls;
+    return ANI_TRUE;
+}
+
+ani_boolean TestFuncVOfInt(ani_env *env, ani_class cls, const char *name, ani_int *value, ...)
+{
+    va_list args {};
+    va_start(args, value);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int_V(cls, name, "ii:i", value, args), ANI_OK);
+    va_end(args);
+    return ANI_TRUE;
+}
+
+ani_boolean TestCombineSceneOfInt(ani_env *env, const char *className, const char *methodName, ani_int expectedValue)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass(className, &cls), ANI_OK);
+
+    ani_int value = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int(cls, methodName, "ii:i", &value, VAL3, VAL4), ANI_OK);
+    ASSERT_EQ(value, expectedValue);
+
+    ani_value args[2U];
+    args[0U].i = VAL3;
+    args[1U].i = VAL4;
+    ani_int valueA = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int_A(cls, methodName, "ii:i", &valueA, args), ANI_OK);
+    ASSERT_EQ(valueA, expectedValue);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Int_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class cls {};
+    GetMethodDataOfInt(env, &cls);
+
+    ani_int sum = 0;
+    ASSERT_EQ(env->c_api->Class_CallStaticMethodByName_Int(env, cls, "sum", nullptr, &sum, VAL3, VAL4), ANI_OK);
+    ASSERT_EQ(sum, VAL3 + VAL4);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Int_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class cls {};
+    GetMethodDataOfInt(env, &cls);
+
+    ani_int sum = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int(cls, "sum", nullptr, &sum, VAL3, VAL4), ANI_OK);
+    ASSERT_EQ(sum, VAL3 + VAL4);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Int_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class cls {};
+    GetMethodDataOfInt(env, &cls);
+
+    ani_value args[2U];
+    args[0U].i = VAL3;
+    args[1U].i = VAL4;
+
+    ani_int sum = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int_A(cls, "sum", nullptr, &sum, args), ANI_OK);
+    ASSERT_EQ(sum, VAL3 + VAL4);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Int_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_int sum = 0;
+    ASSERT_EQ(env->c_api->Class_CallStaticMethodByName_Int(env, nullptr, "sum", nullptr, &sum, VAL3, VAL4),
+              ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Int_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class cls {};
+    GetMethodDataOfInt(env, &cls);
+
+    ani_int sum = 0;
+    ASSERT_EQ(env->c_api->Class_CallStaticMethodByName_Int(env, cls, nullptr, nullptr, &sum, VAL3, VAL4),
+              ANI_INVALID_ARGS);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int(cls, "", nullptr, &sum, VAL3, VAL4), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int(cls, "\n", nullptr, &sum, VAL3, VAL4), ANI_NOT_FOUND);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Int_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class cls {};
+    GetMethodDataOfInt(env, &cls);
+
+    ASSERT_EQ(env->c_api->Class_CallStaticMethodByName_Int(env, cls, "sum", nullptr, nullptr, VAL3, VAL4),
+              ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Int_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_int sum = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int(nullptr, "sum", nullptr, &sum, VAL3, VAL4), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Int_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class cls {};
+    GetMethodDataOfInt(env, &cls);
+
+    ani_int sum = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int(cls, nullptr, nullptr, &sum, VAL3, VAL4), ANI_INVALID_ARGS);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int(cls, "sum_not_exist", nullptr, &sum, VAL3, VAL4), ANI_NOT_FOUND);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Int_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class cls {};
+    GetMethodDataOfInt(env, &cls);
+
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int(cls, "sum", nullptr, nullptr, VAL3, VAL4), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Int_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_value args[2U];
+    args[0U].i = VAL3;
+    args[1U].i = VAL4;
+    ani_int sum = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int_A(nullptr, "sum", nullptr, &sum, args), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Int_11([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class cls {};
+    GetMethodDataOfInt(env, &cls);
+
+    ani_value args[2U];
+    args[0U].i = VAL3;
+    args[1U].i = VAL4;
+    ani_int sum = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int_A(cls, nullptr, nullptr, &sum, args), ANI_INVALID_ARGS);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int_A(cls, "sum_not_exist", nullptr, &sum, args), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int_A(cls, "", nullptr, &sum, args), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int_A(cls, "\n", nullptr, &sum, args), ANI_NOT_FOUND);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Int_12([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class cls {};
+    GetMethodDataOfInt(env, &cls);
+
+    ani_value args[2U];
+    args[0U].i = VAL3;
+    args[1U].i = VAL4;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int_A(cls, "sum", nullptr, nullptr, args), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Int_13([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    GetMethodDataOfInt(env, &cls);
+
+    ani_int sum = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int_A(cls, "sum", nullptr, &sum, nullptr), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Int_18([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class cls {};
+    GetMethodDataOfInt(env, &cls);
+
+    ani_int value = 0;
+    ASSERT_EQ(env->c_api->Class_CallStaticMethodByName_Int(nullptr, cls, "or", nullptr, &value, VAL3, VAL4),
+              ANI_INVALID_ARGS);
+    ani_value args[2U];
+    args[0U].i = VAL3;
+    args[1U].i = VAL4;
+    ASSERT_EQ(env->c_api->Class_CallStaticMethodByName_Int_A(nullptr, cls, "or", nullptr, &value, args),
+              ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Int_19([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class clsA {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.A6", &clsA), ANI_OK);
+    ani_class clsB {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.B6", &clsB), ANI_OK);
+
+    ani_int valueA = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int(clsA, "funcA", "ii:i", &valueA, VAL3, VAL4), ANI_OK);
+    ASSERT_EQ(valueA, VAL3 + VAL4);
+    ani_int valueB = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int(clsB, "funcB", "ii:i", &valueB, VAL3, VAL4), ANI_OK);
+    ASSERT_EQ(valueB, VAL4 - VAL3);
+
+    ani_value args[2U];
+    args[0U].i = VAL3;
+    args[1U].i = VAL4;
+    ani_int valueAA = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int_A(clsA, "funcA", "ii:i", &valueAA, args), ANI_OK);
+    ASSERT_EQ(valueAA, VAL3 + VAL4);
+    ani_int valueBA = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int_A(clsB, "funcB", "ii:i", &valueBA, args), ANI_OK);
+    ASSERT_EQ(valueBA, VAL4 - VAL3);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Int_20([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_double VAL1 = 1.5;
+    const ani_double VAL2 = 2.5;
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.A6", &cls), ANI_OK);
+    ani_int value = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int(cls, "funcA", "ii:i", &value, VAL3, VAL4), ANI_OK);
+    ASSERT_EQ(value, VAL3 + VAL4);
+
+    ani_value args[2U];
+    args[0U].i = VAL3;
+    args[1U].i = VAL4;
+    ani_int valueA = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int_A(cls, "funcA", "ii:i", &valueA, args), ANI_OK);
+    ASSERT_EQ(valueA, VAL3 + VAL4);
+
+    ani_double value2 = 0.0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Double(cls, "funcA", "dd:d", &value2, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(value2, VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Int_21([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    TestCombineSceneOfInt(env, "entry.src.main.src.ets.ClassOperationsMethodByName.A6", "funcB", VAL3 + VAL4);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Int_22([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    TestCombineSceneOfInt(env, "entry.src.main.src.ets.ClassOperationsMethodByName.C6", "funcA", VAL3 + VAL4);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Int_23([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    TestCombineSceneOfInt(env, "entry.src.main.src.ets.ClassOperationsMethodByName.D6", "funcA", VAL4 - VAL3);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Int_24([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    TestCombineSceneOfInt(env, "entry.src.main.src.ets.ClassOperationsMethodByName.E6", "funcA", VAL3 + VAL4);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Int_25([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.F6", &cls), ANI_OK);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void(cls, "increment", nullptr, VAL3, VAL4), ANI_OK);
+    ani_int value = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int(cls, "getCount", nullptr, &value), ANI_OK);
+    ASSERT_EQ(value, VAL3 + VAL4);
+
+    ani_value args[2U];
+    args[0U].i = VAL3;
+    args[1U].i = VAL4;
+    ani_int valueA = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int_A(cls, "getCount", nullptr, &valueA, args), ANI_OK);
+    ASSERT_EQ(valueA, VAL3 + VAL4);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Int_26([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.G6", &cls), ANI_OK);
+    ani_int value = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int(cls, "publicMethod", "ii:i", &value, VAL3, VAL4), ANI_OK);
+    ASSERT_EQ(value, VAL3 + VAL4);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int(cls, "callPrivateMethod", "ii:i", &value, VAL3, VAL4), ANI_OK);
+    ASSERT_EQ(value, VAL4 - VAL3);
+
+    ani_value args[2U];
+    args[0U].i = VAL3;
+    args[1U].i = VAL4;
+    ani_int valueA = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int_A(cls, "publicMethod", "ii:i", &valueA, args), ANI_OK);
+    ASSERT_EQ(valueA, VAL3 + VAL4);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int_A(cls, "callPrivateMethod", "ii:i", &valueA, args), ANI_OK);
+    ASSERT_EQ(valueA, VAL4 - VAL3);
+    return ANI_TRUE;
+}
+
+ani_boolean GetMethodDataOfLong(ani_env *env, ani_class *clsResult)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.Operations7", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+    *clsResult = cls;
+    return ANI_TRUE;
+}
+
+ani_boolean TestFuncVOfLong(ani_env *env, ani_class cls, const char *name, ani_long *value, ...)
+{
+    va_list args {};
+    va_start(args, value);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long_V(cls, name, "ll:l", value, args), ANI_OK);
+    va_end(args);
+    return ANI_TRUE;
+}
+
+ani_boolean TestCombineSceneOfLong(ani_env *env, const char *className, const char *methodName, ani_long expectedValue)
+{
+    const ani_long VAL1 = 123;
+    const ani_long VAL2 = 456;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass(className, &cls), ANI_OK);
+
+    ani_long value = 0L;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long(cls, methodName, "ll:l", &value, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(value, expectedValue);
+
+    ani_value args[2U];
+    args[0U].l = VAL1;
+    args[1U].l = VAL2;
+    ani_long valueA = 0L;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long_A(cls, methodName, "ll:l", &valueA, args), ANI_OK);
+    ASSERT_EQ(valueA, expectedValue);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Long_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_long VAL1 = 123;
+    const ani_long VAL2 = 456;
+    ani_class cls {};
+    GetMethodDataOfLong(env, &cls);
+
+    ani_long sum = 0L;
+    const ani_long v1 = VAL1;
+    const ani_long v2 = VAL2;
+    ASSERT_EQ(env->c_api->Class_CallStaticMethodByName_Long(env, cls, "sum", nullptr, &sum, v1, v2), ANI_OK);
+    ASSERT_EQ(sum, v1 + v2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Long_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    GetMethodDataOfLong(env, &cls);
+
+    ani_long sum = 0L;
+    const ani_long v1 = 123;
+    const ani_long v2 = 456;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long(cls, "sum", nullptr, &sum, v1, v2), ANI_OK);
+    ASSERT_EQ(sum, v1 + v2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Long_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_long VAL1 = 123;
+    const ani_long VAL2 = 456;
+    ani_class cls {};
+    GetMethodDataOfLong(env, &cls);
+
+    ani_value args[2U];
+    args[0U].l = VAL1;
+    args[1U].l = VAL2;
+
+    ani_long sum = 0L;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long_A(cls, "sum", nullptr, &sum, args), ANI_OK);
+    ASSERT_EQ(sum, VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Long_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_long VAL1 = 123;
+    const ani_long VAL2 = 456;
+    ani_long sum = 0L;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long(nullptr, "sum", nullptr, &sum, VAL1, VAL2), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Long_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_long VAL1 = 123;
+    const ani_long VAL2 = 456;
+    ani_class cls {};
+    GetMethodDataOfLong(env, &cls);
+
+    ani_long sum = 0L;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long(cls, nullptr, nullptr, &sum, VAL1, VAL2), ANI_INVALID_ARGS);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long(cls, "sum_not_exist", nullptr, &sum, VAL1, VAL2), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long(cls, "", nullptr, &sum, VAL1, VAL2), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long(cls, "\n", nullptr, &sum, VAL1, VAL2), ANI_NOT_FOUND);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Long_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_long VAL1 = 123;
+    const ani_long VAL2 = 456;
+    ani_class cls {};
+    GetMethodDataOfLong(env, &cls);
+
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long(cls, "sum", nullptr, nullptr, VAL1, VAL2), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Long_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_long VAL1 = 123;
+    const ani_long VAL2 = 456;
+    ani_value args[2U];
+    args[0U].l = VAL1;
+    args[1U].l = VAL2;
+
+    ani_long sum = 0L;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long_A(nullptr, "sum", nullptr, &sum, args), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Long_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_long VAL1 = 123;
+    const ani_long VAL2 = 456;
+    ani_class cls {};
+    GetMethodDataOfLong(env, &cls);
+
+    ani_value args[2U];
+    args[0U].l = VAL1;
+    args[1U].l = VAL2;
+
+    ani_long sum = 0L;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long_A(cls, nullptr, nullptr, &sum, args), ANI_INVALID_ARGS);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long_A(cls, "sum_not_exist", nullptr, &sum, args), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long_A(cls, "", nullptr, &sum, args), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long_A(cls, "\n", nullptr, &sum, args), ANI_NOT_FOUND);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Long_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_long VAL1 = 123;
+    const ani_long VAL2 = 456;
+    ani_class cls {};
+    GetMethodDataOfLong(env, &cls);
+
+    ani_value args[2U];
+    args[0U].l = VAL1;
+    args[1U].l = VAL2;
+
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long_A(cls, "sum", nullptr, nullptr, args), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Long_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    GetMethodDataOfLong(env, &cls);
+
+    ani_long sum = 0L;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long_A(cls, "sum", nullptr, &sum, nullptr), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Long_15([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_long VAL1 = 123;
+    const ani_long VAL2 = 456;
+    ani_class cls {};
+    GetMethodDataOfLong(env, &cls);
+
+    ani_long value = 0L;
+    ASSERT_EQ(env->c_api->Class_CallStaticMethodByName_Long(nullptr, cls, "or", nullptr, &value, VAL1, VAL2),
+              ANI_INVALID_ARGS);
+    ani_value args[2U];
+    args[0U].l = VAL1;
+    args[1U].l = VAL2;
+    ASSERT_EQ(env->c_api->Class_CallStaticMethodByName_Long_A(nullptr, cls, "or", nullptr, &value, args),
+              ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Long_16([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_long VAL1 = 123;
+    const ani_long VAL2 = 456;
+    ani_class clsA {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.A7", &clsA), ANI_OK);
+    ani_class clsB {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.B7", &clsB), ANI_OK);
+
+    ani_long valueA = 0L;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long(clsA, "funcA", "ll:l", &valueA, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(valueA, VAL1 + VAL2);
+    ani_long valueB = 0L;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long(clsB, "funcB", "ll:l", &valueB, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(valueB, VAL2 - VAL1);
+
+    ani_value args[2U];
+    args[0U].l = VAL1;
+    args[1U].l = VAL2;
+    ani_long valueAA = 0L;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long_A(clsA, "funcA", "ll:l", &valueAA, args), ANI_OK);
+    ASSERT_EQ(valueAA, VAL1 + VAL2);
+    ani_long valueBA = 0L;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long_A(clsB, "funcB", "ll:l", &valueBA, args), ANI_OK);
+    ASSERT_EQ(valueBA, VAL2 - VAL1);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Long_17([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_long VAL1 = 123;
+    const ani_long VAL2 = 456;
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.A7", &cls), ANI_OK);
+    ani_long value = 0L;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long(cls, "funcA", "ll:l", &value, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(value, VAL1 + VAL2);
+
+    ani_value args[2U];
+    args[0U].l = VAL1;
+    args[1U].l = VAL2;
+    ani_long valueA = 0L;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long_A(cls, "funcA", "ll:l", &valueA, args), ANI_OK);
+    ASSERT_EQ(valueA, VAL1 + VAL2);
+
+    ani_int value2 = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int(cls, "funcA", "ii:i", &value2, VAL3, VAL4), ANI_OK);
+    ASSERT_EQ(value2, VAL3 + VAL4);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Long_18([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_long VAL1 = 123;
+    const ani_long VAL2 = 456;
+    TestCombineSceneOfLong(env, "entry.src.main.src.ets.ClassOperationsMethodByName.A7", "funcB", VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Long_19([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_long VAL1 = 123;
+    const ani_long VAL2 = 456;
+    TestCombineSceneOfLong(env, "entry.src.main.src.ets.ClassOperationsMethodByName.C7", "funcA", VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Long_20([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_long VAL1 = 123;
+    const ani_long VAL2 = 456;
+    TestCombineSceneOfLong(env, "entry.src.main.src.ets.ClassOperationsMethodByName.D7", "funcA", VAL2 - VAL1);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Long_21([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_long VAL1 = 123;
+    const ani_long VAL2 = 456;
+    TestCombineSceneOfLong(env, "entry.src.main.src.ets.ClassOperationsMethodByName.E7", "funcA", VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Long_22([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_long VAL1 = 123;
+    const ani_long VAL2 = 456;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.F7", &cls), ANI_OK);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void(cls, "increment", nullptr, VAL1, VAL2), ANI_OK);
+    ani_long value = 0L;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long(cls, "getCount", nullptr, &value), ANI_OK);
+    ASSERT_EQ(value, VAL1 + VAL2);
+
+    ani_value args[2U];
+    args[0U].l = VAL1;
+    args[1U].l = VAL2;
+    ani_long valueA = 0L;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long_A(cls, "getCount", nullptr, &valueA, args), ANI_OK);
+    ASSERT_EQ(valueA, VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Long_23([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_long VAL1 = 123;
+    const ani_long VAL2 = 456;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.G7", &cls), ANI_OK);
+    ani_long value = 0L;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long(cls, "publicMethod", "ll:l", &value, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(value, VAL1 + VAL2);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long(cls, "callPrivateMethod", "ll:l", &value, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(value, VAL2 - VAL1);
+
+    ani_value args[2U];
+    args[0U].l = VAL1;
+    args[1U].l = VAL2;
+    ani_long valueA = 0L;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long_A(cls, "publicMethod", "ll:l", &valueA, args), ANI_OK);
+    ASSERT_EQ(valueA, VAL1 + VAL2);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Long_A(cls, "callPrivateMethod", "ll:l", &valueA, args), ANI_OK);
+    ASSERT_EQ(valueA, VAL2 - VAL1);
+    return ANI_TRUE;
+}
+
+ani_boolean GetMethodDataOfRef(ani_env *env, ani_class *clsResult)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.Phone", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+    *clsResult = cls;
+    return ANI_TRUE;
+}
+
+ani_boolean TestFuncVOfRef(ani_env *env, ani_class cls, const char *name, ani_ref *value, ...)
+{
+    va_list args {};
+    va_start(args, value);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref_V(cls, name, "ii:C{std.core.String}", value, args), ANI_OK);
+    va_end(args);
+    return ANI_TRUE;
+}
+
+ani_boolean CheckRefUp2(ani_env *env, ani_ref ref)
+{
+    const ani_int VAL3 = 5;
+    auto string = reinterpret_cast<ani_string>(ref);
+    ani_size result = 0U;
+    ASSERT_EQ(env->String_GetUTF8Size(string, &result), ANI_OK);
+    ASSERT_EQ(result, 2U);
+
+    ani_size substrOffset = 0U;
+    ani_size substrSize = result;
+    const uint32_t bufferSize = VAL3;
+    char utfBuffer[bufferSize] = {};
+    result = 0U;
+    auto status =
+        env->String_GetUTF8SubString(string, substrOffset, substrSize, utfBuffer, sizeof(utfBuffer), &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_STREQ(utfBuffer, "UP");
+    return ANI_TRUE;
+}
+
+ani_boolean CheckRefNum2(ani_env *env, ani_ref ref)
+{
+    auto string = reinterpret_cast<ani_string>(ref);
+    ani_size result = 0U;
+    ASSERT_EQ(env->String_GetUTF8Size(string, &result), ANI_OK);
+    ani_size substrOffset = 0U;
+    ani_size substrSize = result;
+    const uint32_t bufferSize = 10U;
+    char utfBuffer[bufferSize] = {};
+    result = 0U;
+    auto status =
+        env->String_GetUTF8SubString(string, substrOffset, substrSize, utfBuffer, sizeof(utfBuffer), &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_STREQ(utfBuffer, "INT5");
+    return ANI_TRUE;
+}
+
+ani_boolean TestCombineSceneOfRef(ani_env *env, const char *className, const char *methodName)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass(className, &cls), ANI_OK);
+
+    ani_ref value = nullptr;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref(cls, methodName, "ii:C{std.core.String}", &value, VAL3, VAL4),
+                ANI_OK);
+    CheckRefNum2(env, value);
+
+    ani_value args[2U];
+    args[0U].i = VAL3;
+    args[1U].i = VAL4;
+    ani_ref valueA = nullptr;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref_A(cls, methodName, "ii:C{std.core.String}", &valueA, args),
+                ANI_OK);
+    CheckRefNum2(env, valueA);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Ref_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    GetMethodDataOfRef(env, &cls);
+
+    ani_ref ref = nullptr;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref(cls, "get_button_names", nullptr, &ref), ANI_OK);
+    ASSERT_NE(ref, nullptr);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Ref_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    ani_class cls {};
+    GetMethodDataOfRef(env, &cls);
+
+    ani_ref ref = nullptr;
+    ASSERT_EQ(env->c_api->Class_CallStaticMethodByName_Ref(env, cls, "get_button_names", nullptr, &ref), ANI_OK);
+    ASSERT_NE(ref, nullptr);
+
+    auto string = reinterpret_cast<ani_string>(ref);
+    ani_size result = 0U;
+    ASSERT_EQ(env->String_GetUTF8Size(string, &result), ANI_OK);
+    ASSERT_EQ(result, 2U);
+
+    ani_size substrOffset = 0U;
+    ani_size substrSize = result;
+    const uint32_t bufferSize = VAL3;
+    char utfBuffer[bufferSize] = {};
+    result = 0U;
+    auto status =
+        env->String_GetUTF8SubString(string, substrOffset, substrSize, utfBuffer, sizeof(utfBuffer), &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_STREQ(utfBuffer, "UP");
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Ref_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class cls {};
+    GetMethodDataOfRef(env, &cls);
+
+    ani_ref ref = nullptr;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref(cls, "get_num_string", nullptr, &ref, VAL3, VAL4), ANI_OK);
+    ASSERT_NE(ref, nullptr);
+
+    auto string = reinterpret_cast<ani_string>(ref);
+    ani_size result = 0U;
+    ASSERT_EQ(env->String_GetUTF8Size(string, &result), ANI_OK);
+    ani_size substrOffset = 0U;
+    ani_size substrSize = result;
+    const uint32_t bufferSize = 10U;
+    char utfBuffer[bufferSize] = {};
+    result = 0U;
+    auto status =
+        env->String_GetUTF8SubString(string, substrOffset, substrSize, utfBuffer, sizeof(utfBuffer), &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_STREQ(utfBuffer, "INT5");
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Ref_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class cls {};
+    GetMethodDataOfRef(env, &cls);
+
+    ani_ref ref = nullptr;
+    ani_value args[2U];
+    args[0U].i = VAL3;
+    args[1U].i = VAL4;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref_A(cls, "get_num_string", nullptr, &ref, args), ANI_OK);
+    ASSERT_NE(ref, nullptr);
+
+    auto string = reinterpret_cast<ani_string>(ref);
+    ani_size result = 0U;
+    ASSERT_EQ(env->String_GetUTF8Size(string, &result), ANI_OK);
+    ani_size substrOffset = 0U;
+    ani_size substrSize = result;
+    const uint32_t bufferSize = 10U;
+    char utfBuffer[bufferSize] = {};
+    result = 0U;
+    auto status =
+        env->String_GetUTF8SubString(string, substrOffset, substrSize, utfBuffer, sizeof(utfBuffer), &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_STREQ(utfBuffer, "INT5");
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Ref_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_ref ref = nullptr;
+    ASSERT_EQ(env->c_api->Class_CallStaticMethodByName_Ref(env, nullptr, "get_button_names", nullptr, &ref),
+              ANI_INVALID_ARGS);
+    ASSERT_EQ(ref, nullptr);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Ref_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    GetMethodDataOfRef(env, &cls);
+
+    ani_ref ref = nullptr;
+    ASSERT_EQ(env->c_api->Class_CallStaticMethodByName_Ref(env, cls, nullptr, nullptr, &ref), ANI_INVALID_ARGS);
+    ASSERT_EQ(env->c_api->Class_CallStaticMethodByName_Ref(env, cls, "sum_not_exist", nullptr, &ref), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref(cls, "", nullptr, &ref), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref(cls, "\n", nullptr, &ref), ANI_NOT_FOUND);
+    ASSERT_EQ(ref, nullptr);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Ref_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    GetMethodDataOfRef(env, &cls);
+
+    ani_ref ref = nullptr;
+    ASSERT_EQ(env->c_api->Class_CallStaticMethodByName_Ref(env, cls, "get_button_names", nullptr, nullptr),
+              ANI_INVALID_ARGS);
+    ASSERT_EQ(ref, nullptr);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Ref_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_double VAL1 = 4.5;
+    const ani_double VAL2 = 7.5;
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_ref ref = nullptr;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref(nullptr, "get_num_string", nullptr, &ref, VAL3, VAL4),
+              ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Ref_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class cls {};
+    GetMethodDataOfRef(env, &cls);
+
+    ani_ref ref = nullptr;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref(cls, nullptr, nullptr, &ref, VAL3, VAL4), ANI_INVALID_ARGS);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref(cls, "sum_not_exist", nullptr, &ref, VAL3, VAL4), ANI_NOT_FOUND);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Ref_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class cls {};
+    GetMethodDataOfRef(env, &cls);
+
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref(cls, "get_num_string", nullptr, nullptr, VAL3, VAL4),
+              ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Ref_11([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_value args[2U];
+    args[0U].i = VAL3;
+    args[1U].i = VAL4;
+    ani_ref ref = nullptr;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref_A(nullptr, "get_num_string", nullptr, &ref, args),
+              ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Ref_12([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class cls {};
+    GetMethodDataOfRef(env, &cls);
+
+    ani_value args[2U];
+    args[0U].i = VAL3;
+    args[1U].i = VAL4;
+    ani_ref ref = nullptr;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref_A(cls, nullptr, nullptr, &ref, args), ANI_INVALID_ARGS);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref_A(cls, "", nullptr, &ref, args), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref_A(cls, "\n", nullptr, &ref, args), ANI_NOT_FOUND);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Ref_13([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class cls {};
+    GetMethodDataOfRef(env, &cls);
+
+    ani_value args[2U];
+    args[0U].i = VAL3;
+    args[1U].i = VAL4;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref_A(cls, "get_num_string", nullptr, nullptr, args),
+              ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Ref_14([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    GetMethodDataOfRef(env, &cls);
+
+    ani_ref ref = nullptr;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref_A(cls, "get_num_string", nullptr, &ref, nullptr),
+              ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Ref_19([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class cls {};
+    GetMethodDataOfRef(env, &cls);
+
+    ani_ref value = nullptr;
+    ASSERT_EQ(env->c_api->Class_CallStaticMethodByName_Ref(nullptr, cls, "or", nullptr, &value, VAL3, VAL4),
+              ANI_INVALID_ARGS);
+    ani_value args[2U];
+    args[0U].i = VAL3;
+    args[1U].i = VAL4;
+    ASSERT_EQ(env->c_api->Class_CallStaticMethodByName_Ref_A(nullptr, cls, "or", nullptr, &value, args),
+              ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Ref_20([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class clsA {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.A8", &clsA), ANI_OK);
+    ani_class clsB {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.B8", &clsB), ANI_OK);
+
+    ani_ref valueA = nullptr;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref(clsA, "funcA", "ii:C{std.core.String}", &valueA, VAL3, VAL4),
+              ANI_OK);
+    CheckRefNum2(env, valueA);
+    ani_ref valueB = nullptr;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref(clsB, "funcB", "ii:C{std.core.String}", &valueB, VAL3, VAL4),
+              ANI_OK);
+    CheckRefUp2(env, valueB);
+
+    ani_value args[2U];
+    args[0U].i = VAL3;
+    args[1U].i = VAL4;
+    ani_ref valueAA = nullptr;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref_A(clsA, "funcA", "ii:C{std.core.String}", &valueAA, args), ANI_OK);
+    CheckRefNum2(env, valueAA);
+    ani_ref valueBA = nullptr;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref_A(clsB, "funcB", "ii:C{std.core.String}", &valueBA, args), ANI_OK);
+    CheckRefUp2(env, valueBA);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Ref_21([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_double VAL1 = 4.5;
+    const ani_double VAL2 = 7.5;
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.A8", &cls), ANI_OK);
+    ani_ref value = nullptr;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref(cls, "funcA", "ii:C{std.core.String}", &value, VAL3, VAL4),
+              ANI_OK);
+    CheckRefNum2(env, value);
+
+    ani_value args[2U];
+    args[0U].i = VAL3;
+    args[1U].i = VAL4;
+    ani_ref valueA = nullptr;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref_A(cls, "funcA", "ii:C{std.core.String}", &valueA, args), ANI_OK);
+    CheckRefNum2(env, valueA);
+
+    ani_double value2 = 0.0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Double(cls, "funcA", "dd:d", &value2, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(value2, VAL2 - VAL1);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Ref_22([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    TestCombineSceneOfRef(env, "entry.src.main.src.ets.ClassOperationsMethodByName.A8", "funcB");
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Ref_23([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    TestCombineSceneOfRef(env, "entry.src.main.src.ets.ClassOperationsMethodByName.C8", "funcA");
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Ref_24([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    TestCombineSceneOfRef(env, "entry.src.main.src.ets.ClassOperationsMethodByName.E8", "funcA");
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Ref_25([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.DT", &cls), ANI_OK);
+
+    ani_ref value = nullptr;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref(cls, "funcA", "ii:C{std.core.String}", &value, VAL3, VAL4),
+              ANI_OK);
+    CheckRefUp2(env, value);
+
+    ani_value args[2U];
+    args[0U].i = VAL3;
+    args[1U].i = VAL4;
+    ani_ref valueA = nullptr;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref_A(cls, "funcA", "ii:C{std.core.String}", &valueA, args), ANI_OK);
+    CheckRefUp2(env, valueA);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Ref_26([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.F8", &cls), ANI_OK);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void(cls, "increment", nullptr, VAL3, VAL4), ANI_OK);
+    ani_ref value = nullptr;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref(cls, "getCount", nullptr, &value), ANI_OK);
+    CheckRefNum2(env, value);
+
+    ani_value args[2U];
+    args[0U].i = VAL3;
+    args[1U].i = VAL4;
+    ani_ref valueA = nullptr;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref_A(cls, "getCount", nullptr, &valueA, args), ANI_OK);
+    CheckRefNum2(env, valueA);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Ref_27([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL3 = 5;
+    const ani_int VAL4 = 6;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.G8", &cls), ANI_OK);
+    ani_ref value = nullptr;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref(cls, "publicMethod", "ii:C{std.core.String}", &value, VAL3, VAL4),
+              ANI_OK);
+    CheckRefNum2(env, value);
+    ASSERT_EQ(
+        env->Class_CallStaticMethodByName_Ref(cls, "callPrivateMethod", "ii:C{std.core.String}", &value, VAL3, VAL4),
+        ANI_OK);
+    CheckRefUp2(env, value);
+
+    ani_value args[2U];
+    args[0U].i = VAL3;
+    args[1U].i = VAL4;
+    ani_ref valueA = nullptr;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Ref_A(cls, "publicMethod", "ii:C{std.core.String}", &valueA, args),
+              ANI_OK);
+    CheckRefNum2(env, valueA);
+    ASSERT_EQ(
+        env->Class_CallStaticMethodByName_Ref_A(cls, "callPrivateMethod", "ii:C{std.core.String}", &valueA, args),
+        ANI_OK);
+    CheckRefUp2(env, valueA);
+    return ANI_TRUE;
+}
+
+ani_boolean GetClassDataOfShort(ani_env *env, ani_class *clsResult)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.Operations9", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+    *clsResult = cls;
+    return ANI_TRUE;
+}
+
+ani_boolean TestFuncVOfShort(ani_env *env, ani_class cls, const char *name, ani_short *value, ...)
+{
+    va_list args {};
+    va_start(args, value);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short_V(cls, name, "ss:s", value, args), ANI_OK);
+    va_end(args);
+    return ANI_TRUE;
+}
+
+ani_boolean TestCombineSceneOfShort(ani_env *env, const char *className,
+                                    const char *methodName, ani_short expectedValue)
+{
+    const ani_short VAL1 = 5;
+    const ani_short VAL2 = 6;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass(className, &cls), ANI_OK);
+
+    ani_short value = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short(cls, methodName, "ss:s", &value, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(value, expectedValue);
+
+    ani_value args[2U];
+    args[0U].s = VAL1;
+    args[1U].s = VAL2;
+    ani_short valueA = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short_A(cls, methodName, "ss:s", &valueA, args), ANI_OK);
+    ASSERT_EQ(valueA, expectedValue);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Short_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_short VAL1 = 5;
+    const ani_short VAL2 = 6;
+    ani_class cls {};
+    GetClassDataOfShort(env, &cls);
+
+    ani_short value = 0;
+    ASSERT_EQ(env->c_api->Class_CallStaticMethodByName_Short(env, cls, "sum", nullptr, &value, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(value, VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Short_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_short VAL1 = 5;
+    const ani_short VAL2 = 6;
+    ani_class cls {};
+    GetClassDataOfShort(env, &cls);
+
+    ani_short value = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short(cls, "sum", nullptr, &value, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(value, VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Short_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_short VAL1 = 5;
+    const ani_short VAL2 = 6;
+    ani_class cls {};
+    GetClassDataOfShort(env, &cls);
+
+    ani_value args[2U];
+    args[0U].s = VAL1;
+    args[1U].s = VAL2;
+
+    ani_short value = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short_A(cls, "sum", nullptr, &value, args), ANI_OK);
+    ASSERT_EQ(value, VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Short_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_short VAL1 = 5;
+    const ani_short VAL2 = 6;
+    ani_short value = 0;
+    ASSERT_EQ(env->c_api->Class_CallStaticMethodByName_Short(env, nullptr, "sum", nullptr, &value, VAL1, VAL2),
+              ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Short_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_short VAL1 = 5;
+    const ani_short VAL2 = 6;
+    ani_class cls {};
+    GetClassDataOfShort(env, &cls);
+
+    ani_short value = 0;
+    ASSERT_EQ(env->c_api->Class_CallStaticMethodByName_Short(env, cls, nullptr, nullptr, &value, VAL1, VAL2),
+              ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Short_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_short VAL1 = 5;
+    const ani_short VAL2 = 6;
+    ani_class cls {};
+    GetClassDataOfShort(env, &cls);
+
+    ani_short value = 0;
+    ASSERT_EQ(env->c_api->Class_CallStaticMethodByName_Short(env, cls, "aa", nullptr, &value, VAL1, VAL2),
+              ANI_NOT_FOUND);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short(cls, "", nullptr, &value, VAL1, VAL2), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short(cls, "\n", nullptr, &value, VAL1, VAL2), ANI_NOT_FOUND);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Short_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_short VAL1 = 5;
+    const ani_short VAL2 = 6;
+    ani_class cls {};
+    GetClassDataOfShort(env, &cls);
+
+    ASSERT_EQ(env->c_api->Class_CallStaticMethodByName_Short(env, cls, "sum", nullptr, nullptr, VAL1, VAL2),
+              ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Short_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_short VAL1 = 5;
+    const ani_short VAL2 = 6;
+    ani_short value = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short(nullptr, "sum", nullptr, &value, VAL1, VAL2), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Short_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_short VAL1 = 5;
+    const ani_short VAL2 = 6;
+    ani_class cls {};
+    GetClassDataOfShort(env, &cls);
+
+    ani_short value = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short(cls, nullptr, nullptr, &value, VAL1, VAL2), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Short_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_short VAL1 = 5;
+    const ani_short VAL2 = 6;
+    ani_class cls {};
+    GetClassDataOfShort(env, &cls);
+
+    ani_short value = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short(cls, "aa", nullptr, &value, VAL1, VAL2), ANI_NOT_FOUND);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Short_11([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_short VAL1 = 5;
+    const ani_short VAL2 = 6;
+    ani_class cls {};
+    GetClassDataOfShort(env, &cls);
+
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short(cls, "sum", nullptr, nullptr, VAL1, VAL2), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Short_12([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_short VAL1 = 5;
+    const ani_short VAL2 = 6;
+    ani_value args[2U];
+    args[0U].s = VAL1;
+    args[1U].s = VAL2;
+    ani_short value = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short_A(nullptr, "sum", nullptr, &value, args), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Short_13([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_short VAL1 = 5;
+    const ani_short VAL2 = 6;
+    ani_class cls {};
+    GetClassDataOfShort(env, &cls);
+
+    ani_value args[2U];
+    args[0U].s = VAL1;
+    args[1U].s = VAL2;
+    ani_short value = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short_A(cls, nullptr, nullptr, &value, args), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Short_14([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_short VAL1 = 5;
+    const ani_short VAL2 = 6;
+    ani_class cls {};
+    GetClassDataOfShort(env, &cls);
+
+    ani_value args[2U];
+    args[0U].s = VAL1;
+    args[1U].s = VAL2;
+    ani_short value = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short_A(cls, "aa", nullptr, &value, args), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short_A(cls, "", nullptr, &value, args), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short_A(cls, "\n", nullptr, &value, args), ANI_NOT_FOUND);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Short_15([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_short VAL1 = 5;
+    const ani_short VAL2 = 6;
+    ani_class cls {};
+    GetClassDataOfShort(env, &cls);
+
+    ani_value args[2U];
+    args[0U].s = VAL1;
+    args[1U].s = VAL2;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short_A(cls, "sum", nullptr, nullptr, args), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Short_16([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    GetClassDataOfShort(env, &cls);
+
+    ani_short value = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short_A(cls, "sum", nullptr, &value, nullptr), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Short_21([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_short VAL1 = 5;
+    const ani_short VAL2 = 6;
+    ani_class cls {};
+    GetClassDataOfShort(env, &cls);
+
+    ani_short value = 0;
+    ASSERT_EQ(env->c_api->Class_CallStaticMethodByName_Short(nullptr, cls, "or", nullptr, &value, VAL1, VAL2),
+              ANI_INVALID_ARGS);
+    ani_value args[2U];
+    args[0U].s = VAL1;
+    args[1U].s = VAL2;
+    ASSERT_EQ(env->c_api->Class_CallStaticMethodByName_Short_A(nullptr, cls, "or", nullptr, &value, args),
+              ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Short_22([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_short VAL1 = 5;
+    const ani_short VAL2 = 6;
+    ani_class clsA {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.A9", &clsA), ANI_OK);
+    ani_class clsB {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.B9", &clsB), ANI_OK);
+
+    ani_short valueA = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short(clsA, "funcA", "ss:s", &valueA, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(valueA, VAL1 + VAL2);
+    ani_short valueB = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short(clsB, "funcB", "ss:s", &valueB, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(valueB, VAL2 - VAL1);
+
+    ani_value args[2U];
+    args[0U].s = VAL1;
+    args[1U].s = VAL2;
+    ani_short valueAA = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short_A(clsA, "funcA", "ss:s", &valueAA, args), ANI_OK);
+    ASSERT_EQ(valueAA, VAL1 + VAL2);
+    ani_short valueBA = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short_A(clsB, "funcB", "ss:s", &valueBA, args), ANI_OK);
+    ASSERT_EQ(valueBA, VAL2 - VAL1);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Short_23([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_short VAL1 = 5;
+    const ani_short VAL2 = 6;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.A9", &cls), ANI_OK);
+    ani_short value = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short(cls, "funcA", "ss:s", &value, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(value, VAL1 + VAL2);
+
+    ani_value args[2U];
+    args[0U].s = VAL1;
+    args[1U].s = VAL2;
+    ani_short valueA = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short_A(cls, "funcA", "ss:s", &valueA, args), ANI_OK);
+    ASSERT_EQ(valueA, VAL1 + VAL2);
+
+    ani_int value2 = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int(cls, "funcA", "ii:i", &value2, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(value2, VAL2 - VAL1);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Short_24([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_short VAL1 = 5;
+    const ani_short VAL2 = 6;
+    TestCombineSceneOfShort(env, "entry.src.main.src.ets.ClassOperationsMethodByName.A9", "funcB", VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Short_25([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_short VAL1 = 5;
+    const ani_short VAL2 = 6;
+    TestCombineSceneOfShort(env, "entry.src.main.src.ets.ClassOperationsMethodByName.C9", "funcA", VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Short_26([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_short VAL1 = 5;
+    const ani_short VAL2 = 6;
+    TestCombineSceneOfShort(env, "entry.src.main.src.ets.ClassOperationsMethodByName.D9", "funcA", VAL2 - VAL1);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Short_27([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_short VAL1 = 5;
+    const ani_short VAL2 = 6;
+    TestCombineSceneOfShort(env, "entry.src.main.src.ets.ClassOperationsMethodByName.E9", "funcA", VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Short_28([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_short VAL1 = 5;
+    const ani_short VAL2 = 6;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.F9", &cls), ANI_OK);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void(cls, "increment", nullptr, VAL1, VAL2), ANI_OK);
+    ani_short value = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short(cls, "getCount", nullptr, &value), ANI_OK);
+    ASSERT_EQ(value, VAL1 + VAL2);
+
+    ani_value args[2U];
+    args[0U].s = VAL1;
+    args[1U].s = VAL2;
+    ani_short valueA = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short_A(cls, "getCount", nullptr, &valueA, args), ANI_OK);
+    ASSERT_EQ(valueA, VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Short_29([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_short VAL1 = 5;
+    const ani_short VAL2 = 6;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.G9", &cls), ANI_OK);
+    ani_short value = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short(cls, "publicMethod", "ss:s", &value, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(value, VAL1 + VAL2);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short(cls, "callPrivateMethod", "ss:s", &value, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(value, VAL2 - VAL1);
+
+    ani_value args[2U];
+    args[0U].s = VAL1;
+    args[1U].s = VAL2;
+    ani_short valueA = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short_A(cls, "publicMethod", "ss:s", &valueA, args), ANI_OK);
+    ASSERT_EQ(valueA, VAL1 + VAL2);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short_A(cls, "callPrivateMethod", "ss:s", &valueA, args), ANI_OK);
+    ASSERT_EQ(valueA, VAL2 - VAL1);
+    return ANI_TRUE;
+}
+
+ani_boolean GetMethodDataOfVoid(ani_env *env, ani_class *clsResult)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.OperationsV", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+    *clsResult = cls;
+    return ANI_TRUE;
+}
+
+ani_boolean TestFuncVOfVoid(ani_env *env, ani_class cls, const char *name, ...)
+{
+    va_list args {};
+    va_start(args, name);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void_V(cls, name, "ii:", args), ANI_OK);
+    va_end(args);
+    return ANI_TRUE;
+}
+
+ani_boolean GetCountOfVoid(ani_env *env, ani_class cls, ani_int *value)
+{
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int(cls, "getCount", ":i", value), ANI_OK);
+    return ANI_TRUE;
+}
+
+ani_boolean TestCombineSceneOfVoid(ani_env *env, const char *className, const char *methodName, ani_int expectedValue)
+{
+    const ani_int VAL1 = 5;
+    const ani_int VAL2 = 6;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass(className, &cls), ANI_OK);
+
+    ani_int value = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void(cls, methodName, "ii:", VAL1, VAL2), ANI_OK);
+    GetCountOfVoid(env, cls, &value);
+    ASSERT_EQ(value, expectedValue);
+
+    ani_value args[2U];
+    args[0U].i = VAL1;
+    args[1U].i = VAL2;
+    ani_int valueA = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void_A(cls, methodName, "ii:", args), ANI_OK);
+    GetCountOfVoid(env, cls, &valueA);
+    ASSERT_EQ(valueA, expectedValue);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Void_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL1 = 5;
+    const ani_int VAL2 = 6;
+    ani_class cls {};
+    GetMethodDataOfVoid(env, &cls);
+
+    ani_value args[2];
+    args[0].i = VAL1;
+    args[1].i = VAL2;
+
+    ani_int sum = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void_A(cls, "voidMethod", nullptr, args), ANI_OK);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int(cls, "getCount", nullptr, &sum), ANI_OK);
+    ASSERT_EQ(sum, args[0].i + args[1].i);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Void_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL1 = 5;
+    const ani_int VAL2 = 6;
+    const ani_int res = 22;
+    ani_class cls {};
+    GetMethodDataOfVoid(env, &cls);
+    ani_int sum = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void(cls, "voidMethod", nullptr, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int(cls, "getCount", nullptr, &sum), ANI_OK);
+    ASSERT_EQ(sum, res);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Void_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL1 = 5;
+    const ani_int VAL2 = 6;
+    const ani_int res = 33;
+    ani_class cls {};
+    GetMethodDataOfVoid(env, &cls);
+    ani_int sum = 0;
+    ASSERT_EQ(env->c_api->Class_CallStaticMethodByName_Void(env, cls, "voidMethod", nullptr, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Int(cls, "getCount", nullptr, &sum), ANI_OK);
+    ASSERT_EQ(sum, res);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Void_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL1 = 5;
+    const ani_int VAL2 = 6;
+    ani_class cls {};
+    GetMethodDataOfVoid(env, &cls);
+
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void(cls, nullptr, nullptr, VAL1, VAL2), ANI_INVALID_ARGS);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void(cls, "sum_not_exist", nullptr, VAL1, VAL2), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void(cls, "", nullptr, VAL1, VAL2), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void(cls, "\n", nullptr, VAL1, VAL2), ANI_NOT_FOUND);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Void_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL1 = 5;
+    const ani_int VAL2 = 6;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void(nullptr, "voidMethod", nullptr, VAL1, VAL2), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Void_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL1 = 5;
+    const ani_int VAL2 = 6;
+    ani_class cls {};
+    GetMethodDataOfVoid(env, &cls);
+    ani_value args[2];
+    args[0].i = VAL1;
+    args[1].i = VAL2;
+
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void_A(cls, nullptr, nullptr, args), ANI_INVALID_ARGS);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void_A(cls, "sum_not_exist", nullptr, args), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void_A(cls, "", nullptr, args), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void_A(cls, "\n", nullptr, args), ANI_NOT_FOUND);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Void_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL1 = 5;
+    const ani_int VAL2 = 6;
+    ani_value args[2];
+    args[0].i = VAL1;
+    args[1].i = VAL2;
+
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void_A(nullptr, "voidMethod", nullptr, args), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Void_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    GetMethodDataOfVoid(env, &cls);
+
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void_A(cls, "voidMethod", nullptr, nullptr), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Void_13([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL1 = 5;
+    const ani_int VAL2 = 6;
+    ani_class cls {};
+    GetMethodDataOfVoid(env, &cls);
+
+    ASSERT_EQ(env->c_api->Class_CallStaticMethodByName_Void(nullptr, cls, "or", nullptr, VAL1, VAL2),
+              ANI_INVALID_ARGS);
+    ani_value args[2U];
+    args[0U].i = VAL1;
+    args[1U].i = VAL2;
+    ASSERT_EQ(env->c_api->Class_CallStaticMethodByName_Void_A(nullptr, cls, "or", nullptr, args), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Void_14([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL1 = 5;
+    const ani_int VAL2 = 6;
+    ani_class clsA {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.AV", &clsA), ANI_OK);
+    ani_class clsB {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.BV", &clsB), ANI_OK);
+
+    ani_int valueA = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void(clsA, "funcA", "ii:", VAL1, VAL2), ANI_OK);
+    GetCountOfVoid(env, clsA, &valueA);
+    ASSERT_EQ(valueA, VAL1 + VAL2);
+    ani_int valueB = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void(clsB, "funcB", "ii:", VAL1, VAL2), ANI_OK);
+    GetCountOfVoid(env, clsB, &valueB);
+    ASSERT_EQ(valueB, VAL2 - VAL1);
+
+    ani_value args[2U];
+    args[0U].i = VAL1;
+    args[1U].i = VAL2;
+    ani_int valueAA = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void_A(clsA, "funcA", "ii:", args), ANI_OK);
+    GetCountOfVoid(env, clsA, &valueAA);
+    ASSERT_EQ(valueAA, VAL1 + VAL2);
+    ani_int valueBA = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void_A(clsB, "funcB", "ii:", args), ANI_OK);
+    GetCountOfVoid(env, clsB, &valueBA);
+    ASSERT_EQ(valueBA, VAL2 - VAL1);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Void_15([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL1 = 5;
+    const ani_int VAL2 = 6;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.AV", &cls), ANI_OK);
+    ani_int value = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void(cls, "funcA", "ii:", VAL1, VAL2), ANI_OK);
+    GetCountOfVoid(env, cls, &value);
+    ASSERT_EQ(value, VAL1 + VAL2);
+
+    ani_value args[2U];
+    args[0U].i = VAL1;
+    args[1U].i = VAL2;
+    ani_int valueA = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void_A(cls, "funcA", "ii:", args), ANI_OK);
+    GetCountOfVoid(env, cls, &valueA);
+    ASSERT_EQ(valueA, VAL1 + VAL2);
+
+    ani_short value2 = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Short(cls, "funcA", "ss:s", &value2, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(value2, VAL2 - VAL1);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Void_16([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL1 = 5;
+    const ani_int VAL2 = 6;
+    TestCombineSceneOfVoid(env, "entry.src.main.src.ets.ClassOperationsMethodByName.AV", "funcB", VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Void_17([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL1 = 5;
+    const ani_int VAL2 = 6;
+    TestCombineSceneOfVoid(env, "entry.src.main.src.ets.ClassOperationsMethodByName.CV", "funcA", VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Void_18([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL1 = 5;
+    const ani_int VAL2 = 6;
+    TestCombineSceneOfVoid(env, "entry.src.main.src.ets.ClassOperationsMethodByName.DV", "funcA", VAL2 - VAL1);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Void_19([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL1 = 5;
+    const ani_int VAL2 = 6;
+    TestCombineSceneOfVoid(env, "entry.src.main.src.ets.ClassOperationsMethodByName.EV", "funcA", VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Void_20([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL1 = 5;
+    const ani_int VAL2 = 6;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.FV", &cls), ANI_OK);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void(cls, "increment", nullptr, VAL1, VAL2), ANI_OK);
+    ani_int value = 0;
+    GetCountOfVoid(env, cls, &value);
+    ASSERT_EQ(value, VAL1 + VAL2);
+
+    ani_value args[2U];
+    args[0U].i = VAL1;
+    args[1U].i = VAL2;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void_A(cls, "increment", nullptr, args), ANI_OK);
+    ani_int valueA = 0;
+    GetCountOfVoid(env, cls, &valueA);
+    ASSERT_EQ(valueA, VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Call_Static_Method_Void_21([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL1 = 5;
+    const ani_int VAL2 = 6;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.GV", &cls), ANI_OK);
+    ani_int value = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void(cls, "publicMethod", "ii:", VAL1, VAL2), ANI_OK);
+    GetCountOfVoid(env, cls, &value);
+    ASSERT_EQ(value, VAL1 + VAL2);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void(cls, "callPrivateMethod", "ii:", VAL1, VAL2), ANI_OK);
+    GetCountOfVoid(env, cls, &value);
+    ASSERT_EQ(value, VAL2 - VAL1);
+
+    ani_value args[2U];
+    args[0U].i = VAL1;
+    args[1U].i = VAL2;
+    ani_int valueA = 0;
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void_A(cls, "publicMethod", "ii:", args), ANI_OK);
+    GetCountOfVoid(env, cls, &valueA);
+    ASSERT_EQ(valueA, VAL1 + VAL2);
+    ASSERT_EQ(env->Class_CallStaticMethodByName_Void_A(cls, "callPrivateMethod", "ii:", args), ANI_OK);
+    GetCountOfVoid(env, cls, &valueA);
+    ASSERT_EQ(valueA, VAL2 - VAL1);
+    return ANI_TRUE;
+}
+
+ani_boolean CheckFieldValueGetBool(ani_env *env, const char *className, const char *fieldName)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass(className, &cls), ANI_OK);
+
+    ASSERT_EQ(env->Class_SetStaticFieldByName_Boolean(cls, fieldName, ANI_TRUE), ANI_OK);
+    ani_boolean resultValue = ANI_FALSE;
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Boolean(cls, fieldName, &resultValue), ANI_OK);
+    ASSERT_EQ(resultValue, ANI_TRUE);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Bool_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.GetBoolStatic", &cls), ANI_OK);
+    ani_boolean single = ANI_TRUE;
+    ASSERT_EQ(env->c_api->Class_GetStaticFieldByName_Boolean(env, cls, "single", &single), ANI_OK);
+    ASSERT_EQ(single, ANI_FALSE);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Bool_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.GetBoolStatic", &cls), ANI_OK);
+    ani_boolean single = ANI_TRUE;
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Boolean(cls, "single", &single), ANI_OK);
+    ASSERT_EQ(single, ANI_FALSE);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Bool_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.GetBoolStatic", &cls), ANI_OK);
+
+    ani_boolean single = ANI_TRUE;
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Boolean(cls, "name", &single), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Bool_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.GetBoolStatic", &cls), ANI_OK);
+    ani_boolean single = ANI_TRUE;
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Boolean(nullptr, "name", &single), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Bool_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.GetBoolStatic", &cls), ANI_OK);
+    ani_boolean single = ANI_TRUE;
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Boolean(cls, nullptr, &single), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Bool_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.GetBoolStatic", &cls), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Boolean(cls, "name", nullptr), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Bool_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.GetBoolStatic", &cls), ANI_OK);
+    ani_boolean single = ANI_TRUE;
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Boolean(cls, "", &single), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Boolean(cls, "\n", &single), ANI_NOT_FOUND);
+    ASSERT_EQ(env->c_api->Class_GetStaticFieldByName_Boolean(nullptr, cls, "single", &single), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Bool_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.GetBoolStatic", &cls), ANI_OK);
+    ani_boolean single = ANI_TRUE;
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Boolean(cls, "specia1", &single), ANI_INVALID_TYPE);
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Boolean(cls, "specia3", &single), ANI_INVALID_TYPE);
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Boolean(cls, "specia4", &single), ANI_INVALID_TYPE);
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Boolean(cls, "specia5", &single), ANI_INVALID_TYPE);
+
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Boolean(cls, "specia6", &single), ANI_OK);
+    ASSERT_EQ(single, ANI_FALSE);
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Boolean(cls, "specia7", &single), ANI_OK);
+    ASSERT_EQ(single, ANI_TRUE);
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Boolean(cls, "specia8", &single), ANI_OK);
+    ASSERT_EQ(single, ANI_TRUE);
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Boolean(cls, "specia9", &single), ANI_OK);
+    ASSERT_EQ(single, ANI_FALSE);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Bool_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.GetBoolStatic", &cls), ANI_OK);
+    const int32_t loopCount = 3;
+    for (int32_t i = 0; i < loopCount; i++) {
+        ASSERT_EQ(env->Class_SetStaticFieldByName_Boolean(cls, "single", ANI_TRUE), ANI_OK);
+        ani_boolean single = ANI_FALSE;
+        ASSERT_EQ(env->Class_GetStaticFieldByName_Boolean(cls, "single", &single), ANI_OK);
+        ASSERT_EQ(single, ANI_TRUE);
+    }
+    ASSERT_EQ(env->Class_SetStaticFieldByName_Boolean(cls, "single", ANI_FALSE), ANI_OK);
+    ani_boolean single = ANI_TRUE;
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Boolean(cls, "single", &single), ANI_OK);
+    ASSERT_EQ(single, ANI_FALSE);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Bool_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    CheckFieldValueGetBool(env, "entry.src.main.src.ets.ClassOperationsMethodByName.GetBoolStatic", "single");
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Bool_11([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    CheckFieldValueGetBool(env, "entry.src.main.src.ets.ClassOperationsMethodByName.BoolStaticA", "bool_value");
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Bool_12([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    CheckFieldValueGetBool(env, "entry.src.main.src.ets.ClassOperationsMethodByName.BoolStaticFinal", "bool_value");
+    return ANI_TRUE;
+}
+
+ani_boolean CheckFieldValueGetByte(ani_env *env, const char *className, const char *fieldName)
+{
+    ani_class cls {};
+    const ani_byte setTarget = 2U;
+    ASSERT_EQ(env->FindClass(className, &cls), ANI_OK);
+    ASSERT_EQ(env->Class_SetStaticFieldByName_Byte(cls, fieldName, setTarget), ANI_OK);
+    ani_byte resultValue = 1U;
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Byte(cls, fieldName, &resultValue), ANI_OK);
+    ASSERT_EQ(resultValue, setTarget);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Byte_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.GetbyteStatic", &cls), ANI_OK);
+    ani_byte age;
+    ASSERT_EQ(env->c_api->Class_GetStaticFieldByName_Byte(env, cls, "age", &age), ANI_OK);
+    ASSERT_EQ(age, static_cast<ani_byte>(0));
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Byte_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.GetbyteStatic", &cls), ANI_OK);
+    ani_byte age;
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Byte(cls, "age", &age), ANI_OK);
+    ASSERT_EQ(age, static_cast<ani_byte>(0));
+    return ANI_TRUE;
+}
