@@ -38,7 +38,8 @@ import native_node_extented_booleanTest from "./InteractiveFramework/native_node
 import longPressGusture from "./InteractiveFramework/longPressGueture.test";
 import GridFillPolicyTest from "./grid/GridFillPolicyTest.test"
 import gridAttrsTest from "./grid/GridAttrsTest.test";
-import gridEventTest from './grid/GridEventTest.test'
+import gridEventTest from './grid/GridEventTest.test';
+import clipShapeTest from "./clipShape/ClipShapeTest.test";
 
 export default function testsuite() {
   CoastingAxisTest();
@@ -68,4 +69,5 @@ export default function testsuite() {
   longPressGusture();
   gridAttrsTest();
   gridEventTest();
+  clipShapeTest();
 }

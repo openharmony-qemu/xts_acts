@@ -67,6 +67,7 @@ namespace ArkUICapiTest {
 #define PARAM_101_POINT_5 101.5
 #define PARAM_90 90
 #define PARAM_100 100
+#define PARAM_150 150
 #define PARAM_200 200
 #define PARAM_10000 10000
 #define PARAM_NEGATIVE_1 (-1)
@@ -146,6 +147,10 @@ namespace ArkUICapiTest {
 #define PARAM_960000 960000
 #define PARAM_255 255
 #define PARAM_500 500
+#define PARAM_25 25
+#define PARAM_50 50
+#define PARAM_75 75
+#define PARAM_55 55
 
 /**
  * Log print domain.

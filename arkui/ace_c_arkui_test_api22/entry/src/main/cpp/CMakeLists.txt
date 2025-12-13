@@ -39,6 +39,7 @@ add_library(nativerender SHARED
     component/GridComponentTest.cpp
     grid/GridFillPolicyTest.cpp
     grid/GridEventTest.cpp
+    clipShape/ClipShapeTest.cpp
 )
 
 add_library(nativefunc SHARED
