@@ -184,15 +184,15 @@ export default function relationalStoreTest() {
     })
     //
     /**
-     * @tc.name   SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0900
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0900
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_RDBFGAPIexecuteSyncTest_0900
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPIexecuteSyncTest_0900
      * @tc.desc   executesql success
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
-      console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0900 start *************");
+    it('SUB_DistributedData_RelationalStore_SDK_RDBFGAPIexecuteSyncTest_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_RDBFGAPIexecuteSyncTest_0900 start *************");
       const record :relationalStore.ValuesBucket= {
         "name": "Jim",
         "age": 30 as long ,
@@ -209,7 +209,7 @@ export default function relationalStoreTest() {
         done()
       }
       done();
-      console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0900 end *************");
+      console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_RDBFGAPIexecuteSyncTest_0900 end *************");
     })
     /**
      * @tc.name   relationalStoreTest010

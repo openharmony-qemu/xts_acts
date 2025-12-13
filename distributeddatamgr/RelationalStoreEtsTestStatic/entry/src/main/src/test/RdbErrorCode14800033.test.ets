@@ -211,7 +211,7 @@ export default function rdbErrorCode14800033() {
 
     /**
      * @tc.name   relationalStoreTest001
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0200
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0300
      * @tc.desc   delete success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -238,7 +238,7 @@ export default function rdbErrorCode14800033() {
 
     /**
      * @tc.name   relationalStoreTest002
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0300
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_04100
      * @tc.desc   delete success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -948,7 +948,7 @@ export default function rdbErrorCode14800033() {
 
     /**
      * @tc.name   testRdbStoreTrans009
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_ROLLBACK_0300
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ROLLBACK_0400
      * @tc.desc   Configure predicates (TABLE name: "")
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
