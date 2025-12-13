@@ -2061,6 +2061,14 @@ export default function windowZindexTest() {
       }
 
     })
+    /**
+     * @tc.number  SUB_BASIC_WMS_FUNCTION_SET_SUBWINDOW_ZLEVEL_0100
+     * @tc.name    testSetSubWindowZLevel__10001
+     * @tc.desc    setSetSubWindowZLevel入参-10001
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
     it('testSetSubWindowZLevel__10001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetSubWindowZLevel__10001';
       let isSupport = canIUse('SystemCapability.Window.SessionManager')
@@ -2171,6 +2179,14 @@ export default function windowZindexTest() {
         done();
       }
     })
+    /**
+     * @tc.number  SUB_BASIC_WMS_FUNCTION_SET_SUBWINDOW_ZLEVEL_0400
+     * @tc.name    testSetSubWindowZLevel_10001
+     * @tc.desc    setSetSubWindowZLevel入参10001
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
     it('testSetSubWindowZLevel_10001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetSubWindowZLevel_10001';
       let isSupport = canIUse('SystemCapability.Window.SessionManager')

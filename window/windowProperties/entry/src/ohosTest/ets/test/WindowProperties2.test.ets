@@ -3365,7 +3365,7 @@ export default function windowPropertiesTest2() {
       }
     })
     /**
-     * @tc.number  SUB_BASIC_WMS_FUNCTION_SET_START_BACKGROUND_COLOR_0100
+     * @tc.number  SUB_BASIC_WMS_FUNCTION_SET_START_BACKGROUND_COLOR_0300
      * @tc.name    testSetStartWindowBackgroundColor_201
      * @tc.desc    setStartWindowBackgroundColor入参长度201
      * @tc.size    MediumTest
