@@ -25,6 +25,9 @@ const char *g_tag = "YB";
 const char *g_doblanklessGetInfoValue2048Key = "";
 const char *g_doblanklessGetInfoValueWithKey = "GetBlanklessInfoWithKey";
 const char *g_doblanklessINVALID_ARGS = "";
+const char *g_doblanklessINVALID_ARGS_LENGTH1 = "y";
+const char *g_doblanklessINVALID_ARGS_LENGTH2048 = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+const char *g_doblanklessINVALID_ARGS_LENGTH2049 = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
 const char *g_setBlanklessLoadingWithKey = "SetBlanklessInfoWithKey";
 const char *g_doblanklessClearWithKey = "ClearBlankLoadingCache";
 const int g_errCode = 801;
@@ -203,7 +206,7 @@ static napi_value Doblankless_INVALID_ARGS_SET_ZERO(napi_env env, napi_callback_
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
                  "Doblankless_INVALID_ARGS_SET_ZERO similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
                  blanklessInfo.loadingTime, blanklessInfo.errCode);
-    ArkWeb_BlanklessInfo blanklessInfo_set =
+    ArkWeb_BlanklessErrorCode blanklessInfo_set =
         OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessINVALID_ARGS, true);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
                  "Doblankless_INVALID_ARGS_SET_ZERO ,errCode:%{public}d", blanklessInfo_set.errCode);
@@ -211,6 +214,192 @@ static napi_value Doblankless_INVALID_ARGS_SET_ZERO(napi_env env, napi_callback_
         napi_create_double(env, blanklessInfo_set.errCode, &Capacity);
     } else if (blanklessInfo_set.errCode == g_errCode) {
         napi_create_double(env, blanklessInfo_set.errCode, &Capacity);
+    }
+    return Capacity;
+}
+static napi_value Doblankless_INVALID_ARGS_SET_ONE(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 获取第一个参数 webTag
+    size_t webTagSize = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &webTagSize);
+    char *webTagValue = new (std::nothrow) char[webTagSize + 1];
+    size_t webTagLength = 0;
+    napi_get_value_string_utf8(env, args[0], webTagValue, webTagSize + 1, &webTagLength);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag, "%{public}s, length = %{public}d", webTagValue,
+                 (int)webTagSize);
+
+    napi_value Capacity;
+    ArkWeb_BlanklessInfo blanklessInfo =
+        OH_NativeArkWeb_GetBlanklessInfoWithKey(webTagValue, g_doblanklessINVALID_ARGS_LENGTH1);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
+                 "Doblankless_INVALID_ARGS_SET_ONE similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
+                 blanklessInfo.loadingTime, blanklessInfo.errCode);
+    ArkWeb_BlanklessErrorCode blanklessInfo_set =
+        OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessINVALID_ARGS_LENGTH1, true);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
+                 "Doblankless_INVALID_ARGS_SET_ONE ,errCode:%{public}d", blanklessInfo_set.errCode);
+    if (blanklessInfo_set.errCode == ARKWEB_BLANKLESS_ERR_INVALID_ARGS) {
+        napi_create_double(env, blanklessInfo_set.errCode, &Capacity);
+    } else if (blanklessInfo_set.errCode == g_errCode) {
+        napi_create_double(env, blanklessInfo_set.errCode, &Capacity);
+    }
+    return Capacity;
+}
+static napi_value Doblankless_INVALID_ARGS_GET_ONE(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 获取第一个参数 webTag
+    size_t webTagSize = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &webTagSize);
+    char *webTagValue = new (std::nothrow) char[webTagSize + 1];
+    size_t webTagLength = 0;
+    napi_get_value_string_utf8(env, args[0], webTagValue, webTagSize + 1, &webTagLength);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag, "%{public}s, length = %{public}d", webTagValue,
+                 (int)webTagSize);
+
+    napi_value Capacity;
+    ArkWeb_BlanklessInfo blanklessInfo =
+        OH_NativeArkWeb_GetBlanklessInfoWithKey(webTagValue, g_doblanklessINVALID_ARGS_LENGTH1);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
+                 "Doblankless_INVALID_ARGS_GET_ONE similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
+                 blanklessInfo.loadingTime, blanklessInfo.errCode);
+    ArkWeb_BlanklessErrorCode blanklessInfo_set =
+        OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessINVALID_ARGS_LENGTH1, true);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
+                 "Doblankless_INVALID_ARGS_GET_ONE ,errCode:%{public}d", blanklessInfo_set.errCode);
+    if (blanklessInfo.errCode == ARKWEB_BLANKLESS_ERR_INVALID_ARGS) {
+        napi_create_double(env, blanklessInfo.errCode, &Capacity);
+    } else if (blanklessInfo.errCode == g_errCode) {
+        napi_create_double(env, blanklessInfo.errCode, &Capacity);
+    }
+    return Capacity;
+}
+static napi_value Doblankless_INVALID_ARGS_SET_2048(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 获取第一个参数 webTag
+    size_t webTagSize = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &webTagSize);
+    char *webTagValue = new (std::nothrow) char[webTagSize + 1];
+    size_t webTagLength = 0;
+    napi_get_value_string_utf8(env, args[0], webTagValue, webTagSize + 1, &webTagLength);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag, "%{public}s, length = %{public}d", webTagValue,
+                 (int)webTagSize);
+
+    napi_value Capacity;
+    ArkWeb_BlanklessInfo blanklessInfo =
+        OH_NativeArkWeb_GetBlanklessInfoWithKey(webTagValue, g_doblanklessINVALID_ARGS_LENGTH2048);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
+                 "Doblankless_INVALID_ARGS_SET_2048 similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
+                 blanklessInfo.loadingTime, blanklessInfo.errCode);
+    ArkWeb_BlanklessErrorCode blanklessInfo_set =
+        OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessINVALID_ARGS_LENGTH2048, true);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
+                 "Doblankless_INVALID_ARGS_SET_2048 ,errCode:%{public}d", blanklessInfo_set.errCode);
+    if (blanklessInfo_set.errCode == ARKWEB_BLANKLESS_ERR_INVALID_ARGS) {
+        napi_create_double(env, blanklessInfo_set.errCode, &Capacity);
+    } else if (blanklessInfo_set.errCode == g_errCode) {
+        napi_create_double(env, blanklessInfo_set.errCode, &Capacity);
+    }
+    return Capacity;
+}
+static napi_value Doblankless_INVALID_ARGS_GET_2048(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 获取第一个参数 webTag
+    size_t webTagSize = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &webTagSize);
+    char *webTagValue = new (std::nothrow) char[webTagSize + 1];
+    size_t webTagLength = 0;
+    napi_get_value_string_utf8(env, args[0], webTagValue, webTagSize + 1, &webTagLength);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag, "%{public}s, length = %{public}d", webTagValue,
+                 (int)webTagSize);
+
+    napi_value Capacity;
+    ArkWeb_BlanklessInfo blanklessInfo =
+        OH_NativeArkWeb_GetBlanklessInfoWithKey(webTagValue, g_doblanklessINVALID_ARGS_LENGTH2048);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
+                 "Doblankless_INVALID_ARGS_GET_2048 similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
+                 blanklessInfo.loadingTime, blanklessInfo.errCode);
+    ArkWeb_BlanklessErrorCode blanklessInfo_set =
+        OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessINVALID_ARGS_LENGTH2048, true);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
+                 "Doblankless_INVALID_ARGS_GET_2048 ,errCode:%{public}d", blanklessInfo_set.errCode);
+    if (blanklessInfo.errCode == ARKWEB_BLANKLESS_ERR_INVALID_ARGS) {
+        napi_create_double(env, blanklessInfo.errCode, &Capacity);
+    } else if (blanklessInfo.errCode == g_errCode) {
+        napi_create_double(env, blanklessInfo.errCode, &Capacity);
+    }
+    return Capacity;
+}
+static napi_value Doblankless_INVALID_ARGS_SET_2049(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 获取第一个参数 webTag
+    size_t webTagSize = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &webTagSize);
+    char *webTagValue = new (std::nothrow) char[webTagSize + 1];
+    size_t webTagLength = 0;
+    napi_get_value_string_utf8(env, args[0], webTagValue, webTagSize + 1, &webTagLength);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag, "%{public}s, length = %{public}d", webTagValue,
+                 (int)webTagSize);
+
+    napi_value Capacity;
+    ArkWeb_BlanklessInfo blanklessInfo =
+        OH_NativeArkWeb_GetBlanklessInfoWithKey(webTagValue, g_doblanklessINVALID_ARGS_LENGTH2049);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
+                 "Doblankless_INVALID_ARGS_SET_2049 similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
+                 blanklessInfo.loadingTime, blanklessInfo.errCode);
+    ArkWeb_BlanklessErrorCode blanklessInfo_set =
+        OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessINVALID_ARGS_LENGTH2049, true);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
+                 "Doblankless_INVALID_ARGS_SET_2049 ,errCode:%{public}d", blanklessInfo_set.errCode);
+    if (blanklessInfo_set.errCode == ARKWEB_BLANKLESS_ERR_INVALID_ARGS) {
+        napi_create_double(env, blanklessInfo_set.errCode, &Capacity);
+    } else if (blanklessInfo_set.errCode == g_errCode) {
+        napi_create_double(env, blanklessInfo_set.errCode, &Capacity);
+    }
+    return Capacity;
+}
+static napi_value Doblankless_INVALID_ARGS_GET_2049(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 获取第一个参数 webTag
+    size_t webTagSize = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &webTagSize);
+    char *webTagValue = new (std::nothrow) char[webTagSize + 1];
+    size_t webTagLength = 0;
+    napi_get_value_string_utf8(env, args[0], webTagValue, webTagSize + 1, &webTagLength);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag, "%{public}s, length = %{public}d", webTagValue,
+                 (int)webTagSize);
+
+    napi_value Capacity;
+    ArkWeb_BlanklessInfo blanklessInfo =
+        OH_NativeArkWeb_GetBlanklessInfoWithKey(webTagValue, g_doblanklessINVALID_ARGS_LENGTH2049);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
+                 "Doblankless_INVALID_ARGS_GET_2049 similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
+                 blanklessInfo.loadingTime, blanklessInfo.errCode);
+    ArkWeb_BlanklessErrorCode blanklessInfo_set =
+        OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessINVALID_ARGS_LENGTH2049, true);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
+                 "Doblankless_INVALID_ARGS_GET_2049 ,errCode:%{public}d", blanklessInfo_set.errCode);
+    if (blanklessInfo.errCode == ARKWEB_BLANKLESS_ERR_INVALID_ARGS) {
+        napi_create_double(env, blanklessInfo.errCode, &Capacity);
+    } else if (blanklessInfo.errCode == g_errCode) {
+        napi_create_double(env, blanklessInfo.errCode, &Capacity);
     }
     return Capacity;
 }
@@ -339,6 +528,18 @@ static napi_value Init(napi_env env, napi_value exports)
         {"doblankless_INVALID_ARGS", nullptr, Doblankless_INVALID_ARGS, nullptr, nullptr, nullptr, napi_default,
          nullptr},
         {"doblankless_INVALID_ARGS_SET_ZERO", nullptr, Doblankless_INVALID_ARGS_SET_ZERO, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"doblankless_INVALID_ARGS_SET_ONE", nullptr, Doblankless_INVALID_ARGS_SET_ONE, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"doblankless_INVALID_ARGS_GET_ONE", nullptr, Doblankless_INVALID_ARGS_GET_ONE, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"doblankless_INVALID_ARGS_SET_2048", nullptr, Doblankless_INVALID_ARGS_SET_2048, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"doblankless_INVALID_ARGS_GET_2048", nullptr, Doblankless_INVALID_ARGS_GET_2048, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"doblankless_INVALID_ARGS_SET_2049", nullptr, Doblankless_INVALID_ARGS_SET_2049, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"doblankless_INVALID_ARGS_GET_2049", nullptr, Doblankless_INVALID_ARGS_GET_2049, nullptr, nullptr, nullptr, napi_default,
          nullptr},
         {"setCacheCapacity_1", nullptr, SetCacheCapacity_1, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"setCacheCapacity0", nullptr, SetCacheCapacity0, nullptr, nullptr, nullptr, napi_default, nullptr},

@@ -194,13 +194,169 @@ struct ndkBlanklessInfoWithKeyTest {
               console.log(`${msg}`, 'second loadUrl finish');
               num = testNapi.Doblankless_INVALID_ARGS_SET_ZERO(this.webTag);
               console.log(msg, `预期值：-2`,`实际值${num}`);
-              console.log(`${msg}`, 'testNapi.doblankless_SUCCESS0:' + num);
+              console.log(`${msg}`, 'testNapi.Doblankless_INVALID_ARGS_SET_ZERO 0:' + num);
               if (num == 801) {
                 Utils.emitEvent(-2, 148160)
-                console.log(`${msg}`, 'testNapi.Doblankless_INVALID_ARGS_SET_ZERO1:' + num);
+                console.log(`${msg}`, 'testNapi.Doblankless_INVALID_ARGS_SET_ZERO 1:' + num);
               } else {
                 Utils.emitEvent(num, 148160)
-                console.log(`${msg}`, 'testNapi.Doblankless_INVALID_ARGS_SET_ZERO2:' + num);
+                console.log(`${msg}`, 'testNapi.Doblankless_INVALID_ARGS_SET_ZERO 2:' + num);
+              }
+              break;
+            }
+            case 'testndkBlanklessInfoWithKey007': {
+              let msg = 'testndkBlanklessInfoWithKey007'
+              let num: number = -1
+              this.isPageEnd = -1;
+              testNapi.clearBlanklessLoadingCache(this.webTag);
+              await this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              let num1: number = testNapi.doblankless_INVALID_ARGS_SET_ONE(this.webTag);
+              console.log(`${msg}`, 'first loadUrl finish:' + num1);
+              testNapi.clearBlanklessLoadingCache(this.webTag);
+              this.isPageEnd = -1;
+              await this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              console.log(`${msg}`, 'second loadUrl finish');
+              num = testNapi.doblankless_INVALID_ARGS_SET_ONE(this.webTag);
+              console.log(msg, `预期值：0`,`实际值${num}`);
+              console.log(`${msg}`, 'testNapi.doblankless_INVALID_ARGS_SET_ONE 0:' + num);
+              if (num == 801) {
+                Utils.emitEvent(0, 148170)
+                console.log(`${msg}`, 'testNapi.doblankless_INVALID_ARGS_SET_ONE 1:' + num);
+              } else {
+                Utils.emitEvent(num, 148170)
+                console.log(`${msg}`, 'testNapi.doblankless_INVALID_ARGS_SET_ONE 2:' + num);
+              }
+              break;
+            }
+            case 'testndkBlanklessInfoWithKey008': {
+              let msg = 'testndkBlanklessInfoWithKey008'
+              let num: number = -1
+              this.isPageEnd = -1;
+              testNapi.clearBlanklessLoadingCache(this.webTag);
+              await this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              let num1: number = testNapi.doblankless_INVALID_ARGS_SET_2048(this.webTag);
+              console.log(`${msg}`, 'first loadUrl finish:' + num1);
+              testNapi.clearBlanklessLoadingCache(this.webTag);
+              this.isPageEnd = -1;
+              await this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              console.log(`${msg}`, 'second loadUrl finish');
+              num = testNapi.doblankless_INVALID_ARGS_SET_2048(this.webTag);
+              console.log(msg, `预期值：0`,`实际值${num}`);
+              console.log(`${msg}`, 'testNapi.doblankless_INVALID_ARGS_SET_2048 0:' + num);
+              if (num == 801) {
+                Utils.emitEvent(0, 148180)
+                console.log(`${msg}`, 'testNapi.doblankless_INVALID_ARGS_SET_2048 1:' + num);
+              } else {
+                Utils.emitEvent(num, 148180)
+                console.log(`${msg}`, 'testNapi.doblankless_INVALID_ARGS_SET_2048 2:' + num);
+              }
+              break;
+            }
+            case 'testndkBlanklessInfoWithKey009': {
+              let msg = 'testndkBlanklessInfoWithKey009'
+              let num: number = -1
+              this.isPageEnd = -1;
+              testNapi.clearBlanklessLoadingCache(this.webTag);
+              await this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              let num1: number = testNapi.doblankless_INVALID_ARGS_SET_2049(this.webTag);
+              console.log(`${msg}`, 'first loadUrl finish:' + num1);
+              testNapi.clearBlanklessLoadingCache(this.webTag);
+              this.isPageEnd = -1;
+              await this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              console.log(`${msg}`, 'second loadUrl finish');
+              num = testNapi.doblankless_INVALID_ARGS_SET_2049(this.webTag);
+              console.log(msg, `预期值：-2`,`实际值${num}`);
+              console.log(`${msg}`, 'testNapi.doblankless_INVALID_ARGS_SET_2049 0:' + num);
+              if (num == 801) {
+                Utils.emitEvent(-2, 148190)
+                console.log(`${msg}`, 'testNapi.doblankless_INVALID_ARGS_SET_2049 1:' + num);
+              } else {
+                Utils.emitEvent(num, 148190)
+                console.log(`${msg}`, 'testNapi.doblankless_INVALID_ARGS_SET_2049 2:' + num);
+              }
+              break;
+            }
+            case 'testndkBlanklessInfoWithKey010': {
+              let msg = 'testndkBlanklessInfoWithKey010'
+              let num: number = -1
+              this.isPageEnd = -1;
+              testNapi.clearBlanklessLoadingCache(this.webTag);
+              await this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              let num1: number = testNapi.doblankless_INVALID_ARGS_GET_ONE(this.webTag);
+              console.log(`${msg}`, 'first loadUrl finish:' + num1);
+              testNapi.clearBlanklessLoadingCache(this.webTag);
+              this.isPageEnd = -1;
+              await this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              console.log(`${msg}`, 'second loadUrl finish');
+              num = testNapi.doblankless_INVALID_ARGS_GET_ONE(this.webTag);
+              console.log(msg, `预期值：0`,`实际值${num}`);
+              console.log(`${msg}`, 'testNapi.doblankless_INVALID_ARGS_GET_ONE 0:' + num);
+              if (num == 801) {
+                Utils.emitEvent(0, 148200)
+                console.log(`${msg}`, 'testNapi.doblankless_INVALID_ARGS_GET_ONE 1:' + num);
+              } else {
+                Utils.emitEvent(num, 148200)
+                console.log(`${msg}`, 'testNapi.doblankless_INVALID_ARGS_GET_ONE 2:' + num);
+              }
+              break;
+            }
+            case 'testndkBlanklessInfoWithKey011': {
+              let msg = 'testndkBlanklessInfoWithKey011'
+              let num: number = -1
+              this.isPageEnd = -1;
+              testNapi.clearBlanklessLoadingCache(this.webTag);
+              await this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              let num1: number = testNapi.doblankless_INVALID_ARGS_GET_2048(this.webTag);
+              console.log(`${msg}`, 'first loadUrl finish:' + num1);
+              testNapi.clearBlanklessLoadingCache(this.webTag);
+              this.isPageEnd = -1;
+              await this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              console.log(`${msg}`, 'second loadUrl finish');
+              num = testNapi.doblankless_INVALID_ARGS_GET_2048(this.webTag);
+              console.log(msg, `预期值：0`,`实际值${num}`);
+              console.log(`${msg}`, 'testNapi.doblankless_INVALID_ARGS_GET_2048 0:' + num);
+              if (num == 801) {
+                Utils.emitEvent(0, 148210)
+                console.log(`${msg}`, 'testNapi.doblankless_INVALID_ARGS_GET_2048 1:' + num);
+              } else {
+                Utils.emitEvent(num, 148210)
+                console.log(`${msg}`, 'testNapi.doblankless_INVALID_ARGS_GET_2048 2:' + num);
+              }
+              break;
+            }
+            case 'testndkBlanklessInfoWithKey012': {
+              let msg = 'testndkBlanklessInfoWithKey012'
+              let num: number = -1
+              this.isPageEnd = -1;
+              testNapi.clearBlanklessLoadingCache(this.webTag);
+              await this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              let num1: number = testNapi.doblankless_INVALID_ARGS_GET_2049(this.webTag);
+              console.log(`${msg}`, 'first loadUrl finish:' + num1);
+              testNapi.clearBlanklessLoadingCache(this.webTag);
+              this.isPageEnd = -1;
+              await this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              console.log(`${msg}`, 'second loadUrl finish');
+              num = testNapi.doblankless_INVALID_ARGS_GET_2049(this.webTag);
+              console.log(msg, `预期值：-2`,`实际值${num}`);
+              console.log(`${msg}`, 'testNapi.doblankless_INVALID_ARGS_GET_2049 0:' + num);
+              if (num == 801) {
+                Utils.emitEvent(-2, 148220)
+                console.log(`${msg}`, 'testNapi.doblankless_INVALID_ARGS_GET_2049 1:' + num);
+              } else {
+                Utils.emitEvent(num, 148220)
+                console.log(`${msg}`, 'testNapi.doblankless_INVALID_ARGS_GET_2049 2:' + num);
               }
               break;
             }
