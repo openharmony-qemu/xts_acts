@@ -14,7 +14,10 @@
  */
 export const add: (a: number, b: number) => number;
 export const doblankless_Success: (webName:string) => number;
+export const doblankless_Success100: (webName:string) => number;
 export const clearBlanklessLoadingCache: (webName:string) => void;
+export const clearBlanklessLoadingCache100: (webName:string) => void;
+export const clearBlanklessLoadingCache101: (webName:string) => void;
 export const doblankless_ERR_KEY_NOT_MATCH: (webName:string) => number;
 export const doblankless_CONTROLLER_NOT_INITED: (webName:string) => number;
 export const doblankless_INVALID_ARGS: (webName:string) => number;

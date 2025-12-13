@@ -237,5 +237,37 @@ export default function ndkBlanklessInfoWithKeyTest() {
         });
       Utils.waitAndClickComponent('ndkBlanklessInfoWithKeyTestButton', driver);
     })
+    /**
+     * @tc.name   testndkBlanklessInfoWithKey013
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_NDKBLANKLESSINFOWITHKEYTEST_1030
+     * @tc.desc   test ndkBlanklessInfoWithKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testndkBlanklessInfoWithKey013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testndkBlanklessInfoWithKey013", 148101);
+      Utils.registerBaseEvent("testndkBlanklessInfoWithKey013", -5, 148230, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected)
+        });
+      Utils.waitAndClickComponent('ndkBlanklessInfoWithKeyTestButton', driver);
+    })
+    /**
+     * @tc.name   testndkBlanklessInfoWithKey014
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_NDKBLANKLESSINFOWITHKEYTEST_1040
+     * @tc.desc   test ndkBlanklessInfoWithKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testndkBlanklessInfoWithKey014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testndkBlanklessInfoWithKey014", 148101);
+      Utils.registerBaseEvent("testndkBlanklessInfoWithKey014", 0, 148240, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected)
+        });
+      Utils.waitAndClickComponent('ndkBlanklessInfoWithKeyTestButton', driver);
+    })
   })
 }
