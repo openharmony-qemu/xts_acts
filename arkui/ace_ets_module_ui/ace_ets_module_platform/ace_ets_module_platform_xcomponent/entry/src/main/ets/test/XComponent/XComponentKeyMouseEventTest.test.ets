@@ -450,7 +450,83 @@ export default function XComponentKeyMouseEventTest() {
       
       console.info('[XComponentKeyMouseEventTest_1800] END');
       done();
-    });   
+    });
+
+    /**
+     * @tc.name   XComponentKeyMouseEventTest_1900
+     * @tc.number XComponentKeyMouseEventTest_1900
+     * @tc.desc   Test OH_NativeXComponent_RegisterUIInputEventCallback ErrorCode: ARKUI_ERROR_CODE_NO_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('XComponentKeyMouseEventTest_1900', Level.LEVEL1, async (done: Function) => {
+      console.info('[XComponentKeyMouseEventTest_1900] START');
+      await CommonFunc.sleep(1000);
+
+      // 
+      expect(native.TestRegisterUIInputEventCallbackErrorCode_01()).assertEqual(0);
+      
+      console.info('[XComponentKeyMouseEventTest_1900] END');
+      done();
+    });
+
+    /**
+     * @tc.name   XComponentKeyMouseEventTest_2000
+     * @tc.number XComponentKeyMouseEventTest_2000
+     * @tc.desc   Test OH_NativeXComponent_RegisterUIInputEventCallback ErrorCode: ARKUI_ERROR_CODE_PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('XComponentKeyMouseEventTest_2000', Level.LEVEL1, async (done: Function) => {
+      console.info('[XComponentKeyMouseEventTest_2000] START');
+      await CommonFunc.sleep(1000);
+
+      // 
+      expect(native.TestRegisterUIInputEventCallbackErrorCode_02()).assertEqual(0);
+      
+      console.info('[XComponentKeyMouseEventTest_2000] END');
+      done();
+    });
+
+    /**
+     * @tc.name   XComponentKeyMouseEventTest_2100
+     * @tc.number XComponentKeyMouseEventTest_2100
+     * @tc.desc   Test OH_NativeXComponent_RegisterOnTouchInterceptCallback ErrorCode: ARKUI_ERROR_CODE_NO_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('XComponentKeyMouseEventTest_2100', Level.LEVEL1, async (done: Function) => {
+      console.info('[XComponentKeyMouseEventTest_2100] START');
+      await CommonFunc.sleep(1000);
+
+      // 
+      expect(native.TestRegisterOnTouchInterceptCallbackErrorCode_01()).assertEqual(0);
+      
+      console.info('[XComponentKeyMouseEventTest_2100] END');
+      done();
+    });
+
+    /**
+     * @tc.name   XComponentKeyMouseEventTest_2200
+     * @tc.number XComponentKeyMouseEventTest_2200
+     * @tc.desc   Test OH_NativeXComponent_RegisterOnTouchInterceptCallback ErrorCode: ARKUI_ERROR_CODE_PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('XComponentKeyMouseEventTest_2200', Level.LEVEL1, async (done: Function) => {
+      console.info('[XComponentKeyMouseEventTest_2200] START');
+      await CommonFunc.sleep(1000);
+
+      // 
+      expect(native.TestRegisterOnTouchInterceptCallbackErrorCode_02()).assertEqual(0);
+      
+      console.info('[XComponentKeyMouseEventTest_2200] END');
+      done();
+    });
 
   })
 }
