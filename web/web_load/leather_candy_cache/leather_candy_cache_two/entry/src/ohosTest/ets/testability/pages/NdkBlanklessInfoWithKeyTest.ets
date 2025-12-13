@@ -372,8 +372,8 @@ struct ndkBlanklessInfoWithKeyTest {
               testNapi.clearBlanklessLoadingCache100(this.webTag);
               await this.controller.refresh();
               await waitForExist(() => this.isPageEnd, this.str, 0);
-              let num1: number = testNapi.doblankless_Success100(this.webTag);
-              console.log(`${msg}`, 'second loadUrl finish:' + num1);
+              let num2: number = testNapi.doblankless_Success100(this.webTag);
+              console.log(`${msg}`, 'second loadUrl finish:' + num2);
               this.isPageEnd = -1;
               await this.controller.refresh();
               await waitForExist(() => this.isPageEnd, this.str, 0);
@@ -402,8 +402,8 @@ struct ndkBlanklessInfoWithKeyTest {
               testNapi.clearBlanklessLoadingCache101(this.webTag);
               await this.controller.refresh();
               await waitForExist(() => this.isPageEnd, this.str, 0);
-              let num1: number = testNapi.doblankless_Success100(this.webTag);
-              console.log(`${msg}`, 'second loadUrl finish:' + num1);
+              let num2: number = testNapi.doblankless_Success100(this.webTag);
+              console.log(`${msg}`, 'second loadUrl finish:' + num2);
               this.isPageEnd = -1;
               await this.controller.refresh();
               await waitForExist(() => this.isPageEnd, this.str, 0);
