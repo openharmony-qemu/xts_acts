@@ -23,7 +23,6 @@
 #include "ImagePackerCreateTest.h"
 
 
-
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
     { jsmethod, nullptr, method, nullptr, nullptr, nullptr, napi_default, nullptr }
 
@@ -65,8 +64,7 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("PixelMapUnAccessPixelsTest", PixelMapUnAccessPixelsTest),
 };
 
-EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
-{
+EXTERN_C_START static napi_value Init(napi_env env, napi_value exports) {
     size_t mergedLength = sizeof(desc1) / sizeof(desc1[0]);
     napi_property_descriptor mergedArray[mergedLength];
     for (size_t i = 0; i < sizeof(desc1) / sizeof(desc1[0]); ++i) {
@@ -87,7 +85,4 @@ static napi_module demoModule = {
     .reserved = {0},
 };
 
-extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
-{
-    napi_module_register(&demoModule);
-}
+extern "C" __attribute__((constructor)) void RegisterEntryModule(void) { napi_module_register(&demoModule); }

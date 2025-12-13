@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#ifndef OHIMAGEEFFECTNDK_InitNativePixelMapTest_H
-#define OHIMAGEEFFECTNDK_InitNativePixelMapTest_H
+#ifndef OHIMAGEEFFECTNDK_INITNATIVEPIXELMAPTEST_H
+#define OHIMAGEEFFECTNDK_INITNATIVEPIXELMAPTEST_H
 #include "napi/native_api.h"
 #ifdef __cplusplus
 extern "C" {

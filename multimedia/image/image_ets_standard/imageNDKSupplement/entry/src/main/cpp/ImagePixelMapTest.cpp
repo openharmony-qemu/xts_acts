@@ -34,13 +34,13 @@
 #define CASE_INDEX_6 6
 #define CASE_INDEX_7 7
 namespace {
-    constexpr uint32_t NUM_0 = 0;
-    constexpr uint32_t NUM_1 = 1;
-    constexpr uint32_t NUM_2 = 2;
-    constexpr uint32_t NUM_3 = 3;
-    constexpr uint32_t NUM_4 = 4;
-    constexpr uint32_t NUM_5 = 5;
-}
+constexpr uint32_t NUM_0 = 0;
+constexpr uint32_t NUM_1 = 1;
+constexpr uint32_t NUM_2 = 2;
+constexpr uint32_t NUM_3 = 3;
+constexpr uint32_t NUM_4 = 4;
+constexpr uint32_t NUM_5 = 5;
+} // namespace
 #define OPTION_WIDTH_SMALL 4;
 #define OPTION_HEIGHT_SMALL 6;
 #define OPTION_PIXEL_FORMAT_SMALL 4;
@@ -51,8 +51,7 @@ namespace {
 #define OPTION_HEIGHT_BIG 50;
 #define OPTION_PIXEL_FORMAT_BIG 9;
 
-napi_value CreatePixelMapTest(napi_env env, napi_callback_info info)
-{
+napi_value CreatePixelMapTest(napi_env env, napi_callback_info info) {
     LOGI("OH_PixelMap_GetBytesNumberPerRow start");
     napi_value thisVar = nullptr;
     napi_value argValue[1] = {0};
@@ -88,32 +87,31 @@ napi_value CreatePixelMapTest(napi_env env, napi_callback_info info)
     }
 
     int32_t res = IMAGE_RESULT_SUCCESS;
-    switch (index)
-    {
+    switch (index) {
     case CASE_INDEX_1:
         res = OH_PixelMap_CreatePixelMap(env, createOps, (uint8_t *)buff, -1, &pixelMap);
-        LOGI("OH_PixelMap_CreatePixelMap %{public}d",res);
+        LOGI("OH_PixelMap_CreatePixelMap %{public}d", res);
         break;
     case CASE_INDEX_2:
         res = OH_PixelMap_CreatePixelMap(env, createOps, nullptr, bufferSize, &pixelMap);
-        LOGI("OH_PixelMap_CreatePixelMap %{public}d",res);
+        LOGI("OH_PixelMap_CreatePixelMap %{public}d", res);
         break;
     case CASE_INDEX_3:
         createOps.pixelFormat = -1;
         res = OH_PixelMap_CreatePixelMap(env, createOps, (uint8_t *)buff, bufferSize, &pixelMap);
-        LOGI("OH_PixelMap_CreatePixelMap %{public}d",res);
+        LOGI("OH_PixelMap_CreatePixelMap %{public}d", res);
         break;
     case CASE_INDEX_4:
         res = OH_PixelMap_CreatePixelMap(env, createOps, (uint8_t *)buff, bufferSize, nullptr);
-        LOGI("OH_PixelMap_CreatePixelMap %{public}d",res);
+        LOGI("OH_PixelMap_CreatePixelMap %{public}d", res);
         break;
     case CASE_INDEX_5:
         res = OH_PixelMap_CreatePixelMap(env, createOps, (uint8_t *)buff, bufferSize, &pixelMap);
-        LOGI("OH_PixelMap_CreatePixelMap %{public}d",res);
+        LOGI("OH_PixelMap_CreatePixelMap %{public}d", res);
         break;
     case CASE_INDEX_6:
         res = OH_PixelMap_CreatePixelMap(nullptr, createOps, (uint8_t *)buff, bufferSize, &pixelMap);
-        LOGI("OH_PixelMap_CreatePixelMap %{public}d",res);
+        LOGI("OH_PixelMap_CreatePixelMap %{public}d", res);
         break;
     default:
         break;
@@ -123,8 +121,7 @@ napi_value CreatePixelMapTest(napi_env env, napi_callback_info info)
     return result;
 }
 
-napi_value CreatePixelMap(napi_env env)
-{
+napi_value CreatePixelMap(napi_env env) {
     LOGI("OH_PixelMap_CreatePixelMap start");
     napi_value udfVar = nullptr;
     napi_value pixelMap = nullptr;
@@ -146,14 +143,12 @@ napi_value CreatePixelMap(napi_env env)
     }
     int32_t res = IMAGE_RESULT_SUCCESS;
     res = OH_PixelMap_CreatePixelMap(env, createOps, (uint8_t *)buff, bufferSize, &pixelMap);
-    LOGI("OH_PixelMap_CreatePixelMap %{public}d",res);
+    LOGI("OH_PixelMap_CreatePixelMap %{public}d", res);
     return pixelMap;
 }
 
 
-
-napi_value CreatePixelMapWithStrideTest(napi_env env, napi_callback_info info)
-{
+napi_value CreatePixelMapWithStrideTest(napi_env env, napi_callback_info info) {
     LOGI("OH_PixelMap_CreatePixelMapWithStride start");
     napi_value thisVar = nullptr;
     napi_value argValue[1] = {0};
@@ -182,38 +177,37 @@ napi_value CreatePixelMapWithStrideTest(napi_env env, napi_callback_info info)
         LOGE("内存分配失败");
         return nullptr;
     }
-    memset(buff, 0, bufferLen); 
+    memset(buff, 0, bufferLen);
     int32_t returnValue = IMAGE_RESULT_SUCCESS;
-    switch (index)
-    {
+    switch (index) {
     case CASE_INDEX_1:
         returnValue = OH_PixelMap_CreatePixelMapWithStride(nullptr, createOps, buff, bufferLen, rowStride, &pixelmap);
-        LOGI("OH_PixelMap_CreatePixelMapWithStride %{public}d",returnValue);
+        LOGI("OH_PixelMap_CreatePixelMapWithStride %{public}d", returnValue);
         break;
 
     case CASE_INDEX_2:
         returnValue = OH_PixelMap_CreatePixelMapWithStride(env, createOps, buff, bufferLen, rowStride, &pixelmap);
-        LOGI("OH_PixelMap_CreatePixelMapWithStride %{public}d",returnValue);
+        LOGI("OH_PixelMap_CreatePixelMapWithStride %{public}d", returnValue);
         break;
 
     case CASE_INDEX_3:
         returnValue = OH_PixelMap_CreatePixelMapWithStride(env, createOps, buff, -1, rowStride, &pixelmap);
-        LOGI("OH_PixelMap_CreatePixelMapWithStride %{public}d",returnValue);
+        LOGI("OH_PixelMap_CreatePixelMapWithStride %{public}d", returnValue);
         break;
 
     case CASE_INDEX_4:
         createOps.pixelFormat = -1;
         returnValue = OH_PixelMap_CreatePixelMapWithStride(env, createOps, buff, bufferLen, rowStride, &pixelmap);
-        LOGI("OH_PixelMap_CreatePixelMapWithStride %{public}d",returnValue);
+        LOGI("OH_PixelMap_CreatePixelMapWithStride %{public}d", returnValue);
         break;
 
     case CASE_INDEX_5:
         returnValue = OH_PixelMap_CreatePixelMapWithStride(env, createOps, buff, bufferLen, rowStride, nullptr);
-        LOGI("OH_PixelMap_CreatePixelMapWithStride %{public}d",returnValue);
+        LOGI("OH_PixelMap_CreatePixelMapWithStride %{public}d", returnValue);
         break;
     case CASE_INDEX_6:
         returnValue = OH_PixelMap_CreatePixelMapWithStride(env, createOps, nullptr, bufferLen, rowStride, &pixelmap);
-        LOGI("OH_PixelMap_CreatePixelMapWithStride %{public}d",returnValue);
+        LOGI("OH_PixelMap_CreatePixelMapWithStride %{public}d", returnValue);
         break;
     default:
         break;
@@ -222,8 +216,7 @@ napi_value CreatePixelMapWithStrideTest(napi_env env, napi_callback_info info)
     napi_create_int32(env, returnValue, &result);
     return result;
 }
-napi_value CreateAlphaPixelMapTest(napi_env env, napi_callback_info info) 
-{
+napi_value CreateAlphaPixelMapTest(napi_env env, napi_callback_info info) {
     LOGI("OH_PixelMap_CreateAlphaPixelMap start");
     napi_value udfVar = nullptr;
     napi_value thisVar = nullptr;
@@ -258,29 +251,28 @@ napi_value CreateAlphaPixelMapTest(napi_env env, napi_callback_info info)
     napi_get_value_int32(env, argValue[0], &index);
     LOGI("get argValue %{public}d", index);
     int32_t returnValue = IMAGE_RESULT_SUCCESS;
-    switch (index)
-    {
+    switch (index) {
     case CASE_INDEX_1:
         res = OH_PixelMap_CreatePixelMap(env, createOps, (uint8_t *)buff, -1, &pixelMap);
         returnValue = OH_PixelMap_CreateAlphaPixelMap(env, pixelMap, &alphaPixelMap);
-        LOGI("OH_PixelMap_CreateAlphaPixelMap %{public}d",returnValue);
+        LOGI("OH_PixelMap_CreateAlphaPixelMap %{public}d", returnValue);
         break;
     case CASE_INDEX_2:
         returnValue = OH_PixelMap_CreateAlphaPixelMap(nullptr, pixelMap, &alphaPixelMap);
-        LOGI("OH_PixelMap_CreateAlphaPixelMap %{public}d",returnValue);
+        LOGI("OH_PixelMap_CreateAlphaPixelMap %{public}d", returnValue);
         break;
     case CASE_INDEX_3:
         returnValue = OH_PixelMap_CreateAlphaPixelMap(env, nullptr, &alphaPixelMap);
-        LOGI("OH_PixelMap_CreateAlphaPixelMap %{public}d",returnValue);
+        LOGI("OH_PixelMap_CreateAlphaPixelMap %{public}d", returnValue);
         break;
     case CASE_INDEX_4:
         returnValue = OH_PixelMap_CreateAlphaPixelMap(env, pixelMap, nullptr);
-        LOGI("OH_PixelMap_CreateAlphaPixelMap %{public}d",returnValue);
+        LOGI("OH_PixelMap_CreateAlphaPixelMap %{public}d", returnValue);
         break;
     case CASE_INDEX_5:
         res = OH_PixelMap_CreatePixelMap(env, createOps, (uint8_t *)buff, bufferSize, &pixelMap);
         returnValue = OH_PixelMap_CreateAlphaPixelMap(env, pixelMap, &alphaPixelMap);
-        LOGI("OH_PixelMap_CreateAlphaPixelMap %{public}d",returnValue);
+        LOGI("OH_PixelMap_CreateAlphaPixelMap %{public}d", returnValue);
         break;
     default:
         break;
@@ -289,8 +281,7 @@ napi_value CreateAlphaPixelMapTest(napi_env env, napi_callback_info info)
     napi_create_int32(env, returnValue, &result);
     return result;
 }
-napi_value PixelMapGetImageInfoTest(napi_env env, napi_callback_info info) 
-{
+napi_value PixelMapGetImageInfoTest(napi_env env, napi_callback_info info) {
     LOGI("OH_PixelMap_GetImageInfo start");
     napi_value result;
     napi_value udfVar = nullptr;
@@ -309,15 +300,14 @@ napi_value PixelMapGetImageInfoTest(napi_env env, napi_callback_info info)
     NativePixelMap *Native = OH_PixelMap_InitNativePixelMap(env, pixelmap);
     OhosPixelMapInfos pixelmapInfo;
     int32_t res = IMAGE_RESULT_SUCCESS;
-    switch (index)
-    {
+    switch (index) {
     case CASE_INDEX_1:
         res = OH_PixelMap_GetImageInfo(nullptr, &pixelmapInfo);
-        LOGI("OH_PixelMap_GetImageInfo %{public}d",res);
+        LOGI("OH_PixelMap_GetImageInfo %{public}d", res);
         break;
     case CASE_INDEX_2:
         res = OH_PixelMap_GetImageInfo(Native, nullptr);
-        LOGI("OH_PixelMap_GetImageInfo %{public}d",res);
+        LOGI("OH_PixelMap_GetImageInfo %{public}d", res);
         break;
     default:
         break;
@@ -325,8 +315,7 @@ napi_value PixelMapGetImageInfoTest(napi_env env, napi_callback_info info)
     napi_create_int32(env, res, &result);
     return result;
 }
-napi_value PixelMapAccessPixelsTest(napi_env env, napi_callback_info info) 
-{
+napi_value PixelMapAccessPixelsTest(napi_env env, napi_callback_info info) {
     LOGI("OH_PixelMap_GetImageInfo start");
     napi_value result;
     napi_value udfVar = nullptr;
@@ -346,11 +335,10 @@ napi_value PixelMapAccessPixelsTest(napi_env env, napi_callback_info info)
     double p = 0.0;
     void *pixels = &p;
     int32_t res = IMAGE_RESULT_SUCCESS;
-    switch (index)
-    {
+    switch (index) {
     case CASE_INDEX_1:
         res = OH_PixelMap_AccessPixels(nullptr, &pixels);
-        LOGI("OH_PixelMap_GetImageInfo %{public}d",res);
+        LOGI("OH_PixelMap_GetImageInfo %{public}d", res);
         break;
     default:
         break;
@@ -358,8 +346,7 @@ napi_value PixelMapAccessPixelsTest(napi_env env, napi_callback_info info)
     napi_create_int32(env, res, &result);
     return result;
 }
-napi_value PixelMapUnAccessPixelsTest(napi_env env, napi_callback_info info) 
-{
+napi_value PixelMapUnAccessPixelsTest(napi_env env, napi_callback_info info) {
     LOGI("OH_PixelMap_GetImageInfo start");
     napi_value result;
     napi_value udfVar = nullptr;
@@ -377,11 +364,10 @@ napi_value PixelMapUnAccessPixelsTest(napi_env env, napi_callback_info info)
     napi_value pixelmap = nullptr;
     NativePixelMap *Native = OH_PixelMap_InitNativePixelMap(env, pixelmap);
     int32_t res = IMAGE_RESULT_SUCCESS;
-    switch (index)
-    {
+    switch (index) {
     case CASE_INDEX_1:
         res = OH_PixelMap_UnAccessPixels(nullptr);
-        LOGI("OH_PixelMap_UnAccessPixels %{public}d",res);
+        LOGI("OH_PixelMap_UnAccessPixels %{public}d", res);
         break;
     default:
         break;
