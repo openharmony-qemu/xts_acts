@@ -191,12 +191,12 @@ export default function ContactInterfaceStageTest() {
         contact.Attribute.ATTR_SIP_ADDRESS, contact.Attribute.ATTR_WEBSITE]
     };
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryMyCard_test_0100
      * @tc.number SUB_Telephony_ContactsApi_queryMyCard_test_0100
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.name SUB_Telephony_ContactsApi_queryMyCard_test_0100
+     * @tc.desc Function test
+     * @tc.level 3
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryMyCard_test_0100", TestType.FUNCTION | Size.SmallTest | Level.LEVEL3, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -206,19 +206,21 @@ export default function ContactInterfaceStageTest() {
           expect(false).assertTrue();
           done();
           return;
+        } else{
+          console.info("SUB_Telephony_ContactsApi_queryMyCard_test_0100  data = " + JSON.stringify(data));
+          expect(data === undefined).assertTrue();
+          done();
         }
-        console.info("SUB_Telephony_ContactsApi_queryMyCard_test_0100  data = " + JSON.stringify(data));
-        done();
       });
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryMyCard_test_0200
      * @tc.number SUB_Telephony_ContactsApi_queryMyCard_test_0200
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.name SUB_Telephony_ContactsApi_queryMyCard_test_0200
+     * @tc.desc Function test
+     * @tc.level 2
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryMyCard_test_0200", TestType.FUNCTION | Size.SmallTest | Level.LEVEL2, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -228,25 +230,28 @@ export default function ContactInterfaceStageTest() {
           expect(false).assertTrue();
           done();
           return;
+        } else{
+          console.info("SUB_Telephony_ContactsApi_queryMyCard_test_0200  data = " + JSON.stringify(data));
+          expect(data === undefined).assertTrue();
+          done();
         }
-        console.info("SUB_Telephony_ContactsApi_queryMyCard_test_0200  data = " + JSON.stringify(data));
-        done();
       });
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryMyCard_test_0300
      * @tc.number SUB_Telephony_ContactsApi_queryMyCard_test_0300
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.name SUB_Telephony_ContactsApi_queryMyCard_test_0300
+     * @tc.desc Function test
+     * @tc.level 2
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryMyCard_test_0300", TestType.FUNCTION | Size.SmallTest | Level.LEVEL2, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
       let promise = contact.queryMyCard(context, attr);
       promise.then((data) => {
         console.info("SUB_Telephony_ContactsApi_queryMyCard_test_0300  data = " + JSON.stringify(data));
+        expect(data === undefined).assertTrue();
         done();
       }).catch((err:BusinessError) => {
         console.info("SUB_Telephony_ContactsApi_queryMyCard_test_0300  err = " + JSON.stringify(err));
@@ -257,12 +262,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_isMyCard_test_0100
      * @tc.number SUB_Telephony_ContactsApi_isMyCard_test_0100
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.name SUB_Telephony_ContactsApi_isMyCard_test_0100
+     * @tc.desc Function test
+     * @tc.level 3
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_isMyCard_test_0100", TestType.FUNCTION | Size.SmallTest | Level.LEVEL3, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -283,18 +288,19 @@ export default function ContactInterfaceStageTest() {
             return;
           }
           console.info("SUB_Telephony_ContactsApi_isMyCard_test_0100  data = " + JSON.stringify(data));
+          expect(data === false).assertTrue();
           done();
         });
       });
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_isMyCard_test_0200
      * @tc.number SUB_Telephony_ContactsApi_isMyCard_test_0200
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.name SUB_Telephony_ContactsApi_isMyCard_test_0200
+     * @tc.desc Function test
+     * @tc.level 3
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_isMyCard_test_0200", TestType.FUNCTION | Size.SmallTest | Level.LEVEL3, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -311,6 +317,7 @@ export default function ContactInterfaceStageTest() {
         let promise = contact.isMyCard(context, data);
         promise.then((data) => {
           console.info("SUB_Telephony_ContactsApi_isMyCard_test_0200  data = " + JSON.stringify(data));
+          expect(data === false).assertTrue();
           done();
         }).catch((err:BusinessError) => {
           console.info("SUB_Telephony_ContactsApi_isMyCard_test_0200  err = " + JSON.stringify(err));
@@ -322,12 +329,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_updateContact_test_0100
      * @tc.number SUB_Telephony_ContactsApi_updateContact_test_0100
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.name SUB_Telephony_ContactsApi_updateContact_test_0100
+     * @tc.desc Function test
+     * @tc.level 2
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_updateContact_test_0100", TestType.FUNCTION | Size.SmallTest | Level.LEVEL2, async (done:Function) => {
       const caseName: string = "SUB_Telephony_ContactsApi_updateContact_test_0100";
@@ -404,12 +411,12 @@ export default function ContactInterfaceStageTest() {
       });
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_updateContact_test_0200
      * @tc.number SUB_Telephony_ContactsApi_updateContact_test_0200
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.name SUB_Telephony_ContactsApi_updateContact_test_0200
+     * @tc.desc Function test
+     * @tc.level 3
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_updateContact_test_0200", TestType.FUNCTION | Size.SmallTest | Level.LEVEL3, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -484,12 +491,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_updateContact_test_0300
      * @tc.number SUB_Telephony_ContactsApi_updateContact_test_0300
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.name SUB_Telephony_ContactsApi_updateContact_test_0300
+     * @tc.desc Function test
+     * @tc.level 2
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_updateContact_test_0300", TestType.FUNCTION | Size.SmallTest | Level.LEVEL2, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -563,12 +570,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_updateContact_test_0400
      * @tc.number SUB_Telephony_ContactsApi_updateContact_test_0400
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.name SUB_Telephony_ContactsApi_updateContact_test_0400
+     * @tc.desc Function test
+     * @tc.level 3
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_updateContact_test_0400", TestType.FUNCTION | Size.SmallTest | Level.LEVEL3, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -591,18 +598,19 @@ export default function ContactInterfaceStageTest() {
             return;
           }
           console.info("SUB_Telephony_ContactsApi_updateContact_test_0400  data = " + JSON.stringify(data));
+          expect(data === true).assertTrue();
           done();
         });
       });
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_isLocalContact_test_0200
      * @tc.number SUB_Telephony_ContactsApi_isLocalContact_test_0200
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.name SUB_Telephony_ContactsApi_isLocalContact_test_0200
+     * @tc.desc Function test
+     * @tc.level 3
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_isLocalContact_test_0200", TestType.FUNCTION | Size.SmallTest | Level.LEVEL3, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -620,6 +628,7 @@ export default function ContactInterfaceStageTest() {
         let promise = contact.isLocalContact(context, data);
         promise.then((data) => {
           console.info("SUB_Telephony_ContactsApi_isLocalContact_test_0200  data = " + JSON.stringify(data));
+          expect(data === true).assertTrue();
           done();
         }).catch((err:BusinessError) => {
           console.info("SUB_Telephony_ContactsApi_isLocalContact_test_0200  err = " + JSON.stringify(err));
@@ -632,12 +641,12 @@ export default function ContactInterfaceStageTest() {
     });
  
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_selectContacts_test_0100
      * @tc.number SUB_Telephony_ContactsApi_selectContacts_test_0100
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.name SUB_Telephony_ContactsApi_selectContacts_test_0100
+     * @tc.desc Function test
+     * @tc.level 3
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_selectContacts_test_0100", TestType.FUNCTION | Size.SmallTest | Level.LEVEL3, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -658,18 +667,19 @@ export default function ContactInterfaceStageTest() {
             return;
           }
           console.info("SUB_Telephony_ContactsApi_selectContacts_test_0100  data = " + JSON.stringify(data));
+          expect(data.length > 0).assertTrue();
           done();
         });
       });
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_selectContacts_test_0200
      * @tc.number SUB_Telephony_ContactsApi_selectContacts_test_0200
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.name SUB_Telephony_ContactsApi_selectContacts_test_0200
+     * @tc.desc Function test
+     * @tc.level 3
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_selectContacts_test_0200", TestType.FUNCTION | Size.SmallTest | Level.LEVEL3, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -684,6 +694,7 @@ export default function ContactInterfaceStageTest() {
         }
         contact.selectContacts().then((data) => {
           console.info("SUB_Telephony_ContactsApi_selectContacts_test_0200  data = " + JSON.stringify(data));
+          expect(data.length > 0).assertTrue();
           done();
         }).catch((err:BusinessError) => {
           console.info("SUB_Telephony_ContactsApi_selectContacts_test_0200  err = " + JSON.stringify(err));
@@ -695,12 +706,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_selectContacts_test_0300
      * @tc.number SUB_Telephony_ContactsApi_selectContacts_test_0300
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.name SUB_Telephony_ContactsApi_selectContacts_test_0300
+     * @tc.desc Function test
+     * @tc.level 3
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_selectContacts_test_0300", TestType.FUNCTION | Size.SmallTest | Level.LEVEL3, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -723,18 +734,19 @@ export default function ContactInterfaceStageTest() {
             return;
           }
           console.info("SUB_Telephony_ContactsApi_selectContacts_test_0300  data = " + JSON.stringify(data));
+          expect(data.length > 0).assertTrue();
           done();
         });
       });
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_selectContacts_test_0400
      * @tc.number SUB_Telephony_ContactsApi_selectContacts_test_0400
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.name SUB_Telephony_ContactsApi_selectContacts_test_0400
+     * @tc.desc Function test
+     * @tc.level 3
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_selectContacts_test_0400", TestType.FUNCTION | Size.SmallTest | Level.LEVEL3, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -751,6 +763,7 @@ export default function ContactInterfaceStageTest() {
           isMultiSelect: false
         }).then((data) => {
           console.info("SUB_Telephony_ContactsApi_selectContacts_test_0400  data = " + JSON.stringify(data));
+          expect(data.length > 0).assertTrue();
           done();
         }).catch((err:BusinessError) => {
           console.info("SUB_Telephony_ContactsApi_selectContacts_test_0400  err = " + JSON.stringify(err));
@@ -762,12 +775,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_query_key_test_0100
      * @tc.number SUB_Telephony_ContactsApi_query_key_test_0100
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name SUB_Telephony_ContactsApi_query_key_test_0100
+     * @tc.desc Function test
+     * @tc.level 1
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_query_key_test_0100", TestType.FUNCTION | Size.SmallTest | Level.LEVEL1, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -782,17 +795,18 @@ export default function ContactInterfaceStageTest() {
         done();
       } catch (error) {
         console.info("SUB_Telephony_ContactsApi_query_key_test_0100 query error = " + error);
+        expect(false).assertTrue();
         done();
       }
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_query_key_test_0200
      * @tc.number SUB_Telephony_ContactsApi_query_key_test_0200
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name SUB_Telephony_ContactsApi_query_key_test_0200
+     * @tc.desc Function test
+     * @tc.level 1
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_query_key_test_0200", TestType.FUNCTION | Size.SmallTest | Level.LEVEL1, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -822,12 +836,12 @@ export default function ContactInterfaceStageTest() {
       });
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_insert_test_0100
      * @tc.number SUB_Telephony_ContactsApi_insert_test_0100
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name SUB_Telephony_ContactsApi_insert_test_0100
+     * @tc.desc Function test
+     * @tc.level 1
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_insert_test_0100", TestType.FUNCTION | Size.SmallTest | Level.LEVEL1, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -836,21 +850,22 @@ export default function ContactInterfaceStageTest() {
         sleep(500);
         let rawContactId = await contact.addContact(context, contactDataError);
         console.info("SUB_Telephony_ContactsApi_insert_test_0100 : rawContactId = " + rawContactId);
-        expect(rawContactId == -1).assertTrue();
+        expect(false).assertTrue();
         done();
       } catch (error) {
         console.info("SUB_Telephony_ContactsApi_insert_test_0100 : raw_contact insert error = " + error);
+        expect(error.code === 401).assertTrue();
         done();
       }
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_query_contact_test_0300
      * @tc.number SUB_Telephony_ContactsApi_query_contact_test_0300
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name SUB_Telephony_ContactsApi_query_contact_test_0300
+     * @tc.desc Function test
+     * @tc.level 1
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_query_contact_test_0300", TestType.FUNCTION | Size.SmallTest | Level.LEVEL1, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -868,17 +883,18 @@ export default function ContactInterfaceStageTest() {
         done();
       } catch (error) {
         console.info("SUB_Telephony_ContactsApi_query_contact_test_0300 query error = " + error);
+        expect(false).assertTrue();
         done();
       }
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_query_email_test_0400
      * @tc.number SUB_Telephony_ContactsApi_query_email_test_0400
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.name SUB_Telephony_ContactsApi_query_email_test_0400
+     * @tc.desc Function test
+     * @tc.level 3
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_query_email_test_0400", TestType.FUNCTION | Size.SmallTest | Level.LEVEL3, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -887,21 +903,22 @@ export default function ContactInterfaceStageTest() {
         let resultSet = await contact.queryContactsByEmail(context, email);
         console.info("SUB_Telephony_ContactsApi_query_email_test_0400 : query resultSet = " +
         JSON.stringify(resultSet));
-        expect(resultSet.length == 0).assertTrue();
+        expect(false).assertTrue();
         done();
       } catch (error) {
         console.info("SUB_Telephony_ContactsApi_query_email_test_0400 query error = " + error);
+        expect(error.code === 401).assertTrue();
         done();
       }
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_query_phoneNumber_test_0500
      * @tc.number SUB_Telephony_ContactsApi_query_phoneNumber_test_0500
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.name SUB_Telephony_ContactsApi_query_phoneNumber_test_0500
+     * @tc.desc Function test
+     * @tc.level 3
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_query_phoneNumber_test_0500", TestType.FUNCTION | Size.SmallTest | Level.LEVEL3, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -910,21 +927,22 @@ export default function ContactInterfaceStageTest() {
         let resultSet = await contact.queryContactsByPhoneNumber(context, phoneNumber);
         console.info("SUB_Telephony_ContactsApi_query_phoneNumber_test_0500 : query resultSet = " +
         JSON.stringify(resultSet));
-        expect(resultSet.length == 0).assertTrue();
+        expect(false).assertTrue();
         done();
       } catch (error) {
         console.info("SUB_Telephony_ContactsApi_query_phoneNumber_test_0500 query error = " + error);
+        expect(error.code === 401).assertTrue();
         done();
       }
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_query_key_test_0600
      * @tc.number SUB_Telephony_ContactsApi_query_key_test_0600
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.name SUB_Telephony_ContactsApi_query_key_test_0600
+     * @tc.desc Function test
+     * @tc.level 3
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_query_key_test_0600", TestType.FUNCTION | Size.SmallTest | Level.LEVEL3, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -932,21 +950,22 @@ export default function ContactInterfaceStageTest() {
       try {
         let resultSet = await contact.queryKey(context, idTest);
         console.info("SUB_Telephony_ContactsApi_query_key_test_0600 : query resultSet = " + JSON.stringify(resultSet));
-        expect(resultSet.length == 0).assertTrue();
+        expect(false).assertTrue();
         done();
       } catch (error) {
         console.info("SUB_Telephony_ContactsApi_query_key_test_0600 query error = " + error);
+        expect(error.code === 401).assertTrue();
         done();
       }
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_addContact_test_0100
      * @tc.number SUB_Telephony_ContactsApi_addContact_test_0100
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name SUB_Telephony_ContactsApi_addContact_test_0100
+     * @tc.desc Function test
+     * @tc.level 1
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_addContact_test_0100", TestType.FUNCTION | Size.SmallTest | Level.LEVEL1, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -987,12 +1006,12 @@ export default function ContactInterfaceStageTest() {
       });
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_addContact_test_0200
      * @tc.number SUB_Telephony_ContactsApi_addContact_test_0200
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name SUB_Telephony_ContactsApi_addContact_test_0200
+     * @tc.desc Function test
+     * @tc.level 1
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_addContact_test_0200", TestType.FUNCTION | Size.SmallTest | Level.LEVEL1, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -1014,6 +1033,7 @@ export default function ContactInterfaceStageTest() {
             let promise = contact.deleteContact(context, keyData);
             promise.then(() => {
               console.log(`deleteContact success`);
+              expect(true).assertTrue();
               done();
             }).catch((err:BusinessError) => {
               console.info("SUB_Telephony_ContactsApi_addContact_test_0200  err = " + JSON.stringify(err));
@@ -1032,12 +1052,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryContact_test_0100
      * @tc.number SUB_Telephony_ContactsApi_queryContact_test_0100
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name SUB_Telephony_ContactsApi_queryContact_test_0100
+     * @tc.desc Function test
+     * @tc.level 1
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryContact_test_0100", TestType.FUNCTION | Size.SmallTest | Level.LEVEL1, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -1081,12 +1101,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryContact_test_0200
      * @tc.number SUB_Telephony_ContactsApi_queryContact_test_0200
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.name SUB_Telephony_ContactsApi_queryContact_test_0200
+     * @tc.desc Function test
+     * @tc.level 3
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryContact_test_0200", TestType.FUNCTION | Size.SmallTest | Level.LEVEL3, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -1118,6 +1138,7 @@ export default function ContactInterfaceStageTest() {
                 return;
               }
               console.info("SUB_Telephony_ContactsApi_queryContact_test_0200  data = " + JSON.stringify(data));
+              expect(data != null).assertTrue();
               done();
             });
           }else {done()}
@@ -1126,12 +1147,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryContact_test_0300
      * @tc.number SUB_Telephony_ContactsApi_queryContact_test_0300
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.name SUB_Telephony_ContactsApi_queryContact_test_0300
+     * @tc.desc Function test
+     * @tc.level 3
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryContact_test_0300", TestType.FUNCTION | Size.SmallTest | Level.LEVEL3, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -1172,12 +1193,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryContact_test_0400
      * @tc.number SUB_Telephony_ContactsApi_queryContact_test_0400
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.name SUB_Telephony_ContactsApi_queryContact_test_0400
+     * @tc.desc Function test
+     * @tc.level 3
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryContact_test_0400", TestType.FUNCTION | Size.SmallTest | Level.LEVEL3, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -1209,6 +1230,7 @@ export default function ContactInterfaceStageTest() {
                 return;
               }
               console.info("SUB_Telephony_ContactsApi_queryContact_test_0400  data = " + JSON.stringify(data));
+              expect(data != null).assertTrue();
               done();
             });
           }else {done()}
@@ -1217,12 +1239,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryContact_test_0500
      * @tc.number SUB_Telephony_ContactsApi_queryContact_test_0500
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.name SUB_Telephony_ContactsApi_queryContact_test_0500
+     * @tc.desc Function test
+     * @tc.level 3
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryContact_test_0500", TestType.FUNCTION | Size.SmallTest | Level.LEVEL3, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -1249,6 +1271,7 @@ export default function ContactInterfaceStageTest() {
             let promise = contact.queryContact(context, keyData, holder, attr);
             promise.then((data) => {
               console.info("SUB_Telephony_ContactsApi_queryContact_test_0500  data = " + JSON.stringify(data));
+              expect(data != null).assertTrue();
               done();
             }).catch((err:BusinessError) => {
               console.info("SUB_Telephony_ContactsApi_queryContact_test_0500  err = " + JSON.stringify(err));
@@ -1262,12 +1285,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryContacts_test_0100
      * @tc.number SUB_Telephony_ContactsApi_queryContacts_test_0100
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name SUB_Telephony_ContactsApi_queryContacts_test_0100
+     * @tc.desc Function test
+     * @tc.level 1
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryContacts_test_0100", TestType.FUNCTION | Size.SmallTest | Level.LEVEL1, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -1297,12 +1320,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryContacts_test_0200
      * @tc.number SUB_Telephony_ContactsApi_queryContacts_test_0200
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.name SUB_Telephony_ContactsApi_queryContacts_test_0200
+     * @tc.desc Function test
+     * @tc.level 2
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryContacts_test_0200", TestType.FUNCTION | Size.SmallTest | Level.LEVEL2, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -1332,12 +1355,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryContacts_test_0300
      * @tc.number SUB_Telephony_ContactsApi_queryContacts_test_0300
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.name SUB_Telephony_ContactsApi_queryContacts_test_0300
+     * @tc.desc Function test
+     * @tc.level 3
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryContacts_test_0300", TestType.FUNCTION | Size.SmallTest | Level.LEVEL3, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -1367,12 +1390,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryContacts_test_0400
      * @tc.number SUB_Telephony_ContactsApi_queryContacts_test_0400
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.name SUB_Telephony_ContactsApi_queryContacts_test_0400
+     * @tc.desc Function test
+     * @tc.level 3
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryContacts_test_0400", TestType.FUNCTION | Size.SmallTest | Level.LEVEL3, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -1402,12 +1425,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryContacts_test_0500
      * @tc.number SUB_Telephony_ContactsApi_queryContacts_test_0500
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.name SUB_Telephony_ContactsApi_queryContacts_test_0500
+     * @tc.desc Function test
+     * @tc.level 3
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryContacts_test_0500", TestType.FUNCTION | Size.SmallTest | Level.LEVEL3, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -1437,12 +1460,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0100
      * @tc.number SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0100
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0100
+     * @tc.desc Function test
+     * @tc.level 1
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0100", TestType.FUNCTION | Size.SmallTest | Level.LEVEL1, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -1474,12 +1497,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0200
      * @tc.number SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0200
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.name SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0200
+     * @tc.desc Function test
+     * @tc.level 2
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0200", TestType.FUNCTION | Size.SmallTest | Level.LEVEL2, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -1511,12 +1534,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0300
      * @tc.number SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0300
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.name SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0300
+     * @tc.desc Function test
+     * @tc.level 3
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0300", TestType.FUNCTION | Size.SmallTest | Level.LEVEL3, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -1548,12 +1571,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0400
      * @tc.number SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0400
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0400
+     * @tc.desc Function test
+     * @tc.level 1
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0400", TestType.FUNCTION | Size.SmallTest | Level.LEVEL1, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -1585,12 +1608,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0500
      * @tc.number SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0500
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.name SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0500
+     * @tc.desc Function test
+     * @tc.level 3
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0500", TestType.FUNCTION | Size.SmallTest | Level.LEVEL3, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -1621,12 +1644,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryContactsByEmail_test_0100
      * @tc.number SUB_Telephony_ContactsApi_queryContactsByEmail_test_0100
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name SUB_Telephony_ContactsApi_queryContactsByEmail_test_0100
+     * @tc.desc Function test
+     * @tc.level 1
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryContactsByEmail_test_0100", TestType.FUNCTION | Size.SmallTest | Level.LEVEL1, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -1656,12 +1679,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryContactsByEmail_test_0200
      * @tc.number SUB_Telephony_ContactsApi_queryContactsByEmail_test_0200
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.name SUB_Telephony_ContactsApi_queryContactsByEmail_test_0200
+     * @tc.desc Function test
+     * @tc.level 3
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryContactsByEmail_test_0200", TestType.FUNCTION | Size.SmallTest | Level.LEVEL3, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -1691,12 +1714,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryContactsByEmail_test_0300
      * @tc.number SUB_Telephony_ContactsApi_queryContactsByEmail_test_0300
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name SUB_Telephony_ContactsApi_queryContactsByEmail_test_0300
+     * @tc.desc Function test
+     * @tc.level 1
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryContactsByEmail_test_0300", TestType.FUNCTION | Size.SmallTest | Level.LEVEL1, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -1726,12 +1749,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryContactsByEmail_test_0400
      * @tc.number SUB_Telephony_ContactsApi_queryContactsByEmail_test_0400
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.name SUB_Telephony_ContactsApi_queryContactsByEmail_test_0400
+     * @tc.desc Function test
+     * @tc.level 3
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryContactsByEmail_test_0400", TestType.FUNCTION | Size.SmallTest | Level.LEVEL3, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -1761,12 +1784,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryContactsByEmail_test_0500
      * @tc.number SUB_Telephony_ContactsApi_queryContactsByEmail_test_0500
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.name SUB_Telephony_ContactsApi_queryContactsByEmail_test_0500
+     * @tc.desc Function test
+     * @tc.level 3
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryContactsByEmail_test_0500", TestType.FUNCTION | Size.SmallTest | Level.LEVEL3, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -1796,12 +1819,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryGroups_test_0100
      * @tc.number SUB_Telephony_ContactsApi_queryGroups_test_0100
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name SUB_Telephony_ContactsApi_queryGroups_test_0100
+     * @tc.desc Function test
+     * @tc.level 1
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryGroups_test_0100", TestType.FUNCTION | Size.SmallTest | Level.LEVEL1, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -1831,12 +1854,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryGroups_test_0200
      * @tc.number SUB_Telephony_ContactsApi_queryGroups_test_0200
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.name SUB_Telephony_ContactsApi_queryGroups_test_0200
+     * @tc.desc Function test
+     * @tc.level 2
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryGroups_test_0200", TestType.FUNCTION | Size.SmallTest | Level.LEVEL2, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -1866,12 +1889,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryGroups_test_0300
      * @tc.number SUB_Telephony_ContactsApi_queryGroups_test_0300
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name SUB_Telephony_ContactsApi_queryGroups_test_0300
+     * @tc.desc Function test
+     * @tc.level 1
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryGroups_test_0300", TestType.FUNCTION | Size.SmallTest | Level.LEVEL1, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -1901,12 +1924,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryHolders_test_0100
      * @tc.number SUB_Telephony_ContactsApi_queryHolders_test_0100
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name SUB_Telephony_ContactsApi_queryHolders_test_0100
+     * @tc.desc Function test
+     * @tc.level 1
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryHolders_test_0100", TestType.FUNCTION | Size.SmallTest | Level.LEVEL1, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -1924,12 +1947,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryHolders_test_0200
      * @tc.number SUB_Telephony_ContactsApi_queryHolders_test_0200
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.name SUB_Telephony_ContactsApi_queryHolders_test_0200
+     * @tc.desc Function test
+     * @tc.level 2
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryHolders_test_0200", TestType.FUNCTION | Size.SmallTest | Level.LEVEL2, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -1947,12 +1970,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryKey_test_0100
      * @tc.number SUB_Telephony_ContactsApi_queryKey_test_0100
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL4
+     * @tc.name SUB_Telephony_ContactsApi_queryKey_test_0100
+     * @tc.desc Function test
+     * @tc.level 4
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryKey_test_0100", TestType.FUNCTION | Size.SmallTest | Level.LEVEL4, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -1982,12 +2005,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryKey_test_0200
      * @tc.number SUB_Telephony_ContactsApi_queryKey_test_0200
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.name SUB_Telephony_ContactsApi_queryKey_test_0200
+     * @tc.desc Function test
+     * @tc.level 2
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryKey_test_0200", TestType.FUNCTION | Size.SmallTest | Level.LEVEL2, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -2017,12 +2040,12 @@ export default function ContactInterfaceStageTest() {
       sleep(500);
     });
     /**
-     * @tc.name   SUB_Telephony_ContactsApi_queryKey_test_0300
      * @tc.number SUB_Telephony_ContactsApi_queryKey_test_0300
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.name SUB_Telephony_ContactsApi_queryKey_test_0300
+     * @tc.desc Function test
+     * @tc.level 2
+     * @tc.type: Function
+     * @tc.size: SmallTest
      */
     it("SUB_Telephony_ContactsApi_queryKey_test_0300", TestType.FUNCTION | Size.SmallTest | Level.LEVEL2, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
