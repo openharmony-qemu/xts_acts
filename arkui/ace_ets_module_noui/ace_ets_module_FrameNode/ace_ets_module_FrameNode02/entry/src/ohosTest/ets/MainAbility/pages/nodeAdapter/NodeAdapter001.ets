@@ -3,10 +3,10 @@ import { FrameNode, NodeController, NodeAdapter, typeNode } from '@kit.ArkUI';
 // 自定义NodeAdapter管理数据
 class MyNodeAdapter001 extends NodeAdapter {
   public uiContext: UIContext
-  public cachePool: Array<FrameNode> = new Array();
+  public cachePool: FrameNode[] = [];
   public changed: boolean = false
   public reloadTimes: number = 0;
-  public data: Array<string> = new Array();
+  public data: string[] = [];
   public hostNode?: FrameNode
 
   constructor(uiContext: UIContext, count: number) {
@@ -45,7 +45,7 @@ class MyNodeAdapter001 extends NodeAdapter {
     this.changed = !this.changed;
     for (let i = 0; i < count; i++) {
       let index = i + from;
-      this.data[index] = 'Adapter ListItem ' + (this.changed ? 'changed:' : "") + index + ' r:' + this.reloadTimes;
+      this.data[index] = 'Adapter ListItem ' + (this.changed ? 'changed:' : '') + index + ' r:' + this.reloadTimes;
     }
     this.reloadItem(from, count);
   }
@@ -54,7 +54,7 @@ class MyNodeAdapter001 extends NodeAdapter {
     this.changed = !this.changed;
     for (let i = 0; i < count; i++) {
       let index = i + from;
-      this.data[index] = 'Adapter ListItem ' + (this.changed ? 'changed:' : "") + index + ' r:' + this.reloadTimes;
+      this.data[index] = 'Adapter ListItem ' + (this.changed ? 'changed:' : '') + index + ' r:' + this.reloadTimes;
     }
     this.reloadItem(0, 0)
     this.reloadItem(fromReload, countReload);
