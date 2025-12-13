@@ -79,6 +79,7 @@ import GetFrameNodeMethodNullTest from './FrameNodeNewTest/GetFrameNodeMethodNul
 
 import frameNodeApi from './FrameNodeTest/frameNodeApi.test';
 
+import GraphicsFourBoundaryTest from './FrameNodeNewTest/GraphicsFourBoundaryTest';
 
 export default function testsuite() {
   APIdisposeTreeTest();
@@ -146,5 +147,7 @@ export default function testsuite() {
   GetFrameNodeMethodNullTest();
 
   frameNodeApi();
+
+  GraphicsFourBoundaryTest();
 
 }
