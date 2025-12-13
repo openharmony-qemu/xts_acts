@@ -94,9 +94,10 @@ export default function stackFromEndList() {
       let listItem5 = CommonFunc.getComponentRectOnScreen('stackFromEnd_5');
       console.info('[stackFromEndList_0200] listItem5.bottom: ' + listItem5.bottom);
       await CommonFunc.sleep(1000);
+      console.info('[stackFromEndList_0200] vp2px(2): ' + vp2px(2));
       console.info(`[stackFromEndList_0200] list1.bottom - vp2px(2) - listItem5.bottom=
       ${(list1.bottom - vp2px(2) - listItem5.bottom)}`);
-      expect(Math.abs(Math.floor(list1.bottom - vp2px(2) - listItem5.bottom)) <=1 ).assertTrue();
+      expect(Math.floor(Math.abs(list1.bottom - vp2px(2) - listItem5.bottom)) <= 1).assertTrue();
       console.info('[stackFromEndList_0200] END');
       done();
     });
