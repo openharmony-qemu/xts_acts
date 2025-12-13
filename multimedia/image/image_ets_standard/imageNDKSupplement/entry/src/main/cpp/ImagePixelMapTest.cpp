@@ -41,17 +41,18 @@ constexpr uint32_t NUM_3 = 3;
 constexpr uint32_t NUM_4 = 4;
 constexpr uint32_t NUM_5 = 5;
 } // namespace
-#define OPTION_WIDTH_SMALL 4;
-#define OPTION_HEIGHT_SMALL 6;
-#define OPTION_PIXEL_FORMAT_SMALL 4;
-#define OPTION_ALPHA_ZERO 0;
-#define OPTION_EDITABLE_ZERO 0;
-#define OPTION_SCALE_ZERO 0;
-#define OPTION_WIDTH_BIG 100;
-#define OPTION_HEIGHT_BIG 50;
-#define OPTION_PIXEL_FORMAT_BIG 9;
+#define OPTION_WIDTH_SMALL 4
+#define OPTION_HEIGHT_SMALL 6
+#define OPTION_PIXEL_FORMAT_SMALL 4
+#define OPTION_ALPHA_ZERO 0
+#define OPTION_EDITABLE_ZERO 0
+#define OPTION_SCALE_ZERO 0
+#define OPTION_WIDTH_BIG 100
+#define OPTION_HEIGHT_BIG 50
+#define OPTION_PIXEL_FORMAT_BIG 9
 
-napi_value CreatePixelMapTest(napi_env env, napi_callback_info info) {
+napi_value CreatePixelMapTest(napi_env env, napi_callback_info info)
+{
     LOGI("OH_PixelMap_GetBytesNumberPerRow start");
     napi_value thisVar = nullptr;
     napi_value argValue[1] = {0};
@@ -121,7 +122,8 @@ napi_value CreatePixelMapTest(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value CreatePixelMap(napi_env env) {
+napi_value CreatePixelMap(napi_env env)
+{
     LOGI("OH_PixelMap_CreatePixelMap start");
     napi_value udfVar = nullptr;
     napi_value pixelMap = nullptr;
@@ -148,7 +150,8 @@ napi_value CreatePixelMap(napi_env env) {
 }
 
 
-napi_value CreatePixelMapWithStrideTest(napi_env env, napi_callback_info info) {
+napi_value CreatePixelMapWithStrideTest(napi_env env, napi_callback_info info)
+{
     LOGI("OH_PixelMap_CreatePixelMapWithStride start");
     napi_value thisVar = nullptr;
     napi_value argValue[1] = {0};
@@ -216,7 +219,8 @@ napi_value CreatePixelMapWithStrideTest(napi_env env, napi_callback_info info) {
     napi_create_int32(env, returnValue, &result);
     return result;
 }
-napi_value CreateAlphaPixelMapTest(napi_env env, napi_callback_info info) {
+napi_value CreateAlphaPixelMapTest(napi_env env, napi_callback_info info)
+{
     LOGI("OH_PixelMap_CreateAlphaPixelMap start");
     napi_value udfVar = nullptr;
     napi_value thisVar = nullptr;
@@ -281,7 +285,8 @@ napi_value CreateAlphaPixelMapTest(napi_env env, napi_callback_info info) {
     napi_create_int32(env, returnValue, &result);
     return result;
 }
-napi_value PixelMapGetImageInfoTest(napi_env env, napi_callback_info info) {
+napi_value PixelMapGetImageInfoTest(napi_env env, napi_callback_info info)
+{
     LOGI("OH_PixelMap_GetImageInfo start");
     napi_value result;
     napi_value udfVar = nullptr;
@@ -315,7 +320,8 @@ napi_value PixelMapGetImageInfoTest(napi_env env, napi_callback_info info) {
     napi_create_int32(env, res, &result);
     return result;
 }
-napi_value PixelMapAccessPixelsTest(napi_env env, napi_callback_info info) {
+napi_value PixelMapAccessPixelsTest(napi_env env, napi_callback_info info)
+{
     LOGI("OH_PixelMap_GetImageInfo start");
     napi_value result;
     napi_value udfVar = nullptr;
@@ -346,7 +352,8 @@ napi_value PixelMapAccessPixelsTest(napi_env env, napi_callback_info info) {
     napi_create_int32(env, res, &result);
     return result;
 }
-napi_value PixelMapUnAccessPixelsTest(napi_env env, napi_callback_info info) {
+napi_value PixelMapUnAccessPixelsTest(napi_env env, napi_callback_info info)
+{
     LOGI("OH_PixelMap_GetImageInfo start");
     napi_value result;
     napi_value udfVar = nullptr;

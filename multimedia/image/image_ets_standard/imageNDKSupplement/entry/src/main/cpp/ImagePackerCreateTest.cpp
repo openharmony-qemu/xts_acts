@@ -48,9 +48,10 @@ constexpr int32_t INVALID_FD = -1;
 #define TAG "CppImageNdk.ImagePackerCreateTest"
 static constexpr size_t TEST_SIZE = 0;
 constexpr int TEST_ARG_SUM = 1;
-#define IMAGE_RESULT_OPERATION_FAILED -3
+#define IMAGE_RESULT_OPERATION_FAILED (-3)
 
-napi_value ImagePackerCreateTest(napi_env env, napi_callback_info info) {
+napi_value ImagePackerCreateTest(napi_env env, napi_callback_info info)
+{
     size_t argc = TEST_ARG_SUM;
     napi_value args[TEST_ARG_SUM] = {nullptr};
     napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -88,7 +89,8 @@ napi_value ImagePackerCreateTest(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value ImagePackerInitNativeTest(napi_env env, napi_callback_info info) {
+napi_value ImagePackerInitNativeTest(napi_env env, napi_callback_info info)
+{
     LOGI("OH_ImagePacker_Create start");
     napi_value thisVar = nullptr;
     napi_value argValue[SIZE_TWO];
@@ -125,8 +127,8 @@ napi_value ImagePackerInitNativeTest(napi_env env, napi_callback_info info) {
     return result;
 }
 
-
-napi_value ImagePackerPackToDataTest(napi_env env, napi_callback_info info) {
+napi_value ImagePackerPackToDataTest(napi_env env, napi_callback_info info)
+{
     LOGI("OH_ImagePacker_PackToData start");
     napi_value thisVar = nullptr;
     napi_value argValue[SIZE_TWO];
@@ -199,7 +201,8 @@ napi_value ImagePackerPackToDataTest(napi_env env, napi_callback_info info) {
     napi_create_int32(env, packRet, &result);
     return result;
 }
-napi_value ImagePackerPackToFileTest(napi_env env, napi_callback_info info) {
+napi_value ImagePackerPackToFileTest(napi_env env, napi_callback_info info)
+{
     LOGI("OH_ImagePacker_PackToData start");
     napi_value thisVar = nullptr;
     napi_value argValue[SIZE_TWO];

@@ -34,7 +34,7 @@ constexpr uint32_t NUM_2 = 2;
 constexpr uint32_t NUM_3 = 3;
 constexpr uint32_t NUM_4 = 4;
 constexpr size_t ID_SIZE = 64;
-} 
+}
 napi_value PixelMapGetIsEditableResult(napi_env env, napi_callback_info info)
 {
     LOG("before ImagePixelMapNDKTest::CreatePixelMap");
