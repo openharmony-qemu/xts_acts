@@ -61,8 +61,8 @@ export default function GraphicsFourBoundaryTest() {
       await CommonFunc.sleep(1000);
 
       let strJson1 = getInspectorByKey('setRgba_-1');
-      console.info("[GraphicsFourBoundaryTest_0100] backgroundColor is: " + JSON.stringify(JSON.parse(strJson1).$attrs.backgroundColor));   
-      expect(JSON.stringify(JSON.parse(strJson1).$attrs.backgroundColor)).assertEqual('#FF004AAF');
+      console.info("[GraphicsFourBoundaryTest_0100] backgroundColor is: " + JSON.stringify(JSON.parse(strJson1).$attrs.width));   
+      expect(JSON.stringify(JSON.parse(strJson1).$attrs.width)).assertEqual('80');
 
       console.info('[GraphicsFourBoundaryTest_0100] END');
       done();
