@@ -64,7 +64,8 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("PixelMapUnAccessPixelsTest", PixelMapUnAccessPixelsTest),
 };
 
-EXTERN_C_START static napi_value Init(napi_env env, napi_value exports) {
+EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
+{
     size_t mergedLength = sizeof(desc1) / sizeof(desc1[0]);
     napi_property_descriptor mergedArray[mergedLength];
     for (size_t i = 0; i < sizeof(desc1) / sizeof(desc1[0]); ++i) {
