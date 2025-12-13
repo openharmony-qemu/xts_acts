@@ -1033,7 +1033,6 @@ export default function ContactInterfaceStageTest() {
             let promise = contact.deleteContact(context, keyData);
             promise.then(() => {
               console.log(`deleteContact success`);
-              expect(true).assertTrue();
               done();
             }).catch((err:BusinessError) => {
               console.info("SUB_Telephony_ContactsApi_addContact_test_0200  err = " + JSON.stringify(err));
