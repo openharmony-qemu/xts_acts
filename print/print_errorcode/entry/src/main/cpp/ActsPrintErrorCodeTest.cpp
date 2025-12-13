@@ -219,6 +219,7 @@ napi_value OH_Print_QueryPrinterList2(napi_env env, napi_callback_info info)
     napi_value result = nullptr;
     if (printerIdList->count > 0) {
         napi_create_int32(env, errorCode == PRINT_ERROR_INVALID_PRINTER ? 0 : -1, &result);
+        OH_Print_ReleasePrinterList(printerIdList);
     } else {
         napi_create_int32(env, errorCode == PRINT_ERROR_NONE ? 0 : -1, &result);
     }
