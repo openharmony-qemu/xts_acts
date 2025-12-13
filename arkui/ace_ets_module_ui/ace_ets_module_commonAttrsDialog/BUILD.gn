@@ -32,6 +32,7 @@ group("ActsAceEtsModuleCommonAttrsDialogTest") {
       "ace_ets_module_commonAttrsDialog_nowear_api13:ActsAceEtsModuleCommonAttrsDialogNoWearApi13Test",
       "ace_ets_module_commonAttrsDialog_nowear_api14:ActsAceEtsModuleCommonAttrsDialogNoWearApi14Test",
       "ace_ets_module_commonAttrsDialog_nowear_api20:ActsAceEtsModuleCommonAttrsDialogNoWearApi20Test",
+      "ace_ets_module_commonAttrsDialog_nowear_api13_static:ActsAceEtsModuleCommonAttrsDialogNoWearApi13StaticTest",
     ]
   }
 }
