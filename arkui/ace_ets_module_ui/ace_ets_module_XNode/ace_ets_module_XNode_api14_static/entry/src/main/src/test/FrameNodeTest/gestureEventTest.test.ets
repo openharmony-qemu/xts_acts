@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -41,9 +40,9 @@ import { UtilsTest, startAbility } from '../Util.test';
 export default function gestureEventTest() {
   describe('gestureEventTest', () => {
     beforeAll(() => {
-
+      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.XNode.api14.static", "EntryAbility");
-
+      await UtilsTest.msSleep(4000);
     });
 
     beforeEach(async (): Promise<void> => {
@@ -60,6 +59,7 @@ export default function gestureEventTest() {
           console.info("get gestureEventTest pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push gestureEventTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push gestureEventTest page error:" + err);
@@ -73,13 +73,15 @@ export default function gestureEventTest() {
     });
 
 
-    /*
+    
+    
+/**
      * @tc.number   gestureEventTest_static_0100
      * @tc.name     gestureEventTest_static_0100
      * @tc.desc     gestureEventTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('gestureEventTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('gestureEventTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('gestureEventTest_static_0100 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()

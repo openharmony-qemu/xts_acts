@@ -1,6 +1,5 @@
-'use static';
-/*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+/**
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -239,6 +238,7 @@ struct UpDownTreeEventIndex {
             this.bindValue = node.bindValue
             this.willBindValue = node.willBindValue
             this.unbindValue = node.unbindValue
+            console.log('------' + this.unbindValue)
             this.willUnbindValue = node.willUnbindValue
           }
         })

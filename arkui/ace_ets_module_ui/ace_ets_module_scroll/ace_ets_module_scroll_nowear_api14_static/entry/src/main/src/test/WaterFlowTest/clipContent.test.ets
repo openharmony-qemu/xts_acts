@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,9 +31,9 @@ export default function clipContent() {
   describe('clipContent', () => {
     beforeAll(() => {
       console.info("clipContent beforeEach start");
-
+      await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.scroll.nowear.api14.static", "EntryAbility");
-
+      await UtilsTest.msSleep(4000);
     });
 
     beforeEach(async (): Promise<void> => {
@@ -63,7 +62,8 @@ export default function clipContent() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   clipContent_static_0100
      * @tc.name     clipContent_static_0100
      * @tc.desc     clipContent_static_0100
@@ -82,7 +82,8 @@ it('clipContent_static_0100', Level.LEVEL1, async (done: () => void): Promise<vo
     });
 
     
-    /*
+    
+/**
      * @tc.number   clipContent_static_0200
      * @tc.name     clipContent_static_0200
      * @tc.desc     clipContent_static_0200
@@ -105,7 +106,8 @@ it('clipContent_static_0200', Level.LEVEL1, (done: () => void): Promise<void> =>
     });
 
     
-    /*
+    
+/**
      * @tc.number   clipContent_static_0300
      * @tc.name     clipContent_static_0300
      * @tc.desc     clipContent_static_0300

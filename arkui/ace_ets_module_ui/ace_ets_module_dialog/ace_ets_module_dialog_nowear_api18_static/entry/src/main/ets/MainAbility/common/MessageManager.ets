@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,7 @@
  * limitations under the License.
  */
 
-import { Resource, TextCase, TextDecorationType } from '@ohos.arkui.component';
+import { TextCase, TextDecorationType, Resource } from '@ohos.arkui.component';
 
 export class Message {
   name: string = ''

@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -42,9 +41,9 @@ import { UtilsTest, startAbility } from '../Util.test';
 export default function upDownTreeEventTest() {
   describe('upDownTreeEventTest', () => {
     beforeAll(() => {
-
+      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.XNode.api14.static", "EntryAbility");
-
+      await UtilsTest.msSleep(4000);
     });
 
     beforeEach(async (): Promise<void> => {
@@ -61,6 +60,7 @@ export default function upDownTreeEventTest() {
           console.info("get upDownTreeEventTest pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push upDownTreeEventTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push upDownTreeEventTest page error:" + err);
@@ -75,13 +75,15 @@ export default function upDownTreeEventTest() {
     
 
 
-    /*
+    
+    
+/**
      * @tc.number   nodeOnWillUnbindTest_static_0100
      * @tc.name     nodeOnWillUnbindTest_static_0100
      * @tc.desc     nodeOnWillUnbindTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('nodeOnWillUnbindTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('nodeOnWillUnbindTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('nodeOnWillUnbindTest_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -101,13 +103,15 @@ export default function upDownTreeEventTest() {
     });
 
 
-    /*
+    
+    
+/**
      * @tc.number   nodeOnUnBindTest_static_0200
      * @tc.name     nodeOnUnBindTest_static_0200
      * @tc.desc     nodeOnUnBindTest_static_0200
      * @tc.level    Level.LEVEL0
      */
-    it('nodeOnUnBindTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('nodeOnUnBindTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('nodeOnUnBindTest_static_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -126,14 +130,15 @@ export default function upDownTreeEventTest() {
       done();
     });
 
-
-    /*
+    
+    
+/**
      * @tc.number   nodeOnDetachTest_static_0300
      * @tc.name     nodeOnDetachTest_static_0300
      * @tc.desc     nodeOnDetachTest_static_0300
      * @tc.level    Level.LEVEL0
      */
-    it('nodeOnDetachTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('nodeOnDetachTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('nodeOnDetachTest_static_0300 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -153,13 +158,15 @@ export default function upDownTreeEventTest() {
     });
 
 
-    /*
+    
+    
+/**
      * @tc.number   nodeOnAttachTest_static_0400
      * @tc.name     nodeOnAttachTest_static_0400
      * @tc.desc     nodeOnAttachTest_static_0400
      * @tc.level    Level.LEVEL0
      */
-    it('nodeOnAttachTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('nodeOnAttachTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('nodeOnAttachTest_static_0400 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -176,13 +183,15 @@ export default function upDownTreeEventTest() {
     });
 
 
-    /*
+    
+    
+/**
      * @tc.number   nodeOnBindTest_static_0500
      * @tc.name     nodeOnBindTest_static_0500
      * @tc.desc     nodeOnBindTest_static_0500
      * @tc.level    Level.LEVEL0
      */
-    it('nodeOnBindTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('nodeOnBindTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('nodeOnBindTest_static_0500 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -199,13 +208,15 @@ export default function upDownTreeEventTest() {
     });
 
 
-    /*
+    
+    
+/**
      * @tc.number   nodeOnWillBindTest_static_0600
      * @tc.name     nodeOnWillBindTest_static_0600
      * @tc.desc     nodeOnWillBindTest_static_0600
      * @tc.level    Level.LEVEL0
      */
-    it('nodeOnWillBindTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('nodeOnWillBindTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('nodeOnWillBindTest_static_0600 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

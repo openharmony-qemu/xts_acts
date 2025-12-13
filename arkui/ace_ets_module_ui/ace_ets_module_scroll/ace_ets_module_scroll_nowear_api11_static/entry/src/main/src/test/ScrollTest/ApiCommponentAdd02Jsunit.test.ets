@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -40,9 +39,9 @@ export default function ApiCommponentAdd02Jsunit() {
 
     beforeAll(() => {
       console.info("ApiCommponentAdd02Jsunit beforeEach start");
-
+      await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.scroll.nowear.api11.static", "EntryAbility");
-
+      await UtilsTest.msSleep(4000);
     });
 
     beforeEach(async (): Promise<void> => {
@@ -78,7 +77,8 @@ export default function ApiCommponentAdd02Jsunit() {
       console.info("ApiCommponentAdd02Jsunit beforeEach end");
     });
 
-    /*
+    
+/**
      * @tc.number   ApiCommponentAdd02Jsunit_static_0900
      * @tc.name     ApiCommponentAdd02Jsunit_static_0900
      * @tc.desc     ApiCommponentAdd02Jsunit_static_0900

@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,9 +32,9 @@ export default function GridBackToTopTest() {
   describe('GridBackToTopTest', () => {
     beforeAll(() => {
       console.info("GridBackToTopTest beforeEach start");
-
+      await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.scroll.nowear.api15.static", "EntryAbility");
-
+      await UtilsTest.msSleep(4000);
     });
 
     beforeEach(async (): Promise<void> => {
@@ -62,7 +61,8 @@ export default function GridBackToTopTest() {
       console.info("GridBackToTopTest beforeEach end");
     });
     
-    /*
+    
+/**
      * @tc.number   GridScrollTest1_static_0100
      * @tc.name     GridScrollTest1_static_0100
      * @tc.desc     GridScrollTest1_static_0100

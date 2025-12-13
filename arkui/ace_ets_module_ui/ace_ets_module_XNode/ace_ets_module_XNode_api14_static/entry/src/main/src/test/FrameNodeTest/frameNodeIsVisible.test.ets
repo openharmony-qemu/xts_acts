@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -42,9 +41,9 @@ import { UtilsTest, startAbility } from '../Util.test';
 export default function frameNodeIsVisibleTest() {
   describe('frameNodeIsVisibleTest', () => {
     beforeAll(() => {
-
+      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.XNode.api14.static", "EntryAbility");
-
+      await UtilsTest.msSleep(4000);
     });
 
     beforeEach(async (): Promise<void> => {
@@ -61,6 +60,7 @@ export default function frameNodeIsVisibleTest() {
           console.info("get frameNodeIsVisibleTest pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push frameNodeIsVisibleTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push frameNodeIsVisibleTest page error:" + err);
@@ -74,13 +74,15 @@ export default function frameNodeIsVisibleTest() {
     });
 
 
-    /*
+    
+    
+/**
      * @tc.number   frameNodeIsVisibleTest_static_0100
      * @tc.name     frameNodeIsVisibleTest_static_0100
      * @tc.desc     frameNodeIsVisibleTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('frameNodeIsVisibleTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('frameNodeIsVisibleTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('frameNodeIsVisibleTest_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

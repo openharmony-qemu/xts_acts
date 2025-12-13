@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -31,9 +30,9 @@ export default function WaterComponentContent() {
   describe('WaterComponentContent', () => {
     beforeAll(() => {
       console.info("WaterComponentContent beforeEach start");
-
+      await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.scroll.nowear.api16.static", "EntryAbility");
-
+      await UtilsTest.msSleep(4000);
     });
 
     beforeEach(async (): Promise<void> => {
@@ -58,7 +57,8 @@ export default function WaterComponentContent() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   WaterComponentContent_static_0100
      * @tc.name     WaterComponentContent_static_0100
      * @tc.desc     WaterComponentContent_static_0100
@@ -84,7 +84,8 @@ it('WaterComponentContent_static_0100', Level.LEVEL1, async (done: () => void): 
     });
 
     
-    /*
+    
+/**
      * @tc.number   WaterComponentContent_static_0200
      * @tc.name     WaterComponentContent_static_0200
      * @tc.desc     WaterComponentContent_static_0200
@@ -104,7 +105,8 @@ it('WaterComponentContent_static_0200', Level.LEVEL1, async (done: () => void): 
     });
 
     
-    /*
+    
+/**
      * @tc.number   WaterComponentContent_static_0300
      * @tc.name     WaterComponentContent_static_0300
      * @tc.desc     WaterComponentContent_static_0300

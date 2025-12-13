@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+// import screen from '@ohos.screen';
 import { BusinessError } from '@ohos.base';
 import RectValue from './Rect';
 import inspector from '@ohos.arkui.inspector'
@@ -26,8 +25,8 @@ export default class CommonFunc {
   static rect_bottom: number;
   static rect_value: RectValue = new RectValue();
 
-  static async sleep(count: Int): Promise<Int> {
-    return new Promise<Int>((resolve, reject) => {
+  static async sleep(count:int) : Promise<int> {
+    return new Promise<int>((resolve, reject) => {
       setTimeout(() => {
         resolve(0)
       }, count)
@@ -77,4 +76,5 @@ export default class CommonFunc {
       "bottom": CommonFunc.rect_bottom
     }
   }
+
 }

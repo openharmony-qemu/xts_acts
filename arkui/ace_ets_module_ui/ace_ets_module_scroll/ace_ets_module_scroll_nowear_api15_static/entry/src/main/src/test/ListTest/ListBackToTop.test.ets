@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import { Component, Driver, On, ON, MouseButton, Rect } from '@kit.TestKit';
 import { Router } from '@ohos.arkui.UIContext';
@@ -25,9 +24,9 @@ export default function ListBackToTopTest() {
   describe('ListBackToTopTest', () => {
     beforeAll(() => {
       console.info("ListBackToTopTest beforeEach start");
-
+      await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.scroll.nowear.api15.static", "EntryAbility");
-
+      await UtilsTest.msSleep(4000);
     });
 
     beforeEach(async (): Promise<void> => {
@@ -49,11 +48,12 @@ export default function ListBackToTopTest() {
       }
     });
     
-    /*
+    
+/**
      * @tc.number   ListBackToTop_static_0100
      * @tc.name     ListBackToTop_static_0100
      * @tc.desc     ListBackToTop_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('ListBackToTop_static_0100', Level.LEVEL0, async () => {
       console.info('ListBackToTop_static_0100 START');

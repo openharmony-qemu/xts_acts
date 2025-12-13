@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -37,8 +36,8 @@ struct WaterFlowEdge {
   @State colors: Int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as Int[];
   dataSource: WaterFlowDataSource = new WaterFlowDataSource()
   scroller: Scroller = new Scroller()
-  private itemWidthArray: number[] = [] as number[];
-  private itemHeightArray: number[] = [] as number[];
+  private itemWidthArray: Int[] = [] as Int[];
+  private itemHeightArray: Int[] = [] as Int[];
 
   // 计算FlowItem宽/高
   getSize() {
@@ -49,8 +48,8 @@ struct WaterFlowEdge {
   // 设置FlowItem宽/高数组
   setItemSizeArray() {
     for (let i = 0; i < 100; i++) {
-      this.itemWidthArray.push(this.getSize())
-      this.itemHeightArray.push(this.getSize())
+      this.itemWidthArray.push(this.getSize().toInt())
+      this.itemHeightArray.push(this.getSize().toInt())
     }
   }
 
@@ -61,7 +60,7 @@ struct WaterFlowEdge {
   build() {
     Column({ space: 2 } as ColumnOptions) {
       WaterFlow({ scroller:this.scroller }) {
-        LazyForEach(this.dataSource, (item: number) => {
+        LazyForEach(this.dataSource, (item: Int) => {
           FlowItem() {
             Column() {
               Text('N' + item).fontSize(12).height('16')
@@ -69,8 +68,8 @@ struct WaterFlowEdge {
           }
           .width('100%')
           .height(this.itemHeightArray[(item as int) % 100])
-          .backgroundColor(this.colors[(item as int) % 5] as Int)
-        }, (item:number) => item.toString())
+          .backgroundColor(this.colors[(item as int) % 5])
+        }, (item:Int) => item.toString())
       }
       .id('flow_fadingEdge')
       .columnsTemplate('repeat(auto-fill,80)')

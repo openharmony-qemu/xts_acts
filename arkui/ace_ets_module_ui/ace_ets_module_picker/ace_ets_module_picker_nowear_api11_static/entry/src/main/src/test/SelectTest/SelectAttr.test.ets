@@ -1,5 +1,4 @@
-'use static';
-/*
+/**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,9 +37,9 @@ export default function SelectAttr() {
     beforeAll(() => {
       console.info("SelectAttr beforeEach start");
 
-
+      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.static", "EntryAbility");
-
+      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       console.info("SelectAttr beforeEach start");
@@ -74,7 +73,9 @@ export default function SelectAttr() {
 
 
     
-    /*
+    
+
+/**
      * @tc.number   SelectAttr_static_001
      * @tc.name     SelectAttr_static_001
      * @tc.desc     SelectAttr_static_001

@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -27,9 +26,9 @@ export default function waterFlow_WaterFlowFrictionTest() {
   describe('waterFlow_WaterFlowFrictionTest', () => {
     beforeAll(() => {
       console.info("waterFlow_WaterFlowFrictionTest beforeEach start");
-
+      await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.scroll.nowear.api11.static", "EntryAbility");
-
+      await UtilsTest.msSleep(4000);
     });
 
     beforeEach(async (): Promise<void> => {
@@ -57,7 +56,8 @@ export default function waterFlow_WaterFlowFrictionTest() {
       console.info("WaterFlow_WaterFlowFrictionTest after each called");
     });
     
-    /*
+    
+/**
      * @tc.number   testWaterFlowFriction_static_0100
      * @tc.name     testWaterFlowFriction_static_0100
      * @tc.desc     testWaterFlowFriction_static_0100
@@ -85,7 +85,8 @@ it('testWaterFlowFriction_static_0100', Level.LEVEL1, async (done: () => void): 
     });
 
     
-    /*
+    
+/**
      * @tc.number   testWaterFlowFriction_static_0200
      * @tc.name     testWaterFlowFriction_static_0200
      * @tc.desc     testWaterFlowFriction_static_0200

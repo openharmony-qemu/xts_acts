@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,10 +14,10 @@
  */
 
 import { IDataSource ,DataOperation, DataChangeListener} from '@ohos.arkui.component';
-import { MessageManager, Callback, Message } from '../../../common/MessageManager';
+import { MessageManager, Callback, Message } from '../../common/MessageManager';
 
-export class WaterFlowDataSource implements IDataSource<number> {
-  private dataArray: number[] = []
+export class WaterFlowDataSource implements IDataSource<Int> {
+  private dataArray: Int[] = []
   private listeners: DataChangeListener[] = []
 
   constructor() {
@@ -28,7 +27,7 @@ export class WaterFlowDataSource implements IDataSource<number> {
   }
 
   // 获取索引对应的数据
-  public getData(index: Int): number {
+  public getData(index: Int): Int {
     return this.dataArray[index as int]
   }
 
@@ -96,50 +95,50 @@ export class WaterFlowDataSource implements IDataSource<number> {
 
   // 增加数据
   public add1stItem(): void {
-    this.dataArray.splice(0, 0, this.dataArray.length)
+    this.dataArray.splice(0 as Int, 0 as Int, this.dataArray.length)
     this.notifyDataAdd(0)
   }
 
   // 在数据尾部增加一个元素
   public addLastItem(): void {
-    this.dataArray.splice(this.dataArray.length, 0, this.dataArray.length)
+    this.dataArray.splice(this.dataArray.length, 0 as Int, this.dataArray.length)
     this.notifyDataAdd(this.dataArray.length - 1)
   }
 
   // 在指定索引位置增加一个元素
   public addItem(index: Int): void {
-    this.dataArray.splice(index, 0, this.dataArray.length)
+    this.dataArray.splice(index, 0 as Int, this.dataArray.length)
     this.notifyDataAdd(index)
   }
 
   // 删除第一个元素
   public delete1stItem(): void {
-    this.dataArray.splice(0, 1)
+    this.dataArray.splice(0 as Int, 1 as Int)
     this.notifyDataDelete(0)
   }
 
   // 删除第二个元素
   public delete2ndItem(): void {
-    this.dataArray.splice(1, 1)
+    this.dataArray.splice(1 as Int, 1 as Int)
     this.notifyDataDelete(1)
   }
 
   // 删除最后一个元素
   public deleteLastItem(): void {
-    this.dataArray.splice(-1, 1)
+    this.dataArray.splice(-1 as Int, 1 as Int)
     this.notifyDataDelete(this.dataArray.length)
   }
 
   // 在指定索引位置删除一个元素
   public deleteItem(index: Int): void {
-    this.dataArray.splice(index, 1)
+    this.dataArray.splice(index, 1 as Int)
     this.notifyDataDelete(index)
   }
 
   // 重新加载数据
   public reload(): void {
-    this.dataArray.splice(1, 1)
-    this.dataArray.splice(3, 2)
+    this.dataArray.splice(1 as Int, 1 as Int)
+    this.dataArray.splice(3 as Int, 2 as Int)
     this.notifyDataReload()
   }
 }
