@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,9 +32,9 @@ let testAbilityContext:common.UIAbilityContext;
 export default function IconApiTest() {
   describe("IconApiTest", () => {
     beforeAll(() => {
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
     })
     beforeEach(async (): Promise<void> => {
       console.info("IconApiTest beforeEach start");
@@ -44,7 +43,7 @@ export default function IconApiTest() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        // routerInstance.clear();
+        routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get IconApiTest state pages:" + JSON.stringify(pages));
         if (!("IconApi" == pages.name)) {
@@ -62,13 +61,12 @@ export default function IconApiTest() {
       console.info("IconApiTest after each called");
     });
 
-    /*
+    /**
      * @tc.number   IconApiTest_static_001
      * @tc.name     IconApiTest_static_001
      * @tc.desc     IconApiTest_static_001
      * @tc.level    Level.LEVEL2
      */
-    
     it("IconApiTest_static_001", Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("[IconApiTest_001] START");
       await CommonFunc.sleep(1000);
@@ -84,13 +82,12 @@ export default function IconApiTest() {
       done();
     });
 
-    /*
+    /**
      * @tc.number   IconApiTest_static_002
      * @tc.name     IconApiTest_static_002
      * @tc.desc     IconApiTest_static_002
      * @tc.level    Level.LEVEL2
-     */
-    
+     */    
     it("IconApiTest_static_002", Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("[IconApiTest_002] START");
       await CommonFunc.sleep(1000);

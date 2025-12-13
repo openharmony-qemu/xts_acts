@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -35,9 +34,9 @@ export default function openCustomDialog3() {
   describe('openCustomDialog3', () => {
     beforeAll(() => {
 
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
     })
     beforeEach(async (): Promise<void> => {
       console.info("openCustomDialog3 beforeEach start");
@@ -64,7 +63,8 @@ export default function openCustomDialog3() {
       }
     });
     
-    /*
+    
+/**
      * @tc.number   openCustomDialog3_static_0100
      * @tc.name     openCustomDialog3_static_0100
      * @tc.desc     openCustomDialog3_static_0100
@@ -99,7 +99,8 @@ it('openCustomDialog3_static_0100', Level.LEVEL2, async (done: () => void): Prom
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   openCustomDialog3_static_0200
      * @tc.name     openCustomDialog3_static_0200
      * @tc.desc     openCustomDialog3_static_0200

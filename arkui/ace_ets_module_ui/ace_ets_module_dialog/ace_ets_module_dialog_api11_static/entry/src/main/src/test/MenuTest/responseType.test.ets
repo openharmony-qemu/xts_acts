@@ -1,6 +1,5 @@
-'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -61,9 +60,9 @@ export default function responseTypeJsunit() {
   describe('responseTypeTest', () => {
     beforeAll(() => {
       console.info("responseTypeTest beforeAll start")
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
       console.info("responseTypeTest  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -98,13 +97,14 @@ export default function responseTypeJsunit() {
 
 
     
-    /*
+    
+/**
      * @tc.number   testresponseType0002_static
      * @tc.name     testresponseType0002_static
      * @tc.desc     testresponseType0002_static
      * @tc.level    Level.LEVEL2
      */
-it('testresponseType0002_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('testresponseType0002_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('responseType testresponseType0002_static START');
       await Utils.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('RightClickText');
@@ -118,13 +118,14 @@ it('testresponseType0002_static', Level.LEVEL2, async (done: () => void): Promis
 
 
     
-    /*
+    
+/**
      * @tc.number   testresponseType0003_static
      * @tc.name     testresponseType0003_static
      * @tc.desc     testresponseType0003_static
      * @tc.level    Level.LEVEL2
      */
-it('testresponseType0003_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('testresponseType0003_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('responseType testresponseType0003_static START');
       await Utils.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('LongPressText');

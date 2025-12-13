@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -36,9 +35,9 @@ export default function AlertDialog2() {
   describe('AlertDialog2', () => {
     beforeAll(() => {
       console.info("AlertDialog2 beforeEach start");
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("AlertDialog2 beforeEach start");
@@ -61,7 +60,8 @@ export default function AlertDialog2() {
       }
     });
     
-    /*
+    
+/**
      * @tc.number   AlertDialog2_static_0100
      * @tc.name     AlertDialog2_static_0100
      * @tc.desc     AlertDialog2_static_0100

@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -35,9 +34,9 @@ export default function ActionSheet1() {
   describe('ActionSheet1', () => {
     beforeAll(() => {
       console.info("ActionSheet1 beforeEach start");
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("ActionSheet1 beforeEach start");
@@ -46,7 +45,7 @@ export default function ActionSheet1() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        // routerInstance.clear();
+        routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get ActionSheet1 state pages: " + JSON.stringify(pages));
         if (!("ActionSheet1" == pages.name)) {
@@ -60,7 +59,8 @@ export default function ActionSheet1() {
       }
     });
     
-    /*
+    
+/**
      * @tc.number   ActionSheet1_static_0100
      * @tc.name     ActionSheet1_static_0100
      * @tc.desc     ActionSheet1_static_0100
@@ -90,7 +90,8 @@ it('ActionSheet1_static_0100', Level.LEVEL2, async (done: () => void): Promise<v
       done();
     });
 
-    /*
+    
+/**
      * @tc.number   ActionSheet1_static_0200
      * @tc.name     ActionSheet1_static_0200
      * @tc.desc     ActionSheet1_static_0200

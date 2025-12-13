@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -36,9 +35,9 @@ export default function arrowOffset() {
   describe('arrowOffset', () => {
     beforeAll(() => {
 
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
     })
     beforeEach(async (): Promise<void> => {
       console.info("arrowOffset beforeEach start");
@@ -67,7 +66,8 @@ export default function arrowOffset() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   arrowOffset_static_0100
      * @tc.name     arrowOffset_static_0100
      * @tc.desc     arrowOffset_static_0100
@@ -89,7 +89,8 @@ it('arrowOffset_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
     });
 
     
-    /*
+    
+/**
      * @tc.number   arrowOffset_static_0200
      * @tc.name     arrowOffset_static_0200
      * @tc.desc     arrowOffset_static_0200

@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -648,16 +647,24 @@ struct linearGradientBlurPage {
   @State _linearGradientBlurWaterFlowMod: WaterFlowModifier = new WaterFlowModifier()
   @State _linearGradientBlurWebMod: WebModifier = new WebModifier()
   @State _linearGradientBlurXComponentMod: XComponentModifier = new XComponentModifier()
-  @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView ?? '';
-  @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey ?? '';
-  @State parentWidth: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
-  @State parentHeight: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
-  @State columns: int = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int) ?? 0
-  @State gutter: int = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int) ?? 0
-  @State parentComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey ?? '';
+  @State targetView: string = '';
+  @State componentKey: string = '';
+  @State parentWidth: double = 0;
+  @State parentHeight: double = 0;
+  @State columns: int = 0
+  @State gutter: int =  0
+  @State parentComponentKey: string = '';
 
   onPageShow() {
     console.info('22222 linearGradientBlur page show called ')
+    this.targetView = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView;
+    this.componentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey as string;
+    this.parentWidth = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
+    this.parentHeight = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
+    this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int)
+    this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int)
+    this.parentComponentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey;
+    this._linearGradientBlurButttonMod.mLinearGradientBlur = (this.getUIContext().getRouter().getParams() as RouterParams).view.testValue.setValue.linearGradientBlur
     attrsManager.registerDataChange((value: SetValue) => {
       console.info('22222 [registerDataChange] ' + JSON.stringify(value.linearGradientBlur))
       this._linearGradientBlurAlphabetIndexerMod.mLinearGradientBlur = value.linearGradientBlur
@@ -749,7 +756,7 @@ struct linearGradientBlurPage {
     GridRow({ columns: this.columns, gutter: this.gutter, /*margin: 0*/ }) {
       Row() {
         if (this.targetView == 'Button') {
-          Button('button1').attributeModifier(this._linearGradientBlurButttonMod)
+          Button('button1').key(this.componentKey).attributeModifier(this._linearGradientBlurButttonMod)
         } else if (this.targetView == 'Text') {
           Text('text1').attributeModifier(this._linearGradientBlurTextMod)
         } else if (this.targetView == 'AlphabetIndexer') {

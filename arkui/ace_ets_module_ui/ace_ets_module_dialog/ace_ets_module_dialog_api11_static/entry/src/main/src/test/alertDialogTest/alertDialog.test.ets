@@ -1,6 +1,5 @@
-'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -51,9 +50,9 @@ export default function alertDialogCenterStartJsunit() {
   describe('alertDialogCenterStartTest', () => {
     beforeAll(() => {
       console.info("alertDialogCenterStartTest beforeAll start")
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
       console.info("alertDialogCenterStartTest  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -88,13 +87,14 @@ export default function alertDialogCenterStartJsunit() {
 
 
     
-    /*
+    
+/**
      * @tc.number   testalertDialogCenterStart0001_static
      * @tc.name     testalertDialogCenterStart0001_static
      * @tc.desc     testalertDialogCenterStart0001_static
      * @tc.level    Level.LEVEL2
      */
-it('testalertDialogCenterStart0001_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('testalertDialogCenterStart0001_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('alertDialogCenterStart testalertDialogCenterStart0011 START');
       let driver = Driver.create()
       await Utils.sleep(2000);
@@ -122,13 +122,14 @@ it('testalertDialogCenterStart0001_static', Level.LEVEL2, async (done: () => voi
 
 
     
-    /*
+    
+/**
      * @tc.number   testMeasureText0001_static
      * @tc.name     testMeasureText0001_static
      * @tc.desc     testMeasureText0001_static
      * @tc.level    Level.LEVEL2
      */
-it('testMeasureText0001_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('testMeasureText0001_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('testMeasureText0001_static start');
       await Utils.sleep(2000);
       let driver = Driver.create()

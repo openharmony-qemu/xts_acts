@@ -1,11 +1,10 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -34,10 +33,9 @@ let testAbilityContext:common.UIAbilityContext;
 export default function dialogButtonStyle() {
   describe('dialogButtonStyle', () => {
     beforeAll(() => {
-
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
     })
 
     beforeEach(async () => {
@@ -74,7 +72,7 @@ export default function dialogButtonStyle() {
 
     
     
-/*
+/**
      * @tc.number   dialogButtonStyle_static_0100
      * @tc.name     dialogButtonStyle_static_0100
      * @tc.desc     dialogButtonStyle_static_0100

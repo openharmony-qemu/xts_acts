@@ -1,11 +1,10 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+*     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -22,9 +21,9 @@ import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import pointer from '@ohos.multimodalInput.pointer';
-import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@ohos.arkui.Test";
+import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@kit.ArkUI";
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
-let viewPage:string = ""
+
 export class RectValue {
   left: number = 0;
   top: number = 0;
@@ -43,6 +42,7 @@ export interface CurrentRatio{
   isVisible: boolean
 };
 export class SetValue {
+  height: Length = 0;
   obscured: Array<ObscuredReasons> = [];
 }
 export class ExpectValue {
@@ -140,28 +140,17 @@ export default class Utils {
     try {
       const router = AppStorage.get<Router>("router") as Router
       let pages = router.getState();
-      let pageParams: RouterParams = new RouterParams();
+      let pageParams = JSON.parseJsonElement(JSON.stringify(router.getParams()));
       console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
-      if (pageParams && pageParams.view && obj.targetView != pageParams.view.targetView) {
-        console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
-        console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
+      if (pageParams && pageParams.tryGetElement('view') && obj.targetView != pageParams.getElement('view').getString('targetView')) {
+        console.info('get ' + obj.pageName + ' params: ' + JSON.stringifyJsonElement(pageParams));
+        console.info('pageParams.view.targetView: ' + pageParams.getElement('view').getString('targetView'));
         console.info('targetView: ' + obj.targetView);
-        console.info('viewPage: ' + viewPage);
-        if(viewPage == ""){
-          viewPage = obj.targetView
-        } else if(viewPage !== "" && viewPage !== obj.targetView){
-          viewPage = obj.targetView
-          router.pushUrl({
-            url: 'MainAbility/pages/index/index',
-          });
-          await Utils.sleep(500);
-        }else{
-          router.clear()
-        }
+        await Utils.back();
         pages = router.getState();
       }
 
-      if (!(obj.pageName == pages.name)) {
+      if (obj.pageName != pages.name || obj.targetView != pageParams.getElement('view').getString('targetView')) {
         console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
         router.pushUrl({
           url: obj.pageUrl,
@@ -310,7 +299,7 @@ export default class Utils {
     return result;
   }
 
-  static performKeyEventDownUp(keyCode: Int, keyText: string): boolean {
+  static performKeyEventDownUp(keyCode: int, keyText: string): boolean {
     let down = Utils.performKeyEvent(KeyType.Down, keyCode, keyText)
     if (down) {
       let up = Utils.performKeyEvent(KeyType.Up, keyCode, keyText)
@@ -320,7 +309,7 @@ export default class Utils {
     return false;
   }
 
-  static performKeyEvent(type: KeyType, keyCode: Int, keyText: string): boolean {
+  static performKeyEvent(type: KeyType, keyCode: int, keyText: string): boolean {
     console.info('performKeyEvent type : ' + type);
     console.info('performKeyEvent keyCode : ' + keyCode);
     console.info('performKeyEvent keyText : ' + keyText);

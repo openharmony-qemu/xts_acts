@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -99,7 +98,6 @@ export default function testsuite() {
   ActionSheetJsunit()
   ActionSheetTrue()
   stageActionSheet()
-
   alertDialogCenterStartJsunit()
   AlertDialog()
   AlertDialogFalse()

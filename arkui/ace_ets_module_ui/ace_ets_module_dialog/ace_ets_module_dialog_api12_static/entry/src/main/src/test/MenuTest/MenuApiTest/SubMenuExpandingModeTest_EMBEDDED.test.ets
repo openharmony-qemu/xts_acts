@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -34,9 +33,9 @@ export default function SubMenuExpandingModeTest_EMBEDDED() {
   describe('SubMenuExpandingModeTest_EMBEDDED', () => {
     beforeEach(async (): Promise<void> => {
       beforeAll(() => {
-  
+        await UtilsTest.msSleep(4000)
         await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
-  
+        await UtilsTest.msSleep(4000)
       })
       console.info("SubMenuExpandingModeTest_EMBEDDED beforeEach start");
       let options: router.RouterOptions = {
@@ -63,7 +62,8 @@ export default function SubMenuExpandingModeTest_EMBEDDED() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   SubMenuExpandingModeTest_EMBEDDED_static_001
      * @tc.name     SubMenuExpandingModeTest_EMBEDDED_static_001
      * @tc.desc     SubMenuExpandingModeTest_EMBEDDED_static_001

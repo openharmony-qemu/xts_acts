@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -64,9 +63,9 @@ export default function bindPopupOffsetTest() {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       console.info("bindPopupOffsetTest beforeAll start")
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
       console.info("bindPopupOffsetTest beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -105,13 +104,14 @@ export default function bindPopupOffsetTest() {
 
 
     
-    /*
+    
+/**
      * @tc.number   bindPopupOffsetTest_static_0100
      * @tc.name     bindPopupOffsetTest_static_0100
      * @tc.desc     bindPopupOffsetTest_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('bindPopupOffsetTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('bindPopupOffsetTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('bindPopupOffsetTest_static_0100 START');
       try {
         let indexEvent: emitter.InnerEvent = {
@@ -143,13 +143,14 @@ it('bindPopupOffsetTest_static_0100', Level.LEVEL2, async (done: () => void): Pr
 
 
     
-    /*
+    
+/**
      * @tc.number   bindPopupOffsetTest_static_0200
      * @tc.name     bindPopupOffsetTest_static_0200
      * @tc.desc     bindPopupOffsetTest_static_0200
      * @tc.level    Level.LEVEL2
      */
-it('bindPopupOffsetTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('bindPopupOffsetTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('bindPopupOffsetTest_static_0200 START');
       try {
         let indexEvent: emitter.InnerEvent = {
@@ -181,13 +182,14 @@ it('bindPopupOffsetTest_static_0200', Level.LEVEL2, async (done: () => void): Pr
 
 
     
-    /*
+    
+/**
      * @tc.number   bindPopupOffsetTest_static_0300
      * @tc.name     bindPopupOffsetTest_static_0300
      * @tc.desc     bindPopupOffsetTest_static_0300
      * @tc.level    Level.LEVEL2
      */
-it('bindPopupOffsetTest_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('bindPopupOffsetTest_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('bindPopupOffsetTest_static_0300 START');
       try {
         let indexEvent: emitter.InnerEvent = {
@@ -219,13 +221,14 @@ it('bindPopupOffsetTest_static_0300', Level.LEVEL2, async (done: () => void): Pr
 
 
     
-    /*
+    
+/**
      * @tc.number   bindPopupOffsetTest_static_0400
      * @tc.name     bindPopupOffsetTest_static_0400
      * @tc.desc     bindPopupOffsetTest_static_0400
      * @tc.level    Level.LEVEL2
      */
-it('bindPopupOffsetTest_static_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('bindPopupOffsetTest_static_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('bindPopupOffsetTest_static_0400 START');
       try {
         let indexEvent: emitter.InnerEvent = {
@@ -257,13 +260,14 @@ it('bindPopupOffsetTest_static_0400', Level.LEVEL2, async (done: () => void): Pr
 
 
     
-    /*
+    
+/**
      * @tc.number   bindPopupOffsetTest_static_0500
      * @tc.name     bindPopupOffsetTest_static_0500
      * @tc.desc     bindPopupOffsetTest_static_0500
      * @tc.level    Level.LEVEL2
      */
-it('bindPopupOffsetTest_static_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('bindPopupOffsetTest_static_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('bindPopupOffsetTest_static_0500 START');
       try {
         let indexEvent: emitter.InnerEvent = {
@@ -292,13 +296,14 @@ it('bindPopupOffsetTest_static_0500', Level.LEVEL2, async (done: () => void): Pr
     });
 
     
-    /*
+    
+/**
      * @tc.number   bindPopupOffsetTest_static_0600
      * @tc.name     bindPopupOffsetTest_static_0600
      * @tc.desc     bindPopupOffsetTest_static_0600
      * @tc.level    Level.LEVEL2
      */
-it('bindPopupOffsetTest_static_0600', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('bindPopupOffsetTest_static_0600', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('bindPopupOffsetTest_static_0600 START');
       try {
         let indexEvent: emitter.InnerEvent = {
@@ -330,13 +335,14 @@ it('bindPopupOffsetTest_static_0600', Level.LEVEL2, async (done: () => void): Pr
 
 
     
-    /*
+    
+/**
      * @tc.number   bindPopupOffsetTest_static_0700
      * @tc.name     bindPopupOffsetTest_static_0700
      * @tc.desc     bindPopupOffsetTest_static_0700
      * @tc.level    Level.LEVEL2
      */
-it('bindPopupOffsetTest_static_0700', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('bindPopupOffsetTest_static_0700', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('bindPopupOffsetTest_static_0700 START');
       try {
         let indexEvent: emitter.InnerEvent = {
@@ -368,13 +374,14 @@ it('bindPopupOffsetTest_static_0700', Level.LEVEL2, async (done: () => void): Pr
 
 
     
-    /*
+    
+/**
      * @tc.number   bindPopupOffsetTest_static_0800
      * @tc.name     bindPopupOffsetTest_static_0800
      * @tc.desc     bindPopupOffsetTest_static_0800
      * @tc.level    Level.LEVEL2
      */
-it('bindPopupOffsetTest_static_0800', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('bindPopupOffsetTest_static_0800', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('bindPopupOffsetTest_static_0800 START');
       try {
         let indexEvent: emitter.InnerEvent = {
@@ -406,13 +413,14 @@ it('bindPopupOffsetTest_static_0800', Level.LEVEL2, async (done: () => void): Pr
 
 
     
-    /*
+    
+/**
      * @tc.number   bbindPopupOffsetTest_static_0900
      * @tc.name     bbindPopupOffsetTest_static_0900
      * @tc.desc     bbindPopupOffsetTest_static_0900
      * @tc.level    Level.LEVEL2
      */
-it('bbindPopupOffsetTest_static_0900', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('bbindPopupOffsetTest_static_0900', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('bindPopupOffsetTest_static_0900 START');
       try {
         let indexEvent: emitter.InnerEvent = {
@@ -444,13 +452,14 @@ it('bbindPopupOffsetTest_static_0900', Level.LEVEL2, async (done: () => void): P
 
 
     
-    /*
+    
+/**
      * @tc.number   bindPopupOffsetTest_static_1000
      * @tc.name     bindPopupOffsetTest_static_1000
      * @tc.desc     bindPopupOffsetTest_static_1000
      * @tc.level    Level.LEVEL2
      */
-it('bindPopupOffsetTest_static_1000', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('bindPopupOffsetTest_static_1000', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('bindPopupOffsetTest_static_1000 START');
       try {
         let indexEvent: emitter.InnerEvent = {

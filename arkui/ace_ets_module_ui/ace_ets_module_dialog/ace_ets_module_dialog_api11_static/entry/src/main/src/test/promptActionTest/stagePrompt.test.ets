@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -62,9 +61,9 @@ export default function stagePromptTest() {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       console.info("stagePromptTest beforeAll start")
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
       console.info("stagePromptTest  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -102,13 +101,14 @@ export default function stagePromptTest() {
     })
 
     
-    /*
+    
+/**
      * @tc.number   testPromptActionShowToast001_static
      * @tc.name     testPromptActionShowToast001_static
      * @tc.desc     testPromptActionShowToast001_static
      * @tc.level    Level.LEVEL2
      */
-it('testPromptActionShowToast001_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('testPromptActionShowToast001_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('testPromptActionShowToast001_static START');
       try {
         let innerEventOne: emitter.InnerEvent = {
@@ -137,13 +137,14 @@ it('testPromptActionShowToast001_static', Level.LEVEL2, async (done: () => void)
 
 
     
-    /*
+    
+/**
      * @tc.number   testPromptActionShowToast002_static
      * @tc.name     testPromptActionShowToast002_static
      * @tc.desc     testPromptActionShowToast002_static
      * @tc.level    Level.LEVEL2
      */
-it('testPromptActionShowToast002_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('testPromptActionShowToast002_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('testPromptActionShowToast002_static START');
       try {
         let innerEventTwo: emitter.InnerEvent = {
@@ -171,13 +172,14 @@ it('testPromptActionShowToast002_static', Level.LEVEL2, async (done: () => void)
     });
 
     
-    /*
+    
+/**
      * @tc.number   testPromptActionShowToast003_static
      * @tc.name     testPromptActionShowToast003_static
      * @tc.desc     testPromptActionShowToast003_static
      * @tc.level    Level.LEVEL2
      */
-it('testPromptActionShowToast003_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('testPromptActionShowToast003_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('testPromptActionShowToast003_static START');
       try {
         let innerEventThree: emitter.InnerEvent = {
@@ -205,13 +207,14 @@ it('testPromptActionShowToast003_static', Level.LEVEL2, async (done: () => void)
     });
 
     
-    /*
+    
+/**
      * @tc.number   testPromptActionShowToast004_static
      * @tc.name     testPromptActionShowToast004_static
      * @tc.desc     testPromptActionShowToast004_static
      * @tc.level    Level.LEVEL2
      */
-it('testPromptActionShowToast004_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('testPromptActionShowToast004_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('testPromptActionShowToast004_static START');
       try {
         let innerEventFour: emitter.InnerEvent = {
@@ -239,13 +242,14 @@ it('testPromptActionShowToast004_static', Level.LEVEL2, async (done: () => void)
     });
 
     
-    /*
+    
+/**
      * @tc.number   testPromptActionShowToast005_static
      * @tc.name     testPromptActionShowToast005_static
      * @tc.desc     testPromptActionShowToast005_static
      * @tc.level    Level.LEVEL2
      */
-it('testPromptActionShowToast005_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('testPromptActionShowToast005_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('testPromptActionShowToast005_static START');
       try {
         let innerEventFive: emitter.InnerEvent = {

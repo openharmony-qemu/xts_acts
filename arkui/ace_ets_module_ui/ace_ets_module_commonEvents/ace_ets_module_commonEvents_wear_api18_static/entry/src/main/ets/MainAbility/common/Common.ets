@@ -1,19 +1,18 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+// import screen from '@ohos.screen';
 import { BusinessError } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -82,4 +81,21 @@ export default class CommonFunc {
       "left": CommonFunc.rect_left, "top": CommonFunc.rect_top, "right": CommonFunc.rect_right, "bottom": CommonFunc.rect_bottom
     }
   }
+
+  // static setScreenOrientation(orientation: screen.Orientation) {
+  //   screen.getAllScreens().then((data: Array<screen.Screen>) => {
+  //     console.log('Succeeded in getting all screens. Data:'+ JSON.stringify(data));
+  //     return data[0] as screen.Screen;
+  //   }).then((screenClass: screen.Screen) => {
+  //     return screenClass.setOrientation(orientation);
+  //   }).then(() => {
+  //     console.log('Succeeded in setting the vertical orientation.');
+  //   }).catch((err: Error) => {
+  //     console.error('Failed to set the vertical orientation. Cause: ' + err.toString());
+  //   });
+  // }
 }
+
+
+
+

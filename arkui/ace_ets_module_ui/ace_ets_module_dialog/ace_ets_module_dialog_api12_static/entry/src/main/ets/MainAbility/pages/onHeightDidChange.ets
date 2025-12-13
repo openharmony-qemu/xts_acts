@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -40,7 +39,7 @@ struct SheetTransitionExample12 {
           this.sheetHeight = 500;
         })
 
-      Button(this.Height1 )
+      Button(this.Height1)
         .id('chaKan')
         .margin(10)
         .fontSize(20)

@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -62,9 +61,9 @@ export default function ShowDialogJsunit() {
   describe('ShowDialogJsunit', () => {
     beforeAll(() => {
       console.info("ShowDialogJsunit beforeAll start")
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
       console.info("ShowDialogJsunit  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -95,13 +94,14 @@ export default function ShowDialogJsunit() {
 
 
     
-    /*
+    
+/**
      * @tc.number   ShowDialogJsunit_static_0100
      * @tc.name     ShowDialogJsunit_static_0100
      * @tc.desc     ShowDialogJsunit_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('ShowDialogJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ShowDialogJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('ShowDialogJsunit_static_0100 START');
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('ShowDialog'));

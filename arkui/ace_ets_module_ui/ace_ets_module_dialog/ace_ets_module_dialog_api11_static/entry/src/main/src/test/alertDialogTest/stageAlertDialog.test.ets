@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -51,9 +50,9 @@ export default function stageAlertDialog() {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       console.info("stageAlertDialog beforeAll start")
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
       console.info("stageAlertDialog beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -92,13 +91,14 @@ export default function stageAlertDialog() {
 
 
     
-    /*
-     * @tc.number   stageAlertDialog001
-     * @tc.name     stageAlertDialog001
-     * @tc.desc     stageAlertDialog001
+    
+/**
+     * @tc.number   stageAlertDialog_static_001
+     * @tc.name     stageAlertDialog_static_001
+     * @tc.desc     stageAlertDialog_static_001
      * @tc.level    Level.LEVEL2
      */
-it('stageAlertDialog001', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('stageAlertDialog_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('stageAlertDialog001 START');
       setTimeout(() => {
         try {
@@ -129,13 +129,14 @@ it('stageAlertDialog001', Level.LEVEL2, async (done: () => void): Promise<void> 
 
 
     
-    /*
-     * @tc.number   stageAlertDialog002
-     * @tc.name     stageAlertDialog002
-     * @tc.desc     stageAlertDialog002
+    
+/**
+     * @tc.number   stageAlertDialog_static_002
+     * @tc.name     stageAlertDialog_static_002
+     * @tc.desc     stageAlertDialog_static_002
      * @tc.level    Level.LEVEL2
      */
-it('stageAlertDialog002', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('stageAlertDialog_static_002', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('stageAlertDialog002 START');
       setTimeout(() => {
         try {
@@ -166,13 +167,14 @@ it('stageAlertDialog002', Level.LEVEL2, async (done: () => void): Promise<void> 
 
 
     
-    /*
-     * @tc.number   stageAlertDialog003_static
-     * @tc.name     stageAlertDialog003_static
-     * @tc.desc     stageAlertDialog003_static
+    
+/**
+     * @tc.number   stageAlertDialog_static_003
+     * @tc.name     stageAlertDialog_static_003
+     * @tc.desc     stageAlertDialog_static_003
      * @tc.level    Level.LEVEL2
      */
-it('stageAlertDialog003_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('stageAlertDialog_static_003', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('stageAlertDialog003_static START');
       setTimeout(() => {
         try {

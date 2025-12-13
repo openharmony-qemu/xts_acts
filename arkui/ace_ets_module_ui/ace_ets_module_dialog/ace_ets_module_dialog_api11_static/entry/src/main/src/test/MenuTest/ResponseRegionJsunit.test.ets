@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -64,9 +63,9 @@ export default function ResponseRegionJsunit() {
     let y_value: number;
     beforeAll(() => {
       console.info("responseRegionTest beforeAll start")
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
       console.info("responseRegionTest  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -101,14 +100,14 @@ export default function ResponseRegionJsunit() {
 
 
     
-    /*
+    
+/**
      * @tc.number   testResponseRegion01_static
      * @tc.name     testResponseRegion01_static
      * @tc.desc     testResponseRegion01_static
      * @tc.level    Level.LEVEL2
      */
-it('testResponseRegion01_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
-
+    it('testResponseRegion01_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         console.info('[testResponseRegion01_static] START');
         try {
@@ -137,13 +136,14 @@ it('testResponseRegion01_static', Level.LEVEL2, async (done: () => void): Promis
 
 
     
-    /*
+    
+/**
      * @tc.number   testResponseRegion02_static
      * @tc.name     testResponseRegion02_static
      * @tc.desc     testResponseRegion02_static
      * @tc.level    Level.LEVEL2
      */
-it('testResponseRegion02_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('testResponseRegion02_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let rect = Utils.getComponentRect('region')
       console.info("[testResponseRegion02_static] rectInfo is " + JSON.stringify(rect));
       x_value = rect.left + (rect.right - rect.left) / 10

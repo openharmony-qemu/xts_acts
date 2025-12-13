@@ -1,5 +1,4 @@
-'use static';
-/*
+/**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,11 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
-import CommonFunc from '../../ets/MainAbility/common/Common';
+import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
@@ -26,73 +24,64 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility, stopApplication } from './Util.test';
-import window from '@ohos.window';
+import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-export default function onHeightDidChange() {
-
-  describe('onHeightDidChange', () => {
+export default function dialogApi() {
+  describe('dialogApi', () => {
     beforeAll(() => {
-
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
     })
     beforeEach(async (): Promise<void> => {
-      let options: router.RouterOptions = {
-        url: 'MainAbility/pages/onHeightDidChange',
-      }
+      console.info("dialogApi beforeEach start");
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
-        console.info("get onHeightDidChange state pages: " + JSON.stringify(pages));
-        if (!("onHeightDidChange" == pages.name)) {
-          console.info("get onHeightDidChange state pages.name: " + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options);
+        console.info("get dialogApi state pages:" + JSON.stringify(pages));
+        if (!("dialogApi" == pages.name)) {
+          console.info("get Context pages.name:" + JSON.stringify(pages.name));
+          routerInstance.pushUrl({url:"MainAbility/pages/Dialog/dialogApi"})
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push onHeightDidChange page error: " + err);
-        expect().assertFail();
+        console.error("push dialogApi page error:" + err);
       }
+      console.info("dialogApi foreEach end");
     });
-
     afterEach(async () => {
       await CommonFunc.sleep(1000);
-      console.info("onHeightDidChange after each called");
+      console.info("dialogApi after each called");
     });
 
     
 
-
-    /*
-     * @tc.number   onHeightDidChange_static_0100
-     * @tc.name     onHeightDidChange_static_0100
-     * @tc.desc     onHeightDidChange_static_0100
+    
+/**
+     * @tc.number   dialogApi_static_0100
+     * @tc.name     dialogApi_static_0100
+     * @tc.desc     dialogApi_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('onHeightDidChange_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('onHeightDidChange_0100 START');
-      let driver = Driver.create()
+it('dialogApi_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+
+      console.info('dialogApi_0100 START');
+      let driver = Driver.create();
+      let button = await driver.findComponent(ON.id('dialogApiBt'));
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let button1:Component = await driver.findComponent(ON.id('openModal1')) as Component;
-      await button1.click();
-      await CommonFunc.sleep(1000);
-      let button2:Component = await driver.findComponent(ON.id('ChangeHeight1')) as Component;
-      await button2.click();
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('chaKan');
+      let strJson = inspector.getInspectorByKey('dialogApiBt');
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('label')).assertEqual('onHeightDidChange success');
+      console.info("[dialogApi_0100] component obj is: " + JSON.stringify(obj));
+      expect(obj.getElement('$attrs').getString('label')).assertEqual("dialogApi");
+      console.info('[dialogApi_0100] END');
       await CommonFunc.sleep(1000);
-      let button4:Component = await driver.findComponent(ON.id('closeModal1')) as Component;
-      await button4.click();
+      await driver.triggerKey(2070)
       await CommonFunc.sleep(1000);
-      console.info('[onHeightDidChange_0100] END');
       done();
     });
   })

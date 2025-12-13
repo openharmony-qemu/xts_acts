@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -37,9 +36,9 @@ export default function ActionSheet2() {
   describe('ActionSheet2', () => {
     beforeAll(() => {
       console.info("ActionSheet2 beforeEach start");
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("ActionSheet2 beforeEach start");
@@ -66,13 +65,14 @@ export default function ActionSheet2() {
       }
     });
 
-    /*
+    
+    /**
      * @tc.number   ActionSheet2_static_0100
      * @tc.name     ActionSheet2_static_0100
      * @tc.desc     ActionSheet2_static_0100
      * @tc.level    Level.LEVEL2
      */
-    it('ActionSheet2_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('ActionSheet2_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('ActionSheet2_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -103,13 +103,14 @@ export default function ActionSheet2() {
       done();
     });
 
-    /*
+    
+    /**
      * @tc.number   ActionSheet2_static_0200
      * @tc.name     ActionSheet2_static_0200
      * @tc.desc     ActionSheet2_static_0200
      * @tc.level    Level.LEVEL2
      */
-    it('ActionSheet2_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('ActionSheet2_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('ActionSheet2_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

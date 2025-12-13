@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -50,9 +49,9 @@ export default function stageActionSheet() {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       console.info("stageActionSheet beforeAll start")
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
       console.info("stageActionSheet  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -91,13 +90,14 @@ export default function stageActionSheet() {
 
 
     
-    /*
-     * @tc.number   testShowActionShee001
-     * @tc.name     testShowActionShee001
-     * @tc.desc     testShowActionShee001
+    
+/**
+     * @tc.number   testShowActionShee_static_001
+     * @tc.name     testShowActionShee_static_001
+     * @tc.desc     testShowActionShee_static_001
      * @tc.level    Level.LEVEL2
      */
-it('testShowActionShee001', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('testShowActionShee_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('testShowActionShee001 START');
       setTimeout(() => {
         try {
@@ -128,13 +128,14 @@ it('testShowActionShee001', Level.LEVEL2, async (done: () => void): Promise<void
 
 
     
-    /*
-     * @tc.number   testShowActionShee002
-     * @tc.name     testShowActionShee002
-     * @tc.desc     testShowActionShee002
+    
+/**
+     * @tc.number   testShowActionShee_static_002
+     * @tc.name     testShowActionShee_static_002
+     * @tc.desc     testShowActionShee_static_002
      * @tc.level    Level.LEVEL2
      */
-it('testShowActionShee002', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('testShowActionShee_static_002', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('testShowActionShee002 START');
       setTimeout(() => {
         try {
@@ -165,13 +166,14 @@ it('testShowActionShee002', Level.LEVEL2, async (done: () => void): Promise<void
 
 
     
-    /*
-     * @tc.number   testShowActionShee003_static
-     * @tc.name     testShowActionShee003_static
-     * @tc.desc     testShowActionShee003_static
+    
+/**
+     * @tc.number   testShowActionShee_static_003
+     * @tc.name     testShowActionShee_static_003
+     * @tc.desc     testShowActionShee_static_003
      * @tc.level    Level.LEVEL2
      */
-it('testShowActionShee003_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('testShowActionShee_static_003', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('testShowActionShee003_static START');
       setTimeout(() => {
         try {

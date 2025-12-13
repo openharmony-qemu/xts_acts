@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -50,9 +49,9 @@ export default function AlertDialogJsunit() {
   describe('AlertDialogJsunit', () => {
     beforeAll(() => {
       console.info("AlertDialogJsunit beforeAll start")
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
       console.info("AlertDialogJsunit  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -83,13 +82,14 @@ export default function AlertDialogJsunit() {
 
 
     
-    /*
+    
+/**
      * @tc.number   AlertDialogJsunit_static_0100
      * @tc.name     AlertDialogJsunit_static_0100
      * @tc.desc     AlertDialogJsunit_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('AlertDialogJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('AlertDialogJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('AlertDialogJsunit_static_0100 START');
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('AlertDialogJsunit_0100'));

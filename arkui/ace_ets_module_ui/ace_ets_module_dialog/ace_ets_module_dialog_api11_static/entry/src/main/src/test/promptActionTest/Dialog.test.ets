@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -62,9 +61,9 @@ export default function DialogTest() {
   describe('DialogTest', () => {
     beforeAll(() => {
       console.info("DialogTest beforeAll start")
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
       console.info("DialogTest beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -94,13 +93,14 @@ export default function DialogTest() {
 
 
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Dialog_Visual_static_0060
      * @tc.name     ArkUX_Dialog_Visual_static_0060
      * @tc.desc     ArkUX_Dialog_Visual_static_0060
      * @tc.level    Level.LEVEL2
      */
-it('ArkUX_Dialog_Visual_static_0060', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ArkUX_Dialog_Visual_static_0060', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Dialog_Visual_static_0060 START');
       setTimeout(() => {
         try {

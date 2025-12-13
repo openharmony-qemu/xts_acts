@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -29,9 +28,9 @@ export default class EntryAbility extends UIAbility {
     AppStorage.setOrCreate<Want>('abilityWant', want);
   }
 
-  onDestroy(): Promise<void> | undefined {
+  onDestroy(): Promise<void>|undefined {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
-    return undefined;
+    return undefined
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
@@ -46,7 +45,6 @@ export default class EntryAbility extends UIAbility {
       }
       let windowClass: window.Window | undefined = undefined;
       windowStage.getMainWindow((err: BusinessError | null, data) => {
-        // let errCode: number = err?.code as number;
         if (err?.code) {
           console.error('Failed to obtain the main window. Cause: ' + JSON.stringify(err));
           return;
@@ -56,6 +54,7 @@ export default class EntryAbility extends UIAbility {
         try {
           let properties: window.WindowProperties | undefined = windowClass?.getWindowProperties();
           let wRect: window.Rect | undefined = properties?.windowRect;
+          AppStorage.setOrCreate<window.Window>('windowClass', windowClass!)
           AppStorage.setOrCreate<number>('winLeft', wRect?.left ?? 0);
           AppStorage.setOrCreate<number>('winTop', wRect?.top ?? 0);
           hilog.info(0x0000, 'testTag', 'Succeeded get winLeft:' + wRect?.left + ',winTop:' + wRect?.top);
@@ -64,7 +63,7 @@ export default class EntryAbility extends UIAbility {
         }
         // Obtain a UIContext instance.
         if (windowClass !== null) {
-          AppStorage.setOrCreate<UIContext>('uiContent', windowClass!.getUIContext());
+          AppStorage.setOrCreate<UIContext>('uiContext', windowClass!.getUIContext());
         }
       })
       hilog.info(0x0000, 'testTag', 'Succeeded in loading the content.');

@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -35,9 +34,9 @@ let testAbilityContext:common.UIAbilityContext;
 export default function showDialogTest() {
   describe('showDialogTest', () => {
     beforeAll(() => {
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
     })
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
@@ -59,7 +58,8 @@ export default function showDialogTest() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   showDialogTest_static_0100
      * @tc.name     showDialogTest_static_0100
      * @tc.desc     showDialogTest_static_0100
@@ -72,7 +72,9 @@ it('showDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
       let button:Component = await driver.findComponent(ON.id('click')) as Component;
       await button.click();
       await CommonFunc.sleep(1000);
+      console.log('abc123')
       let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+      console.log('efg123')
       await CommonFunc.sleep(2000);
       let column = obj.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')
       let backgroundBlurStyle:string =  column.getElement('backgroundBlurStyle')?.getString('value') as string
@@ -94,7 +96,8 @@ it('showDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
     });
 
     
-    /*
+    
+/**
      * @tc.number   showDialogTest_static_0200
      * @tc.name     showDialogTest_static_0200
      * @tc.desc     showDialogTest_static_0200
@@ -107,12 +110,14 @@ it('showDialogTest_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
       let button:Component = await driver.findComponent(ON.id('click1')) as Component;
       await button.click();
       await CommonFunc.sleep(1000);
+      console.log('abc123')
       let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+      console.log('efg123')
       await CommonFunc.sleep(2000);
 
       let column = obj.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')
       let backgroundColor:string = column.getString('backgroundColor')
-     
+
       let backgroundBlurStyle:string =  column.getElement('backgroundBlurStyle')?.getString('value') as string
 
       console.info('[showDialogTest_0200] backgroundBlurStyle'+ backgroundBlurStyle)
@@ -124,16 +129,17 @@ it('showDialogTest_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
       } else {
         expect(backgroundBlurStyle).assertEqual('BlurStyle.Regular')
       }
-      
+
       let button1:Component = await driver.findComponent(ON.text('button1')) as Component;
       await button1.click();
       await CommonFunc.sleep(1000);
       console.info('showDialogTest_0200 END');
       done();
     });
+
+
     
-    
-    /*
+/**
      * @tc.number   showDialogTest_static_0300
      * @tc.name     showDialogTest_static_0300
      * @tc.desc     showDialogTest_static_0300
@@ -150,7 +156,7 @@ it('showDialogTest_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
       await CommonFunc.sleep(2000);
       let column = obj.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')
       let backgroundColor:string = column.getString('backgroundColor')
-     
+
       let backgroundBlurStyle:string =  column.getElement('backgroundBlurStyle')?.getString('value') as string
 
       console.info('[showDialogTest_0300] backgroundBlurStyle'+ backgroundBlurStyle)
@@ -170,8 +176,9 @@ it('showDialogTest_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
       done();
     });
 
+
     
-    /*
+/**
      * @tc.number   showDialogTest_static_0400
      * @tc.name     showDialogTest_static_0400
      * @tc.desc     showDialogTest_static_0400
@@ -189,9 +196,9 @@ it('showDialogTest_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
 
       let column = obj.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')
       let backgroundColor:string = column.getString('backgroundColor')
-    
+
       let backgroundBlurStyle:string =  column.getElement('backgroundBlurStyle')?.getString('value') as string
-      
+
       console.info('[showDialogTest_0400] shadow'+ backgroundBlurStyle)
 
       let uniRenderFlag: string = obj.getArray('$children')[1].getElement('$attrs')?.getString('uniRender') as string;
@@ -209,9 +216,10 @@ it('showDialogTest_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
       done();
     });
 
+
+
     
-    
-    /*
+/**
      * @tc.number   showDialogTest_static_0500
      * @tc.name     showDialogTest_static_0500
      * @tc.desc     showDialogTest_static_0500
@@ -246,8 +254,9 @@ it('showDialogTest_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
       done();
     });
 
+
     
-    /*
+/**
      * @tc.number   showDialogTest_static_0600
      * @tc.name     showDialogTest_static_0600
      * @tc.desc     showDialogTest_static_0600
@@ -264,7 +273,7 @@ it('showDialogTest_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
       await CommonFunc.sleep(2000);
       let column = obj.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')
       let backgroundBlurStyle:string =  column.getElement('backgroundBlurStyle')?.getString('value') as string
-      
+
       console.info('[showDialogTest_0600] backgroundBlurStyle '+ backgroundBlurStyle)
       let uniRenderFlag: string = obj.getArray('$children')[1].getElement('$attrs')?.getString('uniRender') as string;
       console.info('[DialogOptions_0600] uniRenderFlag'+ uniRenderFlag)
@@ -282,8 +291,9 @@ it('showDialogTest_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
     });
 
 
-     
-    /*
+
+    
+/**
      * @tc.number   showDialogTest_static_0700
      * @tc.name     showDialogTest_static_0700
      * @tc.desc     showDialogTest_static_0700
@@ -301,7 +311,7 @@ it('showDialogTest_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
 
       let column = obj.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')
       let backgroundBlurStyle:string =  column.getElement('backgroundBlurStyle')?.getString('value') as string
-      
+
       console.info('[showDialogTest_0700] backgroundBlurStyle '+ backgroundBlurStyle)
 
       let uniRenderFlag: string = obj.getArray('$children')[1].getElement('$attrs')?.getString('uniRender') as string;
@@ -311,7 +321,7 @@ it('showDialogTest_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
       } else {
         expect(backgroundBlurStyle).assertEqual('BlurStyle.BACKGROUND_ULTRA_THICK')
       }
-      
+
 
       let button1:Component = await driver.findComponent(ON.text('button1')) as Component;
       await button1.click();
@@ -319,8 +329,9 @@ it('showDialogTest_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
       console.info('showDialogTest_0700 END');
       done();
     });
+
     
-    /*
+/**
      * @tc.number   showDialogTest_static_0800
      * @tc.name     showDialogTest_static_0800
      * @tc.desc     showDialogTest_static_0800
@@ -340,7 +351,7 @@ it('showDialogTest_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
       let backgroundBlurStyle:string =  column.getElement('backgroundBlurStyle')?.getString('value') as string
       console.info('[showDialogTest_0800] backgroundBlurStyle '+ backgroundBlurStyle)
       expect(backgroundBlurStyle).assertEqual('BlurStyle.NONE')
-      
+
       let button1:Component = await driver.findComponent(ON.text('button1')) as Component;
       await button1.click();
       await CommonFunc.sleep(1000);
@@ -348,8 +359,9 @@ it('showDialogTest_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
       done();
     });
 
+
     
-    /*
+/**
      * @tc.number   showDialogTest_static_0900
      * @tc.name     showDialogTest_static_0900
      * @tc.desc     showDialogTest_static_0900
@@ -367,7 +379,7 @@ it('showDialogTest_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
 
       let column = obj.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')
       let backgroundBlurStyle:string =  column.getElement('backgroundBlurStyle')?.getString('value') as string
-      
+
       console.info('[showDialogTest_0900] backgroundBlurStyle '+ backgroundBlurStyle)
       let uniRenderFlag: string = obj.getArray('$children')[1].getElement('$attrs')?.getString('uniRender') as string;
       console.info('[DialogOptions_0900] uniRenderFlag'+ uniRenderFlag)
@@ -384,8 +396,9 @@ it('showDialogTest_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
       done();
     });
 
+
     
-    /*
+/**
      * @tc.number   showDialogTest_static_1000
      * @tc.name     showDialogTest_static_1000
      * @tc.desc     showDialogTest_static_1000
@@ -403,7 +416,7 @@ it('showDialogTest_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
 
       let column = obj.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')
       let backgroundBlurStyle:string =  column.getElement('backgroundBlurStyle')?.getString('value') as string
-      
+
       console.info('[showDialogTest_1000] backgroundBlurStyle '+ backgroundBlurStyle)
       let uniRenderFlag: string = obj.getArray('$children')[1].getElement('$attrs')?.getString('uniRender') as string;
       console.info('[DialogOptions_1000] uniRenderFlag'+ uniRenderFlag)
@@ -419,8 +432,9 @@ it('showDialogTest_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
       console.info('showDialogTest_1000 END');
       done();
     });
+
     
-    /*
+/**
      * @tc.number   showDialogTest_static_1100
      * @tc.name     showDialogTest_static_1100
      * @tc.desc     showDialogTest_static_1100
@@ -438,7 +452,7 @@ it('showDialogTest_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
 
       let column = obj.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')
       let backgroundBlurStyle:string =  column.getElement('backgroundBlurStyle')?.getString('value') as string
-      
+
       console.info('[showDialogTest_1100] backgroundBlurStyle '+ backgroundBlurStyle)
       let uniRenderFlag: string = obj.getArray('$children')[1].getElement('$attrs')?.getString('uniRender') as string;
       console.info('[DialogOptions_1100] uniRenderFlag'+ uniRenderFlag)
@@ -455,8 +469,9 @@ it('showDialogTest_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
       done();
     });
 
+
     
-    /*
+/**
      * @tc.number   showDialogTest_static_1200
      * @tc.name     showDialogTest_static_1200
      * @tc.desc     showDialogTest_static_1200
@@ -474,7 +489,7 @@ it('showDialogTest_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
 
       let column = obj.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')
       let backgroundBlurStyle:string =  column.getElement('backgroundBlurStyle')?.getString('value') as string
-      
+
       console.info('[showDialogTest_1200] backgroundBlurStyle '+ backgroundBlurStyle)
 
       let uniRenderFlag: string = obj.getArray('$children')[1].getElement('$attrs')?.getString('uniRender') as string;
@@ -492,8 +507,9 @@ it('showDialogTest_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
       done();
     });
 
+
     
-    /*
+/**
      * @tc.number   showDialogTest_static_1300
      * @tc.name     showDialogTest_static_1300
      * @tc.desc     showDialogTest_static_1300
@@ -511,7 +527,7 @@ it('showDialogTest_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
 
       let column = obj.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')
       let backgroundBlurStyle:string =  column.getElement('backgroundBlurStyle')?.getString('value') as string
-      
+
       console.info('[showDialogTest_1300] backgroundBlurStyle '+ backgroundBlurStyle)
 
       let uniRenderFlag: string = obj.getArray('$children')[1].getElement('$attrs')?.getString('uniRender') as string;
@@ -529,7 +545,8 @@ it('showDialogTest_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
       done();
     });
 
-    /*
+    
+/**
      * @tc.number   showDialogTest_static_1400
      * @tc.name     showDialogTest_static_1400
      * @tc.desc     showDialogTest_static_1400
@@ -547,7 +564,7 @@ it('showDialogTest_static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
 
       let column = obj.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')
       let backgroundBlurStyle:string =  column.getElement('backgroundBlurStyle')?.getString('value') as string
-      
+
       console.info('[showDialogTest_1400] backgroundBlurStyle '+ backgroundBlurStyle)
       let uniRenderFlag: string = obj.getArray('$children')[1].getElement('$attrs')?.getString('uniRender') as string;
       console.info('[DialogOptions_1200] uniRenderFlag'+ uniRenderFlag)

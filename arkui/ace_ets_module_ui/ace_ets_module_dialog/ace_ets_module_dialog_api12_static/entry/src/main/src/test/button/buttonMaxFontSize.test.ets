@@ -1,11 +1,10 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -33,10 +32,9 @@ let testAbilityContext:common.UIAbilityContext;
 export default function buttonMaxFontSize() {
   describe('buttonMaxFontSize', () => {
     beforeAll(() => {
-
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
     })
     
     beforeEach(async () => {
@@ -62,7 +60,8 @@ export default function buttonMaxFontSize() {
       }
     });
     
-/*
+    
+/**
      * @tc.number   buttonMaxFontSize_static_0100
      * @tc.name     buttonMaxFontSize_static_0100
      * @tc.desc     buttonMaxFontSize_static_0100
@@ -82,7 +81,8 @@ it('buttonMaxFontSize_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.
     });
 
     
-    /*
+    
+/**
      * @tc.number   buttonMaxFontSize_static_0200
      * @tc.name     buttonMaxFontSize_static_0200
      * @tc.desc     buttonMaxFontSize_static_0200
@@ -102,7 +102,7 @@ it('buttonMaxFontSize_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.
     });
     
     
-/*
+/**
      * @tc.number   buttonMaxFontSize_static_0300
      * @tc.name     buttonMaxFontSize_static_0300
      * @tc.desc     buttonMaxFontSize_static_0300

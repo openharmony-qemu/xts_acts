@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -62,9 +61,9 @@ export default function openCustomDialogFalse() {
   describe('openCustomDialogFalse', () => {
     beforeAll(() => {
       console.info("openCustomDialogFalse beforeAll start")
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
       console.info("openCustomDialogFalse beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -94,13 +93,14 @@ export default function openCustomDialogFalse() {
 
 
     
-    /*
+    
+/**
      * @tc.number   openCustomDialogFalse_static_0100
      * @tc.name     openCustomDialogFalse_static_0100
      * @tc.desc     openCustomDialogFalse_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('openCustomDialogFalse_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('openCustomDialogFalse_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('openCustomDialogFalse_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

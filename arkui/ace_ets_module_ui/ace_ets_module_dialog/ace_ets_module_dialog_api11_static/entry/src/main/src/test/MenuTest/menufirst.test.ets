@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -70,9 +69,9 @@ export default function menuTest() {
   describe('ActsMenuFirstTest', () => {
     beforeAll(() => {
       console.info("ActsMenuFirstTest beforeAll start")
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
       console.info("ActsMenuFirstTest  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -102,13 +101,14 @@ export default function menuTest() {
 
 
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_Menu_EnableArrow_static_0100
      * @tc.name     ArkUX_Stage_Menu_EnableArrow_static_0100
      * @tc.desc     ArkUX_Stage_Menu_EnableArrow_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('ArkUX_Stage_Menu_EnableArrow_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ArkUX_Stage_Menu_EnableArrow_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("menu"))
       console.info('ArkUX_Stage_Menu_EnableArrow_static_0100 enableArrow :' +
       JSON.stringify(obj.getElement('$attrs').tryGetElement('enableArrow')));
@@ -118,13 +118,14 @@ it('ArkUX_Stage_Menu_EnableArrow_static_0100', Level.LEVEL2, async (done: () => 
 
 
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_Menu_ArrowOffset_static_0100
      * @tc.name     ArkUX_Stage_Menu_ArrowOffset_static_0100
      * @tc.desc     ArkUX_Stage_Menu_ArrowOffset_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('ArkUX_Stage_Menu_ArrowOffset_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ArkUX_Stage_Menu_ArrowOffset_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("menu"))
       console.info('ArkUX_Stage_Menu_ArrowOffset_static_0100 arrowOffset :' +
       JSON.stringify(obj.getElement('$attrs').tryGetElement('arrowOffset')));

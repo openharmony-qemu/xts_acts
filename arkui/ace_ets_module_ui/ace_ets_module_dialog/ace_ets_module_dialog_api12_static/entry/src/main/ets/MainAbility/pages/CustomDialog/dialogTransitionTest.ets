@@ -1,21 +1,20 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the 'License');
+ * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an 'AS IS' BASIS,
+ * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
 import { BusinessError } from '@ohos.base';
-import { PromptAction,UIContext } from '@ohos.arkui.UIContext';
-import  promptAction  from '@ohos.promptAction';
+import { PromptAction, UIContext } from '@ohos.arkui.UIContext';
+import promptAction, { LevelOrder } from '@ohos.promptAction';
 import {
   Entry,
   Component,
@@ -33,16 +32,28 @@ import {
   Week,
   FontWeight,
   Axis,
-  Margin,TransitionEffect,FlexAlign,TransitionEdge, CustomBuilderT,wrapBuilder,
-  PickerTextStyle, CalendarAlign, Date, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,
-  ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,
+  ComponentContent,
+  Margin,
+  TransitionEffect,
+  FlexAlign,
+  TransitionEdge,
+  CustomBuilderT,
+  wrapBuilder,
+  PickerTextStyle,
+  CalendarAlign,
+  Date,
+  CalendarPicker,
+  Builder,
+  TextOverflow,
+  TextHeightAdaptivePolicy,
+  ArrowPosition,
+  Select,
+  BlurStyle,
+  MenuAlignType,
+  TextInputController,
 } from '@ohos.arkui.component';
-import { LevelOrder } from '@ohos.promptAction';
-import { ComponentContent } from '@ohos.arkui.node'
 import {
-  State,
-  Link,
-  PropRef,AppStorage
+  State, Link, Prop, AppStorage
 } from '@ohos.arkui.stateManagement';
 
 class Params {
@@ -68,30 +79,31 @@ function buildText(params: Params) {
 struct dialogTransitionTest {
   @State private isEnableTransition: boolean = true;
   @State message: string = '弹窗'
-  @State text:string = ''
+  @State text: string = ''
   private ctx: UIContext = this.getUIContext()
   private promptAction: PromptAction = this.ctx.getPromptAction()
-  private contentNode: ComponentContent<Params> = new ComponentContent<Params>(this.ctx, wrapBuilder<CustomBuilderT<Params>>(buildText), new Params(this.message))
+  private contentNode: ComponentContent<Params> =
+    new ComponentContent<Params>(this.ctx, wrapBuilder<CustomBuilderT<Params>>(buildText), new Params(this.message))
   private baseDialogOptions: promptAction.BaseDialogOptions = {
     showInSubWindow: false,
     transition: this.isEnableTransition ? TransitionEffect.move(TransitionEdge.BOTTOM)
       .animation({ duration: 2000 })
       .combine(TransitionEffect.OPACITY) : undefined,
     levelOrder: LevelOrder.clamp(30.1),
-    onWillAppear:()=>{
+    onWillAppear: () => {
       this.text = 'onWillAppear'
-      AppStorage.setOrCreate<string>('text',this.text)
+      AppStorage.setOrCreate<string>('text', this.text)
       console.log('onWillAppear')
     },
-    onDidAppear:()=>{
+    onDidAppear: () => {
       console.log('onDidAppear')
     },
-    onWillDisappear:()=>{
+    onWillDisappear: () => {
       console.log('onWillDisappear')
     },
-    onDidDisappear:()=>{
+    onDidDisappear: () => {
       this.text = 'onDidDisappear'
-      AppStorage.setOrCreate<string>('text',this.text)
+      AppStorage.setOrCreate<string>('text', this.text)
       console.log('onDidDisappear')
     }
   } as promptAction.BaseDialogOptions
@@ -100,7 +112,7 @@ struct dialogTransitionTest {
     Column({ space: 10 } as ColumnOptions) {
       Button('openCustomDialog')
         .id('open')
-        .onClick((e:ClickEvent):void => {
+        .onClick((e: ClickEvent): void => {
           this.promptAction.openCustomDialog(this.contentNode, this.baseDialogOptions)
             .catch((err: Error) => {
               console.error('openCustomDialog error: ' + err.code + ' ' + err.message)

@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -62,9 +61,9 @@ export default function ToastShowMode() {
   describe('ToastShowMode', () => {
     beforeAll(() => {
       console.info("ToastShowMode beforeAll start")
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
       console.info("ToastShowMode  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -95,13 +94,14 @@ export default function ToastShowMode() {
 
 
     
-    /*
+    
+/**
      * @tc.number   ToastShowMode_static_0100
      * @tc.name     ToastShowMode_static_0100
      * @tc.desc     ToastShowMode_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('ToastShowMode_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ToastShowMode_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('ToastShowMode_static_0100 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
@@ -119,13 +119,14 @@ it('ToastShowMode_static_0100', Level.LEVEL2, async (done: () => void): Promise<
 
 
     
-    /*
+    
+/**
      * @tc.number   ToastShowMode_static_0200
      * @tc.name     ToastShowMode_static_0200
      * @tc.desc     ToastShowMode_static_0200
      * @tc.level    Level.LEVEL2
      */
-it('ToastShowMode_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ToastShowMode_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('ToastShowMode_static_0200 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()

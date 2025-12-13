@@ -1,11 +1,10 @@
-'use static';
-/*
+/**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+*     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -40,7 +39,6 @@ class UtilsTest{
         await abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
         hilog.info(domain, tag, `loadAndSetUpUiTest, success`);
         UtilsTest.isStartedAbility = true;
-        await UtilsTest.msSleep(4000)
       }
       return true;
     } catch(error) {
@@ -55,7 +53,6 @@ async function startAbility(bundleName: string, abilityName: string): Promise<bo
     await abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
     console.info(`UiTestCase, start abilityFinished`);
     hilog.info(domain, tag, `UiTestCase, start abilityFinished`);
-    await UtilsTest.msSleep(4000)
     return true;
   } catch(error) {
     console.error(`UiTestCase, start abilityFailed: ${error}`);

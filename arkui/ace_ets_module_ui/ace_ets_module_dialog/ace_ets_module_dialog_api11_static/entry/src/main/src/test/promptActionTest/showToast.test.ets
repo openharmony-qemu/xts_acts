@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -61,9 +60,9 @@ export default function showToast() {
     beforeAll(() => {
       console.info("showToast beforeAll start")
 
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
       console.info("showToast beforeAll end")
     })
 
@@ -92,13 +91,14 @@ export default function showToast() {
 
 
     
-    /*
+    
+/**
      * @tc.number   showToast_static_0100
      * @tc.name     showToast_static_0100
      * @tc.desc     showToast_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('showToast_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('showToast_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('showToast_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

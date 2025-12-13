@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -70,9 +69,9 @@ export default function menuDividerTest() {
   describe('ActsMenuDividerTest', () => {
     beforeAll(() => {
       console.info("ActsMenuDividerTest beforeAll start")
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
       console.info("ActsMenuDividerTest  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -101,7 +100,7 @@ export default function menuDividerTest() {
     });
 
 
-    /*
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0001
      * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0001
      * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0001
@@ -123,7 +122,7 @@ export default function menuDividerTest() {
     });
 
 
-    /*
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0002
      * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0002
      * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0002
@@ -144,7 +143,7 @@ export default function menuDividerTest() {
     });
 
 
-    /*
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0003
      * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0003
      * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0003
@@ -165,7 +164,7 @@ export default function menuDividerTest() {
     });
 
 
-    /*
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0004
      * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0004
      * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0004
@@ -186,7 +185,7 @@ export default function menuDividerTest() {
     });
 
 
-    /*
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0005
      * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0005
      * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0005
@@ -208,7 +207,7 @@ export default function menuDividerTest() {
     });
 
 
-    /*
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0006
      * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0006
      * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0006
@@ -229,7 +228,7 @@ export default function menuDividerTest() {
     });
 
 
-    /*
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0007
      * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0007
      * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0007
@@ -249,7 +248,8 @@ export default function menuDividerTest() {
       done();
     });
 
-    /*
+
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0008
      * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0008
      * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0008
@@ -270,7 +270,7 @@ export default function menuDividerTest() {
     });
 
 
-    /*
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0009
      * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0009
      * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0009
@@ -292,7 +292,7 @@ export default function menuDividerTest() {
     });
 
 
-    /*
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0010
      * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0010
      * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0010
@@ -313,7 +313,7 @@ export default function menuDividerTest() {
     });
 
 
-    /*
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0011
      * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0011
      * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0011
@@ -334,7 +334,7 @@ export default function menuDividerTest() {
     });
 
 
-    /*
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0012
      * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0012
      * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0012
@@ -355,7 +355,7 @@ export default function menuDividerTest() {
     });
 
 
-    /*
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0013
      * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0013
      * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0013
@@ -376,7 +376,7 @@ export default function menuDividerTest() {
     });
 
 
-    /*
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_001
      * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_001
      * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_001
@@ -397,7 +397,7 @@ export default function menuDividerTest() {
     });
 
 
-    /*
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0002
      * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0002
      * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0002
@@ -418,7 +418,7 @@ export default function menuDividerTest() {
     })
 
 
-    /*
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0003
      * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0003
      * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0003
@@ -439,7 +439,7 @@ export default function menuDividerTest() {
     });
 
 
-    /*
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0004
      * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0004
      * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0004
@@ -460,7 +460,7 @@ export default function menuDividerTest() {
     });
 
 
-    /*
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0005
      * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0005
      * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0005
@@ -482,7 +482,7 @@ export default function menuDividerTest() {
     });
 
 
-    /*
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0006
      * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0006
      * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0006
@@ -503,7 +503,7 @@ export default function menuDividerTest() {
     })
 
 
-    /*
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0007
      * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0007
      * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0007
@@ -525,7 +525,7 @@ export default function menuDividerTest() {
     });
 
 
-    /*
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0008
      * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0008
      * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0008
@@ -546,7 +546,7 @@ export default function menuDividerTest() {
     });
 
 
-    /*
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0009
      * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0009
      * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0009
@@ -568,7 +568,7 @@ export default function menuDividerTest() {
     });
 
 
-    /*
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0010
      * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0010
      * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0010
@@ -589,7 +589,7 @@ export default function menuDividerTest() {
     })
 
 
-    /*
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0011
      * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0011
      * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0011
@@ -611,7 +611,7 @@ export default function menuDividerTest() {
     });
 
 
-    /*
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0012
      * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0012
      * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0012
@@ -631,7 +631,8 @@ export default function menuDividerTest() {
       done();
     });
 
-    /*
+
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0013
      * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0013
      * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0013
@@ -652,7 +653,7 @@ export default function menuDividerTest() {
     })
 
 
-    /*
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0014
      * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0014
      * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0014
@@ -673,7 +674,7 @@ export default function menuDividerTest() {
     });
 
 
-    /*
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0015
      * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0015
      * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0015
@@ -694,7 +695,7 @@ export default function menuDividerTest() {
     });
 
 
-    /*
+    /**
      * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0016
      * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0016
      * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0016
@@ -713,6 +714,5 @@ export default function menuDividerTest() {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_static_0016] END');
       done();
     });
-
   })
 }
