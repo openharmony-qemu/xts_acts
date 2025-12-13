@@ -18,6 +18,7 @@ export const clearBlanklessLoadingCache: (webName:string) => void;
 export const doblankless_ERR_KEY_NOT_MATCH: (webName:string) => number;
 export const doblankless_CONTROLLER_NOT_INITED: (webName:string) => number;
 export const doblankless_INVALID_ARGS: (webName:string) => number;
+export const doblankless_INVALID_ARGS_SET_ZERO: (webName:string) => number;
 export const setCacheCapacity_1: (webName:string) => number;
 export const setCacheCapacity0: (webName:string) => number;
 export const setCacheCapacity50: (webName:string) => number;

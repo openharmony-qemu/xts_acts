@@ -178,6 +178,32 @@ struct ndkBlanklessInfoWithKeyTest {
               }
               break;
             }
+            case 'testndkBlanklessInfoWithKey006': {
+              let msg = 'testndkBlanklessInfoWithKey006'
+              let num: number = -1
+              this.isPageEnd = -1;
+              testNapi.clearBlanklessLoadingCache(this.webTag);
+              await this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              let num1: number = testNapi.doblankless_Success(this.webTag);
+              console.log(`${msg}`, 'first loadUrl finish:' + num1);
+              testNapi.clearBlanklessLoadingCache(this.webTag);
+              this.isPageEnd = -1;
+              await this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              console.log(`${msg}`, 'second loadUrl finish');
+              num = testNapi.Doblankless_INVALID_ARGS_SET_ZERO(this.webTag);
+              console.log(msg, `预期值：-2`,`实际值${num}`);
+              console.log(`${msg}`, 'testNapi.doblankless_SUCCESS0:' + num);
+              if (num == 801) {
+                Utils.emitEvent(-2, 148160)
+                console.log(`${msg}`, 'testNapi.Doblankless_INVALID_ARGS_SET_ZERO1:' + num);
+              } else {
+                Utils.emitEvent(num, 148160)
+                console.log(`${msg}`, 'testNapi.Doblankless_INVALID_ARGS_SET_ZERO2:' + num);
+              }
+              break;
+            }
           }
         })
       }
