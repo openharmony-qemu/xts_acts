@@ -1,6 +1,5 @@
-'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -573,15 +572,23 @@ struct clipPage {
   @State _clipWaterFlowMod: WaterFlowModifier = new WaterFlowModifier()
   @State _clipWebMod: WebModifier = new WebModifier()
   @State _clipXComponentMod: XComponentModifier = new XComponentModifier()
-  @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView ?? '';
-  @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey ?? '';
-  @State parentWidth: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
-  @State parentHeight: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
-  @State columns: int = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int) ?? 0
-  @State gutter: int = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int) ?? 0
-  @State parentComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey ?? '';
+  @State targetView: string = '';
+  @State componentKey: string = '';
+  @State parentWidth: double = 0
+  @State parentHeight: double = 0
+  @State columns: int = 0
+  @State gutter: int = 0
+  @State parentComponentKey: string = '';
 
   onPageShow() {
+    this.targetView = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView;
+    this.componentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey as string;
+    this.parentWidth = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
+    this.parentHeight = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
+    this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int)
+    this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int)
+    this.parentComponentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey;
+    this._clipButtonMod.mClip = (this.getUIContext().getRouter().getParams() as RouterParams).view.testValue.setValue.clip
     attrsManager.registerDataChange((value: SetValue) => {
       console.info('[registerDataChange] ' + JSON.stringify(value.clip))
       this._clipAlphabetIndexerMod.mClip = value.clip
@@ -673,7 +680,7 @@ struct clipPage {
     GridRow({ columns: this.columns, gutter: this.gutter}) {
       Row() {
         if (this.targetView == 'Button') {
-          Button('button1').attributeModifier(this._clipButtonMod)
+          Button('button1').key(this.componentKey).attributeModifier(this._clipButtonMod)
         } else if (this.targetView == 'Text') {
           Text('text1').attributeModifier(this._clipTextMod)
         } else if (this.targetView == 'AlphabetIndexer') {
