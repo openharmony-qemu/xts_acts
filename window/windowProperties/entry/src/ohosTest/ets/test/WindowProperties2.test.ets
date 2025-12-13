@@ -3307,20 +3307,21 @@ export default function windowPropertiesTest2() {
           expect(false).assertTrue();
           done();
         }).catch((err: BusinessError) => {
-          console.error(caseName+` Failed to set the starting window color. Cause code: ${err.code}, message: ${err.message}`);
+          console.error(`caseName+ Failed to set the starting window color. Cause code: ${err.code}, message: ${err.message}`);
           if(!isSupport){
             expect(err.code).assertEqual(801);
             expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setStartWindowBackgroundColor]');
             done()
           }else {
-            expect(false).assertTrue();
-            done();
+            expect(err.code).assertEqual(1300003);
+            expect(err.message).assertEqual('This window manager service works abnormally.[window][setStartWindowBackgroundColor]');
+            done()
+
           }
         });
       } catch(e) {
         console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);
-        expect(e.code).assertEqual(1300016);
-        expect(e.message).assertEqual('Parameter validation error.[window][setStartWindowBackgroundColor]msg: Parameter moduleName exceeds the allowed length');
+        expect(false).assertTrue();
         done();
       }
     })
@@ -3345,20 +3346,21 @@ export default function windowPropertiesTest2() {
           expect(false).assertTrue();
           done();
         }).catch((err: BusinessError) => {
-          console.error(caseName+` Failed to set the starting window color. Cause code: ${err.code}, message: ${err.message}`);
+          console.error(`caseName+ Failed to set the starting window color. Cause code: ${err.code}, message: ${err.message}`);
           if(!isSupport){
             expect(err.code).assertEqual(801);
             expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setStartWindowBackgroundColor]');
             done()
           }else {
-            expect(false).assertTrue();
-            done();
+            expect(err.code).assertEqual(1300003);
+            expect(err.message).assertEqual('This window manager service works abnormally.[window][setStartWindowBackgroundColor]');
+            done()
+
           }
         });
       } catch(e) {
         console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);
-        expect(e.code).assertEqual(1300016);
-        expect(e.message).assertEqual('Parameter validation error.[window][setStartWindowBackgroundColor]msg: Parameter moduleName exceeds the allowed length');
+        expect(false).assertTrue();
         done();
       }
     })

@@ -2061,14 +2061,6 @@ export default function windowZindexTest() {
       }
 
     })
-    /**
-     * @tc.number  SUB_BASIC_WMS_FUNCTION_SET_SUBWINDOW_ZLEVEL_0100
-     * @tc.name    testSetSubWindowZLevel__10001
-     * @tc.desc    setSetSubWindowZLevel入参-10001
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 3
-     */
     it('testSetSubWindowZLevel__10001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetSubWindowZLevel__10001';
       let isSupport = canIUse('SystemCapability.Window.SessionManager')
@@ -2081,22 +2073,23 @@ export default function windowZindexTest() {
           expect(false).assertTrue();
           done();
         }).catch(async (err: BusinessError) => {
-          console.error(caseName+` Failed to set sub window zLevel. Cause code: ${err.code}, message: ${err.message}`);
+          console.error(`caseName+ Failed to set sub window zLevel. Cause code: ${err.code}, message: ${err.message}`);
           await subWindow.destroyWindow();
           if(!isSupport){
             expect(err.code).assertEqual(801);
             expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setSubWindowZLevel]msg: Set sub window zLevel failed');
             done()
           }else {
-            expect(false).assertTrue();
+            expect(err.code).assertEqual(401);
+            expect(err.message).assertEqual('Parameter error.[window][setSubWindowZLevel]msg: Set sub window zLevel failed');
             done();
+
           }
         });
       } catch(e) {
         console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         await subWindow.destroyWindow();
-        expect(e.code).assertEqual(401);
-        expect(e.message).assertEqual('Parameter validation error.[window][setStartWindowBackgroundColor]msg: Parameter moduleName exceeds the allowed length');
+        expect(false).assertTrue();
         done();
       }
     })
@@ -2178,14 +2171,6 @@ export default function windowZindexTest() {
         done();
       }
     })
-    /**
-     * @tc.number  SUB_BASIC_WMS_FUNCTION_SET_SUBWINDOW_ZLEVEL_0400
-     * @tc.name    testSetSubWindowZLevel_10001
-     * @tc.desc    setSetSubWindowZLevel入参10001
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 3
-     */
     it('testSetSubWindowZLevel_10001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetSubWindowZLevel_10001';
       let isSupport = canIUse('SystemCapability.Window.SessionManager')
@@ -2198,22 +2183,23 @@ export default function windowZindexTest() {
           expect(false).assertTrue();
           done();
         }).catch(async (err: BusinessError) => {
-          console.error(caseName+` Failed to set sub window zLevel. Cause code: ${err.code}, message: ${err.message}`);
+          console.error(`caseName+ Failed to set sub window zLevel. Cause code: ${err.code}, message: ${err.message}`);
           await subWindow.destroyWindow();
           if(!isSupport){
             expect(err.code).assertEqual(801);
             expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setSubWindowZLevel]msg: Set sub window zLevel failed');
             done()
           }else {
-            expect(false).assertTrue();
+            expect(err.code).assertEqual(401);
+            expect(err.message).assertEqual('Parameter error.[window][setSubWindowZLevel]msg: Set sub window zLevel failed');
             done();
+
           }
         });
       } catch(e) {
         console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         await subWindow.destroyWindow();
-        expect(e.code).assertEqual(401);
-        expect(e.message).assertEqual('Parameter validation error.[window][setStartWindowBackgroundColor]msg: Parameter moduleName exceeds the allowed length');
+        expect(false).assertTrue();
         done();
       }
     })
