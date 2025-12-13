@@ -2523,6 +2523,7 @@ export default function SensorJsStaticTest() {
             hilog.info(0x0000, 'testTag', '---------fusion_pressure_SensorJsTest_static_071 off in--------------');
             sensor.offFusionPressureChange();
             hilog.info(0x0000, 'testTag', '---------fusion_pressure_SensorJsTest_static_071 off end--------------');
+            expect(sensor.SensorId.FUSION_PRESSURE == sensor.SensorId.FUSION_PRESSURE).assertTrue();
             done();
           }, 500);
         } catch (error) {
@@ -2554,7 +2555,6 @@ export default function SensorJsStaticTest() {
             expect(false).assertTrue();
             done();
           }, 500);
-          done();
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `fusionPressureParamError_SensorJsTest_static_072 failed error.code: ${e.code} , error.message: ${e.message}`);
