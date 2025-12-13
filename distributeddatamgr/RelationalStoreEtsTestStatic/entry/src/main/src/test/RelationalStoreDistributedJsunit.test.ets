@@ -90,6 +90,20 @@ function storeObserver(devices: Array<string>) {
     expect(devices).assertEqual(null)
 }
 
+function detailsObserver(progressDetails: data_Rdb.ProgressDetails) {
+    console.info(TAG + progressDetails + " AutoSyncProgress");
+    expect(progressDetails).assertEqual(null)
+}
+
+function sqlObserver(sqlExecutionInfo: data_Rdb.SqlExecutionInfo) {
+    console.info(TAG + sqlExecutionInfo + " onStatistics");
+    expect(sqlExecutionInfo).assertEqual(null)
+}
+
+function Observer() {
+    console.info(TAG + " Observer");
+}
+
 export default function relationalStoreDistributedTest() {
 describe('relationalStoreDistributedTest', (): void => {
     beforeAll(async (): Promise<void> => {
@@ -154,7 +168,7 @@ describe('relationalStoreDistributedTest', (): void => {
         try {
             await rdbStore!.setDistributedTables(['employee'])
             console.info(TAG + "set employee to be distributed table success");
-            expect(rdbStore).assertEqual(rdbStore)
+            expect(rdbStore !== null).assertTrue();
         } catch (err: BusinessError) {
             console.info(TAG + "setDistributed003 failed"+ `, error code is ${err.code}, message is ${err.message}`);
             expect(err.code).assertEqual(ERRCODE);
@@ -406,7 +420,7 @@ describe('relationalStoreDistributedTest', (): void => {
     it('testRdbStoreDistributed0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
         console.info(TAG + "************* testRdbStoreDistributed0013 start *************");
         try{
-            rdbStore!.off("dataChange", data_Rdb.SubscribeType.SUBSCRIBE_TYPE_REMOTE, storeObserver);
+            rdbStore!.offDataChange(data_Rdb.SubscribeType.SUBSCRIBE_TYPE_REMOTE, storeObserver);
             console.info(TAG + "off dataChange success ");
         }catch(err){
             console.info(TAG + "off dataChange " + err);
@@ -426,7 +440,7 @@ describe('relationalStoreDistributedTest', (): void => {
      */
     it('SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
         try{
-            rdbStore!.on("dataChange", data_Rdb.SubscribeType.SUBSCRIBE_TYPE_CLOUD, (devices) => {
+            rdbStore!.onDataChange(data_Rdb.SubscribeType.SUBSCRIBE_TYPE_CLOUD, (devices) => {
                 console.info(TAG + devices + " dataChange");
                 expect(devices).assertEqual(null);
             });
@@ -447,7 +461,7 @@ describe('relationalStoreDistributedTest', (): void => {
      */
     it('SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
         try{
-            rdbStore!.on('dataChange', data_Rdb.SubscribeType.SUBSCRIBE_TYPE_CLOUD_DETAILS, (table) => {
+            rdbStore!.onDataChange(data_Rdb.SubscribeType.SUBSCRIBE_TYPE_CLOUD_DETAILS, (table) => {
                 console.info(TAG + table + " dataChange");
                 expect(table).assertEqual(null);
             });
@@ -468,7 +482,7 @@ describe('relationalStoreDistributedTest', (): void => {
      */
     it('SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
         try{
-            rdbStore!.on('dataChange', data_Rdb.SubscribeType.SUBSCRIBE_TYPE_CLOUD_DETAILS, (type) => {
+            rdbStore!.onDataChange(data_Rdb.SubscribeType.SUBSCRIBE_TYPE_CLOUD_DETAILS, (type) => {
                 console.info(TAG + type + " dataChange");
                 expect(type).assertEqual(null);
             });
@@ -493,7 +507,7 @@ describe('relationalStoreDistributedTest', (): void => {
             expect(inserted).assertEqual(null);
         }
         try{
-            rdbStore!.on('dataChange', data_Rdb.SubscribeType.SUBSCRIBE_TYPE_CLOUD_DETAILS, Observer);
+            rdbStore!.onDataChange(data_Rdb.SubscribeType.SUBSCRIBE_TYPE_CLOUD_DETAILS, Observer);
         }catch(err:BusinessError){
             console.info(TAG + "on dataChange " + err);
             expect(err !== null).assertFalse();
@@ -512,7 +526,7 @@ describe('relationalStoreDistributedTest', (): void => {
      */
     it('SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
         try{
-            rdbStore!.on('dataChange', data_Rdb.SubscribeType.SUBSCRIBE_TYPE_CLOUD_DETAILS, (updated) => {
+            rdbStore!.onDataChange(data_Rdb.SubscribeType.SUBSCRIBE_TYPE_CLOUD_DETAILS, (updated) => {
                 console.info(TAG + updated + " dataChange");
                 expect(updated).assertEqual(null);
             });
@@ -534,7 +548,7 @@ describe('relationalStoreDistributedTest', (): void => {
      */
     it('SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
         try{
-            rdbStore!.on('dataChange', data_Rdb.SubscribeType.SUBSCRIBE_TYPE_CLOUD_DETAILS, (deleted) => {
+            rdbStore!.onDataChange(data_Rdb.SubscribeType.SUBSCRIBE_TYPE_CLOUD_DETAILS, (deleted) => {
                 console.info(TAG + deleted + " dataChange");
                 expect(deleted).assertEqual(null);
             });
@@ -555,7 +569,7 @@ describe('relationalStoreDistributedTest', (): void => {
      */
     it('SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         try{
-            rdbStore!.on('dataChange', data_Rdb.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, (table) => {
+            rdbStore!.onDataChange(data_Rdb.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, (table) => {
                 console.info(TAG + table + " dataChange");
                 expect(table).assertEqual(null);
             });

@@ -74,7 +74,7 @@ export default function SqlExecutionTimeTest() {
         return;
       }
       try {
-        rdbStore!.off('statistics');
+        rdbStore!.offStatistics();
       }
       catch (error: BusinessError) {
         console.error(TAG + `unRegister fail3, code:${error.code}, message: ${error.message}`);
@@ -105,7 +105,7 @@ export default function SqlExecutionTimeTest() {
         return;
       }
       try {
-        rdbStore!.on('statistics', (SqlExeInfo) => {
+        rdbStore!.onStatistics((SqlExeInfo) => {
           console.info(TAG + "totalTime is : "+  SqlExeInfo.totalTime);
           console.info(TAG + "prepareTime is : "+  SqlExeInfo.prepareTime);
           console.info(TAG + "waitTime is : "+  SqlExeInfo.waitTime);
@@ -152,7 +152,7 @@ export default function SqlExecutionTimeTest() {
         return;
       }
       try {
-        rdbStore!.on('statistics', (SqlExeInfo) => {
+        rdbStore!.onStatistics((SqlExeInfo) => {
           console.info(TAG + "totalTime is : "+  SqlExeInfo.totalTime);
           console.info(TAG + "prepareTime is : "+  SqlExeInfo.prepareTime);
           console.info(TAG + "waitTime is : "+  SqlExeInfo.waitTime);
@@ -200,7 +200,7 @@ export default function SqlExecutionTimeTest() {
         return;
       }
       try {
-        rdbStore!.on('statistics', (SqlExeInfo) => {
+        rdbStore!.onStatistics((SqlExeInfo) => {
           console.info(TAG + "totalTime is : "+  SqlExeInfo.totalTime);
           console.info(TAG + "prepareTime is : "+  SqlExeInfo.prepareTime);
           console.info(TAG + "waitTime is : "+  SqlExeInfo.waitTime);
@@ -249,7 +249,7 @@ export default function SqlExecutionTimeTest() {
         return;
       }
       try {
-        rdbStore!.on('statistics', (SqlExeInfo) => {
+        rdbStore!.onStatistics((SqlExeInfo) => {
           console.info(TAG + "totalTime is : "+  SqlExeInfo.totalTime);
           console.info(TAG + "prepareTime is : "+  SqlExeInfo.prepareTime);
           console.info(TAG + "waitTime is : "+  SqlExeInfo.waitTime);
@@ -298,7 +298,7 @@ export default function SqlExecutionTimeTest() {
         return;
       }
       try {
-        rdbStore!.on('statistics', (SqlExeInfo) => {
+        rdbStore!.onStatistics((SqlExeInfo) => {
           console.info(TAG + "totalTime is : "+  SqlExeInfo.totalTime);
           console.info(TAG + "prepareTime is : "+  SqlExeInfo.prepareTime);
           console.info(TAG + "waitTime is : "+  SqlExeInfo.waitTime);
@@ -341,7 +341,7 @@ export default function SqlExecutionTimeTest() {
         return;
       }
       try {
-        rdbStore!.on('statistics', (SqlExeInfo) => {
+        rdbStore!.onStatistics((SqlExeInfo) => {
           console.info(TAG + "totalTime is : "+  SqlExeInfo.totalTime);
           console.info(TAG + "prepareTime is : "+  SqlExeInfo.prepareTime);
           console.info(TAG + "waitTime is : "+  SqlExeInfo.waitTime);
@@ -383,7 +383,7 @@ export default function SqlExecutionTimeTest() {
         return;
       }
       try {
-        rdbStore!.on('statistics', (SqlExeInfo) => {
+        rdbStore!.onStatistics((SqlExeInfo) => {
           console.info(TAG + "totalTime is : "+  SqlExeInfo.totalTime);
           console.info(TAG + "prepareTime is : "+  SqlExeInfo.prepareTime);
           console.info(TAG + "waitTime is : "+  SqlExeInfo.waitTime);
@@ -425,7 +425,7 @@ export default function SqlExecutionTimeTest() {
         return;
       }
       try {
-        rdbStore!.on('statistics', (SqlExeInfo) => {
+        rdbStore!.onStatistics((SqlExeInfo) => {
           console.info(TAG + "totalTime is : "+  SqlExeInfo.totalTime);
           console.info(TAG + "prepareTime is : "+  SqlExeInfo.prepareTime);
           console.info(TAG + "waitTime is : "+  SqlExeInfo.waitTime);
@@ -470,7 +470,7 @@ export default function SqlExecutionTimeTest() {
         "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
         "name TEXT NOT NULL, " + "age INTEGER, " + "salary REAL, " + "blobType BLOB)";
       try {
-        rdbStore!.on('statistics', (SqlExeInfo) => {
+        rdbStore!.onStatistics((SqlExeInfo) => {
           console.info(TAG + "totalTime is : "+  SqlExeInfo.totalTime);
           console.info(TAG + "prepareTime is : "+  SqlExeInfo.prepareTime);
           console.info(TAG + "waitTime is : "+  SqlExeInfo.waitTime);
@@ -520,7 +520,7 @@ export default function SqlExecutionTimeTest() {
         return;
       }
       try {
-        rdbStore!.on('statistics', (SqlExeInfo) => {
+        rdbStore!.onStatistics((SqlExeInfo) => {
           console.info(TAG + "totalTime is : "+  SqlExeInfo.totalTime);
           console.info(TAG + "prepareTime is : "+  SqlExeInfo.prepareTime);
           console.info(TAG + "waitTime is : "+  SqlExeInfo.waitTime);
@@ -554,7 +554,7 @@ export default function SqlExecutionTimeTest() {
         return;
       }
       try {
-        rdbStore!.on('statistics', (SqlExeInfo) => {
+        rdbStore!.onStatistics((SqlExeInfo) => {
           console.info(TAG + "totalTime is : "+  SqlExeInfo.totalTime);
           console.info(TAG + "prepareTime is : "+  SqlExeInfo.prepareTime);
           console.info(TAG + "waitTime is : "+  SqlExeInfo.waitTime);
@@ -606,7 +606,7 @@ export default function SqlExecutionTimeTest() {
         return;
       }
       try {
-        rdbStore!.on('statistics', (SqlExeInfo) => {
+        rdbStore!.onStatistics((SqlExeInfo) => {
           expect().assertFail();
         });
       } catch (error: BusinessError) {
@@ -615,7 +615,7 @@ export default function SqlExecutionTimeTest() {
         done();
       }
       try {
-        rdbStore!.off('statistics', undefined);
+        rdbStore!.offStatistics(undefined);
         console.info(TAG + 'off statistics is success')
       } catch (error: BusinessError) {
         expect().assertFail();

@@ -285,7 +285,7 @@ export default function rdbErrorCode801() {
         rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
         try {
           if (rdbStore != undefined) {
-            (rdbStore as data_relationalStore.RdbStore).off('dataChange',
+            (rdbStore as data_relationalStore.RdbStore).offDataChange(
               data_relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE,
               storeObserver);
             console.info(TAG + 'off success.');
@@ -318,7 +318,8 @@ export default function rdbErrorCode801() {
         rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
         try {
           if (rdbStore != undefined) {
-            (rdbStore as data_relationalStore.RdbStore).off('dataChange',data_relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE,storeObserver);
+            (rdbStore as data_relationalStore.RdbStore).offDataChange(
+              data_relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE, storeObserver);
           }
         } catch (err: Error) {
           console.error(TAG + 'Failed to off.Code: ' + err.code + ',message:' + err.message);
@@ -372,7 +373,7 @@ export default function rdbErrorCode801() {
         }
         try {
           if (rdbStore1 != undefined) {
-            (rdbStore1 as data_relationalStore.RdbStore).off('autoSyncProgress', progressDetail);
+            (rdbStore1 as data_relationalStore.RdbStore).offAutoSyncProgress(progressDetail);
             console.info(TAG + 'off success.');
           }
         } catch (err: Error) {
@@ -396,7 +397,7 @@ export default function rdbErrorCode801() {
         rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
         try {
           if (rdbStore != undefined) {
-            (rdbStore as data_relationalStore.RdbStore).off('statistics');
+            (rdbStore as data_relationalStore.RdbStore).offStatistics();
             console.info(TAG + 'off success.');
           }
         } catch (err: Error) {
@@ -429,7 +430,7 @@ export default function rdbErrorCode801() {
         rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
         try {
           if (rdbStore != undefined) {
-            (rdbStore as data_relationalStore.RdbStore).on('dataChange',
+            (rdbStore as data_relationalStore.RdbStore).onDataChange(
               data_relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE,
               storeObserver);
             console.info(TAG + 'on success.');
@@ -462,7 +463,7 @@ export default function rdbErrorCode801() {
         }
         try {
           if (rdbStore != undefined) {
-            (rdbStore as data_relationalStore.RdbStore).on('dataChange',
+            (rdbStore as data_relationalStore.RdbStore).onDataChange(
               data_relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE,
               storeObserver);
           }
@@ -495,7 +496,7 @@ export default function rdbErrorCode801() {
 
         try {
           if (rdbStore != undefined) {
-            (rdbStore as data_relationalStore.RdbStore).on('statistics', sqlExecutionInfo);
+            (rdbStore as data_relationalStore.RdbStore).onStatistics(sqlExecutionInfo);
             console.info(TAG + 'on success.');
           }
         } catch (err: Error) {

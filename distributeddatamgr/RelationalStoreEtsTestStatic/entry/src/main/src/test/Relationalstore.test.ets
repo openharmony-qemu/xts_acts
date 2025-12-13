@@ -149,6 +149,7 @@ export default function relationalStoreTest() {
         expect().assertFail()
         done();
       }
+      done();
       console.log(tag + "************* relationalStoreTest007 end *************");
     })
     /**
@@ -182,7 +183,7 @@ export default function relationalStoreTest() {
       done()
       console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_RDBFGAPIquerySyncTest_0800 end *************");
     })
-    //
+
     /**
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_RDBFGAPIexecuteSyncTest_0900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPIexecuteSyncTest_0900
@@ -536,18 +537,18 @@ export default function relationalStoreTest() {
       let rdbStore2:relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
       expect(rdbStore2 != undefined).assertTrue();
       try{
-        rdbStore?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver1);
-        rdbStore?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver2);
-        rdbStore?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver3);
-        rdbStore?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver4);
-        rdbStore?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver5);
+        rdbStore?.onDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver1);
+        rdbStore?.onDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver2);
+        rdbStore?.onDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver3);
+        rdbStore?.onDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver4);
+        rdbStore?.onDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver5);
         //
-        rdbStore2?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver6);
-        rdbStore2?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver7);
-        rdbStore2?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver8);
-        rdbStore2?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver9);
-        rdbStore2?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver10);
-        //
+        rdbStore2?.onDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver6);
+        rdbStore2?.onDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver7);
+        rdbStore2?.onDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver8);
+        rdbStore2?.onDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver9);
+        rdbStore2?.onDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver10);
+
         const valueBucket: relationalStore.ValuesBucket = {
           'name': 'zhangsan',
           'age': 18 as long,
@@ -565,16 +566,16 @@ export default function relationalStoreTest() {
         expect(status8).assertEqual(1);
         expect(status9).assertEqual(1);
         expect(status10).assertEqual(1);
-        rdbStore?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver1);
-        rdbStore?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver2);
-        rdbStore?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver3);
-        rdbStore?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver4);
-        rdbStore?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver5);
-        rdbStore2?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver6);
-        rdbStore2?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver7);
-        rdbStore2?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver8);
-        rdbStore2?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver9);
-        rdbStore2?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver10);
+        rdbStore?.offDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver1);
+        rdbStore?.offDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver2);
+        rdbStore?.offDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver3);
+        rdbStore?.offDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver4);
+        rdbStore?.offDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver5);
+        rdbStore2?.offDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver6);
+        rdbStore2?.offDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver7);
+        rdbStore2?.offDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver8);
+        rdbStore2?.offDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver9);
+        rdbStore2?.offDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver10);
         done();
       }catch(err:BusinessError){
         console.log(tag + "err.code" + err.code + err.message);
@@ -583,7 +584,7 @@ export default function relationalStoreTest() {
       }
       console.log(tag + "************* testDataChange001 end *************");
     })
-    //
+
     /**
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_RDBFGAPItestDataChange002Test_2200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPItestDataChange002Test_2200
@@ -647,17 +648,17 @@ export default function relationalStoreTest() {
       let rdbStore2:relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
       expect(rdbStore2 != undefined).assertTrue();
       try{
-        rdbStore?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver1);
-        rdbStore?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver2);
-        rdbStore?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver3);
-        rdbStore?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver4);
-        rdbStore?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver5);
+        rdbStore?.onDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver1);
+        rdbStore?.onDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver2);
+        rdbStore?.onDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver3);
+        rdbStore?.onDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver4);
+        rdbStore?.onDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver5);
         //
-        rdbStore2?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver6);
-        rdbStore2?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver7);
-        rdbStore2?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver8);
-        rdbStore2?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver9);
-        rdbStore2?.on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver10);
+        rdbStore2?.onDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver6);
+        rdbStore2?.onDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver7);
+        rdbStore2?.onDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver8);
+        rdbStore2?.onDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver9);
+        rdbStore2?.onDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver10);
         await rdbStore2.close();
         const valueBucket: relationalStore.ValuesBucket = {
           'name': 'zhangsan',
@@ -676,11 +677,11 @@ export default function relationalStoreTest() {
         expect(status8).assertEqual(0);
         expect(status9).assertEqual(0);
         expect(status10).assertEqual(0);
-        rdbStore?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver1);
-        rdbStore?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver2);
-        rdbStore?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver3);
-        rdbStore?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver4);
-        rdbStore?.off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver5);
+        rdbStore?.offDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver1);
+        rdbStore?.offDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver2);
+        rdbStore?.offDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver3);
+        rdbStore?.offDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver4);
+        rdbStore?.offDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver5);
         done();
       }catch(err:BusinessError){
         console.log(tag + "err.code" + err.code + err.message);
@@ -961,16 +962,16 @@ export default function relationalStoreTest() {
       let rdbStore2:relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
       expect(rdbStore2 != undefined).assertTrue();
       try{
-        rdbStore?.on('statistics', storeObserver1);
-        rdbStore?.on('statistics', storeObserver2);
-        rdbStore?.on('statistics', storeObserver3);
-        rdbStore?.on('statistics', storeObserver4);
-        rdbStore?.on('statistics', storeObserver5);
-        rdbStore2?.on('statistics', storeObserver6);
-        rdbStore2?.on('statistics', storeObserver7);
-        rdbStore2?.on('statistics', storeObserver8);
-        rdbStore2?.on('statistics', storeObserver9);
-        rdbStore2?.on('statistics', storeObserver10);
+        rdbStore?.onStatistics(storeObserver1);
+        rdbStore?.onStatistics(storeObserver2);
+        rdbStore?.onStatistics(storeObserver3);
+        rdbStore?.onStatistics(storeObserver4);
+        rdbStore?.onStatistics(storeObserver5);
+        rdbStore2?.onStatistics(storeObserver6);
+        rdbStore2?.onStatistics(storeObserver7);
+        rdbStore2?.onStatistics(storeObserver8);
+        rdbStore2?.onStatistics(storeObserver9);
+        rdbStore2?.onStatistics(storeObserver10);
         const valueBucket: relationalStore.ValuesBucket = {
           'name': 'zhangsan',
           'age': 18 as long,
@@ -988,16 +989,16 @@ export default function relationalStoreTest() {
         expect(status8).assertEqual(1);
         expect(status9).assertEqual(1);
         expect(status10).assertEqual(1);
-        rdbStore?.off('statistics', storeObserver1);
-        rdbStore?.off('statistics', storeObserver2);
-        rdbStore?.off('statistics', storeObserver3);
-        rdbStore?.off('statistics', storeObserver4);
-        rdbStore?.off('statistics', storeObserver5);
-        rdbStore2?.off('statistics', storeObserver6);
-        rdbStore2?.off('statistics', storeObserver7);
-        rdbStore2?.off('statistics', storeObserver8);
-        rdbStore2?.off('statistics', storeObserver9);
-        rdbStore2?.off('statistics', storeObserver10);
+        rdbStore?.offStatistics(storeObserver1);
+        rdbStore?.offStatistics(storeObserver2);
+        rdbStore?.offStatistics(storeObserver3);
+        rdbStore?.offStatistics(storeObserver4);
+        rdbStore?.offStatistics(storeObserver5);
+        rdbStore2?.offStatistics(storeObserver6);
+        rdbStore2?.offStatistics(storeObserver7);
+        rdbStore2?.offStatistics(storeObserver8);
+        rdbStore2?.offStatistics(storeObserver9);
+        rdbStore2?.offStatistics(storeObserver10);
         done();
       }catch(err:BusinessError){
         console.log(tag + "err.code" + err.code + err.message);
@@ -1070,16 +1071,16 @@ export default function relationalStoreTest() {
       let rdbStore2:relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
       expect(rdbStore2 != undefined).assertTrue();
       try{
-        rdbStore?.on('statistics', storeObserver1);
-        rdbStore?.on('statistics', storeObserver2);
-        rdbStore?.on('statistics', storeObserver3);
-        rdbStore?.on('statistics', storeObserver4);
-        rdbStore?.on('statistics', storeObserver5);
-        rdbStore2?.on('statistics', storeObserver6);
-        rdbStore2?.on('statistics', storeObserver7);
-        rdbStore2?.on('statistics', storeObserver8);
-        rdbStore2?.on('statistics', storeObserver9);
-        rdbStore2?.on('statistics', storeObserver10);
+        rdbStore?.onStatistics(storeObserver1);
+        rdbStore?.onStatistics(storeObserver2);
+        rdbStore?.onStatistics(storeObserver3);
+        rdbStore?.onStatistics(storeObserver4);
+        rdbStore?.onStatistics(storeObserver5);
+        rdbStore2?.onStatistics(storeObserver6);
+        rdbStore2?.onStatistics(storeObserver7);
+        rdbStore2?.onStatistics(storeObserver8);
+        rdbStore2?.onStatistics(storeObserver9);
+        rdbStore2?.onStatistics(storeObserver10);
         await rdbStore2.close();
         const valueBucket: relationalStore.ValuesBucket = {
           'name': 'zhangsan',
@@ -1098,11 +1099,11 @@ export default function relationalStoreTest() {
         expect(status8).assertEqual(0);
         expect(status9).assertEqual(0);
         expect(status10).assertEqual(0);
-        rdbStore?.off('statistics', storeObserver1);
-        rdbStore?.off('statistics', storeObserver2);
-        rdbStore?.off('statistics', storeObserver3);
-        rdbStore?.off('statistics', storeObserver4);
-        rdbStore?.off('statistics', storeObserver5);
+        rdbStore?.offStatistics(storeObserver1);
+        rdbStore?.offStatistics(storeObserver2);
+        rdbStore?.offStatistics(storeObserver3);
+        rdbStore?.offStatistics(storeObserver4);
+        rdbStore?.offStatistics(storeObserver5);
         done();
       }catch(err:BusinessError){
         console.log(tag + "err.code" + err.code + err.message);

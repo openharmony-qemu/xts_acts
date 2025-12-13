@@ -595,7 +595,7 @@ export default function rdbErrorCode14800014() {
         }
 
         try {
-          rdbStore!.off('autoSyncProgress', (progressDetail: data_relationalStore.ProgressDetails) => {
+          rdbStore!.offAutoSyncProgress((progressDetail: data_relationalStore.ProgressDetails) => {
             expect().assertFail();
           });
         } catch (err: Error) {
@@ -630,7 +630,7 @@ export default function rdbErrorCode14800014() {
         }
 
         try {
-          rdbStore!.off('dataChange', data_relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE,
+          rdbStore!.offDataChange(data_relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE,
             (devices: Array<string>) => {
               expect().assertFail();
             })
@@ -664,7 +664,7 @@ export default function rdbErrorCode14800014() {
         }
 
         try {
-          rdbStore!.off('dataChange', data_relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE,
+          rdbStore!.offDataChange(data_relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE,
             (devices: Array<data_relationalStore.ChangeInfo>) => {
               expect().assertFail();
             });
@@ -699,7 +699,7 @@ export default function rdbErrorCode14800014() {
         }
 
         try {
-          rdbStore!.off('statistics', (sqlExecutionInfo: data_relationalStore.SqlExecutionInfo) => {
+          rdbStore!.offStatistics((sqlExecutionInfo: data_relationalStore.SqlExecutionInfo) => {
             expect().assertFail();
           });
         } catch (err: Error) {
@@ -733,7 +733,7 @@ export default function rdbErrorCode14800014() {
         }
 
         try {
-          rdbStore!.off('statistics', (sqlExecutionInfo: data_relationalStore.SqlExecutionInfo) => {
+          rdbStore!.offStatistics((sqlExecutionInfo: data_relationalStore.SqlExecutionInfo) => {
             expect().assertFail();
           });
         } catch (err: Error) {
@@ -767,7 +767,7 @@ export default function rdbErrorCode14800014() {
         }
 
         try {
-          rdbStore!.on('autoSyncProgress', (progressDetail: data_relationalStore.ProgressDetails) => {
+          rdbStore!.onAutoSyncProgress((progressDetail: data_relationalStore.ProgressDetails) => {
             expect().assertFail();
           });
         } catch (err: Error) {
@@ -801,7 +801,7 @@ export default function rdbErrorCode14800014() {
     //     }
     //
     //     try {
-    //       rdbStore!.on('dataChange', data_relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE,
+    //       rdbStore!.onDataChange(data_relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE,
     //         (devices: Array<string>) => {
     //           expect().assertFail();
     //         })
@@ -837,7 +837,7 @@ export default function rdbErrorCode14800014() {
     //     }
     //
     //     try {
-    //       rdbStore!.on('dataChange', data_relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE,
+    //       rdbStore!.onDataChange(data_relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE,
     //         (devices: Array<data_relationalStore.ChangeInfo>) => {
     //           expect().assertFail();
     //         });
