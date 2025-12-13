@@ -23,7 +23,6 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
-import sendableRelationalStore from '@ohos.data.sendableRelationalStore'
 import deviceInfo from '@ohos.deviceInfo';
 import data_Rdb from '@ohos.data.relationalStore';
 import { canIUse } from "@internal.full.global";
