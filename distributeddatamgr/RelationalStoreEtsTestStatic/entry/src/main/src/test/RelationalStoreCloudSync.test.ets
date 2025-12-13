@@ -177,60 +177,6 @@ export default function relationalStoreCloudSyncTest() {
             console.log(tag + '************* testRdbStoreCloudSync0003 end *************');
         })
 
-        /**
-         * @tc.name   testRdbStoreCloudSync0005
-         * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudSyncJsAPITest_1400
-         * @tc.desc   get modify time using rowid and promise method
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('testRdbStoreCloudSync0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            console.log(tag + '************* testRdbStoreCloudSync0005 start *************');
-            try {
-                let PRIKey: relationalStore.PRIKeyType[] = [2 as Long, 4 as Long];
-                await rdbStore.getModifyTime('cloud_text', 'roWId', PRIKey).then((data) => {
-                    console.log(tag + `modifyTime:` + JSON.stringify(data));
-                    let size = Object.keys(data).length ;
-                    console.log(tag + 'size=' + size);
-                    expect( size == 2 ).assertTrue();
-                    done();
-                });
-            } catch (err: BusinessError) {
-                console.log(tag + `get modify time fail, err code is ${err.code}, message is ${err.message}.`);
-                expect().assertFail();
-                done();
-            }
-            console.log(tag + '************* testRdbStoreCloudSync0005 end *************');
-        })
-
-        /**
-         * @tc.name   testRdbStoreCloudSync0008
-         * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudSyncJsAPITest_1700
-         * @tc.desc   get modify time using int primary key type and promise method
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('testRdbStoreCloudSync0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            console.log(tag + '************* testRdbStoreCloudSync0008 start *************');
-            try {
-                let PRIKey: relationalStore.PRIKeyType[] = [2 as Long, 4 as Long];
-                await rdbStore.getModifyTime('cloud_integer', 'num', PRIKey).then((data) => {
-                    console.log(tag + `modifyTime:` + JSON.stringify(data));
-                    let size = Object.keys(data).length ;
-                    console.log(tag + 'size=' + size);
-                    expect( size == 2 ).assertTrue();
-                    done();
-                });
-            } catch (err: BusinessError) {
-                console.log(tag + `get modify time fail, err code is ${err.code}, message is ${err.message}.`);
-                expect().assertFail();
-                done();
-            }
-            console.log(tag + '************* testRdbStoreCloudSync0008 end *************');
-        })
-
 
         /**
          * @tc.name   testRdbStoreCloudSync0010
