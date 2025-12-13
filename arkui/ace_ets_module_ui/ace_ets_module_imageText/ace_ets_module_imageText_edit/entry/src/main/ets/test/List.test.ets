@@ -120,6 +120,11 @@ import TextInputEnableSelectedDataDetectorTest from './TextInputApi22Test/TextIn
 import TextInputSetStyledPlaceholderTest from './TextInputApi22Test/TextInputSetStyledPlaceholder.test';
 import TextInputOnWillAttachIMETest from './TextInputApi22Test/TextInputOnWillAttachIME.test';
 
+import TextAreaCompressLeadingPunctuation from './TextAreaTest/TextAreaCompressLeadingPunctuation.test';
+import TextAreaCompressLeadingPunctuationModifier from './TextAreaTest/TextAreaCompressLeadingPunctuationModifier.test';
+import TextInputCompressLeadingPunctuation from './TextInputTest/TextInputCompressLeadingPunctuation.test';
+import TextInputCompressLeadingPunctuationModifier from './TextInputTest/TextInputCompressLeadingPunctuationModifier.test';
+
 
 export default function testsuite() {
   InputPresetTest()
@@ -231,4 +236,8 @@ export default function testsuite() {
   TextInputEnableSelectedDataDetectorTest()
   TextInputSetStyledPlaceholderTest()
   TextInputOnWillAttachIMETest()
+  TextAreaCompressLeadingPunctuation()
+  TextAreaCompressLeadingPunctuationModifier()
+  TextInputCompressLeadingPunctuation()
+  TextInputCompressLeadingPunctuationModifier()
 }

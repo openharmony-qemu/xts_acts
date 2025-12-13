@@ -110,5 +110,9 @@
         "MainAbility/pages/TextInputApi22/TextInputEnableSelectedDataDetector",
         "MainAbility/pages/TextInputApi22/TextInputSetStyledPlaceholder",
         "MainAbility/pages/TextInputApi22/TextInputOnWillAttachIME"
+        "MainAbility/pages/TextArea/TextAreaCompressLeadingPunctuation",
+        "MainAbility/pages/TextArea/TextAreaCompressLeadingPunctuationModifier",
+        "MainAbility/pages/TextInput/TextInputCompressLeadingPunctuation",
+        "MainAbility/pages/TextInput/TextInputCompressLeadingPunctuationModifier"
     ]
 }

@@ -54,6 +54,9 @@ import searchObserverTest from './SearchApi22Test/searchObserver.test';
 import SearchEnableSelectedDataDetectorTest from './SearchApi22Test/SearchEnableSelectedDataDetector.test';
 import SearchSetStyledPlaceholderTest from './SearchApi22Test/SearchSetStyledPlaceholder.test';
 import SearchOnWillAttachIMETest from './SearchApi22Test/SearchOnWillAttachIME.test';
+import SearchCompressLeadingPunctuation from './SearchTest/SearchCompressLeadingPunctuation.test';
+import SearchCompressLeadingPunctuationModifier from './SearchTest/SearchCompressLeadingPunctuationModifier.test';
+
 
 export default function testsuite() {
   InputPresetTest()
@@ -96,4 +99,6 @@ export default function testsuite() {
   SearchEnableSelectedDataDetectorTest()
   SearchSetStyledPlaceholderTest()
   SearchOnWillAttachIMETest()
+  SearchCompressLeadingPunctuation()
+  SearchCompressLeadingPunctuationModifier()
 }

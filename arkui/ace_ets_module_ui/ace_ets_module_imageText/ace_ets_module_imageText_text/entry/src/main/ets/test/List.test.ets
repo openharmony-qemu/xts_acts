@@ -100,6 +100,8 @@ import TextEnableSelectedDataDetectorTest from './TextTest/TextEnableSelectedDat
 import customKeyboardSearchTest from './CustomKeyboardTest/search.test';
 import customKeyboardTextAreaTest from './CustomKeyboardTest/textArea.test';
 import customKeyboardTextInputTest from './CustomKeyboardTest/textInput.test';
+import TextCompressLeadingPunctuation from './TextTest/TextCompressLeadingPunctuation.test';
+import TextCompressLeadingPunctuationModifier from './TextTest/TextCompressLeadingPunctuationModifier.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -190,4 +192,6 @@ export default function testsuite() {
   customKeyboardSearchTest();
   customKeyboardTextAreaTest();
   customKeyboardTextInputTest();
+  TextCompressLeadingPunctuation();
+  TextCompressLeadingPunctuationModifier();
 }
