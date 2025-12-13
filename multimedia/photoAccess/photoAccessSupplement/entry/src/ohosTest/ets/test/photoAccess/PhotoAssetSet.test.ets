@@ -192,7 +192,7 @@ export default function PhotoAccessHelperSetTestSupp() {
     /**
      * @tc.name   Photo_Assets_Set_008
      * @tc.number Photo_Assets_Set_008
-     * @tc.desc   Set title value length is 255
+     * @tc.desc   Set title value length is 244
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -208,7 +208,7 @@ export default function PhotoAccessHelperSetTestSupp() {
     /**
      * @tc.name   Photo_Assets_Set_009
      * @tc.number Photo_Assets_Set_009
-     * @tc.desc   Set title value length is 256
+     * @tc.desc   Set title value length is 245
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -660,5 +660,39 @@ export default function PhotoAccessHelperSetTestSupp() {
       })
       done();
     })
+    /**
+     * @tc.name   Photo_Assets_Set_033
+     * @tc.number Photo_Assets_Set_033
+     * @tc.desc   Set title value length is 255
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Photo_Assets_Set_033', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_008';
+      let title: string = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstadfereuvwxyzabcdefghijdddddklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghij";
+      await photoAccessHelperSetTest(done, testName, title, 'newTitle', 'newTitle', errCode => {
+        expect(errCode).assertEqual('14000014');
+      })
+      done();
+    })
+    /**
+     * @tc.name   Photo_Assets_Set_034
+     * @tc.number Photo_Assets_Set_034
+     * @tc.desc   Set title value length is 256
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Photo_Assets_Set_034', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_009';
+      let title: string = "a1bcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstadfereuvwxyzabcdefghijdddddklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghij";
+      await photoAccessHelperSetTest(done, testName, title, 'newTitle', 'newTitle', errCode => {
+        expect(errCode).assertEqual('14000014');
+      })
+      done();
+    })
+
+
   })
 }
