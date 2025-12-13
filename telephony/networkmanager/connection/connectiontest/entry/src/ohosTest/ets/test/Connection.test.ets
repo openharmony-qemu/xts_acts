@@ -15,6 +15,7 @@
 
 import { describe, expect, it, TestType, Size, Level } from '@ohos/hypium';
 import connection from '@ohos.net.connection';
+import http from '@ohos.net.http'
 import { BusinessError } from '@ohos.base';
 import network from '@system.network';
 
@@ -355,6 +356,56 @@ export default function ConnectionTest() {
         ExpectFail();
         done()
         console.info(`${caseName}---End`);
+      }
+    });
+
+    /**
+     * @tc.name   testConnectionSetHttpProxyCallback1000
+     * @tc.number SUB_Network_Connection_SetAppHttpProxy_1000
+     * @tc.desc   Set network application level HTTP proxy username and password configuration information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testConnectionSetHttpProxyCallback1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testConnectionSetHttpProxyCallback1000';
+      console.info(`${caseName}---Start`);
+      try {
+        let exclusionStr = "192.168,baidu.com";
+        let exclusionArray = exclusionStr.split(',');
+        connection.setAppHttpProxy ({
+          host: "gatewaytest.e-cology.com.cn",
+          port: 443,
+          exclusionList: exclusionArray,
+          username: 'admin',
+          password: '123456'
+        } as connection.HttpProxy);
+        console.info(`setAppHttpProxy success`);
+        let httpRequest = http.createHttp();
+        let options:http.HttpRequestOptions = {
+          usingProxy:true,
+        };
+        httpRequest.request("http://www.baidu.com",options,(err:BusinessError,data:http.HttpResponse) => {
+          if(!err) {
+            console.info(`Result: ${data.result}`);
+            console.info(`code: ${data.responseCode}`);
+            console.info(`type: ${JSON.stringify(data.resultType)}`);
+            console.info(`header: ${JSON.stringify(data.header)}`);
+            ExpectTrue(data.responseCode == 407);
+            console.info(`${caseName}---End`);
+            done();
+          } else {
+            console.error(`error: ${JSON.stringify(err)}`);
+            ExpectTrue(err.code == 2300005);
+            console.info(`${caseName}---End`);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done()
       }
     });
 

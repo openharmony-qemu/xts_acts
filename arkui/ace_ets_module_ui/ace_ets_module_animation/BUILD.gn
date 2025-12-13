@@ -26,6 +26,7 @@ group("ActsAceEtsModuleAnimationTest") {
       "ace_ets_module_tabs:ActsAceEtsModuleTabTest",
       "ace_ets_component_AlphabetIndexer:ActsAceEtsComponentAlphabetIndexerTest",
       "ace_ets_component_ArcAlphabetindexer:ActsAceEtsComponentArcAlphabetIndexer1Test",
+      "ace_ets_module_animation_api18_static:ActsAceEtsModuleAnimationApi18StaticTest",
     ]
   } else {
     deps = [
@@ -39,6 +40,7 @@ group("ActsAceEtsModuleAnimationTest") {
       "ace_ets_module_tabs:ActsAceEtsModuleTabTest",
       "ace_ets_component_AlphabetIndexer:ActsAceEtsComponentAlphabetIndexerTest",
       "ace_ets_component_ArcAlphabetindexer:ActsAceEtsComponentArcAlphabetIndexer1Test",
+      "ace_ets_module_animation_api18_static:ActsAceEtsModuleAnimationApi18StaticTest",
     ]
   }
 }

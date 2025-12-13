@@ -19,6 +19,17 @@ import display from '@ohos.display';
 import { BusinessError } from '@ohos.base';
 import window from '@ohos.window'
 import { AppStorage,LocalStorage } from '@ohos.arkui.stateManagement';
+import common from '@ohos.app.ability.common';
+import screenshot from '@ohos.screenshot';
+import { image } from '@kit.ImageKit';
+import { Driver } from '@ohos.UiTest';
+import { ON } from '@ohos.UiTest';
+import { MatchPattern } from '@ohos.UiTest';
+import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
+import { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
+import { Permissions }  from 'permissions';
+import abilityContext from '@ohos.app.ability.common';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import type { AsyncCallback, Callback} from '@ohos.base'
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -37,35 +48,82 @@ export default function DisplayTest() {
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
         //let isPCStatus: string = '';
-        beforeAll(() => {
-            //context = AppStorage.get('context') as common.UIAbilityContext;
-            //console.log('windowTest context: ' + JSON.stringify(context))
-            try {
-                windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;
-                win = AppStorage.get<window.Window>('mainWindow') as window.Window;
-                // let win = windowStage.getMainWindowSync();
-            } catch (e) {
-                hilog.info(domain, tag, '%{public}s', 'getANI fail = ' + JSON.stringify(e));
+        let displayClass = display.getDefaultDisplaySync();
+        let foldStatus:string= '';
+        let foldDisplayMode:string= '';
+        let rotation:string[];
+        let orientation:string[];
+        let code:number = 0;
+        let displayFoldStatus:number;
+        let context: common.UIAbilityContext;
+        beforeAll(async (): Promise<void> => {
+            try{
+                let atManager:abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+                context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
+                let permissions: Array<Permissions> =
+                    ["ohos.permission.CUSTOM_SCREEN_CAPTURE"];
+                atManager.requestPermissionsFromUser(context,permissions,(err:BusinessError<void>|null,data:PermissionRequestResult|undefined):void=>{
+                    let errCode = err!.code;
+                    if(errCode){
+                        hilog.error(domain, tag,'capture requestPermissionsFromUser failed: ' + JSON.stringify(err));
+                    }else {
+                        hilog.info(domain, tag,'capture requestPermissionsFromUser success: ' + JSON.stringify(data));
+                    }
+                })
+                hilog.info(domain, tag,`come in permissionClick`);
+                let driver = Driver.create();
+                hilog.info(domain, tag,`come in Driver create`);
+                let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 2000);
+                hilog.info(domain, tag,`buttonOne is ${JSON.stringify(permissionButton)}`);
+                if (permissionButton != null) {
+                    await permissionButton.click();
+                    hilog.info(domain, tag, 'clickRequestPermission end');
+                }
+            }catch(err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag, 'RequestPermission failed '+err);
             }
-
-            hilog.info(domain, tag, '%{public}s', 'getANI windowStage = ' + JSON.stringify(windowStage));
-            hilog.info(domain, tag, '%{public}s', 'getANI win = ' + JSON.stringify(win));
-
-            //isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '',settings.domainName.DEVICE_SHARED);
-            //console.info(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
-            //isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
-            //isPCStatus == '' 非PC设备
-            //isPCStatus == '1' PC设备状态栏dock未融合
-            //isPCStatus == '0' PC设备状态栏dock融合
-            //console.info(`beforeAll isPCStatus: `+ isPCStatus);
+            displayFoldStatus = display.getFoldStatus();
+            hilog.info(domain, tag, 'jsUnittest beforeAll getFoldStatus =' + displayFoldStatus);
+            windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;
+            win = AppStorage.get<window.Window>('mainWindow') as window.Window;
+            // context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
+            // let win = windowStage.getMainWindowSync();
+            try{
+                let data:string = displayClass.getDisplayCapability();
+                // let capabilityData = JSON.parse(data);
+                // hilog.info(domain, tag, 'jsUnittest beforeAll deviceMessage =' + JSON.stringify(capabilityData));
+                // for(const capability of capabilityData!.capability){
+                //     if(Number(capability.foldStatus) == displayFoldStatus){
+                //         foldStatus = capability.foldStatus;
+                //         foldDisplayMode = capability.foldDisplayMode;
+                //         rotation = capability.rotation;
+                //         orientation = capability.orientation;
+                //         hilog.info(domain, tag, 'jsUnittest beforeAll foldStatus =' + capability.foldStatus);
+                //         hilog.info(domain, tag, 'jsUnittest beforeAll foldDisplayMode =' + capability.foldDisplayMode);
+                //         hilog.info(domain, tag, 'jsUnittest beforeAll rotation =' + capability.rotation);
+                //         hilog.info(domain, tag, 'jsUnittest beforeAll orientation =' + capability.orientation);
+                //     }
+                // }
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag, 'jsUnittest beforeAll getDisplayCapability failed ' + err.code);
+                hilog.info(domain, tag, 'jsUnittest beforeAll code =' + code);
+                if(err.code == 801){
+                    code = 801;
+                    hilog.info(domain, tag, 'jsUnittest beforeAll code =' + code);
+                }else {
+                    hilog.info(domain, tag, 'jsUnittest getDisplayCapability failed');
+                }
+            }
         })
         /**
-         * @tc.name   tesGetAllDisplays_Promise_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0450
-         * @tc.desc   Gets all current display objects
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0450
+         * @tc.name        tesGetAllDisplays_Promise_static_0100
+         * @tc.desc        Gets all current display objects
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level0
          */
         it('tesGetAllDisplays_Promise_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName:string = 'tesGetAllDisplays_Promise_static_0100';
@@ -95,12 +153,12 @@ export default function DisplayTest() {
             });
         });
         /**
-         * @tc.name   tesGetAllDisplays_Callback_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0440
-         * @tc.desc   Gets all current display objects
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0440
+         * @tc.name        tesGetAllDisplays_Callback_static_0100
+         * @tc.desc        Gets all current display objects
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('tesGetAllDisplays_Callback_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName:string = 'tesGetAllDisplays_Callback_static_0100';
@@ -140,12 +198,12 @@ export default function DisplayTest() {
         });
 
         /**
-         * @tc.name   testDisplayOffFoldStatusChange_RepeatOff_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4230
-         * @tc.desc   Enable the monitoring of the folding status change of the folding device
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4230
+         * @tc.name        testDisplayOffFoldStatusChange_RepeatOff_static_0100
+         * @tc.desc        Enable the monitoring of the folding status change of the folding device
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testDisplayOffFoldStatusChange_RepeatOff_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> =>  {
             let caseName:string = 'testDisplayOffFoldStatusChange_RepeatOff_static_0100';
@@ -178,12 +236,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.name   testDisplayOffFoldStatusChange_UnregisteredOff_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4240
-         * @tc.desc   Enable the monitoring of the folding status change of the folding device
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4240
+         * @tc.name        testDisplayOffFoldStatusChange_UnregisteredOff_static_0100
+         * @tc.desc        Enable the monitoring of the folding status change of the folding device
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testDisplayOffFoldStatusChange_UnregisteredOff_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'testDisplayOffFoldStatusChange_UnregisteredOff_static_0100';
@@ -199,12 +257,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.name   testDisplayOffFoldDisplayModeChange_RepeatOff_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4250
-         * @tc.desc   Turn off monitoring for screen display mode changes on folding devices
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4250
+         * @tc.name        testDisplayOffFoldDisplayModeChange_RepeatOff_static_0100
+         * @tc.desc        Turn off monitoring for screen display mode changes on folding devices
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testDisplayOffFoldDisplayModeChange_RepeatOff_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'testDisplayOffFoldDisplayModeChange_RepeatOff_static_0100';
@@ -237,12 +295,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.name   testGetCurrentFoldCreaseRegion_Test_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1160
-         * @tc.desc   TTo test the function of getCurrentFoldCreaseRegion
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1160
+         * @tc.name        testGetCurrentFoldCreaseRegion_Test_static_0100
+         * @tc.desc        TTo test the function of getCurrentFoldCreaseRegion
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 1
          */
         it('testGetCurrentFoldCreaseRegion_Test_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
 
@@ -268,12 +326,12 @@ export default function DisplayTest() {
         })
 
         /**
-         * @tc.name   test_GetCutoutInfo_static_0100
-         * @tc.number SUB_BASIC_WMS_GET_CUTOUT_INFO_0100
-         * @tc.desc   test_GetCutoutInfo
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.number   SUB_BASIC_WMS_GET_CUTOUT_INFO_0100
+         * @tc.name     test_GetCutoutInfo_static_0100
+         * @tc.desc     test_GetCutoutInfo
+         * @tc.size     MediumTest
+         * @tc.type     Function
+         * @tc.level    Level 1
          */
         it('test_GetCutoutInfo_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName:string = 'test_GetCutoutInfo_static_0100';
@@ -296,12 +354,12 @@ export default function DisplayTest() {
             }
         })
         /**
-         * @tc.name   testGetCutoutInfo_Callbcak_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0490
-         * @tc.desc   Obtain information about unavailable screen areas such as the hole screen, fringe screen, and waterfall screen
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0490
+         * @tc.name        testGetCutoutInfo_Callbcak_static_0100
+         * @tc.desc        Obtain information about unavailable screen areas such as the hole screen, fringe screen, and waterfall screen
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('testGetCutoutInfo_Callbcak_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName: string = 'testGetCutoutInfo_Callbcak_static_0100';
@@ -322,12 +380,12 @@ export default function DisplayTest() {
             })
         })
         /**
-         * @tc.name   testGetCutoutInfo_Promise_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0500
-         * @tc.desc   Obtain information about unavailable screen areas such as the hole screen, fringe screen, and waterfall screen
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0500
+         * @tc.name        testGetCutoutInfo_Promise_static_0100
+         * @tc.desc        Obtain information about unavailable screen areas such as the hole screen, fringe screen, and waterfall screen
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level0
          */
         it('testGetCutoutInfo_Promise_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName: string = 'testGetCutoutInfo_Promise_static_0100';
@@ -347,12 +405,12 @@ export default function DisplayTest() {
         
 
         /**
-         * @tc.name   test_FoldStatus_enum_static_0100
-         * @tc.number SUB_BASIC_WMS_FOLDSTATUS_0100
-         * @tc.desc   test_FoldStatus_enum
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
+         * @tc.number      SUB_BASIC_WMS_FOLDSTATUS_0100
+         * @tc.name        test_FoldStatus_enum_static_0100
+         * @tc.desc        test_FoldStatus_enum
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 0
          */
         it('test_FoldStatus_enum_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName: string = 'test_FoldStatus_enum_static_0100';
@@ -372,12 +430,12 @@ export default function DisplayTest() {
 
         });
         /**
-         * @tc.name   testGetFoldDisplayMode_Test_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1150
-         * @tc.desc   To test the function of getFoldDisplayMode
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1150
+         * @tc.name        testGetFoldDisplayMode_Test_static_0100
+         * @tc.desc        To test the function of getFoldDisplayMode
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 0
          */
         it('testGetFoldDisplayMode_Test_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
 
@@ -399,12 +457,12 @@ export default function DisplayTest() {
             }
         })
         /**
-         * @tc.name   testGetDisplayByIdSync_SyncFunction_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0240
-         * @tc.desc   To test the sync function of obtaining the target display by id
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0240
+         * @tc.name        testGetDisplayByIdSync_SyncFunction_static_0100
+         * @tc.desc        To test the sync function of obtaining the target display by id
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 1
          */
         it('testGetDisplayByIdSync_SyncFunction_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             hilog.info(0x0000, '[ANI]','testGetDisplayByIdSync_SyncFunction_static_0100 begin');
@@ -433,12 +491,12 @@ export default function DisplayTest() {
             }
         })
         /**
-         * @tc.name   testGetAllDisplayPhysicalResolution_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5170
-         * @tc.desc   get all display physical resolution
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5170
+         * @tc.name      testGetAllDisplayPhysicalResolution_static_0100
+         * @tc.desc      get all display physical resolution
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
          */
         it('testGetAllDisplayPhysicalResolution_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'TestGetAllDisplayPhysicalResolution_static_0100';
@@ -466,12 +524,12 @@ export default function DisplayTest() {
         })
 
         /**
-         * @tc.name   testDisplayOffAdd_RepeatOff_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4170
-         * @tc.desc   Turn off the monitor that shows device changes
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4170
+         * @tc.name        testDisplayOffAdd_RepeatOff_static_0100
+         * @tc.desc        Turn off the monitor that shows device changes
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testDisplayOffAdd_RepeatOff_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'testDisplayOffAdd_RepeatOff_static_0100';
@@ -505,12 +563,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.name   testDisplayOffChange_RepeatOff_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4210
-         * @tc.desc   Turn off the monitor that shows device changes
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4210
+         * @tc.name        testDisplayOffChange_RepeatOff_static_0100
+         * @tc.desc        Turn off the monitor that shows device changes
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testDisplayOffChange_RepeatOff_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName = 'testDisplayOffChange_RepeatOff_static_0100';
@@ -544,12 +602,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.name   testDisplayOffRemove_RepeatOff_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4190
-         * @tc.desc   Turn off the monitor that shows device changes
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4190
+         * @tc.name        testDisplayOffRemove_RepeatOff_static_0100
+         * @tc.desc        Turn off the monitor that shows device changes
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testDisplayOffRemove_RepeatOff_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'testDisplayOffRemove_RepeatOff_static_0100';
@@ -583,12 +641,11 @@ export default function DisplayTest() {
         });
 
         /**
-         * @tc.name   testIsFoldable_Test_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1130
-         * @tc.desc   To test the function of isFoldable
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1130
+         * @tc.name        testIsFoldable_Test_static_0100
+         * @tc.desc        To test the function of isFoldable
+         * @tc.type        Function
+         * @tc.level       Level 0
          */
         it('testIsFoldable_Test_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> =>{
 
@@ -605,12 +662,11 @@ export default function DisplayTest() {
         })
 
         /**
-         * @tc.name   testGetFoldStatus_Test_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1140
-         * @tc.desc   To test the function of getFoldStatus
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1140
+         * @tc.name        testGetFoldStatus_Test_static_0100
+         * @tc.desc        To test the function of getFoldStatus
+         * @tc.type        Function
+         * @tc.level       Level 0
          */
         it('testGetFoldStatus_Test_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
 
@@ -629,12 +685,12 @@ export default function DisplayTest() {
         })
 
         /**
-         * @tc.name   testFoldAngleChange_On_Off_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5100
-         * @tc.desc   register and unregister fold angle changes
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5100
+         * @tc.name      testFoldAngleChange_On_Off_static_0100
+         * @tc.desc      register and unregister fold angle changes
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
          */
         it('testFoldAngleChange_On_Off_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'testFoldAngleChange_On_Off_static_0100';
@@ -666,12 +722,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.name   testFoldAngleChange_ON_Off_Off_static_0200
-         * @tc.number SUB_BASIC_WMS_DMS_XTS_DISPLAY_JS_API_5110
-         * @tc.desc   repeat unregister fold angle changes
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number   SUB_BASIC_WMS_DMS_XTS_DISPLAY_JS_API_5110
+         * @tc.name     testFoldAngleChange_ON_Off_Off_static_0200
+         * @tc.desc     repeat unregister fold angle changes
+         * @tc.size     MediumTest
+         * @tc.type     Function
+         * @tc.level    Level 3
          */
         it('testFoldAngleChange_ON_Off_Off_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'testFoldAngleChange_ON_Off_Off_static_0200';
@@ -711,12 +767,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.name   testFoldAngleChange_Off_static_0300
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5120
-         * @tc.desc   unregister of the fold angle changes without register
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5120
+         * @tc.name      testFoldAngleChange_Off_static_0300
+         * @tc.desc      unregister of the fold angle changes without register
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 0
          */
         it('testFoldAngleChange_Off_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName : string = 'testFoldAngleChange_Off_static_0300';
@@ -733,12 +789,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.name   testCaptureStatusChange_On_Off_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5130
-         * @tc.desc   register and unregister capture status
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5130
+         * @tc.name      testCaptureStatusChange_On_Off_static_0100
+         * @tc.desc      register and unregister capture status
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
          */
         it('testCaptureStatusChange_On_Off_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'testCaptureStatusChange_On_Off_static_0100';
@@ -767,12 +823,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.name   testCaptureStatusChange_On_Off_Off_static_0200
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5140
-         * @tc.desc   repeat unregister capture status
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5140
+         * @tc.name      testCaptureStatusChange_On_Off_Off_static_0200
+         * @tc.desc      repeat unregister capture status
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
          */
         it('testCaptureStatusChange_On_Off_Off_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'testCaptureStatusChange_On_Off_Off_static_0200';
@@ -808,12 +864,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.name   testCaptureStatusChange_Off_static_0300
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5150
-         * @tc.desc   unregister the capture status of the device without register
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5150
+         * @tc.name      testCaptureStatusChange_Off_static_0300
+         * @tc.desc      unregister the capture status of the device without register
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
          */
         it('testCaptureStatusChange_Off_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'testCaptureStatusChange_Off_static_0300';
@@ -830,12 +886,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.name   testIsCaptured_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5160
-         * @tc.desc   check current device capture status
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5160
+         * @tc.name      testIsCaptured_static_0100
+         * @tc.desc      check current device capture status
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 2
          */
         it('testIsCaptured_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName: string = 'testIsCaptured_static_0100';
@@ -854,12 +910,9 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.name   testDisplayState_Enum_Value_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0070
-         * @tc.desc   To test the enum value of WindowDisplayState.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.number	SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0070
+         * @tc.name	    testDisplayState_Enum_Value_static_0100
+         * @tc.desc		To test the enum value of WindowDisplayState.
          */
         it('testDisplayState_Enum_Value_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             hilog.info(0x0000, '[ANI]','test the enum value of Window DisplayState begin');
@@ -879,12 +932,12 @@ export default function DisplayTest() {
             }
         })
         /**
-         * @tc.name   testOrientation_attr_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_ORIENTATION_JS_API_0290
-         * @tc.desc   To test the attributes of Orientation
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_ORIENTATION_JS_API_0290
+         * @tc.name      testOrientation_attr_static_0100
+         * @tc.desc      To test the attributes of Orientation
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 0
          */
         it('testOrientation_attr_static_0100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> =>{
             let msg:string = "testOrientation_attr_static_0100"
@@ -901,12 +954,12 @@ export default function DisplayTest() {
         })
 
         /**
-         * @tc.name   test_getAvailableArea_default_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0100
-         * @tc.desc   test_getAvailableArea_default
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0100
+         * @tc.name      test_getAvailableArea_default_static_0100
+         * @tc.desc      test_getAvailableArea_default
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
          */
         it('test_getAvailableArea_default_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'test_getAvailableArea_default_static_0100';
@@ -950,12 +1003,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.name   test_getAvailableArea_subWindow_static_0200
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0200
-         * @tc.desc   test_getAvailableArea_subWindow
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0200
+         * @tc.name      test_getAvailableArea_subWindow_static_0200
+         * @tc.desc      test_getAvailableArea_subWindow
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 2
          */
         it('test_getAvailableArea_subWindow_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName : string = 'test_getAvailableArea_subWindow_static_0200';
@@ -1033,12 +1086,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.name   test_getAvailableArea_setWindowSystemBarEnable_static_0300
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0300
-         * @tc.desc   test_getAvailableArea_setWindowSystemBarEnable
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0300
+         * @tc.name      test_getAvailableArea_setWindowSystemBarEnable_static_0300
+         * @tc.desc      test_getAvailableArea_setWindowSystemBarEnable
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 2
          */
         it('test_getAvailableArea_setWindowSystemBarEnable_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName : string = 'test_getAvailableArea_setWindowSystemBarEnable_static_0300';
@@ -1094,12 +1147,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.name   test_getAvailableArea_ststus_bar_hide_static_0400
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0400
-         * @tc.desc   test_getAvailableArea_ststus_bar_hide
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number   SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0400
+         * @tc.name     test_getAvailableArea_ststus_bar_hide_static_0400
+         * @tc.desc     test_getAvailableArea_ststus_bar_hide
+         * @tc.size     MediumTest
+         * @tc.type     Function
+         * @tc.level    Level 3
          */
         it('test_getAvailableArea_ststus_bar_hide_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'test_getAvailableArea_ststus_bar_hide_static_0400';
@@ -1169,12 +1222,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.name   test_on_availableAreaChange_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0100
-         * @tc.desc   test_on_availableAreaChange
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0100
+         * @tc.name      test_on_availableAreaChange_static_0100
+         * @tc.desc      test_on_availableAreaChange
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
          */
         it('test_on_availableAreaChange_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'test_on_availableAreaChange_static_0100';
@@ -1204,12 +1257,12 @@ export default function DisplayTest() {
         });
 
         /**
-         * @tc.name   test_on_availableAreaChange_triggers_static_0200
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0200
-         * @tc.desc   test_on_availableAreaChange_triggers
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0200
+         * @tc.name      test_on_availableAreaChange_triggers_static_0200
+         * @tc.desc      test_on_availableAreaChange_triggers
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 2
          */
         it('test_on_availableAreaChange_triggers_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName : string = 'test_on_availableAreaChange_triggers_static_0200';
@@ -1262,12 +1315,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.name   test_on_availableAreaChange_Two_callback_static_0300
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0300
-         * @tc.desc   test_on_availableAreaChange_Two_callback
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0300
+         * @tc.name      test_on_availableAreaChange_Two_callback_static_0300
+         * @tc.desc      test_on_availableAreaChange_Two_callback
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 2
          */
         it('test_on_availableAreaChange_Two_callback_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName : string = 'test_on_availableAreaChange_Two_callback_static_0300';
@@ -1327,12 +1380,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.name   test_on_availableAreaChange_off_callback1_static_0400
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0400
-         * @tc.desc   test_on_availableAreaChange_off_callback1
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0400
+         * @tc.name      test_on_availableAreaChange_off_callback1_static_0400
+         * @tc.desc      test_on_availableAreaChange_off_callback1
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 2
          */
         it('test_on_availableAreaChange_off_callback1_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName : string = 'test_on_availableAreaChange_off_callback1_static_0400';
@@ -1393,12 +1446,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.name   test_on_availableAreaChange_off_callback_all_static_0500
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0500
-         * @tc.desc   test_on_availableAreaChange_off_callback_all_static_0500
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0500
+         * @tc.name      test_on_availableAreaChange_off_callback_all_static_0500
+         * @tc.desc      test_on_availableAreaChange_off_callback_all_static_0500
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 2
          */
         it('test_on_availableAreaChange_off_callback_all_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName : string = 'test_on_availableAreaChange_off_callback_all_static_0500';
@@ -1458,12 +1511,12 @@ export default function DisplayTest() {
             }
         });
         /**
-         * @tc.name   test_off_availableAreaChange_static_0600
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0600
-         * @tc.desc   test_off_availableAreaChange
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.number   SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0600
+         * @tc.name     test_off_availableAreaChange_static_0600
+         * @tc.desc     test_off_availableAreaChange
+         * @tc.size     MediumTest
+         * @tc.type     Function
+         * @tc.level    Level 2
          */
         it('test_off_availableAreaChange_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName : string = 'test_off_availableAreaChange_static_0600';
@@ -1489,13 +1542,13 @@ export default function DisplayTest() {
             }
         });
 
-      /**
-       * @tc.name   testMainScreenSupportRefreshRate_static_0100
-       * @tc.number SUB_BASIC_WMS_DMS_REFRESH_LEVEL_0100
-       * @tc.desc   验证主屏刷新率支持的档位
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL0
+/**
+       * @tc.number       SUB_BASIC_WMS_DMS_REFRESH_LEVEL_0100
+       * @tc.name         testMainScreenSupportRefreshRate_static_0100
+       * @tc.desc         验证主屏刷新率支持的档位
+       * @tc.size         MediumTest
+       * @tc.type         Function
+       * @tc.level        Level 0
        */
       it('testMainScreenSupportRefreshRate_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: () => void): Promise<void> =>{
         let caseName: string = "testMainScreenSupportRefreshRate_static_0100";
@@ -1526,12 +1579,12 @@ export default function DisplayTest() {
         }
       })
       /**
-       * @tc.name   test_ScreenShape_static_0100
-       * @tc.number SUB_BASIC_WMS_ScreenShape_0100
-       * @tc.desc   test_ScreenShape_static_0100
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL1
+       * @tc.number       SUB_BASIC_WMS_ScreenShape_0100
+       * @tc.name         test_ScreenShape_static_0100
+       * @tc.desc         test_ScreenShape_static_0100
+       * @tc.size         MediumTest
+       * @tc.type         Function
+       * @tc.level        Level 1
        */
       it('test_ScreenShape_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: () => void): Promise<void> =>{
         let caseName: string = "test_ScreenShape_static_0100";
@@ -1548,12 +1601,12 @@ export default function DisplayTest() {
         }
       });
       /**
-       * @tc.name   test_DisplaySourceMode_enum_static_0100
-       * @tc.number SUB_BASIC_WMS_DisplaySourceMode_0100
-       * @tc.desc   test_DisplaySourceMode_enum_static_0100
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL0
+       * @tc.number      SUB_BASIC_WMS_DisplaySourceMode_0100
+       * @tc.name        test_DisplaySourceMode_enum_static_0100
+       * @tc.desc        test_DisplaySourceMode_enum_static_0100
+       * @tc.size        MediumTest
+       * @tc.type        Function
+       * @tc.level       Level 0
        */
       it('test_DisplaySourceMode_enum_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: () => void): Promise<void> =>{
         let caseName: string = 'test_DisplaySourceMode_enum_static_0100';
@@ -1568,12 +1621,12 @@ export default function DisplayTest() {
       });
 
       /**
-       * @tc.name   test_display_DisplaySourceMode_static_0100
-       * @tc.number SUB_BASIC_WMS_DisplaySourceMode_0200
-       * @tc.desc   test_display_DisplaySourceMode_static_0100
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL0
+       * @tc.number      SUB_BASIC_WMS_DisplaySourceMode_0200
+       * @tc.name        test_display_DisplaySourceMode_static_0100
+       * @tc.desc        test_display_DisplaySourceMode_static_0100
+       * @tc.size        MediumTest
+       * @tc.type        Function
+       * @tc.level       Level 0
        */
       it('test_display_DisplaySourceMode_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: () => void): Promise<void> =>{
         let caseName: string = 'test_display_DisplaySourceMode_static_0100';
@@ -1589,14 +1642,411 @@ export default function DisplayTest() {
         expect(displayClass!.screenShape !=null ).assertTrue();
         done();
       });
+      /**
+         * @tc.number    SUB_BASIC_DMS_JS_0200
+         * @tc.name      test_getPrimaryDisplaySync_static_0100
+         * @tc.desc      test_getPrimaryDisplaySync_static_0100
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
+         */
+        it('test_getPrimaryDisplaySync_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = 'test_getPrimaryDisplaySync_static_0100';
+            try{
+                let displayInfo:display.Display = display.getPrimaryDisplaySync();
+                hilog.info(domain, tag,caseName + ' displayInfo:'+ displayInfo);
+                hilog.info(domain, tag,caseName + ' displayInfo.id:'+ displayInfo.id);
+                expect(displayInfo.id).assertEqual(0);
+                hilog.info(domain, tag,caseName + ' displayInfo.name:'+ displayInfo.name);
+                expect(displayInfo.name != null).assertTrue();
+                hilog.info(domain, tag,caseName + ' displayInfo.alive:'+ displayInfo.alive);
+                expect(displayInfo.alive).assertEqual(true);
+                hilog.info(domain, tag,caseName + ' displayInfo.width:'+ displayInfo.width);
+                expect(displayInfo.width).assertLarger(0);
+                hilog.info(domain, tag,caseName + ' displayInfo.height:'+ displayInfo.height);
+                expect(displayInfo.height).assertLarger(0);
+                hilog.info(domain, tag,caseName + ' displayInfo.refreshRate:'+ displayInfo.refreshRate);
+                expect(displayInfo.refreshRate).assertLarger(0);
+                hilog.info(domain, tag,caseName + ' displayInfo.densityDPI:'+ displayInfo.densityDPI);
+                expect(displayInfo.densityDPI).assertLarger(0);
+                hilog.info(domain, tag,caseName + ' displayInfo.densityPixels:'+ displayInfo.densityPixels);
+                expect(displayInfo.densityPixels).assertLarger(0);
+                hilog.info(domain, tag,caseName + ' displayInfo.scaledDensity:'+ displayInfo.scaledDensity);
+                expect(displayInfo.scaledDensity).assertLarger(0);
+                hilog.info(domain, tag,caseName + ' displayInfo.xDPI:'+ displayInfo.xDPI);
+                expect(displayInfo.xDPI).assertLarger(0);
+                hilog.info(domain, tag,caseName + ' displayInfo.yDPI:'+ displayInfo.yDPI);
+                expect(displayInfo.yDPI).assertLarger(0);
+                hilog.info(domain, tag,caseName + ' displayInfo.state:'+ displayInfo.state);
+                expect(displayInfo.state).assertEqual(2);
+                hilog.info(domain, tag,caseName + ' displayInfo.hdrFormats:'+ displayInfo.hdrFormats);
+                expect(displayInfo.hdrFormats != null).assertTrue();
+                hilog.info(domain, tag,caseName + ' displayInfo.colorSpaces:'+ displayInfo.colorSpaces);
+                expect(displayInfo.colorSpaces != null).assertTrue();
+                hilog.info(domain, tag,caseName + ' displayInfo.rotation:'+ displayInfo.rotation);
+                hilog.info(domain, tag,caseName + ' displayInfo.orientation:'+ displayInfo.orientation);
+                if(code == 801){
+                    expect(displayInfo.rotation).assertEqual(0);
+                    expect(displayInfo.orientation).assertEqual(0);
+                    done();
+                }else {
+                    let rotation:Int = displayInfo.rotation;
+                    // expect(displayInfo.orientation).assertEqual(int(orientation[rotation]));
+                    done();
+                }
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag,caseName + ': fail:'+ err + ' '+err.code);
+                expect(false).assertTrue();
+                done();
+            }
+        })
 
         /**
-         * @tc.name   testConvertGlobalToRelativeCoordinatewithPositionOutofRange_Static
-         * @tc.number SUB_BASIC_WMS_CONVERTCOORDINATE_Static_0500
-         * @tc.desc   验证convertGlobalToRelativeCoordinate接口position超出int32报1400004
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number    SUB_BASIC_WMS_CREATE_VIRTUALSCREEN_ERRORCODE_0100
+         * @tc.name      test_CreateVirtualScreen_ErrorCode1400001_static
+         * @tc.desc      test_CreateVirtualScreen_ErrorCode1400001 when got invalid size
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
+         */
+        it('test_CreateVirtualScreen_ErrorCode1400001_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_CreateVirtualScreen_ErrorCode1400001_static ';
+            let option: display.VirtualScreenConfig = {
+                name: 'screen01',
+                width: -1,
+                height: 2340,
+                density: 2,
+                surfaceId: ''
+            }
+            try {
+                display.createVirtualScreen(option).then((screenId: Long) => {
+                    hilog.info(domain, tag,caseName + 'succeeded in create virtual screen, data : ' + JSON.stringify(screenId));
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err: BusinessError) :PromiseLike<void>|undefined=> {
+                    hilog.info(domain, tag,caseName + 'failed to create the virtual screen, err : ' + JSON.stringify(err));
+                    expect(err.code == 1400001).assertTrue();
+                    done();
+                })
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag,caseName + 'error in createVirtualScreen, err : ' + JSON.stringify(err));
+                if (err.code != 801) {
+                    expect(false).assertTrue();
+                }
+                done();
+            }
+        });
+        /**
+         * @tc.number    SUB_BASIC_WMS_CREATE_VIRTUALSCREEN_0100
+         * @tc.name      test_CreateVirtualScreen01_static
+         * @tc.desc      test_CreateVirtualScreen01 
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
+         */
+        it('test_CreateVirtualScreen01_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_CreateVirtualScreen01_static ';
+            let option: display.VirtualScreenConfig = {
+                name: 'screen01',
+                width: 100,
+                height: 2340,
+                density: 2,
+                surfaceId: ''
+            }
+            try {
+                 display.createVirtualScreen(option).then(async (screenId: Long) => {
+                    hilog.info(domain, tag,caseName + 'succeeded in create virtual screen, data : ' + JSON.stringify(screenId));
+                     display.destroyVirtualScreen(screenId).then(() => {
+                        hilog.info(domain, tag,caseName + 'succeeded in destroyVirtualScreen');
+                        done();
+                    }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                        hilog.info(domain, tag,caseName + 'failed to destroyVirtualScreen, err : ' + JSON.stringify(err));
+                        expect(false).assertTrue();
+                        done();
+                    })
+                })
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag,caseName + 'error in createVirtualScreen, err : ' + JSON.stringify(err));
+                expect(err.code == 801).assertTrue();
+                done();
+            }
+        });
+        /**
+         * @tc.number    SUB_BASIC_WMS_DESTROY_VIRTUALSCREEN_ERRORCODE_0100
+         * @tc.name      test_DestroyVirtualScreenErrorcode401_static
+         * @tc.desc      test_DestroyVirtualScreenErrorcode_401 when got invalid screendId like -1
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
+         */
+        it('test_DestroyVirtualScreenErrorcode401_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_DestroyVirtualScreenErrorcode401 ';
+            try {
+                 display.destroyVirtualScreen(-1).then(() => {
+                    hilog.info(domain, tag,caseName + 'succeeded in destroy virtual screen, data : ');
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.info(domain, tag,caseName + 'failed to destroyVirtualScreen, err : ' + JSON.stringify(err));
+                     expect(err.code).assertTrue();
+                    done();
+                })
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
+                expect(err.code == 801 || err.code == 401).assertTrue();
+                done();
+            }
+        });
+        /**
+         * @tc.number    SUB_BASIC_WMS_DESTROY_VIRTUALSCREEN_ERRORCODE_0200
+         * @tc.name      test_DestroyVirtualScreenErrorcode401_02_static
+         * @tc.desc      test_DestroyVirtualScreenErrorcode_401 when destroy a screen that has already been destroyed
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
+         */
+        it('test_DestroyVirtualScreenErrorcode401_02_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_DestroyVirtualScreenErrorcode401_02_static ';
+            let option:display.VirtualScreenConfig = {
+                name: 'screen01',
+                width: 1,
+                height: 2340,
+                density: 2,
+                surfaceId: ''
+            }
+            try {
+                 display.createVirtualScreen(option).then(async (screenId: Long) => {
+                    hilog.info(domain, tag,caseName + 'Succeeded in creating ther virtual screen. Data: ' + JSON.stringify(screenId));
+                     display.destroyVirtualScreen(screenId).then(() => {
+                        hilog.info(domain, tag,caseName + 'Succeeded in destroyVirtualScreen1');
+                        display.destroyVirtualScreen(screenId).then(() => {
+                        hilog.info(domain, tag,caseName + 'Succeeded in destroyVirtualScreen2');
+                        expect(false).assertTrue();
+                        done();
+                    }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                        hilog.info(domain, tag,caseName + 'Failed in destroyVirtualScreen2');
+                        expect(err.code == 401);
+                        done();
+                    })
+                    }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                        hilog.info(domain, tag,caseName + 'Failed in destroyVirtualScreen1');
+                        expect(false).assertTrue();
+                        done();
+                    })
+                    
+                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.info(domain, tag,caseName + 'failed to createVirtualScreen, err : ' + JSON.stringify(err));
+                    expect(false).assertTrue();
+                    done();
+                })
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
+                expect(err.code == 801);
+                done();
+            }
+        });
+
+        /**
+         * @tc.number    SUB_BASIC_WMS_SET_VIRTUALSCREEN_SURFACE_ERRORCODE_static_0100
+         * @tc.name      test_setVirtualScreenSurface_ErrorCode401_static
+         * @tc.desc      test_setVirtualScreenSurface_ErrorCode401 when got a invalid screenId like -1
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
+         */
+        it('test_setVirtualScreenSurface_ErrorCode401_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_setVirtualScreenSurface_ErrorCode401_static ';
+            try {
+                 display.setVirtualScreenSurface(-1, '').then(() => {
+                    hilog.info(domain, tag,caseName + 'success in setVirtualScreenSurface');
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                     hilog.info(domain, tag,caseName + 'failed to setVirtualScreenSurface, err : ' + JSON.stringify(err));
+                     expect(false).assertTrue();
+                     done();
+                 })
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag,caseName + 'error in setVirtualScreenSurface, err : ' + JSON.stringify(err));
+                expect(err.code == 401 || err.code == 801).assertTrue();
+                done();
+            }
+        });
+        /**
+         * @tc.number    SUB_BASIC_WMS_SET_VIRTUALSCREEN_SURFACE_ERRORCODE_static_0200
+         * @tc.name      test_setVirtualScreenSurface_ErrorCode401_static_02
+         * @tc.desc      test_setVirtualScreenSurface_ErrorCode401 when got non existent surfaceId like ''
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 2
+         */
+        it('test_setVirtualScreenSurface_ErrorCode401_static_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_setVirtualScreenSurface_ErrorCode401_static_02 ';
+            let option: display.VirtualScreenConfig = {
+                name: 'screen01',
+                width: 1,
+                height: 2340,
+                density: 2,
+                surfaceId: ''
+            };
+            try {
+                let screenId: Long = await display.createVirtualScreen(option);
+                hilog.info(domain, tag,caseName + 'success in createVirtualScreen ' + screenId);
+                 display.setVirtualScreenSurface(screenId, '').then(() => {
+                    hilog.info(domain, tag,caseName + 'success in setVirtualScreenSurface');
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                     hilog.info(domain, tag,caseName + 'failed to setVirtualScreenSurface, err : ' + JSON.stringify(err));
+                     expect(false).assertTrue();
+                     done();
+                 })
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag,caseName + 'error in setVirtualScreenSurface, err : ' + JSON.stringify(err));
+                expect(err.code == 401 || err.code == 801).assertTrue();
+                done();
+            }
+        });
+        /**
+         * @tc.number    SUB_BASIC_WMS_MAKEUNIQUE_ERRORCODE_static_0100
+         * @tc.name      test_MakeUniqueErrorcode_401_static
+         * @tc.desc      test_MakeUniqueErrorcode_401 when got invalid screenId like -1
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
+         */
+        it('test_MakeUniqueErrorcode_401_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_MakeUniqueErrorcode_401_static ';
+            try {
+                 display.makeUnique(-1).then(()=>{
+                    hilog.info(domain, tag,caseName + 'Succeeded in makeUnique');
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err: BusinessError) :PromiseLike<void>|undefined => {
+                    hilog.info(domain, tag,caseName + 'Error in makeUnique, err: ' + JSON.stringify(err));
+                    expect(false).assertTrue();
+                    done();
+                })
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
+                expect(err.code == 401 || err.code == 801).assertTrue()
+                done();
+            }
+        });
+        /**
+         * @tc.number    SUB_BASIC_WMS_MAKEUNIQUE_ERRORCODE_static_0200
+         * @tc.name      test_MakeUniqueErrorcode_1400001_static
+         * @tc.desc      test_MakeUniqueErrorcode_1400001 when makeUnique a virtual screen that has already been destroyed
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
+         */
+        it('test_MakeUniqueErrorcode_1400001_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_MakeUniqueErrorcode_1400001_static ';
+            let option: display.VirtualScreenConfig = {
+                name: 'screen01',
+                width: 1,
+                height: 2340,
+                density: 2,
+                surfaceId: ''
+            }
+            try {
+                let vid = await display.createVirtualScreen(option);
+                hilog.info(domain, tag,caseName + 'Success in createVirtualScreen, screendId : ' + vid);
+                await display.destroyVirtualScreen(vid);
+                hilog.info(domain, tag,caseName + 'Success in destroyVirtualScreen');
+
+                display.makeUnique(vid).then(() => {
+                    hilog.info(domain, tag,caseName + 'Success in make unique screen');
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err: BusinessError) :PromiseLike<void>|undefined=> {
+                    hilog.info(domain, tag,caseName + 'Failed to makeUnique, err: ' + JSON.stringify(err));
+
+                    done();
+                })
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
+                expect(err.code == 801);
+                done();
+            }
+        });
+
+
+        /**
+         * @tc.number     SUB_BASIC_DMS_JS_static_0500
+         * @tc.name       test_js_capture_privateWindow_static
+         * @tc.desc       test_js_capture_privateWindow_static
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 3
+         */
+        it('test_js_capture_privateWindow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = 'test_js_capture_privateWindow_static';
+            try{
+                let windowClass:window.Window = windowStage.getMainWindowSync();
+                windowClass.setWindowPrivacyMode(true, (err: BusinessError<void> | null) :void => {
+                    const errCode: number = err!.code;
+                    if (errCode) {
+                        hilog.error(domain, tag,`caseName + Failed to set the window to privacy mode. Cause code: ${err!.code}, message: ${err!.message}`);
+                        return;
+                    }
+                    hilog.info(domain, tag,caseName + 'Succeeded in setting the window to privacy mode.');
+                    let captureOption: screenshot.CaptureOption = {
+                        "displayId": 0
+                    };
+                    let promise = screenshot.capture(captureOption);
+                    promise.then((PixelMap: image.PixelMap) => {
+                        hilog.info(domain, tag,caseName + 'Succeeded in saving screenshot. Pixel bytes number: ' + PixelMap.getPixelBytesNumber());
+                        PixelMap.getImageInfo().then((imageInfo:image.ImageInfo)=>{
+                            let PixelMapWidth = imageInfo.size.width;
+                            let PixelMapHeight = imageInfo.size.height;
+                            hilog.info(domain, tag,caseName + ' PixelMapWidth:'+ PixelMapWidth + ' ,PixelMapHeight:'+ PixelMapHeight);
+                            expect(PixelMapWidth).assertLarger(0);
+                            expect(PixelMapHeight).assertLarger(0);
+                            PixelMap.release(); // PixelMap使用完后及时释放内存
+                            done();
+                        })
+                    }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                        hilog.info(domain, tag,caseName +'Failed to save screenshot. Code: ' + JSON.stringify(err));
+                        if(err.code == 801){
+                            windowClass.setWindowPrivacyMode(false);
+                            done();
+                        }else if(err.code == 1400003){
+                            hilog.info(domain, tag,caseName + 'privateWindow not support capture');
+                            done();
+                        }else{
+                            expect(false).assertTrue();
+                            done();
+                        }
+                    });
+
+                });
+
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag,caseName + ': fail:'+ err + ' '+err.code);
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+      /**
+         * @tc.number      SUB_BASIC_WMS_CONVERTCOORDINATE_Static_0500
+         * @tc.name        testConvertGlobalToRelativeCoordinatewithPositionOutofRange_Static
+         * @tc.desc        验证convertGlobalToRelativeCoordinate接口position超出int32报1400004
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testConvertGlobalToRelativeCoordinatewithPositionOutofRange_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = "testConvertGlobalToRelativeCoordinatewithPositionOutofRange_Static";
@@ -1622,12 +2072,12 @@ export default function DisplayTest() {
         })
 
         /**
-         * @tc.name   testConvertGlobalToRelativeCoordinatewithInvalidDisplayid_Static
-         * @tc.number SUB_BASIC_WMS_CONVERTCOORDINATE_Static_0600
-         * @tc.desc   验证convertGlobalToRelativeCoordinate接口传入displayId<0报1400004
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_CONVERTCOORDINATE_Static_0600
+         * @tc.name        testConvertGlobalToRelativeCoordinatewithInvalidDisplayid_Static
+         * @tc.desc        验证convertGlobalToRelativeCoordinate接口传入displayId<0报1400004
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testConvertGlobalToRelativeCoordinatewithInvalidDisplayid_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = "testConvertGlobalToRelativeCoordinatewithInvalidDisplayid_Static";
@@ -1651,12 +2101,12 @@ export default function DisplayTest() {
 
 
         /**
-         * @tc.name   testConvertGlobalToRelativeCoordinatewithDisplayid_Static
-         * @tc.number SUB_BASIC_WMS_CONVERTCOORDINATE_Static_0800
-         * @tc.desc   验证convertGlobalToRelativeCoordinate接口，传入displayId，在除RK外的设备正常调用
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
+         * @tc.number      SUB_BASIC_WMS_CONVERTCOORDINATE_Static_0800
+         * @tc.name        testConvertGlobalToRelativeCoordinatewithDisplayid_Static
+         * @tc.desc        验证convertGlobalToRelativeCoordinate接口，传入displayId，在除RK外的设备正常调用
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 0
          */
         it('testConvertGlobalToRelativeCoordinatewithDisplayid_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName:string = "testConvertGlobalToRelativeCoordinatewithDisplayid_Static";
@@ -1693,12 +2143,12 @@ export default function DisplayTest() {
         })
 
         /**
-         * @tc.name   testConvertGlobalToRelativeCoordinatewithoutDisplayid_Static
-         * @tc.number SUB_BASIC_WMS_CONVERTCOORDINATE_Static_0900
-         * @tc.desc   验证convertGlobalToRelativeCoordinate接口，不传入displayId，在除RK外的设备正常调用
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
+         * @tc.number      SUB_BASIC_WMS_CONVERTCOORDINATE_Static_0900
+         * @tc.name        testConvertGlobalToRelativeCoordinatewithoutDisplayid_Static
+         * @tc.desc        验证convertGlobalToRelativeCoordinate接口，不传入displayId，在除RK外的设备正常调用
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 0
          */
         it('testConvertGlobalToRelativeCoordinatewithoutDisplayid_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName:string = "testConvertGlobalToRelativeCoordinatewithoutDisplayid_Static";
@@ -1734,12 +2184,12 @@ export default function DisplayTest() {
             }
         })
         /**
-         * @tc.name   testGetLiveCreaseRegion_Static
-         * @tc.number SUB_BASIC_WMS_GET_LIVE_CREASE_REGION_Static_0100
-         * @tc.desc   验证折叠设备可查询到折痕区域，非折叠设备折痕区域返回空
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
+         * @tc.number      SUB_BASIC_WMS_GET_LIVE_CREASE_REGION_Static_0100
+         * @tc.name        testGetLiveCreaseRegion_Static
+         * @tc.desc        验证折叠设备可查询到折痕区域，非折叠设备折痕区域返回空
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 0
          */
         it('testGetLiveCreaseRegion_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName:string = "testGetLiveCreaseRegion_Static";
