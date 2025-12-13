@@ -55,6 +55,8 @@ export const TestRegisterUIInputEventCallbackErrorCode_01: () => void;
 export const TestRegisterUIInputEventCallbackErrorCode_02: () => void;
 export const TestRegisterOnTouchInterceptCallbackErrorCode_01: () => void;
 export const TestRegisterOnTouchInterceptCallbackErrorCode_02: () => void;
+export const TestGetNativeAccessibilityProviderErrorCode_01: () => void;
+export const TestGetNativeAccessibilityProviderErrorCode_02: () => void;
 
 export const TestAttachNativeRootNodeErrorCode001: (id: string) => void;
 export const TestAttachNativeRootNodeErrorCode002: (id: string) => void;

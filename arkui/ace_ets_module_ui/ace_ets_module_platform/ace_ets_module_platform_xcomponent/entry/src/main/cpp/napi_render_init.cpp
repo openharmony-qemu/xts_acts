@@ -95,6 +95,10 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestRegisterOnTouchInterceptCallbackErrorCode_02", nullptr, XComponentKeyMouseEventTest::TestRegisterOnTouchInterceptCallbackErrorCode_02,
          nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestGetNativeAccessibilityProviderErrorCode_01", nullptr, XComponentKeyMouseEventTest::TestGetNativeAccessibilityProviderErrorCode_01,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestGetNativeAccessibilityProviderErrorCode_02", nullptr, XComponentKeyMouseEventTest::TestGetNativeAccessibilityProviderErrorCode_02,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
 
         {"TestAttachNativeRootNodeErrorCode001", nullptr, NodeXComponentTest::TestAttachNativeRootNodeErrorCode001,
          nullptr, nullptr, nullptr, napi_default, nullptr},

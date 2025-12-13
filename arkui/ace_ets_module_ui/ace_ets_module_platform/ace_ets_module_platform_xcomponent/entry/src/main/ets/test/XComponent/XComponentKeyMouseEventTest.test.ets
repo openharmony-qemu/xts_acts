@@ -528,5 +528,43 @@ export default function XComponentKeyMouseEventTest() {
       done();
     });
 
+   /**
+     * @tc.name   XComponentKeyMouseEventTest_2300
+     * @tc.number XComponentKeyMouseEventTest_2300
+     * @tc.desc   Test OH_NativeXComponent_GetNativeAccessibilityProvider ErrorCode: OH_NATIVEXCOMPONENT_RESULT_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('XComponentKeyMouseEventTest_2300', Level.LEVEL1, async (done: Function) => {
+      console.info('[XComponentKeyMouseEventTest_2300] START');
+      await CommonFunc.sleep(1000);
+
+      // 
+      expect(native.TestGetNativeAccessibilityProviderErrorCode_01()).assertEqual(0);
+      
+      console.info('[XComponentKeyMouseEventTest_2300] END');
+      done();
+    });
+
+    /**
+     * @tc.name   XComponentKeyMouseEventTest_2400
+     * @tc.number XComponentKeyMouseEventTest_2400
+     * @tc.desc   Test OH_NativeXComponent_GetNativeAccessibilityProvider ErrorCode: OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('XComponentKeyMouseEventTest_2400', Level.LEVEL1, async (done: Function) => {
+      console.info('[XComponentKeyMouseEventTest_2400] START');
+      await CommonFunc.sleep(1000);
+
+      // 
+      expect(native.TestGetNativeAccessibilityProviderErrorCode_02()).assertEqual(0);
+      
+      console.info('[XComponentKeyMouseEventTest_2400] END');
+      done();
+    });
+    
   })
 }
