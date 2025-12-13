@@ -21,6 +21,7 @@ group("ActsAceEtsModuleCommonAttrsEventsTest") {
       "ace_ets_module_commonAttrsEvents_api13:ActsAceEtsModuleCommonAttrsEventsApi13Test",
       "ace_ets_module_commonAttrsEvents_api20:ActsAceEtsModuleCommonAttrsEventsApi20Test",
       "ace_ets_module_commonAttrsEvents_interactiveAttributes:ActsAceEtsModuleCommonAttrsEventsInteractiveAttributesTest",
+      "ace_ets_module_commonAttrsEvents_api13_static:ActsAceEtsModuleCommonAttrsEventsApi13StaticTest",
     ]
   } else {
     deps = [
@@ -32,6 +33,7 @@ group("ActsAceEtsModuleCommonAttrsEventsTest") {
       "ace_ets_module_commonAttrsEvents_dragControl:ActsAceEtsModuleCommonAttrsEventsDragControlTest",
       "ace_ets_module_commonAttrsEvents_interactiveAttributes:ActsAceEtsModuleCommonAttrsEventsInteractiveAttributesTest",
       "ace_ets_module_commonAttrsEvents_focusControl:ActsAceEtsModuleCommonAttrsEventsFocusControlTest",
+      "ace_ets_module_commonAttrsEvents_api13_static:ActsAceEtsModuleCommonAttrsEventsApi13StaticTest",
     ]
   }
 }
