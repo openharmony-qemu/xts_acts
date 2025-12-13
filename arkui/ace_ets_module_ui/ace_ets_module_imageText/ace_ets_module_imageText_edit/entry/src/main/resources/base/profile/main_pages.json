@@ -55,6 +55,9 @@
         "MainAbility/pages/TextAreaApi20/MaxLinesOptionsTest",
         "MainAbility/pages/TextAreaApi20/TextAreaBindControllerTest",
         "MainAbility/pages/TextAreaApi22/textAreaObserver",
+        "MainAbility/pages/TextAreaApi22/TextAreaEnableSelectedDataDetector",
+        "MainAbility/pages/TextAreaApi22/TextAreaSetStyledPlaceholder",
+        "MainAbility/pages/TextAreaApi22/TextAreaOnWillAttachIME",
 
         "MainAbility/pages/TextInput/TextInputOnEditChangeJsunitTest",
         "MainAbility/pages/TextInputApi11/textInputApi11",
@@ -103,6 +106,9 @@
         "MainAbility/pages/TextInputApi20/TextInputEnableAutoSpacing",
         "MainAbility/pages/TextInputApi20/TextInputEnableAutoFillAnimation",
         "MainAbility/pages/TextInputApi20/TextInputBindControllerTest",
-        "MainAbility/pages/TextInputApi22/textInputObserver"
+        "MainAbility/pages/TextInputApi22/textInputObserver",
+        "MainAbility/pages/TextInputApi22/TextInputEnableSelectedDataDetector",
+        "MainAbility/pages/TextInputApi22/TextInputSetStyledPlaceholder",
+        "MainAbility/pages/TextInputApi22/TextInputOnWillAttachIME"
     ]
 }

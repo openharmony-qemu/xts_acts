@@ -51,7 +51,9 @@ import SearchAutoCapitalizationModeTest from './SearchApi20Test/SearchAutoCapita
 import SearchAutoCapitalizationModeModifierTest from './SearchApi20Test/SearchAutoCapitalizationModeModifier.test';
 import OnWillAttachIMETest from './SearchApi20Test/OnWillAttachIMETest.test';
 import searchObserverTest from './SearchApi22Test/searchObserver.test';
-
+import SearchEnableSelectedDataDetectorTest from './SearchApi22Test/SearchEnableSelectedDataDetector.test';
+import SearchSetStyledPlaceholderTest from './SearchApi22Test/SearchSetStyledPlaceholder.test';
+import SearchOnWillAttachIMETest from './SearchApi22Test/SearchOnWillAttachIME.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -91,4 +93,7 @@ export default function testsuite() {
   SearchAutoCapitalizationModeModifierTest()
   OnWillAttachIMETest()
   searchObserverTest()            // Api22
+  SearchEnableSelectedDataDetectorTest()
+  SearchSetStyledPlaceholderTest()
+  SearchOnWillAttachIMETest()
 }
