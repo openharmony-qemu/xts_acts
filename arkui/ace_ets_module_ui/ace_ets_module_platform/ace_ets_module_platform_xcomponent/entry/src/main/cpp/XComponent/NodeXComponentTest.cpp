@@ -83,9 +83,6 @@ napi_value NodeXComponentTest::TestAttachNativeRootNodeErrorCode002(napi_env env
 
 napi_value NodeXComponentTest::TestGetNativeXComponentReturnNull(napi_env env, napi_callback_info info)
 {
-    // NAPI_START(xcomponent, ARKUI_NODE_XCOMPONENT);
-
-    // OH_NativeXComponent* nativeXComponent = OH_NativeXComponent_GetNativeXComponent(xcomponent);
     OH_NativeXComponent* nativeXComponent = OH_NativeXComponent_GetNativeXComponent(nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "wds", "TestGetNativeXComponentReturnNull: %{public}p", nativeXComponent);
 
@@ -96,9 +93,6 @@ napi_value NodeXComponentTest::TestGetNativeXComponentReturnNull(napi_env env, n
 
 napi_value NodeXComponentTest::TestSurfaceHolderCreateReturnNull(napi_env env, napi_callback_info info)
 {
-    // NAPI_START(xcomponent, ARKUI_NODE_XCOMPONENT);
-
-    // OH_ArkUI_SurfaceHolder *holder = OH_ArkUI_SurfaceHolder_Create(xcomponent);
     OH_ArkUI_SurfaceHolder *holder = OH_ArkUI_SurfaceHolder_Create(nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "wds", "TestSurfaceHolderCreateReturnNull: %{public}p", holder);
 
@@ -119,8 +113,6 @@ napi_value NodeXComponentTest::TestSurfaceHolderGetUserDataReturnNull(napi_env e
 
 napi_value NodeXComponentTest::TestSurfaceCallbackCreateReturnNull(napi_env env, napi_callback_info info)
 {
-    // NAPI_START(xcomponent, ARKUI_NODE_XCOMPONENT);
-
     OH_ArkUI_SurfaceCallback* callback = OH_ArkUI_SurfaceCallback_Create();
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "wds", "TestSurfaceCallbackCreateReturnNull: %{public}p", callback);
 
@@ -131,8 +123,6 @@ napi_value NodeXComponentTest::TestSurfaceCallbackCreateReturnNull(napi_env env,
 
 napi_value NodeXComponentTest::TestXComponentGetNativeWindowReturnNull(napi_env env, napi_callback_info info)
 {
-    // NAPI_START(xcomponent, ARKUI_NODE_XCOMPONENT);
-
     OHNativeWindow* window = OH_ArkUI_XComponent_GetNativeWindow(nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "wds", "TestXComponentGetNativeWindowReturnNull: %{public}p", window);
 
