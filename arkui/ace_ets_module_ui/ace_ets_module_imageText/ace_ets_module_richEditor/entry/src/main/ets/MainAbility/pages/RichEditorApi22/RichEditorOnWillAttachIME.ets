@@ -1,3 +1,18 @@
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import { RichEditorModifier } from '@kit.ArkUI'
 
 
@@ -19,7 +34,7 @@ class MyRichEditorModifierSetExtraConfig extends RichEditorModifier {
     })
   }
 
-  name: string = ""
+  name: string = ''
 
   setName(name: string) {
     this.name = name
@@ -45,8 +60,8 @@ struct RichEditorOnWillAttachIME {
   options2: RichEditorOptions = { controller: this.controller2 };
   options3: RichEditorOptions = { controller: this.controller3 };
   options4: RichEditorOptions = { controller: this.controller4 };
-  RichEditorModifier: MyRichEditorModifierSetExtraConfig = new MyRichEditorModifierSetExtraConfig()
-  RichEditorModifier2: MyRichEditorModifierUndefiend = new MyRichEditorModifierUndefiend()
+  richEditorModifier: MyRichEditorModifierSetExtraConfig = new MyRichEditorModifierSetExtraConfig()
+  richEditorModifier2: MyRichEditorModifierUndefiend = new MyRichEditorModifierUndefiend()
 
   build() {
     Column() {
@@ -66,7 +81,7 @@ struct RichEditorOnWillAttachIME {
 
       RichEditor(this.options2)
         .width('90%').height('5%')
-        .attributeModifier(this.RichEditorModifier2)
+        .attributeModifier(this.richEditorModifier2)
         .onReady(() => {
           this.controller2.addTextSpan('RichEditorModifier:onWillAttachIME undefined',
             {
@@ -81,7 +96,7 @@ struct RichEditorOnWillAttachIME {
       RichEditor(this.options3)
         .width('90%').height('7%')
         .id('RichEditorModifier_onWillAttachIME')
-        .attributeModifier(this.RichEditorModifier)
+        .attributeModifier(this.richEditorModifier)
         .onReady(() => {
           this.controller3.addTextSpan('RichEditorModifier:onWillAttachIME',
             {
@@ -112,7 +127,7 @@ struct RichEditorOnWillAttachIME {
           AppStorage.setOrCreate('RichEditor_onWillAttachIME','onWillAttachIME')
           client.setExtraConfig({
             customSettings: {
-              name: "RichEditor",
+              name: 'RichEditor',
               show: true,
               flag: 10,
               id: client.nodeId,

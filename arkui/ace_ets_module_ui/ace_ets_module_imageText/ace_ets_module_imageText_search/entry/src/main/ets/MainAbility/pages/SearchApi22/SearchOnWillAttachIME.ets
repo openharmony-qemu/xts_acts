@@ -33,7 +33,7 @@ class MySearchModifierSetExtraConfig extends SearchModifier {
     })
   }
 
-  name: string = ""
+  name: string = ''
 
   setName(name: string) {
     this.name = name
@@ -52,33 +52,33 @@ class MySearchModifierUndefiend extends SearchModifier {
 @Component
 struct SearchOnWillAttachIME {
   @State isHover: boolean = false
-  SearchModifier: MySearchModifierSetExtraConfig = new MySearchModifierSetExtraConfig()
-  SearchModifier2: MySearchModifierUndefiend = new MySearchModifierUndefiend()
+  searchModifier: MySearchModifierSetExtraConfig = new MySearchModifierSetExtraConfig()
+  searchModifier2: MySearchModifierUndefiend = new MySearchModifierUndefiend()
 
   build() {
     Column() {
       Search({ value: 'Search onWillAttachIME undefined'})
         .width('90%').height('5%')
         .onChange((value: string) => {
-          this.SearchModifier.setName(value)
+          this.searchModifier.setName(value)
         })
         .onWillAttachIME(undefined)
 
       Search({ value: 'SearchModifier onWillAttachIME undefined'})
         .width('90%').height('5%')
-        .attributeModifier(this.SearchModifier2)
+        .attributeModifier(this.searchModifier2)
 
       Search({ value: 'SearchModifier onWillAttachIME'}).width('90%').height('5%')
         .id('SearchModifier_onWillAttachIME')
-        .attributeModifier(this.SearchModifier)
+        .attributeModifier(this.searchModifier)
         .onChange((value: string) => {
-          this.SearchModifier.setName(value)
+          this.searchModifier.setName(value)
         })
 
       Search({ value: 'Search onWillAttachIME'}).width('90%').height('5%')
         .id('Search_onWillAttachIME')
         .onChange((value: string) => {
-          this.SearchModifier.setName(value)
+          this.searchModifier.setName(value)
         })
         .onWillAttachIME((client: IMEClient) => {
           console.log(`Vincent Search ${client.nodeId}`)
@@ -86,7 +86,7 @@ struct SearchOnWillAttachIME {
           AppStorage.setOrCreate('Search_onWillAttachIME','onWillAttachIME')
           client.setExtraConfig({
             customSettings: {
-              name: "Search",
+              name: 'Search',
               show: true,
               flag: 10,
               id: client.nodeId,

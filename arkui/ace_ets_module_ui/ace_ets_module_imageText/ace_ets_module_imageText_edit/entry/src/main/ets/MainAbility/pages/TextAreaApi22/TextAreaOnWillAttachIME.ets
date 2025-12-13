@@ -1,3 +1,18 @@
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ 
 import { TextAreaModifier } from '@kit.ArkUI'
 
 
@@ -19,7 +34,7 @@ class MyTextAreaModifierSetExtraConfig extends TextAreaModifier {
     })
   }
 
-  name: string = ""
+  name: string = ''
 
   setName(name: string) {
     this.name = name
@@ -38,33 +53,33 @@ class MyTextAreaModifierUndefiend extends TextAreaModifier {
 @Component
 struct TextAreaOnWillAttachIME {
   @State isHover: boolean = false
-  TextAreaModifier: MyTextAreaModifierSetExtraConfig = new MyTextAreaModifierSetExtraConfig()
-  TextAreaModifier2: MyTextAreaModifierUndefiend = new MyTextAreaModifierUndefiend()
+  textAreaModifier: MyTextAreaModifierSetExtraConfig = new MyTextAreaModifierSetExtraConfig()
+  textAreaModifier2: MyTextAreaModifierUndefiend = new MyTextAreaModifierUndefiend()
 
   build() {
     Column() {
       TextArea({ text: 'TextArea onWillAttachIME undefined'})
         .width('90%').height('5%')
         .onChange((value: string) => {
-          this.TextAreaModifier.setName(value)
+          this.textAreaModifier.setName(value)
         })
         .onWillAttachIME(undefined)
 
       TextArea({ text: 'TextAreaModifier onWillAttachIME undefined'})
         .width('90%').height('5%')
-        .attributeModifier(this.TextAreaModifier2)
+        .attributeModifier(this.textAreaModifier2)
 
       TextArea({ text: 'TextAreaModifier onWillAttachIME'}).width('90%').height('5%')
         .id('TextAreaModifier_onWillAttachIME')
-        .attributeModifier(this.TextAreaModifier)
+        .attributeModifier(this.textAreaModifier)
         .onChange((value: string) => {
-          this.TextAreaModifier.setName(value)
+          this.textAreaModifier.setName(value)
         })
 
       TextArea({ text: 'TextArea onWillAttachIME'}).width('90%').height('5%')
         .id('TextArea_onWillAttachIME')
         .onChange((value: string) => {
-          this.TextAreaModifier.setName(value)
+          this.textAreaModifier.setName(value)
         })
         .onWillAttachIME((client: IMEClient) => {
           console.log(`Vincent TextArea ${client.nodeId}`)
@@ -72,7 +87,7 @@ struct TextAreaOnWillAttachIME {
           AppStorage.setOrCreate('TextArea_onWillAttachIME','onWillAttachIME')
           client.setExtraConfig({
             customSettings: {
-              name: "TextArea",
+              name: 'TextArea',
               show: true,
               flag: 10,
               id: client.nodeId,
