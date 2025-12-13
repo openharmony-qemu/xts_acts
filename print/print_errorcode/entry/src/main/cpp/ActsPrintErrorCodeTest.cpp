@@ -214,7 +214,7 @@ napi_value OH_Print_QueryPrinterList1(napi_env env, napi_callback_info info)
 
 napi_value OH_Print_QueryPrinterList2(napi_env env, napi_callback_info info)
 {
-    Print_StringList *printerIdList = { 0 };
+    Print_StringList printerIdList = { 0 };
     Print_ErrorCode errorCode = OH_Print_QueryPrinterList(printerIdList);
     napi_value result = nullptr;
     if (printerIdList->count > 0) {
