@@ -34,7 +34,7 @@ class MyTextInputModifierSetExtraConfig extends TextInputModifier {
     })
   }
 
-  name: string = ''
+  private name: string = ''
 
   setName(name: string) {
     this.name = name

@@ -34,7 +34,7 @@ class MyRichEditorModifierSetExtraConfig extends RichEditorModifier {
     })
   }
 
-  name: string = ''
+  private name: string = ''
 
   setName(name: string) {
     this.name = name

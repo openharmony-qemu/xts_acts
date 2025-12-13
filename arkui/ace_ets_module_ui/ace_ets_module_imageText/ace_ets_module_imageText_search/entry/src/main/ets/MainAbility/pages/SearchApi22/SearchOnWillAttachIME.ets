@@ -33,7 +33,7 @@ class MySearchModifierSetExtraConfig extends SearchModifier {
     })
   }
 
-  name: string = ''
+  private name: string = ''
 
   setName(name: string) {
     this.name = name
