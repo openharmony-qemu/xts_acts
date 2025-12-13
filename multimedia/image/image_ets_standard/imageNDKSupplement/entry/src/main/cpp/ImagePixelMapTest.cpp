@@ -41,6 +41,16 @@ namespace {
     constexpr uint32_t NUM_4 = 4;
     constexpr uint32_t NUM_5 = 5;
 }
+#define OPTION_WIDTH_SMALL 4;
+#define OPTION_HEIGHT_SMALL 6;
+#define OPTION_PIXEL_FORMAT_SMALL 4;
+#define OPTION_ALPHA_ZERO 0;
+#define OPTION_EDITABLE_ZERO 0;
+#define OPTION_SCALE_ZERO 0;
+#define OPTION_WIDTH_BIG 100;
+#define OPTION_HEIGHT_BIG 50;
+#define OPTION_PIXEL_FORMAT_BIG 9;
+
 napi_value CreatePixelMapTest(napi_env env, napi_callback_info info)
 {
     LOGI("OH_PixelMap_GetBytesNumberPerRow start");
@@ -61,20 +71,20 @@ napi_value CreatePixelMapTest(napi_env env, napi_callback_info info)
     napi_value pixelMap = nullptr;
 
     struct OhosPixelMapCreateOps createOps;
-    createOps.width = 4;
-    createOps.height = 6;
-    createOps.pixelFormat = 4;
-    createOps.alphaType = 0;
-    createOps.editable = 0;
-    createOps.scaleMode = 0;
+    createOps.width = OPTION_WIDTH_SMALL;
+    createOps.height = OPTION_HEIGHT_SMALL;
+    createOps.pixelFormat = OPTION_PIXEL_FORMAT_SMALL;
+    createOps.alphaType = OPTION_ALPHA_ZERO;
+    createOps.editable = OPTION_EDITABLE_ZERO;
+    createOps.scaleMode = OPTION_SCALE_ZERO;
     size_t bufferSize = createOps.width * createOps.height * 4;
     void *buff = malloc(bufferSize);
     if (buff == nullptr) {
         return udfVar;
     }
-    char *cc = (char *)buff;
-    for (int i = 0; i < 96; i++) {
-        *(cc++) = (char)i;
+    char *cc = reinterpret_cast<char *>(buff);
+    for (int i = 0; i < bufferSize; ++i) {
+        *(cc++) = static_cast<char>(i);
     }
 
     int32_t res = IMAGE_RESULT_SUCCESS;
@@ -119,20 +129,20 @@ napi_value CreatePixelMap(napi_env env)
     napi_value udfVar = nullptr;
     napi_value pixelMap = nullptr;
     struct OhosPixelMapCreateOps createOps;
-    createOps.width = 4;
-    createOps.height = 6;
-    createOps.pixelFormat = 4;
-    createOps.alphaType = 0;
-    createOps.editable = 0;
-    createOps.scaleMode = 0;
+    createOps.width = OPTION_WIDTH_SMALL;
+    createOps.height = OPTION_HEIGHT_SMALL;
+    createOps.pixelFormat = OPTION_PIXEL_FORMAT_SMALL;
+    createOps.alphaType = OPTION_ALPHA_ZERO;
+    createOps.editable = OPTION_EDITABLE_ZERO;
+    createOps.scaleMode = OPTION_SCALE_ZERO;
     size_t bufferSize = createOps.width * createOps.height * 4;
     void *buff = malloc(bufferSize);
     if (buff == nullptr) {
         return udfVar;
     }
-    char *cc = (char *)buff;
-    for (int i = 0; i < 96; i++) {
-        *(cc++) = (char)i;
+    char *cc = reinterpret_cast<char *>(buff);
+    for (int i = 0; i < bufferSize; ++i) {
+        *(cc++) = static_cast<char>(i);
     }
     int32_t res = IMAGE_RESULT_SUCCESS;
     res = OH_PixelMap_CreatePixelMap(env, createOps, (uint8_t *)buff, bufferSize, &pixelMap);
@@ -160,10 +170,10 @@ napi_value CreatePixelMapWithStrideTest(napi_env env, napi_callback_info info)
     size_t bufferLen = 0;
     int32_t rowStride = 0;
     struct OhosPixelMapCreateOps createOps;
-    createOps.width = 100;
-    createOps.height = 50;
-    createOps.pixelFormat = 9; // 合法像素格式
-    createOps.alphaType = 0;
+    createOps.width = OPTION_WIDTH_BIG;
+    createOps.height = OPTION_HEIGHT_BIG;
+    createOps.pixelFormat = OPTION_PIXEL_FORMAT_BIG; // 合法像素格式
+    createOps.alphaType = OPTION_ALPHA_ZERO;
     rowStride = createOps.width * 4; // 预期行步长（400）
     bufferLen = createOps.height * rowStride;
     napi_value pixelmap = nullptr;
@@ -227,20 +237,20 @@ napi_value CreateAlphaPixelMapTest(napi_env env, napi_callback_info info)
     }
     napi_value pixelMap = nullptr;
     struct OhosPixelMapCreateOps createOps;
-    createOps.width = 4;
-    createOps.height = 6;
-    createOps.pixelFormat = 4;
-    createOps.alphaType = 0;
-    createOps.editable = 0;
-    createOps.scaleMode = 0;
+    createOps.width = OPTION_WIDTH_SMALL;
+    createOps.height = OPTION_HEIGHT_SMALL;
+    createOps.pixelFormat = OPTION_PIXEL_FORMAT_SMALL;
+    createOps.alphaType = OPTION_ALPHA_ZERO;
+    createOps.editable = OPTION_EDITABLE_ZERO;
+    createOps.scaleMode = OPTION_SCALE_ZERO;
     size_t bufferSize = createOps.width * createOps.height * 4;
     void *buff = malloc(bufferSize);
     if (buff == nullptr) {
         return udfVar;
     }
-    char *cc = (char *)buff;
-    for (int i = 0; i < 96; i++) {
-        *(cc++) = (char)i;
+    char *cc = reinterpret_cast<char *>(buff);
+    for (int i = 0; i < bufferSize; ++i) {
+        *(cc++) = static_cast<char>(i);
     }
     int32_t res = IMAGE_RESULT_SUCCESS;
     res = OH_PixelMap_CreatePixelMap(env, createOps, (uint8_t *)buff, bufferSize, &pixelMap);

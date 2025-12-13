@@ -44,12 +44,12 @@ constexpr int32_t INVALID_FD = -1;
 #define CASE_INDEX_4 4
 #define CASE_INDEX_5 5
 #define CASE_INDEX_6 6
+#define OPTION_QUALITY 95
 #define TAG "CppImageNdk.ImagePackerCreateTest"
 static constexpr size_t TEST_SIZE = 0;
 constexpr int TEST_ARG_SUM = 1;
-#ifndef IMAGE_RESULT_OPERATION_FAILED
 #define IMAGE_RESULT_OPERATION_FAILED -3
-#endif
+
 napi_value ImagePackerCreateTest(napi_env env, napi_callback_info info)
 {
     size_t argc = TEST_ARG_SUM;
@@ -145,14 +145,7 @@ napi_value ImagePackerPackToDataTest(napi_env env, napi_callback_info info)
     int32_t fdNumber;
     napi_get_value_int32(env, argValue[1], &fdNumber);
     LOGI("get fdNumber %{public}d", fdNumber);
-   struct OhosImageSourceOps options = {
-        .density=0,
-        .pixelFormat=0,
-        .size = {
-        .width=0,
-        .height=0
-        }
-    };
+    struct OhosImageSourceOps options = {.density = 0, .pixelFormat = 0, .size = {.width = 0, .height = 0}};
     napi_value imageSource = nullptr;
     int32_t code = OH_ImageSource_CreateFromFd(env, fdNumber, &options, &imageSource);
     LOGI("OH_ImageSource_CreateFromFd %{public}d", code);
@@ -167,7 +160,7 @@ napi_value ImagePackerPackToDataTest(napi_env env, napi_callback_info info)
     // 配置编码格式（必须）。
     opts.format = "image/jpeg";
     // 配置编码质量（必须）。
-    opts.quality = 95;
+    opts.quality = OPTION_QUALITY;
     // 配置输出的缓存区大小为4k（缓存区大小视应用场景定）。
     size_t bufferSize = 4*1024;
     // 申请图片编码缓存区。
@@ -249,7 +242,7 @@ napi_value ImagePackerPackToFileTest(napi_env env, napi_callback_info info)
     // 配置编码格式（必须）。
     opts.format = "image/jpeg";
     // 配置编码质量（必须）。
-    opts.quality = 95;
+    opts.quality = OPTION_QUALITY;
     // 配置输出的缓存区大小为4k（缓存区大小视应用场景定）。
     int32_t packRet = IMAGE_RESULT_OPERATION_FAILED;
     switch (index) 
