@@ -575,5 +575,69 @@ export default function UsbCoreEtsTest() {
         expect(err.code).assertEqual(401);
       }
     })
+
+    /**
+     * @tc.name   testEnum001
+     * @tc.number SUB_USB_HostManager_Enum_0100
+     * @tc.desc   TRANSFER_ERROR value check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testEnum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      console.info(TAG, 'usb testEnum001 begin');
+      let res = usbMgr.UsbTransferStatus.TRANSFER_ERROR;
+      console.info(TAG, 'usb case testEnum001 ret : ' + res);
+      expect(res).assertEqual(1);
+      done();
+    })
+
+    /**
+     * @tc.name   testEnum002
+     * @tc.number SUB_USB_HostManager_Enum_0200
+     * @tc.desc   TRANSFER_CANCELED value check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testEnum002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      console.info(TAG, 'usb testEnum002 begin');
+      let res = usbMgr.UsbTransferStatus.TRANSFER_CANCELED;
+      console.info(TAG, 'usb case testEnum002 ret : ' + res);
+      expect(res).assertEqual(3);
+      done();
+    })
+
+    /**
+     * @tc.name   testEnum003
+     * @tc.number SUB_USB_HostManager_Enum_0300
+     * @tc.desc   TRANSFER_STALL value check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testEnum003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      console.info(TAG, 'usb testEnum003 begin');
+      let res = usbMgr.UsbTransferStatus.TRANSFER_STALL;
+      console.info(TAG, 'usb case testEnum003 ret : ' + res);
+      expect(res).assertEqual(4);
+      done();
+    })
+
+    /**
+     * @tc.name   testEnum004
+     * @tc.number SUB_USB_HostManager_Enum_0400
+     * @tc.desc   TRANSFER_NO_DEVICE value check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testEnum004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      console.info(TAG, 'usb testEnum004 begin');
+      let res = usbMgr.UsbTransferStatus.TRANSFER_NO_DEVICE;
+      console.info(TAG, 'usb case testEnum004 ret : ' + res);
+      expect(res).assertEqual(5);
+      done();
+    })
   })
 }
