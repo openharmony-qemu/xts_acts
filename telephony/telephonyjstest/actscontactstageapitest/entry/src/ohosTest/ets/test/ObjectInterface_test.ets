@@ -2334,7 +2334,7 @@ export default function ObjectInterfaceTest() {
             return;
           }
           console.info("contactsApi_selectContact_test_100  data = " + JSON.stringify(data));
-          expect(data > 0).assertTrue();
+          expect(data.length > 0).assertTrue();
           done();
         });
       });
@@ -2361,7 +2361,7 @@ export default function ObjectInterfaceTest() {
         let promise = contact.selectContact();
         promise.then((data) => {
           console.info("contactsApi_selectContact_test_200  data = " + JSON.stringify(data));
-          expect(data > 0).assertTrue();
+          expect(data.length > 0).assertTrue();
           done();
         }).catch((err:BusinessError) => {
           console.info("contactsApi_selectContact_test_200  err = " + JSON.stringify(err));
