@@ -37,7 +37,7 @@ let mVideoOutput: camera.VideoOutput | null = null;
 let nbiasRangeArray: Array<number> ;
 let nzoomRatioRange: Array<number> = [];
 
-let receiver: image.ImageReceiver;
+let receiver: image.ImageReceiver | undefined;
 
 export default function cameraConcurrentTest() {
 
@@ -75,7 +75,7 @@ export default function cameraConcurrentTest() {
     console.log(TAG + 'before receiver check')
     if (receiver !== undefined) {
       console.log(TAG + 'Photo receiver is created successfully')
-      mPhotoSurface = await receiver.getReceivingSurfaceId()
+      mPhotoSurface = await receiver!.getReceivingSurfaceId()
       console.log(TAG + 'Photo received id: ' + JSON.stringify(mPhotoSurface))
     } else {
       console.log(TAG + 'Photo receiver is created failed')
@@ -137,12 +137,12 @@ export default function cameraConcurrentTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_BY_POSITION_TYPE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_BY_POSITION_TYPE_STATIC_0100
-      * @tc.desc   check get camera device by position and type
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_BY_POSITION_TYPE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_BY_POSITION_TYPE_STATIC_0100
+     * @tc.desc   check get camera device by position and type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_BY_POSITION_TYPE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         console.info("--------------SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_BY_POSITION_TYPE_STATIC_0100--------------");
@@ -169,12 +169,12 @@ export default function cameraConcurrentTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_GET_CAMERA_CONCURRENT_INFOS_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_CAMERA_CONCURRENT_INFOS_STATIC_0100
-      * @tc.desc   check get concurrent infos
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_CAMERA_CONCURRENT_INFOS_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_GET_CAMERA_CONCURRENT_INFOS_STATIC_0100
+     * @tc.desc   check get concurrent infos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_GET_CAMERA_CONCURRENT_INFOS_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         console.info("--------------SUB_MULTIMEDIA_CAMERA_GET_CAMERA_CONCURRENT_INFOS_STATIC_0100--------------");
@@ -201,12 +201,12 @@ export default function cameraConcurrentTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_TYPE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_TYPE_STATIC_0100
-      * @tc.desc   check cameraInput open by concurrent type
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_TYPE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_TYPE_STATIC_0100
+     * @tc.desc   check cameraInput open by concurrent type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_TYPE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_TYPE_STATIC_0100--------------");

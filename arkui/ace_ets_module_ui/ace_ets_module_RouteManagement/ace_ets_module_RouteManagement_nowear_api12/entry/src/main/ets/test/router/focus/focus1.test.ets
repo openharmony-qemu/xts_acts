@@ -48,12 +48,12 @@ export default function focus() {
     });
 
     /**
-     * @tc.number    focus_0100
-     * @tc.name      focus_0100
-     * @tc.desc      Test focus
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   focus_0100
+     * @tc.number focus_0100
+     * @tc.desc   Test focus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('focus_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[focus_0100] START');

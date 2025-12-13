@@ -26,52 +26,52 @@ export default function toggleAccessibilityGroupTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_ACCESSIBILITYGROUP_0100
-     * @tc.name       : testToggleAccessibilityGroup001
-     * @tc.desc       : testing accessibilityGroup for Toggle with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testToggleAccessibilityGroup001
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_ACCESSIBILITYGROUP_0100
+     * @tc.desc   testing accessibilityGroup for Toggle with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggleAccessibilityGroup001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testToggleAccessibilityGroup001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_ACCESSIBILITYGROUP_0200
-     * @tc.name       : testToggleAccessibilityGroup002
-     * @tc.desc       : testing accessibilityGroup for Toggle with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testToggleAccessibilityGroup002
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_ACCESSIBILITYGROUP_0200
+     * @tc.desc   testing accessibilityGroup for Toggle with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggleAccessibilityGroup002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testToggleAccessibilityGroup002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_ACCESSIBILITYGROUP_0300
-     * @tc.name       : testToggleAccessibilityGroup003
-     * @tc.desc       : testing accessibilityGroup for Toggle with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testToggleAccessibilityGroup003
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_ACCESSIBILITYGROUP_0300
+     * @tc.desc   testing accessibilityGroup for Toggle with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggleAccessibilityGroup003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testToggleAccessibilityGroup003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_ACCESSIBILITYGROUP_0400
-     * @tc.name       : testToggleAccessibilityGroup004
-     * @tc.desc       : testing accessibilityGroup for Toggle with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testToggleAccessibilityGroup004
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_ACCESSIBILITYGROUP_0400
+     * @tc.desc   testing accessibilityGroup for Toggle with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggleAccessibilityGroup004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testToggleAccessibilityGroup004()).assertEqual(0)

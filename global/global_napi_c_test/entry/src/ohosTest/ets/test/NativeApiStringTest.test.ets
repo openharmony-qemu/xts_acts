@@ -34,13 +34,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetMediaBase64_0100
-    * @tc.name      TestGetMediaBase640100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetMediaBase640100
+     * @tc.number SUB_GLOBAL_OH_ResourceManager_GetMediaBase64_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetMediaBase640100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>TestGetMediaBase640100 start====");
@@ -55,13 +55,13 @@ export default function abilityTest() {
       })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetMediaBase64_0200
-    * @tc.name      TestGetMediaBase640200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetMediaBase640200
+     * @tc.number SUB_GLOBAL_OH_ResourceManager_GetMediaBase64_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetMediaBase640200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>TestGetMediaBase640200 start====");
@@ -76,13 +76,13 @@ export default function abilityTest() {
       })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetMediaBase64_0300
-    * @tc.name      TestGetMediaBase640300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetMediaBase640300
+     * @tc.number SUB_GLOBAL_OH_ResourceManager_GetMediaBase64_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetMediaBase640300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>TestGetMediaBase640300 start====");
@@ -97,13 +97,13 @@ export default function abilityTest() {
       })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetMediaBase64_0400
-    * @tc.name      TestGetMediaBase640400
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetMediaBase640400
+     * @tc.number SUB_GLOBAL_OH_ResourceManager_GetMediaBase64_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetMediaBase640400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>TestGetMediaBase640400 start====");
@@ -118,13 +118,13 @@ export default function abilityTest() {
       })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATA_0100
-    * @tc.name      TestGetMediaBase64Data0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetMediaBase64Data0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATA_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetMediaBase64Data0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>TestGetMediaBase64Data0100 start====");
@@ -139,13 +139,13 @@ export default function abilityTest() {
       })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATA_0200
-    * @tc.name      TestGetMediaBase64Data0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetMediaBase64Data0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATA_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetMediaBase64Data0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>TestGetMediaBase64Data0200 start====");
@@ -160,13 +160,13 @@ export default function abilityTest() {
       })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATA_0300
-    * @tc.name      TestGetMediaBase64Data0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetMediaBase64Data0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATA_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetMediaBase64Data0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>TestGetMediaBase64Data0300 start====");
@@ -181,13 +181,13 @@ export default function abilityTest() {
       })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATA_0400
-    * @tc.name      TestGetMediaBase64Data0400
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetMediaBase64Data0400
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATA_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetMediaBase64Data0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>TestGetMediaBase64Data0400 start====");
@@ -202,13 +202,13 @@ export default function abilityTest() {
       })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64BYNAME_0100
-    * @tc.name      TestGetMediaBase64ByName0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetMediaBase64ByName0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64BYNAME_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetMediaBase64ByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>TestGetMediaBase64ByName0100 start====");
@@ -223,13 +223,13 @@ export default function abilityTest() {
       })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64BYNAME_0200
-    * @tc.name      TestGetMediaBase64ByName0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetMediaBase64ByName0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64BYNAME_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetMediaBase64ByName0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>TestGetMediaBase64ByName0200 start====");
@@ -244,13 +244,13 @@ export default function abilityTest() {
       })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64BYNAME_0300
-    * @tc.name      TestGetMediaBase64ByName0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetMediaBase64ByName0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64BYNAME_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetMediaBase64ByName0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>TestGetMediaBase64ByName0300 start====");
@@ -265,13 +265,13 @@ export default function abilityTest() {
       })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATABYNAME_0100
-    * @tc.name      TestGetMediaBase64DataByName0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetMediaBase64DataByName0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATABYNAME_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetMediaBase64DataByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>TestGetMediaBase64DataByName0100 start====");
@@ -286,13 +286,13 @@ export default function abilityTest() {
       })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATABYNAME_0200
-    * @tc.name      TestGetMediaBase64DataByName0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetMediaBase64DataByName0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATABYNAME_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetMediaBase64DataByName0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>TestGetMediaBase64DataByName0200 start====");
@@ -307,13 +307,13 @@ export default function abilityTest() {
       })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATABYNAME_0300
-    * @tc.name      TestGetMediaBase64DataByName0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetMediaBase64DataByName0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATABYNAME_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetMediaBase64DataByName0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>TestGetMediaBase64DataByName0300 start====");
@@ -328,13 +328,13 @@ export default function abilityTest() {
       })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIA_0100
-    * @tc.name      TestGetMedia0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetMedia0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIA_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetMedia0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>TestGetMedia0100 start====");
@@ -349,13 +349,13 @@ export default function abilityTest() {
       })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIA_0200
-    * @tc.name      TestGetMedia0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetMedia0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIA_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetMedia0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>TestGetMedia0200 start====");
@@ -370,13 +370,13 @@ export default function abilityTest() {
       })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIA_0300
-    * @tc.name      TestGetMedia0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetMedia0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIA_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetMedia0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>TestGetMedia0300 start====");
@@ -391,13 +391,13 @@ export default function abilityTest() {
       })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIA_0400
-    * @tc.name      TestGetMedia0400
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetMedia0400
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIA_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetMedia0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>TestGetMedia0400 start====");
@@ -412,13 +412,13 @@ export default function abilityTest() {
       })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIADATA_0100
-    * @tc.name      TestGetMediaData0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetMediaData0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIADATA_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetMediaData0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetMediaData0100 start====");
@@ -433,13 +433,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIADATA_0200
-    * @tc.name      TestGetMediaData0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetMediaData0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIADATA_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetMediaData0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetMediaData0200 start====");
@@ -454,13 +454,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIADATA_0300
-    * @tc.name      TestGetMediaData0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetMediaData0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIADATA_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetMediaData0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetMediaData0300 start====");
@@ -475,13 +475,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIADATA_0400
-    * @tc.name      TestGetMediaData0400
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetMediaData0400
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIADATA_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetMediaData0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetMediaData0400 start====");
@@ -496,13 +496,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABYNAME_0100
-    * @tc.name      TestGetMediaByName0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetMediaByName0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABYNAME_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetMediaByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetMediaByName0100 start====");
@@ -517,13 +517,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABYNAME_0200
-    * @tc.name      TestGetMediaByName0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetMediaByName0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABYNAME_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetMediaByName0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetMediaByName0200 start====");
@@ -538,13 +538,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABYNAME_0300
-    * @tc.name      TestGetMediaByName0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetMediaByName0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABYNAME_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetMediaByName0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetMediaByName0300 start====");
@@ -559,13 +559,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIADATABYNAME_0100
-    * @tc.name      TestGetMediaDataByName0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetMediaDataByName0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIADATABYNAME_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetMediaDataByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetMediaDataByName0100 start====");
@@ -580,13 +580,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIADATABYNAME_0200
-    * @tc.name      TestGetMediaDataByName0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetMediaDataByName0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIADATABYNAME_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetMediaDataByName0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetMediaDataByName0200 start====");
@@ -601,13 +601,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIADATABYNAME_0300
-    * @tc.name      TestGetMediaDataByName0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetMediaDataByName0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIADATABYNAME_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetMediaDataByName0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetMediaDataByName0300 start====");
@@ -622,13 +622,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTOR_0100
-    * @tc.name      TestGetDrawableDescriptor0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetDrawableDescriptor0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTOR_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetDrawableDescriptor0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetDrawableDescriptor0100 start====");
@@ -643,13 +643,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTOR_0200
-    * @tc.name      TestGetDrawableDescriptor0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetDrawableDescriptor0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTOR_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetDrawableDescriptor0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetDrawableDescriptor0200 start====");
@@ -664,13 +664,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTOR_0300
-    * @tc.name      TestGetDrawableDescriptor0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetDrawableDescriptor0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTOR_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetDrawableDescriptor0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetDrawableDescriptor0300 start====");
@@ -685,13 +685,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTOR_0400
-    * @tc.name      TestGetDrawableDescriptor0400
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetDrawableDescriptor0400
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTOR_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetDrawableDescriptor0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetDrawableDescriptor0400 start====");
@@ -706,13 +706,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORDATA_0100
-    * @tc.name      TestGetDrawableDescriptorData0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetDrawableDescriptorData0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORDATA_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetDrawableDescriptorData0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetDrawableDescriptorData0100 start====");
@@ -727,13 +727,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORDATA_0200
-    * @tc.name      TestGetDrawableDescriptorData0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetDrawableDescriptorData0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORDATA_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetDrawableDescriptorData0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetDrawableDescriptorData0200 start====");
@@ -748,13 +748,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORDATA_0300
-    * @tc.name      TestGetDrawableDescriptorData0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetDrawableDescriptorData0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORDATA_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetDrawableDescriptorData0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetDrawableDescriptorData0300 start====");
@@ -769,13 +769,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORDATA_0400
-    * @tc.name      TestGetDrawableDescriptorData0400
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetDrawableDescriptorData0400
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORDATA_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetDrawableDescriptorData0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetDrawableDescriptorData0400 start====");
@@ -790,13 +790,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORBYNAME_0100
-    * @tc.name      TestGetDrawableDescriptorByName0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetDrawableDescriptorByName0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORBYNAME_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetDrawableDescriptorByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetDrawableDescriptorByName0100 start====");
@@ -811,13 +811,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORBYNAME_0200
-    * @tc.name      TestGetDrawableDescriptorByName0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetDrawableDescriptorByName0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORBYNAME_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetDrawableDescriptorByName0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetDrawableDescriptorByName0200 start====");
@@ -832,13 +832,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORBYNAME_0300
-    * @tc.name      TestGetDrawableDescriptorByName0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetDrawableDescriptorByName0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORBYNAME_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetDrawableDescriptorByName0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetDrawableDescriptorByName0300 start====");
@@ -853,13 +853,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORDATABYNAME_0100
-    * @tc.name      TestGetDrawableDescriptorDataByName0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetDrawableDescriptorDataByName0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORDATABYNAME_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetDrawableDescriptorDataByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetDrawableDescriptorDataByName0100 start====");
@@ -874,13 +874,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORDATABYNAME_0200
-    * @tc.name      TestGetDrawableDescriptorDataByName0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetDrawableDescriptorDataByName0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORDATABYNAME_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetDrawableDescriptorDataByName0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetDrawableDescriptorDataByName0200 start====");
@@ -895,13 +895,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORDATABYNAME_0300
-    * @tc.name      TestGetDrawableDescriptorDataByName0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetDrawableDescriptorDataByName0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORDATABYNAME_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetDrawableDescriptorDataByName0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetDrawableDescriptorDataByName0300 start====");
@@ -916,13 +916,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETSYMBOL_0100
-    * @tc.name      TestGetSymbol0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetSymbol0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSYMBOL_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetSymbol0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetSymbol0100 start====");
@@ -937,13 +937,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETSYMBOL_0200
-    * @tc.name      TestGetSymbol0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetSymbol0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSYMBOL_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetSymbol0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetSymbol0200 start====");
@@ -958,13 +958,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETSYMBOL_0300
-    * @tc.name      TestGetSymbol0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetSymbol0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSYMBOL_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetSymbol0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetSymbol0300 start====");
@@ -979,13 +979,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETSYMBOL_0400
-    * @tc.name      TestGetSymbol0400
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetSymbol0400
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSYMBOL_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetSymbol0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetSymbol0400 start====");
@@ -1000,13 +1000,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETSYMBOL_0500
-    * @tc.name      TestGetSymbol0500
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetSymbol0500
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSYMBOL_0500
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetSymbol0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetSymbol0500 start====");
@@ -1021,13 +1021,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetSymbolByName_0100
-    * @tc.name      TestGetSymbolByName0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetSymbolByName0100
+     * @tc.number SUB_GLOBAL_OH_ResourceManager_GetSymbolByName_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetSymbolByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetSymbolByName0100 start====");
@@ -1042,13 +1042,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetSymbolByName_0200
-    * @tc.name      TestGetSymbolByName0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetSymbolByName0200
+     * @tc.number SUB_GLOBAL_OH_ResourceManager_GetSymbolByName_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetSymbolByName0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetSymbolByName0200 start====");
@@ -1063,13 +1063,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetSymbolByName_0300
-    * @tc.name      TestGetSymbolByName0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetSymbolByName0300
+     * @tc.number SUB_GLOBAL_OH_ResourceManager_GetSymbolByName_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetSymbolByName0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetSymbolByName0300 start====");
@@ -1084,13 +1084,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetSymbolByName_0400
-    * @tc.name      TestGetSymbolByName0400
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetSymbolByName0400
+     * @tc.number SUB_GLOBAL_OH_ResourceManager_GetSymbolByName_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetSymbolByName0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetSymbolByName0400 start====");
@@ -1105,13 +1105,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETLOCALES_0100
-    * @tc.name      TestGetLocales0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetLocales0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETLOCALES_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetLocales0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetLocales0100 start====");
@@ -1126,13 +1126,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETLOCALES_0200
-    * @tc.name      TestGetLocales0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetLocales0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETLOCALES_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetLocales0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetLocales0200 start====");
@@ -1147,13 +1147,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETLOCALESDATA_0100
-    * @tc.name      TestGetLocalesData0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetLocalesData0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETLOCALESDATA_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetLocalesData0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetLocalesData0100 start====");
@@ -1168,13 +1168,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETLOCALESDATA_0200
-    * @tc.name      TestGetLocalesData0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetLocalesData0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETLOCALESDATA_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetLocalesData0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetLocalesData0200 start====");
@@ -1189,13 +1189,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETCONFIGURATION_0100
-    * @tc.name      TestGetConfiguration0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetConfiguration0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETCONFIGURATION_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetConfiguration0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetConfiguration0100 start====");
@@ -1210,13 +1210,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETCONFIGURATION_0200
-    * @tc.name      TestGetConfiguration0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetConfiguration0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETCONFIGURATION_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetConfiguration0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetConfiguration0200 start====");
@@ -1231,13 +1231,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETRESOURCECONFIGURATION_0100
-    * @tc.name      TestGetResourceConfiguration0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetResourceConfiguration0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETRESOURCECONFIGURATION_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetResourceConfiguration0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetResourceConfiguration0100 start====");
@@ -1252,13 +1252,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_RELEASECONFIGURATION_0100
-    * @tc.name      TestReleaseConfiguration0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestReleaseConfiguration0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_RELEASECONFIGURATION_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestReleaseConfiguration0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestReleaseConfiguration0100 start====");
@@ -1273,13 +1273,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_RELEASECONFIGURATION_0200
-    * @tc.name      TestReleaseConfiguration0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestReleaseConfiguration0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_RELEASECONFIGURATION_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestReleaseConfiguration0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestReleaseConfiguration0200 start====");
@@ -1294,13 +1294,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRING_0100
-    * @tc.name      TestGetString0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetString0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRING_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetString0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetString0100 start====");
@@ -1315,13 +1315,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRING_0200
-    * @tc.name      TestGetString0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetString0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRING_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetString0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetString0200 start====");
@@ -1336,13 +1336,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRING_0300
-    * @tc.name      TestGetString0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetString0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRING_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetString0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetString0300 start====");
@@ -1357,13 +1357,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRING_0400
-    * @tc.name      TestGetString0400
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetString0400
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRING_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetString0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetString0400 start====");
@@ -1378,13 +1378,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRING_0500
-    * @tc.name      TestGetString0500
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetString0500
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRING_0500
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetString0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetString0500 start====");
@@ -1399,13 +1399,36 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGBYNAME_0100
-    * @tc.name      TestGetStringByName0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @generated.time 2025-11-26 15:59:23
+     * @tc.name   TestGetString0600
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRING_0600
+     * @tc.desc   capi getstring format args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TestGetString0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info("====>TestGetString0600 start====");
+        let result: number = nativeTest.GetString0600($r('app.string.test_format').id);
+        console.info(`====>TestGetString0600 result====${result}`);
+        expect(result).assertEqual(0);
+        done()
+      } catch (err) {
+        console.error("====>TestGetString0600 catch err: " + err);
+        expect(false).assertEqual(0);
+      }
+    })
+
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   TestGetStringByName0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGBYNAME_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetStringByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetStringByName0100 start====");
@@ -1420,13 +1443,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGBYNAME_0200
-    * @tc.name      TestGetStringByName0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetStringByName0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGBYNAME_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetStringByName0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetStringByName0200 start====");
@@ -1441,13 +1464,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGBYNAME_0300
-    * @tc.name      TestGetStringByName0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetStringByName0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGBYNAME_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetStringByName0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetStringByName0300 start====");
@@ -1462,13 +1485,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGBYNAME_0400
-    * @tc.name      TestGetStringByName0400
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetStringByName0400
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGBYNAME_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetStringByName0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetStringByName0400 start====");
@@ -1483,13 +1506,36 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGARRAY_0100
-    * @tc.name      TestGetStringArray0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @generated.time 2025-11-26 15:33:27
+     * @tc.name   TestGetStringByName0500
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGBYNAME_0500
+     * @tc.desc   overriding getstring format args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TestGetStringByName0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info("====>TestGetStringByName0500 start====");
+        let result: number = nativeTest.GetStringByName0500();
+        console.info(`====>TestGetStringByName0500 result====${result}`);
+        expect(result).assertEqual(0);
+        done()
+      } catch (err) {
+        console.error("====>TestGetStringByName0500 catch err: " + err);
+        expect(false).assertEqual(0);
+      }
+    })
+
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   TestGetStringArray0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGARRAY_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetStringArray0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetStringArray0100 start====");
@@ -1504,13 +1550,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGARRAY_0200
-    * @tc.name      TestGetStringArray0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetStringArray0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGARRAY_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetStringArray0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetStringArray0200 start====");
@@ -1525,13 +1571,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGARRAY_0300
-    * @tc.name      TestGetStringArray0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetStringArray0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGARRAY_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetStringArray0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetStringArray0300 start====");
@@ -1546,13 +1592,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGARRAY_0400
-    * @tc.name      TestGetStringArray0400
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetStringArray0400
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGARRAY_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetStringArray0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetStringArray0400 start====");
@@ -1567,13 +1613,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGARRAY_0500
-    * @tc.name      TestGetStringArray0500
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetStringArray0500
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGARRAY_0500
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetStringArray0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetStringArray0500 start====");
@@ -1588,13 +1634,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGARRAYBYNAME_0100
-    * @tc.name      TestGetStringArrayByName0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetStringArrayByName0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGARRAYBYNAME_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetStringArrayByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetStringArrayByName0100 start====");
@@ -1609,13 +1655,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGARRAYBYNAME_0200
-    * @tc.name      TestGetStringArrayByName0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetStringArrayByName0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGARRAYBYNAME_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetStringArrayByName0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetStringArrayByName0200 start====");
@@ -1630,13 +1676,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGARRAYBYNAME_0300
-    * @tc.name      TestGetStringArrayByName0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetStringArrayByName0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGARRAYBYNAME_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetStringArrayByName0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetStringArrayByName0300 start====");
@@ -1651,13 +1697,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGARRAYBYNAME_0400
-    * @tc.name      TestGetStringArrayByName0400
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetStringArrayByName0400
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGARRAYBYNAME_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetStringArrayByName0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetStringArrayByName0400 start====");
@@ -1672,13 +1718,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_RELEASESTRINGARRAY_0100
-    * @tc.name      TestReleaseStringArray0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestReleaseStringArray0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_RELEASESTRINGARRAY_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestReleaseStringArray0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestReleaseStringArray0100 start====");
@@ -1693,13 +1739,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_RELEASESTRINGARRAY_0200
-    * @tc.name      TestReleaseStringArray0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestReleaseStringArray0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_RELEASESTRINGARRAY_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestReleaseStringArray0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestReleaseStringArray0200 start====");
@@ -1714,13 +1760,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETPLURALSTRING_0100
-    * @tc.name      TestGetPluralString0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetPluralString0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETPLURALSTRING_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetPluralString0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetPluralString0100 start====");
@@ -1735,13 +1781,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETPLURALSTRING_0200
-    * @tc.name      TestGetPluralString0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetPluralString0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETPLURALSTRING_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetPluralString0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetPluralString0200 start====");
@@ -1756,13 +1802,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETPLURALSTRING_0300
-    * @tc.name      TestGetPluralString0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetPluralString0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETPLURALSTRING_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetPluralString0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetPluralString0300 start====");
@@ -1777,13 +1823,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETPLURALSTRING_0400
-    * @tc.name      TestGetPluralString0400
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetPluralString0400
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETPLURALSTRING_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetPluralString0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetPluralString0400 start====");
@@ -1798,13 +1844,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETPLURALSTRING_0500
-    * @tc.name      TestGetPluralString0500
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetPluralString0500
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETPLURALSTRING_0500
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetPluralString0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetPluralString0500 start====");
@@ -1819,13 +1865,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETPLURALSTRINGBYNAME_0100
-    * @tc.name      TestGetPluralStringByName0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetPluralStringByName0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETPLURALSTRINGBYNAME_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetPluralStringByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetPluralStringByName0100 start====");
@@ -1840,13 +1886,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETPLURALSTRINGBYNAME_0200
-    * @tc.name      TestGetPluralStringByName0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetPluralStringByName0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETPLURALSTRINGBYNAME_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetPluralStringByName0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetPluralStringByName0200 start====");
@@ -1861,13 +1907,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETPLURALSTRINGBYNAME_0300
-    * @tc.name      TestGetPluralStringByName0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetPluralStringByName0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETPLURALSTRINGBYNAME_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetPluralStringByName0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetPluralStringByName0300 start====");
@@ -1882,13 +1928,13 @@ export default function abilityTest() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETPLURALSTRINGBYNAME_0400
-    * @tc.name      TestGetPluralStringByName0400
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetPluralStringByName0400
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETPLURALSTRINGBYNAME_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetPluralStringByName0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetPluralStringByName0400 start====");

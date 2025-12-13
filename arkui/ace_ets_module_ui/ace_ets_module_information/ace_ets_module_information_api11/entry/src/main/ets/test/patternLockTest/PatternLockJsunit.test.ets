@@ -53,6 +53,14 @@ export default function patternLockJsunit() {
       console.info("patternLock after each called");
     })
 
+    /**
+     * @tc.name   testPatternLock_01
+     * @tc.number testPatternLock_01
+     * @tc.desc   testPatternLock_01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPatternLock_01', Level.LEVEL0, async (done: Function) => {
       console.info('testPatternLock_01 START');
       await CommonFunc.sleep(1500);

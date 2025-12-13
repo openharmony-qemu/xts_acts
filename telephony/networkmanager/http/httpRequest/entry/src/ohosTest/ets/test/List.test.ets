@@ -21,17 +21,19 @@ import EmptyTest from './Empty.test';
 import sim from '@ohos.telephony.sim';
 import httpErrorCodeTest from './HttpErrorCodeTest.test';
 import HttpRequestGmssl from './HttpRequestGmssl.test.ets';
+import HttpRequestInterceptor from './HttpRequestInterceptor.test';
 
 export default function testsuite() {
-if (sim.getMaxSimCount()>1){
-  HttpRequestGmssl();
-  HttpRequestDataCATest();
-  HttpRequestMethodTest();
-  HttpRequestAndDestroyTest();
-  HttpRequestInStreamTest();
-  HttpRequestOptionsTest();
-  httpErrorCodeTest();
-  }else{
+  HttpRequestInterceptor();
+  if (sim.getMaxSimCount() > 1) {
+    HttpRequestGmssl();
+    HttpRequestDataCATest();
+    HttpRequestMethodTest();
+    HttpRequestAndDestroyTest();
+    HttpRequestInStreamTest();
+    HttpRequestOptionsTest();
+    httpErrorCodeTest();
+  } else {
     EmptyTest()
   }
 }

@@ -118,12 +118,12 @@ export default function proxy2Test() {
     })
 
     /**
+     * @tc.name   proxy2Test001
      * @tc.number SUB_BUILTINS_PROXY2_TEST_0100
-     * @tc.name proxy2Test001
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testDeepProxy1();
@@ -131,24 +131,24 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test002
      * @tc.number SUB_BUILTINS_PROXY2_TEST_0200
-     * @tc.name proxy2Test002
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testNestedProxyThis2();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   proxy2Test003
      * @tc.number SUB_BUILTINS_PROXY2_TEST_0300
-     * @tc.name proxy2Test003
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = testProxySetAdd3();
@@ -156,12 +156,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test006
      * @tc.number SUB_BUILTINS_PROXY2_TEST_0600
-     * @tc.name proxy2Test006
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = testGetInterceptArrayPush6();
@@ -169,12 +169,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test007
      * @tc.number SUB_BUILTINS_PROXY2_TEST_0700
-     * @tc.name proxy2Test007
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testSetArrayLengthLimit7();
@@ -182,12 +182,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test008
      * @tc.number SUB_BUILTINS_PROXY2_TEST_0800
-     * @tc.name proxy2Test008
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = testGetLazyInitialization8();
@@ -195,12 +195,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test009
      * @tc.number SUB_BUILTINS_PROXY2_TEST_0900
-     * @tc.name proxy2Test009
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testReflectEnumerateLike9();
@@ -208,12 +208,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test010
      * @tc.number SUB_BUILTINS_PROXY2_TEST_1000
-     * @tc.name proxy2Test010
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testReflectPreventExtensions10();
@@ -221,12 +221,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test011
      * @tc.number SUB_BUILTINS_PROXY2_TEST_1100
-     * @tc.name proxy2Test011
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testReflectGetPrototypeNull11();
@@ -234,12 +234,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test012
      * @tc.number SUB_BUILTINS_PROXY2_TEST_1200
-     * @tc.name proxy2Test012
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let result = await testProxyAsyncFunction12();
@@ -247,12 +247,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test013
      * @tc.number SUB_BUILTINS_PROXY2_TEST_1300
-     * @tc.name proxy2Test013
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyGenerator13();
@@ -261,12 +261,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test014
      * @tc.number SUB_BUILTINS_PROXY2_TEST_1400
-     * @tc.name proxy2Test014
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testOwnKeysJsonStringify14();
@@ -274,12 +274,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test015
      * @tc.number SUB_BUILTINS_PROXY2_TEST_1500
-     * @tc.name proxy2Test015
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyStructuredClone15();
@@ -287,12 +287,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test016
      * @tc.number SUB_BUILTINS_PROXY2_TEST_1600
-     * @tc.name proxy2Test016
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyDataValidator16();
@@ -300,12 +300,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test017
      * @tc.number SUB_BUILTINS_PROXY2_TEST_1700
-     * @tc.name proxy2Test017
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyObserver17();
@@ -313,12 +313,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test018
      * @tc.number SUB_BUILTINS_PROXY2_TEST_1800
-     * @tc.name proxy2Test018
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyReadOnlyView18();
@@ -326,12 +326,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test019
      * @tc.number SUB_BUILTINS_PROXY2_TEST_1900
-     * @tc.name proxy2Test019
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testGetReturnThis19();
@@ -339,12 +339,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test020
      * @tc.number SUB_BUILTINS_PROXY2_TEST_2000
-     * @tc.name proxy2Test020
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testSetPrototypeProperty20();
@@ -352,12 +352,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test021
      * @tc.number SUB_BUILTINS_PROXY2_TEST_2100
-     * @tc.name proxy2Test021
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testHasForInLoop21();
@@ -365,12 +365,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test022
      * @tc.number SUB_BUILTINS_PROXY2_TEST_2200
-     * @tc.name proxy2Test022
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testApplyValidateArgs22();
@@ -378,12 +378,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test023
      * @tc.number SUB_BUILTINS_PROXY2_TEST_2300
-     * @tc.name proxy2Test023
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testConstructModifyInstance23();
@@ -391,12 +391,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test024
      * @tc.number SUB_BUILTINS_PROXY2_TEST_2400
-     * @tc.name proxy2Test024
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testRevocableReleaseResource24();
@@ -404,12 +404,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test026
      * @tc.number SUB_BUILTINS_PROXY2_TEST_2600
-     * @tc.name proxy2Test026
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyArrayPop26();
@@ -417,12 +417,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test027
      * @tc.number SUB_BUILTINS_PROXY2_TEST_2700
-     * @tc.name proxy2Test027
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyArraySplice27();
@@ -430,12 +430,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test028
      * @tc.number SUB_BUILTINS_PROXY2_TEST_2800
-     * @tc.name proxy2Test028
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyErrorStack28();
@@ -443,12 +443,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test029
      * @tc.number SUB_BUILTINS_PROXY2_TEST_2900
-     * @tc.name proxy2Test029
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = testProxyIntlFormatter29();
@@ -456,12 +456,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test032
      * @tc.number SUB_BUILTINS_PROXY2_TEST_3200
-     * @tc.name proxy2Test032
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testSetToPrimitive32();
@@ -469,12 +469,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test033
      * @tc.number SUB_BUILTINS_PROXY2_TEST_3300
-     * @tc.name proxy2Test033
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testGetSymbolIterator33();
@@ -482,12 +482,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test034
      * @tc.number SUB_BUILTINS_PROXY2_TEST_3400
-     * @tc.name proxy2Test034
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testReflectGetSymbolAccessor34();
@@ -495,12 +495,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test035
      * @tc.number SUB_BUILTINS_PROXY2_TEST_3500
-     * @tc.name proxy2Test035
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testReflectApplyLength35();
@@ -508,12 +508,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test036
      * @tc.number SUB_BUILTINS_PROXY2_TEST_3600
-     * @tc.name proxy2Test036
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testReflectDefineAccessor36();
@@ -521,12 +521,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test037
      * @tc.number SUB_BUILTINS_PROXY2_TEST_3700
-     * @tc.name proxy2Test037
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyPropertyCache37();
@@ -534,12 +534,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test038
      * @tc.number SUB_BUILTINS_PROXY2_TEST_3800
-     * @tc.name proxy2Test038
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let result = await testProxyDebounce38();
@@ -547,12 +547,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test040
      * @tc.number SUB_BUILTINS_PROXY2_TEST_4000
-     * @tc.name proxy2Test040
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testGetAccessorInvariant40();
@@ -560,12 +560,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test041
      * @tc.number SUB_BUILTINS_PROXY2_TEST_4100
-     * @tc.name proxy2Test041
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testOwnKeysInvalidKeyType41();
@@ -573,12 +573,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test042
      * @tc.number SUB_BUILTINS_PROXY2_TEST_4200
-     * @tc.name proxy2Test042
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testSetWritableInvariant42();
@@ -586,12 +586,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test043
      * @tc.number SUB_BUILTINS_PROXY2_TEST_4300
-     * @tc.name proxy2Test043
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let result = await testProxyAsyncIterator43();
@@ -599,12 +599,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test044
      * @tc.number SUB_BUILTINS_PROXY2_TEST_4400
-     * @tc.name proxy2Test044
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyPromiseCatch44();
@@ -612,12 +612,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test046
      * @tc.number SUB_BUILTINS_PROXY2_TEST_4600
-     * @tc.name proxy2Test046
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyClassStaticInheritance46();
@@ -625,12 +625,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test048
      * @tc.number SUB_BUILTINS_PROXY2_TEST_4800
-     * @tc.name proxy2Test048
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testRevokedProxyTypeof48();
@@ -638,12 +638,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test049
      * @tc.number SUB_BUILTINS_PROXY2_TEST_4900
-     * @tc.name proxy2Test049
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyProxyConstructor49();
@@ -651,12 +651,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test051
      * @tc.number SUB_BUILTINS_PROXY2_TEST_5100
-     * @tc.name proxy2Test051
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyUint8Array51();
@@ -664,12 +664,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test052
      * @tc.number SUB_BUILTINS_PROXY2_TEST_5200
-     * @tc.name proxy2Test052
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyDataView52();
@@ -677,12 +677,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test053
      * @tc.number SUB_BUILTINS_PROXY2_TEST_5300
-     * @tc.name proxy2Test053
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyBufferTransfer53();
@@ -690,12 +690,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test054
      * @tc.number SUB_BUILTINS_PROXY2_TEST_5400
-     * @tc.name proxy2Test054
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyPrivateMethod54();
@@ -703,12 +703,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test055
      * @tc.number SUB_BUILTINS_PROXY2_TEST_5500
-     * @tc.name proxy2Test055
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyClassStaticBlock55();
@@ -716,12 +716,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test056
      * @tc.number SUB_BUILTINS_PROXY2_TEST_5600
-     * @tc.name proxy2Test056
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyClassExtends56();
@@ -729,12 +729,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test057
      * @tc.number SUB_BUILTINS_PROXY2_TEST_5700
-     * @tc.name proxy2Test057
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let result = await testProxyPromiseAll57();
@@ -742,24 +742,24 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test060
      * @tc.number SUB_BUILTINS_PROXY2_TEST_6000
-     * @tc.name proxy2Test060
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyDecorator60();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   proxy2Test061
      * @tc.number SUB_BUILTINS_PROXY2_TEST_6100
-     * @tc.name proxy2Test061
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyAdapter61();
@@ -767,12 +767,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test062
      * @tc.number SUB_BUILTINS_PROXY2_TEST_6200
-     * @tc.name proxy2Test062
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyMediator62();
@@ -780,12 +780,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test063
      * @tc.number SUB_BUILTINS_PROXY2_TEST_6300
-     * @tc.name proxy2Test063
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyLRUCache63();
@@ -793,12 +793,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test064
      * @tc.number SUB_BUILTINS_PROXY2_TEST_6400
-     * @tc.name proxy2Test064
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyAccessFrequency64();
@@ -806,12 +806,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test065
      * @tc.number SUB_BUILTINS_PROXY2_TEST_6500
-     * @tc.name proxy2Test065
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyLazyLoad65();
@@ -819,12 +819,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test066
      * @tc.number SUB_BUILTINS_PROXY2_TEST_6600
-     * @tc.name proxy2Test066
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyToStringTag66();
@@ -832,12 +832,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test067
      * @tc.number SUB_BUILTINS_PROXY2_TEST_6700
-     * @tc.name proxy2Test067
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyHasInstance67();
@@ -845,12 +845,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test068
      * @tc.number SUB_BUILTINS_PROXY2_TEST_6800
-     * @tc.name proxy2Test068
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxySymbolSpecies68();
@@ -858,12 +858,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test069
      * @tc.number SUB_BUILTINS_PROXY2_TEST_6900
-     * @tc.name proxy2Test069
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyErrorCapture69();
@@ -871,12 +871,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test070
      * @tc.number SUB_BUILTINS_PROXY2_TEST_7000
-     * @tc.name proxy2Test070
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let result = await testProxySyncAsyncError70();
@@ -884,12 +884,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test071
      * @tc.number SUB_BUILTINS_PROXY2_TEST_7100
-     * @tc.name proxy2Test071
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let result = await testProxyErrorRetry71();
@@ -897,12 +897,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test072
      * @tc.number SUB_BUILTINS_PROXY2_TEST_7200
-     * @tc.name proxy2Test072
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyMapIterator72();
@@ -910,12 +910,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test078
      * @tc.number SUB_BUILTINS_PROXY2_TEST_7800
-     * @tc.name proxy2Test078
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testGetVsGetPrototypeOf78();
@@ -923,12 +923,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test079
      * @tc.number SUB_BUILTINS_PROXY2_TEST_7900
-     * @tc.name proxy2Test079
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testSetVsDefineProperty79();
@@ -936,12 +936,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test080
      * @tc.number SUB_BUILTINS_PROXY2_TEST_8000
-     * @tc.name proxy2Test080
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testOwnKeysVsHas80();
@@ -949,12 +949,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test087
      * @tc.number SUB_BUILTINS_PROXY2_TEST_8700
-     * @tc.name proxy2Test087
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyDataBinding87();
@@ -962,12 +962,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test088
      * @tc.number SUB_BUILTINS_PROXY2_TEST_8800
-     * @tc.name proxy2Test088
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyAccessControl88();
@@ -975,12 +975,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test089
      * @tc.number SUB_BUILTINS_PROXY2_TEST_8900
-     * @tc.name proxy2Test089
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyCommandPattern89();
@@ -988,12 +988,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test090
      * @tc.number SUB_BUILTINS_PROXY2_TEST_9000
-     * @tc.name proxy2Test090
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyArrayAt90();
@@ -1001,12 +1001,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test091
      * @tc.number SUB_BUILTINS_PROXY2_TEST_9100
-     * @tc.name proxy2Test091
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyObjectHasOwn91();
@@ -1014,12 +1014,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test092
      * @tc.number SUB_BUILTINS_PROXY2_TEST_9200
-     * @tc.name proxy2Test092
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyErrorCause92();
@@ -1027,12 +1027,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test095
      * @tc.number SUB_BUILTINS_PROXY2_TEST_9500
-     * @tc.name proxy2Test095
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxyRecursive95();
@@ -1040,12 +1040,12 @@ export default function proxy2Test() {
     });
 
     /**
+     * @tc.name   proxy2Test100
      * @tc.number SUB_BUILTINS_PROXY2_TEST_10000
-     * @tc.name proxy2Test100
-     * @tc.desc test proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('proxy2Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = testProxySandbox100();

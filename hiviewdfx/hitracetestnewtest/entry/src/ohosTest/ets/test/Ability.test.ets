@@ -25,12 +25,12 @@ export default function HiTraceNewTest() {
     })
 
     /**
+     * @tc.name   testHitraceInterface01
      * @tc.number SUB_DFX_DFR_Hitrace_Interface_0100
-     * @tc.name testHitraceInterface01
-     * @tc.desc 验证registerTraceListener和unregisterTraceListener接口正常调用
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.desc   验证registerTraceListener和unregisterTraceListener接口正常调用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHitraceInterface01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hitrace_Interface_0100 start");
@@ -59,12 +59,12 @@ export default function HiTraceNewTest() {
     })
 
     /**
+     * @tc.name   testHitraceInterface02
      * @tc.number SUB_DFX_DFR_Hitrace_Interface_0200
-     * @tc.name testHitraceInterface02
-     * @tc.desc 验证registerTraceListener接口传入null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.desc   验证registerTraceListener接口传入null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHitraceInterface02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hitrace_Interface_0200 start");
@@ -83,12 +83,12 @@ export default function HiTraceNewTest() {
     })
 
     /**
+     * @tc.name   testHitraceInterface03
      * @tc.number SUB_DFX_DFR_Hitrace_Interface_0300
-     * @tc.name testHitraceInterface03
-     * @tc.desc 验证registerTraceListener接口传入undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.desc   验证registerTraceListener接口传入undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHitraceInterface03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hitrace_Interface_0300 start");
@@ -107,12 +107,12 @@ export default function HiTraceNewTest() {
     })
 
     /**
+     * @tc.name   testHitraceInterface04
      * @tc.number SUB_DFX_DFR_Hitrace_Interface_0400
-     * @tc.name testHitraceInterface04
-     * @tc.desc 验证registerTraceListener接口连续调用11次，unregisterTraceListener接口连续调用10次
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证registerTraceListener接口连续调用11次，unregisterTraceListener接口连续调用10次
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHitraceInterface04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hitrace_Interface_0400 start");
@@ -148,12 +148,12 @@ export default function HiTraceNewTest() {
     })
 
     /**
+     * @tc.name   testHitraceInterface05
      * @tc.number SUB_DFX_DFR_Hitrace_Interface_0500
-     * @tc.name testHitraceInterface05
-     * @tc.desc 验证unregisterTraceListener接口传入未注册索引
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证unregisterTraceListener接口传入未注册索引
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHitraceInterface05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hitrace_Interface_0500 start");
@@ -171,12 +171,12 @@ export default function HiTraceNewTest() {
     })
 
     /**
+     * @tc.name   testHitraceInterface06
      * @tc.number SUB_DFX_DFR_Hitrace_Interface_0600
-     * @tc.name testHitraceInterface06
-     * @tc.desc 验证unregisterTraceListener接口传入无效索引
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证unregisterTraceListener接口传入无效索引
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHitraceInterface06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hitrace_Interface_0600 start");
@@ -194,12 +194,12 @@ export default function HiTraceNewTest() {
     })
 
     /**
+     * @tc.name   testHitraceInterface07
      * @tc.number SUB_DFX_DFR_Hitrace_Interface_0700
-     * @tc.name testHitraceInterface07
-     * @tc.desc 验证unregisterTraceListener接口传入null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证unregisterTraceListener接口传入null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHitraceInterface07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hitrace_Interface_0700 start");
@@ -217,12 +217,12 @@ export default function HiTraceNewTest() {
     })
 
     /**
+     * @tc.name   testHitraceInterface08
      * @tc.number SUB_DFX_DFR_Hitrace_Interface_0800
-     * @tc.name testHitraceInterface08
-     * @tc.desc 验证unregisterTraceListener接口传入undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证unregisterTraceListener接口传入undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHitraceInterface08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hitrace_Interface_0800 start");
@@ -240,12 +240,12 @@ export default function HiTraceNewTest() {
     })
 
     /**
+     * @tc.name   testHitraceInterface09
      * @tc.number SUB_DFX_DFR_Hitrace_Interface_0900
-     * @tc.name testHitraceInterface09
-     * @tc.desc 验证OH_HiTrace_RegisterTraceListener和OH_HiTrace_UnregisterTraceListener接口正常调用
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证OH_HiTrace_RegisterTraceListener和OH_HiTrace_UnregisterTraceListener接口正常调用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHitraceInterface09', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hitrace_Interface_0900 start");
@@ -267,12 +267,12 @@ export default function HiTraceNewTest() {
     })
 
     /**
+     * @tc.name   testHitraceInterface10
      * @tc.number SUB_DFX_DFR_Hitrace_Interface_1000
-     * @tc.name testHitraceInterface10
-     * @tc.desc 验证OH_HiTrace_RegisterTraceListener接口传入null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证OH_HiTrace_RegisterTraceListener接口传入null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHitraceInterface10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hitrace_Interface_1000 start");
@@ -291,12 +291,12 @@ export default function HiTraceNewTest() {
     })
 
     /**
+     * @tc.name   testHitraceInterface11
      * @tc.number SUB_DFX_DFR_Hitrace_Interface_1100
-     * @tc.name testHitraceInterface11
-     * @tc.desc 验证OH_HiTrace_RegisterTraceListener接口连续调用11次，OH_HiTrace_UnregisterTraceListener接口连续调用10次
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证OH_HiTrace_RegisterTraceListener接口连续调用11次，OH_HiTrace_UnregisterTraceListener接口连续调用10次
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHitraceInterface11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hitrace_Interface_1100 start");
@@ -325,12 +325,12 @@ export default function HiTraceNewTest() {
     })
 
     /**
+     * @tc.name   testHitraceInterface12
      * @tc.number SUB_DFX_DFR_Hitrace_Interface_1200
-     * @tc.name testHitraceInterface12
-     * @tc.desc 验证OH_HiTrace_UnregisterTraceListener接口传入未注册索引
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证OH_HiTrace_UnregisterTraceListener接口传入未注册索引
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHitraceInterface12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hitrace_Interface_1200 start");
@@ -349,12 +349,12 @@ export default function HiTraceNewTest() {
     })
 
     /**
+     * @tc.name   testHitraceInterface13
      * @tc.number SUB_DFX_DFR_Hitrace_Interface_1300
-     * @tc.name testHitraceInterface13
-     * @tc.desc 验证OH_HiTrace_UnregisterTraceListener接口传入无效索引
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证OH_HiTrace_UnregisterTraceListener接口传入无效索引
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHitraceInterface13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hitrace_Interface_1300 start");

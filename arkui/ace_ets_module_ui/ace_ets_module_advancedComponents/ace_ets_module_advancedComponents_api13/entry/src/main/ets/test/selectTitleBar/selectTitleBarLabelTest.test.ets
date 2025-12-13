@@ -50,12 +50,12 @@ export default function selectTitleBarLabelTest() {
     })
 
     /**
+     * @tc.name   selectTitleBarLabelTest_0100
      * @tc.number selectTitleBarLabelTest
-     * @tc.name selectTitleBarLabelTest_0100
-     * @tc.desc Test selectTitleBarLabel
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test selectTitleBarLabel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('selectTitleBarLabelTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[selectTitleBarLabelTest_0100] START');

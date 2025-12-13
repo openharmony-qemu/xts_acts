@@ -39,12 +39,12 @@ export default function BrightnessTest() {
     })
 
     /**
+     * @tc.name   System_API_Test_brightness_Manager_0100
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0050
-     * @tc.name testSystem_API_Test_brightness_Manager_0100
-     * @tc.desc Test the third-party application call setValue will be blocked
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call setValue will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_brightness_Manager_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async function (done) {
@@ -59,12 +59,12 @@ export default function BrightnessTest() {
       })
 
     /**
+     * @tc.name   System_API_Test_brightness_Manager_0200
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0050
-     * @tc.name testSystem_API_Test_brightness_Manager_0200
-     * @tc.desc Test the third-party application call setValue will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call setValue will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('System_API_Test_brightness_Manager_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {
@@ -79,12 +79,12 @@ export default function BrightnessTest() {
       })
 
     /**
+     * @tc.name   System_API_Test_brightness_Manager_0300
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0060
-     * @tc.name testSystem_API_Test_brightness_Manager_0300
-     * @tc.desc Test the third-party application call setValue will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call setValue will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('System_API_Test_brightness_Manager_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {

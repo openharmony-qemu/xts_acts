@@ -45,10 +45,12 @@ export default function notificationContentTest() {
 
 
     /**
-     * @tc.number: Acts_NotificationContent_0100
-     * @tc.name: Test the notificationContentType property.
-     * @tc.desc: Set notificationContentType attribute parameters
-     *           notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT.
+     * @tc.name   Acts_NotificationContent_0100
+     * @tc.number Acts_NotificationContent_0100
+     * @tc.desc   Set notificationContentType attribute parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Acts_NotificationContent_0100', Level.LEVEL2, async (done: Function) => {
       const TEST_CASE_NAME = 'Acts_NotificationContent_0100';
@@ -90,10 +92,12 @@ export default function notificationContentTest() {
     })
 
     /**
-     * @tc.number: Acts_NotificationContent_0200
-     * @tc.name: Test the notificationContentType property.
-     * @tc.desc: Set notificationContentType attribute parameters
-     *           notificationManager.ContentType.NOTIFICATION_CONTENT_LONG_TEXT.
+     * @tc.name   Acts_NotificationContent_0200
+     * @tc.number Acts_NotificationContent_0200
+     * @tc.desc   Set notificationContentType attribute parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Acts_NotificationContent_0200', Level.LEVEL2, async (done: Function) => {
       const TEST_CASE_NAME = 'Acts_NotificationContent_0200';
@@ -129,10 +133,12 @@ export default function notificationContentTest() {
     })
 
     /**
-     * @tc.number: Acts_NotificationContent_0300
-     * @tc.name: Test the notificationContentType property.
-     * @tc.desc: Set notificationContentType attribute parameters
-     *           notificationManager.ContentType.NOTIFICATION_CONTENT_PICTURE.
+     * @tc.name   Acts_NotificationContent_0300
+     * @tc.number Acts_NotificationContent_0300
+     * @tc.desc   Set notificationContentType attribute parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Acts_NotificationContent_0300', Level.LEVEL2, async (done: Function) => {
       const TEST_CASE_NAME = 'Acts_NotificationContent_0300';
@@ -192,10 +198,12 @@ export default function notificationContentTest() {
     })
 
     /**
-     * @tc.number: Acts_NotificationContent_0400
-     * @tc.name: Test the notificationContentType property.
-     * @tc.desc: Set notificationContentType attribute parameters
-     *           notificationManager.ContentType.NOTIFICATION_CONTENT_MULTILINE.
+     * @tc.name    Acts_NotificationContent_0400
+     * @tc.number Acts_NotificationContent_0400
+     * @tc.desc   Set notificationContentType attribute parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it(" Acts_NotificationContent_0400", Level.LEVEL2, async (done: Function) => {
       const TEST_CASE_NAME = 'Acts_NotificationContent_0400';

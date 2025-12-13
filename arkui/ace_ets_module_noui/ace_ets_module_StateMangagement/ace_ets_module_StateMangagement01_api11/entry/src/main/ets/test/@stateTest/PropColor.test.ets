@@ -54,12 +54,14 @@ export default function PropColor() {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0520
-    * @tc.name  : PropColor_0100
-    * @tc.desc  : To test that the Prop decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   PropColor_0100
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0520
+     * @tc.desc   To test that the Prop decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropColor_0100', Level.LEVEL0, async (done: Function) => {
       console.info('PropColor_0100 START');
       let driver = await Driver.create()
@@ -75,12 +77,14 @@ export default function PropColor() {
       console.info('[PropColor_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0530
-    * @tc.name  : PropColor_0200
-    * @tc.desc  : To test that the Prop decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   PropColor_0200
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0530
+     * @tc.desc   To test that the Prop decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropColor_0200', Level.LEVEL0, async (done: Function) => {
       console.info('PropColor_0100 START');
       let driver = await Driver.create()
@@ -96,12 +100,14 @@ export default function PropColor() {
       console.info('[PropColor_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0540
-    * @tc.name  : PropColor_0300
-    * @tc.desc  : To test that the Prop decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   PropColor_0300
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0540
+     * @tc.desc   To test that the Prop decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropColor_0300', Level.LEVEL0, async (done: Function) => {
       console.info('PropColor_0100 START');
       let driver = await Driver.create()
@@ -117,12 +123,14 @@ export default function PropColor() {
       console.info('[PropColor_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0550
-    * @tc.name  : PropColor_0400
-    * @tc.desc  : To test that the Prop decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   PropColor_0400
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0550
+     * @tc.desc   To test that the Prop decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropColor_0400', Level.LEVEL0, async (done: Function) => {
       console.info('PropColor_0100 START');
       let driver = await Driver.create()
@@ -138,12 +146,14 @@ export default function PropColor() {
       console.info('[PropColor_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0560
-    * @tc.name  : PropColor_0500
-    * @tc.desc  : To test that the Prop decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   PropColor_0500
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0560
+     * @tc.desc   To test that the Prop decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropColor_0500', Level.LEVEL0, async (done: Function) => {
       console.info('PropColor_0100 START');
       let driver = await Driver.create()
@@ -159,12 +169,14 @@ export default function PropColor() {
       console.info('[PropColor_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0570
-    * @tc.name  : PropColor_0600
-    * @tc.desc  : To test that the Prop decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   PropColor_0600
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0570
+     * @tc.desc   To test that the Prop decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropColor_0600', Level.LEVEL0, async (done: Function) => {
       console.info('PropColor_0100 START');
       let driver = await Driver.create()

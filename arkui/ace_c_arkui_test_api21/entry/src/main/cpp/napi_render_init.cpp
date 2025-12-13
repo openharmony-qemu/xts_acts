@@ -21,6 +21,11 @@
 #include "Column/ColumnMatchParentTest.h"
 #include "Column/ColumnWrapContentTest.h"
 #include "Column/ColumnFixAtiDealSizeTest.h"
+#include "list/ListDraggingEventTest.h"
+#include "list/ListFlingEventTest.h"
+#include "Image/ImageSupportSvg2Test.h"
+#include "sourceType/SourceTypeTest.h"
+#include "nodeUtil/NodeUtilsReturnTest.h"
 
 namespace ArkUICapiTest
 {
@@ -63,13 +68,67 @@ namespace ArkUICapiTest
             {"getPositionEdges", nullptr, EdgesPositionTest::getPositionEdges, nullptr, nullptr, nullptr, napi_default, nullptr},
             {"reSetPositionEdges", nullptr, EdgesPositionTest::reSetPositionEdges, nullptr, nullptr, nullptr, napi_default, nullptr},
             {"copyPositionEdges", nullptr, EdgesPositionTest::copyPositionEdges, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"TestPositionEdgesGetTopErrorCode_001", nullptr, EdgesPositionTest::TestPositionEdgesGetTopErrorCode_001,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"TestPositionEdgesGetTopErrorCode_002", nullptr, EdgesPositionTest::TestPositionEdgesGetTopErrorCode_002,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"TestPositionEdgesGetLeftErrorCode_001", nullptr, EdgesPositionTest::TestPositionEdgesGetLeftErrorCode_001,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"TestPositionEdgesGetLeftErrorCode_002", nullptr, EdgesPositionTest::TestPositionEdgesGetLeftErrorCode_002,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"TestPositionEdgesGetBottomErrorCode_001", nullptr, EdgesPositionTest::TestPositionEdgesGetBottomErrorCode_001,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"TestPositionEdgesGetBottomErrorCode_002", nullptr, EdgesPositionTest::TestPositionEdgesGetBottomErrorCode_002,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"TestPositionEdgesGetRightErrorCode_001", nullptr, EdgesPositionTest::TestPositionEdgesGetRightErrorCode_001,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"TestPositionEdgesGetRightErrorCode_002", nullptr, EdgesPositionTest::TestPositionEdgesGetRightErrorCode_002,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"TestPositionEdgesCopyReturnNullptr", nullptr, EdgesPositionTest::TestPositionEdgesCopyReturnNullptr,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"TestPositionEdgesCreateReturnNoNullptr", nullptr, EdgesPositionTest::TestPositionEdgesCreateReturnNoNullptr,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
             {"textContentAlignTest", nullptr, TextContentAlignTest::CreateNativeNode, nullptr, nullptr, nullptr, napi_default, nullptr},
             {"createPixelRoundNativeRoot", nullptr, PixelRoundTest::CreatePixelRoundNativeRoot, nullptr, nullptr, nullptr, napi_default, nullptr},
             {"setPixelRound", nullptr, PixelRoundTest::SetPixelRound, nullptr, nullptr, nullptr, napi_default, nullptr},
             {"getPixelRound", nullptr, PixelRoundTest::GetPixelRound, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"TestPixelRoundPolicyGetTopErrorCode_001", nullptr, PixelRoundTest::TestPixelRoundPolicyGetTopErrorCode_001,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"TestPixelRoundPolicyGetTopErrorCode_002", nullptr, PixelRoundTest::TestPixelRoundPolicyGetTopErrorCode_002,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"TestPixelRoundPolicyGetStartErrorCode_001", nullptr, PixelRoundTest::TestPixelRoundPolicyGetStartErrorCode_001,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"TestPixelRoundPolicyGetStartErrorCode_002", nullptr, PixelRoundTest::TestPixelRoundPolicyGetStartErrorCode_002,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"TestPixelRoundPolicyGetBottomErrorCode_001", nullptr, PixelRoundTest::TestPixelRoundPolicyGetBottomErrorCode_001,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"TestPixelRoundPolicyGetBottomErrorCode_002", nullptr, PixelRoundTest::TestPixelRoundPolicyGetBottomErrorCode_002,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"TestPixelRoundPolicyGetEndErrorCode_001", nullptr, PixelRoundTest::TestPixelRoundPolicyGetEndErrorCode_001,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"TestPixelRoundPolicyGetEndErrorCode_002", nullptr, PixelRoundTest::TestPixelRoundPolicyGetEndErrorCode_002,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"TestPixelRoundPolicyCreateReturnNoNullptr", nullptr, PixelRoundTest::TestPixelRoundPolicyCreateReturnNoNullptr,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
             {"createColumnMatchParentNativeRoot", nullptr, ColumnMatchParentTest::CreateColumnMatchParentNativeRoot, nullptr, nullptr, nullptr, napi_default, nullptr},
             {"createColumnWrapContentNativeRoot", nullptr, ColumnWrapContentTest::CreateColumnWrapContentNativeRoot, nullptr, nullptr, nullptr, napi_default, nullptr},
             {"createColumnFixAtiDealSizeNativeRoot", nullptr, ColumnFixAtiDealSizeTest::CreateColumnFixAtiDealSizeNativeRoot, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"listWillStopDraggingTest", nullptr, ListDraggingEventTest::ListWillStopDraggingTest, nullptr,
+               nullptr, nullptr, napi_default, nullptr},
+            {"listWillStartDraggingTest", nullptr, ListDraggingEventTest::ListWillStartDraggingTest, nullptr,
+               nullptr, nullptr, napi_default, nullptr},
+            {"listDidStopDraggingTest", nullptr, ListDraggingEventTest::ListDidStopDraggingTest, nullptr,
+               nullptr, nullptr, napi_default, nullptr},
+            {"listWillStartFlingTest", nullptr, ListFlingEventTest::ListWillStartFlingTest, nullptr,
+               nullptr, nullptr, napi_default, nullptr},
+            {"listDidStopFlingTest", nullptr, ListFlingEventTest::ListDidStopFlingTest, nullptr,
+               nullptr, nullptr, napi_default, nullptr},
+            {"createImageSupportSvg2NativeRoot", nullptr, ImageSupportSvg2Test::CreateImageSupportSvg2NativeRoot,
+               nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"SourceTypeTest", nullptr, ButtonSourceTypeTest::CreateNativeNode,
+               nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"testGetPositionGetSize", nullptr, NodeUtilsReturnTest::testGetPositionGetSize001,
+               nullptr, nullptr, nullptr, napi_default, nullptr},
         };
         if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok)
         {

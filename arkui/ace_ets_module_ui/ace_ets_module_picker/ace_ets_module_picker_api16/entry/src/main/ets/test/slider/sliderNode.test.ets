@@ -48,12 +48,12 @@ export default function sliderNodeTest() {
     })
    
     /**
-     * @tc.number    sliderNode0100
-     * @tc.name      sliderNode0100
-     * @tc.desc      frameNode: createNodesliderToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   sliderNode0100
+     * @tc.number sliderNode0100
+     * @tc.desc   frameNode: createNodesliderToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('sliderNode0100', Level.LEVEL1, async (done: Function) => {
 

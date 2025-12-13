@@ -63,9 +63,12 @@ export default function SimManagerTest() {
   describe('SimManagerTest',  () => {
 
     /**
-     * @tc.number  Telephony_Sim_getDefaultVoiceSlotId_0100
-     * @tc.name    SIM card get default validation
-     * @tc.desc    Function test
+     * @tc.name   Telephony_Sim_getDefaultVoiceSlotId_0100
+     * @tc.number Telephony_Sim_getDefaultVoiceSlotId_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Telephony_Sim_getDefaultVoiceSlotId_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       sim.getDefaultVoiceSlotId((err: BusinessError | null, data: int | undefined) => {
@@ -75,9 +78,12 @@ export default function SimManagerTest() {
     });
 
     /**
-     * @tc.number  Telephony_Sim_getDefaultVoiceSlotId_0200
-     * @tc.name    SIM card get default validation
-     * @tc.desc    Function test
+     * @tc.name   Telephony_Sim_getDefaultVoiceSlotId_0200
+     * @tc.number Telephony_Sim_getDefaultVoiceSlotId_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Telephony_Sim_getDefaultVoiceSlotId_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let promise = sim.getDefaultVoiceSlotId();
@@ -91,9 +97,12 @@ export default function SimManagerTest() {
     });
 
     /**
-     * @tc.number  Telephony_Sim_constantValidate_0100
-     * @tc.name    SIM card constant validation
-     * @tc.desc    Function test
+     * @tc.name   Telephony_Sim_constantValidate_0100
+     * @tc.number Telephony_Sim_constantValidate_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Telephony_Sim_constantValidate_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(`Telephony_Sim_constantValidate_0100 start`);
@@ -118,10 +127,12 @@ export default function SimManagerTest() {
     });
 
     /**
-     * @tc.number  Telephony_Sim_getISOCountryCodeForSim_Async_0200
-     * @tc.name    Enter exception parameters to test whether the getISOCountryCodeForSim interface function
-     *             can execute normally.
-     * @tc.desc    Function test
+     * @tc.name   Telephony_Sim_getISOCountryCodeForSim_Async_0200
+     * @tc.number Telephony_Sim_getISOCountryCodeForSim_Async_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Telephony_Sim_getISOCountryCodeForSim_Async_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const CASE_NAME = 'Telephony_Sim_getISOCountryCodeForSim_Async_0200';
@@ -139,10 +150,12 @@ export default function SimManagerTest() {
     });
 
     /**
-     * @tc.number  Telephony_Sim_getISOCountryCodeForSim_Promise_0200
-     * @tc.name    Enter exception parameters to test whether the getISOCountryCodeForSim interface function
-     *             can execute normally.
-     * @tc.desc    Function test
+     * @tc.name   Telephony_Sim_getISOCountryCodeForSim_Promise_0200
+     * @tc.number Telephony_Sim_getISOCountryCodeForSim_Promise_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Telephony_Sim_getISOCountryCodeForSim_Promise_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const CASE_NAME = 'Telephony_Sim_getISOCountryCodeForSim_Promise_0200';
@@ -151,7 +164,7 @@ export default function SimManagerTest() {
         console.info(`${CASE_NAME} ， data ->` + data);
         expect().assertFail();
         done
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         console.info(`${CASE_NAME} expect err: ${err?.message}`);
         console.info(`${CASE_NAME} finish`);
@@ -160,9 +173,12 @@ export default function SimManagerTest() {
     });
 
     /**
-     * @tc.number  Telephony_Sim_getSimState_Async_0200
-     * @tc.name    Enter exception parameters to test whether the getSimState interface function can execute normally.
-     * @tc.desc    Function test
+     * @tc.name   Telephony_Sim_getSimState_Async_0200
+     * @tc.number Telephony_Sim_getSimState_Async_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Telephony_Sim_getSimState_Async_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       sim.getSimState(SLOTID_INVALID, (err: BusinessError | null, data: sim.SimState | undefined) => {
@@ -180,9 +196,12 @@ export default function SimManagerTest() {
     });
 
     /**
-     * @tc.number  Telephony_Sim_getSimState_Promise_0200
-     * @tc.name    Enter exception parameters to test whether the getSimState interface function can execute normally.
-     * @tc.desc    Function test
+     * @tc.name   Telephony_Sim_getSimState_Promise_0200
+     * @tc.number Telephony_Sim_getSimState_Promise_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_Sim_getSimState_Promise_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const CASE_NAME = 'Telephony_Sim_getSimState_Promise_0200';
@@ -191,7 +210,7 @@ export default function SimManagerTest() {
         console.info(`${CASE_NAME} fail, data = ${JSON.stringify(data)}`);
         expect().assertFail();
         done();
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         console.info(`${CASE_NAME} expect err: ${err.message}`);
         console.info(`${CASE_NAME} finish`);
@@ -200,10 +219,12 @@ export default function SimManagerTest() {
     });
 
     /**
-     * @tc.number  Telephony_Sim_isSimActive_Async_0700
-     * @tc.name    Test the slotId exception input parameter 2 during isSimActive interface card activation,
-     *             check the callback value, and expect the callback result flase
-     * @tc.desc    Function test
+     * @tc.name   Telephony_Sim_isSimActive_Async_0700
+     * @tc.number Telephony_Sim_isSimActive_Async_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_Sim_isSimActive_Async_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const CASE_NAME = 'Telephony_Sim_isSimActive_Async_0700';
@@ -215,29 +236,33 @@ export default function SimManagerTest() {
     });
 
     /**
-     * @tc.number  Telephony_Sim_isSimActive_Promise_0700
-     * @tc.name    Test the slotId exception input parameter 2 during isSimActive interface card activation,
-     *             check the callback value, and expect the callback result flase
-     * @tc.desc    Function test
+     * @tc.name   Telephony_Sim_isSimActive_Promise_0700
+     * @tc.number Telephony_Sim_isSimActive_Promise_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_Sim_isSimActive_Promise_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const CASE_NAME = 'Telephony_Sim_isSimActive_Promise_0700';
       let promise = sim.isSimActive(SLOTID_INVALID);
-      promise.then(data => {
+      promise.then((data: boolean) => {
         console.info(CASE_NAME + `isSimActive success, promise: data->` + data);
         expect(data).assertFalse();
         done();
-      }).catch(err => {
-        console.info(CASE_NAME + "isSimActive promise err info :" + JSON.stringify(err));
+      }).catch((err: Error) => {
+        console.info(CASE_NAME + "isSimActive promise err info :" + err);
         done();
       });
     });
 
     /**
-     * @tc.number  Telephony_Sim_hasSimCard_Async_0600
-     * @tc.name    Test the slotId exception input parameter 2 of the hasSimCard interface,
-     *             check the callback value, and expect the callback result flase
-     * @tc.desc    Function test
+     * @tc.name   Telephony_Sim_hasSimCard_Async_0600
+     * @tc.number Telephony_Sim_hasSimCard_Async_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_Sim_hasSimCard_Async_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const CASE_NAME = 'Telephony_Sim_hasSimCard_Async_0600';
@@ -253,10 +278,12 @@ export default function SimManagerTest() {
     });
 
     /**
-     * @tc.number  Telephony_Sim_hasSimCard_Promise_0600
-     * @tc.name    Test the slotId exception input parameter 2 of the hasSimCard interface,
-     *             check the callback value, and expect the callback result flase
-     * @tc.desc    Function test
+     * @tc.name   Telephony_Sim_hasSimCard_Promise_0600
+     * @tc.number Telephony_Sim_hasSimCard_Promise_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_Sim_hasSimCard_Promise_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const CASE_NAME = 'Telephony_Sim_hasSimCard_Promise_0600';
@@ -271,9 +298,12 @@ export default function SimManagerTest() {
     });
 
     /**
+     * @tc.name   Telephony_Sim_getMaxSimCount_0100
      * @tc.number Telephony_Sim_getMaxSimCount_0100
-     * @tc.name   Test the getMaxSimCount interface and view the callback result
      * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Telephony_Sim_getMaxSimCount_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const CASE_NAME = 'Telephony_Sim_getMaxSimCount_0100';
@@ -284,9 +314,12 @@ export default function SimManagerTest() {
     });
 
     /**
+     * @tc.name   Telephony_Sim_getSimAccountInfo_CallBack_0100
      * @tc.number Telephony_Sim_getSimAccountInfo_CallBack_0100
-     * @tc.name   Test getOpName interface
-     * @tc.desc
+     * @tc.desc   Telephony_Sim_getSimAccountInfo_CallBack_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_Sim_getSimAccountInfo_CallBack_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       sim.getSimAccountInfo(0, (err: BusinessError | null, data: sim.IccAccountInfo | undefined) => {
@@ -309,29 +342,35 @@ export default function SimManagerTest() {
       });
     });
     /**
+     * @tc.name   Telephony_Sim_getSimAccountInfo_Promise_0100
      * @tc.number Telephony_Sim_getSimAccountInfo_Promise_0100
-     * @tc.name   Test getOpName interface
-     * @tc.desc
+     * @tc.desc   Telephony_Sim_getSimAccountInfo_Promise_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_Sim_getSimAccountInfo_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let promise = sim.getSimAccountInfo(0);
-      promise.then(data => {
-        console.info("Telephony_Sim_getSimAccountInfo_Promise_0100 data = " + JSON.stringify(data));
+      promise.then((data: sim.IccAccountInfo) => {
+        console.info("Telephony_Sim_getSimAccountInfo_Promise_0100 data = " + data);
         sim.hasSimCard(0, (err: BusinessError | null, data: Boolean | undefined) => {
           console.log(`Telephony_Sim_getSimAccountInfo_Promise_0100 hasSimCard callback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
           expect(data).assertTrue();
           done();
         });
-      }).catch(err => {
-        console.info("Telephony_Sim_getSimAccountInfo_Promise_0100 err = " + JSON.stringify(err));
+      }).catch((err: Error) => {
+        console.info("Telephony_Sim_getSimAccountInfo_Promise_0100 err = " + err);
         expect(true).assertTrue();
         done();
       });
     });
     /**
+     * @tc.name   Telephony_Sim_getActiveSimAccountInfoList_CallBack_0100
      * @tc.number Telephony_Sim_getActiveSimAccountInfoList_CallBack_0100
-     * @tc.name   Test getOpName interface
-     * @tc.desc
+     * @tc.desc   Telephony_Sim_getActiveSimAccountInfoList_CallBack_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Telephony_Sim_getActiveSimAccountInfoList_CallBack_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       sim.getActiveSimAccountInfoList((err: BusinessError | null, data: Array<sim.IccAccountInfo> | undefined) => {
@@ -350,34 +389,36 @@ export default function SimManagerTest() {
       });
     });
     /**
+     * @tc.name   Telephony_Sim_getActiveSimAccountInfoList_Promise_0100
      * @tc.number Telephony_Sim_getActiveSimAccountInfoList_Promise_0100
-     * @tc.name   Test getOpName interface
-     * @tc.desc
+     * @tc.desc   Telephony_Sim_getActiveSimAccountInfoList_Promise_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Telephony_Sim_getActiveSimAccountInfoList_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let promise = sim.getActiveSimAccountInfoList();
-      promise.then(data => {
-        console.info("Telephony_Sim_getActiveSimAccountInfoList_Promise_0100 data = " + JSON.stringify(data));
+      promise.then((data: Array<sim.IccAccountInfo>) => {
+        console.info("Telephony_Sim_getActiveSimAccountInfoList_Promise_0100 data = " + data);
         sim.hasSimCard(0, (err: BusinessError | null, data: Boolean | undefined) => {
           console.log(`Telephony_Sim_getActiveSimAccountInfoList_Promise_0100 hasSimCard callback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
           expect(data).assertTrue();
           done();
         });
-      }).catch(err => {
-        console.info("Telephony_Sim_getActiveSimAccountInfoList_Promise_0100 err = " + JSON.stringify(err));
+      }).catch((err: Error) => {
+        console.info("Telephony_Sim_getActiveSimAccountInfoList_Promise_0100 err = " + err);
         expect(true).assertTrue();
         done();
       });
     });
 
-    /*
-     * @tc.number:Telephony_Sim_getOpName_CallBack_0100
-     * @tc.name: Telephony_Sim_getOpName_CallBack_static_0100
-     * @tc.desc:Obtains the opname of the SIM card in a specified slot.
-     *            returns null if no SIM card is inserted or no opname matched.
-     * @tc.level:Level 2
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Telephony_Sim_getOpName_CallBack_static_0100
+     * @tc.number Telephony_Sim_getOpName_CallBack_0100
+     * @tc.desc   Obtains the opname of the SIM card in a specified slot.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Telephony_Sim_getOpName_CallBack_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const CASE_NAME = 'Telephony_Sim_getOpName_CallBack_static_0100';
@@ -392,7 +433,7 @@ export default function SimManagerTest() {
             done();
           }
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, "Telephony_Sim_getOpName_try_catch_static_0100 err = " + JSON.stringify(err));
         expect().assertFail();
@@ -400,14 +441,13 @@ export default function SimManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:Telephony_Sim_getOpName_Promise_0100
-     * @tc.name: Telephony_Sim_getOpName_Promise_static_0100
-     * @tc.desc:Obtains the opname of the SIM card in a specified slot.
-     *   returns null if no SIM card is inserted or no opname matched.
-     * @tc.level:Level 2
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Telephony_Sim_getOpName_Promise_static_0100
+     * @tc.number Telephony_Sim_getOpName_Promise_0100
+     * @tc.desc   Obtains the opname of the SIM card in a specified slot.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Telephony_Sim_getOpName_Promise_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const CASE_NAME = 'Telephony_Sim_getOpName_Promise_static_0100';
@@ -422,7 +462,7 @@ export default function SimManagerTest() {
           expect(err?.code).assertEqual(-1);
           done();
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, CASE_NAME + " err = " + JSON.stringify(err));
         expect().assertFail();
@@ -430,14 +470,13 @@ export default function SimManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:Telephony_Sim_getOpKey_CallBack_0100
-     * @tc.name: Telephony_Sim_getOpKey_CallBack_static_0100
-     * @tc.desc:Obtains the opkey of the SIM card in a specified slot.Returns the opkey;
-     *   returns "-1" if no SIM card is inserted or no opkey matched.
-     * @tc.level:Level 2
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Telephony_Sim_getOpKey_CallBack_static_0100
+     * @tc.number Telephony_Sim_getOpKey_CallBack_0100
+     * @tc.desc   Obtains the opkey of the SIM card in a specified slot.Returns the opkey;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Telephony_Sim_getOpKey_CallBack_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const CASE_NAME = 'Telephony_Sim_getOpKey_CallBack_static_0100';
@@ -452,7 +491,7 @@ export default function SimManagerTest() {
             done();
           }
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, "Telephony_Sim_getOpKey_try_catch_0100 err = " + JSON.stringify(err));
         expect().assertFail();
@@ -460,14 +499,13 @@ export default function SimManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:Telephony_Sim_getOpKey_Promise_0100
-     * @tc.name: Telephony_Sim_getOpKey_Promise_static_0100
-     * @tc.desc:Obtains the opkey of the SIM card in a specified slot.Returns the opkey;
-     *            returns "-1" if no SIM card is inserted or no opkey matched.
-     * @tc.level:Level 2
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Telephony_Sim_getOpKey_Promise_static_0100
+     * @tc.number Telephony_Sim_getOpKey_Promise_0100
+     * @tc.desc   Obtains the opkey of the SIM card in a specified slot.Returns the opkey;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Telephony_Sim_getOpKey_Promise_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const CASE_NAME = 'Telephony_Sim_getOpKey_Promise_static_0100';
@@ -482,7 +520,7 @@ export default function SimManagerTest() {
           expect(err?.code).assertEqual(-1);
           done();
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, CASE_NAME + " err = " + JSON.stringify(err));
         expect().assertFail();
@@ -490,13 +528,13 @@ export default function SimManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:Telephony_Sim_GetCardType_Async_0400
-     * @tc.name: Telephony_Sim_GetCardType_Async_static_0400
-     * @tc.desc:Function test
-     * @tc.level:Level 2
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Telephony_Sim_GetCardType_Async_static_0400
+     * @tc.number Telephony_Sim_GetCardType_Async_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Telephony_Sim_GetCardType_Async_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const CASE_NAME = 'Telephony_Sim_GetCardType_Async_static_0400';
@@ -512,7 +550,7 @@ export default function SimManagerTest() {
             done();
           }
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, "Telephony_Sim_GetCardType_try_catch_static_0400 err = " + JSON.stringify(err));
         expect().assertFail();
@@ -520,13 +558,13 @@ export default function SimManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:Telephony_Sim_GetCardType_Promise_0400
-     * @tc.name: Telephony_Sim_GetCardType_Promise_static_0400
-     * @tc.desc:Function test
-     * @tc.level:Level 2
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Telephony_Sim_GetCardType_Promise_static_0400
+     * @tc.number Telephony_Sim_GetCardType_Promise_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Telephony_Sim_GetCardType_Promise_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const CASE_NAME = 'Telephony_Sim_GetCardType_Promise_static_0400';
@@ -535,7 +573,7 @@ export default function SimManagerTest() {
         hilog.info(domain, tag, CASE_NAME + ' finish');
         expect().assertFail();
         done();
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.error(domain, tag, CASE_NAME + ' GetCardType error: ' + JSON.stringify(err));
         expect(err?.code).assertEqual(8300001);
@@ -543,13 +581,13 @@ export default function SimManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:Telephony_Sim_getSimSpn_Async_0200
-     * @tc.name: Telephony_Sim_getSimSpn_Async_static_0200
-     * @tc.desc:Function test
-     * @tc.level:Level 2
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Telephony_Sim_getSimSpn_Async_static_0200
+     * @tc.number Telephony_Sim_getSimSpn_Async_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Telephony_Sim_getSimSpn_Async_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const CASE_NAME = 'Telephony_Sim_getSimSpn_Async_static_0200';
@@ -565,7 +603,7 @@ export default function SimManagerTest() {
             done();
           }
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.error(domain, tag, CASE_NAME + ' Telephony_Sim_getSimSpn_try_catch_error_0200: ' + JSON.stringify(err));
         expect().assertFail();
@@ -573,13 +611,13 @@ export default function SimManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:Telephony_Sim_getSimSpn_Promise_0200
-     * @tc.name: Telephony_Sim_getSimSpn_Promise_static_0200
-     * @tc.desc:Function test
-     * @tc.level:Level 2
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Telephony_Sim_getSimSpn_Promise_static_0200
+     * @tc.number Telephony_Sim_getSimSpn_Promise_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Telephony_Sim_getSimSpn_Promise_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const CASE_NAME = 'Telephony_Sim_getSimSpn_Promise_static_0200';
@@ -588,7 +626,7 @@ export default function SimManagerTest() {
         hilog.info(domain, tag, CASE_NAME + ' finish' + JSON.stringify(data));
         expect().assertFail();
         done();
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.error(domain, tag, `${CASE_NAME} expect err: ${err?.message}`);
         hilog.error(domain, tag, `${CASE_NAME} finish`);
@@ -596,13 +634,13 @@ export default function SimManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:Telephony_Sim_getSimOperatorNumeric_Async_0200
-     * @tc.name: Telephony_Sim_getSimOperatorNumeric_Async_static_0200
-     * @tc.desc:Function test
-     * @tc.level:Level 2
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Telephony_Sim_getSimOperatorNumeric_Async_static_0200
+     * @tc.number Telephony_Sim_getSimOperatorNumeric_Async_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Telephony_Sim_getSimOperatorNumeric_Async_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const CASE_NAME = 'Telephony_Sim_getSimOperatorNumeric_Async_static_0200';
@@ -618,7 +656,7 @@ export default function SimManagerTest() {
             done();
           }
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, "Telephony_Sim_getSimOperatorNumeric_try_catch_static_0200 err = " + JSON.stringify(err));
         expect().assertFail();
@@ -626,13 +664,13 @@ export default function SimManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:Telephony_Sim_getSimOperatorNumeric_Promise_0200
-     * @tc.name: Telephony_Sim_getSimOperatorNumeric_Promise_static_0200
-     * @tc.desc:Function test
-     * @tc.level:Level 2
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Telephony_Sim_getSimOperatorNumeric_Promise_static_0200
+     * @tc.number Telephony_Sim_getSimOperatorNumeric_Promise_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Telephony_Sim_getSimOperatorNumeric_Promise_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const CASE_NAME = 'Telephony_Sim_getSimOperatorNumeric_Promise_static_0200';
@@ -641,20 +679,20 @@ export default function SimManagerTest() {
         hilog.info(domain, tag, CASE_NAME + ' finish' + JSON.stringify(data));
         expect().assertFail();
         done();
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.error(domain, tag, `${CASE_NAME} expect err: ${err?.message}`);
         done();
       }
     });
 
-    /*
-     * @tc.number:Telephony_Sim_hasOperatorPrivileges_Async_0400
-     * @tc.name: Telephony_Sim_hasOperatorPrivileges_Async_static_0400
-     * @tc.desc:Function test
-     * @tc.level:Level 2
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Telephony_Sim_hasOperatorPrivileges_Async_static_0400
+     * @tc.number Telephony_Sim_hasOperatorPrivileges_Async_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Telephony_Sim_hasOperatorPrivileges_Async_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const CASE_NAME = 'Telephony_Sim_hasOperatorPrivileges_Async_static_0400';
@@ -670,7 +708,7 @@ export default function SimManagerTest() {
             done();
           }
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, "Telephony_Sim_hasOperatorPrivileges_try_catch_static_0400 err = " + JSON.stringify(err));
         expect().assertFail();
@@ -678,13 +716,13 @@ export default function SimManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:Telephony_Sim_hasOperatorPrivileges_Promise_0400
-     * @tc.name: Telephony_Sim_hasOperatorPrivileges_Promise_static_0400
-     * @tc.desc:Function test
-     * @tc.level:Level 2
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Telephony_Sim_hasOperatorPrivileges_Promise_static_0400
+     * @tc.number Telephony_Sim_hasOperatorPrivileges_Promise_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Telephony_Sim_hasOperatorPrivileges_Promise_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const CASE_NAME = 'Telephony_Sim_hasOperatorPrivileges_Promise_static_0400';
@@ -693,7 +731,7 @@ export default function SimManagerTest() {
         hilog.info(domain, tag, CASE_NAME + ' finish' + JSON.stringify(result));
         expect().assertFail();
         done();
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.error(domain, tag, CASE_NAME + 'hasOperatorPrivileges error: ' + JSON.stringify(err));
         expect(err?.code).assertEqual(8300001);
@@ -701,13 +739,13 @@ export default function SimManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:Telephony_Sim_getDefaultVoiceSimId_CallBack_0100
-     * @tc.name: Telephony_Sim_getDefaultVoiceSimId_CallBack_static_0100
-     * @tc.desc:
-     * @tc.level:Level 2
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Telephony_Sim_getDefaultVoiceSimId_CallBack_static_0100
+     * @tc.number Telephony_Sim_getDefaultVoiceSimId_CallBack_0100
+     * @tc.desc   Telephony_Sim_getDefaultVoiceSimId_CallBack_static_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Telephony_Sim_getDefaultVoiceSimId_CallBack_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const CASE_NAME = 'Telephony_Sim_getDefaultVoiceSimId_CallBack_static_0100';
@@ -732,7 +770,7 @@ export default function SimManagerTest() {
             });
           }
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, CASE_NAME + " err = " + JSON.stringify(err));
         expect().assertFail();
@@ -740,13 +778,13 @@ export default function SimManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:Telephony_Sim_getDefaultVoiceSimId_Promise_0100
-     * @tc.name: Telephony_Sim_getDefaultVoiceSimId_Promise_static_0100
-     * @tc.desc:
-     * @tc.level:Level 2
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Telephony_Sim_getDefaultVoiceSimId_Promise_static_0100
+     * @tc.number Telephony_Sim_getDefaultVoiceSimId_Promise_0100
+     * @tc.desc   Telephony_Sim_getDefaultVoiceSimId_Promise_static_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Telephony_Sim_getDefaultVoiceSimId_Promise_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const CASE_NAME = 'Telephony_Sim_getDefaultVoiceSimId_Promise_static_0100';
@@ -766,11 +804,11 @@ export default function SimManagerTest() {
             done();
           });
         }).catch(err => {
-          hilog.info(domain, tag, CASE_NAME + " err = " + JSON.stringify(err));
+          hilog.info(domain, tag, CASE_NAME + " err = " + err);
           expect(false).assertTrue();
           done();
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, CASE_NAME + " err = " + JSON.stringify(err));
         expect().assertFail();

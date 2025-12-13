@@ -28,8 +28,8 @@ struct GetDarkModeTest {
       '1、点击按钮ALWAYS_DARK\n' +
       '2、点击按钮ALWAYS_LIGHT\n' +
       '预期结果：\n' +
-      '1、控制台打印日志信息: getDarkMode value: 0\n' +
-      '2、控制台打印日志信息: getDarkMode value: 1';
+      '1、文本信息显示为: getDarkMode dark: true\n' +
+      '2、文本信息显示为: getDarkMode light: true';
   @State isVue: boolean = false;
   @State active: boolean = false;
   @State intervalNum: number = 0;
@@ -44,6 +44,7 @@ struct GetDarkModeTest {
           .width('20vp')
           .height('20vp')
       }
+      .margin({ bottom: '20vp' })
       .width('30%')
       .height('30vp')
       .backgroundColor(Color.Grey)
@@ -55,7 +56,9 @@ struct GetDarkModeTest {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
           .height('20vp')
-      }.width('30%')
+      }
+      .margin({ bottom: '20vp' })
+      .width('30%')
       .height('30vp')
       .backgroundColor(Color.Grey)
       .onClick(() => {
@@ -79,6 +82,7 @@ struct GetDarkModeTest {
         .width('20vp')
         .height('20vp')
     }
+    .margin({ bottom: '20vp' })
     .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
@@ -191,8 +195,8 @@ struct GetDarkModeTest {
             }
           })
 
-        Text(this.isDarkMode + '')
-        Text(this.isLightMode + '')
+        Text('getDarkMode dark:' + this.isDarkMode + '').fontSize(10).fontColor(Color.Red)
+        Text('getDarkMode light:' + this.isLightMode + '').fontSize(10).fontColor(Color.Red)
 
       }.height('80%')
       .width('100%')
@@ -205,6 +209,7 @@ struct GetDarkModeTest {
             .width('20vp')
             .height('20vp')
         }
+        .margin({ bottom: '20vp' })
         .width('30%')
         .height('30vp')
         .backgroundColor(Color.Grey)

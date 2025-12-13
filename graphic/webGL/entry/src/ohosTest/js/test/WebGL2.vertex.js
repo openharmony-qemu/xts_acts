@@ -91,9 +91,12 @@ export default function webgl2_vertex() {
          * Method specifies the integer value of a common vertex attribute.
          */
         /**
+         * @tc.name   webgl2_test_vertexAttribI4i
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0001
-         * @tc.name webgl2_test_vertexAttribI4i
-         * @tc.desc Test vertexAttribI4i.
+         * @tc.desc   Test vertexAttribI4i.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4i', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_vertexAttribI4i] vertexAttribI4i");
@@ -136,9 +139,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4i_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0002
-         * @tc.name webgl2_test_vertexAttribI4i_1
-         * @tc.desc Test vertexAttribI4i.
+         * @tc.desc   Test vertexAttribI4i.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4i_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_vertexAttribI4i] vertexAttribI4i");
@@ -151,9 +157,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4i_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0003
-         * @tc.name webgl2_test_vertexAttribI4i_2
-         * @tc.desc Test vertexAttribI4i.
+         * @tc.desc   Test vertexAttribI4i.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4i_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_vertexAttribI4i] vertexAttribI4i");
@@ -166,9 +175,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4i_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0004
-         * @tc.name webgl2_test_vertexAttribI4i_3
-         * @tc.desc Test vertexAttribI4i.
+         * @tc.desc   Test vertexAttribI4i.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4i_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_vertexAttribI4i] vertexAttribI4i");
@@ -181,9 +193,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4i_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0005
-         * @tc.name webgl2_test_vertexAttribI4i_4
-         * @tc.desc Test vertexAttribI4i.
+         * @tc.desc   Test vertexAttribI4i.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4i_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_vertexAttribI4i] vertexAttribI4i");
@@ -196,9 +211,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4i_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0006
-         * @tc.name webgl2_test_vertexAttribI4i_5
-         * @tc.desc Test vertexAttribI4i.
+         * @tc.desc   Test vertexAttribI4i.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4i_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_vertexAttribI4i] vertexAttribI4i");
@@ -211,9 +229,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4i_6
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0007
-         * @tc.name webgl2_test_vertexAttribI4i_6
-         * @tc.desc Test vertexAttribI4i.
+         * @tc.desc   Test vertexAttribI4i.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4i_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_vertexAttribI4i] vertexAttribI4i");
@@ -226,9 +247,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4i_7
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0008
-         * @tc.name webgl2_test_vertexAttribI4i_7
-         * @tc.desc Test vertexAttribI4i.
+         * @tc.desc   Test vertexAttribI4i.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4i_7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_vertexAttribI4i] vertexAttribI4i");
@@ -241,9 +265,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4i_8
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0009
-         * @tc.name webgl2_test_vertexAttribI4i_8
-         * @tc.desc Test vertexAttribI4i.
+         * @tc.desc   Test vertexAttribI4i.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4i_8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_vertexAttribI4i] vertexAttribI4i");
@@ -256,9 +283,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4i_9
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0010
-         * @tc.name webgl2_test_vertexAttribI4i_9
-         * @tc.desc Test vertexAttribI4i.
+         * @tc.desc   Test vertexAttribI4i.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4i_9', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_vertexAttribI4i] vertexAttribI4i");
@@ -271,9 +301,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4i_10
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0011
-         * @tc.name webgl2_test_vertexAttribI4i_10
-         * @tc.desc Test vertexAttribI4i.
+         * @tc.desc   Test vertexAttribI4i.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4i_10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -325,9 +358,12 @@ export default function webgl2_vertex() {
             checkError(gl);
         }
         /**
+         * @tc.name   webgl2_test_vertexAttribI4iv
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0012
-         * @tc.name webgl2_test_vertexAttribI4iv
-         * @tc.desc Test vertexAttribI4iv.
+         * @tc.desc   Test vertexAttribI4iv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4iv', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_vertexAttribI4iv] vertexAttribI4iv");
@@ -367,9 +403,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4iv_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0013
-         * @tc.name webgl2_test_vertexAttribI4iv_1
-         * @tc.desc Test vertexAttribI4iv.
+         * @tc.desc   Test vertexAttribI4iv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4iv_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -383,9 +422,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4iv_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0014
-         * @tc.name webgl2_test_vertexAttribI4iv_2
-         * @tc.desc Test vertexAttribI4iv.
+         * @tc.desc   Test vertexAttribI4iv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4iv_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -399,9 +441,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4iv_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0015
-         * @tc.name webgl2_test_vertexAttribI4iv_3
-         * @tc.desc Test vertexAttribI4iv.
+         * @tc.desc   Test vertexAttribI4iv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4iv_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -415,9 +460,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4iv_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0016
-         * @tc.name webgl2_test_vertexAttribI4iv_4
-         * @tc.desc Test vertexAttribI4iv.
+         * @tc.desc   Test vertexAttribI4iv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4iv_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -431,9 +479,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4iv_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0017
-         * @tc.name webgl2_test_vertexAttribI4iv_5
-         * @tc.desc Test vertexAttribI4iv.
+         * @tc.desc   Test vertexAttribI4iv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4iv_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -447,9 +498,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4iv_6
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0018
-         * @tc.name webgl2_test_vertexAttribI4iv_6
-         * @tc.desc Test vertexAttribI4iv.
+         * @tc.desc   Test vertexAttribI4iv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4iv_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -463,9 +517,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4iv_7
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0019
-         * @tc.name webgl2_test_vertexAttribI4iv_7
-         * @tc.desc Test vertexAttribI4iv.
+         * @tc.desc   Test vertexAttribI4iv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4iv_7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -479,9 +536,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4iv_8
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0020
-         * @tc.name webgl2_test_vertexAttribI4iv_8
-         * @tc.desc Test vertexAttribI4iv.
+         * @tc.desc   Test vertexAttribI4iv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4iv_8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -495,9 +555,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4iv_9
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0021
-         * @tc.name webgl2_test_vertexAttribI4iv_9
-         * @tc.desc Test vertexAttribI4iv.
+         * @tc.desc   Test vertexAttribI4iv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4iv_9', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -511,9 +574,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4iv_10
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0022
-         * @tc.name webgl2_test_vertexAttribI4iv_10
-         * @tc.desc Test vertexAttribI4iv.
+         * @tc.desc   Test vertexAttribI4iv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4iv_10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -565,9 +631,12 @@ export default function webgl2_vertex() {
             checkError(gl);
         }
         /**
+         * @tc.name   webgl2_test_vertexAttribI4ui
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0023
-         * @tc.name webgl2_test_vertexAttribI4ui
-         * @tc.desc Test vertexAttribI4ui.
+         * @tc.desc   Test vertexAttribI4ui.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4ui', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_vertexAttribI4ui] vertexAttribI4ui");
@@ -608,9 +677,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4ui_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0024
-         * @tc.name webgl2_test_vertexAttribI4ui_1
-         * @tc.desc Test vertexAttribI4ui.
+         * @tc.desc   Test vertexAttribI4ui.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4ui_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -624,9 +696,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4ui_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0025
-         * @tc.name webgl2_test_vertexAttribI4ui_2
-         * @tc.desc Test vertexAttribI4ui.
+         * @tc.desc   Test vertexAttribI4ui.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4ui_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -640,9 +715,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4ui_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0026
-         * @tc.name webgl2_test_vertexAttribI4ui_3
-         * @tc.desc Test vertexAttribI4ui.
+         * @tc.desc   Test vertexAttribI4ui.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4ui_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -656,9 +734,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4ui_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0027
-         * @tc.name webgl2_test_vertexAttribI4ui_4
-         * @tc.desc Test vertexAttribI4ui.
+         * @tc.desc   Test vertexAttribI4ui.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4ui_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -672,9 +753,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4ui_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0028
-         * @tc.name webgl2_test_vertexAttribI4ui_5
-         * @tc.desc Test vertexAttribI4ui.
+         * @tc.desc   Test vertexAttribI4ui.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4ui_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -688,9 +772,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4ui_6
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0029
-         * @tc.name webgl2_test_vertexAttribI4ui_6
-         * @tc.desc Test vertexAttribI4ui.
+         * @tc.desc   Test vertexAttribI4ui.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4ui_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -704,9 +791,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4ui_7
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0030
-         * @tc.name webgl2_test_vertexAttribI4ui_7
-         * @tc.desc Test vertexAttribI4ui.
+         * @tc.desc   Test vertexAttribI4ui.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4ui_7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -720,9 +810,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4ui_8
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0031
-         * @tc.name webgl2_test_vertexAttribI4ui_8
-         * @tc.desc Test vertexAttribI4ui.
+         * @tc.desc   Test vertexAttribI4ui.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4ui_8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -736,9 +829,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4ui_9
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0032
-         * @tc.name webgl2_test_vertexAttribI4ui_9
-         * @tc.desc Test vertexAttribI4ui.
+         * @tc.desc   Test vertexAttribI4ui.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4ui_9', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -752,9 +848,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4ui_10
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0033
-         * @tc.name webgl2_test_vertexAttribI4ui_10
-         * @tc.desc Test vertexAttribI4ui.
+         * @tc.desc   Test vertexAttribI4ui.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4ui_10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -806,9 +905,12 @@ export default function webgl2_vertex() {
             checkError(gl);
         }
         /**
+         * @tc.name   webgl2_test_vertexAttribI4uiv
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0034
-         * @tc.name webgl2_test_vertexAttribI4uiv
-         * @tc.desc Test vertexAttribI4uiv.
+         * @tc.desc   Test vertexAttribI4uiv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4uiv', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_vertexAttribI4uiv] vertexAttribI4uiv");
@@ -849,9 +951,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4uiv_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0035
-         * @tc.name webgl2_test_vertexAttribI4uiv_1
-         * @tc.desc Test vertexAttribI4uiv.
+         * @tc.desc   Test vertexAttribI4uiv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4uiv_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -865,9 +970,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4uiv_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0036
-         * @tc.name webgl2_test_vertexAttribI4uiv_2
-         * @tc.desc Test vertexAttribI4uiv.
+         * @tc.desc   Test vertexAttribI4uiv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4uiv_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -881,9 +989,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4uiv_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0037
-         * @tc.name webgl2_test_vertexAttribI4uiv_3
-         * @tc.desc Test vertexAttribI4uiv.
+         * @tc.desc   Test vertexAttribI4uiv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4uiv_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -897,9 +1008,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4uiv_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0038
-         * @tc.name webgl2_test_vertexAttribI4uiv_4
-         * @tc.desc Test vertexAttribI4uiv.
+         * @tc.desc   Test vertexAttribI4uiv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4uiv_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -913,9 +1027,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4uiv_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0039
-         * @tc.name webgl2_test_vertexAttribI4uiv_5
-         * @tc.desc Test vertexAttribI4uiv.
+         * @tc.desc   Test vertexAttribI4uiv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4uiv_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -929,9 +1046,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4uiv_6
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0040
-         * @tc.name webgl2_test_vertexAttribI4uiv_6
-         * @tc.desc Test vertexAttribI4uiv.
+         * @tc.desc   Test vertexAttribI4uiv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4uiv_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -945,9 +1065,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4uiv_7
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0041
-         * @tc.name webgl2_test_vertexAttribI4uiv_7
-         * @tc.desc Test vertexAttribI4uiv.
+         * @tc.desc   Test vertexAttribI4uiv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4uiv_7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -961,9 +1084,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4uiv_8
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0042
-         * @tc.name webgl2_test_vertexAttribI4uiv_8
-         * @tc.desc Test vertexAttribI4uiv.
+         * @tc.desc   Test vertexAttribI4uiv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4uiv_8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -977,9 +1103,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4uiv_9
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0043
-         * @tc.name webgl2_test_vertexAttribI4uiv_9
-         * @tc.desc Test vertexAttribI4uiv.
+         * @tc.desc   Test vertexAttribI4uiv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4uiv_9', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -993,9 +1122,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribI4uiv_10
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0044
-         * @tc.name webgl2_test_vertexAttribI4uiv_10
-         * @tc.desc Test vertexAttribI4uiv.
+         * @tc.desc   Test vertexAttribI4uiv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribI4uiv_10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1058,9 +1190,12 @@ export default function webgl2_vertex() {
          * Method specifies the integer data format and location of the vertex attributes in the vertex attributes array。
          */
         /**
+         * @tc.name   webgl2_test_vertexAttribIPointer
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0045
-         * @tc.name webgl2_test_vertexAttribIPointer
-         * @tc.desc Test vertexAttribIPointer.
+         * @tc.desc   Test vertexAttribIPointer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribIPointer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1109,9 +1244,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribIPointer_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0046
-         * @tc.name webgl2_test_vertexAttribIPointer_1
-         * @tc.desc Test vertexAttribIPointer.
+         * @tc.desc   Test vertexAttribIPointer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribIPointer_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1131,9 +1269,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribIPointer_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0047
-         * @tc.name webgl2_test_vertexAttribIPointer_2
-         * @tc.desc Test vertexAttribIPointer.
+         * @tc.desc   Test vertexAttribIPointer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribIPointer_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1153,9 +1294,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribIPointer_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0048
-         * @tc.name webgl2_test_vertexAttribIPointer_3
-         * @tc.desc Test vertexAttribIPointer.
+         * @tc.desc   Test vertexAttribIPointer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribIPointer_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1175,9 +1319,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribIPointer_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0049
-         * @tc.name webgl2_test_vertexAttribIPointer_4
-         * @tc.desc Test vertexAttribIPointer.
+         * @tc.desc   Test vertexAttribIPointer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribIPointer_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1197,9 +1344,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribIPointer_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0050
-         * @tc.name webgl2_test_vertexAttribIPointer_5
-         * @tc.desc Test vertexAttribIPointer.
+         * @tc.desc   Test vertexAttribIPointer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribIPointer_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1219,9 +1369,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribIPointer_6
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0051
-         * @tc.name webgl2_test_vertexAttribIPointer_6
-         * @tc.desc Test vertexAttribIPointer.
+         * @tc.desc   Test vertexAttribIPointer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribIPointer_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1241,9 +1394,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribIPointer_7
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0052
-         * @tc.name webgl2_test_vertexAttribIPointer_7
-         * @tc.desc Test vertexAttribIPointer.
+         * @tc.desc   Test vertexAttribIPointer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribIPointer_7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1263,9 +1419,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribIPointer_8
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0053
-         * @tc.name webgl2_test_vertexAttribIPointer_8
-         * @tc.desc Test vertexAttribIPointer.
+         * @tc.desc   Test vertexAttribIPointer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribIPointer_8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1285,9 +1444,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_createVertexArray
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0054
-         * @tc.name webgl2_test_createVertexArray
-         * @tc.desc Test createVertexArray.
+         * @tc.desc   Test createVertexArray.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_createVertexArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1305,9 +1467,12 @@ export default function webgl2_vertex() {
             finish(gl.isVertexArray(vertexArray));
         }
         /**
+         * @tc.name   webgl2_test_deleteVertexArray
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0055
-         * @tc.name webgl2_test_deleteVertexArray
-         * @tc.desc Test deleteVertexArray.
+         * @tc.desc   Test deleteVertexArray.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_deleteVertexArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_deleteVertexArray] deleteVertexArray");
@@ -1321,9 +1486,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_deleteVertexArray_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0056
-         * @tc.name webgl2_test_deleteVertexArray_1
-         * @tc.desc Test deleteVertexArray.
+         * @tc.desc   Test deleteVertexArray.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_deleteVertexArray_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1338,9 +1506,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_deleteVertexArray_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0057
-         * @tc.name webgl2_test_deleteVertexArray_2
-         * @tc.desc Test deleteVertexArray.
+         * @tc.desc   Test deleteVertexArray.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_deleteVertexArray_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1355,9 +1526,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_deleteVertexArray_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0058
-         * @tc.name webgl2_test_deleteVertexArray_3
-         * @tc.desc Test deleteVertexArray.
+         * @tc.desc   Test deleteVertexArray.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_deleteVertexArray_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1379,9 +1553,12 @@ export default function webgl2_vertex() {
             gl.deleteVertexArray(vertexArrayObject);
         }
         /**
+         * @tc.name   webgl2_test_isVertexArray
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0059
-         * @tc.name webgl2_test_isVertexArray
-         * @tc.desc Test isVertexArray.
+         * @tc.desc   Test isVertexArray.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_isVertexArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_isVertexArray] isVertexArray");
@@ -1395,9 +1572,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_isVertexArray_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0060
-         * @tc.name webgl2_test_isVertexArray_1
-         * @tc.desc Test isVertexArray.
+         * @tc.desc   Test isVertexArray.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_isVertexArray_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_isVertexArray] isVertexArray");
@@ -1410,9 +1590,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_isVertexArray_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0061
-         * @tc.name webgl2_test_isVertexArray_2
-         * @tc.desc Test isVertexArray.
+         * @tc.desc   Test isVertexArray.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_isVertexArray_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_isVertexArray] isVertexArray");
@@ -1425,9 +1608,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_isVertexArray_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0062
-         * @tc.name webgl2_test_isVertexArray_3
-         * @tc.desc Test isVertexArray.
+         * @tc.desc   Test isVertexArray.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_isVertexArray_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_isVertexArray] isVertexArray");
@@ -1447,9 +1633,12 @@ export default function webgl2_vertex() {
             gl.deleteVertexArray(vertexArrayObject);
         }
         /**
+         * @tc.name   webgl2_test_bindVertexArray
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0063
-         * @tc.name webgl2_test_bindVertexArray
-         * @tc.desc Test bindVertexArray.
+         * @tc.desc   Test bindVertexArray.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bindVertexArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bindVertexArray] bindVertexArray");
@@ -1464,9 +1653,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bindVertexArray_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0064
-         * @tc.name webgl2_test_bindVertexArray_1
-         * @tc.desc Test bindVertexArray.
+         * @tc.desc   Test bindVertexArray.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bindVertexArray_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bindVertexArray] bindVertexArray");
@@ -1479,9 +1671,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bindVertexArray_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0065
-         * @tc.name webgl2_test_bindVertexArray_2
-         * @tc.desc Test bindVertexArray.
+         * @tc.desc   Test bindVertexArray.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bindVertexArray_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bindVertexArray] bindVertexArray");
@@ -1494,9 +1689,12 @@ export default function webgl2_vertex() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bindVertexArray_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_VERTEX_0066
-         * @tc.name webgl2_test_bindVertexArray_3
-         * @tc.desc Test bindVertexArray.
+         * @tc.desc   Test bindVertexArray.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bindVertexArray_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bindVertexArray] bindVertexArray");

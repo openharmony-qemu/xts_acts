@@ -18,6 +18,7 @@ import hilog from '@ohos.hilog';
 import window from '@ohos.window';
 import { commonEventManager } from '@kit.BasicServicesKit';
 
+let timeId:number = 0
 let testNum:number = 0;
 
 export default class UiAbility08 extends UIAbility {
@@ -34,10 +35,6 @@ export default class UiAbility08 extends UIAbility {
     commonEventManager.publish('UiAbility08_onNewWant', function () {
       hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility08 publish UiAbility08_onNewWant');
     });
-    setTimeout(()=>{
-      // destroy
-      globalThis.uiAbilityContext8.terminateSelf();
-    }, 500);
   }
 
   onDestroy(): void {
@@ -68,7 +65,13 @@ export default class UiAbility08 extends UIAbility {
 
   onForeground(): void {
     testNum++
-    if (testNum === 1) {
+    if (testNum !== 1) {
+      hilog.info(0x0000, 'testTag', '%{public}s', `UiAbility08 setTimeout before`);
+      setTimeout(() => {
+        hilog.info(0x0000, 'testTag', '%{public}s', `UiAbility08 setTimeout start terminate`);
+        globalThis.uiAbilityContext8.terminateSelf();
+      }, 2000);
+    } else {
       commonEventManager.publish('UiAbility08_onForeground_01', function () {
         hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility08 publish UiAbility08_onForeground_01');
       });
@@ -80,7 +83,7 @@ export default class UiAbility08 extends UIAbility {
           }).then(() => {
           hilog.info(0x0000, 'testTag', '%{public}s', `UiAbility08 start other hap AbilityTest01 end`);
         })
-        setTimeout(()=>{
+        timeId = setTimeout(()=>{
           try{
             globalThis.uiAbilityContext8.moveAbilityToBackground().then(()=>{
               hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility08 moveAbilityToBackground success');
@@ -90,12 +93,16 @@ export default class UiAbility08 extends UIAbility {
                 commonEventManager.publish('UiAbility08_onBackground', function () {
                   hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility08 publish UiAbility08_onBackground');
                 });
+                setTimeout(() => {
+                  hilog.info(0x0000, 'testTag', '%{public}s', `UiAbility08 setTimeout start terminate after UiAbility08_onBackground`);
+                  globalThis.uiAbilityContext8.terminateSelf();
+                }, 3000);
               }
             });
           }catch(e){
             hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility08 moveAbilityToBackground catch fail ' + e?.code + ' ' + e.message);
           }
-        }, 1000)
+        }, 2000)
       } catch (err) {
         hilog.info(0x0000, 'testTag', '%{public}s', `UiAbility08 start other hap AbilityTest01 fail : ${err}`);
       }
@@ -106,6 +113,7 @@ export default class UiAbility08 extends UIAbility {
   onBackground(): void {
     // Ability has back to background
     hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility08 onBackground');
+    clearTimeout(timeId);
     commonEventManager.publish('UiAbility08_onBackground', function () {
       hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility08 publish UiAbility08_onBackground');
     });

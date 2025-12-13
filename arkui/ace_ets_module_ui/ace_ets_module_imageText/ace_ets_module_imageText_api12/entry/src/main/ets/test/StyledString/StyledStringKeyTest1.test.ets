@@ -49,10 +49,12 @@ export default function StyledStringKeyTest1() {
 
 
     /**
-     * @tc.number    StyledStringKeyTest1_0100
-     * @tc.name      StyledStringKeyTest1_0100
-     * @tc.desc      Test StyledStringKey.USER_DATA
-     * @tc.level     Level 2
+     * @tc.name   StyledStringKeyTest1_0100
+     * @tc.number StyledStringKeyTest1_0100
+     * @tc.desc   Test StyledStringKey.USER_DATA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('StyledStringKeyTest1_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('StyledStringKeyTest1_0100 START');
@@ -78,10 +80,12 @@ export default function StyledStringKeyTest1() {
     });
 
     /**
-     * @tc.number    StyledStringKeyTest1_0200
-     * @tc.name      StyledStringKeyTest1_0200
-     * @tc.desc      Test StyledStringKey.USER_DATA
-     * @tc.level     Level 3
+     * @tc.name   StyledStringKeyTest1_0200
+     * @tc.number StyledStringKeyTest1_0200
+     * @tc.desc   Test StyledStringKey.USER_DATA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('StyledStringKeyTest1_0200',  Level.LEVEL3, async (done: Function) => {
       console.info('StyledStringKeyTest1_0200 START');

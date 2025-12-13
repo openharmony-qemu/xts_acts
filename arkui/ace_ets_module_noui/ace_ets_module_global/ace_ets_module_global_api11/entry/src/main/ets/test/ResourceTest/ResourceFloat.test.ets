@@ -71,15 +71,15 @@ export default function ResourceFloat() {
             }
             done()
         })
-        /*
-         * @tc.number       ResourceFloat_0100
-         * @tc.name         ResourceFloat_0100
-         * @tc.desic         ResourceFloat
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : LEVEL0
-         */
 
+        /**
+         * @tc.name   ResourceFloat_0100
+         * @tc.number ResourceFloat_0100
+         * @tc.desc   ResourceFloat_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it("ResourceFloat_0100", Level.LEVEL0, async (done: Function) => {
             console.info("ResourceFloat_0100 START")
             let strJson = getInspectorByKey("float")
@@ -96,13 +96,13 @@ export default function ResourceFloat() {
             done()
         })
 
-        /*
-         * @tc.number       ResourceFloat_0200
-         * @tc.name         ResourceFloat_0200
-         * @tc.desic         ResourceFloat
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : LEVEL0
+        /**
+         * @tc.name   ResourceFloat_0200
+         * @tc.number ResourceFloat_0200
+         * @tc.desc   ResourceFloat_0200
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("ResourceFloat_0200", Level.LEVEL0, async (done: Function) => {
             console.info("ResourceFloat_0200 START")

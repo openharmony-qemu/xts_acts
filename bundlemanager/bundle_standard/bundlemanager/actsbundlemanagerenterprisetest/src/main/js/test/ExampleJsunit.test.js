@@ -100,9 +100,12 @@ describe('ActsBundleManagerTest', function () {
 
 
     /**
+     * @tc.name   testGetAllApplicationInfoPromise
      * @tc.number Sub_Bms_Framework_Query_AppInfo_0840
-     * @tc.name testGetAllApplicationInfoPromise
-     * @tc.desc Test getApplicationInfos interfaces with one hap.
+     * @tc.desc   Test getApplicationInfos interfaces with one hap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetAllApplicationInfoPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
         let datainfo = await demo.getAllApplicationInfo(demo.BundleFlag.GET_APPLICATION_INFO_WITH_PERMISSION, userId);
@@ -133,9 +136,12 @@ describe('ActsBundleManagerTest', function () {
     }
 
     /**
+     * @tc.name   testGetAllApplicationInfoCallback
      * @tc.number Sub_Bms_Framework_Query_AppInfo_0940
-     * @tc.name testGetAllApplicationInfoCallback
-     * @tc.desc Test getApplicationInfos interfaces with one hap.
+     * @tc.desc   Test getApplicationInfos interfaces with one hap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetAllApplicationInfoCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         await demo.getAllApplicationInfo(demo.BundleFlag.GET_APPLICATION_INFO_WITH_PERMISSION,
@@ -156,9 +162,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetAllBundleInfoPromise
      * @tc.number Sub_Bms_Framework_Query_AppInfo_2460
-     * @tc.name testGetAllBundleInfoPromise
-     * @tc.desc Test getBundleInfos interfaces with one hap.
+     * @tc.desc   Test getBundleInfos interfaces with one hap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAllBundleInfoPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
         let data = await demo.getAllBundleInfo(demo.BundleFlag.GET_BUNDLE_DEFAULT);
@@ -184,9 +193,12 @@ describe('ActsBundleManagerTest', function () {
 
 
     /**
+     * @tc.name   testGetAllBundleInfoCallback
      * @tc.number Sub_Bms_Framework_Query_AppInfo_2560
-     * @tc.name testGetAllBundleInfoCallback
-     * @tc.desc Test getBundleInfos interfaces with one hap.
+     * @tc.desc   Test getBundleInfos interfaces with one hap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetAllBundleInfoCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         await demo.getAllBundleInfo(demo.BundleFlag.GET_BUNDLE_DEFAULT, (error, data) => {
@@ -210,9 +222,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetAllApplicationInfoTwoHapPromise
      * @tc.number Sub_Bms_Framework_Query_AppInfo_0860
-    * @tc.name testGetAllApplicationInfoTwoHapPromise
-     * @tc.desc Test getApplicationInfos interfaces with two haps.
+     * @tc.desc   Test getApplicationInfos interfaces with two haps.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetAllApplicationInfoTwoHapPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         let datainfo = await demo.getAllApplicationInfo(demo.BundleFlag.GET_APPLICATION_INFO_WITH_PERMISSION, userId);
@@ -222,9 +237,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetAllApplicationInfoDifferentParamPromise
      * @tc.number Sub_Bms_Framework_Query_AppInfo_0900
-     * @tc.name testGetAllApplicationInfoDifferentParamPromise
-     * @tc.desc Test getApplicationInfos interfaces with two haps and different param.
+     * @tc.desc   Test getApplicationInfos interfaces with two haps and different param.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetAllApplicationInfoDifferentParamPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         let datainfo = await demo.getAllApplicationInfo(demo.BundleFlag.GET_BUNDLE_DEFAULT, userId);
@@ -234,9 +252,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetAllApplicationInfoTwoHapCallback
      * @tc.number Sub_Bms_Framework_Query_AppInfo_0960
-     * @tc.name testGetAllApplicationInfoTwoHapCallback
-     * @tc.desc Test getApplicationInfos interfaces with two haps.
+     * @tc.desc   Test getApplicationInfos interfaces with two haps.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetAllApplicationInfoTwoHapCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         await demo.getAllApplicationInfo(demo.BundleFlag.GET_APPLICATION_INFO_WITH_PERMISSION,
@@ -262,10 +283,13 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetAllApplicationInfoThereHapCallback
      * @tc.number Sub_Bms_Framework_Query_AppInfo_0980
-     * @tc.name testGetAllApplicationInfoThereHapCallback
-     * @tc.desc Test getApplicationInfos interfaces with three haps.
-    */
+     * @tc.desc   Test getApplicationInfos interfaces with three haps.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testGetAllApplicationInfoThereHapCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         await demo.getAllApplicationInfo(demo.BundleFlag.GET_BUNDLE_DEFAULT, userId, (error, datainfo) => {
             for (let i = 0; i < datainfo.length; i++) {
@@ -289,9 +313,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetAllApplicationInfoDifferentParamCallback
      * @tc.number Sub_Bms_Framework_Query_AppInfo_1000
-     * @tc.name testGetAllApplicationInfoDifferentParamCallback
-     * @tc.desc Test getApplicationInfos interfaces with two haps and different param.
+     * @tc.desc   Test getApplicationInfos interfaces with two haps and different param.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetAllApplicationInfoDifferentParamCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         await demo.getAllApplicationInfo(demo.BundleFlag.GET_BUNDLE_DEFAULT, userId, (error, datainfo) => {
@@ -316,9 +343,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetAllBundleInfoTwoHapPromise
      * @tc.number Sub_Bms_Framework_Query_AppInfo_2480
-     * @tc.name testGetAllBundleInfoTwoHapPromise
-     * @tc.desc Test getBundleInfos interfaces with two haps.
+     * @tc.desc   Test getBundleInfos interfaces with two haps.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetAllBundleInfoTwoHapPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         let data = await demo.getAllBundleInfo(demo.BundleFlag.GET_BUNDLE_DEFAULT);
@@ -341,9 +371,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetAllBundleInfoTwoHapDifferentParamPromise
      * @tc.number Sub_Bms_Framework_Query_AppInfo_2520
-     * @tc.name testGetAllBundleInfoTwoHapDifferentParamPromise
-     * @tc.desc Test getBundleInfos interfaces with two haps and different param.
+     * @tc.desc   Test getBundleInfos interfaces with two haps and different param.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetAllBundleInfoTwoHapDifferentParamPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         let data = await demo.getAllBundleInfo(demo.BundleFlag.GET_BUNDLE_WITH_ABILITIES);
@@ -367,9 +400,12 @@ describe('ActsBundleManagerTest', function () {
 
 
     /**
+     * @tc.name   testGetAllBundleInfoTwoHapCallback
      * @tc.number Sub_Bms_Framework_Query_AppInfo_2580
-     * @tc.name testGetAllBundleInfoTwoHapCallback
-     * @tc.desc Test getBundleInfos interfaces with two haps.
+     * @tc.desc   Test getBundleInfos interfaces with two haps.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetAllBundleInfoTwoHapCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         await demo.getAllBundleInfo(demo.BundleFlag.GET_BUNDLE_DEFAULT, (error, data) => {
@@ -393,9 +429,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetAllBundleInfoTwoHapDifferentParamCallback
      * @tc.number Sub_Bms_Framework_Query_AppInfo_2620
-    * @tc.name testGetAllBundleInfoTwoHapDifferentParamCallback
-     * @tc.desc Test getBundleInfos interfaces with two haps and different param.
+     * @tc.desc   Test getBundleInfos interfaces with two haps and different param.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetAllBundleInfoTwoHapDifferentParamCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         await demo.getAllBundleInfo(demo.BundleFlag.GET_BUNDLE_WITH_ABILITIES, (error, data) => {
@@ -419,9 +458,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetAllBundleInfoThereHapPromise
      * @tc.number Sub_Bms_Framework_Query_AppInfo_2500
-     * @tc.name testGetAllBundleInfoThereHapPromise
-     * @tc.desc Test getBundleInfos interfaces with three haps.
+     * @tc.desc   Test getBundleInfos interfaces with three haps.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetAllBundleInfoThereHapPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         let data = await demo.getAllBundleInfo(demo.BundleFlag.GET_BUNDLE_DEFAULT);
@@ -443,9 +485,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetAllBundleInfoThereHapDifferentParamPromise
      * @tc.number Sub_Bms_Framework_Query_AppInfo_2540
-     * @tc.name testGetAllBundleInfoThereHapDifferentParamPromise
-     * @tc.desc Test getBundleInfos interfaces with three haps and different param.
+     * @tc.desc   Test getBundleInfos interfaces with three haps and different param.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetAllBundleInfoThereHapDifferentParamPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         let data = await demo.getAllBundleInfo(demo.BundleFlag.GET_BUNDLE_WITH_ABILITIES);
@@ -467,9 +512,12 @@ describe('ActsBundleManagerTest', function () {
     })
 
     /**
+     * @tc.name   testGetAllBundleInfoThereHapCallback
      * @tc.number Sub_Bms_Framework_Query_AppInfo_2600
-     * @tc.name testGetAllBundleInfoThereHapCallback
-     * @tc.desc Test getBundleInfos interfaces with three haps.
+     * @tc.desc   Test getBundleInfos interfaces with three haps.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetAllBundleInfoThereHapCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         await demo.getAllBundleInfo(demo.BundleFlag.GET_BUNDLE_DEFAULT, (error, data) => {

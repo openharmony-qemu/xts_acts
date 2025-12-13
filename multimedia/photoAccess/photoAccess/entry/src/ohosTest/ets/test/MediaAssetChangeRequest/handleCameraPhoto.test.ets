@@ -166,12 +166,12 @@ export default function handleCameraPhotoTest() {
 
 
     /**
-     * @tc.number : Sub_PhotoAccess_Helper_Save_Camera_Photo_001
-     * @tc.name : save_camera_photo_by_exist_photo_asset_001
-     * @tc.desc : add existing photoAsset as param to saveCameraPhoto interface
-     * @tc.size : MEDIUM
-     * @tc.type : Function
-     * @tc.level : Level 0
+     * @tc.name   save_camera_photo_by_exist_photo_asset_001
+     * @tc.number Sub_PhotoAccess_Helper_Save_Camera_Photo_001
+     * @tc.desc   add existing photoAsset as param to saveCameraPhoto interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('save_camera_photo_by_exist_photo_asset_001', Level.LEVEL0, async (done: Function) => {
       let testNum = 'save_camera_photo_by_exist_photo_asset_001';
@@ -179,12 +179,12 @@ export default function handleCameraPhotoTest() {
     })
 
     /**
-     * @tc.number : Sub_PhotoAccess_Helper_Discard_Camera_Photo_001
-     * @tc.name : discard_camera_photo_by_exist_photo_asset_001
-     * @tc.desc : add existing photoAsset as param to discardCameraPhoto interface, expect fail
-     * @tc.size : MEDIUM
-     * @tc.type : Function
-     * @tc.level : Level 0
+     * @tc.name   discard_camera_photo_by_exist_photo_asset_001
+     * @tc.number Sub_PhotoAccess_Helper_Discard_Camera_Photo_001
+     * @tc.desc   add existing photoAsset as param to discardCameraPhoto interface, expect fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('discard_camera_photo_by_exist_photo_asset_001', Level.LEVEL0, async (done: Function) => {
       let testNum = 'discard_camera_photo_by_exist_photo_asset_001';
@@ -192,12 +192,12 @@ export default function handleCameraPhotoTest() {
     })
 
     /**
-     * @tc.number : Sub_PhotoAccess_Helper_Save_Camera_Photo_002
-     * @tc.name : save_camera_photo_by_exist_photo_asset_002
-     * @tc.desc : add existing photoAsset as param to saveCameraPhoto interface using JPEG
-     * @tc.size : MEDIUM
-     * @tc.type : Function
-     * @tc.level : Level 0
+     * @tc.name   save_camera_photo_by_exist_photo_asset_002
+     * @tc.number Sub_PhotoAccess_Helper_Save_Camera_Photo_002
+     * @tc.desc   add existing photoAsset as param to saveCameraPhoto interface using JPEG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('save_camera_photo_by_exist_photo_asset_002', Level.LEVEL0, async (done: Function) => {
       let testNum: string = 'save_camera_photo_by_exist_photo_asset_002';
@@ -211,12 +211,12 @@ export default function handleCameraPhotoTest() {
     })
 
     /**
-     * @tc.number : Sub_PhotoAccess_Helper_Save_Camera_Photo_003
-     * @tc.name : save_camera_photo_by_exist_photo_asset_003
-     * @tc.desc : add existing photoAsset as param to saveCameraPhoto interface using HEIF
-     * @tc.size : MEDIUM
-     * @tc.type : Function
-     * @tc.level : Level 0
+     * @tc.name   save_camera_photo_by_exist_photo_asset_003
+     * @tc.number Sub_PhotoAccess_Helper_Save_Camera_Photo_003
+     * @tc.desc   add existing photoAsset as param to saveCameraPhoto interface using HEIF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('save_camera_photo_by_exist_photo_asset_003', Level.LEVEL0, async (done: Function) => {
       let testNum: string = 'save_camera_photo_by_exist_photo_asset_003';

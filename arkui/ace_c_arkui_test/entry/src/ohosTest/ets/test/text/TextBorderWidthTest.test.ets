@@ -26,52 +26,52 @@ export default function textBorderWidthTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_BORDERWIDTH_0100
-     * @tc.name       : testTextBorderWidth001
-     * @tc.desc       : testing borderwidth for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextBorderWidth001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_BORDERWIDTH_0100
+     * @tc.desc   testing borderwidth for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextBorderWidth001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextBorderWidth001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_BORDERWIDTH_0200
-     * @tc.name       : testTextBorderWidth002
-     * @tc.desc       : testing borderwidth for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextBorderWidth002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_BORDERWIDTH_0200
+     * @tc.desc   testing borderwidth for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextBorderWidth002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextBorderWidth002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_BORDERWIDTH_0300
-     * @tc.name       : testTextBorderWidth003
-     * @tc.desc       : testing borderwidth for text with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextBorderWidth003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_BORDERWIDTH_0300
+     * @tc.desc   testing borderwidth for text with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextBorderWidth003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextBorderWidth003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_BORDERWIDTH_0400
-     * @tc.name       : testTextBorderWidth004
-     * @tc.desc       : testing borderwidth for text with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextBorderWidth004
+     * @tc.number SUB_ARKUI_CAPI_TEXT_BORDERWIDTH_0400
+     * @tc.desc   testing borderwidth for text with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextBorderWidth004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextBorderWidth004()).assertEqual(0)

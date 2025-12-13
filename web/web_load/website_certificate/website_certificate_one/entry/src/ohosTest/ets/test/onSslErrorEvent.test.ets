@@ -57,14 +57,14 @@ export default function onSslErrorEvent() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_SSlERROREVENT_0100
-    * @tc.name        : testonSslErrorEvent001
-    * @tc.desc        : test testonSslErrorEvent001 when start play audio
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 2
-    */
+    /**
+     * @tc.name   testonSslErrorEvent001
+     * @tc.number SUB_WEB_SSlERROREVENT_0100
+     * @tc.desc   test testonSslErrorEvent001 when start play audio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testonSslErrorEvent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitonSslErrorEvent", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;

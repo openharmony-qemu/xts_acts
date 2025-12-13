@@ -26,39 +26,39 @@ export default function relativecontaineBarrierOptionTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_RELATIVE_CONTAINER_BARRIER_0100
-     * @tc.name       : testRelativeContaineBarrierOption001
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRelativeContaineBarrierOption001
+     * @tc.number SUB_ARKUI_CAPI_RELATIVE_CONTAINER_BARRIER_0100
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRelativeContaineBarrierOption001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRelativeContaineBarrierOption001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_RELATIVE_CONTAINER_BARRIER_0200
-     * @tc.name       : testRelativeContaineBarrierOption002
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRelativeContaineBarrierOption002
+     * @tc.number SUB_ARKUI_CAPI_RELATIVE_CONTAINER_BARRIER_0200
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRelativeContaineBarrierOption002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRelativeContaineBarrierOption002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_RELATIVE_CONTAINER_BARRIER_0300
-     * @tc.name       : testRelativeContaineBarrierOption003
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRelativeContaineBarrierOption003
+     * @tc.number SUB_ARKUI_CAPI_RELATIVE_CONTAINER_BARRIER_0300
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRelativeContaineBarrierOption003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRelativeContaineBarrierOption003()).assertEqual(0)

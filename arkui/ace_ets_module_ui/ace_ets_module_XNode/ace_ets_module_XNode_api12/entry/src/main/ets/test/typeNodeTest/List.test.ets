@@ -40,12 +40,12 @@ export default function typeNodeListTest() {
       done();
     });
     /**
-     * @tc.number    ListTest_0100
-     * @tc.name      ListTest_0100
-     * @tc.desc      TypedFrameNode: List
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ListTest_0100
+     * @tc.number ListTest_0100
+     * @tc.desc   TypedFrameNode: List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ListTest_0100 START');

@@ -131,12 +131,12 @@ export default function bluetoothCApiTest() {
     afterAll(() => {
     })
     /**
-     * @tc.number: SUB_COMMUNICATION_BLUETOOTH_NAPI_0100
-     * @tc.name: testOHBluetoothGetBluetoothSwitchState
-     * @tc.desc: test OH_Bluetooth_GetBluetoothSwitchState
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_NAPI_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_NAPI_0100
+     * @tc.desc   test OH_Bluetooth_GetBluetoothSwitchState
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_COMMUNICATION_BLUETOOTH_NAPI_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {

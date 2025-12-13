@@ -16,12 +16,26 @@ export  function start1 (){
   return testNapi.start(100,  1000);
 }
 
+@Concurrent
+export  function start2 (){
+  return testNapi.start(100,  10000);
+}
 
+@Concurrent
+export  function start3 (){
+  return testNapi.start(100,  15000);
+}
 
 export default function hidebughiperfTest() {
   describe('ActsHidebugHiperfTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll (async () => {
+      for (let i = 0; i < 12; i++) {
+        testNapi.addthread(55);
+      }
+      console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0000 wait");
+      await asyncSleep(1000);
+      console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0000 end");
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -36,12 +50,10 @@ export default function hidebughiperfTest() {
       // This API supports only one parameter: clear action function.
     })
     afterAll(() => {
+      testNapi.clearthreads();
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-
-
-
 
     /**
      * @tc.number SUB_DFX_DFR_Hidebug_Hiperf_Interface_0100
@@ -52,17 +64,15 @@ export default function hidebughiperfTest() {
      * @tc.level Level3
      */
     it('testHidebugHiperfInterface01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0200 start");
+      console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0100 start");
       try {
         let path: string = '/data/storage/el2/base/files/' ;
         console.info("output path: " + path);
         let freeSize = await statfs.getFreeSize(path);
         if (freeSize > 30 * 1024 * 1024 * 1024) {
-          testNapi.addthread(20);
-          await asyncSleep(100);
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0100 addthread end");
+          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0100 start01");
           let errcode = testNapi.start(1000,  2000);
-          expect(errcode == 0)
+          expect(errcode).assertEqual(0);
           console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0100 record success");
         }
         done();
@@ -88,11 +98,9 @@ export default function hidebughiperfTest() {
         console.info("output path: " + path);
         let freeSize = await statfs.getFreeSize(path);
         if (freeSize > 30 * 1024 * 1024 * 1024) {
-          testNapi.addthread(20);
-          await asyncSleep(100);
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0200 addthread end");
+          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0200 start01");
           let errcode = testNapi.start(0, 2000);
-          expect(errcode == 0)
+          expect(errcode).assertEqual(0)
           console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0200 record success");
         }
         done();
@@ -118,11 +126,9 @@ export default function hidebughiperfTest() {
         console.info("output path: " + path);
         let freeSize = await statfs.getFreeSize(path);
         if (freeSize > 30 * 1024 * 1024 * 1024) {
-          testNapi.addthread(20);
-          await asyncSleep(100);
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0300 start");
+          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0300 start01");
           let errcode = testNapi.start(100, 100);
-          expect(errcode == 401)
+          expect(errcode).assertEqual(401)
           console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0300 record success");
         }
         done();
@@ -136,7 +142,7 @@ export default function hidebughiperfTest() {
     /**
      * @tc.number SUB_DFX_DFR_Hidebug_Hiperf_Interface_0400
      * @tc.name testHidebugHiperfInterface04
-     * @tc.desc 时长设置范围[1000,10000] 时长设置大于 10000ms可以正常采集，自动默认设置为采集10000mS
+     * @tc.desc 时长设置范围[1000,10000] 时长设置等于 10000ms可以正常采集
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level3
@@ -144,17 +150,15 @@ export default function hidebughiperfTest() {
     it('testHidebugHiperfInterface04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0400 start");
       try {
-        let path: string = '/data/storage/el2/base/files/' ;
-        console.info("output path: " + path);
-        let freeSize = await statfs.getFreeSize(path);
-        if (freeSize > 30 * 1024 * 1024 * 1024) {
-          testNapi.addthread(20);
-          await asyncSleep(100);
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0400 addthread end");
-          let errcode = testNapi.start(100, 100000);
-          expect(errcode == 0)
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0400 record success");
-        }
+         let path: string = '/data/storage/el2/base/files/' ;
+         console.info("output path: " + path);
+         let freeSize = await statfs.getFreeSize(path);
+         if (freeSize > 30 * 1024 * 1024 * 1024) {
+           console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0400 start01");
+           let ret = await taskpool.execute(start2)
+           console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0400 errcode2" + ret);
+           expect(ret == 0).assertTrue()
+         }
         done();
       } catch (err) {
         console.error(`====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0400 > err code: ${err.code}, err msg: ${err.message}`)
@@ -178,11 +182,10 @@ export default function hidebughiperfTest() {
         console.info("output path: " + path);
         let freeSize = await statfs.getFreeSize(path);
         if (freeSize > 30 * 1024 * 1024 * 1024) {
-          testNapi.addthread(20);
-          await asyncSleep(100);
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0500 addthread end");
-          let errcode = testNapi.start(100, 1000);
-          expect(errcode == 0)
+          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0500 start01");
+          let ret = testNapi.start(100, 1000);
+          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0500 start01" + ret);
+          expect(ret).assertEqual(0)
           console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0500 record success");
         }
         done();
@@ -208,19 +211,20 @@ export default function hidebughiperfTest() {
         console.info("output path: " + path);
         let freeSize = await statfs.getFreeSize(path);
         if (freeSize > 30 * 1024 * 1024 * 1024) {
-          testNapi.addthread(20);
-          await asyncSleep(100);
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0600 addthread end");
-          taskpool.execute(start1)
+          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0600 start01");
+          taskpool.execute(start1).then(ret => {
+            console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0600 recording"+ ret);
+            expect(ret == 0).assertTrue();
+            done();
+          })
           let errcode = await taskpool.execute(start1)
           await asyncSleep(1000);
           console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0600 errcode" + errcode);
           expect(errcode == 11400301)
-          testNapi.start(100, 1000);
-          await asyncSleep(1000);
           console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0600 record end");
+        }else{
+          done();
         }
-        done();
       } catch (err) {
         console.error(`====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0600 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
@@ -243,6 +247,7 @@ export default function hidebughiperfTest() {
         console.info("output path: " + path);
         let freeSize = await statfs.getFreeSize(path);
         if (freeSize > 30 * 1024 * 1024 * 1024) {
+          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0700 start 01");
           let result: number = testNapi.starterrstack();
           console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0700 result" + result);
           expect(result == 401).assertTrue()
@@ -271,6 +276,7 @@ export default function hidebughiperfTest() {
         console.info("output path: " + path);
         let freeSize = await statfs.getFreeSize(path);
         if (freeSize > 30 * 1024 * 1024 * 1024) {
+          console.info("====>  SUB_DFX_DFR_Hidebug_Hiperf_Interface_0800 start 01");
           let result: number = testNapi.starterrconfig();
           console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0800 result" + result);
           expect(result == 401).assertTrue()
@@ -299,6 +305,7 @@ export default function hidebughiperfTest() {
         console.info("output path: " + path);
         let freeSize = await statfs.getFreeSize(path);
         if (freeSize > 30 * 1024 * 1024 * 1024) {
+          console.info("====>  SUB_DFX_DFR_Hidebug_Hiperf_Interface_0900 start01");
           let result: number = testNapi.starterrconfigtid();
           console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0900 result" + result);
           expect(result == 401).assertTrue()
@@ -315,7 +322,7 @@ export default function hidebughiperfTest() {
     /**
      * @tc.number SUB_DFX_DFR_Hidebug_Hiperf_Interface_1000
      * @tc.name testHidebugHiperfInterface10
-     * @tc.desc 栈深度设置成100层，频率设置为 100，时长设置为1000ms可以正常采集,拋出401错误码
+     * @tc.desc 栈深度设置成100层，频率设置为 100，时长设置为1000ms可以正常采集
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level3
@@ -327,11 +334,9 @@ export default function hidebughiperfTest() {
         console.info("output path: " + path);
         let freeSize = await statfs.getFreeSize(path);
         if (freeSize > 30 * 1024 * 1024 * 1024) {
-          testNapi.addthread(100);
-          await asyncSleep(100);
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1000 addthread end");
+          console.info("====>  SUB_DFX_DFR_Hidebug_Hiperf_Interface_1000 start01");
           let errcode = testNapi.start(100, 1000);
-          expect(errcode == 0)
+          expect(errcode).assertEqual(0);
           console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1000 record success");
         }
         done();
@@ -357,13 +362,9 @@ export default function hidebughiperfTest() {
         console.info("output path: " + path);
         let freeSize = await statfs.getFreeSize(path);
         if (freeSize > 30 * 1024 * 1024 * 1024) {
-          for (let i = 0; i < 12; i++) {
-            testNapi.addthread(100);
-            await asyncSleep(100);
-          }
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1100 addthread end");
+          console.info("====>  SUB_DFX_DFR_Hidebug_Hiperf_Interface_1100 start01");
           let errcode = testNapi.start(100, 1000);
-          expect(errcode == 0)
+          expect(errcode).assertEqual(0);
           console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1100 record success");
         }
         done();
@@ -376,6 +377,40 @@ export default function hidebughiperfTest() {
     });
 
 
+    /**
+     * @tc.number SUB_DFX_DFR_Hidebug_Hiperf_Interface_1200
+     * @tc.name testHidebugHiperfInterface12
+     * @tc.desc 时长设置范围[1000,10000] ,时长设置大于 10000ms可以正常采集，自动默认设置为采集10000mS
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level3
+     */
+    it('testHidebugHiperfInterface12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1200 start");
+      try {
+         let path: string = '/data/storage/el2/base/files/' ;
+         console.info("output path: " + path);
+         let freeSize = await statfs.getFreeSize(path);
+         if (freeSize > 30 * 1024 * 1024 * 1024) {
+           console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1200 start01");
+           const startTime = Date.now();
+           let ret = await taskpool.execute(start3);
+           const endTime = Date.now();
+           const executionTime = endTime - startTime;
+           console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1200 executionTime" + executionTime);
+           expect(executionTime).assertLess(11*1000);
+           expect(executionTime).assertLargerOrEqual(10*1000);
+           console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1200 errcode2" + ret);
+           expect(ret == 0).assertTrue()
+         }
+        done();
+      } catch (err) {
+        console.error(`====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1200 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1200 end");
+    });
 
   })
 }

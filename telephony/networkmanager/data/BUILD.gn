@@ -20,6 +20,7 @@ group("data") {
     "cellular_data_abnormal:ActsCellularDataAbnormalTest",
     "cellular_data_abnormal_nop:ActsCellularDataAbnormalNopTest",
     "datatest:ActsDataHasCardNoNetTest",
+    "dataHasDoubleCard:ActsNetworkMgrDataHasDoubleCardTest",
 "ActsCellularDataAbnormalNopTestStatic:ActsCellularDataAbnormalNopStaticTest",
 "ActsTelephonyDataHasCardTestStatic:ActsTelephonyDataHasCardStaticTest",
 "ActsTelephonyDataNoCardTestStatic:ActsTelephonyDataNoCardStaticTest"

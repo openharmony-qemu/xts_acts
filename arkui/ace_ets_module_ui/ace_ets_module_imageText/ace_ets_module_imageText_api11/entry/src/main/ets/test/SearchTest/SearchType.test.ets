@@ -42,12 +42,12 @@ export default function SearchTypeTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SearchTypeTest_0010
-     * @tc.name      SearchTypeTest_0010
-     * @tc.desc      test Search: SearchType.NORMAL
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SearchTypeTest_0010
+     * @tc.number SUB_ACE_SearchTypeTest_0010
+     * @tc.desc   test Search: SearchType.NORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SearchTypeTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('[SearchTypeTest_0010] START');
@@ -60,12 +60,12 @@ export default function SearchTypeTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SearchTypeTest_0020
-     * @tc.name      SearchTypeTest_0020
-     * @tc.desc      test Search: SearchType.NUMBER
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SearchTypeTest_0020
+     * @tc.number SUB_ACE_SearchTypeTest_0020
+     * @tc.desc   test Search: SearchType.NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SearchTypeTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('[SearchTypeTest_0020] START');

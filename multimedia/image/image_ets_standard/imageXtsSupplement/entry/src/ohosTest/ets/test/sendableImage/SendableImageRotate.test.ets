@@ -76,12 +76,12 @@ export default function SendableImageRotateTest() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001_0001
-     * @tc.name       SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001
-     * @tc.desc       Test angle with Value
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_ROTATE_TEST_0001
+     * @tc.number SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001_0001
+     * @tc.desc   Test angle with Value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_ROTATE_TEST_0001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_ROTATE_TEST_0001';
@@ -92,12 +92,12 @@ export default function SendableImageRotateTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001_0002
-     * @tc.name       SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0002
-     * @tc.desc       Test angle with Value
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_ROTATE_TEST_0002
+     * @tc.number SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001_0002
+     * @tc.desc   Test angle with Value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_ROTATE_TEST_0002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_ROTATE_TEST_0002';
@@ -108,12 +108,12 @@ export default function SendableImageRotateTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001_0003
-     * @tc.name       SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0003
-     * @tc.desc       Test angle with Value
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_ROTATE_TEST_0003
+     * @tc.number SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001_0003
+     * @tc.desc   Test angle with Value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_ROTATE_TEST_0003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_ROTATE_TEST_0003';
@@ -124,12 +124,12 @@ export default function SendableImageRotateTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001_0004
-     * @tc.name       SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0004
-     * @tc.desc       Test angle with Value
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_ROTATE_TEST_0004
+     * @tc.number SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001_0004
+     * @tc.desc   Test angle with Value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_ROTATE_TEST_0004', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_ROTATE_TEST_0004';
@@ -140,12 +140,12 @@ export default function SendableImageRotateTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001_0005
-     * @tc.name       SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0005
-     * @tc.desc       Test angle with Value
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_ROTATE_TEST_0005
+     * @tc.number SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001_0005
+     * @tc.desc   Test angle with Value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_ROTATE_TEST_0005', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_ROTATE_TEST_0005';
@@ -156,12 +156,12 @@ export default function SendableImageRotateTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001_0006
-     * @tc.name       SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0006
-     * @tc.desc       Test angle with Value
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_ROTATE_TEST_0006
+     * @tc.number SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001_0006
+     * @tc.desc   Test angle with Value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_ROTATE_TEST_0006', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_ROTATE_TEST_0006';
@@ -172,12 +172,12 @@ export default function SendableImageRotateTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001_0007
-     * @tc.name       SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0007
-     * @tc.desc       Test angle with Value
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_ROTATE_TEST_0007
+     * @tc.number SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001_0007
+     * @tc.desc   Test angle with Value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_ROTATE_TEST_0007', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_ROTATE_TEST_0007';
@@ -188,12 +188,12 @@ export default function SendableImageRotateTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001_0008
-     * @tc.name       SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0008
-     * @tc.desc       Test angle with Value
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_ROTATE_TEST_0008
+     * @tc.number SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001_0008
+     * @tc.desc   Test angle with Value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_ROTATE_TEST_0008', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_ROTATE_TEST_0008';
@@ -204,12 +204,12 @@ export default function SendableImageRotateTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001_0009
-     * @tc.name       SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0009
-     * @tc.desc       Test angle with Value
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_ROTATE_TEST_0009
+     * @tc.number SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001_0009
+     * @tc.desc   Test angle with Value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_ROTATE_TEST_0009', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_ROTATE_TEST_0009';
@@ -220,12 +220,12 @@ export default function SendableImageRotateTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001_0010
-     * @tc.name       SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0010
-     * @tc.desc       Test angle with Value
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_ROTATE_TEST_0010
+     * @tc.number SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001_0010
+     * @tc.desc   Test angle with Value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_ROTATE_TEST_0010', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_ROTATE_TEST_0010';
@@ -236,12 +236,12 @@ export default function SendableImageRotateTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001_0011
-     * @tc.name       SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0011
-     * @tc.desc       Test angle with Value
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_ROTATE_TEST_0011
+     * @tc.number SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001_0011
+     * @tc.desc   Test angle with Value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_ROTATE_TEST_0011', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_ROTATE_TEST_0011';
@@ -252,12 +252,12 @@ export default function SendableImageRotateTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001_0012
-     * @tc.name       SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0012
-     * @tc.desc       Test angle with Value
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_ROTATE_TEST_0012
+     * @tc.number SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001_0012
+     * @tc.desc   Test angle with Value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_ROTATE_TEST_0012', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_ROTATE_TEST_0012';
@@ -268,12 +268,12 @@ export default function SendableImageRotateTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001_0013
-     * @tc.name       SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0013
-     * @tc.desc       Test angle with Value
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_ROTATE_TEST_0013
+     * @tc.number SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001_0013
+     * @tc.desc   Test angle with Value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_ROTATE_TEST_0013', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_ROTATE_TEST_0013';
@@ -284,12 +284,12 @@ export default function SendableImageRotateTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001_0014
-     * @tc.name       SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0014
-     * @tc.desc       Test angle with Value
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_ROTATE_TEST_0014
+     * @tc.number SUB_MEDIA_SENDABLE_IMAGE_ROTATE_TEST_0001_0014
+     * @tc.desc   Test angle with Value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_ROTATE_TEST_0014', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_ROTATE_TEST_0014';

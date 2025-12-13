@@ -57,12 +57,12 @@ export default function VectorStoreTest() {
     });
     console.info(TAG + "*************Unit Test Begin*************");
     /**
-     * @tc.name VectorStoreTest0100
+     * @tc.name   VectorStoreTest0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_VectorEtsAPITest_0100
-     * @tc.desc VectorEtsAPITest isVectorSupported
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   VectorEtsAPITest isVectorSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('VectorStoreTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let TAGTEST = TAG + " testRdbStoreIcuInsert0100 ";
@@ -121,12 +121,12 @@ export default function VectorStoreTest() {
       console.info(TAGTEST + " ************* End*************");
     });
     /**
-     * @tc.name VectorStoreTest0200
+     * @tc.name   VectorStoreTest0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_VectorEtsAPITest_0200
-     * @tc.desc VectorEtsAPITest isVectorSupported
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   VectorEtsAPITest isVectorSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('VectorStoreTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let TAGTEST = TAG + " VectorStoreTest0200 ";
@@ -174,12 +174,12 @@ export default function VectorStoreTest() {
       console.info(TAGTEST + " ************* End*************");
     });
     /**
-     * @tc.name VectorStoreTest0300
+     * @tc.name   VectorStoreTest0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_VectorEtsAPITest_0300
-     * @tc.desc VectorEtsAPITest isVectorSupported
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   VectorEtsAPITest isVectorSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('VectorStoreTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let TAGTEST = TAG + " VectorStoreTest0300 ";
@@ -227,12 +227,12 @@ export default function VectorStoreTest() {
       console.info(TAGTEST + " ************* End*************");
     });
     /**
-     * @tc.name VectorStoreTest0400
+     * @tc.name   VectorStoreTest0400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_VectorEtsAPITest_0400
-     * @tc.desc VectorEtsAPITest isVectorSupported
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   VectorEtsAPITest isVectorSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('VectorStoreTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let TAGTEST = TAG + " VectorStoreTest0400 ";
@@ -279,12 +279,12 @@ export default function VectorStoreTest() {
       console.info(TAGTEST + " ************* End*************");
     });
     /**
-     * @tc.name VectorStoreTest0500
+     * @tc.name   VectorStoreTest0500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_VectorEtsAPITest_0500
-     * @tc.desc VectorEtsAPITest isVectorSupported
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   VectorEtsAPITest isVectorSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('VectorStoreTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let TAGTEST = TAG + " VectorStoreTest0500 ";
@@ -331,12 +331,12 @@ export default function VectorStoreTest() {
       console.info(TAGTEST + " ************* End*************");
     });
     /**
-     * @tc.name VectorStoreTest0600
+     * @tc.name   VectorStoreTest0600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_VectorEtsAPITest_0600
-     * @tc.desc isVectorSupported test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   isVectorSupported test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('VectorStoreTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let TAGTEST = TAG + " VectorStoreTest0600 ";

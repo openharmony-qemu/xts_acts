@@ -41,12 +41,12 @@ export default function cameraEnumTest() {
 
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_CAMERASTATUS_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_CAMERASTATUS_STATIC_0100
-      * @tc.desc   Camera CameraStatus Eunm
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_CAMERASTATUS_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_CAMERASTATUS_STATIC_0100
+     * @tc.desc   Camera CameraStatus Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_CAMERASTATUS_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_CAMERASTATUS_STATIC_0100--------------");
@@ -60,12 +60,12 @@ export default function cameraEnumTest() {
 
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAPOSITION_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAPOSITION_STATIC_0100
-      * @tc.desc   Camera CameraPosition Eunm
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAPOSITION_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAPOSITION_STATIC_0100
+     * @tc.desc   Camera CameraPosition Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAPOSITION_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAPOSITION_STATIC_0100--------------");
@@ -78,12 +78,12 @@ export default function cameraEnumTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_SCENEMODE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_SCENEMODE_STATIC_0100
-      * @tc.desc   Camera ScenMode Eunm
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_SCENEMODE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_SCENEMODE_STATIC_0100
+     * @tc.desc   Camera ScenMode Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_SCENEMODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_SCENEMODE_STATIC_0100--------------");
@@ -94,12 +94,12 @@ export default function cameraEnumTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_CAMERATYPE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_CAMERATYPE_STATIC_0100
-      * @tc.desc   Camera CameraType Eunm
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_CAMERATYPE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_CAMERATYPE_STATIC_0100
+     * @tc.desc   Camera CameraType Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_CAMERATYPE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_CAMERATYPE_STATIC_0100--------------");
@@ -114,12 +114,12 @@ export default function cameraEnumTest() {
 
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_CONNECTIONTYPE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_CONNECTIONTYPE_STATIC_0100
-      * @tc.desc   Camera ConnectionType Eunm
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_CONNECTIONTYPE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_CONNECTIONTYPE_STATIC_0100
+     * @tc.desc   Camera ConnectionType Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_CONNECTIONTYPE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_CONNECTIONTYPE_STATIC_0100--------------");
@@ -132,12 +132,12 @@ export default function cameraEnumTest() {
 
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAFORMAT_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAFORMAT_STATIC_0100
-      * @tc.desc   Camera CameraFormat Eunm
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAFORMAT_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAFORMAT_STATIC_0100
+     * @tc.desc   Camera CameraFormat Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAFORMAT_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAFORMAT_STATIC_0100--------------");
@@ -155,12 +155,12 @@ export default function cameraEnumTest() {
 
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_FLASHMODE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_FLASHMODE_STATIC_0100
-      * @tc.desc   Camera FlashMode Eunm
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_FLASHMODE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_FLASHMODE_STATIC_0100
+     * @tc.desc   Camera FlashMode Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_FLASHMODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_FLASHMODE_STATIC_0100--------------");
@@ -174,12 +174,12 @@ export default function cameraEnumTest() {
 
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_EXPOSUREMODE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_EXPOSUREMODE_STATIC_0100
-      * @tc.desc   CameraExposureMode  Eunm
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_EXPOSUREMODE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_EXPOSUREMODE_STATIC_0100
+     * @tc.desc   CameraExposureMode  Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_EXPOSUREMODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_EXPOSUREMODE_STATIC_0100--------------");
@@ -192,12 +192,12 @@ export default function cameraEnumTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_FOCUSMODE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_FOCUSMODE_STATIC_0100
-      * @tc.desc   Camera FocusMode Eunm
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_FOCUSMODE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_FOCUSMODE_STATIC_0100
+     * @tc.desc   Camera FocusMode Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_FOCUSMODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_FOCUSMODE_STATIC_0100--------------");
@@ -211,12 +211,12 @@ export default function cameraEnumTest() {
 
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_FOCUSSTATE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_FOCUSSTATE_STATIC_0100
-      * @tc.desc   Camera FocusState Eunm
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_FOCUSSTATE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_FOCUSSTATE_STATIC_0100
+     * @tc.desc   Camera FocusState Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_FOCUSSTATE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_FOCUSSTATE_STATIC_0100--------------");
@@ -229,12 +229,12 @@ export default function cameraEnumTest() {
 
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_VIDEOSTABILIZATIONMODE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_VIDEOSTABILIZATIONMODE_STATIC_0100
-      * @tc.desc   Camera VideoStabilizationMode Eunm
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_VIDEOSTABILIZATIONMODE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_VIDEOSTABILIZATIONMODE_STATIC_0100
+     * @tc.desc   Camera VideoStabilizationMode Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_VIDEOSTABILIZATIONMODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_VIDEOSTABILIZATIONMODE_STATIC_0100--------------");
@@ -249,12 +249,12 @@ export default function cameraEnumTest() {
 
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_IMAGEROTATION_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_IMAGEROTATION_STATIC_0100
-      * @tc.desc   Camera ImageRotation Eunm
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_IMAGEROTATION_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_IMAGEROTATION_STATIC_0100
+     * @tc.desc   Camera ImageRotation Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_IMAGEROTATION_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_IMAGEROTATION_STATIC_0100--------------");
@@ -268,12 +268,12 @@ export default function cameraEnumTest() {
 
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_QUALITYLEVEL_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_QUALITYLEVEL_STATIC_0100
-      * @tc.desc   Camera QualityLevel Eunm
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_QUALITYLEVEL_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_QUALITYLEVEL_STATIC_0100
+     * @tc.desc   Camera QualityLevel Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_QUALITYLEVEL_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_QUALITYLEVEL_STATIC_0100--------------");
@@ -286,12 +286,12 @@ export default function cameraEnumTest() {
 
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_METADATAOBJECTTYPE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_METADATAOBJECTTYPE_STATIC_0100
-      * @tc.desc   Camera MetadataObjectType Eunm
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_METADATAOBJECTTYPE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_METADATAOBJECTTYPE_STATIC_0100
+     * @tc.desc   Camera MetadataObjectType Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_METADATAOBJECTTYPE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_METADATAOBJECTTYPE_STATIC_0100--------------");
@@ -304,12 +304,12 @@ export default function cameraEnumTest() {
 
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAERRORCODE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAERRORCODE_STATIC_0100
-      * @tc.desc   Camera CameraErrorCode Eunm
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAERRORCODE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAERRORCODE_STATIC_0100
+     * @tc.desc   Camera CameraErrorCode Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAERRORCODE_STATIC_0100--------------");
@@ -338,12 +338,12 @@ export default function cameraEnumTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_TORCH_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_TORCH_STATIC_0100
-      * @tc.desc   assert all torchMode
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_TORCH_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_TORCH_STATIC_0100
+     * @tc.desc   assert all torchMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_TORCH_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       expect(camera.TorchMode.OFF == 0).assertTrue();
@@ -356,12 +356,12 @@ export default function cameraEnumTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_VIDEOCODECTYPE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_VIDEOCODECTYPE_STATIC_0100
-      * @tc.desc   assert all VideoCodecType
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_VIDEOCODECTYPE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_VIDEOCODECTYPE_STATIC_0100
+     * @tc.desc   assert all VideoCodecType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_VIDEOCODECTYPE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       expect(camera.VideoCodecType.AVC == 0).assertTrue();
@@ -372,12 +372,12 @@ export default function cameraEnumTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_PRECONFIG_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_PRECONFIG_STATIC_0100
-      * @tc.desc   assert all preconfig type enums
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_PRECONFIG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_PRECONFIG_STATIC_0100
+     * @tc.desc   assert all preconfig type enums
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_PRECONFIG_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       expect(camera.PreconfigType.PRECONFIG_720P == 0).assertTrue();
@@ -392,12 +392,12 @@ export default function cameraEnumTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_PRECONFIG_STATIC_0101
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_PRECONFIG_STATIC_0101
-      * @tc.desc   assert all preconfig ratio enums
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_PRECONFIG_STATIC_0101
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_PRECONFIG_STATIC_0101
+     * @tc.desc   assert all preconfig ratio enums
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_PRECONFIG_STATIC_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       expect(camera.PreconfigRatio.PRECONFIG_RATIO_1_1 == 0).assertTrue();
@@ -410,12 +410,12 @@ export default function cameraEnumTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_FOLD_STATUS_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_FOLD_STATUS_STATIC_0100
-      * @tc.desc   assert all fold status enums
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_FOLD_STATUS_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_FOLD_STATUS_STATIC_0100
+     * @tc.desc   assert all fold status enums
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_FOLD_STATUS_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       expect(camera.FoldStatus.NON_FOLDABLE == 0).assertTrue();
@@ -428,12 +428,12 @@ export default function cameraEnumTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_SMOOTH_ZOOM_MODE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_SMOOTH_ZOOM_MODE_STATIC_0100
-      * @tc.desc   assert all smooth zoom mode enums
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_SMOOTH_ZOOM_MODE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_SMOOTH_ZOOM_MODE_STATIC_0100
+     * @tc.desc   assert all smooth zoom mode enums
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_SMOOTH_ZOOM_MODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       expect(camera.SmoothZoomMode.NORMAL == 0).assertTrue();
@@ -442,12 +442,12 @@ export default function cameraEnumTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_CONCURRENT_TYPE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_CONCURRENT_TYPE_STATIC_0100
-      * @tc.desc   assert all concurrent type  enums
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_CONCURRENT_TYPE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_CONCURRENT_TYPE_STATIC_0100
+     * @tc.desc   assert all concurrent type  enums
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_CONCURRENT_TYPE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       expect(camera.CameraConcurrentType.CAMERA_LIMITED_CAPABILITY == 0).assertTrue();
@@ -458,12 +458,12 @@ export default function cameraEnumTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_SYSTEM_PRESSURE_LEVEL_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_SYSTEM_PRESSURE_LEVEL_STATIC_0100
-      * @tc.desc   assert all system pressure level enums
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_SYSTEM_PRESSURE_LEVEL_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_SYSTEM_PRESSURE_LEVEL_STATIC_0100
+     * @tc.desc   assert all system pressure level enums
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_SYSTEM_PRESSURE_LEVEL_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       expect(camera.SystemPressureLevel.SYSTEM_PRESSURE_NORMAL == 0).assertTrue();

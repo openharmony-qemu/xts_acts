@@ -46,14 +46,14 @@ export default function httpRequestDestroyTest() {
 
     describe("HttpRequestDestroyTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
-     /* *
-      * @tc.number:  SUB_NetworkMgr_Http_createHttp_0100
-      * @tc.name:    testNetworkMgrHttpCreateHttp_static_0100
-      * @tc.desc:    test createHttp
-      * @tc.size:    MediumTest
-      * @tc.type:    Function
-      * @tc.level:   level 0
-      */
+        /**
+         * @tc.name   testNetworkMgrHttpCreateHttp_static_0100
+         * @tc.number SUB_NetworkMgr_Http_createHttp_0100
+         * @tc.desc   test createHttp
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testNetworkMgrHttpCreateHttp_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             const caseName: string = "testNetworkMgrHttpCreateHttp_static_0100";
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -79,13 +79,13 @@ export default function httpRequestDestroyTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Request_0200
-         * @tc.name:    testNetworkMgrHttpRequest_static_0200
-         * @tc.desc:    test Request
-         * @tc.size:    MediumTest
-         * @tc.type:    Function
-         * @tc.level:   level 0
+        /**
+         * @tc.name   testNetworkMgrHttpRequest_static_0200
+         * @tc.number SUB_NetworkMgr_Http_Request_0200
+         * @tc.desc   test Request
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testNetworkMgrHttpRequest_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             const caseName: string = "testNetworkMgrHttpRequest_static_0200";
@@ -123,13 +123,13 @@ export default function httpRequestDestroyTest() {
         });
 
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Request_0400
-         * @tc.name:    testNetworkMgrHttpRequest_static_0400
-         * @tc.desc:    test Request
-         * @tc.size:    MediumTest
-         * @tc.type:    Function
-         * @tc.level:   level 0
+        /**
+         * @tc.name   testNetworkMgrHttpRequest_static_0400
+         * @tc.number SUB_NetworkMgr_Http_Request_0400
+         * @tc.desc   test Request
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testNetworkMgrHttpRequest_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             const caseName: string = "testNetworkMgrHttpRequest_static_0400";
@@ -167,13 +167,13 @@ export default function httpRequestDestroyTest() {
 
 
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Request_0600
-         * @tc.name  :  testHttpRequest_static_0600
-         * @tc.desc  :  test Request with illegal url
-         * @tc.size  :  MediumTest
-         * @tc.type  :  method
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequest_static_0600
+         * @tc.number SUB_NetworkMgr_Http_Request_0600
+         * @tc.desc   test Request with illegal url
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequest_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequest_static_0600";
@@ -210,13 +210,13 @@ export default function httpRequestDestroyTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Request_0700
-         * @tc.name  :  testHttpRequest_static_0700
-         * @tc.desc  :  test Request with illegal url
-         * @tc.size  :  MediumTest
-         * @tc.type  :  method
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequest_static_0700
+         * @tc.number SUB_NetworkMgr_Http_Request_0700
+         * @tc.desc   test Request with illegal url
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequest_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequest_static_0700";
@@ -253,13 +253,13 @@ export default function httpRequestDestroyTest() {
         });
 
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Destroy_0800
-         * @tc.name:    testHttpDestroy_static_0800
-         * @tc.desc:    test destroy
-         * @tc.size:    MediumTest
-         * @tc.type:    Function
-         * @tc.level:   level 2
+        /**
+         * @tc.name   testHttpDestroy_static_0800
+         * @tc.number SUB_NetworkMgr_Http_Destroy_0800
+         * @tc.desc   test destroy
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpDestroy_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpDestroy_static_0800";
@@ -295,13 +295,13 @@ export default function httpRequestDestroyTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Destroy_0900
-         * @tc.name:    testHttpDestroy_static_0900
-         * @tc.desc:    test destroy
-         * @tc.size:    MediumTest
-         * @tc.type:    Function
-         * @tc.level:   level 2
+        /**
+         * @tc.name   testHttpDestroy_static_0900
+         * @tc.number SUB_NetworkMgr_Http_Destroy_0900
+         * @tc.desc   test destroy
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpDestroy_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpDestroy_static_0900";
@@ -336,13 +336,13 @@ export default function httpRequestDestroyTest() {
         });
 
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Destroy_1100
-         * @tc.name:    testHttpDestroy_static_1100
-         * @tc.desc:    test destroy after httpRequest send an success request
-         * @tc.size:    MediumTest
-         * @tc.type:    Function
-         * @tc.level:   level 2
+        /**
+         * @tc.name   testHttpDestroy_static_1100
+         * @tc.number SUB_NetworkMgr_Http_Destroy_1100
+         * @tc.desc   test destroy after httpRequest send an success request
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpDestroy_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpDestroy_static_1100";

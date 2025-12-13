@@ -61,12 +61,12 @@ export default function MediaAssetChangeRequestCreateVideoAssetRequestTest() {
     });
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_CREATE_VIDEO_ASSET_REQUEST_001
-     * @tc.name      : MediaAssetChangeRequest_createVideoAssetRequest_promise_001
-     * @tc.desc      : createVideoAssetRequest
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_createVideoAssetRequest_promise_001
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_CREATE_VIDEO_ASSET_REQUEST_001
+     * @tc.desc   createVideoAssetRequest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_createVideoAssetRequest_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_createImageAssetRequest_promise_001';

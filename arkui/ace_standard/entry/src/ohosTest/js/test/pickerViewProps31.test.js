@@ -80,9 +80,12 @@ export default function pickerViewPropsJsTest31() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testPickerViewDirPropRtl START');
@@ -99,9 +102,12 @@ export default function pickerViewPropsJsTest31() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testPickerViewDirPropLtr START');
@@ -118,9 +124,12 @@ export default function pickerViewPropsJsTest31() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testPickerViewDirPropAuto START');
@@ -137,9 +146,12 @@ export default function pickerViewPropsJsTest31() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testPickerViewDirPropNone START');

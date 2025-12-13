@@ -48,12 +48,12 @@ export default function ratingNodeTest() {
     })
    
     /**
-     * @tc.number    ratingNode0100
-     * @tc.name      ratingNode0100
-     * @tc.desc      frameNode: createNoderatingToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ratingNode0100
+     * @tc.number ratingNode0100
+     * @tc.desc   frameNode: createNoderatingToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ratingNode0100', Level.LEVEL1, async (done: Function) => {
 

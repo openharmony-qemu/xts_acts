@@ -29,13 +29,13 @@ export default function lazyForEachGetHostNodeTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_GETHOSTNODE_0100
-     * @tc.name       : testLazyForEachGetHostNode001
-     * @tc.desc       : testing getHostNode for lazyForEach with normal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachGetHostNode001
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_GETHOSTNODE_0100
+     * @tc.desc   testing getHostNode for lazyForEach with normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachGetHostNode001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`lazyforeach/LazyForEachGetHostNodeTest`)
@@ -44,13 +44,13 @@ export default function lazyForEachGetHostNodeTest() {
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_GETHOSTNODE_0200
-     * @tc.name       : testLazyForEachGetHostNode002
-     * @tc.desc       : testing getHostNode for lazyForEach with normal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachGetHostNode002
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_GETHOSTNODE_0200
+     * @tc.desc   testing getHostNode for lazyForEach with normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachGetHostNode002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLazyForEachGetHostNode002()).assertEqual(0)

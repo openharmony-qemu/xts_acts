@@ -40,12 +40,12 @@ export default function ScrollSizeMode_APITest() {
       done();
     });
     /**
-     * @tc.number    ScrollSizeMode
-     * @tc.name      ScrollSizeMode_APITest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ScrollSizeMode_APITest_0100
+     * @tc.number ScrollSizeMode
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ScrollSizeMode_APITest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ScrollSizeMode_APITest_0100 START');
@@ -68,12 +68,12 @@ export default function ScrollSizeMode_APITest() {
     });
 
     /**
-     * @tc.number    ScrollSizeMode
-     * @tc.name      ScrollSizeMode_APITest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ScrollSizeMode_APITest_0200
+     * @tc.number ScrollSizeMode
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ScrollSizeMode_APITest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('ScrollSizeMode_APITest_0200 START');

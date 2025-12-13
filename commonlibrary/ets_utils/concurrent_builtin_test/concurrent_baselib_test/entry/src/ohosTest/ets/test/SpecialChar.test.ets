@@ -108,12 +108,12 @@ export default function SpecialChar() {
     let concurrentNum = 100
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0100
-     * @tc.name      : testBufferAllocSpecial0001
-     * @tc.desc      : Testing the Buffer interface Alloc with Special
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferAllocSpecial0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0100
+     * @tc.desc   Testing the Buffer interface Alloc with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAllocSpecial0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -142,12 +142,12 @@ export default function SpecialChar() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0200
-     * @tc.name      : testBufferByteLengthSpecial0002
-     * @tc.desc      : Testing the Buffer interface ByteLength with Special
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferByteLengthSpecial0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0200
+     * @tc.desc   Testing the Buffer interface ByteLength with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferByteLengthSpecial0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -177,12 +177,12 @@ export default function SpecialChar() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0300
-     * @tc.name       : testBufferIsBufferSpecial0003
-     * @tc.desc       : Testing the Buffer interface IsBuffer with Special
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferIsBufferSpecial0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0300
+     * @tc.desc   Testing the Buffer interface IsBuffer with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferIsBufferSpecial0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -211,12 +211,12 @@ export default function SpecialChar() {
       })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0400
-     * @tc.name       : testBufferIsEncodingSpecial0004
-     * @tc.desc       : Testing the Buffer interface IsEncoding with Special
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferIsEncodingSpecial0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0400
+     * @tc.desc   Testing the Buffer interface IsEncoding with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferIsEncodingSpecial0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -245,12 +245,12 @@ export default function SpecialChar() {
       })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0500
-     * @tc.name       : testBufferFillSpecial0005
-     * @tc.desc       : Testing the Buffer interface Fill with Special
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferFillSpecial0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0500
+     * @tc.desc   Testing the Buffer interface Fill with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferFillSpecial0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -279,12 +279,12 @@ export default function SpecialChar() {
       })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0600
-     * @tc.name       : testBufferIncludesSpecial0006
-     * @tc.desc       : Testing the Buffer interface Includes with Special
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferIncludesSpecial0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0600
+     * @tc.desc   Testing the Buffer interface Includes with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferIncludesSpecial0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -313,12 +313,12 @@ export default function SpecialChar() {
       })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0700
-     * @tc.name       : testBufferIndexOfSpecial0007
-     * @tc.desc       : Testing the Buffer interface IndexOf with Special
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferIndexOfSpecial0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0700
+     * @tc.desc   Testing the Buffer interface IndexOf with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferIndexOfSpecial0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -348,12 +348,12 @@ export default function SpecialChar() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0800
-     * @tc.name       : testbufferLastIndexOf0008
-     * @tc.desc       : Testing the Buffer interface lastIndexOf with Special
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testbufferLastIndexOf0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0800
+     * @tc.desc   Testing the Buffer interface lastIndexOf with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testbufferLastIndexOf0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -383,12 +383,12 @@ export default function SpecialChar() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0900
-     * @tc.name       : testBufferToJSONSpecial0009
-     * @tc.desc       : Testing the Buffer interface ToJSON with Special
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferToJSONSpecial0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0900
+     * @tc.desc   Testing the Buffer interface ToJSON with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferToJSONSpecial0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -417,12 +417,12 @@ export default function SpecialChar() {
       })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_1000
-     * @tc.name       : testBufferToStringSpecial0010
-     * @tc.desc       : Testing the Buffer interface ToString with Special
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferToStringSpecial0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_1000
+     * @tc.desc   Testing the Buffer interface ToString with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferToStringSpecial0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -451,12 +451,12 @@ export default function SpecialChar() {
       })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_1100
-     * @tc.name       : testBufferWriteSpecial0011
-     * @tc.desc       : Testing the Buffer interface Write with Special
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferWriteSpecial0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_1100
+     * @tc.desc   Testing the Buffer interface Write with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferWriteSpecial0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -485,12 +485,12 @@ export default function SpecialChar() {
       })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_1200
-     * @tc.name       : testBufferTextSpecial0012
-     * @tc.desc       : Testing the Buffer interface text with Special
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBufferTextSpecial0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_1200
+     * @tc.desc   Testing the Buffer interface text with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferTextSpecial0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -519,12 +519,12 @@ export default function SpecialChar() {
       })
 
     /**
-     * @tc.number     :  SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1300
-     * @tc.name       :  testBuilintsStringConstructorSpecial0013
-     * @tc.desc       : Testing the Buffer interface String with String
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringConstructorSpecial0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1300
+     * @tc.desc   Testing the Buffer interface String with String
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringConstructorSpecial0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -553,12 +553,12 @@ export default function SpecialChar() {
       })
 
     /**
-     * @tc.number     :  SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1400
-     * @tc.name       :  testBuilintsStringRawSpecial0014
-     * @tc.desc       : Testing the Buffer interface String with Raw
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringRawSpecial0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1400
+     * @tc.desc   Testing the Buffer interface String with Raw
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringRawSpecial0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -587,12 +587,12 @@ export default function SpecialChar() {
       })
 
     /**
-     * @tc.number     :  SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1500
-     * @tc.name       :  testBuilintsStringPrototypeCharAtSpecial0015
-     * @tc.desc       : Testing the Buffer interface String with PrototypeCharAt
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringPrototypeCharAtSpecial0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1500
+     * @tc.desc   Testing the Buffer interface String with PrototypeCharAt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringPrototypeCharAtSpecial0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -621,12 +621,12 @@ export default function SpecialChar() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1600
-     * @tc.name      : testBuilintsStringPrototypeCharCodeAtSpecial0016
-     * @tc.desc      : Testing the Buffer interface String with PrototypeCharAt
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringPrototypeCharCodeAtSpecial0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1600
+     * @tc.desc   Testing the Buffer interface String with PrototypeCharAt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringPrototypeCharCodeAtSpecial0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -655,12 +655,12 @@ export default function SpecialChar() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1700
-     * @tc.name      : testBuilintsStringPrototypeCharCodePointAtSpecial0017
-     * @tc.desc      : Testing the Buffer interface String with PrototypeCharAt
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringPrototypeCharCodePointAtSpecial0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1700
+     * @tc.desc   Testing the Buffer interface String with PrototypeCharAt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringPrototypeCharCodePointAtSpecial0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -689,12 +689,12 @@ export default function SpecialChar() {
       })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1800
-     * @tc.name       : testBuilintsStringPrototypeConcatSpecial0018
-     * @tc.desc       : Testing the Buffer interface String with PrototypeConcat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringPrototypeConcatSpecial0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1800
+     * @tc.desc   Testing the Buffer interface String with PrototypeConcat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringPrototypeConcatSpecial0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -723,12 +723,12 @@ export default function SpecialChar() {
       })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1900
-     * @tc.name       : testBuilintsStringPrototypeEndsWithSpecial0019
-     * @tc.desc       : Testing the Buffer interface String with PrototypeEndsWith
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringPrototypeEndsWithSpecial0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1900
+     * @tc.desc   Testing the Buffer interface String with PrototypeEndsWith
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringPrototypeEndsWithSpecial0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -757,12 +757,12 @@ export default function SpecialChar() {
       })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2000
-     * @tc.name       : testBuilintsStringPrototypeIncludesSpecial0020
-     * @tc.desc       : Testing the Buffer interface String with PrototypeIncludes
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringPrototypeIncludesSpecial0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2000
+     * @tc.desc   Testing the Buffer interface String with PrototypeIncludes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringPrototypeIncludesSpecial0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -792,12 +792,12 @@ export default function SpecialChar() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2100
-     * @tc.name       : testBuilintsStringPrototypeIndexOfSpecial0021
-     * @tc.desc       : Testing the Buffer interface String with PrototypeIndexOf
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringPrototypeIndexOfSpecial0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2100
+     * @tc.desc   Testing the Buffer interface String with PrototypeIndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringPrototypeIndexOfSpecial0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -827,12 +827,12 @@ export default function SpecialChar() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2200
-     * @tc.name       : testBuilintsStringLastIndexOfSpecial0022
-     * @tc.desc       : Testing the Buffer interface String with LastIndexOf
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringLastIndexOfSpecial0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2200
+     * @tc.desc   Testing the Buffer interface String with LastIndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringLastIndexOfSpecial0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -862,12 +862,12 @@ export default function SpecialChar() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2300
-     * @tc.name       : testBuilintsStringMatchSpecial0023
-     * @tc.desc       : Testing the Buffer interface String with Match
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringMatchSpecial0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2300
+     * @tc.desc   Testing the Buffer interface String with Match
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringMatchSpecial0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -896,12 +896,12 @@ export default function SpecialChar() {
       })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2400
-     * @tc.name       : testBuilintsStringPrototypeNormalizeSpecial0024
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringPrototypeNormalizeSpecial0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2400
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringPrototypeNormalizeSpecial0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -932,12 +932,12 @@ export default function SpecialChar() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2500
-     * @tc.name       : testBuilintsStringPrototypePadEndSpecial0025
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringPrototypePadEndSpecial0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2500
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringPrototypePadEndSpecial0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -967,12 +967,12 @@ export default function SpecialChar() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2600
-     * @tc.name       : testBuilintsStringPrototypePadStartSpecial0026
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringPrototypePadStartSpecial0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2600
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringPrototypePadStartSpecial0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1002,12 +1002,12 @@ export default function SpecialChar() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2700
-     * @tc.name       : testBuilintsStringPrototypeRepeatSpecial0027
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringPrototypeRepeatSpecial0027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2700
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringPrototypeRepeatSpecial0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1037,12 +1037,12 @@ export default function SpecialChar() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2800
-     * @tc.name       : testBuilintsStringPrototypeReplaceSpecial0028
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringPrototypeReplaceSpecial0028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2800
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringPrototypeReplaceSpecial0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1072,12 +1072,12 @@ export default function SpecialChar() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2900
-     * @tc.name       : testBuilintsStringPrototypeSearchSpecial0029
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringPrototypeSearchSpecial0029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2900
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringPrototypeSearchSpecial0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1107,12 +1107,12 @@ export default function SpecialChar() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_3000
-     * @tc.name       : testBuilintsStringPrototypeSliceSpecial0030
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringPrototypeSliceSpecial0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_3000
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringPrototypeSliceSpecial0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1142,12 +1142,12 @@ export default function SpecialChar() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_3100
-     * @tc.name       : testBuilintsStringPrototypeStartsWithSpecial0031
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringPrototypeStartsWithSpecial0031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_3100
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringPrototypeStartsWithSpecial0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1176,12 +1176,12 @@ export default function SpecialChar() {
       })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_3200
-     * @tc.name       : testBuilintsStringPrototypeSubstringSpecial0032
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringPrototypeSubstringSpecial0032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_3200
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringPrototypeSubstringSpecial0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1210,12 +1210,12 @@ export default function SpecialChar() {
       })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_3300
-     * @tc.name       : testBuilintsStringPrototypeToLocaleLowerCaseSpecial0033
-     * @tc.desc       : Testing the Buffer interface String with Normize
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringPrototypeToLocaleLowerCaseSpecial0033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_3300
+     * @tc.desc   Testing the Buffer interface String with Normize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringPrototypeToLocaleLowerCaseSpecial0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1245,12 +1245,12 @@ export default function SpecialChar() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_3400
-     * @tc.name       : testBuilintsStringPrototypeToLocaleUpperCaseSpecial0034
-     * @tc.desc       : Testing the Buffer interface String with Normaliz
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringPrototypeToLocaleUpperCaseSpecial0034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_3400
+     * @tc.desc   Testing the Buffer interface String with Normaliz
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringPrototypeToLocaleUpperCaseSpecial0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1280,12 +1280,12 @@ export default function SpecialChar() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_3500
-     * @tc.name       : testBuilintsStringPrototypeToLowerCaseSpecial0035
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringPrototypeToLowerCaseSpecial0035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_3500
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringPrototypeToLowerCaseSpecial0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1315,12 +1315,12 @@ export default function SpecialChar() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_3600
-     * @tc.name       : testBuilintsStringPrototypeToStringSpecial0036
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringPrototypeToStringSpecial0036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_3600
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringPrototypeToStringSpecial0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1350,12 +1350,12 @@ export default function SpecialChar() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_3700
-     * @tc.name       : testBuilintsStringPrototypeToUpperCaseSpecial0037
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringPrototypeToUpperCaseSpecial0037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_3700
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringPrototypeToUpperCaseSpecial0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1385,12 +1385,12 @@ export default function SpecialChar() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_3800
-     * @tc.name       : testBuilintsStringPrototypeTrimSpecial0038
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringPrototypeTrimSpecial0038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_3800
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringPrototypeTrimSpecial0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1420,12 +1420,12 @@ export default function SpecialChar() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_3900
-     * @tc.name       : testBuilintsStringPrototypeTrimEndSpecial0039
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringPrototypeTrimEndSpecial0039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_3900
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringPrototypeTrimEndSpecial0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1455,12 +1455,12 @@ export default function SpecialChar() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_4000
-     * @tc.name       : testBuilintsStringPrototypeTrimStartSpecial0040
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringPrototypeTrimStartSpecial0040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_4000
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringPrototypeTrimStartSpecial0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1490,12 +1490,12 @@ export default function SpecialChar() {
 
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_4100
-     * @tc.name      : testBuilintsStringPrototypeValueOfSpecial0041
-     * @tc.desc      : Testing the Buffer interface String with Normalize
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBuilintsStringPrototypeValueOfSpecial0041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_4100
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBuilintsStringPrototypeValueOfSpecial0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1524,12 +1524,12 @@ export default function SpecialChar() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_UTILJSON_SPECIAL_4200
-     * @tc.name      : testUtilJsonStringifySpecial0042
-     * @tc.desc      : Testing the Buffer interface Stringify with input special
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testUtilJsonStringifySpecial0042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSON_SPECIAL_4200
+     * @tc.desc   Testing the Buffer interface Stringify with input special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUtilJsonStringifySpecial0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1558,12 +1558,12 @@ export default function SpecialChar() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_UTILJSON_SPECIAL_4300
-     * @tc.name      : testUtilJsonParseSpecial0043
-     * @tc.desc      : Testing the Buffer interface parse with input special
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testUtilJsonParseSpecial0043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSON_SPECIAL_4300
+     * @tc.desc   Testing the Buffer interface parse with input special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUtilJsonParseSpecial0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1593,12 +1593,12 @@ export default function SpecialChar() {
 
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_UTILJSON_SPECIAL_4400
-     * @tc.name      : testUtilJsonHasSpecial0044
-     * @tc.desc      : Testing the Buffer interface Has with input special
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testUtilJsonHasSpecial0044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSON_SPECIAL_4400
+     * @tc.desc   Testing the Buffer interface Has with input special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUtilJsonHasSpecial0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1627,12 +1627,12 @@ export default function SpecialChar() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_UTILJSON_SPECIAL_4500
-     * @tc.name      : testUtilJsonRemoveSpecial0045
-     * @tc.desc      : Testing the Buffer interface Remove with input special
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testUtilJsonRemoveSpecial0045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSON_SPECIAL_4500
+     * @tc.desc   Testing the Buffer interface Remove with input special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUtilJsonRemoveSpecial0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

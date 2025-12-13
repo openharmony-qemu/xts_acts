@@ -40,12 +40,12 @@ export default function BuiltinsStatementBreakTest() {
     })
 
     /**
+     * @tc.name   BuiltinsStatementBreakTest0100
      * @tc.number SUB_BUILTINS_STATEMENT_BREAK_TEST0100
-     * @tc.name BuiltinsStatementBreakTest0100
-     * @tc.desc test Break
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Break
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BuiltinsStatementBreakTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
       let count = 0;
@@ -62,12 +62,12 @@ export default function BuiltinsStatementBreakTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementBreakTest0200
      * @tc.number SUB_BUILTINS_STATEMENT_BREAK_TEST0200
-     * @tc.name BuiltinsStatementBreakTest0200
-     * @tc.desc test Break
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Break
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BuiltinsStatementBreakTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
       let count = 0;
@@ -83,12 +83,12 @@ export default function BuiltinsStatementBreakTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementBreakTest0300
      * @tc.number SUB_BUILTINS_STATEMENT_BREAK_TEST0300
-     * @tc.name BuiltinsStatementBreakTest0300
-     * @tc.desc test Break
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Break
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementBreakTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let count = 0;
@@ -105,12 +105,12 @@ export default function BuiltinsStatementBreakTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementBreakTest0400
      * @tc.number SUB_BUILTINS_STATEMENT_BREAK_TEST0400
-     * @tc.name BuiltinsStatementBreakTest0400
-     * @tc.desc test Break
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Break
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementBreakTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let num: number = 0;
@@ -140,12 +140,12 @@ export default function BuiltinsStatementBreakTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementBreakTest0500
      * @tc.number SUB_BUILTINS_STATEMENT_BREAK_TEST0500
-     * @tc.name BuiltinsStatementBreakTest0500
-     * @tc.desc test Break
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Break
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementBreakTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let num: number = 0;
@@ -170,12 +170,12 @@ export default function BuiltinsStatementBreakTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementBreakTest0600
      * @tc.number SUB_BUILTINS_STATEMENT_BREAK_TEST0600
-     * @tc.name BuiltinsStatementBreakTest0600
-     * @tc.desc test Break
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Break
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementBreakTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let loopResult: boolean | number = -1;
@@ -207,12 +207,12 @@ export default function BuiltinsStatementBreakTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementBreakTest0700
      * @tc.number SUB_BUILTINS_STATEMENT_BREAK_TEST0700
-     * @tc.name BuiltinsStatementBreakTest0700
-     * @tc.desc test Break
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Break
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementBreakTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let shouldBreak = false;
@@ -238,12 +238,12 @@ export default function BuiltinsStatementBreakTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementBreakTest0800
      * @tc.number SUB_BUILTINS_STATEMENT_BREAK_TEST0800
-     * @tc.name BuiltinsStatementBreakTest0800
-     * @tc.desc test Break
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Break
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementBreakTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const executeNonLoopLogic = () => {
@@ -264,12 +264,12 @@ export default function BuiltinsStatementBreakTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementBreakTest0900
      * @tc.number SUB_BUILTINS_STATEMENT_BREAK_TEST0900
-     * @tc.name BuiltinsStatementBreakTest0900
-     * @tc.desc test Break
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Break
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementBreakTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const loopWithBreak = () => {
@@ -290,12 +290,12 @@ export default function BuiltinsStatementBreakTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementBreakTest1000
      * @tc.number SUB_BUILTINS_STATEMENT_BREAK_TEST1000
-     * @tc.name BuiltinsStatementBreakTest1000
-     * @tc.desc test Break
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Break
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementBreakTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let loopResult: boolean | number = -1;
@@ -327,12 +327,12 @@ export default function BuiltinsStatementBreakTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementBreakTest1100
      * @tc.number SUB_BUILTINS_STATEMENT_BREAK_TEST1100
-     * @tc.name BuiltinsStatementBreakTest1100
-     * @tc.desc test Break
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Break
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementBreakTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let count = 0;
@@ -351,12 +351,12 @@ export default function BuiltinsStatementBreakTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementBreakTest1200
      * @tc.number SUB_BUILTINS_STATEMENT_BREAK_TEST1200
-     * @tc.name BuiltinsStatementBreakTest1200
-     * @tc.desc test Break
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Break
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementBreakTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let outerCounter = 0;
@@ -381,12 +381,12 @@ export default function BuiltinsStatementBreakTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementBreakTest1300
      * @tc.number SUB_BUILTINS_STATEMENT_BREAK_TEST1400
-     * @tc.name BuiltinsStatementBreakTest1300
-     * @tc.desc test Break
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Break
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementBreakTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let outerCounter = 0;
@@ -414,12 +414,12 @@ export default function BuiltinsStatementBreakTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementBreakTest1400
      * @tc.number SUB_BUILTINS_STATEMENT_BREAK_TEST1400
-     * @tc.name BuiltinsStatementBreakTest1400
-     * @tc.desc test Break
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Break
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementBreakTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let num = 2;
@@ -444,12 +444,12 @@ export default function BuiltinsStatementBreakTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementBreakTest1500
      * @tc.number SUB_BUILTINS_STATEMENT_BREAK_TEST1500
-     * @tc.name BuiltinsStatementBreakTest1500
-     * @tc.desc test Break
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Break
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementBreakTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let conditionMet = false;
@@ -490,12 +490,12 @@ export default function BuiltinsStatementBreakTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementBreakTest1600
      * @tc.number SUB_BUILTINS_STATEMENT_BREAK_TEST1600
-     * @tc.name BuiltinsStatementBreakTest1600
-     * @tc.desc test Break
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Break
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementBreakTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let shouldBreakInner = false;
@@ -538,12 +538,12 @@ export default function BuiltinsStatementBreakTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementBreakTest1700
      * @tc.number SUB_BUILTINS_STATEMENT_BREAK_TEST1700
-     * @tc.name BuiltinsStatementBreakTest1700
-     * @tc.desc test Break
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Break
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementBreakTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let breakInner = false;
@@ -586,12 +586,12 @@ export default function BuiltinsStatementBreakTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementBreakTest1800
      * @tc.number SUB_BUILTINS_STATEMENT_BREAK_TEST1800
-     * @tc.name BuiltinsStatementBreakTest1800
-     * @tc.desc test Break
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Break
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementBreakTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let shouldBreakLoopA = false;
@@ -634,12 +634,12 @@ export default function BuiltinsStatementBreakTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementBreakTest1900
      * @tc.number SUB_BUILTINS_STATEMENT_BREAK_TEST1900
-     * @tc.name BuiltinsStatementBreakTest1900
-     * @tc.desc test Break
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Break
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementBreakTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let breakToInner = false;
@@ -682,12 +682,12 @@ export default function BuiltinsStatementBreakTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementBreakTest2000
      * @tc.number SUB_BUILTINS_STATEMENT_BREAK_TEST2000
-     * @tc.name BuiltinsStatementBreakTest2000
-     * @tc.desc test Break
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Break
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementBreakTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let shouldBreak = false;
@@ -723,12 +723,12 @@ export default function BuiltinsStatementBreakTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementBreakTest2100
      * @tc.number SUB_BUILTINS_STATEMENT_BREAK_TEST2100
-     * @tc.name BuiltinsStatementBreakTest2100
-     * @tc.desc test Break
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Break
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementBreakTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let flag = false;
@@ -753,12 +753,12 @@ export default function BuiltinsStatementBreakTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementBreakTest2200
      * @tc.number SUB_BUILTINS_STATEMENT_BREAK_TEST2200
-     * @tc.name BuiltinsStatementBreakTest2200
-     * @tc.desc test Break
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Break
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementBreakTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const checkConditions = () => {
@@ -788,12 +788,12 @@ export default function BuiltinsStatementBreakTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementBreakTest2300
      * @tc.number SUB_BUILTINS_STATEMENT_BREAK_TEST2300
-     * @tc.name BuiltinsStatementBreakTest2300
-     * @tc.desc test Break
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Break
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementBreakTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let shouldStop = false;
@@ -810,12 +810,12 @@ export default function BuiltinsStatementBreakTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementBreakTest2400
      * @tc.number SUB_BUILTINS_STATEMENT_BREAK_TEST2400
-     * @tc.name BuiltinsStatementBreakTest2400
-     * @tc.desc test Break
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Break
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementBreakTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let isAllConditionsMet = false;
@@ -873,12 +873,12 @@ export default function BuiltinsStatementBreakTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementBreakTest2500
      * @tc.number SUB_BUILTINS_STATEMENT_BREAK_TEST2500
-     * @tc.name BuiltinsStatementBreakTest2500
-     * @tc.desc test Break
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Break
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementBreakTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let isAllConditionsPassed = false;

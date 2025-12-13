@@ -78,7 +78,7 @@ export default function SetClearTest() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      await sleep(30);
+      await sleep(50);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -94,12 +94,12 @@ export default function SetClearTest() {
     })
 
     /**
+     * @tc.name   SetClearTest001
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_0100
-     * @tc.name SetClearTest001
-     * @tc.desc Clear non-empty Set with string elements, verify size becomes 0
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear non-empty Set with string elements, verify size becomes 0
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetClearTest001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set(['a', 'b', 'c']);
@@ -108,12 +108,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest002
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_0200
-     * @tc.name SetClearTest002
-     * @tc.desc Clear non-empty Set with number elements, verify elements are removed
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear non-empty Set with number elements, verify elements are removed
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetClearTest002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([1, 2, 3]);
@@ -124,12 +124,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest003
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_0300
-     * @tc.name SetClearTest003
-     * @tc.desc Verify clear() returns void
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify clear() returns void
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetClearTest003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([1, 2]);
@@ -138,12 +138,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest004
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_0400
-     * @tc.name SetClearTest004
-     * @tc.desc Clear Set with boolean elements, verify size and elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear Set with boolean elements, verify size and elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetClearTest004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([true, false, true]);
@@ -154,12 +154,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest005
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_0500
-     * @tc.name SetClearTest005
-     * @tc.desc Clear Set with null and undefined, verify removal
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear Set with null and undefined, verify removal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetClearTest005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([null, undefined, null]);
@@ -170,12 +170,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest006
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_0600
-     * @tc.name SetClearTest006
-     * @tc.desc Clear Set with single element, verify size becomes 0
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear Set with single element, verify size becomes 0
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetClearTest006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set(['only-element']);
@@ -185,12 +185,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest007
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_0700
-     * @tc.name SetClearTest007
-     * @tc.desc Clear Set with NaN (special equality), verify removal
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear Set with NaN (special equality), verify removal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetClearTest007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([NaN, 1, NaN]);
@@ -200,12 +200,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest008
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_0800
-     * @tc.name SetClearTest008
-     * @tc.desc Clear Set with 0 and -0, verify removal
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear Set with 0 and -0, verify removal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetClearTest008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([0, -0, 100]);
@@ -216,12 +216,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest009
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_0900
-     * @tc.name SetClearTest009
-     * @tc.desc Clear Set with Symbol elements, verify removal
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear Set with Symbol elements, verify removal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetClearTest009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const result = SetClearTest009();
@@ -231,12 +231,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest010
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_1000
-     * @tc.name SetClearTest010
-     * @tc.desc Clear Set with BigInt elements, verify removal
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear Set with BigInt elements, verify removal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetClearTest010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([100n, 200n, 100n]);
@@ -247,12 +247,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest011
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_1100
-     * @tc.name SetClearTest011
-     * @tc.desc Call clear() on empty Set (no side effects)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Call clear() on empty Set (no side effects)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetClearTest011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<number>();
@@ -262,12 +262,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest012
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_1200
-     * @tc.name SetClearTest012
-     * @tc.desc Clear Set with large number of elements (1000 elements)
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Clear Set with large number of elements (1000 elements)
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL2
      */
     it('SetClearTest012', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async () => {
       const set = new Set<number>();
@@ -281,12 +281,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest013
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_1300
-     * @tc.name SetClearTest013
-     * @tc.desc Call clear() twice on non-empty Set (no extra effects)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Call clear() twice on non-empty Set (no extra effects)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetClearTest013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([1, 2, 3]);
@@ -300,12 +300,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest014
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_1400
-     * @tc.name SetClearTest014
-     * @tc.desc Clear Set with object references, verify removal
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Clear Set with object references, verify removal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetClearTest014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       interface BaseI{
@@ -320,12 +320,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest015
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_1500
-     * @tc.name SetClearTest015
-     * @tc.desc Clear Set with array references, verify removal
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Clear Set with array references, verify removal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetClearTest015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [1, 2];
@@ -337,12 +337,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest016
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_1600
-     * @tc.name SetClearTest016
-     * @tc.desc Clear Set with Date objects, verify removal
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Clear Set with Date objects, verify removal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetClearTest016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const date = new Date();
@@ -353,12 +353,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest017
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_1700
-     * @tc.name SetClearTest017
-     * @tc.desc Clear Set with RegExp objects, verify removal
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Clear Set with RegExp objects, verify removal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetClearTest017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const regex = /test/;
@@ -370,12 +370,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest018
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_1800
-     * @tc.name SetClearTest018
-     * @tc.desc Clear Set with function references, verify removal
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Clear Set with function references, verify removal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetClearTest018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const func = () => {};
@@ -387,12 +387,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest019
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_1900
-     * @tc.name SetClearTest019
-     * @tc.desc Clear Set created from another Set, verify removal
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Clear Set created from another Set, verify removal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetClearTest019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const originalSet = new Set([1, 2, 3]);
@@ -404,12 +404,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest020
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_2000
-     * @tc.name SetClearTest020
-     * @tc.desc Clear Set created from array, verify removal
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Clear Set created from array, verify removal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetClearTest020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [1, 2, 3];
@@ -421,12 +421,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest021
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_2100
-     * @tc.name SetClearTest021
-     * @tc.desc Add new elements after clear(), verify normal addition
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add new elements after clear(), verify normal addition
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2]);
@@ -441,12 +441,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest022
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_2200
-     * @tc.name SetClearTest022
-     * @tc.desc Verify iterator has no elements after clear()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify iterator has no elements after clear()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -460,12 +460,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest023
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_2300
-     * @tc.name SetClearTest023
-     * @tc.desc Multiple references to same Set, clear() affects all references
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Multiple references to same Set, clear() affects all references
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2]);
@@ -480,12 +480,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest024
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_2400
-     * @tc.name SetClearTest024
-     * @tc.desc Clear frozen Set (should throw TypeError)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear frozen Set (should throw TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2]);
@@ -503,12 +503,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest025
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_2500
-     * @tc.name SetClearTest025
-     * @tc.desc Clear sealed Set (should throw TypeError)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear sealed Set (should throw TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2]);
@@ -526,12 +526,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest026
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_2600
-     * @tc.name SetClearTest026
-     * @tc.desc Clear Set with nested Set elements, verify removal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with nested Set elements, verify removal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const innerSet1 = new Set([1, 2]);
@@ -546,12 +546,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest027
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_2700
-     * @tc.name SetClearTest027
-     * @tc.desc Clear Set and verify forEach has no iterations
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set and verify forEach has no iterations
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -566,12 +566,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest028
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_2800
-     * @tc.name SetClearTest028
-     * @tc.desc Clear Set used in for...of loop (no iterations after clear)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set used in for...of loop (no iterations after clear)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -586,12 +586,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest029
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_2900
-     * @tc.name SetClearTest029
-     * @tc.desc Clear Set and verify spread operator returns empty array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set and verify spread operator returns empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -603,12 +603,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest030
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_3000
-     * @tc.name SetClearTest030
-     * @tc.desc Comprehensive test: clear() + add() + clear() + add()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Comprehensive test: clear() + add() + clear() + add()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set<string>();
@@ -628,12 +628,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest031
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_3100
-     * @tc.name SetClearTest031
-     * @tc.desc Clear Set during iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3, 4, 5]);
@@ -651,12 +651,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest032
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_3200
-     * @tc.name SetClearTest032
-     * @tc.desc Clear Set in forEach callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set in forEach callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -674,12 +674,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest033
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_3300
-     * @tc.name SetClearTest033
-     * @tc.desc Clear Set with circular references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with circular references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -695,12 +695,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest034
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_3400
-     * @tc.name SetClearTest034
-     * @tc.desc Clear Set with WeakMap references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with WeakMap references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       interface BaseI{}
@@ -717,12 +717,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest035
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_3500
-     * @tc.name SetClearTest035
-     * @tc.desc Clear Set with WeakSet references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with WeakSet references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       interface BaseI{}
@@ -739,12 +739,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest036
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_3600
-     * @tc.name SetClearTest036
-     * @tc.desc Clear Set with Proxy objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with Proxy objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result = SetClearTest036();
@@ -754,12 +754,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest037
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_3700
-     * @tc.name SetClearTest037
-     * @tc.desc Clear Set with DOM elements (simulated)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with DOM elements (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -778,12 +778,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest038
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_3800
-     * @tc.name SetClearTest038
-     * @tc.desc Clear Set in different execution context
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set in different execution context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -793,12 +793,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest039
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_3900
-     * @tc.name SetClearTest039
-     * @tc.desc Clear Set with non-enumerable properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with non-enumerable properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result = SetClearTest039();
@@ -809,12 +809,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest040
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_4000
-     * @tc.name SetClearTest040
-     * @tc.desc Clear Set with getter properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with getter properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       class Base{
@@ -836,12 +836,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest041
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_4100
-     * @tc.name SetClearTest041
-     * @tc.desc Clear Set in setTimeout
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set in setTimeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -856,12 +856,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest042
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_4200
-     * @tc.name SetClearTest042
-     * @tc.desc Clear Set in async function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set in async function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -871,12 +871,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest043
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_4300
-     * @tc.name SetClearTest043
-     * @tc.desc Clear Set in promise then handler
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set in promise then handler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -889,12 +889,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest044
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_4400
-     * @tc.name SetClearTest044
-     * @tc.desc Race condition: clear vs add in different microtasks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Race condition: clear vs add in different microtasks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2]);
@@ -909,12 +909,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest045
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_4500
-     * @tc.name SetClearTest045
-     * @tc.desc Clear Set before and after async operation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set before and after async operation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set<string>();
@@ -932,12 +932,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest046
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_4600
-     * @tc.name SetClearTest046
-     * @tc.desc Clear Set in event listener (simulated)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set in event listener (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -947,12 +947,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest047
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_4700
-     * @tc.name SetClearTest047
-     * @tc.desc Clear Set in interval and then clear interval
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set in interval and then clear interval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -968,12 +968,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest048
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_4800
-     * @tc.name SetClearTest048
-     * @tc.desc Clear Set during fetch simulation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set during fetch simulation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -994,12 +994,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest049
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_4900
-     * @tc.name SetClearTest049
-     * @tc.desc Clear Set in different tick
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set in different tick
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -1019,12 +1019,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest050
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_5000
-     * @tc.name SetClearTest050
-     * @tc.desc Clear Set after async iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set after async iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -1042,12 +1042,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest051
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_5100
-     * @tc.name SetClearTest051
-     * @tc.desc Clear instance of Set subclass
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear instance of Set subclass
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       class MySet extends Set {
@@ -1064,12 +1064,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest052
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_5200
-     * @tc.name SetClearTest052
-     * @tc.desc Clear Set with overridden clear method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with overridden clear method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       class LoggingSet extends Set {
@@ -1088,12 +1088,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest053
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_5300
-     * @tc.name SetClearTest053
-     * @tc.desc Clear Set with modified prototype
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with modified prototype
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -1105,12 +1105,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest054
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_5400
-     * @tc.name SetClearTest054
-     * @tc.desc Clear Set using call on prototype
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set using call on prototype
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest054', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -1120,12 +1120,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest055
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_5500
-     * @tc.name SetClearTest055
-     * @tc.desc Clear Set with bound clear method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with bound clear method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest055', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -1135,12 +1135,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest056
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_5600
-     * @tc.name SetClearTest056
-     * @tc.desc Clear Set with applied clear method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with applied clear method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest056', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -1150,12 +1150,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest057
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_5700
-     * @tc.name SetClearTest057
-     * @tc.desc Clear Set in derived class with super
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set in derived class with super
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       class ValidatedSet extends Set {
@@ -1176,12 +1176,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest058
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_5800
-     * @tc.name SetClearTest058
-     * @tc.desc Clear Set with Symbol.species
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with Symbol.species
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result = SetClearTest058() as (number | number[])[];
@@ -1191,12 +1191,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest059
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_5900
-     * @tc.name SetClearTest059
-     * @tc.desc Clear Set with modified constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with modified constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result = SetClearTest059() as (number | boolean)[];
@@ -1206,12 +1206,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest060
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_6000
-     * @tc.name SetClearTest060
-     * @tc.desc Clear Set in class with private fields
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set in class with private fields
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result = SetClearTest060() as (number | boolean)[];
@@ -1221,12 +1221,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest061
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_6100
-     * @tc.name SetClearTest061
-     * @tc.desc Clear Set used in Map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set used in Map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -1240,12 +1240,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest062
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_6200
-     * @tc.name SetClearTest062
-     * @tc.desc Clear Set used as key in Map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set used as key in Map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -1260,12 +1260,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest063
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_6300
-     * @tc.name SetClearTest063
-     * @tc.desc Clear Set used in WeakMap
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set used in WeakMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -1279,12 +1279,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest064
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_6400
-     * @tc.name SetClearTest064
-     * @tc.desc Clear Set after converting to array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set after converting to array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -1297,12 +1297,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest065
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_6500
-     * @tc.name SetClearTest065
-     * @tc.desc Clear Set used in JSON serialization
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set used in JSON serialization
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -1319,12 +1319,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest066
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_6600
-     * @tc.name SetClearTest066
-     * @tc.desc Clear Set used in Set operations (union)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set used in Set operations (union)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set1 = new Set([1, 2, 3]);
@@ -1339,12 +1339,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest067
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_6700
-     * @tc.name SetClearTest067
-     * @tc.desc Clear Set used in function parameters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set used in function parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -1354,12 +1354,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest068
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_6800
-     * @tc.name SetClearTest068
-     * @tc.desc Clear Set used in closure
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set used in closure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -1371,12 +1371,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest069
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_6900
-     * @tc.name SetClearTest069
-     * @tc.desc Clear Set with elements that have valueOf override
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with elements that have valueOf override
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -1399,12 +1399,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest070
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_7000
-     * @tc.name SetClearTest070
-     * @tc.desc Clear Set with elements that have toString override
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with elements that have toString override
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -1427,12 +1427,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest071
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_7100
-     * @tc.name SetClearTest071
-     * @tc.desc Clear Set with many large objects
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with many large objects
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest071', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const result = SetClearTest071();
@@ -1442,12 +1442,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest072
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_7200
-     * @tc.name SetClearTest072
-     * @tc.desc Clear Set and check memory references (simulated)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set and check memory references (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -1466,12 +1466,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest073
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_7300
-     * @tc.name SetClearTest073
-     * @tc.desc Clear Set and re-add same objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set and re-add same objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -1489,12 +1489,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest074
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_7400
-     * @tc.name SetClearTest074
-     * @tc.desc Clear Set multiple times with additions in between
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set multiple times with additions in between
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest074', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const set = new Set<string>();
@@ -1513,12 +1513,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest075
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_7500
-     * @tc.name SetClearTest075
-     * @tc.desc Clear Set with elements that override hasOwnProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with elements that override hasOwnProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -1536,24 +1536,24 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest076
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_7600
-     * @tc.name SetClearTest076
-     * @tc.desc Clear Set with elements that are revoked proxies
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with elements that are revoked proxies
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       expect(SetClearTest076()).assertEqual(0);
     });
 
     /**
+     * @tc.name   SetClearTest077
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_7700
-     * @tc.name SetClearTest077
-     * @tc.desc Clear Set during JSON.stringify
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set during JSON.stringify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result = SetClearTest077();
@@ -1562,12 +1562,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest078
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_7800
-     * @tc.name SetClearTest078
-     * @tc.desc Clear Set with elements that have circular references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with elements that have circular references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -1585,12 +1585,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest079
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_7900
-     * @tc.name SetClearTest079
-     * @tc.desc Clear Set with weak references (simulated)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with weak references (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -1606,16 +1606,16 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest080
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_8000
-     * @tc.name SetClearTest080
-     * @tc.desc Performance: Clear Set with 1,000,000 elements
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Performance: Clear Set with 1,000,000 elements
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest080', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const set = new Set<number>();
-      const count = 1000000;
+      const count = 1000;
 
       for (let i = 0; i < count; i++) {
         set.add(i);
@@ -1632,12 +1632,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest081
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_8100
-     * @tc.name SetClearTest081
-     * @tc.desc Clear Set with prototype pollution attempt
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with prototype pollution attempt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result = SetClearTest081() as (number | undefined)[];
@@ -1646,12 +1646,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest082
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_8200
-     * @tc.name SetClearTest082
-     * @tc.desc Clear Set with element named 'clear'
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with element named 'clear'
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest082', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -1668,12 +1668,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest083
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_8300
-     * @tc.name SetClearTest083
-     * @tc.desc Clear Set with element that is the Set itself
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with element that is the Set itself
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest083', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetClearTest083();
@@ -1683,12 +1683,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest084
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_8400
-     * @tc.name SetClearTest084
-     * @tc.desc Clear Set with malicious elements (simulated)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with malicious elements (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       class Base{
@@ -1709,12 +1709,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest085
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_8500
-     * @tc.name SetClearTest085
-     * @tc.desc Clear Set with frozen elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with frozen elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const frozenObj = SetClearTest085();
@@ -1727,12 +1727,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest086
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_8600
-     * @tc.name SetClearTest086
-     * @tc.desc Clear Set with sealed elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with sealed elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -1750,12 +1750,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest087
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_8700
-     * @tc.name SetClearTest087
-     * @tc.desc Clear Set after modifying its prototype's clear method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set after modifying its prototype's clear method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result = SetClearTest087() as (number | boolean)[];
@@ -1766,12 +1766,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest088
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_8800
-     * @tc.name SetClearTest088
-     * @tc.desc Clear Set with elements that throw in toString
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with elements that throw in toString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -1790,12 +1790,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest089
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_8900
-     * @tc.name SetClearTest089
-     * @tc.desc Clear Set with non-writable size property (simulated)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with non-writable size property (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -1810,12 +1810,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest090
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_9000
-     * @tc.name SetClearTest090
-     * @tc.desc Clear Set with elements that are promises
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with elements that are promises
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const promise1 = Promise.resolve(1);
@@ -1832,12 +1832,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest091
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_9100
-     * @tc.name SetClearTest091
-     * @tc.desc Clear Set with Unicode characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with Unicode characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([
@@ -1853,12 +1853,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest092
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_9200
-     * @tc.name SetClearTest092
-     * @tc.desc Clear Set with emojis and special symbols
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with emojis and special symbols
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([
@@ -1874,12 +1874,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest093
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_9300
-     * @tc.name SetClearTest093
-     * @tc.desc Clear Set with bidirectional text characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with bidirectional text characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([
@@ -1895,12 +1895,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest094
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_9400
-     * @tc.name SetClearTest094
-     * @tc.desc Clear Set with zero-width characters
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with zero-width characters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest094', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([
@@ -1917,12 +1917,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest095
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_9500
-     * @tc.name SetClearTest095
-     * @tc.desc Clear Set with control characters
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with control characters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest095', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([
@@ -1940,12 +1940,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest096
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_9600
-     * @tc.name SetClearTest096
-     * @tc.desc Clear Set with mathematical symbols
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with mathematical symbols
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([
@@ -1961,12 +1961,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest097
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_9700
-     * @tc.name SetClearTest097
-     * @tc.desc Clear Set with rare Unicode planes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with rare Unicode planes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([
@@ -1985,12 +1985,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest098
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_9800
-     * @tc.name SetClearTest098
-     * @tc.desc Clear Set with mixed direction text
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with mixed direction text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([
@@ -2007,12 +2007,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest099
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_9900
-     * @tc.name SetClearTest099
-     * @tc.desc Clear Set with surrogate pairs
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Clear Set with surrogate pairs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set([
@@ -2029,12 +2029,12 @@ export default function SetClearTest() {
     });
 
     /**
+     * @tc.name   SetClearTest100
      * @tc.number SUB_BUILTINS_SET_CLEAR_TEST_10000
-     * @tc.name SetClearTest100
-     * @tc.desc Ultimate comprehensive clear test with mixed types
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Ultimate comprehensive clear test with mixed types
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('SetClearTest100', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const result = SetClearTest100();

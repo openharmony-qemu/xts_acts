@@ -805,14 +805,6 @@ static OH_CryptoKeyPair *OHTEST_GenAsymKey(const char *algoName)
     return keyPair;
 }
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_0100
-* @tc.name OHCryptoFrameworkSignatureNapiTest/SIGNATURE_RSA_PKCS1_TEST.SUB_Security_CryptoFramework_NAPI_Signature_Test_0100/x
-* @tc.desc Signature function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(SIGNATURE_RSA_PKCS1_TEST, SUB_Security_CryptoFramework_NAPI_Signature_Test_0100, TestSize.Level0)
 {
     SignSpec specInfo = GetParam();
@@ -847,14 +839,6 @@ HWTEST_P(SIGNATURE_RSA_PKCS1_TEST, SUB_Security_CryptoFramework_NAPI_Signature_T
     OH_Crypto_FreeDataBlob((Crypto_DataBlob *)&msgBlob);
 }
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_0200
-* @tc.name OHCryptoFrameworkSignatureNapiTest/SIGNATURE_RSA_PKCS1_TEST.SUB_Security_CryptoFramework_NAPI_Signature_Test_0200/x
-* @tc.desc Signature function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(SIGNATURE_RSA_PKCS1_TEST, SUB_Security_CryptoFramework_NAPI_Signature_Test_0200, TestSize.Level0)
 {
     SignSpec specInfo = GetParam();
@@ -898,14 +882,6 @@ HWTEST_P(SIGNATURE_RSA_PKCS1_TEST, SUB_Security_CryptoFramework_NAPI_Signature_T
 
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkSignatureNapiTest, SIGNATURE_RSA_PSS_TEST, ::testing::ValuesIn(g_signPssData));
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_0300
-* @tc.name OHCryptoFrameworkSignatureNapiTest/SIGNATURE_RSA_PSS_TEST.SUB_Security_CryptoFramework_NAPI_Signature_Test_0300/x
-* @tc.desc Signature function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(SIGNATURE_RSA_PSS_TEST, SUB_Security_CryptoFramework_NAPI_Signature_Test_0300, TestSize.Level0)
 {
     SignSpec specInfo = GetParam();
@@ -940,14 +916,6 @@ HWTEST_P(SIGNATURE_RSA_PSS_TEST, SUB_Security_CryptoFramework_NAPI_Signature_Tes
     OH_Crypto_FreeDataBlob((Crypto_DataBlob *)&msgBlob);
 }
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_0400
-* @tc.name OHCryptoFrameworkSignatureNapiTest/SIGNATURE_RSA_PSS_TEST.SUB_Security_CryptoFramework_NAPI_Signature_Test_0400/x
-* @tc.desc Signature function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(SIGNATURE_RSA_PSS_TEST, SUB_Security_CryptoFramework_NAPI_Signature_Test_0400, TestSize.Level0)
 {
     SignSpec specInfo = GetParam();
@@ -991,14 +959,6 @@ HWTEST_P(SIGNATURE_RSA_PSS_TEST, SUB_Security_CryptoFramework_NAPI_Signature_Tes
 
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkSignatureNapiTest, SIGNATURE_RSA_ONLYSIGN_TEST, ::testing::ValuesIn(g_onlySignData));
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_0500
-* @tc.name OHCryptoFrameworkSignatureNapiTest/SIGNATURE_RSA_ONLYSIGN_TEST.SUB_Security_CryptoFramework_NAPI_Signature_Test_0500/x
-* @tc.desc Signature function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(SIGNATURE_RSA_ONLYSIGN_TEST, SUB_Security_CryptoFramework_NAPI_Signature_Test_0500, TestSize.Level0)
 {
     OnlySignSpec specInfo = GetParam();
@@ -1040,14 +1000,6 @@ HWTEST_P(SIGNATURE_RSA_ONLYSIGN_TEST, SUB_Security_CryptoFramework_NAPI_Signatur
 
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkSignatureNapiTest, SIGNATURE_DSA_TEST, ::testing::ValuesIn(g_dsaData));
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_0600
-* @tc.name OHCryptoFrameworkSignatureNapiTest/SIGNATURE_DSA_TEST.SUB_Security_CryptoFramework_NAPI_Signature_Test_0600/x
-* @tc.desc Signature function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(SIGNATURE_DSA_TEST, SUB_Security_CryptoFramework_NAPI_Signature_Test_0600, TestSize.Level0)
 {
     AsymSignSpec specInfo = GetParam();
@@ -1082,14 +1034,6 @@ HWTEST_P(SIGNATURE_DSA_TEST, SUB_Security_CryptoFramework_NAPI_Signature_Test_06
     OH_Crypto_FreeDataBlob((Crypto_DataBlob *)&msgBlob);
 }
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_0700
-* @tc.name OHCryptoFrameworkSignatureNapiTest/SIGNATURE_DSA_TEST.SUB_Security_CryptoFramework_NAPI_Signature_Test_0700/x
-* @tc.desc Signature function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(SIGNATURE_DSA_TEST, SUB_Security_CryptoFramework_NAPI_Signature_Test_0700, TestSize.Level0)
 {
     AsymSignSpec specInfo = GetParam();
@@ -1130,14 +1074,6 @@ HWTEST_P(SIGNATURE_DSA_TEST, SUB_Security_CryptoFramework_NAPI_Signature_Test_07
 
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkSignatureNapiTest, SIGNATURE_ECDSA_TEST, ::testing::ValuesIn(g_ecdsaData));
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_0800
-* @tc.name OHCryptoFrameworkSignatureNapiTest/SIGNATURE_ECDSA_TEST.SUB_Security_CryptoFramework_NAPI_Signature_Test_0800/x
-* @tc.desc Signature function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(SIGNATURE_ECDSA_TEST, SUB_Security_CryptoFramework_NAPI_Signature_Test_0800, TestSize.Level0)
 {
     AsymSignSpec specInfo = GetParam();
@@ -1172,14 +1108,6 @@ HWTEST_P(SIGNATURE_ECDSA_TEST, SUB_Security_CryptoFramework_NAPI_Signature_Test_
     OH_Crypto_FreeDataBlob((Crypto_DataBlob *)&msgBlob);
 }
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_0900
-* @tc.name OHCryptoFrameworkSignatureNapiTest/SIGNATURE_ECDSA_TEST.SUB_Security_CryptoFramework_NAPI_Signature_Test_0900/x
-* @tc.desc Signature function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(SIGNATURE_ECDSA_TEST, SUB_Security_CryptoFramework_NAPI_Signature_Test_0900, TestSize.Level0)
 {
     AsymSignSpec specInfo = GetParam();
@@ -1217,14 +1145,6 @@ HWTEST_P(SIGNATURE_ECDSA_TEST, SUB_Security_CryptoFramework_NAPI_Signature_Test_
 
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkSignatureNapiTest, SIGNATURE_SM2_ED25519_TEST, ::testing::ValuesIn(g_signOtherData));
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_1000
-* @tc.name OHCryptoFrameworkSignatureNapiTest/SIGNATURE_SM2_ED25519_TEST.SUB_Security_CryptoFramework_NAPI_Signature_Test_1000/x
-* @tc.desc Signature function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(SIGNATURE_SM2_ED25519_TEST, SUB_Security_CryptoFramework_NAPI_Signature_Test_1000, TestSize.Level0)
 {
     AsymSignSpec specInfo = GetParam();
@@ -1259,14 +1179,6 @@ HWTEST_P(SIGNATURE_SM2_ED25519_TEST, SUB_Security_CryptoFramework_NAPI_Signature
     OH_Crypto_FreeDataBlob((Crypto_DataBlob *)&msgBlob);
 }
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_1100
-* @tc.name OHCryptoFrameworkSignatureNapiTest/SIGNATURE_SM2_ED25519_TEST.SUB_Security_CryptoFramework_NAPI_Signature_Test_1100/x
-* @tc.desc Signature function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(SIGNATURE_SM2_ED25519_TEST, SUB_Security_CryptoFramework_NAPI_Signature_Test_1100, TestSize.Level0)
 {
     AsymSignSpec specInfo = GetParam();
@@ -1305,13 +1217,13 @@ HWTEST_P(SIGNATURE_SM2_ED25519_TEST, SUB_Security_CryptoFramework_NAPI_Signature
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_1200
-* @tc.name OHCryptoFrameworkSignatureNapiTest.SUB_Security_CryptoFramework_NAPI_Signature_Test_1200
-* @tc.desc Signature function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Signature_Test_1200
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_1200
+ * @tc.desc   Signature function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_Signature_Test_1200, TestSize.Level0)
 {
     OH_CryptoKeyPair *keyPair = nullptr;
@@ -1393,13 +1305,13 @@ HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_S
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_1300
-* @tc.name OHCryptoFrameworkSignatureNapiTest.SUB_Security_CryptoFramework_NAPI_Signature_Test_1300
-* @tc.desc Signature function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Signature_Test_1300
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_1300
+ * @tc.desc   Signature function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_Signature_Test_1300, TestSize.Level0)
 {
     OH_CryptoKeyPair *keyPair = nullptr;
@@ -1448,13 +1360,13 @@ HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_S
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_1400
-* @tc.name OHCryptoFrameworkSignatureNapiTest.SUB_Security_CryptoFramework_NAPI_Signature_Test_1400
-* @tc.desc Signature function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Signature_Test_1400
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_1400
+ * @tc.desc   Signature function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_Signature_Test_1400, TestSize.Level0)
 {
     OH_CryptoSign *sign = nullptr;
@@ -1475,13 +1387,13 @@ HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_S
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_1500
-* @tc.name OHCryptoFrameworkSignatureNapiTest.SUB_Security_CryptoFramework_NAPI_Signature_Test_1500
-* @tc.desc Signature function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Signature_Test_1500
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_1500
+ * @tc.desc   Signature function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_Signature_Test_1500, TestSize.Level0)
 {
     OH_CryptoSign *sign = nullptr;
@@ -1517,13 +1429,13 @@ HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_S
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_1600
-* @tc.name OHCryptoFrameworkSignatureNapiTest.SUB_Security_CryptoFramework_NAPI_Signature_Test_1600
-* @tc.desc Signature function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Signature_Test_1600
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_1600
+ * @tc.desc   Signature function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_Signature_Test_1600, TestSize.Level0)
 {
     OH_CryptoSign *sign = nullptr;
@@ -1547,13 +1459,13 @@ HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_S
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_1700
-* @tc.name OHCryptoFrameworkSignatureNapiTest.SUB_Security_CryptoFramework_NAPI_Signature_Test_1700
-* @tc.desc Signature function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Signature_Test_1700
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_1700
+ * @tc.desc   Signature function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_Signature_Test_1700, TestSize.Level0)
 {
     OH_CryptoSign *sign = nullptr;
@@ -1583,13 +1495,13 @@ HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_S
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_1800
-* @tc.name OHCryptoFrameworkSignatureNapiTest.SUB_Security_CryptoFramework_NAPI_Signature_Test_1800
-* @tc.desc Signature function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Signature_Test_1800
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_1800
+ * @tc.desc   Signature function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_Signature_Test_1800, TestSize.Level0)
 {
     OH_CryptoSign *sign = nullptr;
@@ -1618,13 +1530,13 @@ HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_S
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_1900
-* @tc.name OHCryptoFrameworkSignatureNapiTest.SUB_Security_CryptoFramework_NAPI_Signature_Test_1900
-* @tc.desc Signature function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Signature_Test_1900
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_1900
+ * @tc.desc   Signature function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_Signature_Test_1900, TestSize.Level0)
 {
     OH_CryptoKeyPair *keyPair = nullptr;
@@ -1654,13 +1566,13 @@ HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_S
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_2000
-* @tc.name OHCryptoFrameworkSignatureNapiTest.SUB_Security_CryptoFramework_NAPI_Signature_Test_2000
-* @tc.desc Signature function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Signature_Test_2000
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_2000
+ * @tc.desc   Signature function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_Signature_Test_2000, TestSize.Level0)
 {
     OH_CryptoKeyPair *keyPair = nullptr;
@@ -1690,13 +1602,13 @@ HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_S
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_2100
-* @tc.name OHCryptoFrameworkSignatureNapiTest.SUB_Security_CryptoFramework_NAPI_Signature_Test_2100
-* @tc.desc Signature function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Signature_Test_2100
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_2100
+ * @tc.desc   Signature function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_Signature_Test_2100, TestSize.Level0)
 {
     OH_CryptoKeyPair *keyPair = nullptr;
@@ -1726,13 +1638,13 @@ HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_S
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_2200
-* @tc.name OHCryptoFrameworkSignatureNapiTest.SUB_Security_CryptoFramework_NAPI_Signature_Test_2200
-* @tc.desc Signature function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Signature_Test_2200
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_2200
+ * @tc.desc   Signature function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_Signature_Test_2200, TestSize.Level0)
 {
     OH_CryptoSign *sign = nullptr;
@@ -1744,13 +1656,13 @@ HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_S
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_2300
-* @tc.name OHCryptoFrameworkSignatureNapiTest.SUB_Security_CryptoFramework_NAPI_Signature_Test_2300
-* @tc.desc Signature function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Signature_Test_2300
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_2300
+ * @tc.desc   Signature function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_Signature_Test_2300, TestSize.Level0)
 {
     OH_CryptoSign *sign = nullptr;
@@ -1794,13 +1706,13 @@ HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_S
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_2400
-* @tc.name OHCryptoFrameworkSignatureNapiTest.SUB_Security_CryptoFramework_NAPI_Signature_Test_2400
-* @tc.desc Signature function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Signature_Test_2400
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_2400
+ * @tc.desc   Signature function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_Signature_Test_2400, TestSize.Level0)
 {
     OH_CryptoSign *sign = nullptr;
@@ -1832,13 +1744,13 @@ HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_S
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_2500
-* @tc.name OHCryptoFrameworkSignatureNapiTest.SUB_Security_CryptoFramework_NAPI_Signature_Test_2500
-* @tc.desc Signature function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Signature_Test_2500
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_2500
+ * @tc.desc   Signature function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_Signature_Test_2500, TestSize.Level0)
 {
     OH_CryptoKeyPair *keyPair = nullptr;
@@ -1965,13 +1877,13 @@ EXIT:
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_2600
-* @tc.name OHCryptoFrameworkSignatureNapiTest.SUB_Security_CryptoFramework_NAPI_Signature_Test_2600
-* @tc.desc Signature sm2 asn1 to r\s, len = 0x43 test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Signature_Test_2600
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_2600
+ * @tc.desc   Signature sm2 asn1 to r\s, len = 0x43 test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_Signature_Test_2600, TestSize.Level0)
 {
     uint8_t sm2_asn1[] = {
@@ -1988,13 +1900,13 @@ HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_S
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_2700
-* @tc.name OHCryptoFrameworkSignatureNapiTest.SUB_Security_CryptoFramework_NAPI_Signature_Test_2700
-* @tc.desc Signature sm2 asn1 to r\s, len = 0x45 test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Signature_Test_2700
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_2700
+ * @tc.desc   Signature sm2 asn1 to r\s, len = 0x45 test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_Signature_Test_2700, TestSize.Level0)
 {
     uint8_t sm2_asn1[] = {
@@ -2011,13 +1923,13 @@ HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_S
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_2800
-* @tc.name OHCryptoFrameworkSignatureNapiTest.SUB_Security_CryptoFramework_NAPI_Signature_Test_2800
-* @tc.desc Signature sm2 asn1 to r\s, len = 0x46 test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Signature_Test_2800
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_2800
+ * @tc.desc   Signature sm2 asn1 to r\s, len = 0x46 test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_Signature_Test_2800, TestSize.Level0)
 {
     uint8_t sm2_asn1[] = {
@@ -2034,13 +1946,13 @@ HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_S
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_2900
-* @tc.name OHCryptoFrameworkSignatureNapiTest.SUB_Security_CryptoFramework_NAPI_Signature_Test_2900
-* @tc.desc Signature sm2 asn1 to r\s, len = 0x44 test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Signature_Test_2900
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_2900
+ * @tc.desc   Signature sm2 asn1 to r\s, len = 0x44 test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_Signature_Test_2900, TestSize.Level0)
 {
     uint8_t sm2_asn1[] = {
@@ -2057,13 +1969,13 @@ HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_S
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_3000
-* @tc.name OHCryptoFrameworkSignatureNapiTest.SUB_Security_CryptoFramework_NAPI_Signature_Test_3000
-* @tc.desc Signature ecc224|sha1 to r\s, len = 0x3c test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Signature_Test_3000
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_3000
+ * @tc.desc   Signature ecc224|sha1 to r\s, len = 0x3c test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_Signature_Test_3000, TestSize.Level0)
 {
     uint8_t ecc_asn1[] = {
@@ -2079,13 +1991,13 @@ HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_S
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_3100
-* @tc.name OHCryptoFrameworkSignatureNapiTest.SUB_Security_CryptoFramework_NAPI_Signature_Test_3100
-* @tc.desc Signature invalid asn1 function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Signature_Test_3100
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_3100
+ * @tc.desc   Signature invalid asn1 function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_Signature_Test_3100, TestSize.Level0)
 {
     uint8_t sm2_asn1[] = {
@@ -2107,13 +2019,13 @@ HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_S
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_3200
-* @tc.name OHCryptoFrameworkSignatureNapiTest.SUB_Security_CryptoFramework_NAPI_Signature_Test_3200
-* @tc.desc Signature invalid asn1 function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Signature_Test_3200
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_3200
+ * @tc.desc   Signature invalid asn1 function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_Signature_Test_3200, TestSize.Level0)
 {
     uint8_t sm2_asn1[] = {
@@ -2148,13 +2060,13 @@ HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_S
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_3300
-* @tc.name OHCryptoFrameworkSignatureNapiTest.SUB_Security_CryptoFramework_NAPI_Signature_Test_3300
-* @tc.desc Signature invalid asn1 function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Signature_Test_3300
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_3300
+ * @tc.desc   Signature invalid asn1 function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_Signature_Test_3300, TestSize.Level0)
 {
     uint8_t sm2_asn1[] = {
@@ -2177,13 +2089,13 @@ HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_S
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_3400
-* @tc.name OHCryptoFrameworkSignatureNapiTest.SUB_Security_CryptoFramework_NAPI_Signature_Test_3400
-* @tc.desc Signature invalid asn1 function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Signature_Test_3400
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_3400
+ * @tc.desc   Signature invalid asn1 function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_Signature_Test_3400, TestSize.Level0)
 {
     uint8_t sm2_asn1[] = {
@@ -2206,13 +2118,13 @@ HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_S
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_3500
-* @tc.name OHCryptoFrameworkSignatureNapiTest.SUB_Security_CryptoFramework_NAPI_Signature_Test_3500
-* @tc.desc Signature invalid asn1 function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Signature_Test_3500
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_3500
+ * @tc.desc   Signature invalid asn1 function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_Signature_Test_3500, TestSize.Level0)
 {
     uint8_t sm2_asn1[] = {
@@ -2235,13 +2147,13 @@ HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_S
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_3600
-* @tc.name OHCryptoFrameworkSignatureNapiTest.SUB_Security_CryptoFramework_NAPI_Signature_Test_3600
-* @tc.desc Signature invalid asn1 function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Signature_Test_3600
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_3600
+ * @tc.desc   Signature invalid asn1 function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_Signature_Test_3600, TestSize.Level0)
 {
     uint8_t sm2_asn1[] = {
@@ -2264,13 +2176,13 @@ HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_S
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_3700
-* @tc.name OHCryptoFrameworkSignatureNapiTest.SUB_Security_CryptoFramework_NAPI_Signature_Test_3700
-* @tc.desc Signature invalid asn1 function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Signature_Test_3700
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_3700
+ * @tc.desc   Signature invalid asn1 function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_Signature_Test_3700, TestSize.Level0)
 {
     uint8_t sm2_asn1[] = {
@@ -2293,13 +2205,13 @@ HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_S
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_3800
-* @tc.name OHCryptoFrameworkSignatureNapiTest.SUB_Security_CryptoFramework_NAPI_Signature_Test_3800
-* @tc.desc Signature invalid asn1 function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Signature_Test_3800
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_3800
+ * @tc.desc   Signature invalid asn1 function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_Signature_Test_3800, TestSize.Level0)
 {
     uint8_t sm2_asn1[] = {
@@ -2321,14 +2233,6 @@ HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_S
     OH_CryptoEccSignatureSpec_Destroy(spec);
 }
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_3900
-* @tc.name OHCryptoFrameworkSignatureNapiTest/SIGNATURE_ECDSA_TEST.SUB_Security_CryptoFramework_NAPI_Signature_Test_3900/x
-* @tc.desc Signature function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(SIGNATURE_ECDSA_TEST, SUB_Security_CryptoFramework_NAPI_Signature_Test_3900, TestSize.Level0)
 {
     AsymSignSpec specInfo = GetParam();
@@ -2363,13 +2267,13 @@ HWTEST_P(SIGNATURE_ECDSA_TEST, SUB_Security_CryptoFramework_NAPI_Signature_Test_
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_4000
-* @tc.name OHCryptoFrameworkSignatureNapiTest.SUB_Security_CryptoFramework_NAPI_Signature_Test_4000
-* @tc.desc Signature msg ge n function test
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Signature_Test_4000
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Signature_Test_4000
+ * @tc.desc   Signature msg ge n function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSignatureNapiTest, SUB_Security_CryptoFramework_NAPI_Signature_Test_4000, TestSize.Level0)
 {
     OH_Crypto_ErrCode ret = CRYPTO_SUCCESS;

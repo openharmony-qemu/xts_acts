@@ -138,12 +138,12 @@ export default function PreviewOutputBackTest() {
     });
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PREVIEW_BACK_001
-     * @tc.name      : on_error_listen_previewOutput_back_001
-     * @tc.desc      : No abnormal scenarios-listen on error
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   on_error_listen_previewOutput_back_001
+     * @tc.number CAMERA_OUTPUT_PREVIEW_BACK_001
+     * @tc.desc   No abnormal scenarios-listen on error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_error_listen_previewOutput_back_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'on_error_listen_previewOutput_back_001';
@@ -180,12 +180,12 @@ export default function PreviewOutputBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PREVIEW_BACK_002
-     * @tc.name      : off_error_listen_previewOutput_back_001
-     * @tc.desc      : No abnormal scenarios-listen off error
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   off_error_listen_previewOutput_back_001
+     * @tc.number CAMERA_OUTPUT_PREVIEW_BACK_002
+     * @tc.desc   No abnormal scenarios-listen off error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('off_error_listen_previewOutput_back_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'off_error_listen_previewOutput_back_001';
@@ -235,12 +235,12 @@ export default function PreviewOutputBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PREVIEW_BACK_003
-     * @tc.name      : release_preview_callback_back_001
-     * @tc.desc      : No abnormal scenarios-preview output release-callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   release_preview_callback_back_001
+     * @tc.number CAMERA_OUTPUT_PREVIEW_BACK_003
+     * @tc.desc   No abnormal scenarios-preview output release-callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_preview_callback_back_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'release_preview_callback_back_001';
@@ -282,12 +282,12 @@ export default function PreviewOutputBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PREVIEW_BACK_004
-     * @tc.name      : release_preview_promise_back_001
-     * @tc.desc      : No abnormal scenarios-preview output release-promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   release_preview_promise_back_001
+     * @tc.number CAMERA_OUTPUT_PREVIEW_BACK_004
+     * @tc.desc   No abnormal scenarios-preview output release-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_preview_promise_back_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'release_preview_promise_back_001';
@@ -325,53 +325,5 @@ export default function PreviewOutputBackTest() {
         done();
       }
     })
-
-    /**
-     * @tc.number    : CAMERA_OUTPUT_PREVIEW_BACK_005 //TODO 未能成功监听错误码
-     * @tc.name      : on_error_listen_previewOutput_abnormal_back_001
-     * @tc.desc      : No abnormal scenarios
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    /*
-        it('on_error_listen_previewOutput_abnormal_back_001', Level.LEVEL0, async (done: Function) => {
-          const testName = 'on_error_listen_previewOutput_abnormal_back_001';
-          console.info(TAG, testName + ' begin.');
-          if (!checkBackCamera()) {
-            console.info(TAG, testName + ' the current device does not have a rear camera.');
-            done();
-            return;
-          }
-          try {
-            if (isEmpty(mCameraManager) && isEmpty(mCameraDeviceArray)) {
-              console.info(TAG, testName + ' cameraManager is null.');
-              expect().assertFail();
-            } else {
-              mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
-              mPhotoSession = mCameraManager.createSession(mSupportedModes[0]);
-              mPreviewOutput.on('error', (error) => {
-                if (error !== undefined && error.code !== 0) {
-                  console.error(TAG,
-                    testName + ' failed to listen error previewOutput on, err: ' + error.code + ', msg: ' + error.message);
-                  expect().assertFail();
-                } else {
-                  console.info(TAG, testName + ' succeed to listen error previewOutput on.');
-                  expect(true).assertFalse();
-                }
-              });
-              await mPhotoSession.start();
-              mPhotoSession.beginConfig();
-              await mPhotoSession.release();
-            }
-            done();
-          } catch (error) {
-            console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-            expect(error.code == cameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
-            await mPhotoSession.release();
-            done();
-          }
-        })
-    */
   })
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
@@ -38,25 +39,6 @@ export default class EntryAbility extends UIAbility {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;
       }
-      let windowClass: window.Window | undefined = undefined;
-      windowStage.getMainWindow((err: BusinessError, data) => {
-        let errCode: number = err.code;
-        if (errCode) {
-          console.error('Failed to obtain the main window. Cause: ' + JSON.stringify(err));
-          return;
-        }
-        windowClass = data;
-        console.info('Succeeded in obtaining the main window. Data: ' + JSON.stringify(data));
-        try {
-          let properties : window.WindowProperties = windowClass.getWindowProperties();
-          let wRect : window.Rect =  properties.windowRect;
-          globalThis.winLeft = wRect.left;
-          globalThis.winTop = wRect.top;
-          console.info('Succeeded get winLeft:' + globalThis.winLeft + ',winTop:' + globalThis.winTop );
-        } catch (exception) {
-          console.error('Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
-        }
-      })
       hilog.info(0x0000, 'testTag', 'Succeeded in loading the content.');
     });
   }

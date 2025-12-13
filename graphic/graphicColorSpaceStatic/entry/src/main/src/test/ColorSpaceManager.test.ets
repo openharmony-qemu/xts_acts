@@ -36,12 +36,12 @@ export default function colorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number: SUB_GRAPHIC_COLOR_SPACE_API_static_001
-     * @tc.name: SUB_GRAPHIC_COLOR_SPACE_API_static_001
-     * @tc.desc: color space API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_001
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_001
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_COLOR_SPACE_API_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -88,12 +88,12 @@ export default function colorSpaceManagerTest() {
       })
 
     /**
-     * @tc.number: SUB_GRAPHIC_COLOR_SPACE_API_static_002
-     * @tc.name: SUB_GRAPHIC_COLOR_SPACE_API_static_002
-     * @tc.desc: color space API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_002
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_002
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_COLOR_SPACE_API_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -113,12 +113,12 @@ export default function colorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number: SUB_GRAPHIC_COLOR_SPACE_API_static_003
-     * @tc.name: SUB_GRAPHIC_COLOR_SPACE_API_static_003
-     * @tc.desc: color space API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_003
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_003
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_COLOR_SPACE_API_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -138,12 +138,12 @@ export default function colorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number: SUB_GRAPHIC_COLOR_SPACE_API_static_004
-     * @tc.name: SUB_GRAPHIC_COLOR_SPACE_API_static_004
-     * @tc.desc: color space API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_004
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_004
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_COLOR_SPACE_API_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -163,12 +163,12 @@ export default function colorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number: SUB_GRAPHIC_COLOR_SPACE_API_static_005
-     * @tc.name: SUB_GRAPHIC_COLOR_SPACE_API_static_005
-     * @tc.desc: color space API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_005
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_005
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_COLOR_SPACE_API_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -188,12 +188,12 @@ export default function colorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number: SUB_GRAPHIC_COLOR_SPACE_API_static_006
-     * @tc.name: SUB_GRAPHIC_COLOR_SPACE_API_static_006
-     * @tc.desc: color space API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_006
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_006
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_COLOR_SPACE_API_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -213,12 +213,12 @@ export default function colorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number: SUB_GRAPHIC_COLOR_SPACE_API_static_007
-     * @tc.name: SUB_GRAPHIC_COLOR_SPACE_API_static_007
-     * @tc.desc: color space API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_007
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_007
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_COLOR_SPACE_API_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -238,12 +238,12 @@ export default function colorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number: SUB_GRAPHIC_COLOR_SPACE_API_static_008
-     * @tc.name: SUB_GRAPHIC_COLOR_SPACE_API_static_008
-     * @tc.desc: color space API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_008
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_008
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_COLOR_SPACE_API_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -278,12 +278,12 @@ export default function colorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number: SUB_GRAPHIC_COLOR_SPACE_API_static_009
-     * @tc.name: SUB_GRAPHIC_COLOR_SPACE_API_static_009
-     * @tc.desc: color space API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_009
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_009
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_COLOR_SPACE_API_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -304,12 +304,12 @@ export default function colorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number: SUB_GRAPHIC_COLOR_SPACE_API_static_010
-     * @tc.name: SUB_GRAPHIC_COLOR_SPACE_API_static_010
-     * @tc.desc: color space API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_010
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_010
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_COLOR_SPACE_API_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -328,12 +328,12 @@ export default function colorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number: SUB_GRAPHIC_COLOR_SPACE_API_static_011
-     * @tc.name: SUB_GRAPHIC_COLOR_SPACE_API_static_011
-     * @tc.desc: color space API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_011
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_011
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_COLOR_SPACE_API_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -351,5 +351,210 @@ export default function colorSpaceManagerTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_012
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_012
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_GRAPHIC_COLOR_SPACE_API_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info('test SUB_GRAPHIC_COLOR_SPACE_API_static_012 begin');
+      try {
+        expect(27).assertEqual(colorSpaceManager.ColorSpace.DISPLAY_BT2020_SRGB);
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.DISPLAY_BT2020_SRGB);
+        expect(colorSpace != null).assertTrue();
+        let colorSpaceName = colorSpace.getColorSpaceName();
+        console.info("the name is " + colorSpaceName);
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.DISPLAY_BT2020_SRGB);
+        done();
+      } catch (err) {
+        console.log('test enum value of ColorSpace Manager error ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_013
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_013
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_GRAPHIC_COLOR_SPACE_API_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info('test SUB_GRAPHIC_COLOR_SPACE_API_static_013 begin');
+      try {
+        let colorSpace1 = colorSpaceManager.create(colorSpaceManager.ColorSpace.ADOBE_RGB_1998);
+        let colorSpaceName1 = colorSpace1.getColorSpaceName();
+        expect(colorSpaceName1).assertEqual(colorSpaceManager.ColorSpace.ADOBE_RGB_1998);
+        let colorSpace2 = colorSpaceManager.create(colorSpaceManager.ColorSpace.DCI_P3);
+        let colorSpaceName2 = colorSpace2.getColorSpaceName();
+        expect(colorSpaceName2).assertEqual(colorSpaceManager.ColorSpace.DCI_P3);
+        let colorSpace3 = colorSpaceManager.create(colorSpaceManager.ColorSpace.DISPLAY_P3);
+        let colorSpaceName3 = colorSpace3.getColorSpaceName();
+        expect(colorSpaceName3).assertEqual(colorSpaceManager.ColorSpace.DISPLAY_P3);
+        let colorSpace4 = colorSpaceManager.create(colorSpaceManager.ColorSpace.SRGB);
+        let colorSpaceName4 = colorSpace4.getColorSpaceName();
+        expect(colorSpaceName4).assertEqual(colorSpaceManager.ColorSpace.SRGB);
+        let colorSpace5 = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT709);
+        let colorSpaceName5 = colorSpace5.getColorSpaceName();
+        expect(colorSpaceName5).assertEqual(colorSpaceManager.ColorSpace.BT709);
+        let colorSpace6 = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT601_EBU);
+        let colorSpaceName6 = colorSpace6.getColorSpaceName();
+        expect(colorSpaceName6).assertEqual(colorSpaceManager.ColorSpace.BT601_EBU);
+        let colorSpace7 = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT601_SMPTE_C);
+        let colorSpaceName7 = colorSpace7.getColorSpaceName();
+        expect(colorSpaceName7).assertEqual(colorSpaceManager.ColorSpace.BT601_SMPTE_C);
+        let colorSpace8 = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT2020_HLG);
+        let colorSpaceName8 = colorSpace8.getColorSpaceName();
+        expect(colorSpaceName8).assertEqual(colorSpaceManager.ColorSpace.BT2020_HLG);
+        let colorSpace9 = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT2020_PQ);
+        let colorSpaceName9 = colorSpace9.getColorSpaceName();
+        expect(colorSpaceName9).assertEqual(colorSpaceManager.ColorSpace.BT2020_PQ);
+        let colorSpace10 = colorSpaceManager.create(colorSpaceManager.ColorSpace.P3_HLG);
+        let colorSpaceName10 = colorSpace10.getColorSpaceName();
+        expect(colorSpaceName10).assertEqual(colorSpaceManager.ColorSpace.P3_HLG);
+        done();
+      } catch (err) {
+        console.log('test enum value of ColorSpace Manager error ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_014
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_014
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_GRAPHIC_COLOR_SPACE_API_static_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info('test SUB_GRAPHIC_COLOR_SPACE_API_static_014 begin');
+      try {
+        let colorSpace1 = colorSpaceManager.create(colorSpaceManager.ColorSpace.P3_PQ);
+        let colorSpaceName1 = colorSpace1.getColorSpaceName();
+        expect(colorSpaceName1).assertEqual(colorSpaceManager.ColorSpace.P3_PQ);
+        let colorSpace2 = colorSpaceManager.create(colorSpaceManager.ColorSpace.ADOBE_RGB_1998_LIMIT);
+        let colorSpaceName2 = colorSpace2.getColorSpaceName();
+        expect(colorSpaceName2).assertEqual(colorSpaceManager.ColorSpace.ADOBE_RGB_1998_LIMIT);
+        let colorSpace3 = colorSpaceManager.create(colorSpaceManager.ColorSpace.DISPLAY_P3_LIMIT);
+        let colorSpaceName3 = colorSpace3.getColorSpaceName();
+        expect(colorSpaceName3).assertEqual(colorSpaceManager.ColorSpace.DISPLAY_P3_LIMIT);
+        let colorSpace4 = colorSpaceManager.create(colorSpaceManager.ColorSpace.SRGB_LIMIT);
+        let colorSpaceName4 = colorSpace4.getColorSpaceName();
+        expect(colorSpaceName4).assertEqual(colorSpaceManager.ColorSpace.SRGB_LIMIT);
+        let colorSpace5 = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT709_LIMIT);
+        let colorSpaceName5 = colorSpace5.getColorSpaceName();
+        expect(colorSpaceName5).assertEqual(colorSpaceManager.ColorSpace.BT709_LIMIT);
+        let colorSpace6 = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT601_EBU_LIMIT);
+        let colorSpaceName6 = colorSpace6.getColorSpaceName();
+        expect(colorSpaceName6).assertEqual(colorSpaceManager.ColorSpace.BT601_EBU_LIMIT);
+        let colorSpace7 = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT601_SMPTE_C_LIMIT);
+        let colorSpaceName7 = colorSpace7.getColorSpaceName();
+        expect(colorSpaceName7).assertEqual(colorSpaceManager.ColorSpace.BT601_SMPTE_C_LIMIT);
+        let colorSpace8 = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT2020_HLG_LIMIT);
+        let colorSpaceName8 = colorSpace8.getColorSpaceName();
+        expect(colorSpaceName8).assertEqual(colorSpaceManager.ColorSpace.BT2020_HLG_LIMIT);
+        let colorSpace9 = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT2020_PQ_LIMIT);
+        let colorSpaceName9 = colorSpace9.getColorSpaceName();
+        expect(colorSpaceName9).assertEqual(colorSpaceManager.ColorSpace.BT2020_PQ_LIMIT);
+        let colorSpace10 = colorSpaceManager.create(colorSpaceManager.ColorSpace.P3_HLG_LIMIT);
+        let colorSpaceName10 = colorSpace10.getColorSpaceName();
+        expect(colorSpaceName10).assertEqual(colorSpaceManager.ColorSpace.P3_HLG_LIMIT);
+        done();
+      } catch (err) {
+        console.log('test enum value of ColorSpace Manager error ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_015
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_015
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_GRAPHIC_COLOR_SPACE_API_static_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info('test SUB_GRAPHIC_COLOR_SPACE_API_static_015 begin');
+      try {
+        let colorSpace1 = colorSpaceManager.create(colorSpaceManager.ColorSpace.P3_PQ_LIMIT);
+        let colorSpaceName1 = colorSpace1.getColorSpaceName();
+        expect(colorSpaceName1).assertEqual(colorSpaceManager.ColorSpace.P3_PQ_LIMIT);
+        let colorSpace2 = colorSpaceManager.create(colorSpaceManager.ColorSpace.LINEAR_P3);
+        let colorSpaceName2 = colorSpace2.getColorSpaceName();
+        expect(colorSpaceName2).assertEqual(colorSpaceManager.ColorSpace.LINEAR_P3);
+        let colorSpace3 = colorSpaceManager.create(colorSpaceManager.ColorSpace.LINEAR_SRGB);
+        let colorSpaceName3 = colorSpace3.getColorSpaceName();
+        expect(colorSpaceName3).assertEqual(colorSpaceManager.ColorSpace.LINEAR_SRGB);
+        let colorSpace4 = colorSpaceManager.create(colorSpaceManager.ColorSpace.LINEAR_BT709);
+        let colorSpaceName4 = colorSpace4.getColorSpaceName();
+        expect(colorSpaceName4).assertEqual(colorSpaceManager.ColorSpace.LINEAR_BT709);
+        let colorSpace5 = colorSpaceManager.create(colorSpaceManager.ColorSpace.LINEAR_BT2020);
+        let colorSpaceName5 = colorSpace5.getColorSpaceName();
+        expect(colorSpaceName5).assertEqual(colorSpaceManager.ColorSpace.LINEAR_BT2020);
+        let colorSpace6 = colorSpaceManager.create(colorSpaceManager.ColorSpace.H_LOG);
+        let colorSpaceName6 = colorSpace6.getColorSpaceName();
+        expect(colorSpaceName6).assertEqual(colorSpaceManager.ColorSpace.H_LOG);
+        let colorSpace7 = colorSpaceManager.create(colorSpaceManager.ColorSpace.DISPLAY_BT2020_SRGB);
+        let colorSpaceName7 = colorSpace7.getColorSpaceName();
+        expect(colorSpaceName7).assertEqual(colorSpaceManager.ColorSpace.DISPLAY_BT2020_SRGB);
+        let colorSpace8 = colorSpaceManager.create(colorSpaceManager.ColorSpace.DISPLAY_SRGB);
+        let colorSpaceName8 = colorSpace8.getColorSpaceName();
+        expect(colorSpaceName8).assertEqual(colorSpaceManager.ColorSpace.DISPLAY_SRGB);
+        let colorSpace9 = colorSpaceManager.create(colorSpaceManager.ColorSpace.DISPLAY_P3_SRGB);
+        let colorSpaceName9 = colorSpace9.getColorSpaceName();
+        expect(colorSpaceName9).assertEqual(colorSpaceManager.ColorSpace.DISPLAY_P3_SRGB);
+        let colorSpace10 = colorSpaceManager.create(colorSpaceManager.ColorSpace.DISPLAY_P3_HLG);
+        let colorSpaceName10 = colorSpace10.getColorSpaceName();
+        expect(colorSpaceName10).assertEqual(colorSpaceManager.ColorSpace.DISPLAY_P3_HLG);
+        let colorSpace11 = colorSpaceManager.create(colorSpaceManager.ColorSpace.DISPLAY_P3_PQ);
+        let colorSpaceName11 = colorSpace11.getColorSpaceName();
+        expect(colorSpaceName11).assertEqual(colorSpaceManager.ColorSpace.DISPLAY_P3_PQ);
+        done();
+      } catch (err) {
+        console.log('test enum value of ColorSpace Manager error ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_016
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_016
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_GRAPHIC_COLOR_SPACE_API_static_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info('test SUB_GRAPHIC_COLOR_SPACE_API_static_016 begin');
+      try {
+        let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.ADOBE_RGB_1998);
+        let point = colorSpace.getWhitePoint();
+        expect(point.length > 0).assertTrue();
+        expect(point[0] > 0).assertTrue();
+        expect(point[1] > 0).assertTrue();
+        done();
+      } catch (err) {
+        console.log('test enum value of ColorSpace Manager error ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
   })
 }

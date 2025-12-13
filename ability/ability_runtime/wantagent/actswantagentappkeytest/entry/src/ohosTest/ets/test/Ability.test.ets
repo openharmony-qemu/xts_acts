@@ -37,12 +37,12 @@ export default function abilityTest() {
       done();
     })
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_wantAgent_Multiton_0100
-     * @tc.name: SUB_Ability_AbilityRuntime_wantAgent_Multiton_0100
-     * @tc.desc: Start Ability by WantAgent default parameter
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level3
+     * @tc.name   SUB_Ability_AbilityRuntime_wantAgent_Multiton_0100
+     * @tc.number SUB_Ability_AbilityRuntime_wantAgent_Multiton_0100
+     * @tc.desc   Start Ability by WantAgent default parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_wantAgent_Multiton_0100', Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'SUB_Ability_AbilityRuntime_wantAgent_Multiton_0100';
@@ -90,12 +90,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_wantAgent_Multiton_0200
-     * @tc.name: SUB_Ability_AbilityRuntime_wantAgent_Multiton_0200
-     * @tc.desc: Start Ability by WantAgent 'app_instance_0'
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   SUB_Ability_AbilityRuntime_wantAgent_Multiton_0200
+     * @tc.number SUB_Ability_AbilityRuntime_wantAgent_Multiton_0200
+     * @tc.desc   Start Ability by WantAgent 'app_instance_0'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_wantAgent_Multiton_0200', Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'SUB_Ability_AbilityRuntime_wantAgent_Multiton_0200';
@@ -146,12 +146,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_wantAgent_Multiton_0300
-     * @tc.name: SUB_Ability_AbilityRuntime_wantAgent_Multiton_0300
-     * @tc.desc: Start Ability by WantAgent 'app_instance_0' and 'START_ABILITIES'
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level3
+     * @tc.name   SUB_Ability_AbilityRuntime_wantAgent_Multiton_0300
+     * @tc.number SUB_Ability_AbilityRuntime_wantAgent_Multiton_0300
+     * @tc.desc   Start Ability by WantAgent 'app_instance_0' and 'START_ABILITIES'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_wantAgent_Multiton_0300', Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'SUB_Ability_AbilityRuntime_wantAgent_Multiton_0300';
@@ -203,12 +203,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_wantAgent_Multiton_0400
-     * @tc.name: SUB_Ability_AbilityRuntime_wantAgent_Multiton_0400
-     * @tc.desc: Start Ability by WantAgent 'app_instance_10' and 'START_ABILITIES'
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level3
+     * @tc.name   SUB_Ability_AbilityRuntime_wantAgent_Multiton_0400
+     * @tc.number SUB_Ability_AbilityRuntime_wantAgent_Multiton_0400
+     * @tc.desc   Start Ability by WantAgent 'app_instance_10' and 'START_ABILITIES'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_wantAgent_Multiton_0400', Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'SUB_Ability_AbilityRuntime_wantAgent_Multiton_0400';
@@ -260,12 +260,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_wantAgent_Multiton_0500
-     * @tc.name: SUB_Ability_AbilityRuntime_wantAgent_Multiton_0500
-     * @tc.desc: Start ServiceExtensionAbility by WantAgent 'app_instance_2' and 'START_SERVICE'
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level3
+     * @tc.name   SUB_Ability_AbilityRuntime_wantAgent_Multiton_0500
+     * @tc.number SUB_Ability_AbilityRuntime_wantAgent_Multiton_0500
+     * @tc.desc   Start ServiceExtensionAbility by WantAgent 'app_instance_2' and 'START_SERVICE'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_wantAgent_Multiton_0500', Level.LEVEL0, async (done: Function) => {
       let mpEnable: string = '';
@@ -328,12 +328,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_wantAgent_Multiton_0600
-     * @tc.name: SUB_Ability_AbilityRuntime_wantAgent_Multiton_0600
-     * @tc.desc: Compare result of WantAgent member function before and after trigger with 'app_instance_0'
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level3
+     * @tc.name   SUB_Ability_AbilityRuntime_wantAgent_Multiton_0600
+     * @tc.number SUB_Ability_AbilityRuntime_wantAgent_Multiton_0600
+     * @tc.desc   Compare result of WantAgent member function before and after trigger with 'app_instance_0'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_wantAgent_Multiton_0600', Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'SUB_Ability_AbilityRuntime_wantAgent_Multiton_0600';
@@ -442,12 +442,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_wantAgent_Multiton_0700
-     * @tc.name: SUB_Ability_AbilityRuntime_wantAgent_Multiton_0700
-     * @tc.desc: Compare result of WantAgent member function before and after trigger with 'app_instance_0'
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level3
+     * @tc.name   SUB_Ability_AbilityRuntime_wantAgent_Multiton_0700
+     * @tc.number SUB_Ability_AbilityRuntime_wantAgent_Multiton_0700
+     * @tc.desc   Compare result of WantAgent member function before and after trigger with 'app_instance_0'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_wantAgent_Multiton_0700', Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'SUB_Ability_AbilityRuntime_wantAgent_Multiton_0700';

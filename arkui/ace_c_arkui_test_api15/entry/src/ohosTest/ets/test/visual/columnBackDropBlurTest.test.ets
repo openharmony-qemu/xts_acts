@@ -26,13 +26,13 @@ export default function columnBackDropBlurTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_BACK_DROP_BLUR_0100
-     * @tc.name       : columnBackDropBlurTest001
-     * @tc.desc       : testing backDropBlur for column with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   columnBackDropBlurTest001
+     * @tc.number SUB_ARKUI_CAPI_BACK_DROP_BLUR_0100
+     * @tc.desc   testing backDropBlur for column with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('columnBackDropBlurTest001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.columnBackDropBlurTest001()).assertEqual(0)

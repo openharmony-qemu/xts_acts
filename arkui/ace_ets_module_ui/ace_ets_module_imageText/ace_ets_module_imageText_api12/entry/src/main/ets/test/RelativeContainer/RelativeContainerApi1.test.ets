@@ -44,15 +44,15 @@ export default function RelativeContainerApi1() {
       console.info("RelativeContainerApi1 after each called");
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_Text_0010
-     * @tc.name       : RelativeContainerApi1_001
-     * @tc.desc       : Text Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   RelativeContainerApi1_001
+     * @tc.number RelativeContainerApi1_001
+     * @tc.desc   RelativeContainerApi1_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('RelativeContainerApi1_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[RelativeContainerApi1_001] START');
       await CommonFunc.sleep(1000);

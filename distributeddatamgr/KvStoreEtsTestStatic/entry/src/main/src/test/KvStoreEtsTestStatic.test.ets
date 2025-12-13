@@ -115,12 +115,12 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name         KvStoreTest001
-     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0010
-     * @tc.desc       : //getKVStore<distributedKVStore.SingleKVStore>
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   KvStoreTest001
+     * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0010
+     * @tc.desc   //getKVStore<distributedKVStore.SingleKVStore>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('KvStoreTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest001 start ");
@@ -139,12 +139,12 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name         KvStoreTest0011
-     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0011
-     * @tc.desc       : //getKVStore<distributedKVStore.SingleKVStore>
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   KvStoreTest0011
+     * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0011
+     * @tc.desc   //getKVStore<distributedKVStore.SingleKVStore>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('KvStoreTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest0011 start ");
@@ -163,12 +163,12 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name         KvStoreTest002
-     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0020
-     * @tc.desc       : //getKVStore<distributedKVStore.DeviceKVStore>
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   KvStoreTest002
+     * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0020
+     * @tc.desc   //getKVStore<distributedKVStore.DeviceKVStore>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('KvStoreTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest002 start ");
@@ -186,12 +186,12 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name         KvStoreTest003
-     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0030
-     * @tc.desc       : //SingleKVStore put get string
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   KvStoreTest003
+     * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0030
+     * @tc.desc   //SingleKVStore put get string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('KvStoreTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest003 start ");
@@ -219,12 +219,12 @@ export default function KvStoreEtsTestStatic() {
 
 
     /**
-     * @tc.name         KvStoreTest005
-     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0050
-     * @tc.desc       ://SingleKVStore put get Boolean
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   KvStoreTest005
+     * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0050
+     * @tc.desc   //SingleKVStore put get Boolean
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('KvStoreTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest005 start ");
@@ -247,12 +247,12 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name         KvStoreTest006
-     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0060
-     * @tc.desc       ://SingleKVStore put get Uint8Array
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   KvStoreTest006
+     * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0060
+     * @tc.desc   //SingleKVStore put get Uint8Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('KvStoreTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest006 start ");
@@ -273,12 +273,12 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name         KvStoreTest007
-     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0070
-     * @tc.desc       : //SingleKVStore backup
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   KvStoreTest007
+     * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0070
+     * @tc.desc   //SingleKVStore backup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('KvStoreTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest007 start ");
@@ -297,12 +297,12 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name         KvStoreTest008
-     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0080
-     * @tc.desc       : //DeviceKVStore backup
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   KvStoreTest008
+     * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0080
+     * @tc.desc   //DeviceKVStore backup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('KvStoreTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest008 start ");
@@ -321,12 +321,12 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name         KvStoreTest009
-     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0090
-     * @tc.desc       : //SingleKVStore backup  callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   KvStoreTest009
+     * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0090
+     * @tc.desc   //SingleKVStore backup  callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('KvStoreTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest009 start ");
@@ -346,12 +346,12 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name         KvStoreTest010
-     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0100
-     * @tc.desc       : //DeviceKVStore put get Uint8Array
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   KvStoreTest010
+     * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0100
+     * @tc.desc   //DeviceKVStore put get Uint8Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('KvStoreTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest010 start ");
@@ -372,12 +372,12 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name         KvStoreTest011
-     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0110
-     * @tc.desc       : //DeviceKVStore put get string
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   KvStoreTest011
+     * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0110
+     * @tc.desc   //DeviceKVStore put get string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('KvStoreTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest011 start ");
@@ -400,12 +400,12 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name         KvStoreTest012
-     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0120
-     * @tc.desc       : //DeviceKVStore put get double
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   KvStoreTest012
+     * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0120
+     * @tc.desc   //DeviceKVStore put get double
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('KvStoreTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest012 start ");
@@ -427,12 +427,12 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name         KvStoreTest013
-     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0130
-     * @tc.desc       : //DeviceKVStore put get Boolean
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   KvStoreTest013
+     * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0130
+     * @tc.desc   //DeviceKVStore put get Boolean
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('KvStoreTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest013 start ");
@@ -454,12 +454,12 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name         KvStoreTest014
-     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0140
-     * @tc.desc       : //DeviceKVStore put get callback Boolean
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   KvStoreTest014
+     * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0140
+     * @tc.desc   //DeviceKVStore put get callback Boolean
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('KvStoreTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest014 start ");
@@ -486,12 +486,12 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name         KvStoreTest015
-     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0150
-     * @tc.desc       : //DeviceKVStore put get callback double
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   KvStoreTest015
+     * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0150
+     * @tc.desc   //DeviceKVStore put get callback double
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('KvStoreTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest015 start ");
@@ -519,12 +519,12 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name         KvStoreTest016
-     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0160
-     * @tc.desc       : //DeviceKVStore put get callback string
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   KvStoreTest016
+     * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0160
+     * @tc.desc   //DeviceKVStore put get callback string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('KvStoreTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest016 start ");
@@ -550,12 +550,12 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name         KvStoreTest017
-     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0170
-     * @tc.desc       : //DeviceKVStore put get  callback string
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   KvStoreTest017
+     * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0170
+     * @tc.desc   //DeviceKVStore put get  callback string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('KvStoreTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest017 start ");
@@ -581,12 +581,12 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name         KvStoreTest018
-     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0180
-     * @tc.desc       : //SingleKVStore put get  callback string
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   KvStoreTest018
+     * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0180
+     * @tc.desc   //SingleKVStore put get  callback string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('KvStoreTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest018 start ");
@@ -611,12 +611,12 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name         KvStoreTest019
-     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0190
-     * @tc.desc       : //DeviceKVStore get(did, key)
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   KvStoreTest019
+     * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0190
+     * @tc.desc   //DeviceKVStore get(did, key)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('KvStoreTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "=======KvStoreTest019 start ");
@@ -642,12 +642,12 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name         KvStoreTest0191
-     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0191
-     * @tc.desc       : //DeviceKVStore get(key)
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   KvStoreTest0191
+     * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0191
+     * @tc.desc   //DeviceKVStore get(key)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('KvStoreTest0191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "=======KvStoreTest0191 start ");
@@ -672,12 +672,12 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @tc.name         KvStoreTest020
-     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0200
-     * @tc.desc       : //DeviceKVStore get(did,key)  callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   KvStoreTest020
+     * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0200
+     * @tc.desc   //DeviceKVStore get(did,key)  callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('KvStoreTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "=======KvStoreTest020 start ");
@@ -706,12 +706,12 @@ export default function KvStoreEtsTestStatic() {
 
 
     /**
-     * @tc.name         KvStoreTest0201
-     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0201
-     * @tc.desc       : //DeviceKVStore get(key)  callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   KvStoreTest0201
+     * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0201
+     * @tc.desc   //DeviceKVStore get(key)  callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('KvStoreTest0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "=======KvStoreTest0201 start ");
@@ -739,12 +739,12 @@ export default function KvStoreEtsTestStatic() {
 
 
     /**
-     * @tc.name         KvStoreTest021
-     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0210
-     * @tc.desc       : //Schema.constructor, FieldNode.constructor, Query.constructor
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   KvStoreTest021
+     * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0210
+     * @tc.desc   //Schema.constructor, FieldNode.constructor, Query.constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('KvStoreTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "============KvStoreTest021 start ");
@@ -759,14 +759,14 @@ export default function KvStoreEtsTestStatic() {
       }
     })
     
-  /**
-   * @tc.name         KvStoreTest022
-   * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0220
-   * @tc.desc       : //SingleKVStore get(key)
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 1
-   */
+    /**
+     * @tc.name   KvStoreTest022
+     * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0220
+     * @tc.desc   //SingleKVStore get(key)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('KvStoreTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "=======KvStoreTest022 start ");
       try {
@@ -790,12 +790,12 @@ export default function KvStoreEtsTestStatic() {
     })
     
     /**
-     * @tc.name         KvStoreTest023
-     * @tc.number     : SUB_DistributedData_KvStore_SDK_APITest_STATIC_0230
-     * @tc.desc       : //SingleKVStore get(key)  callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   KvStoreTest023
+     * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0230
+     * @tc.desc   //SingleKVStore get(key)  callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('KvStoreTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "=======KvStoreTest023 start ");

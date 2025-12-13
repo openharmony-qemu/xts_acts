@@ -28,10 +28,13 @@ export default function AbilityIsTerminatingTest() {
     afterEach(async (done: Function) => {
       done();
     })
-    /*
-     * @tc.number  : SUB_AA_OpenHarmony_IsTerminating_0100
-     * @tc.name    : Verify the isTerminating interface
-     * @tc.desc    : Terminate ability through terminateSelf.
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_IsTerminating_0100
+     * @tc.number SUB_AA_OpenHarmony_IsTerminating_0100
+     * @tc.desc   Terminate ability through terminateSelf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_IsTerminating_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_IsTerminating_0100 == ';
@@ -90,10 +93,13 @@ export default function AbilityIsTerminatingTest() {
       })
     })
 
-    /*
-     * @tc.number  : SUB_AA_OpenHarmony_IsTerminating_0200
-     * @tc.name    : Verify the isTerminating interface
-     * @tc.desc    : Terminate ability through terminateSelfWithResult.
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_IsTerminating_0200
+     * @tc.number SUB_AA_OpenHarmony_IsTerminating_0200
+     * @tc.desc   Terminate ability through terminateSelfWithResult.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_IsTerminating_0200', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_IsTerminating_0200 == ';
@@ -154,10 +160,13 @@ export default function AbilityIsTerminatingTest() {
       })
     })
 
-    /*
-     * @tc.number  : SUB_AA_OpenHarmony_IsTerminating_0500
-     * @tc.name    : Verify the isTerminating interface
-     * @tc.desc    : Terminate ability with the back key.
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_IsTerminating_0500
+     * @tc.number SUB_AA_OpenHarmony_IsTerminating_0500
+     * @tc.desc   Terminate ability with the back key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_IsTerminating_0500', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_IsTerminating_0500 == ';
@@ -191,7 +200,7 @@ export default function AbilityIsTerminatingTest() {
                 }).catch((error: BusinessError) => {
                   console.log(TAG + "executeShellCommand error : " + JSON.stringify(error));
                 });
-            }, 1000);
+            }, 3000);
           }
 
           if (data.event == onDestroy) {

@@ -48,6 +48,14 @@ export default function videoJsunit2() {
       console.info("video after each called");
     });
 
+    /**
+     * @tc.name   testVideo01
+     * @tc.number testVideo01
+     * @tc.desc   testVideo01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testVideo01', Level.LEVEL1, async (done: Function) => {
       console.info('[testVideo01] START');
       await Utils.sleep(2000);
@@ -57,6 +65,14 @@ export default function videoJsunit2() {
       done();
     });
 
+    /**
+     * @tc.name   testVideo02
+     * @tc.number testVideo02
+     * @tc.desc   testVideo02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testVideo02', Level.LEVEL1, async (done: Function) => {
       console.info('[testVideo02] START');
       try {
@@ -81,6 +97,14 @@ export default function videoJsunit2() {
       done();
     });
 
+    /**
+     * @tc.name   testVideo03
+     * @tc.number testVideo03
+     * @tc.desc   testVideo03
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testVideo03', Level.LEVEL1, async (done: Function) => {
       console.info('[testVideo03] START ');
       try {
@@ -105,6 +129,14 @@ export default function videoJsunit2() {
       done();
     });
 
+    /**
+     * @tc.name   testVideo04
+     * @tc.number testVideo04
+     * @tc.desc   testVideo04
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testVideo04', Level.LEVEL1, async (done: Function) => {
       console.info('[testVideo04] START');
       try {
@@ -129,6 +161,14 @@ export default function videoJsunit2() {
       done();
     });
 
+    /**
+     * @tc.name   testVideo05
+     * @tc.number testVideo05
+     * @tc.desc   testVideo05
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testVideo05', Level.LEVEL1, async (done: Function) => {
       console.info('[testVideo05] START');
       try {
@@ -154,6 +194,14 @@ export default function videoJsunit2() {
       done();
     });
 
+    /**
+     * @tc.name   testVideo06
+     * @tc.number testVideo06
+     * @tc.desc   testVideo06
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testVideo06', Level.LEVEL1, async (done: Function) => {
       console.info('[testVideo06] START');
       try {
@@ -179,6 +227,14 @@ export default function videoJsunit2() {
       done();
     });
 
+    /**
+     * @tc.name   testVideo07
+     * @tc.number testVideo07
+     * @tc.desc   testVideo07
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testVideo07', Level.LEVEL1, async (done: Function) => {
       console.info('[testVideo07] START');
       try {

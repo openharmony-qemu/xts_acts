@@ -67,13 +67,14 @@ export default function signNormalNotAccessBiometricExecute() {
         }
       })
     }
-    /*
-        * @tc.number    : Security_IAM_UserAuthInstance_Func_0042
-        * @tc.name      : execute_userAuthInstance_on_off_result
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level.LEVEL2
-    */
+    /**
+     * @tc.name   Security_IAM_UserAuthInstance_Func_0042
+     * @tc.number Security_IAM_UserAuthInstance_Func_0042
+     * @tc.desc   Security_IAM_UserAuthInstance_Func_0042
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Security_IAM_UserAuthInstance_Func_0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info("Security_IAM_UserAuthInstance_Func_0042 start");
       try {
@@ -89,13 +90,14 @@ export default function signNormalNotAccessBiometricExecute() {
       done();
     });
 
-    /*
-        * @tc.number    : Security_IAM_UserAuthInstance_Func_0050
-        * @tc.name      : execute_userAuthInstance_start
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level.LEVEL2
-    */
+    /**
+     * @tc.name   Security_IAM_UserAuthInstance_Func_0050
+     * @tc.number Security_IAM_UserAuthInstance_Func_0050
+     * @tc.desc   Security_IAM_UserAuthInstance_Func_0050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Security_IAM_UserAuthInstance_Func_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info("Security_IAM_UserAuthInstance_Func_0050 start");
       try {
@@ -109,13 +111,14 @@ export default function signNormalNotAccessBiometricExecute() {
       done();
     });
 
-    /*
-        * @tc.number    : Security_IAM_UserAuthInstance_Func_0090
-        * @tc.name      : execute_userAuthInstance_cancel
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level.LEVEL2
-    */
+    /**
+     * @tc.name   Security_IAM_UserAuthInstance_Func_0090
+     * @tc.number Security_IAM_UserAuthInstance_Func_0090
+     * @tc.desc   Security_IAM_UserAuthInstance_Func_0090
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Security_IAM_UserAuthInstance_Func_0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info("Security_IAM_UserAuthInstance_Func_0090 start");
       try {
@@ -130,14 +133,14 @@ export default function signNormalNotAccessBiometricExecute() {
       done();
     });
 
-    /*
-        * @tc.number    : SUB_Security_IAM_authWidget_API_0130
-        * @tc.name      : reuseUnlockResultDuration Parameter transmission test.
-        * @tc.desc      : reuseUnlockResultDuration Parameter transmission test.
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level.LEVEL3
-    */
+    /**
+     * @tc.name   SUB_Security_IAM_authWidget_API_0130
+     * @tc.number SUB_Security_IAM_authWidget_API_0130
+     * @tc.desc   reuseUnlockResultDuration Parameter transmission test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_Security_IAM_authWidget_API_0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("SUB_Security_IAM_authWidget_API_0130 start");
       let reuseDuration1 = [-1, 300001, 0];
@@ -192,14 +195,14 @@ export default function signNormalNotAccessBiometricExecute() {
       done();
     });
 
-    /*
-        * @tc.number    : SUB_Security_IAM_authWidget_API_0150
-        * @tc.name      : Excess parameter transfer test.
-        * @tc.desc      : Excess parameter transfer test.
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level.LEVEL3
-    */
+    /**
+     * @tc.name   SUB_Security_IAM_authWidget_API_0150
+     * @tc.number SUB_Security_IAM_authWidget_API_0150
+     * @tc.desc   Excess parameter transfer test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_Security_IAM_authWidget_API_0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("SUB_Security_IAM_authWidget_API_0150 start");
       let reuseUnlockResult = {
@@ -221,14 +224,14 @@ export default function signNormalNotAccessBiometricExecute() {
       done();
     });
 
-    /*
-        * @tc.number    : SUB_Security_IAM_authWidget_API_0100
-        * @tc.name      : ReuseUnlockResultMode does not transmit.
-        * @tc.desc      : ReuseUnlockResultMode does not transmit.
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level.LEVEL3
-    */
+    /**
+     * @tc.name   SUB_Security_IAM_authWidget_API_0100
+     * @tc.number SUB_Security_IAM_authWidget_API_0100
+     * @tc.desc   ReuseUnlockResultMode does not transmit.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_Security_IAM_authWidget_API_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("SUB_Security_IAM_authWidget_API_0100 start");
       let reuseUnlockResult = {
@@ -260,14 +263,14 @@ export default function signNormalNotAccessBiometricExecute() {
       done();
     });
 
-    /*
-        * @tc.number    : SUB_Security_IAM_authWidget_API_0120
-        * @tc.name      : ReuseUnlockResultDuration: 120000. ReuseUnlockResultMode: 2.
-        * @tc.desc      : ReuseUnlockResultDuration: 120000. ReuseUnlockResultMode: 2.
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level.LEVEL3
-    */
+    /**
+     * @tc.name   SUB_Security_IAM_authWidget_API_0120
+     * @tc.number SUB_Security_IAM_authWidget_API_0120
+     * @tc.desc   ReuseUnlockResultDuration: 120000. ReuseUnlockResultMode: 2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_Security_IAM_authWidget_API_0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("SUB_Security_IAM_authWidget_API_0120 start");
       let reuseUnlockResult = {
@@ -288,14 +291,14 @@ export default function signNormalNotAccessBiometricExecute() {
       done();
     });
 
-    /*
-        * @tc.number    : SUB_Security_IAM_authWidget_API_0140
-        * @tc.name      : reuseUnlockResultMode Parameter transmission test.
-        * @tc.desc      : reuseUnlockResultMode Parameter transmission test.
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level.LEVEL3
-    */
+    /**
+     * @tc.name   SUB_Security_IAM_authWidget_API_0140
+     * @tc.number SUB_Security_IAM_authWidget_API_0140
+     * @tc.desc   reuseUnlockResultMode Parameter transmission test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_Security_IAM_authWidget_API_0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("SUB_Security_IAM_authWidget_API_0140 start");
       let checkFace = await checkSupportOrNot(userAuth.UserAuthType.FACE);
@@ -353,14 +356,14 @@ export default function signNormalNotAccessBiometricExecute() {
       done();
     });
 
-    /*
-        * @tc.number    : SUB_Security_IAM_authWidget_API_0110
-        * @tc.name      : reuseUnlockResultDuration does not transmit.
-        * @tc.desc      : reuseUnlockResultDuration does not transmit.
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level.LEVEL3
-    */
+    /**
+     * @tc.name   SUB_Security_IAM_authWidget_API_0110
+     * @tc.number SUB_Security_IAM_authWidget_API_0110
+     * @tc.desc   reuseUnlockResultDuration does not transmit.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_Security_IAM_authWidget_API_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("SUB_Security_IAM_authWidget_API_0110 start");
       let reuseUnlockResult = {
@@ -392,14 +395,14 @@ export default function signNormalNotAccessBiometricExecute() {
       done();
     });
 
-    /*
-        * @tc.number    : SUB_Security_IAM_authWidget_API_0200
-        * @tc.name      : execute_enum_ReuseMode.
-        * @tc.desc      : 
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level.LEVEL3
-    */
+    /**
+     * @tc.name   SUB_Security_IAM_authWidget_API_0200
+     * @tc.number SUB_Security_IAM_authWidget_API_0200
+     * @tc.desc   SUB_Security_IAM_authWidget_API_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_Security_IAM_authWidget_API_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("SUB_Security_IAM_authWidget_API_0200 start");
       expect(1).assertEqual(userAuth.ReuseMode.AUTH_TYPE_RELEVANT);

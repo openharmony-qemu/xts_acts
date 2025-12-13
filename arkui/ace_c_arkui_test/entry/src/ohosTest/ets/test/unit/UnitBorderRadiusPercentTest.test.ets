@@ -26,61 +26,61 @@ export default function unitBorderRadiusPercentTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_UNIT_BORDER_RADIUS_PERCENT_0001
-     * @tc.name: testUnitBorderRadiusPercent001
-     * @tc.desc: testing text for unitBorderRadiusPercent with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testUnitBorderRadiusPercent001
+     * @tc.number SUB_ARKUI_CAPI_UNIT_BORDER_RADIUS_PERCENT_0001
+     * @tc.desc   testing text for unitBorderRadiusPercent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnitBorderRadiusPercent001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testUnitBorderRadiusPercent001()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_UNIT_BORDER_RADIUS_PERCENT_0002
-     * @tc.name: testUnitBorderRadiusPercent002
-     * @tc.desc: testing text for unitBorderRadiusPercent with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testUnitBorderRadiusPercent002
+     * @tc.number SUB_ARKUI_CAPI_UNIT_BORDER_RADIUS_PERCENT_0002
+     * @tc.desc   testing text for unitBorderRadiusPercent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnitBorderRadiusPercent002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testUnitBorderRadiusPercent002()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_UNIT_BORDER_RADIUS_PERCENT_0003
-     * @tc.name: testUnitBorderRadiusPercent003
-     * @tc.desc: testing text for unitBorderRadiusPercent with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testUnitBorderRadiusPercent003
+     * @tc.number SUB_ARKUI_CAPI_UNIT_BORDER_RADIUS_PERCENT_0003
+     * @tc.desc   testing text for unitBorderRadiusPercent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnitBorderRadiusPercent003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testUnitBorderRadiusPercent003()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_UNIT_BORDER_RADIUS_PERCENT_0004
-     * @tc.name: testUnitBorderRadiusPercent004
-     * @tc.desc: testing text for unitBorderRadiusPercent with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testUnitBorderRadiusPercent004
+     * @tc.number SUB_ARKUI_CAPI_UNIT_BORDER_RADIUS_PERCENT_0004
+     * @tc.desc   testing text for unitBorderRadiusPercent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnitBorderRadiusPercent004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testUnitBorderRadiusPercent004()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_UNIT_BORDER_RADIUS_PERCENT_0005
-     * @tc.name: testUnitBorderRadiusPercent005
-     * @tc.desc: testing text for unitBorderRadiusPercent with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testUnitBorderRadiusPercent005
+     * @tc.number SUB_ARKUI_CAPI_UNIT_BORDER_RADIUS_PERCENT_0005
+     * @tc.desc   testing text for unitBorderRadiusPercent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnitBorderRadiusPercent005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testUnitBorderRadiusPercent005()).assertEqual(0)

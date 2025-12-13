@@ -31,14 +31,12 @@ export default function fileIOWrite() {
     hilog.info(domain, tag, '%{public}s', 'fileIO_fs_write start');
 
     /**
+     * @tc.name   fileIO_test_write_sync_static_000
      * @tc.number SUB_DF_FILEIO_WRITE_SYNC_0000
-     * @tc.name fileIO_test_write_sync_static_000
-     * @tc.desc Test writeSync() interfaces.
-     * Open the file in write-only mode, default write from current offset.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test writeSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_sync_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_sync_static_000 start');
@@ -62,14 +60,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_sync_static_001
      * @tc.number SUB_DF_FILEIO_WRITE_SYNC_0100
-     * @tc.name fileIO_test_write_sync_static_001
-     * @tc.desc Test writeSync() interfaces.
-     * Open the file in write-only mode, writing a string with encoding = 'utf-8'.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test writeSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_sync_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_sync_static_001 start');
@@ -91,14 +87,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_sync_static_002
      * @tc.number SUB_DF_FILEIO_WRITE_SYNC_0200
-     * @tc.name fileIO_test_write_sync_static_002
-     * @tc.desc Test writeSync() interfaces.
-     * Open the file in write-only mode, writing a string from offset(position) = 1.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test writeSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_sync_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_sync_static_002 start');
@@ -120,14 +114,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_sync_static_003
      * @tc.number SUB_DF_FILEIO_WRITE_SYNC_0300
-     * @tc.name fileIO_test_write_sync_static_003
-     * @tc.desc Test writeSync() interfaces.
-     * Open the file in write-only mode, writing a string of length = 1.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test writeSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_sync_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_sync_static_003 start');
@@ -149,14 +141,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_sync_static_004
      * @tc.number SUB_DF_FILEIO_WRITE_SYNC_0400
-     * @tc.name fileIO_test_write_sync_static_004
-     * @tc.desc Test writeSync() interfaces.
-     * Open the file in write-only mode, writing a string of length = 1 and offset(position) = 1.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test writeSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_sync_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_sync_static_004 start');
@@ -179,14 +169,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_sync_static_005
      * @tc.number SUB_DF_FILEIO_WRITE_SYNC_0500
-     * @tc.name fileIO_test_write_sync_static_005
-     * @tc.desc Test writeSync() interfaces.
-     * Open the file in write-only mode, writing a string of length = 1, offset(position) = 1, encoding = 'utf-8'.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test writeSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_sync_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_sync_static_005 start');
@@ -210,14 +198,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_sync_static_006
      * @tc.number SUB_DF_FILEIO_WRITE_SYNC_0600
-     * @tc.name fileIO_test_write_sync_static_006
-     * @tc.desc Test writeSync() interfaces.
-     * Write with invalid 'length' option.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test writeSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_sync_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_sync_static_006 start');
@@ -238,14 +224,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_sync_static_007
      * @tc.number SUB_DF_FILEIO_WRITE_SYNC_0700
-     * @tc.name fileIO_test_write_sync_static_007
-     * @tc.desc Test writeSync() interfaces.
-     * Write with invalid fd parameters.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test writeSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_sync_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_sync_static_007 start');
@@ -259,14 +243,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_sync_static_008
      * @tc.number SUB_DF_FILEIO_WRITE_SYNC_0800
-     * @tc.name fileIO_test_write_sync_static_008
-     * @tc.desc Test writeSync() interfaces.
-     * Open the file in write-only mode, writing an ArrayBuffer(4096).
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test writeSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_sync_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_sync_static_008 start');
@@ -286,14 +268,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_sync_static_009
      * @tc.number SUB_DF_FILEIO_WRITE_SYNC_0900
-     * @tc.name fileIO_test_write_sync_static_009
-     * @tc.desc Test writeSync() interfaces.
-     * Write with invalid 'length' option.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test writeSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_sync_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_sync_static_009 start');
@@ -314,14 +294,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_sync_static_010
      * @tc.number SUB_DF_FILEIO_WRITE_SYNC_1000
-     * @tc.name fileIO_test_write_sync_static_010
-     * @tc.desc Test writeSync() interfaces.
-     * Write with invalid 'offset' option.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test writeSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_sync_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_sync_static_010 start');
@@ -342,14 +320,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_sync_static_011
      * @tc.number SUB_DF_FILEIO_WRITE_SYNC_1100
-     * @tc.name fileIO_test_write_sync_static_011
-     * @tc.desc Test writeSync() interfaces.
-     * Undefined option arguments, use default options.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test writeSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_sync_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_sync_static_011 start');
@@ -373,14 +349,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_sync_static_012
      * @tc.number SUB_DF_FILEIO_WRITE_SYNC_1200
-     * @tc.name fileIO_test_write_sync_static_012
-     * @tc.desc Test writeSync() interfaces.
-     * Undefined option arguments, use default options.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test writeSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_sync_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_sync_static_012 start');
@@ -412,14 +386,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_async_static_000
      * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_0000
-     * @tc.name fileIO_test_write_async_static_000
-     * @tc.desc Test write() interfaces. Promise.
-     * Open the file in write-only mode, default write from current offset.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test write() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_async_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_000 start');
@@ -444,14 +416,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_async_static_001
      * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_0100
-     * @tc.name fileIO_test_write_async_static_001
-     * @tc.desc Test write() interfaces. Callback.
-     * Open the file in write-only mode, default write from current offset.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test write() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_async_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_001 start');
@@ -487,14 +457,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_async_static_002
      * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_0200
-     * @tc.name fileIO_test_write_async_static_002
-     * @tc.desc Test write() interfaces. Promise.
-     * Open the file in read-only mode, verifying that it is not writable.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test write() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_async_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_002 start');
@@ -515,14 +483,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_async_static_003
      * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_0300
-     * @tc.name fileIO_test_write_async_static_003
-     * @tc.desc Test write() interfaces. Callback.
-     * Open the file in read-only mode, verifying that it is not writable.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test write() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_async_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_003 start');
@@ -547,14 +513,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_async_static_004
      * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_0400
-     * @tc.name fileIO_test_write_async_static_004
-     * @tc.desc Test write() interfaces. Promise.
-     * Open the file in write-only mode, writing a string of length = 3.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test write() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_async_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_004 start');
@@ -577,14 +541,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_async_static_005
      * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_0500
-     * @tc.name fileIO_test_write_async_static_005
-     * @tc.desc Test write() interfaces. Callback.
-     * Open the file in write-only mode, writing a string of length = 3.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test write() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_async_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_005 start');
@@ -612,14 +574,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_async_static_006
      * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_0600
-     * @tc.name fileIO_test_write_async_static_006
-     * @tc.desc Test write() interfaces. Promise.
-     * Open the file in write-only mode, writing a string from offset(position) = 5.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test write() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_async_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_006 start');
@@ -642,14 +602,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_async_static_007
      * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_0700
-     * @tc.name fileIO_test_write_async_static_007
-     * @tc.desc Test write() interfaces. Callback.
-     * Open the file in write-only mode, writing a string from offset(position) = 5.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test write() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_async_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_007 start');
@@ -677,14 +635,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_async_static_008
      * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_0800
-     * @tc.name fileIO_test_write_async_static_008
-     * @tc.desc Test write() interfaces. Promise.
-     * Open the file in write-only mode, writing a string of with length = 3 and offset = 5.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test write() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_async_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_008 start');
@@ -708,14 +664,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_async_static_009
      * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_0900
-     * @tc.name fileIO_test_write_async_static_009
-     * @tc.desc Test write() interfaces. Callback.
-     * Open the file in write-only mode, writing a string of with length = 3 and offset = 5.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test write() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_async_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_009 start');
@@ -744,14 +698,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_async_static_010
      * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_1000
-     * @tc.name fileIO_test_write_async_static_010
-     * @tc.desc Test write() interfaces.
-     * Open the file in write-only mode, writing a string of with length = 4, offset = 5 and encoding = 'utf-8'.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test write() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_async_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_010 start');
@@ -776,14 +728,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_async_static_011
      * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_1100
-     * @tc.name fileIO_test_write_async_static_011
-     * @tc.desc Test write() interfaces. Callback.
-     * Open the file in write-only mode, writing a string of with length = 5, offset = 5 and encoding = 'utf-8'.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test write() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_async_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_011 start');
@@ -813,14 +763,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_async_static_012
      * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_1200
-     * @tc.name fileIO_test_write_async_static_012
-     * @tc.desc Test write() interfaces. Promise.
-     * Open the file in write-only mode, writing an ArrayBuffer(4096).
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test write() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_async_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_012 start');
@@ -841,14 +789,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_async_static_013
      * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_1300
-     * @tc.name fileIO_test_write_async_static_013
-     * @tc.desc Test write() interfaces. Callback.
-     * Open the file in write-only mode, writing an ArrayBuffer(4096).
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test write() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_async_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_013 start');
@@ -874,14 +820,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_async_static_014
      * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_1400
-     * @tc.name fileIO_test_write_async_static_014
-     * @tc.desc Test write() interfaces. Promise.
-     * Open the file in write-only mode, writing a string with empty option parameters.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test write() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_async_static_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_014 start');
@@ -902,14 +846,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_async_static_015
      * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_1500
-     * @tc.name fileIO_test_write_async_static_015
-     * @tc.desc Test write() interfaces. Callback.
-     * Open the file in write-only mode, writing a string with empty option parameters.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test write() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_async_static_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_015 start');
@@ -936,14 +878,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_async_static_016
      * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_1600
-     * @tc.name fileIO_test_write_async_static_016
-     * @tc.desc Test write() interfaces. Promise.
-     * Write with invalid fd parameters.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test write() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_async_static_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_016 start');
@@ -958,14 +898,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_async_static_017
      * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_1700
-     * @tc.name fileIO_test_write_async_static_017
-     * @tc.desc Test write() interfaces. Callback.
-     * Write with invalid fd parameters.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test write() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_async_static_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_017 start');
@@ -984,14 +922,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_async_static_018
      * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_1800
-     * @tc.name fileIO_test_write_async_static_018
-     * @tc.desc Test write() interfaces. Callback.
-     * Write with invalid length parameters.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test write() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_async_static_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_018 start');
@@ -1019,14 +955,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_async_static_019
      * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_1900
-     * @tc.name fileIO_test_write_async_static_019
-     * @tc.desc Test write() interfaces. Callback.
-     * Write with invalid length parameters.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test write() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_async_static_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_019 start');
@@ -1054,14 +988,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_async_static_020
      * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_2000
-     * @tc.name fileIO_test_write_async_static_020
-     * @tc.desc Test write() interfaces. Callback.
-     * Write with invalid length parameters.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test write() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_async_static_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_020 start');
@@ -1089,14 +1021,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_async_static_021
      * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_2100
-     * @tc.name fileIO_test_write_async_static_021
-     * @tc.desc Test write() interfaces. Promise.
-     * Undefined option arguments, use default options.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test write() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_async_static_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_021 start');
@@ -1121,14 +1051,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_async_static_023
      * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_2300
-     * @tc.name fileIO_test_write_async_static_023
-     * @tc.desc Test write() interfaces. Promise.
-     * Undefined option arguments, use default options.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test write() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_async_static_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_023 start');
@@ -1161,14 +1089,12 @@ export default function fileIOWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_write_async_static_024
      * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_2400
-     * @tc.name fileIO_test_write_async_static_024
-     * @tc.desc Test write() interfaces. Callback.
-     * Undefined option arguments, use default options.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test write() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_write_async_static_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_write_async_static_024 start');

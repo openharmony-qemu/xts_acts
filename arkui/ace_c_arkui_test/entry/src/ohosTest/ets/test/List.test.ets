@@ -91,6 +91,7 @@ import imageEnableAnalyzerTest from './image/ImageEnableAnalyzerTest.test'
 import imageOpacityTest from './image/ImageOpacityTest.test'
 import imageRadialGradientTest from './image/ImageRadialGradientTest.test'
 import imageRotateTest from './image/ImageRotateTest.test'
+import imageRotateOrientationTest from './image/ImageRotateOrientationTest.test'
 import imageSaturateTest from './image/ImageSaturateTest.test'
 import imageScaleTest from './image/ImageScaleTest.test'
 import imageShadowTest from './image/ImageShadowTest.test'
@@ -1206,6 +1207,7 @@ export default function testsuite() {
   imageOpacityTest()
   imageRadialGradientTest()
   imageRotateTest()
+  imageRotateOrientationTest()
   imageSaturateTest()
   imageScaleTest()
   imageSrcTest()

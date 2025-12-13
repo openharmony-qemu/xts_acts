@@ -27,13 +27,13 @@ export default function imageHitTestBehaviorTest() {
       await Utils.pushPage(`image/${PAGE_TAG}`, done);
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_HITTESTBEHAVIOR_0100
-     * @tc.name       : testImageHitTestBehavior001
-     * @tc.desc       : test image hitTestBehavior with event callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageHitTestBehavior001
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_HITTESTBEHAVIOR_0100
+     * @tc.desc   test image hitTestBehavior with event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageHitTestBehavior001', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnTouchTestStackDefault')

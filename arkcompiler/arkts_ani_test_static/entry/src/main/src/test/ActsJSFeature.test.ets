@@ -30,13 +30,13 @@ export default function JSFeatureTest() {
       console.log('loadFailed', e.message);
     }
 
-    /*
-     * @tc.number    : test_getNull_0100
-     * @tc.name      : test_getNull_0100
-     * @tc.desc      : MediumTest
-     * @tc.size      : Function
-     * @tc.type      : Function test
-     * @tc.level     : Level 0
+    /**
+     * @tc.name   test_getNull_0100
+     * @tc.number test_getNull_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_getNull_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -49,13 +49,13 @@ export default function JSFeatureTest() {
         console.log('test_getNull_0100 end');
       })
 
-    /*
-     * @tc.number    : test_getUndefined_0100
-     * @tc.name      : test_getUndefined_0100
-     * @tc.desc      : MediumTest
-     * @tc.size      : Function
-     * @tc.type      : Function test
-     * @tc.level     : Level 0
+    /**
+     * @tc.name   test_getUndefined_0100
+     * @tc.number test_getUndefined_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_getUndefined_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

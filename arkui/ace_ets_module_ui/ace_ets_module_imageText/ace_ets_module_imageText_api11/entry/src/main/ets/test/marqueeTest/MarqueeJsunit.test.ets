@@ -46,6 +46,14 @@ export default function marqueeJsunit() {
     });
 
 
+    /**
+     * @tc.name   testMarquee_0100
+     * @tc.number testMarquee_0100
+     * @tc.desc   testMarquee_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMarquee_0100', Level.LEVEL1, async (done: Function) => {
       console.info('testMarquee_0100 START');
       await CommonFunc.sleep(1500);
@@ -83,6 +91,14 @@ export default function marqueeJsunit() {
 
     });
 
+    /**
+     * @tc.name   testMarquee_0200
+     * @tc.number testMarquee_0200
+     * @tc.desc   testMarquee_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMarquee_0200', Level.LEVEL1, async (done: Function) => {
       console.info('testMarquee_0200 START');
       await CommonFunc.sleep(1500);
@@ -119,6 +135,14 @@ export default function marqueeJsunit() {
       console.info('testMarquee_0200 END');
     });
 
+    /**
+     * @tc.name   testMarquee_0300
+     * @tc.number testMarquee_0300
+     * @tc.desc   testMarquee_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMarquee_0300', Level.LEVEL1, async (done: Function) => {
       console.info('testMarquee_0300 START');
       await CommonFunc.sleep(1500);

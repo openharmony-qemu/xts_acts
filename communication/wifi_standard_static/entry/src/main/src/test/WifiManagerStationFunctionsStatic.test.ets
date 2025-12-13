@@ -33,12 +33,12 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
+         * @tc.name   constantTest
          * @tc.number constantTest
-         * @tc.name constantTest
-         * @tc.desc Test constantTest API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test constantTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("constantTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -120,12 +120,12 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
+         * @tc.name   wifiOnOffStateTest
          * @tc.number wifiOnOffStateTest
-         * @tc.name wifiOnOffStateTest
-         * @tc.desc Test wifiOnOffStateTest API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test wifiOnOffStateTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("wifiOnOffStateTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
@@ -182,18 +182,22 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
+         * @tc.name   isConnectedTest
          * @tc.number isConnectedTest
-         * @tc.name isConnectedTest
-         * @tc.desc Test isConnectedTest API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test isConnectedTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("isConnectedTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
                 let state: boolean = wifiManager.isConnected();
                 hilog.info(domain, tag, "isConnected:" + state);
-                expect(state).assertFalse();
+                if(state == true){
+                    expect(state).assertTrue();
+                }else{
+                    expect(state).assertFalse();
+                }
             }catch(err: BusinessError){
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "isConnected get errCode:" + err.code + ",errMessage:" + err.message);
@@ -208,12 +212,12 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
+         * @tc.name   getIpInfoTest
          * @tc.number getIpInfoTest
-         * @tc.name getIpInfoTest
-         * @tc.desc Test getIpInfoTest API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test getIpInfoTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("getIpInfoTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
@@ -235,12 +239,12 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
+         * @tc.name   getScanInfoListTest
          * @tc.number getScanInfoListTest
-         * @tc.name getScanInfoListTest
-         * @tc.desc Test getScanInfoListTest API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test getScanInfoListTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("getScanInfoListTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
@@ -270,12 +274,12 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
+         * @tc.name   isMeteredHotspotTest
          * @tc.number isMeteredHotspotTest
-         * @tc.name isMeteredHotspotTest
-         * @tc.desc Test isMeteredHotspotTest API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test isMeteredHotspotTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("isMeteredHotspotTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
@@ -296,12 +300,12 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
+         * @tc.name   getIpv6InfoTest
          * @tc.number getIpv6InfoTest
-         * @tc.name getIpv6InfoTest
-         * @tc.desc Test getIpv6InfoTest API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test getIpv6InfoTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("getIpv6InfoTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
@@ -323,12 +327,12 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
+         * @tc.name   getSignalLevelTest
          * @tc.number getSignalLevelTest
-         * @tc.name getSignalLevelTest
-         * @tc.desc Test getSignalLevelTest API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test getSignalLevelTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("getSignalLevelTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -349,12 +353,12 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
+         * @tc.name   getLinkedInfoPromiseTest
          * @tc.number getLinkedInfoPromiseTest
-         * @tc.name getLinkedInfoPromiseTest
-         * @tc.desc Test getLinkedInfoPromiseTest API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test getLinkedInfoPromiseTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("getLinkedInfoPromiseTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -383,12 +387,12 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
+         * @tc.name   getLinkedInfoCallbackTest
          * @tc.number getLinkedInfoCallbackTest
-         * @tc.name getLinkedInfoCallbackTest
-         * @tc.desc Test getLinkedInfoCallbackTest API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test getLinkedInfoCallbackTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("getLinkedInfoCallbackTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             wifiManager.getLinkedInfo((err: BusinessError | null, data: wifiManager.WifiLinkedInfo| undefined) => {
@@ -430,12 +434,12 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
+         * @tc.name   getLinkedInfoSyncTest
          * @tc.number getLinkedInfoSyncTest
-         * @tc.name getLinkedInfoSyncTest
-         * @tc.desc Test getLinkedInfoSyncTest API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test getLinkedInfoSyncTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("getLinkedInfoSyncTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {

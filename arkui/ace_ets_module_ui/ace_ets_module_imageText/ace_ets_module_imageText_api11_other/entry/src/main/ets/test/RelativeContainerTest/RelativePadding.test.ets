@@ -42,14 +42,15 @@ export default function RelativePadding() {
       console.info("RelativePadding after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0660
-     * @tc.desc      add padding
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
-     */
 
+    /**
+     * @tc.name   RelativePadding_001
+     * @tc.number RelativePadding_001
+     * @tc.desc   RelativePadding_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('RelativePadding_001', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativePadding_001] START');
 

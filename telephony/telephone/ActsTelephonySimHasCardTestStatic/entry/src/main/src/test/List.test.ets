@@ -15,6 +15,7 @@
 import Sim1Public from './Sim1Public.test';
 import Sim2Public from './Sim2Public.test';
 import Sim3Public from './Sim3Public.test';
+import Sim4Public from './Sim4Public.test';
 import EmptyTest from './Empty.test';
 import sim from '@ohos.telephony.sim';
 
@@ -24,6 +25,7 @@ export default function testsuite() {
       Sim1Public();
       Sim2Public();
       Sim3Public();
+      Sim4Public();
   }else{
     EmptyTest();
   }

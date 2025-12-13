@@ -63,9 +63,12 @@ export default function swiperItemSpace() {
     });
 
     /**
+     * @tc.name   testSwiperSetItemSpace
      * @tc.number SUB_ACE_SWIPER_ITEMSPACECHANGED_0100
-     * @tc.name testSwiperSetItemSpace
-     * @tc.desc Set swiper's  ItemSpace  value ' 20 '.
+     * @tc.desc   Set swiper's  ItemSpace  value ' 20 '.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperSetItemSpace', Level.LEVEL1, async (done: Function) => {
       console.info('new testSwiperSetItemSpace START');
@@ -141,9 +144,12 @@ export default function swiperItemSpace() {
     });
 
     /**
+     * @tc.name   testSwiperSetItemSpaceInvalid
      * @tc.number SUB_ACE_SWIPER_ITEMSPACECHANGED_0200
-     * @tc.name testSwiperSetItemSpaceInvalid
-     * @tc.desc Set swiper's  ItemSpace  value ' -20 '.
+     * @tc.desc   Set swiper's  ItemSpace  value ' -20 '.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperSetItemSpaceInvalid', Level.LEVEL1, async (done: Function) => {
       console.info('new testSwiperSetItemSpaceInvalid START');

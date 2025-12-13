@@ -22,14 +22,12 @@ export default function fileIOUnlink() {
 describe('fileIO_fs_unlink', function () {
 
   /**
+   * @tc.name   fileIO_test_unlink_sync_000
    * @tc.number SUB_DF_FILEIO_UNLINK_SYNC_0000
-   * @tc.name fileIO_test_unlink_sync_000
-   * @tc.desc Test unlinkSync() interfaces.
-   * Missing parameter.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test unlinkSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_unlink_sync_000', Level.LEVEL0, function () {
     try {
@@ -42,14 +40,12 @@ describe('fileIO_fs_unlink', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_unlink_sync_001
    * @tc.number SUB_DF_FILEIO_UNLINK_SYNC_0100
-   * @tc.name fileIO_test_unlink_sync_001
-   * @tc.desc Test unlinkSync() interfaces.
-   * The path point to nothing, no such file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test unlinkSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_unlink_sync_001', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIOTest');
@@ -64,14 +60,12 @@ describe('fileIO_fs_unlink', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_unlink_sync_002
    * @tc.number SUB_DF_FILEIO_UNLINK_SYNC_0200
-   * @tc.name fileIO_test_unlink_sync_002
-   * @tc.desc Test unlinkSync() interfaces.
-   * Delete the file by path, verify the normal function.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test unlinkSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_unlink_sync_002', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_unlink_sync_002');
@@ -88,14 +82,12 @@ describe('fileIO_fs_unlink', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_unlink_sync_003
    * @tc.number SUB_DF_FILEIO_UNLINK_SYNC_0300
-   * @tc.name fileIO_test_unlink_sync_003
-   * @tc.desc Test unlinkSync() interfaces.
-   * The path refers to a directory, not a file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test unlinkSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_unlink_sync_003', Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_unlink_sync_003');
@@ -113,14 +105,12 @@ describe('fileIO_fs_unlink', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_unlink_async_000
    * @tc.number SUB_DF_FileIO_UNLINK_ASYNC_0000
-   * @tc.name fileIO_test_unlink_async_000
-   * @tc.desc Test unlinkAsync() interfaces. Promise.
-   * Delete the file by path, verify the normal function.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test unlinkAsync() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_unlink_async_000', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_unlink_async_000');
@@ -138,14 +128,12 @@ describe('fileIO_fs_unlink', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_unlink_async_001
    * @tc.number SUB_DF_FileIO_UNLINK_ASYNC_0100
-   * @tc.name fileIO_test_unlink_async_001
-   * @tc.desc Test unlinkAsync() interfaces. Callback.
-   * Delete the file by path, verify the normal function.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test unlinkAsync() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_unlink_async_001', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_unlink_async_001');
@@ -168,14 +156,12 @@ describe('fileIO_fs_unlink', function () {
   });
   
   /**
+   * @tc.name   fileIO_test_unlink_async_002
    * @tc.number SUB_DF_FileIO_UNLINK_ASYNC_0200
-   * @tc.name fileIO_test_unlink_async_002
-   * @tc.desc Test unlink() interfaces. Callback.
-   * The path point to nothing, no such file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test unlink() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_unlink_async_002', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIOTest');
@@ -195,14 +181,12 @@ describe('fileIO_fs_unlink', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_unlink_async_003
    * @tc.number SUB_DF_FileIO_UNLINK_ASYNC_0300
-   * @tc.name fileIO_test_unlink_async_003
-   * @tc.desc Test unlink() interfaces. Promise.
-   * The path point to nothing, no such file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test unlink() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_unlink_async_003', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIOTest');
@@ -218,14 +202,12 @@ describe('fileIO_fs_unlink', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_unlink_async_004
    * @tc.number SUB_DF_FileIO_UNLINK_ASYNC_0400
-   * @tc.name fileIO_test_unlink_async_004
-   * @tc.desc Test unlink() interfaces. Promise.
-   * Missing parameter.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test unlink() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_unlink_async_004', Level.LEVEL0, async function (done) {
 
@@ -240,14 +222,12 @@ describe('fileIO_fs_unlink', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_unlink_async_005
    * @tc.number SUB_DF_FILEIO_UNLINK_ASYNC_0500
-   * @tc.name fileIO_test_unlink_async_005
-   * @tc.desc Test unlink() interfaces. Promise.
-   * The path refers to a directory, not a file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test unlink() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_unlink_async_005', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_test_unlink_async_005');
@@ -266,14 +246,12 @@ describe('fileIO_fs_unlink', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_unlink_async_006
    * @tc.number SUB_DF_FILEIO_UNLINK_ASYNC_0600
-   * @tc.name fileIO_test_unlink_async_006
-   * @tc.desc Test unlink() interfaces. Callback.
-   * The path refers to a directory, not a file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test unlink() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_unlink_async_006', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_test_unlink_async_006');

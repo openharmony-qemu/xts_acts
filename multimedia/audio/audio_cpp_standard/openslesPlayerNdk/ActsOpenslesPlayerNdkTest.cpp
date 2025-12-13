@@ -411,9 +411,12 @@ static SLresult PlayerStop(SLPlayItf sPlayItf, SLOHBufferQueueItf sBufferQueueIt
 }
 
 /**
- * @tc.number    : SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0100
- * @tc.name      : Pcm gemischte Wiedergabe
- * @tc.desc      : Basic function test
+ * @tc.name   SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0100
+ * @tc.number SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0100
+ * @tc.desc   Basic function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsOpenslesPlayerNdkTest, SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0100, TestSize.Level1)
 {
@@ -458,9 +461,12 @@ HWTEST_F(ActsOpenslesPlayerNdkTest, SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTI
 }
 
 /**
- * @tc.number    : SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0200
- * @tc.name      : Pcm spielt weiter
- * @tc.desc      : Basic function test
+ * @tc.name   SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0200
+ * @tc.number SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0200
+ * @tc.desc   Basic function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsOpenslesPlayerNdkTest, SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0200, TestSize.Level1)
 {
@@ -511,9 +517,12 @@ HWTEST_F(ActsOpenslesPlayerNdkTest, SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTI
 }
 
 /**
- * @tc.number    : SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0100
- * @tc.name      : engine itf invalid
- * @tc.desc      : Basic function test
+ * @tc.name   SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0100
+ * @tc.number SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0100
+ * @tc.desc   Basic function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsOpenslesPlayerNdkTest, SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0100, TestSize.Level1)
 {
@@ -561,9 +570,12 @@ HWTEST_F(ActsOpenslesPlayerNdkTest, SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INV
 }
 
 /**
- * @tc.number    : SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0200
- * @tc.name      : engine itf invalid
- * @tc.desc      : Basic function test
+ * @tc.name   SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0200
+ * @tc.number SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0200
+ * @tc.desc   Basic function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsOpenslesPlayerNdkTest, SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0200, TestSize.Level1)
 {
@@ -587,9 +599,12 @@ HWTEST_F(ActsOpenslesPlayerNdkTest, SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INV
 }
 
 /**
- * @tc.number    : SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0300
- * @tc.name      : engine itf invalid
- * @tc.desc      : Basic function test
+ * @tc.name   SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0300
+ * @tc.number SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0300
+ * @tc.desc   Basic function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsOpenslesPlayerNdkTest, SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0300, TestSize.Level1)
 {
@@ -660,9 +675,12 @@ HWTEST_F(ActsOpenslesPlayerNdkTest, SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INV
 }
 
 /**
- * @tc.number    : SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0400
- * @tc.name      : engine itf invalid
- * @tc.desc      : Basic function test
+ * @tc.name   SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0400
+ * @tc.number SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0400
+ * @tc.desc   Basic function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsOpenslesPlayerNdkTest, SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0400, TestSize.Level1)
 {

@@ -26,39 +26,39 @@ export default function imageScaleTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_SCALE_0100
-     * @tc.name       : testImageScale001
-     * @tc.desc       : testing scale for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageScale001
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_SCALE_0100
+     * @tc.desc   testing scale for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageScale001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageScale001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_SCALE_0200
-     * @tc.name       : testImageScale002
-     * @tc.desc       : testing scale for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageScale002
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_SCALE_0200
+     * @tc.desc   testing scale for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageScale002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageScale002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_SCALE_0300
-     * @tc.name       : testImageScale003
-     * @tc.desc       : testing scale for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageScale003
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_SCALE_0300
+     * @tc.desc   testing scale for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageScale003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageScale003()).assertEqual(0)

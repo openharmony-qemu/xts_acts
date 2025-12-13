@@ -28,8 +28,9 @@ class MainAbility extends UIAbility {
     hilog.info(0x0000, 'testTag MainAbility', 'EntryAbility onCreate');
   }
   
-  onDestroy() {
+  onDestroy(): Promise<void> | undefined {
     hilog.info(0x0000, 'testTag MainAbility', 'EntryAbility onDestroy');
+    return undefined;
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {

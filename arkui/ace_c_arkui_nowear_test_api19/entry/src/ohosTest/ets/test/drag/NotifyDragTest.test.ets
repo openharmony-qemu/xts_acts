@@ -25,15 +25,15 @@ export default function NotifyDragTest(){
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NOTIFY_DRAG_0100
-     * @tc.name       : NotifyDragTest_001
-     * @tc.desc       : testing Notify Drag Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
 
+    /**
+     * @tc.name   NotifyDragTest_001
+     * @tc.number NotifyDragTest_001
+     * @tc.desc   NotifyDragTest_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NotifyDragTest_001', Level.LEVEL0, async (done: Function) => {
       let PAGE_TAG = 'TestNotifyDragTest';
       await Utils.pushPage(`drag/${PAGE_TAG}`);

@@ -60,12 +60,12 @@ export default function TSProjectTypedArrayTest() {
 
 
     /**
+     * @tc.name   TSProjectTypedArrayTest0100
      * @tc.number TS_PROJECT_TYPEDARRAY_METHOD_0100
-     * @tc.name TSProjectTypedArrayTest0100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TSProjectTypedArrayTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -78,12 +78,12 @@ export default function TSProjectTypedArrayTest() {
 
 
     /**
+     * @tc.name   TSProjectTypedArrayTest0200
      * @tc.number TS_PROJECT_TYPEDARRAY_METHOD_0200
-     * @tc.name TSProjectTypedArrayTest0200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TSProjectTypedArrayTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -96,12 +96,12 @@ export default function TSProjectTypedArrayTest() {
 
 
     /**
+     * @tc.name   TSProjectTypedArrayTest0300
      * @tc.number TS_PROJECT_TYPEDARRAY_METHOD_0300
-     * @tc.name TSProjectTypedArrayTest0300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TSProjectTypedArrayTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -115,12 +115,12 @@ export default function TSProjectTypedArrayTest() {
 
 
     /**
+     * @tc.name   TSProjectTypedArrayTest0400
      * @tc.number TS_PROJECT_TYPEDARRAY_METHOD_0400
-     * @tc.name TSProjectTypedArrayTest0400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TSProjectTypedArrayTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -134,12 +134,12 @@ export default function TSProjectTypedArrayTest() {
 
 
     /**
+     * @tc.name   TSProjectTypedArrayTest0500
      * @tc.number TS_PROJECT_TYPEDARRAY_METHOD_0500
-     * @tc.name TSProjectTypedArrayTest0500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TSProjectTypedArrayTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -153,12 +153,12 @@ export default function TSProjectTypedArrayTest() {
 
 
     /**
+     * @tc.name   TSProjectTypedArrayTest0600
      * @tc.number TS_PROJECT_TYPEDARRAY_METHOD_0600
-     * @tc.name TSProjectTypedArrayTest0600
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TSProjectTypedArrayTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -172,12 +172,12 @@ export default function TSProjectTypedArrayTest() {
 
 
     /**
+     * @tc.name   TSProjectTypedArrayTest0700
      * @tc.number TS_PROJECT_TYPEDARRAY_METHOD_0700
-     * @tc.name TSProjectTypedArrayTest0700
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TSProjectTypedArrayTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -191,12 +191,12 @@ export default function TSProjectTypedArrayTest() {
 
 
     /**
+     * @tc.name   TSProjectTypedArrayTest0800
      * @tc.number TS_PROJECT_TYPEDARRAY_METHOD_0800
-     * @tc.name TSProjectTypedArrayTest0800
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TSProjectTypedArrayTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -210,12 +210,12 @@ export default function TSProjectTypedArrayTest() {
 
 
     /**
+     * @tc.name   TSProjectTypedArrayTest0900
      * @tc.number TS_PROJECT_TYPEDARRAY_METHOD_0900
-     * @tc.name TSProjectTypedArrayTest0900
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TSProjectTypedArrayTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -228,12 +228,12 @@ export default function TSProjectTypedArrayTest() {
       })
 
     /**
+     * @tc.name   TSProjectTypedArrayTest1200
      * @tc.number TS_PROJECT_TYPEDARRAY_METHOD_1200
-     * @tc.name TSProjectTypedArrayTest1200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TSProjectTypedArrayTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -246,12 +246,12 @@ export default function TSProjectTypedArrayTest() {
 
 
     /**
+     * @tc.name   TSProjectTypedArrayTest1300
      * @tc.number TS_PROJECT_TYPEDARRAY_METHOD_1300
-     * @tc.name TSProjectTypedArrayTest1300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TSProjectTypedArrayTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -265,12 +265,12 @@ export default function TSProjectTypedArrayTest() {
 
 
     /**
+     * @tc.name   TSProjectTypedArrayTest1400
      * @tc.number TS_PROJECT_TYPEDARRAY_METHOD_1400
-     * @tc.name TSProjectTypedArrayTest1400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TSProjectTypedArrayTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -284,12 +284,12 @@ export default function TSProjectTypedArrayTest() {
 
 
     /**
+     * @tc.name   TSProjectTypedArrayTest1500
      * @tc.number TS_PROJECT_TYPEDARRAY_METHOD_1500
-     * @tc.name TSProjectTypedArrayTest1500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TSProjectTypedArrayTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -303,12 +303,12 @@ export default function TSProjectTypedArrayTest() {
 
 
     /**
+     * @tc.name   TSProjectTypedArrayTest1600
      * @tc.number TS_PROJECT_TYPEDARRAY_METHOD_1600
-     * @tc.name TSProjectTypedArrayTest1600
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TSProjectTypedArrayTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -322,12 +322,12 @@ export default function TSProjectTypedArrayTest() {
 
 
     /**
+     * @tc.name   TSProjectTypedArrayTest1700
      * @tc.number TS_PROJECT_TYPEDARRAY_METHOD_1700
-     * @tc.name TSProjectTypedArrayTest1700
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TSProjectTypedArrayTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -341,12 +341,12 @@ export default function TSProjectTypedArrayTest() {
 
 
     /**
+     * @tc.name   TSProjectTypedArrayTest1800
      * @tc.number TS_PROJECT_TYPEDARRAY_METHOD_1800
-     * @tc.name TSProjectTypedArrayTest1800
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TSProjectTypedArrayTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -360,12 +360,12 @@ export default function TSProjectTypedArrayTest() {
 
 
     /**
+     * @tc.name   TSProjectTypedArrayTest1900
      * @tc.number TS_PROJECT_TYPEDARRAY_METHOD_1900
-     * @tc.name TSProjectTypedArrayTest1900
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TSProjectTypedArrayTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -379,12 +379,12 @@ export default function TSProjectTypedArrayTest() {
 
 
     /**
+     * @tc.name   TSProjectTypedArrayTest2000
      * @tc.number TS_PROJECT_TYPEDARRAY_METHOD_2000
-     * @tc.name TSProjectTypedArrayTest2000
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TSProjectTypedArrayTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -398,12 +398,12 @@ export default function TSProjectTypedArrayTest() {
 
 
     /**
+     * @tc.name   TSProjectTypedArrayTest2100
      * @tc.number TS_PROJECT_TYPEDARRAY_METHOD_2100
-     * @tc.name TSProjectTypedArrayTest2100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TSProjectTypedArrayTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -417,12 +417,12 @@ export default function TSProjectTypedArrayTest() {
 
 
     /**
+     * @tc.name   TSProjectTypedArrayTest2200
      * @tc.number TS_PROJECT_TYPEDARRAY_METHOD_2200
-     * @tc.name TSProjectTypedArrayTest2200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TSProjectTypedArrayTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -436,12 +436,12 @@ export default function TSProjectTypedArrayTest() {
 
 
     /**
+     * @tc.name   TSProjectTypedArrayTest2300
      * @tc.number TS_PROJECT_TYPEDARRAY_METHOD_2300
-     * @tc.name TSProjectTypedArrayTest2300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TSProjectTypedArrayTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -455,12 +455,12 @@ export default function TSProjectTypedArrayTest() {
 
 
     /**
+     * @tc.name   TSProjectTypedArrayTest2400
      * @tc.number TS_PROJECT_TYPEDARRAY_METHOD_2400
-     * @tc.name TSProjectTypedArrayTest2400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TSProjectTypedArrayTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -474,12 +474,12 @@ export default function TSProjectTypedArrayTest() {
 
 
     /**
+     * @tc.name   TSProjectTypedArrayTest2500
      * @tc.number TS_PROJECT_TYPEDARRAY_METHOD_2500
-     * @tc.name TSProjectTypedArrayTest2500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TSProjectTypedArrayTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {

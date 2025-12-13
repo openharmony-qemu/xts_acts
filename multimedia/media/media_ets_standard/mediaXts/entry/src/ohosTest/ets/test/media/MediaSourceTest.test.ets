@@ -128,12 +128,12 @@ export default function MediaSourceTest() {
     });
 
     /**
-     * @tc.number    : MEDIA_SOURCE_TEST_001
-     * @tc.name      : createMediaSourceWithUrl_001
-     * @tc.desc      : Test normal scene of create MediaSourceWithUrl
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createMediaSourceWithUrl_001
+     * @tc.number MEDIA_SOURCE_TEST_001
+     * @tc.desc   Test normal scene of create MediaSourceWithUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createMediaSourceWithUrl_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createMediaSourceWithUrl_001';
@@ -142,12 +142,12 @@ export default function MediaSourceTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_SOURCE_TEST_002
-     * @tc.name      : setMimeType_001
-     * @tc.desc      : Test normal scene of set MimeType
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setMimeType_001
+     * @tc.number MEDIA_SOURCE_TEST_002
+     * @tc.desc   Test normal scene of set MimeType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setMimeType_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setMimeType_001';
@@ -157,12 +157,12 @@ export default function MediaSourceTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_SOURCE_TEST_003
-     * @tc.name      : setMediaResourceLoaderDelegate_001
-     * @tc.desc      : Test normal scene of set MediaResourceLoaderDelegate
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setMediaResourceLoaderDelegate_001
+     * @tc.number MEDIA_SOURCE_TEST_003
+     * @tc.desc   Test normal scene of set MediaResourceLoaderDelegate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setMediaResourceLoaderDelegate_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setMediaResourceLoaderDelegate_001';

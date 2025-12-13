@@ -43,10 +43,12 @@ export default function PageInfo1() {
       console.info("PageInfo1 after each called");
     });
     /**
-     * @tc.number    PageInfo1_0100
-     * @tc.name      PageInfo1_0100
-     * @tc.desc      Test PageInfo
-     * @tc.level     Level 2
+     * @tc.name   PageInfo1_0100
+     * @tc.number PageInfo1_0100
+     * @tc.desc   Test PageInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PageInfo1_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[PageInfo1_0100] START');

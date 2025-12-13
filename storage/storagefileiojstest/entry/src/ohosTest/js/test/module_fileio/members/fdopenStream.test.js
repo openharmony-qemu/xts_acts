@@ -23,13 +23,12 @@ export default function fileioFdOpenStream() {
 describe('fileio_FdOpenStream', async function () {
 
   /**
+   * @tc.name   fileio_test_fdopenstream_sync_000
    * @tc.number SUB_DF_FILEIO_FDOPENSTREAM_SYNC_0000
-   * @tc.name fileio_test_fdopenstream_sync_000
-   * @tc.desc Test fdopenStreamSync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test fdopenStreamSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_fdopenstream_sync_000', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_fdopenstream_sync_000');
@@ -50,14 +49,12 @@ describe('fileio_FdOpenStream', async function () {
   })
 
   /**
+   * @tc.name   fileio_test_fdopenstream_sync_001
    * @tc.number SUB_DF_FILEIO_FDOPENSTREAM_SYNC_0010
-   * @tc.name fileio_test_fdopenstream_sync_001
-   * @tc.desc Test fdopenStreamSync() interface.
-   * This interface shall throw an exception when the fpath is not given.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test fdopenStreamSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_fdopenstream_sync_001', Level.LEVEL0, function () {
     try {
@@ -71,13 +68,12 @@ describe('fileio_FdOpenStream', async function () {
   })
 
   /**
+   * @tc.name   fileio_test_fdopenstream_async_000
    * @tc.number SUB_DF_FILEIO_FDOPENSTREAM_ASYNC_000
-   * @tc.name fileio_test_fdopenstream_async_000
-   * @tc.desc Test fdopenStream() interface.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test fdopenStream() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_fdopenstream_async_000', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_fdopenstream_async_000');
@@ -101,13 +97,12 @@ describe('fileio_FdOpenStream', async function () {
   })
 
   /**
+   * @tc.name   fileio_test_fdopenstream_async_001
    * @tc.number SUB_DF_FILEIO_FDOPENSTREAM_ASYNC_001
-   * @tc.name fileio_test_fdopenstream_async_001
-   * @tc.desc Test fdopenStream() interface.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test fdopenStream() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_fdopenstream_async_001', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_fdopenstream_async_001');

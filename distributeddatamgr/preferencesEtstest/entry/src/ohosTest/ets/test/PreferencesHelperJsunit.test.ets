@@ -39,12 +39,12 @@ export default function preferencesHelperTest(){
       await dataPreferences.deletePreferences(context, NAME);
     });
     /**
-     * @tc.name testGetPreferencesHelper001
+     * @tc.name   testGetPreferencesHelper001
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperEtsTest_3000
-     * @tc.desc getPreferencesSync interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   getPreferencesSync interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetPreferencesHelper001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       mPreferences = await dataPreferences.getPreferences(context, NAME);
@@ -54,12 +54,12 @@ export default function preferencesHelperTest(){
       expect(value).assertEqual(2);
     });
     /**
-     * @tc.name testGetPreferencesHelper002
+     * @tc.name   testGetPreferencesHelper002
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperEtsTest_2300
-     * @tc.desc getPreferences interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   getPreferences interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetPreferencesHelper002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const promise = dataPreferences.getPreferences(context, NAME);
@@ -74,12 +74,12 @@ export default function preferencesHelperTest(){
       done();
     });
     /**
-     * @tc.name testRemovePreferencesFromCache001
+     * @tc.name   testRemovePreferencesFromCache001
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperEtsTest_2100
-     * @tc.desc removePreferencesFromCache interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   removePreferencesFromCache interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRemovePreferencesFromCache001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let perf: dataPreferences.Preferences | null = await dataPreferences.getPreferences(context, NAME);
@@ -92,12 +92,12 @@ export default function preferencesHelperTest(){
       done();
     });
     /**
-     * @tc.name testDeletePreferencesHelper002
+     * @tc.name   testDeletePreferencesHelper002
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperEtsTest_2200
-     * @tc.desc deletePreferences interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   deletePreferences interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeletePreferencesHelper002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let perf: dataPreferences.Preferences | null = await dataPreferences.getPreferences(context, NAME);
@@ -110,12 +110,12 @@ export default function preferencesHelperTest(){
       done();
     });
     /**
-     * @tc.name testPreferencesRegisterObserver001
+     * @tc.name   testPreferencesRegisterObserver001
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperEtsTest_1000
-     * @tc.desc put interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   put interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesRegisterObserver001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       await mPreferences.clear();
@@ -131,12 +131,12 @@ export default function preferencesHelperTest(){
       await mPreferences.flush();
     });
     /**
-     * @tc.name testPreferencesRegisterObserver002
+     * @tc.name   testPreferencesRegisterObserver002
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperEtsTest_1100
-     * @tc.desc repeat on interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   repeat on interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesRegisterObserver002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       await mPreferences.clear();
@@ -153,12 +153,12 @@ export default function preferencesHelperTest(){
       await mPreferences.flush();
     });
     /**
-     * @tc.name testPreferencesUnRegisterObserver001
+     * @tc.name   testPreferencesUnRegisterObserver001
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperEtsTest_0900
-     * @tc.desc off interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   off interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesUnRegisterObserver001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let observer = (key: string) => {
@@ -172,12 +172,12 @@ export default function preferencesHelperTest(){
       await mPreferences.flush();
     });
     /**
-     * @tc.name testGetPreferencesSyncinterface001
+     * @tc.name   testGetPreferencesSyncinterface001
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperEtsTest_3100
-     * @tc.desc getPreferencesSync interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   getPreferencesSync interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetPreferencesSyncinterface001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       mPreferences = dataPreferences.getPreferencesSync(context, {

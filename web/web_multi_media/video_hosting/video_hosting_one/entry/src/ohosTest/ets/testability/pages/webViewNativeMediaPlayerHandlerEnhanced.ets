@@ -1382,7 +1382,7 @@ struct WebComponent {
                                   if(mediaInfo.posterUrl.length > 0 && mediaInfo.posterUrl.indexOf('runoob.com') > -1 ){
                                       Utils.emitEvent(true, 362120)
                                   }
-                                  if(mediaInfo.mediaSrcList[0].source.length > 0 && mediaInfo.mediaSrcList[0].source.indexOf('movie.mp4') > -1 ){
+                                  if(mediaInfo.mediaSrcList[0].source.length > 0 && mediaInfo.mediaSrcList[0].source.indexOf('oceans.mp4') > -1 ){
                                       Utils.emitEvent(true, 362130)
                                   }
                                   if(mediaInfo.mediaSrcList[0].format.length > 0 && mediaInfo.mediaSrcList[0].format.indexOf('mp4') > -1 ){

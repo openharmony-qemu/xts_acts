@@ -58,12 +58,12 @@ export default function RelationalStoreNoneTokenizer() {
         });
         console.info(TAG + "*************Unit Test Begin*************");
         /**
-         * @tc.name testRdbStoreNoneTokenizerQuery0100
+         * @tc.name   testRdbStoreNoneTokenizerQuery0100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_NoneTokenizerEtsAPITest_Query_0100
-         * @tc.desc RelationalStore NoneTokenizer 中文
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore NoneTokenizer 中文
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreNoneTokenizerQuery0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreNoneTokenizerQuery0100 ";
@@ -101,12 +101,12 @@ export default function RelationalStoreNoneTokenizer() {
         });
 
         /**
-         * @tc.name testRdbStoreNoneTokenizerQuery0200
+         * @tc.name   testRdbStoreNoneTokenizerQuery0200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_NoneTokenizerEtsAPITest_Query_0200
-         * @tc.desc RelationalStore NoneTokenizer 英文
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore NoneTokenizer 英文
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreNoneTokenizerQuery0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreNoneTokenizerQuery0200 ";
@@ -154,12 +154,12 @@ export default function RelationalStoreNoneTokenizer() {
         });
 
         /**
-         * @tc.name testRdbStoreNoneTokenizerQuery0300
+         * @tc.name   testRdbStoreNoneTokenizerQuery0300
          * @tc.number SUB_DistributedData_RelationalStore_SDK_NoneTokenizerEtsAPITest_Query_0300
-         * @tc.desc RelationalStore NoneTokenizer 数字
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore NoneTokenizer 数字
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreNoneTokenizerQuery0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreNoneTokenizerQuery0300 ";
@@ -217,12 +217,12 @@ export default function RelationalStoreNoneTokenizer() {
         });
 
         /**
-         * @tc.name testRdbStoreNoneTokenizerQuery0400
+         * @tc.name   testRdbStoreNoneTokenizerQuery0400
          * @tc.number SUB_DistributedData_RelationalStore_SDK_NoneTokenizerEtsAPITest_Query_0400
-         * @tc.desc RelationalStore NoneTokenizer 中英文数字
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore NoneTokenizer 中英文数字
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreNoneTokenizerQuery0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreNoneTokenizerQuery0400 ";
@@ -260,12 +260,12 @@ export default function RelationalStoreNoneTokenizer() {
         });
 
         /**
-         * @tc.name testRdbStoreNoneTokenizerQuery0500
+         * @tc.name   testRdbStoreNoneTokenizerQuery0500
          * @tc.number SUB_DistributedData_RelationalStore_SDK_NoneTokenizerEtsAPITest_Query_0500
-         * @tc.desc RelationalStore NoneTokenizer 中英文数字空格
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore NoneTokenizer 中英文数字空格
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreNoneTokenizerQuery0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreNoneTokenizerQuery0500 ";
@@ -315,12 +315,12 @@ export default function RelationalStoreNoneTokenizer() {
             done();
         });
         /**
-         * @tc.name testRdbStoreNoneTokenizerQuery0600
+         * @tc.name   testRdbStoreNoneTokenizerQuery0600
          * @tc.number SUB_DistributedData_RelationalStore_SDK_NoneTokenizerEtsAPITest_Query_0600
-         * @tc.desc RelationalStore NoneTokenizer 中英文数字特殊字符
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore NoneTokenizer 中英文数字特殊字符
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreNoneTokenizerQuery0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreNoneTokenizerQuery0600 ";

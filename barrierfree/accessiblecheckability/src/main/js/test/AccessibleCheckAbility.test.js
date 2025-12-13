@@ -34,15 +34,14 @@ describe('AccessibleCheckAbility', function () {
     /******************************************************************************************* */
 
     /* Cases for namespace accessibility */
-    /*
-    * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0100
-    * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0100
-    * @tc.desc    Test isOpenAccessibility() function in callback mode.
-    *             The result of isOpenAccessibility() should be boolean type.
-    * @tc.size    SmallTest
-    * @tc.type    User
-    * @tc.level   Level 1
-    */
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0100
+     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0100
+     * @tc.desc   Test isOpenAccessibility() function in callback mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0100', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
         console.info('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0100');
         accessibility.isOpenAccessibility((err, data) => {
@@ -56,15 +55,14 @@ describe('AccessibleCheckAbility', function () {
         });
       })
   
-    /*
-      * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0200
-      * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0200
-      * @tc.desc    Test isOpenAccessibility() function in promise mode.
-      *             The result of isOpenAccessibility() should be boolean type.
-      * @tc.size    SmallTest
-      * @tc.type    User
-      * @tc.level   Level 1
-      */
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0200
+     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0200
+     * @tc.desc   Test isOpenAccessibility() function in promise mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0200', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
         console.info('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0200');
         accessibility.isOpenAccessibility().then((result) => {
@@ -82,15 +80,14 @@ describe('AccessibleCheckAbility', function () {
     /* Cases SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0300-0400 are for accessibility.isOpenTouchGuide() API test   */
     /******************************************************************************************* */
 
-    /*
-      * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0300
-      * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0300
-      * @tc.desc    Test isOpenTouchGuide() function in callback mode.
-      *             The result of isOpenTouchGuide() should be boolean type.
-      * @tc.size    SmallTest
-      * @tc.type    User
-      * @tc.level   Level 1
-      */
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0300
+     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0300
+     * @tc.desc   Test isOpenTouchGuide() function in callback mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0300', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
         console.info('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0300');
         accessibility.isOpenTouchGuide((err, data) => {
@@ -104,15 +101,14 @@ describe('AccessibleCheckAbility', function () {
         });
     })
   
-    /*
-      * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0400
-      * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0400
-      * @tc.desc    Test isOpenTouchGuide() function in promise mode.
-      *             The result of isOpenTouchGuide() should be boolean type.
-      * @tc.size    SmallTest
-      * @tc.type    User
-      * @tc.level   Level 1
-      */
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0400
+     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0400
+     * @tc.desc   Test isOpenTouchGuide() function in promise mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0400', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
         console.info('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0400');
         accessibility.isOpenTouchGuide().then((result) => {
@@ -127,14 +123,14 @@ describe('AccessibleCheckAbility', function () {
             }
         });
     })
-	/*
-    * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0500
-    * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0500
-    * @tc.desc    The result of isOpenAccessibilitySync() should be boolean type.
-    * @tc.size    SmallTest
-    * @tc.type    User
-    * @tc.level   Level 1
-    */
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0500
+     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0500
+     * @tc.desc   The result of isOpenAccessibilitySync() should be boolean type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0500', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
         console.info('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0500');
         try {
@@ -149,14 +145,14 @@ describe('AccessibleCheckAbility', function () {
         }
       })
   
-    /*
-      * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0600
-      * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0600
-      * @tc.desc    The result of isOpenTouchGuideSync() should be boolean type.
-      * @tc.size    SmallTest
-      * @tc.type    User
-      * @tc.level   Level 1
-      */
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0600
+     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0600
+     * @tc.desc   The result of isOpenTouchGuideSync() should be boolean type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0600', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
         console.info('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0600');
         try {

@@ -47,10 +47,12 @@ export default function RelativeContainerCNodeTest() {
     });
 
     /**
-     * @tc.number    RelativeContainerCNodeTest_0100
-     * @tc.name      RelativeContainerCNodeTest_0100
-     * @tc.desc      Test RelativeContainerCNode
-     * @tc.level     Level 1
+     * @tc.name   RelativeContainerCNodeTest_0100
+     * @tc.number RelativeContainerCNodeTest_0100
+     * @tc.desc   Test RelativeContainerCNode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RelativeContainerCNodeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[RelativeContainerCNodeTest_0100] START');

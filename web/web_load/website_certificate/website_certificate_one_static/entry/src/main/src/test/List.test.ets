@@ -14,7 +14,9 @@
  */
 import WebDataBaseTest from './WebDataBase.test'
 import onCreateNativeMediaPlayer from './onSslErrorEvent.test'
+import webTwoJsunit from './SslErrorHandler.test'
 export default function testsuite() {
   WebDataBaseTest();
   onCreateNativeMediaPlayer();
+  webTwoJsunit();
 }

@@ -40,12 +40,12 @@ export default function imageJsunit() {
     });
 
     /**
+     * @tc.name   imageTest_0001
      * @tc.number imageTest_0001
-     * @tc.name Test the properties of components
-     * @tc.desc Set copyOption values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set copyOption values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageTest_0001', Level.LEVEL0, async (done: Function) => {
       console.info('imageTest_0001 START');
@@ -59,12 +59,12 @@ export default function imageJsunit() {
     });
 
     /**
+     * @tc.name   imageTest_0002
      * @tc.number imageTest_0002
-     * @tc.name Test the properties of components
-     * @tc.desc Set colorFilter values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set colorFilter values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageTest_0002', Level.LEVEL0, async (done: Function) => {
       console.info('imageTest_0002 START');
@@ -79,12 +79,12 @@ export default function imageJsunit() {
     });
 
     /**
+     * @tc.name   imageTest_0003
      * @tc.number imageTest_0003
-     * @tc.name Test the properties of components
-     * @tc.desc Set syncLoad values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set syncLoad values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageTest_0003', Level.LEVEL0, async (done: Function) => {
       console.info('imageTest_0003 START');
@@ -98,12 +98,12 @@ export default function imageJsunit() {
     });
 
     /**
+     * @tc.name   imageTest_0004
      * @tc.number imageTest_0004
-     * @tc.name Test the properties of components
-     * @tc.desc Set sourceSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set sourceSize values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageTest_0004', Level.LEVEL0, async (done: Function) => {
       console.info('imageTest_0004 START');
@@ -117,12 +117,12 @@ export default function imageJsunit() {
     });
 
     /**
+     * @tc.name   imageTest_0005
      * @tc.number imageTest_0005
-     * @tc.name Test the properties of components
-     * @tc.desc Set interpolation values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set interpolation values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageTest_0005', Level.LEVEL0, async (done: Function) => {
       console.info('imageTest_0005 START');
@@ -136,12 +136,12 @@ export default function imageJsunit() {
     });
 
     /**
+     * @tc.name   imageTest_0006
      * @tc.number imageTest_0006
-     * @tc.name Test the properties of components
-     * @tc.desc Set renderMode values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set renderMode values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageTest_0006', Level.LEVEL0, async (done: Function) => {
       console.info('imageTest_0006 START');
@@ -155,12 +155,12 @@ export default function imageJsunit() {
     });
 
     /**
+     * @tc.name   imageTest_0007
      * @tc.number imageTest_0007
-     * @tc.name Test the properties of components
-     * @tc.desc Set autoResize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set autoResize values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageTest_0007', Level.LEVEL0, async (done: Function) => {
       console.info('imageTest_0007 START');
@@ -174,12 +174,12 @@ export default function imageJsunit() {
     });
 
     /**
+     * @tc.name   imageTest_0008
      * @tc.number imageTest_0008
-     * @tc.name Test the properties of components
-     * @tc.desc Set objectRepeat values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set objectRepeat values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageTest_0008', Level.LEVEL0, async (done: Function) => {
       console.info('imageTest_0008 START');
@@ -193,12 +193,12 @@ export default function imageJsunit() {
     });
 
     /**
+     * @tc.name   imageTest_0009
      * @tc.number imageTest_0009
-     * @tc.name Test the properties of components
-     * @tc.desc Set objectFit values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set objectFit values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageTest_0009', Level.LEVEL0, async (done: Function) => {
       console.info('imageTest_0009 START');
@@ -212,12 +212,12 @@ export default function imageJsunit() {
     });
 
     /**
+     * @tc.name   imageTest_0010
      * @tc.number imageTest_0010
-     * @tc.name Test the properties of components
-     * @tc.desc Set fillColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set fillColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('imageTest_0010 START');
@@ -231,12 +231,12 @@ export default function imageJsunit() {
     });
 
     /**
+     * @tc.name   imageTest_0011
      * @tc.number imageTest_0011
-     * @tc.name Test the properties of components
-     * @tc.desc Set fitOriginalSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set fitOriginalSize values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageTest_0011', Level.LEVEL0, async (done: Function) => {
       console.info('imageTest_0011 START');
@@ -250,12 +250,12 @@ export default function imageJsunit() {
     });
 
     /**
+     * @tc.name   imageTest_0012
      * @tc.number imageTest_0012
-     * @tc.name Test the properties of components
-     * @tc.desc Set matchTextDirection values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set matchTextDirection values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageTest_0012', Level.LEVEL0, async (done: Function) => {
       console.info('imageTest_0012 START');
@@ -269,12 +269,12 @@ export default function imageJsunit() {
     });
 
     /**
+     * @tc.name   imageTest_0013
      * @tc.number imageTest_0013
-     * @tc.name Test the properties of components
-     * @tc.desc Set alt values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set alt values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageTest_0013', Level.LEVEL0, async (done: Function) => {
       console.info('imageTest_0013 START');
@@ -288,12 +288,12 @@ export default function imageJsunit() {
     });
 
     /**
+     * @tc.name   imageTest_0014
      * @tc.number imageTest_0014
-     * @tc.name Test the properties of components
-     * @tc.desc Set draggable values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set draggable values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageTest_0014', Level.LEVEL0, async (done: Function) => {
       console.info('imageTest_0014 START');
@@ -307,12 +307,12 @@ export default function imageJsunit() {
     });
 
     /**
+     * @tc.name   imageTest_0015
      * @tc.number imageTest_0015
-     * @tc.name Test the properties of components
-     * @tc.desc Change syncLoad values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change syncLoad values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageTest_0015', Level.LEVEL0, async (done: Function) => {
 

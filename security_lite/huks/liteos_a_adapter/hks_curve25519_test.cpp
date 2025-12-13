@@ -55,9 +55,12 @@ void HksCurve25519Test::TearDown()
 }
 
 /**
- * @tc.name: HksCurve25519Test.HksCurve25519Test001
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @tc.name   HksCurve25519Test001
+ * @tc.number HksCurve25519Test001
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksCurve25519Test, HksCurve25519Test001, TestSize.Level1)
 {
@@ -65,9 +68,12 @@ HWTEST_F(HksCurve25519Test, HksCurve25519Test001, TestSize.Level1)
 }
 
 /**
- * @tc.name: HksCurve25519Test.HksCurve25519Test002
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @tc.name   HksCurve25519Test002
+ * @tc.number HksCurve25519Test002
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksCurve25519Test, HksCurve25519Test002, TestSize.Level1)
 {
@@ -75,9 +81,12 @@ HWTEST_F(HksCurve25519Test, HksCurve25519Test002, TestSize.Level1)
 }
 
 /**
- * @tc.name: HksCurve25519Test.HksCurve25519Test003
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @tc.name   HksCurve25519Test003
+ * @tc.number HksCurve25519Test003
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksCurve25519Test, HksCurve25519Test003, TestSize.Level1)
 {
@@ -85,9 +94,12 @@ HWTEST_F(HksCurve25519Test, HksCurve25519Test003, TestSize.Level1)
 }
 
 /**
- * @tc.name: HksCurve25519Test.HksCurve25519Test004
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @tc.name   HksCurve25519Test004
+ * @tc.number HksCurve25519Test004
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksCurve25519Test, HksCurve25519Test004, TestSize.Level1)
 {

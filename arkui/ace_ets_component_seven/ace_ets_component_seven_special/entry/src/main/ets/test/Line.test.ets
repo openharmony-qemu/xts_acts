@@ -41,12 +41,12 @@ export default function lineNeJsunit() {
     });
 
     /**
+     * @tc.name   testLineNe00071
      * @tc.number testLineNe00071
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLineNe00071', Level.LEVEL0, async (done: Function) => {
       console.info('lineNe testLineNe00071 START');
@@ -59,12 +59,12 @@ export default function lineNeJsunit() {
     });
 
     /**
+     * @tc.name   testLineNe00072
      * @tc.number testLineNe00072
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLineNe00072', Level.LEVEL0, async (done: Function) => {
       console.info('lineNe testLineNe00072 START');

@@ -40,12 +40,12 @@ export default function Bgde_InactiveColor_APITest() {
       done();
     });
     /**
-     * @tc.number    Bgde_InactiveColor
-     * @tc.name      Bgde_InactiveColor_APITest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   Bgde_InactiveColor_APITest_0100
+     * @tc.number Bgde_InactiveColor
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Bgde_InactiveColor_APITest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('Bgde_InactiveColor_APITest_0100 START');

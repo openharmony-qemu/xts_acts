@@ -86,12 +86,12 @@ export default function MovingPhotoRequestContentTest() {
     });
 
     /**
-     * @tc.number    : MOVING_PHOTO_REQUEST_CONTENT_001 //TODO 设备不支持 拿到gif的图片 也是报401
-     * @tc.name      : MovingPhoto_requestContent_promise_001
-     * @tc.desc      : MovingPhoto_requestContent
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MovingPhoto_requestContent_promise_001
+     * @tc.number MOVING_PHOTO_REQUEST_CONTENT_001 //TODO 设备不支持 拿到gif的图片 也是报401
+     * @tc.desc   MovingPhoto_requestContent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('MovingPhoto_requestContent_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'MovingPhoto_requestContent_promise_001';

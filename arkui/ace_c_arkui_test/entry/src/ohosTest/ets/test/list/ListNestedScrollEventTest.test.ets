@@ -45,13 +45,13 @@ export default function listNestedScrollEventTest() {
 
   describe('ListNestedScrollEventTest', () => {
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_NESTED_SCROLL_EVENT_0001
-     * @tc.name       : testListNestedScrollEvent001
-     * @tc.desc       : testing list nested scroll
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListNestedScrollEvent001
+     * @tc.number SUB_ARKUI_CAPI_LIST_NESTED_SCROLL_EVENT_0001
+     * @tc.desc   testing list nested scroll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListNestedScrollEvent001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListNestedScroll001Test`, ()=>{
@@ -99,13 +99,13 @@ export default function listNestedScrollEventTest() {
       expect(state2Data[11] == 0).assertEqual(true)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_NESTED_SCROLL_EVENT_0002
-     * @tc.name       : testListNestedScrollEvent002
-     * @tc.desc       : testing list nested scroll small
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListNestedScrollEvent002
+     * @tc.number SUB_ARKUI_CAPI_LIST_NESTED_SCROLL_EVENT_0002
+     * @tc.desc   testing list nested scroll small
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListNestedScrollEvent002', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListNestedScroll002Test`, ()=>{
@@ -153,13 +153,13 @@ export default function listNestedScrollEventTest() {
       expect(state2Data[11] == 0).assertEqual(true)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_NESTED_SCROLL_EVENT_0003
-     * @tc.name       : testListNestedScrollEvent003
-     * @tc.desc       : testing list nested scroll resetAttribute
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListNestedScrollEvent003
+     * @tc.number SUB_ARKUI_CAPI_LIST_NESTED_SCROLL_EVENT_0003
+     * @tc.desc   testing list nested scroll resetAttribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListNestedScrollEvent003', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListNestedScroll003Test`, ()=>{

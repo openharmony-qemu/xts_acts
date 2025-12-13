@@ -58,14 +58,14 @@ export default function webHitTestTypeEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBHITTESTTYPE_ENUM_0100
-    * @tc.name        : testWebHitTestTypeEnum001
-    * @tc.desc        : test the value of WebHitTestType.EditText is 0
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   webKeyboardController001
+     * @tc.number SUB_WEB_WEBHITTESTTYPE_ENUM_0100
+     * @tc.desc   test the value of WebHitTestType.EditText is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('webKeyboardController001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testwebKeyboardController001", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testwebKeyboardController001", 0, 175110, done);

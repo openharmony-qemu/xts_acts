@@ -28,9 +28,12 @@ export default function fileIOTestDir() {
 describe('fileIOTestDir', function () {
 
   /**
+   * @tc.name   fileio_test_dir_open_sync_000
    * @tc.number SUB_STORAGE_FileIO_dir_OpenSync_0000
-   * @tc.name fileio_test_dir_open_sync_000
-   * @tc.desc Function of API, opendirSync.
+   * @tc.desc   Function of API, opendirSync.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_dir_open_sync_000', Level.LEVEL1, async function () {
     let dpath = await nextFileName('fileio_test_dir_open_sync_000') + 'd'
@@ -48,9 +51,12 @@ describe('fileIOTestDir', function () {
   });
 
   /**
+   * @tc.name   fileio_test_dir_open_sync_001
    * @tc.number SUB_STORAGE_FileIO_dir_OpenSync_0100
-   * @tc.name fileio_test_dir_open_sync_001
-   * @tc.desc Function of API, not set parameter.
+   * @tc.desc   Function of API, not set parameter.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_dir_open_sync_001', Level.LEVEL1, function () {
     try {
@@ -63,9 +69,12 @@ describe('fileIOTestDir', function () {
   });
 
   /**
+   * @tc.name   fileio_test_dir_open_sync_002
    * @tc.number SUB_STORAGE_FileIO_dir_OpenSync_0200
-   * @tc.name fileio_test_dir_open_sync_002
-   * @tc.desc Function of API, dpath value is not exist.
+   * @tc.desc   Function of API, dpath value is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_dir_open_sync_002', Level.LEVEL1, async function () {
     let dpath = await nextFileName('fileio_test_dir_open_sync_002') + 'd'
@@ -80,9 +89,12 @@ describe('fileIOTestDir', function () {
   });
 
   /**
+   * @tc.name   fileio_test_dir_open_sync_003
    * @tc.number SUB_STORAGE_FileIO_dir_OpenSync_0300
-   * @tc.name fileio_test_dir_open_sync_003
-   * @tc.desc Function of API, dpath too long.
+   * @tc.desc   Function of API, dpath too long.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_dir_open_sync_003', Level.LEVEL1, async function () {
     let dpath = await nextFileName('fileio_test_dir_open_sync_003');
@@ -102,9 +114,12 @@ describe('fileIOTestDir', function () {
   });
 
   /**
+   * @tc.name   fileio_test_dir_open_sync_004
    * @tc.number SUB_STORAGE_FileIO_dir_OpenSync_0400
-   * @tc.name fileio_test_dir_open_sync_004
-   * @tc.desc Function of API, filename too long.
+   * @tc.desc   Function of API, filename too long.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_dir_open_sync_004', Level.LEVEL1, async function () {
     let dpath = await nextFileName(randomString(256));
@@ -118,9 +133,12 @@ describe('fileIOTestDir', function () {
   });
 
   /**
+   * @tc.name   fileio_test_dir_open_sync_005
    * @tc.number SUB_STORAGE_FileIO_dir_OpenSync_0500
-   * @tc.name fileio_test_dir_open_sync_005
-   * @tc.desc Function of API, uri dir too many layers.
+   * @tc.desc   Function of API, uri dir too many layers.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_dir_open_sync_005', Level.LEVEL1, async function () {
     let dpath = await nextFileName('fileio_test_dir_open_sync_005');
@@ -140,9 +158,12 @@ describe('fileIOTestDir', function () {
   });
 
   /**
+   * @tc.name   fileio_test_dir_open_sync_006
    * @tc.number SUB_STORAGE_FileIO_dir_OpenSync_0600
-   * @tc.name fileio_test_dir_open_sync_006
-   * @tc.desc Function of API, file name contain special character.
+   * @tc.desc   Function of API, file name contain special character.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_dir_open_sync_006', Level.LEVEL1, async function () {
     let dpath = await nextFileName('?*:<>/|');
@@ -157,9 +178,12 @@ describe('fileIOTestDir', function () {
   });
 
   /**
+   * @tc.name   fileio_test_dir_open_async_001
    * @tc.number SUB_STORAGE_FileIO_dir_OpenASync_001
-   * @tc.name fileio_test_dir_open_async_001
-   * @tc.desc Function of API, file name contain special character.
+   * @tc.desc   Function of API, file name contain special character.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_dir_open_async_001', Level.LEVEL1, async function () {
     let dpath = await nextFileName('fileio_test_dir_open_async_001') + 'd'
@@ -172,9 +196,12 @@ describe('fileIOTestDir', function () {
   });
 
   /**
+   * @tc.name   fileio_test_dir_open_async_002
    * @tc.number SUB_STORAGE_FileIO_dir_OpenASync_001
-   * @tc.name fileio_test_dir_open_async_001
-   * @tc.desc Function of API, file name contain special character.
+   * @tc.desc   Function of API, file name contain special character.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_dir_open_async_002', Level.LEVEL1, async function () {
     let dpath = await nextFileName('fileio_test_dir_open_async_002') + 'd'
@@ -190,9 +217,12 @@ describe('fileIOTestDir', function () {
   });
 
   /**
+   * @tc.name   fileio_test_dir_read_sync_000
    * @tc.number SUB_STORAGE_FileIO_dir_ReadSync_0000
-   * @tc.name fileio_test_dir_read_sync_000
-   * @tc.desc Function of API, readSync. The dir contains 1 file.
+   * @tc.desc   Function of API, readSync. The dir contains 1 file.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_dir_read_sync_000', Level.LEVEL1, async function () {
     let dpath = await nextFileName('fileio_test_dir_read_sync_000') + 'd'
@@ -214,9 +244,12 @@ describe('fileIOTestDir', function () {
   });
 
   /**
+   * @tc.name   fileio_test_dir_read_sync_001
    * @tc.number SUB_STORAGE_FileIO_dir_ReadSync_0100
-   * @tc.name fileio_test_dir_read_sync_001
-   * @tc.desc Function of API, readSync. The dir contains more than 1 files.
+   * @tc.desc   Function of API, readSync. The dir contains more than 1 files.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_dir_read_sync_001', Level.LEVEL1, async function () {
     let dpath = await nextFileName('fileio_test_dir_read_sync_001') + 'd'
@@ -254,9 +287,12 @@ describe('fileIOTestDir', function () {
   });
 
   /**
+   * @tc.name   fileio_test_dir_read_sync_002
    * @tc.number SUB_STORAGE_FileIO_dir_ReadSync_0200
-   * @tc.name fileio_test_dir_read_sync_002
-   * @tc.desc Function of API, repeat read. The dir contains more than 1 files.
+   * @tc.desc   Function of API, repeat read. The dir contains more than 1 files.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_dir_read_sync_002', Level.LEVEL1, async function () {
     let dpath = await nextFileName('fileio_test_dir_read_sync_002') + 'd'
@@ -293,9 +329,12 @@ describe('fileIOTestDir', function () {
   });
 
   /**
+   * @tc.name   fileio_test_dir_read_sync_003
    * @tc.number SUB_STORAGE_FileIO_dir_ReadSync_0300
-   * @tc.name fileio_test_dir_read_sync_003
-   * @tc.desc Function of API, readSync. The dir no any files.
+   * @tc.desc   Function of API, readSync. The dir no any files.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_dir_read_sync_003', Level.LEVEL1, async function () {
     let dpath = await nextFileName('fileio_test_dir_read_sync_003') + 'd'
@@ -315,9 +354,12 @@ describe('fileIOTestDir', function () {
   });
 
   /**
+   * @tc.name   fileio_test_dir_read_sync_004
    * @tc.number SUB_STORAGE_FileIO_dir_ReadSync_0400
-   * @tc.name fileio_test_dir_read_sync_004
-   * @tc.desc Function of API, error parameter.
+   * @tc.desc   Function of API, error parameter.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_dir_read_sync_004', Level.LEVEL1, async function () {
     let dpath = await nextFileName('fileio_test_dir_read_sync_004') + 'd'
@@ -341,9 +383,12 @@ describe('fileIOTestDir', function () {
   });
 
   /**
+   * @tc.name   fileio_test_dir_read_sync_005
    * @tc.number SUB_STORAGE_FileIO_dir_ReadSync_0500
-   * @tc.name fileio_test_dir_read_sync_005
-   * @tc.desc Function of API, excess files.
+   * @tc.desc   Function of API, excess files.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_dir_read_sync_005', Level.LEVEL1, async function () {
     let dpath = await nextFileName('fileio_test_dir_read_sync_005') + 'd'
@@ -369,9 +414,12 @@ describe('fileIOTestDir', function () {
   });
 
   /**
+   * @tc.name   fileio_test_dir_close_sync_000
    * @tc.number SUB_STORAGE_FileIO_dir_CloseSync_0000
-   * @tc.name fileio_test_dir_close_sync_000
-   * @tc.desc Function of API, closeSync.
+   * @tc.desc   Function of API, closeSync.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_dir_close_sync_000', Level.LEVEL1, async function () {
     let dpath = await nextFileName('fileio_test_dir_close_sync_000') + 'd'
@@ -389,9 +437,12 @@ describe('fileIOTestDir', function () {
   });
 
   /**
+   * @tc.name   fileio_test_dir_close_sync_001
    * @tc.number SUB_STORAGE_FileIO_dir_CloseSync_0100
-   * @tc.name fileio_test_dir_close_sync_001
-   * @tc.desc Function of API, closeSync. error parameter.
+   * @tc.desc   Function of API, closeSync. error parameter.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_dir_close_sync_001', Level.LEVEL1, async function () {
     let dpath = await nextFileName('fileio_test_dir_close_sync_001') + 'd'

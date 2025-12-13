@@ -41,6 +41,7 @@ struct search {
           .width('20vp')
           .height('20vp')
       }
+      .margin({ bottom: '20vp' })
       .width('30%')
       .height('30vp')
       .backgroundColor(Color.Grey)
@@ -54,7 +55,9 @@ struct search {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
           .height('20vp')
-      }.width('30%')
+      }
+      .margin({ bottom: '20vp' })
+      .width('30%')
       .height('30vp')
       .backgroundColor(Color.Grey)
       .onClick(() => {
@@ -78,6 +81,7 @@ struct search {
         .width('20vp')
         .height('20vp')
     }
+    .margin({ bottom: '20vp' })
     .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
@@ -142,6 +146,7 @@ struct search {
           .height(40)
           .backgroundColor('#F5F5F5')
           .placeholderColor(Color.Grey)
+          .fontColor(Color.Red)
           .placeholderFont({ size: 14, weight: 400 })
           .textFont({ size: 14, weight: 400 })
           .onSubmit((value: string) => {
@@ -170,6 +175,7 @@ struct search {
           Column() {
             Text('1')
               .fontSize(24)
+              .fontColor(Color.Red)
           }
           .width('80%')
           .height(30)
@@ -182,6 +188,7 @@ struct search {
           Column() {
             Text('2')
               .fontSize(24)
+              .fontColor(Color.Red)
           }
           .width('80%')
           .height(30)
@@ -194,6 +201,7 @@ struct search {
           Column() {
             Text('3')
               .fontSize(24)
+              .fontColor(Color.Red)
           }
           .width('80%')
           .height(30)
@@ -206,6 +214,7 @@ struct search {
           Column() {
             Text('4')
               .fontSize(24)
+              .fontColor(Color.Red)
           }
           .width('80%')
           .height(30)
@@ -218,6 +227,7 @@ struct search {
           Column() {
             Text('5')
               .fontSize(24)
+              .fontColor(Color.Red)
           }
           .width('80%')
           .height(30)
@@ -231,6 +241,7 @@ struct search {
             Row() {
               Text(str)
                 .fontSize(24)
+                .fontColor(Color.Red)
             }
             .justifyContent(FlexAlign.Center)
             .height(30)
@@ -252,6 +263,7 @@ struct search {
             .width('20vp')
             .height('20vp')
         }
+        .margin({ bottom: '20vp' })
         .width('30%')
         .height('30vp')
         .backgroundColor(Color.Grey)

@@ -38,13 +38,13 @@ export default function webviewApi() {
     })
 
     
-    /*
-     * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0010
-     * @tc.name       : testRegisterCustoms
-     * @tc.desc       : test RegisterCustoms
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testRegisterCustoms
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0010
+     * @tc.desc   test RegisterCustoms
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRegisterCustoms', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         
@@ -57,13 +57,13 @@ export default function webviewApi() {
       done();
     })
     
-    /*
-     * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0020
-     * @tc.name       : testSetSchemeHandler
-     * @tc.desc       : test SetSchemeHandler
-     * @tc.size_t     : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testSetSchemeHandler
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0020
+     * @tc.desc   test SetSchemeHandler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetSchemeHandler', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         
@@ -76,13 +76,13 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0030
-     * @tc.name       : testClearSchemeHandlers
-     * @tc.desc       : test ClearSchemeHandlers
-     * @tc.size_t     : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testClearSchemeHandlers
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0030
+     * @tc.desc   test ClearSchemeHandlers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testClearSchemeHandlers', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         
@@ -95,13 +95,13 @@ export default function webviewApi() {
       done();
     })
     
-    /*
-     * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0040
-     * @tc.name       : testServiceWorkerClearSchemeHandlers
-     * @tc.desc       : test ServiceWorkerClearSchemeHandlers
-     * @tc.size_t     : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testServiceWorkerClearSchemeHandlers
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0040
+     * @tc.desc   test ServiceWorkerClearSchemeHandlers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testServiceWorkerClearSchemeHandlers', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         
@@ -115,13 +115,13 @@ export default function webviewApi() {
     })
     
     
-    /*
-     * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0050
-     * @tc.name       : testDestroySchemeHandler
-     * @tc.desc       : test DestroySchemeHandler
-     * @tc.size_t     : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testDestroySchemeHandler
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0050
+     * @tc.desc   test DestroySchemeHandler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDestroySchemeHandler', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         
@@ -135,13 +135,13 @@ export default function webviewApi() {
     })
     
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0362
-     * @tc.name       : testWebResourceRequest_GetFrameUrl
-     * @tc.desc       : test WebResourceRequest_GetFrameUrl
-     * @tc.size_t     : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWebResourceRequest_GetFrameUrl
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0362
+     * @tc.desc   test WebResourceRequest_GetFrameUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebResourceRequest_GetFrameUrl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
 

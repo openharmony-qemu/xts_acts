@@ -195,3 +195,4 @@ export const TestAreaFooter: () => number;
 export const testListSwipeActionItem001: () => number;
 export const testListSwipeActionItem002: () => number;
 export const testListSwipeActionItem003: () => number;
+export const TestFinishCallBackLogically: (Node: Content) => void;

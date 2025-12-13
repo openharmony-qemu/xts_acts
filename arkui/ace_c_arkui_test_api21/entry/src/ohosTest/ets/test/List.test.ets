@@ -12,6 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import NodeUtilsMethodTest from './nodeUtil/NodeUtilsMethodTest.test'
+import NodeUtilsReturnTest from './nodeUtil/NodeUtilsReturnTest.test'
 import TestInvalidateAttributes from './invalidate/TestInvalidateAttributes.test'
 import TestRegisterCommonEvent from './commonEvent/TestRegisterCommonEvent.test'
 import EdgesPositionTest from './position/EdgesPositionTest.test'
@@ -22,8 +24,14 @@ import ColumnMatchParentTest from './Column/ColumnMatchParentTest'
 import ColumnWrapContentTest from './Column/ColumnWrapContentTest'
 import ColumnFixAtiDealSizeTest from './Column/ColumnFixAtiDealSizeTest'
 import ImageContentTransitionEffectTest from './Image/ImageContentTransitionEffect.test'
+import ListDraggingEventTest from './list/ListDraggingEventTest.test'
+import ListFlingEventTest from './list/ListFlingEventTest.test'
+import ImageSupportSvg2Test from './imageSupportSvg2/ImageSupportSvg2Test.test'
+import SourceTypeTest from './sourceType/SourceTypeTest.test'
 
 export default function testsuite() {
+  NodeUtilsMethodTest(); // 此条特殊用例请放在首行，勿动
+  NodeUtilsReturnTest();
   TestInvalidateAttributes();
   TestRegisterCommonEvent();
   EdgesPositionTest();
@@ -34,4 +42,8 @@ export default function testsuite() {
   ColumnWrapContentTest();
   ColumnFixAtiDealSizeTest();
   ImageContentTransitionEffectTest();
+  ListDraggingEventTest();
+  ListFlingEventTest();
+  ImageSupportSvg2Test();
+  SourceTypeTest();
 }

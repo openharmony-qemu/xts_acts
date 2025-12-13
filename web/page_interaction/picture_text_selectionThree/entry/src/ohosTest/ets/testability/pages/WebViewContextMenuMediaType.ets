@@ -23,9 +23,7 @@ import { AbilityConstant, Configuration, ConfigurationConstant, UIAbility, Want 
 import { webview } from '@kit.ArkWeb';
 import { pasteboard } from '@kit.BasicServicesKit';
 import { Driver, MouseButton, UiWindow, ON, On } from '@kit.TestKit';
-import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import testsuite from '../../test/List.test';
-const EVENT_ID_SET_SUITE_KEY = 183111;
+const EVENT_ID_SET_SUITE_KEY = 183112;
 let driver = Driver.create();
 const TAG = 'ContextMenu';
 
@@ -42,6 +40,8 @@ struct webViewController {
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
   @State flag:number = 1;
+  @State ContextMenuDataMediaTypeArr: ContextMenuDataMediaType[] = [ContextMenuDataMediaType.NONE,ContextMenuDataMediaType.IMAGE, ContextMenuDataMediaType.VIDEO,
+    ContextMenuDataMediaType.AUDIO,ContextMenuDataMediaType.CANVAS]
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -66,12 +66,7 @@ struct webViewController {
     }
   }
 
-  aboutToAppear() {
-    let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
-    let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
-    console.info('start run testcase!!!')
-    Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
-  }
+
 
 
   @Builder
@@ -228,19 +223,19 @@ struct webViewController {
             console.info("onContextMenuShow getContextMenuMediaType = " + event.param.getContextMenuMediaType());
             if(this.flag == 1) {
               console.log('emitContextMenuMediaTypeVideo');
-              Utils.emitEvent(event.param.getContextMenuMediaType(),20251103)
+              Utils.emitEvent(this.ContextMenuDataMediaTypeArr[event.param.getContextMenuMediaType()],20251103)
             } else if(this.flag == 2) {
               console.log('emitContextMenuMediaTypeText2');
-              Utils.emitEvent(event.param.getContextMenuMediaType(),20251104)
+              Utils.emitEvent(this.ContextMenuDataMediaTypeArr[event.param.getContextMenuMediaType()],20251104)
             } else if(this.flag == 3) {
               console.log('emitContextMenuMediaTypeImage2');
-              Utils.emitEvent(event.param.getContextMenuMediaType(),20251105)
+              Utils.emitEvent(this.ContextMenuDataMediaTypeArr[event.param.getContextMenuMediaType()],20251105)
             } else if(this.flag == 4) {
               console.log('emitContextMenuMediaTypeAudio2');
-              Utils.emitEvent(event.param.getContextMenuMediaType(),20251106)
+              Utils.emitEvent(this.ContextMenuDataMediaTypeArr[event.param.getContextMenuMediaType()],20251106)
             } else if(this.flag == 5) {
               console.log('emitContextMenuMediaTypeCanvas2');
-              Utils.emitEvent(event.param.getContextMenuMediaType(),20251107)
+              Utils.emitEvent(this.ContextMenuDataMediaTypeArr[event.param.getContextMenuMediaType()],20251107)
             }
 
 

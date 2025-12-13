@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import UIAbility from '@ohos.app.ability.UIAbility';
 import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
@@ -25,13 +26,11 @@ import common from '@ohos.app.ability.common';
 class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onCreate');
-
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onWindowStageCreate');
-
-    windowStage.loadContent('pages/webViewMetaViewportFalse', (err: BusinessError<void>|null): void => {
+    windowStage.loadContent('pages/webJavaScriptOnDocumentStartTest', (err: BusinessError<void>|null, data: undefined): void => {
       hilog.info(0x0000, 'testTag EntryAbility', 'loadContent entering');
       if (err?.code) {
         hilog.info(0x0000, 'testTag EntryAbility', 'loadContent error');
@@ -42,19 +41,26 @@ class EntryAbility extends UIAbility {
     });
   }
 
-  onDestroy() {
-    hilog.info(0x0000, 'testTag EntryAbility', '%{public}s', 'TestAbility onDestroy');
+  onDestroy(): Promise<void> | undefined {
+    hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onDestroy');
+    return undefined;
   }
 
   onWindowStageDestroy() {
-    hilog.info(0x0000, 'testTag EntryAbility', '%{public}s', 'TestAbility onWindowStageDestroy');
+    hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onWindowStageDestroy');
   }
 
   onForeground() {
-    hilog.info(0x0000, 'testTag EntryAbility', '%{public}s', 'TestAbility onForeground');
+    hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onForeground');
+    if (this.context) {
+      hilog.info(0x0000, 'testTag EntryAbility', 'context ok'+JSON.stringify(this.context));
+    }else{
+      hilog.info(0x0000, 'testTag EntryAbility', 'context is undefined');
+    }
+    AppStorage.setOrCreate<common.UIAbilityContext>("UIAbilityContext", this.context)
   }
 
   onBackground() {
-    hilog.info(0x0000, 'testTag EntryAbility', '%{public}s', 'TestAbility onBackground');
+    hilog.info(0x0000, 'testTag  EntryAbility', 'EntryAbility onBackground');
   }
 }

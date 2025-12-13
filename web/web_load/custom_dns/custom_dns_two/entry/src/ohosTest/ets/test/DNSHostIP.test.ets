@@ -57,13 +57,13 @@ export default function DNSHostIP() {
     })
 
 
-    /*
-     * @tc.number     : Acts_setHostIP_0100
-     * @tc.name       : testSetHostIP001
-     * @tc.desc       : test DNSHostIP
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   setHostIP0100
+     * @tc.number Acts_setHostIP_0100
+     * @tc.desc   test DNSHostIP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setHostIP0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("setHostIP0100", 148002)
@@ -71,13 +71,13 @@ export default function DNSHostIP() {
       Utils.waitAndClickComponent('DNSHostIP', driver)
     })
 
-    /*
-     * @tc.number     : Acts_clearHostIP_1200
-     * @tc.name       : testClearHostIP012
-     * @tc.desc       : test DNSHostIP
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   setHostIP1200
+     * @tc.number Acts_clearHostIP_1200
+     * @tc.desc   test DNSHostIP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('setHostIP1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("setHostIP1200", 148002)
@@ -86,26 +86,26 @@ export default function DNSHostIP() {
     })
 
 
-    /*
-     * @tc.number     : Acts_clearHostIP_1300
-     * @tc.name       : testClearHostIP013
-     * @tc.desc       : test DNSHostIP
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   setHostIP1300
+     * @tc.number Acts_clearHostIP_1300
+     * @tc.desc   test DNSHostIP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('setHostIP1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("setHostIP1300", 148002)
       Utils.registerEvent("setHostIP1300", true, 148032, done);
       Utils.waitAndClickComponent('DNSHostIP', driver)
     })
-    /*
-     * @tc.number     : Acts_clearHostIP_0800
-     * @tc.name       : testClearHostIP008
-     * @tc.desc       : test DNSHostIP
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   setHostIP1500
+     * @tc.number Acts_clearHostIP_0800
+     * @tc.desc   test DNSHostIP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('setHostIP1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("setHostIP1500", 148002)

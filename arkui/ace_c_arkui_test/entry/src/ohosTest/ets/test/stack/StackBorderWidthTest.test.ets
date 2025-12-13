@@ -26,78 +26,78 @@ export default function stackBorderWidthTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_BORDERWIDTH_0100
-     * @tc.name       : testStackBorderWidth001
-     * @tc.desc       : testing borderwidth for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackBorderWidth001
+     * @tc.number SUB_ARKUI_CAPI_STACK_BORDERWIDTH_0100
+     * @tc.desc   testing borderwidth for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackBorderWidth001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackBorderWidth001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_BORDERWIDTH_0200
-     * @tc.name       : testStackBorderWidth002
-     * @tc.desc       : testing borderwidth for stack with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testStackBorderWidth002
+     * @tc.number SUB_ARKUI_CAPI_STACK_BORDERWIDTH_0200
+     * @tc.desc   testing borderwidth for stack with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackBorderWidth002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackBorderWidth002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_BORDERWIDTH_0300
-     * @tc.name       : testStackBorderWidth003
-     * @tc.desc       : testing borderwidth for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackBorderWidth003
+     * @tc.number SUB_ARKUI_CAPI_STACK_BORDERWIDTH_0300
+     * @tc.desc   testing borderwidth for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackBorderWidth003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackBorderWidth003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_BORDERWIDTH_0400
-     * @tc.name       : testStackBorderWidth004
-     * @tc.desc       : testing borderwidth for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackBorderWidth004
+     * @tc.number SUB_ARKUI_CAPI_STACK_BORDERWIDTH_0400
+     * @tc.desc   testing borderwidth for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackBorderWidth004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackBorderWidth004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_BORDERWIDTH_0500
-     * @tc.name       : testStackBorderWidth005
-     * @tc.desc       : testing borderwidth for stack with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testStackBorderWidth005
+     * @tc.number SUB_ARKUI_CAPI_STACK_BORDERWIDTH_0500
+     * @tc.desc   testing borderwidth for stack with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackBorderWidth005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackBorderWidth005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_BORDERWIDTH_0600
-     * @tc.name       : testStackBorderWidth006
-     * @tc.desc       : testing borderwidth for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackBorderWidth006
+     * @tc.number SUB_ARKUI_CAPI_STACK_BORDERWIDTH_0600
+     * @tc.desc   testing borderwidth for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackBorderWidth006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackBorderWidth006()).assertEqual(0)

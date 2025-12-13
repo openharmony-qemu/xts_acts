@@ -48,12 +48,14 @@ export default function getListItemRect4() {
       console.info("BadgeFocus after each called");
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getListItemRect4_0100
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 0,set the visibility of listItem0 to Visible
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getListItemRect4_0100
+     * @tc.number SUB_ACE_TS_COMPONENT_getListItemRect4_0100
+     * @tc.desc   set index to 0,set the visibility of listItem0 to Visible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getListItemRect4_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getListItemRect4_0100] START');
@@ -109,12 +111,14 @@ export default function getListItemRect4() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getListItemRect4_0200
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 0,set the visibility of listItem0 to Hidden
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getListItemRect4_0200
+     * @tc.number SUB_ACE_TS_COMPONENT_getListItemRect4_0200
+     * @tc.desc   set index to 0,set the visibility of listItem0 to Hidden
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getListItemRect4_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getListItemRect4_0200] START');
@@ -170,12 +174,14 @@ export default function getListItemRect4() {
     });
 
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getListItemRect4_0300
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 0,set the visibility of listItem0 to None
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getListItemRect4_0300
+     * @tc.number SUB_ACE_TS_COMPONENT_getListItemRect4_0300
+     * @tc.desc   set index to 0,set the visibility of listItem0 to None
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getListItemRect4_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getListItemRect4_0300] START');

@@ -46,13 +46,13 @@ export default function ActsZlibInterfaceTest() {
     });
 
     /**
-     * @tc.number     : ACTS_ZlibInterfaceTest_static_01
-     * @tc.name       : ActsZlibInterfaceTest_static_01
-     * @tc.desc       : test getOriginalSize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-    */
+     * @tc.name   ActsZlibInterfaceTest_static_01
+     * @tc.number ACTS_ZlibInterfaceTest_static_01
+     * @tc.desc   test getOriginalSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ActsZlibInterfaceTest_static_01', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = 'ActsZlibInterfaceTest01';
       hilog.info(domain, tag, "==================ACTS_ZlibInterfaceTest_static_01 start==================");
@@ -67,13 +67,14 @@ export default function ActsZlibInterfaceTest() {
         zlib.compressFile(inFile33, outFile35, options).then((): Promise<void> => {
           hilog.info(domain, tag, 'getOriginalSize prepare test.zip success');
           try {
-            zlib.getOriginalSize(outFile35).then((data: double): void => {
+            zlib.getOriginalSize(outFile35).then((data: long): void => {
               hilog.info(domain, tag, `ActsZlibInterfaceTest_static_01 getOriginalSize success. getOriginalSize: ${data}`);
               expect(data >= 0).assertEqual(true);
               done();
-            }).catch((err: Error) => {
-              hilog.info(domain, tag, "getOriginalSize failed with error:" + err);
-              expect(err).assertFail();
+              }).catch((errData: BusinessError<void>): void => {
+                hilog.error(domain, tag,
+                  `ACTS_ZlibInterfaceTest_static_01 getOriginalSize failed errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData).assertFail();
               done();
             });
           } catch(errData: BusinessError) {
@@ -95,13 +96,13 @@ export default function ActsZlibInterfaceTest() {
     })
 
     /**
-     * @tc.number     : ACTS_ZlibInterfaceTest_static_03
-     * @tc.name       : ACTS_ZlibInterfaceTest_static_03
-     * @tc.desc       : test getOriginalSize 900001
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-    */
+     * @tc.name   ACTS_ZlibInterfaceTest_static_03
+     * @tc.number ACTS_ZlibInterfaceTest_static_03
+     * @tc.desc   test getOriginalSize 900001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ACTS_ZlibInterfaceTest_static_03', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "==================ACTS_ZlibInterfaceTest_static_03 start==================");
       let compressedFile: string = dir + '/not_found.zip';
@@ -124,13 +125,13 @@ export default function ActsZlibInterfaceTest() {
     })
 
     /**
-     * @tc.number     : ACTS_ZlibInterfaceTest_static_04
-     * @tc.name       : ACTS_ZlibInterfaceTest_static_04
-     * @tc.desc       : test getOriginalSize 900003
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-    */
+     * @tc.name   ACTS_ZlibInterfaceTest_static_04
+     * @tc.number ACTS_ZlibInterfaceTest_static_04
+     * @tc.desc   test getOriginalSize 900003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ACTS_ZlibInterfaceTest_static_04', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "==================ACTS_ZlibInterfaceTest_static_04 start==================");
       let file = fs.openSync(dir + '/test33.txt', fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);

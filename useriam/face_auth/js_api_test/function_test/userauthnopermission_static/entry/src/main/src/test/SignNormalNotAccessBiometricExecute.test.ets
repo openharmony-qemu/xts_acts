@@ -99,13 +99,13 @@ export default function signNormalNotAccessBiometricExecute() {
     })
 
     /**
-        * @tc.number     Security_IAM_UserAuthInstance_Func_static_0042
-        * @tc.name       Security_IAM_UserAuthInstance_Func_static_0042
-        * @tc.desc       userAuthInstance interface not null
-        * @tc.size       MediumTest
-        * @tc.type       Function
-        * @tc.level      Level.LEVEL2
-    */
+     * @tc.name   Security_IAM_UserAuthInstance_Func_static_0042
+     * @tc.number Security_IAM_UserAuthInstance_Func_static_0042
+     * @tc.desc   userAuthInstance interface not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Security_IAM_UserAuthInstance_Func_static_0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format, "Security_IAM_UserAuthInstance_Func_static_0042 start");
       try {
@@ -122,13 +122,13 @@ export default function signNormalNotAccessBiometricExecute() {
     });
 
     /**
-        * @tc.number     Security_IAM_UserAuthInstance_Func_static_0050
-        * @tc.name       Security_IAM_UserAuthInstance_Func_static_0050
-        * @tc.desc       Nopermisson on
-        * @tc.size       MediumTest
-        * @tc.type       Function
-        * @tc.level      Level.LEVEL2
-    */
+     * @tc.name   Security_IAM_UserAuthInstance_Func_static_0050
+     * @tc.number Security_IAM_UserAuthInstance_Func_static_0050
+     * @tc.desc   Nopermisson on
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Security_IAM_UserAuthInstance_Func_static_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format, "Security_IAM_UserAuthInstance_Func_static_0050 start");
       try {
@@ -147,13 +147,13 @@ export default function signNormalNotAccessBiometricExecute() {
     });
 
     /**
-        * @tc.number     Security_IAM_UserAuthInstance_Func_static_0090
-        * @tc.name       Security_IAM_UserAuthInstance_Func_static_0090
-        * @tc.desc       call cancel interface return GENERAL_ERROR
-        * @tc.size       MediumTest
-        * @tc.type       Function
-        * @tc.level      Level.LEVEL2
-    */
+     * @tc.name   Security_IAM_UserAuthInstance_Func_static_0090
+     * @tc.number Security_IAM_UserAuthInstance_Func_static_0090
+     * @tc.desc   call cancel interface return GENERAL_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Security_IAM_UserAuthInstance_Func_static_0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format, "Security_IAM_UserAuthInstance_Func_static_0090 start");
       try {
@@ -169,13 +169,13 @@ export default function signNormalNotAccessBiometricExecute() {
     });
 
     /**
-        * @tc.number     SUB_Security_IAM_authWidget_API_static_0200
-        * @tc.name       SUB_Security_IAM_authWidget_API_static_0200
-        * @tc.desc       call ReuseMode interface parameter check
-        * @tc.size       MediumTest
-        * @tc.type       Function
-        * @tc.level      Level.LEVEL3
-    */
+     * @tc.name   SUB_Security_IAM_authWidget_API_static_0200
+     * @tc.number SUB_Security_IAM_authWidget_API_static_0200
+     * @tc.desc   call ReuseMode interface parameter check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_Security_IAM_authWidget_API_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format,"SUB_Security_IAM_authWidget_API_static_0200 start");
       expect(''+1).assertEqual(''+userAuth.ReuseMode.AUTH_TYPE_RELEVANT);

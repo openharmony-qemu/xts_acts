@@ -38,12 +38,12 @@ export default function promiseTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PROMISE_00100
-     * @tc.name       : testPromise0001
-     * @tc.desc       : Test the function by promise
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testPromise0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISE_00100
+     * @tc.desc   Test the function by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPromise0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag = true;
@@ -54,12 +54,12 @@ export default function promiseTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PROMISE_00200
-     * @tc.name       : testPromise0002
-     * @tc.desc       : Test the function by promise
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPromise0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISE_00200
+     * @tc.desc   Test the function by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPromise0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let flag = false;
@@ -71,12 +71,12 @@ export default function promiseTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PROMISE_00300
-     * @tc.name       : testPromise0003
-     * @tc.desc       : Test the function by promise
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPromise0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISE_00300
+     * @tc.desc   Test the function by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPromise0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let flag = false;
@@ -100,12 +100,12 @@ export default function promiseTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PROMISE_00400
-     * @tc.name       : testPromise0004
-     * @tc.desc       : Test the function by promise
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPromise0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISE_00400
+     * @tc.desc   Test the function by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPromise0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let flag = true;
@@ -129,12 +129,12 @@ export default function promiseTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PROMISE_00500
-     * @tc.name       : testPromise0005
-     * @tc.desc       : Test the function by promise
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPromise0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISE_00500
+     * @tc.desc   Test the function by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPromise0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let flag = true;
@@ -188,12 +188,12 @@ export default function promiseTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PROMISE_00600
-     * @tc.name       : testPromise0006
-     * @tc.desc       : Test the function by promise
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPromise0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISE_00600
+     * @tc.desc   Test the function by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPromise0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let flag = false;
@@ -241,12 +241,12 @@ export default function promiseTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PROMISE_00700
-     * @tc.name       : testPromise0007
-     * @tc.desc       : Test the function by promise
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPromise0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISE_00700
+     * @tc.desc   Test the function by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPromise0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let flag = true;
@@ -300,12 +300,12 @@ export default function promiseTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PROMISE_00800
-     * @tc.name       : testPromise0008
-     * @tc.desc       : Test the function by promise
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPromise0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISE_00800
+     * @tc.desc   Test the function by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPromise0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let flag = true;
@@ -357,12 +357,12 @@ export default function promiseTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PROMISE_00900
-     * @tc.name       : testPromise0009
-     * @tc.desc       : Test the function by promise
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPromise0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISE_00900
+     * @tc.desc   Test the function by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPromise0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let flag = true;
@@ -428,12 +428,12 @@ export default function promiseTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PROMISE_01000
-     * @tc.name       : testPromise0010
-     * @tc.desc       : Test the function by promise
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPromise0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISE_01000
+     * @tc.desc   Test the function by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPromise0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let flag = true;
@@ -496,12 +496,12 @@ export default function promiseTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PROMISE_01100
-     * @tc.name       : testPromise0011
-     * @tc.desc       : Test the function by promise
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPromise0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISE_01100
+     * @tc.desc   Test the function by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPromise0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let flag = true;
@@ -589,12 +589,12 @@ export default function promiseTest() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PROMISE_01200
-     * @tc.name       : testPromise0012
-     * @tc.desc       : Test the function by promise
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPromise0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISE_01200
+     * @tc.desc   Test the function by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPromise0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let flag = true;

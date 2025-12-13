@@ -49,10 +49,12 @@ export default function ObserverNavDestinationId() {
 
 
     /**
-     * @tc.number    ObserverNavDestinationId_0100
-     * @tc.name      ObserverNavDestinationId_0100
-     * @tc.desc      Test Observer NavDestinationInfo navDestinationId
-     * @tc.level:    Level 2
+     * @tc.name   ObserverNavDestinationId_0100
+     * @tc.number ObserverNavDestinationId_0100
+     * @tc.desc   Test Observer NavDestinationInfo navDestinationId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ObserverNavDestinationId_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[ObserverNavDestinationId_0100] START');

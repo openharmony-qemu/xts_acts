@@ -50,12 +50,12 @@ export default function treeViewNodeParamContainer() {
     })
 
     /**
-     * @tc.number treeViewNodeParamContainer
      * @tc.name   treeViewNodeParamContainer_0100
+     * @tc.number treeViewNodeParamContainer
      * @tc.desc   Test treeViewNodeParamContainer
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('treeViewNodeParamContainer_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

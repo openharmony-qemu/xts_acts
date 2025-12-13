@@ -141,12 +141,12 @@ export default function getTest() {
     //callback
     //image
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_0000
-     * @tc.name      : get_image_uri_001
-     * @tc.desc      : image get photoKeys.URI
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_uri_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_0000
+     * @tc.desc   image get photoKeys.URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_uri_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_image_uri_001';
@@ -159,12 +159,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_0100
-     * @tc.name      : get_image_photo_type_001
-     * @tc.desc      : image get photoKeys.PHOTO_TYPE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_photo_type_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_0100
+     * @tc.desc   image get photoKeys.PHOTO_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_photo_type_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_image_photo_type_001';
@@ -177,12 +177,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_0200
-     * @tc.name      : get_image_displayName_001
-     * @tc.desc      : image get photoKeys.DISPLAY_NAME
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_displayName_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_0200
+     * @tc.desc   image get photoKeys.DISPLAY_NAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_displayName_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_image_displayName_001';
@@ -194,12 +194,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_0300
-     * @tc.name      : get_image_date_added_001
-     * @tc.desc      : image get photoKeys.DATE_ADDED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_date_added_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_0300
+     * @tc.desc   image get photoKeys.DATE_ADDED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_date_added_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_image_date_added_001';
@@ -212,12 +212,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_0400
-     * @tc.name      : get_image_date_modified_001
-     * @tc.desc      : image get photoKeys.DATE_MODIFIED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_date_modified_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_0400
+     * @tc.desc   image get photoKeys.DATE_MODIFIED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_date_modified_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_image_date_modified_001';
@@ -230,12 +230,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_0500
-     * @tc.name      : get_image_duration_001
-     * @tc.desc      : image get photoKeys.DURATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_duration_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_0500
+     * @tc.desc   image get photoKeys.DURATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_duration_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_image_duration_001';
@@ -248,12 +248,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_0600
-     * @tc.name      : get_image_width_001
-     * @tc.desc      : image get photoKeys.WIDTH
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_width_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_0600
+     * @tc.desc   image get photoKeys.WIDTH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_width_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_image_width_001';
@@ -266,12 +266,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_0700
-     * @tc.name      : get_image_height_001
-     * @tc.desc      : image get photoKeys.HEIGHT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_height_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_0700
+     * @tc.desc   image get photoKeys.HEIGHT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_height_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_image_height_001';
@@ -284,12 +284,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_0800
-     * @tc.name      : get_image_date_taken_001
-     * @tc.desc      : image get photoKeys.DATE_TAKEN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_date_taken_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_0800
+     * @tc.desc   image get photoKeys.DATE_TAKEN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_date_taken_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_image_date_taken_001';
@@ -302,12 +302,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_0900
-     * @tc.name      : get_image_orientation_001
-     * @tc.desc      : image get photoKeys.ORIENTATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_orientation_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_0900
+     * @tc.desc   image get photoKeys.ORIENTATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_orientation_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_image_orientation_001';
@@ -320,12 +320,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_1000
-     * @tc.name      : get_image_favorite_001
-     * @tc.desc      : image get photoKeys.FAVORITE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_favorite_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_1000
+     * @tc.desc   image get photoKeys.FAVORITE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_favorite_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_image_favorite_001';
@@ -338,12 +338,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_1100
-     * @tc.name      : get_image_size_001
-     * @tc.desc      : image get photoKeys.SIZE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_size_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_1100
+     * @tc.desc   image get photoKeys.SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_size_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_image_size_001';
@@ -356,12 +356,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_1200
-     * @tc.name      : get_image_title_001
-     * @tc.desc      : image get photoKeys.TITLE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_title_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_1200
+     * @tc.desc   image get photoKeys.TITLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_title_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_image_title_001';
@@ -374,12 +374,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_1300
-     * @tc.name      : get_image_position_001
-     * @tc.desc      : image get photoKeys.POSITION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_position_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_1300
+     * @tc.desc   image get photoKeys.POSITION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_position_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_image_position_001';
@@ -392,12 +392,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_1400
-     * @tc.name      : get_image_date_trash_001
-     * @tc.desc      : image get photoKeys.DATE_TRASHED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_date_trash_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_1400
+     * @tc.desc   image get photoKeys.DATE_TRASHED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_date_trash_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_image_date_trash_001';
@@ -410,12 +410,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_1500
-     * @tc.name      : get_image_hidden_001
-     * @tc.desc      : image get photoKeys.HIDDEN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_hidden_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_1500
+     * @tc.desc   image get photoKeys.HIDDEN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_hidden_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_image_hidden_001';
@@ -429,12 +429,12 @@ export default function getTest() {
 
     //video
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_5000
-     * @tc.name      : get_video_uri_001
-     * @tc.desc      : video get photoKeys.URI
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_uri_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_5000
+     * @tc.desc   video get photoKeys.URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_uri_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_video_uri_001';
@@ -447,12 +447,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_5100
-     * @tc.name      : get_video_photo_type_001
-     * @tc.desc      : video get photoKeys.PHOTO_TYPE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_photo_type_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_5100
+     * @tc.desc   video get photoKeys.PHOTO_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_photo_type_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_video_photo_type_001';
@@ -465,12 +465,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_5200
-     * @tc.name      : get_video_display_name_001
-     * @tc.desc      : video get photoKeys.DISPLAY_NAME
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_display_name_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_5200
+     * @tc.desc   video get photoKeys.DISPLAY_NAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_display_name_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_052';
@@ -482,12 +482,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_5300
-     * @tc.name      : get_video_date_added_001
-     * @tc.desc      : video get photoKeys.DATE_ADDED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_date_added_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_5300
+     * @tc.desc   video get photoKeys.DATE_ADDED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_date_added_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_video_date_added_001';
@@ -500,12 +500,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_5400
-     * @tc.name      : get_video_date_modified_001
-     * @tc.desc      : video get photoKeys.DATE_MODIFIED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_date_modified_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_5400
+     * @tc.desc   video get photoKeys.DATE_MODIFIED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_date_modified_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_video_date_modified_001';
@@ -518,12 +518,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_5500
-     * @tc.name      : get_video_duration_001
-     * @tc.desc      : video get photoKeys.DURATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_duration_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_5500
+     * @tc.desc   video get photoKeys.DURATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_duration_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_video_duration_001';
@@ -536,12 +536,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_5600
-     * @tc.name      : get_video_width_001
-     * @tc.desc      : video get photoKeys.WIDTH
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_width_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_5600
+     * @tc.desc   video get photoKeys.WIDTH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_width_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_video_width_001';
@@ -554,12 +554,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_5700
-     * @tc.name      : get_video_height_001
-     * @tc.desc      : video get photoKeys.HEIGHT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_height_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_5700
+     * @tc.desc   video get photoKeys.HEIGHT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_height_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_video_height_001';
@@ -572,12 +572,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_5800
-     * @tc.name      : get_video_date_taken_001
-     * @tc.desc      : video get photoKeys.DATE_TAKEN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_date_taken_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_5800
+     * @tc.desc   video get photoKeys.DATE_TAKEN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_date_taken_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_video_date_taken_001';
@@ -590,12 +590,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_5900
-     * @tc.name      : get_video_orientation_001
-     * @tc.desc      : video get photoKeys.ORIENTATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_orientation_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_5900
+     * @tc.desc   video get photoKeys.ORIENTATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_orientation_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_video_orientation_001';
@@ -608,12 +608,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_6000
-     * @tc.name      : get_video_favorite_001
-     * @tc.desc      : video get photoKeys.FAVORITE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_favorite_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_6000
+     * @tc.desc   video get photoKeys.FAVORITE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_favorite_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_video_favorite_001';
@@ -626,12 +626,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_6100
-     * @tc.name      : get_video_size_001
-     * @tc.desc      : video get photoKeys.SIZE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_size_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_6100
+     * @tc.desc   video get photoKeys.SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_size_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_video_size_001';
@@ -644,12 +644,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_6200
-     * @tc.name      : get_video_title_001
-     * @tc.desc      : video get photoKeys.TITLE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_title_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_6200
+     * @tc.desc   video get photoKeys.TITLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_title_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_video_title_001';
@@ -662,12 +662,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_6300
-     * @tc.name      : get_video_position_001
-     * @tc.desc      : video get photoKeys.POSITION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_position_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_6300
+     * @tc.desc   video get photoKeys.POSITION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_position_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_video_position_001';
@@ -680,12 +680,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_6400
-     * @tc.name      : get_video_date_trash_001
-     * @tc.desc      : video get photoKeys.DATE_TRASHED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_date_trash_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_6400
+     * @tc.desc   video get photoKeys.DATE_TRASHED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_date_trash_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_video_date_trash_001';
@@ -698,12 +698,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_6500
-     * @tc.name      : get_video_hidden_001
-     * @tc.desc      : video get photoKeys.HIDDEN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_hidden_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_6500
+     * @tc.desc   video get photoKeys.HIDDEN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_hidden_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_video_hidden_001';
@@ -716,12 +716,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_6600
-     * @tc.name      : get_image_date_add_ms_001
-     * @tc.desc      : image get photoKeys.DATE_ADDED_MS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_image_date_add_ms_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_6600
+     * @tc.desc   image get photoKeys.DATE_ADDED_MS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_image_date_add_ms_001', Level.LEVEL1, async (done: Function) => {
       const testNum = 'get_image_date_add_ms_001';
@@ -741,12 +741,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_6700
-     * @tc.name      : get_video_date_added_ms_001
-     * @tc.desc      : video get photoKeys.DATE_ADDED_MS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_video_date_added_ms_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_6700
+     * @tc.desc   video get photoKeys.DATE_ADDED_MS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_video_date_added_ms_001', Level.LEVEL1, async (done: Function) => {
       const testNum = 'get_video_date_add_ms_001';
@@ -766,12 +766,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_6800
-     * @tc.name      : get_image_date_modified_ms_001
-     * @tc.desc      : image get photoKeys.DATE_MODIFIED_MS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_image_date_modified_ms_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_6800
+     * @tc.desc   image get photoKeys.DATE_MODIFIED_MS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_image_date_modified_ms_001', Level.LEVEL1, async (done: Function) => {
       const testNum = 'get_image_date_modified_ms_001';
@@ -791,12 +791,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_6900
-     * @tc.name      : get_video_date_modified_ms_001
-     * @tc.desc      : video get photoKeys.DATE_MODIFIED_MS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_video_date_modified_ms_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_6900
+     * @tc.desc   video get photoKeys.DATE_MODIFIED_MS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_video_date_modified_ms_001', Level.LEVEL1, async (done: Function) => {
       const testNum = 'get_video_date_modified_ms_001';
@@ -817,12 +817,12 @@ export default function getTest() {
 
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_7000
-     * @tc.name      : get_image_dynamic_range_type_001
-     * @tc.desc      : image get photoKeys.DYNAMIC_RANGE_TYPE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_image_dynamic_range_type_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_7000
+     * @tc.desc   image get photoKeys.DYNAMIC_RANGE_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_image_dynamic_range_type_001', Level.LEVEL1, async (done: Function) => {
       const testNum = 'get_image_dynamic_range_type_001';
@@ -835,12 +835,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_7001
-     * @tc.name      : get_image_cover_position_001
-     * @tc.desc      : common image get photoKeys.COVER_POSITION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_image_cover_position_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_7001
+     * @tc.desc   common image get photoKeys.COVER_POSITION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_image_cover_position_001', Level.LEVEL1, async (done: Function) => {
       const testNum = 'get_image_cover_position_001';
@@ -853,12 +853,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_7002
-     * @tc.name      : get_video_cover_position_001
-     * @tc.desc      : video get photoKeys.COVER_POSITION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_video_cover_position_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_7002
+     * @tc.desc   video get photoKeys.COVER_POSITION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_video_cover_position_001', Level.LEVEL1, async (done: Function) => {
       const testNum = 'get_video_cover_position_001';
@@ -871,12 +871,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_7003
-     * @tc.name      : get_image_burst_key_001
-     * @tc.desc      : image get photoKeys.BURST_KEY
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_image_burst_key_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_7003
+     * @tc.desc   image get photoKeys.BURST_KEY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_image_burst_key_001', Level.LEVEL1, async (done: Function) => {
       const testNum = 'get_image_burst_key_001';
@@ -890,12 +890,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_7004
-     * @tc.name      : get_video_burst_key_001
-     * @tc.desc      : video get photoKeys.BURST_KEY
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_video_burst_key_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_7004
+     * @tc.desc   video get photoKeys.BURST_KEY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_video_burst_key_001', Level.LEVEL1, async (done: Function) => {
       const testNum = 'get_video_burst_key_001';
@@ -909,12 +909,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_7005
-     * @tc.name      : get_image_lcd_size_001
-     * @tc.desc      : image get photoKeys.LCD_SIZE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_image_lcd_size_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_7005
+     * @tc.desc   image get photoKeys.LCD_SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_image_lcd_size_001', Level.LEVEL1, async (done: Function) => {
       const testNum = 'get_image_lcd_size_001';
@@ -927,12 +927,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_7006
-     * @tc.name      : get_video_lcd_size_001
-     * @tc.desc      : video get photoKeys.LCD_SIZE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_video_lcd_size_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_7006
+     * @tc.desc   video get photoKeys.LCD_SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_video_lcd_size_001', Level.LEVEL1, async (done: Function) => {
       const testNum = 'get_video_lcd_size_001';
@@ -945,12 +945,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_7007
-     * @tc.name      : get_image_thm_size_001
-     * @tc.desc      : image get photoKeys.THM_SIZE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_image_thm_size_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_7007
+     * @tc.desc   image get photoKeys.THM_SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_image_thm_size_001', Level.LEVEL1, async (done: Function) => {
       const testNum = 'get_image_thm_size_001';
@@ -964,12 +964,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_7008
-     * @tc.name      : get_video_thm_size_001
-     * @tc.desc      : video get photoKeys.THM_SIZE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_video_thm_size_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_7008
+     * @tc.desc   video get photoKeys.THM_SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_video_thm_size_001', Level.LEVEL1, async (done: Function) => {
       const testNum = 'get_video_thm_size_001';
@@ -983,12 +983,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_DETAIL_TIME_001
-     * @tc.name      : get_image_detail_time_001
-     * @tc.desc      : image get photoKeys.DETAIL_TIME
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_image_detail_time_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_DETAIL_TIME_001
+     * @tc.desc   image get photoKeys.DETAIL_TIME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_image_detail_time_001', Level.LEVEL1, async (done: Function) => {
       const testNum = 'get_image_detail_time_001';
@@ -1016,12 +1016,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_DETAIL_TIME_002
-     * @tc.name      : get_video_detail_time_001
-     * @tc.desc      : video get photoKeys.DETAIL_TIME
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_video_detail_time_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_DETAIL_TIME_002
+     * @tc.desc   video get photoKeys.DETAIL_TIME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_video_detail_time_001', Level.LEVEL1, async (done: Function) => {
       const testNum = 'get_video_detail_time_00';
@@ -1049,12 +1049,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_DATE_TAKEN_MS_001
-     * @tc.name      : get_image_date_taken_ms_001
-     * @tc.desc      : image get photoKeys.DATE_TAKEN_MS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_image_date_taken_ms_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_DATE_TAKEN_MS_001
+     * @tc.desc   image get photoKeys.DATE_TAKEN_MS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_image_date_taken_ms_001', Level.LEVEL1, async (done: Function) => {
       const testNum = 'get_image_date_taken_ms_001';
@@ -1074,12 +1074,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_DATE_TAKEN_MS_002
-     * @tc.name      : get_video_date_taken_ms_001
-     * @tc.desc      : video get photoKeys.DATE_TAKEN_MS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_video_date_taken_ms_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_DATE_TAKEN_MS_002
+     * @tc.desc   video get photoKeys.DATE_TAKEN_MS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_video_date_taken_ms_001', Level.LEVEL1, async (done: Function) => {
       const testNum = 'get_video_date_taken_ms_001';
@@ -1098,14 +1098,14 @@ export default function getTest() {
       done();
     });
 
-    /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_DATE_TAKEN_MS_002
-     * @tc.name      : get_video_date_taken_ms_002
-     * @tc.desc      : video get key '', error code 14000014
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
+      /**
+       * @tc.name   get_video_date_taken_ms_002
+       * @tc.number SUB_PHOTOACCESS_HELPER_GET_DATE_TAKEN_MS_002
+       * @tc.desc   video get key '', error code 14000014
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
       it('get_video_date_taken_ms_002', Level.LEVEL2, async (done: Function) => {
         const testNum = 'get_video_date_taken_ms_002';
         const displayName = 'getTest.mp4';
@@ -1118,12 +1118,12 @@ export default function getTest() {
       });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_DATE_TAKEN_MS_003
-     * @tc.name      : get_video_date_taken_ms_003
-     * @tc.desc      : video get key undefined, error code 13900020 or 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_date_taken_ms_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_DATE_TAKEN_MS_003
+     * @tc.desc   video get key undefined, error code 13900020 or 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_date_taken_ms_003', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_video_date_taken_ms_003';
@@ -1136,12 +1136,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : Sub_MediaLibrary_Get_MediaSuffix_001
-     * @tc.name      : get_asset_mediaSuffix_001
-     * @tc.desc      : get all asset mediaSuffix
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_asset_mediaSuffix_001
+     * @tc.number Sub_MediaLibrary_Get_MediaSuffix_001
+     * @tc.desc   get all asset mediaSuffix
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_asset_mediaSuffix_001', Level.LEVEL1, async (done: Function) => {
       const testNum = 'get_asset_mediaSuffix_001';

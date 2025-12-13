@@ -32,13 +32,13 @@ export default function WebViewSetSocketIdleTimeout() {
     })
 
 
-    /*
-     *@tc.number   : SUB_ACE_WEB_setSocketIdleTimeout_API_0001
-     *@tc.name     : testSetSocketIdleTimeout001
-     *@tc.desc     : test setSocketIdleTimeout 200
-     *@tc.size     : MediumTest
-     *@tc.type     : Function
-     *@tc.level    : Level 0
+    /**
+     * @tc.name   testSetSocketIdleTimeout001
+     * @tc.number SUB_ACE_WEB_setSocketIdleTimeout_API_0001
+     * @tc.desc   test setSocketIdleTimeout 200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetSocketIdleTimeout001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         console.log('testSetSocketIdleTimeout001 start')
@@ -56,13 +56,13 @@ export default function WebViewSetSocketIdleTimeout() {
         done()
     })
 
-    /*
-     *@tc.number  : SUB_ACE_WEB_setSocketIdleTimeout_API_0002
-     *@tc.name    : testSetSocketIdleTimeout002
-     *@tc.desc    : test setSocketIdleTimeout 30
-     *@tc.size    : MediumTest
-     *@tc.type    : Function
-     *@tc.level   : Level 1
+    /**
+     * @tc.name   testSetSocketIdleTimeout002
+     * @tc.number SUB_ACE_WEB_setSocketIdleTimeout_API_0002
+     * @tc.desc   test setSocketIdleTimeout 30
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSocketIdleTimeout002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         console.log('testSetSocketIdleTimeout002 start')
@@ -80,13 +80,13 @@ export default function WebViewSetSocketIdleTimeout() {
         done()
     })
 
-    /*
-     *@tc.number : SUB_ACE_WEB_setSocketIdleTimeout_API_0003
-     *@tc.name   : testSetSocketIdleTimeout003
-     *@tc.desc   : test setSocketIdleTimeout 300
-     *@tc.size   : MediumTest
-     *@tc.type   : Function
-     *@tc.level  : Level 1
+    /**
+     * @tc.name   testSetSocketIdleTimeout003
+     * @tc.number SUB_ACE_WEB_setSocketIdleTimeout_API_0003
+     * @tc.desc   test setSocketIdleTimeout 300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSocketIdleTimeout003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         console.log('testSetSocketIdleTimeout003 start')
@@ -104,13 +104,13 @@ export default function WebViewSetSocketIdleTimeout() {
         done()
     })
 
-    /*
-     *@tc.number : SUB_ACE_WEB_setSocketIdleTimeout_API_0004
-     *@tc.name   : testSetSocketIdleTimeout004
-     *@tc.desc   : test setSocketIdleTimeout 0
-     *@tc.size   : MediumTest
-     *@tc.type   : Function
-     *@tc.level  : Level 2
+    /**
+     * @tc.name   testSetSocketIdleTimeout004
+     * @tc.number SUB_ACE_WEB_setSocketIdleTimeout_API_0004
+     * @tc.desc   test setSocketIdleTimeout 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetSocketIdleTimeout004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testSetSocketIdleTimeout004 start')
@@ -128,13 +128,13 @@ export default function WebViewSetSocketIdleTimeout() {
         done()
     })
 
-    /*
-     *@tc.number  : SUB_ACE_WEB_setSocketIdleTimeout_API_0005
-     *@tc.name    : testSetSocketIdleTimeout005
-     *@tc.desc    : test setSocketIdleTimeout 99999999
-     *@tc.size    : MediumTest
-     *@tc.type    : Function
-     *@tc.level   : Level 2
+    /**
+     * @tc.name   testSetSocketIdleTimeout005
+     * @tc.number SUB_ACE_WEB_setSocketIdleTimeout_API_0005
+     * @tc.desc   test setSocketIdleTimeout 99999999
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetSocketIdleTimeout005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testSetSocketIdleTimeout005 start')

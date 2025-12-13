@@ -18,6 +18,8 @@
 #include "common.h"
 #include "hilog/log.h"
 #include "napi/native_api.h"
+#include <cstdio>
+#include <cwchar>
 
 static CommonEvent_Subscriber *g_subscriber = nullptr;
 static CommonEvent_SubscribeInfo *g_subscribeInfo = nullptr;
@@ -33,8 +35,10 @@ void IsOrderedCommonEventCallback(const CommonEvent_RcvData *data) {
                  "IsOrderedCommonEventCallback Enter");
     if (g_subscriber != nullptr) {
         g_isOrderedCommonEvent = OH_CommonEvent_IsOrderedCommonEvent(g_subscriber);
+        ASSERT_TRUE(g_isOrderedCommonEvent);
     } else {
         g_isOrderedCommonEvent = false;
+        ASSERT_FALSE(g_isOrderedCommonEvent);
     }
 }
 
@@ -78,8 +82,10 @@ void FinishCommonEventCallback(const CommonEvent_RcvData *data) {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "FinishCommonEventCallback", "FinishCommonEventCallback Enter");
     if (g_subscriber != nullptr) {
         g_isFinished = OH_CommonEvent_FinishCommonEvent(g_subscriber);
+        ASSERT_TRUE(g_isFinished);
     } else {
         g_isFinished = false;
+        ASSERT_FALSE(g_isFinished);
     }
 }
 
@@ -122,14 +128,18 @@ void GetAbortCommonEventCallback(const CommonEvent_RcvData *data) {
     if (g_subscriber != nullptr) {
         if (OH_CommonEvent_AbortCommonEvent(g_subscriber)) {
             g_isGetAbort = OH_CommonEvent_GetAbortCommonEvent(g_subscriber);
+            ASSERT_TRUE(g_isGetAbort);
         }
     } else {
         g_isGetAbort = false;
+        ASSERT_FALSE(g_isGetAbort);
     }
     if (g_subscriber != nullptr) {
         g_isFinished = OH_CommonEvent_FinishCommonEvent(g_subscriber);
+        ASSERT_TRUE(g_isFinished);
     } else {
         g_isFinished = false;
+        ASSERT_FALSE(g_isFinished);
     }
 }
 
@@ -172,16 +182,20 @@ void AbortCommonEventCallback(const CommonEvent_RcvData *data) {
         OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "AbortCommonEventCallback",
                      "AbortCommonEventCallback Enter g_subscriber");
         g_isAbort = OH_CommonEvent_AbortCommonEvent(g_subscriber);
+        ASSERT_TRUE(g_isAbort);
     } else {
         g_isAbort = false;
+        ASSERT_FALSE(g_isAbort);
     }
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "AbortCommonEventCallback",
                  "AbortCommonEventCallback Enter %{public}d", g_isAbort);
 
     if (g_subscriber != nullptr) {
         g_isFinished = OH_CommonEvent_FinishCommonEvent(g_subscriber);
+        ASSERT_TRUE(g_isFinished);
     } else {
         g_isFinished = false;
+        ASSERT_FALSE(g_isFinished);
     }
 }
 
@@ -223,9 +237,13 @@ void ClearAbortCommonEventCallback(const CommonEvent_RcvData *data) {
                  "ClearAbortCommonEventCallback Enter");
     if (g_subscriber != nullptr) {
         g_isAbort = OH_CommonEvent_AbortCommonEvent(g_subscriber);
+        ASSERT_TRUE(g_isAbort);
         g_isClearAborted = OH_CommonEvent_ClearAbortCommonEvent(g_subscriber);
+        ASSERT_TRUE(g_isClearAborted);
     } else {
         g_isClearAborted = false;
+        ASSERT_FALSE(g_isAbort);
+        ASSERT_FALSE(g_isClearAborted);
     }
 }
 
@@ -267,9 +285,13 @@ void SubscriberCommonEventCallback(const CommonEvent_RcvData *data) {
                  "SubscriberCommonEventCallback Enter");
     if (g_subscriber != nullptr) {
         g_isAbort = OH_CommonEvent_AbortCommonEvent(g_subscriber);
+        ASSERT_TRUE(g_isAbort);
         g_isClearAborted = OH_CommonEvent_ClearAbortCommonEvent(g_subscriber);
+        ASSERT_TRUE(g_isClearAborted);
     } else {
         g_isAbort = false;
+        ASSERT_FALSE(g_isAbort);
+        ASSERT_FALSE(g_isClearAborted);
     }
 }
 
@@ -312,7 +334,12 @@ static napi_value GetGetCodeFromSubscriber(napi_env env, napi_callback_info info
 static napi_value GetSetCodeToSubscriber(napi_env env, napi_callback_info info) {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GetSetCodeToSubscriber", "GetSetCodeToSubscriber Enter");
     if (g_subscriber != nullptr) {
-        ASSERT_EQ(OH_CommonEvent_SetCodeToSubscriber(g_subscriber, PARAM_1), true);
+        bool setcode = OH_CommonEvent_SetCodeToSubscriber(g_subscriber, PARAM_1);
+        if (PARAM_1) {
+            ASSERT_EQ(setcode, true);
+        } else {
+            ASSERT_EQ(setcode, false);
+        }
         ASSERT_EQ(OH_CommonEvent_GetCodeFromSubscriber(g_subscriber), PARAM_1);
         OH_CommonEvent_UnSubscribe(g_subscriber);
         OH_CommonEvent_DestroySubscriber(g_subscriber);
@@ -350,7 +377,11 @@ static napi_value GetSetDataToSubscriber(napi_env env, napi_callback_info info) 
     bool ret = OH_CommonEvent_SetDataToSubscriber(g_subscriber, data, PARAM_4);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GetSetDataToSubscriber",
                  "OH_CommonEvent_SetDataToSubscriber %{public}d", ret);
-    ASSERT_EQ(ret, true);
+    if (data) {
+        ASSERT_EQ(ret, true);
+    } else {
+        ASSERT_EQ(ret, false);
+    }
     const char *retStr = OH_CommonEvent_GetDataFromSubscriber(g_subscriber);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GetSetDataToSubscriber",
                  "OH_CommonEvent_GetDataFromSubscriber %{public}s", retStr);

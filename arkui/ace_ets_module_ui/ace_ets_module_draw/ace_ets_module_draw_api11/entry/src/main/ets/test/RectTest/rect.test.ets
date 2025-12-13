@@ -44,10 +44,13 @@ export default function rectNeJsunit() {
       console.info("rectNe after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testrectNe0001
-     * @tc.desic         acerectNeEtsTest0001
+    /**
+     * @tc.name   testrectNe0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testrectNe0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testrectNe0001', Level.LEVEL0, async () => {
       console.info('rectNe testrectNe0001 START');
@@ -61,10 +64,13 @@ export default function rectNeJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testrectNe0002
-     * @tc.desic         acerectNeEtsTest0002
+    /**
+     * @tc.name   testrectNe0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testrectNe0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testrectNe0002', Level.LEVEL0, async () => {
       console.info('rectNe testrectNe0002 START');

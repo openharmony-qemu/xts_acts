@@ -47,11 +47,13 @@ export default function SwiperTypeNodeTest() {
       console.info("SwiperTypeNode after each called");
     });
 
-    /*
-     * @tc.number    SwiperTypeNodeTest_0100
-     * @tc.name      SwiperTypeNodeTest_0100
-     * @tc.desc      Test SwiperTypeNode
-     * @tc.level     Level 1
+    /**
+     * @tc.name   SwiperTypeNodeTest_0100
+     * @tc.number SwiperTypeNodeTest_0100
+     * @tc.desc   Test SwiperTypeNode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SwiperTypeNodeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[SwiperTypeNodeTest_0100] START');
@@ -86,12 +88,12 @@ export default function SwiperTypeNodeTest() {
       done();
     });
     /**
-     * @tc.number    SwiperTypeNodeTest_0200
-     * @tc.name      SwiperTypeNodeTest_0200
-     * @tc.desc      Test SwiperTypeNodePage undefined.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   SwiperTypeNodeTest_0200
+     * @tc.number SwiperTypeNodeTest_0200
+     * @tc.desc   Test SwiperTypeNodePage undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SwiperTypeNodeTest_0200', Level.LEVEL3, async (done: Function) => {
       console.info('[SwiperTypeNodeTest_0200] START');

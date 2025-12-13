@@ -40,12 +40,12 @@ export default function PreviewScaleModeTest() {
     });
 
     /**
-     * @tc.number    PreviewScaleModeTest_0010
-     * @tc.name      PreviewScaleModeTest_0010
-     * @tc.desc      createMenuToWindow
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   PreviewScaleModeTest_0010
+     * @tc.number PreviewScaleModeTest_0010
+     * @tc.desc   createMenuToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PreviewScaleModeTest_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('PreviewScaleModeTest_0010 START');
@@ -66,13 +66,13 @@ export default function PreviewScaleModeTest() {
       done();
     });
 
-     /**
-     * @tc.number    PreviewScaleModeTest_0020
-     * @tc.name      PreviewScaleModeTest_0020
-     * @tc.desc      createMenuToWindow
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   PreviewScaleModeTest_0020
+     * @tc.number PreviewScaleModeTest_0020
+     * @tc.desc   createMenuToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PreviewScaleModeTest_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('PreviewScaleModeTest_0010 START');
@@ -97,12 +97,12 @@ export default function PreviewScaleModeTest() {
     });
 
     /**
-     * @tc.number    PreviewScaleModeTest_0030
-     * @tc.name      PreviewScaleModeTest_0030
-     * @tc.desc      createMenuToWindow
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   PreviewScaleModeTest_0030
+     * @tc.number PreviewScaleModeTest_0030
+     * @tc.desc   createMenuToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PreviewScaleModeTest_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('PreviewScaleModeTest_0030 START');

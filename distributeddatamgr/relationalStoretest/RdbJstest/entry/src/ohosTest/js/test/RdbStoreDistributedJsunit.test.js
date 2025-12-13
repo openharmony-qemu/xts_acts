@@ -105,12 +105,12 @@ describe('rdbStoreDistributedTest', function () {
     console.info(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @tc.name testRdbStoreDistributed0002
+     * @tc.name   testRdbStoreDistributed0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_0100
-     * @tc.desc rdb set distributed table using none table as argment
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rdb set distributed table using none table as argment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreDistributed0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* testRdbStoreDistributed002 start *************");
@@ -127,12 +127,12 @@ describe('rdbStoreDistributedTest', function () {
     })
 
     /**
-     * @tc.name testRdbStoreDistributed0003
+     * @tc.name   testRdbStoreDistributed0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_0200
-     * @tc.desc set distributed table using one table name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   set distributed table using one table name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreDistributed0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* testRdbStoreDistributed003 start *************");
@@ -149,12 +149,12 @@ describe('rdbStoreDistributedTest', function () {
     })
 
     /**
-     * @tc.name testRdbStoreDistributed0004
+     * @tc.name   testRdbStoreDistributed0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_0300
-     * @tc.desc set distributed table using two table name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   set distributed table using two table name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreDistributed0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* testRdbStoreDistributed004 start *************");
@@ -171,12 +171,12 @@ describe('rdbStoreDistributedTest', function () {
     })
 
     /**
-     * @tc.name testRdbStoreDistributed0005
+     * @tc.name   testRdbStoreDistributed0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_0400
-     * @tc.desc insert record after setting distributed table
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   insert record after setting distributed table
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreDistributed0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* testRdbStoreDistributed005 start *************");
@@ -197,12 +197,12 @@ describe('rdbStoreDistributedTest', function () {
     })
 
     /**
-     * @tc.name testRdbStoreDistributed0006
+     * @tc.name   testRdbStoreDistributed0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_0500
-     * @tc.desc update record after setting distributed table
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   update record after setting distributed table
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreDistributed0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* testRdbStoreDistributed006 start *************");
@@ -230,12 +230,12 @@ describe('rdbStoreDistributedTest', function () {
     })
 
     /**
-     * @tc.name testRdbStoreDistributed0007
+     * @tc.name   testRdbStoreDistributed0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_0600
-     * @tc.desc query record after setting distributed table
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   query record after setting distributed table
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreDistributed0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* testRdbStoreDistributed0007 start *************");
@@ -267,12 +267,12 @@ describe('rdbStoreDistributedTest', function () {
     })
 
     /**
-     * @tc.name testRdbStoreDistributed0008
+     * @tc.name   testRdbStoreDistributed0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_0700
-     * @tc.desc delete record after setting distributed table
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   delete record after setting distributed table
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreDistributed0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* testRdbStoreDistributed0008 start *************");
@@ -290,12 +290,12 @@ describe('rdbStoreDistributedTest', function () {
     })
 
     /**
-     * @tc.name testRdbStoreDistributed0009
+     * @tc.name   testRdbStoreDistributed0009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_0800
-     * @tc.desc predicates inDevice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates inDevice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreDistributed0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* testRdbStoreDistributed0009 start *************");
@@ -314,12 +314,12 @@ describe('rdbStoreDistributedTest', function () {
     })
 
     /**
-     * @tc.name testRdbStoreDistributed0010
+     * @tc.name   testRdbStoreDistributed0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_0900
-     * @tc.desc predicates inAllDevices
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates inAllDevices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreDistributed0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* testRdbStoreDistributed0010 start *************");
@@ -337,12 +337,12 @@ describe('rdbStoreDistributedTest', function () {
     })
 
     /**
-     * @tc.name testRdbStoreDistributed0011
+     * @tc.name   testRdbStoreDistributed0011
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_1000
-     * @tc.desc sync test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   sync test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreDistributed0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* testRdbStoreDistributed0011 start *************");
@@ -365,13 +365,13 @@ describe('rdbStoreDistributedTest', function () {
         console.info(TAG + "************* testRdbStoreDistributed0011 end *************");
     })
 	
-	/**
-     * @tc.name testRdbStoreDistributedCallback0011
+    /**
+     * @tc.name   testRdbStoreDistributedCallback0011
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_1100
-     * @tc.desc sync Callback test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   sync Callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreDistributedCallback0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* testRdbStoreDistributedCallback0011 start *************");
@@ -399,14 +399,14 @@ describe('rdbStoreDistributedTest', function () {
         console.info(TAG + "************* testRdbStoreDistributedCallback0011 end *************");
     })
 
-    /**
-     * @tc.name testRdbStoreDistributed0012
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_1200
-     * @tc.desc subscribe test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
+     /**
+      * @tc.name   testRdbStoreDistributed0012
+      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_1200
+      * @tc.desc   subscribe test
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('testRdbStoreDistributed0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* testRdbStoreDistributed0012 start *************");
         try{
@@ -420,14 +420,14 @@ describe('rdbStoreDistributedTest', function () {
         console.info(TAG + "************* testRdbStoreDistributed0012 end *************");
     })
 
-    /**
-     * @tc.name testRdbStoreDistributed0013
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_1300
-     * @tc.desc subscribe test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
+     /**
+      * @tc.name   testRdbStoreDistributed0013
+      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_1300
+      * @tc.desc   subscribe test
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('testRdbStoreDistributed0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
         console.info(TAG + "************* testRdbStoreDistributed0013 start *************");
         try{
@@ -442,12 +442,12 @@ describe('rdbStoreDistributedTest', function () {
     })
 	
     /**
-     * @tc.name testRdbStoreDistributed0014
+     * @tc.name   testRdbStoreDistributed0014
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_1400
-     * @tc.desc obtainDistributedTableName test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   obtainDistributedTableName test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreDistributed0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done){
         let errInfo = undefined;
@@ -463,14 +463,14 @@ describe('rdbStoreDistributedTest', function () {
         done();
     })
 
-    /**
-     * @tc.name testRdbStoreDistributed0015
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_1500
-     * @tc.desc obtainDistributedTableName test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
+     /**
+      * @tc.name   testRdbStoreDistributed0015
+      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_1500
+      * @tc.desc   obtainDistributedTableName test
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('testRdbStoreDistributed0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done){
         await dataRdb.deleteRdbStore(STORE_NAME);
         const config = {

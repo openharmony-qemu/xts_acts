@@ -20,12 +20,12 @@ export default function AVPlayerNdkTest() {
   describe('AVPlayerTest', () => {
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVPlayer_SetURLSource_0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVPlayer_SetURLSource_0100
-     * @tc.desc       : test OH_AVPlayer_SetURLSource
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVPlayer_SetURLSource_0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVPlayer_SetURLSource_0100
+     * @tc.desc   test OH_AVPlayer_SetURLSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVPlayer_SetURLSource_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -42,12 +42,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_OH_AVPlayer_Reset0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_OH_AVPlayer_Reset0100
-     * @tc.desc       : test OH_AVPlayer_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_OH_AVPlayer_Reset0100
+     * @tc.number SUB_MULTIMEIDA_OH_OH_AVPlayer_Reset0100
+     * @tc.desc   test OH_AVPlayer_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_OH_AVPlayer_Reset0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -64,12 +64,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_OH_AVPlayer_Release0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_OH_AVPlayer_Release0100
-     * @tc.desc       : test OH_AVPlayer_Release
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_OH_AVPlayer_Release0100
+     * @tc.number SUB_MULTIMEIDA_OH_OH_AVPlayer_Release0100
+     * @tc.desc   test OH_AVPlayer_Release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_OH_AVPlayer_Release0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -86,12 +86,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_OH_AVPlayer_ReleaseSync0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_OH_AVPlayer_ReleaseSync0100
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_OH_AVPlayer_ReleaseSync0100
+     * @tc.number SUB_MULTIMEIDA_OH_OH_AVPlayer_ReleaseSync0100
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_OH_AVPlayer_ReleaseSync0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -108,12 +108,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_OH_AVPlayer_SetVolume0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_OH_AVPlayer_SetVolume0100
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_OH_AVPlayer_SetVolume0100
+     * @tc.number SUB_MULTIMEIDA_OH_OH_AVPlayer_SetVolume0100
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_OH_AVPlayer_SetVolume0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -130,12 +130,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_OH_AVPlayer_Seek0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_OH_AVPlayer_Seek0100
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_OH_AVPlayer_Seek0100
+     * @tc.number SUB_MULTIMEIDA_OH_OH_AVPlayer_Seek0100
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_OH_AVPlayer_Seek0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -152,12 +152,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_OH_AVPlayer_GetCurrentTime0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_OH_AVPlayer_GetCurrentTime0100
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_OH_AVPlayer_GetCurrentTime0100
+     * @tc.number SUB_MULTIMEIDA_OH_OH_AVPlayer_GetCurrentTime0100
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_OH_AVPlayer_GetCurrentTime0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -174,12 +174,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_OH_AVPlayer_GetVideoWidth0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_OH_AVPlayer_GetVideoWidth0100
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_OH_AVPlayer_GetVideoWidth0100
+     * @tc.number SUB_MULTIMEIDA_OH_OH_AVPlayer_GetVideoWidth0100
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_OH_AVPlayer_GetVideoWidth0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -196,12 +196,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_OH_AVPlayer_GetVideoHeight0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_OH_AVPlayer_GetVideoHeight0100
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_OH_AVPlayer_GetVideoHeight0100
+     * @tc.number SUB_MULTIMEIDA_OH_OH_AVPlayer_GetVideoHeight0100
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_OH_AVPlayer_GetVideoHeight0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -218,12 +218,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_OH_AVPlayer_SetPlaybackSpeed0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_OH_AVPlayer_SetPlaybackSpeed0100
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_OH_AVPlayer_SetPlaybackSpeed0100
+     * @tc.number SUB_MULTIMEIDA_OH_OH_AVPlayer_SetPlaybackSpeed0100
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_OH_AVPlayer_SetPlaybackSpeed0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -240,12 +240,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_OH_AVPlayer_SetPlaybackRate0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_OH_AVPlayer_SetPlaybackRate0100
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_OH_AVPlayer_SetPlaybackRate0100
+     * @tc.number SUB_MULTIMEIDA_OH_OH_AVPlayer_SetPlaybackRate0100
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_OH_AVPlayer_SetPlaybackRate0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -262,12 +262,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_OH_AVPlayer_GetPlaybackSpeed0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_OH_AVPlayer_GetPlaybackSpeed0100
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_OH_AVPlayer_GetPlaybackSpeed0100
+     * @tc.number SUB_MULTIMEIDA_OH_OH_AVPlayer_GetPlaybackSpeed0100
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_OH_AVPlayer_GetPlaybackSpeed0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -284,12 +284,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_OH_AVPlayer_SetAudioRendererInfo0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_OH_AVPlayer_SetAudioRendererInfo0100
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_OH_AVPlayer_SetAudioRendererInfo0100
+     * @tc.number SUB_MULTIMEIDA_OH_OH_AVPlayer_SetAudioRendererInfo0100
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_OH_AVPlayer_SetAudioRendererInfo0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -306,12 +306,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_OH_AVPlayer_SetAudioInterruptMode0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_OH_AVPlayer_SetAudioInterruptMode0100
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_OH_AVPlayer_SetAudioInterruptMode0100
+     * @tc.number SUB_MULTIMEIDA_OH_OH_AVPlayer_SetAudioInterruptMode0100
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_OH_AVPlayer_SetAudioInterruptMode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -328,12 +328,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_OH_AVPlayer_SetAudioEffectMode0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_OH_AVPlayer_SetAudioEffectMode0100
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_OH_AVPlayer_SetAudioEffectMode0100
+     * @tc.number SUB_MULTIMEIDA_OH_OH_AVPlayer_SetAudioEffectMode0100
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_OH_AVPlayer_SetAudioEffectMode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -350,12 +350,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_OH_AVPlayer_SetVideoSurface0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_OH_AVPlayer_SetVideoSurface0100
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_OH_AVPlayer_SetVideoSurface0100
+     * @tc.number SUB_MULTIMEIDA_OH_OH_AVPlayer_SetVideoSurface0100
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_OH_AVPlayer_SetVideoSurface0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -372,12 +372,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_OH_AVPlayer_GetDuration0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_OH_AVPlayer_GetDuration0100
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_OH_AVPlayer_GetDuration0100
+     * @tc.number SUB_MULTIMEIDA_OH_OH_AVPlayer_GetDuration0100
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_OH_AVPlayer_GetDuration0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -394,12 +394,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_OH_AVPlayer_GetState0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_OH_AVPlayer_GetState0100
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_OH_AVPlayer_GetState0100
+     * @tc.number SUB_MULTIMEIDA_OH_OH_AVPlayer_GetState0100
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_OH_AVPlayer_GetState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -416,12 +416,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_OH_AVPlayer_SetLooping0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_OH_AVPlayer_SetLooping0100
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_OH_AVPlayer_SetLooping0100
+     * @tc.number SUB_MULTIMEIDA_OH_OH_AVPlayer_SetLooping0100
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_OH_AVPlayer_SetLooping0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -438,12 +438,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_OH_AVPlayer_SetPlayerCallback0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_OH_AVPlayer_SetPlayerCallback0100
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_OH_AVPlayer_SetPlayerCallback0100
+     * @tc.number SUB_MULTIMEIDA_OH_OH_AVPlayer_SetPlayerCallback0100
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_OH_AVPlayer_SetPlayerCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -460,12 +460,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_OH_AVPlayer_GetCurrentTrack0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_OH_AVPlayer_GetCurrentTrack0100
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_OH_AVPlayer_GetCurrentTrack0100
+     * @tc.number SUB_MULTIMEIDA_OH_OH_AVPlayer_GetCurrentTrack0100
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_OH_AVPlayer_GetCurrentTrack0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -482,12 +482,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_OH_AVPlayer_SetMediaKeySystemInfoCallback0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_OH_AVPlayer_SetMediaKeySystemInfoCallback0100
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_OH_AVPlayer_SetMediaKeySystemInfoCallback0100
+     * @tc.number SUB_MULTIMEIDA_OH_OH_AVPlayer_SetMediaKeySystemInfoCallback0100
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_OH_AVPlayer_SetMediaKeySystemInfoCallback0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -505,12 +505,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_OH_AVPlayer_GetMediaKeySystemInfo0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_OH_AVPlayer_GetMediaKeySystemInfo0100
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_OH_AVPlayer_GetMediaKeySystemInfo0100
+     * @tc.number SUB_MULTIMEIDA_OH_OH_AVPlayer_GetMediaKeySystemInfo0100
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_OH_AVPlayer_GetMediaKeySystemInfo0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -527,12 +527,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_OH_AVPlayer_SetDecryptionConfig0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_OH_AVPlayer_SetDecryptionConfig0100
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_OH_AVPlayer_SetDecryptionConfig0100
+     * @tc.number SUB_MULTIMEIDA_OH_OH_AVPlayer_SetDecryptionConfig0100
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_OH_AVPlayer_SetDecryptionConfig0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -549,12 +549,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_OH_AVPlayer_SetOnInfoCallback0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_OH_AVPlayer_SetOnInfoCallback0100
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_OH_AVPlayer_SetOnInfoCallback0100
+     * @tc.number SUB_MULTIMEIDA_OH_OH_AVPlayer_SetOnInfoCallback0100
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_OH_AVPlayer_SetOnInfoCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -571,12 +571,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_OH_AVPlayer_SetOnErrorCallback0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_OH_AVPlayer_SetOnErrorCallback0100
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_OH_AVPlayer_SetOnErrorCallback0100
+     * @tc.number SUB_MULTIMEIDA_OH_OH_AVPlayer_SetOnErrorCallback0100
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_OH_AVPlayer_SetOnErrorCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -593,12 +593,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_OH_AVPlayer_SetVolumeMode0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_OH_AVPlayer_SetVolumeMode0100
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_OH_AVPlayer_SetVolumeMode0100
+     * @tc.number SUB_MULTIMEIDA_OH_OH_AVPlayer_SetVolumeMode0100
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_OH_AVPlayer_SetVolumeMode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -615,12 +615,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPlaybackSpeed0100
-     * @tc.name       : SUB_MULTIMEIDA_AVPlaybackSpeed0100
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_AVPlaybackSpeed0100
+     * @tc.number SUB_MULTIMEIDA_AVPlaybackSpeed0100
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_AVPlaybackSpeed0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -637,12 +637,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPlaybackSpeed0101
-     * @tc.name       : SUB_MULTIMEIDA_AVPlaybackSpeed0101
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_AVPlaybackSpeed0101
+     * @tc.number SUB_MULTIMEIDA_AVPlaybackSpeed0101
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_AVPlaybackSpeed0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -659,12 +659,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPlaybackSpeed0102
-     * @tc.name       : SUB_MULTIMEIDA_AVPlaybackSpeed0102
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_AVPlaybackSpeed0102
+     * @tc.number SUB_MULTIMEIDA_AVPlaybackSpeed0102
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_AVPlaybackSpeed0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -681,12 +681,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPlaybackSpeed0103
-     * @tc.name       : SUB_MULTIMEIDA_AVPlaybackSpeed0103
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_AVPlaybackSpeed0103
+     * @tc.number SUB_MULTIMEIDA_AVPlaybackSpeed0103
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_AVPlaybackSpeed0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -703,12 +703,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPlayerBufferingType0100
-     * @tc.name       : SUB_MULTIMEIDA_AVPlayerBufferingType0100
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_AVPlayerBufferingType0100
+     * @tc.number SUB_MULTIMEIDA_AVPlayerBufferingType0100
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_AVPlayerBufferingType0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -725,12 +725,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPlayerBufferingType0101
-     * @tc.name       : SUB_MULTIMEIDA_AVPlayerBufferingType0101
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_AVPlayerBufferingType0101
+     * @tc.number SUB_MULTIMEIDA_AVPlayerBufferingType0101
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_AVPlayerBufferingType0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -747,12 +747,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPlayerBufferingType0102
-     * @tc.name       : SUB_MULTIMEIDA_AVPlayerBufferingType0102
-     * @tc.desc       : test OH_AVPlayer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_AVPlayerBufferingType0102
+     * @tc.number SUB_MULTIMEIDA_AVPlayerBufferingType0102
+     * @tc.desc   test OH_AVPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_AVPlayerBufferingType0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

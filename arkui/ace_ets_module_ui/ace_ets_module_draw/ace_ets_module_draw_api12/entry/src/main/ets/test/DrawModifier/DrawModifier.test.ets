@@ -42,13 +42,15 @@ export default function DrawModifier() {
       console.info("DrawModifier after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_Common_DrawModifier_001
-     * @tc.desc      DrawModifier test
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   DrawModifier_001
+     * @tc.number DrawModifier_001
+     * @tc.desc   DrawModifier_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('DrawModifier_001', Level.LEVEL0, async (done: Function) => {
       console.info('[DrawModifier_001] START');
 
@@ -68,13 +70,15 @@ export default function DrawModifier() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_Common_DrawModifier_002
-     * @tc.desc      DrawModifier test
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   DrawModifier_002
+     * @tc.number DrawModifier_002
+     * @tc.desc   DrawModifier_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('DrawModifier_002', Level.LEVEL0, async (done: Function) => {
       console.info('[DrawModifier_002] START');
 
@@ -94,13 +98,15 @@ export default function DrawModifier() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_Common_DrawModifier_003
-     * @tc.desc      DrawModifier test
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   DrawModifier_003
+     * @tc.number DrawModifier_003
+     * @tc.desc   DrawModifier_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('DrawModifier_003', Level.LEVEL0, async (done: Function) => {
       console.info('[DrawModifier_003] START');
 

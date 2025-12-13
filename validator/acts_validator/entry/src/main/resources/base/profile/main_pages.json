@@ -127,6 +127,7 @@
     "pages/PCS/RebootScreenUnlock",
     "pages/ArkUI/AccessibilityProperty",
     "pages/ArkUI/AccessibilityOptions",
+    "pages/ArkUI/AccessibilityOptionsObjectDescription",
     "pages/ArkUI/HoverMove",
     "pages/ArkUI/Clickhand",
     "pages/ArkUI/Taphand",
@@ -171,6 +172,11 @@
     "pages/ArkUI/ImageAnimationControllerPage",
     "pages/ArkUI/AnimatedDrawableDescriptorFrameDurations",
     "pages/ArkUI/GetDarkModeTest",
-    "pages/ArkUI/TabBarIndicatorPixmap"
+    "pages/ArkUI/TabBarIndicatorPixmap",
+    "pages/ArkUI/RichEditiorComponentContentKeyboard",
+    "pages/ArkUI/WindowSizeLayoutBreakpointChange",
+    "pages/ArkUI/AccessibilityActionOptionsScrollStep",
+    "pages/ArkUI/CapiSourceType",
+    "pages/ArkUI/Magnifier"
   ]
 }

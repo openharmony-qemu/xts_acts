@@ -37,12 +37,12 @@ export default function showDialogCallbackBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    showDialogCallbackBlurStyleOptions_0100
-     * @tc.name      showDialogCallbackBlurStyleOptions_0100
-     * @tc.desc      createShowDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showDialogCallbackBlurStyleOptions_0100
+     * @tc.number showDialogCallbackBlurStyleOptions_0100
+     * @tc.desc   createShowDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('showDialogCallbackBlurStyleOptions_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'showDialogCallbackBlurStyleOptions';
@@ -79,12 +79,12 @@ export default function showDialogCallbackBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    showDialogCallbackBlurStyleOptions_0200
-     * @tc.name      showDialogCallbackBlurStyleOptions_0200
-     * @tc.desc      createShowDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showDialogCallbackBlurStyleOptions_0200
+     * @tc.number showDialogCallbackBlurStyleOptions_0200
+     * @tc.desc   createShowDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('showDialogCallbackBlurStyleOptions_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'showDialogCallbackBlurStyleOptions_0200';
@@ -111,12 +111,12 @@ export default function showDialogCallbackBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    showDialogCallbackBlurStyleOptions_0300
-     * @tc.name      showDialogCallbackBlurStyleOptions_0300
-     * @tc.desc      createShowDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showDialogCallbackBlurStyleOptions_0300
+     * @tc.number showDialogCallbackBlurStyleOptions_0300
+     * @tc.desc   createShowDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('showDialogCallbackBlurStyleOptions_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'showDialogCallbackBlurStyleOptions_0300';

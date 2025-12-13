@@ -20,14 +20,14 @@ import CommonFunc from '../../../MainAbility/common/Common';
 
 export default function activeApiTest() {
   describe('activeApiTest', () => {
-    /**
-     * @tc.number    activeApiTest_0010
-     * @tc.name      activeApiTest_0010
-     * @tc.desc      FocusController.active(active：true,autoInactive:false)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
-     */
+   /**
+    * @tc.name   activeApiTest_0010
+    * @tc.number activeApiTest_0010
+    * @tc.desc   FocusController.active(active：true,autoInactive:false)
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('activeApiTest_0010', Level.LEVEL0, async (done: Function) => {
     let options: router.RouterOptions = {
         url: "MainAbility/pages/UIContext/FocusController/activeTest",
@@ -45,12 +45,12 @@ export default function activeApiTest() {
       done();
     });
     /**
-     * @tc.number    activeApiTest_0020
-     * @tc.name      activeApiTest_0020
-     * @tc.desc      FocusController.active(active：true,autoInactive:true)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   activeApiTest_0020
+     * @tc.number activeApiTest_0020
+     * @tc.desc   FocusController.active(active：true,autoInactive:true)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('activeApiTest_0020', Level.LEVEL0, async (done: Function) => {
      let options: router.RouterOptions = {
@@ -68,12 +68,12 @@ export default function activeApiTest() {
       done();
     });
     /**
-     * @tc.number    activeApiTest_0030
-     * @tc.name      activeApiTest_0030
-     * @tc.desc      FocusController.active(active：false)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   activeApiTest_0030
+     * @tc.number activeApiTest_0030
+     * @tc.desc   FocusController.active(active：false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('activeApiTest_0030', Level.LEVEL0, async (done: Function) => {
      let options: router.RouterOptions = {
@@ -91,13 +91,13 @@ export default function activeApiTest() {
       done();
     });
 
-     /**
-     * @tc.number    activeApiTest_0040
-     * @tc.name      activeApiTest_0040
-     * @tc.desc      FocusController.active(active:false,autoInactive:true)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   activeApiTest_0040
+     * @tc.number activeApiTest_0040
+     * @tc.desc   FocusController.active(active:false,autoInactive:true)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('activeApiTest_0040', Level.LEVEL0, async (done: Function) => {
       let options: router.RouterOptions = {
@@ -116,12 +116,12 @@ export default function activeApiTest() {
     });
 
     /**
-     * @tc.number    activeApiTest_0050
-     * @tc.name      activeApiTest_0050
-     * @tc.desc      FocusController.active(active:false,autoInactive:false)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   activeApiTest_0050
+     * @tc.number activeApiTest_0050
+     * @tc.desc   FocusController.active(active:false,autoInactive:false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('activeApiTest_0050', Level.LEVEL0, async (done: Function) => {
      let options: router.RouterOptions = {

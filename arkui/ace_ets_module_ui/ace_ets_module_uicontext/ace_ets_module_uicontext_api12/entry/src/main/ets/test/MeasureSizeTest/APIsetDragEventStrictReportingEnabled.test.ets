@@ -81,12 +81,12 @@ export default function APIsetDragEventStrictReportingEnabled() {
       console.info("APIsetDragEventStrictReportingEnabled after each called");
     })
     /**
+     * @tc.name   APIsetDragEventStrictReportingEnabled_0100
      * @tc.number api
-     * @tc.name APIsetDragEventStrictReportingEnabled_0100
-     * @tc.desc APIsetDragEventStrictReportingEnabled_0100
-     * @tc.size APIsetDragEventStrictReportingEnabled
-     * @tc.type UIContext
-     * @tc.level 2
+     * @tc.desc   APIsetDragEventStrictReportingEnabled_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIsetDragEventStrictReportingEnabled_0100', Level.LEVEL0, async (done: Function) => {
       console.info('APIsetDragEventStrictReportingEnabled_0100 START');

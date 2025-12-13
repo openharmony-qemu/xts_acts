@@ -733,11 +733,15 @@ void XComponent::PrintXComponentInfo()
     }
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "PluginManager", "GetNativeXComponent success");
     auto typeRet = _nodeAPI->getAttribute(_component, NODE_XCOMPONENT_TYPE);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "PluginManager", "xcomponent type: %{public}d",
+    if (typeRet) {
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "PluginManager", "xcomponent type: %{public}d",
                  typeRet->value[0].i32);
+    }
     auto idRet = _nodeAPI->getAttribute(_component, NODE_XCOMPONENT_ID);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "PluginManager", "xcomponent id: %{public}s",
+    if (idRet) {
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "PluginManager", "xcomponent id: %{public}s",
                  idRet->string);
+    }
 }
 
 void OnFocusEvent(OH_NativeXComponent* component, void* window)

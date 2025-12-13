@@ -125,6 +125,8 @@ export function photoFetchOption(testName: string, key: string,
       photoKeys.DATE_TAKEN_MS,
       photoKeys.PHOTO_SUBTYPE,
       photoKeys.MEDIA_SUFFIX,
+      photoKeys.ASPECT_RATIO,
+      photoKeys.OWNER_ALBUM_ID,
     ],
     predicates: predicates
   };

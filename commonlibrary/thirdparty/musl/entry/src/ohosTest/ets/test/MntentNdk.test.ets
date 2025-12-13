@@ -27,12 +27,12 @@ export default function mntentNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MNTENT_SETMNTENT_0100
-     * @tc.name       : testMuslMntentSetmntent001
-     * @tc.desc       : test setmntent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMntentSetmntent001
+     * @tc.number SUB_THIRDPARTY_MUSL_MNTENT_SETMNTENT_0100
+     * @tc.desc   test setmntent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMntentSetmntent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = mntent.setmntent();
@@ -41,12 +41,12 @@ export default function mntentNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MNTENT_HASMNTOPT_0100
-     * @tc.name     : testMuslMntentHasmntopt001
-     * @tc.desc     : test hasmntopt
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslMntentHasmntopt001
+     * @tc.number SUB_THIRDPARTY_MUSL_MNTENT_HASMNTOPT_0100
+     * @tc.desc   test hasmntopt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMntentHasmntopt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = mntent.hasmntopt();

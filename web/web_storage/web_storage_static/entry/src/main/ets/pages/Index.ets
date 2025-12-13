@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-import { memo, __memo_context_type, __memo_id_type } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import { OnPermissionRequestEvent, OnPageVisibleEvent, Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, Web } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import webView from '@ohos.web.webview'

@@ -26,78 +26,78 @@ export default function commonAttrsGrayscaleTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_GRAYSCALE_0100
-     * @tc.name       : testCommonAttrsGrayscale001
-     * @tc.desc       : testing grayscale for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsGrayscale001
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_GRAYSCALE_0100
+     * @tc.desc   testing grayscale for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsGrayscale001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsGrayscale001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_GRAYSCALE_0200
-     * @tc.name       : testCommonAttrsGrayscale002
-     * @tc.desc       : testing grayscale for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsGrayscale002
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_GRAYSCALE_0200
+     * @tc.desc   testing grayscale for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsGrayscale002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsGrayscale002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_GRAYSCALE_0300
-     * @tc.name       : testCommonAttrsGrayscale003
-     * @tc.desc       : testing grayscale for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsGrayscale003
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_GRAYSCALE_0300
+     * @tc.desc   testing grayscale for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsGrayscale003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsGrayscale003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_GRAYSCALE_0400
-     * @tc.name       : testCommonAttrsGrayscale004
-     * @tc.desc       : testing grayscale for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsGrayscale004
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_GRAYSCALE_0400
+     * @tc.desc   testing grayscale for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsGrayscale004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsGrayscale004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_GRAYSCALE_0500
-     * @tc.name       : testCommonAttrsGrayscale005
-     * @tc.desc       : testing grayscale for stack with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCommonAttrsGrayscale005
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_GRAYSCALE_0500
+     * @tc.desc   testing grayscale for stack with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsGrayscale005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsGrayscale005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_GRAYSCALE_0600
-     * @tc.name       : testCommonAttrsGrayscale006
-     * @tc.desc       : testing grayscale for stack with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCommonAttrsGrayscale006
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_GRAYSCALE_0600
+     * @tc.desc   testing grayscale for stack with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsGrayscale006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsGrayscale006()).assertEqual(0)

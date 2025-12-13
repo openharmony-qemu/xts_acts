@@ -35,13 +35,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTPLURALSTRING_0100
-    * @tc.name      TestGetIntPluralString0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetIntPluralString0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTPLURALSTRING_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetIntPluralString0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetIntPluralString0100 start====");
@@ -56,13 +56,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTPLURALSTRING_0200
-    * @tc.name      TestGetIntPluralString0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetIntPluralString0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTPLURALSTRING_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetIntPluralString0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetIntPluralString0200 start====");
@@ -77,13 +77,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTPLURALSTRING_0300
-    * @tc.name      TestGetIntPluralString0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetIntPluralString0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTPLURALSTRING_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetIntPluralString0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetIntPluralString0300 start====");
@@ -98,13 +98,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTPLURALSTRING_0400
-    * @tc.name      TestGetIntPluralString0400
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetIntPluralString0400
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTPLURALSTRING_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetIntPluralString0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetIntPluralString0400 start====");
@@ -119,13 +119,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTPLURALSTRING_0500
-    * @tc.name      TestGetIntPluralString0500
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetIntPluralString0500
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTPLURALSTRING_0500
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetIntPluralString0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetIntPluralString0500 start====");
@@ -140,13 +140,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDOUBLEPLURALSTRING_0100
-    * @tc.name      TestGetDoublePluralString0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetDoublePluralString0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDOUBLEPLURALSTRING_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetDoublePluralString0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetDoublePluralString0100 start====");
@@ -161,13 +161,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDOUBLEPLURALSTRING_0200
-    * @tc.name      TestGetDoublePluralString0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetDoublePluralString0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDOUBLEPLURALSTRING_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetDoublePluralString0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetDoublePluralString0200 start====");
@@ -182,13 +182,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDOUBLEPLURALSTRING_0300
-    * @tc.name      TestGetDoublePluralString0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetDoublePluralString0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDOUBLEPLURALSTRING_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetDoublePluralString0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetDoublePluralString0300 start====");
@@ -203,13 +203,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDOUBLEPLURALSTRING_0400
-    * @tc.name      TestGetDoublePluralString0400
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetDoublePluralString0400
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDOUBLEPLURALSTRING_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetDoublePluralString0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetDoublePluralString0400 start====");
@@ -224,13 +224,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDOUBLEPLURALSTRING_0500
-    * @tc.name      TestGetDoublePluralString0500
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetDoublePluralString0500
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDOUBLEPLURALSTRING_0500
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetDoublePluralString0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetDoublePluralString0500 start====");
@@ -245,13 +245,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTPLURALSTRINGBYNAME_0100
-    * @tc.name      TestGetIntPluralStringByName0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetIntPluralStringByName0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTPLURALSTRINGBYNAME_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetIntPluralStringByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetIntPluralStringByName0100 start====");
@@ -266,13 +266,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTPLURALSTRINGBYNAME_0200
-    * @tc.name      TestGetIntPluralStringByName0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetIntPluralStringByName0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTPLURALSTRINGBYNAME_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetIntPluralStringByName0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetIntPluralStringByName0200 start====");
@@ -287,13 +287,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTPLURALSTRINGBYNAME_0300
-    * @tc.name      TestGetIntPluralStringByName0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetIntPluralStringByName0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTPLURALSTRINGBYNAME_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetIntPluralStringByName0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetIntPluralStringByName0300 start====");
@@ -308,13 +308,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTPLURALSTRINGBYNAME_0400
-    * @tc.name      TestGetIntPluralStringByName0400
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetIntPluralStringByName0400
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTPLURALSTRINGBYNAME_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetIntPluralStringByName0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetIntPluralStringByName0400 start====");
@@ -329,13 +329,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDOUBLEPLURALSTRINGBYNAME_0100
-    * @tc.name      TestGetDoublePluralStringByName0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetDoublePluralStringByName0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDOUBLEPLURALSTRINGBYNAME_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetDoublePluralStringByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetDoublePluralStringByName0100 start====");
@@ -350,13 +350,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDOUBLEPLURALSTRINGBYNAME_0200
-    * @tc.name      TestGetDoublePluralStringByName0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetDoublePluralStringByName0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDOUBLEPLURALSTRINGBYNAME_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetDoublePluralStringByName0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetDoublePluralStringByName0200 start====");
@@ -371,13 +371,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDOUBLEPLURALSTRINGBYNAME_0300
-    * @tc.name      TestGetDoublePluralStringByName0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetDoublePluralStringByName0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDOUBLEPLURALSTRINGBYNAME_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetDoublePluralStringByName0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetDoublePluralStringByName0300 start====");
@@ -392,13 +392,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETDOUBLEPLURALSTRINGBYNAME_0400
-    * @tc.name      TestGetDoublePluralStringByName0400
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetDoublePluralStringByName0400
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDOUBLEPLURALSTRINGBYNAME_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetDoublePluralStringByName0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetDoublePluralStringByName0400 start====");
@@ -413,13 +413,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetColor_0100
-    * @tc.name      TestGetColor0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetColor0100
+     * @tc.number SUB_GLOBAL_OH_ResourceManager_GetColor_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetColor0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetColor0100 start====");
@@ -434,13 +434,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetColor_0200
-    * @tc.name      TestGetColor0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetColor0200
+     * @tc.number SUB_GLOBAL_OH_ResourceManager_GetColor_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetColor0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetColor0200 start====");
@@ -455,13 +455,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetColor_0300
-    * @tc.name      TestGetColor0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetColor0300
+     * @tc.number SUB_GLOBAL_OH_ResourceManager_GetColor_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetColor0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetColor0300 start====");
@@ -476,13 +476,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetColor_0400
-    * @tc.name      TestGetColor0400
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetColor0400
+     * @tc.number SUB_GLOBAL_OH_ResourceManager_GetColor_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetColor0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetColor0400 start====");
@@ -497,13 +497,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetColor_0500
-    * @tc.name      TestGetColor0500
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetColor0500
+     * @tc.number SUB_GLOBAL_OH_ResourceManager_GetColor_0500
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetColor0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetColor0500 start====");
@@ -518,13 +518,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetColorByName_0100
-    * @tc.name      TestGetColorByName0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetColorByName0100
+     * @tc.number SUB_GLOBAL_OH_ResourceManager_GetColorByName_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetColorByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetColorByName0100 start====");
@@ -539,13 +539,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetColorByName_0200
-    * @tc.name      TestGetColorByName0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetColorByName0200
+     * @tc.number SUB_GLOBAL_OH_ResourceManager_GetColorByName_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetColorByName0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetColorByName0200 start====");
@@ -560,13 +560,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetColorByName_0300
-    * @tc.name      TestGetColorByName0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetColorByName0300
+     * @tc.number SUB_GLOBAL_OH_ResourceManager_GetColorByName_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetColorByName0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetColorByName0300 start====");
@@ -581,13 +581,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_ResourceManager_GetColorByName_0400
-    * @tc.name      TestGetColorByName0400
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetColorByName0400
+     * @tc.number SUB_GLOBAL_OH_ResourceManager_GetColorByName_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetColorByName0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetColorByName0400 start====");
@@ -602,13 +602,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETINT_0100
-    * @tc.name      TestGetInt0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetInt0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINT_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetInt0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetInt0100 start====");
@@ -623,13 +623,13 @@ export default function NativeApiString2Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETINT_0200
-    * @tc.name      TestGetInt0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetInt0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINT_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetInt0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetInt0200 start====");
@@ -643,14 +643,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETINT_0300
-    * @tc.name      TestGetInt0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestGetInt0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINT_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetInt0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetInt0300 start====");
@@ -664,14 +664,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETINT_0400
-    * @tc.name      TestGetInt0400
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestGetInt0400
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINT_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetInt0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetInt0400 start====");
@@ -685,14 +685,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETINT_0500
-    * @tc.name      TestGetInt0500
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestGetInt0500
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINT_0500
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetInt0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetInt0500 start====");
@@ -706,14 +706,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTBYNAME_0100
-    * @tc.name      TestGetIntByName0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestGetIntByName0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTBYNAME_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetIntByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetIntByName0100 start====");
@@ -727,14 +727,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTBYNAME_0200
-    * @tc.name      TestGetIntByName0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestGetIntByName0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTBYNAME_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetIntByName0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetIntByName0200 start====");
@@ -748,14 +748,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTBYNAME_0300
-    * @tc.name      TestGetIntByName0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestGetIntByName0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTBYNAME_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetIntByName0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetIntByName0300 start====");
@@ -769,14 +769,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTBYNAME_0400
-    * @tc.name      TestGetIntByName0400
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestGetIntByName0400
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTBYNAME_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetIntByName0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetIntByName0400 start====");
@@ -790,14 +790,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETFLOAT_0100
-    * @tc.name      TestGetFloat0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestGetFloat0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETFLOAT_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetFloat0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetFloat0100 start====");
@@ -811,14 +811,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETFLOAT_0200
-    * @tc.name      TestGetFloat0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestGetFloat0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETFLOAT_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetFloat0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetFloat0200 start====");
@@ -832,14 +832,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETFLOAT_0300
-    * @tc.name      TestGetFloat0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestGetFloat0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETFLOAT_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetFloat0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetFloat0300 start====");
@@ -853,14 +853,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETFLOAT_0400
-    * @tc.name      TestGetFloat0400
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestGetFloat0400
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETFLOAT_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetFloat0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetFloat0400 start====");
@@ -874,14 +874,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETFLOAT_0500
-    * @tc.name      TestGetFloat0500
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestGetFloat0500
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETFLOAT_0500
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetFloat0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetFloat0500 start====");
@@ -895,14 +895,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETFLOATBYNAME_0100
-    * @tc.name      TestGetFloatByName0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestGetFloatByName0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETFLOATBYNAME_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetFloatByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetFloatByName0100 start====");
@@ -916,14 +916,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETFLOATBYNAME_0200
-    * @tc.name      TestGetFloatByName0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestGetFloatByName0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETFLOATBYNAME_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetFloatByName0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetFloatByName0200 start====");
@@ -937,14 +937,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETFLOATBYNAME_0300
-    * @tc.name      TestGetFloatByName0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestGetFloatByName0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETFLOATBYNAME_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetFloatByName0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetFloatByName0300 start====");
@@ -958,14 +958,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETFLOATBYNAME_0400
-    * @tc.name      TestGetFloatByName0400
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestGetFloatByName0400
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETFLOATBYNAME_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetFloatByName0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetFloatByName0300 start====");
@@ -979,14 +979,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETBOOL_0100
-    * @tc.name      TestGetBool0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestGetBool0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETBOOL_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetBool0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetBool0100 start====");
@@ -1000,14 +1000,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETBOOL_0200
-    * @tc.name      TestGetBool0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestGetBool0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETBOOL_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetBool0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetBool0200 start====");
@@ -1021,14 +1021,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETBOOL_0300
-    * @tc.name      TestGetBool0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestGetBool0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETBOOL_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetBool0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetBool0300 start====");
@@ -1042,14 +1042,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETBOOL_0400
-    * @tc.name      TestGetBool0400
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestGetBool0400
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETBOOL_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetBool0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetBool0400 start====");
@@ -1063,14 +1063,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETBOOL_0500
-    * @tc.name      TestGetBool0500
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestGetBool0500
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETBOOL_0500
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetBool0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetBool0500 start====");
@@ -1084,14 +1084,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETBOOLBYNAME_0100
-    * @tc.name      TestGetBoolByName0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestGetBoolByName0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETBOOLBYNAME_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetBoolByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetBoolByName0100 start====");
@@ -1105,14 +1105,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETBOOLBYNAME_0200
-    * @tc.name      TestGetBoolByName0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestGetBoolByName0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETBOOLBYNAME_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetBoolByName0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetBoolByName0200 start====");
@@ -1126,14 +1126,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETBOOLBYNAME_0300
-    * @tc.name      TestGetBoolByName0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestGetBoolByName0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETBOOLBYNAME_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetBoolByName0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetBoolByName0300 start====");
@@ -1147,14 +1147,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_GETBOOLBYNAME_0400
-    * @tc.name      TestGetBoolByName0400
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestGetBoolByName0400
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETBOOLBYNAME_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetBoolByName0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetBoolByName0400 start====");
@@ -1168,14 +1168,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_ADDRESOURCE_0200
-    * @tc.name      TestAddResource0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestAddResource0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_ADDRESOURCE_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestAddResource0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestAddResource0200 start====");
@@ -1189,14 +1189,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_ADDRESOURCE_0300
-    * @tc.name      TestAddResource0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestAddResource0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_ADDRESOURCE_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestAddResource0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestAddResource0300 start====");
@@ -1210,14 +1210,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_REMOVERESOURCE_0200
-    * @tc.name      TestRemoveResource0200
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestRemoveResource0200
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_REMOVERESOURCE_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestRemoveResource0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestRemoveResource0200 start====");
@@ -1231,14 +1231,14 @@ export default function NativeApiString2Test() {
       }
     })
 
-   /* *
-    * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_REMOVERESOURCE_0300
-    * @tc.name      TestRemoveResource0300
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+    /**
+     * @tc.name   TestRemoveResource0300
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_REMOVERESOURCE_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestRemoveResource0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestRemoveResource0300 start====");

@@ -20,12 +20,12 @@ import base from '@ohos.base'
 export default function ActsChecksumTest() { 
  describe('ActsChecksumTest',  () =>{
     /**
-     * @tc.number     : ACTS_ChecksumTest_01
-     * @tc.name       : actsChecksumTest01
-     * @tc.desc       : test adler32
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   actsChecksumTest01
+     * @tc.number ACTS_ChecksumTest_01
+     * @tc.desc   test adler32
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('actsChecksumTest01', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done : Function) =>{
         console.info("==================ACTS_ChecksumTest_01 start==================");
@@ -53,12 +53,12 @@ export default function ActsChecksumTest() {
     })
 
     /**
-     * @tc.number     : ACTS_ChecksumTest_02
-     * @tc.name       : actsChecksumTest02
-     * @tc.desc       : test adler32Combine
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   actsChecksumTest02
+     * @tc.number ACTS_ChecksumTest_02
+     * @tc.desc   test adler32Combine
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('actsChecksumTest02', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done : Function) =>{
         console.info("==================ACTS_ChecksumTest_02 start==================");
@@ -94,12 +94,12 @@ export default function ActsChecksumTest() {
     })
 
     /**
-     * @tc.number     : ACTS_ChecksumTest_03
-     * @tc.name       : actsChecksumTest03
-     * @tc.desc       : test crc32
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   actsChecksumTest03
+     * @tc.number ACTS_ChecksumTest_03
+     * @tc.desc   test crc32
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('actsChecksumTest03', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done : Function) =>{
         console.info("==================ACTS_ChecksumTest_03 start==================");
@@ -124,12 +124,12 @@ export default function ActsChecksumTest() {
     })
 
     /**
-     * @tc.number     : ACTS_ChecksumTest_04
-     * @tc.name       : actsChecksumTest04
-     * @tc.desc       : test crc32Combine
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   actsChecksumTest04
+     * @tc.number ACTS_ChecksumTest_04
+     * @tc.desc   test crc32Combine
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('actsChecksumTest04', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done : Function) =>{
         console.info("==================ACTS_ChecksumTest_04 start==================");
@@ -165,12 +165,12 @@ export default function ActsChecksumTest() {
     })
 
     /**
-     * @tc.number     : ACTS_ChecksumTest_05
-     * @tc.name       : actsChecksumTest05
-     * @tc.desc       : test crc64
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   actsChecksumTest05
+     * @tc.number ACTS_ChecksumTest_05
+     * @tc.desc   test crc64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('actsChecksumTest05', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done : Function) =>{
         console.info("==================ACTS_ChecksumTest_05 start==================");
@@ -196,12 +196,12 @@ export default function ActsChecksumTest() {
     })
 
     /**
-     * @tc.number     : ACTS_ChecksumTest_06
-     * @tc.name       : actsChecksumTest06
-     * @tc.desc       : test getCrcTable
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   actsChecksumTest06
+     * @tc.number ACTS_ChecksumTest_06
+     * @tc.desc   test getCrcTable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('actsChecksumTest06', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done : Function) =>{
         console.info("==================ACTS_ChecksumTest_06 start==================");
@@ -221,12 +221,12 @@ export default function ActsChecksumTest() {
     })
 
     /**
-     * @tc.number     : ACTS_ChecksumTest_07
-     * @tc.name       : actsChecksumTest07
-     * @tc.desc       : test getCrc64Table
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   actsChecksumTest07
+     * @tc.number ACTS_ChecksumTest_07
+     * @tc.desc   test getCrc64Table
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('actsChecksumTest07', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done : Function) =>{
         console.info("==================ACTS_ChecksumTest_07 start==================");
@@ -246,12 +246,12 @@ export default function ActsChecksumTest() {
     })
 
     /**
-     * @tc.number     : ACTS_ChecksumTest_08
-     * @tc.name       : actsChecksumTest08
-     * @tc.desc       : test adler32
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   actsChecksumTest08
+     * @tc.number ACTS_ChecksumTest_08
+     * @tc.desc   test adler32
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('actsChecksumTest08', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done : Function) =>{
         console.info("==================actsChecksumTest08 start==================");
@@ -276,12 +276,12 @@ export default function ActsChecksumTest() {
     })
 
     /**
-     * @tc.number     : ACTS_ChecksumTest_09
-     * @tc.name       : actsChecksumTest09
-     * @tc.desc       : test crc32
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   actsChecksumTest09
+     * @tc.number ACTS_ChecksumTest_09
+     * @tc.desc   test crc32
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('actsChecksumTest09', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done : Function) =>{
         console.info("==================actsChecksumTest09 start==================");
@@ -307,12 +307,12 @@ export default function ActsChecksumTest() {
     })
 
     /**
-     * @tc.number     : ACTS_ChecksumTest_10
-     * @tc.name       : actsChecksumTest10
-     * @tc.desc       : test crc64
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   actsChecksumTest10
+     * @tc.number ACTS_ChecksumTest_10
+     * @tc.desc   test crc64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('actsChecksumTest10', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done : Function) =>{
         console.info("==================actsChecksumTest10 start==================");
@@ -338,12 +338,12 @@ export default function ActsChecksumTest() {
     })
 
     /**
-     * @tc.number     : ACTS_ChecksumTest_11
-     * @tc.name       : actsChecksumTest11
-     * @tc.desc       : test adler32Combine
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   actsChecksumTest11
+     * @tc.number ACTS_ChecksumTest_11
+     * @tc.desc   test adler32Combine
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('actsChecksumTest11', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done : Function) =>{
         console.info("==================actsChecksumTest11 start==================");
@@ -368,12 +368,12 @@ export default function ActsChecksumTest() {
     })
 
     /**
-     * @tc.number     : ACTS_ChecksumTest_12
-     * @tc.name       : actsChecksumTest12
-     * @tc.desc       : test crc32Combine
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   actsChecksumTest12
+     * @tc.number ACTS_ChecksumTest_12
+     * @tc.desc   test crc32Combine
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('actsChecksumTest12', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>{
         console.info("==================actsChecksumTest12 start==================");

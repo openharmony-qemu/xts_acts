@@ -45,12 +45,12 @@ export default function OhLPPVideoNDKTest() {
     })
 
     /**
-     * @tc.number     : TESTOHLPPVIDEO_NULL_ERROREVENT_0100
-     * @tc.name       : TESTOHLPPVIDEO_NULL_ERROREVENT_0100
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   TESTOHLPPVIDEO_NULL_ERROREVENT_0100
+     * @tc.number TESTOHLPPVIDEO_NULL_ERROREVENT_0100
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TESTOHLPPVIDEO_NULL_ERROREVENT_0100', Level.LEVEL0, async (done: Function) => {
       console.info(`TESTOHLPPVIDEO_NULL_ERROREVENT_0100 test start `);
@@ -106,12 +106,12 @@ export default function OhLPPVideoNDKTest() {
     });
 
     /**
-     * @tc.number     : TESTOHLPPVIDEO_MP4_ERROREVENT_0100
-     * @tc.name       : TESTOHLPPVIDEO_MP4_ERROREVENT_0100
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   TESTOHLPPVIDEO_MP4_ERROREVENT_0100
+     * @tc.number TESTOHLPPVIDEO_MP4_ERROREVENT_0100
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TESTOHLPPVIDEO_MP4_ERROREVENT_0100', Level.LEVEL0, async (done: Function) => {
       console.info(`TESTOHLPPVIDEO_MP4_ERROREVENT_0100 test start `);
@@ -149,12 +149,12 @@ export default function OhLPPVideoNDKTest() {
     });
 
     /**
-     * @tc.number     : TESTOHLPPVIDEO_MP4_ERROREVENT_0102
-     * @tc.name       : TESTOHLPPVIDEO_MP4_ERROREVENT_0102
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   TESTOHLPPVIDEO_MP4_ERROREVENT_0102
+     * @tc.number TESTOHLPPVIDEO_MP4_ERROREVENT_0102
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TESTOHLPPVIDEO_MP4_ERROREVENT_0102', Level.LEVEL0, async (done: Function) => {
       console.info(`TESTOHLPPVIDEO_MP4_ERROREVENT_0102 test start `);
@@ -199,12 +199,12 @@ export default function OhLPPVideoNDKTest() {
     });
 
     /**
-     * @tc.number     : TESTOHLPPVIDEO_MP4_ERROREVENT_0103
-     * @tc.name       : TESTOHLPPVIDEO_MP4_ERROREVENT_0103
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   TESTOHLPPVIDEO_MP4_ERROREVENT_0103
+     * @tc.number TESTOHLPPVIDEO_MP4_ERROREVENT_0103
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TESTOHLPPVIDEO_MP4_ERROREVENT_0103', Level.LEVEL0, async (done: Function) => {
       console.info(`TESTOHLPPVIDEO_MP4_ERROREVENT_0103 test start `);

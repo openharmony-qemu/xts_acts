@@ -190,7 +190,7 @@ struct SensorAccelerometer {
       }
       .width('80%')
       .height('50%')
-
+      .margin({ bottom: '-10vp' })
       CustomContainer({
         title: this.name,
         Url: 'pages/Sensor/Sensor_index',

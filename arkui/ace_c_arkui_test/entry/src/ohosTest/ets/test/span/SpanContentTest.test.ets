@@ -26,26 +26,26 @@ export default function spanContentTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DPAN_CONTENT_0100
-     * @tc.name       : testSpanContent001
-     * @tc.desc       : testing content for span with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSpanContent001
+     * @tc.number SUB_ARKUI_CAPI_DPAN_CONTENT_0100
+     * @tc.desc   testing content for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanContent001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanContent001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SPAN_CONTENT_0200
-     * @tc.name       : testSpanContent002
-     * @tc.desc       : testing content for span with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSpanContent002
+     * @tc.number SUB_ARKUI_CAPI_SPAN_CONTENT_0200
+     * @tc.desc   testing content for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanContent002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanContent002()).assertEqual(0)

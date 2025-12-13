@@ -85,12 +85,13 @@ export default function actsWifiCandidateNetWorkTest() {
         })
 
         /**
-        * @tc.number Communication_WiFi_XTS_UntrustedConfig_0001
-        * @tc.name testaddUntrustedConfig
-        * @tc.desc Test add UntrustedConfig and removeUntrustedConfig Promise API functionality.
-        * @tc.type Function
-        * @tc.level Level 2
-        */
+         * @tc.name   Communication_WiFi_XTS_UntrustedConfig_0001
+         * @tc.number Communication_WiFi_XTS_UntrustedConfig_0001
+         * @tc.desc   Test add UntrustedConfig and removeUntrustedConfig Promise API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Communication_WiFi_XTS_UntrustedConfig_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let wifiDeviceConfig = {
                 "ssid": "TEST_PSK",
@@ -137,12 +138,13 @@ export default function actsWifiCandidateNetWorkTest() {
         })
 
         /**
-        * @tc.number Communication_WiFi_XTS_UntrustedConfig_0002
-        * @tc.name testaddUntrustedConfig
-        * @tc.desc Test add UntrustedConfig and removeUntrustedConfig callback API functionality.
-        * @tc.type Function
-        * @tc.level Level 2
-        */
+         * @tc.name   Communication_WiFi_XTS_UntrustedConfig_0002
+         * @tc.number Communication_WiFi_XTS_UntrustedConfig_0002
+         * @tc.desc   Test add UntrustedConfig and removeUntrustedConfig callback API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Communication_WiFi_XTS_UntrustedConfig_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let wifiDeviceConfig = {
                 "ssid": "TYPE_PSK1",
@@ -183,13 +185,13 @@ export default function actsWifiCandidateNetWorkTest() {
         })
 
         /**
-        * @tc.number Communication_WiFi_XTS_UntrustedConfig_0003
-        * @tc.name Communication_WiFi_XTS_UntrustedConfig_0003
-        * @tc.desc Test add UntrustedConfig and removeUntrustedConfig Promise API functionality.
-        * @tc.type Function
-        * @tc.size MEDIUMTEST
-        * @tc.level Level 0
-        */
+         * @tc.name   Communication_WiFi_XTS_UntrustedConfig_0003
+         * @tc.number Communication_WiFi_XTS_UntrustedConfig_0003
+         * @tc.desc   Test add UntrustedConfig and removeUntrustedConfig Promise API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('Communication_WiFi_XTS_UntrustedConfig_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let wifiDeviceConfig = {
                 "ssid": "TESTTESTTESTTESTTESTTESTTESTTESTTEST",
@@ -225,13 +227,13 @@ export default function actsWifiCandidateNetWorkTest() {
         })
 
         /**
-        * @tc.number Communication_WiFi_XTS_UntrustedConfig_0004
-        * @tc.name Communication_WiFi_XTS_UntrustedConfig_0004
-        * @tc.desc Test add UntrustedConfig and removeUntrustedConfig callback API functionality.
-        * @tc.type Function
-        * @tc.size MEDIUMTEST
-        * @tc.level Level 4
-        */
+         * @tc.name   Communication_WiFi_XTS_UntrustedConfig_0004
+         * @tc.number Communication_WiFi_XTS_UntrustedConfig_0004
+         * @tc.desc   Test add UntrustedConfig and removeUntrustedConfig callback API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('Communication_WiFi_XTS_UntrustedConfig_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let wifiDeviceConfig = {
                 "ssid": "TESTTESTTESTTESTTESTTESTTESTTESTTEST",

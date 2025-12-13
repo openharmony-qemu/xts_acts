@@ -59,14 +59,14 @@ export default function collectionsOtherTest() {
     })
 
 
-    /* *
-    * @tc.number: SUB_Runtime_Language_Backend_ArrayPop_0500
-    * @tc.name  : testArrayPop0500
-    * @tc.desc  : Removes and returns the last element from the ArkTS Array.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 0
-    */
+    /**
+     * @tc.name   testArrayPop0500
+     * @tc.number SUB_Runtime_Language_Backend_ArrayPop_0500
+     * @tc.desc   Removes and returns the last element from the ArkTS Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testArrayPop0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testArrayPop0500';
       console.log(`${caseName} test start `);
@@ -90,14 +90,14 @@ export default function collectionsOtherTest() {
       console.log(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Runtime_Language_Backend_ArrayPush_0300
-    * @tc.name  : testArrayPush0300
-    * @tc.desc  : Add one or more elements to the end of the ArkTS Array and return the new Array length.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 0
-    */
+    /**
+     * @tc.name   testArrayPush0300
+     * @tc.number SUB_Runtime_Language_Backend_ArrayPush_0300
+     * @tc.desc   Add one or more elements to the end of the ArkTS Array and return the new Array length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testArrayPush0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testArrayPush0300';
       console.log(`${caseName} test start `);
@@ -121,14 +121,14 @@ export default function collectionsOtherTest() {
       console.log(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Runtime_Language_Backend_ArrayJoin_0400
-    * @tc.name  : testArrayJoin0400
-    * @tc.desc  : Concatenates all elements of ArkTS Array into a string that can be separated by a specified delimiter.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 1
-    */
+    /**
+     * @tc.name   testArrayJoin0400
+     * @tc.number SUB_Runtime_Language_Backend_ArrayJoin_0400
+     * @tc.desc   Concatenates all elements of ArkTS Array into a string that can be separated by a specified delimiter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArrayJoin0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testArrayJoin0400';
       console.log(`${caseName} test start `);
@@ -152,14 +152,14 @@ export default function collectionsOtherTest() {
       console.log(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Runtime_Language_Backend_ArrayShift_0500
-    * @tc.name  : testArrayShift0500
-    * @tc.desc  : Removes and returns the first element from the ArkTS Array.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 1
-    */
+    /**
+     * @tc.name   testArrayShift0500
+     * @tc.number SUB_Runtime_Language_Backend_ArrayShift_0500
+     * @tc.desc   Removes and returns the first element from the ArkTS Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArrayShift0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testArrayShift0500';
       console.log(`${caseName} test start `);
@@ -183,14 +183,14 @@ export default function collectionsOtherTest() {
       console.log(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Runtime_Language_Backend_ArrayUnshift_0300
-    * @tc.name  : testArrayUnshift0300
-    * @tc.desc  : Inserts one or more elements at the head of the ArkTS Array and returns the new Array length.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 1
-    */
+    /**
+     * @tc.name   testArrayUnshift0300
+     * @tc.number SUB_Runtime_Language_Backend_ArrayUnshift_0300
+     * @tc.desc   Inserts one or more elements at the head of the ArkTS Array and returns the new Array length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArrayUnshift0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testArrayUnshift0300';
       console.log(`${caseName} test start `);
@@ -214,14 +214,14 @@ export default function collectionsOtherTest() {
       console.log(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Runtime_Language_Backend_ArraySlice_1100
-    * @tc.name  : testArraySlice1100
-    * @tc.desc  : Returns a new Array, which is a slice of the original ArkTS Array.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 1
-    */
+    /**
+     * @tc.name   testArraySlice1100
+     * @tc.number SUB_Runtime_Language_Backend_ArraySlice_1100
+     * @tc.desc   Returns a new Array, which is a slice of the original ArkTS Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArraySlice1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testArraySlice1100';
       console.log(`${caseName} test start `);
@@ -245,14 +245,14 @@ export default function collectionsOtherTest() {
       console.log(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Runtime_Language_Backend_ArrayIndexOf_0500
-    * @tc.name  : testArrayIndexOf0500
-    * @tc.desc  : Returns the index where the search element first appears in ArkTS Array, or-1 if it does not exist.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 1
-    */
+    /**
+     * @tc.name   testArrayIndexOf0500
+     * @tc.number SUB_Runtime_Language_Backend_ArrayIndexOf_0500
+     * @tc.desc   Returns the index where the search element first appears in ArkTS Array, or-1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArrayIndexOf0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testArrayIndexOf0500';
       console.log(`${caseName} test start `);
@@ -277,14 +277,14 @@ export default function collectionsOtherTest() {
       console.log(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Runtime_Language_Backend_ArrayAt_0500
-    * @tc.name  : testArrayAt0500
-    * @tc.desc  : Returns the index where the search element first appears in ArkTS Array, or-1 if it does not exist.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 1
-    */
+    /**
+     * @tc.name   testArrayAt0500
+     * @tc.number SUB_Runtime_Language_Backend_ArrayAt_0500
+     * @tc.desc   Returns the index where the search element first appears in ArkTS Array, or-1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArrayAt0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testArrayAt0500';
       console.log(`${caseName} test start `);
@@ -309,14 +309,14 @@ export default function collectionsOtherTest() {
       console.log(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Runtime_Language_Backend_ArrayFill_1100
-    * @tc.name  : testArrayFill1100
-    * @tc.desc  : Fills all elements in the specified range of Array with the specified values.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 1
-    */
+    /**
+     * @tc.name   testArrayFill1100
+     * @tc.number SUB_Runtime_Language_Backend_ArrayFill_1100
+     * @tc.desc   Fills all elements in the specified range of Array with the specified values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArrayFill1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testArrayFill1100';
       console.log(`${caseName} test start `);
@@ -340,14 +340,14 @@ export default function collectionsOtherTest() {
       console.log(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Runtime_Language_Backend_MapClear_0400
-    * @tc.name  : testMapClear0400
-    * @tc.desc  : Delete all elements in the Map.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 1
-    */
+    /**
+     * @tc.name   testMapClear0400
+     * @tc.number SUB_Runtime_Language_Backend_MapClear_0400
+     * @tc.desc   Delete all elements in the Map.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMapClear0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testMapClear0400';
       console.log(`${caseName} test start `);
@@ -371,14 +371,14 @@ export default function collectionsOtherTest() {
       console.log(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Runtime_Language_Backend_MapDelete_0400
-    * @tc.name  : testMapDelete0400
-    * @tc.desc  : Deletes the specified element in the Map.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 1
-    */
+    /**
+     * @tc.name   testMapDelete0400
+     * @tc.number SUB_Runtime_Language_Backend_MapDelete_0400
+     * @tc.desc   Deletes the specified element in the Map.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMapDelete0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testMapDelete0400';
       console.log(`${caseName} test start `);
@@ -402,14 +402,14 @@ export default function collectionsOtherTest() {
       console.log(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Runtime_Language_Backend_MapGet_0400
-    * @tc.name  : testMapGet0400
-    * @tc.desc  : Returns the specified element in the Map.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 1
-    */
+    /**
+     * @tc.name   testMapGet0400
+     * @tc.number SUB_Runtime_Language_Backend_MapGet_0400
+     * @tc.desc   Returns the specified element in the Map.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMapGet0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testMapGet0400';
       console.log(`${caseName} test start `);
@@ -434,14 +434,14 @@ export default function collectionsOtherTest() {
       console.log(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Runtime_Language_Backend_MapHas_0400
-    * @tc.name  : testMapHas0400
-    * @tc.desc  : Determines whether the specified element exists in the Map.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 1
-    */
+    /**
+     * @tc.name   testMapHas0400
+     * @tc.number SUB_Runtime_Language_Backend_MapHas_0400
+     * @tc.desc   Determines whether the specified element exists in the Map.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMapHas0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testMapHas0400';
       console.log(`${caseName} test start `);
@@ -466,14 +466,14 @@ export default function collectionsOtherTest() {
       console.log(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Runtime_Language_Backend_MapHas_0500
-    * @tc.name  : testMapSet0500
-    * @tc.desc  : Adds or updates a specified key-value pair to the Map.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 1
-    */
+    /**
+     * @tc.name   testMapSet0500
+     * @tc.number SUB_Runtime_Language_Backend_MapHas_0500
+     * @tc.desc   Adds or updates a specified key-value pair to the Map.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMapSet0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testMapSet0500';
       console.log(`${caseName} test start `);
@@ -497,14 +497,14 @@ export default function collectionsOtherTest() {
       console.log(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Runtime_Language_Backend_SetClear_0500
-    * @tc.name  : testSetClear0500
-    * @tc.desc  : Returns an Set iterator object that contains the value of each element in this Set.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 1
-    */
+    /**
+     * @tc.name   testSetClear0500
+     * @tc.number SUB_Runtime_Language_Backend_SetClear_0500
+     * @tc.desc   Returns an Set iterator object that contains the value of each element in this Set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSetClear0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testSetClear0500';
       console.log(`${caseName} test start `);
@@ -528,14 +528,14 @@ export default function collectionsOtherTest() {
       console.log(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Runtime_Language_Backend_SetDelete_0400
-    * @tc.name  : testSetDelete0400
-    * @tc.desc  : Deletes the specified element in the Set.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 1
-    */
+    /**
+     * @tc.name   testSetDelete0400
+     * @tc.number SUB_Runtime_Language_Backend_SetDelete_0400
+     * @tc.desc   Deletes the specified element in the Set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSetDelete0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testSetDelete0400';
       console.log(`${caseName} test start `);
@@ -560,14 +560,14 @@ export default function collectionsOtherTest() {
       console.log(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Runtime_Language_Backend_SetAdd_0400
-    * @tc.name  : testSetAdd0400
-    * @tc.desc  : If there is no same element, a new element is inserted into the Set.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 1
-    */
+    /**
+     * @tc.name   testSetAdd0400
+     * @tc.number SUB_Runtime_Language_Backend_SetAdd_0400
+     * @tc.desc   If there is no same element, a new element is inserted into the Set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSetAdd0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testSetAdd0400';
       console.log(`${caseName} test start `);

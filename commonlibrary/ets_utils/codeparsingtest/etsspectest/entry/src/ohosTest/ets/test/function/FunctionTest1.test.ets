@@ -76,12 +76,12 @@ export default function functionTest1() {
     })
 
     /**
+     * @tc.name   FunctionTest0001
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0001
-     * @tc.name FunctionTest0001
-     * @tc.desc Function declaration - number square calculation (parameters passed by value)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Function declaration - number square calculation (parameters passed by value)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input: number = 6;
@@ -93,12 +93,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0002
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0002
-     * @tc.name FunctionTest0002
-     * @tc.desc Anonymous function expression - addition of two numbers (explicit parameter types)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Anonymous function expression - addition of two numbers (explicit parameter types)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const a: number = 4, b: number = 7;
@@ -110,12 +110,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0003
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0003
-     * @tc.name FunctionTest0003
-     * @tc.desc Named function expression - multiplication of two numbers (internal name not accessible externally)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Named function expression - multiplication of two numbers (internal name not accessible externally)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const a: number = 5, b: number = 8;
@@ -136,12 +136,12 @@ export default function functionTest1() {
 
 
     /**
+     * @tc.name   FunctionTest0006
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0006
-     * @tc.name FunctionTest0006
-     * @tc.desc Array parameter - adding elements (reference passing verification)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Array parameter - adding elements (reference passing verification)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArr: number[] = [1, 3, 5];
@@ -153,12 +153,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0007
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0007
-     * @tc.name FunctionTest0007
-     * @tc.desc Function declaration - return fixed number without parameters (type verification)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Function declaration - return fixed number without parameters (type verification)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result: number = getFixedNum();
@@ -169,12 +169,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0008
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0008
-     * @tc.name FunctionTest0008
-     * @tc.desc Anonymous function expression - string concatenation (result verification)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Anonymous function expression - string concatenation (result verification)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str1: string = 'Hello', str2: string = 'ArkTS';
@@ -185,12 +185,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0009
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0009
-     * @tc.name FunctionTest0009
-     * @tc.desc Named function expression - factorial calculation (non-negative parameter verification)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Named function expression - factorial calculation (non-negative parameter verification)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input: number = 5;
@@ -202,12 +202,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0011
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0011
-     * @tc.name FunctionTest0011
-     * @tc.desc Function declaration hoisting - call before declaration (factorial result)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Function declaration hoisting - call before declaration (factorial result)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input: number = 6;
@@ -218,12 +218,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0012
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0012
-     * @tc.name FunctionTest0012
-     * @tc.desc Function expression - no hoisting feature (error when called first)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Function expression - no hoisting feature (error when called first)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const isCallFailed: boolean = checkExprNoHoist();
@@ -232,12 +232,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0014
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0014
-     * @tc.name FunctionTest0014
-     * @tc.desc apply method - sum with array parameters (result verification)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   apply method - sum with array parameters (result verification)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArr: number[] = [10, 20, 30];
@@ -248,12 +248,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0015
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0015
-     * @tc.name FunctionTest0015
-     * @tc.desc Recursive call - factorial calculation (parameter validity)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Recursive call - factorial calculation (parameter validity)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input: number = 4;
@@ -265,12 +265,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0016
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0016
-     * @tc.name FunctionTest0016
-     * @tc.desc Function hoisting + default parameters - call before declaration (default value takes effect)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Function hoisting + default parameters - call before declaration (default value takes effect)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input: number = 5;
@@ -281,12 +281,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0017
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0017
-     * @tc.name FunctionTest0017
-     * @tc.desc call method - multiplication with multiple parameters (result verification)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   call method - multiplication with multiple parameters (result verification)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const a: number = 2, b: number = 5, c: number = 4;
@@ -297,12 +297,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0019
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0019
-     * @tc.name FunctionTest0019
-     * @tc.desc Function scope - internal variables not accessible externally (error verification)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Function scope - internal variables not accessible externally (error verification)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const isAccessFailed: boolean = checkInnerVarAccess();
@@ -311,12 +311,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0020
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0020
-     * @tc.name FunctionTest0020
-     * @tc.desc Nested function - access outer variables (result verification)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Nested function - access outer variables (result verification)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const outerVar: number = 15;
@@ -327,12 +327,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0021
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0021
-     * @tc.name FunctionTest0021
-     * @tc.desc Multi-level nesting - sum of three-level variables (result verification)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Multi-level nesting - sum of three-level variables (result verification)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const a: number = 3, b: number = 4, c: number = 5;
@@ -343,12 +343,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0022
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0022
-     * @tc.name FunctionTest0022
-     * @tc.desc Scope conflict - internal variable overrides outer variable (result verification)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Scope conflict - internal variable overrides outer variable (result verification)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const outerVar: number = 25;
@@ -359,12 +359,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0023
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0023
-     * @tc.name FunctionTest0023
-     * @tc.desc Scope conflict - internal variable overrides global variable (result verification)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Scope conflict - internal variable overrides global variable (result verification)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       globalThis.globalNum = 100;
@@ -375,12 +375,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0024
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0024
-     * @tc.name FunctionTest0024
-     * @tc.desc Scope conflict - parameter overrides outer variable (result verification)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Scope conflict - parameter overrides outer variable (result verification)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const outerVar: number = 30;
@@ -391,12 +391,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0026
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0026
-     * @tc.name FunctionTest0026
-     * @tc.desc Basic closure - counter (increment on multiple calls)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Basic closure - counter (increment on multiple calls)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const counter: () => number = createCounterClosure(1);
@@ -409,12 +409,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0027
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0027
-     * @tc.name FunctionTest0027
-     * @tc.desc Multi-level closure - sum of three-level variables (closure preservation)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Multi-level closure - sum of three-level variables (closure preservation)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sumFunc: () => number = sumThreeLayerClosure(4, 5, 6);
@@ -425,12 +425,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0028
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0028
-     * @tc.name FunctionTest0028
-     * @tc.desc Closure encapsulation - counter object (increment/decrement/check)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Closure encapsulation - counter object (increment/decrement/check)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const counter = createCounterObj();
@@ -444,12 +444,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0029
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0029
-     * @tc.name FunctionTest0029
-     * @tc.desc Closure preserving array - adding elements (reference passing)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Closure preserving array - adding elements (reference passing)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const initArr: number[] = [20, 40];
@@ -462,12 +462,12 @@ export default function functionTest1() {
 
 
     /**
+     * @tc.name   FunctionTest0031
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0031
-     * @tc.name FunctionTest0031
-     * @tc.desc Multiple closure instances - independent variables (no interference)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Multiple closure instances - independent variables (no interference)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const GeneratedDestructObj_1 = createTwoCounterClosure();
@@ -484,12 +484,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0032
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0032
-     * @tc.name FunctionTest0032
-     * @tc.desc Closure handling numbers - cumulative multiplication (multiple calls)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Closure handling numbers - cumulative multiplication (multiple calls)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const multiplyFunc: (n: number) => number = (() => {
@@ -508,12 +508,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0033
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0033
-     * @tc.name FunctionTest0033
-     * @tc.desc Closure handling strings - cumulative concatenation (multiple calls)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Closure handling strings - cumulative concatenation (multiple calls)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const concatFunc: (s: string) => string = (() => {
@@ -532,12 +532,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0034
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0034
-     * @tc.name FunctionTest0034
-     * @tc.desc arguments object - access parameters by index (value verification)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   arguments object - access parameters by index (value verification)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const a: number = 8, b: number = 16, c: number = 24;
@@ -548,12 +548,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0035
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0035
-     * @tc.name FunctionTest0035
-     * @tc.desc arguments object - get parameter length (quantity verification)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   arguments object - get parameter length (quantity verification)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const args: number[] = [5, 10, 15, 20];
@@ -564,12 +564,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0036
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0036
-     * @tc.name FunctionTest0036
-     * @tc.desc arguments object - convert to array (element verification)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   arguments object - convert to array (element verification)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const a: number = 3, b: number = 6, c: number = 9;
@@ -580,12 +580,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0037
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0037
-     * @tc.name FunctionTest0037
-     * @tc.desc arguments object - handle indefinite parameters (sum)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   arguments object - handle indefinite parameters (sum)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const args: number[] = [25, 50, 75];
@@ -596,12 +596,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0038
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0038
-     * @tc.name FunctionTest0038
-     * @tc.desc arguments object - non-array characteristics (no push method)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   arguments object - non-array characteristics (no push method)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const isPushFailed: boolean = checkArgsNoPush(1, 2, 3);
@@ -610,12 +610,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0039
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0039
-     * @tc.name FunctionTest0039
-     * @tc.desc Default parameters - basic features (use default value when no parameter is passed)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Default parameters - basic features (use default value when no parameter is passed)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input: number = 7;
@@ -626,12 +626,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0040
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0040
-     * @tc.name FunctionTest0040
-     * @tc.desc Default parameters - pass undefined to trigger default (value verification)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Default parameters - pass undefined to trigger default (value verification)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result: number = addWithUndefinedDefault(undefined); // default a=12
@@ -641,12 +641,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0041
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0041
-     * @tc.name FunctionTest0041
-     * @tc.desc Rest parameters - collect parameters (array characteristics)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Rest parameters - collect parameters (array characteristics)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const restArr: number[] = collectRestArgs(3, 6, 9, 12);
@@ -656,12 +656,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0042
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0042
-     * @tc.name FunctionTest0042
-     * @tc.desc Default + rest parameters - mixed summation (result verification)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Default + rest parameters - mixed summation (result verification)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result: number = sumDefaultAndRest(4, 5, 6); // default a=3, rest=[5,6]
@@ -671,12 +671,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0043
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0043
-     * @tc.name FunctionTest0043
-     * @tc.desc Parameter destructuring - object destructuring (property extraction)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Parameter destructuring - object destructuring (property extraction)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputObj: GeneratedTypeLiteralInterface_8 = { name: 'Alice', age: 28 };
@@ -687,12 +687,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0044
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0044
-     * @tc.name FunctionTest0044
-     * @tc.desc Parameter destructuring - array destructuring (element extraction)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Parameter destructuring - array destructuring (element extraction)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArr: number[] = [100, 200, 300];
@@ -703,12 +703,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0045
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0045
-     * @tc.name FunctionTest0045
-     * @tc.desc Arrow function - concise syntax with single parameter (result verification)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Arrow function - concise syntax with single parameter (result verification)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input: number = 9;
@@ -719,12 +719,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0047
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0047
-     * @tc.name FunctionTest0047
-     * @tc.desc Arrow function - use rest parameters instead of arguments (sum)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Arrow function - use rest parameters instead of arguments (sum)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result: number = sumWithArrowRest(3, 6, 9); // sum of ...rest
@@ -734,12 +734,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0048
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0048
-     * @tc.name FunctionTest0048
-     * @tc.desc Arrow function - cannot be used as constructor (error with new)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Arrow function - cannot be used as constructor (error with new)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const isNewFailed: boolean = checkArrowNoNew();
@@ -749,12 +749,12 @@ export default function functionTest1() {
 
 
     /**
+     * @tc.name   FunctionTest0050
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0050
-     * @tc.name FunctionTest0050
-     * @tc.desc Predefined function - isFinite verification (boundary value judgment)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Predefined function - isFinite verification (boundary value judgment)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const isFinite1: boolean = checkFiniteValue(Infinity); // infinite value
@@ -765,12 +765,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0051
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0051
-     * @tc.name FunctionTest0051
-     * @tc.desc Function declaration - number cube calculation (parameters passed by value)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Function declaration - number cube calculation (parameters passed by value)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input: number = 4;
@@ -782,12 +782,12 @@ export default function functionTest1() {
     });
 
     /**
+     * @tc.name   FunctionTest0052
      * @tc.number SUB_BUILTINS_FUNCTION_TEST0052
-     * @tc.name FunctionTest0052
-     * @tc.desc Anonymous function expression - subtraction of two numbers (explicit parameter types)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Anonymous function expression - subtraction of two numbers (explicit parameter types)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FunctionTest0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const a: number = 15, b: number = 7;

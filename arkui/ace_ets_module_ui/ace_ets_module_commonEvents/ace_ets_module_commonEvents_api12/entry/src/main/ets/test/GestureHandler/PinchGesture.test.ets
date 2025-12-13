@@ -48,12 +48,12 @@ export default function PinchGestureHandlerTest() {
     });
 
     /**
-     * @tc.number    PinchGestureHandler_0010
-     * @tc.name      PinchGestureHandlerOptions
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   PinchGestureHandler_0010
+     * @tc.number PinchGestureHandler_0010
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PinchGestureHandler_0010', Level.LEVEL0, async (done: Function) => {
       console.info('PinchGestureHandler_0010 START');

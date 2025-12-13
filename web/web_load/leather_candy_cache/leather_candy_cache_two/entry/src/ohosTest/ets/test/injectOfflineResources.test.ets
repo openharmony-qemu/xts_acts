@@ -56,14 +56,14 @@ export default function injectOfflineResourcesTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_INJECTOFFLINERESOURCES_0100
-    * @tc.name       : testInjectOfflineResources001
-    * @tc.desc       : test injectOfflineResources
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testInjectOfflineResources001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_INJECTOFFLINERESOURCES_0100
+     * @tc.desc   test injectOfflineResources
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testInjectOfflineResources001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testInjectOfflineResources001", 148311)
       Utils.registerBaseEvent("testInjectOfflineResources001", true, 148360, done,
@@ -72,14 +72,14 @@ export default function injectOfflineResourcesTest() {
         });
       Utils.waitAndClickComponent('injectOfflineResourcesTestButton',driver)
     })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_INJECTOFFLINERESOURCES_0200
-    * @tc.name       : testInjectOfflineResources002
-    * @tc.desc       : test injectOfflineResources
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testInjectOfflineResources002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_INJECTOFFLINERESOURCES_0200
+     * @tc.desc   test injectOfflineResources
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testInjectOfflineResources002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testInjectOfflineResources002", 148311)
       Utils.registerBaseEvent("testInjectOfflineResources002", '401', 148370, done,
@@ -88,14 +88,14 @@ export default function injectOfflineResourcesTest() {
         });
       Utils.waitAndClickComponent('injectOfflineResourcesTestButton',driver)
     })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_INJECTOFFLINERESOURCES_0300
-    * @tc.name       : testInjectOfflineResources003
-    * @tc.desc       : test injectOfflineResources
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testInjectOfflineResources003
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_INJECTOFFLINERESOURCES_0300
+     * @tc.desc   test injectOfflineResources
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testInjectOfflineResources003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testInjectOfflineResources003", 148311)
       Utils.registerBaseEvent("testInjectOfflineResources003", '401', 148380, done,
@@ -104,14 +104,14 @@ export default function injectOfflineResourcesTest() {
         });
       Utils.waitAndClickComponent('injectOfflineResourcesTestButton',driver)
     })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_INJECTOFFLINERESOURCES_0400
-    * @tc.name       : testInjectOfflineResources004
-    * @tc.desc       : test injectOfflineResources
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testInjectOfflineResources004
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_INJECTOFFLINERESOURCES_0400
+     * @tc.desc   test injectOfflineResources
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testInjectOfflineResources004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testInjectOfflineResources004", 148311)
       Utils.registerBaseEvent("testInjectOfflineResources004", '17100002', 148390, done,
@@ -120,14 +120,14 @@ export default function injectOfflineResourcesTest() {
         });
       Utils.waitAndClickComponent('injectOfflineResourcesTestButton',driver)
     })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_INJECTOFFLINERESOURCES_0500
-    * @tc.name       : testInjectOfflineResources005
-    * @tc.desc       : test injectOfflineResources
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testInjectOfflineResources005
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_INJECTOFFLINERESOURCES_0500
+     * @tc.desc   test injectOfflineResources
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testInjectOfflineResources005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testInjectOfflineResources005", 148311)
       Utils.registerBaseEvent("testInjectOfflineResources005", '17100001', 148400, done,

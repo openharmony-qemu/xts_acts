@@ -42,12 +42,12 @@ export default function uiOpenCustomDialogMode() {
     });
 
     /**
-     * @tc.number    uiOpenCustomDialogMode_0100
-     * @tc.name      uiOpenCustomDialogMode_0100
-     * @tc.desc      set levelMode: 0(LevelMode.OVERLAY),levelUniqueId: Normal value
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   uiOpenCustomDialogMode_0100
+     * @tc.number uiOpenCustomDialogMode_0100
+     * @tc.desc   set levelMode: 0(LevelMode.OVERLAY),levelUniqueId: Normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('uiOpenCustomDialogMode_0100', Level.LEVEL1, async (done: Function) => {
       console.info('uiOpenCustomDialogMode_0100 START');
@@ -94,12 +94,12 @@ export default function uiOpenCustomDialogMode() {
     });
 
     /**
-     * @tc.number    uiOpenCustomDialogMode_0200
-     * @tc.name      uiOpenCustomDialogMode_0200
-     * @tc.desc      set levelMode: 1(LevelMode.EMBEDDED),levelUniqueId: Normal value
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   uiOpenCustomDialogMode_0200
+     * @tc.number uiOpenCustomDialogMode_0200
+     * @tc.desc   set levelMode: 1(LevelMode.EMBEDDED),levelUniqueId: Normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('uiOpenCustomDialogMode_0200', Level.LEVEL1, async (done: Function) => {
       console.info('uiOpenCustomDialogMode_0200 START');
@@ -145,12 +145,12 @@ export default function uiOpenCustomDialogMode() {
     });
 
     /**
-     * @tc.number    uiOpenCustomDialogMode_0300
-     * @tc.name      uiOpenCustomDialogMode_0300
-     * @tc.desc      set levelMode: 0(LevelMode.OVERLAY),levelUniqueId: Abnormal value,
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   uiOpenCustomDialogMode_0300
+     * @tc.number uiOpenCustomDialogMode_0300
+     * @tc.desc   set levelMode: 0(LevelMode.OVERLAY),levelUniqueId: Abnormal value,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('uiOpenCustomDialogMode_0300', Level.LEVEL1, async (done: Function) => {
       console.info('uiOpenCustomDialogMode_0300 START');
@@ -196,12 +196,12 @@ export default function uiOpenCustomDialogMode() {
     });
 
     /**
-     * @tc.number    uiOpenCustomDialogMode_0400
-     * @tc.name      uiOpenCustomDialogMode_0400
-     * @tc.desc      set  set levelMode: 1(LevelMode.EMBEDDED),levelUniqueId: Abnormal value
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   uiOpenCustomDialogMode_0400
+     * @tc.number uiOpenCustomDialogMode_0400
+     * @tc.desc   set  set levelMode: 1(LevelMode.EMBEDDED),levelUniqueId: Abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('uiOpenCustomDialogMode_0400', Level.LEVEL1, async (done: Function) => {
       console.info('uiOpenCustomDialogMode_0400 START');
@@ -247,13 +247,13 @@ export default function uiOpenCustomDialogMode() {
     });
 
 
-     /**
-     * @tc.number    uiOpenCustomDialogMode_0500
-     * @tc.name      uiOpenCustomDialogMode_0500
-     * @tc.desc      set levelMode: 0(LevelMode.EMBEDDED),levelUniqueId: Normal value,immersiveMode:1(imMode: extend)
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   uiOpenCustomDialogMode_0500
+     * @tc.number uiOpenCustomDialogMode_0500
+     * @tc.desc   set levelMode: 0(LevelMode.EMBEDDED),levelUniqueId: Normal value,immersiveMode:1(imMode: extend)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('uiOpenCustomDialogMode_0500', Level.LEVEL1, async (done: Function) => {
       console.info('uiOpenCustomDialogMode_0500 START');
@@ -288,13 +288,13 @@ export default function uiOpenCustomDialogMode() {
     });
 
     
-     /**
-     * @tc.number    uiOpenCustomDialogMode_0600
-     * @tc.name      uiOpenCustomDialogMode_0600
-     * @tc.desc      set levelMode: 0(LevelMode.EMBEDDED),levelUniqueId: Normal value,immersiveMode:0(imMode: extend)
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   uiOpenCustomDialogMode_0600
+     * @tc.number uiOpenCustomDialogMode_0600
+     * @tc.desc   set levelMode: 0(LevelMode.EMBEDDED),levelUniqueId: Normal value,immersiveMode:0(imMode: extend)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('uiOpenCustomDialogMode_0600', Level.LEVEL1, async (done: Function) => {
       console.info('uiOpenCustomDialogMode_0600 START');
@@ -328,12 +328,12 @@ export default function uiOpenCustomDialogMode() {
     });
 
     /**
-     * @tc.number    uiOpenCustomDialogMode_0700
-     * @tc.name      uiOpenCustomDialogMode_0700
-     * @tc.desc      set levelMode: undefined,levelUniqueId: Normal value
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   uiOpenCustomDialogMode_0700
+     * @tc.number uiOpenCustomDialogMode_0700
+     * @tc.desc   set levelMode: undefined,levelUniqueId: Normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('uiOpenCustomDialogMode_0700', Level.LEVEL1, async (done: Function) => {
       console.info('uiOpenCustomDialogMode_0700 START');
@@ -380,12 +380,12 @@ export default function uiOpenCustomDialogMode() {
     });
 
     /**
-     * @tc.number    uiOpenCustomDialogMode_0800
-     * @tc.name      uiOpenCustomDialogMode_0700
-     * @tc.desc      set levelMode: null,levelUniqueId: Normal value
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   uiOpenCustomDialogMode_0800
+     * @tc.number uiOpenCustomDialogMode_0800
+     * @tc.desc   set levelMode: null,levelUniqueId: Normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('uiOpenCustomDialogMode_0800', Level.LEVEL1, async (done: Function) => {
       console.info('uiOpenCustomDialogMode_0800 START');

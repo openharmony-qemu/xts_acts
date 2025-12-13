@@ -42,10 +42,13 @@ export default function ActsNotificationManagerPublishTest() {
     }
 
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Publish_Cancel_3200
-     * @tc.name      : function cancel(id: number, label: string, callback: AsyncCallback<void>): void
-     * @tc.desc      : Cancels a notification with the specified label and ID
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_Cancel_3200
+     * @tc.number Sub_Notification_Ans_Publish_Cancel_3200
+     * @tc.desc   Cancels a notification with the specified label and ID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Publish_Cancel_3200', Level.LEVEL2, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_3200 START`)
@@ -71,10 +74,13 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_3200 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Publish_Cancel_3250
-     * @tc.name      : function cancel(id: number, label: string, callback: AsyncCallback<void>): void
-     * @tc.desc      : Cancels a notification with the specified label and ID
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_Cancel_3250
+     * @tc.number Sub_Notification_Ans_Publish_Cancel_3250
+     * @tc.desc   Cancels a notification with the specified label and ID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Publish_Cancel_3250', Level.LEVEL2, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_3200 START`)
@@ -92,10 +98,13 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_3200 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Publish_Cancel_3300
-     * @tc.name      : function cancel(id: number, callback: AsyncCallback<void>): void
-     * @tc.desc      : Cancels a notification with the specified ID
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_Cancel_3300
+     * @tc.number Sub_Notification_Ans_Publish_Cancel_3300
+     * @tc.desc   Cancels a notification with the specified ID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Publish_Cancel_3300', Level.LEVEL2, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_3300 START`)
@@ -120,10 +129,13 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_3300 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_0400
-     * @tc.name      : function cancel(id: number, undefined): Promise<void>
-     * @tc.desc      : Cancels a notification with the specified label and ID
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_0400
+     * @tc.number SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_0400
+     * @tc.desc   Cancels a notification with the specified label and ID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_0400', Level.LEVEL2, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_0400 START`)
@@ -152,10 +164,13 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_0400 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_0500
-     * @tc.name      : function cancel(id: number, num: number): Promise<void>
-     * @tc.desc      : Cancels a notification with the specified label and ID
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_0500
+     * @tc.number SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_0500
+     * @tc.desc   Cancels a notification with the specified label and ID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_0500', Level.LEVEL2, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_0500 START`)
@@ -173,10 +188,13 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_0500 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_0600
-     * @tc.name      : function cancel(id: number, label: string, undefined): Promise<void>
-     * @tc.desc      : Cancels a notification with the specified label and ID
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_0600
+     * @tc.number SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_0600
+     * @tc.desc   Cancels a notification with the specified label and ID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_0600', Level.LEVEL2, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_0600 START`)
@@ -194,10 +212,13 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_0600 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Publish_Cancel_3350
-     * @tc.name      : function cancelAll(callback: AsyncCallback<void>): void
-     * @tc.desc      : Cancels all notifications of the current application
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_Cancel_3350
+     * @tc.number Sub_Notification_Ans_Publish_Cancel_3350
+     * @tc.desc   Cancels all notifications of the current application
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Publish_Cancel_3350', Level.LEVEL2, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_3350 START`)
@@ -221,10 +242,13 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_3350 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Publish_Cancel_3400
-     * @tc.name      : function cancelAll(): Promise<void>
-     * @tc.desc      : Cancels all notifications of the current application
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_Cancel_3400
+     * @tc.number Sub_Notification_Ans_Publish_Cancel_3400
+     * @tc.desc   Cancels all notifications of the current application
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Publish_Cancel_3400', Level.LEVEL2, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_3400 START`)
@@ -240,10 +264,13 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_3400 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_MANAGER_CANCELAll_TEST_0300
-     * @tc.name      : function cancelAll(undefined): Promise<void>
-     * @tc.desc      : Cancels all notifications of the current application
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_MANAGER_CANCELAll_TEST_0300
+     * @tc.number SUB_NOTIFICATION_ANS_MANAGER_CANCELAll_TEST_0300
+     * @tc.desc   Cancels all notifications of the current application
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_ANS_MANAGER_CANCELAll_TEST_0300', Level.LEVEL2, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_CANCELAll_TEST_0300 START`)
@@ -259,10 +286,13 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_CANCELAll_TEST_0300 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Publish_Cancel_3100
-     * @tc.name      : function cancelGroup(groupName: string, callback: AsyncCallback<void>): void
-     * @tc.desc      : Cancel the notification of a specified group for this application
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_Cancel_3100
+     * @tc.number Sub_Notification_Ans_Publish_Cancel_3100
+     * @tc.desc   Cancel the notification of a specified group for this application
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Publish_Cancel_3100', Level.LEVEL2, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_3100 START`)
@@ -287,10 +317,13 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_3100 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Publish_Cancel_3150
-     * @tc.name      : function cancelGroup(groupName: string): Promise<void>
-     * @tc.desc      : Cancel the notification of a specified group for this application
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_Cancel_3150
+     * @tc.number Sub_Notification_Ans_Publish_Cancel_3150
+     * @tc.desc   Cancel the notification of a specified group for this application
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Publish_Cancel_3150', Level.LEVEL2, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_3150 START`)
@@ -307,10 +340,13 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_3150 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_MANAGER_CANCEL_GROUP_TEST_0300
-     * @tc.name      : function cancelGroup(num: number): Promise<void>
-     * @tc.desc      : Cancel the notification of a specified group for this application
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_MANAGER_CANCEL_GROUP_TEST_0300
+     * @tc.number SUB_NOTIFICATION_ANS_MANAGER_CANCEL_GROUP_TEST_0300
+     * @tc.desc   Cancel the notification of a specified group for this application
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_ANS_MANAGER_CANCEL_GROUP_TEST_0300', Level.LEVEL2, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_CANCEL_GROUP_TEST_0300 START`)
@@ -327,10 +363,13 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_CANCEL_GROUP_TEST_0300 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_MANAGER_CANCEL_GROUP_TEST_0400
-     * @tc.name      : function cancelGroup(groupName: string, undefined): Promise<void>
-     * @tc.desc      : Cancel the notification of a specified group for this application
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_MANAGER_CANCEL_GROUP_TEST_0400
+     * @tc.number SUB_NOTIFICATION_ANS_MANAGER_CANCEL_GROUP_TEST_0400
+     * @tc.desc   Cancel the notification of a specified group for this application
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_ANS_MANAGER_CANCEL_GROUP_TEST_0400', Level.LEVEL2, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_CANCEL_GROUP_TEST_0400 START`)
@@ -347,10 +386,13 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_CANCEL_GROUP_TEST_0400 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Enable_Query_2500
-     * @tc.name      : function requestEnableNotification(callback: AsyncCallback<void>): void
-     * @tc.desc      : OperationType.UNKNOWN_TYPE & WantAgentFlags.ONE_TIME_FLAG
+    /**
+     * @tc.name   Sub_Notification_Ans_Enable_Query_2500
+     * @tc.number Sub_Notification_Ans_Enable_Query_2500
+     * @tc.desc   OperationType.UNKNOWN_TYPE & WantAgentFlags.ONE_TIME_FLAG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Enable_Query_2500', Level.LEVEL2, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Enable_Query_2500 START`)
@@ -374,10 +416,13 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Enable_Query_2500 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Enable_Query_2600
-     * @tc.name      : function requestEnableNotification(): Promise<void>
-     * @tc.desc      : OperationType.UNKNOWN_TYPE & WantAgentFlags.ONE_TIME_FLAG
+    /**
+     * @tc.name   Sub_Notification_Ans_Enable_Query_2600
+     * @tc.number Sub_Notification_Ans_Enable_Query_2600
+     * @tc.desc   OperationType.UNKNOWN_TYPE & WantAgentFlags.ONE_TIME_FLAG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Enable_Query_2600', Level.LEVEL2, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Enable_Query_2600 START`)
@@ -393,10 +438,13 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Enable_Query_2600 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_MANAGER_REQUEST_ENABLE_TEST_0300
-     * @tc.name      : function requestEnableNotification(undefined): Promise<void>
-     * @tc.desc      : OperationType.UNKNOWN_TYPE & WantAgentFlags.ONE_TIME_FLAG
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_MANAGER_REQUEST_ENABLE_TEST_0300
+     * @tc.number SUB_NOTIFICATION_ANS_MANAGER_REQUEST_ENABLE_TEST_0300
+     * @tc.desc   OperationType.UNKNOWN_TYPE & WantAgentFlags.ONE_TIME_FLAG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_ANS_MANAGER_REQUEST_ENABLE_TEST_0300', Level.LEVEL2, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_REQUEST_ENABLE_TEST_0300 START`)
@@ -412,10 +460,13 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_REQUEST_ENABLE_TEST_0300 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Distributed_Search_1300
-     * @tc.name      : function getActiveNotificationCount(callback: AsyncCallback<number>): void
-     * @tc.desc      : Obtains the number of all active notifications
+    /**
+     * @tc.name   Sub_Notification_Ans_Distributed_Search_1300
+     * @tc.number Sub_Notification_Ans_Distributed_Search_1300
+     * @tc.desc   Obtains the number of all active notifications
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Distributed_Search_1300', Level.LEVEL2, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_ACTIVE_COUNT_TEST_0100 START`)
@@ -439,10 +490,13 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_Search_1300 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Distributed_Search_1400
-     * @tc.name      : function getActiveNotificationCount(): Promise<number>
-     * @tc.desc      : Obtains the number of all active notifications
+    /**
+     * @tc.name   Sub_Notification_Ans_Distributed_Search_1400
+     * @tc.number Sub_Notification_Ans_Distributed_Search_1400
+     * @tc.desc   Obtains the number of all active notifications
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Distributed_Search_1400', Level.LEVEL2, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_ACTIVE_COUNT_TEST_0200 START`)
@@ -458,10 +512,13 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_Search_1400 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Distributed_Search_1500
-     * @tc.name      : function getActiveNotifications(callback: AsyncCallback<Array<NotificationRequest>>): void
-     * @tc.desc      : Obtains an array of active notifications
+    /**
+     * @tc.name   Sub_Notification_Ans_Distributed_Search_1500
+     * @tc.number Sub_Notification_Ans_Distributed_Search_1500
+     * @tc.desc   Obtains an array of active notifications
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Distributed_Search_1500', Level.LEVEL2, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_ACTIVE_COUNT_TEST_0300 START`)
@@ -486,10 +543,13 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_Search_1500 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Distributed_Search_1600
-     * @tc.name      : function getActiveNotifications(): Promise<Array<NotificationRequest>>
-     * @tc.desc      : Obtains an array of active notifications
+    /**
+     * @tc.name   Sub_Notification_Ans_Distributed_Search_1600
+     * @tc.number Sub_Notification_Ans_Distributed_Search_1600
+     * @tc.desc   Obtains an array of active notifications
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Distributed_Search_1600', Level.LEVEL2, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_Search_1600 START`)
@@ -506,10 +566,13 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_Search_1600 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_MANAGER_COUNT_TEST_0500
-     * @tc.name      : function getActiveNotificationCount(undefined): Promise<number>
-     * @tc.desc      : Obtains the number of all active notifications
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_MANAGER_COUNT_TEST_0500
+     * @tc.number SUB_NOTIFICATION_ANS_MANAGER_COUNT_TEST_0500
+     * @tc.desc   Obtains the number of all active notifications
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_ANS_MANAGER_COUNT_TEST_0500', Level.LEVEL2, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_COUNT_TEST_0500 START`)
@@ -525,10 +588,13 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_COUNT_TEST_0500 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_MANAGER_COUNT_TEST_0600
-     * @tc.name      : function getActiveNotifications(undefined): Promise<Array<NotificationRequest>>
-     * @tc.desc      : Obtains an array of active notifications
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_MANAGER_COUNT_TEST_0600
+     * @tc.number SUB_NOTIFICATION_ANS_MANAGER_COUNT_TEST_0600
+     * @tc.desc   Obtains an array of active notifications
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_ANS_MANAGER_COUNT_TEST_0600', Level.LEVEL2, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_COUNT_TEST_0600 START`)
@@ -544,10 +610,13 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_COUNT_TEST_0600 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Distributed_template_0300
-     * @tc.name      : function isSupportTemplate(templateName: string, callback: AsyncCallback<boolean>): void
-     * @tc.desc      : Obtains whether the template is supported by the system
+    /**
+     * @tc.name   Sub_Notification_Ans_Distributed_template_0300
+     * @tc.number Sub_Notification_Ans_Distributed_template_0300
+     * @tc.desc   Obtains whether the template is supported by the system
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Distributed_template_0300', Level.LEVEL2, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_template_0300 START`)
@@ -572,10 +641,13 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_template_0300 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Distributed_template_0400
-     * @tc.name      : function isSupportTemplate(templateName: string): Promise<boolean>
-     * @tc.desc      : Obtains whether the template is supported by the system
+    /**
+     * @tc.name   Sub_Notification_Ans_Distributed_template_0400
+     * @tc.number Sub_Notification_Ans_Distributed_template_0400
+     * @tc.desc   Obtains whether the template is supported by the system
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Distributed_template_0400', Level.LEVEL2, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_template_0400 START`)
@@ -595,10 +667,13 @@ export default function ActsNotificationManagerPublishTest() {
 
 
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_MANAGER_SUPPORT_TEST_0300
-     * @tc.name      : function isSupportTemplate(num: number): Promise<boolean>
-     * @tc.desc      : Obtains whether the template is supported by the system
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_MANAGER_SUPPORT_TEST_0300
+     * @tc.number SUB_NOTIFICATION_ANS_MANAGER_SUPPORT_TEST_0300
+     * @tc.desc   Obtains whether the template is supported by the system
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_ANS_MANAGER_SUPPORT_TEST_0300', Level.LEVEL2, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_SUPPORT_TEST_0300 START`)
@@ -629,10 +704,13 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_SUPPORT_TEST_0300 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_MANAGER_SUPPORT_TEST_0400
-     * @tc.name      : function isSupportTemplate(templateName: string, undefined): Promise<boolean>
-     * @tc.desc      : Obtains whether the template is supported by the system
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_MANAGER_SUPPORT_TEST_0400
+     * @tc.number SUB_NOTIFICATION_ANS_MANAGER_SUPPORT_TEST_0400
+     * @tc.desc   Obtains whether the template is supported by the system
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_ANS_MANAGER_SUPPORT_TEST_0400', Level.LEVEL2, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_SUPPORT_TEST_0400 START`)
@@ -649,11 +727,14 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_SUPPORT_TEST_0400 END`)
     })
 
-    /*
-      * @tc.number: Sub_Notification_Ans_Publish_Publish_0110
-      * @tc.name: testPublishTitleForNull
-      * @tc.desc: test publish fail
-   */
+    /**
+     * @tc.name   testPublishTitleForNull
+     * @tc.number Sub_Notification_Ans_Publish_Publish_0110
+     * @tc.desc   test publish fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPublishTitleForNull', Level.LEVEL2, async function (done) {
       const TEST_CASE_NAME = 'testPublishTitleNull';
       let notificationRequest = {
@@ -708,11 +789,14 @@ export default function ActsNotificationManagerPublishTest() {
       }
     })
 
-    /*
-      * @tc.number: Sub_Notification_Ans_Publish_Publish_0210
-      * @tc.name: testPublishTextForNull
-      * @tc.desc: test publish fail
-   */
+    /**
+     * @tc.name   testPublishTextForNull
+     * @tc.number Sub_Notification_Ans_Publish_Publish_0210
+     * @tc.desc   test publish fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPublishTextForNull', Level.LEVEL2, async function (done) {
       const TEST_CASE_NAME = 'testPublishTextForNull';
       let notificationRequest = {
@@ -742,11 +826,14 @@ export default function ActsNotificationManagerPublishTest() {
       }
     })
 
-    /*
-      * @tc.number: Sub_Notification_Ans_Publish_Publish_0310
-      * @tc.name: testPublishadditionalTextForNull
-      * @tc.desc: test publish success
-   */
+    /**
+     * @tc.name   testPublishadditionalTextForNull
+     * @tc.number Sub_Notification_Ans_Publish_Publish_0310
+     * @tc.desc   test publish success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPublishadditionalTextForNull', Level.LEVEL2, async function (done) {
       const TEST_CASE_NAME = 'testPublishadditionalTextForNull';
       function requestEnableNotificationCallback(err) {
@@ -795,11 +882,14 @@ export default function ActsNotificationManagerPublishTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_0410
-     * @tc.name: testPublishLongtextTitleForNull
-     * @tc.desc: test publish fail
-  */
+    /**
+     * @tc.name   testPublishLongtextTitleForNull
+     * @tc.number Sub_Notification_Ans_Publish_Publish_0410
+     * @tc.desc   test publish fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPublishLongtextTitleForNull', Level.LEVEL2, async function (done) {
       const TEST_CASE_NAME = 'testPublishLongtextTitleForNull';
       let notificationRequest = {
@@ -833,11 +923,14 @@ export default function ActsNotificationManagerPublishTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_0510
-     * @tc.name: testPublishLongtextTextForNull
-     * @tc.desc: test publish fail
-  */
+    /**
+     * @tc.name   testPublishLongtextTextForNull
+     * @tc.number Sub_Notification_Ans_Publish_Publish_0510
+     * @tc.desc   test publish fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPublishLongtextTextForNull', Level.LEVEL2, async function (done) {
       const TEST_CASE_NAME = 'testPublishLongtextTextForNull';
       let notificationRequest = {
@@ -870,11 +963,14 @@ export default function ActsNotificationManagerPublishTest() {
       }
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Publish_Publish_0610
-    * @tc.name: testPublishLongtextadditionalTextForNull
-    * @tc.desc: test publish success
- */
+    /**
+     * @tc.name   testPublishLongtextadditionalTextForNull
+     * @tc.number Sub_Notification_Ans_Publish_Publish_0610
+     * @tc.desc   test publish success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("testPublishLongtextadditionalTextForNull", Level.LEVEL2, async function (done) {
       const TEST_CASE_NAME = 'testPublishLongtextadditionalTextForNull';
 
@@ -918,11 +1014,14 @@ export default function ActsNotificationManagerPublishTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_0710
-     * @tc.name: testPublishLongtextLongTextForNull
-     * @tc.desc: test publish fail
-  */
+    /**
+     * @tc.name    testPublishLongtextLongTextForNull
+     * @tc.number Sub_Notification_Ans_Publish_Publish_0710
+     * @tc.desc   test publish fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(" testPublishLongtextLongTextForNull", Level.LEVEL2, async function (done) {
       const TEST_CASE_NAME = 'testPublishLongtextLongTextForNull';
       let notificationRequest = {
@@ -955,11 +1054,14 @@ export default function ActsNotificationManagerPublishTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_0810
-     * @tc.name: testPublishLongtextBriefTextForNull
-     * @tc.desc: test publish fail
-  */
+    /**
+     * @tc.name   testPublishLongtextBriefTextForNull
+     * @tc.number Sub_Notification_Ans_Publish_Publish_0810
+     * @tc.desc   test publish fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("testPublishLongtextBriefTextForNull", Level.LEVEL2, async function (done) {
       const TEST_CASE_NAME = 'testPublishLongtextBriefTextForNull';
       let notificationRequest = {
@@ -992,11 +1094,14 @@ export default function ActsNotificationManagerPublishTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_0910
-     * @tc.name: testPublishLongtextExpandedTitleForNull
-     * @tc.desc: test publish fail
-  */
+    /**
+     * @tc.name   testPublishLongtextExpandedTitleForNull
+     * @tc.number Sub_Notification_Ans_Publish_Publish_0910
+     * @tc.desc   test publish fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("testPublishLongtextExpandedTitleForNull", Level.LEVEL2, async function (done) {
       const TEST_CASE_NAME = 'testPublishLongtextExpandedTitleForNull';
       let notificationRequest = {
@@ -1029,11 +1134,14 @@ export default function ActsNotificationManagerPublishTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_1010
-     * @tc.name: testPublishmultiLineTitleForNull
-     * @tc.desc: test publish fail
-  */
+    /**
+     * @tc.name   testPublishmultiLineTitleForNull
+     * @tc.number Sub_Notification_Ans_Publish_Publish_1010
+     * @tc.desc   test publish fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPublishmultiLineTitleForNull', Level.LEVEL2, async function (done) {
       const TEST_CASE_NAME = 'testPublishmultiLineTitleForNull';
       let notificationRequest = {
@@ -1066,11 +1174,14 @@ export default function ActsNotificationManagerPublishTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_1110
-     * @tc.name: testPublishmultiLineTextForNull
-     * @tc.desc: test publish fail
-  */
+    /**
+     * @tc.name    testPublishmultiLineTextForNull
+     * @tc.number Sub_Notification_Ans_Publish_Publish_1110
+     * @tc.desc   test publish fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(" testPublishmultiLineTextForNull", Level.LEVEL2, async function (done) {
       const TEST_CASE_NAME = 'testPublishmultiLineTextForNull';
       let notificationRequest = {
@@ -1103,11 +1214,14 @@ export default function ActsNotificationManagerPublishTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_1210
-     * @tc.name: testPublishmultiLineadditionalTextForNull
-     * @tc.desc: test publish success
-  */
+    /**
+     * @tc.name    testPublishmultiLineadditionalTextForNull
+     * @tc.number Sub_Notification_Ans_Publish_Publish_1210
+     * @tc.desc   test publish success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(" testPublishmultiLineadditionalTextForNull", Level.LEVEL2, async function (done) {
       const TEST_CASE_NAME = 'testPublishLongtextTitleForNull';
       function requestEnableNotificationCallback(err) {
@@ -1157,11 +1271,14 @@ export default function ActsNotificationManagerPublishTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_1310
-     * @tc.name: testPublishmultiLinebriefTextForNull
-     * @tc.desc: test publish fail
-  */
+    /**
+     * @tc.name   testPublishmultiLinebriefTextForNull
+     * @tc.number Sub_Notification_Ans_Publish_Publish_1310
+     * @tc.desc   test publish fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPublishmultiLinebriefTextForNull', Level.LEVEL2, async function (done) {
       const TEST_CASE_NAME = 'testPublishmultiLinebriefTextForNull';
       let notificationRequest = {
@@ -1194,11 +1311,14 @@ export default function ActsNotificationManagerPublishTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_1410
-     * @tc.name: testPublishmultiLinelongTitleForNull
-     * @tc.desc: test publish fail
-  */
+    /**
+     * @tc.name    testPublishmultiLinelongTitleForNull
+     * @tc.number Sub_Notification_Ans_Publish_Publish_1410
+     * @tc.desc   test publish fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(" testPublishmultiLinelongTitleForNull", Level.LEVEL2, async function (done) {
       const TEST_CASE_NAME = 'testPublishmultiLinelongTitleForNull';
       let notificationRequest = {
@@ -1231,11 +1351,14 @@ export default function ActsNotificationManagerPublishTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_1510
-     * @tc.name: testPublishmultiLineLinesForNull
-     * @tc.desc: test publish fail
-  */
+    /**
+     * @tc.name   testPublishmultiLineLinesForNull
+     * @tc.number Sub_Notification_Ans_Publish_Publish_1510
+     * @tc.desc   test publish fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPublishmultiLineLinesForNull', Level.LEVEL2, async function (done) {
       const TEST_CASE_NAME = 'testPublishmultiLineLinesForNull';
       let notificationRequest = {
@@ -1268,11 +1391,14 @@ export default function ActsNotificationManagerPublishTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_1610
-     * @tc.name: testPublishPictureTitleForNull
-     * @tc.desc: test publish fail
-  */
+    /**
+     * @tc.name   testPublishPictureTitleForNull
+     * @tc.number Sub_Notification_Ans_Publish_Publish_1610
+     * @tc.desc   test publish fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPublishPictureTitleForNull', Level.LEVEL2, async function (done) {
       const TEST_CASE_NAME = 'testPublishPictureTitleForNull';
 
@@ -1329,11 +1455,14 @@ export default function ActsNotificationManagerPublishTest() {
         })
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_1710
-     * @tc.name: testPublishPictureTextForNull
-     * @tc.desc: test publish fail
-  */
+    /**
+     * @tc.name   testPublishPictureTextForNull
+     * @tc.number Sub_Notification_Ans_Publish_Publish_1710
+     * @tc.desc   test publish fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPublishPictureTextForNull', Level.LEVEL2, async function (done) {
       const TEST_CASE_NAME = 'testPublishPictureTextForNull';
 
@@ -1390,11 +1519,14 @@ export default function ActsNotificationManagerPublishTest() {
         })
     });
 
-    /*
-       * @tc.number: Sub_Notification_Ans_Publish_Publish_1810
-       * @tc.name: testPublishPictureadditionalTextForNull
-       * @tc.desc: test publish success
-    */
+    /**
+     * @tc.name   testPublishPictureadditionalTextForNull
+     * @tc.number Sub_Notification_Ans_Publish_Publish_1810
+     * @tc.desc   test publish success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPublishPictureadditionalTextForNull', Level.LEVEL2, async function (done) {
       const TEST_CASE_NAME = 'testPublishPictureadditionalTextForNull';
       function requestEnableNotificationCallback(err) {
@@ -1460,11 +1592,14 @@ export default function ActsNotificationManagerPublishTest() {
         })
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Publish_Publish_1910
-    * @tc.name: testPublishPicturebriefTextForNull
-    * @tc.desc: test publish fail
- */
+    /**
+     * @tc.name   testPublishPicturebriefTextForNull
+     * @tc.number Sub_Notification_Ans_Publish_Publish_1910
+     * @tc.desc   test publish fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPublishPicturebriefTextForNull', Level.LEVEL2, async function (done) {
       const TEST_CASE_NAME = 'testPublishPicturebriefTextForNull';
 
@@ -1520,11 +1655,14 @@ export default function ActsNotificationManagerPublishTest() {
           }
         })
     })
-    /*
-  * @tc.number: Sub_Notification_Ans_Publish_Publish_2010
-  * @tc.name: testPublishPictureExpandedTitleForNull
-  * @tc.desc: test publish fail
-*/
+    /**
+     * @tc.name   testPublishPictureExpandedTitleForNull
+     * @tc.number Sub_Notification_Ans_Publish_Publish_2010
+     * @tc.desc   test publish fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPublishPictureExpandedTitleForNull', Level.LEVEL2, async function (done) {
       const TEST_CASE_NAME = 'testPublishPictureExpandedTitleForNull';
 
@@ -1582,10 +1720,13 @@ export default function ActsNotificationManagerPublishTest() {
     })
 
 
-    /*
-         * @tc.number: Sub_Notification_Ans_Publish_Publish_2110
-         * @tc.name: testPublishPicturepictureForNull
-         * @tc.desc: test publish fail
+    /**
+     * @tc.name   testPublishPictureExpandedTitleForNull
+     * @tc.number Sub_Notification_Ans_Publish_Publish_2110
+     * @tc.desc   test publish fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPublishPictureExpandedTitleForNull', Level.LEVEL2, async function (done) {
       const TEST_CASE_NAME = 'testPublishPicturepictureForNull';

@@ -55,6 +55,14 @@ export default function stageAnimatorTest() {
       // This API supports only one parameter: clear action function.
     })
 
+    /**
+     * @tc.name   testanimatorstage0001
+     * @tc.number testanimatorstage0001
+     * @tc.desc   testanimatorstage0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testanimatorstage0001', Level.LEVEL1, async (done: Function) => {
       console.info('testanimatorstage0001 START');
       setTimeout(() => {
@@ -74,6 +82,14 @@ export default function stageAnimatorTest() {
       }, 500)
     });
 
+    /**
+     * @tc.name   testanimatorstage0002
+     * @tc.number testanimatorstage0002
+     * @tc.desc   testanimatorstage0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testanimatorstage0002', Level.LEVEL1, async (done: Function) => {
       let animator: UIContext = globalThis.uiContent;
       console.info('testanimatorstage0002 START');
@@ -97,6 +113,14 @@ export default function stageAnimatorTest() {
       done();
     });
 
+    /**
+     * @tc.name   testanimatorstage0003
+     * @tc.number testanimatorstage0003
+     * @tc.desc   testanimatorstage0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testanimatorstage0003', Level.LEVEL1, async (done: Function) => {
       let animator: UIContext = globalThis.uiContent;
       console.info('testanimatorstage0003 START');
@@ -120,6 +144,14 @@ export default function stageAnimatorTest() {
       done();
     });
 
+    /**
+     * @tc.name   testanimatorstage0004
+     * @tc.number testanimatorstage0004
+     * @tc.desc   testanimatorstage0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testanimatorstage0004', Level.LEVEL1, async (done: Function) => {
       let animator: UIContext = globalThis.uiContent;
       console.info('testanimatorstage0004 START');
@@ -133,6 +165,14 @@ export default function stageAnimatorTest() {
       done();
     });
 
+    /**
+     * @tc.name   testanimatorstage0005
+     * @tc.number testanimatorstage0005
+     * @tc.desc   testanimatorstage0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testanimatorstage0005', Level.LEVEL1, async (done: Function) => {
       let animator: UIContext = globalThis.uiContent;
       console.info('testanimatorstage0005 START');
@@ -155,6 +195,14 @@ export default function stageAnimatorTest() {
       done();
     });
 
+    /**
+     * @tc.name   testanimatorstage0006
+     * @tc.number testanimatorstage0006
+     * @tc.desc   testanimatorstage0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testanimatorstage0006', Level.LEVEL1, async (done: Function) => {
       let animator: UIContext = globalThis.uiContent;
       console.info('testanimatorstage0006 START');

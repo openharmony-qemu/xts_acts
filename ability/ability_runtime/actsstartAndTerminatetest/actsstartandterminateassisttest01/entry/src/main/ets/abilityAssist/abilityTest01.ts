@@ -19,10 +19,6 @@ import { window } from '@kit.ArkUI';
 import app, { AppResponse } from '@system.app';
 
 let testNum: number = 0;
-let subscriber: commonEventManager.CommonEventSubscriber;
-let ACTS_EVENT: commonEventManager.CommonEventSubscribeInfo = {
-  events: ['ACTS_TEST_DESTROY']
-};
 
 export default class AbilityTest01 extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
@@ -31,23 +27,10 @@ export default class AbilityTest01 extends UIAbility {
     commonEventManager.publish('AbilityTest01_onCreate', function () {
       hilog.info(0x0000, 'testTag', '%{public}s', 'AbilityTest01 publish AbilityTest01_onCreate');
     });
-    commonEventManager.createSubscriber(ACTS_EVENT).then((data: commonEventManager.CommonEventSubscriber) => {
-      subscriber = data;
-      hilog.info(0x0000, 'testTag', '%{public}s', 'AbilityTest01 subscribe ACTS_TEST_DESTROY');
-      commonEventManager.subscribe(subscriber, () => {
-        setTimeout(() => {
-          // destroy assistHap
-          globalThis.abilityAssist01.terminateSelf();
-        }, 500);
-      });
-    });
   }
 
   onDestroy(): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'AbilityTest01 onDestroy');
-    commonEventManager.unsubscribe(subscriber, () => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'AbilityTest01 unsubscribe');
-    });
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
@@ -77,18 +60,25 @@ export default class AbilityTest01 extends UIAbility {
       hilog.info(0x0000, 'testTag', '%{public}s', 'AbilityTest01 publish AbilityTest01_onForeground');
     });
     testNum++;
-    if (testNum === 1) {
-      try {
-        globalThis.abilityAssist01.startAbility(
-          {
-            bundleName: 'com.test.actsstartandterminatetest',
-            abilityName: 'UiAbility08'
-          }).then(() => {
+    if (testNum !== 1) {
+      return;
+    } 
+    try {
+      globalThis.abilityAssist01.startAbility(
+        {
+          bundleName: 'com.test.actsstartandterminatetest',
+          abilityName: 'UiAbility08'
+        }).then(() => {
           hilog.info(0x0000, 'testTag', '%{public}s', 'start test hap UiAbility08');
+        }).catch(() => {
+          hilog.info(0x0000, 'testTag', '%{public}s', 'fail test hap UiAbility08');
         });
-      } catch (err) {
-        hilog.info(0x0000, 'testTag', '%{public}s', `startAbility fail ${err}`);
-      }
+      setTimeout(() => {
+        hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility01 setTimeout inner');
+        globalThis.abilityAssist01.terminateSelf();
+      }, 1000);
+    } catch (err) {
+      hilog.info(0x0000, 'testTag', '%{public}s', `startAbility fail ${err}`);
     }
   }
 

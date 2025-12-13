@@ -26,78 +26,78 @@ export default function stackSaturateTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_SATURATE_0100
-     * @tc.name       : testStackSaturate001
-     * @tc.desc       : testing saturate for stack with small value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackSaturate001
+     * @tc.number SUB_ARKUI_CAPI_STACK_SATURATE_0100
+     * @tc.desc   testing saturate for stack with small value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackSaturate001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackSaturate001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_SATURATE_0200
-     * @tc.name       : testStackSaturate002
-     * @tc.desc       : testing saturate for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackSaturate002
+     * @tc.number SUB_ARKUI_CAPI_STACK_SATURATE_0200
+     * @tc.desc   testing saturate for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackSaturate002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackSaturate002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_SATURATE_0300
-     * @tc.name       : testStackSaturate003
-     * @tc.desc       : testing saturate for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackSaturate003
+     * @tc.number SUB_ARKUI_CAPI_STACK_SATURATE_0300
+     * @tc.desc   testing saturate for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackSaturate003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackSaturate003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_SATURATE_0400
-     * @tc.name       : testStackSaturate004
-     * @tc.desc       : testing saturate for stack with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackSaturate004
+     * @tc.number SUB_ARKUI_CAPI_STACK_SATURATE_0400
+     * @tc.desc   testing saturate for stack with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackSaturate004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackSaturate004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_SATURATE_0500
-     * @tc.name       : testStackSaturate005
-     * @tc.desc       : testing saturate for stack with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testStackSaturate005
+     * @tc.number SUB_ARKUI_CAPI_STACK_SATURATE_0500
+     * @tc.desc   testing saturate for stack with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackSaturate005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackSaturate005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_SATURATE_0600
-     * @tc.name       : testStackSaturate006
-     * @tc.desc       : testing saturate for stack with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testStackSaturate006
+     * @tc.number SUB_ARKUI_CAPI_STACK_SATURATE_0600
+     * @tc.desc   testing saturate for stack with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackSaturate006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackSaturate006()).assertEqual(0)

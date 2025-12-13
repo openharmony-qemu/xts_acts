@@ -52,6 +52,14 @@ export default function textObscuredTest() {
       // This API supports only one parameter: clear action function.
     })
 
+    /**
+     * @tc.name   ArkUX_Redacted_Text_0090
+     * @tc.number ArkUX_Redacted_Text_0090
+     * @tc.desc   ArkUX_Redacted_Text_0090
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_Redacted_Text_0090', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Redacted_Text_0090 START');
       setTimeout(() => {
@@ -75,6 +83,14 @@ export default function textObscuredTest() {
       }, 500)
     });
 
+    /**
+     * @tc.name   ArkUX_Redacted_Text_0100
+     * @tc.number ArkUX_Redacted_Text_0100
+     * @tc.desc   ArkUX_Redacted_Text_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_Redacted_Text_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Redacted_Text_0100 START');
       setTimeout(() => {
@@ -98,6 +114,14 @@ export default function textObscuredTest() {
       }, 500)
     });
 
+    /**
+     * @tc.name   ArkUX_Redacted_Text_0110
+     * @tc.number ArkUX_Redacted_Text_0110
+     * @tc.desc   ArkUX_Redacted_Text_0110
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_Redacted_Text_0110', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Redacted_Text_0110 START');
       setTimeout(() => {
@@ -121,6 +145,14 @@ export default function textObscuredTest() {
       }, 500)
     });
 
+    /**
+     * @tc.name   ArkUX_Redacted_Text_0120
+     * @tc.number ArkUX_Redacted_Text_0120
+     * @tc.desc   ArkUX_Redacted_Text_0120
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_Redacted_Text_0120', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Redacted_Text_0120 START');
       setTimeout(() => {
@@ -144,6 +176,14 @@ export default function textObscuredTest() {
       }, 500)
     });
 
+    /**
+     * @tc.name   ArkUX_Redacted_Text_0130
+     * @tc.number ArkUX_Redacted_Text_0130
+     * @tc.desc   ArkUX_Redacted_Text_0130
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_Redacted_Text_0130', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Redacted_Text_0130 START');
       setTimeout(() => {

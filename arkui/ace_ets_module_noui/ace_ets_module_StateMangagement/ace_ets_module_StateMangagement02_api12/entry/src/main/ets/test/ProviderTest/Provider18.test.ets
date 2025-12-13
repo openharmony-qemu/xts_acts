@@ -45,12 +45,12 @@ export default function ProviderTestJsunit18() {
       console.info("ProviderTestJsunit18 after each called");
     });
     /**
+     * @tc.name   Provider18Test_0100
      * @tc.number Provider18Test_0100
-     * @tc.name Provider18Test_0100
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Provider18Test_0100', Level.LEVEL0, async (done: Function) => {
       console.info('Provider18Test_0100 START');
@@ -71,12 +71,12 @@ export default function ProviderTestJsunit18() {
       done();
     });
     /**
+     * @tc.name   Provider18Test_0200
      * @tc.number Provider18Test_0200
-     * @tc.name Provider18Test_0200
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Provider18Test_0200', Level.LEVEL0, async (done: Function) => {
       console.info('Provider18Test_0200 START');
@@ -108,12 +108,12 @@ export default function ProviderTestJsunit18() {
       done();
     });
     /**
+     * @tc.name   Provider18Test_0300
      * @tc.number Provider18Test_0300
-     * @tc.name Provider18Test_0300
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Provider18Test_0300', Level.LEVEL0, async (done: Function) => {
       console.info('Provider18Test_0300 START');
@@ -138,12 +138,12 @@ export default function ProviderTestJsunit18() {
       done();
     });
     /**
+     * @tc.name   Provider18Test_0400
      * @tc.number Provider18Test_0400
-     * @tc.name Provider18Test_0400
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Provider18Test_0400', Level.LEVEL0, async (done: Function) => {
       console.info('Provider18Test_0400 START');
@@ -168,12 +168,12 @@ export default function ProviderTestJsunit18() {
       done();
     });
     /**
+     * @tc.name   Provider18Test_0500
      * @tc.number Provider18Test_0500
-     * @tc.name Provider18Test_0500
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Provider18Test_0500', Level.LEVEL0, async (done: Function) => {
       console.info('Provider18Test_0500 START');

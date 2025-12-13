@@ -128,12 +128,12 @@ export default function cameraSessionMultiSessionTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_MULTI_SESSION_CREATE_0100
-     * @tc.name      : Check capture create multi session
-     * @tc.desc      : Check capture create multi session
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_MULTI_SESSION_CREATE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_MULTI_SESSION_CREATE_0100
+     * @tc.desc   Check capture create multi session
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_MULTI_SESSION_CREATE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_MULTI_SESSION_CREATE_0100--------------");
@@ -185,6 +185,14 @@ export default function cameraSessionMultiSessionTest() {
       done();
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_CAMERA_STATUS_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_CAMERA_STATUS_0100
+     * @tc.desc   SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_CAMERA_STATUS_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_CAMERA_STATUS_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_CAMERA_STATUS_0100--------------");
       let isTriggerStatusCallback = false;
@@ -207,6 +215,14 @@ export default function cameraSessionMultiSessionTest() {
       done();
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_TORCH_STATUS_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_TORCH_STATUS_0100
+     * @tc.desc   SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_TORCH_STATUS_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_TORCH_STATUS_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_TORCH_STATUS_0100--------------");
       let isTriggerTorchStatusCallback = false;

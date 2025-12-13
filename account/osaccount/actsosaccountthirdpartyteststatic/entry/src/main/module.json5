@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,7 @@
         "name": "ohos.permission.MANAGE_LOCAL_ACCOUNTS"
       },
       {
-        "name": "ohos.permission.DISTRIBUTED_DATASYNC",
-        "reason": "$string:EntryAbility_desc",
-        "usedScene": {}
+        "name": "ohos.permission.MANAGE_DISTRIBUTED_ACCOUNTS"
       }
     ],
     "abilities": [

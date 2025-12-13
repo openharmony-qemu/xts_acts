@@ -27,14 +27,14 @@ export default function sliderOnChangeTest() {
       await Utils.pushPage(`slider/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SLIDER_ONCHANGE_0100
-    * @tc.name       : testSliderOnchange001
-    * @tc.desc       : testing onChange event callback for slider with normal value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testSliderOnchange001
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_ONCHANGE_0100
+     * @tc.desc   testing onChange event callback for slider with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderOnchange001', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnChangeSlider')
       await Utils.sleep(5000);
@@ -42,14 +42,14 @@ export default function sliderOnChangeTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SLIDER_ONCHANGE_0200
-    * @tc.name       : testSliderOnchange002
-    * @tc.desc       : testing onChange event callback for slider with normal value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testSliderOnchange002
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_ONCHANGE_0200
+     * @tc.desc   testing onChange event callback for slider with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderOnchange002', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnChangeSliderValue')
       await Utils.sleep(5000);

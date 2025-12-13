@@ -48,12 +48,12 @@ export default function textAreaMaxFontSize() {
     })
 
     /**
+     * @tc.name   textAreaMaxFontSize0100
      * @tc.number textAreaMaxFontSize0100
-     * @tc.name Test the maxFontSize property of the textArea component
-     * @tc.desc set the maxFontSize property value is  21
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set the maxFontSize property value is  21
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textAreaMaxFontSize0100',  Level.LEVEL0, async (done: Function) => {
       let tagName = 'textAreaMaxFontSize0100';

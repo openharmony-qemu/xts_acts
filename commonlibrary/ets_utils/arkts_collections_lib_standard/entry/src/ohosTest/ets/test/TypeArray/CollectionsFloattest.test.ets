@@ -55,12 +55,12 @@ export default function CollectionsFloattest() {
     })
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_0200
-     * @tc.name      : CollectionsFloattestTypedArray0200
-     * @tc.desc      : toString 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray0200
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_0200
+     * @tc.desc   toString 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -85,12 +85,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_0300
-     * @tc.name      : CollectionsFloattestTypedArray0300
-     * @tc.desc      : toLocaleString 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray0300
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_0300
+     * @tc.desc   toLocaleString 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -114,12 +114,12 @@ export default function CollectionsFloattest() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_0400
-     * @tc.name      : CollectionsFloattestTypedArray0400
-     * @tc.desc      : toLocaleString 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray0400
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_0400
+     * @tc.desc   toLocaleString 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -144,12 +144,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_0500
-     * @tc.name      : CollectionsFloattestTypedArray0500
-     * @tc.desc      : copyWithin 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray0500
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_0500
+     * @tc.desc   copyWithin 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -174,12 +174,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_0600
-     * @tc.name      : CollectionsFloattestTypedArray0600
-     * @tc.desc      : copyWithin 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray0600
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_0600
+     * @tc.desc   copyWithin 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -204,12 +204,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_0700
-     * @tc.name      : CollectionsFloattestTypedArray0700
-     * @tc.desc      : constructor 10200012
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray0700
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_0700
+     * @tc.desc   constructor 10200012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -233,12 +233,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_0800
-     * @tc.name      : CollectionsFloattestTypedArray0800
-     * @tc.desc      : constructor 10200012
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray0800
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_0800
+     * @tc.desc   constructor 10200012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -262,12 +262,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_0900
-     * @tc.name      : CollectionsFloattestTypedArray0900
-     * @tc.desc      : constructor 10200012
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray0900
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_0900
+     * @tc.desc   constructor 10200012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -292,12 +292,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_1000
-     * @tc.name      : CollectionsFloattestTypedArray1000
-     * @tc.desc      : some 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray1000
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_1000
+     * @tc.desc   some 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -322,12 +322,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_1100
-     * @tc.name      : CollectionsFloattestTypedArray1100
-     * @tc.desc      : some 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray1100
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_1100
+     * @tc.desc   some 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -352,12 +352,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_1200
-     * @tc.name      : CollectionsFloattestTypedArray1200
-     * @tc.desc      : every 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray1200
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_1200
+     * @tc.desc   every 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -383,12 +383,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_1300
-     * @tc.name      : CollectionsFloattestTypedArray1300
-     * @tc.desc      : every 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray1300
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_1300
+     * @tc.desc   every 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -413,12 +413,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_1400
-     * @tc.name      : CollectionsFloattestTypedArray1400
-     * @tc.desc      : fill 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray1400
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_1400
+     * @tc.desc   fill 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -443,12 +443,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_1500
-     * @tc.name      : CollectionsFloattestTypedArray1500
-     * @tc.desc      : fill 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray1500
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_1500
+     * @tc.desc   fill 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -473,12 +473,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_1600
-     * @tc.name      : CollectionsFloattestTypedArray1600
-     * @tc.desc      : filter 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray1600
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_1600
+     * @tc.desc   filter 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -503,12 +503,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_1700
-     * @tc.name      : CollectionsFloattestTypedArray1700
-     * @tc.desc      : filter 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray1700
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_1700
+     * @tc.desc   filter 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -533,12 +533,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_1800
-     * @tc.name      : CollectionsFloattestTypedArray1800
-     * @tc.desc      : find 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray1800
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_1800
+     * @tc.desc   find 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -563,12 +563,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_1900
-     * @tc.name      : CollectionsFloattestTypedArray1900
-     * @tc.desc      : find 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray1900
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_1900
+     * @tc.desc   find 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -593,12 +593,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_2000
-     * @tc.name      : CollectionsFloattestTypedArray2000
-     * @tc.desc      : findIndex 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray2000
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_2000
+     * @tc.desc   findIndex 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -623,12 +623,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_2100
-     * @tc.name      : CollectionsFloattestTypedArray2100
-     * @tc.desc      : findIndex 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray2100
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_2100
+     * @tc.desc   findIndex 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -653,12 +653,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_2200
-     * @tc.name      : CollectionsFloattestTypedArray2200
-     * @tc.desc      : forEach 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray2200
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_2200
+     * @tc.desc   forEach 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -683,12 +683,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_2300
-     * @tc.name      : CollectionsFloattestTypedArray2300
-     * @tc.desc      : forEach 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray2300
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_2300
+     * @tc.desc   forEach 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -715,12 +715,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_2400
-     * @tc.name      : CollectionsFloattestTypedArray2400
-     * @tc.desc      : indexOf 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray2400
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_2400
+     * @tc.desc   indexOf 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -745,12 +745,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_2500
-     * @tc.name      : CollectionsFloattestTypedArray2500
-     * @tc.desc      : indexOf 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray2500
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_2500
+     * @tc.desc   indexOf 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -775,12 +775,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_2600
-     * @tc.name      : CollectionsFloattestTypedArray2600
-     * @tc.desc      : lastIndexOf 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray2600
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_2600
+     * @tc.desc   lastIndexOf 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -805,12 +805,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_2700
-     * @tc.name      : CollectionsFloattestTypedArray2700
-     * @tc.desc      : lastIndexOf 10200001
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray2700
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_2700
+     * @tc.desc   lastIndexOf 10200001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -835,12 +835,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_2800
-     * @tc.name      : CollectionsFloattestTypedArray2800
-     * @tc.desc      : join 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray2800
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_2800
+     * @tc.desc   join 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -865,12 +865,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_3000
-     * @tc.name      : CollectionsFloattestTypedArray3000
-     * @tc.desc      : map 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray3000
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_3000
+     * @tc.desc   map 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -895,12 +895,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_3100
-     * @tc.name      : CollectionsFloattestTypedArray3100
-     * @tc.desc      : map 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray3100
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_3100
+     * @tc.desc   map 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -925,12 +925,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_3200
-     * @tc.name      : CollectionsFloattestTypedArray3200
-     * @tc.desc      : reduce 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray3200
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_3200
+     * @tc.desc   reduce 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -955,12 +955,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_3300
-     * @tc.name      : CollectionsFloattestTypedArray3300
-     * @tc.desc      : reduce 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray3300
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_3300
+     * @tc.desc   reduce 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -985,12 +985,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_3400
-     * @tc.name      : CollectionsFloattestTypedArray3400
-     * @tc.desc      : reduceRight 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray3400
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_3400
+     * @tc.desc   reduceRight 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1015,12 +1015,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_3500
-     * @tc.name      : CollectionsFloattestTypedArray3500
-     * @tc.desc      : reduceRight 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray3500
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_3500
+     * @tc.desc   reduceRight 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1045,12 +1045,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_3600
-     * @tc.name      : CollectionsFloattestTypedArray3600
-     * @tc.desc      : reduce 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray3600
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_3600
+     * @tc.desc   reduce 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1075,12 +1075,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_3700
-     * @tc.name      : CollectionsFloattestTypedArray3700
-     * @tc.desc      : reduce 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray3700
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_3700
+     * @tc.desc   reduce 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1105,12 +1105,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_3800
-     * @tc.name      : CollectionsFloattestTypedArray3800
-     * @tc.desc      : reduceRight 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray3800
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_3800
+     * @tc.desc   reduceRight 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1135,12 +1135,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_3900
-     * @tc.name      : CollectionsFloattestTypedArray3900
-     * @tc.desc      : reduceRight 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray3900
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_3900
+     * @tc.desc   reduceRight 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1165,12 +1165,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_4000
-     * @tc.name      : CollectionsFloattestTypedArray4000
-     * @tc.desc      : reduce 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray4000
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_4000
+     * @tc.desc   reduce 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1195,12 +1195,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_4100
-     * @tc.name      : CollectionsFloattestTypedArray4100
-     * @tc.desc      : reduce 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray4100
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_4100
+     * @tc.desc   reduce 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1226,12 +1226,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_4200
-     * @tc.name      : CollectionsFloattestTypedArray4200
-     * @tc.desc      : reverse 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray4200
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_4200
+     * @tc.desc   reverse 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1256,12 +1256,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_4300
-     * @tc.name      : CollectionsFloattestTypedArray4300
-     * @tc.desc      : reverse 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray4300
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_4300
+     * @tc.desc   reverse 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1286,12 +1286,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_4400
-     * @tc.name      : CollectionsFloattestTypedArray4400
-     * @tc.desc      : set 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray4400
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_4400
+     * @tc.desc   set 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1316,12 +1316,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_4500
-     * @tc.name      : CollectionsFloattestTypedArray4500
-     * @tc.desc      : set 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray4500
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_4500
+     * @tc.desc   set 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1346,12 +1346,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_4600
-     * @tc.name      : CollectionsFloattestTypedArray4600
-     * @tc.desc      : slice 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray4600
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_4600
+     * @tc.desc   slice 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1376,12 +1376,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_4700
-     * @tc.name      : CollectionsFloattestTypedArray4700
-     * @tc.desc      : slice 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray4700
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_4700
+     * @tc.desc   slice 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1406,12 +1406,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_4800
-     * @tc.name      : CollectionsFloattestTypedArray4800
-     * @tc.desc      : sort 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray4800
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_4800
+     * @tc.desc   sort 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1436,12 +1436,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_4900
-     * @tc.name      : CollectionsFloattestTypedArray4900
-     * @tc.desc      : sort 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray4900
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_4900
+     * @tc.desc   sort 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1466,12 +1466,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_5000
-     * @tc.name      : CollectionsFloattestTypedArray5000
-     * @tc.desc      : subarray 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray5000
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_5000
+     * @tc.desc   subarray 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1496,12 +1496,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_5100
-     * @tc.name      : CollectionsFloattestTypedArray5100
-     * @tc.desc      : subarray 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray5100
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_5100
+     * @tc.desc   subarray 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1526,12 +1526,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_5200
-     * @tc.name      : CollectionsFloattestTypedArray5200
-     * @tc.desc      : at 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray5200
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_5200
+     * @tc.desc   at 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1556,12 +1556,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_5300
-     * @tc.name      : CollectionsFloattestTypedArray5300
-     * @tc.desc      : at 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray5300
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_5300
+     * @tc.desc   at 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1586,12 +1586,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_5400
-     * @tc.name      : CollectionsFloattestTypedArray5400
-     * @tc.desc      : includes 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray5400
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_5400
+     * @tc.desc   includes 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1616,12 +1616,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_5500
-     * @tc.name      : CollectionsFloattestTypedArray5500
-     * @tc.desc      : includes 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray5500
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_5500
+     * @tc.desc   includes 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1646,12 +1646,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_5600
-     * @tc.name      : CollectionsFloattestTypedArray5600
-     * @tc.desc      : entries 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray5600
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_5600
+     * @tc.desc   entries 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1676,12 +1676,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_5700
-     * @tc.name      : CollectionsFloattestTypedArray5700
-     * @tc.desc      : entries 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray5700
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_5700
+     * @tc.desc   entries 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1706,12 +1706,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_5800
-     * @tc.name      : CollectionsFloattestTypedArray5800
-     * @tc.desc      : keys 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray5800
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_5800
+     * @tc.desc   keys 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1736,12 +1736,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_5900
-     * @tc.name      : CollectionsFloattestTypedArray5900
-     * @tc.desc      : keys 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray5900
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_5900
+     * @tc.desc   keys 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1766,12 +1766,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_6000
-     * @tc.name      : CollectionsFloattestTypedArray6000
-     * @tc.desc      : values 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray6000
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_6000
+     * @tc.desc   values 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1796,12 +1796,12 @@ export default function CollectionsFloattest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_SECOND_TYPEDARRAY_6100
-     * @tc.name      : CollectionsFloattestTypedArray6100
-     * @tc.desc      : values 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsFloattestTypedArray6100
+     * @tc.number SUB_COLLECTION_SECOND_TYPEDARRAY_6100
+     * @tc.desc   values 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsFloattestTypedArray6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

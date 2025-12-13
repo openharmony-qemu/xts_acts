@@ -94,12 +94,12 @@ export default function requestUploadNormalJSUnit() {
     });
 
     /**
+     * @tc.name   SUB_Misc_REQUEST_Create_Promise_Upload_Callback_0010
      * @tc.number SUB_Misc_REQUEST_Create_Promise_Upload_Callback_0010
-     * @tc.name SUB_Misc_REQUEST_Create_Promise_Upload_Callback_0010
-     * @tc.desc Starts a download session.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.desc   Starts a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Misc_REQUEST_Create_Promise_Upload_Callback_0010', Level.LEVEL1, async (done: Function) => {
       console.info("-----------------------SUB_Misc_REQUEST_Create_Promise_Upload_Callback_0010 is starting-----------------------");
@@ -143,12 +143,12 @@ export default function requestUploadNormalJSUnit() {
     });
 
     /**
+     * @tc.name   SUB_Misc_REQUEST_Create_Promise_Upload_Promise_0010
      * @tc.number SUB_Misc_REQUEST_Create_Promise_Upload_Promise_0010
-     * @tc.name SUB_Misc_REQUEST_Create_Promise_Upload_Promise_0010
-     * @tc.desc Starts a download session.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Starts a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Create_Promise_Upload_Promise_0010', Level.LEVEL2, async (done: Function) => {
       console.info("-----------------------SUB_Misc_REQUEST_Create_Promise_Upload_Promise_0010 is starting-----------------------");
@@ -184,12 +184,12 @@ export default function requestUploadNormalJSUnit() {
     });
 
     /**
+     * @tc.name   SUB_Misc_Request_UploadManagement_0001
      * @tc.number SUB_Misc_Request_UploadManagement_0001
-     * @tc.name SUB_Misc_Request_UploadManagement_0001
-     * @tc.desc Starts a download session.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Starts a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_Request_UploadManagement_0001', Level.LEVEL2, async (done: Function) => {
       console.info("-----------------------SUB_Misc_Request_UploadManagement_0001 is starting-----------------------");
@@ -206,12 +206,12 @@ export default function requestUploadNormalJSUnit() {
     });
 
     /**
+     * @tc.name   SUB_Misc_Request_UploadManagement_Callback_0001
      * @tc.number SUB_Misc_Request_UploadManagement_Callback_0001
-     * @tc.name SUB_Misc_Request_UploadManagement_Callback_0001
-     * @tc.desc Starts a download session.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Starts a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_Request_UploadManagement_Callback_0001', Level.LEVEL2, async (done: Function) => {
       console.info("-----------------------SUB_Misc_Request_UploadManagement_Callback_0001 is starting-----------------------");

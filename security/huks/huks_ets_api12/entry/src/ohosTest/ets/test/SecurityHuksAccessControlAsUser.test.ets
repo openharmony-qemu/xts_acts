@@ -14,20 +14,21 @@
  */
 import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import huks from '@ohos.security.huks';
-import { GenParam } from './utils/huks/HuksOptionsUtils';
-import { StringToUint8Array } from './utils/common/CommonUtils';
-import { Logger } from './utils/common/Logger';
+import { GenParam } from './utils/huks/HuksOptionsUtils.ets';
+import { StringToUint8Array } from './utils/common/CommonUtils.ets';
+import { Logger } from './utils/common/Logger.ets';
 
 export default function SecurityHUKSAccessControlAsUserTest() {
 
   describe('SecurityHuksAccessControlAsUserTest', () => {
 
     /**
+     * @tc.name   SUB_Security_HUKS_AccessControl_AsUser_Func_2200
      * @tc.number SUB_Security_HUKS_AccessControl_AsUser_Func_2200
-     * @tc.name Test non_system hap use generateKeyItemAsUser, process fail
-     * @tc.size Small
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   SUB_Security_HUKS_AccessControl_AsUser_Func_2200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_AccessControl_AsUser_Func_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let testNumber: string = "SUB_Security_HUKS_AccessControl_AsUser_Func_2200";
@@ -50,11 +51,12 @@ export default function SecurityHUKSAccessControlAsUserTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_AccessControl_AsUser_Func_2300
      * @tc.number SUB_Security_HUKS_AccessControl_AsUser_Func_2300
-     * @tc.name Test non_system hap use deleteKeyItemAsUser, process fail
-     * @tc.size Small
-     * @tc.type Func
-     * @tc.level Level2
+     * @tc.desc   SUB_Security_HUKS_AccessControl_AsUser_Func_2300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_AccessControl_AsUser_Func_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_AccessControl_AsUser_Func_2300";
@@ -79,11 +81,12 @@ export default function SecurityHUKSAccessControlAsUserTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_AccessControl_AsUser_Func_2400
      * @tc.number SUB_Security_HUKS_AccessControl_AsUser_Func_2400
-     * @tc.name Test non_system hap use importKeyItemAsUser, process fail
-     * @tc.size Small
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   SUB_Security_HUKS_AccessControl_AsUser_Func_2400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_AccessControl_AsUser_Func_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_AccessControl_AsUser_Func_2400";
@@ -111,11 +114,12 @@ export default function SecurityHUKSAccessControlAsUserTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_AccessControl_AsUser_Func_2500
      * @tc.number SUB_Security_HUKS_AccessControl_AsUser_Func_2500
-     * @tc.name Test non_system hap use importWrappedKeyItemAsUser, process fail
-     * @tc.size Small
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   SUB_Security_HUKS_AccessControl_AsUser_Func_2500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_AccessControl_AsUser_Func_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_AccessControl_AsUser_Func_2500";
@@ -143,11 +147,12 @@ export default function SecurityHUKSAccessControlAsUserTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_AccessControl_AsUser_Func_2600
      * @tc.number SUB_Security_HUKS_AccessControl_AsUser_Func_2600
-     * @tc.name Test non_system hap use exportKeyItemAsUser, process fail
-     * @tc.size Small
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   SUB_Security_HUKS_AccessControl_AsUser_Func_2600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_AccessControl_AsUser_Func_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_AccessControl_AsUser_Func_2600";
@@ -172,11 +177,12 @@ export default function SecurityHUKSAccessControlAsUserTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_AccessControl_AsUser_Func_2700
      * @tc.number SUB_Security_HUKS_AccessControl_AsUser_Func_2700
-     * @tc.name Test non_system hap use getKeyItemPropertiesAsUser, process fail
-     * @tc.size Small
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   SUB_Security_HUKS_AccessControl_AsUser_Func_2700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_AccessControl_AsUser_Func_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_AccessControl_AsUser_Func_2700";
@@ -201,11 +207,12 @@ export default function SecurityHUKSAccessControlAsUserTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_AccessControl_AsUser_Func_2800
      * @tc.number SUB_Security_HUKS_AccessControl_AsUser_Func_2800
-     * @tc.name Test non_system hap use hasKeyItemAsUser, process fail
-     * @tc.size Small
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   SUB_Security_HUKS_AccessControl_AsUser_Func_2800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_AccessControl_AsUser_Func_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_AccessControl_AsUser_Func_2800";
@@ -230,11 +237,12 @@ export default function SecurityHUKSAccessControlAsUserTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_AccessControl_AsUser_Func_2900
      * @tc.number SUB_Security_HUKS_AccessControl_AsUser_Func_2900
-     * @tc.name Test non_system hap use initSessionAsUser, process fail
-     * @tc.size Small
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   SUB_Security_HUKS_AccessControl_AsUser_Func_2900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_AccessControl_AsUser_Func_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_AccessControl_AsUser_Func_2900";
@@ -272,11 +280,12 @@ export default function SecurityHUKSAccessControlAsUserTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_AccessControl_AsUser_Func_3000
      * @tc.number SUB_Security_HUKS_AccessControl_AsUser_Func_3000
-     * @tc.name Test non_system hap use attestKeyItemAsUser, process fail
-     * @tc.size Small
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   SUB_Security_HUKS_AccessControl_AsUser_Func_3000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_AccessControl_AsUser_Func_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_AccessControl_AsUser_Func_3000";
@@ -301,11 +310,12 @@ export default function SecurityHUKSAccessControlAsUserTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_AccessControl_AsUser_Func_3100
      * @tc.number SUB_Security_HUKS_AccessControl_AsUser_Func_3100
-     * @tc.name Test non_system hap use anonAttestKeyItemAsUser, process fail
-     * @tc.size Small
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   SUB_Security_HUKS_AccessControl_AsUser_Func_3100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_AccessControl_AsUser_Func_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_AccessControl_AsUser_Func_3100";

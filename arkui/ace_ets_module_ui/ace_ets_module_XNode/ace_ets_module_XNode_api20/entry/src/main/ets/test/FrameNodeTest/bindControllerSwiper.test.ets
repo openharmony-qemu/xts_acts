@@ -42,12 +42,12 @@ export default function bindControllerSwiper() {
     });
 
     /**
-     * @tc.number    bindControllerSwiper_0100
-     * @tc.name      bindControllerSwiper_0100
-     * @tc.desc      frameNode: test bindController error code for Swiper
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   bindControllerSwiper_0100
+     * @tc.number bindControllerSwiper_0100
+     * @tc.desc   frameNode: test bindController error code for Swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindControllerSwiper_0100', Level.LEVEL2, async (done: Function) => {
       console.info('bindControllerSwiper_0100 START');
@@ -65,12 +65,12 @@ export default function bindControllerSwiper() {
     });
 
     /**
-     * @tc.number    bindControllerSwiper_0200
-     * @tc.name      bindControllerSwiper_0200
-     * @tc.desc      frameNode: test bindController error code for Swiper
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   bindControllerSwiper_0200
+     * @tc.number bindControllerSwiper_0200
+     * @tc.desc   frameNode: test bindController error code for Swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindControllerSwiper_0200', Level.LEVEL2, async (done: Function) => {
       console.info('bindControllerSwiper_0200 START');

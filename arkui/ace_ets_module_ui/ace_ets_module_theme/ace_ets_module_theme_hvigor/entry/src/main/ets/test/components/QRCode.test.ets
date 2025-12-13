@@ -65,13 +65,13 @@ export default function qrCodeThemeTest() {
       }
     });
     /**
-      * @tc.number    : ActsQRCodeThemeColors_0100
-      * @tc.name      : ActsQRCodeThemeColors_0100
-      * @tc.desc      : Check system colors values of QRCode component
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsQRCodeThemeColors_0100
+     * @tc.number ActsQRCodeThemeColors_0100
+     * @tc.desc   Check system colors values of QRCode component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsQRCodeThemeColors_0100`, Level.LEVEL2, () => {
       const CASE: string = `ActsQRCodeThemeColors_0100`;
       console.info(`${SUITE} ${CASE} START`);
@@ -84,13 +84,13 @@ export default function qrCodeThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-      * @tc.number    : ActsQRCodeThemeColors_0200
-      * @tc.name      : ActsQRCodeThemeColors_0200
-      * @tc.desc      : Check custom colors values of QRCode component
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsQRCodeThemeColors_0200
+     * @tc.number ActsQRCodeThemeColors_0200
+     * @tc.desc   Check custom colors values of QRCode component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsQRCodeThemeColors_0200`, Level.LEVEL2, () => {
       const CASE: string = `ActsQRCodeThemeColors_0200`;
       console.info(`${SUITE} ${CASE} START`);
@@ -105,14 +105,13 @@ export default function qrCodeThemeTest() {
     })
 
     /**
-      * @tc.number    : ActsQRCodeThemeColors_0300
-      * @tc.name      : ActsQRCodeThemeColors_0300
-      * @tc.desc      : Check custom colors values of QRCode component
-      *                 after changing the theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsQRCodeThemeColors_0300
+     * @tc.number ActsQRCodeThemeColors_0300
+     * @tc.desc   Check custom colors values of QRCode component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsQRCodeThemeColors_0300`, Level.LEVEL0, async () => {
       const CASE: string = `ActsQRCodeThemeColors_0300`;
       console.info(`${SUITE} ${CASE} START`);

@@ -30,12 +30,12 @@ export default function staticLoadHsp() {
   describe('HspTest', () => {
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_HSP_0100
-     * @tc.name      : testStaticLoadHsp01
-     * @tc.desc      : Test static loading of the source HSP, invoking the files exported with relative paths ./xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStaticLoadHsp01
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_HSP_0100
+     * @tc.desc   Test static loading of the source HSP, invoking the files exported with relative paths ./xxx.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStaticLoadHsp01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testStaticLoadHsp01";
@@ -48,12 +48,12 @@ export default function staticLoadHsp() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_HSP_0200
-     * @tc.name      : testStaticLoadHsp02
-     * @tc.desc      : Test static loading of the source HSP, invoking the files exported with relative paths ../xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStaticLoadHsp02
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_HSP_0200
+     * @tc.desc   Test static loading of the source HSP, invoking the files exported with relative paths ../xxx.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStaticLoadHsp02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testStaticLoadHsp02";
@@ -66,12 +66,12 @@ export default function staticLoadHsp() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_HSP_0300
-     * @tc.name      : testStaticLoadHsp03
-     * @tc.desc      : Test static loading of the source HSP, invoking the folders exported with relative paths.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStaticLoadHsp03
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_HSP_0300
+     * @tc.desc   Test static loading of the source HSP, invoking the folders exported with relative paths.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStaticLoadHsp03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testStaticLoadHsp03";
@@ -84,12 +84,12 @@ export default function staticLoadHsp() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_HSP_0400
-     * @tc.name      : testStaticLoadHsp04
-     * @tc.desc      : Test static loading of the source HSP, accessing the exported files with Chinese names.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStaticLoadHsp04
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_HSP_0400
+     * @tc.desc   Test static loading of the source HSP, accessing the exported files with Chinese names.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testStaticLoadHsp04", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testStaticLoadHsp04";
@@ -102,12 +102,12 @@ export default function staticLoadHsp() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_HSP_0500
-     * @tc.name      : testStaticLoadHsp05
-     * @tc.desc      : Test static loading of the source HAR, invoking the files exported with relative paths ./xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStaticLoadHsp05
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_HSP_0500
+     * @tc.desc   Test static loading of the source HAR, invoking the files exported with relative paths ./xxx.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testStaticLoadHsp05", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testStaticLoadHsp05";
@@ -120,12 +120,12 @@ export default function staticLoadHsp() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_HSP_0600
-     * @tc.name      : testStaticLoadHsp06
-     * @tc.desc      : Test static loading of the source HAR, invoking the files exported with relative paths ../xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStaticLoadHsp06
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_HSP_0600
+     * @tc.desc   Test static loading of the source HAR, invoking the files exported with relative paths ../xxx.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testStaticLoadHsp06", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testStaticLoadHsp06";
@@ -138,12 +138,12 @@ export default function staticLoadHsp() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_HSP_0700
-     * @tc.name      : testStaticLoadHsp07
-     * @tc.desc      : Test static loading of the source HAR, invoking the folders exported with relative paths.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStaticLoadHsp07
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_HSP_0700
+     * @tc.desc   Test static loading of the source HAR, invoking the folders exported with relative paths.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testStaticLoadHsp07", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testStaticLoadHsp07";
@@ -156,12 +156,12 @@ export default function staticLoadHsp() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_HSP_0800
-     * @tc.name      : testStaticLoadHsp08
-     * @tc.desc      : Test static loading of the source HAR, accessing the exported files with Chinese names.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStaticLoadHsp08
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_HSP_0800
+     * @tc.desc   Test static loading of the source HAR, accessing the exported files with Chinese names.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testStaticLoadHsp08", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testStaticLoadHsp08";
@@ -174,12 +174,12 @@ export default function staticLoadHsp() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_HSP_0900
-     * @tc.name      : testStaticLoadHsp09
-     * @tc.desc      : Load the ohpm package.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStaticLoadHsp09
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_HSP_0900
+     * @tc.desc   Load the ohpm package.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testStaticLoadHsp09", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testStaticLoadHsp09";

@@ -219,7 +219,7 @@ export default function WindowOrientationTest() {
             await subWindowClass.destroyWindow();
             try {
                 let rotationCallback = (rotationInfo: window.RotationChangeInfo): window.RotationChangeResult => {}
-                subWindowClass.on('rotationChange', rotationCallback);
+                subWindowClass.onRotationChange(rotationCallback);
                 done();
             } catch (err:BusinessError) {
                 hilog.error(0x0000, '[ANI]',`${caseName} :Failed . Cause code: ${err!.code}, message: ${err!.message}`);
@@ -305,7 +305,7 @@ export default function WindowOrientationTest() {
                         return rotationResult;
                     }
                 };
-                subWindowClass.off('rotationChange', rotationCallback);
+                subWindowClass.offRotationChange(rotationCallback);
                 done();
             } catch (err:BusinessError) {
                 hilog.error(0x0000, '[ANI]',`${caseName} :Failed . Cause code: ${err!.code}, message: ${err!.message}`);
@@ -331,8 +331,8 @@ export default function WindowOrientationTest() {
                 await subWindowClass.showWindow();
                 let rotationCallback = (rotationInfo: window.RotationChangeInfo): window.RotationChangeResult  => {
                 }
-                subWindowClass.on('rotationChange', rotationCallback);
-                subWindowClass.off('rotationChange', rotationCallback);
+                subWindowClass.onRotationChange(rotationCallback);
+                subWindowClass.offRotationChange(rotationCallback);
                 hilog.info(0x0000, '[ANI]',`${caseName} :on rotationChange success. `);
                 await subWindowClass.destroyWindow()
                 expect(true).assertTrue();
@@ -368,7 +368,7 @@ export default function WindowOrientationTest() {
             try {
                 await subWindowClass.setUIContent('pages/index2');
                 await subWindowClass.showWindow();
-                subWindowClass.off('rotationChange');
+                subWindowClass.offRotationChange();
                 hilog.info(0x0000, '[ANI]',`${caseName} :off rotationChange success. `);
                 await subWindowClass.destroyWindow()
                 expect(true).assertTrue();
@@ -405,7 +405,33 @@ export default function WindowOrientationTest() {
             expect(window.RectType.RELATIVE_TO_PARENT_WINDOW).assertEqual(1);
             done();
         });
-
+        /**
+         * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_static_4290
+         * @tc.name       testGetPreferredOrientation_WindowAbnormal_static
+         * @tc.desc       Sets the display direction property of the window
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level3
+         */
+        it('testGetPreferredOrientation_WindowAbnormal_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testGetPreferredOrientation_WindowAbnormal_static';
+            let msgStr: string = 'jsUnittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin');
+            let windowClass: window.Window = await windowStage.createSubWindow('testGetPreferredOrientation_WindowAbnormal')
+            hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
+            expect(!!windowClass).assertTrue();
+            await windowClass.destroyWindow();
+            try {
+                let currentOrientation = windowClass.getPreferredOrientation();
+                expect(false).assertTrue();
+                done();
+            } catch (exception) {
+                exception = exception as BusinessError;
+                hilog.error(domain, tag,`Failed to get window orientation. Cause code: ${exception.code}, message: ${exception.message}`);
+                expect(exception.code).assertEqual(1300002);
+                done()
+            }
+        })
 
 
 

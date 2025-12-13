@@ -39,11 +39,19 @@ namespace OHOS {
     {
     }
 
+    /**
+     * @tc.name   TestVulkanMemoryTestCase
+     * @tc.number TestVulkanMemoryTestCase
+     * @tc.desc   TestVulkanMemoryTestCase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     HWTEST_F(ActsVulkanMemoryTest, TestVulkanMemoryTestCase, Function | MediumTest | Level2)
     {
         printf("------start ActsVulkanMemoryTest------\n");
         if (canIUse("SystemCapability.Graphic.Vulkan")) {
-            system("/data/local/tmp/vulkan/vk-default/deqp_vk_execute "
+            system("/data/local/tmp/deqp_vk_execute "
             "--deqp-caselist-file=/data/local/tmp/vulkan/vk-default/memory.txt "
             "--deqp-log-filename=ActsVulkanMemoryTest.qpa");
         }

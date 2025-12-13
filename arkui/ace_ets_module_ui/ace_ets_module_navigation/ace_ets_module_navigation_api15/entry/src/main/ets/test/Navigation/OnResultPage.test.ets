@@ -49,10 +49,12 @@ export default function OnResultPage() {
 
 
     /**
-     * @tc.number    OnResultPage_0100
-     * @tc.name      OnResultPage_0100
-     * @tc.desc      Test OnResult pop
-     * @tc.level     Level 2
+     * @tc.name   OnResultPage_0100
+     * @tc.number OnResultPage_0100
+     * @tc.desc   Test OnResult pop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OnResultPage_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('OnResultPage_0100 START');
@@ -87,10 +89,12 @@ export default function OnResultPage() {
     });
 
     /**
-     * @tc.number    OnResultPage_0200
-     * @tc.name      OnResultPage_0200
-     * @tc.desc      Test OnResult popToIndex
-     * @tc.level     Level 2
+     * @tc.name   OnResultPage_0200
+     * @tc.number OnResultPage_0200
+     * @tc.desc   Test OnResult popToIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OnResultPage_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('OnResultPage_0200 START');
@@ -120,10 +124,12 @@ export default function OnResultPage() {
     });
 
     /**
-     * @tc.number    OnResultPage_0300
-     * @tc.name      OnResultPage_0300
-     * @tc.desc      Test OnResult popToName
-     * @tc.level     Level 2
+     * @tc.name   OnResultPage_0300
+     * @tc.number OnResultPage_0300
+     * @tc.desc   Test OnResult popToName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OnResultPage_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('OnResultPage_0300 START');
@@ -153,10 +159,12 @@ export default function OnResultPage() {
     });
 
     /**
-     * @tc.number    OnResultPage_0400
-     * @tc.name      OnResultPage_0400
-     * @tc.desc      Test OnResult undefined
-     * @tc.level     Level 2
+     * @tc.name   OnResultPage_0400
+     * @tc.number OnResultPage_0400
+     * @tc.desc   Test OnResult undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OnResultPage_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('OnResultPage_0400 START');
@@ -186,10 +194,12 @@ export default function OnResultPage() {
     });
 
     /**
-     * @tc.number    OnResultPage_0500
-     * @tc.name      OnResultPage_0500
-     * @tc.desc      Test OnResult popToName
-     * @tc.level     Level 2
+     * @tc.name   OnResultPage_0500
+     * @tc.number OnResultPage_0500
+     * @tc.desc   Test OnResult popToName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OnResultPage_0500',  Level.LEVEL0, async (done: Function) => {
       console.info('OnResultPage_0500 START');
@@ -220,10 +230,12 @@ export default function OnResultPage() {
 
 
     /**
-     * @tc.number    OnResultPage_0600
-     * @tc.name      OnResultPage_0600
-     * @tc.desc      Test push dialog page pop
-     * @tc.level     Level 2
+     * @tc.name   OnResultPage_0600
+     * @tc.number OnResultPage_0600
+     * @tc.desc   Test push dialog page pop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OnResultPage_0600',  Level.LEVEL0, async (done: Function) => {
       console.info('OnResultPage_0600 START');
@@ -253,10 +265,12 @@ export default function OnResultPage() {
     });
 
     /**
-     * @tc.number    OnResultPage_0700
-     * @tc.name      OnResultPage_0700
-     * @tc.desc      Test push dialog page popToIndex
-     * @tc.level     Level 2
+     * @tc.name   OnResultPage_0700
+     * @tc.number OnResultPage_0700
+     * @tc.desc   Test push dialog page popToIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OnResultPage_0700',  Level.LEVEL0, async (done: Function) => {
       console.info('OnResultPage_0700 START');
@@ -286,10 +300,12 @@ export default function OnResultPage() {
     });
 
     /**
-     * @tc.number    OnResultPage_0800
-     * @tc.name      OnResultPage_0800
-     * @tc.desc      Test push dialog page popToName
-     * @tc.level     Level 2
+     * @tc.name   OnResultPage_0800
+     * @tc.number OnResultPage_0800
+     * @tc.desc   Test push dialog page popToName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OnResultPage_0800',  Level.LEVEL0, async (done: Function) => {
       console.info('OnResultPage_0800 START');

@@ -24,12 +24,12 @@ import { ModuleB } from './exportTest/index'
 export default function staticExport() {
   describe('StaticExportTest', () => {
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_EXPORT_0100
-     * @tc.name      : testStaticExport01
-     * @tc.desc      : Static export test, directly exporting using export {}.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStaticExport01
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_EXPORT_0100
+     * @tc.desc   Static export test, directly exporting using export {}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStaticExport01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testStaticExport01";
@@ -42,12 +42,12 @@ export default function staticExport() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_EXPORT_0200
-     * @tc.name      : testStaticExport02
-     * @tc.desc      : Static export test, indirectly exporting using export {}.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStaticExport02
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_EXPORT_0200
+     * @tc.desc   Static export test, indirectly exporting using export {}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStaticExport02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testStaticExport02";
@@ -60,12 +60,12 @@ export default function staticExport() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_EXPORT_0300
-     * @tc.name      : testStaticExport03
-     * @tc.desc      : Static export test, directly exporting using export *.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStaticExport03
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_EXPORT_0300
+     * @tc.desc   Static export test, directly exporting using export *.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStaticExport03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testStaticExport03";
@@ -78,12 +78,12 @@ export default function staticExport() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_EXPORT_0400
-     * @tc.name      : testStaticExport04
-     * @tc.desc      : Static export test, indirectly exporting using export *.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStaticExport04
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_EXPORT_0400
+     * @tc.desc   Static export test, indirectly exporting using export *.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStaticExport04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testStaticExport04";
@@ -96,12 +96,12 @@ export default function staticExport() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_EXPORT_0500
-     * @tc.name      : testStaticExport05
-     * @tc.desc      : Static export test, directly exporting using export * as obj.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStaticExport05
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_EXPORT_0500
+     * @tc.desc   Static export test, directly exporting using export * as obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStaticExport05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testStaticExport05";
@@ -114,12 +114,12 @@ export default function staticExport() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_EXPORT_0600
-     * @tc.name      : testStaticExport06
-     * @tc.desc      : Static export test, indirectly exporting using export * as obj.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStaticExport06
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_EXPORT_0600
+     * @tc.desc   Static export test, indirectly exporting using export * as obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStaticExport06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testStaticExport06";

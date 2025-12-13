@@ -16,10 +16,13 @@ group("ActsWebResourceInterceptionTest") {
   if (is_standard_system) {
     deps = [
       "resource_interception_cloudservice_webController_five:ActsWebResourceInterceptionCloudServiceWebControllerFiveTest",
+       "resource_interception_cloudservice_webController_five_static:ActsWebResourceInterceptionCloudServiceWebControllerFiveStaticTest",
       "resource_interception_cloudservice_webController_four:ActsWebResourceInterceptionCloudServiceWebControllerFourTest",
       "resource_interception_cloudservice_webController_one:ActsWebResourceInterceptionCloudServiceWebControllerOneTest",
       "resource_interception_cloudservice_webController_seven:ActsWebResourceInterceptionCloudServiceWebControllerSevenTest",
+      "resource_interception_cloudservice_webController_seven_static:ActsWebResourceInterceptionCloudServiceWebControllerSevenStaticTest",
       "resource_interception_cloudservice_webController_six:ActsWebResourceInterceptionCloudServiceWebControllerSixTest",
+      "resource_interception_cloudservice_webController_six_static:ActsWebResourceInterceptionCloudServiceWebControllerSixStaticTest",
       "resource_interception_cloudservice_webController_three:ActsWebResourceInterceptionCloudServiceWebControllerThreeTest",
       "resource_interception_cloudservice_webController_two:ActsWebResourceInterceptionCloudServiceWebControllerTwoTest",
     ]

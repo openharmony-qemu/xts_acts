@@ -26,104 +26,104 @@ export default function commonAttrsTransitionEffectRotateTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSITIONEFFECTROTATE_0100
-     * @tc.name       : testCommonAttrsTransitionRotate001
-     * @tc.desc       : testing TransitionEffect Rotate for common with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTransitionRotate001
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSITIONEFFECTROTATE_0100
+     * @tc.desc   testing TransitionEffect Rotate for common with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTransitionRotate001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTransitionRotate001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSITIONEFFECTROTATE_0200
-     * @tc.name       : testCommonAttrsTransitionRotate002
-     * @tc.desc       : testing TransitionEffect Rotate for common with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTransitionRotate002
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSITIONEFFECTROTATE_0200
+     * @tc.desc   testing TransitionEffect Rotate for common with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTransitionRotate002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTransitionRotate002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSITIONEFFECTROTATE_0300
-     * @tc.name       : testCommonAttrsTransitionRotate003
-     * @tc.desc       : testing TransitionEffect Rotate for common with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTransitionRotate003
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSITIONEFFECTROTATE_0300
+     * @tc.desc   testing TransitionEffect Rotate for common with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTransitionRotate003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTransitionRotate003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSITIONEFFECTROTATE_0400
-     * @tc.name       : testCommonAttrsTransitionRotate004
-     * @tc.desc       : testing TransitionEffect Rotate for common with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTransitionRotate004
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSITIONEFFECTROTATE_0400
+     * @tc.desc   testing TransitionEffect Rotate for common with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTransitionRotate004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTransitionRotate004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSITIONEFFECTROTATE_0500
-     * @tc.name       : testCommonAttrsTransitionRotate005
-     * @tc.desc       : testing TransitionEffect Rotate for common with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTransitionRotate005
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSITIONEFFECTROTATE_0500
+     * @tc.desc   testing TransitionEffect Rotate for common with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTransitionRotate005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTransitionRotate005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSITIONEFFECTROTATE_0600
-     * @tc.name       : testCommonAttrsTransitionRotate006
-     * @tc.desc       : testing TransitionEffect Rotate for common with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTransitionRotate006
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSITIONEFFECTROTATE_0600
+     * @tc.desc   testing TransitionEffect Rotate for common with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTransitionRotate006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTransitionRotate006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSITIONEFFECTROTATE_0700
-     * @tc.name       : testCommonAttrsTransitionRotate007
-     * @tc.desc       : testing TransitionEffect Rotate for common with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTransitionRotate007
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSITIONEFFECTROTATE_0700
+     * @tc.desc   testing TransitionEffect Rotate for common with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTransitionRotate007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTransitionRotate007()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSITIONEFFECTROTATE_0800
-     * @tc.name       : testCommonAttrsTransitionRotate008
-     * @tc.desc       : testing resetAttribute TransitionEffect Rotate for common
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTransitionRotate008
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSITIONEFFECTROTATE_0800
+     * @tc.desc   testing resetAttribute TransitionEffect Rotate for common
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTransitionRotate008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTransitionRotate008()).assertEqual(0)

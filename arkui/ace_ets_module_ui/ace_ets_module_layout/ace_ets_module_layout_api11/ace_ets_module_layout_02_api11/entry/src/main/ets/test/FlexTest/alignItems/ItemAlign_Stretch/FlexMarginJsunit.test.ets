@@ -45,9 +45,12 @@ export default function flexMargin_StretchJsunit() {
     });
 
     /**
+     * @tc.name   testItemAlignStretchParentSetMargin
      * @tc.number SUB_ACE_FLEXALIGNITEMS_STRETCH_0500
-     * @tc.name testItemAlignStretchParentSetMargin
-     * @tc.desc Parent component set margin attribute.
+     * @tc.desc   Parent component set margin attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testItemAlignStretchParentSetMargin',  Level.LEVEL0, async () => {
       console.info('new testItemAlignStretchParentSetMargin START');

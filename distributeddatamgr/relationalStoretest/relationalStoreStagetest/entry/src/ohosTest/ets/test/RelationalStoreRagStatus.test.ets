@@ -73,12 +73,12 @@ describe('relationalStoreRagStatusTest', () => {
     })
 
     /**
-     * @tc.name SUB_DDM_RELATIONALETS_RAGSTATUSTEST_0010
+     * @tc.name   SUB_DDM_RELATIONALETS_RAGSTATUSTEST_0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RagStatusTest_0100
-     * @tc.desc resultSet getBlob normal test
-	 * @tc.size MediumTest
-	 * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_RELATIONALETS_RAGSTATUSTEST_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.info(TAG + '************* SUB_DDM_RELATIONALETS_RAGSTATUSTEST_0010 start *************');

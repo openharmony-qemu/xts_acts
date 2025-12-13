@@ -43,12 +43,12 @@ export default function cloudDataSetStrategyEtsTest() {
     console.log(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @tc.name setCloudStrategyTest001
+     * @tc.name   setCloudStrategyTest001
      * @tc.number SUB_DistributedData_CloudData_SDK_SetCloudStrategyTest_0100
-     * @tc.desc Test Js Api setCloudStrategy with null args.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Js Api setCloudStrategy with null args.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('setCloudStrategyTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* setCloudStrategyTest001 start *************");
@@ -68,12 +68,12 @@ export default function cloudDataSetStrategyEtsTest() {
     })
 
     /**
-     * @tc.name setCloudStrategyTest002
+     * @tc.name   setCloudStrategyTest002
      * @tc.number SUB_DistributedData_CloudData_SDK_SetCloudStrategyTest_0200
-     * @tc.desc Test Js Api setCloudStrategy with undefined args.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Js Api setCloudStrategy with undefined args.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('setCloudStrategyTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* setCloudStrategyTest002 start *************");
@@ -93,12 +93,12 @@ export default function cloudDataSetStrategyEtsTest() {
     })
 
     /**
-     * @tc.name setCloudStrategyTest003
+     * @tc.name   setCloudStrategyTest003
      * @tc.number SUB_DistributedData_CloudData_SDK_SetCloudStrategyTest_0300
-     * @tc.desc Test Js Api setCloudStrategy with undefined args.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Js Api setCloudStrategy with undefined args.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('setCloudStrategyTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* setCloudStrategyTest003 start *************");
@@ -118,12 +118,12 @@ export default function cloudDataSetStrategyEtsTest() {
     })
 
     /**
-     * @tc.name setCloudStrategyTest004
+     * @tc.name   setCloudStrategyTest004
      * @tc.number SUB_DistributedData_CloudData_SDK_SetCloudStrategyTest_0400
-     * @tc.desc Test Js Api setCloudStrategy with error param args.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Js Api setCloudStrategy with error param args.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('setCloudStrategyTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* setCloudStrategyTest004 start *************");
@@ -143,12 +143,12 @@ export default function cloudDataSetStrategyEtsTest() {
     })
 
     /**
-     * @tc.name setCloudStrategyTest005
+     * @tc.name   setCloudStrategyTest005
      * @tc.number SUB_DistributedData_CloudData_SDK_SetCloudStrategyTest_0500
-     * @tc.desc Test Js Api setCloudStrategy with WIFI args.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Js Api setCloudStrategy with WIFI args.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('setCloudStrategyTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* setCloudStrategyTest005 start *************");
@@ -172,12 +172,12 @@ export default function cloudDataSetStrategyEtsTest() {
     })
 
     /**
-     * @tc.name setCloudStrategyTest006
+     * @tc.name   setCloudStrategyTest006
      * @tc.number SUB_DistributedData_CloudData_SDK_SetCloudStrategyTest_0600
-     * @tc.desc Test Js Api setCloudStrategy with CELLULAR args.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Js Api setCloudStrategy with CELLULAR args.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('setCloudStrategyTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* setCloudStrategyTest006 start *************");
@@ -201,12 +201,12 @@ export default function cloudDataSetStrategyEtsTest() {
     })
 
     /**
-     * @tc.name setCloudStrategyTest007
+     * @tc.name   setCloudStrategyTest007
      * @tc.number SUB_DistributedData_CloudData_SDK_SetCloudStrategyTest_0700
-     * @tc.desc Test Js Api setCloudStrategy with args.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Js Api setCloudStrategy with args.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('setCloudStrategyTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* setCloudStrategyTest007 start *************");
@@ -230,12 +230,12 @@ export default function cloudDataSetStrategyEtsTest() {
     })
 
     /**
-     * @tc.name setCloudStrategyTest008
+     * @tc.name   setCloudStrategyTest008
      * @tc.number SUB_DistributedData_CloudData_SDK_SetCloudStrategyTest_0800
-     * @tc.desc Test Js Api setCloudStrategy with undefined param args.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Js Api setCloudStrategy with undefined param args.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('setCloudStrategyTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* setCloudStrategyTest008 start *************");
@@ -259,12 +259,12 @@ export default function cloudDataSetStrategyEtsTest() {
     })
 
     /**
-     * @tc.name setCloudStrategyTest009
+     * @tc.name   setCloudStrategyTest009
      * @tc.number SUB_DistributedData_CloudData_SDK_SetCloudStrategyTest_0900
-     * @tc.desc Test Js Api setCloudStrategy with null param args.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Js Api setCloudStrategy with null param args.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('setCloudStrategyTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* setCloudStrategyTest009 start *************");

@@ -156,6 +156,9 @@ static napi_value SetBoolToParameters(napi_env env, napi_callback_info info)
     bool value = true;
     ASSERT_EQ(OH_CommonEvent_SetBoolToParameters(parameters, KEY_BOOL, value), COMMONEVENT_ERR_OK);
     ASSERT_EQ(OH_CommonEvent_GetBoolFromParameters(parameters, KEY_BOOL, false), value);
+    if (!parameters) {
+        ASSERT_EQ(OH_CommonEvent_GetBoolFromParameters(parameters, KEY_BOOL, false), false);
+    }
     if (parameters != nullptr) {
         OH_CommonEvent_DestroyParameters(parameters);
         OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "DestroyParameters", 

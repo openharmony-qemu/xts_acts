@@ -71,12 +71,12 @@ export default function smsTextNoCardPublic() {
     let specification2: string = '3gpp2';
 
     /**
-     * @tc.number    : SUB_Telephony_SmsMms_CreateMessage_0100
-     * @tc.name      : testTelephonySmsMmsCreateMessage0100
-     * @tc.desc      : Create a SMS instance based on the Protocol Data Unit (PDU) and the specified SMS protocol. Use callback for asynchronous callback. version 10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testTelephonySmsMmsCreateMessage0100
+     * @tc.number SUB_Telephony_SmsMms_CreateMessage_0100
+     * @tc.desc   Create a SMS instance based on the Protocol Data Unit (PDU) and the specified SMS protocol. Use callback for asynchronous callback. version 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelephonySmsMmsCreateMessage0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonySmsMmsCreateMessage0100';
@@ -102,12 +102,12 @@ export default function smsTextNoCardPublic() {
     });
 
     /**
-     * @tc.number    : SUB_Telephony_SmsMms_CreateMessage_0200
-     * @tc.name      : testTelephonySmsMmsCreateMessage0200
-     * @tc.desc      : Create a SMS instance based on the Protocol Data Unit (PDU) and the specified SMS protocol. Use callback for asynchronous callback. version 10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testTelephonySmsMmsCreateMessage0200
+     * @tc.number SUB_Telephony_SmsMms_CreateMessage_0200
+     * @tc.desc   Create a SMS instance based on the Protocol Data Unit (PDU) and the specified SMS protocol. Use callback for asynchronous callback. version 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelephonySmsMmsCreateMessage0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonySmsMmsCreateMessage0200';
@@ -133,12 +133,12 @@ export default function smsTextNoCardPublic() {
     });
 
     /**
-     * @tc.number    : SUB_Telephony_SmsMms_CreateMessage_0300
-     * @tc.name      : testTelephonySmsMmsCreateMessage0300
-     * @tc.desc      : Create a SMS instance based on the Protocol Data Unit (PDU) and the specified SMS protocol. Use callback for asynchronous callback. version 10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testTelephonySmsMmsCreateMessage0300
+     * @tc.number SUB_Telephony_SmsMms_CreateMessage_0300
+     * @tc.desc   Create a SMS instance based on the Protocol Data Unit (PDU) and the specified SMS protocol. Use callback for asynchronous callback. version 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelephonySmsMmsCreateMessage0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonySmsMmsCreateMessage0300';
@@ -165,12 +165,12 @@ export default function smsTextNoCardPublic() {
     });
 
     /**
-     * @tc.number    : SUB_Telephony_SmsMms_CreateMessage_0500
-     * @tc.name      : testTelephonySmsMmsCreateMessage0500
-     * @tc.desc      : Create a SMS instance based on the Protocol Data Unit (PDU) and the specified SMS protocol. Use Promise asynchronous callback. version 10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testTelephonySmsMmsCreateMessage0500
+     * @tc.number SUB_Telephony_SmsMms_CreateMessage_0500
+     * @tc.desc   Create a SMS instance based on the Protocol Data Unit (PDU) and the specified SMS protocol. Use Promise asynchronous callback. version 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelephonySmsMmsCreateMessage0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonySmsMmsCreateMessage0500';
@@ -194,12 +194,12 @@ export default function smsTextNoCardPublic() {
     });
 
     /**
-     * @tc.number    : SUB_Telephony_SmsMms_CreateMessage_0600
-     * @tc.name      : testTelephonySmsMmsCreateMessage0600
-     * @tc.desc      : Create a SMS instance based on the Protocol Data Unit (PDU) and the specified SMS protocol. Use Promise asynchronous callback. version 10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testTelephonySmsMmsCreateMessage0600
+     * @tc.number SUB_Telephony_SmsMms_CreateMessage_0600
+     * @tc.desc   Create a SMS instance based on the Protocol Data Unit (PDU) and the specified SMS protocol. Use Promise asynchronous callback. version 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelephonySmsMmsCreateMessage0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonySmsMmsCreateMessage0600';
@@ -223,12 +223,12 @@ export default function smsTextNoCardPublic() {
     });
 
     /**
-     * @tc.number    : SUB_Telephony_SmsMms_CreateMessage_0700
-     * @tc.name      : testTelephonySmsMmsCreateMessage0700
-     * @tc.desc      : Create a SMS instance based on the Protocol Data Unit (PDU) and the specified SMS protocol. Use Promise asynchronous callback. version 10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testTelephonySmsMmsCreateMessage0700
+     * @tc.number SUB_Telephony_SmsMms_CreateMessage_0700
+     * @tc.desc   Create a SMS instance based on the Protocol Data Unit (PDU) and the specified SMS protocol. Use Promise asynchronous callback. version 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelephonySmsMmsCreateMessage0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonySmsMmsCreateMessage0700';
@@ -252,12 +252,12 @@ export default function smsTextNoCardPublic() {
     });
 
     /**
-     * @tc.number    : SUB_Telephony_SmsMms_CreateMessage_0900
-     * @tc.name      : testTelephonySmsMmsCreateMessage0900
-     * @tc.desc      : Create a SMS instance based on the Protocol Data Unit (PDU) and the specified SMS protocol. Use Promise asynchronous callback. version 10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testTelephonySmsMmsCreateMessage0900
+     * @tc.number SUB_Telephony_SmsMms_CreateMessage_0900
+     * @tc.desc   Create a SMS instance based on the Protocol Data Unit (PDU) and the specified SMS protocol. Use Promise asynchronous callback. version 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelephonySmsMmsCreateMessage0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonySmsMmsCreateMessage0900';

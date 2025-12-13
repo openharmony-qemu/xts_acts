@@ -202,12 +202,12 @@ export default function AudioRendererInterruptUnitTest() {
     }
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0100
-     * @tc.name      : AudioRender  ALARM INTERRUPT MUSIC
-     * @tc.desc      : AudioRender  ALARM INTERRUPT MUSIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0100
+     * @tc.desc   AudioRender  ALARM INTERRUPT MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       try {
@@ -237,12 +237,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0200
-     * @tc.name      : AudioRender  ALARM INTERRUPT MUSIC
-     * @tc.desc      : AudioRender  ALARM INTERRUPT MUSIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0200
+     * @tc.desc   AudioRender  ALARM INTERRUPT MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['MUSIC'], streamInfo['44100'],done)
@@ -268,12 +268,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0300
-     * @tc.name      : AudioRender  ALARM INTERRUPT MUSIC
-     * @tc.desc      : AudioRender  ALARM INTERRUPT MUSIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0300
+     * @tc.desc   AudioRender  ALARM INTERRUPT MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['MUSIC'], streamInfo['44100'],done)
@@ -299,12 +299,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0400
-     * @tc.name      : AudioRender  ALARM INTERRUPT MUSIC
-     * @tc.desc      : AudioRender  ALARM INTERRUPT MUSIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0400
+     * @tc.desc   AudioRender  ALARM INTERRUPT MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0400', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['MUSIC'], streamInfo['44100'],done)
@@ -330,12 +330,12 @@ export default function AudioRendererInterruptUnitTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0600
-     * @tc.name      : AudioRender  ALARM INTERRUPT MUSIC
-     * @tc.desc      : AudioRender  ALARM INTERRUPT MUSIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0600
+     * @tc.desc   AudioRender  ALARM INTERRUPT MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0600', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['MUSIC'], streamInfo['44100'],done)
@@ -361,12 +361,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0700
-     * @tc.name      : AudioRender  ACCESSIBILITY INTERRUPT MUSIC
-     * @tc.desc      : AudioRender  ACCESSIBILITY INTERRUPT MUSIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0700
+     * @tc.desc   AudioRender  ACCESSIBILITY INTERRUPT MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0700', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['MUSIC'], streamInfo['44100'],done)
@@ -392,12 +392,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0800
-     * @tc.name      : AudioRender  SPEECH INTERRUPT MUSIC
-     * @tc.desc      : AudioRender  SPEECH INTERRUPT MUSIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0800
+     * @tc.desc   AudioRender  SPEECH INTERRUPT MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0800', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['MUSIC'], streamInfo['44100'],done)
@@ -418,12 +418,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0900
-     * @tc.name      : AudioRender  MOVIE INTERRUPT MUSIC
-     * @tc.desc      : AudioRender  MOVIE INTERRUPT MUSIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0900
+     * @tc.desc   AudioRender  MOVIE INTERRUPT MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0900', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['MUSIC'], streamInfo['44100'],done)
@@ -444,12 +444,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1000
-     * @tc.name      : AudioRender  UNKNOW INTERRUPT MUSIC
-     * @tc.desc      : AudioRender  UNKNOW INTERRUPT MUSIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1000
+     * @tc.desc   AudioRender  UNKNOW INTERRUPT MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1000', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['MUSIC'], streamInfo['44100'],done)
@@ -470,12 +470,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1100
-     * @tc.name      : AudioRender  MUSIC INTERRUPT VOICE_COMMUNICATION
-     * @tc.desc      : AudioRender  MUSIC INTERRUPT VOICE_COMMUNICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1100
+     * @tc.desc   AudioRender  MUSIC INTERRUPT VOICE_COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['VOICE_COMMUNICATION'], streamInfo['44100'],done)
@@ -504,12 +504,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1200
-     * @tc.name      : AudioRender  VOICE_COMMUNICATION INTERRUPT VOICE_COMMUNICATION
-     * @tc.desc      : AudioRender  VOICE_COMMUNICATION INTERRUPT VOICE_COMMUNICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1200
+     * @tc.desc   AudioRender  VOICE_COMMUNICATION INTERRUPT VOICE_COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['VOICE_COMMUNICATION'], streamInfo['44100'],done)
@@ -536,12 +536,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1300
-     * @tc.name      : AudioRender  RINGTONE INTERRUPT VOICE_COMMUNICATION
-     * @tc.desc      : AudioRender  RINGTONE INTERRUPT VOICE_COMMUNICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1300
+     * @tc.desc   AudioRender  RINGTONE INTERRUPT VOICE_COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let flag1 = false;
@@ -570,12 +570,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1400
-     * @tc.name      : AudioRender  VOICE_ASSISTANT INTERRUPT VOICE_COMMUNICATION
-     * @tc.desc      : AudioRender  VOICE_ASSISTANT INTERRUPT VOICE_COMMUNICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1400
+     * @tc.desc   AudioRender  VOICE_ASSISTANT INTERRUPT VOICE_COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1400', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['VOICE_COMMUNICATION'], streamInfo['44100'],done)
@@ -590,12 +590,12 @@ export default function AudioRendererInterruptUnitTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1600
-     * @tc.name      : AudioRender  ALARM INTERRUPT VOICE_COMMUNICATION
-     * @tc.desc      : AudioRender  ALARM INTERRUPT VOICE_COMMUNICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1600
+     * @tc.desc   AudioRender  ALARM INTERRUPT VOICE_COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1600', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['VOICE_COMMUNICATION'], streamInfo['44100'],done)
@@ -621,12 +621,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1700
-     * @tc.name      : AudioRender  ACCESSIBILITY INTERRUPT VOICE_COMMUNICATION
-     * @tc.desc      : AudioRender  ACCESSIBILITY INTERRUPT VOICE_COMMUNICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1700
+     * @tc.desc   AudioRender  ACCESSIBILITY INTERRUPT VOICE_COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1700', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['VOICE_COMMUNICATION'], streamInfo['44100'],done)
@@ -652,12 +652,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1800
-     * @tc.name      : AudioRender  SPEECH INTERRUPT VOICE_COMMUNICATION
-     * @tc.desc      : AudioRender  SPEECH INTERRUPT VOICE_COMMUNICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1800
+     * @tc.desc   AudioRender  SPEECH INTERRUPT VOICE_COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1800', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['VOICE_COMMUNICATION'], streamInfo['44100'],done)
@@ -685,12 +685,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1900
-     * @tc.name      : AudioRender  MOVIE INTERRUPT VOICE_COMMUNICATION
-     * @tc.desc      : AudioRender  MOVIE INTERRUPT VOICE_COMMUNICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1900
+     * @tc.desc   AudioRender  MOVIE INTERRUPT VOICE_COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_1900', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['VOICE_COMMUNICATION'], streamInfo['44100'],done)
@@ -718,12 +718,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2000
-     * @tc.name      : AudioRender  UNKNOW INTERRUPT VOICE_COMMUNICATION
-     * @tc.desc      : AudioRender  UNKNOW INTERRUPT VOICE_COMMUNICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2000
+     * @tc.desc   AudioRender  UNKNOW INTERRUPT VOICE_COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2000', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['VOICE_COMMUNICATION'], streamInfo['44100'],done)
@@ -752,12 +752,12 @@ export default function AudioRendererInterruptUnitTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2100
-     * @tc.name      : AudioRender  MUSIC INTERRUPT RINGTONE
-     * @tc.desc      : AudioRender  MUSIC INTERRUPT RINGTONE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2100
+     * @tc.desc   AudioRender  MUSIC INTERRUPT RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['RINGTONE'], streamInfo['44100'],done)
@@ -783,12 +783,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2200
-     * @tc.name      : AudioRender  VOICE_COMMUNICATION INTERRUPT RINGTONE
-     * @tc.desc      : AudioRender  VOICE_COMMUNICATION INTERRUPT RINGTONE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2200
+     * @tc.desc   AudioRender  VOICE_COMMUNICATION INTERRUPT RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['RINGTONE'], streamInfo['44100'],done)
@@ -809,12 +809,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2300
-     * @tc.name      : AudioRender  RINGTONE INTERRUPT RINGTONE
-     * @tc.desc      : AudioRender  RINGTONE INTERRUPT RINGTONE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2300
+     * @tc.desc   AudioRender  RINGTONE INTERRUPT RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let flag1 = false;
@@ -843,12 +843,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2400
-     * @tc.name      : AudioRender  VOICE_ASSISTANT INTERRUPT RINGTONE
-     * @tc.desc      : AudioRender  VOICE_ASSISTANT INTERRUPT RINGTONE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2400
+     * @tc.desc   AudioRender  VOICE_ASSISTANT INTERRUPT RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2400', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['RINGTONE'], streamInfo['44100'],done)
@@ -863,12 +863,12 @@ export default function AudioRendererInterruptUnitTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2600
-     * @tc.name      : AudioRender  ALARM INTERRUPT RINGTONE
-     * @tc.desc      : AudioRender  ALARM INTERRUPT RINGTONE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2600
+     * @tc.desc   AudioRender  ALARM INTERRUPT RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2600', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let flag1 = false;
@@ -897,12 +897,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2700
-     * @tc.name      : AudioRender  ACCESSIBILITY INTERRUPT RINGTONE
-     * @tc.desc      : AudioRender  ACCESSIBILITY INTERRUPT RINGTONE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2700
+     * @tc.desc   AudioRender  ACCESSIBILITY INTERRUPT RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2700', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['RINGTONE'], streamInfo['44100'],done)
@@ -928,12 +928,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2800
-     * @tc.name      : AudioRender  SPEECH INTERRUPT RINGTONE
-     * @tc.desc      : AudioRender  SPEECH INTERRUPT RINGTONE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2800
+     * @tc.desc   AudioRender  SPEECH INTERRUPT RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2800', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['RINGTONE'], streamInfo['44100'],done)
@@ -959,12 +959,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2900
-     * @tc.name      : AudioRender  MOVIE INTERRUPT RINGTONE
-     * @tc.desc      : AudioRender  MOVIE INTERRUPT RINGTONE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2900
+     * @tc.desc   AudioRender  MOVIE INTERRUPT RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_2900', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['RINGTONE'], streamInfo['44100'],done)
@@ -990,12 +990,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3000
-     * @tc.name      : AudioRender  UNKNOW INTERRUPT RINGTONE
-     * @tc.desc      : AudioRender  UNKNOW INTERRUPT RINGTONE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3000
+     * @tc.desc   AudioRender  UNKNOW INTERRUPT RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3000', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['RINGTONE'], streamInfo['44100'],done)
@@ -1022,12 +1022,12 @@ export default function AudioRendererInterruptUnitTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3100
-     * @tc.name      : AudioRender  MUSIC INTERRUPT VOICE_ASSISTANT
-     * @tc.desc      : AudioRender  MUSIC INTERRUPT VOICE_ASSISTANT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3100
+     * @tc.desc   AudioRender  MUSIC INTERRUPT VOICE_ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'], streamInfo['44100'],done)
@@ -1048,12 +1048,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3200
-     * @tc.name      : AudioRender  VOICE_COMMUNICATION INTERRUPT VOICE_ASSISTANT
-     * @tc.desc      : AudioRender  VOICE_COMMUNICATION INTERRUPT VOICE_ASSISTANT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3200
+     * @tc.desc   AudioRender  VOICE_COMMUNICATION INTERRUPT VOICE_ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'], streamInfo['44100'],done)
@@ -1074,12 +1074,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3300
-     * @tc.name      : AudioRender  RINGTONE INTERRUPT VOICE_ASSISTANT
-     * @tc.desc      : AudioRender  RINGTONE INTERRUPT VOICE_ASSISTANT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3300
+     * @tc.desc   AudioRender  RINGTONE INTERRUPT VOICE_ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'], streamInfo['44100'],done)
@@ -1100,12 +1100,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3400
-     * @tc.name      : AudioRender  VOICE_ASSISTANT INTERRUPT VOICE_ASSISTANT
-     * @tc.desc      : AudioRender  VOICE_ASSISTANT INTERRUPT VOICE_ASSISTANT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3400
+     * @tc.desc   AudioRender  VOICE_ASSISTANT INTERRUPT VOICE_ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3400', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'], streamInfo['44100'],done)
@@ -1127,12 +1127,12 @@ export default function AudioRendererInterruptUnitTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3600
-     * @tc.name      : AudioRender  ALARM INTERRUPT VOICE_ASSISTANT
-     * @tc.desc      : AudioRender  ALARM INTERRUPT VOICE_ASSISTANT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3600
+     * @tc.desc   AudioRender  ALARM INTERRUPT VOICE_ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3600', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'], streamInfo['44100'],done)
@@ -1153,12 +1153,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3700
-     * @tc.name      : AudioRender  ACCESSIBILITY INTERRUPT ACCESSIBILITY
-     * @tc.desc      : AudioRender  ACCESSIBILITY INTERRUPT ACCESSIBILITY
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3700
+     * @tc.desc   AudioRender  ACCESSIBILITY INTERRUPT ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3700', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'], streamInfo['44100'],done)
@@ -1179,12 +1179,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3800
-     * @tc.name      : AudioRender  SPEECH INTERRUPT VOICE_ASSISTANT
-     * @tc.desc      : AudioRender  SPEECH INTERRUPT VOICE_ASSISTANT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3800
+     * @tc.desc   AudioRender  SPEECH INTERRUPT VOICE_ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3800', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'], streamInfo['44100'],done)
@@ -1205,12 +1205,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3900
-     * @tc.name      : AudioRender  MOVIE INTERRUPT VOICE_ASSISTANT
-     * @tc.desc      : AudioRender  MOVIE INTERRUPT VOICE_ASSISTANT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3900
+     * @tc.desc   AudioRender  MOVIE INTERRUPT VOICE_ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3900', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'], streamInfo['44100'],done)
@@ -1231,12 +1231,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_4000
-     * @tc.name      : AudioRender  UNKNOW INTERRUPT VOICE_ASSISTANT
-     * @tc.desc      : AudioRender  UNKNOW INTERRUPT VOICE_ASSISTANT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_4000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_4000
+     * @tc.desc   AudioRender  UNKNOW INTERRUPT VOICE_ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_4000', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'], streamInfo['44100'],done)
@@ -1258,12 +1258,12 @@ export default function AudioRendererInterruptUnitTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5100
-     * @tc.name      : AudioRender  MUSIC INTERRUPT ALARM
-     * @tc.desc      : AudioRender  MUSIC INTERRUPT ALARM
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5100
+     * @tc.desc   AudioRender  MUSIC INTERRUPT ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['ALARM'], streamInfo['44100'],done)
@@ -1283,12 +1283,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5200
-     * @tc.name      : AudioRender  VOICE_COMMUNICATION INTERRUPT ALARM
-     * @tc.desc      : AudioRender  VOICE_COMMUNICATION INTERRUPT ALARM
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5200
+     * @tc.desc   AudioRender  VOICE_COMMUNICATION INTERRUPT ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['ALARM'], streamInfo['44100'],done)
@@ -1309,12 +1309,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5300
-     * @tc.name      : AudioRender  RINGTONE INTERRUPT ALARM
-     * @tc.desc      : AudioRender  RINGTONE INTERRUPT ALARM
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5300
+     * @tc.desc   AudioRender  RINGTONE INTERRUPT ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['ALARM'], streamInfo['44100'],done)
@@ -1335,12 +1335,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5400
-     * @tc.name      : AudioRender  ALARM INTERRUPT ALARM
-     * @tc.desc      : AudioRender  ALARM INTERRUPT ALARM
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5400
+     * @tc.desc   AudioRender  ALARM INTERRUPT ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5400', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['ALARM'], streamInfo['44100'],done)
@@ -1367,12 +1367,12 @@ export default function AudioRendererInterruptUnitTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5600
-     * @tc.name      : AudioRender  ALARM INTERRUPT ALARM
-     * @tc.desc      : AudioRender  ALARM INTERRUPT ALARM
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5600
+     * @tc.desc   AudioRender  ALARM INTERRUPT ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5600', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['ALARM'], streamInfo['44100'],done)
@@ -1393,12 +1393,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5700
-     * @tc.name      : AudioRender  ACCESSIBILITY INTERRUPT ALARM
-     * @tc.desc      : AudioRender  ACCESSIBILITY INTERRUPT ALARM
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5700
+     * @tc.desc   AudioRender  ACCESSIBILITY INTERRUPT ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5700', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['ALARM'], streamInfo['44100'],done)
@@ -1424,12 +1424,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5800
-     * @tc.name      : AudioRender  SPEECH INTERRUPT ALARM
-     * @tc.desc      : AudioRender  SPEECH INTERRUPT ALARM
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5800
+     * @tc.desc   AudioRender  SPEECH INTERRUPT ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5800', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['ALARM'], streamInfo['44100'],done)
@@ -1449,12 +1449,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5900
-     * @tc.name      : AudioRender  MOVIE INTERRUPT ALARM
-     * @tc.desc      : AudioRender  MOVIE INTERRUPT ALARM
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5900
+     * @tc.desc   AudioRender  MOVIE INTERRUPT ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_5900', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['ALARM'], streamInfo['44100'],done)
@@ -1474,12 +1474,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6000
-     * @tc.name      : AudioRender  UNKNOW INTERRUPT ALARM
-     * @tc.desc      : AudioRender  UNKNOW INTERRUPT ALARM
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6000
+     * @tc.desc   AudioRender  UNKNOW INTERRUPT ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6000', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['ALARM'], streamInfo['44100'],done)
@@ -1500,12 +1500,12 @@ export default function AudioRendererInterruptUnitTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6100
-     * @tc.name      : AudioRender  MUSIC INTERRUPT ACCESSIBILITY
-     * @tc.desc      : AudioRender  MUSIC INTERRUPT ACCESSIBILITY
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6100
+     * @tc.desc   AudioRender  MUSIC INTERRUPT ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['ACCESSIBILITY'], streamInfo['44100'],done)
@@ -1530,12 +1530,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6200
-     * @tc.name      : AudioRender  VOICE_COMMUNICATION INTERRUPT ACCESSIBILITY
-     * @tc.desc      : AudioRender  VOICE_COMMUNICATION INTERRUPT ACCESSIBILITY
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6200
+     * @tc.desc   AudioRender  VOICE_COMMUNICATION INTERRUPT ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['ACCESSIBILITY'], streamInfo['44100'],done)
@@ -1561,12 +1561,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6300
-     * @tc.name      : AudioRender  RINGTONE INTERRUPT ACCESSIBILITY
-     * @tc.desc      : AudioRender  RINGTONE INTERRUPT ACCESSIBILITY
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6300
+     * @tc.desc   AudioRender  RINGTONE INTERRUPT ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['ACCESSIBILITY'], streamInfo['44100'],done)
@@ -1592,12 +1592,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6400
-     * @tc.name      : AudioRender  VOICE_ASSISTANT INTERRUPT ACCESSIBILITY
-     * @tc.desc      : AudioRender  VOICE_ASSISTANT INTERRUPT ACCESSIBILITY
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6400
+     * @tc.desc   AudioRender  VOICE_ASSISTANT INTERRUPT ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6400', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['ACCESSIBILITY'], streamInfo['44100'],done)
@@ -1627,12 +1627,12 @@ export default function AudioRendererInterruptUnitTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6600
-     * @tc.name      : AudioRender  ALARM INTERRUPT ACCESSIBILITY
-     * @tc.desc      : AudioRender  ALARM INTERRUPT ACCESSIBILITY
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6600
+     * @tc.desc   AudioRender  ALARM INTERRUPT ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6600', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['ACCESSIBILITY'], streamInfo['44100'],done)
@@ -1658,12 +1658,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6700
-     * @tc.name      : AudioRender  ACCESSIBILITY INTERRUPT ACCESSIBILITY
-     * @tc.desc      : AudioRender  ACCESSIBILITY INTERRUPT ACCESSIBILITY
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6700
+     * @tc.desc   AudioRender  ACCESSIBILITY INTERRUPT ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6700', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['ACCESSIBILITY'], streamInfo['44100'],done)
@@ -1684,12 +1684,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6800
-     * @tc.name      : AudioRender  SPEECH INTERRUPT ACCESSIBILITY
-     * @tc.desc      : AudioRender  SPEECH INTERRUPT ACCESSIBILITY
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6800
+     * @tc.desc   AudioRender  SPEECH INTERRUPT ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6800', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['ACCESSIBILITY'], streamInfo['44100'],done)
@@ -1714,12 +1714,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6900
-     * @tc.name      : AudioRender  MOVIE INTERRUPT ACCESSIBILITY
-     * @tc.desc      : AudioRender  MOVIE INTERRUPT ACCESSIBILITY
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6900
+     * @tc.desc   AudioRender  MOVIE INTERRUPT ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_6900', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['ACCESSIBILITY'], streamInfo['44100'],done)
@@ -1745,12 +1745,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7000
-     * @tc.name      : AudioRender  UNKNOW INTERRUPT ACCESSIBILITY
-     * @tc.desc      : AudioRender  UNKNOW INTERRUPT ACCESSIBILITY
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7000
+     * @tc.desc   AudioRender  UNKNOW INTERRUPT ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7000', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['ACCESSIBILITY'], streamInfo['44100'],done)
@@ -1777,12 +1777,12 @@ export default function AudioRendererInterruptUnitTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7100
-     * @tc.name      : AudioRender  MUSIC INTERRUPT SPEECH
-     * @tc.desc      : AudioRender  MUSIC INTERRUPT SPEECH
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7100
+     * @tc.desc   AudioRender  MUSIC INTERRUPT SPEECH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['SPEECH'], streamInfo['44100'],done)
@@ -1803,12 +1803,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7200
-     * @tc.name      : AudioRender  VOICE_COMMUNICATION INTERRUPT SPEECH
-     * @tc.desc      : AudioRender  VOICE_COMMUNICATION INTERRUPT SPEECH
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7200
+     * @tc.desc   AudioRender  VOICE_COMMUNICATION INTERRUPT SPEECH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['SPEECH'], streamInfo['44100'],done)
@@ -1834,12 +1834,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7300
-     * @tc.name      : AudioRender  RINGTONE INTERRUPT SPEECH
-     * @tc.desc      : AudioRender  RINGTONE INTERRUPT SPEECH
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7300
+     * @tc.desc   AudioRender  RINGTONE INTERRUPT SPEECH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['SPEECH'], streamInfo['44100'],done)
@@ -1865,12 +1865,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7400
-     * @tc.name      : AudioRender  VOICE_ASSISTANT INTERRUPT SPEECH
-     * @tc.desc      : AudioRender  VOICE_ASSISTANT INTERRUPT SPEECH
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7400
+     * @tc.desc   AudioRender  VOICE_ASSISTANT INTERRUPT SPEECH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7400', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['SPEECH'], streamInfo['44100'],done)
@@ -1897,12 +1897,12 @@ export default function AudioRendererInterruptUnitTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7600
-     * @tc.name      : AudioRender  ALARM INTERRUPT SPEECH
-     * @tc.desc      : AudioRender  ALARM INTERRUPT SPEECH
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7600
+     * @tc.desc   AudioRender  ALARM INTERRUPT SPEECH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7600', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['SPEECH'], streamInfo['44100'],done)
@@ -1928,12 +1928,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7700
-     * @tc.name      : AudioRender  ACCESSIBILITY INTERRUPT SPEECH
-     * @tc.desc      : AudioRender  ACCESSIBILITY INTERRUPT SPEECH
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7700
+     * @tc.desc   AudioRender  ACCESSIBILITY INTERRUPT SPEECH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7700', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['SPEECH'], streamInfo['44100'],done)
@@ -1959,12 +1959,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7800
-     * @tc.name      : AudioRender  SPEECH INTERRUPT SPEECH
-     * @tc.desc      : AudioRender  SPEECH INTERRUPT SPEECH
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7800
+     * @tc.desc   AudioRender  SPEECH INTERRUPT SPEECH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7800', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['SPEECH'], streamInfo['44100'],done)
@@ -1985,12 +1985,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7900
-     * @tc.name      : AudioRender  MOVIE INTERRUPT SPEECH
-     * @tc.desc      : AudioRender  MOVIE INTERRUPT SPEECH
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7900
+     * @tc.desc   AudioRender  MOVIE INTERRUPT SPEECH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7900', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['SPEECH'], streamInfo['44100'],done)
@@ -2011,12 +2011,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8000
-     * @tc.name      : AudioRender  UNKNOW INTERRUPT SPEECH
-     * @tc.desc      : AudioRender  UNKNOW INTERRUPT SPEECH
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8000
+     * @tc.desc   AudioRender  UNKNOW INTERRUPT SPEECH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8000', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['SPEECH'], streamInfo['44100'],done)
@@ -2038,12 +2038,12 @@ export default function AudioRendererInterruptUnitTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8100
-     * @tc.name      : AudioRender  MUSIC INTERRUPT MOVIE
-     * @tc.desc      : AudioRender  MUSIC INTERRUPT MOVIE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8100
+     * @tc.desc   AudioRender  MUSIC INTERRUPT MOVIE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['MOVIE'], streamInfo['44100'],done)
@@ -2064,12 +2064,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8200
-     * @tc.name      : AudioRender  VOICE_COMMUNICATION INTERRUPT MOVIE
-     * @tc.desc      : AudioRender  VOICE_COMMUNICATION INTERRUPT MOVIE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8200
+     * @tc.desc   AudioRender  VOICE_COMMUNICATION INTERRUPT MOVIE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['MOVIE'], streamInfo['44100'],done)
@@ -2095,12 +2095,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8300
-     * @tc.name      : AudioRender  RINGTONE INTERRUPT MOVIE
-     * @tc.desc      : AudioRender  RINGTONE INTERRUPT MOVIE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8300
+     * @tc.desc   AudioRender  RINGTONE INTERRUPT MOVIE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['MOVIE'], streamInfo['44100'],done)
@@ -2126,12 +2126,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8400
-     * @tc.name      : AudioRender  VOICE_ASSISTANT INTERRUPT MOVIE
-     * @tc.desc      : AudioRender  VOICE_ASSISTANT INTERRUPT MOVIE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8400
+     * @tc.desc   AudioRender  VOICE_ASSISTANT INTERRUPT MOVIE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8400', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['MOVIE'], streamInfo['44100'],done)
@@ -2158,12 +2158,12 @@ export default function AudioRendererInterruptUnitTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8600
-     * @tc.name      : AudioRender  ALARM INTERRUPT MOVIE
-     * @tc.desc      : AudioRender  ALARM INTERRUPT MOVIE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8600
+     * @tc.desc   AudioRender  ALARM INTERRUPT MOVIE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8600', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['MOVIE'], streamInfo['44100'],done)
@@ -2189,12 +2189,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8700
-     * @tc.name      : AudioRender  ACCESSIBILITY INTERRUPT MOVIE
-     * @tc.desc      : AudioRender  ACCESSIBILITY INTERRUPT MOVIE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8700
+     * @tc.desc   AudioRender  ACCESSIBILITY INTERRUPT MOVIE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8700', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['MOVIE'], streamInfo['44100'],done)
@@ -2220,12 +2220,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8800
-     * @tc.name      : AudioRender  SPEECH INTERRUPT MOVIE
-     * @tc.desc      : AudioRender  SPEECH INTERRUPT MOVIE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8800
+     * @tc.desc   AudioRender  SPEECH INTERRUPT MOVIE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8800', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['MOVIE'], streamInfo['44100'],done)
@@ -2246,12 +2246,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8900
-     * @tc.name      : AudioRender  MOVIE INTERRUPT MOVIE
-     * @tc.desc      : AudioRender  MOVIE INTERRUPT MOVIE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8900
+     * @tc.desc   AudioRender  MOVIE INTERRUPT MOVIE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_8900', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['MOVIE'], streamInfo['44100'],done)
@@ -2272,12 +2272,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9000
-     * @tc.name      : AudioRender  UNKNOW INTERRUPT MOVIE
-     * @tc.desc      : AudioRender  UNKNOW INTERRUPT MOVIE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9000
+     * @tc.desc   AudioRender  UNKNOW INTERRUPT MOVIE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9000', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['MOVIE'], streamInfo['44100'],done)
@@ -2298,12 +2298,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9100
-     * @tc.name      : AudioRender  ALARM INTERRUPT MUSIC
-     * @tc.desc      : AudioRender  ALARM INTERRUPT MUSIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9100
+     * @tc.desc   AudioRender  ALARM INTERRUPT MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['UNKNOW'], streamInfo['44100'],done)
@@ -2324,12 +2324,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9200
-     * @tc.name      : AudioRender  ALARM INTERRUPT MUSIC
-     * @tc.desc      : AudioRender  ALARM INTERRUPT MUSIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9200
+     * @tc.desc   AudioRender  ALARM INTERRUPT MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['UNKNOW'], streamInfo['44100'],done)
@@ -2355,12 +2355,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9300
-     * @tc.name      : AudioRender  ALARM INTERRUPT MUSIC
-     * @tc.desc      : AudioRender  ALARM INTERRUPT MUSIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9300
+     * @tc.desc   AudioRender  ALARM INTERRUPT MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['UNKNOW'], streamInfo['44100'],done)
@@ -2386,12 +2386,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9400
-     * @tc.name      : AudioRender  ALARM INTERRUPT MUSIC
-     * @tc.desc      : AudioRender  ALARM INTERRUPT MUSIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9400
+     * @tc.desc   AudioRender  ALARM INTERRUPT MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9400', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['UNKNOW'], streamInfo['44100'],done)
@@ -2418,12 +2418,12 @@ export default function AudioRendererInterruptUnitTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9600
-     * @tc.name      : AudioRender  ALARM INTERRUPT MUSIC
-     * @tc.desc      : AudioRender  ALARM INTERRUPT MUSIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9600
+     * @tc.desc   AudioRender  ALARM INTERRUPT MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9600', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['UNKNOW'], streamInfo['44100'],done)
@@ -2449,12 +2449,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9700
-     * @tc.name      : AudioRender  ALARM INTERRUPT MUSIC
-     * @tc.desc      : AudioRender  ALARM INTERRUPT MUSIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9700
+     * @tc.desc   AudioRender  ALARM INTERRUPT MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9700', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['UNKNOW'], streamInfo['44100'],done)
@@ -2480,12 +2480,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9800
-     * @tc.name      : AudioRender  ALARM INTERRUPT MUSIC
-     * @tc.desc      : AudioRender  ALARM INTERRUPT MUSIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9800
+     * @tc.desc   AudioRender  ALARM INTERRUPT MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9800', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['UNKNOW'], streamInfo['44100'],done)
@@ -2506,12 +2506,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9900
-     * @tc.name      : AudioRender  ALARM INTERRUPT MUSIC
-     * @tc.desc      : AudioRender  ALARM INTERRUPT MUSIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9900
+     * @tc.desc   AudioRender  ALARM INTERRUPT MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_9900', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['UNKNOW'], streamInfo['44100'],done)
@@ -2532,12 +2532,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_10000
-     * @tc.name      : AudioRender  UNKNOW INTERRUPT UNKNOW
-     * @tc.desc      : AudioRender  UNKNOW INTERRUPT UNKNOW
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_10000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_10000
+     * @tc.desc   AudioRender  UNKNOW INTERRUPT UNKNOW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_10000', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['UNKNOW'], streamInfo['44100'],done)
@@ -2558,12 +2558,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_10100
-     * @tc.name      : AudioRender  MUSIC INTERRUPT MUSIC
-     * @tc.desc      : AudioRender  MUSIC INTERRUPT MUSIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_10100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_10100
+     * @tc.desc   AudioRender  MUSIC INTERRUPT MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_10100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1_callback = false
@@ -2594,12 +2594,12 @@ export default function AudioRendererInterruptUnitTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_10200
-     * @tc.name      : AudioRender  MUSIC INTERRUPT MUSIC
-     * @tc.desc      : AudioRender  MUSIC INTERRUPT MUSIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_10200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_10200
+     * @tc.desc   AudioRender  MUSIC INTERRUPT MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_10200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1_callback = false
@@ -2632,12 +2632,12 @@ export default function AudioRendererInterruptUnitTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_10300
-     * @tc.name      : AudioRender  MUSIC INTERRUPT MUSIC
-     * @tc.desc      : AudioRender  MUSIC INTERRUPT MUSIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_10300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_10300
+     * @tc.desc   AudioRender  MUSIC INTERRUPT MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_10300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1_callback = false
@@ -2667,12 +2667,12 @@ export default function AudioRendererInterruptUnitTest() {
       done()
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7100
-     * @tc.name      : AudioRender  VOICE_COMMUNICATION INTERRUPT VOICE_MESSAGE
-     * @tc.desc      : AudioRender  VOICE_COMMUNICATION INTERRUPT VOICE_MESSAGE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7100
+     * @tc.desc   AudioRender  VOICE_COMMUNICATION INTERRUPT VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_7100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['VOICE_MESSAGE'], streamInfo['44100'],done)
@@ -2692,12 +2692,12 @@ export default function AudioRendererInterruptUnitTest() {
       done()
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_17200
-     * @tc.name      : AudioRender  VOICE_MESSAGE INTERRUPT VOICE_MESSAGE
-     * @tc.desc      : AudioRender  VOICE_MESSAGE INTERRUPT VOICE_MESSAGE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_17200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_17200
+     * @tc.desc   AudioRender  VOICE_MESSAGE INTERRUPT VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_17200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['VOICE_MESSAGE'], streamInfo['44100'],done)
@@ -2719,12 +2719,12 @@ export default function AudioRendererInterruptUnitTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_17500
-     * @tc.name      : AudioRender  RING INTERRUPT VOICE_MESSAGE
-     * @tc.desc      : AudioRender  RING INTERRUPT VOICE_MESSAGE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_17500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_17500
+     * @tc.desc   AudioRender  RING INTERRUPT VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_17500', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['VOICE_MESSAGE'], streamInfo['44100'],done)
@@ -2744,12 +2744,12 @@ export default function AudioRendererInterruptUnitTest() {
       done()
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_19100
-     * @tc.name      : AudioRender  MUSIC INTERRUPT VOICE_MESSAGE
-     * @tc.desc      : AudioRender  MUSIC INTERRUPT VOICE_MESSAGE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_19100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_19100
+     * @tc.desc   AudioRender  MUSIC INTERRUPT VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_19100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['VOICE_MESSAGE'], streamInfo['44100'],done)
@@ -2769,12 +2769,12 @@ export default function AudioRendererInterruptUnitTest() {
       done()
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_18300
-     * @tc.name      : AudioRender  MOVIE INTERRUPT VOICE_MESSAGE
-     * @tc.desc      : AudioRender  MOVIE INTERRUPT VOICE_MESSAGE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_18300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_18300
+     * @tc.desc   AudioRender  MOVIE INTERRUPT VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_18300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['VOICE_MESSAGE'], streamInfo['44100'],done)
@@ -2795,12 +2795,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_18400
-     * @tc.name      : AudioRender  GAME INTERRUPT VOICE_MESSAGE
-     * @tc.desc      : AudioRender  GAME INTERRUPT VOICE_MESSAGE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_18400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_18400
+     * @tc.desc   AudioRender  GAME INTERRUPT VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_18400', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['VOICE_MESSAGE'], streamInfo['44100'],done)
@@ -2825,12 +2825,12 @@ export default function AudioRendererInterruptUnitTest() {
       done()
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_17400
-     * @tc.name      : AudioRender  SPEECH INTERRUPT VOICE_MESSAGE
-     * @tc.desc      : AudioRender  SPEECH INTERRUPT VOICE_MESSAGE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_17400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_17400
+     * @tc.desc   AudioRender  SPEECH INTERRUPT VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_17400', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['VOICE_MESSAGE'], streamInfo['44100'],done)
@@ -2851,12 +2851,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_18200
-     * @tc.name      : AudioRender  NAVIGATION INTERRUPT VOICE_MESSAGE
-     * @tc.desc      : AudioRender  NAVIGATION INTERRUPT VOICE_MESSAGE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_18200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_18200
+     * @tc.desc   AudioRender  NAVIGATION INTERRUPT VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_18200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['VOICE_MESSAGE'], streamInfo['44100'],done)
@@ -2884,12 +2884,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_18600
-     * @tc.name      : AudioRender  ALARM INTERRUPT VOICE_MESSAGE
-     * @tc.desc      : AudioRender  ALARM INTERRUPT VOICE_MESSAGE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_18600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_18600
+     * @tc.desc   AudioRender  ALARM INTERRUPT VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_18600', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['VOICE_MESSAGE'], streamInfo['44100'],done)
@@ -2910,12 +2910,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_18100
-     * @tc.name      : AudioRender  NOTIFICATION INTERRUPT VOICE_MESSAGE
-     * @tc.desc      : AudioRender  NOTIFICATION INTERRUPT VOICE_MESSAGE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_18100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_18100
+     * @tc.desc   AudioRender  NOTIFICATION INTERRUPT VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_18100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['VOICE_MESSAGE'], streamInfo['44100'],done)
@@ -2939,12 +2939,12 @@ export default function AudioRendererInterruptUnitTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_17300
-     * @tc.name      : AudioRender  TTS INTERRUPT RINGTONE
-     * @tc.desc      : AudioRender  TTS INTERRUPT RINGTONE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_17300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_17300
+     * @tc.desc   AudioRender  TTS INTERRUPT RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_17300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['RINGTONE'], streamInfo['44100'],done)
@@ -2970,12 +2970,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_18700
-     * @tc.name      : AudioRender  ACCESSIBLITY INTERRUPT VOICE_MESSAGE
-     * @tc.desc      : AudioRender  ACCESSIBLITY INTERRUPT VOICE_MESSAGE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_18700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_18700
+     * @tc.desc   AudioRender  ACCESSIBLITY INTERRUPT VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_18700', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['VOICE_MESSAGE'], streamInfo['44100'],done)
@@ -2999,12 +2999,12 @@ export default function AudioRendererInterruptUnitTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_14400
-     * @tc.name      : AudioRender  VOICE_COMMUNICATION INTERRUPT GAME
-     * @tc.desc      : AudioRender  VOICE_COMMUNICATION INTERRUPT GAME
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_14400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_14400
+     * @tc.desc   AudioRender  VOICE_COMMUNICATION INTERRUPT GAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_14400', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['GAME'], streamInfo['44100'],done)
@@ -3030,12 +3030,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_14300
-     * @tc.name      : AudioRender  VOICE_MESSAGE INTERRUPT GAME
-     * @tc.desc      : AudioRender  VOICE_MESSAGE INTERRUPT GAME
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_14300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_14300
+     * @tc.desc   AudioRender  VOICE_MESSAGE INTERRUPT GAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_14300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['GAME'], streamInfo['44100'],done)
@@ -3062,12 +3062,12 @@ export default function AudioRendererInterruptUnitTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15000
-     * @tc.name      : AudioRender  RING INTERRUPT GAME
-     * @tc.desc      : AudioRender  RING INTERRUPT GAME
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15000
+     * @tc.desc   AudioRender  RING INTERRUPT GAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15000', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['GAME'], streamInfo['44100'],done)
@@ -3096,12 +3096,12 @@ export default function AudioRendererInterruptUnitTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_4100
-     * @tc.name      : AudioRender  MOVIE INTERRUPT GAME
-     * @tc.desc      : AudioRender  MOVIE INTERRUPT GAME
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_4100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_4100
+     * @tc.desc   AudioRender  MOVIE INTERRUPT GAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_4100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['GAME'], streamInfo['44100'],done)
@@ -3127,12 +3127,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_4200
-     * @tc.name      : AudioRender  GAME INTERRUPT GAME
-     * @tc.desc      : AudioRender  GAME INTERRUPT GAME
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_4200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_4200
+     * @tc.desc   AudioRender  GAME INTERRUPT GAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_4200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['GAME'], streamInfo['44100'],done)
@@ -3152,12 +3152,12 @@ export default function AudioRendererInterruptUnitTest() {
       done()
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_14900
-     * @tc.name      : AudioRender  SPEECH INTERRUPT GAME
-     * @tc.desc      : AudioRender  SPEECH INTERRUPT GAME
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_14900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_14900
+     * @tc.desc   AudioRender  SPEECH INTERRUPT GAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_14900', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['GAME'], streamInfo['44100'],done)
@@ -3183,12 +3183,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3000
-     * @tc.name      : AudioRender  NAVIGATION INTERRUPT GAME
-     * @tc.desc      : AudioRender  NAVIGATION INTERRUPT GAME
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3000
+     * @tc.desc   AudioRender  NAVIGATION INTERRUPT GAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_3000', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['GAME'], streamInfo['44100'],done)
@@ -3213,12 +3213,12 @@ export default function AudioRendererInterruptUnitTest() {
       done()
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_4700
-     * @tc.name      : AudioRender  ALARM INTERRUPT GAME
-     * @tc.desc      : AudioRender  ALARM INTERRUPT GAME
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_4700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_4700
+     * @tc.desc   AudioRender  ALARM INTERRUPT GAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_4700', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['GAME'], streamInfo['44100'],done)
@@ -3244,12 +3244,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13700
-     * @tc.name      : AudioRender  NOTIFICATION INTERRUPT GAME
-     * @tc.desc      : AudioRender  NOTIFICATION INTERRUPT GAME
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13700
+     * @tc.desc   AudioRender  NOTIFICATION INTERRUPT GAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13700', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['GAME'], streamInfo['44100'],done)
@@ -3275,12 +3275,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_14600
-     * @tc.name      : AudioRender  TTS INTERRUPT GAME
-     * @tc.desc      : AudioRender  TTS INTERRUPT GAME
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_14600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_14600
+     * @tc.desc   AudioRender  TTS INTERRUPT GAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_14600', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['GAME'], streamInfo['44100'],done)
@@ -3306,12 +3306,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_4900
-     * @tc.name      : AudioRender  ACCESSIBILITY INTERRUPT GAME
-     * @tc.desc      : AudioRender  ACCESSIBILITY INTERRUPT GAME
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_4900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_4900
+     * @tc.desc   AudioRender  ACCESSIBILITY INTERRUPT GAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_4900', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['GAME'], streamInfo['44100'],done)
@@ -3339,12 +3339,12 @@ export default function AudioRendererInterruptUnitTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_12700
-     * @tc.name      : AudioRender  VOICE_COMMUNICATION INTERRUPT NAVIGATION
-     * @tc.desc      : AudioRender  VOICE_COMMUNICATION INTERRUPT NAVIGATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_12700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_12700
+     * @tc.desc   AudioRender  VOICE_COMMUNICATION INTERRUPT NAVIGATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_12700', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['NAVIGATION'], streamInfo['44100'],done)
@@ -3369,12 +3369,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
     //7149    duck inproc            VOICE_MESSAGE
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15100
-     * @tc.name      : AudioRender  VOICE_MESSAGE INTERRUPT NAVIGATION
-     * @tc.desc      : AudioRender  VOICE_MESSAGE INTERRUPT NAVIGATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15100
+     * @tc.desc   AudioRender  VOICE_MESSAGE INTERRUPT NAVIGATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['NAVIGATION'], streamInfo['44100'],done)
@@ -3403,12 +3403,12 @@ export default function AudioRendererInterruptUnitTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13300
-     * @tc.name      : AudioRender  RING INTERRUPT NAVIGATION
-     * @tc.desc      : AudioRender  RING INTERRUPT NAVIGATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13300
+     * @tc.desc   AudioRender  RING INTERRUPT NAVIGATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['NAVIGATION'], streamInfo['44100'],done)
@@ -3433,12 +3433,12 @@ export default function AudioRendererInterruptUnitTest() {
       done()
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13600
-     * @tc.name      : AudioRender  MUSIC INTERRUPT NAVIGATION
-     * @tc.desc      : AudioRender  MUSIC INTERRUPT NAVIGATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13600
+     * @tc.desc   AudioRender  MUSIC INTERRUPT NAVIGATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13600', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['NAVIGATION'], streamInfo['44100'],done)
@@ -3466,12 +3466,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13800
-     * @tc.name      : AudioRender  MOVIE INTERRUPT NAVIGATION
-     * @tc.desc      : AudioRender  MOVIE INTERRUPT NAVIGATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13800
+     * @tc.desc   AudioRender  MOVIE INTERRUPT NAVIGATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13800', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['NAVIGATION'], streamInfo['44100'],done)
@@ -3499,12 +3499,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13900
-     * @tc.name      : AudioRender  GAME INTERRUPT NAVIGATION
-     * @tc.desc      : AudioRender  GAME INTERRUPT NAVIGATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13900
+     * @tc.desc   AudioRender  GAME INTERRUPT NAVIGATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13900', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['NAVIGATION'], streamInfo['44100'],done)
@@ -3532,12 +3532,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13200
-     * @tc.name      : AudioRender  SPEECH INTERRUPT NAVIGATION
-     * @tc.desc      : AudioRender  SPEECH INTERRUPT NAVIGATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13200
+     * @tc.desc   AudioRender  SPEECH INTERRUPT NAVIGATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['NAVIGATION'], streamInfo['44100'],done)
@@ -3565,12 +3565,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13500
-     * @tc.name      : AudioRender  NAVIGATION INTERRUPT NAVIGATION
-     * @tc.desc      : AudioRender  NAVIGATION INTERRUPT NAVIGATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13500
+     * @tc.desc   AudioRender  NAVIGATION INTERRUPT NAVIGATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13500', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['NAVIGATION'], streamInfo['44100'],done)
@@ -3591,12 +3591,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_14100
-     * @tc.name      : AudioRender  ALARM INTERRUPT NAVIGATION
-     * @tc.desc      : AudioRender  ALARM INTERRUPT NAVIGATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_14100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_14100
+     * @tc.desc   AudioRender  ALARM INTERRUPT NAVIGATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_14100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['NAVIGATION'], streamInfo['44100'],done)
@@ -3622,12 +3622,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13400
-     * @tc.name      : AudioRender  NOTIFICATION INTERRUPT NAVIGATION
-     * @tc.desc      : AudioRender  NOTIFICATION INTERRUPT NAVIGATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13400
+     * @tc.desc   AudioRender  NOTIFICATION INTERRUPT NAVIGATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_13400', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['NAVIGATION'], streamInfo['44100'],done)
@@ -3653,12 +3653,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_12900
-     * @tc.name      : AudioRender  TTS INTERRUPT NAVIGATION
-     * @tc.desc      : AudioRender  TTS INTERRUPT NAVIGATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_12900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_12900
+     * @tc.desc   AudioRender  TTS INTERRUPT NAVIGATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_12900', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['NAVIGATION'], streamInfo['44100'],done)
@@ -3678,12 +3678,12 @@ export default function AudioRendererInterruptUnitTest() {
       done()
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_14200
-     * @tc.name      : AudioRender  ACCESSIBILITY INTERRUPT NAVIGATION
-     * @tc.desc      : AudioRender  ACCESSIBILITY INTERRUPT NAVIGATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_14200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_14200
+     * @tc.desc   AudioRender  ACCESSIBILITY INTERRUPT NAVIGATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_14200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['NAVIGATION'], streamInfo['44100'],done)
@@ -3706,12 +3706,12 @@ export default function AudioRendererInterruptUnitTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_16700
-     * @tc.name      : AudioRender  VOICE_COMMUNICATION INTERRUPT NOTIFICATION
-     * @tc.desc      : AudioRender  VOICE_COMMUNICATION INTERRUPT NOTIFICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_16700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_16700
+     * @tc.desc   AudioRender  VOICE_COMMUNICATION INTERRUPT NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_16700', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['NOTIFICATION'], streamInfo['44100'],done)
@@ -3732,12 +3732,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_16800
-     * @tc.name      : AudioRender  VOICE_MESSAGE INTERRUPT NOTIFICATION
-     * @tc.desc      : AudioRender  VOICE_MESSAGE INTERRUPT NOTIFICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_16800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_16800
+     * @tc.desc   AudioRender  VOICE_MESSAGE INTERRUPT NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_16800', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['NOTIFICATION'], streamInfo['44100'],done)
@@ -3760,12 +3760,12 @@ export default function AudioRendererInterruptUnitTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_16100
-     * @tc.name      : AudioRender  RING INTERRUPT NOTIFICATION
-     * @tc.desc      : AudioRender  RING INTERRUPT NOTIFICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_16100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_16100
+     * @tc.desc   AudioRender  RING INTERRUPT NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_16100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['NOTIFICATION'], streamInfo['44100'],done)
@@ -3786,12 +3786,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15700
-     * @tc.name      : AudioRender  MUSIC INTERRUPT NOTIFICATION
-     * @tc.desc      : AudioRender  MUSIC INTERRUPT NOTIFICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15700
+     * @tc.desc   AudioRender  MUSIC INTERRUPT NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15700', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['NOTIFICATION'], streamInfo['44100'],done)
@@ -3812,12 +3812,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15600
-     * @tc.name      : AudioRender  MOVIE INTERRUPT NOTIFICATION
-     * @tc.desc      : AudioRender  MOVIE INTERRUPT NOTIFICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15600
+     * @tc.desc   AudioRender  MOVIE INTERRUPT NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15600', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['NOTIFICATION'], streamInfo['44100'],done)
@@ -3838,12 +3838,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15500
-     * @tc.name      : AudioRender  GAME INTERRUPT NOTIFICATION
-     * @tc.desc      : AudioRender  GAME INTERRUPT NOTIFICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15500
+     * @tc.desc   AudioRender  GAME INTERRUPT NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15500', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['NOTIFICATION'], streamInfo['44100'],done)
@@ -3864,12 +3864,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_16200
-     * @tc.name      : AudioRender  SPEECH INTERRUPT NOTIFICATION
-     * @tc.desc      : AudioRender  SPEECH INTERRUPT NOTIFICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_16200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_16200
+     * @tc.desc   AudioRender  SPEECH INTERRUPT NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_16200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['NOTIFICATION'], streamInfo['44100'],done)
@@ -3890,12 +3890,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15800
-     * @tc.name      : AudioRender  NAVIGATION INTERRUPT NOTIFICATION
-     * @tc.desc      : AudioRender  NAVIGATION INTERRUPT NOTIFICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15800
+     * @tc.desc   AudioRender  NAVIGATION INTERRUPT NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15800', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['NOTIFICATION'], streamInfo['44100'],done)
@@ -3913,12 +3913,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15300
-     * @tc.name      : AudioRender  ALARM INTERRUPT NOTIFICATION
-     * @tc.desc      : AudioRender  ALARM INTERRUPT NOTIFICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15300
+     * @tc.desc   AudioRender  ALARM INTERRUPT NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['NOTIFICATION'], streamInfo['44100'],done)
@@ -3939,12 +3939,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15900
-     * @tc.name      : AudioRender  NOTIFICATION INTERRUPT NOTIFICATION
-     * @tc.desc      : AudioRender  NOTIFICATION INTERRUPT NOTIFICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15900
+     * @tc.desc   AudioRender  NOTIFICATION INTERRUPT NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15900', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['NOTIFICATION'], streamInfo['44100'],done)
@@ -3967,12 +3967,12 @@ export default function AudioRendererInterruptUnitTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_16500
-     * @tc.name      : AudioRender  TTS INTERRUPT NOTIFICATION
-     * @tc.desc      : AudioRender  TTS INTERRUPT NOTIFICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_16500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_16500
+     * @tc.desc   AudioRender  TTS INTERRUPT NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_16500', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['NOTIFICATION'], streamInfo['44100'],done)
@@ -3993,12 +3993,12 @@ export default function AudioRendererInterruptUnitTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15200
-     * @tc.name      : AudioRender  ACCESSIBILITY INTERRUPT NOTIFICATION
-     * @tc.desc      : AudioRender  ACCESSIBILITY INTERRUPT NOTIFICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15200
+     * @tc.desc   AudioRender  ACCESSIBILITY INTERRUPT NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_15200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let render1 = await createAudioRenderer(renderInfo['NOTIFICATION'], streamInfo['44100'],done)

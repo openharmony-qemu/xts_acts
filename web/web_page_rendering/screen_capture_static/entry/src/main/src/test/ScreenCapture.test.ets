@@ -47,14 +47,14 @@ export default function screenCapture() {
       console.log("qyh beforeEach end,%s", "Succeed!")
     })
 
-    /*
-    * @tc.number     : SUB_WEB_SCREENCAPTURECONFIGGETORIGIN_0100
-    * @tc.name       : testScreenCaptureConfigGetOriginStatic001
-    * @tc.desc       : test ScreenCaptureConfigGetOrigin
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testScreenCaptureConfigGetOriginStatic001
+     * @tc.number SUB_WEB_SCREENCAPTURECONFIGGETORIGIN_0100
+     * @tc.desc   test ScreenCaptureConfigGetOrigin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testScreenCaptureConfigGetOriginStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitScreenCaptureConfigGetOrigin001", 10)
       await Utils.msSleep(3000);

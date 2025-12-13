@@ -18,11 +18,14 @@ export default function ActsAmsCallBackFirstScene() {
     describe('ActsAmsCallBackFirstScene', function () {
         console.info('----ActsAmsCallBackFirstScene----');
 
-        /*
-        * @tc.number    : Acts_Ams_test_0200
-        * @tc.name      : getProcessRunningInfos : Get All Running Processes Info
-        * @tc.desc      : Get All Running Processes Info(by CallBack)
-        */
+        /**
+         * @tc.name   Acts_Ams_test_0200
+         * @tc.number Acts_Ams_test_0200
+         * @tc.desc   Get All Running Processes Info(by CallBack)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('Acts_Ams_test_0200', Level.LEVEL0, async function (done) {
             appManager.getProcessRunningInfos(
                 (error, info) => {

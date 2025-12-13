@@ -46,9 +46,12 @@ export default function Row_flexBasis_Type() {
       console.info("Row_flexBasis_Type after each called")
     });
     /**
+     * @tc.name   SUB_ACE_Row_flexBasis_Type_TEST_0100
      * @tc.number SUB_ACE_Row_flexBasis_Type_TEST_0100
-     * @tc.name testFlexBasis
-     * @tc.desc row1 is set to flexBasis(100) , the width of row1 is 100vp
+     * @tc.desc   row1 is set to flexBasis(100) , the width of row1 is 100vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Row_flexBasis_Type_TEST_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Row_flexBasis_Type_TEST_0100] START');
@@ -100,9 +103,12 @@ export default function Row_flexBasis_Type() {
       done();
     });
     /**
+     * @tc.name   SUB_ACE_Row_flexBasis_Type_TEST_0200
      * @tc.number SUB_ACE_Row_flexBasis_Type_TEST_0200
-     * @tc.name testFlexBasis
-     * @tc.desc row1 is set to flexBasis(0) , the width of row1 is the original width
+     * @tc.desc   row1 is set to flexBasis(0) , the width of row1 is the original width
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Row_flexBasis_Type_TEST_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Row_flexBasis_Type_TEST_0200] START');
@@ -155,9 +161,12 @@ export default function Row_flexBasis_Type() {
     });
 
     /**
+     * @tc.name   SUB_ACE_flexBasis_Type_TEST_0300
      * @tc.number SUB_ACE_flexBasis_Type_TEST_0300
-     * @tc.name testFlexBasis
-     * @tc.desc row1 is set to flexBasis('auto') , the width of row1 is the original width
+     * @tc.desc   row1 is set to flexBasis('auto') , the width of row1 is the original width
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_flexBasis_Type_TEST_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_flexBasis_Type_TEST_0300] START');
@@ -208,9 +217,12 @@ export default function Row_flexBasis_Type() {
     });
 
     /**
+     * @tc.name   SUB_ACE_flexBasis_Type_TEST_0400
      * @tc.number SUB_ACE_flexBasis_Type_TEST_0400
-     * @tc.name testFlexBasis
-     * @tc.desc row1 is set to flexBasis('200vp') , the width of row1 is 200vp
+     * @tc.desc   row1 is set to flexBasis('200vp') , the width of row1 is 200vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_flexBasis_Type_TEST_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_flexBasis_Type_TEST_0400] START');
@@ -261,9 +273,12 @@ export default function Row_flexBasis_Type() {
     });
 
     /**
+     * @tc.name   SUB_ACE_flexBasis_Type_TEST_0500
      * @tc.number SUB_ACE_flexBasis_Type_TEST_0500
-     * @tc.name testFlexBasis
-     * @tc.desc row1 is set to flexBasis('200px') , the width of row1 is 200px
+     * @tc.desc   row1 is set to flexBasis('200px') , the width of row1 is 200px
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_flexBasis_Type_TEST_0500',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_flexBasis_Type_TEST_0500] START');
@@ -314,9 +329,12 @@ export default function Row_flexBasis_Type() {
     });
 
     /**
+     * @tc.name   SUB_ACE_flexBasis_Type_TEST_0600
      * @tc.number SUB_ACE_flexBasis_Type_TEST_0600
-     * @tc.name testFlexBasis
-     * @tc.desc row1 is set to flexBasis('200fp') , the width of row1 is 200fp
+     * @tc.desc   row1 is set to flexBasis('200fp') , the width of row1 is 200fp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_flexBasis_Type_TEST_0600',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_flexBasis_Type_TEST_0600] START');
@@ -367,9 +385,12 @@ export default function Row_flexBasis_Type() {
     });
 
     /**
+     * @tc.name   SUB_ACE_flexBasis_Type_TEST_0700
      * @tc.number SUB_ACE_flexBasis_Type_TEST_0700
-     * @tc.name testFlexBasis
-     * @tc.desc row1 is set to flexBasis('200lpx') , the width of row1 is 200lpx
+     * @tc.desc   row1 is set to flexBasis('200lpx') , the width of row1 is 200lpx
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_flexBasis_Type_TEST_0700',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_flexBasis_Type_TEST_0700] START');

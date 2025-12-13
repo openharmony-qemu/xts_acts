@@ -20,12 +20,12 @@ import { Sleep } from './Util'
 export default function workerImport() {
   describe('workerImportTest', () => {
     /**
-     * @tc.number    : SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_WorkerImport_0100
-     * @tc.name      : testWorkerImportLibrary
-     * @tc.desc      : Import Shared Library
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWorkerImportLibrary
+     * @tc.number SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_WorkerImport_0100
+     * @tc.desc   Import Shared Library
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerImportLibrary', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let workerImportLibrary = 'failed';
@@ -39,12 +39,12 @@ export default function workerImport() {
     })
 
     /**
-     * @tc.number    : SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_WorkerImport_0200
-     * @tc.name      : testWorkerImportHar
-     * @tc.desc      : Import Static Library
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWorkerImportHar
+     * @tc.number SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_WorkerImport_0200
+     * @tc.desc   Import Static Library
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerImportHar', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let workerImportHar = 'failed';
@@ -58,12 +58,12 @@ export default function workerImport() {
     })
 
     /**
-     * @tc.number    : SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_WorkerImport_0300
-     * @tc.name      : testWorkerImportRelativePath
-     * @tc.desc      : Import Relative Path
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWorkerImportRelativePath
+     * @tc.number SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_WorkerImport_0300
+     * @tc.desc   Import Relative Path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerImportRelativePath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let workerImportRelative = 'failed';
@@ -77,12 +77,12 @@ export default function workerImport() {
     })
     
     /**
-     * @tc.number    : SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_WorkerImport_0400
-     * @tc.name      : testWorkerImportSystem
-     * @tc.desc      : Import System Native Module
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWorkerImportSystem
+     * @tc.number SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_WorkerImport_0400
+     * @tc.desc   Import System Native Module
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerImportSystem', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let workerImportSystem = 'failed';
@@ -96,12 +96,12 @@ export default function workerImport() {
     })
 
     /**
-     * @tc.number    : SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_WorkerImport_0500
-     * @tc.name      : testWorkerImportNapi
-     * @tc.desc      : Import Native Module
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWorkerImportNapi
+     * @tc.number SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_WorkerImport_0500
+     * @tc.desc   Import Native Module
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerImportNapi', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let workerImportNapi = 'failed';

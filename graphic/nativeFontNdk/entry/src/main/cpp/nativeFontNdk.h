@@ -22,6 +22,7 @@
 #include <js_native_api.h>
 #include "napi/native_api.h"
 #include "hilog/log.h"
+#include "native_common.h"
 #include "native_drawing/drawing_bitmap.h"
 #include "native_drawing/drawing_brush.h"
 #include "native_drawing/drawing_canvas.h"
@@ -121,4 +122,11 @@ napi_value OHDrawingTypographyHandlerAddEncodedText007(napi_env env, napi_callba
 napi_value OHDrawingTypographyHandlerAddEncodedText008(napi_env env, napi_callback_info info);
 napi_value OHDrawingTypographyHandlerAddEncodedText009(napi_env env, napi_callback_info info);
 napi_value OHDrawingGetRun001(napi_env env, napi_callback_info info);
+napi_value OHDrawingSetTypographyStyleAttributeDouble001(napi_env env, napi_callback_info info);
+napi_value OHDrawingSetTypographyStyleAttributeInt001(napi_env env, napi_callback_info info);
+napi_value OHDrawingSetTextStyleAttributeDouble001(napi_env env, napi_callback_info info);
+napi_value OHDrawingSetTextStyleAttributeDouble002(napi_env env, napi_callback_info info);
+napi_value OHDrawingSetTextStyleAttributeDouble003(napi_env env, napi_callback_info info);
+napi_value OHDrawingSetTextStyleAttributeDouble004(napi_env env, napi_callback_info info);
+napi_value OHDrawingSetTextStyleAttributeInt001(napi_env env, napi_callback_info info);
 #endif // NATIVEFONTNDK_USELESS_H

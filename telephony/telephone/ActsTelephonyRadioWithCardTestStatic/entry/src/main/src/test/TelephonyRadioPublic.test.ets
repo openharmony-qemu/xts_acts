@@ -47,14 +47,14 @@ export default function telephonyRadioPublicTest() {
 
   describe('telephonyRadioPublicTest', () => {
 
-    /*
- * @tc.number: SUB_Telephony_Radio_GetPrimarySlotId_0300
- * @tc.name  : testTelephonyRadioGetPrimarySlotId0300
- * @tc.desc  : Obtain the index number of the slot where the main card is located. Use callback for asynchronous callback.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 1
- */
+    /**
+     * @tc.name   testTelephonyRadioGetPrimarySlotId0300
+     * @tc.number SUB_Telephony_Radio_GetPrimarySlotId_0300
+     * @tc.desc   Obtain the index number of the slot where the main card is located. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyRadioGetPrimarySlotId0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonyRadioGetPrimarySlotId0300';
       console.info(`${caseName} test start`);
@@ -73,13 +73,13 @@ export default function telephonyRadioPublicTest() {
       });
     });
 
-    /*
-     * @tc.number: SUB_Telephony_Radio_GetPrimarySlotId_0600
-     * @tc.name  : testTelephonyRadioGetPrimarySlotId0600
-     * @tc.desc  : Obtain the index number of the slot where the main card is located. Use Promise asynchronous callback.
-     * @tc.size  : SmallTest
-     * @tc.type  : Function
-     * @tc.level : Level 3
+    /**
+     * @tc.name   testTelephonyRadioGetPrimarySlotId0600
+     * @tc.number SUB_Telephony_Radio_GetPrimarySlotId_0600
+     * @tc.desc   Obtain the index number of the slot where the main card is located. Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyRadioGetPrimarySlotId0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonyRadioGetPrimarySlotId0600';
@@ -96,14 +96,14 @@ export default function telephonyRadioPublicTest() {
       });
     });
 
-    /*
- * @tc.number: SUB_Telephony_Radio_IsNRSupported_0100
- * @tc.name  : testTelephonyRadioIsNRSupported0100
- * @tc.desc  : Determine if the current device supports 5G (NR).
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
- */
+    /**
+     * @tc.name   testTelephonyRadioIsNRSupported0100
+     * @tc.number SUB_Telephony_Radio_IsNRSupported_0100
+     * @tc.desc   Determine if the current device supports 5G (NR).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyRadioIsNRSupported0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonyRadioIsNRSupported0100';
       console.info(`${caseName} test start`);

@@ -26,12 +26,12 @@ export default function BuiltinsStatementContinueTest() {
     })
 
     /**
+     * @tc.name   BuiltinsStatementContinueTest0100
      * @tc.number SUB_BUILTINS_STATEMENT_CONTINUE_TEST0100
-     * @tc.name BuiltinsStatementContinueTest0100
-     * @tc.desc test Continue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Continue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BuiltinsStatementContinueTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: Function) => {
@@ -50,12 +50,12 @@ export default function BuiltinsStatementContinueTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementContinueTest0200
      * @tc.number SUB_BUILTINS_STATEMENT_CONTINUE_TEST0200
-     * @tc.name BuiltinsStatementContinueTest0200
-     * @tc.desc test Continue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Continue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BuiltinsStatementContinueTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: Function) => {
@@ -74,12 +74,12 @@ export default function BuiltinsStatementContinueTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementContinueTest0300
      * @tc.number SUB_BUILTINS_STATEMENT_CONTINUE_TEST0300
-     * @tc.name BuiltinsStatementContinueTest0300
-     * @tc.desc test Continue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Continue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementContinueTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -104,12 +104,12 @@ export default function BuiltinsStatementContinueTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementContinueTest0400
      * @tc.number SUB_BUILTINS_STATEMENT_CONTINUE_TEST0400
-     * @tc.name BuiltinsStatementContinueTest0400
-     * @tc.desc test Continue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Continue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementContinueTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -137,12 +137,12 @@ export default function BuiltinsStatementContinueTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementContinueTest0500
      * @tc.number SUB_BUILTINS_STATEMENT_CONTINUE_TEST0500
-     * @tc.name BuiltinsStatementContinueTest0500
-     * @tc.desc test Continue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Continue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementContinueTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -168,12 +168,12 @@ export default function BuiltinsStatementContinueTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementContinueTest0600
      * @tc.number SUB_BUILTINS_STATEMENT_CONTINUE_TEST0600
-     * @tc.name BuiltinsStatementContinueTest0600
-     * @tc.desc test Continue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Continue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementContinueTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -209,12 +209,12 @@ export default function BuiltinsStatementContinueTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementContinueTest0700
      * @tc.number SUB_BUILTINS_STATEMENT_CONTINUE_TEST0700
-     * @tc.name BuiltinsStatementContinueTest0700
-     * @tc.desc test Continue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Continue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementContinueTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -250,12 +250,12 @@ export default function BuiltinsStatementContinueTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementContinueTest0800
      * @tc.number SUB_BUILTINS_STATEMENT_CONTINUE_TEST0800
-     * @tc.name BuiltinsStatementContinueTest0800
-     * @tc.desc test Continue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Continue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementContinueTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -299,12 +299,12 @@ export default function BuiltinsStatementContinueTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementContinueTest0900
      * @tc.number SUB_BUILTINS_STATEMENT_CONTINUE_TEST0900
-     * @tc.name BuiltinsStatementContinueTest0900
-     * @tc.desc test Continue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Continue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementContinueTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -327,12 +327,12 @@ export default function BuiltinsStatementContinueTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementContinueTest1000
      * @tc.number SUB_BUILTINS_STATEMENT_CONTINUE_TEST1000
-     * @tc.name BuiltinsStatementContinueTest1000
-     * @tc.desc test Continue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Continue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementContinueTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -357,12 +357,12 @@ export default function BuiltinsStatementContinueTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementContinueTest1100
      * @tc.number SUB_BUILTINS_STATEMENT_CONTINUE_TEST1100
-     * @tc.name BuiltinsStatementContinueTest1100
-     * @tc.desc test Continue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Continue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementContinueTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -382,12 +382,12 @@ export default function BuiltinsStatementContinueTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementContinueTest1200
      * @tc.number SUB_BUILTINS_STATEMENT_CONTINUE_TEST1200
-     * @tc.name BuiltinsStatementContinueTest1200
-     * @tc.desc test Continue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Continue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementContinueTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -417,12 +417,12 @@ export default function BuiltinsStatementContinueTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementContinueTest1300
      * @tc.number SUB_BUILTINS_STATEMENT_CONTINUE_TEST1300
-     * @tc.name BuiltinsStatementContinueTest1300
-     * @tc.desc test Continue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Continue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementContinueTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -443,12 +443,12 @@ export default function BuiltinsStatementContinueTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementContinueTest1400
      * @tc.number SUB_BUILTINS_STATEMENT_CONTINUE_TEST1400
-     * @tc.name BuiltinsStatementContinueTest1400
-     * @tc.desc test Continue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Continue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementContinueTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -472,12 +472,12 @@ export default function BuiltinsStatementContinueTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementContinueTest1500
      * @tc.number SUB_BUILTINS_STATEMENT_CONTINUE_TEST1500
-     * @tc.name BuiltinsStatementContinueTest1500
-     * @tc.desc test Continue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Continue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementContinueTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -509,12 +509,12 @@ export default function BuiltinsStatementContinueTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementContinueTest1600
      * @tc.number SUB_BUILTINS_STATEMENT_CONTINUE_TEST1600
-     * @tc.name BuiltinsStatementContinueTest1600
-     * @tc.desc test Continue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Continue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementContinueTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -537,12 +537,12 @@ export default function BuiltinsStatementContinueTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementContinueTest1700
      * @tc.number SUB_BUILTINS_STATEMENT_CONTINUE_TEST1700
-     * @tc.name BuiltinsStatementContinueTest1700
-     * @tc.desc test Continue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Continue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementContinueTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -573,12 +573,12 @@ export default function BuiltinsStatementContinueTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementContinueTest1800
      * @tc.number SUB_BUILTINS_STATEMENT_CONTINUE_TEST1800
-     * @tc.name BuiltinsStatementContinueTest1800
-     * @tc.desc test Continue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Continue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementContinueTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -609,12 +609,12 @@ export default function BuiltinsStatementContinueTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementContinueTest1900
      * @tc.number SUB_BUILTINS_STATEMENT_CONTINUE_TEST1900
-     * @tc.name BuiltinsStatementContinueTest1900
-     * @tc.desc test Continue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Continue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementContinueTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -651,12 +651,12 @@ export default function BuiltinsStatementContinueTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementContinueTest2000
      * @tc.number SUB_BUILTINS_STATEMENT_CONTINUE_TEST2000
-     * @tc.name BuiltinsStatementContinueTest2000
-     * @tc.desc test Continue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Continue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementContinueTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -683,12 +683,12 @@ export default function BuiltinsStatementContinueTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementContinueTest2100
      * @tc.number SUB_BUILTINS_STATEMENT_CONTINUE_TEST2100
-     * @tc.name BuiltinsStatementContinueTest2100
-     * @tc.desc test Continue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Continue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementContinueTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -724,12 +724,12 @@ export default function BuiltinsStatementContinueTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementContinueTest2200
      * @tc.number SUB_BUILTINS_STATEMENT_CONTINUE_TEST2200
-     * @tc.name BuiltinsStatementContinueTest2200
-     * @tc.desc test Continue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Continue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementContinueTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -757,12 +757,12 @@ export default function BuiltinsStatementContinueTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementContinueTest2300
      * @tc.number SUB_BUILTINS_STATEMENT_CONTINUE_TEST2300
-     * @tc.name BuiltinsStatementContinueTest2300
-     * @tc.desc test Continue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Continue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementContinueTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -785,13 +785,13 @@ export default function BuiltinsStatementContinueTest() {
       });
 
 
-    /**af
+    /**
+     * @tc.name   BuiltinsStatementContinueTest2400
      * @tc.number SUB_BUILTINS_STATEMENT_CONTINUE_TEST2400
-     * @tc.name BuiltinsStatementContinueTest2400
-     * @tc.desc test Continue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Continue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementContinueTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -821,12 +821,12 @@ export default function BuiltinsStatementContinueTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementContinueTest2500
      * @tc.number SUB_BUILTINS_STATEMENT_CONTINUE_TEST2500
-     * @tc.name BuiltinsStatementContinueTest2500
-     * @tc.desc test Continue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Continue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementContinueTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -857,12 +857,12 @@ export default function BuiltinsStatementContinueTest() {
 
 
     /**
+     * @tc.name   BuiltinsStatementContinueTest2600
      * @tc.number SUB_BUILTINS_STATEMENT_CONTINUE_TEST2600
-     * @tc.name BuiltinsStatementContinueTest2600
-     * @tc.desc test Continue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Continue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsStatementContinueTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {

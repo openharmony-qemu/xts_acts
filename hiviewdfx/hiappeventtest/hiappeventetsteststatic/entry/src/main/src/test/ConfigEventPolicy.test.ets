@@ -28,12 +28,12 @@ export default function configEventPolicyTest() {
     hilog.info(domain, tag, 'describe start');
 
     /**
+     * @tc.name   testHiAppEventconfigEventPolicy001
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_configEventPolicyStatic_1000
-     * @tc.name testHiAppEventconfigEventPolicy001
-     * @tc.desc 验证hiAppEvent.configEventPolicy接口测试-MainThreadJank-参数正常
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-MainThreadJank-参数正常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventconfigEventPolicy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, `testHiAppEventconfigEventPolicy001 start`);
@@ -59,12 +59,12 @@ export default function configEventPolicyTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventconfigEventPolicy002
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_configEventPolicyStatic_1100
-     * @tc.name testHiAppEventconfigEventPolicy002
-     * @tc.desc 验证hiAppEvent.configEventPolicy接口测试-MainThreadJank-policy为空调用成功
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-MainThreadJank-policy为空调用成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventconfigEventPolicy002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, `testHiAppEventconfigEventPolicy002 start`);
@@ -81,12 +81,12 @@ export default function configEventPolicyTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventconfigEventPolicy003
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_configEventPolicyStatic_1200
-     * @tc.name testHiAppEventconfigEventPolicy003
-     * @tc.desc 验证hiAppEvent.configEventPolicy接口测试-MainThreadJank-EventPolicy参数为空调用成功
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-MainThreadJank-EventPolicy参数为空调用成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventconfigEventPolicy003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, `testHiAppEventconfigEventPolicy003 start`);
@@ -105,12 +105,12 @@ export default function configEventPolicyTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventconfigEventPolicy004
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_configEventPolicyStatic_1300
-     * @tc.name testHiAppEventconfigEventPolicy004
-     * @tc.desc 验证hiAppEvent.configEventPolicy接口测试-MainThreadJank-存在多个policy调用成功
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-MainThreadJank-存在多个policy调用成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventconfigEventPolicy004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, `testHiAppEventconfigEventPolicy004 start`);
@@ -134,12 +134,12 @@ export default function configEventPolicyTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventconfigEventPolicy005
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_configEventPolicyStatic_1400
-     * @tc.name testHiAppEventconfigEventPolicy005
-     * @tc.desc 验证hiAppEvent.configEventPolicy接口测试-MainThreadJank-logType范围异常
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-MainThreadJank-logType范围异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventconfigEventPolicy005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, `testHiAppEventconfigEventPolicy005 start`);
@@ -160,12 +160,12 @@ export default function configEventPolicyTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventconfigEventPolicy006
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_configEventPolicyStatic_1500
-     * @tc.name testHiAppEventconfigEventPolicy006
-     * @tc.desc 验证hiAppEvent.configEventPolicy接口测试-MainThreadJank-sampleIntervale范围异常
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-MainThreadJank-sampleIntervale范围异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventconfigEventPolicy006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, `testHiAppEventconfigEventPolicy006 start`);
@@ -187,12 +187,12 @@ export default function configEventPolicyTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventconfigEventPolicy007
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_configEventPolicyStatic_1600
-     * @tc.name testHiAppEventconfigEventPolicy007
-     * @tc.desc 验证hiAppEvent.configEventPolicy接口测试-MainThreadJank-ignoreStartupTime范围异常
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-MainThreadJank-ignoreStartupTime范围异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventconfigEventPolicy007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, `testHiAppEventconfigEventPolicy007 start`);
@@ -214,12 +214,12 @@ export default function configEventPolicyTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventconfigEventPolicy008
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_configEventPolicyStatic_1700
-     * @tc.name testHiAppEventconfigEventPolicy008
-     * @tc.desc 验证hiAppEvent.configEventPolicy接口测试-MainThreadJank-ignoreStartupTime范围异常
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-MainThreadJank-ignoreStartupTime范围异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventconfigEventPolicy008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, `testHiAppEventconfigEventPolicy008 start`);
@@ -241,12 +241,12 @@ export default function configEventPolicyTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventconfigEventPolicy009
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_configEventPolicyStatic_1800
-     * @tc.name testHiAppEventconfigEventPolicy009
-     * @tc.desc 验证hiAppEvent.configEventPolicy接口测试-MainThreadJank-reportTimesPerApp范围异常
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-MainThreadJank-reportTimesPerApp范围异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventconfigEventPolicy009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, `testHiAppEventconfigEventPolicy009 start`);
@@ -268,12 +268,12 @@ export default function configEventPolicyTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventconfigEventPolicy010
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_configEventPolicyStatic_1900
-     * @tc.name testHiAppEventconfigEventPolicy010
-     * @tc.desc 验证hiAppEvent.configEventPolicy接口测试-MainThreadJank-多个policy的范围异常
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-MainThreadJank-多个policy的范围异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventconfigEventPolicy010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, `testHiAppEventconfigEventPolicy010 start`);
@@ -297,12 +297,12 @@ export default function configEventPolicyTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventconfigEventPolicy011
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_configEventPolicyStatic_2000
-     * @tc.name testHiAppEventconfigEventPolicy011
-     * @tc.desc 验证hiAppEvent.configEventPolicy接口测试-MainThreadJank- CPU_USAGE_HIGH
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-MainThreadJank- CPU_USAGE_HIGH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventconfigEventPolicy011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, `testHiAppEventconfigEventPolicy011 start`);
@@ -327,12 +327,12 @@ export default function configEventPolicyTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventconfigEventPolicy012
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_configEventPolicyStatic_2100
-     * @tc.name testHiAppEventconfigEventPolicy012
-     * @tc.desc 验证hiAppEvent.configEventPolicy接口测试-MainThreadJank- foregroundLoadThreshold范围异常去默认值调用成功
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-MainThreadJank- foregroundLoadThreshold范围异常去默认值调用成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventconfigEventPolicy012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, `testHiAppEventconfigEventPolicy012 start`);
@@ -353,12 +353,12 @@ export default function configEventPolicyTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventconfigEventPolicy013
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_configEventPolicyStatic_2200
-     * @tc.name testHiAppEventconfigEventPolicy013
-     * @tc.desc 验证hiAppEvent.configEventPolicy接口测试-MainThreadJank- backgroundLoadThreshold范围异常去默认值调用成功
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-MainThreadJank- backgroundLoadThreshold范围异常去默认值调用成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventconfigEventPolicy013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, `testHiAppEventconfigEventPolicy013 start`);
@@ -379,12 +379,12 @@ export default function configEventPolicyTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventconfigEventPolicy014
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_configEventPolicyStatic_2300
-     * @tc.name testHiAppEventconfigEventPolicy014
-     * @tc.desc 验证hiAppEvent.configEventPolicy接口测试-MainThreadJank- threadLoadThreshold范围异常去默认值调用成功
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-MainThreadJank- threadLoadThreshold范围异常去默认值调用成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventconfigEventPolicy014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, `testHiAppEventconfigEventPolicy014 start`);
@@ -405,12 +405,12 @@ export default function configEventPolicyTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventconfigEventPolicy015
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_configEventPolicyStatic_2400
-     * @tc.name testHiAppEventconfigEventPolicy015
-     * @tc.desc 验证hiAppEvent.configEventPolicy接口测试-MainThreadJank- perfLogCaptureCount范围异常去默认值调用成功
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-MainThreadJank- perfLogCaptureCount范围异常去默认值调用成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventconfigEventPolicy015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, `testHiAppEventconfigEventPolicy015 start`);
@@ -431,12 +431,12 @@ export default function configEventPolicyTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventconfigEventPolicy016
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_configEventPolicyStatic_2500
-     * @tc.name testHiAppEventconfigEventPolicy016
-     * @tc.desc 验证hiAppEvent.configEventPolicy接口测试-MainThreadJank- threadLoadInterval范围异常去默认值调用成功
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-MainThreadJank- threadLoadInterval范围异常去默认值调用成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventconfigEventPolicy016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, `testHiAppEventconfigEventPolicy016 start`);
@@ -457,12 +457,12 @@ export default function configEventPolicyTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventconfigEventPolicy017
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_configEventPolicyStatic_2600
-     * @tc.name testHiAppEventconfigEventPolicy017
-     * @tc.desc 验证hiAppEvent.configEventPolicy接口测试-MainThreadJank- foregroundLoadThreshold为空
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-MainThreadJank- foregroundLoadThreshold为空
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventconfigEventPolicy017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, `testHiAppEventconfigEventPolicy017 start`);
@@ -482,12 +482,12 @@ export default function configEventPolicyTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventconfigEventPolicy018
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_configEventPolicyStatic_2700
-     * @tc.name testHiAppEventconfigEventPolicy018
-     * @tc.desc 验证hiAppEvent.configEventPolicy接口测试-cpuUsageHighPolicy- 传入undefied调用成功
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-cpuUsageHighPolicy- 传入undefied调用成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventconfigEventPolicy018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, `testHiAppEventconfigEventPolicy018 start`);
@@ -508,12 +508,12 @@ export default function configEventPolicyTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventconfigEventPolicy019
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_configEventPolicyStatic_2800
-     * @tc.name testHiAppEventconfigEventPolicy019
-     * @tc.desc 验证hiAppEvent.configEventPolicy接口测试-MainThreadJank- 传入undefied
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-MainThreadJank- 传入undefied
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventconfigEventPolicy019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, `testHiAppEventconfigEventPolicy019 start`);

@@ -52,13 +52,15 @@ export default function AlignContent_FlexAlign_Center_Margin_padding() {
       console.info("AlignContent_FlexAlign_Center_Margin_padding after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_CENTER_0600
-     * @tc.name testAlignContentCenterFlexMargin&PaddingNOSatisfy
-     * @tc.desc The AlignContent property of the Flex component is set to FlexAlign.Center, while the margin and
-     *               padding settings of the flex component do not meet the size requirements of the subcomponent.
-     */
 
+    /**
+     * @tc.name   testAlignContentCenterFlexMargin&PaddingNOSatisfy
+     * @tc.number testAlignContentCenterFlexMargin&PaddingNOSatisfy
+     * @tc.desc   testAlignContentCenterFlexMargin&PaddingNOSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentCenterFlexMargin&PaddingNOSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentCenterFlexMargin&PaddingNOSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({
@@ -106,13 +108,15 @@ export default function AlignContent_FlexAlign_Center_Margin_padding() {
 
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_CENTER_0700
-     * @tc.name testAlignContentCenterFlexMargin&PaddingSatisfy
-     * @tc.desc Set the AlignContent property of the Flex component to FlexAlign.Center, and set the margin and
-     *               padding for the flex component to meet the size requirements of the subcomponent.
-     */
 
+    /**
+     * @tc.name   testAlignContentCenterFlexMargin&PaddingSatisfy
+     * @tc.number testAlignContentCenterFlexMargin&PaddingSatisfy
+     * @tc.desc   testAlignContentCenterFlexMargin&PaddingSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentCenterFlexMargin&PaddingSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentCenterFlexMargin&PaddingSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({

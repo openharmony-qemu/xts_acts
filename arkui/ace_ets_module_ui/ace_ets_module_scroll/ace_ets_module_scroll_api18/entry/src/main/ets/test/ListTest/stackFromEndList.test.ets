@@ -43,12 +43,12 @@ export default function stackFromEndList() {
     });
 
     /**
-     * @tc.number    stackFromEndList_001
-     * @tc.name      stackFromEndList_0100
-     * @tc.desc      Set the layout of the List component from the top.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   stackFromEndList_0100
+     * @tc.number stackFromEndList_001
+     * @tc.desc   Set the layout of the List component from the top.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stackFromEndList_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[stackFromEndList_0100] START');
@@ -71,12 +71,12 @@ export default function stackFromEndList() {
     });
 
     /**
-     * @tc.number    stackFromEndList_002
-     * @tc.name      stackFromEndList_0200
-     * @tc.desc      Set the layout of the List component to start from the end.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   stackFromEndList_0200
+     * @tc.number stackFromEndList_002
+     * @tc.desc   Set the layout of the List component to start from the end.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stackFromEndList_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[stackFromEndList_0200] START');

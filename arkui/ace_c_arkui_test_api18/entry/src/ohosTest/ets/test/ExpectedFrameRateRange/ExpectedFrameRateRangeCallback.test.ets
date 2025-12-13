@@ -25,13 +25,13 @@ export default function expectedFrameRateRangeCallback(){
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_POST_FRAME_0100
-     * @tc.name       : testFrameRateRangeCallback001
-     * @tc.desc       : testing Post Frame Callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   ExpectedFrameRateRangeCallback001
+     * @tc.number SUB_ARKUI_CAPI_POST_FRAME_0100
+     * @tc.desc   testing Post Frame Callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ExpectedFrameRateRangeCallback001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ExpectedFrameRateRangeCallback';

@@ -124,6 +124,50 @@
         "orientation": "portrait",
       },
       {
+        "name": "StartTestAbility5",
+        "srcEntry": "./ets/testability/StartTestAbility5.ets",
+        "description": "$string:TestAbility_desc",
+        "icon": "$media:icon",
+        "label": "$string:TestAbility_label",
+        "exported": true,
+        "launchType": "multiton",
+        "startWindowIcon": "$media:icon",
+        "startWindowBackground": "$color:start_window_background",
+        "orientation": "portrait",
+        "metadata": [{
+          "name": "ohos.ability.window.isMaximize",
+          "value": "true"
+        }]
+      },
+      {
+        "name": "StartTestAbility6",
+        "srcEntry": "./ets/testability/StartTestAbility6.ets",
+        "description": "$string:TestAbility_desc",
+        "icon": "$media:icon",
+        "label": "$string:TestAbility_label",
+        "exported": true,
+        "launchType": "multiton",
+        "startWindowIcon": "$media:icon",
+        "startWindowBackground": "$color:start_window_background",
+        "orientation": "portrait",
+        "metadata": [{
+          "name": "ohos.ability.window.SupportWindowModeInFreeWindow",
+          "value": "floating"
+        }]
+      },
+      {
+        "name": "StartTestAbility7",
+        "srcEntry": "./ets/testability/StartTestAbility7.ets",
+        "description": "$string:TestAbility_desc",
+        "icon": "$media:icon",
+        "label": "$string:TestAbility_label",
+        "exported": true,
+        "launchType": "multiton",
+        "startWindowIcon": "$media:icon",
+        "startWindowBackground": "$color:start_window_background",
+        "orientation": "landscape",
+      },
+      {
         "name": "TestAbilityDensity1",
         "srcEntry": "./ets/testability/TestAbilityDensity1.ets",
         "description": "$string:TestAbility_desc",

@@ -48,12 +48,12 @@ export default function defaultFocus() {
     });
 
     /**
-     * @tc.number    getWithUniqueId_0001
-     * @tc.name      getWithUniqueId_0001
-     * @tc.desc      test getWithUniqueId with scale param
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getWithUniqueId_0001
+     * @tc.number getWithUniqueId_0001
+     * @tc.desc   test getWithUniqueId with scale param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getWithUniqueId_0001', Level.LEVEL0, async (done: Function) => {
       console.info('getWithUniqueId_0001 START');
@@ -78,12 +78,12 @@ export default function defaultFocus() {
       done();
     });
     /**
-     * @tc.number    getWithUniqueId_0002
-     * @tc.name      getWithUniqueId_0002
-     * @tc.desc      test getSyncWithUniqueId with scale param
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getWithUniqueId_0002
+     * @tc.number getWithUniqueId_0002
+     * @tc.desc   test getSyncWithUniqueId with scale param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getWithUniqueId_0002', Level.LEVEL0, async (done: Function) => {
       console.info('getWithUniqueId_0002 START');
@@ -105,12 +105,12 @@ export default function defaultFocus() {
     });
 
     /**
-     * @tc.number    getWithUniqueId_0003
-     * @tc.name      getWithUniqueId_0003
-     * @tc.desc      test getWithUniqueId with waitUntilRenderFinished param
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getWithUniqueId_0003
+     * @tc.number getWithUniqueId_0003
+     * @tc.desc   test getWithUniqueId with waitUntilRenderFinished param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getWithUniqueId_0003', Level.LEVEL0, async (done: Function) => {
       console.info('getWithUniqueId_0003 START');
@@ -136,12 +136,12 @@ export default function defaultFocus() {
     });
 
     /**
-     * @tc.number    getWithUniqueId_0004
-     * @tc.name      getWithUniqueId_0004
-     * @tc.desc      test getSyncWithUniqueId with waitUntilRenderFinished param
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getWithUniqueId_0004
+     * @tc.number getWithUniqueId_0004
+     * @tc.desc   test getSyncWithUniqueId with waitUntilRenderFinished param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getWithUniqueId_0004', Level.LEVEL0, async (done: Function) => {
       console.info('getWithUniqueId_0004 START');

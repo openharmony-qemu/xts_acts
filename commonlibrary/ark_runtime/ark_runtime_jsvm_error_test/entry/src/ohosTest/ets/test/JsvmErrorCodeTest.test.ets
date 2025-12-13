@@ -44,11 +44,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0001
-     * @tc.name      JsvmErrorCodeTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCreateVMJSOK();
@@ -57,11 +58,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0002
-     * @tc.name      JsvmErrorCodeTest002
-     * @tc.desc      OpenVMScope,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest002
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0002
+     * @tc.desc   OpenVMScope,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testOpenVMScopeJSOK();
@@ -70,11 +72,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0003
-     * @tc.name      JsvmErrorCodeTest003
-     * @tc.desc      CloseVMScope,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest003
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0003
+     * @tc.desc   CloseVMScope,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCloseVMScopeJSOK();
@@ -83,11 +86,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0004
-     * @tc.name      JsvmErrorCodeTest004
-     * @tc.desc      CreateProxy,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest004
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0004
+     * @tc.desc   CreateProxy,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCreateProxyJSOK();
@@ -95,11 +99,12 @@ export default function JsvmJsunit() {
       expect(rst).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0005
-     * @tc.name      JsvmErrorCodeTest005
-     * @tc.desc      CreateProxy if the any of the input arguments is NULL,return JSVM_INVALID_ARG
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest005
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0005
+     * @tc.desc   CreateProxy if the any of the input arguments is NULL,return JSVM_INVALID_ARG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCreateProxyInvalid();
@@ -108,11 +113,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0006
-     * @tc.name      JsvmErrorCodeTest006
-     * @tc.desc      CreateProxy if target or handler is not Javascript Object,return JSVM_OBJECT_EXPECTED
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest006
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0006
+     * @tc.desc   CreateProxy if target or handler is not Javascript Object,return JSVM_OBJECT_EXPECTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCreateProxyObejct();
@@ -121,11 +127,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0007
-     * @tc.name      JsvmErrorCodeTest007
-     * @tc.desc      CreateProxy if an exception occurs,return JSVM_PENDING_EXCEPTION
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest007
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0007
+     * @tc.desc   CreateProxy if an exception occurs,return JSVM_PENDING_EXCEPTION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -139,11 +146,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0008
-     * @tc.name      JsvmErrorCodeTest008
-     * @tc.desc      CreateEnv,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest008
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0008
+     * @tc.desc   CreateEnv,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCreateEnvJSOK();
@@ -153,11 +161,12 @@ export default function JsvmJsunit() {
 
     });
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0009
-     * @tc.name      JsvmErrorCodeTest009
-     * @tc.desc      CreateEnvFromSnapshot,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest009
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0009
+     * @tc.desc   CreateEnvFromSnapshot,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCreateEnvFromSnapshotJSOK();
@@ -166,11 +175,12 @@ export default function JsvmJsunit() {
 
     });
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0010
-     * @tc.name      JsvmErrorCodeTest010
-     * @tc.desc      DestroyEnv,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest010
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0010
+     * @tc.desc   DestroyEnv,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testDestroyEnvJSOK();
@@ -179,11 +189,12 @@ export default function JsvmJsunit() {
 
     });
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0011
-     * @tc.name      JsvmErrorCodeTest011
-     * @tc.desc      OpenEnvScope,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest011
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0011
+     * @tc.desc   OpenEnvScope,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testOpenEnvScopeJSOK();
@@ -192,11 +203,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0012
-     * @tc.name      JsvmErrorCodeTest012
-     * @tc.desc      CloseEnvScope,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest012
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0012
+     * @tc.desc   CloseEnvScope,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCloseEnvScopeJSOK();
@@ -205,11 +217,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0013
-     * @tc.name      JsvmErrorCodeTest013
-     * @tc.desc      GetVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest013
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0013
+     * @tc.desc   GetVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetVMJSOK();
@@ -218,11 +231,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0014
-     * @tc.name      JsvmErrorCodeTest014
-     * @tc.desc      IsProxy,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest014
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0014
+     * @tc.desc   IsProxy,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testIsProxyJSOK();
@@ -231,11 +245,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0015
-     * @tc.name      JsvmErrorCodeTest015
-     * @tc.desc      IsProxy,return JSVM_INVALID_ARG
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest015
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0015
+     * @tc.desc   IsProxy,return JSVM_INVALID_ARG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testIsProxyInvalid();
@@ -244,11 +259,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0016
-     * @tc.name      JsvmErrorCodeTest016
-     * @tc.desc      ProxyGetTarget,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest016
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0016
+     * @tc.desc   ProxyGetTarget,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testProxyGetTargetJSOK();
@@ -257,11 +273,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0017
-     * @tc.name      JsvmErrorCodeTest017
-     * @tc.desc      ProxyGetTarget,return JSVM_INVALID_ARG
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest017
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0017
+     * @tc.desc   ProxyGetTarget,return JSVM_INVALID_ARG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testProxyGetTargetInvalid();
@@ -270,11 +287,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0018
-     * @tc.name      JsvmErrorCodeTest018
-     * @tc.desc      ProxyGetTarget,return JSVM_INVALID_TYPE
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest018
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0018
+     * @tc.desc   ProxyGetTarget,return JSVM_INVALID_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testProxyGetTargetInvalidType();
@@ -283,11 +301,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0019
-     * @tc.name      JsvmErrorCodeTest019
-     * @tc.desc      CompileScript,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest019
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0019
+     * @tc.desc   CompileScript,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCompileScriptJSOK();
@@ -296,11 +315,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0020
-     * @tc.name      JsvmErrorCodeTest020
-     * @tc.desc      CreateCodeCache,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest020
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0020
+     * @tc.desc   CreateCodeCache,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCreateCodeCacheJSOK();
@@ -309,11 +329,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0021
-     * @tc.name      JsvmErrorCodeTest021
-     * @tc.desc      OH_JSVM_Throw,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest021
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0021
+     * @tc.desc   OH_JSVM_Throw,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -326,11 +347,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0022
-     * @tc.name      JsvmErrorCodeTest022
-     * @tc.desc      OpenHandleScope,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest022
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0022
+     * @tc.desc   OpenHandleScope,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testOpenHandleScopeJSOK();
@@ -339,11 +361,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0023
-     * @tc.name      JsvmErrorCodeTest023
-     * @tc.desc      OpenEscapableHandleScope,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest023
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0023
+     * @tc.desc   OpenEscapableHandleScope,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testOpenEscapableHandleScopeJSOK();
@@ -352,11 +375,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0024
-     * @tc.name      JsvmErrorCodeTest024
-     * @tc.desc      CloseEscapableHandleScope,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest024
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0024
+     * @tc.desc   CloseEscapableHandleScope,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCloseEscapableHandleScopeJSOK();
@@ -365,11 +389,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0025
-     * @tc.name      JsvmErrorCodeTest025
-     * @tc.desc      GetReferenceValue,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest025
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0025
+     * @tc.desc   GetReferenceValue,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetReferenceValueJSOK();
@@ -378,11 +403,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0026
-     * @tc.name      JsvmErrorCodeTest026
-     * @tc.desc      CreateArray,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest026
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0026
+     * @tc.desc   CreateArray,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCreateArrayJSOK();
@@ -391,11 +417,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0027
-     * @tc.name      JsvmErrorCodeTest027
-     * @tc.desc      AllocateArrayBufferBackingStoreData,return JSVM_INVALID_ARG
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest027
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0027
+     * @tc.desc   AllocateArrayBufferBackingStoreData,return JSVM_INVALID_ARG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testAllocateArrayBufferBackingStoreDataInvalid();
@@ -404,11 +431,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0028
-     * @tc.name      JsvmErrorCodeTest028
-     * @tc.desc      AllocateArrayBufferBackingStoreData,return JSVM_GENERIC_FAILURE
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest028
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0028
+     * @tc.desc   AllocateArrayBufferBackingStoreData,return JSVM_GENERIC_FAILURE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testAllocateArrayBufferBackingStoreDataGenericFailure();
@@ -417,11 +445,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0029
-     * @tc.name      JsvmErrorCodeTest029
-     * @tc.desc      FreeArrayBufferBackingStoreData,return JSVM_INVALID_ARG
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest029
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0029
+     * @tc.desc   FreeArrayBufferBackingStoreData,return JSVM_INVALID_ARG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testFreeArrayBufferBackingStoreDataInvalid();
@@ -430,11 +459,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0030
-     * @tc.name      JsvmErrorCodeTest030
-     * @tc.desc      CreateArrayBufferFromBackingStoreData,return JSVM_INVALID_ARG
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest030
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0030
+     * @tc.desc   CreateArrayBufferFromBackingStoreData,return JSVM_INVALID_ARG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCreateArrayBufferFromBackingStoreDataInvalid();
@@ -443,11 +473,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0031
-     * @tc.name      JsvmErrorCodeTest031
-     * @tc.desc      CreateDate,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest031
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0031
+     * @tc.desc   CreateDate,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCreateDateJSOK();
@@ -456,11 +487,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0032
-     * @tc.name      JsvmErrorCodeTest032
-     * @tc.desc      CreateExternal,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest032
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0032
+     * @tc.desc   CreateExternal,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCreateExternalJSOK();
@@ -469,11 +501,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0033
-     * @tc.name      JsvmErrorCodeTest033
-     * @tc.desc      CreateSymbol,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest033
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0033
+     * @tc.desc   CreateSymbol,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCreateSymbolJSOK();
@@ -482,11 +515,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0034
-     * @tc.name      JsvmErrorCodeTest034
-     * @tc.desc      CreateBigintInt64,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest034
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0034
+     * @tc.desc   CreateBigintInt64,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCreateBigintInt64JSOK();
@@ -495,11 +529,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0035
-     * @tc.name      JsvmErrorCodeTest035
-     * @tc.desc      GetArrayLength,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest035
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0035
+     * @tc.desc   GetArrayLength,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetArrayLengthJSOK();
@@ -508,11 +543,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0036
-     * @tc.name      JsvmErrorCodeTest036
-     * @tc.desc      GetPrototype,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest036
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0036
+     * @tc.desc   GetPrototype,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetPrototypeJSOK();
@@ -521,11 +557,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0037
-     * @tc.name      JsvmErrorCodeTest037
-     * @tc.desc      GetDateValue,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest037
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0037
+     * @tc.desc   GetDateValue,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetDateValueJSOK();
@@ -534,11 +571,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0038
-     * @tc.name      JsvmErrorCodeTest038
-     * @tc.desc      GetDateValue,return JSVM_DATE_EXPECTED
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest038
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0038
+     * @tc.desc   GetDateValue,return JSVM_DATE_EXPECTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetDateValueExpected();
@@ -547,11 +585,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0039
-     * @tc.name      JsvmErrorCodeTest039
-     * @tc.desc      GetGetValueBool,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest039
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0039
+     * @tc.desc   GetGetValueBool,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetValueBoolJSOK();
@@ -560,11 +599,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0040
-     * @tc.name      JsvmErrorCodeTest040
-     * @tc.desc      GetValueDouble,return JSVM_NUMBER_EXPECTED
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest040
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0040
+     * @tc.desc   GetValueDouble,return JSVM_NUMBER_EXPECTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetValueDoubleExpected();
@@ -573,11 +613,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0041
-     * @tc.name      JsvmErrorCodeTest041
-     * @tc.desc      GetValueBigintInt64,return JSVM_BIGINT_EXPECTED
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest041
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0041
+     * @tc.desc   GetValueBigintInt64,return JSVM_BIGINT_EXPECTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetValueBigintInt64Expected();
@@ -586,11 +627,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0042
-     * @tc.name      JsvmErrorCodeTest042
-     * @tc.desc      GetValueBigintUint64,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest042
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0042
+     * @tc.desc   GetValueBigintUint64,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetValueBigintUint64JSOK();
@@ -599,11 +641,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0043
-     * @tc.name      JsvmErrorCodeTest043
-     * @tc.desc      GetValueBigintUint64,return JSVM_BIGINT_EXPECTED
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest043
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0043
+     * @tc.desc   GetValueBigintUint64,return JSVM_BIGINT_EXPECTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetValueBigintUint64Expected();
@@ -612,11 +655,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0044
-     * @tc.name      JsvmErrorCodeTest044
-     * @tc.desc      GetValueExternal,return JSVM_INVALID_ARG
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest044
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0044
+     * @tc.desc   GetValueExternal,return JSVM_INVALID_ARG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetValueExternalInvalid();
@@ -625,11 +669,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0045
-     * @tc.name      JsvmErrorCodeTest045
-     * @tc.desc      GetValueInt32,return JSVM_NUMBER_EXPECTED
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest045
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0045
+     * @tc.desc   GetValueInt32,return JSVM_NUMBER_EXPECTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetValueInt32Expected();
@@ -638,11 +683,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0046
-     * @tc.name      JsvmErrorCodeTest046
-     * @tc.desc      GetValueInt64,return JSVM_NUMBER_EXPECTED
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest046
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0046
+     * @tc.desc   GetValueInt64,return JSVM_NUMBER_EXPECTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetValueInt64Expected();
@@ -651,11 +697,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0047
-     * @tc.name      JsvmErrorCodeTest047
-     * @tc.desc      GetValueStringLatin1,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest047
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0047
+     * @tc.desc   GetValueStringLatin1,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetValueStringLatin1JSOK();
@@ -664,11 +711,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0048
-     * @tc.name      JsvmErrorCodeTest048
-     * @tc.desc      GetValueStringLatin1,return JSVM_STRING_EXPECTED
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest048
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0048
+     * @tc.desc   GetValueStringLatin1,return JSVM_STRING_EXPECTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetValueStringLatin1Expected();
@@ -677,11 +725,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0049
-     * @tc.name      JsvmErrorCodeTest049
-     * @tc.desc      GetValueStringUtf8,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest049
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0049
+     * @tc.desc   GetValueStringUtf8,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetValueStringUtf8JSOK();
@@ -690,11 +739,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0050
-     * @tc.name      JsvmErrorCodeTest050
-     * @tc.desc      GetValueStringUtf8,return JSVM_STRING_EXPECTED
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest050
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0050
+     * @tc.desc   GetValueStringUtf8,return JSVM_STRING_EXPECTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetValueStringUtf8Expected();
@@ -703,11 +753,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0051
-     * @tc.name      JsvmErrorCodeTest051
-     * @tc.desc      GetValueStringUtf16,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest051
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0051
+     * @tc.desc   GetValueStringUtf16,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetValueStringUtf16JSOK();
@@ -716,11 +767,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0052
-     * @tc.name      JsvmErrorCodeTest052
-     * @tc.desc      GetValueStringUtf16,return JSVM_STRING_EXPECTED
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest052
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0052
+     * @tc.desc   GetValueStringUtf16,return JSVM_STRING_EXPECTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetValueStringUtf16Expected();
@@ -729,11 +781,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0053
-     * @tc.name      JsvmErrorCodeTest053
-     * @tc.desc      GetValueUint32,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest053
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0053
+     * @tc.desc   GetValueUint32,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetValueUint32JSOK();
@@ -742,11 +795,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0054
-     * @tc.name      JsvmErrorCodeTest054
-     * @tc.desc      GetValueUint32,return JSVM_NUMBER_EXPECTED
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest054
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0054
+     * @tc.desc   GetValueUint32,return JSVM_NUMBER_EXPECTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetValueUint32Expected();
@@ -755,11 +809,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0055
-     * @tc.name      JsvmErrorCodeTest055
-     * @tc.desc      GetBoolean,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest055
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0055
+     * @tc.desc   GetBoolean,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetBooleanJSOK();
@@ -768,11 +823,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0056
-     * @tc.name      JsvmErrorCodeTest056
-     * @tc.desc      GetNull,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest056
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0056
+     * @tc.desc   GetNull,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetNullJSOK();
@@ -781,11 +837,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0057
-     * @tc.name      JsvmErrorCodeTest057
-     * @tc.desc      GetUndefined,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest057
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0057
+     * @tc.desc   GetUndefined,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetUndefinedJSOK();
@@ -794,11 +851,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0058
-     * @tc.name      JsvmErrorCodeTest058
-     * @tc.desc      CoerceToBool,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest058
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0058
+     * @tc.desc   CoerceToBool,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCoerceToBoolJSOK();
@@ -807,11 +865,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0059
-     * @tc.name      JsvmErrorCodeTest059
-     * @tc.desc      CoerceToNumber,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest059
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0059
+     * @tc.desc   CoerceToNumber,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCoerceToNumberJSOK();
@@ -820,11 +879,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0060
-     * @tc.name      JsvmErrorCodeTest060
-     * @tc.desc      CoerceToObject,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest060
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0060
+     * @tc.desc   CoerceToObject,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCoerceToObjectJSOK();
@@ -833,11 +893,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0061
-     * @tc.name      JsvmErrorCodeTest061
-     * @tc.desc      CoerceToString,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest061
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0061
+     * @tc.desc   CoerceToString,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCoerceToStringJSOK();
@@ -846,11 +907,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0062
-     * @tc.name      JsvmErrorCodeTest062
-     * @tc.desc      Instanceof,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest062
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0062
+     * @tc.desc   Instanceof,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testInstanceofJSOK();
@@ -859,11 +921,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0063
-     * @tc.name      JsvmErrorCodeTest063
-     * @tc.desc      IsArray,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest063
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0063
+     * @tc.desc   IsArray,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testIsArrayJSOK();
@@ -872,11 +935,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0064
-     * @tc.name      JsvmErrorCodeTest064
-     * @tc.desc      IsArraybuffer,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest064
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0064
+     * @tc.desc   IsArraybuffer,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testIsArraybufferJSOK();
@@ -885,11 +949,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0065
-     * @tc.name      JsvmErrorCodeTest065
-     * @tc.desc      IsDataview,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest065
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0065
+     * @tc.desc   IsDataview,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testIsDataviewJSOK();
@@ -898,11 +963,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0066
-     * @tc.name      JsvmErrorCodeTest066
-     * @tc.desc      Equals,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest066
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0066
+     * @tc.desc   Equals,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testEqualsJSOK();
@@ -911,11 +977,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0068
-     * @tc.name      JsvmErrorCodeTest068
-     * @tc.desc      IsDetachedArraybuffer,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest068
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0068
+     * @tc.desc   IsDetachedArraybuffer,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testIsDetachedArraybufferJSOK();
@@ -924,11 +991,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0069
-     * @tc.name      JsvmErrorCodeTest069
-     * @tc.desc      GetPropertyNames,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest069
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0069
+     * @tc.desc   GetPropertyNames,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetPropertyNamesJSOK();
@@ -937,11 +1005,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0070
-     * @tc.name      JsvmErrorCodeTest070
-     * @tc.desc      GetAllPropertyNames,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest070
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0070
+     * @tc.desc   GetAllPropertyNames,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetAllPropertyNamesJSOK();
@@ -950,11 +1019,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0071
-     * @tc.name      JsvmErrorCodeTest071
-     * @tc.desc      GetProperty,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest071
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0071
+     * @tc.desc   GetProperty,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetPropertyJSOK();
@@ -963,11 +1033,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0072
-     * @tc.name      JsvmErrorCodeTest072
-     * @tc.desc      SetElement,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest072
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0072
+     * @tc.desc   SetElement,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testSetElementJSOK();
@@ -976,11 +1047,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0073
-     * @tc.name      JsvmErrorCodeTest073
-     * @tc.desc      HasElement,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest073
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0073
+     * @tc.desc   HasElement,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testHasElementJSOK();
@@ -989,11 +1061,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0074
-     * @tc.name      JsvmErrorCodeTest074
-     * @tc.desc      DeleteElement,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest074
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0074
+     * @tc.desc   DeleteElement,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testDeleteElementJSOK();
@@ -1002,11 +1075,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0075
-     * @tc.name      JsvmErrorCodeTest075
-     * @tc.desc      ObjectFreeze,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest075
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0075
+     * @tc.desc   ObjectFreeze,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testObjectFreezeJSOK();
@@ -1015,11 +1089,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0076
-     * @tc.name      JsvmErrorCodeTest076
-     * @tc.desc      ObjectSeal,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest076
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0076
+     * @tc.desc   ObjectSeal,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testObjectSealJSOK();
@@ -1028,11 +1103,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0077
-     * @tc.name      JsvmErrorCodeTest077
-     * @tc.desc      GetCbInfo,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest077
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0077
+     * @tc.desc   GetCbInfo,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let script: string = `
@@ -1043,11 +1119,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0078
-     * @tc.name      JsvmErrorCodeTest078
-     * @tc.desc      GetNewTarget,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest078
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0078
+     * @tc.desc   GetNewTarget,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let script: string = `
@@ -1058,11 +1135,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0079
-     * @tc.name      JsvmErrorCodeTest079
-     * @tc.desc      NewInstance,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest079
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0079
+     * @tc.desc   NewInstance,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testNewInstanceJSOK();
@@ -1071,11 +1149,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0080
-     * @tc.name      JsvmErrorCodeTest080
-     * @tc.desc      DefineClass,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest080
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0080
+     * @tc.desc   DefineClass,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testDefineClassJSOK();
@@ -1084,11 +1163,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0081
-     * @tc.name      JsvmErrorCodeTest081
-     * @tc.desc      RemoveWrap,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest081
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0081
+     * @tc.desc   RemoveWrap,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testRemoveWrapJSOK();
@@ -1097,11 +1177,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0082
-     * @tc.name      JsvmErrorCodeTest082
-     * @tc.desc      TypeTagObject,return JSVM_INVALID_ARG
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest082
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0082
+     * @tc.desc   TypeTagObject,return JSVM_INVALID_ARG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testTypeTagObjectInvalid();
@@ -1111,11 +1192,12 @@ export default function JsvmJsunit() {
 
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0083
-     * @tc.name      JsvmErrorCodeTest083
-     * @tc.desc      AddFinalizer,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest083
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0083
+     * @tc.desc   AddFinalizer,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testAddFinalizerJSOK();
@@ -1124,11 +1206,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0084
-     * @tc.name      JsvmErrorCodeTest084
-     * @tc.desc      GetVersion,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest084
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0084
+     * @tc.desc   GetVersion,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetVersionJSOK();
@@ -1137,11 +1220,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0085
-     * @tc.name      JsvmErrorCodeTest085
-     * @tc.desc      GetVMInfo,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest085
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0085
+     * @tc.desc   GetVMInfo,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetVMInfoJSOK();
@@ -1150,11 +1234,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0086
-     * @tc.name      JsvmErrorCodeTest086
-     * @tc.desc      MemoryPressureNotification,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest086
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0086
+     * @tc.desc   MemoryPressureNotification,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testMemoryPressureNotificationJSOK();
@@ -1163,11 +1248,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0087
-     * @tc.name      JsvmErrorCodeTest087
-     * @tc.desc      CreatePromise,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest087
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0087
+     * @tc.desc   CreatePromise,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCreatePromiseJSOK();
@@ -1176,11 +1262,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0088
-     * @tc.name      JsvmErrorCodeTest088
-     * @tc.desc      ResolveDeferre,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest088
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0088
+     * @tc.desc   ResolveDeferre,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testResolveDeferreJSOK();
@@ -1189,11 +1276,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0089
-     * @tc.name      JsvmErrorCodeTest089
-     * @tc.desc      RejectDeferred,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest089
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0089
+     * @tc.desc   RejectDeferred,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testRejectDeferredJSOK();
@@ -1202,11 +1290,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0090
-     * @tc.name      JsvmErrorCodeTest090
-     * @tc.desc      PromiseRegisterHandler,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest090
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0090
+     * @tc.desc   PromiseRegisterHandler,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testPromiseRegisterHandlerJSOK();
@@ -1215,11 +1304,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0091
-     * @tc.name      JsvmErrorCodeTest091
-     * @tc.desc      PromiseRegisterHandler,return JSVM_INVALID_TYPE
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest091
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0091
+     * @tc.desc   PromiseRegisterHandler,return JSVM_INVALID_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testPromiseRegisterHandlerInvalidtype();
@@ -1228,11 +1318,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0092
-     * @tc.name      JsvmErrorCodeTest092
-     * @tc.desc      PromiseRegisterHandler,return JSVM_PENDING_EXCEPTION
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest092
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0092
+     * @tc.desc   PromiseRegisterHandler,return JSVM_PENDING_EXCEPTION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testPromiseRegisterHandlerPending();
@@ -1241,11 +1332,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0093
-     * @tc.name      JsvmErrorCodeTest093
-     * @tc.desc      PromiseRegisterHandler,return JSVM_INVALID_ARG
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest093
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0093
+     * @tc.desc   PromiseRegisterHandler,return JSVM_INVALID_ARG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testPromiseRegisterHandlerInvalid();
@@ -1254,11 +1346,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0095
-     * @tc.name      JsvmErrorCodeTest095
-     * @tc.desc      CreateSnapshot,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest095
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0095
+     * @tc.desc   CreateSnapshot,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCreateSnapshotJSOK();
@@ -1267,11 +1360,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0096
-     * @tc.name      JsvmErrorCodeTest096
-     * @tc.desc      GetHeapStatistics,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest096
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0096
+     * @tc.desc   GetHeapStatistics,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testGetHeapStatisticsJSOK();
@@ -1280,11 +1374,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0097
-     * @tc.name      JsvmErrorCodeTest097
-     * @tc.desc      StartCpuProfiler,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest097
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0097
+     * @tc.desc   StartCpuProfiler,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testStartCpuProfilerJSOK();
@@ -1293,11 +1388,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0098
-     * @tc.name      JsvmErrorCodeTest098
-     * @tc.desc      StopCpuProfiler,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest098
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0098
+     * @tc.desc   StopCpuProfiler,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testStopCpuProfilerJSOK();
@@ -1306,11 +1402,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0099
-     * @tc.name      JsvmErrorCodeTest099
-     * @tc.desc      TakeHeapSnapshot,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest099
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0099
+     * @tc.desc   TakeHeapSnapshot,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testTakeHeapSnapshotJSOK();
@@ -1319,11 +1416,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0100
-     * @tc.name      JsvmErrorCodeTest100
-     * @tc.desc      OpenInspector,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest100
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0100
+     * @tc.desc   OpenInspector,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testOpenInspectorJSOK();
@@ -1332,11 +1430,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0101
-     * @tc.name      JsvmErrorCodeTest101
-     * @tc.desc      OpenInspector,return JSVM_PENDING_EXCEPTION
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest101
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0101
+     * @tc.desc   OpenInspector,return JSVM_PENDING_EXCEPTION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testOpenInspectorPending();
@@ -1345,11 +1444,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0102
-     * @tc.name      JsvmErrorCodeTest102
-     * @tc.desc      CloseInspector,return JSVM_PENDING_EXCEPTION
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest102
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0102
+     * @tc.desc   CloseInspector,return JSVM_PENDING_EXCEPTION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCloseInspectorPending();
@@ -1358,11 +1458,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0104
-     * @tc.name      JsvmErrorCodeTest104
-     * @tc.desc      WaitForDebugger,return JSVM_PENDING_EXCEPTION
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest104
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0104
+     * @tc.desc   WaitForDebugger,return JSVM_PENDING_EXCEPTION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testWaitForDebuggerPending();
@@ -1371,11 +1472,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0105
-     * @tc.name      JsvmErrorCodeTest105
-     * @tc.desc      IsLocked,return JSVM_Ok
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest105
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0105
+     * @tc.desc   IsLocked,return JSVM_Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testIsLockedJSOK();
@@ -1384,11 +1486,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0106
-     * @tc.name      JsvmErrorCodeTest106
-     * @tc.desc      AcquireLock,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest106
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0106
+     * @tc.desc   AcquireLock,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testAcquireLockJSOK();
@@ -1397,11 +1500,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0107
-     * @tc.name      JsvmErrorCodeTest107
-     * @tc.desc      ReleaseLock,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest107
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0107
+     * @tc.desc   ReleaseLock,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testReleaseLockJSOK();
@@ -1410,11 +1514,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0108
-     * @tc.name      JsvmErrorCodeTest108
-     * @tc.desc      IsCallable,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest108
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0108
+     * @tc.desc   IsCallable,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testIsCallableJSOK();
@@ -1423,11 +1528,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0109
-     * @tc.name      JsvmErrorCodeTest109
-     * @tc.desc      IsNull,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest109
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0109
+     * @tc.desc   IsNull,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testIsNullJSOK();
@@ -1436,11 +1542,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0110
-     * @tc.name      JsvmErrorCodeTest110
-     * @tc.desc      IsNullOrUndefined,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest110
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0110
+     * @tc.desc   IsNullOrUndefined,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testIsNullOrUndefinedJSOK();
@@ -1449,11 +1556,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0111
-     * @tc.name      JsvmErrorCodeTest111
-     * @tc.desc      IsBoolean,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest111
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0111
+     * @tc.desc   IsBoolean,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testIsBooleanJSOK();
@@ -1462,11 +1570,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0112
-     * @tc.name      JsvmErrorCodeTest112
-     * @tc.desc      IsNumber,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest112
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0112
+     * @tc.desc   IsNumber,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testIsNumberJSOK();
@@ -1475,11 +1584,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0113
-     * @tc.name      JsvmErrorCodeTest113
-     * @tc.desc      IsString,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest113
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0113
+     * @tc.desc   IsString,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testIsStringJSOK();
@@ -1488,11 +1598,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0114
-     * @tc.name      JsvmErrorCodeTest114
-     * @tc.desc      IsSymbol,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest114
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0114
+     * @tc.desc   IsSymbol,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testIsSymbolJSOK();
@@ -1501,11 +1612,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0115
-     * @tc.name      JsvmErrorCodeTest115
-     * @tc.desc      IsBigInt,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest115
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0115
+     * @tc.desc   IsBigInt,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testIsBigIntJSOK();
@@ -1514,11 +1626,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0116
-     * @tc.name      JsvmErrorCodeTest116
-     * @tc.desc      CreateMap,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest116
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0116
+     * @tc.desc   CreateMap,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCreateMapJSOK();
@@ -1527,11 +1640,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0117
-     * @tc.name      JsvmErrorCodeTest117
-     * @tc.desc      CreateMap,return JSVM_INVALID_ARG
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest117
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0117
+     * @tc.desc   CreateMap,return JSVM_INVALID_ARG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCreateMapInvalid();
@@ -1540,11 +1654,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0118
-     * @tc.name      JsvmErrorCodeTest118
-     * @tc.desc      IsMap,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest118
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0118
+     * @tc.desc   IsMap,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testIsMapJSOK();
@@ -1553,11 +1668,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0119
-     * @tc.name      JsvmErrorCodeTest119
-     * @tc.desc      IsMap,return JSVM_INVALID_ARG
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest119
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0119
+     * @tc.desc   IsMap,return JSVM_INVALID_ARG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testIsMapInvalid();
@@ -1566,11 +1682,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0120
-     * @tc.name      JsvmErrorCodeTest120
-     * @tc.desc      CreateSet,return JSVM_INVALID_ARG
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest120
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0120
+     * @tc.desc   CreateSet,return JSVM_INVALID_ARG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCreateSetInvalid();
@@ -1579,11 +1696,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0121
-     * @tc.name      JsvmErrorCodeTest121
-     * @tc.desc      IsSet,return JSVM_INVALID_ARG
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest121
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0121
+     * @tc.desc   IsSet,return JSVM_INVALID_ARG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testIsSetInvalid();
@@ -1592,11 +1710,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0122
-     * @tc.name      JsvmErrorCodeTest122
-     * @tc.desc      CompileScriptWithOptions,return JSVM_INVALID_ARG
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest122
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0122
+     * @tc.desc   CompileScriptWithOptions,return JSVM_INVALID_ARG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCompileScriptWithOptionsInvalid();
@@ -1605,11 +1724,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0123
-     * @tc.name      JsvmErrorCodeTest123
-     * @tc.desc      CoerceToBigInt,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest123
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0123
+     * @tc.desc   CoerceToBigInt,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCoerceToBigIntJSOK();
@@ -1618,11 +1738,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0124
-     * @tc.name      JsvmErrorCodeTest124
-     * @tc.desc      CoerceToBigInt,return JSVM_INVALID_ARG
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest124
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0124
+     * @tc.desc   CoerceToBigInt,return JSVM_INVALID_ARG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCoerceToBigIntInvalid();
@@ -1631,11 +1752,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0125
-     * @tc.name      JsvmErrorCodeTest125
-     * @tc.desc      CoerceToBigInt,return JSVM_BIGINT_EXPECTED
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest125
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0125
+     * @tc.desc   CoerceToBigInt,return JSVM_BIGINT_EXPECTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testCoerceToBigIntExpected();
@@ -1644,11 +1766,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0126
-     * @tc.name      JsvmErrorCodeTest126
-     * @tc.desc      IsRegExp,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest126
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0126
+     * @tc.desc   IsRegExp,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testIsRegExpJSOK();
@@ -1657,11 +1780,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0127
-     * @tc.name      JsvmErrorCodeTest127
-     * @tc.desc      IsRegExp,return JSVM_INVALID_ARG
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest127
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0127
+     * @tc.desc   IsRegExp,return JSVM_INVALID_ARG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testIsRegExpInvalid();
@@ -1670,11 +1794,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0128
-     * @tc.name      JsvmErrorCodeTest128
-     * @tc.desc      IsConstructor,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest128
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0128
+     * @tc.desc   IsConstructor,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testIsConstructorJSOK();
@@ -1683,11 +1808,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_0129
-     * @tc.name      JsvmErrorCodeTest129
-     * @tc.desc      IsConstructor,return JSVM_INVALID_ARG
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmErrorCodeTest129
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_0129
+     * @tc.desc   IsConstructor,return JSVM_INVALID_ARG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmErrorCodeTest129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.testIsConstructorInvalid();

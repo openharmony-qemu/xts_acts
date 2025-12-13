@@ -29,13 +29,13 @@ export default function lazyForEachGetTypeTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_GETTYPE_0100
-     * @tc.name       : testLazyForEachGetType001
-     * @tc.desc       : testing getType for lazyForEach with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachGetType001
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_GETTYPE_0100
+     * @tc.desc   testing getType for lazyForEach with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachGetType001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`lazyforeach/LazyForEachGetTypeTest`)
@@ -44,13 +44,13 @@ export default function lazyForEachGetTypeTest() {
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_GETTYPE_0200
-     * @tc.name       : testLazyForEachGetType002
-     * @tc.desc       : testing getType for lazyForEach with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachGetType002
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_GETTYPE_0200
+     * @tc.desc   testing getType for lazyForEach with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachGetType002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLazyForEachGetType002()).assertEqual(0)

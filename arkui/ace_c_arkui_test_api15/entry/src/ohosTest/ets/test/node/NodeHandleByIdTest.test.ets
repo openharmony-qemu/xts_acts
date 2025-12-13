@@ -25,13 +25,13 @@ export default function nodeHandleByIdTest(){
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODEHANDLE_BYID_0100
-     * @tc.name       : testNodeHandleById001
-     * @tc.desc       : testing Node Handle By Id
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testNodeHandleById001
+     * @tc.number SUB_ARKUI_CAPI_NODEHANDLE_BYID_0100
+     * @tc.desc   testing Node Handle By Id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNodeHandleById001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestNodeHandleById';

@@ -20,6 +20,8 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import Want from '@ohos.app.ability.Want';
 import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 
+import { SavePhoto, GetUri } from './ContactTestUtil.test';
+
 
 const ExpectTrue = (n: boolean) => {
   try {
@@ -70,6 +72,9 @@ let ability = async () => {
   await delegator.startAbility(want);
   await sleep(1000)
 }
+let fileName = 'contactTest.jpg';
+SavePhoto(fileName);
+let uri = GetUri(fileName);
 let contactData: contact.Contact = {
   id: 0,
   key: "0",
@@ -101,7 +106,7 @@ let contactData: contact.Contact = {
     phoneNumber: "13800000000", labelName: "自定义phoneNumbers", labelId: 4
   }],
   portrait: {
-    uri: "content://head/0"
+    uri: uri
   },
   postalAddresses: [{
     city: "南京",
@@ -188,12 +193,12 @@ export default function ContactsTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_AddContact_0100
-     * @tc.name       : testContactAddContactCallBack0100
-     * @tc.desc       : Add a contacts and useing the callback method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testContactAddContactCallBack0100
+     * @tc.number SUB_Telephony_Contact_AddContact_0100
+     * @tc.desc   Add a contacts and useing the callback method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testContactAddContactCallBack0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testContactAddContactCallBack0100';
@@ -246,12 +251,12 @@ export default function ContactsTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_AddContact_0200
-     * @tc.name       : testContactAddContactCallBack0200
-     * @tc.desc       : Add a contacts and useing the callback method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testContactAddContactCallBack0200
+     * @tc.number SUB_Telephony_Contact_AddContact_0200
+     * @tc.desc   Add a contacts and useing the callback method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testContactAddContactCallBack0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testContactAddContactCallBack0200';
@@ -298,12 +303,12 @@ export default function ContactsTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_AddContact_0300
-     * @tc.name       : testContactAddContactCallBack0300
-     * @tc.desc       : Add a contacts and useing the callback method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testContactAddContactCallBack0300
+     * @tc.number SUB_Telephony_Contact_AddContact_0300
+     * @tc.desc   Add a contacts and useing the callback method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testContactAddContactCallBack0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testContactAddContactCallBack0300';
@@ -350,12 +355,12 @@ export default function ContactsTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_AddContact_0400
-     * @tc.name       : testContactAddContactPromise0100
-     * @tc.desc       : Add a contacts and useing the promise method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testContactAddContactPromise0100
+     * @tc.number SUB_Telephony_Contact_AddContact_0400
+     * @tc.desc   Add a contacts and useing the promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testContactAddContactPromise0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testContactAddContactPromise0100';
@@ -406,12 +411,12 @@ export default function ContactsTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_AddContact_0500
-     * @tc.name       : testContactAddContactPromise0200
-     * @tc.desc       : Add a contacts and useing the promise method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testContactAddContactPromise0200
+     * @tc.number SUB_Telephony_Contact_AddContact_0500
+     * @tc.desc   Add a contacts and useing the promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testContactAddContactPromise0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testContactAddContactPromise0200';
@@ -456,12 +461,12 @@ export default function ContactsTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_AddContact_0600
-     * @tc.name       : testContactAddContactPromise0300
-     * @tc.desc       : Add a contacts and useing the promise method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testContactAddContactPromise0300
+     * @tc.number SUB_Telephony_Contact_AddContact_0600
+     * @tc.desc   Add a contacts and useing the promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testContactAddContactPromise0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testContactAddContactPromise0300';

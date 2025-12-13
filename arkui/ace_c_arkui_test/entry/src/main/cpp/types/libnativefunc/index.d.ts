@@ -1387,6 +1387,10 @@ export const testImageDynamicRangeMode003: () => number;
 
 export const testImageDynamicRangeMode004: () => number;
 
+export const testImageDynamicRangeMode005: () => number;
+
+export const testImageDynamicRangeMode006: () => number;
+
 export const testImageHdrBrightness001: () => number;
 
 export const testImageHdrBrightness002: () => number;
@@ -1663,6 +1667,8 @@ export const testImageObjectFit017: () => number;
 
 export const testImageObjectFit018: () => number;
 
+export const testImageObjectFit019: () => number;
+
 export const testImageObjectRepeat001: () => number;
 
 export const testImageObjectRepeat002: () => number;
@@ -1710,6 +1716,30 @@ export const testImageRotate002: () => number;
 export const testImageRotate003: () => number;
 
 export const testImageRotate004: () => number;
+
+export const testImageRotateOrientation001: () => number;
+
+export const testImageRotateOrientation002: () => number;
+
+export const testImageRotateOrientation003: () => number;
+
+export const testImageRotateOrientation004: () => number;
+
+export const testImageRotateOrientation005: () => number;
+
+export const testImageRotateOrientation006: () => number;
+
+export const testImageRotateOrientation007: () => number;
+
+export const testImageRotateOrientation008: () => number;
+
+export const testImageRotateOrientation009: () => number;
+
+export const testImageRotateOrientation010: () => number;
+
+export const testImageRotateOrientation011: () => number;
+
+export const testImageRotateOrientation012: () => number;
 
 export const testImageSaturate001: () => number;
 
@@ -2353,6 +2383,8 @@ export const testListSwipeOption007: () => number;
 
 export const testListChildMainSize006: () => number;
 
+export const testListChildMainSize007: () => number;
+
 export const testNodeUtils010: ()=> number;
 
 export const testNodeUtils020: ()=> number;
@@ -2388,6 +2420,10 @@ export const testImageAniMatorImageFramelnfo002: () => number;
 export const testImageAniMatorImageFramelnfo003: () => number;
 
 export const testImageAniMatorImageFramelnfo004: () => number;
+
+export const testImageAniMatorImageFramelnfo005: () => number;
+
+export const testImageAniMatorImageFramelnfo006: () => number;
 
 export const testImageAnimatorImages001: () => number;
 
@@ -3170,6 +3206,8 @@ export const testScrollScrollAble002: () => number;
 export const testScrollScrollAble003: () => number;
 
 export const testScrollScrollAble004: () => number;
+
+export const testScrollScrollAble005: () => number;
 
 export const testScrollScrollBarColor001: () => number;
 
@@ -5622,6 +5660,8 @@ export const testWaterFlower_002: () => number;
 export const testWaterFlower_003: () => number;
 export const testWaterFlower_004: () => number;
 export const testWaterFlower_005: () => number;
+export const testWaterFlower_006: () => number;
+export const testWaterFlower_007: () => number;
 
 export const testLayoutDirection001: () => number;
 
@@ -6173,6 +6213,14 @@ export const testDrawableDescriptorCreate002: () => number;
 
 export const testDrawableDescriptorCreate003: () => number;
 
+export const testDrawableDescriptorCreate004: () => number;
+
+export const testDrawableDescriptorCreate005: () => number;
+
+export const testDrawableDescriptorCreate006: () => number;
+
+export const testDrawableDescriptorCreate007: () => number;
+
 export const testNodeContent001: () => number;
 
 export const testNodeContent002: () => number;
@@ -6644,6 +6692,18 @@ export const testAnimateCurve009: () => number;
 export const testAnimateCurve010: () => number;
 
 export const testAnimateCurve011: () => number;
+
+export const testAnimateCurve012: () => number;
+
+export const testAnimateCurve013: () => number;
+
+export const testAnimateCurve014: () => number;
+
+export const testAnimateCurve015: () => number;
+
+export const testAnimateCurve016: () => number;
+
+export const testAnimateCurve017: () => number;
 
 export const testKeyframeAnimateOption001: () => number;
 

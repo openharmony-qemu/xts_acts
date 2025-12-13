@@ -63,24 +63,26 @@ export default class TerminateSelfWithResult extends EmbeddableUIAbility {
     };
 
     try {
-      this.context.terminateSelfWithResult(abilityResult, (err: BusinessError) => {
-        if (err.code) {
-          console.error(`terminateSelfWithResult failed, code is ${err.code}, message is ${err.message}`);
-          return;
-        }
-        console.info('terminateSelfWithResult succeed');
-        let options: commonEventManager.CommonEventPublishData = {
-          code: 9,
-        };
-        console.log('this terminateSelfWithResult' +options.data);
-        commonEventManager.publish('startAbilityForResult', options, async (err: BusinessError) => {
-          if (err) {
-            hilog.error(DOMAIN_NUMBER, TAG, 'PublishCallBack err = ' + JSON.stringify(err));
-          } else {
-            hilog.info(DOMAIN_NUMBER, TAG, 'this push data success terminateSelfWithResult');
+      setTimeout(() => {
+        this.context.terminateSelfWithResult(abilityResult, (err: BusinessError) => {
+          if (err.code) {
+            console.error(`terminateSelfWithResult failed, code is ${err.code}, message is ${err.message}`);
+            return;
           }
+          console.info('terminateSelfWithResult succeed');
+          let options: commonEventManager.CommonEventPublishData = {
+            code: 9,
+          };
+          console.log('this terminateSelfWithResult' +options.data);
+          commonEventManager.publish('startAbilityForResult', options, async (err: BusinessError) => {
+            if (err) {
+              hilog.error(DOMAIN_NUMBER, TAG, 'PublishCallBack err = ' + JSON.stringify(err));
+            } else {
+              hilog.info(DOMAIN_NUMBER, TAG, 'this push data success terminateSelfWithResult');
+            }
+          });
         });
-      });
+      }, 500);
     } catch (err) {
       let code = (err as BusinessError).code;
       let message = (err as BusinessError).message;

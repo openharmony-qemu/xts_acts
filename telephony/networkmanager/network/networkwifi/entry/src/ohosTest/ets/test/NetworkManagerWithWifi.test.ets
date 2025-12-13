@@ -27,98 +27,14 @@ const ExpectTrue: (n: boolean, caseName?: string) => void = (n: boolean, caseNam
 export default function networkManagerWithWifiTest() {
   describe('NetworkManagerWithWifiTest', () => {
 
-    /* *
-   * @tc.number: SUB_NetworkMgr_Network_Subscribe_0600
-   * @tc.name  : testNetworkMgrNetworkSubscribe0600
-   * @tc.desc  : Subscribe to the network connection status of the current device;wifi.
-   * @tc.size  : MediumTest
-   * @tc.type  : Function
-   * @tc.level : level 0
-   */
-    it('testNetworkMgrNetworkSubscribe0600',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 ,  async (done: Function) => {
-      let caseName: string = 'testNetworkMgrNetworkSubscribe0600';
-      console.info(`${caseName} test start`);
-      try {
-        network.subscribe({
-          success: (data: NetworkResponse) => {
-            console.info(`${caseName} data1 ${JSON.stringify(data)}`);
-            ExpectTrue(data.type === 'WiFi');
-          },
-          fail: (data: Object, code: number) => {
-            console.info(`${caseName} fail data1 ${JSON.stringify(data)} ${JSON.stringify(code)}`);
-            ExpectTrue(false);
-            done();
-            console.info(`${caseName} test end`);
-          },
-        });
-        network.subscribe({
-          success: (data: NetworkResponse) => {
-            console.info(`${caseName} data2 ${JSON.stringify(data)}`);
-            ExpectTrue(data.type === 'WiFi');
-            done();
-            console.info(`${caseName} test end`);
-          },
-          fail: (data: Object, code: number) => {
-            console.info(`${caseName} fail data2 ${JSON.stringify(data)} ${JSON.stringify(code)}`);
-            ExpectTrue(false);
-            done();
-            console.info(`${caseName} test end`);
-          },
-        });
-        network.unsubscribe();
-        done();
-      } catch (err) {
-        console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-        ExpectTrue(err.code == 2101007, caseName);
-        done();
-        console.info(`${caseName} test end`);
-      }
-    });
-
-    /* *
-* @tc.number: SUB_NetworkMgr_Network_Unsubscribe_0200
-* @tc.name  : testNetworkMgrNetworkUnsubscribe0200
-* @tc.desc  : Unsubscribe to the network connection status of the device;wifi.
-* @tc.size  : MediumTest
-* @tc.type  : Function
-* @tc.level : level 0
-*/
-    it('testNetworkMgrNetworkUnsubscribe0200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 ,  async (done: Function) => {
-      let caseName: string = 'testNetworkMgrNetworkUnsubscribe0200';
-      console.info(`${caseName} test start`);
-      try {
-        network.subscribe({
-          success: (data: NetworkResponse) => {
-            console.info(`${caseName} data ${JSON.stringify(data)}`);
-            ExpectTrue(data.type === 'WiFi');
-            done();
-            console.info(`${caseName} test end`);
-          },
-          fail: (data: Object, code: number) => {
-            console.info(`${caseName} fail data ${JSON.stringify(data)} ${JSON.stringify(code)}`);
-            ExpectTrue(false);
-            done();
-            console.info(`${caseName} test end`);
-          },
-        });
-        network.unsubscribe();
-        done();
-      } catch (err) {
-        console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-        ExpectTrue(err.code == 2101007, caseName);
-        done();
-        console.info(`${caseName} test end`);
-      }
-    });
-
-    /* *
-    * @tc.number: SUB_NetworkMgr_Network_Subscribe_0400
-    * @tc.name  : testNetworkMgrNetworkSubscribe0400
-    * @tc.desc  : Subscribe to the network connection status of the current device;wifi.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testNetworkMgrNetworkSubscribe0400
+     * @tc.number SUB_NetworkMgr_Network_Subscribe_0400
+     * @tc.desc   Subscribe to the network connection status of the current device;wifi.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrNetworkSubscribe0400',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 ,  async (done: Function) => {
       let caseName: string = 'testNetworkMgrNetworkSubscribe0400';
       console.info(`${caseName} test start`);
@@ -146,7 +62,6 @@ export default function networkManagerWithWifiTest() {
             console.info(`${caseName} test end`);
           },
         });
-        done();
       } catch (err) {
         console.info(`${caseName} catch error ${JSON.stringify(err)}`);
         ExpectTrue(false, caseName);
@@ -155,13 +70,13 @@ export default function networkManagerWithWifiTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Network_getType_0200
-     * @tc.name  : testNetworkMgrNetworkGetType0200
-     * @tc.desc  : Gets the network type of the current device;wifi.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrNetworkGetType0200
+     * @tc.number SUB_NetworkMgr_Network_getType_0200
+     * @tc.desc   Gets the network type of the current device;wifi.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrNetworkGetType0200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 ,  async (done: Function) => {
       let caseName: string = 'testNetworkMgrNetworkGetType0200';
@@ -171,6 +86,7 @@ export default function networkManagerWithWifiTest() {
           success: (data: NetworkResponse) => {
             console.info(`${caseName} data ${JSON.stringify(data)}}`);
             ExpectTrue(data.type === 'WiFi',caseName);
+	    ExpectTrue(data.metered == false)
             done();
             console.info(`${caseName} test end`);
           },
@@ -181,7 +97,6 @@ export default function networkManagerWithWifiTest() {
             console.info(`${caseName} test end`);
           },
         });
-        done();
       } catch (err) {
         console.info(`${caseName} catch error ${JSON.stringify(err)}`);
         ExpectTrue(false, caseName);
@@ -190,49 +105,13 @@ export default function networkManagerWithWifiTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Network_Unsubscribe_0300
-     * @tc.name  : testNetworkMgrNetworkUnsubscribe0300
-     * @tc.desc  : Unsubscribe to the network connection status of the device;wifi.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
-     */
-    it('testNetworkMgrNetworkUnsubscribe0300',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 ,  async (done: Function) => {
-      let caseName: string = 'testNetworkMgrNetworkUnsubscribe0300';
-      console.info(`${caseName} test start`);
-      try {
-        network.subscribe({
-          success: (data: NetworkResponse) => {
-            console.info(`${caseName} data ${JSON.stringify(data)}`);
-            ExpectTrue(data.type === 'WiFi');
-            done();
-            console.info(`${caseName} test end`);
-          },
-          fail: (data: Object, code: number) => {
-            console.info(`${caseName} fail data ${JSON.stringify(data)} ${JSON.stringify(code)}`);
-            ExpectTrue(false);
-            done();
-            console.info(`${caseName} test end`);
-          },
-        });
-        network.unsubscribe();
-        done();
-      } catch (err) {
-        console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-        ExpectTrue(err.code == 2101007, caseName);
-        done();
-        console.info(`${caseName} test end`);
-      }
-    });
-
-    /* *
-     * @tc.number: SUB_NetworkMgr_Network_Subscribe_0200
-     * @tc.name  : testNetworkMgrNetworkSubscribe0200
-     * @tc.desc  : Subscribe to the network connection status of the current device;wifi.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrNetworkSubscribe0200
+     * @tc.number SUB_NetworkMgr_Network_Subscribe_0200
+     * @tc.desc   Subscribe to the network connection status of the current device;wifi.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrNetworkSubscribe0200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 ,  async (done: Function) => {
       let caseName: string = 'testNetworkMgrNetworkSubscribe0200';
@@ -252,7 +131,6 @@ export default function networkManagerWithWifiTest() {
             console.info(`${caseName} test end`);
           },
         });
-        done();
       } catch (err) {
         console.info(`${caseName} catch error ${JSON.stringify(err)}`);
         ExpectTrue(false, caseName);
@@ -261,13 +139,13 @@ export default function networkManagerWithWifiTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Network_Subscribe_0300
-     * @tc.name  : testNetworkMgrNetworkSubscribe0300
-     * @tc.desc  : Subscribe no Parameter
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrNetworkSubscribe0300
+     * @tc.number SUB_NetworkMgr_Network_Subscribe_0300
+     * @tc.desc   Subscribe no Parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrNetworkSubscribe0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrNetworkSubscribe0300';
@@ -283,13 +161,13 @@ export default function networkManagerWithWifiTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Network_Subscribe_0500
-     * @tc.name  : testNetworkMgrNetworkSubscribe0500
-     * @tc.desc  : Subscribe no Parameter
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrNetworkSubscribe0500
+     * @tc.number SUB_NetworkMgr_Network_Subscribe_0500
+     * @tc.desc   Subscribe no Parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrNetworkSubscribe0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrNetworkSubscribe0400';
@@ -298,7 +176,7 @@ export default function networkManagerWithWifiTest() {
         network.subscribe({
           success: (data: NetworkResponse) => {
             console.info(`${caseName} data is `,JSON.stringify(data));
-            ExpectTrue(data.metered)
+            ExpectTrue(data.metered == false)
             done();
             console.info(`${caseName} test end`);
           },
@@ -309,7 +187,6 @@ export default function networkManagerWithWifiTest() {
             console.info(`${caseName} test end`);
           },
         });
-        done();
       } catch (err) {
         console.info(`${caseName} catch error ${JSON.stringify(err)}`);
         ExpectTrue(false, caseName);

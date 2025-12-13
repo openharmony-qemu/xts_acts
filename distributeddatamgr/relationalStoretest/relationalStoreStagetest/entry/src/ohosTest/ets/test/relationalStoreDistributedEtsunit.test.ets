@@ -59,12 +59,12 @@ describe('relationalStoreDistributedTest', () => {
 
     console.info(TAG + "*************Unit Test Begin*************");
     /**
-     * @tc.name SUB_DDM_AppDataFWK_ETSRDB_Distributed_obtainDistributedTableName_0100
+     * @tc.name   SUB_DDM_AppDataFWK_ETSRDB_Distributed_obtainDistributedTableName_0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsApiTest_2700
-     * @tc.desc obtainDistributedTableName test
-	 * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   obtainDistributedTableName test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_AppDataFWK_ETSRDB_Distributed_obtainDistributedTableName_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         let deviceId: string | undefined = undefined;
@@ -81,14 +81,14 @@ describe('relationalStoreDistributedTest', () => {
         done();
     })
 
-    /**
-     * @tc.name SUB_DDM_AppDataFWK_ETSRDB_Distributed_obtainDistributedTableName_0200
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsApiTest_2800
-     * @tc.desc obtainDistributedTableName test
-	 * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
+     /**
+      * @tc.name   SUB_DDM_AppDataFWK_ETSRDB_Distributed_obtainDistributedTableName_0200
+      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsApiTest_2800
+      * @tc.desc   obtainDistributedTableName test
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('SUB_DDM_AppDataFWK_ETSRDB_Distributed_obtainDistributedTableName_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function)=> {
         let deviceId: string | undefined = "";
         let errInfo: BusinessError | undefined = undefined;

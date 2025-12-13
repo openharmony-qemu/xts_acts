@@ -38,9 +38,12 @@ export default function abilityTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number: 001
-     * @tc.name: assertContain
-     * @tc.desc: assertContain函数是否能正确判断包含关系
+     * @tc.name   assertContain
+     * @tc.number 001
+     * @tc.desc   assertContain函数是否能正确判断包含关系
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('assertContain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       hilog.info(0x0000, 'testTag', '%{public}s', 'it begin');

@@ -26,14 +26,14 @@ export default function stackOnTouchTest() {
       await Utils.pushPage(`stack/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_STACK_ONTOUCH_0100
-    * @tc.name       : testStackOnTouch001
-    * @tc.desc       : test OnTouch event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testStackOnTouch001
+     * @tc.number SUB_ARKUI_CAPI_STACK_ONTOUCH_0100
+     * @tc.desc   test OnTouch event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testStackOnTouch001', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnTouchTest');
       await Utils.sleep(1000);
@@ -41,14 +41,14 @@ export default function stackOnTouchTest() {
       done();
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_STACK_ONTOUCH_0200
-    * @tc.name       : testStackOnTouch002
-    * @tc.desc       : test OnTouch event not callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testStackOnTouch002
+     * @tc.number SUB_ARKUI_CAPI_STACK_ONTOUCH_0200
+     * @tc.desc   test OnTouch event not callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testStackOnTouch002', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnTouchTestDisable');
       await Utils.sleep(1000);

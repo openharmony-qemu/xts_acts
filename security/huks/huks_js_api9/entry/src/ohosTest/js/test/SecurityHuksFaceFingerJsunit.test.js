@@ -188,9 +188,12 @@ export default function SecurityHuksFaceFingerJsunit() {
             done();
         })
         /**
+         * @tc.name   HUKS_Cipher_AuthToken_2900
          * @tc.number HUKS_Cipher_AuthToken_2900
-         * @tc.name HUKS_Cipher_AuthToken_2900.
-         * @tc.desc HUKS_TAG_USER_AUTH_TYPE invalid and generate.
+         * @tc.desc   HUKS_TAG_USER_AUTH_TYPE invalid and generate.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("HUKS_Cipher_AuthToken_2900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let alias = "HUKS_Cipher_AuthToken_2900";
@@ -221,9 +224,12 @@ export default function SecurityHuksFaceFingerJsunit() {
         });
 
         /**
+         * @tc.name   HUKS_Cipher_AuthToken_3000
          * @tc.number HUKS_Cipher_AuthToken_3000
-         * @tc.name HUKS_Cipher_AuthToken_3000.
-         * @tc.desc HUKS_TAG_KEY_AUTH_ACCESS_TYPE invalid and generate.
+         * @tc.desc   HUKS_TAG_KEY_AUTH_ACCESS_TYPE invalid and generate.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("HUKS_Cipher_AuthToken_3000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let alias = "HUKS_Cipher_AuthToken_3000";
@@ -254,9 +260,12 @@ export default function SecurityHuksFaceFingerJsunit() {
         });
 
         /**
+         * @tc.name   HUKS_Cipher_AuthToken_3100
          * @tc.number HUKS_Cipher_AuthToken_3100
-         * @tc.name HUKS_Cipher_AuthToken_3100.
-         * @tc.desc HUKS_TAG_CHALLENGE_TYPE invalid and generate.
+         * @tc.desc   HUKS_TAG_CHALLENGE_TYPE invalid and generate.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("HUKS_Cipher_AuthToken_3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let alias = "HUKS_Cipher_AuthToken_3100";
@@ -287,9 +296,12 @@ export default function SecurityHuksFaceFingerJsunit() {
         });
 
         /**
+         * @tc.name   HUKS_Cipher_AuthToken_3200
          * @tc.number HUKS_Cipher_AuthToken_3200
-         * @tc.name HUKS_Cipher_AuthToken_3200.
-         * @tc.desc HUKS_TAG_CHALLENGE_POS invalid and generate.
+         * @tc.desc   HUKS_TAG_CHALLENGE_POS invalid and generate.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("HUKS_Cipher_AuthToken_3200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let alias = "HUKS_Cipher_AuthToken_3200";
@@ -319,9 +331,12 @@ export default function SecurityHuksFaceFingerJsunit() {
         });
 
         /**
+         * @tc.name   HUKS_Cipher_AuthToken_3300
          * @tc.number HUKS_Cipher_AuthToken_3300
-         * @tc.name HUKS_Cipher_AuthToken_3300.
-         * @tc.desc HUKS_TAG_AUTH_TIMEOUT invalid and generate.
+         * @tc.desc   HUKS_TAG_AUTH_TIMEOUT invalid and generate.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("HUKS_Cipher_AuthToken_3300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let alias = "HUKS_Cipher_AuthToken_3300";
@@ -351,9 +366,12 @@ export default function SecurityHuksFaceFingerJsunit() {
         });
 
         /**
+         * @tc.name   HUKS_Cipher_AuthToken_5500
          * @tc.number HUKS_Cipher_AuthToken_5500
-         * @tc.name HUKS_Cipher_AuthToken_5500.
-         * @tc.desc use pin access type is HUKS_AUTH_ACCESS_INVALID_NEW_BIO_ENROLL.
+         * @tc.desc   use pin access type is HUKS_AUTH_ACCESS_INVALID_NEW_BIO_ENROLL.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("HUKS_Cipher_AuthToken_5500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let alias = "HUKS_Cipher_AuthToken_5500";
@@ -383,9 +401,12 @@ export default function SecurityHuksFaceFingerJsunit() {
         });
 
         /**
+         * @tc.name   HUKS_Cipher_Attestation_0300
          * @tc.number HUKS_Cipher_Attestation_0300
-         * @tc.name HUKS_Cipher_Attestation_0300.
-         * @tc.desc attest key support.
+         * @tc.desc   attest key support.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("HUKS_Cipher_Attestation_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let aliasString = keyAliasString;

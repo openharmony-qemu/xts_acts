@@ -263,12 +263,12 @@ export default function AVScreenCaptureRecorderTest() {
     });
 
     /**
-     * @tc.number    : AV_SCREEN_CAPTURE_RECORDER_TEST_001
-     * @tc.name      : createAVScreenCaptureRecorder_001
-     * @tc.desc      : Test normal scene of create AVScreenCaptureRecorder.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createAVScreenCaptureRecorder_001
+     * @tc.number AV_SCREEN_CAPTURE_RECORDER_TEST_001
+     * @tc.desc   Test normal scene of create AVScreenCaptureRecorder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createAVScreenCaptureRecorder_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAVScreenCaptureRecorder_001';
@@ -277,12 +277,12 @@ export default function AVScreenCaptureRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_SCREEN_CAPTURE_RECORDER_TEST_002
-     * @tc.name      : init_001
-     * @tc.desc      : Test normal scene of init screen record.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   init_001
+     * @tc.number AV_SCREEN_CAPTURE_RECORDER_TEST_002
+     * @tc.desc   Test normal scene of init screen record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('init_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'init_001';
@@ -292,12 +292,12 @@ export default function AVScreenCaptureRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_SCREEN_CAPTURE_RECORDER_TEST_003
-     * @tc.name      : startRecording_001
-     * @tc.desc      : Test normal scene of start screen record.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   startRecording_001
+     * @tc.number AV_SCREEN_CAPTURE_RECORDER_TEST_003
+     * @tc.desc   Test normal scene of start screen record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startRecording_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'startRecording_001';
@@ -310,12 +310,12 @@ export default function AVScreenCaptureRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_SCREEN_CAPTURE_RECORDER_TEST_004
-     * @tc.name      : stopRecording_001
-     * @tc.desc      : Test normal scene of stop screen record.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopRecording_001
+     * @tc.number AV_SCREEN_CAPTURE_RECORDER_TEST_004
+     * @tc.desc   Test normal scene of stop screen record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopRecording_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'stopRecording_001';
@@ -329,34 +329,12 @@ export default function AVScreenCaptureRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_SCREEN_CAPTURE_RECORDER_TEST_005
-     * @tc.name      : skipPrivacyMode_001
-     * @tc.desc      : Test normal scene of stop screen record.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
-     */
-/*
-    it('skipPrivacyMode_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'skipPrivacyMode_001';
-      let windowIDs = [0];
-      await createAVScreenCaptureRecorder(done, testName);
-      onListen(testName);
-      await initConfig(testName);
-      await startRecording(testName);
-      await skipPrivacyMode(testName, windowIDs);
-      offListen();
-      done();
-    });
-*/
-
-    /**
-     * @tc.number    : AV_SCREEN_CAPTURE_RECORDER_TEST_006
-     * @tc.name      : setMicEnabled_001
-     * @tc.desc      : Test normal scene of stop screen record.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setMicEnabled_001
+     * @tc.number AV_SCREEN_CAPTURE_RECORDER_TEST_006
+     * @tc.desc   Test normal scene of stop screen record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setMicEnabled_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setMicEnabled_001';
@@ -370,12 +348,12 @@ export default function AVScreenCaptureRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_SCREEN_CAPTURE_RECORDER_TEST_007
-     * @tc.name      : setMicEnabled_002
-     * @tc.desc      : Test normal scene of stop screen record.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setMicEnabled_002
+     * @tc.number AV_SCREEN_CAPTURE_RECORDER_TEST_007
+     * @tc.desc   Test normal scene of stop screen record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setMicEnabled_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'setMicEnabled_002';
@@ -389,12 +367,12 @@ export default function AVScreenCaptureRecorderTest() {
     })
 
     /**
-     * @tc.number    : AV_SCREEN_CAPTURE_RECORDER_TEST_008
-     * @tc.name      : release_recorder_001
-     * @tc.desc      : Test normal scene of release AVScreenCaptureRecorder.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   release_recorder_001
+     * @tc.number AV_SCREEN_CAPTURE_RECORDER_TEST_008
+     * @tc.desc   Test normal scene of release AVScreenCaptureRecorder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_recorder_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'release_recorder_001';

@@ -43,12 +43,14 @@ export default function navigationPosition() {
       done();
     });
 
-    /* *
-       * @tc.number: SUB_ACE_COMPONENT_SR000I1RO8_018
-       * @tc.name  : navigationPosition_001
-       * @tc.desc  : Set navBarPosition to Start
-       * @tc.level : Level 2
-       */
+    /**
+     * @tc.name   navigationPosition_001
+     * @tc.number SUB_ACE_COMPONENT_SR000I1RO8_018
+     * @tc.desc   Set navBarPosition to Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('navigationPosition_001',  Level.LEVEL0, async  (done:Function) =>{
 
       console.info('[navigationPosition_001] START');
@@ -65,12 +67,14 @@ export default function navigationPosition() {
       done();
     });
 
-    /* *
-       * @tc.number: SUB_ACE_COMPONENT_SR000I1RO8_017
-       * @tc.name  : navigationPosition_002
-       * @tc.desc  : Set navBarPosition to End
-       * @tc.level : Level 2
-       */
+    /**
+     * @tc.name   navigationPosition_002
+     * @tc.number SUB_ACE_COMPONENT_SR000I1RO8_017
+     * @tc.desc   Set navBarPosition to End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('navigationPosition_002',  Level.LEVEL0, async  (done:Function) =>{
 
       console.info('[navigationPosition_002] START');

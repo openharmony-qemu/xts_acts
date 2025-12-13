@@ -92,13 +92,13 @@ export default function AVSessionCallback() {
             console.info('TestLog: End Testing AVSession Interfaces');
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0100
-         * @tc.name      : setAVMetadata - callback - set assetId
-         * @tc.desc      : Testing call setAVMetadata(callback) set assetId
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0100
+         * @tc.desc   Testing call setAVMetadata(callback) set assetId
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let metadata0  = {
@@ -128,13 +128,13 @@ export default function AVSessionCallback() {
             await sleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0200
-         * @tc.name      : setAVMetadata - callback - set artist
-         * @tc.desc      : Testing call setAVMetadata(callback) set artist
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0200
+         * @tc.desc   Testing call setAVMetadata(callback) set artist
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let metadata1  = {
@@ -164,13 +164,13 @@ export default function AVSessionCallback() {
             await sleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0300
-         * @tc.name      : setAVMetadata - callback - set author
-         * @tc.desc      : Testing call setAVMetadata(callback) set author
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0300
+         * @tc.desc   Testing call setAVMetadata(callback) set author
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let metadata2  = {
@@ -200,13 +200,13 @@ export default function AVSessionCallback() {
             await sleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0400
-         * @tc.name      : setAVMetadata - callback - set album
-         * @tc.desc      : Testing call setAVMetadata(callback) set album
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0400
+         * @tc.desc   Testing call setAVMetadata(callback) set album
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let metadata3  = {
@@ -236,13 +236,13 @@ export default function AVSessionCallback() {
             await sleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0500
-         * @tc.name      : setAVMetadata - callback - set writer
-         * @tc.desc      : Testing call setAVMetadata(callback) set writer
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0500
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0500
+         * @tc.desc   Testing call setAVMetadata(callback) set writer
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let metadata4  = {
@@ -272,13 +272,13 @@ export default function AVSessionCallback() {
             await sleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0600
-         * @tc.name      : setAVMetadata - callback - set composer
-         * @tc.desc      : Testing call setAVMetadata(callback) set composer
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0600
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0600
+         * @tc.desc   Testing call setAVMetadata(callback) set composer
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let metadata5  = {
@@ -308,13 +308,13 @@ export default function AVSessionCallback() {
             await sleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0700
-         * @tc.name      : setAVMetadata - callback - set duration
-         * @tc.desc      : Testing call setAVMetadata(callback) set duration
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0700
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0700
+         * @tc.desc   Testing call setAVMetadata(callback) set duration
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let metadata6  = {
@@ -344,13 +344,13 @@ export default function AVSessionCallback() {
             await sleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0800
-         * @tc.name      : setAVMetadata - callback - set mediaImage(url)
-         * @tc.desc      : Testing call setAVMetadata(callback) set mediaImage(url)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0800
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0800
+         * @tc.desc   Testing call setAVMetadata(callback) set mediaImage(url)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let metadata7  = {
@@ -380,13 +380,13 @@ export default function AVSessionCallback() {
             await sleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0900
-         * @tc.name      : setAVMetadata - callback - set mediaImage(pixelMap)
-         * @tc.desc      : Testing call setAVMetadata(callback) set mediaImage(pixelMap)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0900
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0900
+         * @tc.desc   Testing call setAVMetadata(callback) set mediaImage(pixelMap)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('TestLog: Create pixelmap');
@@ -436,13 +436,13 @@ export default function AVSessionCallback() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1000
-         * @tc.name      : setAVMetadata - callback - set publishDate
-         * @tc.desc      : Testing call setAVMetadata(callback) set publishDate
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1000
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1000
+         * @tc.desc   Testing call setAVMetadata(callback) set publishDate
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let metadata9  = {
@@ -474,13 +474,13 @@ export default function AVSessionCallback() {
             await sleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1100
-         * @tc.name      : setAVMetadata - callback - set subtitle
-         * @tc.desc      : Testing call setAVMetadata(callback) set subtitle
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1100
+         * @tc.desc   Testing call setAVMetadata(callback) set subtitle
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let metadata10  = {
@@ -513,13 +513,13 @@ export default function AVSessionCallback() {
             await sleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1200
-         * @tc.name      : setAVMetadata - callback - set description
-         * @tc.desc      : Testing call setAVMetadata(callback) set description
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1200
+         * @tc.desc   Testing call setAVMetadata(callback) set description
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let metadata11  = {
@@ -549,13 +549,13 @@ export default function AVSessionCallback() {
             await sleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1300
-         * @tc.name      : setAVMetadata - callback - set lyric
-         * @tc.desc      : Testing call setAVMetadata(callback) set lyric
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1300
+         * @tc.desc   Testing call setAVMetadata(callback) set lyric
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let metadata12  = {
@@ -586,13 +586,13 @@ export default function AVSessionCallback() {
             await sleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1400
-         * @tc.name      : setAVMetadata - callback - set previousAssetId & nextAssetId
-         * @tc.desc      : Testing call setAVMetadata(callback) set previousAssetId & nextAssetId
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1400
+         * @tc.desc   Testing call setAVMetadata(callback) set previousAssetId & nextAssetId
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let metadata13  = {
@@ -625,13 +625,13 @@ export default function AVSessionCallback() {
             await sleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1500
-         * @tc.name      : setAVMetadata - callback - set filter
-         * @tc.desc      : Testing call setAVMetadata(callback) set filter
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1500
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1500
+         * @tc.desc   Testing call setAVMetadata(callback) set filter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let metadata16  = {
@@ -662,13 +662,13 @@ export default function AVSessionCallback() {
             await sleep(500);
         })
         
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1600
-         * @tc.name      : setAVMetadata - callback - set skipIntervals
-         * @tc.desc      : Testing call setAVMetadata(callback) set skipIntervals
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1600
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1600
+         * @tc.desc   Testing call setAVMetadata(callback) set skipIntervals
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let metadata17  = {
@@ -699,13 +699,13 @@ export default function AVSessionCallback() {
             await sleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1700
-         * @tc.name      : setAVMetadata - callback - set avQueueName、avQueueId、avQueueImage(pixelmap)
-         * @tc.desc      : Testing call setAVMetadata(callback) set avQueueName、avQueueId、avQueueImage(pixelmap)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1700
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1700
+         * @tc.desc   Testing call setAVMetadata(callback) set avQueueName、avQueueId、avQueueImage(pixelmap)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('TestLog: Creat pixelmap');
@@ -758,13 +758,13 @@ export default function AVSessionCallback() {
             await sleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1800
-         * @tc.name      : setAVMetadata - callback - set avQueueName、avQueueId、avQueueImage(string)
-         * @tc.desc      : Testing call setAVMetadata(callback) set avQueueName、avQueueId、avQueueImage(string)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1800
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1800
+         * @tc.desc   Testing call setAVMetadata(callback) set avQueueName、avQueueId、avQueueImage(string)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let metadata = {
@@ -801,13 +801,13 @@ export default function AVSessionCallback() {
             await sleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1900
-         * @tc.name      : setAVMetadata - callback - set displayTags
-         * @tc.desc      : Testing call setAVMetadata(callback) set displayTags
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1900
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1900
+         * @tc.desc   Testing call setAVMetadata(callback) set displayTags
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let metadata = {
@@ -843,13 +843,13 @@ export default function AVSessionCallback() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_2000
-         * @tc.name      : setAVMetadata - callback - set singleLyricText
-         * @tc.desc      : Testing call setAVMetadata(callback) set singleLyricText
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_2000
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_2000
+         * @tc.desc   Testing call setAVMetadata(callback) set singleLyricText
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let metadata = {
@@ -885,13 +885,13 @@ export default function AVSessionCallback() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0100
-         * @tc.name      : setAVPlaybackState - callback - set state & activeItemId
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set state & activeItemId
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0100
+         * @tc.desc   Testing call setAVPlaybackState(callback) set state & activeItemId
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let PlaybackState1 = {
@@ -922,13 +922,13 @@ export default function AVSessionCallback() {
             await sleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0200
-         * @tc.name      : setAVPlaybackState - callback - set speed
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set speed
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0200
+         * @tc.desc   Testing call setAVPlaybackState(callback) set speed
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let PlaybackState2 = {
@@ -960,13 +960,13 @@ export default function AVSessionCallback() {
             await sleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0300
-         * @tc.name      : setAVPlaybackState - callback - set position
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set position
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0300
+         * @tc.desc   Testing call setAVPlaybackState(callback) set position
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let PlaybackState3 = {
@@ -998,13 +998,13 @@ export default function AVSessionCallback() {
             await sleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0400
-         * @tc.name      : setAVPlaybackState - callback - set bufferedTime
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set bufferedTime
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0400
+         * @tc.desc   Testing call setAVPlaybackState(callback) set bufferedTime
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let PlaybackState4 = {
@@ -1036,13 +1036,13 @@ export default function AVSessionCallback() {
             await sleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0500
-         * @tc.name      : setAVPlaybackState - callback - set loopMode(LOOP_MODE_SEQUENCE)
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set loopMode(LOOP_MODE_SEQUENCE)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0500
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0500
+         * @tc.desc   Testing call setAVPlaybackState(callback) set loopMode(LOOP_MODE_SEQUENCE)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let PlaybackState5 = {
@@ -1074,13 +1074,13 @@ export default function AVSessionCallback() {
             await sleep(1000);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0600
-         * @tc.name      : setAVPlaybackState - callback - set loopMode(LOOP_MODE_SINGLE)
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set loopMode(LOOP_MODE_SINGLE)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0600
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0600
+         * @tc.desc   Testing call setAVPlaybackState(callback) set loopMode(LOOP_MODE_SINGLE)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let PlaybackState6 = {
@@ -1112,13 +1112,13 @@ export default function AVSessionCallback() {
             await sleep(1000);
         })
         
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0700
-         * @tc.name      : setAVPlaybackState - callback - set loopMode(LOOP_MODE_LIST)
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set loopMode(LOOP_MODE_LIST)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0700
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0700
+         * @tc.desc   Testing call setAVPlaybackState(callback) set loopMode(LOOP_MODE_LIST)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let PlaybackState7 = {
@@ -1150,13 +1150,13 @@ export default function AVSessionCallback() {
             await sleep(1000);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0800
-         * @tc.name      : setAVPlaybackState - callback - set loopMode(LOOP_MODE_SHUFFLE)
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set loopMode(LOOP_MODE_SHUFFLE)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0800
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0800
+         * @tc.desc   Testing call setAVPlaybackState(callback) set loopMode(LOOP_MODE_SHUFFLE)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let PlaybackState8 = {
@@ -1188,13 +1188,13 @@ export default function AVSessionCallback() {
             await sleep(1000);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0900
-         * @tc.name      : setAVPlaybackState - callback - set isFavorite
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set isFavorite
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0900
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0900
+         * @tc.desc   Testing call setAVPlaybackState(callback) set isFavorite
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let PlaybackState9 = {
@@ -1226,13 +1226,13 @@ export default function AVSessionCallback() {
             await sleep(1000);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_1000
-         * @tc.name      : setAVPlaybackState - callback - set state(PLAYBACK_STATE_IDLE)
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set state(PLAYBACK_STATE_IDLE)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_1000
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_1000
+         * @tc.desc   Testing call setAVPlaybackState(callback) set state(PLAYBACK_STATE_IDLE)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let PlaybackState10 = {
@@ -1263,13 +1263,13 @@ export default function AVSessionCallback() {
             await sleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_1100
-         * @tc.name      : setAVPlaybackState - callback - set state(PLAYBACK_STATE_BUFFERING)
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set state(PLAYBACK_STATE_BUFFERING)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_1100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_1100
+         * @tc.desc   Testing call setAVPlaybackState(callback) set state(PLAYBACK_STATE_BUFFERING)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let PlaybackState11 = {
@@ -1300,13 +1300,13 @@ export default function AVSessionCallback() {
             await sleep(500);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_1200
-         * @tc.name      : setAVPlaybackState - callback - set loopMode(LOOP_MODE_CUSTOM)
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set loopMode(LOOP_MODE_CUSTOM)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_1200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_1200
+         * @tc.desc   Testing call setAVPlaybackState(callback) set loopMode(LOOP_MODE_CUSTOM)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let PlaybackState = {
@@ -1341,13 +1341,13 @@ export default function AVSessionCallback() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_1300
-         * @tc.name      : setAVPlaybackState - callback - set maxVolume
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set maxVolume
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_1300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_1300
+         * @tc.desc   Testing call setAVPlaybackState(callback) set maxVolume
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let PlaybackState = {
@@ -1382,13 +1382,13 @@ export default function AVSessionCallback() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_1400
-         * @tc.name      : setAVPlaybackState - callback - set muted
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set muted
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_1400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_1400
+         * @tc.desc   Testing call setAVPlaybackState(callback) set muted
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let PlaybackState = {
@@ -1423,13 +1423,13 @@ export default function AVSessionCallback() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_1500
-         * @tc.name      : setAVPlaybackState - callback - set videoWidth & videoHeight
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set videoWidth & videoHeight
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_1500
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_1500
+         * @tc.desc   Testing call setAVPlaybackState(callback) set videoWidth & videoHeight
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let PlaybackState = {
@@ -1465,13 +1465,13 @@ export default function AVSessionCallback() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_1600
-         * @tc.name      : setAVPlaybackState - callback - set duration
-         * @tc.desc      : Testing call setAVPlaybackState(callback) set duration
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_1600
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_1600
+         * @tc.desc   Testing call setAVPlaybackState(callback) set duration
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_CALLBACK_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let PlaybackState = {
@@ -1506,13 +1506,13 @@ export default function AVSessionCallback() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_CALLBACK_0100
-         * @tc.name      : set session launchAbility - callback
-         * @tc.desc      : Testing call setLaunchAbility(callback)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_CALLBACK_0100
+         * @tc.desc   Testing call setLaunchAbility(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function(done) {
             let wantAgentInfo = {
@@ -1552,25 +1552,25 @@ export default function AVSessionCallback() {
                 }
             });
             await sleep(500);
-            await WantAgent.equal(agent, wantagent).then((bool) => {
-                if (bool) {
-                    console.info('AVSessionTest : Set LaunchAbility successfully');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('AVSessionTest : Set LaunchAbility failed');
-                    expect(false).assertTrue();
-                }
-            });
+            let agentBundleName = await WantAgent.getBundleName(agent);
+            let wantagentBundleName = await WantAgent.getBundleName(wantagent);
+            if (agentBundleName == wantagentBundleName) {
+                console.info('TestLog: AVSessionTest : Set LaunchAbility successfully');
+                expect(true).assertTrue();
+            } else {
+                console.info('TestLog: AVSessionTest : Set LaunchAbility failed');
+                expect(false).assertTrue();
+            }
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_CALLBACK_0100
-         * @tc.name      : destroy session - callback
-         * @tc.desc      : Testing destroy session(callback)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_CALLBACK_0100
+         * @tc.desc   Testing destroy session(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let flag = false;

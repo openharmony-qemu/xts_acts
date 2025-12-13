@@ -43,12 +43,12 @@ export default function customPropertyTest() {
     });
 
     /**
-     * @tc.number    customPropertyTest_0010
-     * @tc.name      customPropertyTest_0010
-     * @tc.desc      commonMethed: customProperty
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   customPropertyTest_0010
+     * @tc.number customPropertyTest_0010
+     * @tc.desc   commonMethed: customProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('customPropertyTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('customPropertyTest_0010 START');

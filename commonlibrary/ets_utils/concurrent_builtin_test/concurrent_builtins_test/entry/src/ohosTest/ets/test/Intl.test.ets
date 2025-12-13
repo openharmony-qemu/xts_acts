@@ -68,12 +68,12 @@ export default function IntTest() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_INTL_0100
-     * @tc.name      : testIntlCollator_0100
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testIntlCollator_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INTL_0100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testIntlCollator_0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -102,12 +102,12 @@ export default function IntTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_INTL_0200
-     * @tc.name      : testIntlCollator_0200
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testIntlCollator_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INTL_0200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testIntlCollator_0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -137,12 +137,12 @@ export default function IntTest() {
 
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_INTL_0300
-     * @tc.name      : testIntlCollator_0500
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testIntlCollator_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INTL_0300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testIntlCollator_0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -171,12 +171,12 @@ export default function IntTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_INTL_0301
-     * @tc.name      : testIntlCollator_1900
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testIntlCollator_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INTL_0301
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testIntlCollator_1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -205,12 +205,12 @@ export default function IntTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_INTL_0302
-     * @tc.name      : testIntlCollator_2800
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testIntlCollator_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INTL_0302
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testIntlCollator_2800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -239,12 +239,12 @@ export default function IntTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_INTL_0400
-     * @tc.name      : testIntlCompare_6300
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testIntlCompare_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INTL_0400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testIntlCompare_6300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -273,12 +273,12 @@ export default function IntTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_INTL_0500
-     * @tc.name      : testIntlResolvedOptions_7200
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testIntlResolvedOptions_7200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INTL_0500
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testIntlResolvedOptions_7200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -307,12 +307,12 @@ export default function IntTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_INTL_0600
-     * @tc.name      : testIntlDateTimeFormat_8700
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testIntlDateTimeFormat_8700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INTL_0600
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testIntlDateTimeFormat_8700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -341,12 +341,12 @@ export default function IntTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_INTL_0700
-     * @tc.name      : testIntlDateTimeFormat_8800
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testIntlDateTimeFormat_8800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INTL_0700
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testIntlDateTimeFormat_8800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -375,12 +375,12 @@ export default function IntTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_INTL_0800
-     * @tc.name      : testNumberFormatConstructorNew0009
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testNumberFormatConstructorNew0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INTL_0800
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testNumberFormatConstructorNew0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -409,12 +409,12 @@ export default function IntTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_INTL_1000
-     * @tc.name      : testPluralRulesConstructor0006
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testPluralRulesConstructor0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INTL_1000
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testPluralRulesConstructor0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -443,12 +443,12 @@ export default function IntTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_INTL_1100
-     * @tc.name      : testCollatorSupportedLocalesOf0009
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testCollatorSupportedLocalesOf0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INTL_1100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testCollatorSupportedLocalesOf0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -477,12 +477,12 @@ export default function IntTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_INTL_1200
-     * @tc.name      : testIntlRelativeTimeFormatCtor
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testIntlRelativeTimeFormatCtor
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INTL_1200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testIntlRelativeTimeFormatCtor', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -511,12 +511,12 @@ export default function IntTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_INTL_1300
-     * @tc.name      : testIntlRelativeTimeFormatFormat
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testIntlRelativeTimeFormatFormat
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INTL_1300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testIntlRelativeTimeFormatFormat', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -545,12 +545,12 @@ export default function IntTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_INTL_1400
-     * @tc.name      : testIntlRelativeTimeFormatFormatToParts
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testIntlRelativeTimeFormatFormatToParts
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INTL_1400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testIntlRelativeTimeFormatFormatToParts', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -579,12 +579,12 @@ export default function IntTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_INTL_1500
-     * @tc.name      : testIntlRelativeTimeFormatDefault
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testIntlRelativeTimeFormatDefault
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INTL_1500
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testIntlRelativeTimeFormatDefault', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

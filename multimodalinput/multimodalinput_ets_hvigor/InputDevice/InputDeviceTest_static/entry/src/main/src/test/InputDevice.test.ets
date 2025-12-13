@@ -39,12 +39,12 @@ export default function InputDeviceTest() {
     }
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_InputDevice_0100
-     * @tc.name: SUB_MMI_Input_Api_InputDevice_0100
-     * @tc.desc: Test KeyboardType.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_InputDevice_0100
+     * @tc.number SUB_MMI_Input_Api_InputDevice_0100
+     * @tc.desc   Test KeyboardType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_InputDevice_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -67,12 +67,12 @@ export default function InputDeviceTest() {
       });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_InputDevice_0200
-     * @tc.name: SUB_MMI_Input_Api_InputDevice_0200
-     * @tc.desc: Test FunctionKey.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_InputDevice_0200
+     * @tc.number SUB_MMI_Input_Api_InputDevice_0200
+     * @tc.desc   Test FunctionKey.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_InputDevice_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -90,12 +90,12 @@ export default function InputDeviceTest() {
       });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_InputDevice_0300
-     * @tc.name: SUB_MMI_Input_Api_InputDevice_0300
-     * @tc.desc: Test callback getDeviceInfo interface to get information about a specified input device.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_InputDevice_0300
+     * @tc.number SUB_MMI_Input_Api_InputDevice_0300
+     * @tc.desc   Test callback getDeviceInfo interface to get information about a specified input device.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_InputDevice_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -126,12 +126,12 @@ export default function InputDeviceTest() {
       });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_InputDevice_0400
-     * @tc.name: SUB_MMI_Input_Api_InputDevice_0400
-     * @tc.desc: Test promise getDeviceInfo interface to get information about a specified input device.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_InputDevice_0400
+     * @tc.number SUB_MMI_Input_Api_InputDevice_0400
+     * @tc.desc   Test promise getDeviceInfo interface to get information about a specified input device.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_InputDevice_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -179,12 +179,12 @@ export default function InputDeviceTest() {
       });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_InputDevice_0500
-     * @tc.name: SUB_MMI_Input_Api_InputDevice_0500
-     * @tc.desc: Test callback getDeviceList interface to get the ID list of all input devices.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_InputDevice_0500
+     * @tc.number SUB_MMI_Input_Api_InputDevice_0500
+     * @tc.desc   Test callback getDeviceList interface to get the ID list of all input devices.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_InputDevice_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -213,12 +213,12 @@ export default function InputDeviceTest() {
       });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_InputDevice_0600
-     * @tc.name: SUB_MMI_Input_Api_InputDevice_0600
-     * @tc.desc: Test promise getDeviceList interface to get the ID list of all input devices.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_InputDevice_0600
+     * @tc.number SUB_MMI_Input_Api_InputDevice_0600
+     * @tc.desc   Test promise getDeviceList interface to get the ID list of all input devices.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_InputDevice_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -240,12 +240,12 @@ export default function InputDeviceTest() {
       });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_InputDevice_0700
-     * @tc.name: SUB_MMI_Input_Api_InputDevice_0700
-     * @tc.desc: Test inputDevice on interface
-     * @tc.level 0
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_InputDevice_0700
+     * @tc.number SUB_MMI_Input_Api_InputDevice_0700
+     * @tc.desc   Test inputDevice on interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_InputDevice_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -253,7 +253,7 @@ export default function InputDeviceTest() {
         hilog.info(domain, tag, `${caseName} enter`);
         let isPhysicalKeyboardExist = 0;
         try {
-          inputDevice.on("change", (data): void => {
+          inputDevice.onChange((data): void => {
             hilog.info(domain, tag, `InputDevice type: ${data.type}, deviceId: ${data.deviceId}`);
             isPhysicalKeyboardExist++;
             ExpectTrue(isPhysicalKeyboardExist == 1);
@@ -267,12 +267,12 @@ export default function InputDeviceTest() {
       });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_InputDevice_0800
-     * @tc.name: SUB_MMI_Input_Api_InputDevice_0800
-     * @tc.desc: Test callback on and off interfaces to cancel the hot swap event for the specified input device.
-     * @tc.level 0
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_InputDevice_0800
+     * @tc.number SUB_MMI_Input_Api_InputDevice_0800
+     * @tc.desc   Test callback on and off interfaces to cancel the hot swap event for the specified input device.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_InputDevice_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -282,14 +282,14 @@ export default function InputDeviceTest() {
         };
         let ifInputDeviceOffSuccess = 0;
         try {
-          inputDevice.on("change", (data: inputDevice.DeviceListener) => {
+          inputDevice.onChange((data: inputDevice.DeviceListener) => {
             console.info(`${caseName} Device event info: ${JSON.stringify(data)}`);
           });
         } catch (error) {
           console.info(`${caseName} Get device info failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
         }
         try {
-          inputDevice.off("change", callback);
+          inputDevice.offChange(callback);
           console.info(`${caseName} Cancel listening device event success, ifInputDeviceOffSuccess: ${JSON.stringify(ifInputDeviceOffSuccess)}`);
           ifInputDeviceOffSuccess++;
           ExpectTrue(ifInputDeviceOffSuccess == 1);
@@ -303,12 +303,12 @@ export default function InputDeviceTest() {
       });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_InputDevice_0900
-     * @tc.name: SUB_MMI_Input_Api_InputDevice_0900
-     * @tc.desc: Test callback off interface to cancel the hot swap event for all input devices.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_InputDevice_0900
+     * @tc.number SUB_MMI_Input_Api_InputDevice_0900
+     * @tc.desc   Test callback off interface to cancel the hot swap event for all input devices.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_InputDevice_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -318,7 +318,7 @@ export default function InputDeviceTest() {
           console.info(`${caseName} Report device event info: ${JSON.stringify(data, [`type`, `deviceId`])}`);
         };
         try {
-          inputDevice.off("change");
+          inputDevice.offChange();
           ifInputDeviceOffSuccess++;
           ExpectTrue(ifInputDeviceOffSuccess == 1);
           done();

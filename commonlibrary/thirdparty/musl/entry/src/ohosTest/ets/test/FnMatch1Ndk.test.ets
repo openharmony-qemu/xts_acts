@@ -25,12 +25,12 @@ export default function fnmatch1NdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_GETITIMER_TIME64_0100
-     * @tc.name       : testMuslTimeGetITimerTime64001
-     * @tc.desc       : test __getitimer_time64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeGetITimerTime64001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_GETITIMER_TIME64_0100
+     * @tc.desc   test __getitimer_time64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeGetITimerTime64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(fnmatchndk.__getitimer_time64(0)).assertEqual(0);
@@ -38,12 +38,12 @@ export default function fnmatch1NdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_GETITIMER_TIME64_0200
-     * @tc.name       : testMuslTimeGetITimerTime64002
-     * @tc.desc       : test __getitimer_time64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeGetITimerTime64002
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_GETITIMER_TIME64_0200
+     * @tc.desc   test __getitimer_time64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeGetITimerTime64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(fnmatchndk.__getitimer_time64(-1)).assertEqual(-1);
@@ -51,12 +51,12 @@ export default function fnmatch1NdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_FNMATCH_FNMATCH_0100
-     * @tc.name       : testMuslResourceGetRUsageTime64001
-     * @tc.desc       : test __getrusage_time64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslResourceGetRUsageTime64001
+     * @tc.number SUB_THIRDPARTY_MUSL_FNMATCH_FNMATCH_0100
+     * @tc.desc   test __getrusage_time64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslResourceGetRUsageTime64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(fnmatchndk.__getrusage_time64(0)).assertEqual(0);
@@ -64,12 +64,12 @@ export default function fnmatch1NdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_FNMATCH_FNMATCH_0200
-     * @tc.name       : testMuslResourceGetRUsageTime64002
-     * @tc.desc       : test __getrusage_time64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslResourceGetRUsageTime64002
+     * @tc.number SUB_THIRDPARTY_MUSL_FNMATCH_FNMATCH_0200
+     * @tc.desc   test __getrusage_time64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslResourceGetRUsageTime64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(fnmatchndk.__getrusage_time64(-2)).assertEqual(-1);
@@ -77,12 +77,12 @@ export default function fnmatch1NdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_GETTIMEOFDAY_TIME64_0100
-     * @tc.name       : testMuslTimeGetTimeOfDayTime64001
-     * @tc.desc       : test __gettimeofday_time64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeGetTimeOfDayTime64001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_GETTIMEOFDAY_TIME64_0100
+     * @tc.desc   test __gettimeofday_time64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeGetTimeOfDayTime64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(fnmatchndk.__gettimeofday_time64(0)).assertEqual(0);
@@ -90,12 +90,12 @@ export default function fnmatch1NdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_GETTIMEOFDAY_TIME64_0200
-     * @tc.name       : testMuslTimeGetTimeOfDayTime64002
-     * @tc.desc       : test __gettimeofday_time64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeGetTimeOfDayTime64002
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_GETTIMEOFDAY_TIME64_0200
+     * @tc.desc   test __gettimeofday_time64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeGetTimeOfDayTime64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(fnmatchndk.__gettimeofday_time64(-1)).assertEqual(-1);
@@ -103,12 +103,12 @@ export default function fnmatch1NdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SELECT_SELECT_TIME64_0100
-     * @tc.name       : testMuslSelectPSelectTime64001
-     * @tc.desc       : test __pselect_time64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSelectPSelectTime64001
+     * @tc.number SUB_THIRDPARTY_MUSL_SELECT_SELECT_TIME64_0100
+     * @tc.desc   test __pselect_time64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSelectPSelectTime64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(fnmatchndk.__pselect_time64(1)).assertEqual(0);
@@ -116,12 +116,12 @@ export default function fnmatch1NdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SELECT_SELECT_TIME64_0200
-     * @tc.name       : testMuslSelectPSelectTime64002
-     * @tc.desc       : test __pselect_time64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSelectPSelectTime64002
+     * @tc.number SUB_THIRDPARTY_MUSL_SELECT_SELECT_TIME64_0200
+     * @tc.desc   test __pselect_time64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSelectPSelectTime64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(fnmatchndk.__pselect_time64(-1)).assertEqual(-1);
@@ -129,12 +129,12 @@ export default function fnmatch1NdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_SETITIMER_TIME64_0100
-     * @tc.name       : testMuslTimeSetItimerTime64001
-     * @tc.desc       : test __setitimer_time64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeSetItimerTime64001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_SETITIMER_TIME64_0100
+     * @tc.desc   test __setitimer_time64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeSetItimerTime64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(fnmatchndk.__setitimer_time64(0)).assertEqual(0);
@@ -142,12 +142,12 @@ export default function fnmatch1NdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_SETITIMER_TIME64_0200
-     * @tc.name       : testMuslTimeSetItimerTime64002
-     * @tc.desc       : test __setitimer_time64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeSetItimerTime64002
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_SETITIMER_TIME64_0200
+     * @tc.desc   test __setitimer_time64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeSetItimerTime64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(fnmatchndk.__setitimer_time64(-1)).assertEqual(-1);

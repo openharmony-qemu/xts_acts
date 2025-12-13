@@ -25,12 +25,12 @@ export default function resolvNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_RESOLV_RESINIT_0100
-     * @tc.name       : testMuslResolvResInit001
-     * @tc.desc       : test res_init
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslResolvResInit001
+     * @tc.number SUB_THIRDPARTY_MUSL_RESOLV_RESINIT_0100
+     * @tc.desc   test res_init
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslResolvResInit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = resolv.resInit();
@@ -40,12 +40,12 @@ export default function resolvNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_RESOLV_RESMKQUERY_0100
-     * @tc.name       : testMuslResolvResMkquery001
-     * @tc.desc       : test res_mkquery
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslResolvResMkquery001
+     * @tc.number SUB_THIRDPARTY_MUSL_RESOLV_RESMKQUERY_0100
+     * @tc.desc   test res_mkquery
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslResolvResMkquery001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -1;
@@ -56,12 +56,12 @@ export default function resolvNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_RESOLV_RESMKQUERY_0200
-     * @tc.name       : testMuslResolvResMkquery002
-     * @tc.desc       : test res_mkquery
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslResolvResMkquery002
+     * @tc.number SUB_THIRDPARTY_MUSL_RESOLV_RESMKQUERY_0200
+     * @tc.desc   test res_mkquery
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslResolvResMkquery002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0;
@@ -73,12 +73,12 @@ export default function resolvNdkTest() {
 
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_RESOLV_DN_EXPAND_0100
-     * @tc.name       : testMuslReSoLvDnExpand001
-     * @tc.desc       : test dn_expand
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslReSoLvDnExpand001
+     * @tc.number SUB_THIRDPARTY_MUSL_RESOLV_DN_EXPAND_0100
+     * @tc.desc   test dn_expand
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslReSoLvDnExpand001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = false;

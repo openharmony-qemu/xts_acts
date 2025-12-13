@@ -26,13 +26,13 @@ export default function textAreaKeyTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_KEY_0100
-     * @tc.name: testTextAreaKey001
-     * @tc.desc: testing key for textArea
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaKey001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_KEY_0100
+     * @tc.desc   testing key for textArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaKey001', Level.LEVEL1, async (done: Function) => {
       let driver: Driver = Driver.create();

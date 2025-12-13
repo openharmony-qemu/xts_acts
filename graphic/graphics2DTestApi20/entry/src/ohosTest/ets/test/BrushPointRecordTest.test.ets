@@ -20,12 +20,12 @@ const OH_DRAWING_ERROR_INVALID_PARAMETER = 401;
 export default function BrushPointRecordTest() {
   describe('BrushPointRecordTest', () => {
     /**
-     * @tc.number  : SUB_OH_Data_Asset_GetAlphaFloat_0100
-     * @tc.name    : SUB_OH_Data_Asset_GetAlphaFloat_0100
-     * @tc.desc    : test OH_Data_Asset_GetAlphaFloat Test Normal Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Data_Asset_GetAlphaFloat_0100
+     * @tc.number SUB_OH_Data_Asset_GetAlphaFloat_0100
+     * @tc.desc   test OH_Data_Asset_GetAlphaFloat Test Normal Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Data_Asset_GetAlphaFloat_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -42,12 +42,12 @@ export default function BrushPointRecordTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Data_Asset_GetAlphaFloat_0200
-     * @tc.name    : SUB_OH_Data_Asset_GetAlphaFloat_0200
-     * @tc.desc    : test OH_Data_Asset_GetAlphaFloat Test Normal Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Data_Asset_GetAlphaFloat_0200
+     * @tc.number SUB_OH_Data_Asset_GetAlphaFloat_0200
+     * @tc.desc   test OH_Data_Asset_GetAlphaFloat Test Normal Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Data_Asset_GetAlphaFloat_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -64,12 +64,12 @@ export default function BrushPointRecordTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_BrushGetRedFloatSuccess_0100
-     * @tc.name    : SUB_OH_Drawing_BrushGetRedFloatSuccess_0100
-     * @tc.desc    : test OH_Drawing_BrushGetRedFloatSuccess Normal Fail Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_BrushGetRedFloatSuccess_0100
+     * @tc.number SUB_OH_Drawing_BrushGetRedFloatSuccess_0100
+     * @tc.desc   test OH_Drawing_BrushGetRedFloatSuccess Normal Fail Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_BrushGetRedFloatSuccess_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -86,12 +86,12 @@ export default function BrushPointRecordTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_BrushGetRedFloatFail_0200
-     * @tc.name    : SUB_OH_Drawing_BrushGetRedFloatFail_0200
-     * @tc.desc    : test OH_Drawing_BrushGetRedFloatFail  Fail Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_BrushGetRedFloatFail_0200
+     * @tc.number SUB_OH_Drawing_BrushGetRedFloatFail_0200
+     * @tc.desc   test OH_Drawing_BrushGetRedFloatFail  Fail Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_BrushGetRedFloatFail_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -108,12 +108,12 @@ export default function BrushPointRecordTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_BrushGetGreenFloatSuccess_0100
-     * @tc.name    : SUB_OH_Drawing_BrushGetGreenFloatSuccess_0100
-     * @tc.desc    : test SUB_OH_Drawing_BrushGetGreenFloatSuccess Normal Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_BrushGetGreenFloatSuccess_0100
+     * @tc.number SUB_OH_Drawing_BrushGetGreenFloatSuccess_0100
+     * @tc.desc   test SUB_OH_Drawing_BrushGetGreenFloatSuccess Normal Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_BrushGetGreenFloatSuccess_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -130,12 +130,12 @@ export default function BrushPointRecordTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_BrushGetGreenFloatFail_0200
-     * @tc.name    : SUB_OH_Drawing_BrushGetGreenFloatFail_0200
-     * @tc.desc    : test SUB_OH_Drawing_BrushGetGreenFloat Fail Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_BrushGetGreenFloatFail_0200
+     * @tc.number SUB_OH_Drawing_BrushGetGreenFloatFail_0200
+     * @tc.desc   test SUB_OH_Drawing_BrushGetGreenFloat Fail Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_BrushGetGreenFloatFail_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -152,12 +152,12 @@ export default function BrushPointRecordTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_BrushGetBlueFloat_0100
-     * @tc.name    : SUB_OH_Drawing_BrushGetBlueFloat_0100
-     * @tc.desc    : test OH_Drawing_BrushGetBlueFloat Normal Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_BrushGetBlueFloat_0100
+     * @tc.number SUB_OH_Drawing_BrushGetBlueFloat_0100
+     * @tc.desc   test OH_Drawing_BrushGetBlueFloat Normal Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_BrushGetBlueFloat_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -174,12 +174,12 @@ export default function BrushPointRecordTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_BrushGetBlueFloat_0200
-     * @tc.name    : SUB_OH_Drawing_BrushGetBlueFloat_0200
-     * @tc.desc    : test SUB_OH_Drawing_BrushGetBlueFloat Fail Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_BrushGetBlueFloat_0200
+     * @tc.number SUB_OH_Drawing_BrushGetBlueFloat_0200
+     * @tc.desc   test SUB_OH_Drawing_BrushGetBlueFloat Fail Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_BrushGetBlueFloat_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -196,12 +196,12 @@ export default function BrushPointRecordTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_PointGetX_0100
-     * @tc.name    : SUB_OH_Drawing_PointGetX_0100
-     * @tc.desc    : test SUB_OH_Drawing_PointGetX Success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_PointGetX_0100
+     * @tc.number SUB_OH_Drawing_PointGetX_0100
+     * @tc.desc   test SUB_OH_Drawing_PointGetX Success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_PointGetX_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -216,12 +216,12 @@ export default function BrushPointRecordTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_PointGetX_0200
-     * @tc.name    : SUB_OH_Drawing_PointGetX_0200
-     * @tc.desc    : test SUB_OH_Drawing_PointGetX Fail Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_PointGetX_0200
+     * @tc.number SUB_OH_Drawing_PointGetX_0200
+     * @tc.desc   test SUB_OH_Drawing_PointGetX Fail Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_PointGetX_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -236,12 +236,12 @@ export default function BrushPointRecordTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_PointGetY_0100
-     * @tc.name    : SUB_OH_Drawing_PointGetY_0100
-     * @tc.desc    : test SUB_OH_Drawing_PointGetY Success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_PointGetY_0100
+     * @tc.number SUB_OH_Drawing_PointGetY_0100
+     * @tc.desc   test SUB_OH_Drawing_PointGetY Success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_PointGetY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -256,12 +256,12 @@ export default function BrushPointRecordTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_PointGetY_0200
-     * @tc.name    : SUB_OH_Drawing_PointGetY_0200
-     * @tc.desc    : test SUB_OH_Drawing_PointGetY Fail Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_PointGetY_0200
+     * @tc.number SUB_OH_Drawing_PointGetY_0200
+     * @tc.desc   test SUB_OH_Drawing_PointGetY Fail Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_PointGetY_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -276,12 +276,12 @@ export default function BrushPointRecordTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_PointSet_0100
-     * @tc.name    : SUB_OH_Drawing_PointSet_0100
-     * @tc.desc    : test SUB_OH_Drawing_PointSet Success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_PointSet_0100
+     * @tc.number SUB_OH_Drawing_PointSet_0100
+     * @tc.desc   test SUB_OH_Drawing_PointSet Success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_PointSet_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -296,12 +296,12 @@ export default function BrushPointRecordTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_PointSet_0200
-     * @tc.name    : SUB_OH_Drawing_PointSet_0200
-     * @tc.desc    : test SUB_OH_Drawing_PointSet_0200 Fail Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_PointSet_0200
+     * @tc.number SUB_OH_Drawing_PointSet_0200
+     * @tc.desc   test SUB_OH_Drawing_PointSet_0200 Fail Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_PointSet_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -316,12 +316,12 @@ export default function BrushPointRecordTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_RecordCmdUtilsDestroy_0100
-     * @tc.name    : SUB_OH_Drawing_RecordCmdUtilsDestroy_0100
-     * @tc.desc    : test SUB_OH_Drawing_RecordCmdUtilsDestroy_0100 SUCCESS Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_RecordCmdUtilsDestroy_0100
+     * @tc.number SUB_OH_Drawing_RecordCmdUtilsDestroy_0100
+     * @tc.desc   test SUB_OH_Drawing_RecordCmdUtilsDestroy_0100 SUCCESS Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_RecordCmdUtilsDestroy_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -338,12 +338,12 @@ export default function BrushPointRecordTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_RecordCmdUtilsDestroy_0200
-     * @tc.name    : SUB_OH_Drawing_RecordCmdUtilsDestroy_0200
-     * @tc.desc    : test SUB_OH_Drawing_RecordCmdUtilsDestroy_0200 SUCCESS Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_RecordCmdUtilsDestroy_0200
+     * @tc.number SUB_OH_Drawing_RecordCmdUtilsDestroy_0200
+     * @tc.desc   test SUB_OH_Drawing_RecordCmdUtilsDestroy_0200 SUCCESS Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_RecordCmdUtilsDestroy_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -360,12 +360,12 @@ export default function BrushPointRecordTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_RecordCmdUtilsBeginRecording_0100
-     * @tc.name    : SUB_OH_Drawing_RecordCmdUtilsBeginRecording_0100
-     * @tc.desc    : test SUB_OH_Drawing_RecordCmdUtilsBeginRecording_0100 SUCCESS Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_RecordCmdUtilsBeginRecording_0100
+     * @tc.number SUB_OH_Drawing_RecordCmdUtilsBeginRecording_0100
+     * @tc.desc   test SUB_OH_Drawing_RecordCmdUtilsBeginRecording_0100 SUCCESS Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_RecordCmdUtilsBeginRecording_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -382,12 +382,12 @@ export default function BrushPointRecordTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_RecordCmdUtilsBeginRecording_0200
-     * @tc.name    : SUB_OH_Drawing_RecordCmdUtilsBeginRecording_0200
-     * @tc.desc    : test SUB_OH_Drawing_RecordCmdUtilsBeginRecording_0200 fail Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_RecordCmdUtilsBeginRecording_0200
+     * @tc.number SUB_OH_Drawing_RecordCmdUtilsBeginRecording_0200
+     * @tc.desc   test SUB_OH_Drawing_RecordCmdUtilsBeginRecording_0200 fail Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_RecordCmdUtilsBeginRecording_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -404,12 +404,12 @@ export default function BrushPointRecordTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_RecordCmdUtilsFinishRecording_0100
-     * @tc.name    : SUB_OH_Drawing_RecordCmdUtilsFinishRecording_0100
-     * @tc.desc    : test SUB_OH_Drawing_RecordCmdUtilsFinishRecording SUCCESS Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_RecordCmdUtilsFinishRecording_0100
+     * @tc.number SUB_OH_Drawing_RecordCmdUtilsFinishRecording_0100
+     * @tc.desc   test SUB_OH_Drawing_RecordCmdUtilsFinishRecording SUCCESS Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_RecordCmdUtilsFinishRecording_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -426,12 +426,12 @@ export default function BrushPointRecordTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_RecordCmdUtilsFinishRecording_0200
-     * @tc.name    : SUB_OH_Drawing_RecordCmdUtilsFinishRecording_0200
-     * @tc.desc    : test SUB_OH_Drawing_RecordCmdUtilsFinishRecording fail Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_RecordCmdUtilsFinishRecording_0200
+     * @tc.number SUB_OH_Drawing_RecordCmdUtilsFinishRecording_0200
+     * @tc.desc   test SUB_OH_Drawing_RecordCmdUtilsFinishRecording fail Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_RecordCmdUtilsFinishRecording_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {

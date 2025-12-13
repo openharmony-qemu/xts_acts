@@ -45,15 +45,15 @@ export default function AppStorageJsunit() {
       console.info("appStorage after each called");
     })
 
-    /**
-     * @tc.number stateManagement_AppStorage_setOrCreate_0100
-     * @tc.name stateManagement ContentStorage  validation
-     * @tc.desc Function test
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
-     */
 
+    /**
+     * @tc.name   stateManagement_AppStorage_setOrCreate_0100
+     * @tc.number stateManagement_AppStorage_setOrCreate_0100
+     * @tc.desc   stateManagement_AppStorage_setOrCreate_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('stateManagement_AppStorage_setOrCreate_0100', Level.LEVEL0, (done: Function) => {
       console.info('[stateManagement_AppStorage_setOrCreate_0100] START');
       AppStorage.setOrCreate<string>("key1", "value1");
@@ -69,15 +69,15 @@ export default function AppStorageJsunit() {
       done();
     });
 
-    /**
-     * @tc.number stateManagement_Storage_setOrCreate_0100
-     * @tc.name stateManagement Storage  validation
-     * @tc.desc Function test
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
-     */
 
+    /**
+     * @tc.name   stateManagement_Storage_set_0100
+     * @tc.number stateManagement_Storage_set_0100
+     * @tc.desc   stateManagement_Storage_set_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('stateManagement_Storage_set_0100', Level.LEVEL0, (done: Function) => {
       done();
       return;
@@ -104,15 +104,15 @@ export default function AppStorageJsunit() {
     });
 
 
-    /**
-     * @tc.number stateManagement_Environment_EnvProps_0100
-     * @tc.name stateManagement Environment  validation
-     * @tc.desc Function test
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
-     */
 
+    /**
+     * @tc.name   stateManagement_Environment_EnvProps_0100
+     * @tc.number stateManagement_Environment_EnvProps_0100
+     * @tc.desc   stateManagement_Environment_EnvProps_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('stateManagement_Environment_EnvProps_0100', Level.LEVEL0, (done: Function) => {
       console.info('[stateManagement_Environment_EnvProps_0100] START');
       try {

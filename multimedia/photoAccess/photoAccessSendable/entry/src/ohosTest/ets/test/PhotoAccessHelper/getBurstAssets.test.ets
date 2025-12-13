@@ -68,12 +68,12 @@ export default function getBurstAssetsTest () {
     }
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Get_Burst_001
-     * @tc.name      : get_image_burst_assets_001
-     * @tc.desc      : getBurstAssets image
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   get_burst_assets_image_001
+     * @tc.number Sub_Photo_Access_Sendable_Get_Burst_001
+     * @tc.desc   getBurstAssets image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("get_burst_assets_image_001", Level.LEVEL0, async (done: Function) => {
       const testNum = "get_burst_assets_image_001";
@@ -101,12 +101,12 @@ export default function getBurstAssetsTest () {
     })
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Get_Burst_002
-     * @tc.name      : get_burst_assets_video_001
-     * @tc.desc      : getBurstAssets video
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   get_burst_assets_video_001
+     * @tc.number Sub_Photo_Access_Sendable_Get_Burst_002
+     * @tc.desc   getBurstAssets video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("get_burst_assets_video_001", Level.LEVEL0, async (done: Function) => {
       const testNum = "get_burst_assets_video_001";
@@ -134,12 +134,12 @@ export default function getBurstAssetsTest () {
     })
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Get_Burst_003
-     * @tc.name      : get_image_burst_assets_003
-     * @tc.desc      : getBurstAssets by burstKey not exist
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   get_image_burst_assets_003
+     * @tc.number Sub_Photo_Access_Sendable_Get_Burst_003
+     * @tc.desc   getBurstAssets by burstKey not exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("get_image_burst_assets_003", Level.LEVEL0, async (done: Function) => {
       const testNum = "get_burst_assets_image_003";
@@ -157,13 +157,13 @@ export default function getBurstAssetsTest () {
       }
     })
 
-     /**
-     * @tc.number    : SUB_PHOTO_ACCESS_SENDABLE_ERROR_GET_BURST_0000
-     * @tc.name      : sendable_error_get_burst_assets_invalid_fetchColumns_000
-     * @tc.desc      : getBurstAssets with burstKey fetchColumns
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+    /**
+     * @tc.name   sendable_error_get_burst_assets_invalid_fetchColumns_000
+     * @tc.number SUB_PHOTO_ACCESS_SENDABLE_ERROR_GET_BURST_0000
+     * @tc.desc   getBurstAssets with burstKey fetchColumns
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("sendable_error_get_burst_assets_invalid_fetchColumns_000", Level.LEVEL0, async (done: Function) => {
       const testNum = "sendable_error_get_burst_assets_invalid_fetchColumns_000";

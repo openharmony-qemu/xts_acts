@@ -35,12 +35,12 @@ function expectTrue(n:boolean) {
 export default function httpResponseJsunit() {
   describe("HttpResponseJsunitTest", () => {
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpResponse_Result_0100
-     * @tc.name: testNetworkMgrHttpHttpResponseResult0100
-     * @tc.desc: Test Test HttpResponse property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseResult0100
+     * @tc.number SUB_NetworkMgr_Http_HttpResponse_Result_0100
+     * @tc.desc   Test Test HttpResponse property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrHttpHttpResponseResult0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpResponseResult0100';
@@ -68,12 +68,12 @@ export default function httpResponseJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpResponse_Result_0200
-     * @tc.name: testNetworkMgrHttpHttpResponseResult0200
-     * @tc.desc: Test Test HttpResponse property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseResult0200
+     * @tc.number SUB_NetworkMgr_Http_HttpResponse_Result_0200
+     * @tc.desc   Test Test HttpResponse property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrHttpHttpResponseResult0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpResponseResult0200';
@@ -95,12 +95,12 @@ export default function httpResponseJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpResponse_Result_0300
-     * @tc.name: testNetworkMgrHttpHttpResponseResult0300
-     * @tc.desc: Test Test HttpResponse property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseResult0300
+     * @tc.number SUB_NetworkMgr_Http_HttpResponse_Result_0300
+     * @tc.desc   Test Test HttpResponse property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrHttpHttpResponseResult0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpResponseResult0300';
@@ -133,12 +133,12 @@ export default function httpResponseJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpResponse_ResponseCode_0100
-     * @tc.name: testNetworkMgrHttpHttpResponseResponseCode0100
-     * @tc.desc Test Test HttpResponse property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseResponseCode0100
+     * @tc.number SUB_NetworkMgr_Http_HttpResponse_ResponseCode_0100
+     * @tc.desc   Test Test HttpResponse property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrHttpHttpResponseResponseCode0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpResponseResponseCode0100';
@@ -166,12 +166,12 @@ export default function httpResponseJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpResponse_ResponseCode_0200
-     * @tc.name: testNetworkMgrHttpHttpResponseResponseCode0200
-     * @tc.desc: Test Test HttpResponse property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseResponseCode0200
+     * @tc.number SUB_NetworkMgr_Http_HttpResponse_ResponseCode_0200
+     * @tc.desc   Test Test HttpResponse property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrHttpHttpResponseResponseCode0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpResponseResponseCode0200';
@@ -193,12 +193,12 @@ export default function httpResponseJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpResponse_ResponseCode_0300
-     * @tc.name: testNetworkMgrHttpHttpResponseResponseCode0300
-     * @tc.desc: Test Test HttpResponse property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseResponseCode0300
+     * @tc.number SUB_NetworkMgr_Http_HttpResponse_ResponseCode_0300
+     * @tc.desc   Test Test HttpResponse property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrHttpHttpResponseResponseCode0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpResponseResponseCode0300';
@@ -231,12 +231,12 @@ export default function httpResponseJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpResponse_Header_0100
-     * @tc.name: testNetworkMgrHttpHttpResponseHeader0100
-     * @tc.desc: Test Test HttpResponse property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseHeader0100
+     * @tc.number SUB_NetworkMgr_Http_HttpResponse_Header_0100
+     * @tc.desc   Test Test HttpResponse property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrHttpHttpResponseHeader0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpResponseHeader0100';
@@ -264,12 +264,12 @@ export default function httpResponseJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpResponse_Header_0200
-     * @tc.name: testNetworkMgrHttpHttpResponseHeader0200
-     * @tc.desc: Test Test HttpResponse property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseHeader0200
+     * @tc.number SUB_NetworkMgr_Http_HttpResponse_Header_0200
+     * @tc.desc   Test Test HttpResponse property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrHttpHttpResponseHeader0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpResponseHeader0200';
@@ -291,12 +291,12 @@ export default function httpResponseJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpResponse_Header_0300
-     * @tc.name: testNetworkMgrHttpHttpResponseHeader0300
-     * @tc.desc: Test Test HttpResponse property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseHeader0300
+     * @tc.number SUB_NetworkMgr_Http_HttpResponse_Header_0300
+     * @tc.desc   Test Test HttpResponse property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrHttpHttpResponseHeader0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpResponseHeader0300';
@@ -329,12 +329,12 @@ export default function httpResponseJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpResponse_Cookies_0100
-     * @tc.name: testNetworkMgrHttpHttpResponseCookies0100
-     * @tc.desc: Test Test HttpResponse property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseCookies0100
+     * @tc.number SUB_NetworkMgr_Http_HttpResponse_Cookies_0100
+     * @tc.desc   Test Test HttpResponse property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrHttpHttpResponseCookies0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpResponseCookies0100';
@@ -362,12 +362,12 @@ export default function httpResponseJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpResponse_Cookies_0200
-     * @tc.name: testNetworkMgrHttpHttpResponseCookies0200
-     * @tc.desc: Test Test HttpResponse property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseCookies0200
+     * @tc.number SUB_NetworkMgr_Http_HttpResponse_Cookies_0200
+     * @tc.desc   Test Test HttpResponse property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrHttpHttpResponseCookies0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpResponseCookies0200';
@@ -389,12 +389,12 @@ export default function httpResponseJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpResponse_Cookies_0300
-     * @tc.name: testNetworkMgrHttpHttpResponseCookies0300
-     * @tc.desc: Test Test HttpResponse property.
-     * @tc.level: level0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseCookies0300
+     * @tc.number SUB_NetworkMgr_Http_HttpResponse_Cookies_0300
+     * @tc.desc   Test Test HttpResponse property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrHttpHttpResponseCookies0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpResponseCookies0300';

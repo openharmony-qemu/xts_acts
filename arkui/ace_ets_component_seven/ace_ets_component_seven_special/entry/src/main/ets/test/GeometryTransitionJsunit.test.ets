@@ -45,12 +45,12 @@ export default function geometryTransitionJsunit() {
     });
 
     /**
+     * @tc.name   geometryTransitionTest_0100
      * @tc.number geometryTransitionTest_0100
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('geometryTransitionTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('geometryTransitionTest_0100 START');

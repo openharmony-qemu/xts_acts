@@ -24,9 +24,12 @@ using namespace OHOS::NeuralNetworkRuntime::Test;
 class DeviceTest : public testing::Test {};
 
 /**
- * @tc.number : SUB_AI_NNRtt_Func_North_Device_DeviceID_0100
- * @tc.name   : 获取设备ID，*allDevicesID为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Device_DeviceID_0100
+ * @tc.number SUB_AI_NNRtt_Func_North_Device_DeviceID_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DeviceTest, SUB_AI_NNRt_Func_North_Device_DeviceID_0100, Function | MediumTest | Level3)
 {
@@ -37,9 +40,12 @@ HWTEST_F(DeviceTest, SUB_AI_NNRt_Func_North_Device_DeviceID_0100, Function | Med
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Device_DeviceID_0200
- * @tc.name   : 获取设备ID，**allDevicesID非nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Device_DeviceID_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Device_DeviceID_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DeviceTest, SUB_AI_NNRt_Func_North_Device_DeviceID_0200, Function | MediumTest | Level3)
 {
@@ -52,9 +58,12 @@ HWTEST_F(DeviceTest, SUB_AI_NNRt_Func_North_Device_DeviceID_0200, Function | Med
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Device_DeviceID_0300
- * @tc.name   : 获取设备ID，获取设备ID，deviceCount为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Device_DeviceID_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Device_DeviceID_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DeviceTest, SUB_AI_NNRt_Func_North_Device_DeviceID_0300, Function | MediumTest | Level3)
 {
@@ -65,9 +74,12 @@ HWTEST_F(DeviceTest, SUB_AI_NNRt_Func_North_Device_DeviceID_0300, Function | Med
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Device_DeviceID_0400
- * @tc.name   : 获取设备ID，设备数量校验
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Device_DeviceID_0400
+ * @tc.number SUB_AI_NNRt_Func_North_Device_DeviceID_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DeviceTest, SUB_AI_NNRt_Func_North_Device_DeviceID_0400, Function | MediumTest | Level2)
 {
@@ -82,9 +94,12 @@ HWTEST_F(DeviceTest, SUB_AI_NNRt_Func_North_Device_DeviceID_0400, Function | Med
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Device_DeviceName_0100
- * @tc.name   : 获取硬件名称，deviceID不存在
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Device_DeviceName_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Device_DeviceName_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DeviceTest, SUB_AI_NNRt_Func_North_Device_DeviceName_0100, Function | MediumTest | Level3)
 {
@@ -96,9 +111,12 @@ HWTEST_F(DeviceTest, SUB_AI_NNRt_Func_North_Device_DeviceName_0100, Function | M
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Device_DeviceName_0200
- * @tc.name   : 获取硬件名称，*name为nullprt
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Device_DeviceName_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Device_DeviceName_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DeviceTest, SUB_AI_NNRt_Func_North_Device_DeviceName_0200, Function | MediumTest | Level3)
 {
@@ -112,9 +130,12 @@ HWTEST_F(DeviceTest, SUB_AI_NNRt_Func_North_Device_DeviceName_0200, Function | M
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Device_DeviceName_0300
- * @tc.name   : 获取硬件名称，**name非nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Device_DeviceName_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Device_DeviceName_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DeviceTest, SUB_AI_NNRt_Func_North_Device_DeviceName_0300, Function | MediumTest | Level3)
 {
@@ -130,9 +151,12 @@ HWTEST_F(DeviceTest, SUB_AI_NNRt_Func_North_Device_DeviceName_0300, Function | M
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Device_DeviceName_0400
- * @tc.name   : 获取硬件名称， 结果校验
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Device_DeviceName_0400
+ * @tc.number SUB_AI_NNRt_Func_North_Device_DeviceName_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DeviceTest, SUB_AI_NNRt_Func_North_Device_DeviceName_0400, Function | MediumTest | Level1)
 {
@@ -159,9 +183,12 @@ HWTEST_F(DeviceTest, SUB_AI_NNRt_Func_North_Device_DeviceName_0400, Function | M
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Device_DeviceType_0100
- * @tc.name   : 获取硬件类别，deviceType为nullprt
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Device_DeviceType_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Device_DeviceType_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DeviceTest, SUB_AI_NNRt_Func_North_Device_DeviceType_0100, Function | MediumTest | Level3)
 {
@@ -175,9 +202,12 @@ HWTEST_F(DeviceTest, SUB_AI_NNRt_Func_North_Device_DeviceType_0100, Function | M
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Device_DeviceType_0200
- * @tc.name   : 获取硬件类别，deviceID不存在
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Device_DeviceType_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Device_DeviceType_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DeviceTest, SUB_AI_NNRt_Func_North_Device_DeviceType_0200, Function | MediumTest | Level3)
 {
@@ -189,9 +219,12 @@ HWTEST_F(DeviceTest, SUB_AI_NNRt_Func_North_Device_DeviceType_0200, Function | M
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Device_DeviceType_0300
- * @tc.name   :获取硬件类别，结果校验
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Device_DeviceType_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Device_DeviceType_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DeviceTest, SUB_AI_NNRt_Func_North_Device_DeviceType_0300, Function | MediumTest | Level1)
 {

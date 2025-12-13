@@ -20,12 +20,12 @@ export default function nativeDrawingNdkTest() {
   describe('NativeDrawingNdkTest', () => {
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BITMAP_OH_DRAWING_BITMAPCREATE_0100
-     * @tc.name       : testOHDrawingBitmapCreate001
-     * @tc.desc       : test OH_Drawing_BitmapCreate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingBitmapCreate001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BITMAP_OH_DRAWING_BITMAPCREATE_0100
+     * @tc.desc   test OH_Drawing_BitmapCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingBitmapCreate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingBitmapCreate();
@@ -34,12 +34,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BITMAP_OH_DRAWING_BITMAPBUILD_0100
-     * @tc.name       : testOHDrawingBitmapBuild001
-     * @tc.desc       : test OH_Drawing_BitmapBuild
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingBitmapBuild001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BITMAP_OH_DRAWING_BITMAPBUILD_0100
+     * @tc.desc   test OH_Drawing_BitmapBuild
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingBitmapBuild001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingBitmapBuild();
@@ -48,12 +48,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BITMAP_OH_DRAWING_BITMAPGETWIDTH_0100
-     * @tc.name       : testOHDrawingBitmapGetWidth001
-     * @tc.desc       : test OH_Drawing_BitmapGetWidth
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingBitmapGetWidth001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BITMAP_OH_DRAWING_BITMAPGETWIDTH_0100
+     * @tc.desc   test OH_Drawing_BitmapGetWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingBitmapGetWidth001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -63,12 +63,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BITMAP_OH_DRAWING_BITMAPGETHEIGHT_0100
-     * @tc.name       : testOHDrawingBitmapGetHeight001
-     * @tc.desc       : test OH_Drawing_BitmapGetHeight
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingBitmapGetHeight001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BITMAP_OH_DRAWING_BITMAPGETHEIGHT_0100
+     * @tc.desc   test OH_Drawing_BitmapGetHeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingBitmapGetHeight001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -78,12 +78,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BITMAP_OH_DRAWING_BITMAPGETPIXELS_0100
-     * @tc.name       : testOHDrawingBitmapGetPixels001
-     * @tc.desc       : test OH_Drawing_BitmapGetPixels
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingBitmapGetPixels001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BITMAP_OH_DRAWING_BITMAPGETPIXELS_0100
+     * @tc.desc   test OH_Drawing_BitmapGetPixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingBitmapGetPixels001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -93,12 +93,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BRUSH_OH_DRAWING_BRUSHCREATE_0100
-     * @tc.name       : testOHDrawingBrushCreate001
-     * @tc.desc       : test OH_Drawing_BrushCreate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingBrushCreate001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BRUSH_OH_DRAWING_BRUSHCREATE_0100
+     * @tc.desc   test OH_Drawing_BrushCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingBrushCreate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingBrushCreate();
@@ -107,12 +107,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BRUSH_OH_DRAWING_BRUSHISANTIALIAS_0100
-     * @tc.name       : testOHDrawingBrushIsAntiAlias001
-     * @tc.desc       : test OH_Drawing_BrushIsAntiAlias
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingBrushIsAntiAlias001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BRUSH_OH_DRAWING_BRUSHISANTIALIAS_0100
+     * @tc.desc   test OH_Drawing_BrushIsAntiAlias
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingBrushIsAntiAlias001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -122,12 +122,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BRUSH_OH_DRAWING_BRUSHSETANTIALIAS_0100
-     * @tc.name       : testOHDrawingBrushSetAntiAlias001
-     * @tc.desc       : test OH_Drawing_BrushSetAntiAlias
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingBrushSetAntiAlias001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BRUSH_OH_DRAWING_BRUSHSETANTIALIAS_0100
+     * @tc.desc   test OH_Drawing_BrushSetAntiAlias
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingBrushSetAntiAlias001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -137,12 +137,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BRUSH_OH_DRAWING_BRUSHGETCOLOR_0100
-     * @tc.name       : testOHDrawingBrushGetColor001
-     * @tc.desc       : test OH_Drawing_BrushGetColor
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingBrushGetColor001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BRUSH_OH_DRAWING_BRUSHGETCOLOR_0100
+     * @tc.desc   test OH_Drawing_BrushGetColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingBrushGetColor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingBrushGetColor();
@@ -151,12 +151,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BRUSH_OH_DRAWING_BRUSHSETCOLOR_0100
-     * @tc.name       : testOHDrawingBrushSetColor001
-     * @tc.desc       : test OH_Drawing_BrushSetColor
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingBrushSetColor001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BRUSH_OH_DRAWING_BRUSHSETCOLOR_0100
+     * @tc.desc   test OH_Drawing_BrushSetColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingBrushSetColor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingBrushSetColor();
@@ -165,12 +165,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_CANVAS_OH_DRAWING_CANVASCREATE_0100
-     * @tc.name       : testOHDrawingCanvasCreate001
-     * @tc.desc       : test OH_Drawing_CanvasCreate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCanvasCreate001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_CANVAS_OH_DRAWING_CANVASCREATE_0100
+     * @tc.desc   test OH_Drawing_CanvasCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCanvasCreate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingCanvasCreate();
@@ -179,12 +179,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PATH_OH_DRAWING_PATHCREATE_0100
-     * @tc.name       : testOHDrawingPathCreate001
-     * @tc.desc       : test OH_Drawing_PathCreate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPathCreate001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PATH_OH_DRAWING_PATHCREATE_0100
+     * @tc.desc   test OH_Drawing_PathCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPathCreate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingPathCreate();
@@ -193,12 +193,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PATH_OH_DRAWING_PENCREATE_0100
-     * @tc.name       : testOHDrawingPenCreate001
-     * @tc.desc       : test OH_Drawing_PenCreate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPenCreate001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PATH_OH_DRAWING_PENCREATE_0100
+     * @tc.desc   test OH_Drawing_PenCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPenCreate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingPenCreate();
@@ -207,12 +207,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENISANTIALIAS_0100
-     * @tc.name       : testOHDrawingPenIsAntiAlias001
-     * @tc.desc       : test OH_Drawing_PenIsAntiAlias
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPenIsAntiAlias001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENISANTIALIAS_0100
+     * @tc.desc   test OH_Drawing_PenIsAntiAlias
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPenIsAntiAlias001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -222,12 +222,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENSETANTIALIAS_0100
-     * @tc.name       : testOHDrawingPenSetAntiAlias001
-     * @tc.desc       : test OH_Drawing_PenSetAntiAlias
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPenSetAntiAlias001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENSETANTIALIAS_0100
+     * @tc.desc   test OH_Drawing_PenSetAntiAlias
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPenSetAntiAlias001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -237,12 +237,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENGETCOLOR_0100
-     * @tc.name       : testOHDrawingPenGetColor001
-     * @tc.desc       : test OH_Drawing_PenGetColor
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPenGetColor001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENGETCOLOR_0100
+     * @tc.desc   test OH_Drawing_PenGetColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPenGetColor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingPenGetColor();
@@ -251,12 +251,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENSETCOLOR_0100
-     * @tc.name       : testOHDrawingPenSetColor001
-     * @tc.desc       : test OH_Drawing_PenSetColor
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPenSetColor001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENSETCOLOR_0100
+     * @tc.desc   test OH_Drawing_PenSetColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPenSetColor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingPenSetColor();
@@ -265,12 +265,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENGETWIDTH_0100
-     * @tc.name       : testOHDrawingPenGetWidth001
-     * @tc.desc       : test OH_Drawing_PenGetWidth
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPenGetWidth001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENGETWIDTH_0100
+     * @tc.desc   test OH_Drawing_PenGetWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPenGetWidth001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingPenGetWidth();
@@ -279,12 +279,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENSETWIDTH_0100
-     * @tc.name       : testOHDrawingPenSetWidth001
-     * @tc.desc       : test OH_Drawing_PenSetWidth
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPenSetWidth001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENSETWIDTH_0100
+     * @tc.desc   test OH_Drawing_PenSetWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPenSetWidth001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingPenSetWidth();
@@ -293,12 +293,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENGETMITERLIMIT_0100
-     * @tc.name       : testOHDrawingPenGetMiterLimit001
-     * @tc.desc       : test OH_Drawing_PenGetMiterLimit
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPenGetMiterLimit001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENGETMITERLIMIT_0100
+     * @tc.desc   test OH_Drawing_PenGetMiterLimit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPenGetMiterLimit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -308,12 +308,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENSETMITERLIMIT_0100
-     * @tc.name       : testOHDrawingPenSetMiterLimit001
-     * @tc.desc       : test OH_Drawing_PenSetMiterLimit
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPenSetMiterLimit001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENSETMITERLIMIT_0100
+     * @tc.desc   test OH_Drawing_PenSetMiterLimit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPenSetMiterLimit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -323,12 +323,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENGETCAP_0100
-     * @tc.name       : testOHDrawingPenGetCap001
-     * @tc.desc       : test OH_Drawing_PenGetCap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPenGetCap001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENGETCAP_0100
+     * @tc.desc   test OH_Drawing_PenGetCap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPenGetCap001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingPenGetCap();
@@ -337,12 +337,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENSETCAP_0100
-     * @tc.name       : testOHDrawingPenSetCap001
-     * @tc.desc       : test OH_Drawing_PenSetCap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPenSetCap001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENSETCAP_0100
+     * @tc.desc   test OH_Drawing_PenSetCap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPenSetCap001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingPenSetCap();
@@ -351,12 +351,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENGETJOIN_0100
-     * @tc.name       : testOHDrawingPenGetJoin001
-     * @tc.desc       : test OH_Drawing_PenGetJoin
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPenGetJoin001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENGETJOIN_0100
+     * @tc.desc   test OH_Drawing_PenGetJoin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPenGetJoin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingPenGetJoin();
@@ -365,12 +365,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENSETJOIN_0100
-     * @tc.name       : testOHDrawingPenSetJoin001
-     * @tc.desc       : test OH_Drawing_PenSetJoin
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPenSetJoin001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENSETJOIN_0100
+     * @tc.desc   test OH_Drawing_PenSetJoin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPenSetJoin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingPenSetJoin();
@@ -379,12 +379,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_COLOR_OH_DRAWING_COLORSETARGB_0100
-     * @tc.name       : testOHDrawingColorSetArgb001
-     * @tc.desc       : test OH_Drawing_ColorSetArgb
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingColorSetArgb001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_COLOR_OH_DRAWING_COLORSETARGB_0100
+     * @tc.desc   test OH_Drawing_ColorSetArgb
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingColorSetArgb001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingColorSetArgb();
@@ -393,12 +393,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_FONTCOLLECTION_OH_DRAWING_CREATEFONTCOLLECTION_0100
-     * @tc.name       : testOHDrawingCreateFontCollection001
-     * @tc.desc       : test OH_Drawing_CreateFontCollection
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateFontCollection001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_FONTCOLLECTION_OH_DRAWING_CREATEFONTCOLLECTION_0100
+     * @tc.desc   test OH_Drawing_CreateFontCollection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateFontCollection001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -408,12 +408,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_FONTCOLLECTION_OH_DRAWING_CREATETYPOGRAPHYSTYLE_0100
-     * @tc.name       : testOHDrawingCreateTypographyStyle001
-     * @tc.desc       : test OH_Drawing_CreateTypographyStyle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTypographyStyle001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_FONTCOLLECTION_OH_DRAWING_CREATETYPOGRAPHYSTYLE_0100
+     * @tc.desc   test OH_Drawing_CreateTypographyStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTypographyStyle001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -423,12 +423,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_0100
-     * @tc.name       : testOHDrawingCreateTextStyle001
-     * @tc.desc       : test OH_Drawing_CreateTextStyle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTextStyle001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_0100
+     * @tc.desc   test OH_Drawing_CreateTextStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTextStyle001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -438,12 +438,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETYPOGRAPHYHANDLER_0100
-     * @tc.name       : testOHDrawingCreateTypographyHandler001
-     * @tc.desc       : test OH_Drawing_CreateTypographyHandler
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTypographyHandler001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETYPOGRAPHYHANDLER_0100
+     * @tc.desc   test OH_Drawing_CreateTypographyHandler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTypographyHandler001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -453,12 +453,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETYPOGRAPHY_0100
-     * @tc.name       : testOHDrawingCreateTypography001
-     * @tc.desc       : test OH_Drawing_CreateTypography
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTypography001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETYPOGRAPHY_0100
+     * @tc.desc   test OH_Drawing_CreateTypography
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTypography001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -468,12 +468,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYLAYOUT_0100
-     * @tc.name       : testOHDrawingTypographyLayout001
-     * @tc.desc       : test OH_Drawing_TypographyLayout
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingTypographyLayout001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYLAYOUT_0100
+     * @tc.desc   test OH_Drawing_TypographyLayout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingTypographyLayout001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -483,12 +483,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETMAXWIDTH_0100
-     * @tc.name       : testOHDrawingTypographyGetMaxWidth001
-     * @tc.desc       : test OH_Drawing_TypographyGetMaxWidth
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingTypographyGetMaxWidth001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETMAXWIDTH_0100
+     * @tc.desc   test OH_Drawing_TypographyGetMaxWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingTypographyGetMaxWidth001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -498,12 +498,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETMININTRINSICWIDTH_0100
-     * @tc.name       : testOHDrawingTypographyGetMinIntrinsicWidth001
-     * @tc.desc       : test OH_Drawing_TypographyGetMinIntrinsicWidth
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingTypographyGetMinIntrinsicWidth001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETMININTRINSICWIDTH_0100
+     * @tc.desc   test OH_Drawing_TypographyGetMinIntrinsicWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingTypographyGetMinIntrinsicWidth001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -513,12 +513,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETMAXINTRINSICWIDTH_0100
-     * @tc.name       : testOHDrawingTypographyGetMaxIntrinsicWidth001
-     * @tc.desc       : test OH_Drawing_TypographyGetMaxIntrinsicWidth
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingTypographyGetMaxIntrinsicWidth001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETMAXINTRINSICWIDTH_0100
+     * @tc.desc   test OH_Drawing_TypographyGetMaxIntrinsicWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingTypographyGetMaxIntrinsicWidth001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL00,
       async (done: Function) => {
@@ -528,12 +528,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETLONGESTLINE_0100
-     * @tc.name       : testOHDrawingTypographyGetLongestLine001
-     * @tc.desc       : test OH_Drawing_TypographyGetLongestLine
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingTypographyGetLongestLine001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETLONGESTLINE_0100
+     * @tc.desc   test OH_Drawing_TypographyGetLongestLine
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingTypographyGetLongestLine001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -543,12 +543,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETLONGESTLINE_0200
-     * @tc.name       : testOHDrawingTypographyGetLongestLine002
-     * @tc.desc       : test OH_Drawing_TypographyGetLongestLine
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingTypographyGetLongestLine002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETLONGESTLINE_0200
+     * @tc.desc   test OH_Drawing_TypographyGetLongestLine
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingTypographyGetLongestLine002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -558,12 +558,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETLONGESTLINEWithIndent
-     * @tc.name       : testOHDrawingTypographyGetLongestLineWithIndent
-     * @tc.desc       : test OH_Drawing_TypographyGetLongestLineWithIndent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingTypographyGetLongestLineWithIndent
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETLONGESTLINEWithIndent
+     * @tc.desc   test OH_Drawing_TypographyGetLongestLineWithIndent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingTypographyGetLongestLineWithIndent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -573,12 +573,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETALPHABETICBASELINE_0100
-     * @tc.name       : testOHDrawingTypographyGetAlphabeticBaseline001
-     * @tc.desc       : test OH_Drawing_TypographyGetAlphabeticBaseline
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingTypographyGetAlphabeticBaseline001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETALPHABETICBASELINE_0100
+     * @tc.desc   test OH_Drawing_TypographyGetAlphabeticBaseline
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingTypographyGetAlphabeticBaseline001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -588,12 +588,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETIDEOGRAPHICBASELINE_0200
-     * @tc.name       : testOHDrawingTypographyGetIdeographicBaseline002
-     * @tc.desc       : test OH_Drawing_TypographyGetIdeographicBaseline
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingTypographyGetIdeographicBaseline002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETIDEOGRAPHICBASELINE_0200
+     * @tc.desc   test OH_Drawing_TypographyGetIdeographicBaseline
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingTypographyGetIdeographicBaseline002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -603,12 +603,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETIDEOGRAPHICBASELINE_0100
-     * @tc.name       : testOHDrawingTypographyGetIdeographicBaseline001
-     * @tc.desc       : test OH_Drawing_TypographyGetIdeographicBaseline
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingTypographyGetIdeographicBaseline001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETIDEOGRAPHICBASELINE_0100
+     * @tc.desc   test OH_Drawing_TypographyGetIdeographicBaseline
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingTypographyGetIdeographicBaseline001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -618,12 +618,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETALPHABETICBASELINE_0200
-     * @tc.name       : testOHDrawingTypographyGetAlphabeticBaseline002
-     * @tc.desc       : test OH_Drawing_TypographyGetAlphabeticBaseline
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingTypographyGetAlphabeticBaseline002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETALPHABETICBASELINE_0200
+     * @tc.desc   test OH_Drawing_TypographyGetAlphabeticBaseline
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingTypographyGetAlphabeticBaseline002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -633,12 +633,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETHEIGHT_0100
-     * @tc.name       : testOHDrawingTypographyGetHeight001
-     * @tc.desc       : test OH_Drawing_TypographyGetHeight
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingTypographyGetHeight001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETHEIGHT_0100
+     * @tc.desc   test OH_Drawing_TypographyGetHeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingTypographyGetHeight001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -648,12 +648,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETHEIGHT_0200
-     * @tc.name       : testOHDrawingTypographyGetHeight002
-     * @tc.desc       : test OH_Drawing_TypographyGetHeight
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingTypographyGetHeight002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETHEIGHT_0200
+     * @tc.desc   test OH_Drawing_TypographyGetHeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingTypographyGetHeight002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -663,12 +663,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENGETCAP_0200
-     * @tc.name       : testOHDrawingPenGetCap002
-     * @tc.desc       : test OH_Drawing_PenGetCap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPenGetCap002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENGETCAP_0200
+     * @tc.desc   test OH_Drawing_PenGetCap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPenGetCap002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingPenGetCapNormal();
@@ -677,12 +677,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENSETCAP_0200
-     * @tc.name       : testOHDrawingPenSetCap002
-     * @tc.desc       : test OH_Drawing_PenSetCap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPenSetCap002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENSETCAP_0200
+     * @tc.desc   test OH_Drawing_PenSetCap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPenSetCap002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingPenSetCapNormal();
@@ -691,12 +691,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENGETJOIN_0200
-     * @tc.name       : testOHDrawingPenGetJoin002
-     * @tc.desc       : test OH_Drawing_PenGetJoin
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPenGetJoin002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENGETJOIN_0200
+     * @tc.desc   test OH_Drawing_PenGetJoin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPenGetJoin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingPenGetJoinNormal();
@@ -705,12 +705,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENSETJOIN_0200
-     * @tc.name       : testOHDrawingPenSetJoin002
-     * @tc.desc       : test OH_Drawing_PenSetJoin
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPenSetJoin002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENSETJOIN_0200
+     * @tc.desc   test OH_Drawing_PenSetJoin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPenSetJoin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingPenSetJoinNormal();
@@ -719,12 +719,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENISANTIALIAS_0200
-     * @tc.name       : testOHDrawingPenIsAntiAlias002
-     * @tc.desc       : test OH_Drawing_PenIsAntiAlias
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPenIsAntiAlias002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENISANTIALIAS_0200
+     * @tc.desc   test OH_Drawing_PenIsAntiAlias
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPenIsAntiAlias002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -734,12 +734,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENSETANTIALIAS_0200
-     * @tc.name       : testOHDrawingPenSetAntiAlias002
-     * @tc.desc       : test OH_Drawing_PenSetAntiAlias
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPenSetAntiAlias002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENSETANTIALIAS_0200
+     * @tc.desc   test OH_Drawing_PenSetAntiAlias
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPenSetAntiAlias002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -749,12 +749,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BITMAP_OH_DRAWING_BITMAPBUILD_0200
-     * @tc.name       : testOHDrawingBitmapBuild002
-     * @tc.desc       : test OH_Drawing_BitmapBuild
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingBitmapBuild002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BITMAP_OH_DRAWING_BITMAPBUILD_0200
+     * @tc.desc   test OH_Drawing_BitmapBuild
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingBitmapBuild002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingBitmapBuildNormal();
@@ -763,12 +763,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BITMAP_OH_DRAWING_BITMAPGETWIDTH_0200
-     * @tc.name       : testOHDrawingBitmapGetWidth002
-     * @tc.desc       : test OH_Drawing_BitmapGetWidth
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingBitmapGetWidth002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BITMAP_OH_DRAWING_BITMAPGETWIDTH_0200
+     * @tc.desc   test OH_Drawing_BitmapGetWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingBitmapGetWidth002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -778,12 +778,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BITMAP_OH_DRAWING_BITMAPGETHEIGHT_0200
-     * @tc.name       : testOHDrawingBitmapGetHeight002
-     * @tc.desc       : test OH_Drawing_BitmapGetHeight
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingBitmapGetHeight002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BITMAP_OH_DRAWING_BITMAPGETHEIGHT_0200
+     * @tc.desc   test OH_Drawing_BitmapGetHeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingBitmapGetHeight002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -793,12 +793,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BITMAP_OH_DRAWING_BITMAPGETPIXELS_0200
-     * @tc.name       : testOHDrawingBitmapGetPixels002
-     * @tc.desc       : test OH_Drawing_BitmapGetPixels
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingBitmapGetPixels002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BITMAP_OH_DRAWING_BITMAPGETPIXELS_0200
+     * @tc.desc   test OH_Drawing_BitmapGetPixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingBitmapGetPixels002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -808,12 +808,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BRUSH_OH_DRAWING_BRUSHANTIALIAS_0200
-     * @tc.name       : testOHDrawingBrushIsAntiAlias002
-     * @tc.desc       : test OH_Drawing_BrushIsAntiAlias
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingBrushIsAntiAlias002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BRUSH_OH_DRAWING_BRUSHANTIALIAS_0200
+     * @tc.desc   test OH_Drawing_BrushIsAntiAlias
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingBrushIsAntiAlias002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -823,12 +823,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BRUSH_OH_DRAWING_BRUSHSETANTIALIAS_0200
-     * @tc.name       : testOHDrawingBrushSetAntiAlias002
-     * @tc.desc       : test OH_Drawing_BrushSetAntiAlias
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingBrushSetAntiAlias002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BRUSH_OH_DRAWING_BRUSHSETANTIALIAS_0200
+     * @tc.desc   test OH_Drawing_BrushSetAntiAlias
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingBrushSetAntiAlias002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -838,12 +838,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BRUSH_OH_DRAWING_BRUSHGETCOLOR_0200
-     * @tc.name       : testOHDrawingBrushGetColor002
-     * @tc.desc       : test OH_Drawing_BrushGetColor
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingBrushGetColor002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BRUSH_OH_DRAWING_BRUSHGETCOLOR_0200
+     * @tc.desc   test OH_Drawing_BrushGetColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingBrushGetColor002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingBrushGetColorNormal();
@@ -852,12 +852,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BRUSH_OH_DRAWING_BRUSHSETCOLOR_0200
-     * @tc.name       : testOHDrawingBrushSetColor002
-     * @tc.desc       : test OH_Drawing_BrushSetColor
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingBrushSetColor002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_BRUSH_OH_DRAWING_BRUSHSETCOLOR_0200
+     * @tc.desc   test OH_Drawing_BrushSetColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingBrushSetColor002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingBrushSetColorNormal();
@@ -866,12 +866,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENGETCOLOR_0200
-     * @tc.name       : testOHDrawingPenGetColor002
-     * @tc.desc       : test OH_Drawing_PenGetColor
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPenGetColor002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENGETCOLOR_0200
+     * @tc.desc   test OH_Drawing_PenGetColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPenGetColor002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingPenGetColorNormal();
@@ -880,12 +880,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENSETCOLOR_0200
-     * @tc.name       : testOHDrawingPenSetColor002
-     * @tc.desc       : test OH_Drawing_PenSetColor
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPenSetColor002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENSETCOLOR_0200
+     * @tc.desc   test OH_Drawing_PenSetColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPenSetColor002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingPenSetColorNormal();
@@ -894,12 +894,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENGETWIDTH_0200
-     * @tc.name       : testOHDrawingPenGetWidth002
-     * @tc.desc       : test OH_Drawing_PenGetWidth
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPenGetWidth002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENGETWIDTH_0200
+     * @tc.desc   test OH_Drawing_PenGetWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPenGetWidth002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingPenGetWidthNormal();
@@ -908,12 +908,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENSETWIDTH_0200
-     * @tc.name       : testOHDrawingPenSetWidth002
-     * @tc.desc       : test OH_Drawing_PenSetWidth
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPenSetWidth002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENSETWIDTH_0200
+     * @tc.desc   test OH_Drawing_PenSetWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPenSetWidth002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingPenSetWidthNormal();
@@ -922,12 +922,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENGETMITERLIMIT_0200
-     * @tc.name       : testOHDrawingPenGetMiterLimit002
-     * @tc.desc       : test OH_Drawing_PenGetMiterLimit
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPenGetMiterLimit002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENGETMITERLIMIT_0200
+     * @tc.desc   test OH_Drawing_PenGetMiterLimit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPenGetMiterLimit002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -937,12 +937,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENSETMITERLIMIT_0200
-     * @tc.name       : testOHDrawingPenSetMiterLimit002
-     * @tc.desc       : test OH_Drawing_PenSetMiterLimit
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPenSetMiterLimit002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PEN_OH_DRAWING_PENSETMITERLIMIT_0200
+     * @tc.desc   test OH_Drawing_PenSetMiterLimit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPenSetMiterLimit002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -952,12 +952,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_COLOR_OH_DRAWING_COLORSETARGB_0200
-     * @tc.name       : testOHDrawingColorSetArgb002
-     * @tc.desc       : test OH_Drawing_ColorSetArgb
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingColorSetArgb002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_COLOR_OH_DRAWING_COLORSETARGB_0200
+     * @tc.desc   test OH_Drawing_ColorSetArgb
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingColorSetArgb002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingColorSetArgbNormal();
@@ -966,12 +966,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYLAYOUT_0200
-     * @tc.name       : testOHDrawingTypographyLayout002
-     * @tc.desc       : test OH_Drawing_TypographyLayout
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingTypographyLayout002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYLAYOUT_0200
+     * @tc.desc   test OH_Drawing_TypographyLayout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingTypographyLayout002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -981,12 +981,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETMAXWIDTH_0200
-     * @tc.name       : testOHDrawingTypographyGetMaxWidth002
-     * @tc.desc       : test OH_Drawing_TypographyGetMaxWidth
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingTypographyGetMaxWidth002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETMAXWIDTH_0200
+     * @tc.desc   test OH_Drawing_TypographyGetMaxWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingTypographyGetMaxWidth002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -996,12 +996,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETMININTRINSICWIDTH_0200
-     * @tc.name       : testOHDrawingTypographyGetMinIntrinsicWidth002
-     * @tc.desc       : test OH_Drawing_TypographyGetMinIntrinsicWidth
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingTypographyGetMinIntrinsicWidth002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETMININTRINSICWIDTH_0200
+     * @tc.desc   test OH_Drawing_TypographyGetMinIntrinsicWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingTypographyGetMinIntrinsicWidth002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1011,12 +1011,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETMAXINTRINSICWIDTH_0200
-     * @tc.name       : testOHDrawingTypographyGetMaxIntrinsicWidth002
-     * @tc.desc       : test OH_Drawing_TypographyGetMaxIntrinsicWidth
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingTypographyGetMaxIntrinsicWidth002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYGETMAXINTRINSICWIDTH_0200
+     * @tc.desc   test OH_Drawing_TypographyGetMaxIntrinsicWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingTypographyGetMaxIntrinsicWidth002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1028,12 +1028,12 @@ export default function nativeDrawingNdkTest() {
 
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETYPOGRAPHYSTYLE_0200
-     * @tc.name       : testOHDrawingCreateTypographyStyle002
-     * @tc.desc       : test OH_Drawing_CreateTypographyStyle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTypographyStyle002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETYPOGRAPHYSTYLE_0200
+     * @tc.desc   test OH_Drawing_CreateTypographyStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTypographyStyle002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1043,12 +1043,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETYPOGRAPHYSTYLE_0300
-     * @tc.name       : testOHDrawingCreateTypographyStyle003
-     * @tc.desc       : test OH_Drawing_CreateTypographyStyle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTypographyStyle003
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETYPOGRAPHYSTYLE_0300
+     * @tc.desc   test OH_Drawing_CreateTypographyStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTypographyStyle003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1058,12 +1058,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETYPOGRAPHYSTYLE_0400
-     * @tc.name       : testOHDrawingCreateTypographyStyle004
-     * @tc.desc       : test OH_Drawing_CreateTypographyStyle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTypographyStyle004
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETYPOGRAPHYSTYLE_0400
+     * @tc.desc   test OH_Drawing_CreateTypographyStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTypographyStyle004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1073,12 +1073,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETYPOGRAPHYSTYLE_0500
-     * @tc.name       : testOHDrawingCreateTypographyStyle005
-     * @tc.desc       : test OH_Drawing_CreateTypographyStyle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTypographyStyle005
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETYPOGRAPHYSTYLE_0500
+     * @tc.desc   test OH_Drawing_CreateTypographyStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTypographyStyle005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1088,12 +1088,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETYPOGRAPHYSTYLE_0600
-     * @tc.name       : testOHDrawingCreateTypographyStyle006
-     * @tc.desc       : test OH_Drawing_CreateTypographyStyle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTypographyStyle006
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETYPOGRAPHYSTYLE_0600
+     * @tc.desc   test OH_Drawing_CreateTypographyStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTypographyStyle006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1103,12 +1103,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETYPOGRAPHYSTYLE_0700
-     * @tc.name       : testOHDrawingCreateTypographyStyle007
-     * @tc.desc       : test OH_Drawing_CreateTypographyStyle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTypographyStyle007
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETYPOGRAPHYSTYLE_0700
+     * @tc.desc   test OH_Drawing_CreateTypographyStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTypographyStyle007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1118,12 +1118,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_0200
-     * @tc.name       : testOHDrawingCreateTextStyle002
-     * @tc.desc       : test OH_Drawing_CreateTextStyle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTextStyle002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_0200
+     * @tc.desc   test OH_Drawing_CreateTextStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTextStyle002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1133,12 +1133,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_0300
-     * @tc.name       : testOHDrawingCreateTextStyle003
-     * @tc.desc       : test OH_Drawing_CreateTextStyle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTextStyle003
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_0300
+     * @tc.desc   test OH_Drawing_CreateTextStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTextStyle003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1148,12 +1148,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_0400
-     * @tc.name       : testOHDrawingCreateTextStyle004
-     * @tc.desc       : test OH_Drawing_CreateTextStyle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTextStyle004
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_0400
+     * @tc.desc   test OH_Drawing_CreateTextStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTextStyle004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1163,12 +1163,12 @@ export default function nativeDrawingNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_0500
-     * @tc.name       : testOHDrawingCreateTextStyle005
-     * @tc.desc       : test OH_Drawing_CreateTextStyle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTextStyle005
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_0500
+     * @tc.desc   test OH_Drawing_CreateTextStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTextStyle005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1178,12 +1178,12 @@ export default function nativeDrawingNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_0600
-     * @tc.name       : testOHDrawingCreateTextStyle006
-     * @tc.desc       : test OH_Drawing_CreateTextStyle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTextStyle006
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_0600
+     * @tc.desc   test OH_Drawing_CreateTextStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTextStyle006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1193,12 +1193,12 @@ export default function nativeDrawingNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_0700
-     * @tc.name       : testOHDrawingCreateTextStyle007
-     * @tc.desc       : test OH_Drawing_CreateTextStyle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTextStyle007
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_0700
+     * @tc.desc   test OH_Drawing_CreateTextStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTextStyle007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1208,12 +1208,12 @@ export default function nativeDrawingNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_0800
-     * @tc.name       : testOHDrawingCreateTextStyle008
-     * @tc.desc       : test OH_Drawing_CreateTextStyle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTextStyle008
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_0800
+     * @tc.desc   test OH_Drawing_CreateTextStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTextStyle008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1223,12 +1223,12 @@ export default function nativeDrawingNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_0900
-     * @tc.name       : testOHDrawingCreateTextStyle009
-     * @tc.desc       : test OH_Drawing_CreateTextStyle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTextStyle009
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_0900
+     * @tc.desc   test OH_Drawing_CreateTextStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTextStyle009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1238,12 +1238,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_1000
-     * @tc.name       : testOHDrawingCreateTextStyle010
-     * @tc.desc       : test OH_Drawing_CreateTextStyle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTextStyle010
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_1000
+     * @tc.desc   test OH_Drawing_CreateTextStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTextStyle010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1253,12 +1253,12 @@ export default function nativeDrawingNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_1100
-     * @tc.name       : testOHDrawingCreateTextStyle011
-     * @tc.desc       : test OH_Drawing_CreateTextStyle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTextStyle011
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_1100
+     * @tc.desc   test OH_Drawing_CreateTextStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTextStyle011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1268,12 +1268,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_1200
-     * @tc.name       : testOHDrawingCreateTextStyle012
-     * @tc.desc       : test OH_Drawing_CreateTextStyle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTextStyle012
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_1200
+     * @tc.desc   test OH_Drawing_CreateTextStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTextStyle012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1283,12 +1283,12 @@ export default function nativeDrawingNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_1300
-     * @tc.name       : testOHDrawingCreateTextStyle013
-     * @tc.desc       : test OH_Drawing_CreateTextStyle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTextStyle013
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_1300
+     * @tc.desc   test OH_Drawing_CreateTextStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTextStyle013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1298,12 +1298,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_1400
-     * @tc.name       : testOHDrawingCreateTextStyle014
-     * @tc.desc       : test OH_Drawing_CreateTextStyle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTextStyle014
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_1400
+     * @tc.desc   test OH_Drawing_CreateTextStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTextStyle014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1313,12 +1313,12 @@ export default function nativeDrawingNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_1500
-     * @tc.name       : testOHDrawingCreateTextStyle015
-     * @tc.desc       : test OH_Drawing_CreateTextStyle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTextStyle015
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_1500
+     * @tc.desc   test OH_Drawing_CreateTextStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTextStyle015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1328,12 +1328,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_1600
-     * @tc.name       : testOHDrawingCreateTextStyle016
-     * @tc.desc       : test OH_Drawing_CreateTextStyle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTextStyle016
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_1600
+     * @tc.desc   test OH_Drawing_CreateTextStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTextStyle016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1343,12 +1343,12 @@ export default function nativeDrawingNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_1700
-     * @tc.name       : testOHDrawingCreateTextStyle017
-     * @tc.desc       : test OH_Drawing_CreateTextStyle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTextStyle017
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_1700
+     * @tc.desc   test OH_Drawing_CreateTextStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTextStyle017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1358,12 +1358,12 @@ export default function nativeDrawingNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_1800
-     * @tc.name       : testOHDrawingCreateTextStyle018
-     * @tc.desc       : test OH_Drawing_CreateTextStyle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTextStyle018
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_1800
+     * @tc.desc   test OH_Drawing_CreateTextStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTextStyle018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1373,12 +1373,12 @@ export default function nativeDrawingNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_1900
-     * @tc.name       : testOHDrawingCreateTextStyle019
-     * @tc.desc       : test OH_Drawing_CreateTextStyle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTextStyle019
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_1900
+     * @tc.desc   test OH_Drawing_CreateTextStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTextStyle019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1388,12 +1388,12 @@ export default function nativeDrawingNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_2000
-     * @tc.name       : testOHDrawingCreateTextStyle020
-     * @tc.desc       : test OH_Drawing_CreateTextStyle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTextStyle020
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_2000
+     * @tc.desc   test OH_Drawing_CreateTextStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTextStyle020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1403,12 +1403,12 @@ export default function nativeDrawingNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_2100
-     * @tc.name       : testOHDrawingCreateTextStyle021
-     * @tc.desc       : test OH_Drawing_CreateTextStyle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTextStyle021
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETEXTSTYLE_2100
+     * @tc.desc   test OH_Drawing_CreateTextStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTextStyle021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1417,15 +1417,15 @@ export default function nativeDrawingNdkTest() {
       done();
     });
 
-    /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYHANDLERADDTEXT_0100
-     * @tc.name       : testOHDrawingTypographyHandlerAddText001
-     * @tc.desc       : test OHDrawingTypographyGetIdeographicBaseline
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
 
+    /**
+     * @tc.name   testOHDrawingTypographyHandlerAddText001
+     * @tc.number testOHDrawingTypographyHandlerAddText001
+     * @tc.desc   testOHDrawingTypographyHandlerAddText001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOHDrawingTypographyHandlerAddText001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingTypographyHandlerAddText();
@@ -1433,15 +1433,15 @@ export default function nativeDrawingNdkTest() {
       done();
     });
 
-    /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_TYPOGRAPHYHANDLERADDTEXT_0200
-     * @tc.name       : testOHDrawingTypographyHandlerAddText002
-     * @tc.desc       : test OHDrawingTypographyHandlerAddTextF
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
 
+    /**
+     * @tc.name   testOHDrawingTypographyHandlerAddText002
+     * @tc.number testOHDrawingTypographyHandlerAddText002
+     * @tc.desc   testOHDrawingTypographyHandlerAddText002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOHDrawingTypographyHandlerAddText002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingTypographyHandlerAddTextAanormal();
@@ -1450,12 +1450,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_CANVAS_OH_DRAWING_CANVASCREATE_0200
-     * @tc.name       : testOHDrawingCanvasCreate002
-     * @tc.desc       : test OH_Drawing_CanvasCreate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCanvasCreate002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_CANVAS_OH_DRAWING_CANVASCREATE_0200
+     * @tc.desc   test OH_Drawing_CanvasCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCanvasCreate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingCanvasCreateBitmap();
@@ -1464,12 +1464,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_CANVAS_OH_DRAWING_CANVASCREATE_0300
-     * @tc.name       : testOHDrawingCanvasCreate003
-     * @tc.desc       : test OH_Drawing_CanvasCreate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCanvasCreate003
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_CANVAS_OH_DRAWING_CANVASCREATE_0300
+     * @tc.desc   test OH_Drawing_CanvasCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCanvasCreate003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingCanvasCreatePen();
@@ -1478,12 +1478,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_CANVAS_OH_DRAWING_CANVASCREATE_0400
-     * @tc.name       : testOHDrawingCanvasCreate004
-     * @tc.desc       : test OH_Drawing_CanvasCreate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCanvasCreate004
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_CANVAS_OH_DRAWING_CANVASCREATE_0400
+     * @tc.desc   test OH_Drawing_CanvasCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCanvasCreate004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingCanvasCreateBrush();
@@ -1492,12 +1492,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : 5SUB_GRAPHIC_GRAPHIC_2D_DRAWING_CANVAS_OH_DRAWING_CANVASCREATE_0500
-     * @tc.name       : testOHDrawingCanvasCreate005
-     * @tc.desc       : test OH_Drawing_CanvasCreate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCanvasCreate005
+     * @tc.number 5SUB_GRAPHIC_GRAPHIC_2D_DRAWING_CANVAS_OH_DRAWING_CANVASCREATE_0500
+     * @tc.desc   test OH_Drawing_CanvasCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCanvasCreate005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingCanvasCreateSave();
@@ -1506,12 +1506,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : 6SUB_GRAPHIC_GRAPHIC_2D_DRAWING_CANVAS_OH_DRAWING_CANVASCREATE_0600
-     * @tc.name       : testOHDrawingCanvasCreate006
-     * @tc.desc       : test OH_Drawing_CanvasCreate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCanvasCreate006
+     * @tc.number 6SUB_GRAPHIC_GRAPHIC_2D_DRAWING_CANVAS_OH_DRAWING_CANVASCREATE_0600
+     * @tc.desc   test OH_Drawing_CanvasCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCanvasCreate006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingCanvasCreateDrawLine();
@@ -1520,12 +1520,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_CANVAS_OH_DRAWING_CANVASCREATE_0700
-     * @tc.name       : testOHDrawingCanvasCreate007
-     * @tc.desc       : test OH_Drawing_CanvasCreate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCanvasCreate007
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_CANVAS_OH_DRAWING_CANVASCREATE_0700
+     * @tc.desc   test OH_Drawing_CanvasCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCanvasCreate007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingCanvasCreateDrawPath();
@@ -1534,12 +1534,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_CANVAS_OH_DRAWING_CANVASCREATE_0800
-     * @tc.name       : testOHDrawingCanvasCreate008
-     * @tc.desc       : test OH_Drawing_CanvasCreate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCanvasCreate008
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_CANVAS_OH_DRAWING_CANVASCREATE_0800
+     * @tc.desc   test OH_Drawing_CanvasCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCanvasCreate008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingCanvasCreateClear();
@@ -1548,12 +1548,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_CANVAS_OH_DRAWING_CANVASCREATE_0900
-     * @tc.name       : testOHDrawingCanvasCreate009
-     * @tc.desc       : test OH_Drawing_CanvasCreate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCanvasCreate009
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_CANVAS_OH_DRAWING_CANVASCREATE_0900
+     * @tc.desc   test OH_Drawing_CanvasCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCanvasCreate009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingCanvasCreateDetachPen();
@@ -1562,12 +1562,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_CANVAS_OH_DRAWING_CANVASCREATE_1000
-     * @tc.name       : testOHDrawingCanvasCreate010
-     * @tc.desc       : test OH_Drawing_CanvasCreate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCanvasCreate010
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_CANVAS_OH_DRAWING_CANVASCREATE_1000
+     * @tc.desc   test OH_Drawing_CanvasCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCanvasCreate010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.oHDrawingCanvasCreateDetachBrush();
@@ -1576,12 +1576,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PATH_OH_DRAWING_PATHCREATE_0200
-     * @tc.name       : testOHDrawingPathCreate002
-     * @tc.desc       : test OH_Drawing_PathCreate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPathCreate002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PATH_OH_DRAWING_PATHCREATE_0200
+     * @tc.desc   test OH_Drawing_PathCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPathCreate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.ohDrawingPathCreateMoveTo();
@@ -1590,12 +1590,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PATH_OH_DRAWING_PATHCREATE_0300
-     * @tc.name       : testOHDrawingPathCreate003
-     * @tc.desc       : test OH_Drawing_PathCreate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPathCreate003
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PATH_OH_DRAWING_PATHCREATE_0300
+     * @tc.desc   test OH_Drawing_PathCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPathCreate003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.ohDrawingPathCreateLineTo();
@@ -1604,12 +1604,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PATH_OH_DRAWING_PATHCREATE_0400
-     * @tc.name       : testOHDrawingPathCreate004
-     * @tc.desc       : test OH_Drawing_PathCreate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPathCreate004
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PATH_OH_DRAWING_PATHCREATE_0400
+     * @tc.desc   test OH_Drawing_PathCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPathCreate004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.ohDrawingPathCreateArcTo();
@@ -1618,12 +1618,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PATH_OH_DRAWING_PATHCREATE_0500
-     * @tc.name       : testOHDrawingPathCreate005
-     * @tc.desc       : test OH_Drawing_PathCreate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPathCreate005
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PATH_OH_DRAWING_PATHCREATE_0500
+     * @tc.desc   test OH_Drawing_PathCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPathCreate005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.ohDrawingPathCreateQuadTo();
@@ -1632,12 +1632,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PATH_OH_DRAWING_PATHCREATE_0600
-     * @tc.name       : testOHDrawingPathCreate006
-     * @tc.desc       : test OH_Drawing_PathCreate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPathCreate006
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PATH_OH_DRAWING_PATHCREATE_0600
+     * @tc.desc   test OH_Drawing_PathCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPathCreate006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.ohDrawingPathCreateCubicTo();
@@ -1646,12 +1646,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PATH_OH_DRAWING_PATHCREATE_0700
-     * @tc.name       : testOHDrawingPathCreate007
-     * @tc.desc       : test OH_Drawing_PathCreate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPathCreate007
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PATH_OH_DRAWING_PATHCREATE_0700
+     * @tc.desc   test OH_Drawing_PathCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPathCreate007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.ohDrawingPathCreateClose();
@@ -1660,12 +1660,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PATH_OH_DRAWING_PATHCREATE_0800
-     * @tc.name       : testOHDrawingPathCreate008
-     * @tc.desc       : test OH_Drawing_PathCreate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingPathCreate008
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_PATH_OH_DRAWING_PATHCREATE_0800
+     * @tc.desc   test OH_Drawing_PathCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingPathCreate008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeDrawing.ohDrawingPathCreateReset();
@@ -1674,12 +1674,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETYPOGRAPHY_0200
-     * @tc.name       : testOHDrawingCreateTypography002
-     * @tc.desc       : test OH_Drawing_CreateTypography
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingCreateTypography002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_CREATETYPOGRAPHY_0200
+     * @tc.desc   test OH_Drawing_CreateTypography
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDrawingCreateTypography002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1689,12 +1689,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_VERRICALALIGNMENTBASELINE_0100
-     * @tc.name       : testOHDrawingTextVerticalAlignmentBaseline001
-     * @tc.desc       : test TEXT_VERTICAL_ALIGNMENT_BASELINE
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingTextVerticalAlignmentBaseline001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_VERRICALALIGNMENTBASELINE_0100
+     * @tc.desc   test TEXT_VERTICAL_ALIGNMENT_BASELINE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHDrawingTextVerticalAlignmentBaseline001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1704,12 +1704,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_VERRICALALIGNMENTCENTER_0100
-     * @tc.name       : testOHDrawingTextVerticalAlignmentCenter001
-     * @tc.desc       : test TEXT_VERTICAL_ALIGNMENT_CENTER
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingTextVerticalAlignmentCenter001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_VERRICALALIGNMENTCENTER_0100
+     * @tc.desc   test TEXT_VERTICAL_ALIGNMENT_CENTER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHDrawingTextVerticalAlignmentCenter001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1719,12 +1719,12 @@ export default function nativeDrawingNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_VERRICALALIGNMENTTOP_0100
-     * @tc.name       : testOHDrawingTextVerticalAlignmentTop001
-     * @tc.desc       : test TEXT_VERTICAL_ALIGNMENT_CENTER
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHDrawingTextVerticalAlignmentTop001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DRAWING_TEXTTYPOGRAPHY_OH_DRAWING_VERRICALALIGNMENTTOP_0100
+     * @tc.desc   test TEXT_VERTICAL_ALIGNMENT_CENTER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHDrawingTextVerticalAlignmentTop001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

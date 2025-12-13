@@ -15,21 +15,31 @@
  @Entry
 @Component
 struct HasAxis {
-  @State hasAxis: boolean = false
-
+  @State hasAxis1: boolean = false
+  @State hasAxis2: boolean = false
   build() {
     Column() {
-      if (this.hasAxis) {
-        Text('true').id('has')
+      if (this.hasAxis1) {
+        Text('true').id('has1')
       } else {
-        Text('false').id('has')
+        Text('false').id('has1')
+      }
+      if (this.hasAxis2) {
+         Text('true').id('has2')
+      } else {
+        Text('false').id('has2')
       }
       Button('onAxisEvent test')
          .id('button')
          .width('80%')
          .height('80%')
         .onAxisEvent(event => {
-          this.hasAxis = event.hasAxis(0)
+          if (event.hasAxis(0)) {
+            this.hasAxis1 = true;
+          }
+          if (event.hasAxis(1)) {
+            this.hasAxis2 = true;
+          }
         })
     }
   }

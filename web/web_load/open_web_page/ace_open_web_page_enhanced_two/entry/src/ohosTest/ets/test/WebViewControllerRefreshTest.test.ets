@@ -58,14 +58,14 @@ export default function webViewControllerRefreshTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_REFRESH_0200
-    * @tc.name       : testRefresh002
-    * @tc.desc       : test WebViewController.refresh
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testRefresh002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_REFRESH_0200
+     * @tc.desc   test WebViewController.refresh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRefresh002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testRefresh002", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -76,14 +76,14 @@ export default function webViewControllerRefreshTest() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_REFRESH_0300
-    * @tc.name       : testRefresh003
-    * @tc.desc       : test WebViewController.refresh
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testRefresh003
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_REFRESH_0300
+     * @tc.desc   test WebViewController.refresh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRefresh003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testRefresh003", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -94,14 +94,14 @@ export default function webViewControllerRefreshTest() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_REFRESH_0400
-    * @tc.name       : testRefresh004
-    * @tc.desc       : test WebViewController.refresh
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testRefresh004
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_REFRESH_0400
+     * @tc.desc   test WebViewController.refresh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRefresh004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testRefresh004", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;

@@ -49,12 +49,12 @@ export default function subHeaderSelect() {
     })
 
     /**
-     * @tc.number subHeaderSelect
      * @tc.name   subHeaderSelect_0100
+     * @tc.number subHeaderSelect
      * @tc.desc   Test subHeaderSelect
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('subHeaderSelect_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[subHeaderSelect_0100] START');

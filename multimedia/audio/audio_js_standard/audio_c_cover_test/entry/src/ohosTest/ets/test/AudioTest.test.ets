@@ -22,12 +22,12 @@ export default function AudioTest() {
   describe('AudioTest', () => {
 
     /**
+     * @tc.name   testMultimediaAudioCapturerStart0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_START_0100
-     * @tc.name testMultimediaAudioCapturerStart0100
-     * @tc.desc Testing OH_AudioCapturer_Start returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioCapturer_Start returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioCapturerStart0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -46,12 +46,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioCapturerPause0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PAUSE_0100
-     * @tc.name testMultimediaAudioCapturerPause0100
-     * @tc.desc Testing OH_AudioCapturer_Pause returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioCapturer_Pause returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioCapturerPause0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -70,12 +70,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioCapturerStop0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_STOP_0100
-     * @tc.name testMultimediaAudioCapturerStop0100
-     * @tc.desc Testing OH_AudioCapturer_Stop returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioCapturer_Stop returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioCapturerStop0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -94,12 +94,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioCapturerFlush0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_FLUSH_0100
-     * @tc.name testMultimediaAudioCapturerFlush0100
-     * @tc.desc Testing OH_AudioCapturer_Flush returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioCapturer_Flush returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioCapturerFlush0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -118,12 +118,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioCapturerGetCurrentState0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GETCURRENTSTATE_0100
-     * @tc.name testMultimediaAudioCapturerGetCurrentState0100
-     * @tc.desc Testing OH_AudioCapturer_GetCurrentState returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioCapturer_GetCurrentState returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioCapturerGetCurrentState0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -142,12 +142,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioCapturerGetLatencyMode0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GETLATENCYMODE_0100
-     * @tc.name testMultimediaAudioCapturerGetLatencyMode0100
-     * @tc.desc Testing OH_AudioCapturer_GetLatencyMode returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioCapturer_GetLatencyMode returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioCapturerGetLatencyMode0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -166,12 +166,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioCapturerGetStreamId0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GETSTREAMID_0100
-     * @tc.name testMultimediaAudioCapturerGetStreamId0100
-     * @tc.desc Testing OH_AudioCapturer_GetStreamId returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioCapturer_GetStreamId returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioCapturerGetStreamId0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -190,12 +190,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioCapturerGetSamplingRate0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GETSAMPLINGRATE_0100
-     * @tc.name testMultimediaAudioCapturerGetSamplingRate0100
-     * @tc.desc Testing OH_AudioCapturer_GetSamplingRate returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioCapturer_GetSamplingRate returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioCapturerGetSamplingRate0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -214,12 +214,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioCapturerGetChannelCount0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GETCHANNELCOUNT_0100
-     * @tc.name testMultimediaAudioCapturerGetChannelCount0100
-     * @tc.desc Testing OH_AudioCapturer_GetChannelCount returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioCapturer_GetChannelCount returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioCapturerGetChannelCount0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -238,12 +238,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioCapturerGetSampleFormat0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GETSAMPLEFORMAT_0100
-     * @tc.name testMultimediaAudioCapturerGetSampleFormat0100
-     * @tc.desc Testing OH_AudioCapturer_GetSampleFormat returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioCapturer_GetSampleFormat returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioCapturerGetSampleFormat0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -262,12 +262,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioCapturerGetEncodingType0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GETENCODINGTYPE_0100
-     * @tc.name testMultimediaAudioCapturerGetEncodingType0100
-     * @tc.desc Testing OH_AudioCapturer_GetEncodingType returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioCapturer_GetEncodingType returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioCapturerGetEncodingType0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -286,12 +286,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioCapturerGetCapturerInfo0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GETCAPUTURERINFO_0100
-     * @tc.name testMultimediaAudioCapturerGetCapturerInfo0100
-     * @tc.desc Testing OH_AudioCapturer_GetCapturerInfo returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioCapturer_GetCapturerInfo returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioCapturerGetCapturerInfo0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -310,12 +310,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioCapturerGetFrameSizeInCallback0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GETFRAMESIZEINCALLBACK_0100
-     * @tc.name testMultimediaAudioCapturerGetFrameSizeInCallback0100
-     * @tc.desc Testing OH_AudioCapturer_GetFrameSizeInCallback returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioCapturer_GetFrameSizeInCallback returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioCapturerGetFrameSizeInCallback0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -334,12 +334,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioCapturerGetTimestamp0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GETTIMESTAMP_0100
-     * @tc.name testMultimediaAudioCapturerGetTimestamp0100
-     * @tc.desc Testing OH_AudioCapturer_GetTimestamp returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioCapturer_GetTimestamp returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioCapturerGetTimestamp0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -358,12 +358,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioCapturerGetFramesRead0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GETFRAMESREAD_0100
-     * @tc.name testMultimediaAudioCapturerGetFramesRead0100
-     * @tc.desc Testing OH_AudioCapturer_GetFramesRead returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioCapturer_GetFramesRead returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioCapturerGetFramesRead0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -382,12 +382,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioCapturerGetOverflowCount0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GETOVERFLOWCOUNT_0100
-     * @tc.name testMultimediaAudioCapturerGetOverflowCount0100
-     * @tc.desc Testing OH_AudioCapturer_GetOverflowCount returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioCapturer_GetOverflowCount returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioCapturerGetOverflowCount0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -406,12 +406,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererStart0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_START_0100
-     * @tc.name testMultimediaAudioRendererStart0100
-     * @tc.desc Testing OH_AudioRenderer_Start returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_Start returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererStart0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -430,12 +430,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererPause0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PAUSE_0100
-     * @tc.name testMultimediaAudioRendererPause0100
-     * @tc.desc Testing OH_AudioRenderer_Pause returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_Pause returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererPause0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -454,12 +454,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererStop0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_STOP_0100
-     * @tc.name testMultimediaAudioRendererStop0100
-     * @tc.desc Testing OH_AudioRenderer_Stop returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_Stop returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererStop0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -478,12 +478,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererFlush0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_FLUSH_0100
-     * @tc.name testMultimediaAudioRendererFlush0100
-     * @tc.desc Testing OH_AudioRenderer_Flush returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_Flush returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererFlush0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -502,12 +502,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererGetCurrentState0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETCURRENTSTATE_0100
-     * @tc.name testMultimediaAudioRendererGetCurrentState0100
-     * @tc.desc Testing OH_AudioRenderer_GetCurrentState returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_GetCurrentState returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererGetCurrentState0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -526,12 +526,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererGetSamplingRate0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETSAMPLINGRATE_0100
-     * @tc.name testMultimediaAudioRendererGetSamplingRate0100
-     * @tc.desc Testing OH_AudioRenderer_GetSamplingRate returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_GetSamplingRate returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererGetSamplingRate0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -550,12 +550,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererGetStreamId0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETSTREAMID_0100
-     * @tc.name testMultimediaAudioRendererGetStreamId0100
-     * @tc.desc Testing OH_AudioRenderer_GetStreamId returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_GetStreamId returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererGetStreamId0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -574,12 +574,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererGetChannelCount0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETCHANNELCOUNT_0100
-     * @tc.name testMultimediaAudioRendererGetChannelCount0100
-     * @tc.desc Testing OH_AudioRenderer_GetChannelCount returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_GetChannelCount returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererGetChannelCount0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -598,12 +598,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererGetSampleFormat0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETSAMPLEFORMAT_0100
-     * @tc.name testMultimediaAudioRendererGetSampleFormat0100
-     * @tc.desc Testing OH_AudioRenderer_GetSampleFormat returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_GetSampleFormat returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererGetSampleFormat0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -622,12 +622,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererGetLatencyMode0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETLATENCYMODE_0100
-     * @tc.name testMultimediaAudioRendererGetLatencyMode0100
-     * @tc.desc Testing OH_AudioRenderer_GetLatencyMode returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_GetLatencyMode returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererGetLatencyMode0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -646,12 +646,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererGetRendererInfo0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETRENDERERINFO_0100
-     * @tc.name testMultimediaAudioRendererGetRendererInfo0100
-     * @tc.desc Testing OH_AudioRenderer_GetRendererInfo returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_GetRendererInfo returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererGetRendererInfo0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -670,12 +670,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererGetEncodingType0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETENCODINGTYPE_0100
-     * @tc.name testMultimediaAudioRendererGetEncodingType0100
-     * @tc.desc Testing OH_AudioRenderer_GetEncodingType returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_GetEncodingType returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererGetEncodingType0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -694,12 +694,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererGetFramesWritten0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETFRAMESWRITTEN_0100
-     * @tc.name testMultimediaAudioRendererGetFramesWritten0100
-     * @tc.desc Testing OH_AudioRenderer_GetFramesWritten returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_GetFramesWritten returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererGetFramesWritten0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -718,12 +718,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererGetTimestamp0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETTIMESTAMP_0100
-     * @tc.name testMultimediaAudioRendererGetTimestamp0100
-     * @tc.desc Testing OH_AudioRenderer_GetTimestamp returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_GetTimestamp returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererGetTimestamp0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -742,12 +742,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererGetTimestamp0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETTIMESTAMP_0200
-     * @tc.name testMultimediaAudioRendererGetTimestamp0200
-     * @tc.desc Test OH_AudioRenderer_GetTimestamp error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test OH_AudioRenderer_GetTimestamp error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererGetTimestamp0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -766,12 +766,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererGetFrameSizeInCallback0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETFRAMESIZEINCALLBACK_0100
-     * @tc.name testMultimediaAudioRendererGetFrameSizeInCallback0100
-     * @tc.desc Testing OH_AudioRenderer_GetFrameSizeInCallback returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_GetFrameSizeInCallback returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererGetFrameSizeInCallback0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -790,12 +790,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererGetSpeed0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETSPEED_0100
-     * @tc.name testMultimediaAudioRendererGetSpeed0100
-     * @tc.desc Testing OH_AudioRenderer_GetSpeed returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_GetSpeed returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererGetSpeed0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -814,12 +814,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererSetSpeed0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETSPEED_0100
-     * @tc.name testMultimediaAudioRendererSetSpeed0100
-     * @tc.desc Testing OH_AudioRenderer_SetSpeed returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_SetSpeed returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererSetSpeed0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -838,12 +838,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererSetVolume0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUME_0100
-     * @tc.name testMultimediaAudioRendererSetVolume0100
-     * @tc.desc Testing OH_AudioRenderer_SetVolume returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_SetVolume returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererSetVolume0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -862,12 +862,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererSetVolume0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUME_0200
-     * @tc.name testMultimediaAudioRendererSetVolume0200
-     * @tc.desc Testing OH_AudioRenderer_SetVolume returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_SetVolume returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererSetVolume0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -886,12 +886,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererSetVolumeWithRamp0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_0100
-     * @tc.name testMultimediaAudioRendererSetVolumeWithRamp0100
-     * @tc.desc Testing OH_AudioRenderer_SetVolumeWithRamp returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_SetVolumeWithRamp returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererSetVolumeWithRamp0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -910,12 +910,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererSetVolumeWithRamp0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_0200
-     * @tc.name testMultimediaAudioRendererSetVolumeWithRamp0200
-     * @tc.desc Testing OH_AudioRenderer_SetVolumeWithRamp returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_SetVolumeWithRamp returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererSetVolumeWithRamp0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -934,12 +934,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererGetVolume0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETVOLUME_0100
-     * @tc.name testMultimediaAudioRendererGetVolume0100
-     * @tc.desc Testing OH_AudioRenderer_GetVolume returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_GetVolume returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererGetVolume0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -958,12 +958,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererGetVolume0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETVOLUME_0200
-     * @tc.name testMultimediaAudioRendererGetVolume0200
-     * @tc.desc Testing OH_AudioRenderer_GetVolume returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_GetVolume returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererGetVolume0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -982,12 +982,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererSetMarkPosition0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETMARKPOSITION_0100
-     * @tc.name testMultimediaAudioRendererSetMarkPosition0100
-     * @tc.desc Testing OH_AudioRenderer_SetMarkPosition returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_SetMarkPosition returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererSetMarkPosition0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1006,12 +1006,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererSetMarkPosition0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETMARKPOSITION_0200
-     * @tc.name testMultimediaAudioRendererSetMarkPosition0200
-     * @tc.desc Testing OH_AudioRenderer_SetMarkPosition returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_SetMarkPosition returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererSetMarkPosition0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1030,12 +1030,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererCancelMark0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_CANCELMARK_0100
-     * @tc.name testMultimediaAudioRendererCancelMark0100
-     * @tc.desc Testing OH_AudioRenderer_CancelMark returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_CancelMark returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererCancelMark0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1054,12 +1054,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererCancelMark0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_CANCELMARK_0200
-     * @tc.name testMultimediaAudioRendererCancelMark0200
-     * @tc.desc Testing OH_AudioRenderer_CancelMark returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_CancelMark returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererCancelMark0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1078,12 +1078,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererGetUnderflowCount0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_0100
-     * @tc.name testMultimediaAudioRendererGetUnderflowCount0100
-     * @tc.desc Testing OH_AudioRenderer_GetUnderflowCount returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_GetUnderflowCount returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererGetUnderflowCount0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1102,12 +1102,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererGetUnderflowCount0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_0200
-     * @tc.name testMultimediaAudioRendererGetUnderflowCount0200
-     * @tc.desc Testing OH_AudioRenderer_GetUnderflowCount returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_GetUnderflowCount returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererGetUnderflowCount0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1126,12 +1126,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererGetChannelLayout0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETCHANNELLAYOUT_0100
-     * @tc.name testMultimediaAudioRendererGetChannelLayout0100
-     * @tc.desc Testing OH_AudioRenderer_GetChannelLayout returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_GetChannelLayout returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererGetChannelLayout0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1150,12 +1150,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererGetChannelLayout0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETCHANNELLAYOUT_0200
-     * @tc.name testMultimediaAudioRendererGetChannelLayout0200
-     * @tc.desc Testing OH_AudioRenderer_GetChannelLayout returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_GetChannelLayout returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererGetChannelLayout0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1174,12 +1174,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererGetEffectMode0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETEFFECTMODE_0100
-     * @tc.name testMultimediaAudioRendererGetEffectMode0100
-     * @tc.desc Testing OH_AudioRenderer_GetEffectMode returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_GetEffectMode returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererGetEffectMode0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1198,12 +1198,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererGetEffectMode0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETEFFECTMODE_0200
-     * @tc.name testMultimediaAudioRendererGetEffectMode0200
-     * @tc.desc Testing OH_AudioRenderer_GetEffectMode returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_GetEffectMode returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererGetEffectMode0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1222,12 +1222,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererSetEffectMode0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETEFFECTMODE_0100
-     * @tc.name testMultimediaAudioRendererSetEffectMode0100
-     * @tc.desc Testing OH_AudioRenderer_SetEffectMode returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_SetEffectMode returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererSetEffectMode0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1246,12 +1246,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererSetEffectMode0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETEFFECTMODE_0200
-     * @tc.name testMultimediaAudioRendererSetEffectMode0200
-     * @tc.desc Testing OH_AudioRenderer_SetEffectMode returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_SetEffectMode returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererSetEffectMode0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1270,12 +1270,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererGetRendererPrivacy0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETRENDERERPRIVACY_0100
-     * @tc.name testMultimediaAudioRendererGetRendererPrivacy0100
-     * @tc.desc Testing OH_AudioRenderer_GetRendererPrivacy returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_GetRendererPrivacy returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererGetRendererPrivacy0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1294,12 +1294,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererSetSilentModeAndMixWithOthers0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETSILENTMODEANDMIXWITHOTHERS_0100
-     * @tc.name testMultimediaAudioRendererSetSilentModeAndMixWithOthers0100
-     * @tc.desc Testing OH_AudioRenderer_SetSilentModeAndMixWithOthers returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_SetSilentModeAndMixWithOthers returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererSetSilentModeAndMixWithOthers0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1318,12 +1318,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererSetSilentModeAndMixWithOthers0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETSILENTMODEANDMIXWITHOTHERS_0200
-     * @tc.name testMultimediaAudioRendererSetSilentModeAndMixWithOthers0200
-     * @tc.desc Testing OH_AudioRenderer_SetSilentModeAndMixWithOthers returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_SetSilentModeAndMixWithOthers returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererSetSilentModeAndMixWithOthers0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1342,12 +1342,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererGetSilentModeAndMixWithOthers0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETSILENTMODEANDMIXWITHOTHERS_0100
-     * @tc.name testMultimediaAudioRendererGetSilentModeAndMixWithOthers0100
-     * @tc.desc Testing OH_AudioRenderer_GetSilentModeAndMixWithOthers returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_GetSilentModeAndMixWithOthers returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererGetSilentModeAndMixWithOthers0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1366,12 +1366,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererGetSilentModeAndMixWithOthers0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETSILENTMODEANDMIXWITHOTHERS_0200
-     * @tc.name testMultimediaAudioRendererGetSilentModeAndMixWithOthers0200
-     * @tc.desc Testing OH_AudioRenderer_GetSilentModeAndMixWithOthers returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_GetSilentModeAndMixWithOthers returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererGetSilentModeAndMixWithOthers0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1390,12 +1390,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererSetDefaultOutputDevice0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETDEFAULTOUTPUTDEVICE_0100
-     * @tc.name testMultimediaAudioRendererSetDefaultOutputDevice0100
-     * @tc.desc Testing OH_AudioRenderer_SetDefaultOutputDevice returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_SetDefaultOutputDevice returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererSetDefaultOutputDevice0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1414,12 +1414,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererSetDefaultOutputDevice0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETDEFAULTOUTPUTDEVICE_0200
-     * @tc.name testMultimediaAudioRendererSetDefaultOutputDevice0200
-     * @tc.desc Testing OH_AudioRenderer_SetDefaultOutputDevice returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_SetDefaultOutputDevice returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererSetDefaultOutputDevice0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1443,12 +1443,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererGetAudioTimestampInfo0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETAUDIOTIMESTAMPINFO_0100
-     * @tc.name testMultimediaAudioRendererGetAudioTimestampInfo0100
-     * @tc.desc Testing OH_AudioRenderer_GetAudioTimestampInfo returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_GetAudioTimestampInfo returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererGetAudioTimestampInfo0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1467,12 +1467,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererSetLoudnessGain0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETLOUDNESSGAIN_0100
-     * @tc.name testMultimediaAudioRendererSetLoudnessGain0100
-     * @tc.desc Testing OH_AudioRenderer_SetLoudnessGain returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_SetLoudnessGain returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererSetLoudnessGain0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1491,12 +1491,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererSetLoudnessGain0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETLOUDNESSGAIN_0200
-     * @tc.name testMultimediaAudioRendererSetLoudnessGain0200
-     * @tc.desc Testing OH_AudioRenderer_SetLoudnessGain returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_SetLoudnessGain returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererSetLoudnessGain0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1513,14 +1513,157 @@ export default function AudioTest() {
           done();
         }
       })
+    
+    /**
+     * @tc.name   testMultimediaAudioRendererSetLoudnessGain0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETLOUDNESSGAIN_0300
+     * @tc.desc   Testing OH_AudioRenderer_SetLoudnessGain returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testMultimediaAudioRendererSetLoudnessGain0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        const LOG_NAME = `SUB_MULTIMEDIA_AUDIO_RENDERER_SETLOUDNESSGAIN_0300`;
+        try {
+          console.info(`====>${LOG_NAME} start====`);
+          let result: number = AudioKitTest.AudioRendererSetLoudnessGainSuccess_001();
+          expect(0).assertEqual(result);
+          console.info(`====>${LOG_NAME} result: ` + result);
+          done();
+        } catch (err) {
+          console.error(`====>${LOG_NAME} catch err: ` + err);
+          expect(false).assertEqual(ABILITY_ERR_OK);
+          done();
+        }
+      })
 
     /**
+     * @tc.name   testMultimediaAudioRendererSetLoudnessGain0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETLOUDNESSGAIN_0400
+     * @tc.desc   Testing OH_AudioRenderer_SetLoudnessGain returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testMultimediaAudioRendererSetLoudnessGain0400',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        const LOG_NAME = `SUB_MULTIMEDIA_AUDIO_RENDERER_SETLOUDNESSGAIN_0400`;
+        try {
+          console.info(`====>${LOG_NAME} start====`);
+          let result: number = AudioKitTest.AudioRendererSetLoudnessGainSuccess_002();
+          expect(0).assertEqual(result);
+          console.info(`====>${LOG_NAME} result: ` + result);
+          done();
+        } catch (err) {
+          console.error(`====>${LOG_NAME} catch err: ` + err);
+          expect(false).assertEqual(ABILITY_ERR_OK);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testMultimediaAudioRendererSetLoudnessGain0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETLOUDNESSGAIN_0500
+     * @tc.desc   Testing OH_AudioRenderer_SetLoudnessGain returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testMultimediaAudioRendererSetLoudnessGain0500',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        const LOG_NAME = `SUB_MULTIMEDIA_AUDIO_RENDERER_SETLOUDNESSGAIN_0500`;
+        try {
+          console.info(`====>${LOG_NAME} start====`);
+          let result: number = AudioKitTest.AudioRendererSetLoudnessGainSuccess_003();
+          expect(1).assertEqual(result);
+          console.info(`====>${LOG_NAME} result: ` + result);
+          done();
+        } catch (err) {
+          console.error(`====>${LOG_NAME} catch err: ` + err);
+          expect(false).assertEqual(ABILITY_ERR_OK);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testMultimediaAudioRendererSetLoudnessGain0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETLOUDNESSGAIN_0600
+     * @tc.desc   Testing OH_AudioRenderer_SetLoudnessGain returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testMultimediaAudioRendererSetLoudnessGain0600',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        const LOG_NAME = `SUB_MULTIMEDIA_AUDIO_RENDERER_SETLOUDNESSGAIN_0600`;
+        try {
+          console.info(`====>${LOG_NAME} start====`);
+          let result: number = AudioKitTest.AudioRendererSetLoudnessGainSuccess_004();
+          expect(0).assertEqual(result);
+          console.info(`====>${LOG_NAME} result: ` + result);
+          done();
+        } catch (err) {
+          console.error(`====>${LOG_NAME} catch err: ` + err);
+          expect(false).assertEqual(ABILITY_ERR_OK);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testMultimediaAudioRendererSetLoudnessGain0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETLOUDNESSGAIN_0700
+     * @tc.desc   Testing OH_AudioRenderer_SetLoudnessGain returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testMultimediaAudioRendererSetLoudnessGain0700',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        const LOG_NAME = `SUB_MULTIMEDIA_AUDIO_RENDERER_SETLOUDNESSGAIN_0700`;
+        try {
+          console.info(`====>${LOG_NAME} start====`);
+          let result: number = AudioKitTest.AudioRendererSetLoudnessGainSuccess_005();
+          expect(0).assertEqual(result);
+          console.info(`====>${LOG_NAME} result: ` + result);
+          done();
+        } catch (err) {
+          console.error(`====>${LOG_NAME} catch err: ` + err);
+          expect(false).assertEqual(ABILITY_ERR_OK);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testMultimediaAudioRendererSetLoudnessGain0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETLOUDNESSGAIN_0800
+     * @tc.desc   Testing OH_AudioRenderer_SetLoudnessGain returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testMultimediaAudioRendererSetLoudnessGain0800',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        const LOG_NAME = `SUB_MULTIMEDIA_AUDIO_RENDERER_SETLOUDNESSGAIN_0800`;
+        try {
+          console.info(`====>${LOG_NAME} start====`);
+          let result: number = AudioKitTest.AudioRendererSetLoudnessGainSuccess_006();
+          expect(1).assertEqual(result);
+          console.info(`====>${LOG_NAME} result: ` + result);
+          done();
+        } catch (err) {
+          console.error(`====>${LOG_NAME} catch err: ` + err);
+          expect(false).assertEqual(ABILITY_ERR_OK);
+          done();
+        }
+      })                  
+    /**
+     * @tc.name   testMultimediaAudioRendererGetLoudnessGain0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETLOUDNESSGAIN_0100
-     * @tc.name testMultimediaAudioRendererGetLoudnessGain0100
-     * @tc.desc Testing OH_AudioRenderer_GetLoudnessGain returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_GetLoudnessGain returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererGetLoudnessGain0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1539,12 +1682,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRendererGetLoudnessGain0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETLOUDNESSGAIN_0200
-     * @tc.name testMultimediaAudioRendererGetLoudnessGain0200
-     * @tc.desc Testing OH_AudioRenderer_GetLoudnessGain returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioRenderer_GetLoudnessGain returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRendererGetLoudnessGain0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1563,12 +1706,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamSetSampleFormat0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_SETSAMPLEFORMAT_0100
-     * @tc.name testMultimediaAudioStreamSetSampleFormat0100
-     * @tc.desc Testing OH_AudioStreamBuilder_SetSampleFormat returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioStreamBuilder_SetSampleFormat returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamSetSampleFormat0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1587,12 +1730,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamSetEncodingType0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_SETENCODINGTYPE_0100
-     * @tc.name testMultimediaAudioStreamSetEncodingType0100
-     * @tc.desc Testing OH_AudioStreamBuilder_SetEncodingType returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioStreamBuilder_SetEncodingType returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamSetEncodingType0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1611,12 +1754,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamSetLatencyMode0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_SETLATENCYMODE_0100
-     * @tc.name testMultimediaAudioStreamSetLatencyMode0100
-     * @tc.desc Testing OH_AudioStreamBuilder_SetLatencyMode returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioStreamBuilder_SetLatencyMode returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamSetLatencyMode0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1635,12 +1778,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamSetChannelLayout0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_SETCHANNNELLAYOUT_0100
-     * @tc.name testMultimediaAudioStreamSetChannelLayout0100
-     * @tc.desc Testing OH_AudioStreamBuilder_SetChannelLayout returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioStreamBuilder_SetChannelLayout returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamSetChannelLayout0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1659,12 +1802,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamSetChannelLayout0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_SETCHANNELLAYOUT_0200
-     * @tc.name testMultimediaAudioStreamSetChannelLayout0200
-     * @tc.desc Testing OH_AudioStreamBuilder_SetChannelLayout returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioStreamBuilder_SetChannelLayout returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamSetChannelLayout0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1683,12 +1826,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamSetRendererInfo0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_SETRENDERINFO_0100
-     * @tc.name testMultimediaAudioStreamSetRendererInfo0100
-     * @tc.desc Testing OH_AudioStreamBuilder_SetRendererInfo returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioStreamBuilder_SetRendererInfo returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamSetRendererInfo0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1707,12 +1850,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamSetRendererCallback0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_SETRENDERCALLBACK_0100
-     * @tc.name testMultimediaAudioStreamSetRendererCallback0100
-     * @tc.desc Testing OH_AudioStreamBuilder_SetRendererCallback returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioStreamBuilder_SetRendererCallback returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamSetRendererCallback0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1731,12 +1874,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamSetRendererOutputDeviceChangeCallback0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_SETRENDEROUTPUTDEVICECHANGECALLBACK_0100
-     * @tc.name testMultimediaAudioStreamSetRendererOutputDeviceChangeCallback0100
-     * @tc.desc Testing OH_AudioStreamBuilder_SetRendererOutputDeviceChangeCallback returns an invalid param code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioStreamBuilder_SetRendererOutputDeviceChangeCallback returns an invalid param code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamSetRendererOutputDeviceChangeCallback0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1755,12 +1898,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamSetCapturerCallback0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_SETCAPTURERCALLBACK_0100
-     * @tc.name testMultimediaAudioStreamSetCapturerCallback0100
-     * @tc.desc Testing OH_AudioStreamBuilder_SetCapturerCallback returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioStreamBuilder_SetCapturerCallback returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamSetCapturerCallback0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1779,12 +1922,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamSetFrameSizeInCallback0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_SETFRAMESIZEINCALLBACK_0100
-     * @tc.name testMultimediaAudioStreamSetFrameSizeInCallback0100
-     * @tc.desc Testing OH_AudioStreamBuilder_SetFrameSizeInCallback returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioStreamBuilder_SetFrameSizeInCallback returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamSetFrameSizeInCallback0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1803,12 +1946,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamSetWriteDataWithMetadataCallback0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_SETWRITEDATAWITHMETADATACALLBACK_0100
-     * @tc.name testMultimediaAudioStreamSetWriteDataWithMetadataCallback0100
-     * @tc.desc Testing OH_AudioStreamBuilder_SetWriteDataWithMetadataCallback returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioStreamBuilder_SetWriteDataWithMetadataCallback returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamSetWriteDataWithMetadataCallback0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1827,12 +1970,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamSetWriteDataWithMetadataCallback0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_SETWRITEDATAWITHMETADATACALLBACK_0200
-     * @tc.name testMultimediaAudioStreamSetWriteDataWithMetadataCallback0200
-     * @tc.desc Testing OH_AudioStreamBuilder_SetWriteDataWithMetadataCallback returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioStreamBuilder_SetWriteDataWithMetadataCallback returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamSetWriteDataWithMetadataCallback0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1851,12 +1994,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamSetRendererInterruptMode0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_SETRENDERERINTERRUPTMODE_0100
-     * @tc.name testMultimediaAudioStreamSetRendererInterruptMode0100
-     * @tc.desc Testing OH_AudioStreamBuilder_SetRendererInterruptMode returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioStreamBuilder_SetRendererInterruptMode returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamSetRendererInterruptMode0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1875,12 +2018,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamSetRendererWriteDataCallback0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_SETRENDERERWRITEDATACALLBACK_0100
-     * @tc.name testMultimediaAudioStreamSetRendererWriteDataCallback0100
-     * @tc.desc Testing OH_AudioStreamBuilder_SetRendererWriteDataCallback returns an invalid param error code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioStreamBuilder_SetRendererWriteDataCallback returns an invalid param error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamSetRendererWriteDataCallback0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1899,12 +2042,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamSetRendererWriteDataCallbackAdvanced0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_SETRENDERERWRITEDATACALLBACKADVANCED_0100
-     * @tc.name testMultimediaAudioStreamSetRendererWriteDataCallbackAdvanced0100
-     * @tc.desc Testing OH_AudioStreamBuilder_SetRendererWriteDataCallbackAdvanced returns an invalid param code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioStreamBuilder_SetRendererWriteDataCallbackAdvanced returns an invalid param code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamSetRendererWriteDataCallbackAdvanced0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1923,12 +2066,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamSetRendererWriteDataCallbackAdvanced0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_SETRENDERERWRITEDATACALLBACKADVANCED_0200
-     * @tc.name testMultimediaAudioStreamSetRendererWriteDataCallbackAdvanced0200
-     * @tc.desc Testing OH_AudioStreamBuilder_SetRendererWriteDataCallbackAdvanced returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioStreamBuilder_SetRendererWriteDataCallbackAdvanced returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamSetRendererWriteDataCallbackAdvanced0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1947,12 +2090,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamSetRendererErrorCallback0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_SETRENDERERERRORCALLBACK_0100
-     * @tc.name testMultimediaAudioStreamSetRendererErrorCallback0100
-     * @tc.desc Testing OH_AudioStreamBuilder_SetRendererErrorCallback returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioStreamBuilder_SetRendererErrorCallback returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamSetRendererErrorCallback0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1971,12 +2114,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamSetCapturerReadDataCallback0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_SETCAPTURERREADDATACALLBACK_0100
-     * @tc.name testMultimediaAudioStreamSetCapturerReadDataCallback0100
-     * @tc.desc Testing OH_AudioStreamBuilder_SetCapturerReadDataCallback returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioStreamBuilder_SetCapturerReadDataCallback returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamSetCapturerReadDataCallback0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1995,12 +2138,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamSetCapturerDeviceChangeCallback0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_SETCAPTURERDEVICECHANGECALLBACK_0100
-     * @tc.name testMultimediaAudioStreamSetCapturerDeviceChangeCallback0100
-     * @tc.desc Testing OH_AudioStreamBuilder_SetCapturerDeviceChangeCallback returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioStreamBuilder_SetCapturerDeviceChangeCallback returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamSetCapturerDeviceChangeCallback0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2019,12 +2162,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamSetCapturerInterruptCallback0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_SETCAPTURERINTERRUPTCALLBACK_0100
-     * @tc.name testMultimediaAudioStreamSetCapturerInterruptCallback0100
-     * @tc.desc Testing OH_AudioStreamBuilder_SetCapturerInterruptCallback returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioStreamBuilder_SetCapturerInterruptCallback returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamSetCapturerInterruptCallback0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2043,12 +2186,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamSetCapturerErrorCallback0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_SETCAPTURERERRORCALLBACK_0100
-     * @tc.name testMultimediaAudioStreamSetCapturerErrorCallback0100
-     * @tc.desc Testing OH_AudioStreamBuilder_SetCapturerErrorCallback returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioStreamBuilder_SetCapturerErrorCallback returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamSetCapturerErrorCallback0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2067,12 +2210,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamSetCapturerWillMuteWhenInterrupted0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_SETCAPTURERWILLMUTEWHENINTERRUPTED_0100
-     * @tc.name testMultimediaAudioStreamSetCapturerWillMuteWhenInterrupted0100
-     * @tc.desc Testing OH_AudioStreamBuilder_SetCapturerWillMuteWhenInterrupted returns an invalid param code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioStreamBuilder_SetCapturerWillMuteWhenInterrupted returns an invalid param code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamSetCapturerWillMuteWhenInterrupted0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2091,12 +2234,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceGetDeviceRole0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_GETDEVICEROLE_0100
-     * @tc.name testMultimediaAudioDeviceGetDeviceRole0100
-     * @tc.desc Testing OH_AudioDeviceDescriptor_GetDeviceRole returns an invalid param code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioDeviceDescriptor_GetDeviceRole returns an invalid param code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceGetDeviceRole0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2115,12 +2258,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceGetDeviceRole0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_GETDEVICEROLE_0200
-     * @tc.name testMultimediaAudioDeviceGetDeviceRole0200
-     * @tc.desc Testing OH_AudioDeviceDescriptor_GetDeviceRole returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioDeviceDescriptor_GetDeviceRole returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceGetDeviceRole0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2139,12 +2282,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceGetDeviceType0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_GETDEVICETYPE_0100
-     * @tc.name testMultimediaAudioDeviceGetDeviceType0100
-     * @tc.desc Testing OH_AudioDeviceDescriptor_GetDeviceType returns an invalid param code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioDeviceDescriptor_GetDeviceType returns an invalid param code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceGetDeviceType0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2163,12 +2306,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceGetDeviceType0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_GETDEVICETYPE_0200
-     * @tc.name testMultimediaAudioDeviceGetDeviceType0200
-     * @tc.desc Testing OH_AudioDeviceDescriptor_GetDeviceType returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioDeviceDescriptor_GetDeviceType returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceGetDeviceType0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2187,12 +2330,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceGetDeviceId0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_GETDEVICEID_0100
-     * @tc.name testMultimediaAudioDeviceGetDeviceId0100
-     * @tc.desc Testing OH_AudioDeviceDescriptor_GetDeviceId returns an invalid param code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioDeviceDescriptor_GetDeviceId returns an invalid param code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceGetDeviceId0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2211,12 +2354,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceGetDeviceId0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_GETDEVICEID_0200
-     * @tc.name testMultimediaAudioDeviceGetDeviceId0200
-     * @tc.desc Testing OH_AudioDeviceDescriptor_GetDeviceId returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioDeviceDescriptor_GetDeviceId returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceGetDeviceId0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2235,12 +2378,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceGetDeviceName0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_GETDEVICENAME_0100
-     * @tc.name testMultimediaAudioDeviceGetDeviceName0100
-     * @tc.desc Testing OH_AudioDeviceDescriptor_GetDeviceName returns an invalid param code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioDeviceDescriptor_GetDeviceName returns an invalid param code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceGetDeviceName0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2259,12 +2402,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceGetDeviceName0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_GETDEVICENAME_0200
-     * @tc.name testMultimediaAudioDeviceGetDeviceName0200
-     * @tc.desc Testing OH_AudioDeviceDescriptor_GetDeviceName returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioDeviceDescriptor_GetDeviceName returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceGetDeviceName0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2283,12 +2426,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceGetDeviceAddress0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_GETDEVICEADDRESS_0100
-     * @tc.name testMultimediaAudioDeviceGetDeviceAddress0100
-     * @tc.desc Testing OH_AudioDeviceDescriptor_GetDeviceAddress returns an invalid param code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioDeviceDescriptor_GetDeviceAddress returns an invalid param code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceGetDeviceAddress0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2307,12 +2450,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceGetDeviceAddress0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_GETDEVICEADDRESS_0200
-     * @tc.name testMultimediaAudioDeviceGetDeviceAddress0200
-     * @tc.desc Testing OH_AudioDeviceDescriptor_GetDeviceAddress returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioDeviceDescriptor_GetDeviceAddress returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceGetDeviceAddress0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2331,12 +2474,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceGetDeviceSampleRates0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_GETDEVICESAMPLERATES_0100
-     * @tc.name testMultimediaAudioDeviceGetDeviceSampleRates0100
-     * @tc.desc Testing OH_AudioDeviceDescriptor_GetDeviceSampleRates returns an invalid param code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioDeviceDescriptor_GetDeviceSampleRates returns an invalid param code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceGetDeviceSampleRates0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2355,12 +2498,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceGetDeviceSampleRates0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_GETDEVICESAMPLERATES_0200
-     * @tc.name testMultimediaAudioDeviceGetDeviceSampleRates0200
-     * @tc.desc Testing OH_AudioDeviceDescriptor_GetDeviceSampleRates returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioDeviceDescriptor_GetDeviceSampleRates returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceGetDeviceSampleRates0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2379,12 +2522,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceGetDeviceChannelCounts0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_GETDEVICECHANNELCOUNTS_0100
-     * @tc.name testMultimediaAudioDeviceGetDeviceChannelCounts0100
-     * @tc.desc Testing OH_AudioDeviceDescriptor_GetDeviceChannelCounts returns an invalid param code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioDeviceDescriptor_GetDeviceChannelCounts returns an invalid param code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceGetDeviceChannelCounts0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2403,12 +2546,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceGetDeviceChannelCounts0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_GETDEVICECHANNELCOUNTS_0200
-     * @tc.name testMultimediaAudioDeviceGetDeviceChannelCounts0200
-     * @tc.desc Testing OH_AudioDeviceDescriptor_GetDeviceChannelCounts returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioDeviceDescriptor_GetDeviceChannelCounts returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceGetDeviceChannelCounts0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2427,12 +2570,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceGetDeviceDisplayName0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_GETDEVICEDISPLAYNAME_0100
-     * @tc.name testMultimediaAudioDeviceGetDeviceDisplayName0100
-     * @tc.desc Testing OH_AudioDeviceDescriptor_GetDeviceDisplayName returns an invalid param code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioDeviceDescriptor_GetDeviceDisplayName returns an invalid param code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceGetDeviceDisplayName0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2451,12 +2594,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceGetDeviceDisplayName0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_GETDEVICEDISPLAYNAME_0200
-     * @tc.name testMultimediaAudioDeviceGetDeviceDisplayName0200
-     * @tc.desc Testing OH_AudioDeviceDescriptor_GetDeviceDisplayName returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioDeviceDescriptor_GetDeviceDisplayName returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceGetDeviceDisplayName0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2475,12 +2618,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceGetDeviceEncodingTypes0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_GETDEVICEENCODINGTYPE_0100
-     * @tc.name testMultimediaAudioDeviceGetDeviceEncodingTypes0100
-     * @tc.desc Testing OH_AudioDeviceDescriptor_GetDeviceEncodingTypes returns an invalid param code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioDeviceDescriptor_GetDeviceEncodingTypes returns an invalid param code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceGetDeviceEncodingTypes0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2499,12 +2642,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceGetDeviceEncodingTypes0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_GETDEVICEENCODINGTYPE_0200
-     * @tc.name testMultimediaAudioDeviceGetDeviceEncodingTypes0200
-     * @tc.desc Testing OH_AudioDeviceDescriptor_GetDeviceEncodingTypes returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_AudioDeviceDescriptor_GetDeviceEncodingTypes returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceGetDeviceEncodingTypes0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2523,12 +2666,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioGetAudioManager0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_GETAUDIOMANGAGER_0100
-     * @tc.name testMultimediaAudioGetAudioManager0100
-     * @tc.desc Testing OH_GetAudioManager returns an invalid param code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_GetAudioManager returns an invalid param code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioGetAudioManager0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2547,12 +2690,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioGetAudioManager0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_GETAUDIOMANGAGER_0200
-     * @tc.name testMultimediaAudioGetAudioManager0200
-     * @tc.desc Testing OH_GetAudioManager returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_GetAudioManager returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioGetAudioManager0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2571,12 +2714,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioGetAudioScene0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_GETAUDIOSCENE_0100
-     * @tc.name testMultimediaAudioGetAudioScene0100
-     * @tc.desc Testing OH_GetAudioScene returns an invalid param code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_GetAudioScene returns an invalid param code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioGetAudioScene0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2595,12 +2738,12 @@ export default function AudioTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioGetAudioScene0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_GETAUDIOSCENE_0200
-     * @tc.name testMultimediaAudioGetAudioScene0200
-     * @tc.desc Testing OH_GetAudioScene returns a successful code.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing OH_GetAudioScene returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioGetAudioScene0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

@@ -16,7 +16,7 @@
 import { describe, beforeAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver, Point, ComponentEventType, On } from '@ohos.UiTest'
 
-const TestTag = 'uitest401';
+const TestTag = 'testTag';
 const ErrorCode = 401;
 
 export default function abilityTest() {
@@ -29,9 +29,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   test_injectMultiPointerAction_401
      * @tc.number UiTest_uitest401_001
-     * @tc.name test_injectMultiPointerAction_401
-     * @tc.desc injectMultiPointerAction 401 test.
+     * @tc.desc   injectMultiPointerAction 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_injectMultiPointerAction_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_injectMultiPointerAction_401 start`);
@@ -70,9 +73,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   test_PointerMatrix_401
      * @tc.number UiTest_uitest401_002
-     * @tc.name test_PointerMatrix_401
-     * @tc.desc create 401 test.
+     * @tc.desc   create 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_PointerMatrix_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_PointerMatrix_401 start`);
@@ -110,9 +116,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   test_setPoint_401
      * @tc.number UiTest_uitest401_003
-     * @tc.name test_setPoint_401
-     * @tc.desc setPoint 401 test.
+     * @tc.desc   setPoint 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setPoint_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_setPoint_401 start`);
@@ -157,6 +166,79 @@ export default function abilityTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, test_setPoint_401 END`);
+    })
+    /**
+     * @tc.name   test_swipe_401
+     * @tc.number UiTest_uitest401_008
+     * @tc.desc   swipe 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_swipe_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, test_swipe_401 start`);
+      try {
+        await driver.swipe(-1, 100, 100, 100);
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, test_swipe_401 startx = -1 error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.swipe(100, -1, 100, 100);
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, test_swipe_401 starty = -1 error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.swipe(100, 100, -1, 100);
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, test_swipe_401 endx = -1 error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.swipe(100, 100, 100, -1);
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, test_swipe_401 endy = -1 error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.swipe(100, 100, 100, 100, -1);
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, test_swipe_401 speed = -1 error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      console.log(`${TestTag}, test_swipe_401 END`);
+    })
+    /**
+     * @tc.name   test_type_401
+     * @tc.number UiTest_uitest401_009
+     * @tc.desc   type 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_type_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, test_type_401 start`);
+      try {
+        ON.type(null);
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, test_type_401 type = null error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        ON.type(undefined);
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, test_type_401 type = undefined error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      console.log(`${TestTag}, test_type_401 END`);
     })
   })
 }

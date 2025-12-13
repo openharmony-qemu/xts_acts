@@ -47,12 +47,12 @@ export default function actsApplicationStartAbilityTest2() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_2300
      * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_2300
-     * @tc.name Start ability, after completion, restart ability multiple examples
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_2300', Level.LEVEL0, async (done: Function) => {
       let onForegroundFlagNumber = 0;
@@ -153,15 +153,15 @@ export default function actsApplicationStartAbilityTest2() {
       });
     });
 
-    /**
-     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_3100
-     * @tc.name Configure BundleName, AbileName, and URI, corresponding to Ability configured with URI
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
 
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_3100
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_3100
+     * @tc.desc   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_3100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_3100', Level.LEVEL1, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_3100';
       let subscriberInfo_startdebugapp: commonEventManager.CommonEventSubscribeInfo = {
@@ -219,12 +219,12 @@ export default function actsApplicationStartAbilityTest2() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0100
      * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0100
-     * @tc.name UIAbility calls startAbilityForResult to mutually start singleton
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0100', Level.LEVEL0, async (done: Function) => {
       let TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0100';
@@ -309,12 +309,12 @@ export default function actsApplicationStartAbilityTest2() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0200
      * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0200
-     * @tc.name UIAbility calls startAbilityForResult to start multiple instances with each other
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0200', Level.LEVEL0, async (done: Function) => {
       let TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0200';
@@ -398,12 +398,12 @@ export default function actsApplicationStartAbilityTest2() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0300
      * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0300
-     * @tc.name StartAbilityForResult and terminateSelfWithResult repeated start stop single case
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0300', Level.LEVEL0, async (done: Function) => {
       let TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0300';
@@ -497,12 +497,12 @@ export default function actsApplicationStartAbilityTest2() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_1100
      * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_1100
-     * @tc.name StartAbilityForResult takes options as an existing floating-point type
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_1100', Level.LEVEL0, async (done: Function) => {
       let TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_1100';
@@ -599,12 +599,12 @@ export default function actsApplicationStartAbilityTest2() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0900
      * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0900
-     * @tc.name StartAbilityForResult input options input as undefined
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0900', Level.LEVEL0, async (done: Function) => {
       let TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0900';
@@ -697,12 +697,12 @@ export default function actsApplicationStartAbilityTest2() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_2200
      * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_2200
-     * @tc.name Start ability, after completion, restart ability single instance
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_2200', Level.LEVEL0, async (done: Function) => {
       let onForegroundFlagNumber = 0;
@@ -794,15 +794,15 @@ export default function actsApplicationStartAbilityTest2() {
       });
     });
 
-    /**
-     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_3800
-     * @tc.name Send the 'want' parameter with the 'aa' command
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
 
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_3800
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_3800
+     * @tc.desc   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_3800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_3800", Level.LEVEL1, async (done: Function) => {
       let bundleName = 'com.example.actsapplicationstartabilityauxiliary'
       let abilityName = 'EntryAbility1'
@@ -848,12 +848,12 @@ export default function actsApplicationStartAbilityTest2() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_1300
      * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_1300
-     * @tc.name The test application calls the startAbility interface through context to start the Ability of multiple instances of auxiliary application
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_1300', Level.LEVEL0, async (done: Function) => {
       let TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_1300';
@@ -930,12 +930,12 @@ export default function actsApplicationStartAbilityTest2() {
       })
     });
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_1400
      * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_1400
-     * @tc.name Start singleton Ability by calling the startAbility interface through context
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_1400', Level.LEVEL0, async (done: Function) => {
       let TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_1400';

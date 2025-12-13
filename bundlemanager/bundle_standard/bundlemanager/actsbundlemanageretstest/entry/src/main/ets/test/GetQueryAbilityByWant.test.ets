@@ -37,11 +37,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_0500
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_0500
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_0500
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_0500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -55,11 +58,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_0520
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_0520
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_0520
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_0520', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
       bundle.queryAbilityByWant(
         {}, bundle.BundleFlag.GET_BUNDLE_DEFAULT, userId).then(res => {
@@ -71,11 +77,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_0540
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_0540
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_0540
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_0540', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -93,11 +102,14 @@ export default function ActsBmsQueryAbilityByWant() {
 
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_0560
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_0560
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_0560
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_0560', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -114,11 +126,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_0580
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_0580
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_0580
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_0580', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -135,11 +150,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_0600
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third appl
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_0600
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_0600
+     * @tc.desc   queryAbilityByWant for third appl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_0600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -157,11 +175,14 @@ export default function ActsBmsQueryAbilityByWant() {
     });
 
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_0620
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_0620
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_0620
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_0620', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -176,11 +197,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_0640
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_0640
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_0640
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_0640', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -202,11 +226,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_0660
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_0660
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_0660
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_0660', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -222,11 +249,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_0680
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_0680
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_0680
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_0680', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -244,11 +274,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_0700
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_0700
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_0700
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_0700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -266,11 +299,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5020
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5020
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5020
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5020', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -288,11 +324,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5520
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5520
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5520
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5520', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -310,11 +349,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5540
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5540
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5540
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5540', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -330,11 +372,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5080
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5080
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5080
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5080', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -350,11 +395,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5040
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5040
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5040
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5040', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -370,11 +418,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_4940
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_4940
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_4940
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_4940', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -395,11 +446,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5660
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5660
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5660
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5660', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -424,11 +478,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5560
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5560
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5560
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5560', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -450,11 +507,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5100
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5100
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5100
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -479,11 +539,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5120
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5120
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5120
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5120', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -511,11 +574,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5580
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5580
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5580
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5580', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -549,11 +615,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5140
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5140
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5140
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5140', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -585,11 +654,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5180
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5180
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5180
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5180', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -619,11 +691,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5160
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5160
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5160
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5160', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -653,11 +728,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5680
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5680
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5680
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5680', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -674,11 +752,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5700
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5700
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5700
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -695,11 +776,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5720
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5720
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5720
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5720', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -722,11 +806,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5200
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5200
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5200
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -751,11 +838,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5220
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5220
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5220
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5220', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -776,11 +866,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: sub_Bms_Framework_Query_AbilityInfo_5240
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   sub_Bms_Framework_Query_AbilityInfo_5240
+     * @tc.number sub_Bms_Framework_Query_AbilityInfo_5240
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('sub_Bms_Framework_Query_AbilityInfo_5240', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -801,11 +894,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5740
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5740
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5740
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5740', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -826,11 +922,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5760
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5760
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5760
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5760', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -851,11 +950,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5600
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5600
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5600
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -877,11 +979,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5780
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5780
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5780
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5780', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -897,11 +1002,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5900
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5900
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5900
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -918,11 +1026,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5920
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5920
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5920
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5920', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -939,11 +1050,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5800
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5800
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5800
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -960,11 +1074,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5820
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5820
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5820
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5820', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -981,11 +1098,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5840
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5840
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5840
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5840', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -1002,11 +1122,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5860
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5860
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5860
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5860', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -1023,11 +1146,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5880
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5880
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5880
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5880', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -1044,11 +1170,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5620
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5620
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5620
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5620', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {
@@ -1067,11 +1196,14 @@ export default function ActsBmsQueryAbilityByWant() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_5640
-    * @tc.name: Use the implicit query method in queryAbilityByWant to get abilityInfos
-    * @tc.desc: queryAbilityByWant for third app
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_5640
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_5640
+     * @tc.desc   queryAbilityByWant for third app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_5640', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
       bundle.queryAbilityByWant(
         {

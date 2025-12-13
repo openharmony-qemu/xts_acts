@@ -39,13 +39,13 @@ export default function dataNoCardTest() {
     describe("DataNoCardTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
 
-      /* *
-          * @tc.number: SUB_Telephony_Data_GetCellularDataState_0400
-          * @tc.name  : testTelephonyDataGetCellularDataState_static_0400
-          * @tc.desc  : Get the connection status of a packet switched domain (PS domain).
-          * @tc.size  : MediumTest
-          * @tc.type  : Function
-          * @tc.level : level 3
+        /**
+         * @tc.name   testTelephonyDataGetCellularDataState_static_0400
+         * @tc.number SUB_Telephony_Data_GetCellularDataState_0400
+         * @tc.desc   Get the connection status of a packet switched domain (PS domain).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testTelephonyDataGetCellularDataState_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testTelephonyDataGetCellularDataState_static_0400';
@@ -70,13 +70,13 @@ export default function dataNoCardTest() {
             }
         })
 
-     /* *
-         * @tc.number: SUB_Telephony_Data_GetCellularDataState_0800
-         * @tc.name  : testTelephonyDataGetCellularDataState_static_0800
-         * @tc.desc  : Get the connection status of a packet switched domain (PS domain).
-         * @tc.size  : MediumTest
-         * @tc.type  : Function
-         * @tc.level : level 3
+        /**
+         * @tc.name   testTelephonyDataGetCellularDataState_static_0800
+         * @tc.number SUB_Telephony_Data_GetCellularDataState_0800
+         * @tc.desc   Get the connection status of a packet switched domain (PS domain).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testTelephonyDataGetCellularDataState_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testTelephonyDataGetCellularDataState_static_0800';

@@ -202,6 +202,8 @@ export const getWhiteBalanceTest: () => number;
 
 export const getMacroStatusChangeTest: () => number;
 
+export const getIsoInfoChangeTest: () => number;
+
 export const createCameraInput: () => number;
 
 export const createCameraInputWithPositionAndType: (position: number, type: number) => number;
@@ -329,6 +331,8 @@ export const sessionGetPhotoRotation: (a: number) => number;
 export const sessionGetVideoRotation: (a: number) => number;
 
 export const sessionGetPreviewRotation: (a: number) => number;
+
+export const sessionGetImageRotation: (a: number) => number;
 
 export const sessionSetPreviewRotation: (a: number, b: boolean) => number;
 

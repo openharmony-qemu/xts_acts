@@ -152,8 +152,8 @@ function toNextStep(avTranscoder: media.AVTranscoder | null, config: media.AVTra
       break;
     case RELEASEAVTRANSCODER_PROMISE_EVENT:
       steps.shift();
-      avTranscoder?.off('complete');
-      avTranscoder?.off('progressUpdate');
+      avTranscoder?.offComplete();
+      avTranscoder?.offProgressUpdate();
         avTranscoder?.release().then(() => {
           console.info('release AVTranscoder success');
           toNextStep(avTranscoder, config, pauseTime, steps, done);
@@ -202,7 +202,7 @@ function toNextStep(avTranscoder: media.AVTranscoder | null, config: media.AVTra
 function setCallback(avTranscoder: media.AVTranscoder, config: media.AVTranscoderConfig, pauseTime: int,
   steps: Array<string>, done: () => void) {
     // 转码进度
-    avTranscoder.on('progressUpdate', (progress: int) => {
+    avTranscoder.onProgressUpdate((progress: int) => {
       console.info('avTranscoder progressUpdate = ' + progress);
       // to pause
       if (progress > 100) {
@@ -218,7 +218,7 @@ function setCallback(avTranscoder: media.AVTranscoder, config: media.AVTranscode
       }
     })
     // 错误上报回调函数
-    avTranscoder.on('error', (err: BusinessError) => {
+    avTranscoder.onError((err: BusinessError) => {
       try {
         console.error('error ocConstantSourceNode, error message is ' + err);
         toNextStep(avTranscoder, config, pauseTime, steps, done);
@@ -228,7 +228,7 @@ function setCallback(avTranscoder: media.AVTranscoder, config: media.AVTranscode
       }
     });
     // 转码完成事件
-    avTranscoder.on('complete', () => {
+    avTranscoder.onComplete(() => {
       console.info('avTranscoder complete');
       toNextStep(avTranscoder, config, pauseTime, steps, done);
     });
@@ -263,9 +263,8 @@ function getDSt(outputName: string) {
 
 async function getfdScrAndfdDst() {
   console.info('case getfdScrAndfdDst start');
-  await mediaTestBase.getStageFileDescriptor(inputName).then((res: resourceManager.RawFileDescriptor) => {
-    let fd: media.AVFileDescriptor = { fd: res.fd as int, length: res.length as long, offset: res.offset as long };
-    fileDescriptor = fd
+  await mediaTestBase.getFileDescriptorFromFileDir(inputName, () => {}).then((res: media.AVFileDescriptor) => {
+    fileDescriptor = { fd: res!.fd } as media.AVFileDescriptor;
   });
   outputFdObject = getDSt(outputName);
   console.info('case getfdScrAndfdDst end');
@@ -297,7 +296,7 @@ export default function AVTransCoderTest() {
         await mediaTestBase.closeFd(outputFdObject!!.fdNumber);
       }
       try {
-        await closeRawFd(inputName);
+        fs.closeSync(fileDescriptor!.fd);
       } catch (error) {
         console.info('closeRawFd' + error);
       }
@@ -307,13 +306,12 @@ export default function AVTransCoderTest() {
       console.info('afterAll case');
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVTANSCODER_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVTANSCODER_static_0100
-      * @tc.desc    Transcoder start-pause-resume-stop-release
-      *               : 001.test start-pause-resume-stop-release
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVTANSCODER_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVTANSCODER_static_0100
+     * @tc.desc   Transcoder start-pause-resume-stop-release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVTANSCODER_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info('SUB_MULTIMEDIA_AVTANSCODER_0100 start');
@@ -341,13 +339,12 @@ export default function AVTransCoderTest() {
       console.info('SUB_MULTIMEDIA_AVTANSCODER_0100 end');
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVTANSCODER_static_0200
-      * @tc.name    SUB_MULTIMEDIA_AVTANSCODER_static_0200
-      * @tc.desc    Transcoder start-pause-resume-cancel-release
-      *               : 001.test start-pause-resume-cancel-release
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVTANSCODER_static_0200
+     * @tc.number SUB_MULTIMEDIA_AVTANSCODER_static_0200
+     * @tc.desc   Transcoder start-pause-resume-cancel-release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVTANSCODER_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info('SUB_MULTIMEDIA_AVTANSCODER_0200 start');

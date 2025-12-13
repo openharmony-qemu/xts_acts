@@ -43,12 +43,12 @@ export default function TextHalfLeading() {
     });
 
     /**
-     * @tc.number: TextHalfLeading_0010
-     * @tc.name  : TextHalfLeading_0010
-     * @tc.desc  : set Text: TextHalfLeading
-     * @tc.level : Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextHalfLeading_0010
+     * @tc.number TextHalfLeading_0010
+     * @tc.desc   set Text: TextHalfLeading
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextHalfLeading_0010',  Level.LEVEL0, async (done: Function) => {
       console.info('TextHalfLeading_0010 START');
@@ -59,12 +59,12 @@ export default function TextHalfLeading() {
     });
 
     /**
-     * @tc.number: TextHalfLeading_0020
-     * @tc.name  : TextHalfLeading_0020
-     * @tc.desc  : set Text: TextHalfLeading
-     * @tc.level : Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextHalfLeading_0020
+     * @tc.number TextHalfLeading_0020
+     * @tc.desc   set Text: TextHalfLeading
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextHalfLeading_0020',  Level.LEVEL0, async (done: Function) => {
       console.info('TextHalfLeading_0020 START');

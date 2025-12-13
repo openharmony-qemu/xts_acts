@@ -18,7 +18,8 @@ import {
   CurrentAlbumDeletedCallback,
   videoPlayStateChangedCallback,
   VideoPlayerState,
-  PreselectedInfo
+  PreselectedInfo,
+  UpdatablePickerConfigs
 } from '@ohos.file.PhotoPickerComponent';
 import { AlbumPickerComponent, AlbumPickerOptions, AlbumInfo } from '@ohos.file.AlbumPickerComponent';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
@@ -90,6 +91,23 @@ struct PickerComponent {
     result.maxVideoSelectNumber = this.pickerOptions.maxVideoSelectNumber ?? 500;
     result.pickerIndex = this.pickerOptions.pickerIndex ?? -1;
     result.preselectedInfos = this.pickerOptions.preselectedInfos ?? [];
+     result.isSlidingSupported = this.pickerOptions.isSlidingSupported ?? false;
+    return result;
+  }
+
+  getUpdatablePickerResult(config: UpdatablePickerConfigs): PhotoPickerResult {
+    let result: PhotoPickerResult = new PhotoPickerResult();
+
+    result.maxSelectCount = config.maxSelectNumber ?? 500;
+    result.maxPhotoSelectNumber = config.maxPhotoSelectNumber ?? 500;
+    result.maxVideoSelectNumber = config.maxVideoSelectNumber ?? 500;
+    result.checkBoxColor = config.checkBoxColor ?? '';
+    result.checkboxTextColor = config.checkboxTextColor ?? '';
+    result.backgroundColor = config.backgroundColor ?? '';
+    result.photoBrowserBackgroundColorMode = config.photoBrowserBackgroundColorMode ?? 0;
+    result.uiComponentColorMode = config.uiComponentColorMode ?? 0;
+    result.isSlidingSupported = config.isSlidingSupported ?? false;
+
     return result;
   }
 
@@ -260,18 +278,36 @@ struct PickerComponent {
     }.margin({ top: '10vp', bottom: '5vp' })
 
     Row() {
-      Button('返回测试结果').width('33%').height('5%').onClick(() => {
+      Button('返回测试结果').width('25%').height('5%').onClick(() => {
         console.info('testPicker setData');
         let result: PhotoPickerResult = this.getPhotoPickerResult();
         this.sendEvent(result, EventType.PHOTO_PICKER_INFO);
       }).id('resultButton')
-      Button('选择修改数量').width('33%').height('5%').onClick(() => {
+      Button('UpdatablePickerConfigs').width('25%').height('5%').onClick(() => {
+        console.info('update picker options');
+        const updatedOptions: UpdatablePickerConfigs = new UpdatablePickerConfigs();
+        updatedOptions.maxSelectNumber = 10;
+        updatedOptions.maxPhotoSelectNumber = 5;
+        updatedOptions.maxVideoSelectNumber = 5;
+        updatedOptions.checkBoxColor = '#ff38ff00';
+        updatedOptions.checkboxTextColor = '#ffffdc00';
+        updatedOptions.backgroundColor = '#f00000';
+        updatedOptions.photoBrowserBackgroundColorMode = PickerColorMode.DARK;
+        updatedOptions.uiComponentColorMode = PickerColorMode.DARK;
+        updatedOptions.isSlidingSupported = true;
+
+        this.pickerController.updatePickerOptions(updatedOptions);
+
+        let result: PhotoPickerResult = this.getUpdatablePickerResult(updatedOptions);
+        this.sendEvent(result, EventType.PHOTO_PICKER_INFO);
+      }).id('updatePickerOptions')
+      Button('选择修改数量').width('25%').height('5%').onClick(() => {
         let maxSelect: MaxSelected = new MaxSelected();
         maxSelect.data = new Map<MaxCountType, number>([[MaxCountType.TOTAL_MAX_COUNT, 1],
           [MaxCountType.PHOTO_MAX_COUNT, 1], [MaxCountType.VIDEO_MAX_COUNT, 1]]);
         this.pickerController.setMaxSelected(maxSelect);
       }).id('changeNumButton')
-      Button('退出大图').width('33%').height('5%').onClick(() => {
+      Button('退出大图').width('25%').height('5%').onClick(() => {
         this.pickerController.exitPhotoBrowser();
       }).id('exitBrowser')
     }

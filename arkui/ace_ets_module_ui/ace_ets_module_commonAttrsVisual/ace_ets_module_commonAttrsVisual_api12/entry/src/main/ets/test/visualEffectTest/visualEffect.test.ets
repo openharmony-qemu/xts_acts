@@ -56,12 +56,12 @@ export default function visualEffectTest() {
     });
 
     /**
+     * @tc.name   visualEffectTest_0100
      * @tc.number visualEffectTest_0100
-     * @tc.name visualEffectTest_0100
-     * @tc.desc api: visualEffect
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api: visualEffect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('visualEffectTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('visualEffectTest_0100 START');
@@ -75,12 +75,12 @@ export default function visualEffectTest() {
     });
 
     /**
+     * @tc.name   foregroundFilterTest_0200
      * @tc.number foregroundFilterTest_0200
-     * @tc.name foregroundFilterTest_0200
-     * @tc.desc api: foregroundFilter
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api: foregroundFilter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('foregroundFilterTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('foregroundFilterTest_0200 START');
@@ -94,12 +94,12 @@ export default function visualEffectTest() {
     });
 
     /**
+     * @tc.name   backgroundFilterTest_0300
      * @tc.number backgroundFilterTest_0300
-     * @tc.name backgroundFilterTest_0300
-     * @tc.desc api: backgroundFilter
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api: backgroundFilter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('backgroundFilterTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('backgroundFilterTest_0300 START');
@@ -112,12 +112,12 @@ export default function visualEffectTest() {
     });
 
     /**
+     * @tc.name   compositingFilterTest_0400
      * @tc.number compositingFilterTest_0400
-     * @tc.name compositingFilterTest_0400
-     * @tc.desc api: compositingFilter
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api: compositingFilter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('compositingFilterTest_0400', Level.LEVEL0, async (done: Function) => {
       console.info('compositingFilterTest_0400 START');

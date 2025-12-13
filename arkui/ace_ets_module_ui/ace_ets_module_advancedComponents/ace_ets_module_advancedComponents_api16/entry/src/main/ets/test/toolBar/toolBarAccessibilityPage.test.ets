@@ -50,12 +50,12 @@ export default function toolBarAccessibilityTest() {
     })
 
     /**
-     * @tc.number toolBarAccessibilityPage
      * @tc.name   toolBarAccessibilityPage_0100
+     * @tc.number toolBarAccessibilityPage
      * @tc.desc   Test toolBarAccessibilityPage
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('toolBarAccessibilityPage_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[toolBarAccessibilityPage_0100] START');

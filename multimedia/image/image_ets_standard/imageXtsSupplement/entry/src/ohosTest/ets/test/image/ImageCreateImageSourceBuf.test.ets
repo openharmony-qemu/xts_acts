@@ -52,12 +52,12 @@ export default function ImageCreateImageSourceBufTest() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0001
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0001
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0001
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0001
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0001';
@@ -68,12 +68,12 @@ export default function ImageCreateImageSourceBufTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0002
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0002
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0002
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0002
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0002';
@@ -84,12 +84,12 @@ export default function ImageCreateImageSourceBufTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0003
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0003
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0003
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0003
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0003';
@@ -101,12 +101,12 @@ export default function ImageCreateImageSourceBufTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0004
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0004
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0004
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0004
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0004', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0004';
@@ -118,12 +118,12 @@ export default function ImageCreateImageSourceBufTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0005
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0005
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0005
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0005
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0005', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_0005';

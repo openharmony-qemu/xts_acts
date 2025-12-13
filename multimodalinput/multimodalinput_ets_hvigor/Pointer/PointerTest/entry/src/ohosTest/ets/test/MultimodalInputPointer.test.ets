@@ -37,12 +37,12 @@ export default function MultimodalInputPointerTest() {
     }
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setPointerVisible_0100
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setPointerVisible_0100
-     * @tc.desc: Test callback setPointerVisible interface to show or hide the mouse pointer.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerVisible_0100
+     * @tc.number SUB_MMI_Input_Api_Pointer_setPointerVisible_0100
+     * @tc.desc   Test callback setPointerVisible interface to show or hide the mouse pointer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setPointerVisible_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setPointerVisible_0100";
@@ -68,12 +68,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setPointerVisible_0200
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setPointerVisible_0200
-     * @tc.desc: Test promise setPointerVisible interface to show or hide the mouse pointer.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerVisible_0200
+     * @tc.number SUB_MMI_Input_Api_Pointer_setPointerVisible_0200
+     * @tc.desc   Test promise setPointerVisible interface to show or hide the mouse pointer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setPointerVisible_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setPointerVisible_0200";
@@ -97,12 +97,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setPointerVisible_0300
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setPointerVisible_0300
-     * @tc.desc: Test promise setPointerVisible interface to set null value.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerVisible_0300
+     * @tc.number SUB_MMI_Input_Api_Pointer_setPointerVisible_0300
+     * @tc.desc   Test promise setPointerVisible interface to set null value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setPointerVisible_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setPointerVisible_0300";
@@ -120,12 +120,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0100
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0100
-     * @tc.desc: Test setPointerVisibleSync interface to show or hide the mouse pointer.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0100
+     * @tc.number SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0100
+     * @tc.desc   Test setPointerVisibleSync interface to show or hide the mouse pointer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0100";
@@ -144,12 +144,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_isPointerVisible_0100
-     * @tc.name: SUB_MMI_Input_Api_Pointer_isPointerVisible_0100
-     * @tc.desc: Test callback isPointerVisible interface to get the display or hide status of the mouse pointer.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_isPointerVisible_0100
+     * @tc.number SUB_MMI_Input_Api_Pointer_isPointerVisible_0100
+     * @tc.desc   Test callback isPointerVisible interface to get the display or hide status of the mouse pointer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_isPointerVisible_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_isPointerVisible_0100";
@@ -173,12 +173,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_isPointerVisible_0200
-     * @tc.name: SUB_MMI_Input_Api_Pointer_isPointerVisible_0200
-     * @tc.desc: Test promise isPointerVisible interface to get the display or hide status of the mouse pointer.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_isPointerVisible_0200
+     * @tc.number SUB_MMI_Input_Api_Pointer_isPointerVisible_0200
+     * @tc.desc   Test promise isPointerVisible interface to get the display or hide status of the mouse pointer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_isPointerVisible_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_isPointerVisible_0200";
@@ -196,12 +196,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_isPointerVisibleSync_0100
-     * @tc.name: SUB_MMI_Input_Api_Pointer_isPointerVisibleSync_0100
-     * @tc.desc: Test isPointerVisibleSync interface to get the display or hide status of the mouse pointer.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_isPointerVisibleSync_0100
+     * @tc.number SUB_MMI_Input_Api_Pointer_isPointerVisibleSync_0100
+     * @tc.desc   Test isPointerVisibleSync interface to get the display or hide status of the mouse pointer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_isPointerVisibleSync_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_isPointerVisibleSync_0100";
@@ -218,12 +218,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_getPointerStyle_0100
-     * @tc.name: SUB_MMI_Input_Api_Pointer_getPointerStyle_0100
-     * @tc.desc: Test callback getPointerStyle interface to get the mouse style type.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_getPointerStyle_0100
+     * @tc.number SUB_MMI_Input_Api_Pointer_getPointerStyle_0100
+     * @tc.desc   Test callback getPointerStyle interface to get the mouse style type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_getPointerStyle_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -284,12 +284,12 @@ export default function MultimodalInputPointerTest() {
       });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_getPointerStyle_0200
-     * @tc.name: SUB_MMI_Input_Api_Pointer_getPointerStyle_0200
-     * @tc.desc: Test promise getPointerStyle interface to get the mouse style type.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_getPointerStyle_0200
+     * @tc.number SUB_MMI_Input_Api_Pointer_getPointerStyle_0200
+     * @tc.desc   Test promise getPointerStyle interface to get the mouse style type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_getPointerStyle_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_getPointerStyle_0200";
@@ -348,12 +348,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_getPointerStyle_0300
-     * @tc.name: SUB_MMI_Input_Api_Pointer_getPointerStyle_0300
-     * @tc.desc: Test promise getPointerStyle interface to set null value.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_getPointerStyle_0300
+     * @tc.number SUB_MMI_Input_Api_Pointer_getPointerStyle_0300
+     * @tc.desc   Test promise getPointerStyle interface to set null value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_Pointer_getPointerStyle_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_getPointerStyle_0300";
@@ -371,12 +371,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0100
-     * @tc.name: SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0100
-     * @tc.desc: Test getPointerStyleSync interface to get the mouse style type.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0100
+     * @tc.number SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0100
+     * @tc.desc   Test getPointerStyleSync interface to get the mouse style type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0100";
@@ -420,12 +420,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setPointerStyle_0100
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setPointerStyle_0100
-     * @tc.desc: Test callback setPointerStyle interface to set the mouse style type.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerStyle_0100
+     * @tc.number SUB_MMI_Input_Api_Pointer_setPointerStyle_0100
+     * @tc.desc   Test callback setPointerStyle interface to set the mouse style type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setPointerStyle_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setPointerStyle_0100";
@@ -458,12 +458,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setPointerStyle_0200
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setPointerStyle_0200
-     * @tc.desc: Test promise setPointerStyle interface to set the mouse style type.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerStyle_0200
+     * @tc.number SUB_MMI_Input_Api_Pointer_setPointerStyle_0200
+     * @tc.desc   Test promise setPointerStyle interface to set the mouse style type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setPointerStyle_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setPointerStyle_0200";
@@ -496,12 +496,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setPointerStyle_0300
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setPointerStyle_0300
-     * @tc.desc: Test promise setPointerStyle interface to set null value.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerStyle_0300
+     * @tc.number SUB_MMI_Input_Api_Pointer_setPointerStyle_0300
+     * @tc.desc   Test promise setPointerStyle interface to set null value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_Pointer_setPointerStyle_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setPointerStyle_0300";
@@ -519,12 +519,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0100
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0100
-     * @tc.desc: Test setPointerStyleSync interface to set the mouse style type.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0100
+     * @tc.number SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0100
+     * @tc.desc   Test setPointerStyleSync interface to set the mouse style type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0100";
@@ -556,12 +556,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursor_0100
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursor_0100
-     * @tc.desc: Test promise setCustomCursor interface to set the custom cursor style.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_0100
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_0100
+     * @tc.desc   Test promise setCustomCursor interface to set the custom cursor style.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursor_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_0100";
@@ -591,12 +591,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0100
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0100
-     * @tc.desc: Test setCustomCursorSync interface to set the custom cursor style.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0100
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0100
+     * @tc.desc   Test setCustomCursorSync interface to set the custom cursor style.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0100";
@@ -625,12 +625,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursor_0200
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursor_0200
-     * @tc.desc: Test promise setCustomCursor interface to set the custom cursor style.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_0200
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_0200
+     * @tc.desc   Test promise setCustomCursor interface to set the custom cursor style.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursor_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_0200";
@@ -661,12 +661,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursor_0300
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursor_0300
-     * @tc.desc: Test promise setCustomCursor interface to set the custom cursor style.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_0300
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_0300
+     * @tc.desc   Test promise setCustomCursor interface to set the custom cursor style.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursor_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_0300";
@@ -696,12 +696,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursor_0400
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursor_0400
-     * @tc.desc: Test promise setCustomCursor interface to set the custom cursor style.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_0400
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_0400
+     * @tc.desc   Test promise setCustomCursor interface to set the custom cursor style.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursor_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_0400";
@@ -731,12 +731,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursor_0500
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursor_0500
-     * @tc.desc: Test promise setCustomCursor interface to set the custom cursor style.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_0500
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_0500
+     * @tc.desc   Test promise setCustomCursor interface to set the custom cursor style.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursor_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_0500";
@@ -766,12 +766,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursor_0600
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursor_0600
-     * @tc.desc: Test promise setCustomCursor interface to set the custom cursor style.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_0600
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_0600
+     * @tc.desc   Test promise setCustomCursor interface to set the custom cursor style.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursor_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_0600";
@@ -801,12 +801,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursor_0700
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursor_0700
-     * @tc.desc: Test promise setCustomCursor interface to set the custom cursor style.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_0700
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_0700
+     * @tc.desc   Test promise setCustomCursor interface to set the custom cursor style.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursor_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_0700";
@@ -836,12 +836,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursor_0800
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursor_0800
-     * @tc.desc: Test promise setCustomCursor interface to set the custom cursor style.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_0800
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_0800
+     * @tc.desc   Test promise setCustomCursor interface to set the custom cursor style.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursor_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_0800";
@@ -871,12 +871,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursor_0900
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursor_0900
-     * @tc.desc: Test promise setCustomCursor interface to set the custom cursor style.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_0900
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_0900
+     * @tc.desc   Test promise setCustomCursor interface to set the custom cursor style.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursor_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_0900";
@@ -906,12 +906,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursor_1000
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursor_1000
-     * @tc.desc: Test promise setCustomCursor interface to set the custom cursor style.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_1000
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_1000
+     * @tc.desc   Test promise setCustomCursor interface to set the custom cursor style.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursor_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_1000";
@@ -941,12 +941,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursor_1100
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursor_1100
-     * @tc.desc: Test promise setCustomCursor interface to set the custom cursor style with error windowId(-1).
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_1100
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_1100
+     * @tc.desc   Test promise setCustomCursor interface to set the custom cursor style with error windowId(-1).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursor_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_1100";
@@ -973,12 +973,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursor_1200
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursor_1200
-     * @tc.desc: Test promise setCustomCursor interface to set the custom cursor style with error windowId(10000).
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_1200
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_1200
+     * @tc.desc   Test promise setCustomCursor interface to set the custom cursor style with error windowId(10000).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursor_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_1200";
@@ -1009,12 +1009,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursor_1300
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursor_1300
-     * @tc.desc: Test promise setCustomCursor interface to set the custom cursor style.
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_1300
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_1300
+     * @tc.desc   Test promise setCustomCursor interface to set the custom cursor style.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursor_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_1300";
@@ -1042,12 +1042,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursor_1400
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursor_1400
-     * @tc.desc: Test promise setCustomCursor interface to set the custom cursor style.
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_1400
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_1400
+     * @tc.desc   Test promise setCustomCursor interface to set the custom cursor style.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursor_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_1400";
@@ -1075,12 +1075,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursor_1500
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursor_1500
-     * @tc.desc: Test promise setCustomCursor interface to set the custom cursor style with error windowId.
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_1500
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_1500
+     * @tc.desc   Test promise setCustomCursor interface to set the custom cursor style with error windowId.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursor_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_1500";
@@ -1108,12 +1108,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursor_1600
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursor_1600
-     * @tc.desc: Test promise setCustomCursor interface to set the custom cursor style with error windowId.
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_1600
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_1600
+     * @tc.desc   Test promise setCustomCursor interface to set the custom cursor style with error windowId.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursor_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_1600";
@@ -1141,12 +1141,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursor_1700
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursor_1700
-     * @tc.desc: Test promise setCustomCursor interface to set the custom cursor style with error windowId.
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_1700
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_1700
+     * @tc.desc   Test promise setCustomCursor interface to set the custom cursor style with error windowId.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursor_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_1700";
@@ -1174,12 +1174,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursor_1800
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursor_1800
-     * @tc.desc: Test promise setCustomCursor interface to set the custom cursor style with error windowId.
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_1800
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_1800
+     * @tc.desc   Test promise setCustomCursor interface to set the custom cursor style with error windowId.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursor_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_1800";
@@ -1207,12 +1207,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursor_1900
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursor_1900
-     * @tc.desc: Test promise setCustomCursor interface to set the custom cursor style with error windowId.
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_1900
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_1900
+     * @tc.desc   Test promise setCustomCursor interface to set the custom cursor style with error windowId.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursor_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_1900";
@@ -1240,12 +1240,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0200
-     * @tc.name: SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0200
-     * @tc.desc: Test getPointerStyleSync interface to get the mouse style type.
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0200
+     * @tc.number SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0200
+     * @tc.desc   Test getPointerStyleSync interface to get the mouse style type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0200";
@@ -1263,12 +1263,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0200
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0200
-     * @tc.desc: Test setPointerVisibleSync interface to show or hide the mouse pointer.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0200
+     * @tc.number SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0200
+     * @tc.desc   Test setPointerVisibleSync interface to show or hide the mouse pointer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0200";
@@ -1287,12 +1287,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0300
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0300
-     * @tc.desc: Test setPointerVisibleSync interface invalid input parameter
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0300
+     * @tc.number SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0300
+     * @tc.desc   Test setPointerVisibleSync interface invalid input parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0300";
@@ -1308,12 +1308,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0200
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0200
-     * @tc.desc: Test setCustomCursorSync interface to set the custom cursor style.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0200
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0200
+     * @tc.desc   Test setCustomCursorSync interface to set the custom cursor style.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0200";
@@ -1343,12 +1343,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0300
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0300
-     * @tc.desc: Test setCustomCursorSync interface to set the custom cursor style.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0300
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0300
+     * @tc.desc   Test setCustomCursorSync interface to set the custom cursor style.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0300";
@@ -1378,12 +1378,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0400
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0400
-     * @tc.desc: Test setCustomCursorSync interface to set the custom cursor style.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0400
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0400
+     * @tc.desc   Test setCustomCursorSync interface to set the custom cursor style.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0400";
@@ -1412,12 +1412,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0500
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0500
-     * @tc.desc: Test setCustomCursorSync interface to set the custom cursor style.
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0500
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0500
+     * @tc.desc   Test setCustomCursorSync interface to set the custom cursor style.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0500";
@@ -1444,12 +1444,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0600
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0600
-     * @tc.desc: Test setCustomCursorSync interface to set the custom cursor style.
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0600
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0600
+     * @tc.desc   Test setCustomCursorSync interface to set the custom cursor style.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0600";
@@ -1476,12 +1476,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0700
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0700
-     * @tc.desc: Test setCustomCursorSync interface to set the custom cursor style.
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0700
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0700
+     * @tc.desc   Test setCustomCursorSync interface to set the custom cursor style.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0700";
@@ -1508,12 +1508,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursor_2000
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursor_2000
-     * @tc.desc: Test promise setCustomCursor interface to set the custom cursor style.
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_2000
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_2000
+     * @tc.desc   Test promise setCustomCursor interface to set the custom cursor style.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursor_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_2000";
@@ -1541,12 +1541,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursor_2100
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursor_2100
-     * @tc.desc: Test promise setCustomCursor interface to set the custom cursor style.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_2100
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_2100
+     * @tc.desc   Test promise setCustomCursor interface to set the custom cursor style.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursor_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_2100";
@@ -1577,12 +1577,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursor_2200
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursor_2200
-     * @tc.desc: Test promise setCustomCursor interface to set the custom cursor style.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_2200
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_2200
+     * @tc.desc   Test promise setCustomCursor interface to set the custom cursor style.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursor_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_2200";
@@ -1613,12 +1613,12 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_setCustomCursor_2300
-     * @tc.name: SUB_MMI_Input_Api_Pointer_setCustomCursor_2300
-     * @tc.desc: Test promise setCustomCursor interface to set the custom cursor style.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_2300
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_2300
+     * @tc.desc   Test promise setCustomCursor interface to set the custom cursor style.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_setCustomCursor_2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_2300";
@@ -1647,13 +1647,13 @@ export default function MultimodalInputPointerTest() {
       });
     });
 
-     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_PrimaryButton_0100
-     * @tc.name: SUB_MMI_Input_Api_Pointer_PrimaryButton_0100
-     * @tc.desc: Test PrimaryButton LEFT and RIGHT Property
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_PrimaryButton_0100
+     * @tc.number SUB_MMI_Input_Api_Pointer_PrimaryButton_0100
+     * @tc.desc   Test PrimaryButton LEFT and RIGHT Property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_PrimaryButton_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_PrimaryButton_0100";
@@ -1671,13 +1671,13 @@ export default function MultimodalInputPointerTest() {
       }
     });
 
-     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_Style_0100
-     * @tc.name: SUB_MMI_Input_Api_Pointer_Style_0100
-     * @tc.desc: Test Pointer interface PointerStyle MIDDLE_BTN_EAST_WEST
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_Style_0100
+     * @tc.number SUB_MMI_Input_Api_Pointer_Style_0100
+     * @tc.desc   Test Pointer interface PointerStyle MIDDLE_BTN_EAST_WEST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_Style_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_Style_0100";
@@ -1693,13 +1693,13 @@ export default function MultimodalInputPointerTest() {
       }
     });
 
-     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_Style_0200
-     * @tc.name: SUB_MMI_Input_Api_Pointer_Style_0200
-     * @tc.desc: Test Pointer interface PointerStyle SCREENRECORDER_CURSOR
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_Style_0200
+     * @tc.number SUB_MMI_Input_Api_Pointer_Style_0200
+     * @tc.desc   Test Pointer interface PointerStyle SCREENRECORDER_CURSOR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_Pointer_Style_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_Style_0200";
@@ -1715,13 +1715,13 @@ export default function MultimodalInputPointerTest() {
       }
     });    
 
-     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_RightClickType_0100
-     * @tc.name: SUB_MMI_Input_Api_Pointer_RightClickType_0100
-     * @tc.desc: Test Pointer interface RightClickType TOUCHPAD_TWO_FINGER_TAP_OR_RIGHT_BUTTON 
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_RightClickType_0100
+     * @tc.number SUB_MMI_Input_Api_Pointer_RightClickType_0100
+     * @tc.desc   Test Pointer interface RightClickType TOUCHPAD_TWO_FINGER_TAP_OR_RIGHT_BUTTON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_Pointer_RightClickType_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_RightClickType_0100";
@@ -1737,13 +1737,13 @@ export default function MultimodalInputPointerTest() {
       }
     });
 
-     /**
-     * @tc.number: SUB_MMI_Input_Api_Pointer_RightClickType_0200
-     * @tc.name: SUB_MMI_Input_Api_Pointer_RightClickType_0200
-     * @tc.desc: Test Pointer interface RightClickType TOUCHPAD_TWO_FINGER_TAP_OR_LEFT_BUTTON 
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_RightClickType_0200
+     * @tc.number SUB_MMI_Input_Api_Pointer_RightClickType_0200
+     * @tc.desc   Test Pointer interface RightClickType TOUCHPAD_TWO_FINGER_TAP_OR_LEFT_BUTTON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_Pointer_RightClickType_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_Pointer_RightClickType_0200";

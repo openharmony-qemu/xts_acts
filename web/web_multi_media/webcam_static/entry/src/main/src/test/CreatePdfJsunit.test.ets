@@ -54,14 +54,14 @@ export default function WebCameraApiNoCrash() {
       console.info('web beforeEach start');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCAMERAAPINOCRASH_100
-    * @tc.name       : WebCameraApiNoCrashStatic0100
-    * @tc.desc       : test WebCameraApiNoCrash
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   WebCameraApiNoCrashStatic0100
+     * @tc.number SUB_WEB_WEBCAMERAAPINOCRASH_100
+     * @tc.desc   test WebCameraApiNoCrash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('WebCameraApiNoCrashStatic0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void):Promise<void> => {
       console.log('click end')
       Utils.emitEvent('WebCameraApiNoCrash0100', 10)
@@ -74,14 +74,14 @@ export default function WebCameraApiNoCrash() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCAMERAAPINOCRASH_200
-    * @tc.name       : WebCameraApiNoCrashStatic0200
-    * @tc.desc       : test WebCameraApiNoCrash
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   WebCameraApiNoCrashStatic0200
+     * @tc.number SUB_WEB_WEBCAMERAAPINOCRASH_200
+     * @tc.desc   test WebCameraApiNoCrash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('WebCameraApiNoCrashStatic0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void):Promise<void> => {
       Utils.emitEvent('WebCameraApiNoCrash0200', 10)
       await Utils.msSleep(2000);
@@ -95,14 +95,14 @@ export default function WebCameraApiNoCrash() {
       },5000)
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCAMERAAPINOCRASH_300
-    * @tc.name       : WebCameraApiNoCrashStatic0300
-    * @tc.desc       : test WebCameraApiNoCrash
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   WebCameraApiNoCrashStatic0300
+     * @tc.number SUB_WEB_WEBCAMERAAPINOCRASH_300
+     * @tc.desc   test WebCameraApiNoCrash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('WebCameraApiNoCrashStatic0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void):Promise<void> => {
       Utils.emitEvent('WebCameraApiNoCrash0300', 10)
       await Utils.msSleep(2000);
@@ -116,14 +116,14 @@ export default function WebCameraApiNoCrash() {
       },5000)
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCAMERAAPINOCRASH_400
-    * @tc.name       : WebCameraApiNoCrashStatic0400
-    * @tc.desc       : test WebCameraApiNoCrash
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   WebCameraApiNoCrashStatic0400
+     * @tc.number SUB_WEB_WEBCAMERAAPINOCRASH_400
+     * @tc.desc   test WebCameraApiNoCrash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('WebCameraApiNoCrashStatic0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void):Promise<void> => {
       Utils.emitEvent('WebCameraApiNoCrash0400', 10)
       await Utils.msSleep(2000);
@@ -137,14 +137,14 @@ export default function WebCameraApiNoCrash() {
       },5000)
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCAMERAAPINOCRASH_500
-    * @tc.name       : WebCameraApiNoCrashStatic0500
-    * @tc.desc       : test WebCameraApiNoCrash
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   WebCameraApiNoCrashStatic0500
+     * @tc.number SUB_WEB_WEBCAMERAAPINOCRASH_500
+     * @tc.desc   test WebCameraApiNoCrash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('WebCameraApiNoCrashStatic0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void):Promise<void> => {
       Utils.emitEvent('WebCameraApiNoCrash0500', 10)
       await Utils.msSleep(2000);
@@ -158,14 +158,14 @@ export default function WebCameraApiNoCrash() {
       },5000)
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCAMERAAPINOCRASH_600
-    * @tc.name       : WebCameraApiNoCrashStatic0600
-    * @tc.desc       : test WebCameraApiNoCrash
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   WebCameraApiNoCrashStatic0600
+     * @tc.number SUB_WEB_WEBCAMERAAPINOCRASH_600
+     * @tc.desc   test WebCameraApiNoCrash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('WebCameraApiNoCrashStatic0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void):Promise<void> => {
       Utils.emitEvent('WebCameraApiNoCrash0600', 10)
       await Utils.msSleep(2000);
@@ -179,14 +179,14 @@ export default function WebCameraApiNoCrash() {
       },5000)
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCAMERAAPINOCRASH_700
-    * @tc.name       : WebCameraApiNoCrashStatic0700
-    * @tc.desc       : test WebCameraApiNoCrash
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   WebCameraApiNoCrashStatic0700
+     * @tc.number SUB_WEB_WEBCAMERAAPINOCRASH_700
+     * @tc.desc   test WebCameraApiNoCrash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('WebCameraApiNoCrashStatic0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void):Promise<void> => {
       Utils.emitEvent('WebCameraApiNoCrash0700', 10)
       await Utils.msSleep(2000);
@@ -200,14 +200,14 @@ export default function WebCameraApiNoCrash() {
       },5000)
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCAMERAAPINOCRASH_800
-    * @tc.name       : WebCameraApiNoCrashStatic0800
-    * @tc.desc       : test WebCameraApiNoCrash
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   WebCameraApiNoCrashStatic0800
+     * @tc.number SUB_WEB_WEBCAMERAAPINOCRASH_800
+     * @tc.desc   test WebCameraApiNoCrash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('WebCameraApiNoCrashStatic0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void):Promise<void> => {
       Utils.emitEvent('WebCameraApiNoCrash0800', 10)
       await Utils.msSleep(2000);
@@ -221,14 +221,14 @@ export default function WebCameraApiNoCrash() {
       },5000)
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCAMERAAPINOCRASH_900
-    * @tc.name       : WebCameraApiNoCrashStatic0900
-    * @tc.desc       : test WebCameraApiNoCrash
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   WebCameraApiNoCrashStatic0900
+     * @tc.number SUB_WEB_WEBCAMERAAPINOCRASH_900
+     * @tc.desc   test WebCameraApiNoCrash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('WebCameraApiNoCrashStatic0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void):Promise<void> => {
       Utils.emitEvent('WebCameraApiNoCrash0900', 10)
       await Utils.msSleep(2000);
@@ -242,14 +242,14 @@ export default function WebCameraApiNoCrash() {
       },5000)
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCAMERAAPINOCRASH_1000
-    * @tc.name       : WebCameraApiNoCrashStatic1000
-    * @tc.desc       : test WebCameraApiNoCrash
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   WebCameraApiNoCrashStatic1000
+     * @tc.number SUB_WEB_WEBCAMERAAPINOCRASH_1000
+     * @tc.desc   test WebCameraApiNoCrash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('WebCameraApiNoCrashStatic1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void):Promise<void> => {
       Utils.emitEvent('WebCameraApiNoCrash1000', 10)
       await Utils.msSleep(2000);

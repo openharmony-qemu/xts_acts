@@ -22,14 +22,12 @@ export default function fileIORmdir() {
 describe('fileIO_fs_rmdir', function () {
 
   /**
+   * @tc.name   fileIO_test_rmdir_sync_000
    * @tc.number SUB_STORAGE_FILEIO_RMDIR_SYNC_0000
-   * @tc.name fileIO_test_rmdir_sync_000
-   * @tc.desc Test rmdirSync() interface.
-   * Recursively delete all files and subfolders in a directory.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test rmdirSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rmdir_sync_000', Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_rmdir_sync_000') + 'd';
@@ -57,14 +55,12 @@ describe('fileIO_fs_rmdir', function () {
 });
 
   /**
+   * @tc.name   fileIO_test_rmdir_sync_001
    * @tc.number SUB_STORAGE_FILEIO_RMDIR_SYNC_0100
-   * @tc.name fileIO_test_rmdir_sync_001
-   * @tc.desc Test rmdirSync() interface.
-   * Invalid path.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test rmdirSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rmdir_sync_001', Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_rmdir_sync_001') + 'd';
@@ -79,14 +75,12 @@ describe('fileIO_fs_rmdir', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rmdir_sync_002
    * @tc.number SUB_STORAGE_FILEIO_RMDIR_SYNC_0200
-   * @tc.name fileIO_test_rmdir_sync_002
-   * @tc.desc Test rmdirSync() interface.
-   * Missing parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test rmdirSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rmdir_sync_002', Level.LEVEL0, async function () {
 
@@ -100,14 +94,12 @@ describe('fileIO_fs_rmdir', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rmdir_sync_003
    * @tc.number SUB_STORAGE_FILEIO_RMDIR_SYNC_0300
-   * @tc.name fileIO_test_rmdir_sync_003
-   * @tc.desc Test rmdirSync() interface.
-   * Invalid type of parameter.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test rmdirSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rmdir_sync_003', Level.LEVEL0, function () {
 
@@ -121,14 +113,12 @@ describe('fileIO_fs_rmdir', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rmdir_sync_004
    * @tc.number SUB_STORAGE_FILEIO_RMDIR_SYNC_0400
-   * @tc.name fileIO_test_rmdir_sync_004
-   * @tc.desc Test rmdirSync() interface.
-   * The path contains ../, normal call.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test rmdirSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rmdir_sync_004', Level.LEVEL0, async function () {
     let dpath = await nextFileName('../cache/fileIO_test_rmdir_sync_003') + 'd';
@@ -145,14 +135,12 @@ describe('fileIO_fs_rmdir', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rmdir_async_000
    * @tc.number SUB_STORAGE_FILEIO_RMDIR_ASYNC_0000
-   * @tc.name fileIO_test_rmdir_async_000
-   * @tc.desc Test rmdir() interface. Promise.
-   * Recursively delete all files and subfolders in a directory.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test rmdir() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rmdir_async_000', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_test_rmdir_async_000') + 'd';
@@ -181,14 +169,12 @@ describe('fileIO_fs_rmdir', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rmdir_async_001
    * @tc.number SUB_STORAGE_FILEIO_RMDIR_ASYNC_0100
-   * @tc.name fileIO_test_rmdir_async_001
-   * @tc.desc Test rmdir() interface. Callback.
-   * Recursively delete all files and subfolders in a directory.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test rmdir() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rmdir_async_001', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_test_rmdir_async_001') + 'd';
@@ -222,14 +208,12 @@ describe('fileIO_fs_rmdir', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rmdir_async_002
    * @tc.number SUB_STORAGE_FILEIO_RMDIR_ASYNC_0200
-   * @tc.name fileIO_test_rmdir_async_002
-   * @tc.desc Test rmdir() interface. Promise.
-   * Invalid path.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test rmdir() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rmdir_async_002', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_test_rmdir_async_002') + 'd';
@@ -245,14 +229,12 @@ describe('fileIO_fs_rmdir', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rmdir_async_003
    * @tc.number SUB_STORAGE_FILEIO_RMDIR_ASYNC_0300
-   * @tc.name fileIO_test_rmdir_async_003
-   * @tc.desc Test rmdir() interface. Callback.
-   * Invalid path.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test rmdir() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rmdir_async_003', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_test_rmdir_async_003') + 'd';
@@ -272,15 +254,13 @@ describe('fileIO_fs_rmdir', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rmdir_async_004
    * @tc.number SUB_STORAGE_FILEIO_RMDIR_ASYNC_0400
-   * @tc.name fileIO_test_rmdir_async_004
-   * @tc.desc Test rmdir() interface. Callback.
-   * Parameter mismatch.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */ 
+   * @tc.desc   Test rmdir() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('fileIO_test_rmdir_async_004', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_test_rmdir_async_004') + 'd';
 
@@ -299,14 +279,12 @@ describe('fileIO_fs_rmdir', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rmdir_async_005
    * @tc.number SUB_STORAGE_FILEIO_RMDIR_ASYNC_0500
-   * @tc.name fileIO_test_rmdir_async_005
-   * @tc.desc Test rmdir() interfaces. Promise.
-   * Missing parameter.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test rmdir() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rmdir_async_005', Level.LEVEL0, async function (done) {
 
@@ -321,14 +299,12 @@ describe('fileIO_fs_rmdir', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_rmdir_async_006
    * @tc.number SUB_STORAGE_FILEIO_RMDIR_ASYNC_0600
-   * @tc.name fileIO_test_rmdir_async_006
-   * @tc.desc Test rmdirSync() interface. Promise.
-   * The path contains ../, normal call.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test rmdirSync() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_rmdir_async_006', Level.LEVEL0, async function () {
     let dpath = await nextFileName('../cache/fileIO_test_rmdir_async_006') + 'd';

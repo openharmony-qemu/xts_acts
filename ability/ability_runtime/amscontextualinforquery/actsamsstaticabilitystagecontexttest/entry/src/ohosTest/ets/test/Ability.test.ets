@@ -18,10 +18,12 @@ import bundleManager from '@ohos.bundle.bundleManager'
 export default function abilityTest() {
     describe('ActsglobalThis.abilityStageContextTest', () => {
         /**
-         * @tc.number: ACTS_getApplicationInfo_0300
-         * @tc.name: Application query applicationInfo Static information.
-         * @tc.desc: Verify that the application query applicationInfo static
-         *           information is the same as that in the configuration file.
+         * @tc.name   ACTS_getApplicationInfo_0300
+         * @tc.number ACTS_getApplicationInfo_0300
+         * @tc.desc   Verify that the application query applicationInfo static
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_getApplicationInfo_0300', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_getApplicationInfo_0300 --- start ability=====>'+ abilityContext.applicationInfo")
@@ -30,10 +32,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_getHapModuleInfo_0300
-         * @tc.name: Application query currentHapModuleInfo Static information.
-         * @tc.desc: Verify that the application query currentHapModuleInfo static
-         *           information is the same as that in the configuration file.
+         * @tc.name   ACTS_getHapModuleInfo_0300
+         * @tc.number ACTS_getHapModuleInfo_0300
+         * @tc.desc   Verify that the application query currentHapModuleInfo static
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_getHapModuleInfo_0300', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_getHapModuleInfo_0300 --- start ability=====>'+ abilityContext.currentHapModuleInfo")

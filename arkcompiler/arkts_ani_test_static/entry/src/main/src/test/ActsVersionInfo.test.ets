@@ -31,12 +31,12 @@ export default function versionInfoTest() {
     }
 
     /**
-     * @tc.number    SUB_ANI_GETVERSIONINFO_STATIC_0100
-     * @tc.name      test_GetVersionInfo_Static_0001
-     * @tc.desc      get version valid argument
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_GetVersionInfo_Static_0001
+     * @tc.number SUB_ANI_GETVERSIONINFO_STATIC_0100
+     * @tc.desc   get version valid argument
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_GetVersionInfo_Static_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -50,12 +50,12 @@ export default function versionInfoTest() {
     });
 
     /**
-     * @tc.number    SUB_ANI_GETVERSIONINFO_STATIC_0200
-     * @tc.name      test_GetVersionInfo_Static_0002
-     * @tc.desc      get version first args is nullptr
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_GetVersionInfo_Static_0002
+     * @tc.number SUB_ANI_GETVERSIONINFO_STATIC_0200
+     * @tc.desc   get version first args is nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_GetVersionInfo_Static_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -69,12 +69,12 @@ export default function versionInfoTest() {
       });
 
     /**
-     * @tc.number    SUB_ANI_GETVERSIONINFO_STATIC_0300
-     * @tc.name      test_GetVersionInfo_Static_0003
-     * @tc.desc      get version first args is invalid
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_GetVersionInfo_Static_0003
+     * @tc.number SUB_ANI_GETVERSIONINFO_STATIC_0300
+     * @tc.desc   get version first args is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_GetVersionInfo_Static_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -88,12 +88,12 @@ export default function versionInfoTest() {
       });
 
     /**
-     * @tc.number    SUB_ANI_GETVERSIONINFO_STATIC_0400
-     * @tc.name      test_GetVersionInfo_Static_0004
-     * @tc.desc      get version multiple call is normal
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_GetVersionInfo_Static_0004
+     * @tc.number SUB_ANI_GETVERSIONINFO_STATIC_0400
+     * @tc.desc   get version multiple call is normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_GetVersionInfo_Static_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

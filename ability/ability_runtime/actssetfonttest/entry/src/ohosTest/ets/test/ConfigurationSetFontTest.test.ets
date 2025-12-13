@@ -52,11 +52,13 @@ export default function setFontTest() {
 
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_Configuration_FontSettings_0100
-     * @tc.name    SUB_Ability_AbilityRuntime_Configuration_FontSettings_0100
-     * @tc.desc    Passing null to the setFont interface results in a 401 error code
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_Configuration_FontSettings_0100
+     * @tc.number SUB_Ability_AbilityRuntime_Configuration_FontSettings_0100
+     * @tc.desc   Passing null to the setFont interface results in a 401 error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_Configuration_FontSettings_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_Configuration_FontSettings_0100';
@@ -74,11 +76,13 @@ export default function setFontTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_Configuration_FontSettings_0200
-     * @tc.name    SUB_Ability_AbilityRuntime_Configuration_FontSettings_0200
-     * @tc.desc    Passing undefined to the setFont interface results in a 401 error code
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_Configuration_FontSettings_0200
+     * @tc.number SUB_Ability_AbilityRuntime_Configuration_FontSettings_0200
+     * @tc.desc   Passing undefined to the setFont interface results in a 401 error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_Configuration_FontSettings_0200', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_Configuration_FontSettings_0200';
@@ -96,11 +100,13 @@ export default function setFontTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_Configuration_FontSettings_0500
-     * @tc.name    SUB_Ability_AbilityRuntime_Configuration_FontSettings_0500
-     * @tc.desc    Calling the setFont interface should not trigger the onConfigurationUpdate function
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_Configuration_FontSettings_0500
+     * @tc.number SUB_Ability_AbilityRuntime_Configuration_FontSettings_0500
+     * @tc.desc   Calling the setFont interface should not trigger the onConfigurationUpdate function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_Configuration_FontSettings_0500', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_Configuration_FontSettings_0500';

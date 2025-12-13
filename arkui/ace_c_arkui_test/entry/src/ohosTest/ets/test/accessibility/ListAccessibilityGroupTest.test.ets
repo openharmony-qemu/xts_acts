@@ -26,52 +26,52 @@ export default function listAccessibilityGroupTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ACCESSIBILITYGROUP_0100
-     * @tc.name       : testListAccessibilityGroup001
-     * @tc.desc       : testing accessibilityGroup for List with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListAccessibilityGroup001
+     * @tc.number SUB_ARKUI_CAPI_LIST_ACCESSIBILITYGROUP_0100
+     * @tc.desc   testing accessibilityGroup for List with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListAccessibilityGroup001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListAccessibilityGroup001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ACCESSIBILITYGROUP_0200
-     * @tc.name       : testListAccessibilityGroup002
-     * @tc.desc       : testing accessibilityGroup for List with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListAccessibilityGroup002
+     * @tc.number SUB_ARKUI_CAPI_LIST_ACCESSIBILITYGROUP_0200
+     * @tc.desc   testing accessibilityGroup for List with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListAccessibilityGroup002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListAccessibilityGroup002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ACCESSIBILITYGROUP_0300
-     * @tc.name       : testListAccessibilityGroup003
-     * @tc.desc       : testing accessibilityGroup for List with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testListAccessibilityGroup003
+     * @tc.number SUB_ARKUI_CAPI_LIST_ACCESSIBILITYGROUP_0300
+     * @tc.desc   testing accessibilityGroup for List with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListAccessibilityGroup003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListAccessibilityGroup003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ACCESSIBILITYGROUP_0400
-     * @tc.name       : testListAccessibilityGroup004
-     * @tc.desc       : testing accessibilityGroup for List with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testListAccessibilityGroup004
+     * @tc.number SUB_ARKUI_CAPI_LIST_ACCESSIBILITYGROUP_0400
+     * @tc.desc   testing accessibilityGroup for List with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListAccessibilityGroup004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListAccessibilityGroup004()).assertEqual(0)

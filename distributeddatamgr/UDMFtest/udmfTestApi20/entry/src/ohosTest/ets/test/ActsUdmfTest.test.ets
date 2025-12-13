@@ -23,12 +23,12 @@ const UDMF_ERR = 20400000;
 export default function ActsUdmfTest() {
   describe('ActsUdmfTest', () => {
     /**
-     * @tc.number  : SUB_DistributedData_UDMF_SDK_OH_UdmfRecordProvider_Destroy_0100
-     * @tc.name    : SUB_DistributedData_UDMF_SDK_OH_UdmfRecordProvider_Destroy_0100
-     * @tc.desc    : test OH_UdmfRecordProvider_Destroy Test Illegal Parameter Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfRecordProvider_Destroy_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfRecordProvider_Destroy_0100
+     * @tc.desc   test OH_UdmfRecordProvider_Destroy Test Illegal Parameter Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_UDMF_SDK_OH_UdmfRecordProvider_Destroy_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -44,12 +44,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_AddFileUri_0200
-     * @tc.name    : SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_AddFileUri_0200
-     * @tc.desc    : test OH_UdmfRecord_AddFileUri Test Illegal Parameter Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_AddFileUri_0200
+     * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_AddFileUri_0200
+     * @tc.desc   test OH_UdmfRecord_AddFileUri Test Illegal Parameter Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_AddFileUri_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -65,12 +65,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_AddFileUri_0300
-     * @tc.name    : SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_AddFileUri_0300
-     * @tc.desc    : test OH_UdmfRecord_AddFileUri Test Normal Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_AddFileUri_0300
+     * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_AddFileUri_0300
+     * @tc.desc   test OH_UdmfRecord_AddFileUri Test Normal Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_AddFileUri_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -86,12 +86,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_AddPixelMap_0400
-     * @tc.name    : SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_AddPixelMap_0400
-     * @tc.desc    : test OH_UdmfRecord_AddPixelMap Test Illegal Parameter Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_AddPixelMap_0400
+     * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_AddPixelMap_0400
+     * @tc.desc   test OH_UdmfRecord_AddPixelMap Test Illegal Parameter Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_AddPixelMap_0400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -107,12 +107,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_AddPixelMap_0500
-     * @tc.name    : SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_AddPixelMap_0500
-     * @tc.desc    : test OH_UdmfRecord_AddPixelMap Test Normal Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_AddPixelMap_0500
+     * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_AddPixelMap_0500
+     * @tc.desc   test OH_UdmfRecord_AddPixelMap Test Normal Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_AddPixelMap_0500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -128,12 +128,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetGeneralEntry_0600
-     * @tc.name    : SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetGeneralEntry_0600
-     * @tc.desc    : test OH_UdmfRecord_GetGeneralEntry Test Illegal Parameter Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetGeneralEntry_0600
+     * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetGeneralEntry_0600
+     * @tc.desc   test OH_UdmfRecord_GetGeneralEntry Test Illegal Parameter Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetGeneralEntry_0600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -149,12 +149,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetPlainText_0700
-     * @tc.name    : SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetPlainText_0700
-     * @tc.desc    : test OH_UdmfRecord_GetPlainText Test Internal Data Error Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetPlainText_0700
+     * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetPlainText_0700
+     * @tc.desc   test OH_UdmfRecord_GetPlainText Test Internal Data Error Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetPlainText_0700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -170,12 +170,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetHyperlink_0800
-     * @tc.name    : SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetHyperlink_0800
-     * @tc.desc    : test OH_UdmfRecord_GetHyperlink Test Internal Data Error Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetHyperlink_0800
+     * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetHyperlink_0800
+     * @tc.desc   test OH_UdmfRecord_GetHyperlink Test Internal Data Error Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetHyperlink_0800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -191,12 +191,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetHtml_0900
-     * @tc.name    : SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetHtml_0900
-     * @tc.desc    : test OH_UdmfRecord_GetHtml Test Internal Data Error Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetHtml_0900
+     * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetHtml_0900
+     * @tc.desc   test OH_UdmfRecord_GetHtml Test Internal Data Error Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetHtml_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -212,12 +212,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetAppItem_1000
-     * @tc.name    : SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetAppItem_1000
-     * @tc.desc    : test OH_UdmfRecord_GetAppItem Test Illegal Parameter Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetAppItem_1000
+     * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetAppItem_1000
+     * @tc.desc   test OH_UdmfRecord_GetAppItem Test Illegal Parameter Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetAppItem_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -233,12 +233,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetAppItem_1100
-     * @tc.name    : SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetAppItem_1100
-     * @tc.desc    : test OH_UdmfRecord_GetAppItem Test Internal Data Error Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetAppItem_1100
+     * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetAppItem_1100
+     * @tc.desc   test OH_UdmfRecord_GetAppItem Test Internal Data Error Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_GetAppItem_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -254,12 +254,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_SetProvider_1200
-     * @tc.name    : SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_SetProvider_1200
-     * @tc.desc    : test OH_UdmfRecord_SetProvider Test Illegal Parameter Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_SetProvider_1200
+     * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_SetProvider_1200
+     * @tc.desc   test OH_UdmfRecord_SetProvider Test Illegal Parameter Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_UDMF_SDK_OH_UdmfRecord_SetProvider_1200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -275,12 +275,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_UDMF_SDK_OH_UdmfOptions_GetVisibility_1300
-     * @tc.name    : SUB_DistributedData_UDMF_SDK_OH_UdmfOptions_GetVisibility_1300
-     * @tc.desc    : test OH_UdmfOptions_GetVisibility Test Normal Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfOptions_GetVisibility_1300
+     * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfOptions_GetVisibility_1300
+     * @tc.desc   test OH_UdmfOptions_GetVisibility Test Normal Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_UDMF_SDK_OH_UdmfOptions_GetVisibility_1300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -296,12 +296,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_UDMF_SDK_OH_UdmfOptions_SetVisibility_1400
-     * @tc.name    : SUB_DistributedData_UDMF_SDK_OH_UdmfOptions_SetVisibility_1400
-     * @tc.desc    : test OH_UdmfOptions_SetVisibility Test Illegal Parameter Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfOptions_SetVisibility_1400
+     * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfOptions_SetVisibility_1400
+     * @tc.desc   test OH_UdmfOptions_SetVisibility Test Illegal Parameter Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_UDMF_SDK_OH_UdmfOptions_SetVisibility_1400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -317,12 +317,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_UDMF_SDK_OH_UdmfOptions_SetVisibility_1500
-     * @tc.name    : SUB_DistributedData_UDMF_SDK_OH_UdmfOptions_SetVisibility_1500
-     * @tc.desc    : test OH_UdmfOptions_SetVisibility Test Normal Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_UDMF_SDK_OH_UdmfOptions_SetVisibility_1500
+     * @tc.number SUB_DistributedData_UDMF_SDK_OH_UdmfOptions_SetVisibility_1500
+     * @tc.desc   test OH_UdmfOptions_SetVisibility Test Normal Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_UDMF_SDK_OH_UdmfOptions_SetVisibility_1500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -338,12 +338,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_UDMF_SDK_OH_Udmf_GetUnifiedData_1600
-     * @tc.name    : SUB_DistributedData_UDMF_SDK_OH_Udmf_GetUnifiedData_1600
-     * @tc.desc    : test OH_Udmf_GetUnifiedData Test Internal Data Error Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_UDMF_SDK_OH_Udmf_GetUnifiedData_1600
+     * @tc.number SUB_DistributedData_UDMF_SDK_OH_Udmf_GetUnifiedData_1600
+     * @tc.desc   test OH_Udmf_GetUnifiedData Test Internal Data Error Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_UDMF_SDK_OH_Udmf_GetUnifiedData_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -359,12 +359,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_UDMF_SDK_OH_Udmf_GetUnifiedDataByOptions_1700
-     * @tc.name    : SUB_DistributedData_UDMF_SDK_OH_Udmf_GetUnifiedDataByOptions_1700
-     * @tc.desc    : test OH_Udmf_GetUnifiedDataByOptions Test Internal Data Error Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_UDMF_SDK_OH_Udmf_GetUnifiedDataByOptions_1700
+     * @tc.number SUB_DistributedData_UDMF_SDK_OH_Udmf_GetUnifiedDataByOptions_1700
+     * @tc.desc   test OH_Udmf_GetUnifiedDataByOptions Test Internal Data Error Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_UDMF_SDK_OH_Udmf_GetUnifiedDataByOptions_1700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -380,12 +380,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_UDMF_SDK_OH_Udmf_SetUnifiedData_1800
-     * @tc.name    : SUB_DistributedData_UDMF_SDK_OH_Udmf_SetUnifiedData_1800
-     * @tc.desc    : test OH_Udmf_SetUnifiedData Test Internal Data Error Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_UDMF_SDK_OH_Udmf_SetUnifiedData_1800
+     * @tc.number SUB_DistributedData_UDMF_SDK_OH_Udmf_SetUnifiedData_1800
+     * @tc.desc   test OH_Udmf_SetUnifiedData Test Internal Data Error Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_UDMF_SDK_OH_Udmf_SetUnifiedData_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -401,12 +401,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_UDMF_SDK_OH_Udmf_UpdateUnifiedData_1900
-     * @tc.name    : SUB_DistributedData_UDMF_SDK_OH_Udmf_UpdateUnifiedData_1900
-     * @tc.desc    : test OH_Udmf_UpdateUnifiedData Test Internal Data Error Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_UDMF_SDK_OH_Udmf_UpdateUnifiedData_1900
+     * @tc.number SUB_DistributedData_UDMF_SDK_OH_Udmf_UpdateUnifiedData_1900
+     * @tc.desc   test OH_Udmf_UpdateUnifiedData Test Internal Data Error Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_UDMF_SDK_OH_Udmf_UpdateUnifiedData_1900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -422,12 +422,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_UDMF_SDK_OH_Udmf_DeleteUnifiedData_2000
-     * @tc.name    : SUB_DistributedData_UDMF_SDK_OH_Udmf_DeleteUnifiedData_2000
-     * @tc.desc    : test OH_Udmf_DeleteUnifiedData Test Internal Data Error Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_UDMF_SDK_OH_Udmf_DeleteUnifiedData_2000
+     * @tc.number SUB_DistributedData_UDMF_SDK_OH_Udmf_DeleteUnifiedData_2000
+     * @tc.desc   test OH_Udmf_DeleteUnifiedData Test Internal Data Error Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_UDMF_SDK_OH_Udmf_DeleteUnifiedData_2000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -443,12 +443,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_UDMF_SDK_UDMF_ALL_2100
-     * @tc.name    : SUB_DistributedData_UDMF_SDK_UDMF_ALL_2100
-     * @tc.desc    : Test the scenario of enumeration value UDMF_ALL of data visibility level.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMF_ALL_2100
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMF_ALL_2100
+     * @tc.desc   Test the scenario of enumeration value UDMF_ALL of data visibility level.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_UDMF_SDK_UDMF_ALL_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -464,12 +464,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_UDMF_SDK_UDMF_OWN_PROCESS_2200
-     * @tc.name    : SUB_DistributedData_UDMF_SDK_UDMF_OWN_PROCESS_2200
-     * @tc.desc    : Test the scenario of enumeration value UDMF_OWN_PROCESS of data visibility level.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMF_OWN_PROCESS_2200
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMF_OWN_PROCESS_2200
+     * @tc.desc   Test the scenario of enumeration value UDMF_OWN_PROCESS of data visibility level.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_UDMF_SDK_UDMF_OWN_PROCESS_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -485,12 +485,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_UDS_SDK_OH_UdsPixelMap_SetPixelMap_2300
-     * @tc.name    : SUB_DistributedData_UDS_SDK_OH_UdsPixelMap_SetPixelMap_2300
-     * @tc.desc    : test OH_UdsPixelMap_SetPixelMap Test Illegal Parameter Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_UDS_SDK_OH_UdsPixelMap_SetPixelMap_2300
+     * @tc.number SUB_DistributedData_UDS_SDK_OH_UdsPixelMap_SetPixelMap_2300
+     * @tc.desc   test OH_UdsPixelMap_SetPixelMap Test Illegal Parameter Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_UDS_SDK_OH_UdsPixelMap_SetPixelMap_2300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -507,12 +507,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_UDS_SDK_OH_UdsArrayBuffer_Destroy_2400
-     * @tc.name    : SUB_DistributedData_UDS_SDK_OH_UdsArrayBuffer_Destroy_2400
-     * @tc.desc    : test OH_UdsArrayBuffer_Destroy Test Illegal Parameter Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_UDS_SDK_OH_UdsArrayBuffer_Destroy_2400
+     * @tc.number SUB_DistributedData_UDS_SDK_OH_UdsArrayBuffer_Destroy_2400
+     * @tc.desc   test OH_UdsArrayBuffer_Destroy Test Illegal Parameter Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_UDS_SDK_OH_UdsArrayBuffer_Destroy_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -528,12 +528,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_UDS_SDK_OH_UdsArrayBuffer_GetData_2500
-     * @tc.name    : SUB_DistributedData_UDS_SDK_OH_UdsArrayBuffer_GetData_2500
-     * @tc.desc    : test OH_UdsArrayBuffer_GetData Test Illegal Parameter Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_UDS_SDK_OH_UdsArrayBuffer_GetData_2500
+     * @tc.number SUB_DistributedData_UDS_SDK_OH_UdsArrayBuffer_GetData_2500
+     * @tc.desc   test OH_UdsArrayBuffer_GetData Test Illegal Parameter Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_UDS_SDK_OH_UdsArrayBuffer_GetData_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -549,12 +549,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_UdmfProgressInfo_GetStatus_2600
-     * @tc.name    : SUB_OH_UdmfProgressInfo_GetStatus_2600
-     * @tc.desc    : test OH_UdmfProgressInfo_GetStatus return UDMF_FINISHED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_UdmfProgressInfo_GetStatus_2600
+     * @tc.number SUB_OH_UdmfProgressInfo_GetStatus_2600
+     * @tc.desc   test OH_UdmfProgressInfo_GetStatus return UDMF_FINISHED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_UdmfProgressInfo_GetStatus_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -570,12 +570,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_UdmfProgressInfo_GetStatus_2700
-     * @tc.name    : SUB_OH_UdmfProgressInfo_GetStatus_2700
-     * @tc.desc    : test UDMF_FINISHED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_UdmfProgressInfo_GetStatus_2700
+     * @tc.number SUB_OH_UdmfProgressInfo_GetStatus_2700
+     * @tc.desc   test UDMF_FINISHED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_UdmfProgressInfo_GetStatus_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -591,12 +591,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_UdmfProgressInfo_GetStatus_2800
-     * @tc.name    : SUB_OH_UdmfProgressInfo_GetStatus_2800
-     * @tc.desc    : test UDMF_PROCESSING
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_UdmfProgressInfo_GetStatus_2800
+     * @tc.number SUB_OH_UdmfProgressInfo_GetStatus_2800
+     * @tc.desc   test UDMF_PROCESSING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_UdmfProgressInfo_GetStatus_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -612,12 +612,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_UdmfProgressInfo_GetStatus_2900
-     * @tc.name    : SUB_OH_UdmfProgressInfo_GetStatus_2900
-     * @tc.desc    : test UDMF_CANCELED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_UdmfProgressInfo_GetStatus_2900
+     * @tc.number SUB_OH_UdmfProgressInfo_GetStatus_2900
+     * @tc.desc   test UDMF_CANCELED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_UdmfProgressInfo_GetStatus_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -633,12 +633,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_UdmfProgressInfo_GetStatus_3000
-     * @tc.name    : SUB_OH_UdmfProgressInfo_GetStatus_3000
-     * @tc.desc    : test UDMF_INNER_ERROR
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_UdmfProgressInfo_GetStatus_3000
+     * @tc.number SUB_OH_UdmfProgressInfo_GetStatus_3000
+     * @tc.desc   test UDMF_INNER_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_UdmfProgressInfo_GetStatus_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -654,12 +654,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_UdmfProgressInfo_GetStatus_3100
-     * @tc.name    : SUB_OH_UdmfProgressInfo_GetStatus_3100
-     * @tc.desc    : test UDMF_INVALID_PARAMETERS
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_UdmfProgressInfo_GetStatus_3100
+     * @tc.number SUB_OH_UdmfProgressInfo_GetStatus_3100
+     * @tc.desc   test UDMF_INVALID_PARAMETERS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_UdmfProgressInfo_GetStatus_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -675,12 +675,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_UdmfProgressInfo_GetStatus_3200
-     * @tc.name    : SUB_OH_UdmfProgressInfo_GetStatus_3200
-     * @tc.desc    : test UDMF_DATA_NOT_FOUND
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_UdmfProgressInfo_GetStatus_3200
+     * @tc.number SUB_OH_UdmfProgressInfo_GetStatus_3200
+     * @tc.desc   test UDMF_DATA_NOT_FOUND
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_UdmfProgressInfo_GetStatus_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -696,12 +696,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_UdmfProgressInfo_GetStatus_3300
-     * @tc.name    : SUB_OH_UdmfProgressInfo_GetStatus_3300
-     * @tc.desc    : test UDMF_SYNC_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_UdmfProgressInfo_GetStatus_3300
+     * @tc.number SUB_OH_UdmfProgressInfo_GetStatus_3300
+     * @tc.desc   test UDMF_SYNC_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_UdmfProgressInfo_GetStatus_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -717,12 +717,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_UdmfProgressInfo_GetStatus_3400
-     * @tc.name    : SUB_OH_UdmfProgressInfo_GetStatus_3400
-     * @tc.desc    : test UDMF_COPY_FILE_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_UdmfProgressInfo_GetStatus_3400
+     * @tc.number SUB_OH_UdmfProgressInfo_GetStatus_3400
+     * @tc.desc   test UDMF_COPY_FILE_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_UdmfProgressInfo_GetStatus_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -738,12 +738,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Udmf_FileConflictOptions_3500
-     * @tc.name    : SUB_OH_Udmf_FileConflictOptions_3500
-     * @tc.desc    : test UDMF_SKIP
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Udmf_FileConflictOptions_3500
+     * @tc.number SUB_OH_Udmf_FileConflictOptions_3500
+     * @tc.desc   test UDMF_SKIP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Udmf_FileConflictOptions_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -759,12 +759,12 @@ export default function ActsUdmfTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Udmf_ProgressIndicator_3600
-     * @tc.name    : SUB_OH_Udmf_ProgressIndicator_3600
-     * @tc.desc    : test UDMF_SKIP
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Udmf_ProgressIndicator_3600
+     * @tc.number SUB_OH_Udmf_ProgressIndicator_3600
+     * @tc.desc   test UDMF_SKIP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Udmf_ProgressIndicator_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

@@ -34,6 +34,14 @@ let HuksOptions63kb = {
 
 export default function SecurityHuksDeriveHKDFCallbackJsunit() {
     describe('SecurityHuksDeriveHKDFCallbackJsunit', function () {
+        /**
+         * @tc.name   Security_HUKS_Derive_API9_HKDF_001
+         * @tc.number Security_HUKS_Derive_API9_HKDF_001
+         * @tc.desc   Security_HUKS_Derive_API9_HKDF_001
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Derive_API9_HKDF_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAliesFirst = 'testDeriveHKDFSize256SHA256Finish63KBDeriveKeyAlias_01_001';
             let huksOptionsFinish = {
@@ -58,6 +66,14 @@ export default function SecurityHuksDeriveHKDFCallbackJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Derive_API9_HKDF_002
+         * @tc.number Security_HUKS_Derive_API9_HKDF_002
+         * @tc.desc   Security_HUKS_Derive_API9_HKDF_002
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Derive_API9_HKDF_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAliesFirst = 'testDeriveHKDFSize256SHA256Abort63KBDeriveKeyAlias_01_001';
             let huksOptionsFinish = {

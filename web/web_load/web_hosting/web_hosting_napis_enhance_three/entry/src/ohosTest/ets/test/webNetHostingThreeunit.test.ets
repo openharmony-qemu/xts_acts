@@ -38,14 +38,14 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0490
-    * @tc.name       : testWebResourceHandler_DidFailWithError
-    * @tc.desc       : test WebResourceHandler_DidFailWithError
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testWebResourceHandler_DidFailWithError
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0490
+     * @tc.desc   test WebResourceHandler_DidFailWithError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testWebResourceHandler_DidFailWithError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceHandler_DidFailWithError PASS');

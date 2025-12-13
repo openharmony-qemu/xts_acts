@@ -295,12 +295,12 @@ export default function CameraVideoCodecTypeTest() {
     });
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0100
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0100
-     * @tc.desc       Check capture session set moving photo video error with Illegal value -10000
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0100
+     * @tc.desc   Check capture session set moving photo video error with Illegal value -10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0100', Level.LEVEL2, async (done: Function) => {
       setMovingPhotoVideoCodecType( done, 'SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0100',  -1000, (errcode: number) => {
@@ -309,12 +309,12 @@ export default function CameraVideoCodecTypeTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0200
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0200
-     * @tc.desc       Check capture session set moving photo video error with Illegal value -2
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0200
+     * @tc.desc   Check capture session set moving photo video error with Illegal value -2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0200', Level.LEVEL2, async (done: Function) => {
       setMovingPhotoVideoCodecType( done, 'SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0200',  -2, (errcode: number) => {
@@ -323,12 +323,12 @@ export default function CameraVideoCodecTypeTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0300
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0300
-     * @tc.desc       Check capture session set moving photo video error with Illegal value 3
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0300
+     * @tc.desc   Check capture session set moving photo video error with Illegal value 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0300', Level.LEVEL2, async (done: Function) => {
       let maxEnum = getEnumMaxValue(camera.VideoCodecType);
@@ -338,12 +338,12 @@ export default function CameraVideoCodecTypeTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0400
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0400
-     * @tc.desc       Check capture session set moving photo video error with null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0400
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0400
+     * @tc.desc   Check capture session set moving photo video error with null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0400', Level.LEVEL2, async (done: Function) => {
       setMovingPhotoVideoCodecType( done, 'SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0400',  null, (errcode: number) => {
@@ -351,12 +351,12 @@ export default function CameraVideoCodecTypeTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0500
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0500
-     * @tc.desc       Check capture session set moving photo video error with undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0500
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0500
+     * @tc.desc   Check capture session set moving photo video error with undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0500', Level.LEVEL2, async (done: Function) => {
       setMovingPhotoVideoCodecType( done, 'SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_ERROR_TYPE_0500',  undefined, (errcode: number) => {

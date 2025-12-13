@@ -45,12 +45,12 @@ export default function ReuseV2Test0030() {
     });
 
     /**
-     * @tc.number    ReuseV2Test0030
-     * @tc.name      ReuseV2Test0030_001
-     * @tc.desc      Persistently store UI related data
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ReuseV2Test0030_001
+     * @tc.number ReuseV2Test0030
+     * @tc.desc   Persistently store UI related data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ReuseV2Test0030_001', Level.LEVEL0, async (done: Function) => {
       console.info('[ReuseV2Test0030_001] START');

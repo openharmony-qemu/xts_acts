@@ -79,9 +79,12 @@ export default function undo() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarIdProp
-         * @tc.desc      ACE
+         * @tc.name   testTabBarIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarIdProp', Level.LEVEL0, async function(done) {
             console.info('testTabBarIdProp START');
@@ -97,9 +100,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarClassProp
-         * @tc.desc      ACE
+         * @tc.name   testTabBarClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarClassProp', Level.LEVEL0, async function(done) {
             console.info('testTabBarClassProp START');
@@ -116,9 +122,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testTabBarClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testTabBarClassPropNone START');
@@ -136,9 +145,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarRefProp
-         * @tc.desc      ACE
+         * @tc.name   testTabBarRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarRefProp', Level.LEVEL0, async function(done) {
             console.info('testTabBarRefProp START');
@@ -155,9 +167,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testTabBarRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testTabBarRefPropNone START');
@@ -175,9 +190,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testTabBarDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testTabBarDisabledPropTrue START');
@@ -194,9 +212,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testTabBarDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testTabBarDisabledPropFalse START');
@@ -213,9 +234,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testTabBarDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testTabBarDisabledPropNone START');
@@ -232,9 +256,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testTabBarFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testTabBarFocusablePropTrue START');
@@ -251,9 +278,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testTabBarFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testTabBarFocusablePropFalse START');
@@ -270,9 +300,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testTabBarFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testTabBarFocusablePropNone START');
@@ -289,9 +322,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarDataProp
-         * @tc.desc      ACE
+         * @tc.name   testTabBarDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarDataProp', Level.LEVEL0, async function(done) {
             console.info('testTabBarDataProp START');
@@ -309,9 +345,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testTabBarDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testTabBarDataPropNone START');
@@ -329,9 +368,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testTabBarClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testTabBarClickEffectPropSmall START');
@@ -348,9 +390,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testTabBarClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testTabBarClickEffectPropMedium START');
@@ -367,9 +412,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testTabBarClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testTabBarClickEffectPropLarge START');
@@ -386,9 +434,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testTabBarClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testTabBarClickEffectPropNone START');
@@ -406,9 +457,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testTabBarDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testTabBarDirPropRtl START');
@@ -425,9 +479,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testTabBarDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testTabBarDirPropLtr START');
@@ -444,9 +501,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testTabBarDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testTabBarDirPropAuto START');
@@ -463,9 +523,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testTabBarDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testTabBarDirPropNone START');
@@ -482,9 +545,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testTabBarForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarForPropNull', Level.LEVEL0, async function(done) {
             console.info('testTabBarForPropNull START');
@@ -502,9 +568,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testTabBarForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarForPropOne', Level.LEVEL0, async function(done) {
             console.info('testTabBarForPropOne START');
@@ -522,9 +591,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testTabBarForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarForPropThree', Level.LEVEL0, async function(done) {
             console.info('testTabBarForPropThree START');
@@ -542,9 +614,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testTabBarIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testTabBarIfPropTrue START');
@@ -562,9 +637,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testTabBarShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testTabBarShowPropTrue START');
@@ -582,9 +660,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testTabBarShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testTabBarShowPropFalse START');
@@ -602,9 +683,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testTabBarShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testTabBarShowPropNone START');
@@ -624,9 +708,12 @@ export default function undo() {
         //   特有属性
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarIndexNumber
-         * @tc.desc      ACE
+         * @tc.name   testTabBarModeScroll
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarModeScroll', Level.LEVEL0, async function(done) {
             console.info('testTabBarModeScroll START');
@@ -644,9 +731,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarModeFixed
-         * @tc.desc      ACE
+         * @tc.name   testTabBarModeFixed
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarModeFixed', Level.LEVEL0, async function(done) {
             console.info('testTabBarModeFixed START');
@@ -664,9 +754,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarModeNone
-         * @tc.desc      ACE
+         * @tc.name   testTabBarModeNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarModeNone', Level.LEVEL0, async function(done) {
             console.info('testTabBarModeNone START');

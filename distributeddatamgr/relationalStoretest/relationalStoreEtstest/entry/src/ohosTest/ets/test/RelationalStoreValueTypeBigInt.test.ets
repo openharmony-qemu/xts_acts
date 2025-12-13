@@ -55,12 +55,12 @@ export default function RdbStoreValueTypeTest() {
     console.log(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @tc.name the value type BigInt(45)
+     * @tc.name   testValueType0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BigIntAPITest_0100
-     * @tc.desc the value type BigInt(45)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   the value type BigInt(45)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testValueType0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testValueType0001 start *************");
@@ -98,12 +98,12 @@ export default function RdbStoreValueTypeTest() {
     })
 
     /**
-     * @tc.name the value BigInt "15822401018187971961171"
+     * @tc.name   testValueType0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BigIntAPITest_0200
-     * @tc.desc the value BigInt "15822401018187971961171"
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   the value BigInt "15822401018187971961171"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testValueType0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testValueType0002 start *************");
@@ -140,12 +140,12 @@ export default function RdbStoreValueTypeTest() {
       console.log(TAG + "************* testValueType0002 end *************");
     })
     /**
-     * @tc.name the value update
+     * @tc.name   testValueType0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BigIntAPITest_0300
-     * @tc.desc the value update
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   the value update
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testValueType0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testValueType0003 start *************");
@@ -199,12 +199,12 @@ export default function RdbStoreValueTypeTest() {
       console.log(TAG + "************* testValueType0003 end *************");
     })
     /**
-     * @tc.name the value delete
+     * @tc.name   testValueType0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BigIntAPITest_0400
-     * @tc.desc the value delete
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   the value delete
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testValueType0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testValueType0004 start *************");
@@ -262,12 +262,12 @@ export default function RdbStoreValueTypeTest() {
       console.log(TAG + "************* testValueType0004 end *************");
     })
     /**
-     * @tc.name close database open database query
+     * @tc.name   testValueType0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BigIntAPITest_0500
-     * @tc.desc close database open database query
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   close database open database query
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testValueType0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testValueType0005 start *************");
@@ -304,12 +304,12 @@ export default function RdbStoreValueTypeTest() {
       console.log(TAG + "************* testValueType0005 end *************");
     })
     /**
-     * @tc.name executesql update delete
+     * @tc.name   testValueType0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BigIntAPITest_0600
-     * @tc.desc executesql update delete
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   executesql update delete
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testValueType0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testValueType0006 start *************");

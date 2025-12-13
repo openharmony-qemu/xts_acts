@@ -54,12 +54,12 @@ export default function RichEditorOnWillChange002() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0019
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0019
-     * @tc.desc  : The addition of image/symbol/builder will not trigger callbacks to test RichEditor OnSelectionChange
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0019
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0019
+     * @tc.desc   The addition of image/symbol/builder will not trigger callbacks to test RichEditor OnSelectionChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0019',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0019 START');
@@ -69,7 +69,7 @@ export default function RichEditorOnWillChange002() {
       let int_callback_status = await driver.findComponent(ON.id('int_callback_status'));
 
       let add_image = await driver.findComponent(ON.id('add_image'));
-      add_image.click();
+      await add_image.click();
       await CommonFunc.sleep(500);
       let onWillChange = await driver.findComponent(ON.id('onWillChange_callback'));
       let onWillText = await onWillChange.getText();
@@ -83,7 +83,7 @@ export default function RichEditorOnWillChange002() {
       await CommonFunc.sleep(500);
 
       let add_symbol = await driver.findComponent(ON.id('add_symbol'));
-      add_symbol.click();
+      await add_symbol.click();
       await CommonFunc.sleep(500);
       onWillText = await onWillChange.getText();
       didText = await onDidChange.getText();
@@ -91,15 +91,15 @@ export default function RichEditorOnWillChange002() {
       expect(onWillText).assertEqual('onWillChange_callback:true');
       expect(didText).assertEqual('onDidChange_callback:true');
 
-      int_callback_status.click();
+      await int_callback_status.click();
       await CommonFunc.sleep(500);
 
       let builder = await driver.findComponent(ON.id('builder'));
-      builder.click();
+      await builder.click();
       await CommonFunc.sleep(500);
 
       let add_builder = await driver.findComponent(ON.id('add_builder'));
-      add_builder.click();
+      await add_builder.click();
       await CommonFunc.sleep(500);
 
       onWillText = await onWillChange.getText();
@@ -113,12 +113,12 @@ export default function RichEditorOnWillChange002() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0020
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0020
-     * @tc.desc  : Deleting image/symbol/builder will trigger a callback to test RichEditor OnSelectionChange
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0020
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0020
+     * @tc.desc   Deleting image/symbol/builder will trigger a callback to test RichEditor OnSelectionChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0020',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0020 START');
@@ -145,7 +145,7 @@ export default function RichEditorOnWillChange002() {
       expect(didText).assertEqual('onDidChange_callback:true');
 
       //KEYCODE_DEL delete symbol
-      int_callback_status.click();
+      await int_callback_status.click();
       await CommonFunc.sleep(500);
       await driver.triggerKey(2055);
       await CommonFunc.sleep(500);
@@ -156,7 +156,7 @@ export default function RichEditorOnWillChange002() {
       expect(didText).assertEqual('onDidChange_callback:true');
 
       //KEYCODE_DEL delete image
-      int_callback_status.click();
+      await int_callback_status.click();
       await CommonFunc.sleep(500);
       await driver.triggerKey(2055);
       await CommonFunc.sleep(500);

@@ -25,7 +25,7 @@ function buttonBuilder(text: string, uiContext: UIContext) {
       .fontSize(20)
       .width('45%')
       .height('30%')
-      .offset({x: 100, y: 100})
+      .offset({x: 50, y: 50})
       .id('button')
       .onTouch((event) => {
         let promptAction: PromptAction = uiContext!.getPromptAction();
@@ -36,8 +36,8 @@ function buttonBuilder(text: string, uiContext: UIContext) {
         console.info('onTouch')
       })
   }
-  .width(500)
-  .height(300)
+  .width(300)
+  .height(100)
   .backgroundColor(Color.Gray)
 }
 // 继承NodeController实现自定义UI控制器
@@ -100,12 +100,12 @@ struct MyComponent {
   build() {
     Stack() {
       NodeContainer(this.nodeController)
-        .height(300)
-        .width(500)
+        .height(100)
+        .width(300)
       Column()
         .id('column1')
-        .width(500)
-        .height(300)
+        .width(300)
+        .height(100)
         .backgroundColor(Color.Transparent)
         .onTouch((event) => {
           if (event != undefined) {

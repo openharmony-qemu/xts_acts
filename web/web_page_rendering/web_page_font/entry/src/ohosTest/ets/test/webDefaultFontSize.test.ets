@@ -57,10 +57,13 @@ export default function webDefaultFontSize() {
       done();
     })
   
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBPATR6_API_0200
-     *tc.name testDefaultFontSize73AndMinFontSize1WebC
-     *tc.desc test with defaultfontsize 73 and minfontsize 1
+    /**
+     * @tc.name   testDefaultFontSize73AndMinFontSize1WebC
+     * @tc.number SUB_ACE_BASIC_ETS_WEBPATR6_API_0200
+     * @tc.desc   test with defaultfontsize 73 and minfontsize 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDefaultFontSize73AndMinFontSize1WebC', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitdefaultFontSize73AndminFontSize1WebC";
@@ -69,10 +72,13 @@ export default function webDefaultFontSize() {
       let component = await driver.findComponent(ON.id("webDefaultFontSize"));
       await component.click();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBPATR6_API_0300
-     *tc.name testDefaultFontSize73AndMinFontSize73WebC
-     *tc.desc test with defaultfontsize 73 and minfontsize 73
+    /**
+     * @tc.name   testDefaultFontSize73AndMinFontSize73WebC
+     * @tc.number SUB_ACE_BASIC_ETS_WEBPATR6_API_0300
+     * @tc.desc   test with defaultfontsize 73 and minfontsize 73
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDefaultFontSize73AndMinFontSize73WebC', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitdefaultFontSize73AndminFontSize73WebC";

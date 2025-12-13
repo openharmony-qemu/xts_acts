@@ -50,12 +50,15 @@ export default function AlignContent_Start_FlexP_Fixed_Visibility() {
       console.info("AlignContent_Start_FlexP_Fixed_Visibility after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_START_1300
-     * @tc.name testAlignContentStartFlexfixedVisibilityHidden
-     * @tc.desc Set the visibility property of the child component to Visibility.Hidden.
-     */
 
+    /**
+     * @tc.name   testAlignContentStartFlexfixedVisibilityHidden
+     * @tc.number testAlignContentStartFlexfixedVisibilityHidden
+     * @tc.desc   testAlignContentStartFlexfixedVisibilityHidden
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentStartFlexfixedVisibilityHidden',  Level.LEVEL0, async () => {
       console.info('testAlignContentStartFlexfixedVisibilityHidden START');
       GlobalContext.getContext().getObject<number>('value').message.notify({
@@ -109,12 +112,15 @@ export default function AlignContent_Start_FlexP_Fixed_Visibility() {
 
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_START_1400
-     * @tc.name testAlignContentStartFlexfixedVisibilityNone
-     * @tc.desc Set the visibility property of the child component to Visibility.None.
-     */
 
+    /**
+     * @tc.name   testAlignContentStartFlexfixedVisibilityNone
+     * @tc.number testAlignContentStartFlexfixedVisibilityNone
+     * @tc.desc   testAlignContentStartFlexfixedVisibilityNone
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentStartFlexfixedVisibilityNone',  Level.LEVEL0, async () => {
       console.info('testAlignContentStartFlexfixedVisibilityNone START');
       GlobalContext.getContext().getObject<number>('value').message.notify({

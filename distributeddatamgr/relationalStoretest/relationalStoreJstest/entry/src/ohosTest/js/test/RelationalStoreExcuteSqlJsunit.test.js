@@ -50,12 +50,12 @@ export default function relationalStoreExcuteSqlTest() {
         })
     
         /**
-         * @tc.name ExcuteSqlTest0001
+         * @tc.name   ExcuteSqlTest0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesJsAPITest_1210
-         * @tc.desc resultSet ExcuteSql normal test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   resultSet ExcuteSql normal test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('ExcuteSqlTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* ExcuteSqlTest0001 start *************");
@@ -130,12 +130,12 @@ export default function relationalStoreExcuteSqlTest() {
         })
     
         /**
-         * @tc.name ExcuteSqlTest0002
+         * @tc.name   ExcuteSqlTest0002
          * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesJsAPITest_1220
-         * @tc.desc resultSet ExcuteSql normal test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   resultSet ExcuteSql normal test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('ExcuteSqlTest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* ExcuteSqlTest0002 start *************");
@@ -208,12 +208,12 @@ export default function relationalStoreExcuteSqlTest() {
         })
     
         /**
-         * @tc.name ExcuteSqlTest0003
+         * @tc.name   ExcuteSqlTest0003
          * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesJsAPITest_1230
-         * @tc.desc resultSet ExcuteSql normal test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   resultSet ExcuteSql normal test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('ExcuteSqlTest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* ExcuteSqlTest0003 start *************");
@@ -307,12 +307,12 @@ export default function relationalStoreExcuteSqlTest() {
         })
     
         /**
-         * @tc.name ExcuteSqlTest0004
+         * @tc.name   ExcuteSqlTest0004
          * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesJsAPITest_1240
-         * @tc.desc resultSet ExcuteSql normal test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   resultSet ExcuteSql normal test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('ExcuteSqlTest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* ExcuteSqlTest0004 start *************");

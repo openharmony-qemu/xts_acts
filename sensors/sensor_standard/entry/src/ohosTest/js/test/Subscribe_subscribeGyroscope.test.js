@@ -58,13 +58,13 @@ describe("SensorJsTest_sensor_29", function () {
     const SERVICE_EXCEPTION_MSG = "Service exception.Possible causes:" +
         "1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception."
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeGyroscope_JSTest_0010
-     * @tc.name:subscribeGyroscope_SensorJsTest001
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeGyroscope_SensorJsTest001
+     * @tc.number SUB_SensorsSystem_SubscribeGyroscope_JSTest_0010
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeGyroscope_SensorJsTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeGyroscope_SensorJsTest001---------------');
@@ -100,13 +100,13 @@ describe("SensorJsTest_sensor_29", function () {
         }
     })
 
-   /*
-     * @tc.number:SUB_SensorsSystem_SubscribeGyroscope_JSTest_0020
-     * @tc.name:subscribeGyroscope_SensorJsTest002
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeGyroscope_SensorJsTest002
+     * @tc.number SUB_SensorsSystem_SubscribeGyroscope_JSTest_0020
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeGyroscope_SensorJsTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try{
@@ -141,13 +141,13 @@ describe("SensorJsTest_sensor_29", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeGyroscope_JSTest_0030
-     * @tc.name:subscribeGyroscope_SensorJsTest003
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeGyroscope_SensorJsTest003
+     * @tc.number SUB_SensorsSystem_SubscribeGyroscope_JSTest_0030
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeGyroscope_SensorJsTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try{
@@ -182,13 +182,13 @@ describe("SensorJsTest_sensor_29", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeGyroscope_JSTest_0040
-     * @tc.name:subscribeGyroscope_SensorJsTest004
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeGyroscope_SensorJsTest004
+     * @tc.number SUB_SensorsSystem_SubscribeGyroscope_JSTest_0040
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeGyroscope_SensorJsTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try{
@@ -237,13 +237,13 @@ describe("SensorJsTest_sensor_29", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeGyroscope_JSTest_0050
-     * @tc.name:subscribeGyroscope_SensorJsTest005
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeGyroscope_SensorJsTest005
+     * @tc.number SUB_SensorsSystem_SubscribeGyroscope_JSTest_0050
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeGyroscope_SensorJsTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try{
@@ -275,13 +275,13 @@ describe("SensorJsTest_sensor_29", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeGyroscope_JSTest_0060
-     * @tc.name:subscribeGyroscope_SensorJsTest006
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeGyroscope_SensorJsTest006
+     * @tc.number SUB_SensorsSystem_SubscribeGyroscope_JSTest_0060
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeGyroscope_SensorJsTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeGyroscope_SensorJsTest006---------------');
@@ -314,13 +314,13 @@ describe("SensorJsTest_sensor_29", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeGyroscope_JSTest_0070
-     * @tc.name:subscribeGyroscope_SensorJsTest007
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeGyroscope_SensorJsTest007
+     * @tc.number SUB_SensorsSystem_SubscribeGyroscope_JSTest_0070
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeGyroscope_SensorJsTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeGyroscope_SensorJsTest007---------------');
@@ -357,13 +357,13 @@ describe("SensorJsTest_sensor_29", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeGyroscope_JSTest_0080
-     * @tc.name:subscribeGyroscope_SensorJsTest008
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeGyroscope_SensorJsTest008
+     * @tc.number SUB_SensorsSystem_SubscribeGyroscope_JSTest_0080
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeGyroscope_SensorJsTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeGyroscope_SensorJsTest008---------------');
@@ -396,13 +396,13 @@ describe("SensorJsTest_sensor_29", function () {
         }
     })
 
-   /*
-     * @tc.number:SUB_SensorsSystem_SubscribeGyroscope_JSTest_0090
-     * @tc.name:subscribeGyroscope_SensorJsTest009
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeGyroscope_SensorJsTest009
+     * @tc.number SUB_SensorsSystem_SubscribeGyroscope_JSTest_0090
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeGyroscope_SensorJsTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try{
@@ -434,13 +434,13 @@ describe("SensorJsTest_sensor_29", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeGyroscope_JSTest_0100
-     * @tc.name:subscribeGyroscope_SensorJsTest010
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeGyroscope_SensorJsTest010
+     * @tc.number SUB_SensorsSystem_SubscribeGyroscope_JSTest_0100
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeGyroscope_SensorJsTest010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeGyroscope_SensorJsTest010---------------------------');
@@ -473,13 +473,13 @@ describe("SensorJsTest_sensor_29", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeGyroscope_JSTest_0110
-     * @tc.name:subscribeGyroscope_SensorJsTest011
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeGyroscope_SensorJsTest011
+     * @tc.number SUB_SensorsSystem_SubscribeGyroscope_JSTest_0110
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeGyroscope_SensorJsTest011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeGyroscope_SensorJsTest011---------------------------');
@@ -523,13 +523,13 @@ describe("SensorJsTest_sensor_29", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeGyroscope_JSTest_0120
-     * @tc.name:subscribeGyroscope_SensorJsTest012
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeGyroscope_SensorJsTest012
+     * @tc.number SUB_SensorsSystem_SubscribeGyroscope_JSTest_0120
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeGyroscope_SensorJsTest012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeGyroscope_SensorJsTest012---------------------------');
@@ -561,13 +561,13 @@ describe("SensorJsTest_sensor_29", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeGyroscope_JSTest_0130
-     * @tc.name:subscribeGyroscope_SensorJsTest013
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeGyroscope_SensorJsTest013
+     * @tc.number SUB_SensorsSystem_SubscribeGyroscope_JSTest_0130
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeGyroscope_SensorJsTest013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeGyroscope_SensorJsTest013---------------------------');
@@ -600,13 +600,13 @@ describe("SensorJsTest_sensor_29", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeGyroscope_JSTest_0140
-     * @tc.name:subscribeGyroscope_SensorJsTest014
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeGyroscope_SensorJsTest014
+     * @tc.number SUB_SensorsSystem_SubscribeGyroscope_JSTest_0140
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeGyroscope_SensorJsTest014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeGyroscope_SensorJsTest014---------------------------');

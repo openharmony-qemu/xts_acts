@@ -45,10 +45,13 @@ export default function BindMenuTest() {
       done()
     });
 
-    /*
-     *tc.number ArkUI_Menu_0100
-     *tc.name   Call function bindMenu with MenuOptions
-     *tc.desc   Call function bindMenu with MenuOptions
+    /**
+     * @tc.name   ArkUI_Menu_0100
+     * @tc.number ArkUI_Menu_0100
+     * @tc.desc   Call function bindMenu with MenuOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Menu_0100', Level.LEVEL0, async (done: Function) => {
       let CASE: string = 'ArkUI_Menu_0100'
@@ -73,10 +76,13 @@ export default function BindMenuTest() {
       done()
     });
 
-    /*
-     *tc.number ArkUI_Menu_0200
-     *tc.name   Call function bindContextMenu with MenuOptions
-     *tc.desc   Call function bindContextMenu with MenuOptions
+    /**
+     * @tc.name   ArkUI_Menu_0200
+     * @tc.number ArkUI_Menu_0200
+     * @tc.desc   Call function bindContextMenu with MenuOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Menu_0200', Level.LEVEL0, async (done: Function) => {
       let CASE: string = 'ArkUI_Menu_0200'

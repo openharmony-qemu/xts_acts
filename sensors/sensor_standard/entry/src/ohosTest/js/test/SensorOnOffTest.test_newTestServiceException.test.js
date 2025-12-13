@@ -52,10 +52,13 @@ describe("SystemServiceExceptionTest", function () {
 
     let invild = -1;
 
-    /*
-     * @tc.number:SUB_SensorsSystem_ServiceException_JSTest_0010
-     * @tc.name:newTestServiceException_SensorJsTest001
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
+    /**
+     * @tc.name   newTestServiceException_SensorJsTest001
+     * @tc.number SUB_SensorsSystem_ServiceException_JSTest_0010
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newTestServiceException_SensorJsTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------newTestServiceException_SensorJsTest001---------------------------');

@@ -160,11 +160,12 @@ function nCChanged() {
 
 
       /**
+       * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERCONNECT_0100
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERCONNECT_0100
-       * @tc.name test Server connectStateChange
-       * @tc.desc Test on and off api10 .
-       * @tc.type Function
-       * @tc.level Level 2
+       * @tc.desc   Test on and off api10 .
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERCONNECT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
         try {
@@ -183,11 +184,12 @@ function nCChanged() {
       })
 
       /**
+       * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERCONNECT_0200
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERCONNECT_0200
-       * @tc.name test Server connectStateChange
-       * @tc.desc Test on and off api10 .
-       * @tc.type Function
-       * @tc.level Level 2
+       * @tc.desc   Test on and off api10 .
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERCONNECT_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
         gattServer.on("connectionStateChange", Connected);
@@ -206,11 +208,12 @@ function nCChanged() {
       })
 
       /**
+       * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_0100
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_0100
-       * @tc.name testAddService
-       * @tc.desc Test AddService api10.
-       * @tc.type Function
-       * @tc.level Level 1
+       * @tc.desc   Test AddService api10.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
         let descriptors : Array<bluetooth.BLEDescriptor> = [];
@@ -250,11 +253,12 @@ function nCChanged() {
       })
 
       /**
+       * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_0300
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_0300
-       * @tc.name testAddService
-       * @tc.desc Test AddService api10.
-       * @tc.type Function
-       * @tc.level Level 1
+       * @tc.desc   Test AddService api10.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
         try {
@@ -268,11 +272,12 @@ function nCChanged() {
       })
 
       /**
+       * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_0200
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_0200
-       * @tc.name testAddService
-       * @tc.desc Test api10 401 - characteristics of service is null.
-       * @tc.type Function
-       * @tc.level Level 2
+       * @tc.desc   Test api10 401 - characteristics of service is null.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('SUB_COMMUNICATION_BLUETOOTHBLE_ADDSERVICE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
         try {
@@ -291,11 +296,12 @@ function nCChanged() {
       })
 
       /**
+       * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_NOTIFYCHARACTERISTIC_0100
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_NOTIFYCHARACTERISTIC_0100
-       * @tc.name testNotifyCharacteristicChanged callback
-       * @tc.desc Test NotifyCharacteristicChanged api10.
-       * @tc.type Function
-       * @tc.level Level 2
+       * @tc.desc   Test NotifyCharacteristicChanged api10.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('SUB_COMMUNICATION_BLUETOOTHBLE_NOTIFYCHARACTERISTIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
         let descriptors : Array<bluetooth.BLEDescriptor> = [];
@@ -335,11 +341,12 @@ function nCChanged() {
       })
 
       /**
+       * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_NOTIFYCHARACTERISTIC_0200
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_NOTIFYCHARACTERISTIC_0200
-       * @tc.name testNotifyCharacteristicChanged promise
-       * @tc.desc Test NotifyCharacteristicChanged api10.
-       * @tc.type Function
-       * @tc.level Level 2
+       * @tc.desc   Test NotifyCharacteristicChanged api10.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('SUB_COMMUNICATION_BLUETOOTHBLE_NOTIFYCHARACTERISTIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
         let descriptors : Array<bluetooth.BLEDescriptor> = [];
@@ -377,11 +384,12 @@ function nCChanged() {
       })
 
       /**
+       * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_NOTIFYCHARACTERISTIC_0300
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_NOTIFYCHARACTERISTIC_0300
-       * @tc.name testNotifyCharacteristicChanged callback
-       * @tc.desc Test NotifyCharacteristicChanged api10.
-       * @tc.type Function
-       * @tc.level Level 2
+       * @tc.desc   Test NotifyCharacteristicChanged api10.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('SUB_COMMUNICATION_BLUETOOTHBLE_NOTIFYCHARACTERISTIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
         try {
@@ -406,11 +414,12 @@ function nCChanged() {
       })
 
       /**
+       * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_NOTIFYCHARACTERISTIC_0400
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_NOTIFYCHARACTERISTIC_0400
-       * @tc.name testNotifyCharacteristicChanged callback
-       * @tc.desc Test NotifyCharacteristicChanged api10.
-       * @tc.type Function
-       * @tc.level Level 2
+       * @tc.desc   Test NotifyCharacteristicChanged api10.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('SUB_COMMUNICATION_BLUETOOTHBLE_NOTIFYCHARACTERISTIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
         try {
@@ -424,11 +433,12 @@ function nCChanged() {
       })
 
       /**
+       * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_SENDRESPONSE_0100
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_SENDRESPONSE_0100
-       * @tc.name testSendResponse success
-       * @tc.desc Test SendResponse api10.
-       * @tc.type Function
-       * @tc.level Level 1
+       * @tc.desc   Test SendResponse api10.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('SUB_COMMUNICATION_BLUETOOTHBLE_SENDRESPONSE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
         try {
@@ -454,11 +464,12 @@ function nCChanged() {
       })
 
       /**
+       * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_SENDRESPONSE_0200
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_SENDRESPONSE_0200
-       * @tc.name testSendResponse success
-       * @tc.desc Test SendResponse api10.
-       * @tc.type Function
-       * @tc.level Level 1
+       * @tc.desc   Test SendResponse api10.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('SUB_COMMUNICATION_BLUETOOTHBLE_SENDRESPONSE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
         try {
@@ -479,11 +490,12 @@ function nCChanged() {
       })
 
       /**
+       * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_SENDRESPONSE_0300
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_SENDRESPONSE_0300
-       * @tc.name testSendResponse success
-       * @tc.desc Test SendResponse 401 -null parameter.
-       * @tc.type Function
-       * @tc.level Level 1
+       * @tc.desc   Test SendResponse 401 -null parameter.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('SUB_COMMUNICATION_BLUETOOTHBLE_SENDRESPONSE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
         try {
@@ -499,11 +511,12 @@ function nCChanged() {
       })
 
       /**
+       * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_SENDRESPONSE_0400
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_SENDRESPONSE_0400
-       * @tc.name testSendResponse success
-       * @tc.desc Test SendResponse 401 -error parameter.
-       * @tc.type Function
-       * @tc.level Level 1
+       * @tc.desc   Test SendResponse 401 -error parameter.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('SUB_COMMUNICATION_BLUETOOTHBLE_SENDRESPONSE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
         try {
@@ -524,11 +537,12 @@ function nCChanged() {
       })
 
       /**
+       * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLES_MTUCHANGE_0100
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLES_MTUCHANGE_0100
-       * @tc.name test gattserver on blemtuchange
-       * @tc.desc test gattserver on blemtuchange api10.
-       * @tc.type Function
-       * @tc.level Level 1
+       * @tc.desc   test gattserver on blemtuchange api10.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('SUB_COMMUNICATION_BLUETOOTHBLES_MTUCHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
         try {
@@ -551,11 +565,12 @@ function nCChanged() {
       })
 
       /**
+       * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLES_MTUCHANGE_0200
        * @tc.number SUB_COMMUNICATION_BLUETOOTHBLES_MTUCHANGE_0200
-       * @tc.name test gattserver off blemtuchange
-       * @tc.desc test gattserver off blemtuchange api10
-       * @tc.type Function
-       * @tc.level Level 1
+       * @tc.desc   test gattserver off blemtuchange api10
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('SUB_COMMUNICATION_BLUETOOTHBLES_MTUCHANGE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
         gattServer.on('BLEMtuChange', (mtu: number)=> {
@@ -578,11 +593,12 @@ function nCChanged() {
       })
 
       /**
+       * @tc.name   SUB_COMMUNICATION_BLUETOOTH_GATTSERVER_CLOSE_0100
        * @tc.number SUB_COMMUNICATION_BLUETOOTH_GATTSERVER_CLOSE_0100
-       * @tc.name testClose
-       * @tc.desc test gattserver close
-       * @tc.type Function
-       * @tc.level Level 2
+       * @tc.desc   test gattserver close
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('SUB_COMMUNICATION_BLUETOOTH_GATTSERVER_CLOSE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
         try {

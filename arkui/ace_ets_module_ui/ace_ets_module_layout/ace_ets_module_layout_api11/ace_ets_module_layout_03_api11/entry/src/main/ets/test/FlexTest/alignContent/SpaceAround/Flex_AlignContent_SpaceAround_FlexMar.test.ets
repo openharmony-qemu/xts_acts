@@ -46,10 +46,12 @@ export default function flex_AlignContent_SpaceAround_FlexMarTest() {
       console.info("Flex_AlignContent_SpaceAround_FlexMarTest after each called");
     });
     /**
+     * @tc.name   testFlexAlignContentSpaceAroundFlexMargin
      * @tc.number SUB_ACE_FLEXALIGNCONTENT_SPACEAROUND_0100
-     * @tc.name testFlexAlignContentSpaceAroundFlexMargin
-     * @tc.desc The size of the parent component in the cross direction meets the layout
-     *               of the child components when the margin of parent component set to 10
+     * @tc.desc   The size of the parent component in the cross direction meets the layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignContentSpaceAroundFlexMargin',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignContentSpaceAroundFlexMargin] START');

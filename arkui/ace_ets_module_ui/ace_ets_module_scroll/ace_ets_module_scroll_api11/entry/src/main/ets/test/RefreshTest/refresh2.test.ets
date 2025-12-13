@@ -46,10 +46,13 @@ export default function refreshDragJsunit() {
       console.info("refreshDrag after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0011
-     * @tc.name         testrefreshDrag0011
-     * @tc.desic         acerefreshDragEtsTest0011
+    /**
+     * @tc.name   testrefreshDrag0011
+     * @tc.number SUB_ACE_BASIC_ETS_API_0011
+     * @tc.desc   testrefreshDrag0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testrefreshDrag0011', Level.LEVEL1, async (done: Function) => {
       console.info('refreshDrag testrefreshDrag0011 START');
@@ -72,10 +75,13 @@ export default function refreshDragJsunit() {
       console.info('testrefreshDrag0011 END');
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0012
-     * @tc.name         testrefreshRefresh0001
-     * @tc.desic         acerefreshRefreshEtsTest0001
+    /**
+     * @tc.name   testrefreshRefresh0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0012
+     * @tc.desc   testrefreshRefresh0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testrefreshRefresh0001', Level.LEVEL1, async (done: Function) => {
       console.info('refreshDrag testrefreshRefresh0001 START');

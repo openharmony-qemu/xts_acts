@@ -46,12 +46,12 @@ export default function taskPoolAsyncRunnerMultipleGCTest() {
     })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerMultipleGCTest0100
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_MULTIPLE_GC_TEST_0100
-     * @tc.name taskPoolAsyncRunnerMultipleGCTest0100
-     * @tc.desc test task ui
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test task ui
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerMultipleGCTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'taskPoolAsyncRunnerMultipleGCTest0100';
@@ -86,12 +86,12 @@ export default function taskPoolAsyncRunnerMultipleGCTest() {
     })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerMultipleGCTest0200
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_MULTIPLE_GC_TEST_0200
-     * @tc.name taskPoolAsyncRunnerMultipleGCTest0200
-     * @tc.desc test task ui
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test task ui
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerMultipleGCTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'taskPoolAsyncRunnerMultipleGCTest0200';

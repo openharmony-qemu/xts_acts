@@ -40,12 +40,15 @@ namespace OHOS {
         };
 
         namespace {
-            /*
-             * @tc.name: OH_GLES_Extension001
-             * @tc.desc: test for OH_GLES_Extension
-             * @tc.type: FUNC
-             */
 
+            /**
+             * @tc.name   OH_GLES_Extension001
+             * @tc.number OH_GLES_Extension001
+             * @tc.desc   OH_GLES_Extension001
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
             HWTEST_F(OH_GLES_ExtensionTest, OH_GLES_Extension001, Function | MediumTest | Level2)
             {
                 EGLDisplay display;
@@ -100,12 +103,15 @@ namespace OHOS {
                 ASSERT_EQ(isHave3, 0);
             }
 
-            /*
-             * @tc.name: OH_GLES_Extension002
-             * @tc.desc: test for OH_GLES_Extension
-             * @tc.type: FUNC
-             */
 
+            /**
+             * @tc.name   OH_GLES_Extension002
+             * @tc.number OH_GLES_Extension002
+             * @tc.desc   OH_GLES_Extension002
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
             HWTEST_F(OH_GLES_ExtensionTest, OH_GLES_Extension002, Function | MediumTest | Level2)
             {
                 EGLDisplay display;
@@ -160,12 +166,15 @@ namespace OHOS {
                 ASSERT_EQ(isHave3, 0);
             }
 
-            /*
-             * @tc.name: OH_GLES_Extension003
-             * @tc.desc: test for OH_GLES_Extension
-             * @tc.type: FUNC
-             */
 
+            /**
+             * @tc.name   OH_GLES_Extension003
+             * @tc.number OH_GLES_Extension003
+             * @tc.desc   OH_GLES_Extension003
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
             HWTEST_F(OH_GLES_ExtensionTest, OH_GLES_Extension003, Function | MediumTest | Level2)
             {
                 EGLDisplay display;
@@ -220,12 +229,15 @@ namespace OHOS {
                 ASSERT_EQ(isHave3, 0);
             }
 
-            /*
-             * @tc.name: OH_GLES_Extension004
-             * @tc.desc: test for OH_GLES_Extension
-             * @tc.type: FUNC
-             */
 
+            /**
+             * @tc.name   OH_GLES_Extension004
+             * @tc.number OH_GLES_Extension004
+             * @tc.desc   OH_GLES_Extension004
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
             HWTEST_F(OH_GLES_ExtensionTest, OH_GLES_Extension004, Function | MediumTest | Level2)
             {
                 EGLDisplay display;
@@ -280,12 +292,15 @@ namespace OHOS {
                 ASSERT_EQ(isHave3, 0);
             }
 
-            /*
-             * @tc.name: OH_GLES_Extension005
-             * @tc.desc: test for OH_GLES_Extension
-             * @tc.type: FUNC
-             */
 
+            /**
+             * @tc.name   OH_GLES_Extension005
+             * @tc.number OH_GLES_Extension005
+             * @tc.desc   OH_GLES_Extension005
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
             HWTEST_F(OH_GLES_ExtensionTest, OH_GLES_Extension005, Function | MediumTest | Level2)
             {
                 EGLDisplay display;

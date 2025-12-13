@@ -43,14 +43,15 @@ export default function listLevel1HorizontalTest() {
       console.info("listLevel1HorizontalTest after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_listLevel1HorizontalTest_0100
-     * @tc.desc      test Horizontal divider endMargin
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   listLevel1HorizontalTest_0100
+     * @tc.number listLevel1HorizontalTest_0100
+     * @tc.desc   listLevel1HorizontalTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('listLevel1HorizontalTest_0100', Level.LEVEL1, async (done:Function) => {
       console.info('[listLevel1HorizontalTest_0100] START');
       try {
@@ -77,14 +78,15 @@ export default function listLevel1HorizontalTest() {
       done()
     });
 
-    /**
-     * @tc.number    SUB_ACE_listLevel1HorizontalTest_0200
-     * @tc.desc      test Horizontal divider strokeWidth
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   listLevel1HorizontalTest_0200
+     * @tc.number listLevel1HorizontalTest_0200
+     * @tc.desc   listLevel1HorizontalTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('listLevel1HorizontalTest_0200', Level.LEVEL1, async (done:Function) => {
       console.info('[listLevel1HorizontalTest_0200] START');
       try {
@@ -111,14 +113,15 @@ export default function listLevel1HorizontalTest() {
       done()
     });
 
-    /**
-     * @tc.number    SUB_ACE_listLevel1HorizontalTest_0300
-     * @tc.desc      test Horizontal divider startMargin
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   listLevel1HorizontalTest_0300
+     * @tc.number listLevel1HorizontalTest_0300
+     * @tc.desc   listLevel1HorizontalTest_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('listLevel1HorizontalTest_0300', Level.LEVEL1, async (done:Function) => {
       console.info('[listLevel1HorizontalTest_0300] START');
       try {
@@ -145,14 +148,15 @@ export default function listLevel1HorizontalTest() {
       done()
     });
 
-    /**
-     * @tc.number    SUB_ACE_listLevel1HorizontalTest_0400
-     * @tc.desc      test Horizontal divider startMargin
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   listLevel1HorizontalTest_0400
+     * @tc.number listLevel1HorizontalTest_0400
+     * @tc.desc   listLevel1HorizontalTest_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('listLevel1HorizontalTest_0400', Level.LEVEL1, async (done:Function) => {
       console.info('[listLevel1HorizontalTest_0400] START');
       try {
@@ -179,14 +183,15 @@ export default function listLevel1HorizontalTest() {
       done()
     });
 
-    /**
-     * @tc.number    SUB_ACE_listLevel1HorizontalTest_0500
-     * @tc.desc      test Horizontal divider startMargin
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   listLevel1HorizontalTest_0500
+     * @tc.number listLevel1HorizontalTest_0500
+     * @tc.desc   listLevel1HorizontalTest_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('listLevel1HorizontalTest_0500', Level.LEVEL1, async (done:Function) => {
       console.info('[listLevel1HorizontalTest_0500] START');
       try {
@@ -213,14 +218,15 @@ export default function listLevel1HorizontalTest() {
       done()
     });
 
-    /**
-     * @tc.number    SUB_ACE_listLevel1HorizontalTest_0600
-     * @tc.desc      test Horizontal divider endMargin
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   listLevel1HorizontalTest_0600
+     * @tc.number listLevel1HorizontalTest_0600
+     * @tc.desc   listLevel1HorizontalTest_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('listLevel1HorizontalTest_0600', Level.LEVEL1, async (done:Function) => {
       console.info('[listLevel1HorizontalTest_0600] START');
       try {
@@ -247,14 +253,15 @@ export default function listLevel1HorizontalTest() {
       done()
     });
 
-    /**
-     * @tc.number    SUB_ACE_listLevel1HorizontalTest_0700
-     * @tc.desc      test Horizontal divider endMargin
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   listLevel1HorizontalTest_0700
+     * @tc.number listLevel1HorizontalTest_0700
+     * @tc.desc   listLevel1HorizontalTest_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('listLevel1HorizontalTest_0700', Level.LEVEL1, async (done:Function) => {
       console.info('[listLevel1HorizontalTest_0700] START');
       try {

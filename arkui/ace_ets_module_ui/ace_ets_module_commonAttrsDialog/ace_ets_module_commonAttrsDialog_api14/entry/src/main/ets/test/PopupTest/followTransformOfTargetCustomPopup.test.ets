@@ -43,12 +43,12 @@ export default function followTransformOfTargetCustomPopup() {
     });
 
     /**
-     * @tc.number    followTransformOfTargetCustomPopup_0010
-     * @tc.name      followTransformOfTargetCustomPopup_0010
-     * @tc.desc      customPopup: followTransformOfTargetCustomPopup: false
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   followTransformOfTargetCustomPopup_0010
+     * @tc.number followTransformOfTargetCustomPopup_0010
+     * @tc.desc   customPopup: followTransformOfTargetCustomPopup: false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('followTransformOfTargetCustomPopup_0010', Level.LEVEL0, async (done: Function) => {
       console.info('followTransformOfTargetCustomPopup_0010 START');
@@ -71,13 +71,13 @@ export default function followTransformOfTargetCustomPopup() {
       done();
     });
 
- /**
-     * @tc.number    followTransformOfTargetCustomPopup_0020
-     * @tc.name      followTransformOfTargetCustomPopup_0020
-     * @tc.desc      customPopup: followTransformOfTargetCustomPopup: true
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   followTransformOfTargetCustomPopup_0020
+     * @tc.number followTransformOfTargetCustomPopup_0020
+     * @tc.desc   customPopup: followTransformOfTargetCustomPopup: true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('followTransformOfTargetCustomPopup_0020', Level.LEVEL0, async (done: Function) => {
       console.info('followTransformOfTargetCustomPopup_0020 START');

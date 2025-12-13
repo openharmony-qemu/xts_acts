@@ -55,12 +55,12 @@ export default function RichEditorParticiple001() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_AI_PARTICIPLE_0050
-     * @tc.name  : SUB_ACE_UI_AI_PARTICIPLE_0050
-     * @tc.desc  : Set the RichEditor graphic mixing to test the RichEditor content Click the result
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   SUB_ACE_UI_AI_PARTICIPLE_0050
+     * @tc.number SUB_ACE_UI_AI_PARTICIPLE_0050
+     * @tc.desc   Set the RichEditor graphic mixing to test the RichEditor content Click the result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_AI_PARTICIPLE_0050',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_AI_PARTICIPLE_0050 START');

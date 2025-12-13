@@ -72,12 +72,12 @@ export default function MediaAssetChangeRequestDeleteAssetsTest() {
     });
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_001
-     * @tc.name      : MediaAssetChangeRequest_deleteAssets_promise_001
-     * @tc.desc      : deleteAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_deleteAssets_promise_001
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_001
+     * @tc.desc   deleteAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('MediaAssetChangeRequest_deleteAssets_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_deleteAssets_promise_001';
@@ -86,12 +86,12 @@ export default function MediaAssetChangeRequestDeleteAssetsTest() {
     })*/
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_002
-     * @tc.name      : MediaAssetChangeRequest_deleteAssets_promise_002
-     * @tc.desc      : deleteAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_deleteAssets_promise_002
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_002
+     * @tc.desc   deleteAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('MediaAssetChangeRequest_deleteAssets_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_deleteAssets_promise_002';

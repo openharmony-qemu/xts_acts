@@ -55,6 +55,14 @@ export default function StorageProp20Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StorageProp20Jsunit_0100
+     * @tc.number StorageProp20Jsunit_0100
+     * @tc.desc   StorageProp20Jsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageProp20Jsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[StorageProp20Jsunit_0100] START');
       let strJson1 = getInspectorByKey('text_state');
@@ -65,6 +73,14 @@ export default function StorageProp20Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StorageProp20Jsunit_0200
+     * @tc.number StorageProp20Jsunit_0200
+     * @tc.desc   StorageProp20Jsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageProp20Jsunit_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[StorageProp20Jsunit_0200] START');
       let strJson1 = getInspectorByKey('text_Link');
@@ -75,6 +91,14 @@ export default function StorageProp20Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StorageProp20Jsunit_0300
+     * @tc.number StorageProp20Jsunit_0300
+     * @tc.desc   StorageProp20Jsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageProp20Jsunit_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[StorageProp20Jsunit_0300] START');
       let strJson1 = getInspectorByKey('text_Prop');
@@ -85,6 +109,14 @@ export default function StorageProp20Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StorageProp20Jsunit_0400
+     * @tc.number StorageProp20Jsunit_0400
+     * @tc.desc   StorageProp20Jsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageProp20Jsunit_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[StorageProp20Jsunit_0400] START');
       let strJson1 = getInspectorByKey('text_Provide');

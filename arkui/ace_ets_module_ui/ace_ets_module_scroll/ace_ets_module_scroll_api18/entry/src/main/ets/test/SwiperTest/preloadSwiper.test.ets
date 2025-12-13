@@ -43,12 +43,12 @@ export default function preloadSwiper() {
     });
 
     /**
-     * @tc.number    preloadSwiper_001
-     * @tc.name      preloadSwiper_0100
-     * @tc.desc      Control Swiper to preload specified child nodes.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   preloadSwiper_0100
+     * @tc.number preloadSwiper_001
+     * @tc.desc   Control Swiper to preload specified child nodes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('preloadSwiper_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[preloadSwiper_0100] START');

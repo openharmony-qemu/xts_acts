@@ -72,15 +72,15 @@ export default function ResourceColor() {
             done()
         })
 
-        /*
-         * @tc.number       ResourceColor_0100
-         * @tc.name         ResourceColor_0100
-         * @tc.desic         ResourceColor
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : LEVEL0
-         */
 
+        /**
+         * @tc.name   ResourceColor_0100
+         * @tc.number ResourceColor_0100
+         * @tc.desc   ResourceColor_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it("ResourceColor_0100", Level.LEVEL0, async (done: Function) => {
             console.info("ResourceColor_0100 START")
             let strJson = getInspectorByKey("color")
@@ -96,15 +96,15 @@ export default function ResourceColor() {
             console.info("[ResourceColor_0100] END")
             done()
         })
-        /*
-         * @tc.number       ResourceColor_0200
-         * @tc.name         ResourceColor_0200
-         * @tc.desic         ResourceColor
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : LEVEL0
-         */
 
+        /**
+         * @tc.name   ResourceColor_0200
+         * @tc.number ResourceColor_0200
+         * @tc.desc   ResourceColor_0200
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it("ResourceColor_0200", Level.LEVEL0, async (done: Function) => {
             console.info("ResourceColor_0200 START")
             let driver = Driver.create()

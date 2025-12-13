@@ -47,12 +47,12 @@ export default function textContentAlignTest() {
     });
 
     /**
-     * @tc.number    textContentAlignTest_0010
-     * @tc.name      textContentAlignTest_0010
-     * @tc.desc      test the attr of Text: textContentAlign(TextContentAlign.TOP)
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   textContentAlignTest_0010
+     * @tc.number textContentAlignTest_0010
+     * @tc.desc   test the attr of Text: textContentAlign(TextContentAlign.TOP)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textContentAlignTest_0010', Level.LEVEL1, async (done: Function) => {
       console.info('[textContentAlignTest_0010] START');
@@ -69,12 +69,12 @@ export default function textContentAlignTest() {
     });
 
     /**
-     * @tc.number    textContentAlignTest_0011
-     * @tc.name      textContentAlignTest_0011
-     * @tc.desc      test the attr of Text: textContentAlign(TextContentAlign.CENTER)
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   textContentAlignTest_0011
+     * @tc.number textContentAlignTest_0011
+     * @tc.desc   test the attr of Text: textContentAlign(TextContentAlign.CENTER)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textContentAlignTest_0011', Level.LEVEL1, async (done: Function) => {
       console.info('[textContentAlignTest_0011] START');
@@ -91,12 +91,12 @@ export default function textContentAlignTest() {
     });
 
     /**
-     * @tc.number    textContentAlignTest_0012
-     * @tc.name      textContentAlignTest_0012
-     * @tc.desc      test the attr of Text: textContentAlign(TextContentAlign.BOTTOM)
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   textContentAlignTest_0012
+     * @tc.number textContentAlignTest_0012
+     * @tc.desc   test the attr of Text: textContentAlign(TextContentAlign.BOTTOM)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textContentAlignTest_0012', Level.LEVEL1, async (done: Function) => {
       console.info('[textContentAlignTest_0012] START');

@@ -58,31 +58,40 @@ describe('DateTimeFormatInIntlTest', function () {
         + ' syslocale: ' + I18n.System.getSystemLocale());
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_0100
-    * @tc.name    format the datetime with en-GB locale
-    * @tc.desc    check the datetime is not null
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_0100
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_0100
+     * @tc.desc   check the datetime is not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('dateTimeFormat_test_0100', Level.LEVEL0, function () {
         let datefmt = new Intl.DateTimeFormat('en-GB');
         expect(datefmt !== null).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_0120
-    * @tc.name    format the datetime with en-GB locale
-    * @tc.desc    check the datetime is not null
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_0120
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_0120
+     * @tc.desc   check the datetime is not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_0120', Level.LEVEL2, function () {
         let datefmt = new Intl.DateTimeFormat();
         expect(datefmt !== null).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_0200
-    * @tc.name    format the date with zh locale
-    * @tc.desc    check the date
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_0200
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_0200
+     * @tc.desc   check the date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_0200', Level.LEVEL2, function () {
         let date = new Date(2021, 11, 17, 3, 24, 0);
         let datefmt = new Intl.DateTimeFormat('zh');
@@ -90,11 +99,14 @@ describe('DateTimeFormatInIntlTest', function () {
         expect(datefmt.format(date)).assertContain('2021');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_0220
-    * @tc.name    format the date with zh locale and undefined options
-    * @tc.desc    check the date
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_0220
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_0220
+     * @tc.desc   check the date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_0220', Level.LEVEL2, function () {
         let date = new Date(2021, 11, 17, 3, 24, 0);
         let datefmt = new Intl.DateTimeFormat('zh', undefined);
@@ -102,11 +114,14 @@ describe('DateTimeFormatInIntlTest', function () {
         expect(datefmt.format(date)).assertContain('2021');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_0240
-    * @tc.name    format the date with zh locale and null options
-    * @tc.desc    check the date
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_0240
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_0240
+     * @tc.desc   check the date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_0240', Level.LEVEL2, function () {
         let date = new Date(2021, 11, 17, 3, 24, 0);
         let datefmt = new Intl.DateTimeFormat('zh', null);
@@ -114,11 +129,14 @@ describe('DateTimeFormatInIntlTest', function () {
         expect(datefmt.format(date)).assertContain('2021');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_0300
-    * @tc.name    format the date with en locale
-    * @tc.desc    check the date
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_0300
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_0300
+     * @tc.desc   check the date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_0300', Level.LEVEL2, function () {
         let date = new Date(2021, 11, 17, 3, 24, 0);
         let datefmt = new Intl.DateTimeFormat('en');
@@ -126,11 +144,14 @@ describe('DateTimeFormatInIntlTest', function () {
         expect(datefmt.format(date)).assertContain('21');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_0310
-    * @tc.name    format the date with en-US locale
-    * @tc.desc    check the date
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_0310
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_0310
+     * @tc.desc   check the date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_0310', Level.LEVEL2, function () {
         let date = new Date(2021, 11, 17, 3, 24, 0);
         let datefmt = new Intl.DateTimeFormat('en-US');
@@ -138,11 +159,14 @@ describe('DateTimeFormatInIntlTest', function () {
         expect(datefmt.format(date)).assertContain('21');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_0320
-    * @tc.name    format the date with en-GB locale
-    * @tc.desc    check the date
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_0320
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_0320
+     * @tc.desc   check the date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_0320', Level.LEVEL2, function () {
         let date = new Date(2021, 11, 17, 3, 24, 0);
         let datefmt = new Intl.DateTimeFormat('en-GB');
@@ -150,11 +174,14 @@ describe('DateTimeFormatInIntlTest', function () {
         expect(datefmt.format(date)).assertContain('2021');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_0400
-    * @tc.name    format the date with aa locale
-    * @tc.desc    check the date
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_0400
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_0400
+     * @tc.desc   check the date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_0400', Level.LEVEL2, function () {
         let date = new Date(2021, 11, 17, 3, 24, 0);
         let datefmt = new Intl.DateTimeFormat('aa');
@@ -163,11 +190,14 @@ describe('DateTimeFormatInIntlTest', function () {
         expect(value).assertInstanceOf('String');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_0500
-    * @tc.name    format the hour with ban and zh locale
-    * @tc.desc    check the hour with ban and zh locale
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_0500
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_0500
+     * @tc.desc   check the hour with ban and zh locale
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_0500', Level.LEVEL2, function () {
         let date = new Date(2020, 11, 20, 14, 23, 16);
         let option = { dateStyle: 'full' };
@@ -176,11 +206,14 @@ describe('DateTimeFormatInIntlTest', function () {
         expect(datefmt.format(date)).assertEqual('2020年12月20日星期日');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_0600
-    * @tc.name    format the hour with en and zh locale
-    * @tc.desc    check the hour with en and zh locale
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_0600
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_0600
+     * @tc.desc   check the hour with en and zh locale
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_0600', Level.LEVEL2, function () {
         let date = new Date(2020, 11, 20, 14, 23, 16);
         let option = { dateStyle: 'full' };
@@ -189,11 +222,14 @@ describe('DateTimeFormatInIntlTest', function () {
         expect(datefmt.format(date)).assertEqual('Sunday, December 20, 2020');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_0700
-    * @tc.name    format the hour with en and ban locale
-    * @tc.desc    check the hour with en and ban locale
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_0700
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_0700
+     * @tc.desc   check the hour with en and ban locale
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_0700', Level.LEVEL2, function () {
         let date = new Date(2020, 11, 20, 14, 23, 16);
         let option = { dateStyle: 'full' };
@@ -202,11 +238,14 @@ describe('DateTimeFormatInIntlTest', function () {
         expect(datefmt.format(date)).assertEqual('Sunday, December 20, 2020');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_0800
-    * @tc.name    format the hour without correct locale
-    * @tc.desc    check the hour without correct locale
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_0800
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_0800
+     * @tc.desc   check the hour without correct locale
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_0800', Level.LEVEL2, function () {
         let date = new Date(2020, 11, 20, 14, 23, 16);
         let option = { dateStyle: 'full' };
@@ -215,11 +254,14 @@ describe('DateTimeFormatInIntlTest', function () {
         expect(datefmt.format(date)).assertContain('2020');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_0900
-    * @tc.name    format the date with full datestyle and mediu timestyle
-    * @tc.desc    check the date with full datestyle and mediu timestyle
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_0900
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_0900
+     * @tc.desc   check the date with full datestyle and mediu timestyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_0900', Level.LEVEL2, function () {
         let date = new Date(2020, 11, 20, 14, 23, 16);
         let option = { dateStyle: 'full', timeStyle: 'full' };
@@ -228,11 +270,14 @@ describe('DateTimeFormatInIntlTest', function () {
         expect(datefmt.format(date)).assertContain('2020年12月20日星期日');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_1000
-    * @tc.name    format the date dateStyle with long style
-    * @tc.desc    check the dateStyle with long style
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_1000
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_1000
+     * @tc.desc   check the dateStyle with long style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_1000', Level.LEVEL2, function () {
         let date = new Date(2020, 11, 20, 14, 23, 16);
         let option = { dateStyle: 'long', timeStyle: 'long' };
@@ -242,11 +287,14 @@ describe('DateTimeFormatInIntlTest', function () {
         expect(datefmt.format(date)).assertContain('2020年12月20日');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_1100
-    * @tc.name    format the date dateStyle with medium style
-    * @tc.desc    check the dateStyle with medium style
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_1100
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_1100
+     * @tc.desc   check the dateStyle with medium style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_1100', Level.LEVEL2, function () {
         let date = new Date(2020, 11, 20, 14, 23, 16);
         let option = { dateStyle: 'medium', timeStyle: 'medium' };
@@ -256,11 +304,14 @@ describe('DateTimeFormatInIntlTest', function () {
         expect(datefmt.format(date)).assertContain('2020年12月20日');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_1200
-    * @tc.name    format the date dateStyle with short style
-    * @tc.desc    check the dateStyle with short style
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_1200
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_1200
+     * @tc.desc   check the dateStyle with short style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_1200', Level.LEVEL2, function () {
         let date = new Date(2020, 11, 20, 14, 23, 16);
         let option = { dateStyle: 'short', timeStyle: 'short' };
@@ -270,11 +321,14 @@ describe('DateTimeFormatInIntlTest', function () {
         expect(datefmt.format(date)).assertContain('2020/12/20');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_1300
-    * @tc.name    format the date with daterange
-    * @tc.desc    check the daterange
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_1300
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_1300
+     * @tc.desc   check the daterange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_1300', Level.LEVEL2, function () {
         let startdate = new Date(2020, 11, 20, 14, 23, 16);
         let enddate = new Date(2020, 11, 21, 14, 23, 16);
@@ -282,14 +336,17 @@ describe('DateTimeFormatInIntlTest', function () {
             dateStyle: 'full'
         });
         console.log('dateTimeFormat_test_1300 ' + datefmt.formatRange(startdate, enddate));
-        expect(datefmt.formatRange(startdate, enddate)).assertEqual('Sunday, 20 – Monday, 21 December 2020');
+        expect(datefmt.formatRange(startdate, enddate)).assertEqual('Sunday 20 December – Monday 21 December 2020');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_1400
-    * @tc.name    format the date with daterange when the start and end date is equal
-    * @tc.desc    check the daterange when the start and end date is equal.
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_1400
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_1400
+     * @tc.desc   check the daterange when the start and end date is equal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_1400', Level.LEVEL2, function () {
         let startdate = new Date(2020, 11, 20, 14, 23, 16);
         let enddate = new Date(2020, 11, 20, 14, 23, 16);
@@ -297,14 +354,17 @@ describe('DateTimeFormatInIntlTest', function () {
             dateStyle: 'full'
         });
         console.log('dateTimeFormat_test_1400 ' + datefmt.formatRange(startdate, enddate));
-        expect(datefmt.formatRange(startdate, enddate)).assertEqual('Sunday, 20 December 2020');
+        expect(datefmt.formatRange(startdate, enddate)).assertEqual('Sunday 20 December 2020');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_1500
-    * @tc.name    format the year、month、day、weekday
-    * @tc.desc    check the year、month、day、weekday
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_1500
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_1500
+     * @tc.desc   check the year、month、day、weekday
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_1500', Level.LEVEL2, function () {
         let date = new Date(2020, 11, 20, 14, 23, 16);
         let option = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
@@ -313,25 +373,31 @@ describe('DateTimeFormatInIntlTest', function () {
         expect(datefmt.format(date)).assertEqual('2020年12月20日日曜日');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_1600
-    * @tc.name    format the timerange with year、month、day、weekday
-    * @tc.desc    check the timerange with year、month、day、weekday
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_1600
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_1600
+     * @tc.desc   check the timerange with year、month、day、weekday
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_1600', Level.LEVEL2, function () {
         let startdate = new Date(2020, 11, 20, 14, 23, 16);
         let enddate = new Date(2021, 4, 5, 10, 5, 3);
         let option = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
         let datefmt = new Intl.DateTimeFormat('en', option);
         console.log('dateTimeFormat_test_1600 ' + datefmt.formatRange(startdate, enddate));
-        expect(datefmt.formatRange(startdate, enddate)).assertEqual('Sunday, December 20, 2020 – Wednesday, May 5, 2021');
+        expect(datefmt.formatRange(startdate, enddate)).assertEqual('Sunday, December 20, 2020 – Wednesday, May 5, 2021');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_1700
-    * @tc.name    format the hour&minute&second
-    * @tc.desc    check the hour&minute&second
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_1700
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_1700
+     * @tc.desc   check the hour&minute&second
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_1700', Level.LEVEL2, function () {
         let date = new Date(2020, 11, 20, 14, 23, 16);
         let option = { year: 'numeric', month: 'long', day: 'numeric',
@@ -341,11 +407,14 @@ describe('DateTimeFormatInIntlTest', function () {
         expect(datefmt.format(date)).assertContain('公元2020年12月20日星期日');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_1800
-    * @tc.name    format the timeZone
-    * @tc.desc    check the timeZone
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_1800
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_1800
+     * @tc.desc   check the timeZone
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_1800', Level.LEVEL2, function () {
         let date = new Date(2020, 3, 14, 15, 5, 3);
         let option = { timeZone: 'America/Los_Angeles', timeZoneName: 'long' };
@@ -354,11 +423,14 @@ describe('DateTimeFormatInIntlTest', function () {
         expect(datefmt.format(date).indexOf('北美太平洋夏令时间') !== -1).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_1900
-    * @tc.name    format the America/Los_Angeles timeZone
-    * @tc.desc    check the America/Los_Angeles timeZone
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_1900
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_1900
+     * @tc.desc   check the America/Los_Angeles timeZone
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_1900', Level.LEVEL2, function () {
         let option = { timeZone: 'America/Los_Angeles', timeZoneName: 'long' };
         let datefmt = new Intl.DateTimeFormat('zh-CN-u-hc-h12', option);
@@ -366,11 +438,14 @@ describe('DateTimeFormatInIntlTest', function () {
         expect(datefmt.resolvedOptions().timeZone).assertEqual('America/Los_Angeles');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_2000
-    * @tc.name    format the America/Los_Angeles timeZoneName
-    * @tc.desc    check the America/Los_Angeles timeZoneName
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_2000
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_2000
+     * @tc.desc   check the America/Los_Angeles timeZoneName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_2000', Level.LEVEL2, function () {
         let option = { timeZone: 'America/Los_Angeles', timeZoneName: 'long' };
         let datefmt = new Intl.DateTimeFormat('zh-CN-u-hc-h12', option);
@@ -378,11 +453,14 @@ describe('DateTimeFormatInIntlTest', function () {
         expect(datefmt.resolvedOptions().timeZoneName).assertEqual('long');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_2100
-    * @tc.name    format the year
-    * @tc.desc    check the year
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_2100
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_2100
+     * @tc.desc   check the year
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_2100', Level.LEVEL2, function () {
         let option = { year: 'numeric', month: 'long', day: 'numeric',
             hour: 'numeric', minute: '2-digit', second: 'numeric', weekday: 'long', era: 'short' };
@@ -391,11 +469,14 @@ describe('DateTimeFormatInIntlTest', function () {
         expect(datefmt.resolvedOptions().year).assertEqual('numeric');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_2200
-    * @tc.name    format the weekday
-    * @tc.desc    check the weekday
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_2200
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_2200
+     * @tc.desc   check the weekday
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_2200', Level.LEVEL2, function () {
         let option = { year: 'numeric', month: 'long', day: 'numeric',
             hour: 'numeric', minute: '2-digit', second: 'numeric', weekday: 'long', era: 'short' };
@@ -404,11 +485,14 @@ describe('DateTimeFormatInIntlTest', function () {
         expect(datefmt.resolvedOptions().weekday).assertEqual('long');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_2300
-    * @tc.name    format the hour in zh-CN-u-hc-h12
-    * @tc.desc    check the hour in zh-CN-u-hc-h12
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_2300
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_2300
+     * @tc.desc   check the hour in zh-CN-u-hc-h12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_2300', Level.LEVEL2, function () {
         let option = { year: 'numeric', month: 'long', day: 'numeric',
             hour: 'numeric', minute: '2-digit', second: 'numeric', weekday: 'long', era: 'short' };
@@ -417,11 +501,14 @@ describe('DateTimeFormatInIntlTest', function () {
         expect(datefmt.resolvedOptions().hour).assertEqual('numeric');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_2400
-    * @tc.name    format the hour in fr-Latn-FR-u-nu-mong
-    * @tc.desc    check the hour in fr-Latn-FR-u-nu-mong
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_2400
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_2400
+     * @tc.desc   check the hour in fr-Latn-FR-u-nu-mong
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_2400', Level.LEVEL2, function () {
         let date = new Date(2020, 11, 20, 14, 23, 16);
         let option = { dateStyle: 'full' };
@@ -430,11 +517,14 @@ describe('DateTimeFormatInIntlTest', function () {
         expect(datefmt.format(date)).assertEqual('dimanche ᠒᠐ décembre ᠒᠐᠒᠐');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_DATETIME_2500
-    * @tc.name    format the hour in zh-CN-u-hc-h12 with matcher
-    * @tc.desc    check the hour in zh-CN-u-hc-h12 with matcher
-    */
+    /**
+     * @tc.name   dateTimeFormat_test_2500
+     * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_2500
+     * @tc.desc   check the hour in zh-CN-u-hc-h12 with matcher
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dateTimeFormat_test_2500', Level.LEVEL2, function () {
         let option = { year: 'numeric', month: 'long', day: 'numeric',
             hour: 'numeric', minute: '2-digit', second: 'numeric', weekday: 'long', era: 'short',

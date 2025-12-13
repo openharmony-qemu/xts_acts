@@ -361,12 +361,12 @@ export default function CameraSessionControlCenterTest() {
   describe('CameraSessionControlCenterTest', () => {
 
     /**
-     * @tc.number    : CONTROL_CENTER_001
-     * @tc.name      : isControlCenterSupported_video_001
-     * @tc.desc      : isControlCenterSupported_normal
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isControlCenterSupported_video_001
+     * @tc.number CONTROL_CENTER_001
+     * @tc.desc   isControlCenterSupported_normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isControlCenterSupported_video_001', Level.LEVEL0, (done: Function) => {
       const testName = 'isControlCenterSupported_video_001';
@@ -380,12 +380,12 @@ export default function CameraSessionControlCenterTest() {
     })
 
     /**
-     * @tc.number    : CONTROL_CENTER_002
-     * @tc.name      : isControlCenterSupported_video_002
-     * @tc.desc      : isControlCenterSupported_abnormal
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isControlCenterSupported_video_002
+     * @tc.number CONTROL_CENTER_002
+     * @tc.desc   isControlCenterSupported_abnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isControlCenterSupported_video_002', Level.LEVEL0, (done: Function) => {
       const testName = 'isControlCenterSupported_video_002';
@@ -399,12 +399,12 @@ export default function CameraSessionControlCenterTest() {
     })
 
     /**
-     * @tc.number    : CONTROL_CENTER_003
-     * @tc.name      : isControlCenterSupported_video_abnormal_003
-     * @tc.desc      : enableControlCenter
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isControlCenterSupported_video_abnormal_003
+     * @tc.number CONTROL_CENTER_003
+     * @tc.desc   enableControlCenter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isControlCenterSupported_video_abnormal_003', Level.LEVEL0, (done: Function) => {
       const testName = 'isControlCenterSupported_video_abnormal_003';

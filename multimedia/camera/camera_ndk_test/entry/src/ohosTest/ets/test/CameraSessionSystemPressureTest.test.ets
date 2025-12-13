@@ -259,12 +259,12 @@ function getCameraManagerInstance() {
     });
  
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OHSessionRegisterSystemPressureLevelTest100
-     * @tc.name      : testOHSessionRegisterSystempressureLevelTest100
-     * @tc.desc      : Checks if register systemPressureLevel successful.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHSessionRegisterSystempressureLevelTest100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OHSessionRegisterSystemPressureLevelTest100
+     * @tc.desc   Checks if register systemPressureLevel successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionRegisterSystempressureLevelTest100', Level.LEVEL2, async () => {
         console.info("--------------testOHSessionRegisterSystempressureLevelTest100--------------");
@@ -275,12 +275,12 @@ function getCameraManagerInstance() {
     })
  
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OHSessionRegisterSystemPressureLevelTest200
-     * @tc.name      : testOHSessionRegisterSystempressureLevelTest200
-     * @tc.desc      : Checks if register systemPressureLevel successful.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHSessionRegisterSystempressureLevelTest200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OHSessionRegisterSystemPressureLevelTest200
+     * @tc.desc   Checks if register systemPressureLevel successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionRegisterSystempressureLevelTest200', Level.LEVEL2, async () => {
         console.info("--------------testOHSessionRegisterSystempressureLevelTest200--------------");
@@ -291,12 +291,12 @@ function getCameraManagerInstance() {
     })
  
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OHSessionRegisterSystemPressureLevelTest300
-     * @tc.name      : testOHSessionRegisterSystempressureLevelTest300
-     * @tc.desc      : Checks if register systemPressureLevel successful.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHSessionRegisterSystempressureLevelTest300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OHSessionRegisterSystemPressureLevelTest300
+     * @tc.desc   Checks if register systemPressureLevel successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionRegisterSystempressureLevelTest300', Level.LEVEL2, async () => {
         console.info("--------------testOHSessionRegisterSystempressureLevelTest300--------------");
@@ -307,12 +307,12 @@ function getCameraManagerInstance() {
     })
  
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OHSessionUnregisterSystemPressureLevelTest100
-     * @tc.name      : testOHSessionUnregisterSystempressureLevelTest100
-     * @tc.desc      : Checks if unregister systemPressureLevel successful.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHSessionUnregisterSystempressureLevelTest100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OHSessionUnregisterSystemPressureLevelTest100
+     * @tc.desc   Checks if unregister systemPressureLevel successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionUnregisterSystempressureLevelTest100', Level.LEVEL2, async () => {
         console.info("--------------testOHSessionUnregisterSystempressureLevelTest100--------------");
@@ -323,12 +323,12 @@ function getCameraManagerInstance() {
     })
  
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OHSessionUnregisterSystemPressureLevelTest200
-     * @tc.name      : testOHSessionUnregisterSystempressureLevelTest200
-     * @tc.desc      : Checks if unregister systemPressureLevel successful.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHSessionUnregisterSystempressureLevelTest200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OHSessionUnregisterSystemPressureLevelTest200
+     * @tc.desc   Checks if unregister systemPressureLevel successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionUnregisterSystempressureLevelTest200', Level.LEVEL2, async () => {
         console.info("--------------testOHSessionUnregisterSystempressureLevelTest300--------------");
@@ -339,12 +339,12 @@ function getCameraManagerInstance() {
     })
  
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OHSessionUnregisterSystemPressureLevelTest300
-     * @tc.name      : testOHSessionUnregisterSystempressureLevelTest300
-     * @tc.desc      : Checks if unregister systemPressureLevel successful.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHSessionUnregisterSystempressureLevelTest300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OHSessionUnregisterSystemPressureLevelTest300
+     * @tc.desc   Checks if unregister systemPressureLevel successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionUnregisterSystempressureLevelTest300', Level.LEVEL2, async () => {
         console.info("--------------testOHSessionUnregisterSystempressureLevelTest300--------------");

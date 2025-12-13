@@ -26,39 +26,39 @@ export default function scrollBorderRadiusTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_BORDERRADIUS_0100
-     * @tc.name       : testScrollBorderRadius001
-     * @tc.desc       : testing border radius for scroll
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollBorderRadius001
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_BORDERRADIUS_0100
+     * @tc.desc   testing border radius for scroll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollBorderRadius001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollBorderRadius001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_BORDERRADIUS_0200
-     * @tc.name       : testScrollBorderRadius002
-     * @tc.desc       : testing border radius for scroll with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testScrollBorderRadius002
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_BORDERRADIUS_0200
+     * @tc.desc   testing border radius for scroll with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollBorderRadius002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollBorderRadius002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_BORDERRADIUS_0300
-     * @tc.name       : testScrollBorderRadius003
-     * @tc.desc       : testing border radius for scroll with all param
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollBorderRadius003
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_BORDERRADIUS_0300
+     * @tc.desc   testing border radius for scroll with all param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollBorderRadius003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollBorderRadius003()).assertEqual(0)

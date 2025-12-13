@@ -45,10 +45,13 @@ export default function videoOnFullscreenChangeJsunit() {
       console.info("videoOnFullscreenChange after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testvideoOnFullscreenChange0001
-     * @tc.desic         acevideoOnFullscreenChangeEtsTest0001
+    /**
+     * @tc.name   testvideoOnFullscreenChange0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testvideoOnFullscreenChange0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testvideoOnFullscreenChange0001', Level.LEVEL0, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0001 START');
@@ -62,10 +65,13 @@ export default function videoOnFullscreenChangeJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testvideoOnFullscreenChange0002
-     * @tc.desic         acevideoOnFullscreenChangeEtsTest0002
+    /**
+     * @tc.name   testvideoOnFullscreenChange0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testvideoOnFullscreenChange0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testvideoOnFullscreenChange0002', Level.LEVEL0, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0002 START');
@@ -79,10 +85,13 @@ export default function videoOnFullscreenChangeJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name         testvideoOnFullscreenChange0003
-     * @tc.desic         acevideoOnFullscreenChangeEtsTest0003
+    /**
+     * @tc.name   testvideoOnFullscreenChange0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   testvideoOnFullscreenChange0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testvideoOnFullscreenChange0003', Level.LEVEL0, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0003 START');
@@ -96,10 +105,13 @@ export default function videoOnFullscreenChangeJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-     * @tc.name         testvideoOnFullscreenChange0004
-     * @tc.desic         acevideoOnFullscreenChangeEtsTest0004
+    /**
+     * @tc.name   testvideoOnFullscreenChange0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_0004
+     * @tc.desc   testvideoOnFullscreenChange0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testvideoOnFullscreenChange0004', Level.LEVEL0, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0004 START');
@@ -113,10 +125,13 @@ export default function videoOnFullscreenChangeJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0005
-     * @tc.name         testvideoOnFullscreenChange0005
-     * @tc.desic         acevideoOnFullscreenChangeEtsTest0005
+    /**
+     * @tc.name   testvideoOnFullscreenChange0005
+     * @tc.number SUB_ACE_BASIC_ETS_API_0005
+     * @tc.desc   testvideoOnFullscreenChange0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testvideoOnFullscreenChange0005', Level.LEVEL0, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0005 START');
@@ -130,10 +145,13 @@ export default function videoOnFullscreenChangeJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0006
-     * @tc.name         testvideoOnFullscreenChange0006
-     * @tc.desic         acevideoOnFullscreenChangeEtsTest0006
+    /**
+     * @tc.name   testvideoOnFullscreenChange0006
+     * @tc.number SUB_ACE_BASIC_ETS_API_0006
+     * @tc.desc   testvideoOnFullscreenChange0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testvideoOnFullscreenChange0006', Level.LEVEL0, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0006 START');
@@ -147,10 +165,13 @@ export default function videoOnFullscreenChangeJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0007
-     * @tc.name         testvideoOnFullscreenChange0007
-     * @tc.desic         acevideoOnFullscreenChangeEtsTest0007
+    /**
+     * @tc.name   testvideoOnFullscreenChange0007
+     * @tc.number SUB_ACE_BASIC_ETS_API_0007
+     * @tc.desc   testvideoOnFullscreenChange0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testvideoOnFullscreenChange0007', Level.LEVEL0, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0007 START');
@@ -164,10 +185,13 @@ export default function videoOnFullscreenChangeJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0009
-     * @tc.name         testvideoOnFullscreenChange0009
-     * @tc.desic         acevideoOnFullscreenChangeEtsTest0009
+    /**
+     * @tc.name   testvideoOnFullscreenChange0009
+     * @tc.number SUB_ACE_BASIC_ETS_API_0009
+     * @tc.desc   testvideoOnFullscreenChange0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testvideoOnFullscreenChange0009', Level.LEVEL0, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange009 START');
@@ -181,10 +205,13 @@ export default function videoOnFullscreenChangeJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0010
-     * @tc.name         testvideoOnFullscreenChange0010
-     * @tc.desic         acevideoOnFullscreenChangeEtsTest0010
+    /**
+     * @tc.name   testvideoOnFullscreenChange0010
+     * @tc.number SUB_ACE_BASIC_ETS_API_0010
+     * @tc.desc   testvideoOnFullscreenChange0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testvideoOnFullscreenChange0010', Level.LEVEL0, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0010 START');
@@ -198,6 +225,14 @@ export default function videoOnFullscreenChangeJsunit() {
 
     });
 
+    /**
+     * @tc.name   testvideoOnFullscreenChange0011
+     * @tc.number testvideoOnFullscreenChange0011
+     * @tc.desc   testvideoOnFullscreenChange0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testvideoOnFullscreenChange0011', Level.LEVEL0, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0011 START');
       let innerEvent: events_emitter.InnerEvent = {

@@ -41,12 +41,12 @@ export default function bindSheetTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_STATUSMANAGER_$$CAPABILITY_0250
-     * @tc.name      bindSheetTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 1
-     * @tc.type :    FUNC
-     * @tc.size :    MEDIUM
+     * @tc.name   bindSheetTest_0100
+     * @tc.number SUB_ACE_STATUSMANAGER_$$CAPABILITY_0250
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('bindSheetTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('bindSheetTest_0100 START');
@@ -66,12 +66,12 @@ export default function bindSheetTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_STATUSMANAGER_$$CAPABILITY_0250
-     * @tc.name      bindSheetTest_0200
-     * @tc.desc      api
-     * @tc.level:    Level 1
-     * @tc.type :    FUNC
-     * @tc.size :    MEDIUM
+     * @tc.name   bindSheetTest_0200
+     * @tc.number SUB_ACE_STATUSMANAGER_$$CAPABILITY_0250
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('bindSheetTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('bindSheetTest_0200 START');

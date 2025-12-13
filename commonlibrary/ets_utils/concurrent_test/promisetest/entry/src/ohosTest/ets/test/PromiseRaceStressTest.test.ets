@@ -47,12 +47,12 @@ export default function PromiseRaceStressTest() {
     })
 
     /**
+     * @tc.name   PromiseRaceStressTest4600
      * @tc.number SUB_PROMISE_RACE_STRESS_TEST_4600
-     * @tc.name PromiseRaceStressTest4600
-     * @tc.desc Test Promise.race with 1000 promises where the first one resolves immediately and the rest reject with delay
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race with 1000 promises where the first one resolves immediately and the rest reject with delay
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceStressTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceStressTest4600';
@@ -119,12 +119,12 @@ export default function PromiseRaceStressTest() {
     });
 
     /**
+     * @tc.name   PromiseRaceStressTest4700
      * @tc.number SUB_PROMISE_RACE_STRESS_TEST_4700
-     * @tc.name PromiseRaceStressTest4700
-     * @tc.desc Test Promise.race with 1000 promises where all promises resolve with different delays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race with 1000 promises where all promises resolve with different delays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceStressTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceStressTest4700';
@@ -178,12 +178,12 @@ export default function PromiseRaceStressTest() {
     });
 
     /**
+     * @tc.name   PromiseRaceStressTest4800
      * @tc.number SUB_PROMISE_RACE_STRESS_TEST_4800
-     * @tc.name PromiseRaceStressTest4800
-     * @tc.desc Test Promise.race with 1000 promises where all promises reject with different delays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race with 1000 promises where all promises reject with different delays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceStressTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceStressTest4800';

@@ -45,12 +45,12 @@ export default function ArraylistTest1() {
       await Utils.msSleep(10)
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_0100
-     * @tc.name       : testArray0001
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_0100
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
@@ -64,12 +64,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_0200
-     * @tc.name       : testArray0002
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_0200
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String> = new ArrayList<String>();
@@ -79,12 +79,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_0300
-     * @tc.name       : testArray0003
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_0300
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<Number> = new ArrayList<Number>();
@@ -94,12 +94,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_0400
-     * @tc.name       : testArray0004
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_0400
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<Object> = new ArrayList<Object>();
@@ -112,12 +112,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_0500
-     * @tc.name       : testArray0005
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_0500
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<Array<Number>> = new ArrayList<Array<Number>>();
@@ -128,12 +128,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_0600
-     * @tc.name       : testArray0006
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_0600
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<Boolean> = new ArrayList<Boolean>();
@@ -144,12 +144,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_0700
-     * @tc.name       : testArray0007
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_0700
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -169,12 +169,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_0800
-     * @tc.name       : testArray0008
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_0800
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -188,12 +188,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_0900
-     * @tc.name       : testArray0009
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_0900
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -207,12 +207,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_01000
-     * @tc.name       : testArray0010
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_01000
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -226,12 +226,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_01100
-     * @tc.name       : testArray0011
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_01100
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -251,12 +251,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_01200
-     * @tc.name       : testArray0012
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_01200
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -270,12 +270,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_01300
-     * @tc.name       : testArray0013
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_01300
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -290,12 +290,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_01400
-     * @tc.name       : testArray0014
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_01400
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -318,15 +318,15 @@ export default function ArraylistTest1() {
       }
     });
 
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_01500
-     * @tc.name       : testArray0015
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
 
+    /**
+     * @tc.name   testArray0015
+     * @tc.number testArray0015
+     * @tc.desc   testArray0015
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it("testArray0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let arrayList: ArrayList<Number> = new ArrayList<Number>();
     //   arrayList.add(4);
@@ -349,12 +349,12 @@ export default function ArraylistTest1() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_01600
-     * @tc.name       : testArray0016
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_01600
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<Number> = new ArrayList<Number>();
@@ -374,12 +374,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_01700
-     * @tc.name       : testArray0017
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_01700
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<Number> = new ArrayList<Number>();
@@ -400,12 +400,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_01800
-     * @tc.name       : testArray0018
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_01800
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<Number> = new ArrayList<Number>();
@@ -420,12 +420,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_01900
-     * @tc.name       : testArray0019
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_01900
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<Number> = new ArrayList<Number>();
@@ -442,12 +442,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_02000
-     * @tc.name       : testArray0020
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_02000
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<Number> = new ArrayList<Number>();
@@ -468,12 +468,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_02100
-     * @tc.name       : testArray0021
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_02100
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<Number> = new ArrayList<Number>();
@@ -487,12 +487,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_02200
-     * @tc.name       : testArray0022
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_02200
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number | Array<String | Number>> =
@@ -514,12 +514,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_02300
-     * @tc.name       : testArray0023
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_02300
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -534,12 +534,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_02400
-     * @tc.name       : testArray0024
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_02400
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -554,12 +554,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_02500
-     * @tc.name       : testArray0025
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_02500
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number | Array<String | Number>> =
@@ -585,12 +585,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_02600
-     * @tc.name       : testArray0026
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_02600
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<Number> = new ArrayList<Number>();
@@ -611,12 +611,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_02700
-     * @tc.name       : testArray0027
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_02700
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testArray0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -635,12 +635,12 @@ export default function ArraylistTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_02800
-     * @tc.name       : testArray0028
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_02800
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testArray0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -659,12 +659,12 @@ export default function ArraylistTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_02900
-     * @tc.name       : testArray0029
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_02900
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testArray0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -683,12 +683,12 @@ export default function ArraylistTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_03000
-     * @tc.name       : testArray0030
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_03000
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -703,12 +703,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_03100
-     * @tc.name       : testArray0031
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_03100
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -722,12 +722,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_03200
-     * @tc.name       : testArray0032
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_03200
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -741,12 +741,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_03300
-     * @tc.name       : testArray0033
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_03300
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -760,12 +760,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_03400
-     * @tc.name       : testArray0034
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_03400
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -778,12 +778,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_03500
-     * @tc.name       : testArray0035
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_03500
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -809,12 +809,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_03600
-     * @tc.name       : testArray0036
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_03600
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -835,12 +835,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_03700
-     * @tc.name       : testArray0037
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_03700
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testArray0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -863,12 +863,12 @@ export default function ArraylistTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_03800
-     * @tc.name       : testArray0038
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_03800
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testArray0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -888,12 +888,12 @@ export default function ArraylistTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_03900
-     * @tc.name       : testArray0039
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_03900
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -913,12 +913,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_04000
-     * @tc.name       : testArray0001
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_04000
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -939,12 +939,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_04100
-     * @tc.name       : testArray0041
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_04100
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -965,12 +965,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_04200
-     * @tc.name       : testArray0042
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_04200
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -991,12 +991,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_04300
-     * @tc.name       : testArray0043
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_04300
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -1011,12 +1011,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_04400
-     * @tc.name       : testArray0044
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_04400
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testArray0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -1036,12 +1036,12 @@ export default function ArraylistTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_04500
-     * @tc.name       : testArray0045
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_04500
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -1055,12 +1055,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_4600
-     * @tc.name       : testArray0046
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_4600
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -1071,12 +1071,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_04700
-     * @tc.name       : testArray0047
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_04700
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -1087,12 +1087,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_04800
-     * @tc.name       : testArray0048
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_04800
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -1103,12 +1103,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_04900
-     * @tc.name       : testArray0049
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_04900
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testArray0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -1129,12 +1129,12 @@ export default function ArraylistTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_05000
-     * @tc.name       : testArray0050
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_05000
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testArray0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let arrayList: ArrayList<String> = new ArrayList<String>();
@@ -1155,12 +1155,12 @@ export default function ArraylistTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_05100
-     * @tc.name       : testArray0051
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_05100
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -1183,12 +1183,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_05200
-     * @tc.name       : testArray0052
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_05200
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -1212,12 +1212,12 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_05300
-     * @tc.name       : testArray0053
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0053 
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_05300
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testArray0053 ", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -1232,12 +1232,12 @@ export default function ArraylistTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_05400
-     * @tc.name       : testArray0054
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_05400
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testArray0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -1253,12 +1253,12 @@ export default function ArraylistTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_05500
-     * @tc.name       : testArray0055
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_05500
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testArray0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -1278,12 +1278,12 @@ export default function ArraylistTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_05600
-     * @tc.name       : testArray0056
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_05600
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testArray0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -1300,12 +1300,12 @@ export default function ArraylistTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_05700
-     * @tc.name       : testArray0057
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_05700
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testArray0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -1322,12 +1322,12 @@ export default function ArraylistTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_05800
-     * @tc.name       : testArray0058
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_05800
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testArray0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -1347,12 +1347,12 @@ export default function ArraylistTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_05900
-     * @tc.name       : testArray0059
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_05900
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testArray0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -1367,12 +1367,12 @@ export default function ArraylistTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_06000
-     * @tc.name       : testArray0060
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_06000
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testArray0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -1387,12 +1387,12 @@ export default function ArraylistTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_06100
-     * @tc.name       : testArray0061
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_06100
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testArray0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -1407,12 +1407,12 @@ export default function ArraylistTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_06200
-     * @tc.name       : testArray0062
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_06200
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testArray0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -1427,12 +1427,12 @@ export default function ArraylistTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_06300
-     * @tc.name       : testArray0063
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_06300
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testArray0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -1447,12 +1447,12 @@ export default function ArraylistTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_06400
-     * @tc.name       : testArray0064
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_06400
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testArray0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -1467,12 +1467,12 @@ export default function ArraylistTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_06500
-     * @tc.name       : testArray0065
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_06500
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testArray0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
@@ -1487,12 +1487,12 @@ export default function ArraylistTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_ARRAY_06600
-     * @tc.name       : testArray0066
-     * @tc.desc       : Test the function By ArrayList.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testArray0066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_06600
+     * @tc.desc   Test the function By ArrayList.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArray0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();

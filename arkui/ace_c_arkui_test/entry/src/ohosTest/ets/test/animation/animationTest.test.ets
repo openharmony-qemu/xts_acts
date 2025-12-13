@@ -26,61 +26,61 @@ export default function testAnimationTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_Animation_0100
-     * @tc.name       : testAnimationTest001
-     * @tc.desc       : testing create for Animation with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testAnimationTest001
+     * @tc.number SUB_ARKUI_CAPI_Animation_0100
+     * @tc.desc   testing create for Animation with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAnimationTest001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testAnimation_001()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_Animation_0200
-     * @tc.name       : testAnimationTest002
-     * @tc.desc       : testing create for Animation with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testAnimationTest002
+     * @tc.number SUB_ARKUI_CAPI_Animation_0200
+     * @tc.desc   testing create for Animation with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAnimationTest002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testAnimation_002()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_Animation_0300
-     * @tc.name       : testAnimationTest003
-     * @tc.desc       : testing create for Animation with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testAnimationTest003
+     * @tc.number SUB_ARKUI_CAPI_Animation_0300
+     * @tc.desc   testing create for Animation with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAnimationTest003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testAnimation_003()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_Animation_0400
-     * @tc.name       : testAnimationTest004
-     * @tc.desc       : testing create for Animation with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testAnimationTest004
+     * @tc.number SUB_ARKUI_CAPI_Animation_0400
+     * @tc.desc   testing create for Animation with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAnimationTest004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testAnimation_004()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_Animation_0500
-     * @tc.name       : testAnimationTest005
-     * @tc.desc       : testing create for Animation with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testAnimationTest005
+     * @tc.number SUB_ARKUI_CAPI_Animation_0500
+     * @tc.desc   testing create for Animation with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAnimationTest005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testAnimation_005()).assertEqual(0)

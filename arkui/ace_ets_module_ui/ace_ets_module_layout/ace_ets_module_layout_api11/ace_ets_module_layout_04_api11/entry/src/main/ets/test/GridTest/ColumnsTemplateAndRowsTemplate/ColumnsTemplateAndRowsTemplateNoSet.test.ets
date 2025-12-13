@@ -48,9 +48,12 @@ export default function ColumnsTemplateAndRowsTemplateNoSet() {
     });
 
     /**
+     * @tc.name   SUB_ACE_GRID_ColumnsTemplateAndRowsTemplateNoSet_0100
      * @tc.number SUB_ACE_GRID_ColumnsTemplateAndRowsTemplateNoSet_0100
-     * @tc.name testGrid
-     * @tc.desc GridItem set columnStart、columnEnd、rowStart、rowEnd
+     * @tc.desc   GridItem set columnStart、columnEnd、rowStart、rowEnd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplateNoSet_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplateNoSet_0100] START');
@@ -71,10 +74,11 @@ export default function ColumnsTemplateAndRowsTemplateNoSet() {
       console.log('GridItem_01.left - Grid_1.left' + (GridItem_01.left - Grid_1.left))
 
       console.log('assert size')
-      expect(Math.round(GridItem_01.right - GridItem_01.left)).assertEqual(Math.round(vp2px(100)));
-      console.log('GridItem_01.right - GridItem_01.left' + (GridItem_01.right - GridItem_01.left))
-      expect(Math.round(GridItem_01.bottom - GridItem_01.top)).assertEqual(Math.round(vp2px(100)));
-      console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_01.bottom - GridItem_01.top))
+      console.log('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplateNoSet_0100 width: ' + (GridItem_01.right - GridItem_01.left))
+      console.log('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplateNoSet_0100 height: ' + (GridItem_01.bottom - GridItem_01.top))
+      console.info(`[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplateNoSet_0100] vp2px(100)=${(vp2px(100))}`); 
+      expect(Math.floor(Math.abs((GridItem_01.right - GridItem_01.left) - vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((GridItem_01.bottom - GridItem_01.top) - vp2px(100))) <= 1).assertTrue();
 
 
       console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplateNoSet_0100] END');

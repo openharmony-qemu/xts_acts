@@ -54,12 +54,12 @@ export default function RichEditor005() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_0019
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_0019
-     * @tc.desc  : By using emojis with symbols before and after, the del key can delete the emoji behind the cursor to test RichEditor emojis
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_0019
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_0019
+     * @tc.desc   By using emojis with symbols before and after, the del key can delete the emoji behind the cursor to test RichEditor emojis
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_0019',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_0019 START');
@@ -70,10 +70,10 @@ export default function RichEditor005() {
       await CommonFunc.sleep(1000);
 
       let back = await driver.findComponent(ON.id('back'));
-      back.click();
+      await back.click();
       await CommonFunc.sleep(500);
       let point = await driver.findComponent(ON.id('get_position'));
-      point.click();
+      await point.click();
       await CommonFunc.sleep(1000);
       let text = await driver.findComponent(ON.id('position_text'));
       let beginPosition = await text.getText();
@@ -82,7 +82,7 @@ export default function RichEditor005() {
       await driver.triggerKey(2071);
       await CommonFunc.sleep(500);
 
-      point.click();
+      await point.click();
       await CommonFunc.sleep(1000);
       let endPosition = await text.getText();
 

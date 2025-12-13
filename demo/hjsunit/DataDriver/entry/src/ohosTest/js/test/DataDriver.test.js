@@ -15,9 +15,25 @@
 import {describe, it, expect, Level, Size, TestType} from 'deccjsunit/index'
 
 describe('testSuite01', function () {
+    /**
+     * @tc.name   testSpec01
+     * @tc.number testSpec01
+     * @tc.desc   testSpec01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSpec01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function (data) {
         console.info('testSpec01......' + JSON.stringify(data))
     })
+    /**
+     * @tc.name   testSpec02
+     * @tc.number testSpec02
+     * @tc.desc   testSpec02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSpec02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function (data) {
         console.info('testSpec02......' + JSON.stringify(data))
     })

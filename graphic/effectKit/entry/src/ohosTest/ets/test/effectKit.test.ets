@@ -26,9 +26,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
     console.log('describe effectKitTest start!!!');
 
     /**
+     * @tc.name   createEffect1
      * @tc.number EFFECT_KIT_CREATEEFFECT_JSAPI_001
-     * @tc.name Test createEffect1
-     * @tc.desc Create a FilterChain to add multiple effects to an image.
+     * @tc.desc   Create a FilterChain to add multiple effects to an image.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createEffect1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'createEffect1';
@@ -53,9 +56,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
     })
 
     /**
+     * @tc.name   createEffect2
      * @tc.number EFFECT_KIT_CREATEEFFECT_JSAPI_002
-     * @tc.name Test createEffect2
-     * @tc.desc Create a FilterChain to add multiple effects to an image.
+     * @tc.desc   Create a FilterChain to add multiple effects to an image.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createEffect2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'createEffect2';
@@ -68,9 +74,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
     })
 
     /**
+     * @tc.name   blur1
      * @tc.number EFFECT_KIT_BLUR_JSAPI_001
-     * @tc.name Test blur1
-     * @tc.desc A blur effect is added to the image.
+     * @tc.desc   A blur effect is added to the image.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('blur1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'blur1';
@@ -101,9 +110,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
     })
 
     /**
+     * @tc.name   blur2
      * @tc.number EFFECT_KIT_BLUR_JSAPI_002
-     * @tc.name Test blur2
-     * @tc.desc A blur effect is added to the image.
+     * @tc.desc   A blur effect is added to the image.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('blur2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'blur2';
@@ -134,9 +146,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
     })
 
     /**
+     * @tc.name   blur3
      * @tc.number EFFECT_KIT_BLUR_JSAPI_003
-     * @tc.name Test blur3
-     * @tc.desc A blur effect is added to the image.
+     * @tc.desc   A blur effect is added to the image.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('blur3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'blur3';
@@ -167,9 +182,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
     })
 
     /**
+     * @tc.name   brightness1
      * @tc.number EFFECT_KIT_BRIGHTNESS_JSAPI_001
-     * @tc.name Test brightness1
-     * @tc.desc A Brightness effect is added to the image.
+     * @tc.desc   A Brightness effect is added to the image.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('brightness1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'brightness1';
@@ -200,9 +218,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
     })
 
     /**
+     * @tc.name   brightness2
      * @tc.number EFFECT_KIT_BRIGHTNESS_JSAPI_002
-     * @tc.name Test brightness2
-     * @tc.desc A Brightness effect is added to the image.
+     * @tc.desc   A Brightness effect is added to the image.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('brightness2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'brightness2';
@@ -233,9 +254,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
     })
 
     /**
+     * @tc.name   brightness3
      * @tc.number EFFECT_KIT_BRIGHTNESS_JSAPI_003
-     * @tc.name Test brightness3
-     * @tc.desc A Brightness effect is added to the image.
+     * @tc.desc   A Brightness effect is added to the image.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('brightness3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'brightness3';
@@ -266,9 +290,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
     })
 
     /**
+     * @tc.name   grayscale1
      * @tc.number EFFECT_KIT_GRAYSCALE_JSAPI_001
-     * @tc.name Test grayscale1
-     * @tc.desc A Grayscale effect is added to the image.
+     * @tc.desc   A Grayscale effect is added to the image.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('grayscale1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'grayscale1';
@@ -299,9 +326,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
     })
 
     /**
+     * @tc.name   getPixelMap1
      * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_001
-     * @tc.name Test getPixelMap1
-     * @tc.desc Gets the PixelMap where all filter effects have been added to the image.
+     * @tc.desc   Gets the PixelMap where all filter effects have been added to the image.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getPixelMap1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'getPixelMap1';
@@ -332,9 +362,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
     })
 
     /**
+     * @tc.name   getPixelMap2
      * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_002
-     * @tc.name Test getPixelMap2
-     * @tc.desc Gets the PixelMap where all filter effects have been added to the image.
+     * @tc.desc   Gets the PixelMap where all filter effects have been added to the image.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getPixelMap2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'getPixelMap2';
@@ -365,9 +398,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
     })
 
     /**
+     * @tc.name   getPixelMap3
      * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_003
-     * @tc.name Test getPixelMap3
-     * @tc.desc Gets the PixelMap where all filter effects have been added to the image.
+     * @tc.desc   Gets the PixelMap where all filter effects have been added to the image.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getPixelMap3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'getPixelMap3';
@@ -398,9 +434,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
     })
 
     /**
+     * @tc.name   createColorPicker1
      * @tc.number EFFECT_KIT_CREATECOLORPICKER_JSAPI_001
-     * @tc.name Test createColorPicker
-     * @tc.desc Create a color picker to get the main color.
+     * @tc.desc   Create a color picker to get the main color.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createColorPicker1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'createColorPicker1';
@@ -428,9 +467,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
     })
 
     /**
+     * @tc.name   createColorPicker2
      * @tc.number EFFECT_KIT_CREATECOLORPICKER_JSAPI_002
-     * @tc.name Test createColorPicker
-     * @tc.desc Create a color picker to get the main color.
+     * @tc.desc   Create a color picker to get the main color.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createColorPicker2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'createColorPicker2';
@@ -459,9 +501,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
     })
 
     /**
+     * @tc.name   createColorPicker3
      * @tc.number EFFECT_KIT_CREATECOLORPICKER_JSAPI_003
-     * @tc.name Test createColorPicker
-     * @tc.desc Create a color picker to get the main color.
+     * @tc.desc   Create a color picker to get the main color.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createColorPicker3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'createColorPicker3';
@@ -490,9 +535,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
     })
 
     /**
+     * @tc.name   createColorPicker4
      * @tc.number EFFECT_KIT_CREATECOLORPICKER_JSAPI_004
-     * @tc.name Test createColorPicker
-     * @tc.desc Create a color picker to get the main color.
+     * @tc.desc   Create a color picker to get the main color.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createColorPicker4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'createColorPicker4';
@@ -521,9 +569,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
     })
 
     /**
+     * @tc.name   createColorPicker5
      * @tc.number EFFECT_KIT_CREATECOLORPICKER_JSAPI_005
-     * @tc.name Test createColorPicker
-     * @tc.desc Create a color picker to get the main color.
+     * @tc.desc   Create a color picker to get the main color.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createColorPicker5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'createColorPicker5';
@@ -553,9 +604,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
     })
 
     /**
+     * @tc.name   createColorPicker6
      * @tc.number EFFECT_KIT_CREATECOLORPICKER_JSAPI_006
-     * @tc.name Test createColorPicker
-     * @tc.desc Create a color picker to get the main color.
+     * @tc.desc   Create a color picker to get the main color.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createColorPicker6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'createColorPicker6';
@@ -586,9 +640,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
     })
 
     /**
+     * @tc.name   createColorPicker7
      * @tc.number EFFECT_KIT_CREATECOLORPICKER_JSAPI_007
-     * @tc.name Test createColorPicker
-     * @tc.desc Create a color picker to get the main color.
+     * @tc.desc   Create a color picker to get the main color.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createColorPicker7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'createColorPicker7';
@@ -616,9 +673,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
     })
 
     /**
+     * @tc.name   getMainColor1
      * @tc.number EFFECT_KIT_GETMAINCOLOR_JSAPI_001
-     * @tc.name Test getMainColor
-     * @tc.desc Create a color picker to get the main color.
+     * @tc.desc   Create a color picker to get the main color.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getMainColor1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'getMainColor1';
@@ -653,9 +713,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
     })
 
     /**
+     * @tc.name   getMainColor2
      * @tc.number EFFECT_KIT_GETMAINCOLOR_JSAPI_002
-     * @tc.name Test getMainColor
-     * @tc.desc Create a color picker to get the main color.
+     * @tc.desc   Create a color picker to get the main color.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getMainColor2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'getMainColor2';
@@ -690,9 +753,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
     })
 
     /**
+     * @tc.name   getMainColorSync1
      * @tc.number EFFECT_KIT_GETMAINCOLORSYNC_JSAPI_001
-     * @tc.name Test getMainColorSync
-     * @tc.desc Create a color picker to get the main color.
+     * @tc.desc   Create a color picker to get the main color.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getMainColorSync1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'getMainColorSync1';
@@ -722,9 +788,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
     })
 
     /**
+     * @tc.name   getMainColorSync2
      * @tc.number EFFECT_KIT_GETMAINCOLORSYNC_JSAPI_002
-     * @tc.name Test getMainColorSync
-     * @tc.desc Create a color picker to get the main color.
+     * @tc.desc   Create a color picker to get the main color.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getMainColorSync2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'getMainColorSync2';
@@ -753,9 +822,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       done();
     })
     /**
+     * @tc.name   getLargestProportionColor
      * @tc.number EFFECT_KIT_GETLARGESTPROPORTIONCOLOR_JSAPI_001
-     * @tc.name Test getLargestProportionColor
-     * @tc.desc .
+     * @tc.desc   .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getLargestProportionColor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'getLargestProportionColor';
@@ -803,9 +875,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       })
     })
     /**
+     * @tc.name   getHighestSaturationColor
      * @tc.number EFFECT_KIT_GETHIGHESTSATURATIONCOLOR_JSAPI_001
-     * @tc.name Test getHighestSaturationColor
-     * @tc.desc .
+     * @tc.desc   .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getHighestSaturationColor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'getHighestSaturationColor';
@@ -853,9 +928,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       })
     })
     /**
+     * @tc.name   getAverageColor
      * @tc.number EFFECT_KIT_GETAVERAGECOLOR_JSAPI_001
-     * @tc.name Test getAverageColor
-     * @tc.desc .
+     * @tc.desc   .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAverageColor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'getAverageColor';
@@ -903,9 +981,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       })
     })
     /**
+     * @tc.name   isBlackOrWhiteOrGrayColor
      * @tc.number EFFECT_KIT_ISBLACKORWHITEORGRAYCOLOR_JSAPI_001
-     * @tc.name Test isBlackOrWhiteOrGrayColor
-     * @tc.desc .
+     * @tc.desc   .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isBlackOrWhiteOrGrayColor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'isBlackOrWhiteOrGrayColor';
@@ -957,9 +1038,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       })
     })
     /**
+     * @tc.name   createColorPickerTest001
      * @tc.number EFFECT_KIT_CREATECOLORPICKER_JSAPI_001
-     * @tc.name Test createColorPickerTest001
-     * @tc.desc Create a ColorPicker instance from the passed PixelMap
+     * @tc.desc   Create a ColorPicker instance from the passed PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createColorPickerTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'createColorPickerTest001';
@@ -1007,9 +1091,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       })
     })
     /**
+     * @tc.name   createColorPickerTest002
      * @tc.number EFFECT_KIT_CREATECOLORPICKER_JSAPI_002
-     * @tc.name Test createColorPickerTest002
-     * @tc.desc Create a ColorPicker instance from the passed PixelMap
+     * @tc.desc   Create a ColorPicker instance from the passed PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createColorPickerTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'createColorPickerTest002';
@@ -1057,9 +1144,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       })
     })
     /**
+     * @tc.name   createColorPickerTest003
      * @tc.number EFFECT_KIT_CREATECOLORPICKER_JSAPI_003
-     * @tc.name Test createColorPickerTest003
-     * @tc.desc Create a ColorPicker instance from the passed PixelMap
+     * @tc.desc   Create a ColorPicker instance from the passed PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createColorPickerTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'createColorPickerTest003';
@@ -1107,9 +1197,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       })
     })
     /**
+     * @tc.name   createColorPickerTest004
      * @tc.number EFFECT_KIT_CREATECOLORPICKER_JSAPI_004
-     * @tc.name Test createColorPickerTest004
-     * @tc.desc Create a ColorPicker instance from the passed PixelMap
+     * @tc.desc   Create a ColorPicker instance from the passed PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createColorPickerTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'createColorPickerTest004';
@@ -1149,9 +1242,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       })
     })
     /**
+     * @tc.name   createColorPickerTest005
      * @tc.number EFFECT_KIT_CREATECOLORPICKER_JSAPI_005
-     * @tc.name Test createColorPickerTest005
-     * @tc.desc Create a ColorPicker instance from the passed PixelMap
+     * @tc.desc   Create a ColorPicker instance from the passed PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createColorPickerTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'createColorPickerTest005';
@@ -1191,12 +1287,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       })
     })
     /**
-     * @tc.number    : EFFECT_KIT_GETEFFECTPIXELMAP_JSAPI_0100
-     * @tc.name      : testGetEffectPixelMap_Functin_Promise
-     * @tc.desc      : Gets the getEffectPixelMap where all filter effects have been added to the image.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testGetEffectPixelMap_Functin_Promise
+     * @tc.number EFFECT_KIT_GETEFFECTPIXELMAP_JSAPI_0100
+     * @tc.desc   Gets the getEffectPixelMap where all filter effects have been added to the image.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetEffectPixelMap_Functin_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

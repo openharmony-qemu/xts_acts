@@ -80,9 +80,12 @@ export default function swiperJsunit2() {
     });
 
     /**
+     * @tc.name   swiperTest001
      * @tc.number SUB_ACE_BASIC_ETS_API_0500
-     * @tc.name swiperTest001
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('swiperTest001', Level.LEVEL1, async () => {
       console.info('++++++++++++++++ Swiper TestCase 1 START ++++++++++++++++');

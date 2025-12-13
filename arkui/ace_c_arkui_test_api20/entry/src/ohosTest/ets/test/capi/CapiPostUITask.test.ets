@@ -63,16 +63,18 @@ export default function CapiPostUITask() {
     });
 
     /**
+     * @tc.name   ArkUIPostUITask_001
      * @tc.number ArkUIPostUITask_001
-     * @tc.name ArkUIPostUITask_001
-     * @tc.desc Test ArkUIPostUITask
-     * @tc.level: Level 1
+     * @tc.desc   Test ArkUIPostUITask
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIPostUITask_001', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUIPostUITask_001] START'); 
       await Utils.sleep(3000);
       let driver: Driver = Driver.create();
-      let view = await driver.findComponent(ON.text('测试文本1'));
+      let view = await driver.findComponent(ON.id('text'));
       expect(view != null).assertTrue();
       console.info('[ArkUIPostUITask_001] END');
       done();

@@ -25,12 +25,12 @@ export default function prctlNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_PRCTL_PRCTL_0100
-     * @tc.name       : testMuslPrctlPrctl001
-     * @tc.desc       : test prctl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMuslPrctlPrctl001
+     * @tc.number SUB_THIRDPARTY_MUSL_PRCTL_PRCTL_0100
+     * @tc.desc   test prctl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslPrctlPrctl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = prctl.prctl();

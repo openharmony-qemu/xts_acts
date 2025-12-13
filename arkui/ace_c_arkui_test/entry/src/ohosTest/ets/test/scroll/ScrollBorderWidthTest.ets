@@ -26,39 +26,39 @@ export default function scrollBorderWidthTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_BORDERWIDTH_0100
-     * @tc.name       : testScrollBorderWidth001
-     * @tc.desc       : testing border width for scroll with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollBorderWidth001
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_BORDERWIDTH_0100
+     * @tc.desc   testing border width for scroll with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollBorderWidth001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollBorderWidth001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_BORDERWIDTH_0200
-     * @tc.name       : testScrollBorderWidth002
-     * @tc.desc       : testing border width for scroll with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollBorderWidth002
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_BORDERWIDTH_0200
+     * @tc.desc   testing border width for scroll with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollBorderWidth002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollBorderWidth002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_BORDERWIDTH_0300
-     * @tc.name       : testScrollBorderWidth003
-     * @tc.desc       : testing border width for scroll with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testScrollBorderWidth003
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_BORDERWIDTH_0300
+     * @tc.desc   testing border width for scroll with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollBorderWidth003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollBorderWidth003()).assertEqual(0)

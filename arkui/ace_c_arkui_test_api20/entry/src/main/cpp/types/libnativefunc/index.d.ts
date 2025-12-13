@@ -15,3 +15,10 @@
 export const TestSetForceDarkConfig: () => number;
 
 export const TestInitModuleForArkTSEnv: () => number;
+
+export const AccessibilityProviderCreateTest: () => number;
+export const EmbeddedComponentOptionTest: () => number;
+export const AccessibilityValueCreateTest: () => number;
+export const AccessibilityStateCreateTest: () => number;
+export const CreateAccessibilityEventInfoTest: () => number;
+export const CreateAccessibilityElementInfoTest: () => number;

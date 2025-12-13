@@ -40,12 +40,12 @@ export default function typeNodeBlankTest() {
       done();
     });
     /**
-     * @tc.number    BlankTest_0100
-     * @tc.name      BlankTest_0100
-     * @tc.desc      TypedFrameNode: Blank
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   BlankTest_0100
+     * @tc.number BlankTest_0100
+     * @tc.desc   TypedFrameNode: Blank
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BlankTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('BlankTest_0100 START');

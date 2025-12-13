@@ -29,13 +29,13 @@ export default function lazyForEachGetRemovedNodeTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_GETREMOVENODE_0100
-     * @tc.name       : testLazyForEachGetRemovedNode001
-     * @tc.desc       : testing getRemovedNode for lazyForEach with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachGetRemovedNode001
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_GETREMOVENODE_0100
+     * @tc.desc   testing getRemovedNode for lazyForEach with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachGetRemovedNode001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`lazyforeach/LazyForEachGetRemovedNodeTest`)
@@ -45,13 +45,13 @@ export default function lazyForEachGetRemovedNodeTest() {
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_GETREMOVENODE_0200
-     * @tc.name       : testLazyForEachGetRemovedNode002
-     * @tc.desc       : testing getRemovedNode for lazyForEach with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachGetRemovedNode002
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_GETREMOVENODE_0200
+     * @tc.desc   testing getRemovedNode for lazyForEach with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachGetRemovedNode002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLazyForEachGetRemovedNode002()).assertEqual(0)

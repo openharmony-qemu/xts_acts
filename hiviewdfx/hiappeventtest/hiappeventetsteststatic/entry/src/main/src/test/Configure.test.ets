@@ -25,9 +25,12 @@ export default function configureTest() {
     hilog.info(domain, tag, 'describe start');
 
     /**
+     * @tc.name   testConfigure001
      * @tc.number DFX_HiAppEvent_JSANI_0100
-     * @tc.name testConfigure001
-     * @tc.desc HiAppEvent configure interface with disable option set false.
+     * @tc.desc   HiAppEvent configure interface with disable option set false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConfigure001', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'testConfigure001 start')

@@ -79,12 +79,12 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVManagerCallbackJsApiTest_1100
-     * @tc.desc Test Js Api KVManager.GetKVStore() testcase 001
-     * @tc.type: FUNC
-     * @tc.name SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0100
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @tc.desc   Test Js Api KVManager.GetKVStore() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0100');
@@ -108,12 +108,12 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVManagerCallbackJsApiTest_1200
-     * @tc.desc Test Js Api KVManager.GetKVStore() testcase 002
-     * @tc.type: FUNC
-     * @tc.name SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0200
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @tc.desc   Test Js Api KVManager.GetKVStore() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0200');
@@ -137,12 +137,12 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVManagerCallbackJsApiTest_0600
-     * @tc.desc Test Js Api KVManager.GetKVStore() testcase 003
-     * @tc.type: FUNC
-     * @tc.name SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0300
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @tc.desc   Test Js Api KVManager.GetKVStore() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0300');
@@ -170,12 +170,12 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVManagerCallbackJsApiTest_0700
-     * @tc.desc Test Js Api KVManager.GetKVStore() testcase 004
-     * @tc.type: FUNC
-     * @tc.name SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0400
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @tc.desc   Test Js Api KVManager.GetKVStore() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0400');
@@ -202,12 +202,12 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0500
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVManagerCallbackJsApiTest_0800
-     * @tc.desc Test Js Api KVManager.GetKVStore() testcase 005
-     * @tc.type: FUNC
-     * @tc.name SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0500
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @tc.desc   Test Js Api KVManager.GetKVStore() testcase 005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0500');
@@ -234,12 +234,12 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0600
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVManagerCallbackJsApiTest_0900
-     * @tc.desc Test Js Api KVManager.GetKVStore() testcase 006
-     * @tc.type: FUNC
-     * @tc.name SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0600
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @tc.desc   Test Js Api KVManager.GetKVStore() testcase 006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0600');
@@ -266,12 +266,12 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0700
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVManagerCallbackJsApiTest_1000
-     * @tc.desc Test Js Api KVManager.GetKVStore() testcase 007
-     * @tc.type: FUNC
-     * @tc.name SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0700
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @tc.desc   Test Js Api KVManager.GetKVStore() testcase 007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0700');
@@ -298,12 +298,12 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_KVMANAGER_CLOSEKVSTORE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVManagerCallbackJsApiTest_1400
-     * @tc.desc Test Js Api KVManager.CloseKVStore() testcase 001
-     * @tc.type: FUNC
-     * @tc.name SUB_DDM_DKV_KVMANAGER_CLOSEKVSTORE_0100
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @tc.desc   Test Js Api KVManager.CloseKVStore() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_KVMANAGER_CLOSEKVSTORE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('SUB_DDM_DKV_KVMANAGER_CLOSEKVSTORE_0100');
@@ -326,12 +326,12 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_KVMANAGER_CLOSEKVSTORE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVManagerCallbackJsApiTest_1500
-     * @tc.desc Test Js Api KVManager.CloseKVStore() testcase 002
-     * @tc.type: FUNC
-     * @tc.name SUB_DDM_DKV_KVMANAGER_CLOSEKVSTORE_0200
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @tc.desc   Test Js Api KVManager.CloseKVStore() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_KVMANAGER_CLOSEKVSTORE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('SUB_DDM_DKV_KVMANAGER_CLOSEKVSTORE_0200');
@@ -365,12 +365,12 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_KVMANAGER_CLOSEKVSTORE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVManagerCallbackJsApiTest_1600
-     * @tc.desc Test Js Api KVManager.CloseKVStore() testcase 003
-     * @tc.type: FUNC
-     * @tc.name SUB_DDM_DKV_KVMANAGER_CLOSEKVSTORE_0300
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @tc.desc   Test Js Api KVManager.CloseKVStore() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_KVMANAGER_CLOSEKVSTORE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('SUB_DDM_DKV_KVMANAGER_CLOSEKVSTORE_0300');
@@ -403,12 +403,12 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_KVMANAGER_CLOSEKVSTORE_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVManagerCallbackJsApiTest_1700
-     * @tc.desc Test Js Api KVManager.CloseKVStore() testcase 004
-     * @tc.type: FUNC
-     * @tc.name SUB_DDM_DKV_KVMANAGER_CLOSEKVSTORE_0400
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @tc.desc   Test Js Api KVManager.CloseKVStore() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_KVMANAGER_CLOSEKVSTORE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('SUB_DDM_DKV_KVMANAGER_CLOSEKVSTORE_0400');
@@ -437,12 +437,12 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_KVMANAGER_DLETEKVSTORE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVManagerCallbackJsApiTest_1800
-     * @tc.desc Test Js Api KVManager.DeleteKVStore() testcase 001
-     * @tc.type: FUNC
-     * @tc.name SUB_DDM_DKV_KVMANAGER_DLETEKVSTORE_0100
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @tc.desc   Test Js Api KVManager.DeleteKVStore() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_KVMANAGER_DLETEKVSTORE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('SUB_DDM_DKV_KVMANAGER_DLETEKVSTORE_0100');
@@ -476,12 +476,12 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_KVMANAGER_DLETEKVSTORE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVManagerCallbackJsApiTest_1900
-     * @tc.desc Test Js Api KVManager.DeleteKVStore() testcase 002
-     * @tc.type: FUNC
-     * @tc.name SUB_DDM_DKV_KVMANAGER_DLETEKVSTORE_0200
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @tc.desc   Test Js Api KVManager.DeleteKVStore() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_KVMANAGER_DLETEKVSTORE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('SUB_DDM_DKV_KVMANAGER_DLETEKVSTORE_0200');
@@ -505,12 +505,12 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_KVMANAGER_GETALLKVSTOREID_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVManagerCallbackJsApiTest_1300
-     * @tc.desc Test Js Api KVManager.GetAllKVStoreId() testcase 001
-     * @tc.type: FUNC
-     * @tc.name SUB_DDM_DKV_KVMANAGER_GETALLKVSTOREID_0100
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @tc.desc   Test Js Api KVManager.GetAllKVStoreId() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_KVMANAGER_GETALLKVSTOREID_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('SUB_DDM_DKV_KVMANAGER_GETALLKVSTOREID_0100');
@@ -531,12 +531,12 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_KVMANAGER_PUT_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVManagerCallbackJsApiTest_500
-     * @tc.desc Test Js Api KVStore.Put() testcase 001
-     * @tc.type: FUNC
-     * @tc.name SUB_DDM_DKV_KVMANAGER_PUT_0100
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @tc.desc   Test Js Api KVStore.Put() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_KVMANAGER_PUT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('SUB_DDM_DKV_KVMANAGER_PUT_0100');
@@ -559,12 +559,12 @@ describe('kvManagerCallbackTest', function () {
 
 
     /**
+     * @tc.name   SUB_DDM_DKV_KVMANAGER_CREATEKVMANAGER_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVManagerCallbackJsApiTest_0100
-     * @tc.desc Test Js Api  createKVManager() testcase 001
-     * @tc.type: FUNC
-     * @tc.name SUB_DDM_DKV_KVMANAGER_CREATEKVMANAGER_0100
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @tc.desc   Test Js Api  createKVManager() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_KVMANAGER_CREATEKVMANAGER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('SUB_DDM_DKV_KVMANAGER_CREATEKVMANAGER_0100');
@@ -585,12 +585,12 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_KVMANAGER_CREATEKVMANAGER_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVManagerCallbackJsApiTest_0300
-     * @tc.desc Test Js Api  createKVManager() testcase 002
-     * @tc.type: FUNC
-     * @tc.name SUB_DDM_DKV_KVMANAGER_CREATEKVMANAGER_0200
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @tc.desc   Test Js Api  createKVManager() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_KVMANAGER_CREATEKVMANAGER_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('SUB_DDM_DKV_KVMANAGER_CREATEKVMANAGER_0200');
@@ -612,12 +612,12 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_KVMANAGER_CREATEKVMANAGER_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVManagerCallbackJsApiTest_0400
-     * @tc.desc Test Js Api  createKVManager() testcase 003
-     * @tc.type: FUNC
-     * @tc.name SUB_DDM_DKV_KVMANAGER_CREATEKVMANAGER_0300
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @tc.desc   Test Js Api  createKVManager() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_KVMANAGER_CREATEKVMANAGER_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('SUB_DDM_DKV_KVMANAGER_CREATEKVMANAGER_0300 start ');
@@ -634,12 +634,12 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_KVMANAGER_CREATEKVMANAGER_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVManagerCallbackJsApiTest_0200
-     * @tc.desc Test Js Api  createKVManager() testcase 004
-     * @tc.type: FUNC
-     * @tc.name SUB_DDM_DKV_KVMANAGER_CREATEKVMANAGER_0400
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @tc.desc   Test Js Api  createKVManager() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_KVMANAGER_CREATEKVMANAGER_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('SUB_DDM_DKV_KVMANAGER_CREATEKVMANAGER_0400 start ');

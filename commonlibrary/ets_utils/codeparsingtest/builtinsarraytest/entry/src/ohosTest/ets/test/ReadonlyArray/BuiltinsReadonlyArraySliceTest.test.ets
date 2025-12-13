@@ -41,12 +41,12 @@ export default function builtinsReadonlyArraySliceTest() {
     })
 
     /**
+     * @tc.name   BuiltinsReadonlyArraySliceTest0100
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_0100
-     * @tc.name BuiltinsReadonlyArraySliceTest0100
-     * @tc.desc test Slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BuiltinsReadonlyArraySliceTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: Function) => {
@@ -59,12 +59,12 @@ export default function builtinsReadonlyArraySliceTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArraySliceTest0200
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_0200
-     * @tc.name BuiltinsReadonlyArraySliceTest0200
-     * @tc.desc test Slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArraySliceTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -77,12 +77,12 @@ export default function builtinsReadonlyArraySliceTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArraySliceTest0300
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_0300
-     * @tc.name BuiltinsReadonlyArraySliceTest0300
-     * @tc.desc test Slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArraySliceTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -95,12 +95,12 @@ export default function builtinsReadonlyArraySliceTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArraySliceTest0400
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_0400
-     * @tc.name BuiltinsReadonlyArraySliceTest0400
-     * @tc.desc test Slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArraySliceTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -113,12 +113,12 @@ export default function builtinsReadonlyArraySliceTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArraySliceTest0500
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_0500
-     * @tc.name BuiltinsReadonlyArraySliceTest0500
-     * @tc.desc test Slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArraySliceTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -131,12 +131,12 @@ export default function builtinsReadonlyArraySliceTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArraySliceTest0600
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_0600
-     * @tc.name BuiltinsReadonlyArraySliceTest0600
-     * @tc.desc test Slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArraySliceTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -149,12 +149,12 @@ export default function builtinsReadonlyArraySliceTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArraySliceTest0700
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_0700
-     * @tc.name BuiltinsReadonlyArraySliceTest0700
-     * @tc.desc test Slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArraySliceTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -167,12 +167,12 @@ export default function builtinsReadonlyArraySliceTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArraySliceTest0800
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_0800
-     * @tc.name BuiltinsReadonlyArraySliceTest0800
-     * @tc.desc test Slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArraySliceTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -185,12 +185,12 @@ export default function builtinsReadonlyArraySliceTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArraySliceTest0900
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_0900
-     * @tc.name BuiltinsReadonlyArraySliceTest0900
-     * @tc.desc test Slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArraySliceTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -203,12 +203,12 @@ export default function builtinsReadonlyArraySliceTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArraySliceTest1000
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_1000
-     * @tc.name BuiltinsReadonlyArraySliceTest1000
-     * @tc.desc test Slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArraySliceTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -221,12 +221,12 @@ export default function builtinsReadonlyArraySliceTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArraySliceTest1100
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_1100
-     * @tc.name BuiltinsReadonlyArraySliceTest1100
-     * @tc.desc test Slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArraySliceTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -239,12 +239,12 @@ export default function builtinsReadonlyArraySliceTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArraySliceTest1200
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_1200
-     * @tc.name BuiltinsReadonlyArraySliceTest1200
-     * @tc.desc test Slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArraySliceTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -278,12 +278,12 @@ export default function builtinsReadonlyArraySliceTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArraySliceTest1300
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_1300
-     * @tc.name BuiltinsReadonlyArraySliceTest1300
-     * @tc.desc test Slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArraySliceTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -296,12 +296,12 @@ export default function builtinsReadonlyArraySliceTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArraySliceTest1400
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_1400
-     * @tc.name BuiltinsReadonlyArraySliceTest1400
-     * @tc.desc test Slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArraySliceTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -314,12 +314,12 @@ export default function builtinsReadonlyArraySliceTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArraySliceTest1500
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_1500
-     * @tc.name BuiltinsReadonlyArraySliceTest1500
-     * @tc.desc test Slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArraySliceTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -332,12 +332,12 @@ export default function builtinsReadonlyArraySliceTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArraySliceTest1600
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_1600
-     * @tc.name BuiltinsReadonlyArraySliceTest1600
-     * @tc.desc test Slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArraySliceTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -350,12 +350,12 @@ export default function builtinsReadonlyArraySliceTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArraySliceTest1700
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_1700
-     * @tc.name BuiltinsReadonlyArraySliceTest1700
-     * @tc.desc test Slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArraySliceTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -368,12 +368,12 @@ export default function builtinsReadonlyArraySliceTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArraySliceTest1800
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_1800
-     * @tc.name BuiltinsReadonlyArraySliceTest1800
-     * @tc.desc test Slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArraySliceTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -386,12 +386,12 @@ export default function builtinsReadonlyArraySliceTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArraySliceTest1900
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_1900
-     * @tc.name BuiltinsReadonlyArraySliceTest1900
-     * @tc.desc test Slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArraySliceTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -404,12 +404,12 @@ export default function builtinsReadonlyArraySliceTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArraySliceTest2000
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_2000
-     * @tc.name BuiltinsReadonlyArraySliceTest2000
-     * @tc.desc test Slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArraySliceTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -422,12 +422,12 @@ export default function builtinsReadonlyArraySliceTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArraySliceTest2100
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_2100
-     * @tc.name BuiltinsReadonlyArraySliceTest2100
-     * @tc.desc test Slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArraySliceTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -440,12 +440,12 @@ export default function builtinsReadonlyArraySliceTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArraySliceTest2200
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_2200
-     * @tc.name BuiltinsReadonlyArraySliceTest2200
-     * @tc.desc test Slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArraySliceTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -458,12 +458,12 @@ export default function builtinsReadonlyArraySliceTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArraySliceTest2300
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_2300
-     * @tc.name BuiltinsReadonlyArraySliceTest2300
-     * @tc.desc test Slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArraySliceTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -476,12 +476,12 @@ export default function builtinsReadonlyArraySliceTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArraySliceTest2400
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_2400
-     * @tc.name BuiltinsReadonlyArraySliceTest2400
-     * @tc.desc test Slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArraySliceTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -494,12 +494,12 @@ export default function builtinsReadonlyArraySliceTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArraySliceTest2500
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_2500
-     * @tc.name BuiltinsReadonlyArraySliceTest2500
-     * @tc.desc test Slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArraySliceTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {

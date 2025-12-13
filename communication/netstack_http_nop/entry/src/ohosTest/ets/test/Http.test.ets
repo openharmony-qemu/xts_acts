@@ -54,13 +54,13 @@ export default function httpTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    /*
-     * @tc.number:SUB_Communication_NetStack_Http_RequestInStream_HttpRequestOptions_Promise_100
-     * @tc.name: Http_RequestInStream_HttpRequestOptions_Promise_100
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_Communication_NetStack_Http_RequestInStream_HttpRequestOptions_Promise_100
+     * @tc.number SUB_Communication_NetStack_Http_RequestInStream_HttpRequestOptions_Promise_100
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Communication_NetStack_Http_RequestInStream_HttpRequestOptions_Promise_100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: Function) => {
       hilog.info(0x0000, 'httpTag', '%{public}s', 'SUB_Communication_NetStack_Http_RequestInStream_HttpRequestOptions_Promise_100 begin');
@@ -87,13 +87,13 @@ export default function httpTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_NetStack_Http_RequestInStream_HttpRequestOptions_Callback_200
-     * @tc.name: Http_RequestInStream_HttpRequestOptions_Callback_200
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_Communication_NetStack_Http_RequestInStream_HttpRequestOptions_Callback_200
+     * @tc.number SUB_Communication_NetStack_Http_RequestInStream_HttpRequestOptions_Callback_200
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Communication_NetStack_Http_RequestInStream_HttpRequestOptions_Callback_200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       hilog.info(0x0000, 'httpTag', '%{public}s', 'SUB_Communication_NetStack_Http_RequestInStream_HttpRequestOptions_Callback_200 begin');
@@ -121,13 +121,13 @@ export default function httpTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_NetStack_Http_RequestInStream_Callback_300
-     * @tc.name: Http_RequestInStream_Callback_300
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_Communication_NetStack_Http_RequestInStream_Callback_300
+     * @tc.number SUB_Communication_NetStack_Http_RequestInStream_Callback_300
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Communication_NetStack_Http_RequestInStream_Callback_300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       hilog.info(0x0000, 'httpTag', '%{public}s', 'SUB_Communication_NetStack_Http_RequestInStream_Callback_300 begin');
@@ -150,13 +150,13 @@ export default function httpTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_NetStack_Http_Request_Callback_400
-     * @tc.name: Http_Request_Callback_400
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_Communication_NetStack_Http_Request_Callback_400
+     * @tc.number SUB_Communication_NetStack_Http_Request_Callback_400
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Communication_NetStack_Http_Request_Callback_400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,  async (done: Function) => {
       hilog.info(0x0000, 'httpTag', '%{public}s', 'SUB_Communication_NetStack_Http_Request_Callback_400 begin');
@@ -180,13 +180,13 @@ export default function httpTest() {
     });
 
 
-      /*
-       * @tc.number:SUB_Communication_NetStack_Http_Request_HttpRequestOptions_Callback_500
-       * @tc.name: Http_Request_HttpRequestOptions_Callback_500
-       * @tc.desc:Using the on method without permission
-       * @tc.level:Level 3
-       * @tc.type:Function
-       * @tc.size:MediumTest
+      /**
+       * @tc.name   SUB_Communication_NetStack_Http_Request_HttpRequestOptions_Callback_500
+       * @tc.number SUB_Communication_NetStack_Http_Request_HttpRequestOptions_Callback_500
+       * @tc.desc   Using the on method without permission
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
        */
       it('SUB_Communication_NetStack_Http_Request_HttpRequestOptions_Callback_500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,  async (done: Function) => {
         hilog.info(0x0000, 'httpTag', '%{public}s', 'SUB_Communication_NetStack_Http_Request_HttpRequestOptions_Callback_500 begin');
@@ -214,13 +214,13 @@ export default function httpTest() {
         }
       });
 
-      /*
-       * @tc.number:SUB_Communication_NetStack_Http_Request_HttpRequestOptions_Promise_600
-       * @tc.name: Http_Request_HttpRequestOptions_Promise_600
-       * @tc.desc:Using the on method without permission
-       * @tc.level:Level 3
-       * @tc.type:Function
-       * @tc.size:MediumTest
+      /**
+       * @tc.name   SUB_Communication_NetStack_Http_Request_HttpRequestOptions_Promise_600
+       * @tc.number SUB_Communication_NetStack_Http_Request_HttpRequestOptions_Promise_600
+       * @tc.desc   Using the on method without permission
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
        */
       it('SUB_Communication_NetStack_Http_Request_HttpRequestOptions_Promise_600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         hilog.info(0x0000, 'httpTag', '%{public}s', 'SUB_Communication_NetStack_Http_Request_HttpRequestOptions_Promise_600 begin');

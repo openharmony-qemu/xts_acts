@@ -53,12 +53,12 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       done();
     });
     /**
-     * @tc.number    onGesture
-     * @tc.name      onGestureTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   onGestureTest_0100
+     * @tc.number onGesture
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onGestureTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('onGestureTest_0100 START');

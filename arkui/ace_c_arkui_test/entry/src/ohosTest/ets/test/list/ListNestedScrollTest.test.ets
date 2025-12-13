@@ -21,85 +21,85 @@ export default function listNestedScrollTest() {
 
   describe('listNestedScrollTest', () => {
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_NESTED_SCROLL_0001
-     * @tc.name       : testListNestedScroll001
-     * @tc.desc       : testing nested scroll for list with ARKUI_SCROLL_NESTED_MODE_SELF_ONLY value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListNestedScroll001
+     * @tc.number SUB_ARKUI_CAPI_LIST_NESTED_SCROLL_0001
+     * @tc.desc   testing nested scroll for list with ARKUI_SCROLL_NESTED_MODE_SELF_ONLY value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListNestedScroll001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListNestedScroll001()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_NESTED_SCROLL_0002
-     * @tc.name       : testListNestedScroll002
-     * @tc.desc       : testing nested scroll for list with ARKUI_SCROLL_NESTED_MODE_SELF_FIRST value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListNestedScroll002
+     * @tc.number SUB_ARKUI_CAPI_LIST_NESTED_SCROLL_0002
+     * @tc.desc   testing nested scroll for list with ARKUI_SCROLL_NESTED_MODE_SELF_FIRST value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListNestedScroll002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListNestedScroll002()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_NESTED_SCROLL_0003
-     * @tc.name       : testListNestedScroll003
-     * @tc.desc       : testing nested scroll for list with ARKUI_SCROLL_NESTED_MODE_PARENT_FIRST value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListNestedScroll003
+     * @tc.number SUB_ARKUI_CAPI_LIST_NESTED_SCROLL_0003
+     * @tc.desc   testing nested scroll for list with ARKUI_SCROLL_NESTED_MODE_PARENT_FIRST value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListNestedScroll003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListNestedScroll003()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_NESTED_SCROLL_0004
-     * @tc.name       : testListNestedScroll004
-     * @tc.desc       : testing nested scroll for list with ARKUI_SCROLL_NESTED_MODE_PARALLEL value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListNestedScroll004
+     * @tc.number SUB_ARKUI_CAPI_LIST_NESTED_SCROLL_0004
+     * @tc.desc   testing nested scroll for list with ARKUI_SCROLL_NESTED_MODE_PARALLEL value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListNestedScroll004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListNestedScroll004()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_NESTED_SCROLL_0005
-     * @tc.name       : testListNestedScroll005
-     * @tc.desc       : testing nested scroll for list with -1 value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListNestedScroll005
+     * @tc.number SUB_ARKUI_CAPI_LIST_NESTED_SCROLL_0005
+     * @tc.desc   testing nested scroll for list with -1 value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListNestedScroll005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListNestedScroll005()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_NESTED_SCROLL_0006
-     * @tc.name       : testListNestedScroll006
-     * @tc.desc       : testing nested scroll for list with 4 value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListNestedScroll006
+     * @tc.number SUB_ARKUI_CAPI_LIST_NESTED_SCROLL_0006
+     * @tc.desc   testing nested scroll for list with 4 value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListNestedScroll006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListNestedScroll006()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_NESTED_SCROLL_0007
-     * @tc.name       : testListNestedScroll007
-     * @tc.desc       : testing nested scroll for list with resetAttribute
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListNestedScroll007
+     * @tc.number SUB_ARKUI_CAPI_LIST_NESTED_SCROLL_0007
+     * @tc.desc   testing nested scroll for list with resetAttribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListNestedScroll007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListNestedScroll007()).assertEqual(0)

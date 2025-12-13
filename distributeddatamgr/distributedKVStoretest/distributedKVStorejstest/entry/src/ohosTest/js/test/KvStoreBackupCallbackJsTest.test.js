@@ -219,12 +219,12 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_MANALRESTORE_CALLBACK_0100
-         * @tc.desc Test Js Api SingleKvStore.restore() manal testcase 001
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0100
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_MANALRESTORE_CALLBACK_0100
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0100
+         * @tc.desc   Test Js Api SingleKvStore.restore() manal testcase 001
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_MANALRESTORE_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try{
@@ -248,12 +248,12 @@ export default function kvStoreBackupCallbackJsunittest(){
 
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_MANALRESTORE_CALLBACK_0200
-         * @tc.desc Test Js Api SingleKvStore.restore() manal testcase 002
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0200
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_MANALRESTORE_CALLBACK_0200
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0200
+         * @tc.desc   Test Js Api SingleKvStore.restore() manal testcase 002
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_MANALRESTORE_CALLBACK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -283,12 +283,12 @@ export default function kvStoreBackupCallbackJsunittest(){
 
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_BUCKUP_CALLBACK_0100
-         * @tc.desc Test Js Api SingleKvStore.backup() db testcase 001
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0300
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_BUCKUP_CALLBACK_0100
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0300
+         * @tc.desc   Test Js Api SingleKvStore.backup() db testcase 001
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_BUCKUP_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -315,12 +315,12 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0100
-         * @tc.desc Test Js Api SingleKvStore.backup() manal testcase 001
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0400
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0100
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0400
+         * @tc.desc   Test Js Api SingleKvStore.backup() manal testcase 001
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try{
@@ -347,12 +347,12 @@ export default function kvStoreBackupCallbackJsunittest(){
             }
         })
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0200
-         * @tc.desc Test Js Api SingleKvStore.backup() manal testcase 002
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0500
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0200
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0500
+         * @tc.desc   Test Js Api SingleKvStore.backup() manal testcase 002
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -379,12 +379,12 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0300
-         * @tc.desc Test Js Api SingleKvStore.backup() manal testcase 003
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0600
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0300
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0600
+         * @tc.desc   Test Js Api SingleKvStore.backup() manal testcase 003
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -411,12 +411,12 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0400
-         * @tc.desc Test Js Api SingleKvStore.backup() testcase 004
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0700
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0400
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0700
+         * @tc.desc   Test Js Api SingleKvStore.backup() testcase 004
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -440,12 +440,12 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0500
-         * @tc.desc Test Js Api SingleKvStore.backup() testcase 005
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0800
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0500
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0800
+         * @tc.desc   Test Js Api SingleKvStore.backup() testcase 005
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -511,12 +511,12 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0600
-         * @tc.desc Test Js Api SingleKvStore.backup() testcase 006
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0900
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0600
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0900
+         * @tc.desc   Test Js Api SingleKvStore.backup() testcase 006
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -593,12 +593,12 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0100
-         * @tc.desc Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 001
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1000
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0100
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1000
+         * @tc.desc   Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 001
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -627,12 +627,12 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0200
-         * @tc.desc Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 002
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1100
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0200
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1100
+         * @tc.desc   Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 002
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -661,12 +661,12 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0300
-         * @tc.desc Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 003
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1200
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0300
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1200
+         * @tc.desc   Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 003
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -695,12 +695,12 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0400
-         * @tc.desc Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 004
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1300
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0400
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1300
+         * @tc.desc   Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 004
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -729,12 +729,12 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0500
-         * @tc.desc Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 005
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1400
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0500
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1400
+         * @tc.desc   Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 005
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -766,12 +766,12 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0600
-         * @tc.desc Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 006
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1500
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0600
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1500
+         * @tc.desc   Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 006
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -795,12 +795,12 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_DELETEBUCKUP_CALLBACK_0100
-         * @tc.desc Test Js Api SingleKvStore.deleteBackup() testcase 001
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1600
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_DELETEBUCKUP_CALLBACK_0100
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1600
+         * @tc.desc   Test Js Api SingleKvStore.deleteBackup() testcase 001
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_DELETEBUCKUP_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -824,12 +824,12 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0100
-         * @tc.desc Test Js Api SingleKvStore.put() db testcase 001
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1700
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0100
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1700
+         * @tc.desc   Test Js Api SingleKvStore.put() db testcase 001
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -852,12 +852,12 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0200
-         * @tc.desc Test Js Api SingleKvStore.put() db testcase 002
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1800
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0200
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1800
+         * @tc.desc   Test Js Api SingleKvStore.put() db testcase 002
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -881,12 +881,12 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0300
-         * @tc.desc Test Js Api SingleKvStore.put() db testcase 003
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1900
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0300
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1900
+         * @tc.desc   Test Js Api SingleKvStore.put() db testcase 003
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {

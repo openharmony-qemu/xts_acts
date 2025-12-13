@@ -58,13 +58,15 @@ export default function onWillApplyTheme() {
       console.info("onWillApplyTheme after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_UI_COMPONENT_Common_onWillApplyTheme_001
-     * @tc.desc onWillApplyTheme test
-     * @tc.level Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   onWillApplyTheme_001
+     * @tc.number onWillApplyTheme_001
+     * @tc.desc   onWillApplyTheme_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('onWillApplyTheme_001', Level.LEVEL0, async (done: Function) => {
       console.info('[onWillApplyTheme_001] START');
 

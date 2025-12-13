@@ -239,12 +239,12 @@ export default function VideoTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerCreateVideoOutput0100
-     * @tc.name       : testOHCameraManagerCreateVideoOutput0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerCreateVideoOutput0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerCreateVideoOutput0100
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerCreateVideoOutput0100', Level.LEVEL0, () => {
 
@@ -253,12 +253,12 @@ export default function VideoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerCreateVideoOutput0200
-     * @tc.name       : testOHCameraManagerCreateVideoOutput0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerCreateVideoOutput0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerCreateVideoOutput0200
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerCreateVideoOutput0200', Level.LEVEL0, () => {
 
@@ -267,12 +267,12 @@ export default function VideoTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerCreateVideoOutput0300
-     * @tc.name       : testOHCameraManagerCreateVideoOutput0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerCreateVideoOutput0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerCreateVideoOutput0300
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerCreateVideoOutput0300', Level.LEVEL0, () => {
 
@@ -281,12 +281,12 @@ export default function VideoTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerCreateVideoOutput0400
-     * @tc.name       : testOHCameraManagerCreateVideoOutput0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerCreateVideoOutput0400
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerCreateVideoOutput0400
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerCreateVideoOutput0400', Level.LEVEL0, () => {
 
@@ -295,12 +295,12 @@ export default function VideoTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerCreateVideoOutput0500
-     * @tc.name       : testOHCameraManagerCreateVideoOutput0500
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerCreateVideoOutput0500
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerCreateVideoOutput0500
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerCreateVideoOutput0500', Level.LEVEL0, () => {
 
@@ -309,12 +309,12 @@ export default function VideoTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionAddVideoOutput0100
-     * @tc.name       : testOHCaptureSessionAddVideoOutput0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionAddVideoOutput0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionAddVideoOutput0100
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionAddVideoOutput0100', Level.LEVEL0, () => {
       captureSessionCommitConfig()
@@ -325,12 +325,12 @@ export default function VideoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionAddVideoOutput0200
-     * @tc.name       : testOHCaptureSessionAddVideoOutput0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionAddVideoOutput0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionAddVideoOutput0200
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionAddVideoOutput0200', Level.LEVEL0, () => {
       CreateVideoOutput();
@@ -339,12 +339,12 @@ export default function VideoTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionAddVideoOutput0300
-     * @tc.name       : testOHCaptureSessionAddVideoOutput0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionAddVideoOutput0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionAddVideoOutput0300
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionAddVideoOutput0300', Level.LEVEL0, () => {
       CreateVideoOutput();
@@ -353,12 +353,12 @@ export default function VideoTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputRegisterCallback0100
-     * @tc.name       : testOHVideoOutputRegisterCallback0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputRegisterCallback0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputRegisterCallback0100
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputRegisterCallback0100', Level.LEVEL0, () => {
 
@@ -368,12 +368,12 @@ export default function VideoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputRegisterCallback0200
-     * @tc.name       : testOHVideoOutputRegisterCallback0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputRegisterCallback0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputRegisterCallback0200
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputRegisterCallback0200', Level.LEVEL0, () => {
 
@@ -383,12 +383,12 @@ export default function VideoTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputRegisterCallback0300
-     * @tc.name       : testOHVideoOutputRegisterCallback0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputRegisterCallback0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputRegisterCallback0300
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputRegisterCallback0300', Level.LEVEL0, () => {
 
@@ -398,12 +398,12 @@ export default function VideoTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputUnregisterCallback0100
-     * @tc.name       : testOHVideoOutputUnregisterCallback0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputUnregisterCallback0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputUnregisterCallback0100
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputUnregisterCallback0100', Level.LEVEL0, () => {
 
@@ -413,12 +413,12 @@ export default function VideoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputUnregisterCallback0200
-     * @tc.name       : testOHVideoOutputUnregisterCallback0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputUnregisterCallback0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputUnregisterCallback0200
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputUnregisterCallback0200', Level.LEVEL0, () => {
 
@@ -428,12 +428,12 @@ export default function VideoTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputUnregisterCallback0300
-     * @tc.name       : testOHVideoOutputUnregisterCallback0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputUnregisterCallback0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputUnregisterCallback0300
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputUnregisterCallback0300', Level.LEVEL0, () => {
 
@@ -443,12 +443,12 @@ export default function VideoTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputStart0100
-     * @tc.name       : testOHVideoOutputStart0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputStart0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputStart0100
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputStart0100', Level.LEVEL0, () => {
       captureSessionCommitConfig()
@@ -463,12 +463,12 @@ export default function VideoTest() {
 
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputStart0200
-     * @tc.name       : testOHVideoOutputStart0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputStart0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputStart0200
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputStart0200', Level.LEVEL0, () => {
       captureSessionCommitConfig()
@@ -481,12 +481,12 @@ export default function VideoTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputStart0300
-     * @tc.name       : testOHVideoOutputStart0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputStart0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputStart0300
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputStart0300', Level.LEVEL0, () => {
 
@@ -500,12 +500,12 @@ export default function VideoTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputStop0100
-     * @tc.name       : testOHVideoOutputStop0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputStop0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputStop0100
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputStop0100', Level.LEVEL0, () => {
 
@@ -520,12 +520,12 @@ export default function VideoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputStop0200
-     * @tc.name       : testOHVideoOutputStop0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputStop0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputStop0200
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputStop0200', Level.LEVEL0, () => {
 
@@ -540,12 +540,12 @@ export default function VideoTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputStop0300
-     * @tc.name       : testOHVideoOutputStop0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputStop0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputStop0300
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputStop0300', Level.LEVEL0, () => {
 
@@ -560,12 +560,12 @@ export default function VideoTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputRelease0100
-     * @tc.name       : testOHVideoOutputRelease0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputRelease0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputRelease0100
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputRelease0100', Level.LEVEL0, () => {
       captureSessionCommitConfig()
@@ -576,12 +576,12 @@ export default function VideoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputRelease0200
-     * @tc.name       : testOHVideoOutputRelease0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputRelease0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputRelease0200
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputRelease0200', Level.LEVEL0, () => {
       captureSessionCommitConfig()
@@ -592,12 +592,12 @@ export default function VideoTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputRelease0300
-     * @tc.name       : testOHVideoOutputRelease0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputRelease0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputRelease0300
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputRelease0300', Level.LEVEL0, () => {
       captureSessionCommitConfig()
@@ -608,12 +608,12 @@ export default function VideoTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRemoveVideoOutput0100
-     * @tc.name       : testOHCaptureSessionRemoveVideoOutput0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionRemoveVideoOutput0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRemoveVideoOutput0100
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionRemoveVideoOutput0100', Level.LEVEL0, () => {
       captureSessionCommitConfig()
@@ -625,12 +625,12 @@ export default function VideoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRemoveVideoOutput0200
-     * @tc.name       : testOHCaptureSessionRemoveVideoOutput0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionRemoveVideoOutput0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRemoveVideoOutput0200
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionRemoveVideoOutput0200', Level.LEVEL0, () => {
       captureSessionCommitConfig()
@@ -642,12 +642,12 @@ export default function VideoTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRemoveVideoOutput0300
-     * @tc.name       : testOHCaptureSessionRemoveVideoOutput0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionRemoveVideoOutput0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRemoveVideoOutput0300
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionRemoveVideoOutput0300', Level.LEVEL0, () => {
       captureSessionCommitConfig()

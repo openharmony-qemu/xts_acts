@@ -39,12 +39,12 @@ export default function UsbSceneEtsTest() {
     })
   
     /**
-     * @tc.number     : SUB_USB_Spec_Sec_SysApiAuthen_0900
-     * @tc.name       : testConnectDeviceNormalApp001
-     * @tc.desc       : connectDevice Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testConnectDeviceNormalApp001
+     * @tc.number SUB_USB_Spec_Sec_SysApiAuthen_0900
+     * @tc.desc   connectDevice Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDeviceNormalApp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       if (portCurrentMode != 1) {

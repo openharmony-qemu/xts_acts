@@ -60,10 +60,13 @@ export default function webenableSmoothDragResizeTestJsunit() {
       console.info("enableWebAVSession afterEach start");
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_ENABLESMOOTHDRAGRESIZE_API_001
-     *tc.name enableSmoothDragResize01
-     *tc.desic test enableSmoothDragResize01 interface when choose callback mode.
+    /**
+     * @tc.name   enableWebAVSession01
+     * @tc.number SUB_ACE_BASIC_ETS_ENABLESMOOTHDRAGRESIZE_API_001
+     * @tc.desc   enableWebAVSession01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('enableWebAVSession01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("enableWebAVSession01", 132760)

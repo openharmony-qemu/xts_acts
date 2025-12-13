@@ -46,12 +46,12 @@ export default function tabsTransition() {
     });
 
     /**
-     * @tc.number    tabsTransition_001
-     * @tc.name      tabsTransition_0100
-     * @tc.desc      Finger sliding can not trigger customContentTransition.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   tabsTransition_0100
+     * @tc.number tabsTransition_001
+     * @tc.desc   Finger sliding can not trigger customContentTransition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('tabsTransition_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[tabsTransition_0100] START');
@@ -75,12 +75,12 @@ export default function tabsTransition() {
     });
 
     /**
-     * @tc.number    tabsTransition_0200
-     * @tc.name      tabsTransition_0200
-     * @tc.desc      Clicking on the index to trigger the onTabBarClick event.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   tabsTransition_0200
+     * @tc.number tabsTransition_0200
+     * @tc.desc   Clicking on the index to trigger the onTabBarClick event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('tabsTransition_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[tabsTransition_0200] START');

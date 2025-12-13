@@ -82,12 +82,12 @@ export default function Int32ArrayGlobalTest() {
     })
 
     /**
-     * @tc.number    : SUB_INT32ARRAY_TEST_0001
-     * @tc.name      : Int32array_test_0001
-     * @tc.desc      : Test Int32array
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Int32array_test_0001
+     * @tc.number SUB_INT32ARRAY_TEST_0001
+     * @tc.desc   Test Int32array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('Int32array_test_0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -119,12 +119,12 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : SUB_INT32ARRAY_TEST_0002
-     * @tc.name      : Int32array_test_0003
-     * @tc.desc      : Test Int32array
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Int32array_test_0003
+     * @tc.number SUB_INT32ARRAY_TEST_0002
+     * @tc.desc   Test Int32array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Int32array_test_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -157,12 +157,12 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : SUB_INT32ARRAY_TEST_0003
-     * @tc.name      : Int32array_test_0004
-     * @tc.desc      : Test Int32array
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Int32array_test_0004
+     * @tc.number SUB_INT32ARRAY_TEST_0003
+     * @tc.desc   Test Int32array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Int32array_test_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -195,12 +195,12 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : SUB_INT32ARRAY_TEST_0004
-     * @tc.name      : Int32array_test_0005
-     * @tc.desc      : Test Int32array
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Int32array_test_0005
+     * @tc.number SUB_INT32ARRAY_TEST_0004
+     * @tc.desc   Test Int32array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('Int32array_test_0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -232,12 +232,12 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : SUB_INT32ARRAY_TEST_0005
-     * @tc.name      : Int32array_test_0006
-     * @tc.desc      : Test Int32array
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Int32array_test_0006
+     * @tc.number SUB_INT32ARRAY_TEST_0005
+     * @tc.desc   Test Int32array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('Int32array_test_0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -272,12 +272,12 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : SUB_INT32ARRAY_TEST_0006
-     * @tc.name      : Int32array_test_0007
-     * @tc.desc      : Test Int32array
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Int32array_test_0007
+     * @tc.number SUB_INT32ARRAY_TEST_0006
+     * @tc.desc   Test Int32array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('Int32array_test_0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -311,12 +311,12 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : SUB_INT32ARRAY_TEST_0007
-     * @tc.name      : Int32array_test_0008
-     * @tc.desc      : Test Int32array
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Int32array_test_0008
+     * @tc.number SUB_INT32ARRAY_TEST_0007
+     * @tc.desc   Test Int32array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('Int32array_test_0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -350,12 +350,12 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : SUB_INT32ARRAY_TEST_0008
-     * @tc.name      : Int32array_test_0009
-     * @tc.desc      : Test Int32array
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Int32array_test_0009
+     * @tc.number SUB_INT32ARRAY_TEST_0008
+     * @tc.desc   Test Int32array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('Int32array_test_0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -389,12 +389,12 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : SUB_INT32ARRAY_TEST_009
-     * @tc.name      : Int32array_test_0010
-     * @tc.desc      : Test Int32array
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Int32array_test_0010
+     * @tc.number SUB_INT32ARRAY_TEST_009
+     * @tc.desc   Test Int32array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('Int32array_test_0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -429,12 +429,12 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : SUB_INT32ARRAY_TEST_0010
-     * @tc.name      : Int32array_test_0011
-     * @tc.desc      : Test Int32array
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Int32array_test_0011
+     * @tc.number SUB_INT32ARRAY_TEST_0010
+     * @tc.desc   Test Int32array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('Int32array_test_0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -468,12 +468,12 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : SUB_INT32ARRAY_TEST_0011
-     * @tc.name      : Int32array_test_0012
-     * @tc.desc      : Test Int32array
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Int32array_test_0012
+     * @tc.number SUB_INT32ARRAY_TEST_0011
+     * @tc.desc   Test Int32array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('Int32array_test_0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -507,12 +507,12 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : SUB_INT32ARRAY_TEST_0012
-     * @tc.name      : Int32array_test_0013
-     * @tc.desc      : Test Int32array
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Int32array_test_0013
+     * @tc.number SUB_INT32ARRAY_TEST_0012
+     * @tc.desc   Test Int32array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('Int32array_test_0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -545,12 +545,12 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : SUB_INT32ARRAY_TEST_0013
-     * @tc.name      : Int32array_test_0014
-     * @tc.desc      : Test Int32array
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Int32array_test_0014
+     * @tc.number SUB_INT32ARRAY_TEST_0013
+     * @tc.desc   Test Int32array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('Int32array_test_0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -584,12 +584,12 @@ export default function Int32ArrayGlobalTest() {
 
 
     /**
-     * @tc.number    : SUB_INT32ARRAY_TEST_0014
-     * @tc.name      : Int32array_test_0016
-     * @tc.desc      : Test Int32array
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Int32array_test_0016
+     * @tc.number SUB_INT32ARRAY_TEST_0014
+     * @tc.desc   Test Int32array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('Int32array_test_0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -623,12 +623,12 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : SUB_INT32ARRAY_TEST_0015
-     * @tc.name      : Int32array_test_0017
-     * @tc.desc      : Test Int32array
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Int32array_test_0017
+     * @tc.number SUB_INT32ARRAY_TEST_0015
+     * @tc.desc   Test Int32array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('Int32array_test_0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -662,12 +662,12 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : SUB_INT32ARRAY_TEST_0016
-     * @tc.name      : Int32array_test_0018
-     * @tc.desc      : Test Int32array
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Int32array_test_0018
+     * @tc.number SUB_INT32ARRAY_TEST_0016
+     * @tc.desc   Test Int32array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('Int32array_test_0018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -701,12 +701,12 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : SUB_INT32ARRAY_TEST_0017
-     * @tc.name      : Int32array_test_0019
-     * @tc.desc      : Test Int32array
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Int32array_test_0019
+     * @tc.number SUB_INT32ARRAY_TEST_0017
+     * @tc.desc   Test Int32array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('Int32array_test_0019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -740,12 +740,12 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : SUB_INT32ARRAY_TEST_0018
-     * @tc.name      : Int32array_test_0021
-     * @tc.desc      : Test Int32array
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Int32array_test_0021
+     * @tc.number SUB_INT32ARRAY_TEST_0018
+     * @tc.desc   Test Int32array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('Int32array_test_0021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -780,12 +780,12 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : SUB_INT32ARRAY_TEST_0019
-     * @tc.name      : Int32array_test_0022
-     * @tc.desc      : Test Int32array
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Int32array_test_0022
+     * @tc.number SUB_INT32ARRAY_TEST_0019
+     * @tc.desc   Test Int32array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('Int32array_test_0022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -819,12 +819,12 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : SUB_INT32ARRAY_TEST_0020
-     * @tc.name      : Int32array_test_0023
-     * @tc.desc      : Test Int32array
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Int32array_test_0023
+     * @tc.number SUB_INT32ARRAY_TEST_0020
+     * @tc.desc   Test Int32array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('Int32array_test_0023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -858,12 +858,12 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : SUB_INT32ARRAY_TEST_0021
-     * @tc.name      : Int32array_test_0024
-     * @tc.desc      : Test Int32array
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Int32array_test_0024
+     * @tc.number SUB_INT32ARRAY_TEST_0021
+     * @tc.desc   Test Int32array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('Int32array_test_0024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -897,12 +897,12 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : SUB_INT32ARRAY_TEST_0022
-     * @tc.name      : Int32array_test_0025
-     * @tc.desc      : Test Int32array
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Int32array_test_0025
+     * @tc.number SUB_INT32ARRAY_TEST_0022
+     * @tc.desc   Test Int32array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('Int32array_test_0025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -933,12 +933,12 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : SUB_INT32ARRAY_TEST_0023
-     * @tc.name      : Int32array_test_0026
-     * @tc.desc      : Test Int32array
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Int32array_test_0026
+     * @tc.number SUB_INT32ARRAY_TEST_0023
+     * @tc.desc   Test Int32array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('Int32array_test_0026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -971,12 +971,12 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : SUB_INT32ARRAY_TEST_0024
-     * @tc.name      : Int32array_test_0027
-     * @tc.desc      : Test Int32array
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Int32array_test_0027
+     * @tc.number SUB_INT32ARRAY_TEST_0024
+     * @tc.desc   Test Int32array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('Int32array_test_0027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1010,12 +1010,12 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : SUB_INT32ARRAY_TEST_0025
-     * @tc.name      : Int32array_test_0028
-     * @tc.desc      : Test Int32array
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Int32array_test_0028
+     * @tc.number SUB_INT32ARRAY_TEST_0025
+     * @tc.desc   Test Int32array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('Int32array_test_0028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1049,12 +1049,12 @@ export default function Int32ArrayGlobalTest() {
       });
 
     /**
-     * @tc.number    : SUB_INT32ARRAY_TEST_0026
-     * @tc.name      : Int32array_test_0029
-     * @tc.desc      : Test Int32array
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Int32array_test_0029
+     * @tc.number SUB_INT32ARRAY_TEST_0026
+     * @tc.desc   Test Int32array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('Int32array_test_0029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1089,12 +1089,12 @@ export default function Int32ArrayGlobalTest() {
 
 
     /**
-     * @tc.number    : SUB_INT32ARRAY_TEST_0027
-     * @tc.name      : Int32array_test_0030
-     * @tc.desc      : Test Int32array
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Int32array_test_0030
+     * @tc.number SUB_INT32ARRAY_TEST_0027
+     * @tc.desc   Test Int32array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('Int32array_test_0030', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

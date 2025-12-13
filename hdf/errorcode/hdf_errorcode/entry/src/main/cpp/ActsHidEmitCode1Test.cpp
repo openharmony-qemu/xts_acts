@@ -306,7 +306,7 @@ int32_t CreateTestDeviceKeyCodeKEY2(const char* str)
         .length = (uint16_t)eventType.size()
     };
     std::vector<Hid_KeyCode> keyCode = {
-        HID_KEY_D };
+        HID_KEY_2 };
     Hid_KeyCodeArray keyCodeArray = {
         .hidKeyCode = keyCode.data(),
         .length = (uint16_t)keyCode.size()

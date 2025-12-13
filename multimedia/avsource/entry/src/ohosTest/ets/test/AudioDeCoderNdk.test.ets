@@ -20,12 +20,12 @@ export default function audioDeCoderNdkTest() {
   describe('AvcodecAudioDecoderTest', () => {
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_CREATEBYMINE_0100
-     * @tc.name       : testOhAudioDecoderCreateByMine001
-     * @tc.desc       : test OH_AudioDecoder_CreateByMime
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAudioDecoderCreateByMine001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_CREATEBYMINE_0100
+     * @tc.desc   test OH_AudioDecoder_CreateByMime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAudioDecoderCreateByMine001', Level.LEVEL0, async (done: Function) => {
       expect(audiodecoderxdlndk.OH_AudioDecoder_CreateByMime()).assertEqual(0);
@@ -33,12 +33,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_CREATEBYNAME_0100
-     * @tc.name       : testOhAudioDecoderCreateByName001
-     * @tc.desc       : test OH_AudioDecoder_CreateByName
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAudioDecoderCreateByName001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_CREATEBYNAME_0100
+     * @tc.desc   test OH_AudioDecoder_CreateByName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAudioDecoderCreateByName001', Level.LEVEL0, async (done: Function) => {
       expect(audiodecoderxdlndk.OH_AudioDecoder_CreateByName()).assertEqual(0);
@@ -46,12 +46,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_DESTROY_0100
-     * @tc.name       : testOhAudioDecoderDestroy001
-     * @tc.desc       : test OH_AudioDecoder_Destroy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAudioDecoderDestroy001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_DESTROY_0100
+     * @tc.desc   test OH_AudioDecoder_Destroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAudioDecoderDestroy001', Level.LEVEL0, async (done: Function) => {
       expect(audiodecoderxdlndk.OH_AudioDecoder_Destroy()).assertEqual(0);
@@ -59,12 +59,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_SETCALLBACK_0100
-     * @tc.name       : testOhAudioDecoderSetCallback001
-     * @tc.desc       : test OH_AudioDecoder_SetCallback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAudioDecoderSetCallback001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_SETCALLBACK_0100
+     * @tc.desc   test OH_AudioDecoder_SetCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAudioDecoderSetCallback001', Level.LEVEL0, async (done: Function) => {
       expect(audiodecoderxdlndk.OH_AudioDecoder_SetCallback()).assertEqual(0);
@@ -72,12 +72,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_CONFIGURE_0100
-     * @tc.name       : testOhAudioDecoderConfigure001
-     * @tc.desc       : test OH_AudioDecoder_Configure
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAudioDecoderConfigure001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_CONFIGURE_0100
+     * @tc.desc   test OH_AudioDecoder_Configure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAudioDecoderConfigure001', Level.LEVEL0, async (done: Function) => {
       expect(audiodecoderxdlndk.OH_AudioDecoder_Configure()).assertEqual(0);
@@ -85,12 +85,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_PREPARE_0100
-     * @tc.name       : testOhAudioDecoderPrepare001
-     * @tc.desc       : test OH_AudioDecoder_Prepare
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAudioDecoderPrepare001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_PREPARE_0100
+     * @tc.desc   test OH_AudioDecoder_Prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAudioDecoderPrepare001', Level.LEVEL0, async (done: Function) => {
       expect(audiodecoderxdlndk.OH_AudioDecoder_Prepare()).assertEqual(0);
@@ -98,12 +98,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_START_0100
-     * @tc.name       : testOhAudioDecoderStart001
-     * @tc.desc       : test OH_AudioDecoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAudioDecoderStart001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_START_0100
+     * @tc.desc   test OH_AudioDecoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAudioDecoderStart001', Level.LEVEL0, async (done: Function) => {
       expect(audiodecoderxdlndk.OH_AudioDecoder_Start()).assertEqual(0);
@@ -111,12 +111,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_STOP_0100
-     * @tc.name       : testOhAudioDecoderStop001
-     * @tc.desc       : test OH_AudioDecoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAudioDecoderStop001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_STOP_0100
+     * @tc.desc   test OH_AudioDecoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAudioDecoderStop001', Level.LEVEL0, async (done: Function) => {
       expect(audiodecoderxdlndk.OH_AudioDecoder_Stop()).assertEqual(0);
@@ -124,12 +124,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_FLUSH_0100
-     * @tc.name       : testOhAudioDecoderFlush001
-     * @tc.desc       : test OH_AudioDecoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAudioDecoderFlush001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_FLUSH_0100
+     * @tc.desc   test OH_AudioDecoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAudioDecoderFlush001', Level.LEVEL0, async (done: Function) => {
       expect(audiodecoderxdlndk.OH_AudioDecoder_Flush()).assertEqual(0);
@@ -137,12 +137,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_RESET_0100
-     * @tc.name       : testOhAudioDecoderReset001
-     * @tc.desc       : test OH_AudioDecoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAudioDecoderReset001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_RESET_0100
+     * @tc.desc   test OH_AudioDecoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAudioDecoderReset001', Level.LEVEL0, async (done: Function) => {
       expect(audiodecoderxdlndk.OH_AudioDecoder_Reset()).assertEqual(0);
@@ -150,12 +150,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_GETOUTPUTDESCRIPTION_0100
-     * @tc.name       : testOhAudioDecoderGetOutputDescription001
-     * @tc.desc       : test OH_AudioDecoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAudioDecoderGetOutputDescription001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_GETOUTPUTDESCRIPTION_0100
+     * @tc.desc   test OH_AudioDecoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAudioDecoderGetOutputDescription001', Level.LEVEL0, async (done: Function) => {
       expect(audiodecoderxdlndk.OH_AudioDecoder_GetOutputDescription()).assertEqual(0);
@@ -163,12 +163,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_SETPARAMETER_0100
-     * @tc.name       : testOhAudioDecoderSetParameter001
-     * @tc.desc       : test OH_AudioDecoder_SetParameter
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAudioDecoderSetParameter001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_SETPARAMETER_0100
+     * @tc.desc   test OH_AudioDecoder_SetParameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAudioDecoderSetParameter001', Level.LEVEL0, async (done: Function) => {
       expect(audiodecoderxdlndk.OH_AudioDecoder_SetParameter()).assertEqual(0);
@@ -176,12 +176,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_ISVALID_0100
-     * @tc.name       : testOhAudioDecoderIsValid001
-     * @tc.desc       : test OH_AudioDecoder_IsValid
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAudioDecoderIsValid001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_ISVALID_0100
+     * @tc.desc   test OH_AudioDecoder_IsValid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAudioDecoderIsValid001', Level.LEVEL0, async (done: Function) => {
       expect(audiodecoderxdlndk.OH_AudioDecoder_IsValid()).assertEqual(0);
@@ -189,12 +189,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_CREATEBYNAME_0200
-     * @tc.name       : testOHAudioDecoderCreateByName002
-     * @tc.desc       : test OH_AudioDecoder_CreateByName
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAudioDecoderCreateByName002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_CREATEBYNAME_0200
+     * @tc.desc   test OH_AudioDecoder_CreateByName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAudioDecoderCreateByName002', Level.LEVEL0, async (done: Function) => {
       let result: number = audiodecoderxdlndk.OHAudioDecoderCreateByNameAnormal();
@@ -203,12 +203,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_CREATEBYNAME_0300
-     * @tc.name       : testOHAudioDecoderCreateByName003
-     * @tc.desc       : test OH_AudioDecoder_CreateByName
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAudioDecoderCreateByName003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_CREATEBYNAME_0300
+     * @tc.desc   test OH_AudioDecoder_CreateByName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAudioDecoderCreateByName003', Level.LEVEL0, async (done: Function) => {
       let result: number = audiodecoderxdlndk.OHAudioDecoderCreateByNameBnormal();
@@ -217,12 +217,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_CREATEBYNAME_0400
-     * @tc.name       : testOHAudioDecoderCreateByName004
-     * @tc.desc       : test OH_AudioDecoder_CreateByName
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAudioDecoderCreateByName004
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_CREATEBYNAME_0400
+     * @tc.desc   test OH_AudioDecoder_CreateByName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAudioDecoderCreateByName004', Level.LEVEL0, async (done: Function) => {
       let result: number = audiodecoderxdlndk.OHAudioDecoderCreateByNameCnormal();
@@ -231,12 +231,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_DESTROY_0200
-     * @tc.name       : testOHAudioDecoderDestroy002
-     * @tc.desc       : test OH_AudioDecoder_Destroy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAudioDecoderDestroy002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_DESTROY_0200
+     * @tc.desc   test OH_AudioDecoder_Destroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAudioDecoderDestroy002', Level.LEVEL0, async (done: Function) => {
       let result: number = audiodecoderxdlndk.OHAudioDecoderDestroyAnormal();
@@ -245,12 +245,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_DESTROY_0300
-     * @tc.name       : testOHAudioDecoderDestroy003
-     * @tc.desc       : test OH_AudioDecoder_Destroy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAudioDecoderDestroy003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_DESTROY_0300
+     * @tc.desc   test OH_AudioDecoder_Destroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAudioDecoderDestroy003', Level.LEVEL0, async (done: Function) => {
       let result: number = audiodecoderxdlndk.OHAudioDecoderDestroyBnormal();
@@ -259,12 +259,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_DESTROY_0400
-     * @tc.name       : testOHAudioDecoderDestroy004
-     * @tc.desc       : test OH_AudioDecoder_Destroy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAudioDecoderDestroy004
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_DESTROY_0400
+     * @tc.desc   test OH_AudioDecoder_Destroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAudioDecoderDestroy004', Level.LEVEL0, async (done: Function) => {
       let result: number = audiodecoderxdlndk.OHAudioDecoderDestroyCnormal();
@@ -273,12 +273,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_START_0200
-     * @tc.name       : testOHAudioDecoderStart002
-     * @tc.desc       : test OH_AudioDecoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAudioDecoderStart002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_START_0200
+     * @tc.desc   test OH_AudioDecoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAudioDecoderStart002', Level.LEVEL0, async (done: Function) => {
       let result: number = audiodecoderxdlndk.OHAudioDecoderStartAnormal();
@@ -287,12 +287,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_START_0300
-     * @tc.name       : testOHAudioDecoderStart003
-     * @tc.desc       : test OH_AudioDecoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAudioDecoderStart003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_START_0300
+     * @tc.desc   test OH_AudioDecoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAudioDecoderStart003', Level.LEVEL0, async (done: Function) => {
       let result: number = audiodecoderxdlndk.OHAudioDecoderStartBnormal();
@@ -300,13 +300,13 @@ export default function audioDeCoderNdkTest() {
       done();
     });
 
-     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_START_0400
-     * @tc.name       : testOHAudioDecoderStart004
-     * @tc.desc       : test OH_AudioDecoder_Start
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testOHAudioDecoderStart004
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_START_0400
+     * @tc.desc   test OH_AudioDecoder_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAudioDecoderStart004', Level.LEVEL0, async (done: Function) => {
       let result: number = audiodecoderxdlndk.OHAudioDecoderStartCnormal();
@@ -315,12 +315,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_STOP_0200
-     * @tc.name       : testOHAudioDecoderStop002
-     * @tc.desc       : test OH_AudioDecoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAudioDecoderStop002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_STOP_0200
+     * @tc.desc   test OH_AudioDecoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAudioDecoderStop002', Level.LEVEL0, async (done: Function) => {
       let result: number = audiodecoderxdlndk.OHAudioDecoderStopAnormal();
@@ -329,12 +329,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_STOP_0300
-     * @tc.name       : testOHAudioDecoderStop003
-     * @tc.desc       : test OH_AudioDecoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAudioDecoderStop003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_STOP_0300
+     * @tc.desc   test OH_AudioDecoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAudioDecoderStop003', Level.LEVEL0, async (done: Function) => {
       let result: number = audiodecoderxdlndk.OHAudioDecoderStopBnormal();
@@ -343,12 +343,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_STOP_0400
-     * @tc.name       : testOHAudioDecoderStop004
-     * @tc.desc       : test OH_AudioDecoder_Stop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAudioDecoderStop004
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_STOP_0400
+     * @tc.desc   test OH_AudioDecoder_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAudioDecoderStop004', Level.LEVEL0, async (done: Function) => {
       let result: number = audiodecoderxdlndk.OHAudioDecoderStopCnormal();
@@ -357,12 +357,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_FLUSH_0200
-     * @tc.name       : testOHAudioDecoderFlush002
-     * @tc.desc       : test OH_AudioDecoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAudioDecoderFlush002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_FLUSH_0200
+     * @tc.desc   test OH_AudioDecoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAudioDecoderFlush002', Level.LEVEL0, async (done: Function) => {
       let result: number = audiodecoderxdlndk.OHAudioDecoderFlushAnormal();
@@ -371,12 +371,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_FLUSH_0300
-     * @tc.name       : testOHAudioDecoderFlush003
-     * @tc.desc       : test OH_AudioDecoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAudioDecoderFlush003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_FLUSH_0300
+     * @tc.desc   test OH_AudioDecoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAudioDecoderFlush003', Level.LEVEL0, async (done: Function) => {
       let result: number = audiodecoderxdlndk.OHAudioDecoderFlushBnormal();
@@ -385,12 +385,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_FLUSH_0400
-     * @tc.name       : testOHAudioDecoderFlush004
-     * @tc.desc       : test OH_AudioDecoder_Flush
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAudioDecoderFlush004
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_FLUSH_0400
+     * @tc.desc   test OH_AudioDecoder_Flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAudioDecoderFlush004', Level.LEVEL0, async (done: Function) => {
       let result: number = audiodecoderxdlndk.OHAudioDecoderFlushCnormal();
@@ -399,12 +399,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_RESET_0200
-     * @tc.name       : testOHAudioDecoderReset002
-     * @tc.desc       : test OH_AudioDecoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAudioDecoderReset002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_RESET_0200
+     * @tc.desc   test OH_AudioDecoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAudioDecoderReset002', Level.LEVEL0, async (done: Function) => {
       let result: number = audiodecoderxdlndk.OHAudioDecoderResetAnormal();
@@ -413,12 +413,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_RESET_0300
-     * @tc.name       : testOHAudioDecoderReset003
-     * @tc.desc       : test OH_AudioDecoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAudioDecoderReset003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_RESET_0300
+     * @tc.desc   test OH_AudioDecoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAudioDecoderReset003', Level.LEVEL0, async (done: Function) => {
       let result: number = audiodecoderxdlndk.OHAudioDecoderResetBnormal();
@@ -427,12 +427,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_RESET_0400
-     * @tc.name       : testOHAudioDecoderReset004
-     * @tc.desc       : test OH_AudioDecoder_Reset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAudioDecoderReset004
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_RESET_0400
+     * @tc.desc   test OH_AudioDecoder_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAudioDecoderReset004', Level.LEVEL0, async (done: Function) => {
       let result: number = audiodecoderxdlndk.OHAudioDecoderResetCnormal();
@@ -440,13 +440,13 @@ export default function audioDeCoderNdkTest() {
       done();
     });
 
-     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_GETOUTPUTDESCRIPTION_0200
-     * @tc.name       : testOHAudioDecoderGetOutputDescription002
-     * @tc.desc       : test OH_AudioDecoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testOHAudioDecoderGetOutputDescription002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_GETOUTPUTDESCRIPTION_0200
+     * @tc.desc   test OH_AudioDecoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAudioDecoderGetOutputDescription002', Level.LEVEL0, async (done: Function) => {
       let result: number = audiodecoderxdlndk.OHAudioDecoderGetOutputDescriptionAnormal();
@@ -455,12 +455,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_GETOUTPUTDESCRIPTION_0300
-     * @tc.name       : testOHAudioDecoderGetOutputDescription003
-     * @tc.desc       : test OH_AudioDecoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAudioDecoderGetOutputDescription003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_GETOUTPUTDESCRIPTION_0300
+     * @tc.desc   test OH_AudioDecoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAudioDecoderGetOutputDescription003', Level.LEVEL0, async (done: Function) => {
       let result: number = audiodecoderxdlndk.OHAudioDecoderGetOutputDescriptionBnormal();
@@ -469,12 +469,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_GETOUTPUTDESCRIPTION_0400
-     * @tc.name       : testOHAudioDecoderGetOutputDescription004
-     * @tc.desc       : test OH_AudioDecoder_GetOutputDescription
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAudioDecoderGetOutputDescription004
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_GETOUTPUTDESCRIPTION_0400
+     * @tc.desc   test OH_AudioDecoder_GetOutputDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAudioDecoderGetOutputDescription004', Level.LEVEL0, async (done: Function) => {
       let result: number = audiodecoderxdlndk.OHAudioDecoderGetOutputDescriptionCnormal();
@@ -483,12 +483,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_SETPARAMETER_0200
-     * @tc.name       : testOHAudioDecoderSetParameter002
-     * @tc.desc       : test OH_AudioDecoder_SetParameter
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAudioDecoderSetParameter002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_SETPARAMETER_0200
+     * @tc.desc   test OH_AudioDecoder_SetParameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAudioDecoderSetParameter002', Level.LEVEL0, async (done: Function) => {
       let result: number = audiodecoderxdlndk.OHAudioDecoderSetParameterAnormal();
@@ -497,12 +497,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_SETPARAMETER_0300
-     * @tc.name       : testOHAudioDecoderSetParameter003
-     * @tc.desc       : test OH_AudioDecoder_SetParameter
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAudioDecoderSetParameter003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_SETPARAMETER_0300
+     * @tc.desc   test OH_AudioDecoder_SetParameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAudioDecoderSetParameter003', Level.LEVEL0, async (done: Function) => {
       let result: number = audiodecoderxdlndk.OHAudioDecoderSetParameterBnormal();
@@ -511,12 +511,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_SETPARAMETER_0400
-     * @tc.name       : testOHAudioDecoderSetParameter004
-     * @tc.desc       : test OH_AudioDecoder_SetParameter
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAudioDecoderSetParameter004
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_SETPARAMETER_0400
+     * @tc.desc   test OH_AudioDecoder_SetParameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAudioDecoderSetParameter004', Level.LEVEL0, async (done: Function) => {
       let result: number = audiodecoderxdlndk.OHAudioDecoderSetParameterCnormal();
@@ -525,12 +525,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_ISVALID_0200
-     * @tc.name       : testOHAudioDecoderIsValid002
-     * @tc.desc       : test OH_AudioDecoder_IsValid
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAudioDecoderIsValid002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_ISVALID_0200
+     * @tc.desc   test OH_AudioDecoder_IsValid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAudioDecoderIsValid002', Level.LEVEL0, async (done: Function) => {
       let result: number = audiodecoderxdlndk.OHAudioDecoderIsValidAnormal();
@@ -539,12 +539,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_ISVALID_0300
-     * @tc.name       : testOHAudioDecoderIsValid003
-     * @tc.desc       : test OH_AudioDecoder_IsValid
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAudioDecoderIsValid003
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_ISVALID_0300
+     * @tc.desc   test OH_AudioDecoder_IsValid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAudioDecoderIsValid003', Level.LEVEL0, async (done: Function) => {
       let result: number = audiodecoderxdlndk.OHAudioDecoderIsValidBnormal();
@@ -553,12 +553,12 @@ export default function audioDeCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_ISVALID_0400
-     * @tc.name       : testOHAudioDecoderIsValid004
-     * @tc.desc       : test OH_AudioDecoder_IsValid
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAudioDecoderIsValid004
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_AUDIODECODER_OH_AUDIODECODER_ISVALID_0400
+     * @tc.desc   test OH_AudioDecoder_IsValid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAudioDecoderIsValid004', Level.LEVEL0, async (done: Function) => {
       let result: number = audiodecoderxdlndk.OHAudioDecoderIsValidCnormal();

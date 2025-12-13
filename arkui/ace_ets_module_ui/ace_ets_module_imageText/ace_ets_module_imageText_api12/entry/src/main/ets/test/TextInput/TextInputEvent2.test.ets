@@ -42,15 +42,15 @@ export default function TextInputEvent2() {
       console.info("TextInputEvent2 after each called");
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TEXT_INPUT_DELETE_CALLBACK_0170
-     * @tc.name       : TextInputEvent2_001
-     * @tc.desc       : onWillInsert Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   TextInputEvent2_001
+     * @tc.number TextInputEvent2_001
+     * @tc.desc   TextInputEvent2_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('TextInputEvent2_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[TextInputEvent2_001] START');
 
@@ -80,15 +80,15 @@ export default function TextInputEvent2() {
 
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TEXT_INPUT_DELETE_CALLBACK_0180
-     * @tc.name       : TextInputEvent2_002
-     * @tc.desc       : onWillInsert Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   TextInputEvent2_002
+     * @tc.number TextInputEvent2_002
+     * @tc.desc   TextInputEvent2_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('TextInputEvent2_002',  Level.LEVEL0, async (done: Function) => {
       console.info('[TextInputEvent2_002] START');
 
@@ -100,8 +100,6 @@ export default function TextInputEvent2() {
 	  await driver.triggerKey(2070);
       await CommonFunc.sleep(1000);
       await text.clearText();
-      await CommonFunc.sleep(1000);
-	  await driver.triggerKey(2070);
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('TextInputEvent2Text')
       let strJson2 = getInspectorByKey('TextInputEvent2Text2');
@@ -118,15 +116,15 @@ export default function TextInputEvent2() {
 
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TEXT_INPUT_DELETE_CALLBACK_0190
-     * @tc.name       : TextInputEvent2_003
-     * @tc.desc       : onWillInsert Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   TextInputEvent2_003
+     * @tc.number TextInputEvent2_003
+     * @tc.desc   TextInputEvent2_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('TextInputEvent2_003',  Level.LEVEL0, async (done: Function) => {
       console.info('[TextInputEvent2_003] START');
 
@@ -156,15 +154,15 @@ export default function TextInputEvent2() {
 
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TEXT_INPUT_DELETE_CALLBACK_0200
-     * @tc.name       : TextInputEvent2_004
-     * @tc.desc       : onWillInsert Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   TextInputEvent2_004
+     * @tc.number TextInputEvent2_004
+     * @tc.desc   TextInputEvent2_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('TextInputEvent2_004',  Level.LEVEL0, async (done: Function) => {
       console.info('[TextInputEvent2_004] START');
 
@@ -194,15 +192,15 @@ export default function TextInputEvent2() {
 
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TEXT_INPUT_DELETE_CALLBACK_0210
-     * @tc.name       : TextInputEvent2_005
-     * @tc.desc       : onWillInsert Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   TextInputEvent2_005
+     * @tc.number TextInputEvent2_005
+     * @tc.desc   TextInputEvent2_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('TextInputEvent2_005',  Level.LEVEL0, async (done: Function) => {
       console.info('[TextInputEvent2_005] START');
 
@@ -218,8 +216,6 @@ export default function TextInputEvent2() {
       await CommonFunc.sleep(1000);
       await text.clearText();
       await CommonFunc.sleep(1000);
-	  await driver.triggerKey(2070);
-      await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('TextInputEvent2Text5')
       await CommonFunc.sleep(200);
       let obj: ESObject = JSON.parse(strJson);
@@ -232,15 +228,15 @@ export default function TextInputEvent2() {
 
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TEXT_INPUT_DELETE_CALLBACK_0230
-     * @tc.name       : TextInputEvent2_006
-     * @tc.desc       : onWillInsert Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   TextInputEvent2_006
+     * @tc.number TextInputEvent2_006
+     * @tc.desc   TextInputEvent2_006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('TextInputEvent2_006',  Level.LEVEL0, async (done: Function) => {
       console.info('[TextInputEvent2_006] START');
 
@@ -268,15 +264,15 @@ export default function TextInputEvent2() {
 
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TEXT_INPUT_DELETE_CALLBACK_0250
-     * @tc.name       : TextInputEvent2_007
-     * @tc.desc       : onWillInsert Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   TextInputEvent2_007
+     * @tc.number TextInputEvent2_007
+     * @tc.desc   TextInputEvent2_007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('TextInputEvent2_007',  Level.LEVEL0, async (done: Function) => {
       console.info('[TextInputEvent2_007] START');
 
@@ -289,8 +285,6 @@ export default function TextInputEvent2() {
       await CommonFunc.sleep(1000);
       await text.clearText();
       await CommonFunc.sleep(1000);
-	  await driver.triggerKey(2070);
-      await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('TextInputEvent2Text5')
       await CommonFunc.sleep(200);
       let obj: ESObject = JSON.parse(strJson);
@@ -300,13 +294,6 @@ export default function TextInputEvent2() {
       expect(obj.$attrs.content).assertEqual('onWillInsert');
       console.info('[TextInputEvent2_007] END');
       done();
-
     });
-
-
-
-
-
-
   })
 }

@@ -85,14 +85,14 @@ export default function MindSporeStatusTest() {
         err.message + ", error code: " + err.code);
       });
     })
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_STATUS_LITE_PARAM_INVALID_0100
-       * @tc.name       : testOH_AI_STATUS_LITE_PARAM_INVALID0100
-       * @tc.desc       : testing OH_AI_STATUS_LITE_PARAM_INVALID interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_STATUS_LITE_PARAM_INVALID0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_STATUS_LITE_PARAM_INVALID_0100
+     * @tc.desc   testing OH_AI_STATUS_LITE_PARAM_INVALID interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_STATUS_LITE_PARAM_INVALID0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -108,14 +108,14 @@ export default function MindSporeStatusTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_STATUS_LITE_UNINITIALIZED_OBJ_0100
-       * @tc.name       : testOH_AI_STATUS_LITE_UNINITIALIZED_OBJ0100
-       * @tc.desc       : testing OH_AI_STATUS_LITE_UNINITIALIZED_OBJ interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_STATUS_LITE_UNINITIALIZED_OBJ0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_STATUS_LITE_UNINITIALIZED_OBJ_0100
+     * @tc.desc   testing OH_AI_STATUS_LITE_UNINITIALIZED_OBJ interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_STATUS_LITE_UNINITIALIZED_OBJ0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {

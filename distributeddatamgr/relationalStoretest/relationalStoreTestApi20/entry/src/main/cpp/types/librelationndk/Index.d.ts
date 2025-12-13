@@ -20,6 +20,7 @@ export const getModifyTimeSuccess: () => number;
 export const getSizeSuccess: () => number;
 export const getStatusSuccess: () => number;
 export const getDestroyOneSuccess: () => number;
+export const OHRdbExecuteByTrxId: () => number;
 // database/data/oh_data_value.h
 export const destroy: () => number;
 export const putNull: () => number;

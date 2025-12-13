@@ -37,14 +37,14 @@ export default function NetworkManagerDnsGetAddrInfo1Test() {
     let function_valid = 0
     let function_null = 1
 
-    /* *
-    * @tc.number  NETWORKMANAGER_DNS_GETADDRINFO_0200
-    * @tc.name    getAddrInfo
-    * @tc.desc    check get DNS result
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level 2
-    */
+    /**
+     * @tc.name   NetworkManager_Dns_GetAddrInfo_0200
+     * @tc.number NETWORKMANAGER_DNS_GETADDRINFO_0200
+     * @tc.desc   check get DNS result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("NetworkManager_Dns_GetAddrInfo_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "NetworkManager_Dns_GetAddrInfo_0200"
       let status = testNapi.getaddrinfo(hostaddr_invalid, serv, netid_default);
@@ -59,14 +59,14 @@ export default function NetworkManagerDnsGetAddrInfo1Test() {
       }
     });
 
-    /* *
-    * @tc.number  NETWORKMANAGER_DNS_GETADDRINFO_0300
-    * @tc.name    getAddrInfo
-    * @tc.desc    check get DNS result
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level 0
-    */
+    /**
+     * @tc.name   NetworkManager_Dns_GetAddrInfo_0300
+     * @tc.number NETWORKMANAGER_DNS_GETADDRINFO_0300
+     * @tc.desc   check get DNS result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("NetworkManager_Dns_GetAddrInfo_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "NetworkManager_Dns_GetAddrInfo_0300"
       let status = testNapi.getaddrinfo(hostaddr_valid, serv, netid_invalid);
@@ -81,14 +81,14 @@ export default function NetworkManagerDnsGetAddrInfo1Test() {
       }
     });
 
-    /* *
-    * @tc.number  NETWORKMANAGER_DNS_GETADDRINFO_0400
-    * @tc.name    getAddrInfo
-    * @tc.desc    check get DNS result
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level 2
-    */
+    /**
+     * @tc.name   NetworkManager_Dns_GetAddrInfo_0400
+     * @tc.number NETWORKMANAGER_DNS_GETADDRINFO_0400
+     * @tc.desc   check get DNS result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("NetworkManager_Dns_GetAddrInfo_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "NetworkManager_Dns_GetAddrInfo_0400"
       let status = testNapi.getaddrinfo(hostaddr_valid, serv, netid_unreachable);
@@ -103,14 +103,14 @@ export default function NetworkManagerDnsGetAddrInfo1Test() {
       }
     });
 
-    /* *
-    * @tc.number  NetworkManager_Dns_RegisterDnsResolver_0100
-    * @tc.name    registerdnsresolver
-    * @tc.desc    check register dns resolver
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level 0
-    */
+    /**
+     * @tc.name   NetworkManager_Dns_RegisterDnsResolver_0100
+     * @tc.number NetworkManager_Dns_RegisterDnsResolver_0100
+     * @tc.desc   check register dns resolver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("NetworkManager_Dns_RegisterDnsResolver_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "NetworkManager_Dns_RegisterDnsResolver_0100"
       let status = testNapi.registerdnsresolver(function_valid);
@@ -125,14 +125,14 @@ export default function NetworkManagerDnsGetAddrInfo1Test() {
       }
     });
 
-    /* *
-    * @tc.number  NetworkManager_Dns_RegisterDnsResolver_0200
-    * @tc.name    registerdnsresolver
-    * @tc.desc    check register dns resolver
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level 2
-    */
+    /**
+     * @tc.name   NetworkManager_Dns_RegisterDnsResolver_0200
+     * @tc.number NetworkManager_Dns_RegisterDnsResolver_0200
+     * @tc.desc   check register dns resolver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("NetworkManager_Dns_RegisterDnsResolver_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "NetworkManager_Dns_RegisterDnsResolver_0200"
       let status = testNapi.registerdnsresolver(function_null);

@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import { MyCallback } from '../models/MyCallback';
-import { AppStorage } from '@ohos.arkui.stateManagement'
+import { AppStorage } from 'arkui.stateManagement.storage.appStorage'
 import common from '@ohos.app.ability.common';
 
 class EntryAbility extends UIAbility {
@@ -30,34 +30,37 @@ class EntryAbility extends UIAbility {
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onWindowStageCreate');
-    try {
-      windowStage.loadContent('pages/geolocationPermissions', (err: BusinessError<void> | null): void => {
-        hilog.info(0x0000, 'testTag EntryAbility', 'loadContent entering');
-        MyCallback.runCasesOfCallback();
-        if (err?.code) {
-          hilog.info(0x0000, 'testTag EntryAbility', 'loadContent error');
-          return;
-        }
-        hilog.info(0x0000, 'testTag EntryAbility', 'loadContent ok');
-      });
-    } catch (e: Error) {
-      hilog.info(0x0000, 'testTag EntryAbility', 'loadContent catch error：-----------' + e.message);
-    }
+    windowStage.loadContent('pages/geolocationPermissions', (err: BusinessError<void>|null, data: undefined): void => {
+      hilog.info(0x0000, 'testTag EntryAbility', 'loadContent entering');
+      if (err?.code) {
+        hilog.info(0x0000, 'testTag EntryAbility', 'loadContent error');
+        return;
+      }
+      hilog.info(0x0000, 'testTag EntryAbility', 'loadContent ok'+JSON.stringify(this.context));
+      hilog.info(0x0000, 'testTag EntryAbility', 'onWindowStageCreate ok');
+    });
   }
 
-  onDestroy() {
-    hilog.info(0x0000, 'testTag EntryAbility', '%{public}s', 'TestAbility onDestroy');
+  onDestroy(): Promise<void> | undefined {
+    hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onDestroy');
+    return undefined;
   }
 
   onWindowStageDestroy() {
-    hilog.info(0x0000, 'testTag EntryAbility', '%{public}s', 'TestAbility onWindowStageDestroy');
+    hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onWindowStageDestroy');
   }
 
   onForeground() {
-    hilog.info(0x0000, 'testTag EntryAbility', '%{public}s', 'TestAbility onForeground');
+    hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onForeground');
+    if (this.context) {
+      hilog.info(0x0000, 'testTag EntryAbility', 'context ok'+JSON.stringify(this.context));
+    }else{
+      hilog.info(0x0000, 'testTag EntryAbility', 'context is undefined');
+    }
+    AppStorage.setOrCreate<common.UIAbilityContext>("UIAbilityContext", this.context)
   }
 
   onBackground() {
-    hilog.info(0x0000, 'testTag EntryAbility', '%{public}s', 'TestAbility onBackground');
+    hilog.info(0x0000, 'testTag  EntryAbility', 'EntryAbility onBackground');
   }
 }

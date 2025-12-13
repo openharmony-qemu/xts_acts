@@ -23,9 +23,12 @@ let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner
 export default function inputMethodOnOffTest() {
     describe('inputMethodOnOffTest', () => {
         /**
+         * @tc.name   SUB_Misc_inputMethod_ImeChange__static_0100
          * @tc.number SUB_Misc_inputMethod_ImeChange__static_0100
-         * @tc.name SUB_Misc_inputMethod_ImeChange__static_0100
-         * @tc.desc Function test
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Misc_inputMethod_ImeChange__static_0100', Level.LEVEL2, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_ImeChange__static_0100';
@@ -52,9 +55,12 @@ export default function inputMethodOnOffTest() {
         });
 
         /**
+         * @tc.name   SUB_Misc_inputMethod_selectByMovement__static_0100
          * @tc.number SUB_Misc_inputMethod_selectByMovement__static_0100
-         * @tc.name SUB_Misc_inputMethod_selectByMovement__static_0100
-         * @tc.desc Function test
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Misc_inputMethod_selectByMovement__static_0100', Level.LEVEL2, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_selectByMovement__static_0100';
@@ -81,9 +87,12 @@ export default function inputMethodOnOffTest() {
         });
 
         /**
+         * @tc.name   SUB_Misc_inputMethod_selectByRange__static_0100
          * @tc.number SUB_Misc_inputMethod_selectByRange__static_0100
-         * @tc.name SUB_Misc_inputMethod_selectByRange__static_0100
-         * @tc.desc Function test
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Misc_inputMethod_selectByRange__static_0100', Level.LEVEL2, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_selectByRange__static_0100';
@@ -110,9 +119,12 @@ export default function inputMethodOnOffTest() {
         });
 
         /**
+         * @tc.name   SUB_Misc_inputMethod_sendKeyboardStatus__static_0100
          * @tc.number SUB_Misc_inputMethod_sendKeyboardStatus__static_0100
-         * @tc.name SUB_Misc_inputMethod_sendKeyboardStatus__static_0100
-         * @tc.desc Function test
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Misc_inputMethod_sendKeyboardStatus__static_0100', Level.LEVEL2, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_sendKeyboardStatus__static_0100';
@@ -139,9 +151,12 @@ export default function inputMethodOnOffTest() {
         });
 
         /**
+         * @tc.name   SUB_Misc_inputMethod_sendFunctionKey__static_0100
          * @tc.number SUB_Misc_inputMethod_sendFunctionKey__static_0100
-         * @tc.name SUB_Misc_inputMethod_sendFunctionKey__static_0100
-         * @tc.desc Function test
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Misc_inputMethod_sendFunctionKey__static_0100', Level.LEVEL2, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_sendFunctionKey__static_0100';
@@ -168,9 +183,12 @@ export default function inputMethodOnOffTest() {
         });
 
         /**
+         * @tc.name   SUB_Misc_inputMethod_moveCursor__static_0100
          * @tc.number SUB_Misc_inputMethod_moveCursor__static_0100
-         * @tc.name SUB_Misc_inputMethod_moveCursor__static_0100
-         * @tc.desc Function test
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Misc_inputMethod_moveCursor__static_0100', Level.LEVEL2, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_moveCursor__static_0100';
@@ -197,9 +215,12 @@ export default function inputMethodOnOffTest() {
         });
 
         /**
+         * @tc.name   SUB_Misc_inputMethod_deleteRight__static_0100
          * @tc.number SUB_Misc_inputMethod_deleteRight__static_0100
-         * @tc.name SUB_Misc_inputMethod_deleteRight__static_0100
-         * @tc.desc Function test
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Misc_inputMethod_deleteRight__static_0100', Level.LEVEL2, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_deleteRight__static_0100';
@@ -226,9 +247,12 @@ export default function inputMethodOnOffTest() {
         });
 
         /**
+         * @tc.name   SUB_Misc_inputMethod_deleteLeft__static_0100
          * @tc.number SUB_Misc_inputMethod_deleteLeft__static_0100
-         * @tc.name SUB_Misc_inputMethod_deleteLeft__static_0100
-         * @tc.desc Function test
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Misc_inputMethod_deleteLeft__static_0100', Level.LEVEL2, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_deleteLeft__static_0100';
@@ -255,9 +279,12 @@ export default function inputMethodOnOffTest() {
         });
 
         /**
+         * @tc.name   SUB_Misc_inputMethod_handleExtendAction__static_0100
          * @tc.number SUB_Misc_inputMethod_handleExtendAction__static_0100
-         * @tc.name SUB_Misc_inputMethod_handleExtendAction__static_0100
-         * @tc.desc Function test
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Misc_inputMethod_handleExtendAction__static_0100', Level.LEVEL2, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_handleExtendAction__static_0100';
@@ -284,9 +311,12 @@ export default function inputMethodOnOffTest() {
         });
 
         /**
+         * @tc.name   SUB_Misc_inputMethod_insertText__static_0100
          * @tc.number SUB_Misc_inputMethod_insertText__static_0100
-         * @tc.name SUB_Misc_inputMethod_insertText__static_0100
-         * @tc.desc Function test
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Misc_inputMethod_insertText__static_0100', Level.LEVEL2, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_insertText__static_0100';
@@ -313,9 +343,12 @@ export default function inputMethodOnOffTest() {
         });
 
         /**
+         * @tc.name   SUB_Misc_inputMethod_getRightTextOfCursor__static_0100
          * @tc.number SUB_Misc_inputMethod_getRightTextOfCursor__static_0100
-         * @tc.name SUB_Misc_inputMethod_getRightTextOfCursor__static_0100
-         * @tc.desc Function test
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Misc_inputMethod_getRightTextOfCursor__static_0100', Level.LEVEL2, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_getRightTextOfCursor__static_0100';
@@ -344,9 +377,12 @@ export default function inputMethodOnOffTest() {
         });
 
         /**
+         * @tc.name   SUB_Misc_inputMethod_getLeftTextOfCursor__static_0100
          * @tc.number SUB_Misc_inputMethod_getLeftTextOfCursor__static_0100
-         * @tc.name SUB_Misc_inputMethod_getLeftTextOfCursor__static_0100
-         * @tc.desc Function test
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Misc_inputMethod_getLeftTextOfCursor__static_0100', Level.LEVEL2, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_getLeftTextOfCursor__static_0100';
@@ -375,9 +411,12 @@ export default function inputMethodOnOffTest() {
         });
 
         /**
+         * @tc.name   SUB_Misc_inputMethod_getTextIndexAtCursor__static_0100
          * @tc.number SUB_Misc_inputMethod_getTextIndexAtCursor__static_0100
-         * @tc.name SUB_Misc_inputMethod_getTextIndexAtCursor__static_0100
-         * @tc.desc Function test
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Misc_inputMethod_getTextIndexAtCursor__static_0100', Level.LEVEL2, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_getTextIndexAtCursor__static_0100';

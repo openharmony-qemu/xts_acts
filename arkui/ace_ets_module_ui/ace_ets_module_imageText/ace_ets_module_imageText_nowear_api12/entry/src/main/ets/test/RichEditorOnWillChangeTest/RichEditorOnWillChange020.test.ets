@@ -55,12 +55,12 @@ export default function RichEditorOnWillChange020() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0006
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0006
-     * @tc.desc  : Soft/hard (BackSpace, delete) keyboard to delete some text to test RichEditor on WillChange callback
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0006
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0006
+     * @tc.desc   Soft/hard (BackSpace, delete) keyboard to delete some text to test RichEditor on WillChange callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0006',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0006 START');
@@ -110,7 +110,7 @@ export default function RichEditorOnWillChange020() {
       expect(replaceCall).assertEqual('replacedSpans Callback:[]');
 
       let back = await driver.findComponent(ON.id('back'));
-      back.click();
+      await back.click();
       await CommonFunc.sleep(500);
 
       await driver.triggerKey(KeyCode.KEYCODE_FORWARD_DEL);

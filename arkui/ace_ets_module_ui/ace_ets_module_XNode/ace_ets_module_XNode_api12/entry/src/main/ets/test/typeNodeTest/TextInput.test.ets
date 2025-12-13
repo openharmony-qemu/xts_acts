@@ -40,12 +40,12 @@ export default function typeNodeTextInputTest() {
       done();
     });
     /**
-     * @tc.number    TextInputTest_0100
-     * @tc.name      TextInputTest_0100
-     * @tc.desc      TypedFrameNode: TextInput
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputTest_0100
+     * @tc.number TextInputTest_0100
+     * @tc.desc   TypedFrameNode: TextInput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextInputTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('TextInputTest_0100 START');

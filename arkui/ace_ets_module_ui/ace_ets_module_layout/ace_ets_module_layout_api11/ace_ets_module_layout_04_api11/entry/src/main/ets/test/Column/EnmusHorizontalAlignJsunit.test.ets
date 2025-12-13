@@ -44,6 +44,14 @@ export default function enumsVerticalAlignJsunit() {
       console.info('[ afterEach ] ===================enumsFlexItemTest test after each called===================');
     });
 
+    /**
+     * @tc.name   enumsHorizontalAlignTest_0100
+     * @tc.number enumsHorizontalAlignTest_0100
+     * @tc.desc   enumsHorizontalAlignTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('enumsHorizontalAlignTest_0100', Level.LEVEL0,  async (done: Function) =>{
       console.info('enumsHorizontalAlignTest_0100 START');
       await Utils.sleep(1500);

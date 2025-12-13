@@ -39,11 +39,19 @@ namespace OHOS {
     {
     }
 
+    /**
+     * @tc.name   TestVulkanFragment_shader_interlockTestCase
+     * @tc.number TestVulkanFragment_shader_interlockTestCase
+     * @tc.desc   TestVulkanFragment_shader_interlockTestCase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     HWTEST_F(ActsVulkanFragmentshaderinterlockTest, TestVulkanFragment_shader_interlockTestCase, Function | MediumTest | Level2)
     {
         printf("------start ActsVulkanFragmentshaderinterlockTest------\n");
         if (canIUse("SystemCapability.Graphic.Vulkan")) {
-            system("/data/local/tmp/vulkan/vk-default/deqp_vk_execute "
+            system("/data/local/tmp/deqp_vk_execute "
                 "--deqp-caselist-file=/data/local/tmp/vulkan/vk-default/fragment-shader-interlock.txt "
                 "--deqp-log-filename=ActsVulkanFragmentshaderinterlockTest.qpa");
         }

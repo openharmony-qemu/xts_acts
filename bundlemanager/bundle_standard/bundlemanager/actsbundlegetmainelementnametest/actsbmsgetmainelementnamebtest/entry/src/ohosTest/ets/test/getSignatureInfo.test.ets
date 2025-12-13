@@ -20,12 +20,12 @@ import { BusinessError } from '@ohos.base';
 export default function getSignatureInfo() {
   describe('getSignatureInfo', () => {
     /**
-     * @tc.number: Sub_Bms_Framework_getSignatureInfo04
-     * @tc.name: Sub_Bms_Framework_getSignatureInfo04
-     * @tc.desc: Test getSignatureInfo with error code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+     * @tc.name   Sub_Bms_Framework_getSignatureInfo04
+     * @tc.number Sub_Bms_Framework_getSignatureInfo04
+     * @tc.desc   Test getSignatureInfo with error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Bms_Framework_getSignatureInfo04', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION |

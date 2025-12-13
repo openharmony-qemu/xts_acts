@@ -214,12 +214,12 @@ function AVPlayerLocalDeprecatedTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_0001
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_0001
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_0001
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_0001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_0001';
@@ -230,12 +230,12 @@ function AVPlayerLocalDeprecatedTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_0002
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_0002
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_0002
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_0002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_0002';
@@ -247,12 +247,12 @@ function AVPlayerLocalDeprecatedTest() {
 
 
     /**
-     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_PLAYING_0001
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_PLAYING_0001
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_PLAYING_0001
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_PLAYING_0001', Level.LEVEL0,
       async (done: Function) => {
@@ -264,12 +264,12 @@ function AVPlayerLocalDeprecatedTest() {
       });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_PLAYING_0002
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_PLAYING_0002
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_PLAYING_0002
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_PLAYING_0002', Level.LEVEL0,
       async (done: Function) => {
@@ -282,12 +282,12 @@ function AVPlayerLocalDeprecatedTest() {
 
 
     /**
-     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_MOV_0001
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_MOV_0001
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_MOV_0001
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_MOV_0001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_MOV_0001';
@@ -298,12 +298,12 @@ function AVPlayerLocalDeprecatedTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_MOV_0002
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_MOV_0002
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_MOV_0002
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_MOV_0002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_MOV_0002';
@@ -314,12 +314,12 @@ function AVPlayerLocalDeprecatedTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_F4V_0001
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_F4V_0001
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_F4V_0001
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_F4V_0001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_F4V_0001';
@@ -330,12 +330,12 @@ function AVPlayerLocalDeprecatedTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_F4V_0002
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_F4V_0002
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_F4V_0002
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_F4V_0002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_F4V_0002';
@@ -346,12 +346,12 @@ function AVPlayerLocalDeprecatedTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_MKV_0001
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_MKV_0001
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_MKV_0001
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_MKV_0001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_MKV_0001';
@@ -362,12 +362,12 @@ function AVPlayerLocalDeprecatedTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_MKV_0002
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_MKV_0002
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_MKV_0002
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_MKV_0002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_MKV_0002';
@@ -378,12 +378,12 @@ function AVPlayerLocalDeprecatedTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_MP3_0001
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_MP3_0001
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_MP3_0001
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_MP3_0001', Level.LEVEL0,
       async (done: Function) => {
@@ -395,12 +395,12 @@ function AVPlayerLocalDeprecatedTest() {
       });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_MP3_0002
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_MP3_0002
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_MP3_0002
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_MP3_0002', Level.LEVEL0,
       async (done: Function) => {
@@ -412,12 +412,12 @@ function AVPlayerLocalDeprecatedTest() {
       });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_ARM_0001
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_ARM_0001
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_ARM_0001
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_ARM_0001', Level.LEVEL0,
       async (done: Function) => {
@@ -429,12 +429,12 @@ function AVPlayerLocalDeprecatedTest() {
       });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_ARM_0002
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_ARM_0002
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_ARM_0002
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_ARM_0002', Level.LEVEL0,
       async (done: Function) => {
@@ -446,12 +446,12 @@ function AVPlayerLocalDeprecatedTest() {
       });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_WAV_0001
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_WAV_0001
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_WAV_0001
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_WAV_0001', Level.LEVEL0,
       async (done: Function) => {
@@ -463,12 +463,12 @@ function AVPlayerLocalDeprecatedTest() {
       });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_WAV_0002
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_WAV_0002
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_WAV_0002
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_WAV_0002', Level.LEVEL0,
       async (done: Function) => {
@@ -480,12 +480,12 @@ function AVPlayerLocalDeprecatedTest() {
       });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0001
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0001
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0001
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0001', Level.LEVEL0,
       async (done: Function) => {
@@ -497,12 +497,12 @@ function AVPlayerLocalDeprecatedTest() {
       });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0002
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0002
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0002
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0002', Level.LEVEL0,
       async (done: Function) => {
@@ -514,12 +514,12 @@ function AVPlayerLocalDeprecatedTest() {
       });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_OGG_0001
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_OGG_0001
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_OGG_0001
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_OGG_0001', Level.LEVEL0,
       async (done: Function) => {
@@ -531,12 +531,12 @@ function AVPlayerLocalDeprecatedTest() {
       });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_OGG_0002
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_OGG_0002
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_OGG_0002
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_PLAYER_GET_TRACK_DESCRIPTION_OGG_0002', Level.LEVEL0,
       async (done: Function) => {
@@ -548,12 +548,12 @@ function AVPlayerLocalDeprecatedTest() {
       });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_3GP_0001
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_3GP_0001
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_3GP_0001
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_3GP_0001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_3GP_0001';
@@ -564,12 +564,12 @@ function AVPlayerLocalDeprecatedTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_3GP_0002
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_3GP_0002
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_3GP_0002
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_3GP_0002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_3GP_0002';
@@ -582,12 +582,12 @@ function AVPlayerLocalDeprecatedTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_3G2_0001
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_3G2_0001
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_3G2_0001
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_3G2_0001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_3G2_0001';
@@ -598,12 +598,12 @@ function AVPlayerLocalDeprecatedTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_3G2_0002
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_3G2_0002
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_3G2_0002
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_3G2_0002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_3G2_0002';
@@ -614,12 +614,12 @@ function AVPlayerLocalDeprecatedTest() {
     })
 
     /**
-     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_AVI_0001
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_AVI_0001
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_AVI_0001
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_AVI_0001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_AVI_0001';
@@ -630,12 +630,12 @@ function AVPlayerLocalDeprecatedTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_AVI_0002
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_AVI_0002
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_AVI_0002
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_AVI_0002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_AVI_0002';
@@ -646,12 +646,12 @@ function AVPlayerLocalDeprecatedTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_TS_0001
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_TS_0001
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_TS_0001
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_TS_0001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_TS_0001';
@@ -662,12 +662,12 @@ function AVPlayerLocalDeprecatedTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_TS_0002
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_TS_0002
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_TS_0002
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_TS_0002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GET_TRACK_DESCRIPTION_TS_0002';

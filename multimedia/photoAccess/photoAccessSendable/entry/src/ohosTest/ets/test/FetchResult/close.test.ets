@@ -41,12 +41,12 @@ export default function closeTest () {
     });
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Close_001
-     * @tc.name      : close_fetch_result_000
-     * @tc.desc      : close fetchResult
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   close_fetch_result_000
+     * @tc.number Sub_Photo_Access_Sendable_Close_001
+     * @tc.desc   close fetchResult
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('close_fetch_result_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'close_fetch_result_000';
@@ -68,12 +68,12 @@ export default function closeTest () {
     });
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Close_002
-     * @tc.name      : close_fetch_result_001
-     * @tc.desc      : close fetchResult, then operate fetchResult
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   close_fetch_result_001
+     * @tc.number Sub_Photo_Access_Sendable_Close_002
+     * @tc.desc   close fetchResult, then operate fetchResult
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('close_fetch_result_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'close_fetch_result_001';

@@ -55,12 +55,12 @@ export default function RichEditorOnWillChange017() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0017
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0017
-     * @tc.desc  : Test RichEditor on WillChange callback by adding multiple spans with line breaks and splitting to occupy AddTextCpan
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0017
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0017
+     * @tc.desc   Test RichEditor on WillChange callback by adding multiple spans with line breaks and splitting to occupy AddTextCpan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0017',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0017 START');
@@ -71,7 +71,7 @@ export default function RichEditorOnWillChange017() {
       await CommonFunc.sleep(1000);
 
       let add_text_span = await driver.findComponent(ON.id('add_text_span'));
-      add_text_span.click();
+      await add_text_span.click();
       await CommonFunc.sleep(500);
 
       let onDidChange_rangeBefore = await driver.findComponent(ON.id('onDidChange_rangeBefore'));

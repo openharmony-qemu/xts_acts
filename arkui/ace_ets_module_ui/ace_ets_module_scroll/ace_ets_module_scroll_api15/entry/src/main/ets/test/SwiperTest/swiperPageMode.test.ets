@@ -50,12 +50,12 @@ export default function swiperPageMode() {
     });
 
     /**
-     * @tc.number    swiperPageMode_001
-     * @tc.name      swiperPageMode_0100
-     * @tc.desc      Set mouse scroll wheel single page flipping mode.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   swiperPageMode_0100
+     * @tc.number swiperPageMode_001
+     * @tc.desc   Set mouse scroll wheel single page flipping mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('swiperPageMode_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[swiperPageMode_0100] START');
@@ -90,12 +90,12 @@ export default function swiperPageMode() {
     });
 
     /**
-     * @tc.number    swiperPageMode_002
-     * @tc.name      swiperPageMode_0200
-     * @tc.desc      Set mouse scroll wheel continuous page flipping mode.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   swiperPageMode_0200
+     * @tc.number swiperPageMode_002
+     * @tc.desc   Set mouse scroll wheel continuous page flipping mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('swiperPageMode_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[swiperPageMode_0200] START');

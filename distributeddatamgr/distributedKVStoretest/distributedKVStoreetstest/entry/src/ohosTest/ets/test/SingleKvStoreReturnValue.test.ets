@@ -110,13 +110,12 @@ export default function SingleKvStoreReturnValue(){
     });
 
     /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_0300
-     * @tc.name SUB_DDM_SKV_ReturnValue_0300
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getEntries(keyPrefix: string, callback: AsyncCallback<Entry[]>): void
-     * Entry.length = 10
+     * @tc.desc   getEntries(keyPrefix: string, callback: AsyncCallback<Entry[]>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -155,13 +154,12 @@ export default function SingleKvStoreReturnValue(){
     })
 
     /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_0301
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_0301
-     * @tc.name SUB_DDM_SKV_ReturnValue_0301
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getEntries(keyPrefix: string, callback: AsyncCallback<Entry[]>): void
-     * Entry.length = 0
+     * @tc.desc   getEntries(keyPrefix: string, callback: AsyncCallback<Entry[]>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_0301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -183,13 +181,12 @@ export default function SingleKvStoreReturnValue(){
     })
 
     /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_0400
-     * @tc.name SUB_DDM_SKV_ReturnValue_0400
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getEntries(keyPrefix: string): Promise<Entry[]>
-     * Entry.length = 10
+     * @tc.desc   getEntries(keyPrefix: string): Promise<Entry[]>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -229,13 +226,12 @@ export default function SingleKvStoreReturnValue(){
     })
 
     /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_0401
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_0401
-     * @tc.name SUB_DDM_SKV_ReturnValue_0401
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getEntries(keyPrefix: string): Promise<Entry[]>
-     * Entry.length = 0
+     * @tc.desc   getEntries(keyPrefix: string): Promise<Entry[]>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_0401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -261,13 +257,12 @@ export default function SingleKvStoreReturnValue(){
     })
 
     /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_0700
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_0700
-     * @tc.name SUB_DDM_SKV_ReturnValue_0700
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
-     * Entry.length = 10
+     * @tc.desc   getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -308,13 +303,12 @@ export default function SingleKvStoreReturnValue(){
     })
 
     /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_0701
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_0701
-     * @tc.name SUB_DDM_SKV_ReturnValue_0701
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
-     * Entry.length = 0
+     * @tc.desc   getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_0701', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -339,13 +333,12 @@ export default function SingleKvStoreReturnValue(){
 
 
     /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_0800
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_0800
-     * @tc.name SUB_DDM_SKV_ReturnValue_0800
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getEntries(query: Query): Promise<Entry[]>
-     * Entry.length = 10
+     * @tc.desc   getEntries(query: Query): Promise<Entry[]>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -386,13 +379,12 @@ export default function SingleKvStoreReturnValue(){
     })
 
     /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_0801
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_0801
-     * @tc.name SUB_DDM_SKV_ReturnValue_0801
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getEntries(query: Query): Promise<Entry[]>
-     * Entry.length = 0
+     * @tc.desc   getEntries(query: Query): Promise<Entry[]>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_0801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -419,12 +411,12 @@ export default function SingleKvStoreReturnValue(){
     })
 
     /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_1100
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_1100
-     * @tc.name SUB_DDM_SKV_ReturnValue_1100
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc get(key: string, callback: AsyncCallback<boolean | string | number | Uint8Array>): void---true
+     * @tc.desc   get(key: string, callback: AsyncCallback<boolean | string | number | Uint8Array>): void---true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -447,12 +439,12 @@ export default function SingleKvStoreReturnValue(){
     })
 
     /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_1101
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_1101
-     * @tc.name SUB_DDM_SKV_ReturnValue_1101
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc get(key: string, callback: AsyncCallback<boolean | string | number | Uint8Array>): void---false
+     * @tc.desc   get(key: string, callback: AsyncCallback<boolean | string | number | Uint8Array>): void---false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_1101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -475,12 +467,12 @@ export default function SingleKvStoreReturnValue(){
     })
 
     /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_1200
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_1200
-     * @tc.name SUB_DDM_SKV_ReturnValue_1200
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc get(key: string): Promise<boolean | string | number | Uint8Array>---true
+     * @tc.desc   get(key: string): Promise<boolean | string | number | Uint8Array>---true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -506,12 +498,12 @@ export default function SingleKvStoreReturnValue(){
     })
 
     /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_1201
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_1201
-     * @tc.name SUB_DDM_SKV_ReturnValue_1201
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc get(key: string): Promise<boolean | string | number | Uint8Array>---false
+     * @tc.desc   get(key: string): Promise<boolean | string | number | Uint8Array>---false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_1201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -538,12 +530,12 @@ export default function SingleKvStoreReturnValue(){
 
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_1600
      * @tc.name   SUB_DDM_SKV_ReturnValue_1600
-     * @tc.type   FUNC
-     * @tc.size   MediumTest
-     * @tc.level  Level 2
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_1600
      * @tc.desc   getResultSize(query: Query, callback: AsyncCallback<number>): void---number = 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -570,12 +562,12 @@ export default function SingleKvStoreReturnValue(){
     })
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_1601
      * @tc.name   SUB_DDM_SKV_ReturnValue_1601
-     * @tc.type   FUNC
-     * @tc.size   MediumTest
-     * @tc.level  Level 2
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_1601
      * @tc.desc   getResultSize(query: Query, callback: AsyncCallback<number>): void---number = 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_1601', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -600,13 +592,12 @@ export default function SingleKvStoreReturnValue(){
 
 
     /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_1800
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_1800
-     * @tc.name SUB_DDM_SKV_ReturnValue_1800
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getResultSize(query: Query): Promise<Entry[]>---number = 10
-     * Entry.length = 10
+     * @tc.desc   getResultSize(query: Query): Promise<Entry[]>---number = 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -634,13 +625,12 @@ export default function SingleKvStoreReturnValue(){
     })
 
     /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_1801
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_1801
-     * @tc.name SUB_DDM_SKV_ReturnValue_1801
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getResultSize(query: Query): Promise<Entry[]>---number = 0
-     * Entry.length = 10
+     * @tc.desc   getResultSize(query: Query): Promise<Entry[]>---number = 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_1801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -667,12 +657,12 @@ export default function SingleKvStoreReturnValue(){
     })
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_2000
      * @tc.name   SUB_DDM_SKV_ReturnValue_2000
-     * @tc.type   FUNC
-     * @tc.size   MediumTest
-     * @tc.level  Level 2
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_2000
      * @tc.desc   getResultSet(keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void---result != null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -705,12 +695,12 @@ export default function SingleKvStoreReturnValue(){
 
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_2001
      * @tc.name   SUB_DDM_SKV_ReturnValue_2001
-     * @tc.type   FUNC
-     * @tc.size   MediumTest
-     * @tc.level  Level 2
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_2001
      * @tc.desc   getResultSet(keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void---result == null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -738,13 +728,12 @@ export default function SingleKvStoreReturnValue(){
 
 
     /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_2200
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_2200
-     * @tc.name SUB_DDM_SKV_ReturnValue_2200
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getResultSet(keyPrefix: string): Promise<KVStoreResultSet>
-     * Entry.length = 10
+     * @tc.desc   getResultSet(keyPrefix: string): Promise<KVStoreResultSet>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -775,13 +764,12 @@ export default function SingleKvStoreReturnValue(){
 
 
     /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_2201
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_2201
-     * @tc.name SUB_DDM_SKV_ReturnValue_2201
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getResultSet(keyPrefix: string): Promise<KVStoreResultSet>
-     * Entry.length = 10
+     * @tc.desc   getResultSet(keyPrefix: string): Promise<KVStoreResultSet>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_2201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -808,13 +796,12 @@ export default function SingleKvStoreReturnValue(){
 
 
     /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_2400
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_2400
-     * @tc.name SUB_DDM_SKV_ReturnValue_2400
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getResultSet(query: Query, callback:AsyncCallback<KVStoreResultSet>): void
-     * Entry.length = 10
+     * @tc.desc   getResultSet(query: Query, callback:AsyncCallback<KVStoreResultSet>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -846,13 +833,12 @@ export default function SingleKvStoreReturnValue(){
 
 
     /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_2401
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_2401
-     * @tc.name SUB_DDM_SKV_ReturnValue_2401
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getResultSet(query: Query, callback:AsyncCallback<KVStoreResultSet>): void
-     * Entry.length = 10
+     * @tc.desc   getResultSet(query: Query, callback:AsyncCallback<KVStoreResultSet>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_2401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -880,13 +866,12 @@ export default function SingleKvStoreReturnValue(){
     })
 
     /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_2600
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_2600
-     * @tc.name SUB_DDM_SKV_ReturnValue_2600
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getResultSet(query: Query): Promise<KVStoreResultSet>
-     * Entry.length = 10
+     * @tc.desc   getResultSet(query: Query): Promise<KVStoreResultSet>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -916,13 +901,12 @@ export default function SingleKvStoreReturnValue(){
 
 
     /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_2601
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_2601
-     * @tc.name SUB_DDM_SKV_ReturnValue_2601
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getResultSet(query: Query): Promise<KVStoreResultSet>
-     * Entry.length = 10
+     * @tc.desc   getResultSet(query: Query): Promise<KVStoreResultSet>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_2601', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -953,12 +937,12 @@ export default function SingleKvStoreReturnValue(){
 
 
     /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_SL_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_SL_0100
-     * @tc.name SUB_DDM_SKV_ReturnValue_SL_0100
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getSecurityLevel(callback: AsyncCallback<SecurityLevel>): void---S1
+     * @tc.desc   getSecurityLevel(callback: AsyncCallback<SecurityLevel>): void---S1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_SL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -1004,12 +988,12 @@ export default function SingleKvStoreReturnValue(){
     })
 
     /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_SL_0101
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_SL_0101
-     * @tc.name SUB_DDM_SKV_ReturnValue_SL_0101
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getSecurityLevel(callback: AsyncCallback<SecurityLevel>): void---S2
+     * @tc.desc   getSecurityLevel(callback: AsyncCallback<SecurityLevel>): void---S2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_SL_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -1056,12 +1040,12 @@ export default function SingleKvStoreReturnValue(){
     })
 
     /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_SL_0102
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_SL_0102
-     * @tc.name SUB_DDM_SKV_ReturnValue_SL_0102
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getSecurityLevel(callback: AsyncCallback<SecurityLevel>): void---S3
+     * @tc.desc   getSecurityLevel(callback: AsyncCallback<SecurityLevel>): void---S3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_SL_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -1106,12 +1090,12 @@ export default function SingleKvStoreReturnValue(){
     })
 
     /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_SL_0103
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_SL_0103
-     * @tc.name SUB_DDM_SKV_ReturnValue_SL_0103
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getSecurityLevel(callback: AsyncCallback<SecurityLevel>): void---S4
+     * @tc.desc   getSecurityLevel(callback: AsyncCallback<SecurityLevel>): void---S4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_SL_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -1157,12 +1141,12 @@ export default function SingleKvStoreReturnValue(){
 
 
     /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_SL_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_SL_0200
-     * @tc.name SUB_DDM_SKV_ReturnValue_SL_0200
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getSecurityLevel(): Promise<SecurityLevel>---S1
+     * @tc.desc   getSecurityLevel(): Promise<SecurityLevel>---S1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_SL_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -1210,12 +1194,12 @@ export default function SingleKvStoreReturnValue(){
     })
 
     /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_SL_0201
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_SL_0201
-     * @tc.name SUB_DDM_SKV_ReturnValue_SL_0201
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getSecurityLevel(): Promise<SecurityLevel>---S2
+     * @tc.desc   getSecurityLevel(): Promise<SecurityLevel>---S2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_SL_0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -1263,12 +1247,12 @@ export default function SingleKvStoreReturnValue(){
     })
 
     /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_SL_0202
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_SL_0202
-     * @tc.name SUB_DDM_SKV_ReturnValue_SL_0202
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getSecurityLevel(): Promise<SecurityLevel>---S3
+     * @tc.desc   getSecurityLevel(): Promise<SecurityLevel>---S3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_SL_0202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -1316,12 +1300,12 @@ export default function SingleKvStoreReturnValue(){
     })
 
     /**
+     * @tc.name   SUB_DDM_SKV_ReturnValue_SL_0203
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueTest_SL_0203
-     * @tc.name SUB_DDM_SKV_ReturnValue_SL_0203
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getSecurityLevel(): Promise<SecurityLevel>---S4
+     * @tc.desc   getSecurityLevel(): Promise<SecurityLevel>---S4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_SL_0203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {

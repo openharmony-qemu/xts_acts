@@ -43,12 +43,12 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_0100
      * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_0100
-     * @tc.name Test SignRecover algName with RSA2048|NoPadding|NoHash|OnlySign. Promise style. Process success
-     * @tc.desc digest is RSA2048|NoPadding|NoHash|OnlySign
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   digest is RSA2048|NoPadding|NoHash|OnlySign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_RSASignRecover_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let algName: string = "RSA2048";
@@ -69,12 +69,12 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_0200
      * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_0200
-     * @tc.name Test SignRecover algName with NoPadding|NoHash|OnlySign. Sync style. Process success
-     * @tc.desc digest is RSA4096|NoPadding|NoHash|OnlySign
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   digest is RSA4096|NoPadding|NoHash|OnlySign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_RSASignRecover_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let algName: string = "RSA8192";
@@ -95,12 +95,12 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_0300
      * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_0300
-     * @tc.name Test SignRecover algName with RSA1024|PKCS1|NoHash|OnlySign. Promise style. Process success
-     * @tc.desc digest is RSA1024|PKCS1|NoHash|OnlySign
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   digest is RSA1024|PKCS1|NoHash|OnlySign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_RSASignRecover_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -122,12 +122,12 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_0400
      * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_0400
-     * @tc.name Test SignRecover algName with RSA2048|PKCS1|NoHash|OnlySign. Sync style. Process success
-     * @tc.desc digest is RSA2048|PKCS1|NoHash|OnlySign
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   digest is RSA2048|PKCS1|NoHash|OnlySign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_RSASignRecover_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -149,12 +149,12 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_0500
      * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_0500
-     * @tc.name Test SignRecover algName with RSA2048|PKCS1|SHA512|OnlySign. Promise style. Process success
-     * @tc.desc digest is RSA2048|PKCS1|SHA512|OnlySign
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   digest is RSA2048|PKCS1|SHA512|OnlySign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_RSASignRecover_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -174,13 +174,13 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
       done();
     });
 	
-	/**
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_0600
      * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_0600
-     * @tc.name Test SignRecover algName with RSA512|PKCS1|MD5|OnlySign. Promise style. Process success
-     * @tc.desc digest is RSA512|PKCS1|MD5|OnlySign
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   digest is RSA512|PKCS1|MD5|OnlySign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_RSASignRecover_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -201,12 +201,12 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_0700
      * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_0700
-     * @tc.name Test SignRecover algName with RSA768|PKCS1|SHA1|OnlySign. Sync style. Process success
-     * @tc.desc digest is RSA768|PKCS1|SHA1|OnlySign
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   digest is RSA768|PKCS1|SHA1|OnlySign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_RSASignRecover_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -227,12 +227,12 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_0800
      * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_0800
-     * @tc.name Test SignRecover algName with RSA1024|PKCS1|SHA224|OnlySign. Promise style. Process success
-     * @tc.desc digest is RSA1024|PKCS1|SHA224|OnlySign
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   digest is RSA1024|PKCS1|SHA224|OnlySign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_RSASignRecover_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -253,12 +253,12 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_0900
      * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_0900
-     * @tc.name Test SignRecover algName with RSA4096|PKCS1|SHA256|OnlySign. Sync style. Process success
-     * @tc.desc digest is RSA4096|PKCS1|SHA256|OnlySign
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   digest is RSA4096|PKCS1|SHA256|OnlySign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_RSASignRecover_Func_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -279,12 +279,12 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_1000
      * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_1000
-     * @tc.name Test SignRecover algName with RSA4096|PKCS1|SHA256|OnlySign. Sync style. Process success
-     * @tc.desc digest is RSA4096|PKCS1|SHA256|OnlySign
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   digest is RSA4096|PKCS1|SHA256|OnlySign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_RSASignRecover_Func_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -305,12 +305,12 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_1100
      * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_1100
-     * @tc.name Test SignRecover algName with RSA8192|PKCS1|SHA512|OnlySign. Promise style. Process success
-     * @tc.desc digest is RSA8192|PKCS1|SHA512|OnlySign
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   digest is RSA8192|PKCS1|SHA512|OnlySign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_RSASignRecover_Func_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -331,12 +331,12 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_1200
      * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_1200
-     * @tc.name Test SignRecover algName with RSA3072|PKCS1|SHA384|OnlySign. Sync style. Process success
-     * @tc.desc digest is RSA3072|PKCS1|SHA384|OnlySign
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   digest is RSA3072|PKCS1|SHA384|OnlySign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_RSASignRecover_Func_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -357,12 +357,12 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_1300
      * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_1300
-     * @tc.name Test SignRecover algName with RSA2048|PKCS1|SHA512|OnlySign and plainTextLen gt mdLen. Sync style. Process success
-     * @tc.desc digest is RSA2048|PKCS1|SHA512|OnlySign
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   digest is RSA2048|PKCS1|SHA512|OnlySign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_RSASignRecover_Func_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -383,12 +383,12 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_1400
      * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_1400
-     * @tc.name Test SignRecover algName with RSA3072|PKCS1|SHA384|OnlySign and plainTextLen lt mdLen.. Promise style. Process success
-     * @tc.desc digest is RSA3072|PKCS1|SHA384|OnlySign
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   digest is RSA3072|PKCS1|SHA384|OnlySign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_RSASignRecover_Func_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -409,12 +409,12 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_1500
      * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_1500
-     * @tc.name Test SignRecover algName with RSA1024|PSS|SHA256|MGF1_SHA256|OnlySign. Sync style. Process success
-     * @tc.desc digest is RSA1024|PSS|SHA256|MGF1_SHA256|OnlySign
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   digest is RSA1024|PSS|SHA256|MGF1_SHA256|OnlySign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_RSASignRecover_Func_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -435,12 +435,12 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_1600
      * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_1600
-     * @tc.name Test SignRecover algName with SM2_256|SM3 with OnlySign. Promise style. Process success
-     * @tc.desc digest is SM3
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   digest is SM3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_RSASignRecover_Func_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let dataLen: number = 32;
@@ -460,12 +460,12 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_1700
      * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_1700
-     * @tc.name Test SignRecover algName with NoPadding with OnlySign. Promise style. Process success
-     * @tc.desc digest is NoPadding
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   digest is NoPadding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_RSASignRecover_Func_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let dataLen: number = 128;
@@ -487,12 +487,12 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_1800
      * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_1800
-     * @tc.name Test SignRecover algName with NoPadding with OnlySign. Promise style. Process success
-     * @tc.desc digest is NoPadding
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   digest is NoPadding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_RSASignRecover_Func_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let dataLen: number = 128;
@@ -512,12 +512,12 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_1900
      * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_1900
-     * @tc.name Test SignRecover algName with DSA2048|NoPadding|SHA256. Promise style. Process success
-     * @tc.desc digest is DSA2048|NoPadding|SHA256|Recover
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   digest is DSA2048|NoPadding|SHA256|Recover
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_RSASignRecover_Func_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -538,12 +538,12 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_2000
      * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_2000
-     * @tc.name Test SignRecover algName with NoPadding with OnlySign. Promise style. Process success
-     * @tc.desc digest is NoPadding
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   digest is NoPadding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_RSASignRecover_Func_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let dataLen: number = 128;
@@ -565,12 +565,12 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_2100
      * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_2100
-     * @tc.name Test SignRecover algName with NoPadding with OnlySign. Promise style. Process success
-     * @tc.desc digest is NoPadding
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   digest is NoPadding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_RSASignRecover_Func_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let dataLen: number = 128;
@@ -592,12 +592,12 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_2200
      * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_2200
-     * @tc.name Test SignRecover algName with NoPadding with OnlySign. Promise style. Process success
-     * @tc.desc digest is NoPadding/Recover
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   digest is NoPadding/Recover
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_RSASignRecover_Func_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let dataLen: number = 128;
@@ -619,12 +619,12 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_2300
      * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_2300
-     * @tc.name Test SignRecover algName with NoPadding with OnlySign. Promise style. Process success
-     * @tc.desc digest is NoPadding
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   digest is NoPadding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_RSASignRecover_Func_2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let dataLen: number = 128;
@@ -646,12 +646,12 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_2400
      * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_2400
-     * @tc.name Test signRecover algName with SHA512 with OnlySign and plainText data is empty. Promise style. Process success
-     * @tc.desc digest is SHA512
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   digest is SHA512
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_RSASignRecover_Func_2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -682,12 +682,12 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_2500
      * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_2500
-     * @tc.name Test SignRecover algName with NoPadding with OnlySign. Promise style. Process success
-     * @tc.desc digest is NoPadding
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   digest is NoPadding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_RSASignRecover_Func_2500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let dataLen: number = 128;
@@ -709,12 +709,12 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_2600
      * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_2600
-     * @tc.name Test SignRecover algName with NoPadding with OnlySign. Promise style. Process success
-     * @tc.desc digest is NoPadding
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   digest is NoPadding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_RSASignRecover_Func_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let dataLen: number = 128;
@@ -734,12 +734,12 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_2700
      * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_2700
-     * @tc.name Test SignRecover algName with NoPadding with OnlySign. Promise style. Process success
-     * @tc.desc digest is NoPadding
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   digest is NoPadding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_RSASignRecover_Func_2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let dataLen: number = 128;
@@ -759,5 +759,52 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
       }
       done();
     });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_RSASignRecover_Func_2800
+     * @tc.number SUB_Security_CryptoFramework_RSASignRecover_Func_2800
+     * @tc.desc   digest is NoPadding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_RSASignRecover_Func_2800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        let algName: string = "RSA1024"
+        let data: number[] = [
+          0x57, 0x0d, 0x63, 0x63, 0x4e, 0x86, 0xee, 0xf9, 0x55, 0x4f, 0x81, 0x18, 0x55, 0xba, 0x68, 0xa8,
+          0x55, 0xff, 0xf6, 0x30, 0x62, 0x9a, 0x73, 0xf5, 0x9e, 0x61, 0xd4, 0xe9, 0x6c, 0xf2, 0xc8, 0x1c,
+          0x00, 0x1e, 0x1d, 0xbf, 0x2b, 0x4d, 0x0c, 0x08, 0xd0, 0x38, 0xc8, 0xf0, 0x47, 0x05, 0xd6, 0x5b,
+          0xce, 0x22, 0xaa, 0xe7, 0xbb, 0x73, 0xb1, 0x0c, 0xbe, 0xf0, 0x71, 0xb2, 0x46, 0x94, 0xca, 0x35,
+          0xfa, 0xd1, 0x86, 0x22, 0x2d, 0x31, 0x8c, 0x2b, 0xb9, 0xfc, 0x89, 0x62, 0x45, 0x66, 0xa8, 0x7b,
+          0x06, 0x13, 0x7f, 0x9d, 0x69, 0xb4, 0x70, 0x4b, 0x66, 0xa0, 0x12, 0x70, 0xcc, 0x71, 0x9d, 0x9c,
+          0x8f, 0x55, 0x63, 0x95, 0x1f, 0x46, 0xd0, 0x4f, 0x6c, 0xf7, 0x76, 0xc4, 0xb0, 0x4d, 0x13, 0x63,
+          0xfe, 0x9a, 0xb5, 0x31, 0x62, 0x87, 0xc7, 0xe3, 0x6e, 0x94, 0x58, 0x7f, 0xae, 0xae, 0xdc, 0xd7
+        ];
+        let pubKey: string = "-----BEGIN PUBLIC KEY-----\n" +
+          "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDi9zW7r2rXcswcK8KEkOAil2Fc\n" +
+          "D5y2f2SFcPj+WmxphLkICcpnMArvgin+LRZwjBjC5USmCCSjQMOmWKgKdiNT84S2\n" +
+          "fQ6nG3V/iafXse9R941kM3Rfed4XjckXlrFM28gkO4d2ItahZQwrQm199JQxDsXH\n" +
+          "cxbIBZqEMH02yW2SkwIDAQAB\n" +
+          "-----END PUBLIC KEY-----";
+        let signData: cryptoFramework.DataBlob = {data: new Uint8Array(data)};
+        let verifyAlg: string = "RSA1024|PKCS1|NoHash|Recover";
+        let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
+        let keyPair: cryptoFramework.KeyPair = await generator.convertPemKey(pubKey, null);
+        let verifier1: cryptoFramework.Verify = cryptoFramework.createVerify(verifyAlg);
+        await verifier1.init(keyPair.pubKey);
+        let rawSignData: cryptoFramework.DataBlob|null = await verifier1.recover(signData);
+        expect(rawSignData).assertNull();
+        let verifier2: cryptoFramework.Verify = cryptoFramework.createVerify(verifyAlg);
+        await verifier2.init(keyPair.pubKey);
+        rawSignData = verifier2.recoverSync(signData);
+        expect(rawSignData).assertNull();
+      } catch (error) {
+        console.error(`“${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
   })
 }

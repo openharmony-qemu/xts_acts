@@ -43,12 +43,12 @@ export default function wifiEapTest(){
         })
 
         /**
+         * @tc.name   SUB_Communication_Netmanager_Eap_js_0100
          * @tc.number SUB_Communication_Netmanager_Eap_js_0100
-         * @tc.name SUB_Communication_Netmanager_Eap_js_0100
-         * @tc.desc Test eap register api functionality.
-         * @tc.size LargeTest
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Test eap register api functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   LARGETEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Netmanager_Eap_js_0100',TestType.FUNCTION|Size.LARGETEST|Level.LEVEL0, async (done:Function) => {
             let isAccessToken = canIUse("SystemCapability.Communication.NetManager.Eap");
@@ -110,12 +110,12 @@ export default function wifiEapTest(){
         })
         
         /**
+         * @tc.name   SUB_Communication_Netmanager_Eap_js_0200
          * @tc.number SUB_Communication_Netmanager_Eap_js_0200
-         * @tc.name SUB_Communication_Netmanager_Eap_js_0200
-         * @tc.desc Test eap register api functionality.
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Test eap register api functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Netmanager_Eap_js_0200',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
             let isAccessToken = canIUse("SystemCapability.Communication.NetManager.Eap");
@@ -187,12 +187,12 @@ export default function wifiEapTest(){
         })
         
         /**
+         * @tc.name   SUB_Communication_Netmanager_Eap_js_0300
          * @tc.number SUB_Communication_Netmanager_Eap_js_0300
-         * @tc.name SUB_Communication_Netmanager_Eap_js_0300
-         * @tc.desc Test eap register api functionality.
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Test eap register api functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Netmanager_Eap_js_0300',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,(done:Function) => {
             let isAccessToken = canIUse("SystemCapability.Communication.NetManager.Eap");
@@ -238,13 +238,13 @@ export default function wifiEapTest(){
         })
         
         /**
+         * @tc.name   SUB_Communication_Netmanager_Eap_js_0400
          * @tc.number SUB_Communication_Netmanager_Eap_js_0400
-         * @tc.name SUB_Communication_Netmanager_Eap_js_0400
-         * @tc.desc Test eap unregister api functionality.
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 0
-         */        
+         * @tc.desc   Test eap unregister api functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_Communication_Netmanager_Eap_js_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
           try {
             // 1. 测试EapData接口（通过创建实例验证结构）
@@ -368,12 +368,12 @@ export default function wifiEapTest(){
           done();
         });
         /**
+         * @tc.name   SUB_Communication_Netmanager_Eap_js_0500
          * @tc.number SUB_Communication_Netmanager_Eap_js_0500
-         * @tc.name SUB_Communication_Netmanager_Eap_js_0500
-         * @tc.desc Test eap startEthEap api functionality.
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Test eap startEthEap api functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Netmanager_Eap_js_0500',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
             let isAccessToken = canIUse("SystemCapability.Communication.NetManager.Eap");
@@ -438,12 +438,12 @@ export default function wifiEapTest(){
             done();
         })
         /**
+         * @tc.name   SUB_Communication_Netmanager_Eap_js_0600
          * @tc.number SUB_Communication_Netmanager_Eap_js_0600
-         * @tc.name SUB_Communication_Netmanager_Eap_js_0600
-         * @tc.desc Test eap logOffEthEap api functionality.
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Test eap logOffEthEap api functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Netmanager_Eap_js_0600',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
             let isAccessToken = canIUse("SystemCapability.Communication.NetManager.Eap");

@@ -165,6 +165,18 @@ struct webViewSetHttpDns {
           console.log('onPageEnd url:' + event.url);
           this.isPageEnd = 1;
         })
+        .onSslErrorEvent((event: SslErrorEvent) => {
+          if (event) {
+            console.log('onSslErrorEvent url: ' + event.url);
+            console.log('onSslErrorEvent error: ' + event.error);
+            console.log('onSslErrorEvent originalUrl: ' + event.originalUrl);
+            console.log('onSslErrorEvent referrer: ' + event.referrer);
+            console.log('onSslErrorEvent isFatalError: ' + event.isFatalError);
+            console.log('onSslErrorEvent isMainFrame: ' + event.isMainFrame);
+            console.log('onSslErrorEvent handler: ' + event.handler);
+            event.handler.handleConfirm();
+          }
+        })
     }
   }
 }

@@ -62,12 +62,12 @@ export default function sendableSetColorSpaceTest() {
     });
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_001  //TODO 在colorSpaceManager.create(colorSpaceName) 中UNKNOWN 和CUSTOM 类型报错 18600001
-     * @tc.name      : setColorSpace_sendable_promise_001
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_001
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_001  //TODO 在colorSpaceManager.create(colorSpaceName) 中UNKNOWN 和CUSTOM 类型报错 18600001
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('setColorSpace_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_001';
@@ -78,12 +78,12 @@ export default function sendableSetColorSpaceTest() {
     })*/
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_002
-     * @tc.name      : setColorSpace_sendable_promise_002
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_002
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_002
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setColorSpace_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_002';
@@ -94,12 +94,12 @@ export default function sendableSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_003
-     * @tc.name      : setColorSpace_sendable_promise_003
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_003
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_003
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setColorSpace_sendable_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_003';
@@ -110,12 +110,12 @@ export default function sendableSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_004
-     * @tc.name      : setColorSpace_sendable_promise_004
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_004
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_004
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setColorSpace_sendable_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_004';
@@ -126,12 +126,12 @@ export default function sendableSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_005
-     * @tc.name      : setColorSpace_sendable_promise_005
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_005
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_005
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('setColorSpace_sendable_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_005';
@@ -142,12 +142,12 @@ export default function sendableSetColorSpaceTest() {
     })*/
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_006
-     * @tc.name      : setColorSpace_sendable_promise_006
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_006
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_006
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setColorSpace_sendable_promise_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_006';
@@ -158,12 +158,12 @@ export default function sendableSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_007
-     * @tc.name      : setColorSpace_sendable_promise_007
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_007
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_007
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setColorSpace_sendable_promise_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_007';
@@ -174,12 +174,12 @@ export default function sendableSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_008
-     * @tc.name      : setColorSpace_sendable_promise_008
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_008
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_008
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setColorSpace_sendable_promise_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_008';
@@ -190,12 +190,12 @@ export default function sendableSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_009
-     * @tc.name      : setColorSpace_sendable_promise_009
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_009
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_009
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setColorSpace_sendable_promise_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_009';
@@ -206,12 +206,12 @@ export default function sendableSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_010
-     * @tc.name      : setColorSpace_sendable_promise_010
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_010
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_010
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setColorSpace_sendable_promise_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_010';
@@ -222,12 +222,12 @@ export default function sendableSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_011
-     * @tc.name      : setColorSpace_sendable_promise_011
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_011
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_011
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setColorSpace_sendable_promise_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_011';
@@ -238,12 +238,12 @@ export default function sendableSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_012
-     * @tc.name      : setColorSpace_sendable_promise_012
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_012
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_012
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setColorSpace_sendable_promise_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_012';
@@ -254,12 +254,12 @@ export default function sendableSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_013
-     * @tc.name      : setColorSpace_sendable_promise_013
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_013
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_013
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setColorSpace_sendable_promise_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_013';
@@ -270,12 +270,12 @@ export default function sendableSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_014
-     * @tc.name      : setColorSpace_sendable_promise_014
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_014
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_014
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setColorSpace_sendable_promise_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_014';
@@ -286,12 +286,12 @@ export default function sendableSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_015
-     * @tc.name      : setColorSpace_sendable_promise_015
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_015
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_015
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setColorSpace_sendable_promise_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_015';
@@ -302,12 +302,12 @@ export default function sendableSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_016
-     * @tc.name      : setColorSpace_sendable_promise_016
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_016
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_016
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setColorSpace_sendable_promise_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_016';
@@ -318,12 +318,12 @@ export default function sendableSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_017
-     * @tc.name      : setColorSpace_sendable_promise_017
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_017
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_017
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setColorSpace_sendable_promise_017', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_017';
@@ -334,12 +334,12 @@ export default function sendableSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_018
-     * @tc.name      : setColorSpace_sendable_promise_018
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_018
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_018
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setColorSpace_sendable_promise_018', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_018';
@@ -350,12 +350,12 @@ export default function sendableSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_019
-     * @tc.name      : setColorSpace_sendable_promise_019
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_019
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_019
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setColorSpace_sendable_promise_019', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_019';
@@ -366,12 +366,12 @@ export default function sendableSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_020
-     * @tc.name      : setColorSpace_sendable_promise_020
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_020
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_020
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setColorSpace_sendable_promise_020', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_020';
@@ -382,12 +382,12 @@ export default function sendableSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_021
-     * @tc.name      : setColorSpace_sendable_promise_021
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_021
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_021
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setColorSpace_sendable_promise_021', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_021';
@@ -398,12 +398,12 @@ export default function sendableSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_022
-     * @tc.name      : setColorSpace_sendable_promise_022
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_022
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_022
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setColorSpace_sendable_promise_022', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_022';
@@ -414,12 +414,12 @@ export default function sendableSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_023
-     * @tc.name      : setColorSpace_sendable_promise_023
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_023
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_023
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setColorSpace_sendable_promise_023', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_023';
@@ -430,12 +430,12 @@ export default function sendableSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_024
-     * @tc.name      : setColorSpace_sendable_promise_024
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_024
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_024
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setColorSpace_sendable_promise_024', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_024';
@@ -446,12 +446,12 @@ export default function sendableSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_025
-     * @tc.name      : setColorSpace_sendable_promise_025
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_025
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_025
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setColorSpace_sendable_promise_025', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_025';
@@ -462,12 +462,12 @@ export default function sendableSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_026
-     * @tc.name      : setColorSpace_sendable_promise_026
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_026
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_026
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setColorSpace_sendable_promise_026', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_026';
@@ -478,12 +478,12 @@ export default function sendableSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_027
-     * @tc.name      : setColorSpace_sendable_promise_027
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_027
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_027
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setColorSpace_sendable_promise_027', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_027';
@@ -494,12 +494,12 @@ export default function sendableSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_028
-     * @tc.name      : setColorSpace_sendable_promise_028
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_028
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_028
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setColorSpace_sendable_promise_028', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_028';
@@ -510,12 +510,12 @@ export default function sendableSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_029
-     * @tc.name      : setColorSpace_sendable_promise_029
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_029
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_029
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setColorSpace_sendable_promise_029', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_029';
@@ -526,12 +526,12 @@ export default function sendableSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SET_COLOR_SPACE_030
-     * @tc.name      : setColorSpace_sendable_promise_030
-     * @tc.desc      : setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setColorSpace_sendable_promise_030
+     * @tc.number PIXEL_MAP_SET_COLOR_SPACE_030
+     * @tc.desc   setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setColorSpace_sendable_promise_030', Level.LEVEL0, async (done: Function) => {
       const testName = 'setColorSpace_sendable_promise_030';

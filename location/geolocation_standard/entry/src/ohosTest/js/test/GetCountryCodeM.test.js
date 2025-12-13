@@ -91,13 +91,14 @@ export default function geolocationTest_6() {
             done();
         })
     
-    /**
-     * @tc.number SUB_HSS_LocationSystem_CountryCode_0400
-     * @tc.name Test getCountryCode
-     * @tc.desc Obtaining Country Code Information
-     * @tc.type Function
-     * @tc.level Level 2
-     */
+     /**
+      * @tc.name   SUB_HSS_LocationSystem_CountryCode_0400
+      * @tc.number SUB_HSS_LocationSystem_CountryCode_0400
+      * @tc.desc   Obtaining Country Code Information
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('SUB_HSS_LocationSystem_CountryCode_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         try {
             await geolocationm.getCountryCode().then((result) => {
@@ -123,11 +124,12 @@ export default function geolocationTest_6() {
     })
 
     /**
+     * @tc.name   SUB_HSS_LocationSystem_CountryCode_0500
      * @tc.number SUB_HSS_LocationSystem_CountryCode_0500
-     * @tc.name Test getCountryCode
-     * @tc.desc Obtaining Country Code Information
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Obtaining Country Code Information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_HSS_LocationSystem_CountryCode_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         try {
@@ -153,11 +155,12 @@ export default function geolocationTest_6() {
     })
 
     /**
+     * @tc.name   SUB_HSS_LocationSystem_CountryCode_0600
      * @tc.number SUB_HSS_LocationSystem_CountryCode_0600
-     * @tc.name getCountryCode_on_off
-     * @tc.desc The interception country code is changed.
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   The interception country code is changed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_HSS_LocationSystem_CountryCode_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info("[lbs_js] countryCodeChange");

@@ -83,14 +83,12 @@ export default function RdbStoreDataChangeTest() {
         console.info(TAG + "*************Unit Test Begin*************");
 
         /**
-         * @tc.name Normal case for inserting a data into local database
+         * @tc.name   testRdbStoreDataChange0100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_0100
-         * @tc.desc 1. Register callback for local database
-         *          2. Insert data 
-         *          3. UnRegister callback
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   1. Register callback for local database
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreDataChange0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreDataChange0100 start *************");
@@ -144,14 +142,12 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @tc.name Normal case for updating a data
+         * @tc.name   testRdbStoreDataChange0200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_0200
-         * @tc.desc 1. Register callback for local database
-         *          2. Update data
-         *          3. UnRegister callback
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   1. Register callback for local database
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreDataChange0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreDataChange0200 start *************");
@@ -205,14 +201,12 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @tc.name Normal case for deleting datas
+         * @tc.name   testRdbStoreDataChange0300
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_0300
-         * @tc.desc 1. Register callback for local database
-         *          2. Delete data
-         *          3. UnRegister callback
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   1. Register callback for local database
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreDataChange0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreDataChange0300 start *************");
@@ -261,14 +255,12 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @tc.name Normal case for batch insert data into local database
+         * @tc.name   testRdbStoreDataChange0400
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_0400
-         * @tc.desc 1. Register callback for local database
-         *          2. Batch insert data
-         *          3. UnRegister callback
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   1. Register callback for local database
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreDataChange0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreDataChange0400 start *************");
@@ -328,15 +320,12 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @tc.name Normal case for multi tables
+         * @tc.name   testRdbStoreDataChange0500
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_0500
-         * @tc.desc 1. Register callback for local database
-         *          2. Create table test1
-         *          3. Insert data into table test1
-         *          4. UnRegister callback
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   1. Register callback for local database
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreDataChange0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreDataChange0500 start *************");
@@ -392,14 +381,12 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @tc.name AbNormal case for failed to insert
+         * @tc.name   testRdbStoreDataChange0600
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_0600
-         * @tc.desc 1. Register callback for local database
-         *          2. Failed to insert data into table test
-         *          3. UnRegister callback
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   1. Register callback for local database
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreDataChange0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreDataChange0600 start *************");
@@ -441,12 +428,12 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @tc.name AbNormal case for function on, if args is invalid
+         * @tc.name   testRdbStoreDataChange0700
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_0700
-         * @tc.desc 1.Register callback for local database, event is invalid
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   1.Register callback for local database, event is invalid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreDataChange0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreDataChange0700 start *************");
@@ -463,12 +450,12 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @tc.name AbNormal case for function on, if args is invalid
+         * @tc.name   testRdbStoreDataChange0800
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_0800
-         * @tc.desc 1.Register callback for local database, SubscribeType is invalid
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   1.Register callback for local database, SubscribeType is invalid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreDataChange0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreDataChange0800 start *************");
@@ -486,12 +473,12 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @tc.name AbNormal case for function on, if args is invalid
+         * @tc.name   testRdbStoreDataChange0900
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_0900
-         * @tc.desc 1.Register callback for local database, SubscribeType is null
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   1.Register callback for local database, SubscribeType is null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreDataChange0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreDataChange0900 start *************");
@@ -508,12 +495,12 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @tc.name AbNormal case for function on, if args is invalid
+         * @tc.name   testRdbStoreDataChange1000
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_1000
-         * @tc.desc 1.Register callback for local database, SubscribeType is undefined
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   1.Register callback for local database, SubscribeType is undefined
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreDataChange1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreDataChange1000 start *************");
@@ -530,12 +517,12 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @tc.name AbNormal case for function off, if args is invalid
+         * @tc.name   testRdbStoreDataChange1100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_1100
-         * @tc.desc 1.unRegister callback for local database, event is invalid
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   1.unRegister callback for local database, event is invalid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreDataChange1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreDataChange1100 start *************");
@@ -552,12 +539,12 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @tc.name AbNormal case for function off, if args is invalid
+         * @tc.name   testRdbStoreDataChange1200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_1200
-         * @tc.desc 1.unRegister callback for local database, SubscribeType is invalid
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   1.unRegister callback for local database, SubscribeType is invalid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreDataChange1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreDataChange1200 start *************");
@@ -575,12 +562,12 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @tc.name AbNormal case for function off, if args is invalid
+         * @tc.name   testRdbStoreDataChange1300
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_1300
-         * @tc.desc 1.unRegister callback for local database, SubscribeType is null
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   1.unRegister callback for local database, SubscribeType is null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreDataChange1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreDataChange1300 start *************");
@@ -597,12 +584,12 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @tc.name AbNormal case for function off, if args is invalid
+         * @tc.name   testRdbStoreDataChange1400
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_1400
-         * @tc.desc 1.unRegister callback for local database, SubscribeType is undefined
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   1.unRegister callback for local database, SubscribeType is undefined
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreDataChange1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreDataChange1400 start *************");
@@ -619,14 +606,12 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @tc.name Normal case for multi observer
+         * @tc.name   testRdbStoreDataChange1500
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_1500
-         * @tc.desc 1. Register observer1 and observer2 for local database
-         *          2. UnRegister observer1
-         *          3. Insert data into table test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   1. Register observer1 and observer2 for local database
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreDataChange1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreDataChange1500 start *************");
@@ -690,14 +675,12 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @tc.name Normal case for multi observer
+         * @tc.name   testRdbStoreDataChange1600
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_1600
-         * @tc.desc 1. Register observer1 and observer2 for local database
-         *          2. Insert data into table test
-         *          3. UnRegister observer1 and observer2
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   1. Register observer1 and observer2 for local database
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreDataChange1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreDataChange1600 start *************");
@@ -759,14 +742,12 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @tc.name Normal case for multi observer
+         * @tc.name   testRdbStoreDataChange1700
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_1700
-         * @tc.desc 1. Register observer1 and observer2 for local database
-         *          2. UnRegister observer1 and observer2
-         *          3. Insert data into table test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   1. Register observer1 and observer2 for local database
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreDataChange1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreDataChange1700 start *************");
@@ -822,14 +803,12 @@ export default function RdbStoreDataChangeTest() {
 
 
         /**
-         * @tc.name Normal case for multi observer
+         * @tc.name   testRdbStoreDataChange1800
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_1800
-         * @tc.desc 1. Register observer1 and observer2 for local database
-         *          2. UnRegister all
-         *          3. Insert data into table test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   1. Register observer1 and observer2 for local database
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreDataChange1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreDataChange1800 start *************");
@@ -883,14 +862,12 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @tc.name Normal case for multi observer
+         * @tc.name   testRdbStoreDataChange1900
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_1900
-         * @tc.desc 1. Register observer1 ,SubscribeType=SUBSCRIBE_TYPE_REMOTE
-         *          2. Insert data into table test
-         *          3. UnRegister observer1 and observer2
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   1. Register observer1 ,SubscribeType=SUBSCRIBE_TYPE_REMOTE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreDataChange1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreDataChange1800 start *************");
@@ -942,14 +919,12 @@ export default function RdbStoreDataChangeTest() {
 
 
         /**
-         * @tc.name Normal case for multi observer
+         * @tc.name   testRdbStoreDataChange2000
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_2000
-         * @tc.desc 1. Register observer1 ,SubscribeType=SUBSCRIBE_TYPE_CLOUD
-         *          2. Insert data into table test
-         *          3. UnRegister observer1 and observer2
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   1. Register observer1 ,SubscribeType=SUBSCRIBE_TYPE_CLOUD
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreDataChange2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreDataChange2000 start *************");
@@ -998,14 +973,12 @@ export default function RdbStoreDataChangeTest() {
         })
 
         /**
-         * @tc.name Normal case for multi observer
+         * @tc.name   testRdbStoreDataChange2100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_DataChange_2100
-         * @tc.desc 1. Register observer1 ,SubscribeType=SUBSCRIBE_TYPE_CLOUD_DETAILS
-         *          2. Insert data into table test
-         *          3. UnRegister observer1 and observer2
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   1. Register observer1 ,SubscribeType=SUBSCRIBE_TYPE_CLOUD_DETAILS
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreDataChange2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreDataChange2100 start *************");

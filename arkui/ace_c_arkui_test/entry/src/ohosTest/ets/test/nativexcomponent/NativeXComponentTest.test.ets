@@ -26,13 +26,13 @@ export default function nativeXComponentTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NATIVE_XCOMPONENT_0100
-     * @tc.name       : testNativeXComponent001
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testNativeXComponent001
+     * @tc.number SUB_ARKUI_CAPI_NATIVE_XCOMPONENT_0100
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNativeXComponent001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testNativeXComponent001()).assertEqual(0)

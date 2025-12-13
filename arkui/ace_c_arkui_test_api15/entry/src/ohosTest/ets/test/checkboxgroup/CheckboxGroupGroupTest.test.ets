@@ -43,13 +43,13 @@ export default function checkboxGroupGroupTest() {
       done();
     })
 
-    /*
-     * @tc.number     : checkboxGroupGroupTest001
-     * @tc.name       : checkboxGroupGroup001
-     * @tc.desc       : testing checkboxGroup
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   checkboxGroupGroupTest001
+     * @tc.number checkboxGroupGroupTest001
+     * @tc.desc   testing checkboxGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('checkboxGroupGroupTest001', Level.LEVEL1, async (done: Function) => {
       let  strJson = getInspectorByKey('checkboxgroup')

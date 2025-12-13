@@ -21,12 +21,12 @@ export default function napiLifecycleTest() {
 
   describe('napiLifecycleTest', () => {
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_0001
-     * @tc.name      : createAsyncResource0001
-     * @tc.desc      : aceNapiEtsTest
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createAsyncResource0001
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_0001
+     * @tc.desc   aceNapiEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createAsyncResource0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('createAsyncResource start');
@@ -39,12 +39,12 @@ export default function napiLifecycleTest() {
     });
 
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_0002
-     * @tc.name      : destroyAsyncResource0002
-     * @tc.desc      : aceNapiEtsTest
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   destroyAsyncResource0002
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_0002
+     * @tc.desc   aceNapiEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('destroyAsyncResource0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('destroyAsyncResource start');
@@ -58,12 +58,12 @@ export default function napiLifecycleTest() {
     });
 
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_0003
-     * @tc.name      : runInCallbackScope0003
-     * @tc.desc      : aceNapiEtsTest
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   runInCallbackScope0003
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_0003
+     * @tc.desc   aceNapiEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('runInCallbackScope0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('runInCallbackScope start');
@@ -74,12 +74,12 @@ export default function napiLifecycleTest() {
     });
 
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_0004
-     * @tc.name      : testResolveAsync0004
-     * @tc.desc      : aceNapiEtsTest
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testResolveAsync0004
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_0004
+     * @tc.desc   aceNapiEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testResolveAsync0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('testResolveAsync start');
@@ -90,12 +90,12 @@ export default function napiLifecycleTest() {
     });
 
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_0005
-     * @tc.name      : testSetInstanceData0005
-     * @tc.desc      : aceNapiEtsTest
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSetInstanceData0005
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_0005
+     * @tc.desc   aceNapiEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetInstanceData0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let value = napitest.napiSetInstanceData();
@@ -104,12 +104,12 @@ export default function napiLifecycleTest() {
     });
 
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_0006
-     * @tc.name      : asyncWorkCallback0006
-     * @tc.desc      : aceNapiEtsTest
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   asyncWorkCallback0006
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_0006
+     * @tc.desc   aceNapiEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('asyncWorkCallback0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('asyncWorkCallback start');
@@ -123,12 +123,12 @@ export default function napiLifecycleTest() {
     });
 
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_0007
-     * @tc.name      : napiAsyncCleanUpHook0007
-     * @tc.desc      : aceNapiEtsTest
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   napiAsyncCleanUpHook0007
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_0007
+     * @tc.desc   aceNapiEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('napiAsyncCleanUpHook0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('napiAsyncCleanUpHook start');
@@ -139,12 +139,12 @@ export default function napiLifecycleTest() {
     });
 
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_0008
-     * @tc.name      : napiEnvCleanupHook0008
-     * @tc.desc      : aceNapiEtsTest
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   napiEnvCleanupHook0008
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_0008
+     * @tc.desc   aceNapiEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('napiEnvCleanupHook0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('napiEnvCleanUpHook start');
@@ -155,12 +155,12 @@ export default function napiLifecycleTest() {
     });
 
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_0009
-     * @tc.name      : napiGetModuleFileName0009
-     * @tc.desc      : aceNapiEtsTest
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   napiGetModuleFileName0009
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_0009
+     * @tc.desc   aceNapiEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('napiGetModuleFileName0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('napiGetModuleFileName start');

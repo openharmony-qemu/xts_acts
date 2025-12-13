@@ -48,18 +48,18 @@ export default function showToast() {
     });
 
     /**
-     * @tc.number    SUB_ACE_showToast_0100
-     * @tc.name      showToast_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showToast_0100
+     * @tc.number SUB_ACE_showToast_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('showToast_0100', Level.LEVEL2, async (done: Function) => {
       console.info('showToast_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('showToast'));
+      let button = await driver.findComponent(ON.id('showToastExample_showToast'));
       await button.click();
       await CommonFunc.sleep(1000);
 
@@ -76,7 +76,29 @@ export default function showToast() {
       done();
     });
 
+    /**
+     * @tc.name   showToast_0200
+     * @tc.number SUB_ACE_showToast_0200
+     * @tc.desc   test error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('showToast_0200', Level.LEVEL2, async (done: Function) => {
+      console.info('showToast_0200 START');
+      let driver = await Driver.create()
+      await CommonFunc.sleep(1000);
+      let button = await driver.findComponent(ON.id('showToastExample_ErrorCode'));
+      await button.click();
+      await CommonFunc.sleep(1000);
 
+      console.info("[showToast_0200] AppStorage.get('showToastExample_ErrorCode'): " + AppStorage.get('showToastExample_ErrorCode'));
+      expect(AppStorage.get('showToastExample_ErrorCode')).assertEqual('401');
+      AppStorage.delete('showToastExample_ErrorCode');
+
+      console.info('[showToast_0200] END');
+      done();
+    });
   })
 }
 

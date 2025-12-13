@@ -26,6 +26,14 @@ let finishOutData;
 
 export default function SecurityHuksSignVerifySM2PromiseJsunit() {
     describe('SecurityHuksSignVerifySM2PromiseJsunit', function () {
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_SM2_101
+         * @tc.number Security_HUKS_SignVerify_API8_SM2_101
+         * @tc.desc   Security_HUKS_SignVerify_API8_SM2_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_SM2_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifySM2Size256SIGNSM3KeyAlias101';
             let HuksOptions = {
@@ -51,6 +59,14 @@ export default function SecurityHuksSignVerifySM2PromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_SM2_102
+         * @tc.number Security_HUKS_SignVerify_API8_SM2_102
+         * @tc.desc   Security_HUKS_SignVerify_API8_SM2_102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_SM2_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifySM2Size256SIGNSM3KeyAlias102';
             let HuksOptions = {
@@ -66,6 +82,14 @@ export default function SecurityHuksSignVerifySM2PromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_SM2_103
+         * @tc.number Security_HUKS_SignVerify_API8_SM2_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_SM2_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_SM2_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifySM2Size256SIGNSM3KeyAlias103';
             let HuksOptions = {
@@ -91,6 +115,14 @@ export default function SecurityHuksSignVerifySM2PromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_SM2_104
+         * @tc.number Security_HUKS_SignVerify_API8_SM2_104
+         * @tc.desc   Security_HUKS_SignVerify_API8_SM2_104
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_SM2_104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifySM2Size256SIGNSM3KeyAlias104';
             let HuksOptions = {

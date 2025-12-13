@@ -18,7 +18,7 @@ ohos_app_assist_suite("ActsMediaXtsSuppTest") {
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsMediaXtsSuppTest"
   subsystem_name = "multimedia"
-  part_name = "image_framework"
+  part_name = "player_framework"
 }
 
 ohos_js_app_suite("mediaXts_supp_ets_hap") {
@@ -26,7 +26,7 @@ ohos_js_app_suite("mediaXts_supp_ets_hap") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsMediaXtsSuppTest"
-  part_name = "image_framework"
+  part_name = "player_framework"
 
   subsystem_name = "multimedia"
   deps = [ ":ActsMediaXtsSuppTest" ]

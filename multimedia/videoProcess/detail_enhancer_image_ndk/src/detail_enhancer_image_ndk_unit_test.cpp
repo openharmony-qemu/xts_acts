@@ -113,6 +113,14 @@ bool IsSupportImageSR()
 }
 
 // initialize environment
+/**
+ * @tc.name   vpeImageNdk_01
+ * @tc.number vpeImageNdk_01
+ * @tc.desc   vpeImageNdk_01
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_01, TestSize.Level1)
 {
     ImageProcessing_ErrorCode ret = OH_ImageProcessing_InitializeEnvironment();
@@ -121,6 +129,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_01, TestSize.Level1)
 }
 
 // initialize and de-initialize
+/**
+ * @tc.name   vpeImageNdk_02
+ * @tc.number vpeImageNdk_02
+ * @tc.desc   vpeImageNdk_02
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_02, TestSize.Level1)
 {
     ImageProcessing_ErrorCode ret = OH_ImageProcessing_InitializeEnvironment();
@@ -130,6 +146,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_02, TestSize.Level1)
 }
 
 // de-initialize without initialize
+/**
+ * @tc.name   vpeImageNdk_03
+ * @tc.number vpeImageNdk_03
+ * @tc.desc   vpeImageNdk_03
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_03, TestSize.Level1)
 {
     ImageProcessing_ErrorCode ret = OH_ImageProcessing_DeinitializeEnvironment();
@@ -137,6 +161,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_03, TestSize.Level1)
 }
 
 // create instance
+/**
+ * @tc.name   vpeImageNdk_04
+ * @tc.number vpeImageNdk_04
+ * @tc.desc   vpeImageNdk_04
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_04, TestSize.Level1)
 {
     OH_ImageProcessing_InitializeEnvironment();
@@ -146,6 +178,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_04, TestSize.Level1)
 }
 
 // create instance impl
+/**
+ * @tc.name   vpeImageNdk_04_1
+ * @tc.number vpeImageNdk_04_1
+ * @tc.desc   vpeImageNdk_04_1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_04_1, TestSize.Level1)
 {
     OH_ImageProcessing_InitializeEnvironment();
@@ -157,6 +197,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_04_1, TestSize.Level1)
 }
 
 // create instance with wrong type
+/**
+ * @tc.name   vpeImageNdk_05
+ * @tc.number vpeImageNdk_05
+ * @tc.desc   vpeImageNdk_05
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_05, TestSize.Level1)
 {
     OH_ImageProcessing_InitializeEnvironment();
@@ -166,6 +214,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_05, TestSize.Level1)
 }
 
 // create instance with wrong type impl
+/**
+ * @tc.name   vpeImageNdk_05_1
+ * @tc.number vpeImageNdk_05_1
+ * @tc.desc   vpeImageNdk_05_1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_05_1, TestSize.Level1)
 {
     OH_ImageProcessing_InitializeEnvironment();
@@ -177,6 +233,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_05_1, TestSize.Level1)
 }
 
 // destroy instance
+/**
+ * @tc.name   vpeImageNdk_06
+ * @tc.number vpeImageNdk_06
+ * @tc.desc   vpeImageNdk_06
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_06, TestSize.Level1)
 {
     OH_ImageProcessing_InitializeEnvironment();
@@ -187,6 +251,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_06, TestSize.Level1)
 }
 
 // destroy instance impl
+/**
+ * @tc.name   vpeImageNdk_06_1
+ * @tc.number vpeImageNdk_06_1
+ * @tc.desc   vpeImageNdk_06_1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_06_1, TestSize.Level1)
 {
     OH_ImageProcessing_InitializeEnvironment();
@@ -199,6 +271,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_06_1, TestSize.Level1)
 }
 
 // destroy null instance
+/**
+ * @tc.name   vpeImageNdk_07
+ * @tc.number vpeImageNdk_07
+ * @tc.desc   vpeImageNdk_07
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_07, TestSize.Level1)
 {
     OH_ImageProcessing_InitializeEnvironment();
@@ -208,6 +288,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_07, TestSize.Level1)
 }
 
 // destroy null instance impl
+/**
+ * @tc.name   vpeImageNdk_07_1
+ * @tc.number vpeImageNdk_07_1
+ * @tc.desc   vpeImageNdk_07_1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_07_1, TestSize.Level1)
 {
     OH_ImageProcessing_InitializeEnvironment();
@@ -217,6 +305,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_07_1, TestSize.Level1)
 }
 
 // set parameter normally
+/**
+ * @tc.name   vpeImageNdk_08
+ * @tc.number vpeImageNdk_08
+ * @tc.desc   vpeImageNdk_08
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_08, TestSize.Level1)
 {
     OH_ImageProcessing* instance = nullptr;
@@ -229,6 +325,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_08, TestSize.Level1)
 }
 
 // set parameter normally impl
+/**
+ * @tc.name   vpeImageNdk_08_1
+ * @tc.number vpeImageNdk_08_1
+ * @tc.desc   vpeImageNdk_08_1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_08_1, TestSize.Level1)
 {
     OH_ImageProcessing* instance = nullptr;
@@ -243,6 +347,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_08_1, TestSize.Level1)
 }
 
 // set parameter with null
+/**
+ * @tc.name   vpeImageNdk_09
+ * @tc.number vpeImageNdk_09
+ * @tc.desc   vpeImageNdk_09
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_09, TestSize.Level1)
 {
     OH_ImageProcessing* instance = nullptr;
@@ -254,6 +366,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_09, TestSize.Level1)
 }
 
 // set parameter with null impl
+/**
+ * @tc.name   vpeImageNdk_09_1
+ * @tc.number vpeImageNdk_09_1
+ * @tc.desc   vpeImageNdk_09_1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_09_1, TestSize.Level1)
 {
     OH_ImageProcessing* instance = nullptr;
@@ -267,6 +387,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_09_1, TestSize.Level1)
 }
 
 // set parameter but instance is null
+/**
+ * @tc.name   vpeImageNdk_10
+ * @tc.number vpeImageNdk_10
+ * @tc.desc   vpeImageNdk_10
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_10, TestSize.Level1)
 {
     OH_ImageProcessing* instance = nullptr;
@@ -276,6 +404,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_10, TestSize.Level1)
 }
 
 // get parameter after set parameter
+/**
+ * @tc.name   vpeImageNdk_11
+ * @tc.number vpeImageNdk_11
+ * @tc.desc   vpeImageNdk_11
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_11, TestSize.Level1)
 {
     OH_ImageProcessing* instance = nullptr;
@@ -290,6 +426,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_11, TestSize.Level1)
 }
 
 // get parameter after set parameter impl
+/**
+ * @tc.name   vpeImageNdk_11_1
+ * @tc.number vpeImageNdk_11_1
+ * @tc.desc   vpeImageNdk_11_1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_11_1, TestSize.Level1)
 {
     OH_ImageProcessing* instance = nullptr;
@@ -306,6 +450,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_11_1, TestSize.Level1)
 }
 
 // get parameter but parameter is null
+/**
+ * @tc.name   vpeImageNdk_12
+ * @tc.number vpeImageNdk_12
+ * @tc.desc   vpeImageNdk_12
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_12, TestSize.Level1)
 {
     OH_ImageProcessing* instance = nullptr;
@@ -317,6 +469,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_12, TestSize.Level1)
 }
 
 // get parameter but parameter is null impl
+/**
+ * @tc.name   vpeImageNdk_12_1
+ * @tc.number vpeImageNdk_12_1
+ * @tc.desc   vpeImageNdk_12_1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_12_1, TestSize.Level1)
 {
     OH_ImageProcessing* instance = nullptr;
@@ -330,6 +490,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_12_1, TestSize.Level1)
 }
 
 // get parameter but instance is null set
+/**
+ * @tc.name   vpeImageNdk_13
+ * @tc.number vpeImageNdk_13
+ * @tc.desc   vpeImageNdk_13
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_13, TestSize.Level1)
 {
     OH_ImageProcessing* instance = nullptr;
@@ -339,6 +507,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_13, TestSize.Level1)
 }
 
 // get parameter but parameter is not null
+/**
+ * @tc.name   vpeImageNdk_14
+ * @tc.number vpeImageNdk_14
+ * @tc.desc   vpeImageNdk_14
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_14, TestSize.Level1)
 {
     OH_ImageProcessing* instance = nullptr;
@@ -350,6 +526,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_14, TestSize.Level1)
 }
 
 // get parameter but parameter is not null impl
+/**
+ * @tc.name   vpeImageNdk_14_1
+ * @tc.number vpeImageNdk_14_1
+ * @tc.desc   vpeImageNdk_14_1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_14_1, TestSize.Level1)
 {
     OH_ImageProcessing* instance = nullptr;
@@ -363,6 +547,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_14_1, TestSize.Level1)
 }
 
 // colorspaceconversion support check 1
+/**
+ * @tc.name   vpeImageNdk_15
+ * @tc.number vpeImageNdk_15
+ * @tc.desc   vpeImageNdk_15
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_15, TestSize.Level1)
 {
     bool ret = OH_ImageProcessing_IsColorSpaceConversionSupported(&param_srgb, &param_p3);
@@ -370,6 +562,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_15, TestSize.Level1)
 }
 
 // colorspaceconversion support check 2
+/**
+ * @tc.name   vpeImageNdk_16
+ * @tc.number vpeImageNdk_16
+ * @tc.desc   vpeImageNdk_16
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_16, TestSize.Level1)
 {
     bool ret = OH_ImageProcessing_IsColorSpaceConversionSupported(&param_p3, &param_bt709);
@@ -377,6 +577,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_16, TestSize.Level1)
 }
 
 // colorspaceconversion support check 3
+/**
+ * @tc.name   vpeImageNdk_17
+ * @tc.number vpeImageNdk_17
+ * @tc.desc   vpeImageNdk_17
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_17, TestSize.Level1)
 {
     bool ret = OH_ImageProcessing_IsColorSpaceConversionSupported(&param_bt709, &param_not_support);
@@ -384,6 +592,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_17, TestSize.Level1)
 }
 
 // colorspaceconversion support check 4
+/**
+ * @tc.name   vpeImageNdk_18
+ * @tc.number vpeImageNdk_18
+ * @tc.desc   vpeImageNdk_18
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_18, TestSize.Level1)
 {
     bool ret = OH_ImageProcessing_IsColorSpaceConversionSupported(&param_p3, &param_srgb);
@@ -391,6 +607,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_18, TestSize.Level1)
 }
 
 // conposition support check 1
+/**
+ * @tc.name   vpeImageNdk_19
+ * @tc.number vpeImageNdk_19
+ * @tc.desc   vpeImageNdk_19
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_19, TestSize.Level1)
 {
     bool ret = OH_ImageProcessing_IsCompositionSupported(&param_srgb, &param_srgb, &param_p3);
@@ -398,6 +622,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_19, TestSize.Level1)
 }
 
 // conposition support check 2
+/**
+ * @tc.name   vpeImageNdk_20
+ * @tc.number vpeImageNdk_20
+ * @tc.desc   vpeImageNdk_20
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_20, TestSize.Level1)
 {
     bool ret = OH_ImageProcessing_IsCompositionSupported(&param_not_support, &param_not_support, &param_not_support);
@@ -405,6 +637,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_20, TestSize.Level1)
 }
 
 // conposition support check 3
+/**
+ * @tc.name   vpeImageNdk_21
+ * @tc.number vpeImageNdk_21
+ * @tc.desc   vpeImageNdk_21
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_21, TestSize.Level1)
 {
     bool ret = OH_ImageProcessing_IsCompositionSupported(&param_srgb, &param_srgb, &param_srgb);
@@ -412,6 +652,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_21, TestSize.Level1)
 }
 
 // deconposition support check 1
+/**
+ * @tc.name   vpeImageNdk_22
+ * @tc.number vpeImageNdk_22
+ * @tc.desc   vpeImageNdk_22
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_22, TestSize.Level1)
 {
     bool ret = OH_ImageProcessing_IsDecompositionSupported(&param_srgb, &param_p3, &param_bt709);
@@ -419,6 +667,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_22, TestSize.Level1)
 }
 
 // deconposition support check 2
+/**
+ * @tc.name   vpeImageNdk_23
+ * @tc.number vpeImageNdk_23
+ * @tc.desc   vpeImageNdk_23
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_23, TestSize.Level1)
 {
     bool ret = OH_ImageProcessing_IsDecompositionSupported(&param_not_support, &param_not_support, &param_not_support);
@@ -426,6 +682,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_23, TestSize.Level1)
 }
 
 // deconposition support check 3
+/**
+ * @tc.name   vpeImageNdk_24
+ * @tc.number vpeImageNdk_24
+ * @tc.desc   vpeImageNdk_24
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_24, TestSize.Level1)
 {
     bool ret = OH_ImageProcessing_IsDecompositionSupported(&param_srgb, &param_srgb, &param_srgb);
@@ -433,6 +697,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_24, TestSize.Level1)
 }
 
 // metadata generation support check 1
+/**
+ * @tc.name   vpeImageNdk_25
+ * @tc.number vpeImageNdk_25
+ * @tc.desc   vpeImageNdk_25
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_25, TestSize.Level1)
 {
     bool ret = OH_ImageProcessing_IsMetadataGenerationSupported(&param5);
@@ -440,6 +712,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_25, TestSize.Level1)
 }
 
 // metadata generation support check 2
+/**
+ * @tc.name   vpeImageNdk_26
+ * @tc.number vpeImageNdk_26
+ * @tc.desc   vpeImageNdk_26
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_26, TestSize.Level1)
 {
     bool ret = OH_ImageProcessing_IsMetadataGenerationSupported(&param_p3);
@@ -447,6 +727,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_26, TestSize.Level1)
 }
 
 // metadata generation support check 3
+/**
+ * @tc.name   vpeImageNdk_27
+ * @tc.number vpeImageNdk_27
+ * @tc.desc   vpeImageNdk_27
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_27, TestSize.Level1)
 {
     bool ret = OH_ImageProcessing_IsMetadataGenerationSupported(&param_bt709);
@@ -454,6 +742,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_27, TestSize.Level1)
 }
 
 // metadata generation support check 4
+/**
+ * @tc.name   vpeImageNdk_28
+ * @tc.number vpeImageNdk_28
+ * @tc.desc   vpeImageNdk_28
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_28, TestSize.Level1)
 {
     bool ret = OH_ImageProcessing_IsMetadataGenerationSupported(&param_not_support);
@@ -461,6 +757,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_28, TestSize.Level1)
 }
 
 // convert color space RGBA to BGRA impl
+/**
+ * @tc.name   vpeImageNdk_29
+ * @tc.number vpeImageNdk_29
+ * @tc.desc   vpeImageNdk_29
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_29, TestSize.Level1)
 {
     OH_ImageProcessing_InitializeEnvironment();
@@ -483,6 +787,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_29, TestSize.Level1)
 }
 
 // convert color space BGRA to RGBA impl
+/**
+ * @tc.name   vpeImageNdk_30
+ * @tc.number vpeImageNdk_30
+ * @tc.desc   vpeImageNdk_30
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_30, TestSize.Level1)
 {
     OH_ImageProcessing_InitializeEnvironment();
@@ -505,6 +817,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_30, TestSize.Level1)
 }
 
 // convert color space nullptr
+/**
+ * @tc.name   vpeImageNdk_31
+ * @tc.number vpeImageNdk_31
+ * @tc.desc   vpeImageNdk_31
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_31, TestSize.Level1)
 {
     OH_ImageProcessing_InitializeEnvironment();
@@ -519,6 +839,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_31, TestSize.Level1)
 }
 
 // convert color space nullptr impl
+/**
+ * @tc.name   vpeImageNdk_31_1
+ * @tc.number vpeImageNdk_31_1
+ * @tc.desc   vpeImageNdk_31_1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_31_1, TestSize.Level1)
 {
     OH_ImageProcessing_InitializeEnvironment();
@@ -535,6 +863,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_31_1, TestSize.Level1)
 }
 
 // compose RGBA impl
+/**
+ * @tc.name   vpeImageNdk_32
+ * @tc.number vpeImageNdk_32
+ * @tc.desc   vpeImageNdk_32
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_32, TestSize.Level1)
 {
     OH_ImageProcessing_InitializeEnvironment();
@@ -559,6 +895,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_32, TestSize.Level1)
 }
 
 // compose BGRA impl
+/**
+ * @tc.name   vpeImageNdk_33
+ * @tc.number vpeImageNdk_33
+ * @tc.desc   vpeImageNdk_33
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_33, TestSize.Level1)
 {
     OH_ImageProcessing_InitializeEnvironment();
@@ -583,6 +927,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_33, TestSize.Level1)
 }
 
 // compose nullptr
+/**
+ * @tc.name   vpeImageNdk_34
+ * @tc.number vpeImageNdk_34
+ * @tc.desc   vpeImageNdk_34
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_34, TestSize.Level1)
 {
     OH_ImageProcessing_InitializeEnvironment();
@@ -598,6 +950,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_34, TestSize.Level1)
 }
 
 // compose nullptr impl
+/**
+ * @tc.name   vpeImageNdk_34_1
+ * @tc.number vpeImageNdk_34_1
+ * @tc.desc   vpeImageNdk_34_1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_34_1, TestSize.Level1)
 {
     OH_ImageProcessing_InitializeEnvironment();
@@ -615,6 +975,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_34_1, TestSize.Level1)
 }
 
 // decompose RGBA impl
+/**
+ * @tc.name   vpeImageNdk_35
+ * @tc.number vpeImageNdk_35
+ * @tc.desc   vpeImageNdk_35
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_35, TestSize.Level1)
 {
     OH_ImageProcessing_InitializeEnvironment();
@@ -639,6 +1007,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_35, TestSize.Level1)
 }
 
 // decompose BGRA impl
+/**
+ * @tc.name   vpeImageNdk_36
+ * @tc.number vpeImageNdk_36
+ * @tc.desc   vpeImageNdk_36
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_36, TestSize.Level1)
 {
     OH_ImageProcessing_InitializeEnvironment();
@@ -663,6 +1039,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_36, TestSize.Level1)
 }
 
 // decompose nullptr
+/**
+ * @tc.name   vpeImageNdk_37
+ * @tc.number vpeImageNdk_37
+ * @tc.desc   vpeImageNdk_37
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_37, TestSize.Level1)
 {
     OH_ImageProcessing_InitializeEnvironment();
@@ -678,6 +1062,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_37, TestSize.Level1)
 }
 
 // compose nullptr impl
+/**
+ * @tc.name   vpeImageNdk_37_1
+ * @tc.number vpeImageNdk_37_1
+ * @tc.desc   vpeImageNdk_37_1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_37_1, TestSize.Level1)
 {
     OH_ImageProcessing_InitializeEnvironment();
@@ -695,6 +1087,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_37_1, TestSize.Level1)
 }
 
 // generate metadata RGBA impl
+/**
+ * @tc.name   vpeImageNdk_38
+ * @tc.number vpeImageNdk_38
+ * @tc.desc   vpeImageNdk_38
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_38, TestSize.Level1)
 {
     OH_ImageProcessing_InitializeEnvironment();
@@ -715,6 +1115,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_38, TestSize.Level1)
 }
 
 // generate metadata BGRA impl
+/**
+ * @tc.name   vpeImageNdk_39
+ * @tc.number vpeImageNdk_39
+ * @tc.desc   vpeImageNdk_39
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_39, TestSize.Level1)
 {
     OH_ImageProcessing_InitializeEnvironment();
@@ -735,6 +1143,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_39, TestSize.Level1)
 }
 
 // generate metadata nullptr
+/**
+ * @tc.name   vpeImageNdk_40
+ * @tc.number vpeImageNdk_40
+ * @tc.desc   vpeImageNdk_40
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_40, TestSize.Level1)
 {
     OH_ImageProcessing_InitializeEnvironment();
@@ -748,6 +1164,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_40, TestSize.Level1)
 }
 
 // generate metadata nullptr impl
+/**
+ * @tc.name   vpeImageNdk_40_1
+ * @tc.number vpeImageNdk_40_1
+ * @tc.desc   vpeImageNdk_40_1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_40_1, TestSize.Level1)
 {
     OH_ImageProcessing_InitializeEnvironment();
@@ -763,6 +1187,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_40_1, TestSize.Level1)
 }
 
 // detail enhance RGBA
+/**
+ * @tc.name   vpeImageNdk_41
+ * @tc.number vpeImageNdk_41
+ * @tc.desc   vpeImageNdk_41
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_41, TestSize.Level1)
 {
     if (!IsSupportImageSR()) {
@@ -782,6 +1214,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_41, TestSize.Level1)
 }
 
 // detail enhance RGBA impl
+/**
+ * @tc.name   vpeImageNdk_41_1
+ * @tc.number vpeImageNdk_41_1
+ * @tc.desc   vpeImageNdk_41_1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_41_1, TestSize.Level1)
 {
     OH_ImageProcessing_InitializeEnvironment();
@@ -804,6 +1244,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_41_1, TestSize.Level1)
 }
 
 // detail enhance BGRA
+/**
+ * @tc.name   vpeImageNdk_42
+ * @tc.number vpeImageNdk_42
+ * @tc.desc   vpeImageNdk_42
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_42, TestSize.Level1)
 {
     if (!IsSupportImageSR()) {
@@ -823,6 +1271,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_42, TestSize.Level1)
 }
 
 // detail enhance BGRA impl
+/**
+ * @tc.name   vpeImageNdk_42_1
+ * @tc.number vpeImageNdk_42_1
+ * @tc.desc   vpeImageNdk_42_1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_42_1, TestSize.Level1)
 {
     OH_ImageProcessing_InitializeEnvironment();
@@ -845,6 +1301,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_42_1, TestSize.Level1)
 }
 
 // detail enhance nullptr
+/**
+ * @tc.name   vpeImageNdk_43
+ * @tc.number vpeImageNdk_43
+ * @tc.desc   vpeImageNdk_43
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_43, TestSize.Level1)
 {
     OH_ImageProcessing_InitializeEnvironment();
@@ -859,6 +1323,14 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_43, TestSize.Level1)
 }
 
 // detail enhance nullptr impl
+/**
+ * @tc.name   vpeImageNdk_43_1
+ * @tc.number vpeImageNdk_43_1
+ * @tc.desc   vpeImageNdk_43_1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_43_1, TestSize.Level1)
 {
     OH_ImageProcessing_InitializeEnvironment();

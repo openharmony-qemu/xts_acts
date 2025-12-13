@@ -39,11 +39,19 @@ namespace OHOS {
     {
     }
 
+    /**
+     * @tc.name   TestVulkanReconvergenceTestCase
+     * @tc.number TestVulkanReconvergenceTestCase
+     * @tc.desc   TestVulkanReconvergenceTestCase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     HWTEST_F(ActsVulkanReconvergenceTest, TestVulkanReconvergenceTestCase, Function | MediumTest | Level2)
     {
         printf("------start ActsVulkanReconvergenceTest------\n");
         if (canIUse("SystemCapability.Graphic.Vulkan")) {
-            system("/data/local/tmp/vulkan/vk-default/deqp_vk_execute "
+            system("/data/local/tmp/deqp_vk_execute "
                 "--deqp-caselist-file=/data/local/tmp/vulkan/vk-default/reconvergence.txt "
                 "--deqp-log-filename=ActsVulkanReconvergenceTest.qpa");
         }

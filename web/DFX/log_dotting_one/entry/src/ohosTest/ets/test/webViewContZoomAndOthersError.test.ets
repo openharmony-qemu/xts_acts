@@ -58,10 +58,13 @@ export default function webViewContZoomAndOthersError() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_3300
-     *tc.name testZoomInitErr
-     *tc.desc test interface of zoom with not been associated with specific Web Components
+    /**
+     * @tc.name   testZoomInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_3300
+     * @tc.desc   test interface of zoom with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testZoomInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitZoomInitErr";
@@ -70,10 +73,13 @@ export default function webViewContZoomAndOthersError() {
       Utils.registerEvent("testZoomInitErr", "Init error. The WebviewController must be associated with a Web component", 112350, done);
       await Utils.waitAndClickComponent(driver, "webViewContZoomAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_3400
-     *tc.name testZoomEnableErr
-     *tc.desc test interface of zoom with not been enabled
+    /**
+     * @tc.name   testZoomEnableErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_3400
+     * @tc.desc   test interface of zoom with not been enabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testZoomEnableErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitZoomEnableErr";
@@ -82,10 +88,13 @@ export default function webViewContZoomAndOthersError() {
       Utils.registerEvent("testZoomEnableErr", "Function not enabled.", 112370, done);
       await Utils.waitAndClickComponent(driver, "webViewContZoomAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_3500
-     *tc.name testSearchAllAsyncInitErr
-     *tc.desc test interface of searchAllAsync with not been associated with specific Web Components
+    /**
+     * @tc.name   testSearchAllAsyncInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_3500
+     * @tc.desc   test interface of searchAllAsync with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSearchAllAsyncInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitSearchAllAsyncInitErr";
@@ -94,10 +103,13 @@ export default function webViewContZoomAndOthersError() {
       Utils.registerEvent("testSearchAllAsyncInitErr", "Init error. The WebviewController must be associated with a Web component", 112390, done);
       await Utils.waitAndClickComponent(driver, "webViewContZoomAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_3600
-     *tc.name testClearMatchesInitErr
-     *tc.desc test interface of clearMatches with not been associated with specific Web Components
+    /**
+     * @tc.name   testClearMatchesInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_3600
+     * @tc.desc   test interface of clearMatches with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testClearMatchesInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitClearMatchesInitErr";
@@ -106,10 +118,13 @@ export default function webViewContZoomAndOthersError() {
       Utils.registerEvent("testClearMatchesInitErr", "Init error. The WebviewController must be associated with a Web component", 112410, done);
       await Utils.waitAndClickComponent(driver, "webViewContZoomAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_3700
-     *tc.name testSearchNextInitErr
-     *tc.desc test interface of searchNext with not been associated with specific Web Components
+    /**
+     * @tc.name   testSearchNextInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_3700
+     * @tc.desc   test interface of searchNext with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSearchNextInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitSearchNextInitErr";
@@ -118,10 +133,13 @@ export default function webViewContZoomAndOthersError() {
       Utils.registerEvent("testSearchNextInitErr", "Init error. The WebviewController must be associated with a Web component", 112430, done);
       await Utils.waitAndClickComponent(driver, "webViewContZoomAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_3800
-     *tc.name testClearSslCacheInitErr
-     *tc.desc test interface of clearSslCache with not been associated with specific Web Components
+    /**
+     * @tc.name   testClearSslCacheInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_3800
+     * @tc.desc   test interface of clearSslCache with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testClearSslCacheInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitClearSslCacheInitErr";
@@ -130,10 +148,13 @@ export default function webViewContZoomAndOthersError() {
       Utils.registerEvent("testClearSslCacheInitErr", "Init error. The WebviewController must be associated with a Web component", 112450, done);
       await Utils.waitAndClickComponent(driver, "webViewContZoomAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_3900
-     *tc.name testClearClientAuthenticationCacheInitErr
-     *tc.desc test interface of clearClientAuthenticationCache with not been associated with specific Web Components
+    /**
+     * @tc.name   testClearClientAuthenticationCacheInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_3900
+     * @tc.desc   test interface of clearClientAuthenticationCache with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testClearClientAuthenticationCacheInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitClearClientAuthenticationCacheInitErr";
@@ -142,10 +163,13 @@ export default function webViewContZoomAndOthersError() {
       Utils.registerEvent("testClearClientAuthenticationCacheInitErr", "Init error. The WebviewController must be associated with a Web component", 112470, done);
       await Utils.waitAndClickComponent(driver, "webViewContZoomAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_4000
-     *tc.name testCreateWebMessagePortsInitErr
-     *tc.desc test interface of createWebMessagePorts with not been associated with specific Web Components
+    /**
+     * @tc.name   testCreateWebMessagePortsInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_4000
+     * @tc.desc   test interface of createWebMessagePorts with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCreateWebMessagePortsInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitCreateWebMessagePortsInitErr";
@@ -154,10 +178,13 @@ export default function webViewContZoomAndOthersError() {
       Utils.registerEvent("testCreateWebMessagePortsInitErr", "Init error. The WebviewController must be associated with a Web component", 112490, done);
       await Utils.waitAndClickComponent(driver, "webViewContZoomAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_4100
-     *tc.name testRequestFocusInitErr
-     *tc.desc test interface of requestFocus with not been associated with specific Web Components
+    /**
+     * @tc.name   testRequestFocusInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_4100
+     * @tc.desc   test interface of requestFocus with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRequestFocusInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitRequestFocusInitErr";
@@ -166,10 +193,13 @@ export default function webViewContZoomAndOthersError() {
       Utils.registerEvent("testRequestFocusInitErr", "Init error. The WebviewController must be associated with a Web component", 112510, done);
       await Utils.waitAndClickComponent(driver, "webViewContZoomAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_4200
-     *tc.name testZoomInInitErr
-     *tc.desc test interface of zoomIn with not been associated with specific Web Components
+    /**
+     * @tc.name   testZoomInInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_4200
+     * @tc.desc   test interface of zoomIn with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testZoomInInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitZoomInInitErr";
@@ -178,10 +208,13 @@ export default function webViewContZoomAndOthersError() {
       Utils.registerEvent("testZoomInInitErr", "Init error. The WebviewController must be associated with a Web component", 112530, done);
       await Utils.waitAndClickComponent(driver, "webViewContZoomAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_4300
-     *tc.name testZoomInEnableErr
-     *tc.desc test interface of zoomIn with not been enabled
+    /**
+     * @tc.name   testZoomInEnableErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_4300
+     * @tc.desc   test interface of zoomIn with not been enabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testZoomInEnableErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitZoomInEnableErr";
@@ -190,10 +223,13 @@ export default function webViewContZoomAndOthersError() {
       Utils.registerEvent("testZoomInEnableErr", "Function not enabled.", 112550, done);
       await Utils.waitAndClickComponent(driver, "webViewContZoomAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_4400
-     *tc.name testZoomOutInitErr
-     *tc.desc test interface of zoomOut with not been associated with specific Web Components
+    /**
+     * @tc.name   testZoomOutInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_4400
+     * @tc.desc   test interface of zoomOut with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testZoomOutInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitZoomOutInitErr";
@@ -202,10 +238,13 @@ export default function webViewContZoomAndOthersError() {
       Utils.registerEvent("testZoomOutInitErr", "Init error. The WebviewController must be associated with a Web component", 112570, done);
       await Utils.waitAndClickComponent(driver, "webViewContZoomAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_4500
-     *tc.name testZoomOutEnableErr
-     *tc.desc test interface of zoomOut with not been enabled
+    /**
+     * @tc.name   testZoomOutEnableErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_4500
+     * @tc.desc   test interface of zoomOut with not been enabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testZoomOutEnableErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitZoomOutEnableErr";
@@ -214,10 +253,13 @@ export default function webViewContZoomAndOthersError() {
       Utils.registerEvent("testZoomOutEnableErr", "Function not enabled.", 112590, done);
       await Utils.waitAndClickComponent(driver, "webViewContZoomAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_4600
-     *tc.name testGetHitTestValueInitErr
-     *tc.desc test interface of getHitTestValue with not been associated with specific Web Components
+    /**
+     * @tc.name   testGetHitTestValueInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_4600
+     * @tc.desc   test interface of getHitTestValue with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetHitTestValueInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetHitTestValueInitErr";
@@ -226,10 +268,13 @@ export default function webViewContZoomAndOthersError() {
       Utils.registerEvent("testGetHitTestValueInitErr", "Init error. The WebviewController must be associated with a Web component", 112610, done);
       await Utils.waitAndClickComponent(driver, "webViewContZoomAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_4700
-     *tc.name testGetWebIdInitErr
-     *tc.desc test interface of getWebId with not been associated with specific Web Components
+    /**
+     * @tc.name   testGetWebIdInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_4700
+     * @tc.desc   test interface of getWebId with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetWebIdInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetWebIdInitErr";
@@ -238,10 +283,13 @@ export default function webViewContZoomAndOthersError() {
       Utils.registerEvent("testGetWebIdInitErr", "Init error. The WebviewController must be associated with a Web component", 112630, done);
       await Utils.waitAndClickComponent(driver, "webViewContZoomAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_4800
-     *tc.name testGetUserAgentInitErr
-     *tc.desc test interface of getUserAgent with not been associated with specific Web Components
+    /**
+     * @tc.name   testGetUserAgentInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_4800
+     * @tc.desc   test interface of getUserAgent with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetUserAgentInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetUserAgentInitErr";
@@ -250,10 +298,13 @@ export default function webViewContZoomAndOthersError() {
       Utils.registerEvent("testGetUserAgentInitErr", "Init error. The WebviewController must be associated with a Web component", 112650, done);
       await Utils.waitAndClickComponent(driver, "webViewContZoomAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_4900
-     *tc.name testGetTitleInitErr
-     *tc.desc test interface of getTitle with not been associated with specific Web Components
+    /**
+     * @tc.name   testGetTitleInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_4900
+     * @tc.desc   test interface of getTitle with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetTitleInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetTitleInitErr";
@@ -262,10 +313,13 @@ export default function webViewContZoomAndOthersError() {
       Utils.registerEvent("testGetTitleInitErr", "Init error. The WebviewController must be associated with a Web component", 112670, done);
       await Utils.waitAndClickComponent(driver, "webViewContZoomAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_5000
-     *tc.name testGetPageHeightInitErr
-     *tc.desc test interface of getPageHeight with not been associated with specific Web Components
+    /**
+     * @tc.name   testGetPageHeightInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_5000
+     * @tc.desc   test interface of getPageHeight with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetPageHeightInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetPageHeightInitErr";
