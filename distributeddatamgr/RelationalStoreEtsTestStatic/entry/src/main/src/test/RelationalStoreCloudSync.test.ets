@@ -177,7 +177,6 @@ export default function relationalStoreCloudSyncTest() {
             console.log(tag + '************* testRdbStoreCloudSync0003 end *************');
         })
 
-
         /**
          * @tc.name   testRdbStoreCloudSync0010
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudSyncJsAPITest_1900

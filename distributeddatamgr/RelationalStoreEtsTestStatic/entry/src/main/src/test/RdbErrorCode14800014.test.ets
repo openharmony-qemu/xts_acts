@@ -258,7 +258,7 @@ export default function rdbErrorCode14800014() {
           expect(null).assertFail()
           done();
         } catch (err: Error) {
-          console.log(TAG + err + "batchInsertWithConflictResolutionSync failed" + err.code);
+          console.log(TAG + err + "testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0100 failed" + err.code);
           expect(err.code == 14800014).assertTrue()
           done();
         }
@@ -368,16 +368,16 @@ export default function rdbErrorCode14800014() {
     })
 
     /**
-     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1600
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1600
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_DETACH_1600
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_DETACH_1600
      * @tc.desc   1.setDistributedTables params: setConfig={autoSync: true,asyncDownloadAsset:true,enableCloud:false,} DistributedType is DISTRIBUTED_DEVICE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_DistributedData_RelationalStore_SDK_DETACH_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        console.info(TAG + "************* SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1600 start *************");
+        console.info(TAG + "************* SUB_DistributedData_RelationalStore_SDK_DETACH_1600 start *************");
         rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
         try {
@@ -395,7 +395,7 @@ export default function rdbErrorCode14800014() {
         }
         rdbStore = undefined;
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
-        console.info(TAG + "************* SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1600 end *************");
+        console.info(TAG + "************* SUB_DistributedData_RelationalStore_SDK_DETACH_1600 end *************");
         done();
       })
 
@@ -1381,7 +1381,7 @@ export default function rdbErrorCode14800014() {
 
     /**
      * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_RemoteQuery_1200
-     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1200
+     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_RemoteQuery_1200
      * @tc.desc   test remoteQuery
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1944,16 +1944,16 @@ export default function rdbErrorCode14800014() {
       })
 
     /**
-     * @tc.name   testRdbStoreBatchInsertWithConflictResolutionErrcode0100
-     * @tc.number testRdbStoreBatchInsertWithConflictResolutionErrcode0100
-     * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionErrcode0100
+     * @tc.name   testRdbStoreBatchInsertWithConflictResolutionErrcode0200
+     * @tc.number testRdbStoreBatchInsertWithConflictResolutionErrcode0200
+     * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionErrcode0200
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testRdbStoreBatchInsertWithConflictResolutionErrcode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testRdbStoreBatchInsertWithConflictResolutionErrcode0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void) => {
-        console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionErrcode0100 start *************");
+        console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionErrcode0200 start *************");
         let u8 = new Uint8Array([1, 2, 3])
         const valueBucket: data_relationalStore.ValuesBucket = {
           "name": "zhangsan",
@@ -1972,26 +1972,26 @@ export default function rdbErrorCode14800014() {
           expect(null).assertFail()
           done();
         } catch (err: Error) {
-          console.log(TAG + err + "batchInsertWithConflictResolution failed" + err.code);
+          console.log(TAG + err + "testRdbStoreBatchInsertWithConflictResolutionErrcode0200 failed" + err.code);
           expect(err.code == 14800014).assertTrue()
           done();
         }
-        console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionErrcode0100 end *************");
+        console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionErrcode0200 end *************");
       })
 
 
     /**
-     * @tc.name   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0100
-     * @tc.number testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0100
-     * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0100
+     * @tc.name   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0200
+     * @tc.number testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0200
+     * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0200
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0100',
+    it('testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
         console.log(TAG +
-          "************* testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0100 start *************");
+          "************* testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0200 start *************");
         let u8 = new Uint8Array([1, 2, 3])
         const valueBucket: data_relationalStore.ValuesBucket = {
           "name": "zhangsan",
@@ -2009,12 +2009,12 @@ export default function rdbErrorCode14800014() {
             data_relationalStore.ConflictResolution.ON_CONFLICT_NONE);
           done();
         } catch (err: Error) {
-          console.log(TAG + err + "batchInsertWithConflictResolutionSync failed" + err.code);
+          console.log(TAG + err + "testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0200 failed" + err.code);
           expect(err.code == 14800014).assertTrue()
           done();
         }
         console.log(TAG +
-          "************* testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0100 end *************");
+          "************* testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0200 end *************");
       })
 
     /**

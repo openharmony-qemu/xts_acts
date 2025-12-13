@@ -120,7 +120,7 @@ export default function rdbErrorCode14800011() {
   describe("rdbErrorCode14800011", (): void => {
     beforeAll(async(): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'rdbErrorCode14800011 beforeAll');
-      //abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.helloworld")
+      //abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore")
       await abilityDelegator.startAbility({
         bundleName: 'com.example.relationalstore',
         abilityName: 'EntryAbility'

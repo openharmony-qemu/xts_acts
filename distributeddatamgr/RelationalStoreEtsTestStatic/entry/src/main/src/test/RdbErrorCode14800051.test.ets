@@ -68,7 +68,7 @@ export default function rdbErrorCode14800051() {
 
     /**
      * @tc.name   setDistributedTablesTest001
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0400
      * @tc.desc   delete success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

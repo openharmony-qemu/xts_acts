@@ -211,7 +211,7 @@ export default function rdbErrorCode14800033() {
 
     /**
      * @tc.name   relationalStoreTest001
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0200
      * @tc.desc   delete success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -238,7 +238,7 @@ export default function rdbErrorCode14800033() {
 
     /**
      * @tc.name   relationalStoreTest002
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0300
      * @tc.desc   delete success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -265,7 +265,7 @@ export default function rdbErrorCode14800033() {
 
     /**
      * @tc.name   relationalStoreTest003
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0500
      * @tc.desc   delete success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -295,7 +295,7 @@ export default function rdbErrorCode14800033() {
 
     /**
      * @tc.name   relationalStoreTest006
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0600
      * @tc.desc   update success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -321,7 +321,7 @@ export default function rdbErrorCode14800033() {
 
     /**
      * @tc.name   relationalStoreTest012
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0700
      * @tc.desc   delete success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -344,7 +344,7 @@ export default function rdbErrorCode14800033() {
 
     /**
      * @tc.name   relationalStoreTest015
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0800
      * @tc.desc   getModifyTime success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -368,7 +368,7 @@ export default function rdbErrorCode14800033() {
 
     /**
      * @tc.name   relationalStoreTest017
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0900
      * @tc.desc   cleanDirtyData success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -392,7 +392,7 @@ export default function rdbErrorCode14800033() {
 
     /**
      * @tc.name   relationalStoreTest022
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_01100
      * @tc.desc   executeSync success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -412,7 +412,7 @@ export default function rdbErrorCode14800033() {
 
     /**
      * @tc.name   relationalStoreTest032
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_01200
      * @tc.desc   cleanDirtyData success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -431,7 +431,7 @@ export default function rdbErrorCode14800033() {
 
     /**
      * @tc.name   relationalStoreTest033
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_01300
      * @tc.desc   cleanDirtyData success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -496,7 +496,7 @@ export default function rdbErrorCode14800033() {
 
     /**
      * @tc.name   testRdbStoreLockRow0003
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0300
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0400
      * @tc.desc   Configure predicates (TABLE name: "")
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -519,7 +519,7 @@ export default function rdbErrorCode14800033() {
 
     /**
      * @tc.name   testRdbStoreQueryLockedRow0003
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0300
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0500
      * @tc.desc   Configure predicates (TABLE name: "")
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -542,7 +542,7 @@ export default function rdbErrorCode14800033() {
 
     /**
      * @tc.name   relationalStoreTest023
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_01400
      * @tc.desc   cleanDirtyData success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -760,61 +760,12 @@ export default function rdbErrorCode14800033() {
           "************* testRdbStorebatchInsertWithConflictResolutionSyncErrcode0600 end *************");
       })
 
-    /**
-     * @tc.name   testRdbStoreAttach0017
-     * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0010
-     * @tc.desc   non encrypted database attach non encrypted database
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    // it('testRdbStoreAttach0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
-    //   console.log(TAG + "************* testRdbStoreAttach0017 start *************");
-    //   rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
-    //   await rdbStore!.execute(CREATE_TABLE_TEST);
-    //   await attachInsert(rdbStore!, "test");
-    //   try {
-    //     let num = await rdbStore!.attach(context, STORE_CONFIG1, "attachDB");
-    //   } catch (e: Error) {
-    //     console.log("testRdbStoreAttach0017 : failed, err: code=" + e.code + " message=" + e.message);
-    //     expect(14800033).assertEqual(e.code);
-    //     done();
-    //   }
-    //   await attachCheck(rdbStore!);
-    //   expect(0).assertEqual(await rdbStore!.detach("attachDB"))
-    //   console.log(TAG + "************* testRdbStoreAttach0017 end *************");
-    //   done();
-    // })
-
-    /**
-     * @tc.name   testRdbStoreAttach0018
-     * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0050
-     * @tc.desc   non encrypted database attach non encrypted database
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    // it('testRdbStoreAttach0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
-    //   console.log(TAG + "************* testRdbStoreAttach0018 start *************");
-    //   await rdbStore!.execute(CREATE_TABLE_TEST);
-    //   await attachInsert(rdbStore!, "test");
-    //   try {
-    //     let num: int = await rdbStore!.attach(dataBaseDir + "rdbStore33.db", "attachDB");
-    //   } catch (e: Error) {
-    //     console.log("testRdbStoreAttach0018 err: failed, err: code=" + e.code + " message=" + e.message);
-    //     expect(14800033).assertEqual(e.code);
-    //     done();
-    //   }
-    //   await attachCheck(rdbStore!);
-    //   expect(0).assertEqual(await rdbStore!.detach("attachDB"));
-    //   done();
-    //   console.log(TAG + "************* testRdbStoreAttach0018 end *************");
-    // })
+ 
 
 
     /**
      * @tc.name   testRdbStoreTrans004
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0300
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0800
      * @tc.desc   Configure predicates (TABLE name: "")
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -936,7 +887,7 @@ export default function rdbErrorCode14800033() {
 
     /**
      * @tc.name   testRdbStoreTrans008
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0300
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0900
      * @tc.desc   Configure predicates (TABLE name: "")
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -967,7 +918,7 @@ export default function rdbErrorCode14800033() {
 
     /**
      * @tc.name   testRdbStoreTrans010
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0300
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ROLLBACK_0300
      * @tc.desc   Configure predicates (TABLE name: "")
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -997,7 +948,7 @@ export default function rdbErrorCode14800033() {
 
     /**
      * @tc.name   testRdbStoreTrans009
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0300
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ROLLBACK_0300
      * @tc.desc   Configure predicates (TABLE name: "")
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1027,7 +978,7 @@ export default function rdbErrorCode14800033() {
 
     /**
      * @tc.name   testRdbStoreTrans001
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0300
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ROLLBACK_0800
      * @tc.desc   Configure predicates (TABLE name: "")
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1064,7 +1015,7 @@ export default function rdbErrorCode14800033() {
 
     /**
      * @tc.name   testRdbStoreTrans005
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0300
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_UPDATESYNC_0300
      * @tc.desc   Configure predicates (TABLE name: "")
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

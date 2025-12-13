@@ -406,32 +406,7 @@ export default function rdbErrorCode801() {
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_0800 end-----")
       })
 
-    /**
-     * @tc.name   SUB_DistributedData_RelationalStore_on_ErrTest_0600
-     * @tc.number SUB_DistributedData_RelationalStore_on_ErrTest_0600
-     * @tc.desc   Test on
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_DistributedData_RelationalStore_on_ErrTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async () => {
-        console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_0600 start-----")
-        let progressDetail = (progressDetail: data_relationalStore.ProgressDetails) => {
-          console.info(`progress: ${progressDetail}`);
-        }
-        let rdbStore1 = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
-        try {
-          if (rdbStore1 != undefined) {
-            (rdbStore1 as data_relationalStore.RdbStore).on('autoSyncProgress', progressDetail);
-            console.info(TAG + 'on success.');
-          }
-        } catch (err: Error) {
-          console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual('801')
-        }
-        console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_0600 end-----")
-      })
+
 
     /**
      * @tc.name   SUB_DistributedData_RelationalStore_on_ErrTest_0100

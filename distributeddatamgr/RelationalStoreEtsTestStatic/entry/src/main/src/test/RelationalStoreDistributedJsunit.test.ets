@@ -176,7 +176,7 @@ describe('relationalStoreDistributedTest', (): void => {
         try {
             await rdbStore!.setDistributedTables(['employee', 'product'])
             console.info(TAG + "set employee and product to be distributed table success");
-            expect(rdbStore).assertEqual(rdbStore)
+            expect(rdbStore !== null).assertTrue();
         } catch (err: BusinessError) {
             console.info(TAG + "setDistributed004 failed"+ `, error code is ${err.code}, message is ${err.message}`);
             expect(err.code).assertEqual(ERRCODE);

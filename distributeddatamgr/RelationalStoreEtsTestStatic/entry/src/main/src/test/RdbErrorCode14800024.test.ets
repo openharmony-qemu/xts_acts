@@ -73,7 +73,7 @@ export default function rdbErrorCode14800024() {
 
     /**
      * @tc.name   SUB_DDM_RELATIONALETS_ERRORCODETSET_0010
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsApiTest_8400
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_GETROWS_8400
      * @tc.desc   resultSet getBlob normal test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -107,7 +107,7 @@ export default function rdbErrorCode14800024() {
 
     /**
      * @tc.name   SUB_DDM_RELATIONALETS_ERRORCODETSET_0060
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsApiTest_8400
+     * @tc.number SUB_DDM_RELATIONALETS_ERRORCODETSET_0060
      * @tc.desc   resultSet getBlob normal test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -176,7 +176,7 @@ export default function rdbErrorCode14800024() {
 
     /**
      * @tc.name   SUB_DDM_RELATIONALETS_ERRORCODETSET_0070
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsApiTest_8400
+     * @tc.number SUB_DDM_RELATIONALETS_ERRORCODETSET_0070
      * @tc.desc   resultSet getBlob normal test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -322,7 +322,7 @@ export default function rdbErrorCode14800024() {
 
     /**
      * @tc.name   SUB_DDM_RELATIONALETS_ERRORCODETSET_0050
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsApiTest_8400
+     * @tc.number SUB_DDM_RELATIONALETS_ERRORCODETSET_0050
      * @tc.desc   resultSet getBlob normal test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

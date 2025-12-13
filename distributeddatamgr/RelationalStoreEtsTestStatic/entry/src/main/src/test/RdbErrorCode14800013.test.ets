@@ -114,7 +114,7 @@ export default function rdbErrorCode14800013() {
 
     /**
      * @tc.name   testgetColumnTypeJsTest0500
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0500
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0600
      * @tc.desc   uerySharingResource test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
