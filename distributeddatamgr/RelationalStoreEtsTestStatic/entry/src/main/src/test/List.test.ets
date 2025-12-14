@@ -33,7 +33,7 @@ import RelationStoreError1001Test from "./RelationStoreError1001Api.test";
 import RelationalStoreSyncApiTest from "./RelationalStoreSyncApiTest.test"; 
 import RelationalStoreCloudSync from "./RelationalStoreCloudSync.test";
 import RelationalStoreDistributedJsunit from "./RelationalStoreDistributedJsunit.test";
-import relationalStoreCloudSyncEts from "./relationalStoreCloudSyncEts.test";
+import relationalStoreCloudSyncEts from "./RelationalStoreCloudSyncEts.test";
 import VectorStore from "./VectorStore.test";
 
 import RelationStoreSqlExecTimeTest from "./RelationStoreSqlExecTimeTest.test";
@@ -42,7 +42,7 @@ import RdbStoreAttachEtsunit from "./RdbStoreAttachEtsunit.test";
 import RelationalStorePredicatesJsunit from "./RelationalStorePredicatesJsunit.test";
 import RelationalStoreCloudCursor from "./RelationalStoreCloudCursor.test";
 import RelationalStoreResultSetSync from "./RelationalStoreResultSetSync.test";
-import relationalStoreInterfaceTest from  "./relationalstore.test";
+import relationalStoreInterfaceTest from  "./RelationalStore.test";
 import RelationalStoreBackupRestoreWithFAContextJsunit from "./RelationalStoreBackupRestoreWithFAContextJsunit.test";
 
 import rdbErrorCode14800011 from "./RdbErrorCode14800011.test";

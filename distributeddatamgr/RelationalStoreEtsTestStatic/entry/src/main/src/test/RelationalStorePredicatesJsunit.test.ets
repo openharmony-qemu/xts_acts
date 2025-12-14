@@ -915,6 +915,7 @@ export default function relationalStorePredicatesTest() {
       console.info(tag + "************* testLessThan0004 end *************");
     })
 
+    /**
      * @tc.name   testLessThan0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0420
      * @tc.desc   predicates lessThan normal test
