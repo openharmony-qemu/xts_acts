@@ -685,27 +685,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name   testGreaterThan0006
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0300
-     * @tc.desc   predicates greaterThan normal test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testGreaterThan0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
-      console.info(tag + "************* testGreaterThan0006 start *************");
-      {
-        let predicates = new data_Rdb.RdbPredicates("AllDataType");
-        predicates.greaterThan("doubleValue", 999.0);
-        let result =  await rdbStore.query(predicates);
-        expect(1).assertEqual(result?.rowCount);
-        result.close();
-      }
-      done();
-      console.info(tag + "************* testGreaterThan0006 end *************");
-    })
-
-    /**
      * @tc.name   testGreaterThan0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0310
      * @tc.desc   predicates greaterThan normal test

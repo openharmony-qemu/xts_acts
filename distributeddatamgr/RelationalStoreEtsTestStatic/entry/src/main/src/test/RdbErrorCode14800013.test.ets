@@ -151,15 +151,15 @@ export default function rdbErrorCode14800013() {
     });
 
     /**
-     * @tc.name   errcode006
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_0600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_0600
      * @tc.desc   errcode is 14800013
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('errcode006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) => {
-      console.info(TAG + "************* errcode006 start *************");
+    it('SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) => {
+      console.info(TAG + "************* SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_0600 start *************");
       const CREATE_TABLE_TEST2 = "CREATE TABLE IF NOT EXISTS test2 (" + "id INTEGER PRIMARY KEY, " +
         "name TEXT NOT NULL, " + "age INTEGER, "  + "blobType BLOB)";
       await (rdbStore as data_relationalStore.RdbStore).execute(CREATE_TABLE_TEST2, []);
@@ -189,7 +189,7 @@ export default function rdbErrorCode14800013() {
         expect(err.code == 14800013).assertTrue()
         done()
       }
-      console.info(TAG + "************* errcode006 end *************");
+      console.info(TAG + "************* SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_0600 end *************");
     })
 
   })

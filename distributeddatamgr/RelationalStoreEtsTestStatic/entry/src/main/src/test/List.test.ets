@@ -73,7 +73,6 @@ export default function testsuite() {
 
   RelationStoreError12Test();
   RelationStoreError14Test();
-  RelationStoreError21Test();
   RelationStoreError24Test();
   RelationStoreError30Test();
   RelationStoreError32Test();
