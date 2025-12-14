@@ -210,15 +210,15 @@ export default function rdbErrorCode14800033() {
     });
 
     /**
-     * @tc.name   relationalStoreTest001
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0300
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_RDBFGAPIinsertSyncTest_0300
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPIinsertSyncTest_0300
      * @tc.desc   delete success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('relationalStoreTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
-      console.info(TAG + "************* relationalStoreTest001 start *************");
+    it('SUB_DistributedData_RelationalStore_SDK_RDBFGAPIinsertSyncTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + "************* SUB_DistributedData_RelationalStore_SDK_RDBFGAPIinsertSyncTest_0300 start *************");
       const valueBucket: data_relationalStore.ValuesBucket = {
         "id": "abc",
         "name": "Jim",
@@ -229,10 +229,10 @@ export default function rdbErrorCode14800033() {
         rdbStore!.insertSync("test", valueBucket);
         expect().assertFail();
       } catch (e: Error) {
-        console.error(TAG + "relationalStoreTest001 fail code is " + e.code + " message is " + e.message);
+        console.error(TAG + "SUB_DistributedData_RelationalStore_SDK_RDBFGAPIinsertSyncTest_0300 fail code is " + e.code + " message is " + e.message);
         expect(14800033).assertEqual(e.code);
       }
-      console.info(TAG + "************* relationalStoreTest001 end *************");
+      console.info(TAG + "************* SUB_DistributedData_RelationalStore_SDK_RDBFGAPIinsertSyncTest_0300 end *************");
       done();
     })
 
@@ -264,15 +264,15 @@ export default function rdbErrorCode14800033() {
     })
 
     /**
-     * @tc.name   relationalStoreTest003
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0500
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_RDBFGAPIbatchInsertSyncTest_0500
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPIbatchInsertSyncTest_0500
      * @tc.desc   delete success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('relationalStoreTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
-      console.info(TAG + "************* relationalStoreTest003 start *************");
+    it('SUB_DistributedData_RelationalStore_SDK_RDBFGAPIbatchInsertSyncTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + "************* SUB_DistributedData_RelationalStore_SDK_RDBFGAPIbatchInsertSyncTest_0500 start *************");
       let values: Array<data_relationalStore.ValuesBucket> = new Array<data_relationalStore.ValuesBucket>();
       const valueBucket: data_relationalStore.ValuesBucket = {
         "id": "abc",
@@ -283,26 +283,26 @@ export default function rdbErrorCode14800033() {
       values.push(valueBucket)
       try {
         rdbStore!.batchInsertSync("test", values);
-        console.info(TAG + "relationalStoreTest003 success ");
+        console.info(TAG + "SUB_DistributedData_RelationalStore_SDK_RDBFGAPIbatchInsertSyncTest_0500 success ");
       } catch (e: Error) {
-        console.error(TAG + "relationalStoreTest003 fail code is " + e.code + " message is " + e.message);
+        console.error(TAG + "SUB_DistributedData_RelationalStore_SDK_RDBFGAPIbatchInsertSyncTest_0500 fail code is " + e.code + " message is " + e.message);
         expect(14800033).assertEqual(e.code);
       }
-      console.info(TAG + "************* relationalStoreTest003 end *************");
+      console.info(TAG + "************* SUB_DistributedData_RelationalStore_SDK_RDBFGAPIbatchInsertSyncTest_0500 end *************");
       done();
     })
 
 
     /**
-     * @tc.name   relationalStoreTest006
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0600
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_RDBFGAPIupdateSyncTest_0600
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPIupdateSyncTest_0600
      * @tc.desc   update success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('relationalStoreTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
-      console.info(TAG + "************* relationalStoreTest006 start *************");
+    it('SUB_DistributedData_RelationalStore_SDK_RDBFGAPIupdateSyncTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + "************* SUB_DistributedData_RelationalStore_SDK_RDBFGAPIupdateSyncTest_0600 start *************");
       const valueBucket: data_relationalStore.ValuesBucket = {
         "age": 30.0,
         "salary": 2000.0
@@ -311,31 +311,31 @@ export default function rdbErrorCode14800033() {
         let predicates = new data_relationalStore.RdbPredicates("test");
         predicates.equalTo("name", "Jim");
         rdbStore!.updateSync(valueBucket, predicates);
-        console.info(TAG + `relationalStoreTest006 updateSync is successful`);
+        console.info(TAG + `SUB_DistributedData_RelationalStore_SDK_RDBFGAPIupdateSyncTest_0600 updateSync is successful`);
       } catch (e: Error) {
-        console.error(TAG + "relationalStoreTest006 fail code is " + e.code + " message is " + e.message);
+        console.error(TAG + "SUB_DistributedData_RelationalStore_SDK_RDBFGAPIupdateSyncTest_0600 fail code is " + e.code + " message is " + e.message);
         expect(14800033).assertEqual(e.code);
       }
       done();
     })
 
     /**
-     * @tc.name   relationalStoreTest012
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0700
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_RDBFGAPIdeleteSyncTest_0700
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPIdeleteSyncTest_0700
      * @tc.desc   delete success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('relationalStoreTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
-      console.info(TAG + "************* relationalStoreTest006 start *************");
+    it('SUB_DistributedData_RelationalStore_SDK_RDBFGAPIdeleteSyncTest_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + "************* SUB_DistributedData_RelationalStore_SDK_RDBFGAPIdeleteSyncTest_0700 start *************");
       try {
         let predicates = new data_relationalStore.RdbPredicates("test");
         predicates.equalTo("name", "Jim");
         rdbStore!.deleteSync(predicates);
         console.info(TAG + "deleteSync success ");
       } catch (e: Error) {
-        console.error(TAG + "relationalStoreTest012 fail code is " + e.code + " message is " + e.message);
+        console.error(TAG + "SUB_DistributedData_RelationalStore_SDK_RDBFGAPIdeleteSyncTest_0700 fail code is " + e.code + " message is " + e.message);
         expect(14800033).assertEqual(e.code);
       }
       done();
@@ -343,15 +343,15 @@ export default function rdbErrorCode14800033() {
 
 
     /**
-     * @tc.name   relationalStoreTest015
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0800
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_RDBFGAPIgetModifyTimeTest_0800
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPIgetModifyTimeTest_0800
      * @tc.desc   getModifyTime success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    // it('relationalStoreTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
-    //   console.log(TAG + "************* relationalStoreTest015 start *************");
+    // it('SUB_DistributedData_RelationalStore_SDK_RDBFGAPIgetModifyTimeTest_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+    //   console.log(TAG + "************* SUB_DistributedData_RelationalStore_SDK_RDBFGAPIgetModifyTimeTest_0800 start *************");
     //   await rdbStore!.setDistributedTables(
     //     ["employee1"], data_relationalStore.DistributedType.DISTRIBUTED_CLOUD, { autoSync: false });
     //   try {
@@ -361,21 +361,21 @@ export default function rdbErrorCode14800033() {
     //     console.log(TAG + `get modify time fail, err code is ${err.code}, message is ${err.message}.`);
     //     expect(err.code).assertEqual(14800033);
     //   }
-    //   console.log(TAG + "************* relationalStoreTest015 end *************");
+    //   console.log(TAG + "************* SUB_DistributedData_RelationalStore_SDK_RDBFGAPIgetModifyTimeTest_0800 end *************");
     //   done();
     // })
 
 
     /**
-     * @tc.name   relationalStoreTest017
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0900
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_RDBFGAPIcleanDirtyDataTest_0900
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPIcleanDirtyDataTest_0900
      * @tc.desc   cleanDirtyData success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('relationalStoreTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
-      console.info(TAG + "************* relationalStoreTest017 start *************");
+    it('SUB_DistributedData_RelationalStore_SDK_RDBFGAPIcleanDirtyDataTest_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + "************* SUB_DistributedData_RelationalStore_SDK_RDBFGAPIcleanDirtyDataTest_0900 start *************");
       try {
         await rdbStore!.cleanDirtyData('employee', 100).then(() => {
           console.info(TAG + 'clean dirty data  succeeded');
@@ -383,7 +383,7 @@ export default function rdbErrorCode14800033() {
           console.error(TAG + `clean dirty data failed, code is ${err.code},message is ${err.message}`);
         });
       } catch (e: Error) {
-        console.error(TAG + "relationalStoreTest017 fail code is " + e.code + " message is " + e.message);
+        console.error(TAG + "SUB_DistributedData_RelationalStore_SDK_RDBFGAPIcleanDirtyDataTest_0900 fail code is " + e.code + " message is " + e.message);
         expect(14800033).assertEqual(e.code);
       }
       done();

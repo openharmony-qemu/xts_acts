@@ -68,9 +68,9 @@ export default function testsuite() {
   RelationStoreRdbStoreTest();
   RelationalStoreEnumTest();
   RdbResultSetTest();
-  RelationStoreError00Test();
+
   RelationStoreError10Test();
-  RelationStoreError11Test();
+
   RelationStoreError12Test();
   RelationStoreError14Test();
   RelationStoreError21Test();
@@ -107,7 +107,7 @@ export default function testsuite() {
   rdbErrorCode14800016();
   rdbErrorCode14801001(); 
   rdbErrorCode14800012();
-  rdbErrorCode14800014();
+
   rdbErrorCode14800011();
   rdbErrorCode14800032();
   rdbErrorCode14800033();

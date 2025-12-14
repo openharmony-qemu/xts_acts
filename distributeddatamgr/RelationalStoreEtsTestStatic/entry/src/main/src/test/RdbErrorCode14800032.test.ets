@@ -346,7 +346,7 @@ export default function RdbErrorCode14800032() {
 
     /**
      * @tc.name   relationalStoreTest001
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_01500
      * @tc.desc   delete success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -551,21 +551,21 @@ export default function RdbErrorCode14800032() {
     })
 
     /**
-     * @tc.name   relationalStoreTest022
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_02300
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_RDBFGAPIexecuteTest_02300
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPIexecuteTest_02300
      * @tc.desc   executeSync success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('relationalStoreTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info(TAG + "************* relationalStoreTest022 start *************");
+    it('SUB_DistributedData_RelationalStore_SDK_RDBFGAPIexecuteTest_02300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info(TAG + "************* SUB_DistributedData_RelationalStore_SDK_RDBFGAPIexecuteTest_02300 start *************");
       await rdbStore!.execute(CREATE_TABLE_EMPLOYEE);
       const SQL_DELETE_TABLE = 'DELETE FROM employee';
       try{
         rdbStore!.executeSync(SQL_DELETE_TABLE);
       } catch (e: BusinessError) {
-        console.error(TAG + "relationalStoreTest022 fail code is "+e.code + " message is "+ e.message);
+        console.error(TAG + "SUB_DistributedData_RelationalStore_SDK_RDBFGAPIexecuteTest_02300 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
       }
       done();

@@ -82,6 +82,7 @@ export default function RelationalStoreSyncApiTest() {
       await rdbStore!.execute(CREATE_TABLE_TEST);
       done();
     })
+
     afterEach(async (done: () => void) => {
       console.info(TAG + 'afterEach');
       await rdbStore!.execute("DELETE FROM test");

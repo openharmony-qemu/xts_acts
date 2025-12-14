@@ -24,8 +24,6 @@ import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 
-
-import sendableRelationalStore from '@ohos.data.sendableRelationalStore'
 import deviceInfo from '@ohos.deviceInfo';
 
 let context: common.UIAbilityContext;
@@ -152,6 +150,7 @@ export default function relationalStoreTest() {
       done();
       console.log(tag + "************* relationalStoreTest007 end *************");
     })
+
     /**
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_RDBFGAPIquerySyncTest_0800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPIquerySyncTest_0800
@@ -212,6 +211,7 @@ export default function relationalStoreTest() {
       done();
       console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_RDBFGAPIexecuteSyncTest_0900 end *************");
     })
+
     /**
      * @tc.name   relationalStoreTest010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_1000

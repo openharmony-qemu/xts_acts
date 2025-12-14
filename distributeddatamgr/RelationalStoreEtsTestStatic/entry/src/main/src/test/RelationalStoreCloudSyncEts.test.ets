@@ -86,20 +86,24 @@ export default function relationalStoreCloudSyncEts() {
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore")
       await Utils.msSleep(5000)
       context = AppStorage.get<common.UIAbilityContext>('abilityContextMainAbility2') as common.UIAbilityContext;
-      hilog.info(domain, tag, 'context:' + JSON.stringify(context))
-      hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
+    });
+    
+    beforeEach(async(): Promise<void> => {
       rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
       rdbStore2 = await data_relationalStore.getRdbStore(context, STORE_CONFIG2);
       await rdbStore.execute(DROP_TABLE_TEST);
       await rdbStore.execute(CREATE_TABLE_TEST);
-      hilog.info(domain, tag, 'batchInsert vbs:' + JSON.stringify(vbs))
-      try {
-        let num = await rdbStore.batchInsert("test", vbs);
-        hilog.info(domain, tag, 'batchInsert %{public}d rows.', num)
-      } catch (err:BusinessError){
-        hilog.error(domain, tag, 'batchInsert err:' + JSON.stringify(err))
-      }
+    })
+
+    afterEach(async (): Promise<void> => {
+      console.info(tag + 'afterEach');
     });
+
+    afterAll(async () : Promise<void> => {
+      await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await data_relationalStore.deleteRdbStore(context, STORE_CONFIG2);
+    })
+    
 
     /**
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_qiangjiAPItestGetColumnIndex0001Test_0100
@@ -111,6 +115,7 @@ export default function relationalStoreCloudSyncEts() {
      */
     it('SUB_DistributedData_RelationalStore_SDK_qiangjiAPItestGetColumnIndex0001Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* SUB_DistributedData_RelationalStore_SDK_qiangjiAPItestGetColumnIndex0001Test_0100 start *************');
+      await rdbStore.batchInsert("test", vbs);
       let resultSet = await rdbStore.querySql("SELECT * FROM test");
       expect(true).assertEqual(resultSet.goToFirstRow())
       expect(true).assertEqual(resultSet.getColumnIndex("data1")==1)
@@ -193,6 +198,7 @@ export default function relationalStoreCloudSyncEts() {
      */
     it('SUB_DistributedData_RelationalStore_testGetString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* SUB_DistributedData_RelationalStore_testGetString0001 start *************');
+      await rdbStore.batchInsert("test", vbs);
       let resultSet = await  rdbStore.querySql("SELECT * FROM test")
       expect(true).assertEqual(resultSet.goToFirstRow())
       const data1 = resultSet.getString(resultSet.getColumnIndex("data1"))
@@ -211,6 +217,7 @@ export default function relationalStoreCloudSyncEts() {
      */
     it('SUB_DistributedData_RelationalStore_SDK_qiangjiAPItestGetString0002Test_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* SUB_DistributedData_RelationalStore_SDK_qiangjiAPItestGetString0002Test_0700 start *************');
+      await rdbStore.batchInsert("test", vbs);
       let resultSet = await rdbStore.querySql("SELECT * FROM test")
       expect(true).assertEqual(resultSet.goToFirstRow())
       const data2 = resultSet.getString(resultSet.getColumnIndex("data2"))

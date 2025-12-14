@@ -87,7 +87,7 @@ export default function rdbErrorCode14800024() {
       let columnIndex = 1;
       try {
         //TestCode
-        let row = (resultSet as dataRdb.ResultSet).getRows(MaxCount);
+        let row = await (resultSet as dataRdb.ResultSet).getRows(MaxCount);
       } catch (e: BusinessError) {
         expect(e.code).assertEqual(14800024);
       }
