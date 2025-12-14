@@ -916,15 +916,15 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name   testLessThan0007
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0430
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPIlessThanTest_0430
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPIlessThanTest_0430
      * @tc.desc   predicates lessThan normal test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testLessThan0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
-      console.info(tag + "************* testLessThan0007 start *************");
+    it('SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPIlessThanTest_0430', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPIlessThanTest_0430 start *************");
       {
         let predicates = new data_Rdb.RdbPredicates("AllDataType");
         predicates.lessThan("integerValue", -2147483648 as long);
@@ -933,7 +933,7 @@ export default function relationalStorePredicatesTest() {
         result.close();
       }
       done();
-      console.info(tag + "************* testLessThan0007 end *************");
+      console.info(tag + "************* SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPIlessThanTest_0430 end *************");
     })
 
     /**

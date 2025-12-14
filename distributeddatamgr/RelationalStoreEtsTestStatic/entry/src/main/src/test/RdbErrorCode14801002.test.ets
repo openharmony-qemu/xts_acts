@@ -71,15 +71,15 @@ export default function rdbErrorCode14801002() {
 
 
     /**
-     * @tc.name   relationalStoreTest001
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_RDBFGAPIUint8ArrayTest_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPIUint8ArrayTest_0100
      * @tc.desc   delete success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('relationalStoreTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      console.log(TAG + "************* testRdbStoreAttach0001 start *************");
+    it('SUB_DistributedData_RelationalStore_SDK_RDBFGAPIUint8ArrayTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.log(TAG + "************* SUB_DistributedData_RelationalStore_SDK_RDBFGAPIUint8ArrayTest_0100 start *************");
       const STORE_CONFIG: data_relationalStore.StoreConfig = {
         name: "rdbstore002.db",
         securityLevel: data_relationalStore.SecurityLevel.S1,
@@ -113,7 +113,7 @@ export default function rdbErrorCode14801002() {
         console.error(TAG + `deleteRdbStore failed, code is ${e.code},message is ${e.message}`);
         expect(e.code).assertEqual(14801002);
       }
-      console.info(TAG + "************* relationalStoreTest001 end *************");
+      console.info(TAG + "************* SUB_DistributedData_RelationalStore_SDK_RDBFGAPIUint8ArrayTest_0100 end *************");
     })
 
   })

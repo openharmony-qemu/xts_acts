@@ -1046,15 +1046,15 @@ export default function rdbErrorCode14800011() {
     })
 
     /**
-     * @tc.name   testQuerySqlSyncErrcode0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertSyncTest_1000
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_InsertSyncUint8ArrayTest_1000
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertSyncUint8ArrayTest_1000
      * @tc.desc   Transaction insertSync errcode is 14800011
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("testQuerySqlSyncErrcode0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', "************* testQuerySqlSyncErrcode0100 start *************");
+    it("SUB_DistributedData_RelationalStore_SDK_InsertSyncUint8ArrayTest_1000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "************* SUB_DistributedData_RelationalStore_SDK_InsertSyncUint8ArrayTest_1000 start *************");
       let transaction: data_relationalStore.Transaction;
       try {
         rdbStore!.executeSync(CREATE_TABLE_TEST1);
@@ -1066,63 +1066,20 @@ export default function rdbErrorCode14800011() {
           "blobType": u8,
         };
         transaction = await (rdbStore as data_relationalStore.RdbStore).createTransaction();
-        hilog.info(domain, tag, '%{public}s','testQuerySqlSyncErrcode0100 end createTransaction');
+        hilog.info(domain, tag, '%{public}s','SUB_DistributedData_RelationalStore_SDK_InsertSyncUint8ArrayTest_1000 end createTransaction');
         transaction.insertSync("test1", valueBucket);
         await CreateCorruptDb();
-        hilog.info(domain, tag, '%{public}s', 'testQuerySqlSyncErrcode0100 end CreateCorruptDb');
+        hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_RelationalStore_SDK_InsertSyncUint8ArrayTest_1000 end CreateCorruptDb');
         let array: Array<data_relationalStore.ValueType> = new Array<data_relationalStore.ValueType>("zhangsan");
         transaction.querySqlSync("select * from test where name = ?", array);
         done();
       } catch (err: BusinessError) {
         await transaction.rollback();
-        hilog.info(domain, tag, '%{public}s', `testQuerySqlSyncErrcode0100 + ${err.code} + ${err.message}`);
+        hilog.info(domain, tag, '%{public}s', `SUB_DistributedData_RelationalStore_SDK_InsertSyncUint8ArrayTest_1000 + ${err.code} + ${err.message}`);
         expect(14800011).assertEqual(err.code);
         done();
       }
     })
-
-    /**
-     * @tc.name   testUpdateSyncErrcode0200
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_UpdateSyncTest_1000
-     * @tc.desc   Transaction updateSync errcode is 14800011
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    // it("testUpdateSyncErrcode0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   hilog.info(domain, tag, '%{public}s', "************* testUpdateSyncErrcode0200 start *************");
-    //   let transaction: data_relationalStore.Transaction;
-    //   try {
-    //     rdbStore!.executeSync(CREATE_TABLE_TEST1);
-    //     const u8 = new Uint8Array([1, 2, 3]);
-    //     const valueBucket: data_relationalStore.ValuesBucket = {
-    //       "name": "zhangsan",
-    //       "age": 20 as long,
-    //       "salary": 220.5,
-    //       "blobType": u8,
-    //     };
-    //     const valueBucket1: data_relationalStore.ValuesBucket = {
-    //       "name": "lisi",
-    //       "age": 30 as long,
-    //       "salary": 20.5,
-    //       "blobType": u8,
-    //     };
-    //     transaction = await rdbStore!.createTransaction();
-    //     hilog.info(domain, tag, '%{public}s','testUpdateSyncErrcode0200 end createTransaction');
-    //     transaction.insertSync("test1", valueBucket);
-    //     let predicates = new data_relationalStore.RdbPredicates("test1");
-    //     predicates.equalTo("NAME", "zhangsan");
-    //     await CreateCorruptDb();
-    //     hilog.info(domain, tag, '%{public}s', 'testUpdateSyncErrcode0200 end CreateCorruptDb');
-    //     transaction.updateSync(valueBucket1, predicates);
-    //     done();
-    //   } catch (err: BusinessError) {
-    //     await transaction.rollback();
-    //     hilog.info(domain, tag, '%{public}s', `testUpdateSyncErrcode0200 + ${err.code} + ${err.message}`);
-    //     expect(14800011).assertEqual(err.code);
-    //     done();
-    //   }
-    // })
 
   })
 }

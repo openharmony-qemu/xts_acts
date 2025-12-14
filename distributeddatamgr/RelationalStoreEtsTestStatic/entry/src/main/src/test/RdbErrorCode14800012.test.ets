@@ -151,27 +151,27 @@ export default function rdbErrorCode14800012() {
     });
 
     /**
-     * @tc.name   testgetColumnTypeJsTest0400
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJS_EtsAPI16Test_0400
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_ResultSetJS_EtsAPI16getColumnTypeTest_0400
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJS_EtsAPI16getColumnTypeTest_0400
      * @tc.desc   uerySharingResource test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
 
-    it('testgetColumnTypeJsTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) => {
+    it('SUB_DistributedData_RelationalStore_SDK_ResultSetJS_EtsAPI16getColumnTypeTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) => {
       try {
         const valueBucket:data_relationalStore.ValuesBucket = {
           "data1": null,
         };
         await (rdbStore as data_relationalStore.RdbStore).insert("test", valueBucket);
       } catch (err: BusinessError) {
-        console.error(TAG + "testgetColumnTypeJsTest0400 insert failed " + err);
+        console.error(TAG + "SUB_DistributedData_RelationalStore_SDK_ResultSetJS_EtsAPI16getColumnTypeTest_0400 insert failed " + err);
       }
       let resultSet:data_relationalStore.ResultSet;
       resultSet = await (rdbStore as data_relationalStore.RdbStore).querySql("SELECT * FROM test");
       try {
-        console.error(TAG + "testgetColumnTypeJsTest0400 getColumnType success ");
+        console.error(TAG + "SUB_DistributedData_RelationalStore_SDK_ResultSetJS_EtsAPI16getColumnTypeTest_0400 getColumnType success ");
         await resultSet.getColumnType(0);
         expect(true).assertFail();
         done();;
@@ -179,7 +179,7 @@ export default function rdbErrorCode14800012() {
         expect(14800012).assertEqual(err.code);
         resultSet.close();
         done();
-        console.error(TAG + "testgetColumnTypeJsTest0400 getColumnType failed " + err);
+        console.error(TAG + "SUB_DistributedData_RelationalStore_SDK_ResultSetJS_EtsAPI16getColumnTypeTest_0400 getColumnType failed " + err);
       }
     });
 

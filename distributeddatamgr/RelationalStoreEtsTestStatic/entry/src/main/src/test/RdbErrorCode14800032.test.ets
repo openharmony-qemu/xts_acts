@@ -611,14 +611,14 @@ export default function RdbErrorCode14800032() {
     })
 
     /**
-     * @tc.name   testGetRows0001
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0200
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPIgetRowsTest_0200
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPIgetRowsTest_0200
      * @tc.desc   resultSet getBlob normal test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testGetRows0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPIgetRowsTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let predicates = new data_relationalStore.RdbPredicates('employee');
       let resultSet = await rdbStore!.query(predicates);
       try {
@@ -626,7 +626,7 @@ export default function RdbErrorCode14800032() {
         resultSet.close();
         done();
       } catch (e: BusinessError) {
-        console.error(TAG + "testGetRows0001 fail code is "+e.code + " message is "+ e.message);
+        console.error(TAG + "SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPIgetRowsTest_0200 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
         done();
       }
