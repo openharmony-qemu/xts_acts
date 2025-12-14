@@ -150,6 +150,7 @@ export default function rdbErrorCode14800012() {
       }
     });
 
+
     /**
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_ResultSetJS_EtsAPI16getColumnTypeTest_0400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJS_EtsAPI16getColumnTypeTest_0400
@@ -158,7 +159,6 @@ export default function rdbErrorCode14800012() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-
     it('SUB_DistributedData_RelationalStore_SDK_ResultSetJS_EtsAPI16getColumnTypeTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) => {
       try {
         const valueBucket:data_relationalStore.ValuesBucket = {

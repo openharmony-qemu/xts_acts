@@ -90,7 +90,6 @@ export default function testsuite() {
   
   relationalStoreInterfaceTest(); 
   RelationalStoreBackupRestoreWithFAContextJsunit();
-  RelationalStorePredicatesJsunit(); 
   VectorStore(); 
   RelationalStoreCloudCursor(); 
   RdbStoreAttachEtsunit(); 

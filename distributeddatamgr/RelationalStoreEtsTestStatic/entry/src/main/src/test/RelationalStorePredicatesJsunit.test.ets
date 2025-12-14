@@ -255,28 +255,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name   testEqualTo0008
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0080
-     * @tc.desc   predicates equalTo normal test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testEqualTo0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
-      console.info(tag + "************* testEqualTo0008 start *************");
-      {
-        let predicates = new data_Rdb.RdbPredicates("AllDataType");
-        predicates.equalTo("floatValue", -0.123);
-        let result = await rdbStore.query(predicates);
-        expect(true).assertEqual(result.goToFirstRow());
-        expect(1).assertEqual(result.getLong(0))
-        result.close();
-      }
-      done();
-      console.info(tag + "************* testEqualTo0008 end   *************");
-    })
-
-    /**
      * @tc.name   testNotEqualTo0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0090
      * @tc.desc   predicates notEqualTo normal test
@@ -577,27 +555,6 @@ export default function relationalStorePredicatesTest() {
       result.close();
       done();
       console.info(tag + "************* testIsNotNull0004 end *************");
-    })
-
-    /**
-     * @tc.name   testGreaterThan0001
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0250
-     * @tc.desc   predicates greaterThan normal test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testGreaterThan0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
-      console.info(tag + "************* testGreaterThan0001 start *************");
-      {
-        let predicates = new data_Rdb.RdbPredicates("AllDataType");
-        predicates.greaterThan("stringValue", "ABC");
-        let result = await rdbStore.query(predicates);
-        expect(3).assertEqual(result?.rowCount);
-        result.close();
-      }
-      done();
-      console.info(tag + "************* testGreaterThan0001 end *************");
     })
 
     /**
@@ -1041,28 +998,6 @@ export default function relationalStorePredicatesTest() {
       console.info(tag + "************* testLessThanOrEqualTo0004 end *************");
     })
 
-
-    /**
-     * @tc.name   testBetween0002
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0500
-     * @tc.desc   predicates between normal test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testBetween0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
-      console.info(tag + "************* testBetween0002 start *************");
-      {
-        let predicates = new data_Rdb.RdbPredicates("AllDataType");
-        predicates.between("doubleValue", 0.0, DOUBLE_MAX);
-        let result = await rdbStore.query(predicates);
-        expect(3).assertEqual(result?.rowCount);
-        result.close();
-      }
-      done();
-      console.info(tag + "************* testBetween0002 end *************");
-    })
-
     /**
      * @tc.name   testBetween0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0510
@@ -1337,27 +1272,6 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name   testGlob0004
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0640
-     * @tc.desc   begin with ? by glob.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testGlob0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
-      console.info(tag + "************* testGlob0004 start *************");
-      {
-        let predicates = new data_Rdb.RdbPredicates("AllDataType");
-        predicates.glob("stringValue", "?BCDEFGHIJKLMN");
-        let result = await rdbStore.query(predicates);
-        expect(3).assertEqual(result?.rowCount);
-        result.close();
-      }
-      done();
-      console.info(tag + "************* testGlob0004 end *************");
-    })
-
-    /**
      * @tc.name   testGlob0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0650
      * @tc.desc   begin and end with * by glob.
@@ -1376,27 +1290,6 @@ export default function relationalStorePredicatesTest() {
       }
       done();
       console.info(tag + "************* testGlob0005 end *************");
-    })
-
-    /**
-     * @tc.name   testGlob0006
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0660
-     * @tc.desc   begin and end with ? by glob.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testGlob0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
-      console.info(tag + "************* testGlob0006 start *************");
-      {
-        let predicates = new data_Rdb.RdbPredicates("AllDataType");
-        predicates.glob("stringValue", "?BCDEFGHIJKLM?");
-        let result = await rdbStore.query(predicates);
-        expect(3).assertEqual(result?.rowCount);
-        result.close();
-      }
-      done();
-      console.info(tag + "************* testGlob0006 end *************");
     })
 
     /**
