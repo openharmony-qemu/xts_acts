@@ -25,6 +25,8 @@ import listAnVisible from './List/listAnVisible.test';
 import listHeight from './List/listHeight.test';
 import groupAnVisible from './ListItemGroup/groupAnVisible.test';
 import groupHeight from './ListItemGroup/groupHeight.test';
+import cachedListMin from './List/cachedListMin.test';
+import cachedShowListMin from './List/cachedShowListMin.test';
 import cachedShowList from './List/cachedShowList.test';
 import getItemError from './List/getItemError.test';
 import getVisibleListError from './List/getVisibleListError.test';
@@ -62,6 +64,8 @@ export default function testsuite() {
   listHeight()
   groupAnVisible()
   groupHeight()
+  cachedListMin()
+  cachedShowListMin()
   cachedShowList()
   getItemError()
   getVisibleListError()

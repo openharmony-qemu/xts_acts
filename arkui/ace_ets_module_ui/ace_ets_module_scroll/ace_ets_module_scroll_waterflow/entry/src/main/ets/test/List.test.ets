@@ -20,6 +20,8 @@ import waterFlowDraggingFling from './WaterFlow/waterFlowDraggingFling.test';
 import repeatNoMakeObserved from './WaterFlow/repeatNoMakeObserved.test';
 import waterOffsetRes from './WaterFlow/waterOffsetRes.test';
 import waterContentOffset from './WaterFlow/waterContentOffset.test';
+import cachedFlowMin from './WaterFlow/cachedFlowMin.test';
+import cachedShowFlowMin from './WaterFlow/cachedShowFlowMin.test';
 
 export default function testsuite() {
   WaterflowDemo()
@@ -29,4 +31,6 @@ export default function testsuite() {
   repeatNoMakeObserved()
   waterOffsetRes()
   waterContentOffset()
+  cachedFlowMin()
+  cachedShowFlowMin()
 }
