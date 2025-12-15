@@ -133,9 +133,9 @@ export default function builtinsRegExpExecArrayGroupsTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsRegExpMatchArrayGroupsTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+    it('builtinsRegExpExecArrayGroupsTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       (done: Function) => {
-        const caseName = 'builtinsRegExpMatchArrayGroupsTest0100';
+        const caseName = 'builtinsRegExpExecArrayGroupsTest0300';
         console.info(`${caseName} test start`);
         try {
           const exp: string = '23-456-789';

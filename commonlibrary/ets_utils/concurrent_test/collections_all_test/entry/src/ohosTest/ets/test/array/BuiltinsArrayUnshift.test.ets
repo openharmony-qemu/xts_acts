@@ -247,7 +247,6 @@ export default function builtinsArrayUnshiftTest() {
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
         expect(newValue).assertEqual(5);
-        expect(array).assertDeepEquals(array);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
         expect().assertFail();
