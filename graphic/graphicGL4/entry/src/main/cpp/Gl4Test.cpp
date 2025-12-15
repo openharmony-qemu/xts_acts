@@ -39,7 +39,10 @@ typedef EGLBoolean(*PFNOHGRAPHICSQUERYGLPROC)(void);
 static napi_value IsSupportGL(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
-    PFNOHGRAPHICSQUERYGLPROC OH_Graphics_QueryGL = (PFNOHGRAPHICSQUERYGLPROC)eglGetProcAddress("OH_Graphics_QueryGL");
+    // PFNOHGRAPHICSQUERYGLPROC OH_Graphics_QueryGL = (PFNOHGRAPHICSQUERYGLPROC)eglGetProcAddress("OH_Graphics_QueryGL");
+    PFNOHGRAPHICSQUERYGLPROC OH_Graphics_QueryGL = reinterpret_cast<PFNOHGRAPHICSQUERYGLPROC>(
+        eglGetProcAddress("OH_Graphics_QueryGL")
+    );
     if (OH_Graphics_QueryGL) {
         if (OH_Graphics_QueryGL()) {
             napi_create_int32(env, SUCCESS, &result);
