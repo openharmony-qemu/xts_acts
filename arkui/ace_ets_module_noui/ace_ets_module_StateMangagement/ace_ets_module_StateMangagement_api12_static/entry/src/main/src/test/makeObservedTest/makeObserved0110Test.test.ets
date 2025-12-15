@@ -71,7 +71,7 @@ export default function makeObserved0110Test() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get makeObserved0110Test state pages:" + JSON.stringify(pages));
-        if (!("makeObserved0110Test" == pages.name)) {
+        if (!("makeObserved0110" == pages.name)) {
           console.info("get makeObserved0110Test pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

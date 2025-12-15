@@ -102,8 +102,8 @@ it('LazyForEachReload_static_001', Level.LEVEL0, async (done: () => void): Promi
       let reload_btn = await driver.findComponent(ON.id('reload'));
       await (reload_btn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
-      let count_text = await driver.findComponent(ON.id('text_disappear_count'));
-      expect(await (count_text?.getText() as Promise<String>)).assertEqual('12');
+      let count_text = await driver.findComponent(ON.id('text_disappear_count')) as Component;
+      expect(count_text?.getText()).assertEqual('12');
       console.info('[LazyForEachReload_static_001] END');
       done();
     });

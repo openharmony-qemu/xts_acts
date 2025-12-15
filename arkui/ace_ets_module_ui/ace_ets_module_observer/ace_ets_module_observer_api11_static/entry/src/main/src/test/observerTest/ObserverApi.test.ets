@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -52,7 +53,7 @@ export default function ObserverApi() {
         if (!("ObserverApi" == pages.name)) {
           console.info("get ObserverApi state success " + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push ObserverApi page success " + JSON.stringify(result));
         }

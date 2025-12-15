@@ -177,20 +177,20 @@ export default function V2ToV1() {
       done();
     })
     /*
-     * @tc.number   v2Tov1_static_0700
+     * @tc.number   v2Tov1_static_0700  // 1.1 func类型在1.2中不支持
      * @tc.name     v2Tov1_static_0700
      * @tc.desc     v2Tov1_static_0700
      * @tc.level    Level.LEVEL0
      */
-    it('v2Tov1_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[v2Tov1_static_0700] START');
-      let Json = inspector.getInspectorByKey('func_value2');
-      let Obj = JSON.parseJsonElement(Json);
-      await CommonFunc.sleep(1000);
-      console.log('[v2Tov1_static_0700] Obj ' + JSON.stringify(Obj.getElement('$attrs').getString('content')));
-      expect(Obj.getElement('$attrs').getString('content')).assertEqual('v1 funcValue2: 0');
-      done();
-    })
+    // it('v2Tov1_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    //   console.info('[v2Tov1_static_0700] START');
+    //   let Json = inspector.getInspectorByKey('func_value2');
+    //   let Obj = JSON.parseJsonElement(Json);
+    //   await CommonFunc.sleep(1000);
+    //   console.log('[v2Tov1_static_0700] Obj ' + JSON.stringify(Obj.getElement('$attrs').getString('content')));
+    //   expect(Obj.getElement('$attrs').getString('content')).assertEqual('v1 funcValue2: 0');
+    //   done();
+    // })
     /*
      * @tc.number   v2Tov1_static_0800
      * @tc.name     v2Tov1_static_0800

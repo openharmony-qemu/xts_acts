@@ -46,10 +46,7 @@ export default function RepeatTest0040() {
   describe('RepeatTest0040', () => {
     beforeAll(() => {
       console.info("RepeatTest0040 beforeEach start");
-
-
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api12.static", "EntryAbility");
-
     });
 
     beforeEach(async (): Promise<void> => {
@@ -90,10 +87,14 @@ export default function RepeatTest0040() {
     it('RepeatTest0040_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[RepeatTest0040_static_001] START');
       await CommonFunc.sleep(2000);
+      console.info("[RepeatTest0040_static_001] sleep ");
       let driver: Driver = Driver.create();
+      console.info("[RepeatTest0040_static_001] Driver ");
       let btn: Component|null = await (driver.findComponent(ON.id("btnRepeat00401")) as Promise<Component>);
+      console.info("[RepeatTest0040_static_001] findComponent ");
       await CommonFunc.sleep(1000);
       await (btn?.click() as Promise<void>);
+      console.info("[RepeatTest0040_static_001] click ");
       await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray('$children')[0]

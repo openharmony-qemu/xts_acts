@@ -1224,7 +1224,7 @@ export default function search() {
         AppStorage.get<MessageManagerBase<number|int|string>>("messageManagerBase")?.notify({
           name: 'leftSearchIconSizeNumber', value: leftSearchIconSizeNumber
         });
-        ;
+        await CommonFunc.sleep(2000);
       } catch (err: Error) {
         console.log("[ArkUI_Stage_Search_SearchIcon_0800] change component data error: " + err.message);
       }
@@ -1262,7 +1262,7 @@ export default function search() {
         AppStorage.get<MessageManagerBase<number|int|string>>("messageManagerBase")?.notify({
           name: 'leftSearchIconSizeNumber', value: leftSearchIconSizeNumber
         });
-        ;
+        await CommonFunc.sleep(2000);
       } catch (err: Error) {
         console.log("[ArkUI_Stage_Search_SearchIcon_0900] change component data error: " + err.message);
       }
@@ -1755,7 +1755,7 @@ export default function search() {
         AppStorage.get<MessageManagerBase<number|int|string>>("messageManagerBase")?.notify({
           name: 'searchSrcPath', value: searchSrcPath
         });
-        ;
+        await CommonFunc.sleep(2000);
       } catch (err: Error) {
         console.log("[ArkUI_Stage_Search_SearchIcon_2300] change component data error: " + err.message);
       }

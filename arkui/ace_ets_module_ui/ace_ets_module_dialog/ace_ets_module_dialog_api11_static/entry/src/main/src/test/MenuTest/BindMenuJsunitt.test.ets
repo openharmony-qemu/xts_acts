@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -59,9 +60,9 @@ export default function bindMenuTesttt() {
   describe('bindMenuTesttt', () => {
     beforeAll(() => {
       console.info("bindMenuTesttt beforeAll start")
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("bindMenuTesttt  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -97,6 +98,7 @@ export default function bindMenuTesttt() {
 
     
     
+'use static';
 /**
      * @tc.number   bindMenuTest_static_0100
      * @tc.name     bindMenuTest_static_0100

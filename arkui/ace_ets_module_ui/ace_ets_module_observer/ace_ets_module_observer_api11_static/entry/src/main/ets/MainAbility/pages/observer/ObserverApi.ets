@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,18 +18,19 @@ import common from '@ohos.app.ability.common';
 import router from '@ohos.router';
 import { Entry, Component, Column, Text, Image, Color, Padding, Button, ClickEvent, ColumnOptions} from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+
 @Entry
 @Component
 struct ObserverApiTest {
   @State text1 :string = '1'
   @State text2 :string = '2'
-  // private context = getContext(this) as common.UIAbilityContext
-  private context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext
+  private context:UIContext = this.getUIContext()
 
 
   testFunc(info:uiObserver.RouterPageInfo){
     if(info) {
-      if(info.context) {
+      if(info.context) { // info.context null
         if (info.state == uiObserver.RouterPageState.ABOUT_TO_APPEAR){
           AppStorage.setOrCreate<string>('Observer_APPEAR', 'Appear')
         } else if (info.state == uiObserver.RouterPageState.ABOUT_TO_DISAPPEAR){
@@ -68,21 +70,21 @@ struct ObserverApiTest {
       Button('ObserverOn')
         .fontSize(14)
         .onClick((e: ClickEvent)=>{
-          uiObserver.onRouterPageUpdate( this.context, this.testFunc)
+          uiObserver.onRouterPageUpdate(this.context, this.testFunc)
         })
         .id('ObserverApi_ObserverOn')
 
       Button('ObserverOff')
         .fontSize(14)
         .onClick((e: ClickEvent)=>{
-          uiObserver.offRouterPageUpdate( this.context, this.testFunc)
+          uiObserver.offRouterPageUpdate(this.context, this.testFunc)
         })
         .id('ObserverApi_ObserverOff')
 
       Button('pushToPageTwo')
         .fontSize(14)
         .onClick((e: ClickEvent)=>{
-          this.getUIContext().getRouter().pushUrl({url: "MainAbility/pages/observer/ObserverApi2"})
+          this.context.getRouter().pushUrl({url: "MainAbility/pages/observer/ObserverApi2"})
         })
         .id('ObserverApi_pushToPageTwo')
 

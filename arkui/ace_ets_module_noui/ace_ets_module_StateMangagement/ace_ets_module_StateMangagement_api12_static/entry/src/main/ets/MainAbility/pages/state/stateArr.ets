@@ -55,7 +55,6 @@ struct StateArr0010 {
         .id('btnStateArr0010Set')
         .onClick((e: ClickEvent) => {
           this.arr.push({ 'param': 47 } as Param1)
-          console.log("===================================arr: " + JSON.stringify(UIUtils.getTarget(this.arr)));
         })
       Button('Delete')
         .id('btnStateArr0010Delete')

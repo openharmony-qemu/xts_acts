@@ -68,7 +68,7 @@ export default function ProviderTestJsunit18() {
         // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get ProviderTestJsunit18 state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Provider/Provider18" == pages.name)) {
+        if (!("Provider18" == pages.name)) {
           console.info("get ProviderTestJsunit18 pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

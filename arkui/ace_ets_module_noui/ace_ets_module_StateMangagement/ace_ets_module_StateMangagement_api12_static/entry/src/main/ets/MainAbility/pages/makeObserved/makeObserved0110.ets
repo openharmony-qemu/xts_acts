@@ -35,6 +35,7 @@ import {
   StorageLink,LocalStorage,UIUtils,Observed,ObservedV2
 } from '@ohos.arkui.stateManagement'
 
+@Observed
 class MyButtonModifier implements AttributeModifier<ButtonAttribute> {
   public isDark: boolean = false
 
@@ -59,6 +60,7 @@ struct makeObserved0110 {
           .attributeModifier(this.modifier)
           .onClick(():void => {
             this.modifier.isDark = !this.modifier.isDark
+            console.log("====================================== onClick");
           })
           .id('buttonTest')
       }

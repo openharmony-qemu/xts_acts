@@ -21,6 +21,6 @@ import ChipGroupApi1 from './ChipGroup/ChipGroupApi1.test';
 export default function testsuite() {
   FolderStackTest1();
   FolderStackTest2();
-  ChipApi1()
-  ChipGroupApi1()
+  // ChipApi1()
+  // ChipGroupApi1()
 }

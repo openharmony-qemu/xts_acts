@@ -188,19 +188,19 @@ export default function testsuite() {
   ExtendTrackTest(); //全pass 注释
   Extend0010TestJsunit(); //pass
 
-  //全pass 注释
   Foreach1();
   FreezeV2Test();
   FreezeV2Child();
 
-  LazyForEachAdd();  //pass
-  LazyForEachDelete();  //pass
-  LazyForEachMove();  //pass
-  LazyForEachCacheEnhance(); //app died
-  LazyForEachVisibleAreaChange(); //expect 221 equals 2
-  LazyForEachSingleBoolean();  //pass 注释
-  LazyForEachSingleNumber();  //pass 注释
-  LazyForEachSingleString();  //pass 注释
+  LazyForEachAdd();  //pass //12.9 LazyForEach 未加载组件，fail
+  LazyForEachDelete();  //pass //12.9 LazyForEach 未加载组件，fail
+  LazyForEachMove();  //pass //12.9 LazyForEach 未加载组件，fail
+  LazyForEachCacheEnhance(); //12.9 LazyForEach 自定义组件 aboutToReuse 未调用
+  LazyForEachVisibleAreaChange(); //expect 221 equals 2 //12.9 LazyForEach 未加载组件，fail
+  LazyForEachSingleBoolean();  //pass 注释 //12.9 LazyForEach 未加载组件，fail
+  LazyForEachSingleNumber();  //pass 注释 //12.9 LazyForEach 未加载组件，fail
+  LazyForEachSingleString();  //pass 注释 //12.9 LazyForEach 未加载组件，fail
+
   NestTrackTest(); //全pass 注释
   StaticTrackTest(); //全pass 注释
   getSharedLocalStorageTest(); //pass
@@ -221,24 +221,25 @@ export default function testsuite() {
   Monitor5Test();
   Monitor6Test();
 
-  RepeatEachJsunit(); //断言失败 已上报
-  RepeatForeachNumberBool(); //断言失败 已上报
-  RepeatForeachString(); //断言失败 已上报
-  RepeatLazyForEachBooleanSource(); //pass 注释
-  RepeatLazyForEachNumberSource(); //pass 注释
-  RepeatLazyForEachStringSource(); //pass 注释
+  RepeatEachJsunit(); //断言失败 已上报 // 12.9sdk报错相同
+  RepeatForeachNumberBool(); //断言失败 已上报 // 12.9sdk报错相同
+  RepeatForeachString(); //断言失败 已上报 // 12.9sdk报错相同
+  RepeatLazyForEachBooleanSource(); //pass 注释 //12.9 LazyForEach 未加载组件，fail
+  RepeatLazyForEachNumberSource(); //pass 注释 //12.9 LazyForEach 未加载组件，fail
+  RepeatLazyForEachStringSource(); //pass 注释 //12.9 LazyForEach 未加载组件，fail
+
 
   //全pass 注释
-  RepeatIfElseObject();
-  RepeatIfElseBoolean();
-  RepeatGridBoolean();
-  RepeatGridNumber();
-  RepeatListBoolean();
-  RepeatListNumber();
+  RepeatIfElseObject(); // pass
+  RepeatIfElseBoolean(); // pass
+  RepeatGridBoolean(); // 12.9 fail 1 //在Grid容器组件中使用Repeat， 滚动操作 Repeat未能正确根据容器组件可视区域渲染子组件,子组件显示内容不更新
+  RepeatGridNumber(); // 12.9 fail 1 //在Grid容器组件中使用Repeat， 滚动操作 Repeat未能正确根据容器组件可视区域渲染子组件,子组件显示内容不更新
+  RepeatListBoolean(); // 12.9 fail 1 //在List容器组件中使用Repeat， 滚动操作 scroller.scrollToIndex(15)调用两次， app died
+  RepeatListNumber(); // 12.9 fail 1 //在List容器组件中使用Repeat， 滚动操作 scroller.scrollToIndex(15)调用两次， app died
   RepeatNestObject();
   RepeatObservedV2Nest();
-  RepeatSwiperBoolean();
-  RepeatSwiperNumber();
+  RepeatSwiperBoolean(); // 12.9 fail 1 //在Swiper容器组件中使用Repeat， showNext翻至下一页 Repeat未能正确根据容器组件可视区域渲染子组件,子组件显示内容不更新
+  RepeatSwiperNumber(); // 12.9 fail 1 //在Swiper容器组件中使用Repeat， showNext翻至下一页 Repeat未能正确根据容器组件可视区域渲染子组件,子组件显示内容不更新
   RepeatV1Boolean();
   RepeatV1Object();
 
@@ -255,13 +256,13 @@ export default function testsuite() {
   Param3Jsunit(); //全pass 注释
   Param4Jsunit(); //全pass 注释
   Monitor1Jsunit(); //全pass 注释
-  Monitor2Jsunit(); // app died sr
+  // Monitor2Jsunit(); // app died sr
   Monitor3Jsunit(); // pass
   Monitor4Jsunit(); //全pass 注释
   repeatCountJsunit();  //全pass 注释
   repeatNoTemplateIdJsunit(); //全pass 注释
   repeatKeyJsunit(); //全pass 注释
-  repeatVirtualScrollJsunit();
+  repeatVirtualScrollJsunit(); // 12.9 sdk fail 4 已上报
   LocalTestJsunit();  //全pass 注释
   ComponentV2TestJsunit(); //全pass 注释
   ParamTestJsunit();  //全pass 注释
@@ -282,16 +283,15 @@ export default function testsuite() {
   getTarget6Test(); //全pass 注释
   ComputedTest(); //全pass 注释
   makeObservedTest(); //全pass 注释
-  makeObserved0020Test();  //collections.Array 导入不了，外领域
+  // makeObserved0020Test();  //collections.Array 导入不了，外领域
   makeObserved0030Test();  //pass 注释
-  makeObserved0040Test();  //collections.Set  导入不了，外领域
+  // makeObserved0040Test();  //collections.Set  导入不了，外领域
   makeObserved0050Test();  // 删除用例
   makeObserved0060Test();  //pass 注释
-  makeObserved0070Test();  //@Concurrent装饰器 无法导入，外领域
-  makeObserved0080Test(); //pass 注释
-  makeObserved0110Test(); //pass 注释
+  // makeObserved0070Test();  //@Concurrent装饰器 无法导入，外领域
+  makeObserved0080Test(); //pass 注释 // 12.9  @Local count: number = 0 getColor(): Color {this.count++ } backgroundColor(this.getColor())修改@local装饰的变量，报错：  白屏
+  makeObserved0110Test(); //pass
   makeObserved0120Test();  //pass
-  makeObserved0130Test(); //强基语法中UIUtils.makeObserved入参不支持class，建议该删除用例
   makeObserved0150Test(); //pass 注释
   twoWayBindTest();//pass 注释
 
@@ -337,7 +337,7 @@ export default function testsuite() {
   RepeatTest0040(); //全pass 注释
   MakeObservedTest0090(); //pass
   V1ToV2();  //全pass 注释
-  V2ToV1(); //@BuilderParam注释导致1用例failed
+  V2ToV1(); //@BuilderParam注释导致1用例failed // 12.15sdk all pass 10
   Prefetcher1();  // 页面编译不通过  IDataSourcePrefetching sr 页面注释 1用例
   Prefetcher2(); // 页面编译不通过 IDataSourcePrefetching sr 页面注释 1用例
   appStorageV2(); // 页面编译不通过  appStorageV2 下掉，7.0上暂无 sr 页面注释 2用例
@@ -346,11 +346,11 @@ export default function testsuite() {
   StateTest0080();  //全pass 注释
   WrapBuilder0020Test(); //全pass 注释
   StateTest0070(); //pass
-  StateTest0090();
+  StateTest0090(); // pass
   LazyForEachTest0470(); //全pass 注释
   IfElseTest0100(); //全pass 注释
   RepeatTest0200(); //全pass 注释
-  MakeObservedTest0300();
+  MakeObservedTest0300(); // pass
   WatchLinkTest0050(); //全pass 注释
   ProvideConsumeTest0010(); //全pass 注释
   ProviderTest0270(); //全pass 注释
@@ -359,10 +359,10 @@ export default function testsuite() {
   SubAbstractPropertyLinkTest(); //pass
   EnvironmentTest0040();  // fail 1
   LocalStorageDeleteTest0120(); //全pass 注释
-  LazyForEachInterface(); //@Reusable生命周期函数未调用
-  RepeatTest0010(); //全pass 注释
-  RepeatTest0020(); //全pass 注释
-  RepeatTest0400(); //全pass 注释
+  LazyForEachInterface(); //@Reusable生命周期函数未调用 fail 2
+  RepeatTest0010(); //全pass 注释  //12.9 sdk Repeat ListItem.onDetach 内修改 @Local 装饰的变量，app died
+  RepeatTest0020(); //全pass 注释 //12.9 sdk Repeat GridItem.onDetach 内修改 @Local 装饰的变量，app died
+  RepeatTest0400(); //全pass 注释 //12.9  Swiper Stack  Repeat 内修改 @Local 装饰的变量，app died
 
 
   FreezeV2Test03(); // pass

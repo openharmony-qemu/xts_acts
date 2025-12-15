@@ -17,7 +17,7 @@ import { ToolType } from '@ohos.multimodalInput.mouseEvent'
 import Intl from '@ohos.intl';
 import { Entry, Column, Component, Row,RowOptions,ClickEvent, Toggle,  Text, TimePickerFormat,TimePicker,
   TextPicker,Color,Button,FontWeight,Color,TimePickerResult, DateTimeOptions } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement';
+import { State, UIUtils } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
@@ -122,7 +122,7 @@ struct dateTimeOptionsExample {
       }
 
       Text(`${this.indexNumber2 + 1} / ${this.opt.length}`)
-      Text(JSON.stringify(this.opt[this.indexNumber2]))
+      Text(JSON.stringify(UIUtils.getTarget(this.opt[this.indexNumber2])))
         .id("dateTimeOptionsValue")
         .height('100vp')
         .width('100%')

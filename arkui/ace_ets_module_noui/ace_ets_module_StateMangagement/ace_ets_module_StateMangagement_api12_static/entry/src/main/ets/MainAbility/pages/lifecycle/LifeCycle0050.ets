@@ -52,12 +52,12 @@ struct SonLifeCycle0050 {
   build() {
     Column() {
       Text(this.showState).id('tvLifeCycle0050Son')
+      Button('showState3')
+        .id('showState3')
+        .onClick(()=>{
+          this.showState = this.state
+        })
     }
-    Button('showState3')
-      .id('showState3')
-      .onClick(()=>{
-        this.showState = this.state
-      })
   }
 }
 

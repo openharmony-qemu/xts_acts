@@ -66,7 +66,7 @@ struct RepeatWaterFlowNumber {
 
   build() {
     Column({ space: 10 } as ColumnOptions) {
-      Text('Non-VirtualScroll场景 父容器WaterFlow组件')
+      Text('Non-VirtualScrollWaterFlow')
         .fontSize(15)
         .fontColor(Color.Gray)
       WaterFlow({ scroller: this.scroller }) {
@@ -103,7 +103,7 @@ struct RepeatWaterFlowNumber {
           })
       }
 
-      Text('Has-VirtualScroll场景 父容器WaterFlow组件')
+      Text('Has-VirtualScrollWaterFlow')
         .fontSize(15)
         .fontColor(Color.Gray)
       WaterFlow({ scroller: this.scroller1 }) {

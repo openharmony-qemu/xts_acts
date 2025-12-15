@@ -51,10 +51,7 @@ export default function RepeatWaterFlowBoolean() {
   describe('RepeatWaterFlowBoolean', () => {
     beforeAll(() => {
       console.info("RepeatWaterFlowBoolean beforeEach start");
-
-
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.nowear.api12.static", "EntryAbility");
-
     });
 
     beforeEach(async (): Promise<void> => {

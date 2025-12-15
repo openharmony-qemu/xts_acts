@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -61,9 +62,9 @@ export default function ToastShowMode() {
   describe('ToastShowMode', () => {
     beforeAll(() => {
       console.info("ToastShowMode beforeAll start")
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("ToastShowMode  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -81,7 +82,7 @@ export default function ToastShowMode() {
         if (!("ToastShowMode" == pages.name)) {
           console.info("get ToastShowMode state pages.name: " + JSON.stringify(pages.name));
           // let result = await routerInstance .pushUrl(options);
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push ToastShowMode success: " + JSON.stringify(result));
         }

@@ -45,6 +45,9 @@
     "MainAbility/pages/Storage/AbstractPropertyRef",
     "MainAbility/pages/LazyForEach/LazyForEach0120",
     "MainAbility/pages/LazyForEach/LazyForEachChange0020",
-    "MainAbility/pages/LazyForEach/LazyForEachInterface"
+    "MainAbility/pages/LazyForEach/LazyForEachInterface",
+    "MainAbility/pages/RepeatMixedComponent/RepeatGridBoolean",
+    "MainAbility/pages/makeObserved/makeObserved0080",
+    "MainAbility/pages/V1V2Mix/V2ToV1"
   ]
 }

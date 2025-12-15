@@ -70,14 +70,11 @@ struct extendsMonitor {
     Row(){
       Column(){
         ForEach(log.logStr,(item:string, index:int)=>{
-          console.log("===================================== gen text");
           Text(`${item}`).id('extends_mes_' + index)
         })
         Button('change name').id('extends_btn')
           .onClick(():void => {
-            console.log("===================================== extends_btn start");
             this.info.name = 'Jack'
-            console.log("===================================== extends_btn end");
           })
       }.width('100%')
     }

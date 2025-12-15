@@ -55,7 +55,7 @@ export default function textTwoJsunit() {
         console.info("get textTwoJsunit state pages:" + JSON.stringify(pages));
         if (!("textTwo" == pages.name)) {
           console.info("get textTwoJsunit pages.name:" + '');
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {

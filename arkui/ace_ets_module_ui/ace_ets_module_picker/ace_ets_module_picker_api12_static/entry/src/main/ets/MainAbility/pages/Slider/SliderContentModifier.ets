@@ -24,6 +24,7 @@ import { State } from '@ohos.arkui.stateManagement';
   Column({space: 5} as ColumnOptions) {
     Button('triggerChange')
       .onClick((e:ClickEvent)=>{
+        console.log("============================================ triggerChange")
         config.triggerChange(10, SliderChangeMode.Click)
       })
       .id('SliderContentModifier_btn')
@@ -64,8 +65,10 @@ struct SliderContentModifierTest {
         step:this.sliderStep,
       })
         .onChange((value: number, mode: SliderChangeMode):void => {
+          console.log("============================================ onChange")
           this.sliderValue = value
           this.sliderChangeMode = mode
+          console.log("============================================ mode" + mode);
         })
         .contentModifier(new MySliderStyle())
 

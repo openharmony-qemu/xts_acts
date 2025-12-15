@@ -1,6 +1,6 @@
 'use static';
-/*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+/**
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -121,7 +121,7 @@ export struct V2ToV1ComponentCorrect_TestV1child1 {
   @State mapValue: Map<string, string> = new Map<string, string>([['key', 'value']])
   @State dateValue: Date = new Date('2024/07/15')
   @State arrValue: Array<number> = [3.0, 4.0]
-  @PropRef setValue: Set<string> = new Set<string> (['1', '2'])
+  @Prop setValue: Set<string> = new Set<string> (['1', '2'])
   @State setValueAlias: newType = new Set<string>()
 
   aboutToReuse(params: Record<string, string | boolean | null | undefined | Set<string> | Set<number> | MemberType
@@ -148,7 +148,7 @@ export struct V2ToV1ComponentCorrect_TestV1child1 {
       Text(`v1 boolValue1: ${this.boolValue1}`).key('bool_value1')
       Text(`v1 undefinedValue1: ${this.undefinedValue1}`).key('undefined_value1')
       Text(`v1 nullValue1: ${this.nullValue1}`).key('null_value1')
-      // Text(`v1 funcValue2: ${this.funcValue2()}`).key('func_value2')
+      // // Text(`v1 funcValue2: ${this.funcValue2()}`).key('func_value2')
       Text(`v1 setValue: ${Array.from(this.setValue).toString()}`).key('set_value')
       Text(`v1 mapValue: ${Array.from(this.mapValue).toString()}`).key('map_value')
       Text(`v1 dateValue: ${this.dateValue}`).key('date_value')

@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -72,11 +73,11 @@ import stagePromptTest from './promptActionTest/stagePrompt.test';
 import ToastShowMode from './promptActionTest/ToastShowMode.test';
 
 export default function testsuite() {
-  bindPopupOffsetTest()
+  openCustomDialog()
   CustomDialogMaskTest()
   DialogTest()
   ohosPromptJsunit()
-  openCustomDialog()
+  bindPopupOffsetTest()
   openCustomDialogFalse()
   openCustomDialogNew()
   openCustomDialogTrue()
@@ -98,7 +99,6 @@ export default function testsuite() {
   ActionSheetJsunit()
   ActionSheetTrue()
   stageActionSheet()
-  alertDialogCenterStartJsunit()
   AlertDialog()
   AlertDialogFalse()
   AlertDialogJsunit()
@@ -124,4 +124,5 @@ export default function testsuite() {
   menuSecondTest()
   ResponseRegionJsunit()
   responseTypeJsunit()
+  alertDialogCenterStartJsunit()
 }

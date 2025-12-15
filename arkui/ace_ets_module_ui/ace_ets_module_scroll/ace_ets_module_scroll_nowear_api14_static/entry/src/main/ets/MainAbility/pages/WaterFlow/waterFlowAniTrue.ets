@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -103,7 +104,7 @@ struct waterFlowNextAnimationExample {
         .backgroundColor(0xFAEEE0)
         .layoutWeight(1)
         .borderWidth(2)
-        .onScrollIndex((first: int, last: int) => {
+        .onScrollIndex((first: Int, last: Int) => {
           console.info('onScrollIndex first:' + first.toString() + ' last:' + last.toString())
         })
         // .onWillScroll((scrollOffset: number, scrollState: ScrollState, scrollSource: ScrollSource) => {

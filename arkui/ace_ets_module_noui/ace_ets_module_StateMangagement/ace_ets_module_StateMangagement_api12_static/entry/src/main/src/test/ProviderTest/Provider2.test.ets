@@ -68,7 +68,7 @@ export default function Provider2Test() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get Provider2Test state pages:" + JSON.stringify(pages));
-        if (!("Provider2Test" == pages.name)) {
+        if (!("Provider2" == pages.name)) {
           console.info("get Provider2Test pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);
