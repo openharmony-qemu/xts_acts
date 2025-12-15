@@ -126,13 +126,13 @@ void GetAbortCommonEventCallback(const CommonEvent_RcvData *data) {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GetAbortCommonEventCallback",
                  "GetAbortCommonEventCallback Enter");
     if (g_subscriber != nullptr) {
-        bool g_AbortCes = OH_CommonEvent_AbortCommonEvent(g_subscriber);
-        ASSERT_EA(g_AbortCes, true);
-        if (g_AbortCes) {
+        bool exsits = OH_CommonEvent_AbortCommonEvent(g_subscriber);
+        ASSERT_EA(exsits, true);
+        if (exsits) {
             g_isGetAbort = OH_CommonEvent_GetAbortCommonEvent(g_subscriber);
             ASSERT_EA(g_isGetAbort, true);
         } else {
-            ASSERT_EA(g_AbortCes, false);
+            ASSERT_EA(exsits, false);
         }
     } else {
         g_isGetAbort = false;
