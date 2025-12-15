@@ -2405,4 +2405,41 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_FORMAT_API_0020, TestSize.Level0)
     OH_AVCapability *capability = OH_AVCodec_GetCapability(avcodecMimeType, false);
     OH_AVCapability_GetVideoSupportedNativeBufferFormats(capability, &(vDecSample->pixlFormats), nullptr);
 }
+
+/**
+ * @tc.name   VIDEO_HWDEC_API_ADD_0010
+ * @tc.number VIDEO_HWDEC_API_ADD_0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_ADD_0010, TestSize.Level2)
+{
+    vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
+    ASSERT_NE(vdec_, NULL);
+    format = OH_AVFormat_Create();
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_ENABLE_SYNC_MODE, 1);
+    ASSERT_EQ(AV_ERR_OK, OH_VideoDecoder_Configure(vdec_, format));
+    ASSERT_EQ(AV_ERR_OK, OH_VideoDecoder_Prepare(vdec_));
+    uint32_t index = 0;
+    ASSERT_EQ(AV_ERR_INVALID_STATE, OH_VideoDecoder_QueryOutputBuffer(vdec_, &index, 0));
+    OH_VideoDecoder_Destroy(vdec_);
+    vdec_ = nullptr;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_API_ADD_0020
+ * @tc.number VIDEO_HWDEC_API_ADD_0020
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_ADD_0020, TestSize.Level2)
+{
+    ASSERT_EQ(nullptr, OH_AVBuffer_GetNativeBuffer(nullptr));
+}
 } // namespace

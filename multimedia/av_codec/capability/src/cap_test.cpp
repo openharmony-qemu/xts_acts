@@ -375,4 +375,58 @@ HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0025, TestSize.Level1)
         ASSERT_EQ(nullptr, OH_AVCapability_GetFeatureProperties(capability, VIDEO_LOW_LATENCY));
     }
 }
+
+/**
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0026
+ * @tc.number VIDEO_TEMPORAL_ENCODE_API_0026
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  Level2
+ */
+HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0026, TestSize.Level2)
+{
+    OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (capability) {
+        const OH_NativeBuffer_Format *pixlFormats = nullptr;
+        uint32_t pixlFormatNum = 0;
+        ASSERT_EQ(AV_ERR_OK, OH_AVCapability_GetVideoSupportedNativeBufferFormats(
+            capability, &pixlFormats, &pixlFormatNum));
+    }
+}
+
+/**
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0027
+ * @tc.number VIDEO_TEMPORAL_ENCODE_API_0027
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  Level2
+ */
+HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0027, TestSize.Level2)
+{
+    OH_AVCapability *capability = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_AUDIO_AAC, true);
+    if (capability) {
+        const OH_NativeBuffer_Format *pixlFormats = nullptr;
+        uint32_t pixlFormatNum = 0;
+        ASSERT_EQ(AV_ERR_INVALID_VAL, OH_AVCapability_GetVideoSupportedNativeBufferFormats(
+            capability, &pixlFormats, &pixlFormatNum));
+    }
+}
+
+/**
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0028
+ * @tc.number VIDEO_TEMPORAL_ENCODE_API_0028
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  Level2
+ */
+HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0028, TestSize.Level2)
+{
+    OH_AVRange *sampleRateRanges = nullptr;
+    uint32_t rangesNum = -1;
+    ASSERT_EQ(AV_ERR_INVALID_VAL, OH_AVCapability_GetAudioSupportedSampleRateRanges(
+        nullptr, &sampleRateRanges, &rangesNum));
+}
 } // namespace
