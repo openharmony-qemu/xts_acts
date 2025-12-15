@@ -23,6 +23,7 @@ group("UxFiveTest") {
         "ace_ets_component_Refresh:RefreshTest",
         "ace_ets_component_ModelSheet_static:ActsModelSheetStaticTest",
         "ace_ets_component_Refresh_static:ActsRefreshStaticTest",
+        "ace_ets_component_Dialog_static:DialogStaticTest",
       ]
     } else {
       deps = [
@@ -33,6 +34,7 @@ group("UxFiveTest") {
         "ace_ets_component_Select:SelectTest",
         "ace_ets_component_ModelSheet_static:ActsModelSheetStaticTest",
         "ace_ets_component_Refresh_static:ActsRefreshStaticTest",
+        "ace_ets_component_Dialog_static:DialogStaticTest",
       ]
     }
   }
