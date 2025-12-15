@@ -1087,6 +1087,7 @@ export default function WindowTest() {
         console.info(`====>${caseName} windowId: ${windowId}`);
         let Result: number = windowndkapi20.testLockCursorwithoutPermission(windowId);
         console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        await sleep(1000)
         await subWindowClass.destroyWindow();
         if (Result == 801) {
           done()
@@ -1153,6 +1154,7 @@ export default function WindowTest() {
         console.info(`====>${caseName} windowId: ${windowId}`);
         let Result: number = windowndkapi20.testUnLockCursorwithoutPermission(windowId);
         console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        await sleep(1000);
         await subWindowClass.destroyWindow();
         if (Result == 801) {
           done()
