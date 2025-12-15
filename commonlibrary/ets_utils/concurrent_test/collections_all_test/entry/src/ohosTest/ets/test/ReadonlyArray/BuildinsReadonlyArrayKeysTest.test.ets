@@ -83,14 +83,14 @@ export default function builtinsReadonlyArrayKeysTest() {
       })
 
     /**
-     * @tc.name   buildinsReadonlyArrayKeysTest1003
-     * @tc.number SUB_BUILDINS_READONLY_ARRAY_KEYS_TEST_0200
+     * @tc.name   buildinsReadonlyArrayKeysTest10030
+     * @tc.number SUB_BUILDINS_READONLY_ARRAY_KEYS_TEST_10030
      * @tc.desc   test Array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('buildinsReadonlyArrayKeysTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('buildinsReadonlyArrayKeysTest10030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');

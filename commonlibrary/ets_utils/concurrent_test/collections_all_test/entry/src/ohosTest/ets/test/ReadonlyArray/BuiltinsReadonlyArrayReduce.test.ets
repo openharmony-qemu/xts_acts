@@ -38,14 +38,14 @@ export default function builtinsReadonlyArrayReduceTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.name   BuiltinsReadonlyArrayReduceTest0100
-     * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_0100
+     * @tc.name   BuiltinsReadonlyArrayReduceTest010
+     * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_010
      * @tc.desc   test Readonly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsReadonlyArrayReduceTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (Done: Function) => {
+    it('BuiltinsReadonlyArrayReduceTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (Done: Function) => {
       const numbers: readonly number[] = [1, 2, 3];
       const sum = numbers.reduce((accumulator, currentValue) => {
         return accumulator + currentValue;
@@ -55,14 +55,14 @@ export default function builtinsReadonlyArrayReduceTest() {
       Done();
     });
     /**
-     * @tc.name   BuiltinsReadonlyArrayReduceTest0200
-     * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_0200
+     * @tc.name   BuiltinsReadonlyArrayReduceTest020
+     * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_020
      * @tc.desc   test Readonly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsReadonlyArrayReduceTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
+    it('BuiltinsReadonlyArrayReduceTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const numbers: readonly number[] = [1, 2, 3];
       const sum = numbers.reduce((accumulator, currentValue) => {
         return accumulator + currentValue;
@@ -72,14 +72,14 @@ export default function builtinsReadonlyArrayReduceTest() {
       Done();
     });
     /**
-     * @tc.name   BuiltinsReadonlyArrayReduceTest0300
-     * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_0300
+     * @tc.name   BuiltinsReadonlyArrayReduceTest030
+     * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_030
      * @tc.desc   test Readonly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsReadonlyArrayReduceTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
+    it('BuiltinsReadonlyArrayReduceTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const numbers: readonly number[] = [];
       try {
         const result = numbers.reduce((accumulator, currentValue) => {
@@ -94,14 +94,14 @@ export default function builtinsReadonlyArrayReduceTest() {
       Done();
     })
     /**
-     * @tc.name   BuiltinsReadonlyArrayReduceTest0400
-     * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_0400
+     * @tc.name   BuiltinsReadonlyArrayReduceTest040
+     * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_040
      * @tc.desc   test Readonly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsReadonlyArrayReduceTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
+    it('BuiltinsReadonlyArrayReduceTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const numbers: readonly number[] = [];
       const result = numbers.reduce((accumulator, currentValue) => {
         return accumulator + currentValue;
@@ -111,14 +111,14 @@ export default function builtinsReadonlyArrayReduceTest() {
       Done();
     });
     /**
-     * @tc.name   BuiltinsReadonlyArrayReduceTest0500
-     * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_0500
+     * @tc.name   BuiltinsReadonlyArrayReduceTest050
+     * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_050
      * @tc.desc   test Readonly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsReadonlyArrayReduceTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
+    it('BuiltinsReadonlyArrayReduceTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const numbers: readonly (number | undefined)[] = [1, , 3];
       const result = numbers.reduce((accumulator, currentValue) => {
         return (accumulator !== undefined ? accumulator : 0) + (currentValue !== undefined ? currentValue : 0)
@@ -128,14 +128,14 @@ export default function builtinsReadonlyArrayReduceTest() {
       Done();
     })
     /**
-     * @tc.name   BuiltinsReadonlyArrayReduceTest0600
-     * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_0600
+     * @tc.name   BuiltinsReadonlyArrayReduceTest060
+     * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_060
      * @tc.desc   test Readonly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsReadonlyArrayReduceTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
+    it('BuiltinsReadonlyArrayReduceTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const numbers: readonly number[] = [5];
       const result = numbers.reduce((accumulator, currentValue) => {
         return accumulator + currentValue;
@@ -145,14 +145,14 @@ export default function builtinsReadonlyArrayReduceTest() {
       Done();
     });
     /**
-     * @tc.name   BuiltinsReadonlyArrayReduceTest0700
-     * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_0700
+     * @tc.name   BuiltinsReadonlyArrayReduceTest070
+     * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_070
      * @tc.desc   test Readonly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsReadonlyArrayReduceTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
+    it('BuiltinsReadonlyArrayReduceTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const numbers: readonly (number | undefined)[] = [,];
       const result = numbers.reduce((accumulator, currentValue) => {
         return (accumulator !== undefined ? accumulator : 0) + (currentValue !== undefined ? currentValue : 0);
@@ -162,14 +162,14 @@ export default function builtinsReadonlyArrayReduceTest() {
       Done();
     });
     /**
-     * @tc.name   BuiltinsReadonlyArrayReduceTest0800
-     * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_0800
+     * @tc.name   BuiltinsReadonlyArrayReduceTest080
+     * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_080
      * @tc.desc   test Readonly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsReadonlyArrayReduceTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
+    it('BuiltinsReadonlyArrayReduceTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const numbers: readonly number[][] = [[1, 2], [3, 4], [5, 6]];
       const result = numbers.reduce((accumulator, currentValue) => {
         return accumulator.concat(currentValue);
@@ -181,14 +181,14 @@ export default function builtinsReadonlyArrayReduceTest() {
       Done();
     });
     /**
-     * @tc.name   BuiltinsReadonlyArrayReduceTest0900
-     * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_0900
+     * @tc.name   BuiltinsReadonlyArrayReduceTest090
+     * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_090
      * @tc.desc   test Readonly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsReadonlyArrayReduceTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
+    it('BuiltinsReadonlyArrayReduceTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const numbers: readonly (number | undefined | null)[] = [null, undefined, 3];
       const result = numbers.reduce((accumulator, currentValue) => {
         return accumulator + currentValue;
@@ -198,14 +198,14 @@ export default function builtinsReadonlyArrayReduceTest() {
       Done();
     })
     /**
-     * @tc.name   BuiltinsReadonlyArrayReduceTest1000
-     * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_1000
+     * @tc.name   BuiltinsReadonlyArrayReduceTest100
+     * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_100
      * @tc.desc   test Readonly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsReadonlyArrayReduceTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
+    it('BuiltinsReadonlyArrayReduceTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const numbers: readonly myObject[] = [{
         name: "hh", age: 10, like: [1, 2, 3, 4, 5]
       }];
@@ -219,14 +219,14 @@ export default function builtinsReadonlyArrayReduceTest() {
       Done();
     })
     /**
-     * @tc.name   BuiltinsReadonlyArrayReduceTest1100
-     * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_1100
+     * @tc.name   BuiltinsReadonlyArrayReduceTest110
+     * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_110
      * @tc.desc   test Readonly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsReadonlyArrayReduceTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
+    it('BuiltinsReadonlyArrayReduceTest110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const numbers: readonly string[] = ['a', 'b', 'c', 'd'];
       const result = numbers.reduce((accumulator, currentValue) => {
         return accumulator + currentValue;
@@ -236,14 +236,14 @@ export default function builtinsReadonlyArrayReduceTest() {
       Done();
     })
     /**
-     * @tc.name   BuiltinsReadonlyArrayReduceTest1200
-     * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_1200
+     * @tc.name   BuiltinsReadonlyArrayReduceTest120
+     * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_120
      * @tc.desc   test Readonly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsReadonlyArrayReduceTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
+    it('BuiltinsReadonlyArrayReduceTest120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const numbers: readonly number[] = [1, 2, 3];
       const result1 = numbers.reduce((accumulator, currentValue) => {
         return accumulator + currentValue;
