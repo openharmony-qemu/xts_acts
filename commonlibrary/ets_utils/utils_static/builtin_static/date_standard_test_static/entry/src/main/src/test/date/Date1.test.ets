@@ -305,7 +305,7 @@ export default function Date1Test() {
      * @tc.level Level 2
      */
     it('Date1Test_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const date = new Date(2024, 11, 31); // 11 代表 12 月
+      const date = new Date(2024, 11, 31);
       expect(date.getFullYear()).assertEqual(2024);
       expect(date.getDate()).assertEqual(31);
     });
@@ -410,7 +410,7 @@ export default function Date1Test() {
      * @tc.level Level 2
      */
     it('Date1Test_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const timestamp6 = -86400000; // 1969-12-31 00:00:00 UTC
+      const timestamp6 = -86400000;
       const date6 = new Date(timestamp6);
       expect(date6.toISOString()).assertEqual('1969-12-31T00:00:00.000Z');
     });
@@ -1126,7 +1126,7 @@ export default function Date1Test() {
      * @tc.level Level 2
      */
     it('Date1Test_126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const date139 = new Date(-1); // 1969-12-31T23:59:59.999Z
+      const date139 = new Date(-1);
       expect(date139.toISOString()).assertEqual('1969-12-31T23:59:59.999Z');
 
     });
@@ -1291,7 +1291,7 @@ export default function Date1Test() {
      * @tc.level Level 2
      */
     it('Date1Test_143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const date162 = new Date(1970, 0, 2); // 1970-01-02，时间戳>0
+      const date162 = new Date(1970, 0, 2);
       expect(date162.getTime() > 0).assertEqual(true);
     });
 

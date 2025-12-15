@@ -399,7 +399,7 @@ export default function RegExpTest004() {
      * @tc.level Level 1
      */
     it('testRegSearch0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const str: string = "e\u0301"; // é as e + combining acute
+      const str: string = "e\u0301";
       const regex = new RegExp('\\u0301');
       const result: number = str.search(regex);
       expect(result).assertEqual(1);
@@ -643,7 +643,7 @@ export default function RegExpTest004() {
      */
     it('testRegSearch0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "abc";
-      const result: number = str.search(new RegExp("\\x")); // 已为RegExp构造函数形式，保持不变
+      const result: number = str.search(new RegExp("\\x"));
       expect(result).assertEqual(-1);
     });
 
@@ -717,7 +717,7 @@ export default function RegExpTest004() {
      */
     it('testRegSearch0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "abc";
-      const literal: number = str.search(new RegExp('a')); // 字面量改为构造函数形式，保持对比逻辑
+      const literal: number = str.search(new RegExp('a'));
       const constructed: number = str.search(new RegExp("a"));
       expect(literal).assertEqual(constructed);
     });
@@ -1061,7 +1061,7 @@ export default function RegExpTest004() {
      * @tc.level Level 1
      */
     it('testRegSearch0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const str: string = "e\u0301"; // e + combining acute
+      const str: string = "e\u0301";
       const regex = new RegExp('e\\u0301');
       const result: number = str.search(regex);
       expect(result).assertEqual(0);
@@ -1616,7 +1616,7 @@ export default function RegExpTest004() {
      * @tc.level Level 1
      */
     it('testRegSplit0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const result = "abc".split(""); // 空字符串参数无需修改
+      const result = "abc".split("");
       expect(result).assertDeepEquals(["a", "b", "c"]);
     });
 
@@ -1643,7 +1643,7 @@ export default function RegExpTest004() {
      * @tc.level Level 1
      */
     it('testRegSplit0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const reg: RegExp = new RegExp(',', 'g'); // 复用的RegExp对象改为构造函数形式
+      const reg: RegExp = new RegExp(',', 'g');
       const str1 = "a,b,c";
       const str2 = "1,2,3";
       const result1 = str1.split(reg);
@@ -2154,7 +2154,7 @@ export default function RegExpTest004() {
     it('testRegSplit0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pattern: string = "\\d+";
       const str: string = "a1b22c333";
-      const result: string[] = str.split(new RegExp(pattern, "g")); // 已为构造函数形式，保持不变
+      const result: string[] = str.split(new RegExp(pattern, "g"));
       expect(result).assertDeepEquals(["a", "b", "c", ""]);
     });
 
@@ -2169,7 +2169,7 @@ export default function RegExpTest004() {
     it('testRegSplit0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pattern: string = ",";
       const str: string = "a,b,c";
-      const result: string[] = str.split(new RegExp(pattern)); // 已为构造函数形式，保持不变
+      const result: string[] = str.split(new RegExp(pattern));
       expect(result).assertDeepEquals(["a", "b", "c"]);
     });
 

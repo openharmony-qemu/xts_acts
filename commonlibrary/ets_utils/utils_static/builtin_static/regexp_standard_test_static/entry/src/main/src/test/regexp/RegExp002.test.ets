@@ -178,7 +178,7 @@ export default function RegExpTest002() {
       const str = "abc";
       const regex = new RegExp('(?=b)c', 'g');
       const result = str.match(regex);
-      expect(result).assertEqual(null); // lookahead doesn't consume, no match at 'c'
+      expect(result).assertEqual(null);
     });
 
     /**
@@ -524,7 +524,7 @@ export default function RegExpTest002() {
      * @tc.level Level 1
      */
     it('testRegMatch0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const str = "\u{1F600}\u{1F601}"; // 😀😁
+      const str = "\u{1F600}\u{1F601}";
       const regex = new RegExp('\\u{1F600}', 'u');
       const result = str.match(regex);
       expect(result?.[0]).assertEqual("😀");
@@ -801,7 +801,7 @@ export default function RegExpTest002() {
       const str = "abc";
       const regex = new RegExp('(?=a)(?=b)(?=c)', 'g');
       const result = str.match(regex);
-      expect(result).assertNull(); // multiple zero-width assertions match empty string
+      expect(result).assertNull();
     });
 
     /**

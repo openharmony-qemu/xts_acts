@@ -15,40 +15,37 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from "../../../hypium/index";
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
-// function sleep(ms: number): Promise<void> {
-//   return new Promise<void>((resolve: () => void) => {
-//     setTimeout(resolve, ms);
-//   });
-// }
+import Utils from '../Util.test';
+
 export default function dateTest() {
   describe('DateTest', (): void => {
-    // // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    // beforeAll(() => {
-    //   // Presets an action, which is performed only once before all test cases of the test suite start.
-    //   // This API supports only one parameter: preset action function.
-    // })
-    // beforeEach(() => {
-    //   await sleep(100)
-    //   // Presets an action, which is performed before each unit test case starts.
-    //   // The number of execution times is the same as the number of test cases defined by **it**.
-    //   // This API supports only one parameter: preset action function.
-    // })
-    // afterEach(() => {
-    //   // Presets a clear action, which is performed after each unit test case ends.
-    //   // The number of execution times is the same as the number of test cases defined by **it**.
-    //   // This API supports only one parameter: clear action function.
-    // })
-    // afterAll(() => {
-    //   // Presets a clear action, which is performed after all test cases of the test suite end.
-    //   // This API supports only one parameter: clear action function.
-    // })
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+    })
+    beforeEach(() => {
+      await Utils.msSleep(20);
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
+    })
+    afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+    afterAll(() => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_0100
-     * @tc.name       : testGetDate0001
-     * @tc.desc       : Test the function of the interface GetDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_0100
+     * @tc.name testGetDate0001
+     * @tc.desc Test the function of the interface GetDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetDate0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetDate0001";
@@ -66,12 +63,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_0200
-     * @tc.name       : testGetDate0002
-     * @tc.desc       : Test the function of the interface GetDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_0200
+     * @tc.name testGetDate0002
+     * @tc.desc Test the function of the interface GetDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
 
     it('testGetDate0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
@@ -89,12 +86,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_0300
-     * @tc.name       : testGetDate0003
-     * @tc.desc       : Test the function of the interface GetDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_0300
+     * @tc.name testGetDate0003
+     * @tc.desc Test the function of the interface GetDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetDate0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetDate0003";
@@ -111,12 +108,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_0400
-     * @tc.name       : testGetDate0004
-     * @tc.desc       : Test the function of the interface GetDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_0400
+     * @tc.name testGetDate0004
+     * @tc.desc Test the function of the interface GetDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetDate0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetDate0004";
@@ -133,12 +130,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_0500
-     * @tc.name       : testGetDate0005
-     * @tc.desc       : Test the function of the interface GetDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_0500
+     * @tc.name testGetDate0005
+     * @tc.desc Test the function of the interface GetDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetDate0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetDate0005";
@@ -155,12 +152,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_0600
-     * @tc.name       : testGetDate0006
-     * @tc.desc       : Test the function of the interface GetDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_0600
+     * @tc.name testGetDate0006
+     * @tc.desc Test the function of the interface GetDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetDate0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetDate0006";
@@ -177,12 +174,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_0700
-     * @tc.name       : testGetDate0007
-     * @tc.desc       : Test the function of the interface GetDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_0700
+     * @tc.name testGetDate0007
+     * @tc.desc Test the function of the interface GetDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetDate0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetDate0007";
@@ -199,12 +196,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_0800
-     * @tc.name       : testGetDate0008
-     * @tc.desc       : Test the function of the interface GetDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_0800
+     * @tc.name testGetDate0008
+     * @tc.desc Test the function of the interface GetDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetDate0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetDate0008";
@@ -219,12 +216,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_0900
-     * @tc.name       : testGetDate0009
-     * @tc.desc       : Test the function of the interface GetDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_0900
+     * @tc.name testGetDate0009
+     * @tc.desc Test the function of the interface GetDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetDate0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetDate0009";
@@ -240,12 +237,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_1000
-     * @tc.name       : testGetDate0010
-     * @tc.desc       : Test the function of the interface GetDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_1000
+     * @tc.name testGetDate0010
+     * @tc.desc Test the function of the interface GetDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetDate0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetDate0010";
@@ -263,12 +260,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_1100
-     * @tc.name       : testGetDay0001
-     * @tc.desc       : Test the function of the interface GetDay.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_1100
+     * @tc.name testGetDay0001
+     * @tc.desc Test the function of the interface GetDay.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetDay0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetDay0001";
@@ -285,12 +282,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_1200
-     * @tc.name       : testGetDay0002
-     * @tc.desc       : Test the function of the interface GetDay.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_1200
+     * @tc.name testGetDay0002
+     * @tc.desc Test the function of the interface GetDay.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetDay0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetDay0002";
@@ -307,12 +304,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_1300
-     * @tc.name       : testGetDay0003
-     * @tc.desc       : Test the function of the interface GetDay.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_1300
+     * @tc.name testGetDay0003
+     * @tc.desc Test the function of the interface GetDay.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetDay0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetDay0003";
@@ -329,12 +326,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_1400
-     * @tc.name       : testGetDay0004
-     * @tc.desc       : Test the function of the interface GetDay.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_1400
+     * @tc.name testGetDay0004
+     * @tc.desc Test the function of the interface GetDay.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetDay0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetDay0004";
@@ -351,12 +348,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_1500
-     * @tc.name       : testGetDay0005
-     * @tc.desc       : Test the function of the interface GetDay.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_1500
+     * @tc.name testGetDay0005
+     * @tc.desc Test the function of the interface GetDay.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetDay0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetDay0005";
@@ -371,12 +368,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_1600
-     * @tc.name       : testGetDay0006
-     * @tc.desc       : Test the function of the interface GetDay.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_1600
+     * @tc.name testGetDay0006
+     * @tc.desc Test the function of the interface GetDay.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetDay0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetDay0006";
@@ -392,12 +389,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_1700
-     * @tc.name       : testGetDay0007
-     * @tc.desc       : Test the function of the interface GetDay.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_1700
+     * @tc.name testGetDay0007
+     * @tc.desc Test the function of the interface GetDay.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
 
     it('testGetDay0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
@@ -415,12 +412,12 @@ export default function dateTest() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_1800
-     * @tc.name       : testGetFullYear0001
-     * @tc.desc       : Test the function of the interface GetFullYear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_1800
+     * @tc.name testGetFullYear0001
+     * @tc.desc Test the function of the interface GetFullYear.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetFullYear0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetFullYear0001";
@@ -438,12 +435,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_1900
-     * @tc.name       : testGetFullYear0002
-     * @tc.desc       : Test the function of the interface GetFullYear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_1900
+     * @tc.name testGetFullYear0002
+     * @tc.desc Test the function of the interface GetFullYear.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetFullYear0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetFullYear0002";
@@ -460,12 +457,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_2000
-     * @tc.name       : testGetFullYear0003
-     * @tc.desc       : Test the function of the interface GetFullYear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_2000
+     * @tc.name testGetFullYear0003
+     * @tc.desc Test the function of the interface GetFullYear.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetFullYear0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetFullYear0003";
@@ -482,12 +479,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_2100
-     * @tc.name       : testGetFullYear0004
-     * @tc.desc       : Test the function of the interface GetFullYear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_2100
+     * @tc.name testGetFullYear0004
+     * @tc.desc Test the function of the interface GetFullYear.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetFullYear0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetFullYear0004";
@@ -504,12 +501,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_2200
-     * @tc.name       : testGetFullYear0005
-     * @tc.desc       : Test the function of the interface GetFullYear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_2200
+     * @tc.name testGetFullYear0005
+     * @tc.desc Test the function of the interface GetFullYear.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetFullYear0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetFullYear0005";
@@ -525,12 +522,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_2300
-     * @tc.name       : testGetHours0001
-     * @tc.desc       : Test the function of the interface GetHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_2300
+     * @tc.name testGetHours0001
+     * @tc.desc Test the function of the interface GetHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetHours0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetHours0001";
@@ -548,12 +545,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_2400
-     * @tc.name       : testGetHours0002
-     * @tc.desc       : Test the function of the interface GetHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_2400
+     * @tc.name testGetHours0002
+     * @tc.desc Test the function of the interface GetHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetHours0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetHours0002";
@@ -570,12 +567,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_2500
-     * @tc.name       : testGetHours0003
-     * @tc.desc       : Test the function of the interface GetHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_2500
+     * @tc.name testGetHours0003
+     * @tc.desc Test the function of the interface GetHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetHours0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetHours0003";
@@ -592,12 +589,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_2600
-     * @tc.name       : testGetHours0004
-     * @tc.desc       : Test the function of the interface GetHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_2600
+     * @tc.name testGetHours0004
+     * @tc.desc Test the function of the interface GetHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetHours0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetHours0004";
@@ -614,12 +611,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_2700
-     * @tc.name       : testGetHours0005
-     * @tc.desc       : Test the function of the interface GetHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_2700
+     * @tc.name testGetHours0005
+     * @tc.desc Test the function of the interface GetHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetHours0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetHours0005";
@@ -635,12 +632,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_2800
-     * @tc.name       : testGetMilliSeconds0001
-     * @tc.desc       : Test the function of the interface MilliSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_2800
+     * @tc.name testGetMilliSeconds0001
+     * @tc.desc Test the function of the interface MilliSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetMilliSeconds0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetMilliSeconds0001";
@@ -658,12 +655,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_2900
-     * @tc.name       : testGetMilliSeconds0002
-     * @tc.desc       : Test the function of the interface MilliSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_2900
+     * @tc.name testGetMilliSeconds0002
+     * @tc.desc Test the function of the interface MilliSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetMilliSeconds0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetMilliSeconds0002";
@@ -681,12 +678,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_3000
-     * @tc.name       : testGetMilliSeconds0003
-     * @tc.desc       : Test the function of the interface MilliSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_3000
+     * @tc.name testGetMilliSeconds0003
+     * @tc.desc Test the function of the interface MilliSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetMilliSeconds0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetMilliSeconds0003";
@@ -704,12 +701,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_3100
-     * @tc.name       : testGetMilliSeconds0004
-     * @tc.desc       : Test the function of the interface MilliSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_3100
+     * @tc.name testGetMilliSeconds0004
+     * @tc.desc Test the function of the interface MilliSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetMilliSeconds0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetMilliSeconds0004";
@@ -727,12 +724,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_3200
-     * @tc.name       : testGetMilliSeconds0005
-     * @tc.desc       : Test the function of the interface MilliSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_3200
+     * @tc.name testGetMilliSeconds0005
+     * @tc.desc Test the function of the interface MilliSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetMilliSeconds0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetMilliSeconds0005";
@@ -750,12 +747,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_3300
-     * @tc.name       : testGetMinutes0001
-     * @tc.desc       : Test the function of the interface GetMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_3300
+     * @tc.name testGetMinutes0001
+     * @tc.desc Test the function of the interface GetMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetMinutes0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetMinutes0001";
@@ -772,12 +769,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_3400
-     * @tc.name       : testGetMinutes0002
-     * @tc.desc       : Test the function of the interface GetMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_3400
+     * @tc.name testGetMinutes0002
+     * @tc.desc Test the function of the interface GetMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetMinutes0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetMinutes0002";
@@ -794,12 +791,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_3500
-     * @tc.name       : testGetMinutes0003
-     * @tc.desc       : Test the function of the interface GetMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_3500
+     * @tc.name testGetMinutes0003
+     * @tc.desc Test the function of the interface GetMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetMinutes0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetMinutes0003";
@@ -816,12 +813,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_3600
-     * @tc.name       : testGetMinutes0004
-     * @tc.desc       : Test the function of the interface GetMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_3600
+     * @tc.name testGetMinutes0004
+     * @tc.desc Test the function of the interface GetMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetMinutes0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetMinutes0004";
@@ -838,12 +835,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_3700
-     * @tc.name       : testGetMinutes0005
-     * @tc.desc       : Test the function of the interface GetMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_3700
+     * @tc.name testGetMinutes0005
+     * @tc.desc Test the function of the interface GetMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetMinutes0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetMinutes0005";
@@ -859,12 +856,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_3800
-     * @tc.name       : testGetMinutes0006
-     * @tc.desc       : Test the function of the interface GetMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_3800
+     * @tc.name testGetMinutes0006
+     * @tc.desc Test the function of the interface GetMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetMinutes0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetMinutes0006";
@@ -881,12 +878,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_3900
-     * @tc.name       : testGetMonth0001
-     * @tc.desc       : Test the function of the interface GetMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_3900
+     * @tc.name testGetMonth0001
+     * @tc.desc Test the function of the interface GetMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetMonth0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetMonth0001";
@@ -903,12 +900,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_4000
-     * @tc.name       : testGetMonth0002
-     * @tc.desc       : Test the function of the interface GetMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_4000
+     * @tc.name testGetMonth0002
+     * @tc.desc Test the function of the interface GetMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetMonth0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetMonth0002";
@@ -925,12 +922,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_4100
-     * @tc.name       : testGetMonth0003
-     * @tc.desc       : Test the function of the interface GetMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_4100
+     * @tc.name testGetMonth0003
+     * @tc.desc Test the function of the interface GetMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetMonth0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetMonth0003";
@@ -947,12 +944,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_4200
-     * @tc.name       : testGetMonth0004
-     * @tc.desc       : Test the function of the interface GetMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_4200
+     * @tc.name testGetMonth0004
+     * @tc.desc Test the function of the interface GetMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetMonth0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetMonth0004";
@@ -969,12 +966,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_4300
-     * @tc.name       : testGetMonth0005
-     * @tc.desc       : Test the function of the interface GetMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_4300
+     * @tc.name testGetMonth0005
+     * @tc.desc Test the function of the interface GetMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetMonth0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetMonth0005";
@@ -991,12 +988,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_4400
-     * @tc.name       : testGetSeconds0001
-     * @tc.desc       : Test the function of the interface GetSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_4400
+     * @tc.name testGetSeconds0001
+     * @tc.desc Test the function of the interface GetSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetSeconds0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetSeconds0001";
@@ -1013,12 +1010,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_4500
-     * @tc.name       : testGetSeconds0002
-     * @tc.desc       : Test the function of the interface GetSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_4500
+     * @tc.name testGetSeconds0002
+     * @tc.desc Test the function of the interface GetSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetSeconds0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetSeconds0002";
@@ -1035,12 +1032,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_4600
-     * @tc.name       : testGetSeconds0003
-     * @tc.desc       : Test the function of the interface GetSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_4600
+     * @tc.name testGetSeconds0003
+     * @tc.desc Test the function of the interface GetSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetSeconds0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetSeconds0003";
@@ -1057,12 +1054,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_4700
-     * @tc.name       : testGetSeconds0004
-     * @tc.desc       : Test the function of the interface GetSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_4700
+     * @tc.name testGetSeconds0004
+     * @tc.desc Test the function of the interface GetSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetSeconds0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetSeconds0004";
@@ -1079,12 +1076,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_4800
-     * @tc.name       : testGetSeconds0005
-     * @tc.desc       : Test the function of the interface GetSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_4800
+     * @tc.name testGetSeconds0005
+     * @tc.desc Test the function of the interface GetSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetSeconds0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetSeconds0005";
@@ -1101,12 +1098,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_4900
-     * @tc.name       : testGetTime0001
-     * @tc.desc       : Test the function of the interface GetTime.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_4900
+     * @tc.name testGetTime0001
+     * @tc.desc Test the function of the interface GetTime.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetTime0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetTime0001";
@@ -1123,12 +1120,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_5000
-     * @tc.name       : testGetTime0002
-     * @tc.desc       : Test the function of the interface GetTime.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_5000
+     * @tc.name testGetTime0002
+     * @tc.desc Test the function of the interface GetTime.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetTime0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetTime0002";
@@ -1145,12 +1142,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_5100
-     * @tc.name       : testGetTime0003
-     * @tc.desc       : Test the function of the interface GetTime.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_5100
+     * @tc.name testGetTime0003
+     * @tc.desc Test the function of the interface GetTime.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetTime0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetTime0003";
@@ -1167,12 +1164,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_5200
-     * @tc.name       : testGetTime0004
-     * @tc.desc       : Test the function of the interface GetTime.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_5200
+     * @tc.name testGetTime0004
+     * @tc.desc Test the function of the interface GetTime.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetTime0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetTime0004";
@@ -1189,12 +1186,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_5300
-     * @tc.name       : testGetTime0005
-     * @tc.desc       : Test the function of the interface GetTime.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_5300
+     * @tc.name testGetTime0005
+     * @tc.desc Test the function of the interface GetTime.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetTime0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetTime0005";
@@ -1211,12 +1208,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_5400
-     * @tc.name       : testGetTimezoneOffset0001
-     * @tc.desc       : Test the function of the interface GetTimezoneOffset.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_5400
+     * @tc.name testGetTimezoneOffset0001
+     * @tc.desc Test the function of the interface GetTimezoneOffset.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetTimezoneOffset0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetTimezoneOffset0001";
@@ -1233,12 +1230,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_5500
-     * @tc.name       : testGetTimezoneOffset0002
-     * @tc.desc       : Test the function of the interface GetTimezoneOffset.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_5500
+     * @tc.name testGetTimezoneOffset0002
+     * @tc.desc Test the function of the interface GetTimezoneOffset.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetTimezoneOffset0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetTimezoneOffset0002";
@@ -1256,12 +1253,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_5600
-     * @tc.name       : testGetTimezoneOffset0003
-     * @tc.desc       : Test the function of the interface GetTimezoneOffset.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_5600
+     * @tc.name testGetTimezoneOffset0003
+     * @tc.desc Test the function of the interface GetTimezoneOffset.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetTimezoneOffset0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetTimezoneOffset0003";
@@ -1279,12 +1276,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_5700
-     * @tc.name       : testGetTimezoneOffset0004
-     * @tc.desc       : Test the function of the interface GetTimezoneOffset.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_5700
+     * @tc.name testGetTimezoneOffset0004
+     * @tc.desc Test the function of the interface GetTimezoneOffset.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetTimezoneOffset0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetTimezoneOffset0004";
@@ -1301,12 +1298,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_5800
-     * @tc.name       : testGetUTCDate0001
-     * @tc.desc       : Test the function of the interface GetUTCDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_5800
+     * @tc.name testGetUTCDate0001
+     * @tc.desc Test the function of the interface GetUTCDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCDate0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCDate0001";
@@ -1324,12 +1321,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_5900
-     * @tc.name       : testGetUTCDate0002
-     * @tc.desc       : Test the function of the interface GetUTCDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_5900
+     * @tc.name testGetUTCDate0002
+     * @tc.desc Test the function of the interface GetUTCDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCDate0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCDate0002";
@@ -1346,12 +1343,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_6000
-     * @tc.name       : testGetUTCDate0003
-     * @tc.desc       : Test the function of the interface GetUTCDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_6000
+     * @tc.name testGetUTCDate0003
+     * @tc.desc Test the function of the interface GetUTCDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCDate0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCDate0003";
@@ -1368,12 +1365,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_6100
-     * @tc.name       : testGetUTCDate0004
-     * @tc.desc       : Test the function of the interface GetUTCDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_6100
+     * @tc.name testGetUTCDate0004
+     * @tc.desc Test the function of the interface GetUTCDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCDate0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCDate0004";
@@ -1390,12 +1387,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_6200
-     * @tc.name       : testGetUTCDate0005
-     * @tc.desc       : Test the function of the interface GetUTCDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_6200
+     * @tc.name testGetUTCDate0005
+     * @tc.desc Test the function of the interface GetUTCDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCDate0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCDate0005";
@@ -1412,12 +1409,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_6300
-     * @tc.name       : testGetUTCDate0006
-     * @tc.desc       : Test the function of the interface GetUTCDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_6300
+     * @tc.name testGetUTCDate0006
+     * @tc.desc Test the function of the interface GetUTCDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCDate0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCDate0006";
@@ -1434,12 +1431,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_6400
-     * @tc.name       : testGetUTCDate0007
-     * @tc.desc       : Test the function of the interface GetUTCDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_6400
+     * @tc.name testGetUTCDate0007
+     * @tc.desc Test the function of the interface GetUTCDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCDate0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCDate0007";
@@ -1456,12 +1453,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_6500
-     * @tc.name       : testGetUTCDate0008
-     * @tc.desc       : Test the function of the interface GetUTCDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_6500
+     * @tc.name testGetUTCDate0008
+     * @tc.desc Test the function of the interface GetUTCDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCDate0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCDate0008";
@@ -1477,12 +1474,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_6600
-     * @tc.name       : testGetUTCDate0009
-     * @tc.desc       : Test the function of the interface GetUTCDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_6600
+     * @tc.name testGetUTCDate0009
+     * @tc.desc Test the function of the interface GetUTCDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCDate0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCDate0009";
@@ -1498,12 +1495,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_6700
-     * @tc.name       : testGetUTCDate0010
-     * @tc.desc       : Test the function of the interface GetUTCDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_6700
+     * @tc.name testGetUTCDate0010
+     * @tc.desc Test the function of the interface GetUTCDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCDate0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCDate0010";
@@ -1521,12 +1518,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_6800
-     * @tc.name       : testGetUTCDay0001
-     * @tc.desc       : Test the function of the interface GetUTCDay.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_6800
+     * @tc.name testGetUTCDay0001
+     * @tc.desc Test the function of the interface GetUTCDay.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCDay0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCDay0001";
@@ -1543,12 +1540,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_6900
-     * @tc.name       : testGetUTCDay0002
-     * @tc.desc       : Test the function of the interface GetUTCDay.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_6900
+     * @tc.name testGetUTCDay0002
+     * @tc.desc Test the function of the interface GetUTCDay.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCDay0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCDay0002";
@@ -1565,12 +1562,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_7000
-     * @tc.name       : testGetUTCDay0003
-     * @tc.desc       : Test the function of the interface GetUTCDay.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_7000
+     * @tc.name testGetUTCDay0003
+     * @tc.desc Test the function of the interface GetUTCDay.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCDay0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCDay0003";
@@ -1587,12 +1584,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_7100
-     * @tc.name       : testGetUTCDay0004
-     * @tc.desc       : Test the function of the interface GetUTCDay.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_7100
+     * @tc.name testGetUTCDay0004
+     * @tc.desc Test the function of the interface GetUTCDay.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCDay0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCDay0004";
@@ -1609,12 +1606,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_7200
-     * @tc.name       : testGetUTCDay0005
-     * @tc.desc       : Test the function of the interface GetUTCDay.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_7200
+     * @tc.name testGetUTCDay0005
+     * @tc.desc Test the function of the interface GetUTCDay.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCDay0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCDay0005";
@@ -1630,12 +1627,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_7300
-     * @tc.name       : testGetUTCDay0006
-     * @tc.desc       : Test the function of the interface GetUTCDay.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_7300
+     * @tc.name testGetUTCDay0006
+     * @tc.desc Test the function of the interface GetUTCDay.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCDay0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCDay0006";
@@ -1651,12 +1648,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_7400
-     * @tc.name       : testGetUTCDay0007
-     * @tc.desc       : Test the function of the interface GetUTCDay.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_7400
+     * @tc.name testGetUTCDay0007
+     * @tc.desc Test the function of the interface GetUTCDay.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCDay0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCDay0007";
@@ -1673,12 +1670,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_7500
-     * @tc.name       : testGetUTCFullYear0001
-     * @tc.desc       : Test the function of the interface GetUTCFullYear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_7500
+     * @tc.name testGetUTCFullYear0001
+     * @tc.desc Test the function of the interface GetUTCFullYear.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCFullYear0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCFullYear0001";
@@ -1695,12 +1692,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_7600
-     * @tc.name       : testGetUTCFullYear0002
-     * @tc.desc       : Test the function of the interface GetUTCFullYear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_7600
+     * @tc.name testGetUTCFullYear0002
+     * @tc.desc Test the function of the interface GetUTCFullYear.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCFullYear0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCFullYear0002";
@@ -1717,12 +1714,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_7700
-     * @tc.name       : testGetUTCFullYear0003
-     * @tc.desc       : Test the function of the interface GetUTCFullYear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_7700
+     * @tc.name testGetUTCFullYear0003
+     * @tc.desc Test the function of the interface GetUTCFullYear.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCFullYear0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCFullYear0003";
@@ -1739,12 +1736,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_7800
-     * @tc.name       : testGetUTCFullYear0004
-     * @tc.desc       : Test the function of the interface GetUTCFullYear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_7800
+     * @tc.name testGetUTCFullYear0004
+     * @tc.desc Test the function of the interface GetUTCFullYear.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCFullYear0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCFullYear0004";
@@ -1761,12 +1758,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_7900
-     * @tc.name       : testGetUTCFullYear0005
-     * @tc.desc       : Test the function of the interface GetUTCFullYear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_7900
+     * @tc.name testGetUTCFullYear0005
+     * @tc.desc Test the function of the interface GetUTCFullYear.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCFullYear0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCFullYear0005";
@@ -1782,12 +1779,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_8000
-     * @tc.name       : testGetUTCHours0001
-     * @tc.desc       : Test the function of the interface GetUTCHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_8000
+     * @tc.name testGetUTCHours0001
+     * @tc.desc Test the function of the interface GetUTCHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCHours0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCHours0001";
@@ -1804,12 +1801,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_8100
-     * @tc.name       : testGetUTCHours0002
-     * @tc.desc       : Test the function of the interface GetUTCHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_8100
+     * @tc.name testGetUTCHours0002
+     * @tc.desc Test the function of the interface GetUTCHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCHours0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCHours0002";
@@ -1826,12 +1823,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_8200
-     * @tc.name       : testGetUTCHours0003
-     * @tc.desc       : Test the function of the interface GetUTCHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_8200
+     * @tc.name testGetUTCHours0003
+     * @tc.desc Test the function of the interface GetUTCHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCHours0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCHours0003";
@@ -1848,12 +1845,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_8300
-     * @tc.name       : testGetUTCHours0004
-     * @tc.desc       : Test the function of the interface GetUTCHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_8300
+     * @tc.name testGetUTCHours0004
+     * @tc.desc Test the function of the interface GetUTCHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCHours0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCHours0004";
@@ -1870,12 +1867,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_8400
-     * @tc.name       : testGetUTCHours0005
-     * @tc.desc       : Test the function of the interface GetUTCHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_8400
+     * @tc.name testGetUTCHours0005
+     * @tc.desc Test the function of the interface GetUTCHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCHours0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCHours0005";
@@ -1891,12 +1888,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_8500
-     * @tc.name       : testGetUTCMilliseconds0001
-     * @tc.desc       : Test the function of the interface GetUTCMilliseconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_8500
+     * @tc.name testGetUTCMilliseconds0001
+     * @tc.desc Test the function of the interface GetUTCMilliseconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCMilliseconds0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCMilliseconds0001";
@@ -1914,12 +1911,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_8600
-     * @tc.name       : testGetUTCMilliseconds0002
-     * @tc.desc       : Test the function of the interface GetUTCMilliseconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_8600
+     * @tc.name testGetUTCMilliseconds0002
+     * @tc.desc Test the function of the interface GetUTCMilliseconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCMilliseconds0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCMilliseconds0002";
@@ -1937,12 +1934,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_8700
-     * @tc.name       : testGetUTCMilliseconds0003
-     * @tc.desc       : Test the function of the interface GetUTCMilliseconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_8700
+     * @tc.name testGetUTCMilliseconds0003
+     * @tc.desc Test the function of the interface GetUTCMilliseconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCMilliseconds0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCMilliseconds0003";
@@ -1960,12 +1957,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_8800
-     * @tc.name       : testGetUTCMilliseconds0004
-     * @tc.desc       : Test the function of the interface GetUTCMilliseconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_8800
+     * @tc.name testGetUTCMilliseconds0004
+     * @tc.desc Test the function of the interface GetUTCMilliseconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCMilliseconds0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCMilliseconds0004";
@@ -1983,12 +1980,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_8900
-     * @tc.name       : testGetUTCMilliseconds0005
-     * @tc.desc       : Test the function of the interface GetUTCMilliseconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_8900
+     * @tc.name testGetUTCMilliseconds0005
+     * @tc.desc Test the function of the interface GetUTCMilliseconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCMilliseconds0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCMilliseconds0005";
@@ -2006,12 +2003,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_9000
-     * @tc.name       : testGetUTCMinutes0001
-     * @tc.desc       : Test the function of the interface GetUTCMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_9000
+     * @tc.name testGetUTCMinutes0001
+     * @tc.desc Test the function of the interface GetUTCMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCMinutes0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCMinutes0001";
@@ -2028,12 +2025,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_9100
-     * @tc.name       : testGetUTCMinutes0002
-     * @tc.desc       : Test the function of the interface GetUTCMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_9100
+     * @tc.name testGetUTCMinutes0002
+     * @tc.desc Test the function of the interface GetUTCMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCMinutes0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCMinutes0002";
@@ -2050,12 +2047,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_9200
-     * @tc.name       : testGetUTCMinutes0003
-     * @tc.desc       : Test the function of the interface GetUTCMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_9200
+     * @tc.name testGetUTCMinutes0003
+     * @tc.desc Test the function of the interface GetUTCMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCMinutes0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCMinutes0003";
@@ -2072,12 +2069,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_9300
-     * @tc.name       : testGetUTCMinutes0004
-     * @tc.desc       : Test the function of the interface GetUTCMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_9300
+     * @tc.name testGetUTCMinutes0004
+     * @tc.desc Test the function of the interface GetUTCMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCMinutes0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCMinutes0004";
@@ -2094,12 +2091,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_9400
-     * @tc.name       : testGetUTCMinutes0005
-     * @tc.desc       : Test the function of the interface GetUTCMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_9400
+     * @tc.name testGetUTCMinutes0005
+     * @tc.desc Test the function of the interface GetUTCMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCMinutes0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCMinutes0005";
@@ -2115,12 +2112,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_9500
-     * @tc.name       : testGetUTCMinutes0006
-     * @tc.desc       : Test the function of the interface GetUTCMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_9500
+     * @tc.name testGetUTCMinutes0006
+     * @tc.desc Test the function of the interface GetUTCMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCMinutes0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCMinutes0006";
@@ -2137,12 +2134,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_9600
-     * @tc.name       : testGetUTCMonth0001
-     * @tc.desc       : Test the function of the interface GetUTCMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_9600
+     * @tc.name testGetUTCMonth0001
+     * @tc.desc Test the function of the interface GetUTCMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCMonth0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCMonth0001";
@@ -2160,12 +2157,12 @@ export default function dateTest() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_9700
-     * @tc.name       : testGetUTCMonth0002
-     * @tc.desc       : Test the function of the interface GetUTCMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_9700
+     * @tc.name testGetUTCMonth0002
+     * @tc.desc Test the function of the interface GetUTCMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCMonth0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCMonth0002";
@@ -2182,12 +2179,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_9800
-     * @tc.name       : testGetUTCMonth0003
-     * @tc.desc       : Test the function of the interface GetUTCMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_9800
+     * @tc.name testGetUTCMonth0003
+     * @tc.desc Test the function of the interface GetUTCMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCMonth0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCMonth0003";
@@ -2204,12 +2201,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_9900
-     * @tc.name       : testGetUTCMonth0004
-     * @tc.desc       : Test the function of the interface GetUTCMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_9900
+     * @tc.name testGetUTCMonth0004
+     * @tc.desc Test the function of the interface GetUTCMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCMonth0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCMonth0004";
@@ -2226,12 +2223,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_10000
-     * @tc.name       : testGetUTCMonth0005
-     * @tc.desc       : Test the function of the interface GetUTCMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_10000
+     * @tc.name testGetUTCMonth0005
+     * @tc.desc Test the function of the interface GetUTCMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCMonth0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCMonth0005";
@@ -2248,12 +2245,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_10100
-     * @tc.name       : testGetUTCSeconds0001
-     * @tc.desc       : Test the function of the interface GetUTCSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_10100
+     * @tc.name testGetUTCSeconds0001
+     * @tc.desc Test the function of the interface GetUTCSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCSeconds0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCSeconds0001";
@@ -2270,12 +2267,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_10200
-     * @tc.name       : testGetUTCSeconds0002
-     * @tc.desc       : Test the function of the interface GetUTCSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_10200
+     * @tc.name testGetUTCSeconds0002
+     * @tc.desc Test the function of the interface GetUTCSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCSeconds0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCSeconds0002";
@@ -2292,12 +2289,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_10300
-     * @tc.name       : testGetUTCSeconds0003
-     * @tc.desc       : Test the function of the interface GetUTCSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_10300
+     * @tc.name testGetUTCSeconds0003
+     * @tc.desc Test the function of the interface GetUTCSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCSeconds0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCSeconds0003";
@@ -2314,12 +2311,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_10400
-     * @tc.name       : testGetUTCSeconds0004
-     * @tc.desc       : Test the function of the interface GetUTCSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_10400
+     * @tc.name testGetUTCSeconds0004
+     * @tc.desc Test the function of the interface GetUTCSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCSeconds0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCSeconds0004";
@@ -2336,12 +2333,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_10500
-     * @tc.name       : testGetUTCSeconds0005
-     * @tc.desc       : Test the function of the interface GetUTCSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_10500
+     * @tc.name testGetUTCSeconds0005
+     * @tc.desc Test the function of the interface GetUTCSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testGetUTCSeconds0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetUTCSeconds0005";
@@ -2358,12 +2355,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_10600
-     * @tc.name       : testSetDate0001
-     * @tc.desc       : Test the function of the interface SetDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_10600
+     * @tc.name testSetDate0001
+     * @tc.desc Test the function of the interface SetDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetDate0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetDate0001";
@@ -2381,12 +2378,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_10700
-     * @tc.name       : testSetDate0002
-     * @tc.desc       : Test the function of the interface SetDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_10700
+     * @tc.name testSetDate0002
+     * @tc.desc Test the function of the interface SetDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetDate0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetDate0002";
@@ -2404,12 +2401,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_10800
-     * @tc.name       : testSetDate0003
-     * @tc.desc       : Test the function of the interface SetDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_10800
+     * @tc.name testSetDate0003
+     * @tc.desc Test the function of the interface SetDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetDate0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetDate0003";
@@ -2427,12 +2424,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_10900
-     * @tc.name       : testSetDate0004
-     * @tc.desc       : Test the function of the interface SetDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_10900
+     * @tc.name testSetDate0004
+     * @tc.desc Test the function of the interface SetDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetDate0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetDate0004";
@@ -2450,12 +2447,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_11000
-     * @tc.name       : testSetDate0005
-     * @tc.desc       : Test the function of the interface SetDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_11000
+     * @tc.name testSetDate0005
+     * @tc.desc Test the function of the interface SetDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetDate0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetDate0005";
@@ -2473,12 +2470,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_11100
-     * @tc.name       : testSetDate0006
-     * @tc.desc       : Test the function of the interface SetDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_11100
+     * @tc.name testSetDate0006
+     * @tc.desc Test the function of the interface SetDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetDate0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetDate0006";
@@ -2496,12 +2493,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_11200
-     * @tc.name       : testSetDate0007
-     * @tc.desc       : Test the function of the interface SetDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_11200
+     * @tc.name testSetDate0007
+     * @tc.desc Test the function of the interface SetDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetDate0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetDate0007";
@@ -2519,12 +2516,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_11300
-     * @tc.name       : testSetDate0008
-     * @tc.desc       : Test the function of the interface SetDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_11300
+     * @tc.name testSetDate0008
+     * @tc.desc Test the function of the interface SetDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetDate0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetDate0008";
@@ -2542,12 +2539,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_11400
-     * @tc.name       : testSetDate0009
-     * @tc.desc       : Test the function of the interface SetDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_11400
+     * @tc.name testSetDate0009
+     * @tc.desc Test the function of the interface SetDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetDate0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetDate0009";
@@ -2565,12 +2562,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_11500
-     * @tc.name       : testSetFullYear0001
-     * @tc.desc       : Test the function of the interface SetFullYear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_11500
+     * @tc.name testSetFullYear0001
+     * @tc.desc Test the function of the interface SetFullYear.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetFullYear0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetFullYear0001";
@@ -2588,12 +2585,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_11600
-     * @tc.name       : testSetFullYear0002
-     * @tc.desc       : Test the function of the interface SetFullYear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_11600
+     * @tc.name testSetFullYear0002
+     * @tc.desc Test the function of the interface SetFullYear.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetFullYear0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetFullYear0002";
@@ -2611,12 +2608,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_11700
-     * @tc.name       : testSetFullYear0003
-     * @tc.desc       : Test the function of the interface SetFullYear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_11700
+     * @tc.name testSetFullYear0003
+     * @tc.desc Test the function of the interface SetFullYear.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetFullYear0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetFullYear0003";
@@ -2634,12 +2631,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_11800
-     * @tc.name       : testSetFullYear0004
-     * @tc.desc       : Test the function of the interface SetFullYear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_11800
+     * @tc.name testSetFullYear0004
+     * @tc.desc Test the function of the interface SetFullYear.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetFullYear0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetFullYear0004";
@@ -2657,12 +2654,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_11900
-     * @tc.name       : testSetFullYear0005
-     * @tc.desc       : Test the function of the interface SetFullYear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_11900
+     * @tc.name testSetFullYear0005
+     * @tc.desc Test the function of the interface SetFullYear.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetFullYear0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetFullYear0005";
@@ -2680,12 +2677,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_12000
-     * @tc.name       : testSetFullYear0006
-     * @tc.desc       : Test the function of the interface SetFullYear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_12000
+     * @tc.name testSetFullYear0006
+     * @tc.desc Test the function of the interface SetFullYear.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetFullYear0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetFullYear0006";
@@ -2703,12 +2700,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_12100
-     * @tc.name       : testSetHours0001
-     * @tc.desc       : Test the function of the interface SetHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_12100
+     * @tc.name testSetHours0001
+     * @tc.desc Test the function of the interface SetHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetHours0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetHours0001";
@@ -2726,12 +2723,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_122000
-     * @tc.name       : testSetHours0002
-     * @tc.desc       : Test the function of the interface SetHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_122000
+     * @tc.name testSetHours0002
+     * @tc.desc Test the function of the interface SetHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetHours0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetHours0002";
@@ -2749,12 +2746,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_123000
-     * @tc.name       : testSetHours0003
-     * @tc.desc       : Test the function of the interface SetHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_123000
+     * @tc.name testSetHours0003
+     * @tc.desc Test the function of the interface SetHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetHours0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetHours0003";
@@ -2772,12 +2769,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_124000
-     * @tc.name       : testSetHours0004
-     * @tc.desc       : Test the function of the interface SetHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_124000
+     * @tc.name testSetHours0004
+     * @tc.desc Test the function of the interface SetHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetHours0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetHours0004";
@@ -2795,12 +2792,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_125000
-     * @tc.name       : testSetHours0005
-     * @tc.desc       : Test the function of the interface SetHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_125000
+     * @tc.name testSetHours0005
+     * @tc.desc Test the function of the interface SetHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetHours0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetHours0005";
@@ -2818,12 +2815,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_126000
-     * @tc.name       : testSetHours0006
-     * @tc.desc       : Test the function of the interface SetHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_126000
+     * @tc.name testSetHours0006
+     * @tc.desc Test the function of the interface SetHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetHours0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetHours0006";
@@ -2841,12 +2838,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_127000
-     * @tc.name       : testSetHours0007
-     * @tc.desc       : Test the function of the interface SetHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_127000
+     * @tc.name testSetHours0007
+     * @tc.desc Test the function of the interface SetHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetHours0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetHours0007";
@@ -2864,12 +2861,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_128000
-     * @tc.name       : testSetHours0008
-     * @tc.desc       : Test the function of the interface SetHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_128000
+     * @tc.name testSetHours0008
+     * @tc.desc Test the function of the interface SetHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetHours0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetHours0008";
@@ -2887,12 +2884,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_129000
-     * @tc.name       : testSetHours0009
-     * @tc.desc       : Test the function of the interface SetHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_129000
+     * @tc.name testSetHours0009
+     * @tc.desc Test the function of the interface SetHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetHours0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetHours0009";
@@ -2910,12 +2907,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_130000
-     * @tc.name       : testSetHours0010
-     * @tc.desc       : Test the function of the interface SetHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_130000
+     * @tc.name testSetHours0010
+     * @tc.desc Test the function of the interface SetHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetHours0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetHours0010";
@@ -2933,12 +2930,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_131000
-     * @tc.name       : testSetHours0011
-     * @tc.desc       : Test the function of the interface SetHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_131000
+     * @tc.name testSetHours0011
+     * @tc.desc Test the function of the interface SetHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetHours0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetHours0011";
@@ -2956,12 +2953,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_132000
-     * @tc.name       : testSetHours0012
-     * @tc.desc       : Test the function of the interface SetHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_132000
+     * @tc.name testSetHours0012
+     * @tc.desc Test the function of the interface SetHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetHours0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetHours0012";
@@ -2979,12 +2976,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_133000
-     * @tc.name       : testSetHours0013
-     * @tc.desc       : Test the function of the interface SetHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_133000
+     * @tc.name testSetHours0013
+     * @tc.desc Test the function of the interface SetHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetHours0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetHours0013";
@@ -3002,12 +2999,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_134000
-     * @tc.name       : testSetHours0014
-     * @tc.desc       : Test the function of the interface SetHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_134000
+     * @tc.name testSetHours0014
+     * @tc.desc Test the function of the interface SetHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetHours0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetHours0014";
@@ -3025,12 +3022,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_135000
-     * @tc.name       : testSetHours0015
-     * @tc.desc       : Test the function of the interface SetHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_135000
+     * @tc.name testSetHours0015
+     * @tc.desc Test the function of the interface SetHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetHours0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetHours0015";
@@ -3048,12 +3045,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_136000
-     * @tc.name       : testSetHours0016
-     * @tc.desc       : Test the function of the interface SetHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_136000
+     * @tc.name testSetHours0016
+     * @tc.desc Test the function of the interface SetHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetHours0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetHours0016";
@@ -3071,12 +3068,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_137000
-     * @tc.name       : testSetMilliseconds0001
-     * @tc.desc       : Test the function of the interface SetMilliseconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_137000
+     * @tc.name testSetMilliseconds0001
+     * @tc.desc Test the function of the interface SetMilliseconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetMilliseconds0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetMilliseconds0001";
@@ -3094,12 +3091,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_138000
-     * @tc.name       : testSetMilliseconds0002
-     * @tc.desc       : Test the function of the interface SetMilliseconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_138000
+     * @tc.name testSetMilliseconds0002
+     * @tc.desc Test the function of the interface SetMilliseconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetMilliseconds0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetMilliseconds0002";
@@ -3117,12 +3114,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_139000
-     * @tc.name       : testSetMilliseconds0003
-     * @tc.desc       : Test the function of the interface SetMilliseconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_139000
+     * @tc.name testSetMilliseconds0003
+     * @tc.desc Test the function of the interface SetMilliseconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetMilliseconds0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetMilliseconds0003";
@@ -3140,12 +3137,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_140000
-     * @tc.name       : testSetMilliseconds0004
-     * @tc.desc       : Test the function of the interface SetMilliseconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_140000
+     * @tc.name testSetMilliseconds0004
+     * @tc.desc Test the function of the interface SetMilliseconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetMilliseconds0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetMilliseconds0004";
@@ -3163,12 +3160,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_141000
-     * @tc.name       : testSetMilliseconds0005
-     * @tc.desc       : Test the function of the interface SetMilliseconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_141000
+     * @tc.name testSetMilliseconds0005
+     * @tc.desc Test the function of the interface SetMilliseconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetMilliseconds0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetMilliseconds0005";
@@ -3186,12 +3183,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_142000
-     * @tc.name       : testSetMinutes0001
-     * @tc.desc       : Test the function of the interface SetMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_142000
+     * @tc.name testSetMinutes0001
+     * @tc.desc Test the function of the interface SetMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetMinutes0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetMinutes0001";
@@ -3209,12 +3206,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_143000
-     * @tc.name       : testSetMinutes0002
-     * @tc.desc       : Test the function of the interface SetMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_143000
+     * @tc.name testSetMinutes0002
+     * @tc.desc Test the function of the interface SetMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetMinutes0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetMinutes0002";
@@ -3232,12 +3229,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_144000
-     * @tc.name       : testSetMinutes0003
-     * @tc.desc       : Test the function of the interface SetMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_144000
+     * @tc.name testSetMinutes0003
+     * @tc.desc Test the function of the interface SetMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetMinutes0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetMinutes0003";
@@ -3255,12 +3252,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_145000
-     * @tc.name       : testSetMinutes0004
-     * @tc.desc       : Test the function of the interface SetMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_145000
+     * @tc.name testSetMinutes0004
+     * @tc.desc Test the function of the interface SetMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetMinutes0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetMinutes0004";
@@ -3278,12 +3275,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_146000
-     * @tc.name       : testSetMinutes0005
-     * @tc.desc       : Test the function of the interface SetMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_146000
+     * @tc.name testSetMinutes0005
+     * @tc.desc Test the function of the interface SetMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetMinutes0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetMinutes0005";
@@ -3301,12 +3298,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_147000
-     * @tc.name       : testSetMinutes0006
-     * @tc.desc       : Test the function of the interface SetMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_147000
+     * @tc.name testSetMinutes0006
+     * @tc.desc Test the function of the interface SetMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetMinutes0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetMinutes0006";
@@ -3324,12 +3321,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_148000
-     * @tc.name       : testSetMinutes0007
-     * @tc.desc       : Test the function of the interface SetMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_148000
+     * @tc.name testSetMinutes0007
+     * @tc.desc Test the function of the interface SetMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetMinutes0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetMinutes0007";
@@ -3347,12 +3344,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_149000
-     * @tc.name       : testSetMinutes0008
-     * @tc.desc       : Test the function of the interface SetMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_149000
+     * @tc.name testSetMinutes0008
+     * @tc.desc Test the function of the interface SetMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetMinutes0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetMinutes0008";
@@ -3370,12 +3367,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_150000
-     * @tc.name       : testSetMinutes0009
-     * @tc.desc       : Test the function of the interface SetMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_150000
+     * @tc.name testSetMinutes0009
+     * @tc.desc Test the function of the interface SetMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetMinutes0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetMinutes0009";
@@ -3393,12 +3390,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_151000
-     * @tc.name       : testSetMinutes0010
-     * @tc.desc       : Test the function of the interface SetMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_151000
+     * @tc.name testSetMinutes0010
+     * @tc.desc Test the function of the interface SetMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetMinutes0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetMinutes0010";
@@ -3416,12 +3413,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_152000
-     * @tc.name       : testSetMinutes0011
-     * @tc.desc       : Test the function of the interface SetMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_152000
+     * @tc.name testSetMinutes0011
+     * @tc.desc Test the function of the interface SetMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetMinutes0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetMinutes0011";
@@ -3439,12 +3436,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_153000
-     * @tc.name       : testSetMinutes0012
-     * @tc.desc       : Test the function of the interface SetMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_153000
+     * @tc.name testSetMinutes0012
+     * @tc.desc Test the function of the interface SetMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetMinutes0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetMinutes0012";
@@ -3462,12 +3459,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_154000
-     * @tc.name       : testSetMonth0001
-     * @tc.desc       : Test the function of the interface SetMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_154000
+     * @tc.name testSetMonth0001
+     * @tc.desc Test the function of the interface SetMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetMonth0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetMonth0001";
@@ -3485,12 +3482,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_155000
-     * @tc.name       : testSetMonth0002
-     * @tc.desc       : Test the function of the interface SetMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_155000
+     * @tc.name testSetMonth0002
+     * @tc.desc Test the function of the interface SetMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetMonth0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetMonth0002";
@@ -3508,12 +3505,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_156000
-     * @tc.name       : testSetMonth0003
-     * @tc.desc       : Test the function of the interface SetMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_156000
+     * @tc.name testSetMonth0003
+     * @tc.desc Test the function of the interface SetMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetMonth0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetMonth0003";
@@ -3531,12 +3528,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_157000
-     * @tc.name       : testSetMonth0004
-     * @tc.desc       : Test the function of the interface SetMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_157000
+     * @tc.name testSetMonth0004
+     * @tc.desc Test the function of the interface SetMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetMonth0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetMonth0004";
@@ -3554,12 +3551,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_158000
-     * @tc.name       : testSetMonth0005
-     * @tc.desc       : Test the function of the interface SetMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_158000
+     * @tc.name testSetMonth0005
+     * @tc.desc Test the function of the interface SetMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetMonth0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetMonth0005";
@@ -3577,12 +3574,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_159000
-     * @tc.name       : testSetMonth0006
-     * @tc.desc       : Test the function of the interface SetMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_159000
+     * @tc.name testSetMonth0006
+     * @tc.desc Test the function of the interface SetMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetMonth0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetMonth0006";
@@ -3600,12 +3597,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_160000
-     * @tc.name       : testSetMonth0007
-     * @tc.desc       : Test the function of the interface SetMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_160000
+     * @tc.name testSetMonth0007
+     * @tc.desc Test the function of the interface SetMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetMonth0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetMonth0007";
@@ -3623,12 +3620,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_161000
-     * @tc.name       : testSetMonth0008
-     * @tc.desc       : Test the function of the interface SetMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_161000
+     * @tc.name testSetMonth0008
+     * @tc.desc Test the function of the interface SetMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetMonth0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetMonth0008";
@@ -3646,12 +3643,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_162000
-     * @tc.name       : testSetMonth0009
-     * @tc.desc       : Test the function of the interface SetMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_162000
+     * @tc.name testSetMonth0009
+     * @tc.desc Test the function of the interface SetMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetMonth0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetMonth0009";
@@ -3669,12 +3666,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_163000
-     * @tc.name       : testSetMonth0010
-     * @tc.desc       : Test the function of the interface SetMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_163000
+     * @tc.name testSetMonth0010
+     * @tc.desc Test the function of the interface SetMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetMonth0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetMonth0010";
@@ -3692,12 +3689,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_164000
-     * @tc.name       : testSetSeconds0001
-     * @tc.desc       : Test the function of the interface SetSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_164000
+     * @tc.name testSetSeconds0001
+     * @tc.desc Test the function of the interface SetSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetSeconds0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetSeconds0001";
@@ -3715,12 +3712,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_165000
-     * @tc.name       : testSetSeconds0002
-     * @tc.desc       : Test the function of the interface SetSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_165000
+     * @tc.name testSetSeconds0002
+     * @tc.desc Test the function of the interface SetSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetSeconds0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetSeconds0002";
@@ -3738,12 +3735,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_166000
-     * @tc.name       : testSetSeconds0003
-     * @tc.desc       : Test the function of the interface SetSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_166000
+     * @tc.name testSetSeconds0003
+     * @tc.desc Test the function of the interface SetSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetSeconds0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetSeconds0003";
@@ -3761,12 +3758,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_167000
-     * @tc.name       : testSetSeconds0004
-     * @tc.desc       : Test the function of the interface SetSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_167000
+     * @tc.name testSetSeconds0004
+     * @tc.desc Test the function of the interface SetSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetSeconds0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetSeconds0004";
@@ -3784,12 +3781,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_168000
-     * @tc.name       : testSetSeconds0005
-     * @tc.desc       : Test the function of the interface SetSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_168000
+     * @tc.name testSetSeconds0005
+     * @tc.desc Test the function of the interface SetSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetSeconds0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetSeconds0005";
@@ -3807,12 +3804,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_169000
-     * @tc.name       : testSetSeconds0006
-     * @tc.desc       : Test the function of the interface SetSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_169000
+     * @tc.name testSetSeconds0006
+     * @tc.desc Test the function of the interface SetSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetSeconds0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetSeconds0006";
@@ -3830,12 +3827,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_170000
-     * @tc.name       : testSetSeconds0007
-     * @tc.desc       : Test the function of the interface SetSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_170000
+     * @tc.name testSetSeconds0007
+     * @tc.desc Test the function of the interface SetSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetSeconds0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetSeconds0007";
@@ -3853,12 +3850,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_171000
-     * @tc.name       : testSetSeconds0008
-     * @tc.desc       : Test the function of the interface SetSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_171000
+     * @tc.name testSetSeconds0008
+     * @tc.desc Test the function of the interface SetSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetSeconds0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetSeconds0008";
@@ -3876,12 +3873,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_172000
-     * @tc.name       : testSetTime0001
-     * @tc.desc       : Test the function of the interface SetTime.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_172000
+     * @tc.name testSetTime0001
+     * @tc.desc Test the function of the interface SetTime.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetTime0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetTime0001";
@@ -3900,12 +3897,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_173000
-     * @tc.name       : testSetTime0002
-     * @tc.desc       : Test the function of the interface SetTime.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_173000
+     * @tc.name testSetTime0002
+     * @tc.desc Test the function of the interface SetTime.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetTime0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetTime0002";
@@ -3926,12 +3923,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_174000
-     * @tc.name       : testSetTime0003
-     * @tc.desc       : Test the function of the interface SetTime.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_174000
+     * @tc.name testSetTime0003
+     * @tc.desc Test the function of the interface SetTime.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetTime0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetTime0003";
@@ -3950,12 +3947,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_175000
-     * @tc.name       : testSetTime0004
-     * @tc.desc       : Test the function of the interface SetTime.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_175000
+     * @tc.name testSetTime0004
+     * @tc.desc Test the function of the interface SetTime.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetTime0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetTime0004";
@@ -3976,12 +3973,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_176000
-     * @tc.name       : testSetTime0005
-     * @tc.desc       : Test the function of the interface SetTime.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_176000
+     * @tc.name testSetTime0005
+     * @tc.desc Test the function of the interface SetTime.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetTime0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetTime0005";
@@ -4000,12 +3997,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_177000
-     * @tc.name       : testSetTime0006
-     * @tc.desc       : Test the function of the interface SetTime.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_177000
+     * @tc.name testSetTime0006
+     * @tc.desc Test the function of the interface SetTime.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetTime0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetTime0006";
@@ -4024,12 +4021,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_178000
-     * @tc.name       : testSetUTCDate0001
-     * @tc.desc       : Test the function of the interface SetUTCDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_178000
+     * @tc.name testSetUTCDate0001
+     * @tc.desc Test the function of the interface SetUTCDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCDate0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCDate0001";
@@ -4047,12 +4044,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_179000
-     * @tc.name       : testSetUTCDate0002
-     * @tc.desc       : Test the function of the interface SetUTCDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_179000
+     * @tc.name testSetUTCDate0002
+     * @tc.desc Test the function of the interface SetUTCDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCDate0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCDate0002";
@@ -4070,12 +4067,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_180000
-     * @tc.name       : testSetUTCDate0003
-     * @tc.desc       : Test the function of the interface SetUTCDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_180000
+     * @tc.name testSetUTCDate0003
+     * @tc.desc Test the function of the interface SetUTCDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCDate0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCDate0003";
@@ -4093,12 +4090,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_181000
-     * @tc.name       : testSetUTCDate0004
-     * @tc.desc       : Test the function of the interface SetUTCDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_181000
+     * @tc.name testSetUTCDate0004
+     * @tc.desc Test the function of the interface SetUTCDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCDate0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCDate0004";
@@ -4116,12 +4113,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_182000
-     * @tc.name       : testSetUTCDate0005
-     * @tc.desc       : Test the function of the interface SetUTCDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_182000
+     * @tc.name testSetUTCDate0005
+     * @tc.desc Test the function of the interface SetUTCDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCDate0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCDate0005";
@@ -4139,12 +4136,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_183000
-     * @tc.name       : testSetUTCDate0006
-     * @tc.desc       : Test the function of the interface SetUTCDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_183000
+     * @tc.name testSetUTCDate0006
+     * @tc.desc Test the function of the interface SetUTCDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCDate0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCDate0006";
@@ -4162,12 +4159,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_184000
-     * @tc.name       : testSetUTCDate0007
-     * @tc.desc       : Test the function of the interface SetUTCDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_184000
+     * @tc.name testSetUTCDate0007
+     * @tc.desc Test the function of the interface SetUTCDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCDate0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCDate0007";
@@ -4185,12 +4182,12 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_185000
-     * @tc.name       : testSetUTCDate0008
-     * @tc.desc       : Test the function of the interface SetUTCDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_185000
+     * @tc.name testSetUTCDate0008
+     * @tc.desc Test the function of the interface SetUTCDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCDate0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCDate0008";
@@ -4208,12 +4205,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_186000
-     * @tc.name       : testSetUTCDate0009
-     * @tc.desc       : Test the function of the interface SetUTCDate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_186000
+     * @tc.name testSetUTCDate0009
+     * @tc.desc Test the function of the interface SetUTCDate.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCDate0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCDate0009";
@@ -4231,12 +4228,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_187000
-     * @tc.name       : testSetUTCFullYear0001
-     * @tc.desc       : Test the function of the interface SetUTCFullYear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_187000
+     * @tc.name testSetUTCFullYear0001
+     * @tc.desc Test the function of the interface SetUTCFullYear.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCFullYear0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCFullYear0001";
@@ -4254,12 +4251,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_188000
-     * @tc.name       : testSetUTCFullYear0002
-     * @tc.desc       : Test the function of the interface SetUTCFullYear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_188000
+     * @tc.name testSetUTCFullYear0002
+     * @tc.desc Test the function of the interface SetUTCFullYear.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCFullYear0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCFullYear0002";
@@ -4277,12 +4274,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_189000
-     * @tc.name       : testSetUTCFullYear0003
-     * @tc.desc       : Test the function of the interface SetUTCFullYear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_189000
+     * @tc.name testSetUTCFullYear0003
+     * @tc.desc Test the function of the interface SetUTCFullYear.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCFullYear0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCFullYear0003";
@@ -4300,12 +4297,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_190000
-     * @tc.name       : testSetUTCFullYear0004
-     * @tc.desc       : Test the function of the interface SetUTCFullYear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_190000
+     * @tc.name testSetUTCFullYear0004
+     * @tc.desc Test the function of the interface SetUTCFullYear.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCFullYear0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCFullYear0004";
@@ -4323,12 +4320,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_191000
-     * @tc.name       : testSetUTCFullYear0005
-     * @tc.desc       : Test the function of the interface SetUTCFullYear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_191000
+     * @tc.name testSetUTCFullYear0005
+     * @tc.desc Test the function of the interface SetUTCFullYear.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCFullYear0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCFullYear0005";
@@ -4346,12 +4343,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_192000
-     * @tc.name       : testSetUTCFullYear0006
-     * @tc.desc       : Test the function of the interface SetUTCFullYear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_192000
+     * @tc.name testSetUTCFullYear0006
+     * @tc.desc Test the function of the interface SetUTCFullYear.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCFullYear0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCFullYear0006";
@@ -4369,12 +4366,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_193000
-     * @tc.name       : testSetUTCHours0001
-     * @tc.desc       : Test the function of the interface SetUTCHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_193000
+     * @tc.name testSetUTCHours0001
+     * @tc.desc Test the function of the interface SetUTCHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCHours0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCHours0001";
@@ -4392,12 +4389,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_194000
-     * @tc.name       : testSetUTCHours0002
-     * @tc.desc       : Test the function of the interface SetUTCHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_194000
+     * @tc.name testSetUTCHours0002
+     * @tc.desc Test the function of the interface SetUTCHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCHours0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCHours0002";
@@ -4415,12 +4412,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_195000
-     * @tc.name       : testSetUTCHours0003
-     * @tc.desc       : Test the function of the interface SetUTCHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_195000
+     * @tc.name testSetUTCHours0003
+     * @tc.desc Test the function of the interface SetUTCHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCHours0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCHours0003";
@@ -4438,12 +4435,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_196000
-     * @tc.name       : testSetUTCHours0004
-     * @tc.desc       : Test the function of the interface SetUTCHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_196000
+     * @tc.name testSetUTCHours0004
+     * @tc.desc Test the function of the interface SetUTCHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCHours0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCHours0004";
@@ -4461,12 +4458,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_197000
-     * @tc.name       : testSetUTCHours0005
-     * @tc.desc       : Test the function of the interface SetUTCHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_197000
+     * @tc.name testSetUTCHours0005
+     * @tc.desc Test the function of the interface SetUTCHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCHours0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCHours0005";
@@ -4484,12 +4481,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_198000
-     * @tc.name       : testSetUTCHours0006
-     * @tc.desc       : Test the function of the interface SetUTCHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_198000
+     * @tc.name testSetUTCHours0006
+     * @tc.desc Test the function of the interface SetUTCHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCHours0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCHours0006";
@@ -4507,12 +4504,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_19900
-     * @tc.name       : testSetUTCHours0007
-     * @tc.desc       : Test the function of the interface SetUTCHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_19900
+     * @tc.name testSetUTCHours0007
+     * @tc.desc Test the function of the interface SetUTCHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCHours0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCHours0007";
@@ -4530,12 +4527,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_20000
-     * @tc.name       : testSetUTCHours0008
-     * @tc.desc       : Test the function of the interface SetUTCHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_20000
+     * @tc.name testSetUTCHours0008
+     * @tc.desc Test the function of the interface SetUTCHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCHours0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCHours0008";
@@ -4553,12 +4550,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_20100
-     * @tc.name       : testSetUTCHours0009
-     * @tc.desc       : Test the function of the interface SetUTCHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_20100
+     * @tc.name testSetUTCHours0009
+     * @tc.desc Test the function of the interface SetUTCHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCHours0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCHours0009";
@@ -4576,12 +4573,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_20200
-     * @tc.name       : testSetUTCHours0010
-     * @tc.desc       : Test the function of the interface SetUTCHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_20200
+     * @tc.name testSetUTCHours0010
+     * @tc.desc Test the function of the interface SetUTCHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCHours0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCHours0010";
@@ -4599,12 +4596,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_20300
-     * @tc.name       : testSetUTCHours0011
-     * @tc.desc       : Test the function of the interface SetUTCHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_20300
+     * @tc.name testSetUTCHours0011
+     * @tc.desc Test the function of the interface SetUTCHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCHours0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCHours0011";
@@ -4622,12 +4619,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_20400
-     * @tc.name       : testSetUTCHours0012
-     * @tc.desc       : Test the function of the interface SetUTCHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_20400
+     * @tc.name testSetUTCHours0012
+     * @tc.desc Test the function of the interface SetUTCHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCHours0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCHours0012";
@@ -4645,12 +4642,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_20500
-     * @tc.name       : testSetUTCHours0013
-     * @tc.desc       : Test the function of the interface SetUTCHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_20500
+     * @tc.name testSetUTCHours0013
+     * @tc.desc Test the function of the interface SetUTCHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCHours0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCHours0013";
@@ -4668,12 +4665,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_20600
-     * @tc.name       : testSetUTCHours0014
-     * @tc.desc       : Test the function of the interface SetUTCHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_20600
+     * @tc.name testSetUTCHours0014
+     * @tc.desc Test the function of the interface SetUTCHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCHours0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCHours0014";
@@ -4691,12 +4688,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_20700
-     * @tc.name       : testSetUTCHours0015
-     * @tc.desc       : Test the function of the interface SetUTCHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_20700
+     * @tc.name testSetUTCHours0015
+     * @tc.desc Test the function of the interface SetUTCHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCHours0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCHours0015";
@@ -4714,12 +4711,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_20800
-     * @tc.name       : testSetUTCHours0016
-     * @tc.desc       : Test the function of the interface SetUTCHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_20800
+     * @tc.name testSetUTCHours0016
+     * @tc.desc Test the function of the interface SetUTCHours.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCHours0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCHours0016";
@@ -4737,12 +4734,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_20900
-     * @tc.name       : testSetUTCMilliseconds0001
-     * @tc.desc       : Test the function of the interface SetUTCMilliseconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_20900
+     * @tc.name testSetUTCMilliseconds0001
+     * @tc.desc Test the function of the interface SetUTCMilliseconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCMilliseconds0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCMilliseconds0001";
@@ -4760,12 +4757,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_21000
-     * @tc.name       : testSetUTCMilliseconds0002
-     * @tc.desc       : Test the function of the interface SetUTCMilliseconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_21000
+     * @tc.name testSetUTCMilliseconds0002
+     * @tc.desc Test the function of the interface SetUTCMilliseconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCMilliseconds0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCMilliseconds0002";
@@ -4783,12 +4780,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_21100
-     * @tc.name       : testSetUTCMilliseconds0003
-     * @tc.desc       : Test the function of the interface SetUTCMilliseconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_21100
+     * @tc.name testSetUTCMilliseconds0003
+     * @tc.desc Test the function of the interface SetUTCMilliseconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCMilliseconds0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCMilliseconds0003";
@@ -4806,12 +4803,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_21200
-     * @tc.name       : testSetUTCMilliseconds0004
-     * @tc.desc       : Test the function of the interface SetUTCMilliseconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_21200
+     * @tc.name testSetUTCMilliseconds0004
+     * @tc.desc Test the function of the interface SetUTCMilliseconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCMilliseconds0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCMilliseconds0004";
@@ -4829,12 +4826,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_21300
-     * @tc.name       : testSetUTCMilliseconds0005
-     * @tc.desc       : Test the function of the interface SetUTCMilliseconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_21300
+     * @tc.name testSetUTCMilliseconds0005
+     * @tc.desc Test the function of the interface SetUTCMilliseconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCMilliseconds0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCMilliseconds0005";
@@ -4852,12 +4849,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_21400
-     * @tc.name       : testSetUTCMinutes0001
-     * @tc.desc       : Test the function of the interface SetUTCMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_21400
+     * @tc.name testSetUTCMinutes0001
+     * @tc.desc Test the function of the interface SetUTCMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCMinutes0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCMinutes0001";
@@ -4875,12 +4872,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_21500
-     * @tc.name       : testSetUTCMinutes0002
-     * @tc.desc       : Test the function of the interface SetUTCMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_21500
+     * @tc.name testSetUTCMinutes0002
+     * @tc.desc Test the function of the interface SetUTCMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCMinutes0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCMinutes0002";
@@ -4898,12 +4895,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_21600
-     * @tc.name       : testSetUTCMinutes0003
-     * @tc.desc       : Test the function of the interface SetUTCMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_21600
+     * @tc.name testSetUTCMinutes0003
+     * @tc.desc Test the function of the interface SetUTCMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCMinutes0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCMinutes0003";
@@ -4921,12 +4918,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_21700
-     * @tc.name       : testSetUTCMinutes0004
-     * @tc.desc       : Test the function of the interface SetUTCMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_21700
+     * @tc.name testSetUTCMinutes0004
+     * @tc.desc Test the function of the interface SetUTCMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCMinutes0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCMinutes0004";
@@ -4944,12 +4941,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_21800
-     * @tc.name       : testSetUTCMinutes0005
-     * @tc.desc       : Test the function of the interface SetUTCMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_21800
+     * @tc.name testSetUTCMinutes0005
+     * @tc.desc Test the function of the interface SetUTCMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCMinutes0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCMinutes0005";
@@ -4967,12 +4964,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_21900
-     * @tc.name       : testSetUTCMinutes0006
-     * @tc.desc       : Test the function of the interface SetUTCMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_21900
+     * @tc.name testSetUTCMinutes0006
+     * @tc.desc Test the function of the interface SetUTCMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCMinutes0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCMinutes0006";
@@ -4990,12 +4987,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_22000
-     * @tc.name       : testSetUTCMinutes0007
-     * @tc.desc       : Test the function of the interface SetUTCMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_22000
+     * @tc.name testSetUTCMinutes0007
+     * @tc.desc Test the function of the interface SetUTCMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCMinutes0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCMinutes0007";
@@ -5013,12 +5010,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_221000
-     * @tc.name       : testSetUTCMinutes0008
-     * @tc.desc       : Test the function of the interface SetUTCMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_221000
+     * @tc.name testSetUTCMinutes0008
+     * @tc.desc Test the function of the interface SetUTCMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCMinutes0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCMinutes0008";
@@ -5036,12 +5033,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_222000
-     * @tc.name       : testSetUTCMinutes0009
-     * @tc.desc       : Test the function of the interface SetUTCMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_222000
+     * @tc.name testSetUTCMinutes0009
+     * @tc.desc Test the function of the interface SetUTCMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCMinutes0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCMinutes0009";
@@ -5059,12 +5056,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_223000
-     * @tc.name       : testSetUTCMinutes0010
-     * @tc.desc       : Test the function of the interface SetUTCMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_223000
+     * @tc.name testSetUTCMinutes0010
+     * @tc.desc Test the function of the interface SetUTCMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCMinutes0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCMinutes0010";
@@ -5082,12 +5079,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_224000
-     * @tc.name       : testSetUTCMinutes0011
-     * @tc.desc       : Test the function of the interface SetUTCMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_224000
+     * @tc.name testSetUTCMinutes0011
+     * @tc.desc Test the function of the interface SetUTCMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCMinutes0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCMinutes0011";
@@ -5105,12 +5102,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_225000
-     * @tc.name       : testSetUTCMinutes0012
-     * @tc.desc       : Test the function of the interface SetUTCMinutes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_225000
+     * @tc.name testSetUTCMinutes0012
+     * @tc.desc Test the function of the interface SetUTCMinutes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCMinutes0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCMinutes0012";
@@ -5128,12 +5125,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_226000
-     * @tc.name       : testSetUTCMonth0001
-     * @tc.desc       : Test the function of the interface SetUTCMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_226000
+     * @tc.name testSetUTCMonth0001
+     * @tc.desc Test the function of the interface SetUTCMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCMonth0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCMonth0001";
@@ -5151,12 +5148,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_227000
-     * @tc.name       : testSetUTCMonth0002
-     * @tc.desc       : Test the function of the interface SetUTCMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_227000
+     * @tc.name testSetUTCMonth0002
+     * @tc.desc Test the function of the interface SetUTCMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCMonth0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCMonth0002";
@@ -5174,12 +5171,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_228000
-     * @tc.name       : testSetUTCMonth0003
-     * @tc.desc       : Test the function of the interface SetUTCMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_228000
+     * @tc.name testSetUTCMonth0003
+     * @tc.desc Test the function of the interface SetUTCMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCMonth0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCMonth0003";
@@ -5197,12 +5194,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_229000
-     * @tc.name       : testSetUTCMonth0004
-     * @tc.desc       : Test the function of the interface SetUTCMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_229000
+     * @tc.name testSetUTCMonth0004
+     * @tc.desc Test the function of the interface SetUTCMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCMonth0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCMonth0004";
@@ -5220,12 +5217,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_230000
-     * @tc.name       : testSetUTCMonth0005
-     * @tc.desc       : Test the function of the interface SetUTCMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_230000
+     * @tc.name testSetUTCMonth0005
+     * @tc.desc Test the function of the interface SetUTCMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCMonth0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCMonth0005";
@@ -5243,12 +5240,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_231000
-     * @tc.name       : testSetUTCMonth0006
-     * @tc.desc       : Test the function of the interface SetUTCMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_231000
+     * @tc.name testSetUTCMonth0006
+     * @tc.desc Test the function of the interface SetUTCMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCMonth0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCMonth0006";
@@ -5266,12 +5263,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_232000
-     * @tc.name       : testSetUTCMonth0007
-     * @tc.desc       : Test the function of the interface SetUTCMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_232000
+     * @tc.name testSetUTCMonth0007
+     * @tc.desc Test the function of the interface SetUTCMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCMonth0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCMonth0007";
@@ -5289,12 +5286,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_233000
-     * @tc.name       : testSetUTCMonth0008
-     * @tc.desc       : Test the function of the interface SetUTCMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_233000
+     * @tc.name testSetUTCMonth0008
+     * @tc.desc Test the function of the interface SetUTCMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCMonth0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCMonth0008";
@@ -5312,12 +5309,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_234000
-     * @tc.name       : testSetUTCMonth0009
-     * @tc.desc       : Test the function of the interface SetUTCMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_234000
+     * @tc.name testSetUTCMonth0009
+     * @tc.desc Test the function of the interface SetUTCMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCMonth0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCMonth0009";
@@ -5335,12 +5332,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_235000
-     * @tc.name       : testSetUTCMonth0010
-     * @tc.desc       : Test the function of the interface SetUTCMonth.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_235000
+     * @tc.name testSetUTCMonth0010
+     * @tc.desc Test the function of the interface SetUTCMonth.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCMonth0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCMonth0010";
@@ -5358,12 +5355,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_236000
-     * @tc.name       : testSetUTCSeconds0001
-     * @tc.desc       : Test the function of the interface SetUTCSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_236000
+     * @tc.name testSetUTCSeconds0001
+     * @tc.desc Test the function of the interface SetUTCSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCSeconds0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCSeconds0001";
@@ -5381,12 +5378,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_237000
-     * @tc.name       : testSetUTCSeconds0002
-     * @tc.desc       : Test the function of the interface SetUTCSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_237000
+     * @tc.name testSetUTCSeconds0002
+     * @tc.desc Test the function of the interface SetUTCSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCSeconds0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCSeconds0002";
@@ -5404,12 +5401,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_238000
-     * @tc.name       : testSetUTCSeconds0003
-     * @tc.desc       : Test the function of the interface SetUTCSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_238000
+     * @tc.name testSetUTCSeconds0003
+     * @tc.desc Test the function of the interface SetUTCSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCSeconds0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCSeconds0003";
@@ -5427,12 +5424,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_239000
-     * @tc.name       : testSetUTCSeconds0004
-     * @tc.desc       : Test the function of the interface SetUTCSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_239000
+     * @tc.name testSetUTCSeconds0004
+     * @tc.desc Test the function of the interface SetUTCSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCSeconds0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCSeconds0004";
@@ -5450,12 +5447,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_240000
-     * @tc.name       : testSetUTCSeconds0005
-     * @tc.desc       : Test the function of the interface SetUTCSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_240000
+     * @tc.name testSetUTCSeconds0005
+     * @tc.desc Test the function of the interface SetUTCSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCSeconds0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCSeconds0005";
@@ -5473,12 +5470,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_241000
-     * @tc.name       : testSetUTCSeconds0006
-     * @tc.desc       : Test the function of the interface SetUTCSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_241000
+     * @tc.name testSetUTCSeconds0006
+     * @tc.desc Test the function of the interface SetUTCSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCSeconds0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCSeconds0006";
@@ -5496,12 +5493,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_242000
-     * @tc.name       : testSetUTCSeconds0007
-     * @tc.desc       : Test the function of the interface SetUTCSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_242000
+     * @tc.name testSetUTCSeconds0007
+     * @tc.desc Test the function of the interface SetUTCSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCSeconds0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCSeconds0007";
@@ -5519,12 +5516,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_24300
-     * @tc.name       : testSetUTCSeconds0008
-     * @tc.desc       : Test the function of the interface SetUTCSeconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_24300
+     * @tc.name testSetUTCSeconds0008
+     * @tc.desc Test the function of the interface SetUTCSeconds.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSetUTCSeconds0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetUTCSeconds0008";
@@ -5542,12 +5539,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_24400
-     * @tc.name       : testDateToDateString0001
-     * @tc.desc       : Test the function of the Interface toDateString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_24400
+     * @tc.name testDateToDateString0001
+     * @tc.desc Test the function of the Interface toDateString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToDateString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToDateString0001";
@@ -5564,12 +5561,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_24500
-     * @tc.name       : testDateToDateString0002
-     * @tc.desc       : Test the function of the Interface toDateString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_24500
+     * @tc.name testDateToDateString0002
+     * @tc.desc Test the function of the Interface toDateString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToDateString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToDateString0002";
@@ -5584,12 +5581,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_24600
-     * @tc.name       : testDateToDateString0003
-     * @tc.desc       : Test the function of the Interface toDateString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_24600
+     * @tc.name testDateToDateString0003
+     * @tc.desc Test the function of the Interface toDateString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToDateString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToDateString0003";
@@ -5610,12 +5607,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_24700
-     * @tc.name       : testDateToDateString0004
-     * @tc.desc       : Test the function of the Interface toDateString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_24700
+     * @tc.name testDateToDateString0004
+     * @tc.desc Test the function of the Interface toDateString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToDateString0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToDateString0004";
@@ -5629,12 +5626,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_24800
-     * @tc.name       : testDateToDateString0005
-     * @tc.desc       : Test the function of the Interface toDateString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_24800
+     * @tc.name testDateToDateString0005
+     * @tc.desc Test the function of the Interface toDateString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToDateString0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToDateString0005";
@@ -5649,12 +5646,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_24900
-     * @tc.name       : testDateToDateString0006
-     * @tc.desc       : Test the function of the Interface toDateString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_24900
+     * @tc.name testDateToDateString0006
+     * @tc.desc Test the function of the Interface toDateString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToDateString0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToDateString0006";
@@ -5669,12 +5666,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_25000
-     * @tc.name       : testDateToDateString0007
-     * @tc.desc       : Test the function of the Interface toDateString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_25000
+     * @tc.name testDateToDateString0007
+     * @tc.desc Test the function of the Interface toDateString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToDateString0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToDateString0007";
@@ -5689,12 +5686,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_25100
-     * @tc.name       : testDateToDateString0008
-     * @tc.desc       : Test the function of the Interface toDateString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_25100
+     * @tc.name testDateToDateString0008
+     * @tc.desc Test the function of the Interface toDateString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToDateString0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToDateString0008";
@@ -5709,12 +5706,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_25200
-     * @tc.name       : testDateToISOString0001
-     * @tc.desc       : Test the function of the Interface toISOString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_25200
+     * @tc.name testDateToISOString0001
+     * @tc.desc Test the function of the Interface toISOString.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToISOString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = 'testDateToISOString0001';
@@ -5730,12 +5727,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_25300
-     * @tc.name       : testDateToISOString0002
-     * @tc.desc       : Test the function of the Interface toISOString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_25300
+     * @tc.name testDateToISOString0002
+     * @tc.desc Test the function of the Interface toISOString.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToISOString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = 'testDateToISOString0002';
@@ -5752,12 +5749,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_25400
-     * @tc.name       : testDateToISOString0003
-     * @tc.desc       : Test the function of the Interface toISOString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_25400
+     * @tc.name testDateToISOString0003
+     * @tc.desc Test the function of the Interface toISOString.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToISOString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = 'testDateToISOString0003';
@@ -5772,12 +5769,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_25500
-     * @tc.name       : testDateToISOString0004
-     * @tc.desc       : Test the function of the Interface ToISOString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_25500
+     * @tc.name testDateToISOString0004
+     * @tc.desc Test the function of the Interface ToISOString.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToISOString0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = 'testDateToISOString0004';
@@ -5792,12 +5789,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_25600
-     * @tc.name       : testDateToISOString0005
-     * @tc.desc       : Test the function of the Interface ToISOString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_25600
+     * @tc.name testDateToISOString0005
+     * @tc.desc Test the function of the Interface ToISOString.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToISOString0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = 'testDateToISOString0005';
@@ -5812,12 +5809,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_25700
-     * @tc.name       : testDateToISOString0006
-     * @tc.desc       : Test the function of the Interface ToISOString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_25700
+     * @tc.name testDateToISOString0006
+     * @tc.desc Test the function of the Interface ToISOString.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToISOString0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = 'testDateToISOString0006';
@@ -5832,12 +5829,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_25800
-     * @tc.name       : testDateToISOString0007
-     * @tc.desc       : Test the function of the Interface ToISOString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_25800
+     * @tc.name testDateToISOString0007
+     * @tc.desc Test the function of the Interface ToISOString.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToISOString0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = 'testDateToISOString0007';
@@ -5852,12 +5849,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_25900
-     * @tc.name       : testDateToISOString0008
-     * @tc.desc       : Test the function of the Interface ToISOString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_25900
+     * @tc.name testDateToISOString0008
+     * @tc.desc Test the function of the Interface ToISOString.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToISOString0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = 'testDateToISOString0008';
@@ -5872,12 +5869,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_26000
-     * @tc.name       : testDateToJSON0001
-     * @tc.desc       : Test the function of the Interface toJSON().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_26000
+     * @tc.name testDateToJSON0001
+     * @tc.desc Test the function of the Interface toJSON().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it("testDateToJSON0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToJSON0001";
@@ -5892,12 +5889,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_26100
-     * @tc.name       : testDateToJSON0002
-     * @tc.desc       : Test the function of the Interface toJSON().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_26100
+     * @tc.name testDateToJSON0002
+     * @tc.desc Test the function of the Interface toJSON().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it("testDateToJSON0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToJSON0002";
@@ -5912,12 +5909,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_26200
-     * @tc.name       : testDateToJSON0003
-     * @tc.desc       : Test the function of the Interface toJSON().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_26200
+     * @tc.name testDateToJSON0003
+     * @tc.desc Test the function of the Interface toJSON().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it("testDateToJSON0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToJSON0003";
@@ -5933,12 +5930,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_26300
-     * @tc.name       : testDateToJSON0004
-     * @tc.desc       : Test the function of the Interface toJSON().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_26300
+     * @tc.name testDateToJSON0004
+     * @tc.desc Test the function of the Interface toJSON().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it("testDateToJSON0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToJSON0004";
@@ -5952,12 +5949,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_26400
-     * @tc.name       : testDateToJSON0005
-     * @tc.desc       : Test the function of the Interface toJSON().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_26400
+     * @tc.name testDateToJSON0005
+     * @tc.desc Test the function of the Interface toJSON().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it("testDateToJSON0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToJSON0005";
@@ -5972,12 +5969,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_26500
-     * @tc.name       : testDateToJSON0006
-     * @tc.desc       : Test the function of the Interface toJSON().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_26500
+     * @tc.name testDateToJSON0006
+     * @tc.desc Test the function of the Interface toJSON().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it("testDateToJSON0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToJSON0006";
@@ -5992,12 +5989,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_26600
-     * @tc.name       : testDateToJSON0007
-     * @tc.desc       : Test the function of the Interface toJSON().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_26600
+     * @tc.name testDateToJSON0007
+     * @tc.desc Test the function of the Interface toJSON().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it("testDateToJSON0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToJSON0007";
@@ -6012,12 +6009,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_26700
-     * @tc.name       : testDateToJSON0008
-     * @tc.desc       : Test the function of the Interface toJSON().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_26700
+     * @tc.name testDateToJSON0008
+     * @tc.desc Test the function of the Interface toJSON().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it("testDateToJSON0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToJSON0008";
@@ -6032,12 +6029,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_26800
-     * @tc.name       : testDateToLocaleDateString0001
-     * @tc.desc       : Test the function of the Interface Date.toLocaleDateString()
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_26800
+     * @tc.name testDateToLocaleDateString0001
+     * @tc.desc Test the function of the Interface Date.toLocaleDateString()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it("testDateToLocaleDateString0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToLocaleDateString0001";
@@ -6052,12 +6049,12 @@ export default function dateTest() {
     });
 
     /**  toLocaleDateString 接口有问题已经提单
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_26900
-     * @tc.name       : testDateToLocaleDateString0002
-     * @tc.desc       : Test the function of the Interface Date.toLocaleDateString()
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_26900
+     * @tc.name testDateToLocaleDateString0002
+     * @tc.desc Test the function of the Interface Date.toLocaleDateString()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it("testDateToLocaleDateString0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToLocaleDateString0002";
@@ -6072,12 +6069,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_27000
-     * @tc.name       : testDateToLocaleDateString0003
-     * @tc.desc       : Test the function of the Interface Date.toLocaleDateString()
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_27000
+     * @tc.name testDateToLocaleDateString0003
+     * @tc.desc Test the function of the Interface Date.toLocaleDateString()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it("testDateToLocaleDateString0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToLocaleDateString0003";
@@ -6098,12 +6095,12 @@ export default function dateTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_27100
-     * @tc.name       : testDateToLocaleDateString0004
-     * @tc.desc       : Test the function of the Interface Date.toLocaleDateString()
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_27100
+     * @tc.name testDateToLocaleDateString0004
+     * @tc.desc Test the function of the Interface Date.toLocaleDateString()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it("testDateToLocaleDateString0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToLocaleDateString0004";
@@ -6123,12 +6120,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_27200
-     * @tc.name       : testDateToLocaleDateString0005
-     * @tc.desc       : Test the function of the Interface Date.toLocaleDateString()
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_27200
+     * @tc.name testDateToLocaleDateString0005
+     * @tc.desc Test the function of the Interface Date.toLocaleDateString()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it("testDateToLocaleDateString0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToLocaleDateString0005";
@@ -6148,12 +6145,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_27300
-     * @tc.name       : testDateToLocaleDateString0006
-     * @tc.desc       : Test the function of the Interface Date.toLocaleDateString()
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_27300
+     * @tc.name testDateToLocaleDateString0006
+     * @tc.desc Test the function of the Interface Date.toLocaleDateString()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it("testDateToLocaleDateString0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToLocaleDateString0006";
@@ -6167,12 +6164,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_27400
-     * @tc.name       : testDateToLocaleDateString0007
-     * @tc.desc       : Test the function of the Interface Date.toLocaleDateString()
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_27400
+     * @tc.name testDateToLocaleDateString0007
+     * @tc.desc Test the function of the Interface Date.toLocaleDateString()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it("testDateToLocaleDateString0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToLocaleDateString0007";
@@ -6186,12 +6183,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_27500
-     * @tc.name       : testDateToLocaleDateString0008
-     * @tc.desc       : Test the function of the Interface Date.toLocaleDateString()
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_27500
+     * @tc.name testDateToLocaleDateString0008
+     * @tc.desc Test the function of the Interface Date.toLocaleDateString()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it("testDateToLocaleDateString0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToLocaleDateString0008";
@@ -6205,12 +6202,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_27600
-     * @tc.name       : testDateToLocaleDateString0009
-     * @tc.desc       : Test the function of the Interface Date.toLocaleDateString()
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_27600
+     * @tc.name testDateToLocaleDateString0009
+     * @tc.desc Test the function of the Interface Date.toLocaleDateString()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it("testDateToLocaleDateString0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToLocaleDateString0009";
@@ -6224,12 +6221,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_27700
-     * @tc.name       : testDataToUTCString0001
-     * @tc.desc       : Return the primitive value of a Date object. Overrides the Object.prototype.valueOf() method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_27700
+     * @tc.name testDataToUTCString0001
+     * @tc.desc Return the primitive value of a Date object. Overrides the Object.prototype.valueOf() method.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDataToUTCString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDataToUTCString0001";
@@ -6243,12 +6240,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_27800
-     * @tc.name       : testDataValueOf0001
-     * @tc.desc       : Translate to English: "Convert a Dateobject to a string using the UTC time zone.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_27800
+     * @tc.name testDataValueOf0001
+     * @tc.desc Translate to English: "Convert a Dateobject to a string using the UTC time zone.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDataValueOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDataValueOf0001";
@@ -6262,12 +6259,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_27900
-     * @tc.name       : testDataValueOf0002
-     * @tc.desc       : Translate to English: "Convert a Dateobject to a string using the UTC time zone.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_27900
+     * @tc.name testDataValueOf0002
+     * @tc.desc Translate to English: "Convert a Dateobject to a string using the UTC time zone.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDataValueOf0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDataValueOf0002";
@@ -6281,12 +6278,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_28000
-     * @tc.name       : testDataValueOf0003
-     * @tc.desc       : Translate to English: "Convert a Dateobject to a string using the UTC time zone.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_28000
+     * @tc.name testDataValueOf0003
+     * @tc.desc Translate to English: "Convert a Dateobject to a string using the UTC time zone.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDataValueOf0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDataValueOf0003";
@@ -6300,12 +6297,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_28100
-     * @tc.name       : testDateToLocaleStringConstEvent0001
-     * @tc.desc       : Test the function of the interface ToLocaleString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_28100
+     * @tc.name testDateToLocaleStringConstEvent0001
+     * @tc.desc Test the function of the interface ToLocaleString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToLocaleStringConstEvent0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testDateToLocaleStringConstEvent0001';
@@ -6322,12 +6319,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_28200
-     * @tc.name       : testDateToLocaleStringConstEvent0002
-     * @tc.desc       : Test the function of the interface ToLocaleString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_28200
+     * @tc.name testDateToLocaleStringConstEvent0002
+     * @tc.desc Test the function of the interface ToLocaleString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToLocaleStringConstEvent0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testDateToLocaleStringConstEvent0002';
@@ -6344,12 +6341,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_28300
-     * @tc.name       : testDateToLocaleStringConstEvent0003
-     * @tc.desc       : Test the function of the interface ToLocaleString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_28300
+     * @tc.name testDateToLocaleStringConstEvent0003
+     * @tc.desc Test the function of the interface ToLocaleString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToLocaleStringConstEvent0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToLocaleStringConstEvent0003";
@@ -6364,12 +6361,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_28400
-     * @tc.name       : testDateToLocaleStringConstEvent0004
-     * @tc.desc       : Test the function of the interface ToLocaleString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_28400
+     * @tc.name testDateToLocaleStringConstEvent0004
+     * @tc.desc Test the function of the interface ToLocaleString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToLocaleStringConstEvent0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToLocaleStringConstEvent0004";
@@ -6383,12 +6380,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_28500
-     * @tc.name       : testDateToLocaleStringConstEvent0005
-     * @tc.desc       : Test the function of the interface ToLocaleString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_28500
+     * @tc.name testDateToLocaleStringConstEvent0005
+     * @tc.desc Test the function of the interface ToLocaleString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToLocaleStringConstEvent0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToLocaleStringConstEvent0005";
@@ -6403,12 +6400,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_28600
-     * @tc.name       : testDateToLocaleStringConstEvent0006
-     * @tc.desc       : Test the function of the interface ToLocaleString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_28600
+     * @tc.name testDateToLocaleStringConstEvent0006
+     * @tc.desc Test the function of the interface ToLocaleString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToLocaleStringConstEvent0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToLocaleStringConstEvent0006";
@@ -6425,12 +6422,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_28700
-     * @tc.name       : testDateToLocaleStringDate0001
-     * @tc.desc       : Test the function of the interface toLocaleString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_28700
+     * @tc.name testDateToLocaleStringDate0001
+     * @tc.desc Test the function of the interface toLocaleString.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToLocaleStringDate0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToLocaleStringDate0001";
@@ -6444,12 +6441,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_28800
-     * @tc.name       : testDateToLocaleStringDate0002
-     * @tc.desc       : Test the function of the interface BigInt.prototype.toString with 254n.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_28800
+     * @tc.name testDateToLocaleStringDate0002
+     * @tc.desc Test the function of the interface BigInt.prototype.toString with 254n.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToLocaleStringDate0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToLocaleStringDate0002";
@@ -6464,12 +6461,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_28900
-     * @tc.name       : testDateToLocaleStringDate0003
-     * @tc.desc       : Test the function of the interface BigInt.prototype.toString with 254n.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_28900
+     * @tc.name testDateToLocaleStringDate0003
+     * @tc.desc Test the function of the interface BigInt.prototype.toString with 254n.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToLocaleStringDate0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToLocaleStringDate0003";
@@ -6484,12 +6481,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_29000
-     * @tc.name       : testDateToLocaleStringDate0004
-     * @tc.desc       : Test the function of the interface BigInt.prototype.toString with 254n.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_29000
+     * @tc.name testDateToLocaleStringDate0004
+     * @tc.desc Test the function of the interface BigInt.prototype.toString with 254n.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToLocaleStringDate0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToLocaleStringDate0004";
@@ -6504,12 +6501,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_29100
-     * @tc.name       : testDateToLocaleStringDate0005
-     * @tc.desc       : Test the function of the interface BigInt.prototype.toString with 254n.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_29100
+     * @tc.name testDateToLocaleStringDate0005
+     * @tc.desc Test the function of the interface BigInt.prototype.toString with 254n.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToLocaleStringDate0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToLocaleStringDate0005";
@@ -6524,12 +6521,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_29200
-     * @tc.name       : testDateToLocaleStringDate0006
-     * @tc.desc       : Test the function of the interface BigInt.prototype.toString with 254n.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_29200
+     * @tc.name testDateToLocaleStringDate0006
+     * @tc.desc Test the function of the interface BigInt.prototype.toString with 254n.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToLocaleStringDate0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToLocaleStringDate0006";
@@ -6543,12 +6540,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_29300
-     * @tc.name       : testDateToLocaleTimeString0001
-     * @tc.desc       : Test the function of the interface ToLocaleTimeString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_29300
+     * @tc.name testDateToLocaleTimeString0001
+     * @tc.desc Test the function of the interface ToLocaleTimeString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToLocaleTimeString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testDateToLocaleTimeString0001';
@@ -6562,12 +6559,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_29400
-     * @tc.name       : testDateToLocaleTimeString0002
-     * @tc.desc       : Test the function of the interface ToLocaleTimeString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_29400
+     * @tc.name testDateToLocaleTimeString0002
+     * @tc.desc Test the function of the interface ToLocaleTimeString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToLocaleTimeString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testDateToLocaleTimeString0002';
@@ -6581,12 +6578,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_29500
-     * @tc.name       : testDateToLocaleTimeString0003
-     * @tc.desc       : Test the function of the interface ToLocaleTimeString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_29500
+     * @tc.name testDateToLocaleTimeString0003
+     * @tc.desc Test the function of the interface ToLocaleTimeString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToLocaleTimeString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testDateToLocaleTimeString0003';
@@ -6600,12 +6597,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_29600
-     * @tc.name       : testDateToLocaleTimeString0004
-     * @tc.desc       : Test the function of the interface ToLocaleTimeString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_29600
+     * @tc.name testDateToLocaleTimeString0004
+     * @tc.desc Test the function of the interface ToLocaleTimeString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToLocaleTimeString0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testDateToLocaleTimeString0004';
@@ -6619,12 +6616,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_29700
-     * @tc.name       : testDateToLocaleTimeString0005
-     * @tc.desc       : Test the function of the interface ToLocaleTimeString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_29700
+     * @tc.name testDateToLocaleTimeString0005
+     * @tc.desc Test the function of the interface ToLocaleTimeString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToLocaleTimeString0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testDateToLocaleTimeString0005';
@@ -6640,12 +6637,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_29800
-     * @tc.name       : testDateToLocaleTimeString0006
-     * @tc.desc       : Test the function of the interface ToLocaleTimeString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_29800
+     * @tc.name testDateToLocaleTimeString0006
+     * @tc.desc Test the function of the interface ToLocaleTimeString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToLocaleTimeString0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testDateToLocaleTimeString0006';
@@ -6659,12 +6656,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_29900
-     * @tc.name       : testDateToLocaleTimeString0007
-     * @tc.desc       : Test the function of the interface toLocaleTimeString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_29900
+     * @tc.name testDateToLocaleTimeString0007
+     * @tc.desc Test the function of the interface toLocaleTimeString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToLocaleTimeString0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToLocaleTimeString0007";
@@ -6679,12 +6676,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_30000
-     * @tc.name       : testDateToLocaleTimeString0008
-     * @tc.desc       : Test the function of the interface toLocaleTimeString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_30000
+     * @tc.name testDateToLocaleTimeString0008
+     * @tc.desc Test the function of the interface toLocaleTimeString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToLocaleTimeString0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToLocaleTimeString0008";
@@ -6699,12 +6696,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_30100
-     * @tc.name       : testDateToLocaleTimeString0009
-     * @tc.desc       : Test the function of the interface toLocaleTimeString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_30100
+     * @tc.name testDateToLocaleTimeString0009
+     * @tc.desc Test the function of the interface toLocaleTimeString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToLocaleTimeString0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToLocaleTimeString0009";
@@ -6719,12 +6716,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_30200
-     * @tc.name       : testDateToLocaleTimeString0010
-     * @tc.desc       : Test the function of the interface toLocaleTimeString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_30200
+     * @tc.name testDateToLocaleTimeString0010
+     * @tc.desc Test the function of the interface toLocaleTimeString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToLocaleTimeString0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToLocaleTimeString0010";
@@ -6739,12 +6736,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_30300
-     * @tc.name       : testDateToLocaleTimeString0011
-     * @tc.desc       : Test the function of the interface toLocaleTimeString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_30300
+     * @tc.name testDateToLocaleTimeString0011
+     * @tc.desc Test the function of the interface toLocaleTimeString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToLocaleTimeString0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToLocaleTimeString0011";
@@ -6763,12 +6760,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_30400
-     * @tc.name       : testDateToLocaleTimeString0012
-     * @tc.desc       : Test the function of the interface toLocaleTimeString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_30400
+     * @tc.name testDateToLocaleTimeString0012
+     * @tc.desc Test the function of the interface toLocaleTimeString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToLocaleTimeString0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToLocaleTimeString0012";
@@ -6786,12 +6783,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_30500
-     * @tc.name       : testDateToLocaleTimeString0013
-     * @tc.desc       : Test the function of the interface toLocaleTimeString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_30500
+     * @tc.name testDateToLocaleTimeString0013
+     * @tc.desc Test the function of the interface toLocaleTimeString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToLocaleTimeString0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToLocaleTimeString0013";
@@ -6813,12 +6810,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_30600
-     * @tc.name       : testDateToString0001
-     * @tc.desc       : Test the function of the interface toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_30600
+     * @tc.name testDateToString0001
+     * @tc.desc Test the function of the interface toString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToString0001";
@@ -6832,12 +6829,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_30700
-     * @tc.name       : testDateToString0002
-     * @tc.desc       : Test the function of the interface toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_30700
+     * @tc.name testDateToString0002
+     * @tc.desc Test the function of the interface toString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToString0002";
@@ -6851,12 +6848,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_30800
-     * @tc.name       : testDateToString0003
-     * @tc.desc       : Test the function of the interface toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_30800
+     * @tc.name testDateToString0003
+     * @tc.desc Test the function of the interface toString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToString0003";
@@ -6869,12 +6866,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_30900
-     * @tc.name       : testDateToTimeString0001
-     * @tc.desc       : Test the function of the interface toTimeString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_30900
+     * @tc.name testDateToTimeString0001
+     * @tc.desc Test the function of the interface toTimeString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToTimeString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToTimeString0001";
@@ -6888,12 +6885,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_31000
-     * @tc.name       : testDateToTimeString0002
-     * @tc.desc       : Test the function of the interface toTimeString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_31000
+     * @tc.name testDateToTimeString0002
+     * @tc.desc Test the function of the interface toTimeString().
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToTimeString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToTimeString0002";
@@ -6907,12 +6904,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_31100
-     * @tc.name       : testDateToTimeString0003
-     * @tc.desc       : Test the function of the interface ToTimeString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_31100
+     * @tc.name testDateToTimeString0003
+     * @tc.desc Test the function of the interface ToTimeString.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToTimeString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToTimeString0003";
@@ -6926,12 +6923,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_31200
-     * @tc.name       : testDateToUTCString0001
-     * @tc.desc       : Test the function of the interface ToUTCString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_31200
+     * @tc.name testDateToUTCString0001
+     * @tc.desc Test the function of the interface ToUTCString.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToUTCString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToUTCString0001";
@@ -6945,12 +6942,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_31300
-     * @tc.name       : testDateToUTCString0002
-     * @tc.desc       : Test the function of the interface ToUTCString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_31300
+     * @tc.name testDateToUTCString0002
+     * @tc.desc Test the function of the interface ToUTCString.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToUTCString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const TAG = "testDateToUTCString0002";
@@ -6964,12 +6961,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_31400
-     * @tc.name       : testDateToUTCString0003
-     * @tc.desc       : Test the function of the interface ToUTCString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_31400
+     * @tc.name testDateToUTCString0003
+     * @tc.desc Test the function of the interface ToUTCString.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateToUTCString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateToUTCString0003";
@@ -6983,12 +6980,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_31500
-     * @tc.name       : testDateValueOf0001
-     * @tc.desc       : Test the function of the interface ValueOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_31500
+     * @tc.name testDateValueOf0001
+     * @tc.desc Test the function of the interface ValueOf.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateValueOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateValueOf0001";
@@ -7003,18 +7000,17 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_31600
-     * @tc.name       : testDateValueOf0002
-     * @tc.desc       : Test the function of the interface ValueOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_31600
+     * @tc.name testDateValueOf0002
+     * @tc.desc Test the function of the interface ValueOf.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateValueOf0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const TAG = "testDateValueOf0002";
       try {
         const x1 = new Date();
-        // await sleep(1);
         const x2 = new Date();
         const value1 = x1.valueOf();
         const value2 = x2.valueOf();
@@ -7027,12 +7023,12 @@ export default function dateTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_31700
-     * @tc.name       : testDateValueOf0003
-     * @tc.desc       : Test the function of the interface ValueOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATE_31700
+     * @tc.name testDateValueOf0003
+     * @tc.desc Test the function of the interface ValueOf.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testDateValueOf0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testDateValueOf0003";
