@@ -24,6 +24,9 @@ add_library(nativerender SHARED
     Image/ImageSupportSvg2Test.cpp
     sourceType/SourceTypeTest.cpp
     nodeUtil/NodeUtilsReturnTest.cpp
+    list/SourceFlingEdgeTest.cpp
+    list/SourceScrollBarTest.cpp
+    list/SourceBtnScrollerTest.cpp
 )
 
 add_library(nativefunc SHARED

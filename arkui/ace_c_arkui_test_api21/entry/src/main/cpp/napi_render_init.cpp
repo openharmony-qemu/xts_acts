@@ -26,6 +26,9 @@
 #include "Image/ImageSupportSvg2Test.h"
 #include "sourceType/SourceTypeTest.h"
 #include "nodeUtil/NodeUtilsReturnTest.h"
+#include "list/SourceFlingEdgeTest.h"
+#include "list/SourceScrollBarTest.h"
+#include "list/SourceBtnScrollerTest.h"
 
 namespace ArkUICapiTest
 {
@@ -129,6 +132,14 @@ namespace ArkUICapiTest
                nullptr, nullptr, nullptr, napi_default, nullptr},
             {"testGetPositionGetSize", nullptr, NodeUtilsReturnTest::testGetPositionGetSize001,
                nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"sourceDragTest", nullptr, SourceFlingEdgeTest::SourceDragTest, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"sourceFlingTest", nullptr, SourceFlingEdgeTest::SourceFlingTest, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"sourceEdgeTest", nullptr, SourceFlingEdgeTest::SourceEdgeTest, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"sourceOtherTest", nullptr, SourceFlingEdgeTest::SourceOtherTest, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"sourceBarTest", nullptr, SourceScrollBarTest::SourceBarTest, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"sourceBarFlingTest", nullptr, SourceScrollBarTest::SourceBarFlingTest, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"sourceScrollerTest", nullptr, SourceBtnScrollerTest::SourceScrollerTest, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"sourceAnimationTest", nullptr, SourceBtnScrollerTest::SourceAnimationTest, nullptr, nullptr, nullptr, napi_default, nullptr},
         };
         if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok)
         {
