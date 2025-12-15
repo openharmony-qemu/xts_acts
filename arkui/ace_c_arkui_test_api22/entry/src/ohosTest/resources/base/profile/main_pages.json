@@ -23,6 +23,7 @@
     "MainAbility/pages/grid/GridOnWillScrollTest",
     "MainAbility/pages/grid/GridOnScrollBarUpdateTest",
     "MainAbility/pages/grid/GridOnDidScrollTest",
-    "MainAbility/pages/grid/GridOnScrollIndexTest"
+    "MainAbility/pages/grid/GridOnScrollIndexTest",
+    "MainAbility/pages/clipShape/ClipShapeTest"
   ]
 }
