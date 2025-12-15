@@ -3828,3 +3828,1058 @@ ani_int test_Object_SetProp_By_Name_Byte_09([[maybe_unused]] ani_env *env, [[may
     ASSERT_EQ(prop, 1U);
     return ANI_TRUE;
 }
+
+ani_int test_Object_SetProp_By_Name_Byte_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto c2Ref = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newClassByte2");
+    ani_object c2 = static_cast<ani_object>(c2Ref);
+    ani_byte prop {};
+    ASSERT_EQ(env->Object_SetPropertyByName_Byte(c2, "prop", 0U), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Byte(c2, "prop", &prop), ANI_OK);
+    ASSERT_EQ(prop, 0U);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Byte(c2, "prop", 1U), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Byte(c2, "prop", &prop), ANI_OK);
+    ASSERT_EQ(prop, 1U);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Char_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject2");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ani_char highPerformance = '\0';
+    ASSERT_EQ(env->Object_GetPropertyByName_Char(car, "highPerformance", &highPerformance), ANI_OK);
+    ASSERT_EQ(highPerformance, 0U);
+
+    const int32_t loopCount = 3;
+    for (int32_t i = 1; i <= loopCount; i++) {
+        ASSERT_EQ(env->Object_SetPropertyByName_Char(car, "highPerformance", 'a'), ANI_OK);
+        ASSERT_EQ(env->Object_GetPropertyByName_Char(car, "highPerformance", &highPerformance), ANI_OK);
+        ASSERT_EQ(highPerformance, 'a');
+
+        ASSERT_EQ(env->Object_SetPropertyByName_Char(car, "highPerformance", 'b'), ANI_OK);
+        ASSERT_EQ(env->Object_GetPropertyByName_Char(car, "highPerformance", &highPerformance), ANI_OK);
+        ASSERT_EQ(highPerformance, 'b');
+    }
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Char_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject2");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ani_char ecoFriendly = '\0';
+
+    ASSERT_EQ(env->Object_GetPropertyByName_Char(car, "ecoFriendly", &ecoFriendly), ANI_OK);
+    ASSERT_EQ(ecoFriendly, 0U);
+
+    const int32_t loopCount = 3;
+    for (int32_t i = 1; i <= loopCount; i++) {
+        ASSERT_EQ(env->Object_SetPropertyByName_Char(car, "ecoFriendly", 'a'), ANI_OK);
+        ASSERT_EQ(env->Object_GetPropertyByName_Char(car, "ecoFriendly", &ecoFriendly), ANI_OK);
+        ASSERT_EQ(ecoFriendly, 'a');
+
+        ASSERT_EQ(env->Object_SetPropertyByName_Char(car, "ecoFriendly", 'b'), ANI_OK);
+        ASSERT_EQ(env->Object_GetPropertyByName_Char(car, "ecoFriendly", &ecoFriendly), ANI_OK);
+        ASSERT_EQ(ecoFriendly, 'b');
+    }
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Char_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject2");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->c_api->Object_SetPropertyByName_Char(nullptr, car, "ecoFriendly", 1U), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Char_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject2");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Char(car, "ecoFriendlyA", 1U), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Object_SetPropertyByName_Char(car, "", 1U), ANI_NOT_FOUND);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Char_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject2");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Char(nullptr, "highPerformance", 1U), ANI_INVALID_ARGS);
+    ASSERT_EQ(env->Object_SetPropertyByName_Char(car, nullptr, 1U), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Char_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject2");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Char(car, "manufacturer", 1U), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Char_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject2");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Char(car, "model", 1U), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Char_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto c1Ref = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newClassChar");
+    ani_object c1 = static_cast<ani_object>(c1Ref);
+
+    ani_char prop = '\0';
+    ASSERT_EQ(env->Object_GetPropertyByName_Char(c1, "prop", &prop), ANI_OK);
+    ASSERT_EQ(prop, 0U);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Char(c1, "prop", 1U), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Char(c1, "prop", &prop), ANI_OK);
+    ASSERT_EQ(prop, 1U);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Char_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto c2Ref = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newClassChar2");
+    ani_object c2 = static_cast<ani_object>(c2Ref);
+
+    ani_char prop = '\0';
+    ASSERT_EQ(env->Object_SetPropertyByName_Char(c2, "prop", 0U), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Char(c2, "prop", &prop), ANI_OK);
+    ASSERT_EQ(prop, 0U);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Char(c2, "prop", 1U), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Char(c2, "prop", &prop), ANI_OK);
+    ASSERT_EQ(prop, 1U);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Double_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject3");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ani_double highPerformance = 0U;
+    ASSERT_EQ(env->Object_GetPropertyByName_Double(car, "highPerformance", &highPerformance), ANI_OK);
+    ASSERT_EQ(highPerformance, 0U);
+
+    const ani_double value = 1.02;
+    const ani_double value1 = 1.03;
+    ASSERT_EQ(env->Object_SetPropertyByName_Double(car, "highPerformance", value), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Double(car, "highPerformance", &highPerformance), ANI_OK);
+    ASSERT_EQ(highPerformance, value);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Double(car, "ecoFriendly", value1), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Double(car, "ecoFriendly", &highPerformance), ANI_OK);
+    ASSERT_EQ(highPerformance, value1);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Double_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject3");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ani_double highPerformance = 0U;
+    ASSERT_EQ(env->Object_GetPropertyByName_Double(car, "highPerformance", &highPerformance), ANI_OK);
+    ASSERT_EQ(static_cast<int32_t>(highPerformance), 0U);
+
+    const int32_t loopCount = 3;
+    const ani_double value = -1.7976931348623157E308;
+    const ani_double value1 = 1.7976931348623157E308;
+    for (int32_t i = 1; i <= loopCount; i++) {
+        ASSERT_EQ(env->Object_SetPropertyByName_Double(car, "highPerformance", value), ANI_OK);
+        ASSERT_EQ(env->Object_GetPropertyByName_Double(car, "highPerformance", &highPerformance), ANI_OK);
+        ASSERT_EQ(highPerformance, value);
+
+        ASSERT_EQ(env->Object_SetPropertyByName_Double(car, "highPerformance", value1), ANI_OK);
+        ASSERT_EQ(env->Object_GetPropertyByName_Double(car, "highPerformance", &highPerformance), ANI_OK);
+        ASSERT_EQ(highPerformance, value1);
+    }
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Double_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject3");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ani_double ecoFriendly = 0U;
+    ASSERT_EQ(env->Object_GetPropertyByName_Double(car, "ecoFriendly", &ecoFriendly), ANI_OK);
+    ASSERT_EQ(static_cast<int32_t>(ecoFriendly), 0U);
+
+    const int32_t loopCount = 3;
+    const ani_double value = -1.7976931348623157E308;
+    const ani_double value1 = 1.7976931348623157E308;
+    for (int32_t i = 1; i <= loopCount; i++) {
+        ASSERT_EQ(env->Object_SetPropertyByName_Double(car, "ecoFriendly", value), ANI_OK);
+        ASSERT_EQ(env->Object_GetPropertyByName_Double(car, "ecoFriendly", &ecoFriendly), ANI_OK);
+        ASSERT_EQ(ecoFriendly, value);
+
+        ASSERT_EQ(env->Object_SetPropertyByName_Double(car, "ecoFriendly", value1), ANI_OK);
+        ASSERT_EQ(env->Object_GetPropertyByName_Double(car, "ecoFriendly", &ecoFriendly), ANI_OK);
+        ASSERT_EQ(ecoFriendly, value1);
+    }
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Double_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject3");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->c_api->Object_SetPropertyByName_Double(nullptr, car, "ecoFriendly", 1U), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Double_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject3");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Double(car, "ecoFriendlyA", 1U), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Object_SetPropertyByName_Double(car, "", 1U), ANI_NOT_FOUND);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Double_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject3");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Double(nullptr, "highPerformance", 1U), ANI_INVALID_ARGS);
+    ASSERT_EQ(env->Object_SetPropertyByName_Double(car, nullptr, 1U), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Double_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject3");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Double(car, "manufacturer", 1U), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Double_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject3");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Double(car, "model", 1U), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Double_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto c1Ref = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newClassDouble");
+    ani_object c1 = static_cast<ani_object>(c1Ref);
+
+    ani_double prop = 0U;
+    ASSERT_EQ(env->Object_GetPropertyByName_Double(c1, "prop", &prop), ANI_OK);
+    ASSERT_EQ(static_cast<int32_t>(prop), 0U);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Double(c1, "prop", 1U), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Double(c1, "prop", &prop), ANI_OK);
+    ASSERT_EQ(static_cast<int32_t>(prop), 1U);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Double_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto c2Ref = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newClassDouble2");
+    ani_object c2 = static_cast<ani_object>(c2Ref);
+
+    ani_double prop = 0U;
+    ASSERT_EQ(env->Object_SetPropertyByName_Double(c2, "prop", 0U), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Double(c2, "prop", &prop), ANI_OK);
+    ASSERT_EQ(static_cast<int32_t>(prop), 0U);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Double(c2, "prop", 1U), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Double(c2, "prop", &prop), ANI_OK);
+    ASSERT_EQ(static_cast<int32_t>(prop), 1U);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Float_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject4");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ani_float highPerformance = 0U;
+    ASSERT_EQ(env->Object_GetPropertyByName_Float(car, "highPerformance", &highPerformance), ANI_OK);
+    ASSERT_EQ(highPerformance, 0U);
+
+    const ani_float value = 0.1;
+    const ani_float value1 = 0.2;
+    ASSERT_EQ(env->Object_SetPropertyByName_Float(car, "highPerformance", value), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Float(car, "highPerformance", &highPerformance), ANI_OK);
+    ASSERT_EQ(highPerformance, value);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Float(car, "ecoFriendly", value1), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Float(car, "ecoFriendly", &highPerformance), ANI_OK);
+    ASSERT_EQ(highPerformance, value1);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Float_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject4");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ani_float highPerformance = 0U;
+    ASSERT_EQ(env->Object_GetPropertyByName_Float(car, "highPerformance", &highPerformance), ANI_OK);
+    ASSERT_EQ(static_cast<int32_t>(highPerformance), 0U);
+
+    const int32_t loopCount = 3;
+    const ani_float value = -3.4028235E38;
+    const ani_float value1 = 3.4028235E38;
+    for (int32_t i = 1; i <= loopCount; i++) {
+        ASSERT_EQ(env->Object_SetPropertyByName_Float(car, "highPerformance", value), ANI_OK);
+        ASSERT_EQ(env->Object_GetPropertyByName_Float(car, "highPerformance", &highPerformance), ANI_OK);
+        ASSERT_EQ(highPerformance, value);
+
+        ASSERT_EQ(env->Object_SetPropertyByName_Float(car, "highPerformance", value1), ANI_OK);
+        ASSERT_EQ(env->Object_GetPropertyByName_Float(car, "highPerformance", &highPerformance), ANI_OK);
+        ASSERT_EQ(highPerformance, value1);
+    }
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Float_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject4");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ani_float ecoFriendly = 0U;
+    ASSERT_EQ(env->Object_GetPropertyByName_Float(car, "ecoFriendly", &ecoFriendly), ANI_OK);
+    ASSERT_EQ(static_cast<int32_t>(ecoFriendly), 0U);
+
+    const int32_t loopCount = 3;
+    const ani_float value = -3.4028235E38;
+    const ani_float value1 = 3.4028235E38;
+    for (int32_t i = 1; i <= loopCount; i++) {
+        ASSERT_EQ(env->Object_SetPropertyByName_Float(car, "ecoFriendly", value), ANI_OK);
+        ASSERT_EQ(env->Object_GetPropertyByName_Float(car, "ecoFriendly", &ecoFriendly), ANI_OK);
+        ASSERT_EQ(ecoFriendly, value);
+
+        ASSERT_EQ(env->Object_SetPropertyByName_Float(car, "ecoFriendly", value1), ANI_OK);
+        ASSERT_EQ(env->Object_GetPropertyByName_Float(car, "ecoFriendly", &ecoFriendly), ANI_OK);
+        ASSERT_EQ(ecoFriendly, value1);
+    }
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Float_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject4");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->c_api->Object_SetPropertyByName_Float(nullptr, car, "ecoFriendly", 1U), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Float_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject4");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Float(car, "ecoFriendlyA", 1U), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Object_SetPropertyByName_Float(car, "", 1U), ANI_NOT_FOUND);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Float_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject4");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Float(nullptr, "highPerformance", 1U), ANI_INVALID_ARGS);
+    ASSERT_EQ(env->Object_SetPropertyByName_Float(car, nullptr, 1U), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Float_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject4");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Float(car, "manufacturer", 1U), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Float_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject4");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Float(car, "model", 1U), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Float_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto c1Ref = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newClassFloat");
+    ani_object c1 = static_cast<ani_object>(c1Ref);
+
+    ani_float prop = 0U;
+    ASSERT_EQ(env->Object_GetPropertyByName_Float(c1, "prop", &prop), ANI_OK);
+    ASSERT_EQ(static_cast<int32_t>(prop), 0U);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Float(c1, "prop", 1U), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Float(c1, "prop", &prop), ANI_OK);
+    ASSERT_EQ(static_cast<int32_t>(prop), 1U);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Float_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto c2Ref = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newClassFloat2");
+    ani_object c2 = static_cast<ani_object>(c2Ref);
+
+    ani_float prop = 0U;
+    ASSERT_EQ(env->Object_SetPropertyByName_Float(c2, "prop", 0U), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Float(c2, "prop", &prop), ANI_OK);
+    ASSERT_EQ(static_cast<int32_t>(prop), 0U);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Float(c2, "prop", 1U), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Float(c2, "prop", &prop), ANI_OK);
+    ASSERT_EQ(static_cast<int32_t>(prop), 1U);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Int_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject5");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ani_int highPerformance = 0U;
+    ASSERT_EQ(env->Object_GetPropertyByName_Int(car, "highPerformance", &highPerformance), ANI_OK);
+    ASSERT_EQ(highPerformance, 0U);
+
+    const ani_int value = 0;
+    const ani_int value1 = 1;
+    ASSERT_EQ(env->Object_SetPropertyByName_Int(car, "highPerformance", value), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Int(car, "highPerformance", &highPerformance), ANI_OK);
+    ASSERT_EQ(highPerformance, value);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Int(car, "ecoFriendly", value1), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Int(car, "ecoFriendly", &highPerformance), ANI_OK);
+    ASSERT_EQ(highPerformance, value1);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Int_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject5");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ani_int highPerformance = 0U;
+    ASSERT_EQ(env->Object_GetPropertyByName_Int(car, "highPerformance", &highPerformance), ANI_OK);
+    ASSERT_EQ(highPerformance, 0U);
+
+    const int32_t loopCount = 3;
+    const ani_int value = -2147483648;
+    const ani_int value1 = 2147483647;
+    for (int32_t i = 1; i <= loopCount; i++) {
+        ASSERT_EQ(env->Object_SetPropertyByName_Int(car, "highPerformance", value), ANI_OK);
+        ASSERT_EQ(env->Object_GetPropertyByName_Int(car, "highPerformance", &highPerformance), ANI_OK);
+        ASSERT_EQ(highPerformance, value);
+
+        ASSERT_EQ(env->Object_SetPropertyByName_Int(car, "highPerformance", value1), ANI_OK);
+        ASSERT_EQ(env->Object_GetPropertyByName_Int(car, "highPerformance", &highPerformance), ANI_OK);
+        ASSERT_EQ(highPerformance, value1);
+    }
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Int_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject5");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ani_int ecoFriendly = 0U;
+    ASSERT_EQ(env->Object_GetPropertyByName_Int(car, "ecoFriendly", &ecoFriendly), ANI_OK);
+    ASSERT_EQ(ecoFriendly, 0U);
+
+    const int32_t loopCount = 3;
+    const ani_int value = -2147483648;
+    const ani_int value1 = 2147483647;
+    for (int32_t i = 1; i <= loopCount; i++) {
+        ASSERT_EQ(env->Object_SetPropertyByName_Int(car, "ecoFriendly", value), ANI_OK);
+        ASSERT_EQ(env->Object_GetPropertyByName_Int(car, "ecoFriendly", &ecoFriendly), ANI_OK);
+        ASSERT_EQ(ecoFriendly, value);
+
+        ASSERT_EQ(env->Object_SetPropertyByName_Int(car, "ecoFriendly", value1), ANI_OK);
+        ASSERT_EQ(env->Object_GetPropertyByName_Int(car, "ecoFriendly", &ecoFriendly), ANI_OK);
+        ASSERT_EQ(ecoFriendly, value1);
+    }
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Int_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject5");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->c_api->Object_SetPropertyByName_Int(nullptr, car, "ecoFriendly", 1U), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Int_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject5");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Int(car, "ecoFriendlyA", 1U), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Object_SetPropertyByName_Int(car, "", 1U), ANI_NOT_FOUND);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Int_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject5");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Int(nullptr, "highPerformance", 1U), ANI_INVALID_ARGS);
+    ASSERT_EQ(env->Object_SetPropertyByName_Int(car, nullptr, 1U), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Int_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject5");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Int(car, "manufacturer", 1U), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Int_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject5");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Int(car, "model", 1U), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Int_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto c1Ref = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newClassInt");
+    ani_object c1 = static_cast<ani_object>(c1Ref);
+
+    ani_int prop = 0U;
+    ASSERT_EQ(env->Object_GetPropertyByName_Int(c1, "prop", &prop), ANI_OK);
+    ASSERT_EQ(prop, 0U);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Int(c1, "prop", 1U), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Int(c1, "prop", &prop), ANI_OK);
+    ASSERT_EQ(prop, 1U);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Int_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto c2Ref = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newClassInt2");
+    ani_object c2 = static_cast<ani_object>(c2Ref);
+
+    ani_int prop = 0U;
+    ASSERT_EQ(env->Object_SetPropertyByName_Int(c2, "prop", 0U), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Int(c2, "prop", &prop), ANI_OK);
+    ASSERT_EQ(prop, 0U);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Int(c2, "prop", 1U), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Int(c2, "prop", &prop), ANI_OK);
+    ASSERT_EQ(prop, 1U);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Long_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject6");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ani_long highPerformance = 0U;
+    ASSERT_EQ(env->Object_GetPropertyByName_Long(car, "highPerformance", &highPerformance), ANI_OK);
+    ASSERT_EQ(highPerformance, 0U);
+
+    const ani_long value = 1;
+    const ani_long value1 = 2;
+    ASSERT_EQ(env->Object_SetPropertyByName_Long(car, "highPerformance", value), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Long(car, "highPerformance", &highPerformance), ANI_OK);
+    ASSERT_EQ(highPerformance, value);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Long(car, "ecoFriendly", value1), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Long(car, "ecoFriendly", &highPerformance), ANI_OK);
+    ASSERT_EQ(highPerformance, value1);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Long_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject6");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ani_long highPerformance = 0U;
+    ASSERT_EQ(env->Object_GetPropertyByName_Long(car, "highPerformance", &highPerformance), ANI_OK);
+    ASSERT_EQ(highPerformance, 0U);
+
+    const int32_t loopCount = 3;
+    const ani_long value = -9007199254740991;
+    const ani_long value1 = 9007199254740991;
+    for (int32_t i = 1; i <= loopCount; i++) {
+        ASSERT_EQ(env->Object_SetPropertyByName_Long(car, "highPerformance", value), ANI_OK);
+        ASSERT_EQ(env->Object_GetPropertyByName_Long(car, "highPerformance", &highPerformance), ANI_OK);
+        ASSERT_EQ(highPerformance, value);
+
+        ASSERT_EQ(env->Object_SetPropertyByName_Long(car, "highPerformance", value1), ANI_OK);
+        ASSERT_EQ(env->Object_GetPropertyByName_Long(car, "highPerformance", &highPerformance), ANI_OK);
+        ASSERT_EQ(highPerformance, value1);
+    }
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Long_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject6");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ani_long ecoFriendly = 0U;
+    ASSERT_EQ(env->Object_GetPropertyByName_Long(car, "ecoFriendly", &ecoFriendly), ANI_OK);
+    ASSERT_EQ(ecoFriendly, 0U);
+
+    const int32_t loopCount = 3;
+    const ani_long value = -9007199254740991;
+    const ani_long value1 = 9007199254740991;
+    for (int32_t i = 1; i <= loopCount; i++) {
+        ASSERT_EQ(env->Object_SetPropertyByName_Long(car, "ecoFriendly", value), ANI_OK);
+        ASSERT_EQ(env->Object_GetPropertyByName_Long(car, "ecoFriendly", &ecoFriendly), ANI_OK);
+        ASSERT_EQ(ecoFriendly, value);
+
+        ASSERT_EQ(env->Object_SetPropertyByName_Long(car, "ecoFriendly", value1), ANI_OK);
+        ASSERT_EQ(env->Object_GetPropertyByName_Long(car, "ecoFriendly", &ecoFriendly), ANI_OK);
+        ASSERT_EQ(ecoFriendly, value1);
+    }
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Long_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject6");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->c_api->Object_SetPropertyByName_Long(nullptr, car, "ecoFriendly", 1U), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Long_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject6");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Long(car, "ecoFriendlyA", 1U), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Object_SetPropertyByName_Long(car, "", 1U), ANI_NOT_FOUND);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Long_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject6");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Long(nullptr, "highPerformance", 1U), ANI_INVALID_ARGS);
+    ASSERT_EQ(env->Object_SetPropertyByName_Long(car, nullptr, 1U), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Long_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject6");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Long(car, "manufacturer", 1U), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Long_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject6");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Long(car, "model", 1U), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Long_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto c1Ref = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newClassLong");
+    ani_object c1 = static_cast<ani_object>(c1Ref);
+
+    ani_long prop = 0U;
+    ASSERT_EQ(env->Object_GetPropertyByName_Long(c1, "prop", &prop), ANI_OK);
+    ASSERT_EQ(prop, 0U);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Long(c1, "prop", 1U), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Long(c1, "prop", &prop), ANI_OK);
+    ASSERT_EQ(prop, 1U);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Long_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto c2Ref = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newClassLong2");
+    ani_object c2 = static_cast<ani_object>(c2Ref);
+
+    ani_long prop = 0U;
+    ASSERT_EQ(env->Object_SetPropertyByName_Long(c2, "prop", 0U), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Long(c2, "prop", &prop), ANI_OK);
+    ASSERT_EQ(prop, 0U);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Long(c2, "prop", 1U), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Long(c2, "prop", &prop), ANI_OK);
+    ASSERT_EQ(prop, 1U);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Short_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject7");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ani_short highPerformance = 0U;
+    ASSERT_EQ(env->Object_GetPropertyByName_Short(car, "highPerformance", &highPerformance), ANI_OK);
+    ASSERT_EQ(highPerformance, 0U);
+
+    const ani_short value = 0;
+    const ani_short value1 = 1;
+    ASSERT_EQ(env->Object_SetPropertyByName_Short(car, "highPerformance", value), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Short(car, "highPerformance", &highPerformance), ANI_OK);
+    ASSERT_EQ(highPerformance, value);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Short(car, "ecoFriendly", value1), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Short(car, "ecoFriendly", &highPerformance), ANI_OK);
+    ASSERT_EQ(highPerformance, value1);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Short_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject7");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ani_short highPerformance = 0U;
+    ASSERT_EQ(env->Object_GetPropertyByName_Short(car, "highPerformance", &highPerformance), ANI_OK);
+    ASSERT_EQ(highPerformance, 0U);
+
+    const int32_t loopCount = 3;
+    const ani_short value = -32768;
+    const ani_short value1 = 32767;
+    for (int32_t i = 1; i <= loopCount; i++) {
+        ASSERT_EQ(env->Object_SetPropertyByName_Short(car, "highPerformance", value), ANI_OK);
+        ASSERT_EQ(env->Object_GetPropertyByName_Short(car, "highPerformance", &highPerformance), ANI_OK);
+        ASSERT_EQ(highPerformance, value);
+
+        ASSERT_EQ(env->Object_SetPropertyByName_Short(car, "highPerformance", value1), ANI_OK);
+        ASSERT_EQ(env->Object_GetPropertyByName_Short(car, "highPerformance", &highPerformance), ANI_OK);
+        ASSERT_EQ(highPerformance, value1);
+    }
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Short_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject7");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ani_short ecoFriendly = 0U;
+    ASSERT_EQ(env->Object_GetPropertyByName_Short(car, "ecoFriendly", &ecoFriendly), ANI_OK);
+    ASSERT_EQ(ecoFriendly, 0U);
+
+    const int32_t loopCount = 3;
+    const ani_short value = -32768;
+    const ani_short value1 = 32767;
+    for (int32_t i = 1; i <= loopCount; i++) {
+        ASSERT_EQ(env->Object_SetPropertyByName_Short(car, "ecoFriendly", value), ANI_OK);
+        ASSERT_EQ(env->Object_GetPropertyByName_Short(car, "ecoFriendly", &ecoFriendly), ANI_OK);
+        ASSERT_EQ(ecoFriendly, value);
+
+        ASSERT_EQ(env->Object_SetPropertyByName_Short(car, "ecoFriendly", value1), ANI_OK);
+        ASSERT_EQ(env->Object_GetPropertyByName_Short(car, "ecoFriendly", &ecoFriendly), ANI_OK);
+        ASSERT_EQ(ecoFriendly, value1);
+    }
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Short_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject7");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->c_api->Object_SetPropertyByName_Short(nullptr, car, "ecoFriendly", 1U), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Short_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject7");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Short(car, "ecoFriendlyA", 1U), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Object_SetPropertyByName_Short(car, "", 1U), ANI_NOT_FOUND);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Short_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject7");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Short(nullptr, "highPerformance", 1U), ANI_INVALID_ARGS);
+    ASSERT_EQ(env->Object_SetPropertyByName_Short(car, nullptr, 1U), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Short_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject7");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Short(car, "manufacturer", 1U), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Short_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject7");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Short(car, "model", 1U), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Short_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto c1Ref = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newClassShort");
+    ani_object c1 = static_cast<ani_object>(c1Ref);
+
+    ani_short prop = 0U;
+    ASSERT_EQ(env->Object_GetPropertyByName_Short(c1, "prop", &prop), ANI_OK);
+    ASSERT_EQ(prop, 0U);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Short(c1, "prop", 1U), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Short(c1, "prop", &prop), ANI_OK);
+    ASSERT_EQ(prop, 1U);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Short_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto c2Ref = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newClassShort2");
+    ani_object c2 = static_cast<ani_object>(c2Ref);
+
+    ani_short prop = 0U;
+    ASSERT_EQ(env->Object_SetPropertyByName_Short(c2, "prop", 0U), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Short(c2, "prop", &prop), ANI_OK);
+    ASSERT_EQ(prop, 0U);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Short(c2, "prop", 1U), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Short(c2, "prop", &prop), ANI_OK);
+    ASSERT_EQ(prop, 1U);
+    return ANI_TRUE;
+}
+
+ani_int RetrieveStringFromAni2(ani_env *env, ani_string string, std::string &resString)
+{
+    ani_size result = 0U;
+    ASSERT_EQ(env->String_GetUTF8Size(string, &result), ANI_OK);
+    ani_size substrOffset = 0U;
+    ani_size substrSize = result;
+    const ani_size bufferExtension = 10U;
+    resString.resize(substrSize + bufferExtension);
+    ani_size resSize = resString.size();
+    result = 0U;
+    auto status =
+        env->String_GetUTF8SubString(string, substrOffset, substrSize, resString.data(), resSize, &result);
+    ASSERT_EQ(status, ANI_OK);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Ref_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject8");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ani_ref highPerformance {};
+    ASSERT_EQ(env->Object_GetPropertyByName_Ref(car, "highPerformance", &highPerformance), ANI_OK);
+    std::string defaultVal {};
+    RetrieveStringFromAni2(env, reinterpret_cast<ani_string>(highPerformance), defaultVal);
+    ASSERT_STREQ(defaultVal.data(), "Porsche 911");
+
+    ani_string string {};
+    std::string toSet = "Abracadabra";
+    const int32_t loopCount = 3;
+    for (int32_t i = 1; i <= loopCount; i++) {
+        ASSERT_EQ(env->String_NewUTF8(toSet.data(), toSet.size(), &string), ANI_OK);
+        ASSERT_EQ(env->Object_SetPropertyByName_Ref(car, "highPerformance", string), ANI_OK);
+        ASSERT_EQ(env->Object_GetPropertyByName_Ref(car, "highPerformance", &highPerformance), ANI_OK);
+        RetrieveStringFromAni2(env, reinterpret_cast<ani_string>(highPerformance), defaultVal);
+        ASSERT_STREQ(defaultVal.data(), "Abracadabra");
+    }
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Ref_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject8");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ani_ref ecoFriendly {};
+    ASSERT_EQ(env->Object_GetPropertyByName_Ref(car, "ecoFriendly", &ecoFriendly), ANI_OK);
+    std::string defaultVal {};
+    RetrieveStringFromAni2(env, reinterpret_cast<ani_string>(ecoFriendly), defaultVal);
+    ASSERT_STREQ(defaultVal.data(), "Porsche");
+
+    ani_string string {};
+    std::string toSet = "AbracadabraSetter";
+    const int32_t loopCount = 3;
+    for (int32_t i = 1; i <= loopCount; i++) {
+        ASSERT_EQ(env->String_NewUTF8(toSet.data(), toSet.size(), &string), ANI_OK);
+        ASSERT_EQ(env->Object_SetPropertyByName_Ref(car, "ecoFriendly", string), ANI_OK);
+        ASSERT_EQ(env->Object_GetPropertyByName_Ref(car, "ecoFriendly", &ecoFriendly), ANI_OK);
+        RetrieveStringFromAni2(env, reinterpret_cast<ani_string>(ecoFriendly), defaultVal);
+        ASSERT_STREQ(defaultVal.data(), "AbracadabraSetter");
+    }
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Ref_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject8");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ani_ref ecoFriendly {};
+    ASSERT_EQ(env->Object_GetPropertyByName_Ref(car, "ecoFriendly", &ecoFriendly), ANI_OK);
+    std::string defaultVal {};
+    RetrieveStringFromAni2(env, reinterpret_cast<ani_string>(ecoFriendly), defaultVal);
+    ASSERT_STREQ(defaultVal.data(), "Porsche");
+
+    ani_string string {};
+    std::string toSet = "AbracadabraSetter";
+    ASSERT_EQ(env->String_NewUTF8(toSet.data(), toSet.size(), &string), ANI_OK);
+    ASSERT_EQ(env->c_api->Object_SetPropertyByName_Ref(nullptr, car, "ecoFriendly", string), ANI_INVALID_ARGS);
+    ASSERT_EQ(env->c_api->Object_GetPropertyByName_Ref(nullptr, car, "ecoFriendly", &ecoFriendly), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Ref_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject8");
+    ani_object car = static_cast<ani_object>(carRef);
+
+    ani_ref ecoFriendly {};
+    ASSERT_EQ(env->Object_GetPropertyByName_Ref(car, "ecoFriendly", &ecoFriendly), ANI_OK);
+    std::string defaultVal {};
+    RetrieveStringFromAni2(env, reinterpret_cast<ani_string>(ecoFriendly), defaultVal);
+    ASSERT_STREQ(defaultVal.data(), "Porsche");
+
+    ani_string string {};
+    std::string toSet = "AbracadabraSetter";
+    ASSERT_EQ(env->String_NewUTF8(toSet.data(), toSet.size(), &string), ANI_OK);
+    ASSERT_EQ(env->Object_SetPropertyByName_Ref(car, "ecoFriendlyA", string), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Object_GetPropertyByName_Ref(car, "", &ecoFriendly), ANI_NOT_FOUND);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Ref_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject8");
+    ani_object car = static_cast<ani_object>(carRef);
+    ani_string string {};
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Ref(nullptr, "highPerformance", string), ANI_INVALID_ARGS);
+    ASSERT_EQ(env->Object_SetPropertyByName_Ref(car, nullptr, string), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Ref_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject8");
+    ani_object car = static_cast<ani_object>(carRef);
+    ani_string string {};
+
+    std::string_view utf8string = "12345";
+    ASSERT_EQ(env->String_NewUTF8(utf8string.data(), utf8string.size(), &string), ANI_OK);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Ref(car, "manufacturer", string), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Ref_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto carRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newCarObject8");
+    ani_object car = static_cast<ani_object>(carRef);
+    ani_string string {};
+
+    std::string_view utf8string = "12345";
+    ASSERT_EQ(env->String_NewUTF8(utf8string.data(), utf8string.size(), &string), ANI_OK);
+
+    ASSERT_EQ(env->Object_SetPropertyByName_Ref(car, "model", string), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Ref_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto c1Ref = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newClassRef");
+    ani_object c1 = static_cast<ani_object>(c1Ref);
+
+    ani_ref prop {};
+    ASSERT_EQ(env->Object_GetPropertyByName_Ref(c1, "prop", &prop), ANI_OK);
+    std::string defaultVal {};
+    RetrieveStringFromAni2(env, reinterpret_cast<ani_string>(prop), defaultVal);
+    ASSERT_STREQ(defaultVal.data(), "Default");
+
+    ani_string string {};
+    std::string toSet = "InterfaceField";
+    ASSERT_EQ(env->String_NewUTF8(toSet.data(), toSet.size(), &string), ANI_OK);
+    ASSERT_EQ(env->Object_SetPropertyByName_Ref(c1, "prop", string), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Ref(c1, "prop", &prop), ANI_OK);
+    RetrieveStringFromAni2(env, reinterpret_cast<ani_string>(prop), defaultVal);
+    ASSERT_STREQ(defaultVal.data(), "InterfaceField");
+    return ANI_TRUE;
+}
+
+ani_int test_Object_SetProp_By_Name_Ref_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto c2Ref = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperationsSetProp", "newClassRef2");
+    ani_object c2 = static_cast<ani_object>(c2Ref);
+
+    ani_ref prop {};
+    ASSERT_EQ(env->Object_GetPropertyByName_Ref(c2, "prop", &prop), ANI_OK);
+    std::string defaultVal {};
+    RetrieveStringFromAni2(env, reinterpret_cast<ani_string>(prop), defaultVal);
+    ASSERT_STREQ(defaultVal.data(), "Default");
+
+    ani_string string {};
+    std::string toSet = "InterfaceProp";
+    ASSERT_EQ(env->String_NewUTF8(toSet.data(), toSet.size(), &string), ANI_OK);
+    ASSERT_EQ(env->Object_SetPropertyByName_Ref(c2, "prop", string), ANI_OK);
+    ASSERT_EQ(env->Object_GetPropertyByName_Ref(c2, "prop", &prop), ANI_OK);
+    RetrieveStringFromAni2(env, reinterpret_cast<ani_string>(prop), defaultVal);
+    ASSERT_STREQ(defaultVal.data(), "InterfaceProp");
+    return ANI_TRUE;
+}
+#endif //ARKTS_ANI_TEST_OBJECTOPERATIONS_H
