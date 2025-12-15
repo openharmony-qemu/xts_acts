@@ -37,7 +37,7 @@ export default function SourceBtnScrollerTest() {
       let button = await driver.findComponent(ON.id('scroller_btn_1'));
       await button.click();
       await Utils.sleep(1500);
-      let strJson = getInspectorByKey('list_source'); //ARKUI_SCROLL_SOURCE_SCROLLER
+      let strJson = getInspectorByKey('list_source_scroller'); //ARKUI_SCROLL_SOURCE_SCROLLER
       console.info("[SourceBtnScrollerTest_0100] component obj is: " + JSON.stringify(JSON.parse(strJson)));
       console.info("[SourceBtnScrollerTest_0100] backgroundColor: " + JSON.stringify(JSON.parse(strJson).$attrs.backgroundColor));
       expect(JSON.parse(strJson).$attrs.backgroundColor).assertEqual("#FF00FF00");
@@ -61,7 +61,7 @@ export default function SourceBtnScrollerTest() {
       let button = await driver.findComponent(ON.id('scroller_btn_2'));
       await button.click();
       await Utils.sleep(1500);
-      let strJson = getInspectorByKey('list_source'); //ARKUI_SCROLL_SOURCE_ANIMATION
+      let strJson = getInspectorByKey('list_source_scroller'); //ARKUI_SCROLL_SOURCE_ANIMATION
       console.info("[SourceBtnScrollerTest_0100] component obj is: " + JSON.stringify(JSON.parse(strJson)));
       console.info("[SourceBtnScrollerTest_0100] backgroundColor: " + JSON.stringify(JSON.parse(strJson).$attrs.backgroundColor));
       expect(JSON.parse(strJson).$attrs.backgroundColor).assertEqual("#FF00FF00");
