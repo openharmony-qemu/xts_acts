@@ -22,7 +22,6 @@
 #include "napi/native_api.h"
 #include "utils.cpp"
 #include "huks_api_test.h"
-#include "huks_error_test.h"
 
 #define FAIL (-1)
 #define PARAM_0 0
@@ -1398,20 +1397,12 @@ static napi_value Init(napi_env env, napi_value exports)
         {"oHHuksFreeKeyAliasSet", nullptr, OHHuksFreeKeyAliasSet, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHHuksWrapKey", nullptr, OHHuksWrapKey, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHHuksUnwrapKey", nullptr, OHHuksUnwrapKey, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"huksNativeApi22Err0100", nullptr, OHHuksNativeApi22Err0100, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"huksNativeApi22Err0200", nullptr, OHHuksNativeApi22Err0200, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"huksNativeApi22Err0300", nullptr, OHHuksNativeApi22Err0300, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"huksNativeApi22Err0400", nullptr, OHHuksNativeApi22Err0400, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"huksNativeApi22Err0500", nullptr, OHHuksNativeApi22Err0500, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"huksNativeApi22Err0600", nullptr, OHHuksNativeApi22Err0600, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"huksNativeApi22Type0100", nullptr, OHHuksNativeApi22Type0100, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
-        {"huksNativeApi22Type0200", nullptr, OHHuksNativeApi22Type0200, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
         {"huksNativeApi22Type0300", nullptr, OHHuksNativeApi22Type0300, nullptr, nullptr, nullptr, napi_default,
             nullptr},
-        {"huksNativeApi22Utils0100", nullptr, OHHuksNativeApi22Utils0100, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
+        {"huksNativeApi22Type0400", nullptr, OHHuksNativeApi22Type0400, nullptr, nullptr, nullptr, napi_default,
+            nullptr}
+        {"huksNativeApi22Type0500", nullptr, OHHuksNativeApi22Type0500, nullptr, nullptr, nullptr, napi_default,
+            nullptr}
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

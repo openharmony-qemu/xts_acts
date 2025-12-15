@@ -14,7 +14,7 @@
  */
 
 import { describe, expect, it, TestType, Size, Level } from '@ohos/hypium'
-import huksndk from 'libhuksndk.so'
+import huksNdk from 'libentry.so'
 
 export default function SecurityHuksErrorTest() {
   describe('SecurityHuksErrorTest', () => {
@@ -27,10 +27,8 @@ export default function SecurityHuksErrorTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_ErrorCode_Native_API22_Interface_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (canIUse("SystemCapability.Security.Huks.CryptoExtension")) {
-        let result: number = huksndk.huksNativeApi22Err0100();
-        expect(result).assertEqual(0);
-      }
+      let result: number = huksNdk.huksNativeApi22Err0100();
+      expect(result).assertEqual(0);
     });
 
     /**
@@ -42,12 +40,10 @@ export default function SecurityHuksErrorTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_ErrorCode_Native_API22_Interface_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (canIUse("SystemCapability.Security.Huks.CryptoExtension")) {
-        let result: number = huksndk.huksNativeApi22Err0200();
-        expect(result).assertEqual(0);
-      }
+      let result: number = huksNdk.huksNativeApi22Err0200();
+      expect(result).assertEqual(0);
     });
-    
+
     /**
      * @tc.name   SUB_Security_HUKS_ErrorCode_Native_API22_Interface_0300
      * @tc.number SUB_Security_HUKS_ErrorCode_Native_API22_Interface_0300
@@ -57,12 +53,10 @@ export default function SecurityHuksErrorTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_ErrorCode_Native_API22_Interface_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (canIUse("SystemCapability.Security.Huks.CryptoExtension")) {
-        let result: number = huksndk.huksNativeApi22Err0300();
-        expect(result).assertEqual(0);
-      }
+      let result: number = huksNdk.huksNativeApi22Err0300();
+      expect(result).assertEqual(0);
     });
-    
+
     /**
      * @tc.name   SUB_Security_HUKS_ErrorCode_Native_API22_Interface_0400
      * @tc.number SUB_Security_HUKS_ErrorCode_Native_API22_Interface_0400
@@ -72,12 +66,10 @@ export default function SecurityHuksErrorTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_ErrorCode_Native_API22_Interface_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (canIUse("SystemCapability.Security.Huks.CryptoExtension")) {
-        let result: number = huksndk.huksNativeApi22Err0400();
-        expect(result).assertEqual(0);
-      }
+      let result: number = huksNdk.huksNativeApi22Err0400();
+      expect(result).assertEqual(0);
     });
-    
+
     /**
      * @tc.name   SUB_Security_HUKS_ErrorCode_Native_API22_Interface_0500
      * @tc.number SUB_Security_HUKS_ErrorCode_Native_API22_Interface_0500
@@ -87,12 +79,10 @@ export default function SecurityHuksErrorTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_ErrorCode_Native_API22_Interface_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (canIUse("SystemCapability.Security.Huks.CryptoExtension")) {
-        let result: number = huksndk.huksNativeApi22Err0500();
-        expect(result).assertEqual(0);
-      }
+      let result: number = huksNdk.huksNativeApi22Err0500();
+      expect(result).assertEqual(0);
     });
-    
+
     /**
      * @tc.name   SUB_Security_HUKS_ErrorCode_Native_API22_Interface_0600
      * @tc.number SUB_Security_HUKS_ErrorCode_Native_API22_Interface_0600
@@ -102,10 +92,8 @@ export default function SecurityHuksErrorTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_ErrorCode_Native_API22_Interface_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (canIUse("SystemCapability.Security.Huks.CryptoExtension")) {
-        let result: number = huksndk.huksNativeApi22Err0600();
-        expect(result).assertEqual(0);
-      }
+      let result: number = huksNdk.huksNativeApi22Err0600();
+      expect(result).assertEqual(0);
     });
   })
 }
