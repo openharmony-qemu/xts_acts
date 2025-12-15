@@ -261,7 +261,7 @@ static napi_value Doblankless_INVALID_ARGS(napi_env env, napi_callback_info info
 }
 static napi_value Doblankless_INVALID_ARGS_SET_ZERO(napi_env env, napi_callback_info info)
 {
-    size_t argc = 1;
+     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     // 获取第一个参数 webTag
@@ -275,14 +275,14 @@ static napi_value Doblankless_INVALID_ARGS_SET_ZERO(napi_env env, napi_callback_
 
     napi_value Capacity;
     ArkWeb_BlanklessInfo blanklessInfo =
-        OH_NativeArkWeb_GetBlanklessInfoWithKey(webTagValue, g_doblanklessINVALID_ARGS);
+        OH_NativeArkWeb_GetBlanklessInfoWithKey(webTagValue, g_doblanklessINVALID_ARGS_LENGTH1);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-                 "Doblankless_INVALID_ARGS_SET_ZERO similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
+                 "Doblankless_INVALID_ARGS_SET_2049 similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
                  blanklessInfo.loadingTime, blanklessInfo.errCode);
     ArkWeb_BlanklessErrorCode blanklessInfo_set =
         OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessINVALID_ARGS_LENGTH1, true);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-                 "Doblankless_INVALID_ARGS_SET_ZERO ,errCode:%{public}d", blanklessInfo_set);
+                 "Doblankless_INVALID_ARGS_SET_2049 ,errCode:%{public}d", blanklessInfo_set);
     if (blanklessInfo_set == ARKWEB_BLANKLESS_ERR_INVALID_ARGS) {
         napi_create_double(env, blanklessInfo_set, &Capacity);
     } else if (blanklessInfo_set == g_errCode) {
