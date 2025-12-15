@@ -103,7 +103,7 @@ it('dragAdaptationTest_static_001', Level.LEVEL0, async (): Promise<void> => {
         console.log('dragTo before')
         textArea1?.dragTo(textArea2!);
         console.log('dragTo after')
-        await CommonFunc.sleep(2000);
+        await CommonFunc.sleep(3000);
         console.info('dragAdaptationTest_static_001 dragTo success');
         // let button4 = await driver.findComponent(ON.text('取消'));
         // await CommonFunc.sleep(500);

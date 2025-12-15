@@ -28,7 +28,7 @@ export default function RestoreLayerTest() {
       console.info("RestoreLayerTest beforeEach start");
 
 
-      await startAbility("com.arkui.ace.drawAPI12.static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.drawAPI12.static", "EntryAbility")
 
 
     });

@@ -39,7 +39,7 @@ interface Attrs{
  */
 export default function heightTest() {
   await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.height.nowear.test.static", "EntryAbility")
-
+  await UtilsTest.msSleep(4000)
   //A list of components that support padding attributes is required.
   let supportView :Array<string>=new Array<string>( 'AlphabetIndexer',
     'Select',

@@ -88,7 +88,7 @@ import {
   CommonMethod
 } from '@ohos.arkui.component'
 import { RouterParams } from '../../common/Utils';
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 /**
@@ -101,7 +101,7 @@ struct GroupDefaultFocusPage {
 
   private scroller: Scroller = new Scroller() //For Scroll and Scroll
   private arr: Array<number> = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) //For Scroll
-  @State _groupDefaultFocus: boolean = true;
+  @StoragePropRef('_groupDefaultFocus') _groupDefaultFocus: boolean = true;
   @State callback: string = '';
   @State referenceOneCallback: string = '';
   @State referenceTwoCallback: string = '';
@@ -116,6 +116,7 @@ struct GroupDefaultFocusPage {
   onPageShow() {
     console.info('[GroupDefaultFocusPage] page show called ');
     let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+    AppStorage.setOrCreate<boolean>('_groupDefaultFocus', routerParamOptions.view.testValue.setValue)
     this.targetView = routerParamOptions.view.targetView
     this.componentKey = routerParamOptions.view.componentKey ?? ""
     this.textComponentKey = routerParamOptions.view.textComponentKey
