@@ -27,7 +27,7 @@
 #include <native_window/external_window.h>
 #include <string>
 #include "render_texture.h"
-#include "imageEffectFilterSupp.h"
+#include "ImageEffectFilterSupp.h"
 
 #define MY_LOG_DOMAIN 0x0000
 #define MY_LOG_TAG "ImageEffectNDK"
@@ -39,8 +39,7 @@
 #define KEY_FILTER_INTENSITY "FilterIntensity"
 #define IMAGE_EFFECT_NAME "imageEdit"
 #define CUSTOM_FILTER "CustomCrop"
-#define IMAGE_NullString ""
-
+#define IMAGE_NULLSSTRING ""
 
 #define CASE_INDEX_1 1
 #define CASE_INDEX_2 2
@@ -71,9 +70,8 @@
 #define IMAGE_EFFECT_1722514390000 1722514390000
 #define EFFECT_PARAM_ERROR 29000121
 
-
-
-napi_value OHEffectFilterCreateSupp(napi_env env, napi_callback_info info) {
+napi_value OHEffectFilterCreateSupp(napi_env env, napi_callback_info info)
+{
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -89,7 +87,7 @@ napi_value OHEffectFilterCreateSupp(napi_env env, napi_callback_info info) {
         effectFilter = OH_EffectFilter_Create(nullptr);
         break;
     case CASE_INDEX_3:
-        effectFilter = OH_EffectFilter_Create(IMAGE_NullString);
+        effectFilter = OH_EffectFilter_Create(IMAGE_NULLSSTRING);
     default:
         break;
     }
@@ -103,7 +101,8 @@ napi_value OHEffectFilterCreateSupp(napi_env env, napi_callback_info info) {
     napi_create_int32(env, code, &ret);
     return ret;
 }
-napi_value OHEffectFilterLookUpFiltersSupp(napi_env env, napi_callback_info info) {
+napi_value OHEffectFilterLookUpFiltersSupp(napi_env env, napi_callback_info info)
+{
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -121,7 +120,7 @@ napi_value OHEffectFilterLookUpFiltersSupp(napi_env env, napi_callback_info info
         lookupFilters = OH_EffectFilter_LookupFilters(nullptr);
         break;
     case CASE_INDEX_3:
-        lookupFilters = OH_EffectFilter_LookupFilters(IMAGE_NullString);
+        lookupFilters = OH_EffectFilter_LookupFilters(IMAGE_NULLSSTRING);
     default:
         break;
     }
@@ -135,7 +134,8 @@ napi_value OHEffectFilterLookUpFiltersSupp(napi_env env, napi_callback_info info
     napi_create_int32(env, code, &ret);
     return ret;
 }
-napi_value OHEffectFilterLookUpFiltersNullptrSupp(napi_env env, napi_callback_info info) {
+napi_value OHEffectFilterLookUpFiltersNullptrSupp(napi_env env, napi_callback_info info)
+{
     ImageEffect_FilterNames *lookupFilters = nullptr;
     lookupFilters = OH_EffectFilter_LookupFilters(nullptr);
     napi_value ret;
@@ -144,7 +144,8 @@ napi_value OHEffectFilterLookUpFiltersNullptrSupp(napi_env env, napi_callback_in
     }
     return ret;
 }
-napi_value OHEffectFilterSetValueSupp(napi_env env, napi_callback_info info) {
+napi_value OHEffectFilterSetValueSupp(napi_env env, napi_callback_info info)
+{
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -164,7 +165,7 @@ napi_value OHEffectFilterSetValueSupp(napi_env env, napi_callback_info info) {
     case CASE_INDEX_3:
         setValue.dataType = ImageEffect_DataType::EFFECT_DATA_TYPE_FLOAT;
         setValue.dataValue.floatValue = IMAGE_EFFECT_100F;
-        code = OH_EffectFilter_SetValue(effectFilter, IMAGE_NullString, &setValue);
+        code = OH_EffectFilter_SetValue(effectFilter, IMAGE_NULLSSTRING, &setValue);
         break;
     case CASE_INDEX_4:
         setValue.dataType = ImageEffect_DataType::EFFECT_DATA_TYPE_FLOAT;
@@ -180,7 +181,8 @@ napi_value OHEffectFilterSetValueSupp(napi_env env, napi_callback_info info) {
     napi_create_int32(env, code, &ret);
     return ret;
 }
-napi_value OHEffectFilterGetValueSupp(napi_env env, napi_callback_info info) {
+napi_value OHEffectFilterGetValueSupp(napi_env env, napi_callback_info info)
+{
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -206,9 +208,9 @@ napi_value OHEffectFilterGetValueSupp(napi_env env, napi_callback_info info) {
     case CASE_INDEX_2:
         setValue.dataType = ImageEffect_DataType::EFFECT_DATA_TYPE_FLOAT;
         setValue.dataValue.floatValue = IMAGE_EFFECT_100F;
-        OH_EffectFilter_SetValue(effectFilter, IMAGE_NullString, &setValue);
-        code = OH_EffectFilter_GetValue(effectFilter, IMAGE_NullString, &retValue);
-        break;  
+        OH_EffectFilter_SetValue(effectFilter, IMAGE_NULLSSTRING, &setValue);
+        code = OH_EffectFilter_GetValue(effectFilter, IMAGE_NULLSSTRING, &retValue);
+        break;
     case CASE_INDEX_3:
         code = OH_EffectFilter_GetValue(nullptr, KEY_FILTER_INTENSITY, &retValue);
         break;
@@ -230,14 +232,14 @@ napi_value OHEffectFilterRegisterSupp(napi_env env, napi_callback_info info)
 
     OH_EffectFilterInfo *filterInfo = OH_EffectFilterInfo_Create();
     ImageEffect_FilterDelegate delegate;
-        delegate.setValue = [](OH_EffectFilter *filter, const char *key, const ImageEffect_Any *value) { return false; },
-        delegate.render =
-            [](OH_EffectFilter *filter, OH_EffectBufferInfo *src, OH_EffectFilterDelegate_PushData pushData) {
-                pushData(filter, src);
-                return true;
-            },
-        delegate.save = [](OH_EffectFilter *filter, char **info) { return true; },
-        delegate.restore = [](const char *info) { return OH_EffectFilter_Create("CustomBrightnessEFilter"); };
+    delegate.setValue = [](OH_EffectFilter *filter, const char *key, const ImageEffect_Any *value) { return false; },
+    delegate.render =
+        [](OH_EffectFilter *filter, OH_EffectBufferInfo *src, OH_EffectFilterDelegate_PushData pushData) {
+            pushData(filter, src);
+            return true;
+        },
+    delegate.save = [](OH_EffectFilter *filter, char **info) { return true; },
+    delegate.restore = [](const char *info) { return OH_EffectFilter_Create("CustomBrightnessEFilter"); };
     ImageEffect_ErrorCode code;
     switch (index) {
     case CASE_INDEX_1:
@@ -271,7 +273,7 @@ napi_value OHEffectFilterLookupFilterInfoSupp(napi_env env, napi_callback_info i
         code = OH_EffectFilter_LookupFilterInfo(OH_EFFECT_BRIGHTNESS_FILTER, nullptr);
         break;
     case CASE_INDEX_3:
-        code = OH_EffectFilter_LookupFilterInfo(IMAGE_NullString, filterInfo);
+        code = OH_EffectFilter_LookupFilterInfo(IMAGE_NULLSSTRING, filterInfo);
         break;
     default:
         break;

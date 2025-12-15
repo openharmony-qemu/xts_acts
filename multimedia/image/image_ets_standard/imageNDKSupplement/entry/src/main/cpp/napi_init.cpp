@@ -22,7 +22,7 @@
 #include "OHEffectBufferInfoGetTimestampTest.h"
 #include "OHEffectBufferInfoSetTextureIdTest.h"
 #include "OHEffectBufferInfoGetTextureIdTest.h"
-#include "imageEffectFilterSupp.h"
+#include "ImageEffectFilterSupp.h"
 #include "OHImageErrorSuppTest.h"
 #include "OHEffectFilterInfoSupplementTest.h"
 #include "ImagePackerCreateTest.h"
@@ -48,7 +48,7 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHEffectFilterGetValueSupp", OHEffectFilterGetValueSupp),
     DESCRIPTOR("OHEffectFilterRegisterSupp", OHEffectFilterRegisterSupp),
     DESCRIPTOR("OHEffectFilterLookupFilterInfoSupp", OHEffectFilterLookupFilterInfoSupp),
-    DESCRIPTOR("OHEffectFilterReleaseSupp", OHEffectFilterReleaseSupp)
+    DESCRIPTOR("OHEffectFilterReleaseSupp", OHEffectFilterReleaseSupp),
     DESCRIPTOR("OHImageAlphaTypeSupp", OHImageAlphaTypeSupp),
     DESCRIPTOR("OHImageErrorCodeSupp", OHImageErrorCodeSupp),
     DESCRIPTOR("OHImageScaleModeSupp", OHImageScaleModeSupp),

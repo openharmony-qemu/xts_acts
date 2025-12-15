@@ -25,7 +25,7 @@ add_library(imageEffect SHARED
     OHEffectBufferInfoSetTextureIdTest.cpp
     OHEffectBufferInfoGetTextureIdTest.cpp
     OHEffectFilterInfoSupplementTest.cpp
-    imageEffectFilterSupp.cpp
+    ImageEffectFilterSupp.cpp
     OHImageErrorSuppTest.cpp
     OHEffectFilterInfoSupplementTest.cpp
     ImageEffectSuppTest.cpp
