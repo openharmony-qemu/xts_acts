@@ -113,6 +113,10 @@ import TextInputAutoCapitalizationModeTest from './TextInputApi20Test/TextInputA
 import TextInputAutoCapitalizationModeModifierTest from './TextInputApi20Test/TextInputAutoCapitalizationModeModifier.test';
 import TextInputBindControllerTest from './TextInputApi20Test/TextInputBindControllerTest.test';
 import textInputObserverTest from './TextInputApi22Test/textInputObserver.test';
+import TextAreaCompressLeadingPunctuation from './TextAreaTest/TextAreaCompressLeadingPunctuation.test';
+import TextAreaCompressLeadingPunctuationModifier from './TextAreaTest/TextAreaCompressLeadingPunctuationModifier.test';
+import TextInputCompressLeadingPunctuation from './TextInputTest/TextInputCompressLeadingPunctuation.test';
+import TextInputCompressLeadingPunctuationModifier from './TextInputTest/TextInputCompressLeadingPunctuationModifier.test';
 
 
 export default function testsuite() {
@@ -219,4 +223,8 @@ export default function testsuite() {
   TextInputAutoCapitalizationModeModifierTest()
   TextInputBindControllerTest()
   textInputObserverTest()            // Api22
+  TextAreaCompressLeadingPunctuation()
+  TextAreaCompressLeadingPunctuationModifier()
+  TextInputCompressLeadingPunctuation()
+  TextInputCompressLeadingPunctuationModifier()
 }

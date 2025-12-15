@@ -4804,6 +4804,7 @@ static napi_value AudioSuiteEngine_StopPipeline_0003(napi_env env, napi_callback
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, outputBuilder, &outputNode);
     OH_AudioSuite_Result connectNodesresult = OH_AudioSuiteEngine_ConnectNodes(inputNode, outputNode);
     OH_AudioSuite_Result startpipelineresult = OH_AudioSuiteEngine_StartPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_StopPipeline(audioSuitePipeline);
     OH_AudioSuite_Result stoppipelineresult = OH_AudioSuiteEngine_StopPipeline(audioSuitePipeline);
     if (stoppipelineresult != OH_AudioSuite_Result::AUDIOSUITE_ERROR_INVALID_STATE) {
         napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);

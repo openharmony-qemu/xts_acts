@@ -28,6 +28,7 @@ import typeNodeGestureTest from './PanGesture/Gesture.test';
 import panGestureOnOffTest from './PanGesture/panGestureOnOff.test';
 import panGestureDistanceTest from './PanGesture/panGestureDistance.test';
 import PanGestureTest from './PanGestureTest/observer.test';
+import setDistanceTest from "./PanGesture/setDistance.test";
 
 export default function testsuite() {
   PanGesture1();
@@ -46,4 +47,5 @@ export default function testsuite() {
   panGestureDistanceTest();
   PanGestureTest();
   // gestureSetDirectionJsunit();
+  setDistanceTest();
 }

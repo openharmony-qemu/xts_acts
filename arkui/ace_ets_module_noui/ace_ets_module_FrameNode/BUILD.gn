@@ -27,6 +27,7 @@ group("ActsAceEtsModuleFrameNodeTest") {
       "ace_ets_module_FrameNode01:ActsAceEtsModuleFrameNode01Test",
       "ace_ets_module_FrameNode02:ActsAceEtsModuleFrameNode02Test",
       "ace_ets_module_FrameNode_NoWear:ActsAceEtsModuleFrameNodeNoWearTest",
+      "ace_ets_module_FrameNode_NoWear_api12_static:ActsAceEtsModuleFrameNodeNoWearApi12StaticTest",
     ]
   }
 }
