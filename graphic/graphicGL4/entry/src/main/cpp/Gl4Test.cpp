@@ -17,12 +17,35 @@
 #include "napi/native_api.h"
 #include "native_common.h"
 #include "Gl4ApiTest.h"
+#include <ace/xcomponent/native_interface_xcomponent.h>
+#include <EGL/egl.h>
+#include <EGL/eglext.h>
+#include <EGL/eglplatform.h>
+#include <GL/gl.h>
+#include <GL/glcorearb.h>
 
 static napi_value getError(const napi_env env, const GLenum glError)
 {
     napi_value result = nullptr;
     if (GL_NO_ERROR == glError) {
         napi_create_int32(env, SUCCESS, &result);
+    } else {
+        napi_create_int32(env, FAILED, &result);
+    }
+    return result;
+}
+
+typedef EGLBoolean(*PFNOHGRAPHICSQUERYGLPROC)(void);
+static napi_value IsSupportGL(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    PFNOHGRAPHICSQUERYGLPROC OH_Graphics_QueryGL = (PFNOHGRAPHICSQUERYGLPROC)eglGetProcAddress("OH_Graphics_QueryGL");
+    if (OH_Graphics_QueryGL) {
+        if (OH_Graphics_QueryGL()) {
+            napi_create_int32(env, SUCCESS, &result);
+        } else {
+            napi_create_int32(env, FAILED, &result);
+        }
     } else {
         napi_create_int32(env, FAILED, &result);
     }
@@ -115,6 +138,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"glLineStippleMaxFactor", nullptr, GLLineStippleMaxFactor, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"glLineStippleDottedPattern", nullptr, GLLineStippleDottedPattern, nullptr, nullptr, nullptr, napi_default,
          nullptr},
+        {"isSupportGL", nullptr, IsSupportGL, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     setenv("NEED_OPENGL", "1", 1);
