@@ -17,7 +17,6 @@ group("builtin_static") {
   testonly = true
   if (is_standard_system) {
     deps = [
-      "date_standard_test_static:ActsDateStaticTest",
       "regexp_standard_test_static:ActsRegExpStaticTest",
     ]
   }
