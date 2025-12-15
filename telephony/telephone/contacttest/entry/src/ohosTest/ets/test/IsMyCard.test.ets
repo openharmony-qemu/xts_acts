@@ -1055,7 +1055,7 @@ export default function IsMyCardTest() {
         contact.queryMyCard(null, (err: BusinessError, data: contact.Contact) => {
           if (err) {
             console.log(`${caseName} callback: err>${JSON.stringify(err)}`);
-            ExpectTrue(err.code === 401);
+            ExpectTrue(err.code === 201);
             done();
           } else {
             console.log(`${caseName} callback: success data>${JSON.stringify(data)}`);
@@ -1152,7 +1152,7 @@ export default function IsMyCardTest() {
         contact.queryMyCard(null, attr, (err: BusinessError, data: contact.Contact) => {
           if (err) {
             console.log(`${caseName} callback: err:${JSON.stringify(err)}`);
-            ExpectTrue(err.code === 401);
+            ExpectTrue(err.code === 201);
             done();
           } else {
             console.log(`${caseName} callback: success data:${JSON.stringify(data)}`);
