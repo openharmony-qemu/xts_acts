@@ -241,22 +241,22 @@ export default function asyncallback() {
     })
 
     /**
-     * @tc.name   relationalStoreTest_14800033_016
-     * @tc.number relationalStoreTest_14800033_016
+     * @tc.name   relationalStoreTest_Async14800033_016
+     * @tc.number relationalStoreTest_Async14800033_016
      * @tc.desc   cleanDirtyData success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('relationalStoreTest_14800033_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done:()=>void) =>{
-      console.info(TAG + "************* relationalStoreTest_14800033_016 start *************");
+    it('relationalStoreTest_Async14800033_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done:()=>void) =>{
+      console.info(TAG + "************* relationalStoreTest_Async14800033_016 start *************");
       try{
         rdbStore!.cleanDirtyData('employee', (err) => {
           console.info(TAG +'clean dirty data succeeded');
           done();
         })
       }catch (e: Error) {
-        console.error(TAG + "relationalStoreTest_14800033_016 fail code is "+e.code + " message is "+ e.message);
+        console.error(TAG + "relationalStoreTest_Async14800033_016 fail code is "+e.code + " message is "+ e.message);
         expect(e.code).assertEqual(14800033);
         done();
       }
@@ -303,15 +303,15 @@ export default function asyncallback() {
     })
 
     /**
-     * @tc.name   SUB_DDM_RELATIONALETS_ERRORCODETSET_0060
-     * @tc.number SUB_DDM_RELATIONALETS_ERRORCODETSET_0060
+     * @tc.name   SUB_DDM_RELATIONALETS_ERRORCODETSET_Async_0060
+     * @tc.number SUB_DDM_RELATIONALETS_ERRORCODETSET_Async_0060
      * @tc.desc   resultSet getBlob normal test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_DDM_RELATIONALETS_ERRORCODETSET_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) => {
-      console.info(TAG + '************* SUB_DDM_RELATIONALETS_ERRORCODETSET_0060 start *************');
+    it('SUB_DDM_RELATIONALETS_ERRORCODETSET_Async_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) => {
+      console.info(TAG + '************* SUB_DDM_RELATIONALETS_ERRORCODETSET_Async_0060 start *************');
       let predicates = new data_relationalStore.RdbPredicates('test');
       let resultSet: data_relationalStore.ResultSet = await rdbStore!.query(predicates);
       if(rdbStore != undefined) {
@@ -331,7 +331,7 @@ export default function asyncallback() {
       }
 
       done();
-      console.info(TAG + '************* SUB_DDM_RELATIONALETS_ERRORCODETSET_0060 end *************');
+      console.info(TAG + '************* SUB_DDM_RELATIONALETS_ERRORCODETSET_Async_0060 end *************');
     })
 
     /**
@@ -367,50 +367,50 @@ export default function asyncallback() {
       })
 
     /**
-     * @tc.name   relationalStoreTest_14800032_014
-     * @tc.number relationalStoreTest_14800032_014
+     * @tc.name   relationalStoreTest_Async14800032_014
+     * @tc.number relationalStoreTest_Async14800032_014
      * @tc.desc   getModifyTime success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('relationalStoreTest_14800032_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) => {
-      console.log(TAG + "************* relationalStoreTest_14800032_014 start *************");
+    it('relationalStoreTest_Async14800032_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) => {
+      console.log(TAG + "************* relationalStoreTest_Async14800032_014 start *************");
       try {
         let PRIKey: Array<data_relationalStore.PRIKeyType> = [30 as long, 31 as long];
         rdbStore!.getModifyTime("employee", "age", PRIKey, (err) =>{
           done();
         });
       } catch (err: Error) {
-        console.log(TAG + `relationalStoreTest_14800032_014 get modify time fail, err code is ${err.code}, message is ${err.message}.`);
+        console.log(TAG + `relationalStoreTest_Async14800032_014 get modify time fail, err code is ${err.code}, message is ${err.message}.`);
         expect(err.code).assertEqual(14800032);
         done();
       }
-      console.log(TAG + "************* relationalStoreTest_14800032_014 end *************");
+      console.log(TAG + "************* relationalStoreTest_Async14800032_014 end *************");
     })
 
 
     /**
-     * @tc.name   relationalStoreTest_14800033_014
-     * @tc.number relationalStoreTest_14800033_014
+     * @tc.name   relationalStoreTest_Async14800033_014
+     * @tc.number relationalStoreTest_Async14800033_014
      * @tc.desc   getModifyTime success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('relationalStoreTest_14800033_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) => {
-      console.log(TAG + "************* relationalStoreTest_14800033_014 start *************");
+    it('relationalStoreTest_Async14800033_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) => {
+      console.log(TAG + "************* relationalStoreTest_Async14800033_014 start *************");
       try {
         let PRIKey: Array<data_relationalStore.PRIKeyType> = [30 as long, 31 as long];
         rdbStore!.getModifyTime("employee", "age", PRIKey, (err) =>{
           done();
         });
       } catch (err: Error) {
-        console.log(TAG + `relationalStoreTest_14800033_014 get modify time fail, err code is ${err.code}, message is ${err.message}.`);
+        console.log(TAG + `relationalStoreTest_Async14800033_014 get modify time fail, err code is ${err.code}, message is ${err.message}.`);
         expect(err.code).assertEqual(14800033);
         done();
       }
-      console.log(TAG + "************* relationalStoreTest_14800033_014 end *************");
+      console.log(TAG + "************* relationalStoreTest_Async14800033_014 end *************");
     })
 
     // /**
@@ -462,14 +462,14 @@ export default function asyncallback() {
     // })
 
     /**
-     * @tc.name   relationalStoreTest_14800032_018
-     * @tc.number relationalStoreTest_14800032_018
+     * @tc.name   relationalStoreTest_Async14800032_018
+     * @tc.number relationalStoreTest_Async14800032_018
      * @tc.desc   cleanDirtyData success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('relationalStoreTest_14800032_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done:()=>void) =>{
+    it('relationalStoreTest_Async14800032_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done:()=>void) =>{
       console.info(TAG + "************* relationalStoreTest035 start *************");
       try{
         rdbStore!.cleanDirtyData('employee',100, (err) => {
@@ -477,7 +477,7 @@ export default function asyncallback() {
           done();
         })
       }catch (e: Error) {
-        console.error(TAG + "relationalStoreTest_14800032_018 fail code is "+e.code + " message is "+ e.message);
+        console.error(TAG + "relationalStoreTest_Async14800032_018 fail code is "+e.code + " message is "+ e.message);
         expect(e.code).assertEqual(14800032);
         done();
       }
@@ -485,22 +485,22 @@ export default function asyncallback() {
 
 
     /**
-     * @tc.name   relationalStoreTest_14800033_018
-     * @tc.number relationalStoreTest_14800033_018
+     * @tc.name   relationalStoreTest_Async14800033_018
+     * @tc.number relationalStoreTest_Async14800033_018
      * @tc.desc   cleanDirtyData success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('relationalStoreTest_14800033_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done:()=>void) =>{
-      console.info(TAG + "************* relationalStoreTest_14800033_018 start *************");
+    it('relationalStoreTest_Async14800033_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done:()=>void) =>{
+      console.info(TAG + "************* relationalStoreTest_Async14800033_018 start *************");
       try{
         rdbStore!.cleanDirtyData('employee',100, (err) => {
           console.info(TAG +'clean dirty data succeeded');
           done();
         })
       }catch (e: Error) {
-        console.error(TAG + "relationalStoreTest_14800033_018 fail code is "+e.code + " message is "+ e.message);
+        console.error(TAG + "relationalStoreTest_Async14800033_018 fail code is "+e.code + " message is "+ e.message);
         expect(e.code).assertEqual(14800033);
         done();
       }
