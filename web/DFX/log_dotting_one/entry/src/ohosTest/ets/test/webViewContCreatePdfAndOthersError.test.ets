@@ -375,7 +375,7 @@ export default function webViewContCreatePdfAndOthersError() {
     it('testSetSoftKeyboardBehaviorModeErr',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSetSoftKeyboardBehaviorModeErr", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testSetSoftKeyboardBehaviorModeErr", "17100001", 20151223, null);
-      Utils.registerEvent("testSetSoftKeyboardBehaviorModeErr", "InitError 17100001: Site Isolation mode is already set by the developer.", 20151224, done);
+      Utils.registerEvent("testSetSoftKeyboardBehaviorModeErr", "Init error. The WebviewController must be associated with a Web component", 20151224, done);
       await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
     })
 

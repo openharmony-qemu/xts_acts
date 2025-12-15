@@ -24,6 +24,7 @@
         "MainAbility/pages/Grid/GridFillPolicy",
         "MainAbility/pages/Grid/GridContentSize",
         "MainAbility/pages/Grid/gridOffsetRes",
-        "MainAbility/pages/Grid/gridContentOffset"
+        "MainAbility/pages/Grid/gridContentOffset",
+        "MainAbility/pages/Grid/GridFillPolicyModifier"
     ]
 }

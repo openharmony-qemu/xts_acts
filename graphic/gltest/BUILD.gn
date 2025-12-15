@@ -35,6 +35,7 @@ ohos_xts_group("openGLTest") {
   if (is_standard_system) {
     deps = [
       "src/gltest/gltest_km/gltest_main/gl30master:ActsOpenGlMainGl30MasterTest",
+      "src/gltest/gltest_km/gltest_main/gl42master:ActsOpenGlMainGl42MasterTest",
     ]
   }
 }

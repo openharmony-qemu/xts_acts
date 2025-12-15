@@ -197,6 +197,18 @@ struct WebAttributeTest {
             console.log('web pageEnd==>' + event.url);
             this.isPageEnd = 0;
           })
+          .onSslErrorEvent((event: SslErrorEvent) => {
+            if (event) {
+              console.log('onSslErrorEvent url: ' + event.url);
+              console.log('onSslErrorEvent error: ' + event.error);
+              console.log('onSslErrorEvent originalUrl: ' + event.originalUrl);
+              console.log('onSslErrorEvent referrer: ' + event.referrer);
+              console.log('onSslErrorEvent isFatalError: ' + event.isFatalError);
+              console.log('onSslErrorEvent isMainFrame: ' + event.isMainFrame);
+              console.log('onSslErrorEvent handler: ' + event.handler);
+              event.handler.handleConfirm();
+            }
+          })
       }
       .width('100%')
     }

@@ -31,7 +31,14 @@ import imageSpanTest from "./imageSpanTest/ImageSpanTest.test";
 import customKeyboardTest from "./customKeyboard/CustomKeyboardTest.test";
 import animationControllerTest from "./image/animationControllerTest.test";
 import ImageDrawableErrorTest from "./image/drawableDescriptorError.test";
+import DragAndDropTest from "./drag/DragDragPreviewOption.test";
+import native_gesture_booleanTest from "./InteractiveFramework/native_gesture_boolean.test";
+import ui_input_event_booleanTest from "./InteractiveFramework/ui_input_event_boolean.test";
+import native_node_extented_booleanTest from "./InteractiveFramework/native_node_extented_boolean.test";
+import longPressGusture from "./InteractiveFramework/longPressGueture.test";
 import GridFillPolicyTest from "./grid/GridFillPolicyTest.test"
+import gridAttrsTest from "./grid/GridAttrsTest.test";
+import gridEventTest from './grid/GridEventTest.test'
 
 export default function testsuite() {
   CoastingAxisTest();
@@ -54,4 +61,11 @@ export default function testsuite() {
   animationControllerTest();
   ImageDrawableErrorTest();
   GridFillPolicyTest();
+  DragAndDropTest();
+  native_gesture_booleanTest();
+  ui_input_event_booleanTest();
+  native_node_extented_booleanTest();
+  longPressGusture();
+  gridAttrsTest();
+  gridEventTest();
 }

@@ -23,13 +23,16 @@ static int32_t g_scrollState3 = 2;
 void onReceiver(ArkUI_NodeEvent *event)
 {
     const ArkUI_NodeComponentEvent* eventdata = OH_ArkUI_NodeEvent_GetNodeComponentEvent(event);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "eventdata", "ScrollState: %{public}d", eventdata->data[0].i32);
-    if (eventdata->data[0].i32 == ARKUI_SCROLL_STATE_IDLE) {
-        g_scrollState1 = 0;
-    } else if (eventdata->data[0].i32 == ARKUI_SCROLL_STATE_SCROLL) {
-        g_scrollState2 = 0;
-    } else if (eventdata->data[0].i32 == ARKUI_SCROLL_STATE_FLING) {
-        g_scrollState3 = 0;
+    if (eventdata) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "eventdata", "ScrollState: %{public}d",
+          eventdata->data[0].i32);
+        if (eventdata->data[0].i32 == ARKUI_SCROLL_STATE_IDLE) {
+            g_scrollState1 = 0;
+        } else if (eventdata->data[0].i32 == ARKUI_SCROLL_STATE_SCROLL) {
+            g_scrollState2 = 0;
+        } else if (eventdata->data[0].i32 == ARKUI_SCROLL_STATE_FLING) {
+            g_scrollState3 = 0;
+        }
     }
     return;
 }

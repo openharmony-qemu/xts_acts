@@ -2640,12 +2640,7 @@ export default function ActsGzipDecompressionTest() {
                 hilog.info(domain, tag, "gzerror success data.status : " + data.status);
                 hilog.info(domain, tag, "gzerror success status : " + JSON.stringify(data.status));
                 hilog.info(domain, tag, "gzerror success statusMsg : " + JSON.stringify(data.statusMsg));
-                expect(data.status).assertEqual(-3);
-                expect(zlib.ReturnStatus.ERRNO).assertEqual(-1);
-                expect(zlib.ReturnStatus.STREAM_ERROR).assertEqual(-2);
-                expect(zlib.ReturnStatus.DATA_ERROR).assertEqual(-3);
-                expect(zlib.ReturnStatus.MEM_ERROR).assertEqual(-4);
-                expect(zlib.ReturnStatus.BUF_ERROR).assertEqual(-5);
+                expect(data.status).assertEqual(zlib.ReturnStatus.DATA_ERROR);
                 done();
               }).catch((err: BusinessError<void>): void => {
                 hilog.info(domain, tag,

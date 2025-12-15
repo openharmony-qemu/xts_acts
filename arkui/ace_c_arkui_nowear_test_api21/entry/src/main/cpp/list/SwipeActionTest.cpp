@@ -30,15 +30,15 @@ namespace ArkUICapiTest {
 constexpr int32_t LIST_ITEM_COUNT = 10;
 constexpr int32_t LIST_ITEM_GROUP_COUNT = 6;
 
-int32_t SwipeActionTest::direction = 0;
+int32_t SwipeActionTest::direction = ARKUI_LIST_ITEM_SWIPE_ACTION_DIRECTION_START;
 int32_t SwipeActionTest::listIndex = 0;
 int32_t SwipeActionTest::listGroupIndex = -1;
-int32_t SwipeActionTest::directionRight = 1;
+int32_t SwipeActionTest::directionRight = ARKUI_LIST_ITEM_SWIPE_ACTION_DIRECTION_END;
 int32_t SwipeActionTest::listIndexOne = 1;
 
-static void SetAction(std::shared_ptr<ListItemComponent> listItem,
-                      ArkUI_ListItemSwipeEdgeEffect setEdgeEffect =
-                          ArkUI_ListItemSwipeEdgeEffect::ARKUI_LIST_ITEM_SWIPE_EDGE_EFFECT_SPRING)
+static napi_value SetAction(napi_env env, std::shared_ptr<ListItemComponent> listItem,
+                            ArkUI_ListItemSwipeEdgeEffect setEdgeEffect =
+                            ArkUI_ListItemSwipeEdgeEffect::ARKUI_LIST_ITEM_SWIPE_EDGE_EFFECT_SPRING)
 {
     auto option = new ListItemSwipeActionOption();
     auto col1 = std::make_shared<ColumnComponent>();
@@ -52,6 +52,7 @@ static void SetAction(std::shared_ptr<ListItemComponent> listItem,
     col2->SetBackgroundColor(COLOR_YELLOW);
 
     auto item1 = OH_ArkUI_ListItemSwipeActionItem_Create();
+    ASSERT_NOTNULL(item1);
     auto item2 = OH_ArkUI_ListItemSwipeActionItem_Create();
 
     OH_ArkUI_ListItemSwipeActionItem_SetContent(item1, col1->GetComponent());
@@ -60,6 +61,7 @@ static void SetAction(std::shared_ptr<ListItemComponent> listItem,
     option->SetEnd(item2);
     option->SetEdgeEffect(setEdgeEffect);
     listItem->SetListItemSwiperAction(option);
+    NAPI_END;
 }
 
 static std::shared_ptr<RowComponent> CreateButton(std::vector<std::shared_ptr<ListComponent>> list)
@@ -99,7 +101,8 @@ static std::shared_ptr<TextComponent> CreateText(std::string str)
     return text;
 }
 
-static std::shared_ptr<ListComponent> CreateListWithAction(int32_t listItemCount, int32_t listItemGroupCount,
+static std::shared_ptr<ListComponent> CreateListWithAction(napi_env env, int32_t listItemCount,
+                                                           int32_t listItemGroupCount,
                                                            int32_t listItemCountInGroup, int32_t vertical,
                                                            std::string firstItemId)
 {
@@ -117,7 +120,7 @@ static std::shared_ptr<ListComponent> CreateListWithAction(int32_t listItemCount
         
         listItem->SetPercentHeight(PARAM_0_POINT_1);
         listItem->SetBackgroundColor(COLOR_BLUE);
-        SetAction(listItem);
+        SetAction(env, listItem);
         listItem->AddChild(CreateText("listItem " + std::to_string(i)));
         list->AddChild(listItem);
     }
@@ -164,7 +167,25 @@ void Collapse(ArkUI_NodeHandle node)
                  "Collapse ret = %{public}d", ret);
 }
 
-static std::shared_ptr<ColumnComponent> CreateSwipeActionController(std::shared_ptr<ListComponent> list)
+static napi_value Expand_ErrorCode(napi_env env, ArkUI_NodeHandle node, int32_t direction)
+{
+    auto ret = OH_ArkUI_ListItemSwipeAction_Expand(node, static_cast<ArkUI_ListItemSwipeActionDirection>(direction));
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Expand",
+                 "CXN expand ret = %{public}d, direction = %{public}d", ret, direction);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
+    NAPI_END;
+}
+
+static napi_value Collapse_ErrorCode(napi_env env, ArkUI_NodeHandle node)
+{
+    auto ret = OH_ArkUI_ListItemSwipeAction_Collapse(node);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Expand",
+                 "CXN Collapse ret = %{public}d", ret);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
+    NAPI_END;
+}
+
+static std::shared_ptr<ColumnComponent> CreateSwipeActionController(napi_env env, std::shared_ptr<ListComponent> list)
 {
     auto column = std::make_shared<ColumnComponent>();
     auto expandListBtn = std::make_shared<ButtonComponent>();
@@ -187,12 +208,14 @@ static std::shared_ptr<ColumnComponent> CreateSwipeActionController(std::shared_
     column->AddChild(expandListBtn_right);
     column->AddChild(collapseListBtn_right);
     column->AddChild(invalidBtn);
-    expandListBtn->RegisterOnClick([list]() { Expand(findListItem(list), SwipeActionTest::direction); });
-    collapseListBtn->RegisterOnClick([list]() { Collapse(findListItem(list)); });
-    expandListBtn_right->RegisterOnClick([list]() {
-        Expand(findListItem_one(list), SwipeActionTest::directionRight);
+    expandListBtn->RegisterOnClick([env, list]() {
+        Expand_ErrorCode(env, findListItem(list), SwipeActionTest::direction);
     });
-    collapseListBtn_right->RegisterOnClick([list]() { Collapse(findListItem_one(list)); });
+    collapseListBtn->RegisterOnClick([env, list]() { Collapse_ErrorCode(env, findListItem(list)); });
+    expandListBtn_right->RegisterOnClick([env, list]() {
+        Expand_ErrorCode(env, findListItem_one(list), SwipeActionTest::directionRight);
+    });
+    collapseListBtn_right->RegisterOnClick([env, list]() { Collapse_ErrorCode(env, findListItem_one(list)); });
     invalidBtn->RegisterOnClick([list]() { Expand(nullptr, SwipeActionTest::direction); });
     return column;
 }
@@ -216,9 +239,9 @@ napi_value SwipeActionTest::swipeActionTest(napi_env env, napi_callback_info inf
     }
     auto rootRow = new RowComponent();
     auto list =
-        CreateListWithAction(LIST_ITEM_COUNT, LIST_ITEM_GROUP_COUNT, 6, ArkUI_Axis::ARKUI_AXIS_VERTICAL, "list1");
+        CreateListWithAction(env, LIST_ITEM_COUNT, LIST_ITEM_GROUP_COUNT, 6, ArkUI_Axis::ARKUI_AXIS_VERTICAL, "list1");
     rootRow->AddChild(list);
-    rootRow->AddChild(CreateSwipeActionController(list));
+    rootRow->AddChild(CreateSwipeActionController(env, list));
     std::string id(xComponentID);
     if (OH_NativeXComponent_AttachNativeRootNode(PluginManager::GetInstance()->GetNativeXComponent(id),
                                                  rootRow->GetComponent()) == INVALID_PARAM) {

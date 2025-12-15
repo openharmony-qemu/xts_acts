@@ -26,6 +26,7 @@ group("ActsAceEtsModulePickerTest") {
       "ace_ets_module_picker_datePicker:ActsAceEtsModulePickerDatePickerTest",
       "ace_ets_module_picker_timePicker:ActsAceEtsModulePickerTimePickerTest",
       "ace_ets_module_picker_textPicker:ActsAceEtsModulePickerTextPickerTest",
+      "ace_ets_module_picker_api13_static:ActsAceEtsModulePickerApi13StaticTest",
     ]
   } else {
     deps = [
@@ -52,6 +53,7 @@ group("ActsAceEtsModulePickerTest") {
       "ace_ets_module_picker_nowear_api19:ActsAceEtsModulePickerNoWearApi19Test",
       "ace_ets_module_picker_nowear_api20:ActsAceEtsModulePickerNoWearApi20Test",
       "ace_ets_module_picker_pickerContainer:ActsAceEtsModulePickerPickerContainerTest",
+      "ace_ets_module_picker_api13_static:ActsAceEtsModulePickerApi13StaticTest",
     ]
   }
 }

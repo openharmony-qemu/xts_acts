@@ -106,6 +106,7 @@ struct PickerComponent {
     result.backgroundColor = config.backgroundColor ?? '';
     result.photoBrowserBackgroundColorMode = config.photoBrowserBackgroundColorMode ?? 0;
     result.uiComponentColorMode = config.uiComponentColorMode ?? 0;
+    result.isSlidingSupported = config.isSlidingSupported ?? false;
 
     return result;
   }
@@ -293,6 +294,7 @@ struct PickerComponent {
         updatedOptions.backgroundColor = '#f00000';
         updatedOptions.photoBrowserBackgroundColorMode = PickerColorMode.DARK;
         updatedOptions.uiComponentColorMode = PickerColorMode.DARK;
+        updatedOptions.isSlidingSupported = true;
 
         this.pickerController.updatePickerOptions(updatedOptions);
 
