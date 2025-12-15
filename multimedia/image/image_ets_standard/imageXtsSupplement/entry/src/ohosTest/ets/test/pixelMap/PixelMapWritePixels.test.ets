@@ -72,7 +72,7 @@ async function writePixelsAbnormalTest(done: Function, testName: string, pixelMa
 
 async function getArrayBufferByUri(pathUri: string): Promise<ArrayBuffer> {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-  let array = new ArrayBuffer(3000);
+  let array = new ArrayBuffer(110000);
   let path = `file://${testContext.filesDir}/${pathUri}`;
   const fd = await fs.open(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
   let readLength = await fs.read(fd.fd, array);
