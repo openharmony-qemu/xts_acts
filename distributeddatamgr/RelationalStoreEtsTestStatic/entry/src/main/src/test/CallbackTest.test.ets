@@ -182,22 +182,22 @@ export default function CallbackTest() {
       })
 
     /**
-     * @tc.name   relationalStoreTest_14800032_016
-     * @tc.number relationalStoreTest_14800032_016
+     * @tc.name   relationalStoreTest_Callback14800032_016
+     * @tc.number relationalStoreTest_Callback14800032_016
      * @tc.desc   cleanDirtyData success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('relationalStoreTest_14800032_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void) => {
-      console.info(TAG + "************* relationalStoreTest_14800032_016 start *************");
+    it('relationalStoreTest_Callback14800032_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void) => {
+      console.info(TAG + "************* relationalStoreTest_Callback14800032_016 start *************");
       try {
         rdbStore!.cleanDirtyData('employee', (err) => {
           console.info(TAG + 'clean dirty data succeeded');
           done();
         })
       } catch (e: Error) {
-        console.error(TAG + "relationalStoreTest_14800032_016 fail code is " + e.code + " message is " + e.message);
+        console.error(TAG + "relationalStoreTest_Callback14800032_016 fail code is " + e.code + " message is " + e.message);
         expect(e.code).assertEqual(14800032);
         done();
       }
@@ -341,7 +341,7 @@ export default function CallbackTest() {
 
     /**
      * @tc.name   relationalStoreTest_14800033_016
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
+     * @tc.number relationalStoreTest_14800033_016
      * @tc.desc   cleanDirtyData success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -363,7 +363,7 @@ export default function CallbackTest() {
 
     /**
      * @tc.name   relationalStoreTest034
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
+     * @tc.number relationalStoreTest034
      * @tc.desc   cleanDirtyData success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -384,7 +384,7 @@ export default function CallbackTest() {
 
     /**
      * @tc.name   relationalStoreTest_14800033_035
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
+     * @tc.number relationalStoreTest_14800033_035
      * @tc.desc   cleanDirtyData success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -469,7 +469,7 @@ export default function CallbackTest() {
 
     /**
      * @tc.name   relationalStoreTest_14800032_014
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
+     * @tc.number relationalStoreTest_14800032_014
      * @tc.desc   getModifyTime success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -495,7 +495,7 @@ export default function CallbackTest() {
 
     /**
      * @tc.name   relationalStoreTest_14800033_014
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
+     * @tc.number relationalStoreTest_14800033_014
      * @tc.desc   getModifyTime success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -520,7 +520,7 @@ export default function CallbackTest() {
 
     /**
      * @tc.name   relationalStoreTest_14800032_018
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
+     * @tc.number relationalStoreTest_14800032_018
      * @tc.desc   cleanDirtyData success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -543,7 +543,7 @@ export default function CallbackTest() {
 
     /**
      * @tc.name   relationalStoreTest_14800033_018
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
+     * @tc.number relationalStoreTest_14800033_018
      * @tc.desc   cleanDirtyData success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

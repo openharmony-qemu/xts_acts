@@ -89,22 +89,22 @@ export default function asyncallback() {
     })
 
     /**
-     * @tc.name   relationalStoreTest_14800032_016
-     * @tc.number relationalStoreTest_14800032_016
+     * @tc.name   relationalStoreTest_Async14800032_016
+     * @tc.number relationalStoreTest_Async14800032_016
      * @tc.desc   cleanDirtyData success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('relationalStoreTest_14800032_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done:()=>void) =>{
-      console.info(TAG + "************* relationalStoreTest_14800032_016 start *************");
+    it('relationalStoreTest_Async14800032_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done:()=>void) =>{
+      console.info(TAG + "************* relationalStoreTest_Async14800032_016 start *************");
       try{
         rdbStore!.cleanDirtyData('employee', (err) => {
           console.info(TAG +'clean dirty data succeeded');
           done();
         })
       }catch (e: Error) {
-        console.error(TAG + "relationalStoreTest_14800032_016 fail code is "+e.code + " message is "+ e.message);
+        console.error(TAG + "relationalStoreTest_Async14800032_016 fail code is "+e.code + " message is "+ e.message);
         expect(e.code).assertEqual(14800032);
         done();
       }
@@ -137,14 +137,14 @@ export default function asyncallback() {
       })
 
     /**
-     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0300
-     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0300
+     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_Async_0300
+     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_Async_0300
      * @tc.desc   Verify the properties of the text type
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) => {
+    it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_Async_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) => {
       let rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
       await rdbStore.executeSql(CREATE_TABLE_TEST1);
       const u8 = new Uint8Array([1, 2, 3]);
@@ -304,7 +304,7 @@ export default function asyncallback() {
 
     /**
      * @tc.name   SUB_DDM_RELATIONALETS_ERRORCODETSET_0060
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsApiTest_8400
+     * @tc.number SUB_DDM_RELATIONALETS_ERRORCODETSET_0060
      * @tc.desc   resultSet getBlob normal test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -603,14 +603,14 @@ export default function asyncallback() {
     })
 
     /**
-     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1200
-     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1200
+     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Async_1200
+     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Async_1200
      * @tc.desc   Verify the properties of the text type
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) => {
+    it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Async_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) => {
       rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
       await rdbStore!.executeSql(CREATE_TABLE_TEST1);
       try {
@@ -647,14 +647,14 @@ export default function asyncallback() {
     })
 
     /**
-     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0400
-     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0400
+     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_Async_0400
+     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_Async_0400
      * @tc.desc   Verify the properties of the text type
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) => {
+    it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_Async_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) => {
       let rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
       await rdbStore.executeSql(CREATE_TABLE_TEST1);
       try {
