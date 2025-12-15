@@ -61,6 +61,7 @@
         "MainAbility/pages/FrameNodeNew/isTransferredTest",
         "MainAbility/pages/FrameNodeNew/GetFrameNodeNullTest",
         "MainAbility/pages/FrameNodeNew/GetFrameNodeMethodNullTest",
-        "MainAbility/pages/FrameNode/frameNodeApi"
+        "MainAbility/pages/FrameNode/frameNodeApi",
+        "MainAbility/pages/FrameNodeNew/GraphicsFourBoundary"
     ]
 }
