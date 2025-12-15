@@ -209,5 +209,121 @@ export default function animationCurveTest() {
         done();
       }, 1000)
     });
+
+    /**
+     * @tc.name customCurve_1500
+     * @tc.number customCurve_1500
+     * @tc.desc customCurve_1500 test 0
+     * @tc.level Level 0
+     */
+    it('customCurve_1500', Level.LEVEL0, async (done: Function) => {
+      console.info('ArkUX_ohos.curves_customCurve_1400 START');
+      let fraction5: ESObject
+      setTimeout(() => {
+        try {
+          fraction5 = Curves.customCurve((fraction: number) => {
+            return fraction * fraction
+          }).interpolate(0).toFixed(4)
+          console.info("customCurve_1500", fraction5)
+          let finalRes2: boolean
+          if (fraction5 == 0.0000) {
+            finalRes2 = true;
+          } else {
+            finalRes2 = false;
+          }
+          expect(finalRes2).assertEqual(true);
+        } catch (err) {
+          console.log('customCurve_1500', err)
+        }
+        done();
+      }, 500)
+    });
+
+    /**
+     * @tc.name customCurve_1600
+     * @tc.number customCurve_1600
+     * @tc.desc customCurve_1600 test 1
+     * @tc.level Level 0
+     */
+    it('customCurve_1600', Level.LEVEL0, async (done: Function) => {
+      console.info('ArkUX_ohos.curves_customCurve_1400 START');
+      let fraction5: ESObject
+      setTimeout(() => {
+        try {
+          fraction5 = Curves.customCurve((fraction: number) => {
+            return fraction * fraction
+          }).interpolate(1).toFixed(4)
+          console.info("customCurve_1600", fraction5)
+          let finalRes2: boolean
+          if (fraction5 == 1.0000) {
+            finalRes2 = true;
+          } else {
+            finalRes2 = false;
+          }
+          expect(finalRes2).assertEqual(true);
+        } catch (err) {
+          console.log('customCurve_1600', err)
+        }
+        done();
+      }, 500)
+    });
+
+    /**
+     * @tc.name customCurve_1700
+     * @tc.number customCurve_1700
+     * @tc.desc customCurve_1700 test 2
+     * @tc.level Level 0
+     */
+    it('customCurve_1700', Level.LEVEL0, async (done: Function) => {
+      console.info('ArkUX_ohos.curves_customCurve_1400 START');
+      let fraction5: ESObject
+      setTimeout(() => {
+        try {
+          fraction5 = Curves.customCurve((fraction: number) => {
+            return fraction * fraction
+          }).interpolate(2).toFixed(4)
+          console.info("customCurve_1700", fraction5)
+          let finalRes2: boolean
+          if (fraction5 == 1.0000) {
+            finalRes2 = true;
+          } else {
+            finalRes2 = false;
+          }
+          expect(finalRes2).assertEqual(true);
+        } catch (err) {
+          console.log('customCurve_1700', err)
+        }
+        done();
+      }, 500)
+    });
+
+    /**
+     * @tc.name customCurve_1800
+     * @tc.number customCurve_1800
+     * @tc.desc customCurve_1800 test -1
+     * @tc.level Level 0
+     */
+    it('customCurve_1800', Level.LEVEL0, async (done: Function) => {
+      console.info('ArkUX_ohos.curves_customCurve_1400 START');
+      let fraction5: ESObject
+      setTimeout(() => {
+        try {
+          fraction5 = Curves.customCurve((fraction: number) => {
+            return fraction * fraction
+          }).interpolate(-1).toFixed(4)
+          console.info("customCurve_1800", fraction5)
+          let finalRes2: boolean
+          if (fraction5 == 0.0000) {
+            finalRes2 = true;
+          } else {
+            finalRes2 = false;
+          }
+          expect(finalRes2).assertEqual(true);
+        } catch (err) {
+          console.log('customCurve_1800', err)
+        }
+        done();
+      }, 500)
+    });
   })
 }
