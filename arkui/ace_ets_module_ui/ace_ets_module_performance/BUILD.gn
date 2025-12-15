@@ -17,10 +17,12 @@ group("ActsAceEtsModulePerformanceTest") {
   if (ace_engine_feature_wearable) {
     deps = [
       "ace_ets_module_performance_api18:ActsAceEtsModulePerformanceapi18Test",
+      "ace_ets_module_performance_api18_static:ActsAceEtsModulePerformanceapi18StaticTest",
     ]
   } else {
     deps = [
       "ace_ets_module_performance_api18:ActsAceEtsModulePerformanceapi18Test",
+      "ace_ets_module_performance_api18_static:ActsAceEtsModulePerformanceapi18StaticTest",
     ]
   }
 }
