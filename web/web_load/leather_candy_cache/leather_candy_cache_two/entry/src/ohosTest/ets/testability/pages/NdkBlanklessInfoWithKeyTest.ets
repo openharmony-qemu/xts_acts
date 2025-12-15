@@ -182,12 +182,12 @@ struct ndkBlanklessInfoWithKeyTest {
               let msg = 'testndkBlanklessInfoWithKey006'
               let num: number = -1
               this.isPageEnd = -1;
-              // testNapi.clearBlanklessLoadingCache(this.webTag);
+              testNapi.clearBlanklessLoadingCache(this.webTag);
               await this.controller.refresh();
               await waitForExist(() => this.isPageEnd, this.str, 0);
-              let num1: number = testNapi.doblankless_Success(this.webTag);
+              let num1: number = testNapi.Doblankless_INVALID_ARGS_SET_ZERO(this.webTag);
               console.log(`${msg}`, 'first loadUrl finish:' + num1);
-              // testNapi.clearBlanklessLoadingCache(this.webTag);
+              testNapi.clearBlanklessLoadingCache(this.webTag);
               this.isPageEnd = -1;
               await this.controller.refresh();
               await waitForExist(() => this.isPageEnd, this.str, 0);
