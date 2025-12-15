@@ -89,14 +89,14 @@ export default function CallbackTest() {
 
 
     /**
-     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1000
-     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1000
+     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_1000
+     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_1000
      * @tc.desc   Verify the properties of the text type
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
         rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
         await rdbStore!.executeSql(CREATE_TABLE_TEST1);
@@ -105,22 +105,22 @@ export default function CallbackTest() {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
         } catch (err: BusinessError) {
-          console.error(`${TAG} close failed, SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1000 code is ${err.code},message is ${err.message}`);
+          console.error(`${TAG} close failed, SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_1000 code is ${err.code},message is ${err.message}`);
         }
 
         try {
           rdbStore!.backup("TransactionTest.db", (err) => {
             if (err) {
-              console.error(`SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1000 Backup failed, code is ${err.code},message is ${err.message}`);
+              console.error(`SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_1000 Backup failed, code is ${err.code},message is ${err.message}`);
               expect(err.code).assertEqual(14800014)
               done();
             } else {
               expect().assertFail();
             }
-            console.info('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1000 Backup success.');
+            console.info('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_1000 Backup success.');
           })
         } catch (e: BusinessError) {
-          console.log(TAG + "SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1000 e.code:" + e.code);
+          console.log(TAG + "SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_1000 e.code:" + e.code);
           expect(e.code).assertEqual(14800014)
         }
 
@@ -182,22 +182,22 @@ export default function CallbackTest() {
       })
 
     /**
-     * @tc.name   relationalStoreTest016
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
+     * @tc.name   relationalStoreTest_14800032_016
+     * @tc.number relationalStoreTest_14800032_016
      * @tc.desc   cleanDirtyData success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('relationalStoreTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void) => {
-      console.info(TAG + "************* relationalStoreTest016 start *************");
+    it('relationalStoreTest_14800032_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void) => {
+      console.info(TAG + "************* relationalStoreTest_14800032_016 start *************");
       try {
         rdbStore!.cleanDirtyData('employee', (err) => {
           console.info(TAG + 'clean dirty data succeeded');
           done();
         })
       } catch (e: Error) {
-        console.error(TAG + "relationalStoreTest016 fail code is " + e.code + " message is " + e.message);
+        console.error(TAG + "relationalStoreTest_14800032_016 fail code is " + e.code + " message is " + e.message);
         expect(e.code).assertEqual(14800032);
         done();
       }
@@ -231,14 +231,14 @@ export default function CallbackTest() {
       })
 
     /**
-     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0300
-     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0300
+     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_Callback_0300
+     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_Callback_0300
      * @tc.desc   Verify the properties of the text type
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_Callback_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
         let rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
         await rdbStore.executeSql(CREATE_TABLE_TEST1);
@@ -265,14 +265,14 @@ export default function CallbackTest() {
 
 
     /**
-     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_0700
-     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_0700
+     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_0700
+     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_0700
      * @tc.desc   Verify the properties of the text type
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
         rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
         await rdbStore!.executeSql(CREATE_TABLE_TEST1);
@@ -340,22 +340,22 @@ export default function CallbackTest() {
       })
 
     /**
-     * @tc.name   relationalStoreTest016
+     * @tc.name   relationalStoreTest_14800033_016
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   cleanDirtyData success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('relationalStoreTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void) => {
-      console.info(TAG + "************* relationalStoreTest016 start *************");
+    it('relationalStoreTest_14800033_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void) => {
+      console.info(TAG + "************* relationalStoreTest_14800033_016 start *************");
       try {
         rdbStore!.cleanDirtyData('employee', (err) => {
           console.info(TAG + 'clean dirty data succeeded');
           done();
         })
       } catch (e: Error) {
-        console.error(TAG + "relationalStoreTest016 fail code is " + e.code + " message is " + e.message);
+        console.error(TAG + "relationalStoreTest_14800033_016 fail code is " + e.code + " message is " + e.message);
         expect(e.code).assertEqual(14800033);
         done();
       }
@@ -383,15 +383,15 @@ export default function CallbackTest() {
     })
 
     /**
-     * @tc.name   relationalStoreTest034
+     * @tc.name   relationalStoreTest_14800033_035
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   cleanDirtyData success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('relationalStoreTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void) => {
-      console.info(TAG + "************* relationalStoreTest001 start *************");
+    it('relationalStoreTest_14800033_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void) => {
+      console.info(TAG + "************* relationalStoreTest_14800033_035 start *************");
       rdbStore!.backup("backup3.db", (err) => {
         if (err) {
           console.error(TAG + `Backup failed, code is ${err.code},message is ${err.message}`);
@@ -405,7 +405,7 @@ export default function CallbackTest() {
 
     /**
      * @tc.name   SUB_DDM_RELATIONALETS_ERRORCODETSET_0060
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsApiTest_8400
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsApiTest_Callback_8400
      * @tc.desc   resultSet getBlob normal test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -468,15 +468,15 @@ export default function CallbackTest() {
       })
 
     /**
-     * @tc.name   relationalStoreTest014
+     * @tc.name   relationalStoreTest_14800032_014
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   getModifyTime success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('relationalStoreTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
-      console.log(TAG + "************* relationalStoreTest014 start *************");
+    it('relationalStoreTest_14800032_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.log(TAG + "************* relationalStoreTest_14800032_014 start *************");
       try {
         let PRIKey: Array<data_relationalStore.PRIKeyType> = [30 as long, 31 as long];
         rdbStore!.getModifyTime("employee", "age", PRIKey, (err) => {
@@ -484,25 +484,25 @@ export default function CallbackTest() {
         });
       } catch (err: Error) {
         console.log(TAG +
-          `relationalStoreTest014 get modify time fail, err code is ${err.code}, message is ${err.message}.`);
+          `relationalStoreTest_14800032_014 get modify time fail, err code is ${err.code}, message is ${err.message}.`);
         expect(err.code).assertEqual(14800032);
         done();
       }
-      console.log(TAG + "************* relationalStoreTest014 end *************");
+      console.log(TAG + "************* relationalStoreTest_14800032_014 end *************");
       done();
     })
 
 
     /**
-     * @tc.name   relationalStoreTest014
+     * @tc.name   relationalStoreTest_14800033_014
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   getModifyTime success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('relationalStoreTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
-      console.log(TAG + "************* relationalStoreTest014 start *************");
+    it('relationalStoreTest_14800033_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.log(TAG + "************* relationalStoreTest_14800033_014 start *************");
       try {
         let PRIKey: Array<data_relationalStore.PRIKeyType> = [30 as long, 31 as long];
         rdbStore!.getModifyTime("employee", "age", PRIKey, (err) => {
@@ -510,31 +510,31 @@ export default function CallbackTest() {
         });
       } catch (err: Error) {
         console.log(TAG +
-          `relationalStoreTest014 get modify time fail, err code is ${err.code}, message is ${err.message}.`);
+          `relationalStoreTest_14800033_014 get modify time fail, err code is ${err.code}, message is ${err.message}.`);
         expect(err.code).assertEqual(14800033);
         done();
       }
-      console.log(TAG + "************* relationalStoreTest014 end *************");
+      console.log(TAG + "************* relationalStoreTest_14800033_014 end *************");
       done();
     })
 
     /**
-     * @tc.name   relationalStoreTest018
+     * @tc.name   relationalStoreTest_14800032_018
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   cleanDirtyData success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('relationalStoreTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void) => {
-      console.info(TAG + "************* relationalStoreTest035 start *************");
+    it('relationalStoreTest_14800032_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void) => {
+      console.info(TAG + "************* relationalStoreTest_14800032_018 start *************");
       try {
         rdbStore!.cleanDirtyData('employee', 100, (err) => {
           console.info(TAG + 'clean dirty data succeeded');
           done();
         })
       } catch (e: Error) {
-        console.error(TAG + "relationalStoreTest018 fail code is " + e.code + " message is " + e.message);
+        console.error(TAG + "relationalStoreTest_14800032_018 fail code is " + e.code + " message is " + e.message);
         expect(e.code).assertEqual(14800032);
         done();
       }
@@ -542,22 +542,22 @@ export default function CallbackTest() {
     })
 
     /**
-     * @tc.name   relationalStoreTest018
+     * @tc.name   relationalStoreTest_14800033_018
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   cleanDirtyData success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('relationalStoreTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void) => {
-      console.info(TAG + "************* relationalStoreTest018 start *************");
+    it('relationalStoreTest_14800033_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void) => {
+      console.info(TAG + "************* relationalStoreTest_14800033_018 start *************");
       try {
         rdbStore!.cleanDirtyData('employee', 100, (err) => {
           console.info(TAG + 'clean dirty data succeeded');
           done();
         })
       } catch (e: Error) {
-        console.error(TAG + "relationalStoreTest018 fail code is " + e.code + " message is " + e.message);
+        console.error(TAG + "relationalStoreTest_14800033_018 fail code is " + e.code + " message is " + e.message);
         expect(e.code).assertEqual(14800033);
         done();
       }
@@ -567,7 +567,7 @@ export default function CallbackTest() {
 
     /**
      * @tc.name   SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0400
-     * @tc.number SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0100
+     * @tc.number SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0400
      * @tc.desc   Test cleanDirtyData
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -675,27 +675,27 @@ export default function CallbackTest() {
       })
 
     /**
-     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1200
-     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1200
+     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_1200
+     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_1200
      * @tc.desc   Verify the properties of the text type
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
         rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
         await rdbStore!.executeSql(CREATE_TABLE_TEST1);
-        console.info('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1200 obtainDistributedTableName.');
+        console.info('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_1200 obtainDistributedTableName.');
 
         await rdbStore!.close();
         rdbStore!.obtainDistributedTableName("deviceId", "test1", (err, tableName) => {
           if (err) {
-            console.error(`SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1200 failed, code is ${err.code},message is ${err.message}`);
+            console.error(`SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_1200 failed, code is ${err.code},message is ${err.message}`);
             expect(err.code).assertEqual(14800014)
             done();
           } else {
-            console.log(TAG + "SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1200 ");
+            console.log(TAG + "SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_1200 ");
             expect().assertFail();
           }
         })
@@ -703,14 +703,14 @@ export default function CallbackTest() {
       })
 
     /**
-     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0400
-     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0400
+     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_Callback_0400
+     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_Callback_0400
      * @tc.desc   Verify the properties of the text type
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_Callback_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
         let rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
         await rdbStore.executeSql(CREATE_TABLE_TEST1);
@@ -740,15 +740,15 @@ export default function CallbackTest() {
       })
 
     /**
-     * @tc.name   relationalStoreTest035
+     * @tc.name   relationalStoreTest_14800032_035
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   cleanDirtyData success callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('relationalStoreTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
-      console.info(TAG + "************* relationalStoreTest035 start *************");
+    it('relationalStoreTest_14800032_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + "************* relationalStoreTest_14800032_035 start *************");
       await rdbStore!.backup("backup4.db");
       rdbStore!.restore("backup4.db", (err) => {
         if (err) {
@@ -829,6 +829,14 @@ export default function CallbackTest() {
         done();
       })
 
+    /**
+     * @tc.name   errcode035
+     * @tc.number errcode035
+     * @tc.desc   Test setDistributedTables
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('errcode035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       console.info(TAG + "************* errcode035 start *************");
       try {
@@ -847,6 +855,14 @@ export default function CallbackTest() {
       done();
     })
 
+    /**
+     * @tc.name   errcode036
+     * @tc.number errcode036
+     * @tc.desc   Test setDistributedTables
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('errcode036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       console.info(TAG + "************* errcode036 start *************");
       try {
@@ -864,6 +880,14 @@ export default function CallbackTest() {
       done();
     })
 
+    /**
+     * @tc.name   errcode037
+     * @tc.number errcode037
+     * @tc.desc   Test setDistributedTables
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('errcode037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       console.info(TAG + "************* errcode037 start *************");
       try {
@@ -882,6 +906,14 @@ export default function CallbackTest() {
       done();
     })
 
+    /**
+     * @tc.name   errcode038
+     * @tc.number errcode038
+     * @tc.desc   Test setDistributedTables
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('errcode038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       console.info(TAG + "************* errcode038 start *************");
       try {
@@ -912,7 +944,15 @@ export default function CallbackTest() {
       done();
     })
 
-    it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /**
+     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_1100
+     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_1100
+     * @tc.desc   Verify the properties of the text type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
         try {
           await rdbStore!.close();
@@ -954,6 +994,14 @@ export default function CallbackTest() {
         done();
       })
 
+    /**
+     * @tc.name   setDistributedTablesTest003
+     * @tc.number setDistributedTablesTest003
+     * @tc.desc   setDistributedTables report 14800051
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('setDistributedTablesTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void) => {
       console.info(TAG + "************* setDistributedTablesTest003 start *************");
       try {
@@ -974,6 +1022,14 @@ export default function CallbackTest() {
       done();
     });
 
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_sync_ErrTest_0100
+     * @tc.number SUB_DistributedData_RelationalStore_sync_ErrTest_0100
+     * @tc.desc   Verify the properties of the text type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_DistributedData_RelationalStore_sync_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void) => {
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_sync_ErrTest_0100 start-----")
@@ -1010,6 +1066,14 @@ export default function CallbackTest() {
         done();
       })
 
+    /**
+     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1300
+     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1300
+     * @tc.desc   Verify the properties of the text type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
         console.info(TAG + "-----SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1300 start-----")

@@ -612,7 +612,7 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testclose0001 start *************');
       let num =await rdbStore.batchInsert("test", vbs);
       try{
-        rdbStore.close();
+        await rdbStore.close();
         try{
           let rows = await rdbStore.execute("PRAGMA integrity_check");
           hilog.info(domain, tag, '%{public}s', '************* testclose0001 rows *************' + rows);
