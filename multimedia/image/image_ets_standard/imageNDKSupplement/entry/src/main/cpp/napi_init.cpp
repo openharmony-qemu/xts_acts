@@ -18,6 +18,10 @@
 #include "napi/native_api.h"
 #include "InitNativePixelMapTest.h"
 #include "ImageEffectSuppTest.h"
+#include "OHEffectBufferInfoSetTimestampTest.h"
+#include "OHEffectBufferInfoGetTimestampTest.h"
+#include "OHEffectBufferInfoSetTextureIdTest.h"
+#include "OHEffectBufferInfoGetTextureIdTest.h"
 #include "imageEffectFilterSupp.h"
 #include "OHImageErrorSuppTest.h"
 #include "OHEffectFilterInfoSupplementTest.h"
@@ -33,6 +37,10 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHImageEffectInsertFilterSupp", OHImageEffectInsertFilterSupp),
     DESCRIPTOR("OHImageEffectRemoveFilterSupp", OHImageEffectRemoveFilterSupp),
     DESCRIPTOR("OHImageEffectReplaceFilterSupp", OHImageEffectReplaceFilterSupp),
+    DESCRIPTOR("OHEffectBufferInfoSetTimestampTest", OHEffectBufferInfoSetTimestampTest),
+    DESCRIPTOR("OHEffectBufferInfoGetTimestampTest", OHEffectBufferInfoGetTimestampTest),
+    DESCRIPTOR("OHEffectBufferInfoSetTextureIdTest", OHEffectBufferInfoSetTextureIdTest),
+    DESCRIPTOR("OHEffectBufferInfoGetTextureIdTest", OHEffectBufferInfoGetTextureIdTest),
     DESCRIPTOR("OHEffectFilterCreateSupp", OHEffectFilterCreateSupp),
     DESCRIPTOR("OHEffectFilterLookUpFiltersSupp", OHEffectFilterLookUpFiltersSupp),
     DESCRIPTOR("OHEffectFilterLookUpFiltersNullptrSupp", OHEffectFilterLookUpFiltersNullptrSupp),
