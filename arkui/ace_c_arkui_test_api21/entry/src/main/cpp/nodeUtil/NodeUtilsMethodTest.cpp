@@ -72,4 +72,79 @@ static napi_value TestMethodReturnValue005(napi_env env, napi_callback_info info
         "kkk nodeAPI->version ret=%{public}d", ret);
     NAPI_END;
 }
+
+static napi_value TestMethodReturnValue006(napi_env env, napi_callback_info info)
+{
+    NAPI_START(column, ARKUI_NODE_COLUMN);
+    ArkUI_NodeAdapterHandle adapter = OH_ArkUI_NodeAdapter_Create();
+    ASSERT_OBJ_NE(adapter, nullptr);
+    NAPI_END;
+}
+
+static napi_value TestNodeErrorCode001(napi_env env, napi_callback_info info)
+{
+    ASSERT_EQ(ARKUI_ERROR_CODE_ARKTS_NODE_NOT_SUPPORTED, NUMBER_106103);
+    NAPI_END;
+}
+
+static napi_value TestNodeErrorCode002(napi_env env, napi_callback_info info)
+{
+    ASSERT_EQ(ARKUI_ERROR_CODE_ADAPTER_NOT_BOUND, NUMBER_106104);
+    NAPI_END;
+}
+
+static napi_value TestNodeErrorCode003(napi_env env, napi_callback_info info)
+{
+    ASSERT_EQ(ARKUI_ERROR_CODE_ADAPTER_EXIST, NUMBER_106105);
+    NAPI_END;
+}
+
+static napi_value TestNodeErrorCode004(napi_env env, napi_callback_info info)
+{
+    ASSERT_EQ(ARKUI_ERROR_CODE_NODE_IS_ADOPTED, NUMBER_106206);
+    NAPI_END;
+}
+
+static napi_value TestNodeErrorCode005(napi_env env, napi_callback_info info)
+{
+    ASSERT_EQ(ARKUI_ERROR_CODE_NODE_HAS_PARENT, NUMBER_106207);
+    NAPI_END;
+}
+
+static napi_value TestNodeErrorCode006(napi_env env, napi_callback_info info)
+{
+    ASSERT_EQ(ARKUI_ERROR_CODE_NODE_CAN_NOT_BE_ADOPTED, NUMBER_106208);
+    NAPI_END;
+}
+
+static napi_value TestNodeErrorCode007(napi_env env, napi_callback_info info)
+{
+    ASSERT_EQ(ARKUI_ERROR_CODE_NODE_CAN_NOT_ADOPT_TO, NUMBER_106209);
+    NAPI_END;
+}
+
+static napi_value TestNodeErrorCode008(napi_env env, napi_callback_info info)
+{
+    ASSERT_EQ(ARKUI_ERROR_CODE_NODE_IS_NOT_IN_ADOPTED_CHILDREN, NUMBER_106210);
+    NAPI_END;
+}
+
+static napi_value TestNodeErrorCode009(napi_env env, napi_callback_info info)
+{
+    ASSERT_EQ(ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE, NUMBER_106406);
+    NAPI_END;
+}
+
+static napi_value TestNodeErrorCode010(napi_env env, napi_callback_info info)
+{
+    ASSERT_EQ(ARKUI_ERROR_CODE_RENDER_HAS_INVALID_FRAME_NODE, NUMBER_106407);
+    NAPI_END;
+}
+
+static napi_value TestNodeErrorCode011(napi_env env, napi_callback_info info)
+{
+    ASSERT_EQ(ARKUI_ERROR_CODE_RENDER_NOT_ADOPTED_NODE, NUMBER_106408);
+    NAPI_END;
+}
+
 } // namespace ArkUICapiTest
