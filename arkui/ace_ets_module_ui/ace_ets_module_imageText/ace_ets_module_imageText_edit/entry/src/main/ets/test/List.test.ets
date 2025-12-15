@@ -65,6 +65,9 @@ import TextAreaAutoCapitalizationModeModifierTest from './TextAreaApi20Test/Text
 import MaxLinesOptionsTest from './TextAreaApi20Test/MaxLinesOptionsTest.test';
 import TextAreaBindControllerTest from './TextAreaApi20Test/TextAreaBindControllerTest.test';
 import textAreaObserverTest from './TextAreaApi22Test/textAreaObserver.test';
+import TextAreaEnableSelectedDataDetectorTest from './TextAreaApi22Test/TextAreaEnableSelectedDataDetector.test';
+import TextAreaSetStyledPlaceholderTest from './TextAreaApi22Test/TextAreaSetStyledPlaceholder.test';
+import TextAreaOnWillAttachIMETest from './TextAreaApi22Test/TextAreaOnWillAttachIME.test';
 
 import TextInputOnEditChangeJsunitTest from './TextInputTest/TextInputOnEditChangeJsunitTest.test';
 import textInputApi11 from './TextInputApi11Test/textInputApi11.test'
@@ -113,6 +116,10 @@ import TextInputAutoCapitalizationModeTest from './TextInputApi20Test/TextInputA
 import TextInputAutoCapitalizationModeModifierTest from './TextInputApi20Test/TextInputAutoCapitalizationModeModifier.test';
 import TextInputBindControllerTest from './TextInputApi20Test/TextInputBindControllerTest.test';
 import textInputObserverTest from './TextInputApi22Test/textInputObserver.test';
+import TextInputEnableSelectedDataDetectorTest from './TextInputApi22Test/TextInputEnableSelectedDataDetector.test';
+import TextInputSetStyledPlaceholderTest from './TextInputApi22Test/TextInputSetStyledPlaceholder.test';
+import TextInputOnWillAttachIMETest from './TextInputApi22Test/TextInputOnWillAttachIME.test';
+
 import TextAreaCompressLeadingPunctuation from './TextAreaTest/TextAreaCompressLeadingPunctuation.test';
 import TextAreaCompressLeadingPunctuationModifier from './TextAreaTest/TextAreaCompressLeadingPunctuationModifier.test';
 import TextInputCompressLeadingPunctuation from './TextInputTest/TextInputCompressLeadingPunctuation.test';
@@ -174,6 +181,9 @@ export default function testsuite() {
   MaxLinesOptionsTest()
   TextAreaBindControllerTest()
   textAreaObserverTest()           // Api22
+  TextAreaEnableSelectedDataDetectorTest()
+  TextAreaSetStyledPlaceholderTest()
+  TextAreaOnWillAttachIMETest()
 
   // TextInputTest
   TextInputOnEditChangeJsunitTest()
@@ -223,6 +233,9 @@ export default function testsuite() {
   TextInputAutoCapitalizationModeModifierTest()
   TextInputBindControllerTest()
   textInputObserverTest()            // Api22
+  TextInputEnableSelectedDataDetectorTest()
+  TextInputSetStyledPlaceholderTest()
+  TextInputOnWillAttachIMETest()
   TextAreaCompressLeadingPunctuation()
   TextAreaCompressLeadingPunctuationModifier()
   TextInputCompressLeadingPunctuation()
