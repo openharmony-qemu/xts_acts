@@ -25,10 +25,9 @@ const EVENT_ID_SET_EMIT_KEY = 202512;
 struct clientAuthenticationHandlerTest {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
   @State str: string = '';
-  @State show:boolean = true;
+  @State isPageEnd: number = -1;
   @State isReceive: number = -1;
   @State isError: number = -1;
-  @State credentialType: number = -1;
 
 
   onPageShow() {
@@ -58,14 +57,15 @@ struct clientAuthenticationHandlerTest {
       Row() {
         Button('clientAuthenticationHandler').key('clientAuthenticationHandlerButton').onClick(async () => {
           await Utils.waitForExist(()=>this.isReceive, this.str, 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str, 1, 1000);
           console.info('key==>' + this.str);
           this.isReceive = -1;
-          this.credentialType = -1;
           this.isError = -1;
           switch (this.str) {
             case 'emitClientAuthenticationHandlerConfirmType001': {
               try {
-                this.credentialType = 1;
+                this.controller.clearClientAuthenticationCache();
+                this.controller.loadUrl(URL_CLIENT);
                 await Utils.waitForExist(()=>this.isError, this.str, 1, 1000);
                 console.log(this.str + ' result==>' + this.isError);
                 Utils.emitEvent(this.isError, 25121101);
@@ -74,174 +74,41 @@ struct clientAuthenticationHandlerTest {
               }
               break;
             }
-            case 'emitClientAuthenticationHandlerConfirmType002': {
-              try {
-                this.credentialType = 2;
-                await Utils.waitForExist(()=>this.isError, this.str, 1, 1000);
-                console.log(this.str + ' result==>' + this.isError);
-                Utils.emitEvent(this.isError, 25121102);
-              } catch (error) {
-                console.log(this.str + 'errorInfo==>' + error.toString());
-              }
-              break;
-            }
-            case 'emitClientAuthenticationHandlerConfirmType003': {
-              try {
-                this.credentialType = 3;
-                await Utils.waitForExist(()=>this.isError, this.str, 1, 1000);
-                console.log(this.str + ' result==>' + this.isError);
-                Utils.emitEvent(this.isError, 25121103);
-              } catch (error) {
-                console.log(this.str + 'errorInfo==>' + error.toString());
-              }
-              break;
-            }
-            case 'emitClientAuthenticationHandlerConfirmType004': {
-              this.credentialType = 4;
-              break;
-            }
 
           }
         }).margin(10)
  
       }
-      if (this.credentialType == 1) {
-        Web({ src: URL_CLIENT, controller: this.controller })
-          .onPageEnd((event) => {
-            console.log('onPageEnd url==>' + event.url);
-          })
-          .onSslErrorEvent((event: SslErrorEvent) => {
-            if (event) {
-              console.log('onSslErrorEvent url: ' + event.url);
-              console.log('onSslErrorEvent error: ' + event.error);
-              console.log('onSslErrorEvent originalUrl: ' + event.originalUrl);
-              console.log('onSslErrorEvent referrer: ' + event.referrer);
-              console.log('onSslErrorEvent isFatalError: ' + event.isFatalError);
-              console.log('onSslErrorEvent isMainFrame: ' + event.isMainFrame);
-              console.log('onSslErrorEvent handler: ' + event.handler);
-              event.handler.handleConfirm();
-            }
-          })
-          .onClientAuthenticationRequest((event) => {
-            console.log('onClientAuthenticationRequest==>');
-            event.handler.confirm('222', '333');
-            return true;
-          })
-          .onErrorReceive((event) => {
-            if (event) {
-              console.info('getErrorInfo:' + event.error.getErrorInfo());
-              console.info('getErrorCode:' + event.error.getErrorCode());
-              console.info('url:' + event.request.getRequestUrl());
-              this.isError = 1;
-            }
-          })
+      Web({ src: $rawfile('second.html'), controller: this.controller })
+        .onPageEnd((event) => {
+          console.log('onPageEnd url==>' + event.url);
+          this.isPageEnd = 1;
+        })
+        .onSslErrorEvent((event: SslErrorEvent) => {
+          if (event) {
+            console.log('onSslErrorEvent url: ' + event.url);
+            console.log('onSslErrorEvent error: ' + event.error);
+            console.log('onSslErrorEvent originalUrl: ' + event.originalUrl);
+            console.log('onSslErrorEvent referrer: ' + event.referrer);
+            console.log('onSslErrorEvent isFatalError: ' + event.isFatalError);
+            console.log('onSslErrorEvent isMainFrame: ' + event.isMainFrame);
+            console.log('onSslErrorEvent handler: ' + event.handler);
+            event.handler.handleConfirm();
+          }
+        })
+        .onClientAuthenticationRequest((event) => {
+          console.log('onClientAuthenticationRequest==>');
+          event.handler.confirm('222', '333');
+          return true;
+        })
+        .onErrorReceive((event) => {
+          if (event) {
+            console.info('getErrorInfo:' + event.error.getErrorInfo());
+            console.info('getErrorCode:' + event.error.getErrorCode());
+            console.info('url:' + event.request.getRequestUrl());
+            this.isError = 1;
+          }
+        })
       }
-      if (this.credentialType == 2) {
-        Web({ src: URL_CLIENT, controller: this.controller })
-          .onPageEnd((event) => {
-            console.log('onPageEnd url==>' + event.url);
-          })
-          .onSslErrorEvent((event: SslErrorEvent) => {
-            if (event) {
-              console.log('onSslErrorEvent url: ' + event.url);
-              console.log('onSslErrorEvent error: ' + event.error);
-              console.log('onSslErrorEvent originalUrl: ' + event.originalUrl);
-              console.log('onSslErrorEvent referrer: ' + event.referrer);
-              console.log('onSslErrorEvent isFatalError: ' + event.isFatalError);
-              console.log('onSslErrorEvent isMainFrame: ' + event.isMainFrame);
-              console.log('onSslErrorEvent handler: ' + event.handler);
-              event.handler.handleConfirm();
-            }
-          })
-          .onClientAuthenticationRequest((event) => {
-            console.log('onClientAuthenticationRequest==>');
-            console.log('CredentialType==>' + CredentialType.CREDENTIAL_USER);
-            event.handler.confirm('222', CredentialType.CREDENTIAL_USER);
-            return true;
-          })
-          .onErrorReceive((event) => {
-            if (event) {
-              console.info('getErrorInfo:' + event.error.getErrorInfo());
-              console.info('getErrorCode:' + event.error.getErrorCode());
-              console.info('url:' + event.request.getRequestUrl());
-              this.isError = 1;
-            }
-          })
-      }
-      if (this.credentialType == 3) {
-        Web({ src: URL_CLIENT, controller: this.controller })
-          .onPageEnd((event) => {
-            console.log('onPageEnd url==>' + event.url);
-          })
-          .onSslErrorEvent((event: SslErrorEvent) => {
-            if (event) {
-              console.log('onSslErrorEvent url: ' + event.url);
-              console.log('onSslErrorEvent error: ' + event.error);
-              console.log('onSslErrorEvent originalUrl: ' + event.originalUrl);
-              console.log('onSslErrorEvent referrer: ' + event.referrer);
-              console.log('onSslErrorEvent isFatalError: ' + event.isFatalError);
-              console.log('onSslErrorEvent isMainFrame: ' + event.isMainFrame);
-              console.log('onSslErrorEvent handler: ' + event.handler);
-              event.handler.handleConfirm();
-            }
-          })
-          .onClientAuthenticationRequest((event) => {
-            console.log('onClientAuthenticationRequest==>');
-            console.log('CredentialType==>' + CredentialType.CREDENTIAL_APP);
-            event.handler.confirm('222', CredentialType.CREDENTIAL_APP);
-            return true;
-          })
-          .onErrorReceive((event) => {
-            if (event) {
-              console.info('getErrorInfo:' + event.error.getErrorInfo());
-              console.info('getErrorCode:' + event.error.getErrorCode());
-              console.info('url:' + event.request.getRequestUrl());
-              this.isError = 1;
-            }
-          })
-      }
-      if (this.credentialType == 4) {
-        Web({ src: URL_CLIENT, controller: this.controller })
-          .onPageEnd((event) => {
-            console.log('onPageEnd url==>' + event.url);
-            this.controller.clearClientAuthenticationCache();
-          })
-          .onSslErrorEvent((event: SslErrorEvent) => {
-            if (event) {
-              console.log('onSslErrorEvent url: ' + event.url);
-              console.log('onSslErrorEvent error: ' + event.error);
-              console.log('onSslErrorEvent originalUrl: ' + event.originalUrl);
-              console.log('onSslErrorEvent referrer: ' + event.referrer);
-              console.log('onSslErrorEvent isFatalError: ' + event.isFatalError);
-              console.log('onSslErrorEvent isMainFrame: ' + event.isMainFrame);
-              console.log('onSslErrorEvent handler: ' + event.handler);
-              event.handler.handleConfirm();
-            }
-          })
-          .onClientAuthenticationRequest((event) => {
-            console.log('onClientAuthenticationRequest==>');
-            console.log('CredentialType==>' + CredentialType.CREDENTIAL_UKEY);
-            try {
-              event.handler.confirm('222', CredentialType.CREDENTIAL_UKEY);
-            } catch (error) {
-              console.log('errorCode==>' + error.code);
-              console.log('errorInfo==>' + error.message);
-              if (error.code == 801) {
-                Utils.emitEvent(true, 25121104);
-              }
-            }
-            return true;
-          })
-          .onErrorReceive((event) => {
-            if (event) {
-              console.info('getErrorInfo:' + event.error.getErrorInfo());
-              console.info('getErrorCode:' + event.error.getErrorCode());
-              console.info('url:' + event.request.getRequestUrl());
-              Utils.emitEvent(true, 25121104);
-            }
-          })
-      }
-
-    }
   }
 }
