@@ -1674,6 +1674,45 @@ export class Foo {
   native test_Object_SetProp_By_Name_Ref_07(): boolean
   native test_Object_SetProp_By_Name_Ref_08(): boolean
   native test_Object_SetProp_By_Name_Ref_09(): boolean
+  native test_Handling_Error_01(): boolean;
+  native test_Handling_Error_02(): boolean;
+  native test_Handling_Error_03(): boolean;
+  native test_Handling_Error_04(): boolean;
+  native test_Handling_Error_05(): boolean;
+  native test_Handling_Error_Test1(): boolean;
+  native test_Handling_Error_Test2(): boolean;
+  native test_Handling_Error_Test3(): boolean;
+  native test_Handling_Error_06(): boolean;
+  native test_Handling_Error_07(): boolean;
+  native test_Handling_Error_08(): boolean;
+  native test_Handling_Error_09(): boolean;
+  native test_Handling_Error_10(): boolean;
+  native test_Handling_Error_11(): boolean;
+  native test_Handling_Error_12(): boolean;
+  native test_Handling_Error_13(): boolean;
+  native test_Handling_Error_14(): boolean;
+  native test_Handling_Error_15(): boolean;
+  native test_Handling_Error_16(): boolean;
+  native test_Handling_Error_17(): boolean;
+  native test_Handling_Error_18(): boolean;
+  native test_Handling_Error_19(): boolean;
+  native test_Handling_Error_20(): boolean;
+  native test_Handling_Error_21(): boolean;
+  native test_Handling_Error_22(): boolean;
+  native test_Handling_Error_23(): boolean;
+  native test_Handling_Error_24(): boolean;
+  native test_Handling_Error_25(): boolean;
+  native test_Handling_Error_26(): boolean;
+  native test_Handling_Error_27(): boolean;
+  native test_Handling_Error_28(): boolean;
+  native test_Handling_Error_30(): boolean;
+  native test_Handling_Error_31(): boolean;
+  native test_Handling_Error_32(): boolean;
+  native test_Handling_Error_33(): boolean;
+  native test_Handling_Error_35(): boolean;
+  native test_Handling_Error_36(): boolean;
+  native test_Handling_Error_37(): boolean;
+  native test_Handling_Error_38(): boolean;
 
   constructor() {
   }
