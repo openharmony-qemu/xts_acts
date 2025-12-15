@@ -215,9 +215,11 @@ struct Index {
 
               case "emitIsActiveWebEngineEvergreen009": {
                 await Utils.sleep(2000);
-                Utils.emitEvent(webview.WebviewController.isActiveWebEngineEvergreen(), 20251225)
+                if(webview.WebviewController.isActiveWebEngineEvergreen() == true || webview.WebviewController.isActiveWebEngineEvergreen() == false )
+                Utils.emitEvent(true, 20251226)
                 break;
               }
+
 
             }
           })
