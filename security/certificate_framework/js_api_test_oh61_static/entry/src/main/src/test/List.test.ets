@@ -12,9 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import certFrameworkCertReinforcementOfStringTestUnit from './CertframeworkReinforcement.test';
 import certFrameworkCertCheckOnlineCaTestUnit from './CertOnlineVerification.test';
 
 export default function testsuite() {
   /* Networking is required and latest system time */
   certFrameworkCertCheckOnlineCaTestUnit();
+  certFrameworkCertReinforcementOfStringTestUnit();
 }

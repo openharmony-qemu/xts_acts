@@ -396,7 +396,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           expect(null).assertFail();
         } catch (error: BusinessError) {
           console.error(`[XTS] Reinforcement_Func_1800 ${error}, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.NOT_SUPPORT);
+          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
       });

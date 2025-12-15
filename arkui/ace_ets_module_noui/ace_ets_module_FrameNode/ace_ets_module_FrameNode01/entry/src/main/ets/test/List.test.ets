@@ -83,6 +83,7 @@ import AdoptChildTest from './FrameNodeMethod/AdoptChildTest.test';
 
 import frameNodeApi from './FrameNodeTest/frameNodeApi.test';
 
+import GraphicsFourBoundaryTest from './FrameNodeNewTest/GraphicsFourBoundaryTest';
 
 export default function testsuite() {
   APIdisposeTreeTest();
@@ -154,5 +155,7 @@ export default function testsuite() {
   AdoptChildTest();
   
   frameNodeApi();
+
+  GraphicsFourBoundaryTest();
 
 }
