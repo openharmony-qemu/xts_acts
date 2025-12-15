@@ -26,26 +26,26 @@ export default function scrollPositionTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_POSITION_0100
-     * @tc.name       : testScrollPosition001
-     * @tc.desc       : testing position for scroll with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollPosition001
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_POSITION_0100
+     * @tc.desc   testing position for scroll with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollPosition001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollPosition001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_POSITION_0200
-     * @tc.name       : testScrollPosition002
-     * @tc.desc       : testing position for scroll with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollPosition002
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_POSITION_0200
+     * @tc.desc   testing position for scroll with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollPosition002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollPosition002()).assertEqual(0)

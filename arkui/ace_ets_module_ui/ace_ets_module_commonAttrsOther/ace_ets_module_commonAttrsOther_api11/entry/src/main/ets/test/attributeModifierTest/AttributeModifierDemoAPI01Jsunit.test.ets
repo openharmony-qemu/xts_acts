@@ -40,6 +40,14 @@ export default function AttributeModifierDemoAPI01Jsunit() {
       }
       done();
     });
+    /**
+     * @tc.name   AttributeModifierDemoAPI01Jsunit_0100
+     * @tc.number AttributeModifierDemoAPI01Jsunit_0100
+     * @tc.desc   AttributeModifierDemoAPI01Jsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('AttributeModifierDemoAPI01Jsunit_0100', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('AttributeModifierDemoAPI01Jsunit_0100 START');

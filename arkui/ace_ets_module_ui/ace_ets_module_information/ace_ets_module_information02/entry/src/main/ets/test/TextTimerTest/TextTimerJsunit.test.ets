@@ -43,12 +43,12 @@ export default function TextTimerJsunit() {
       console.info("TextTimerJsunit after each called");
     })
     /**
-     * @tc.number    textTimer0100
-     * @tc.name      textTimer0100
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   textTimer0100
+     * @tc.number textTimer0100
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textTimer0100', Level.LEVEL1, async (done: Function) => {
       console.info('[textTimer0100] START');
@@ -65,12 +65,12 @@ export default function TextTimerJsunit() {
       done();
     });
     /**
-     * @tc.number    textTimer0200
-     * @tc.name      textTimer0200
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   textTimer0200
+     * @tc.number textTimer0200
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textTimer0200', Level.LEVEL1, async (done: Function) => {
       console.info('[textTimer0100] START');

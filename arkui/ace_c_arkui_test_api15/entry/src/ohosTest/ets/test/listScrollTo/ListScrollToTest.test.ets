@@ -25,13 +25,13 @@ export default function listScrollToIndexTest(){
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLL_TO_001
-     * @tc.name       : listScrollToIndexTest001
-     * @tc.desc       : testing List ScrollToIndex
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   listScrollToIndexTest001
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLL_TO_001
+     * @tc.desc   testing List ScrollToIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listScrollToIndexTest001', Level.LEVEL1, async (done: Function) => {
       console.info('listScrollToIndexTest001 START' )
@@ -54,13 +54,13 @@ export default function listScrollToIndexTest(){
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLL_TO_002
-     * @tc.name       : listScrollToItemInGroupTest001
-     * @tc.desc       : testing List ScrollToItemInGroup
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   listScrollToItemInGroupTest001
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLL_TO_002
+     * @tc.desc   testing List ScrollToItemInGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listScrollToItemInGroupTest001', Level.LEVEL1, async (done: Function) => {
       console.info('listScrollToItemInGroupTest001 START' )
@@ -83,13 +83,13 @@ export default function listScrollToIndexTest(){
       done()
     })
 
-        /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLL_TO_003
-     * @tc.name       : listItemGroupHeaderAndFooterTest001
-     * @tc.desc       : testing ListItem header and footer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   listItemGroupHeaderAndFooterTest001
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLL_TO_003
+     * @tc.desc   testing ListItem header and footer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listItemGroupHeaderAndFooterTest001', Level.LEVEL1, async (done: Function) => {
       console.info('listItemGroupHeaderAndFooterTest001 START' )

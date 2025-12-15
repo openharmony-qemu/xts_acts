@@ -59,28 +59,28 @@ export default function WebViewGetMimeTypes() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWGETMIMETYPES_0100
-    * @tc.name       : testWebViewGetMimeTypes01
-    * @tc.desc       : test onShowFileSelector
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewGetMimeTypes01
+     * @tc.number SUB_WEB_WEBVIEWGETMIMETYPES_0100
+     * @tc.desc   test onShowFileSelector
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewGetMimeTypes01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebViewGetMimeTypes01", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testWebViewGetMimeTypes01", true, 20251111, done);
       await Utils.waitAndClickComponent(driver, "WebViewGetMimeTypesButton","testWebViewGetMimeTypes01");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWGETMIMETYPES_0200
-    * @tc.name       : testWebViewGetMimeTypes02
-    * @tc.desc       : test onShowFileSelector
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewGetMimeTypes02
+     * @tc.number SUB_WEB_WEBVIEWGETMIMETYPES_0200
+     * @tc.desc   test onShowFileSelector
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewGetMimeTypes02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebViewGetMimeTypes02", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testWebViewGetMimeTypes02", true, 20251112, done);

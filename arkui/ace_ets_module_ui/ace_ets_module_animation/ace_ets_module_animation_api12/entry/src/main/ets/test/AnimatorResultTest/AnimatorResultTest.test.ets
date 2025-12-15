@@ -57,12 +57,12 @@ export default function AnimatorResultTest() {
       console.info("AnimatorResultTest after each called");
     });
     /**
+     * @tc.name   AnimatorResultTest_001
      * @tc.number AnimatorResultTest_001
-     * @tc.name testBack
-     * @tc.desc Return specified page by index value
-     * @tc.level Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AnimatorResultTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('[AnimatorResultTest_001] START');
@@ -81,6 +81,14 @@ export default function AnimatorResultTest() {
       console.info('[AnimatorResultTest_001] END');
       done();
     });
+    /**
+     * @tc.name   AnimatorResultTest_002
+     * @tc.number AnimatorResultTest_002
+     * @tc.desc   AnimatorResultTest_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('AnimatorResultTest_002', Level.LEVEL0, async (done: Function) => {
       console.info('[AnimatorResultTest_002] START');
       await CommonFunc.sleep(1000);

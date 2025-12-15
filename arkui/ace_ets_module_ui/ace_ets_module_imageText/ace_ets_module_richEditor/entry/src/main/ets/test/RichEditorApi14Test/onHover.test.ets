@@ -42,13 +42,13 @@ export default function RichEditorOnHoverTest() {
       done();
     });
 
-     /**
-     * @tc.number    SUB_ACE_RichEditorOnHover_0010
-     * @tc.name      SUB_ACE_RichEditorOnHover_0010
-     * @tc.desc      test onHover:true
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+    /**
+     * @tc.name   RichEditorOnHoverTest_0010
+     * @tc.number SUB_ACE_RichEditorOnHover_0010
+     * @tc.desc   test onHover:true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorOnHoverTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('RichEditorOnHoverTest_0010 START');
@@ -68,13 +68,13 @@ export default function RichEditorOnHoverTest() {
       done();
     });
 
-     /**
-     * @tc.number    SUB_ACE_RichEditorOnHover_0020
-     * @tc.name      SUB_ACE_RichEditorOnHover_0020
-     * @tc.desc      test onHover:false
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+    /**
+     * @tc.name   RichEditorOnHoverTest_0020
+     * @tc.number SUB_ACE_RichEditorOnHover_0020
+     * @tc.desc   test onHover:false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorOnHoverTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('RichEditorOnHoverTest_0020 START');

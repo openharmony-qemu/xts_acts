@@ -26,65 +26,65 @@ export default function swiperChangeIndexTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_TO_INDEX_0100
-     * @tc.name       : testSwiperChangeIndex001
-     * @tc.desc       : testing changeIndex for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperChangeIndex001
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_TO_INDEX_0100
+     * @tc.desc   testing changeIndex for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperChangeIndex001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperChangeIndex001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_TO_INDEX_0200
-     * @tc.name       : testSwiperChangeIndex002
-     * @tc.desc       : testing changeIndex for swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperChangeIndex002
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_TO_INDEX_0200
+     * @tc.desc   testing changeIndex for swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperChangeIndex002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperChangeIndex002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_TO_INDEX_0300
-     * @tc.name       : testSwiperChangeIndex003
-     * @tc.desc       : testing changeIndex for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperChangeIndex003
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_TO_INDEX_0300
+     * @tc.desc   testing changeIndex for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperChangeIndex003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperChangeIndex003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_TO_INDEX_0400
-     * @tc.name       : testSwiperChangeIndex004
-     * @tc.desc       : testing changeIndex for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperChangeIndex004
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_TO_INDEX_0400
+     * @tc.desc   testing changeIndex for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperChangeIndex004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperChangeIndex004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_TO_INDEX_0500
-     * @tc.name       : testSwiperChangeIndex005
-     * @tc.desc       : testing changeIndex for swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperChangeIndex005
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_TO_INDEX_0500
+     * @tc.desc   testing changeIndex for swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperChangeIndex005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperChangeIndex005()).assertEqual(0)

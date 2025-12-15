@@ -71,12 +71,12 @@ export default function OhLPPAudioNDKTest() {
     })
 
     /**
-     * @tc.number     : TESTOHLPPAUDIO_NULL_ERROREVENT_0100
-     * @tc.name       : TESTOHLPPAUDIO_NULL_ERROREVENT_0100
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   TESTOHLPPAUDIO_NULL_ERROREVENT_0100
+     * @tc.number TESTOHLPPAUDIO_NULL_ERROREVENT_0100
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TESTOHLPPAUDIO_NULL_ERROREVENT_0100', Level.LEVEL0, async (done: Function) => {
       console.info(`TESTOHLPPAUDIO_NULL_ERROREVENT_0100 test start `);
@@ -126,12 +126,12 @@ export default function OhLPPAudioNDKTest() {
       console.info(`TESTOHLPPAUDIO_NULL_ERROREVENT_0100 test end `);
     });
     /**
-     * @tc.number     : TESTOHLPPAUDIO_MP4_ERROREVENT_0100
-     * @tc.name       : TESTOHLPPAUDIO_MP4_ERROREVENT_0100
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   TESTOHLPPAUDIO_MP4_ERROREVENT_0100
+     * @tc.number TESTOHLPPAUDIO_MP4_ERROREVENT_0100
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TESTOHLPPAUDIO_MP4_ERROREVENT_0100', Level.LEVEL0, async (done: Function) => {
       console.info(`TESTOHLPPAUDIO_MP4_ERROREVENT_0100 test start `);
@@ -175,12 +175,12 @@ export default function OhLPPAudioNDKTest() {
     });
 
     /**
-     * @tc.number     : TESTOHLPPAUDIO_MP4_ERROREVENT_0102
-     * @tc.name       : TESTOHLPPAUDIO_MP4_ERROREVENT_0102
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   TESTOHLPPAUDIO_MP4_ERROREVENT_0102
+     * @tc.number TESTOHLPPAUDIO_MP4_ERROREVENT_0102
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TESTOHLPPAUDIO_MP4_ERROREVENT_0102', Level.LEVEL0, async (done: Function) => {
       console.info(`TESTOHLPPAUDIO_MP4_ERROREVENT_0102 test start `);
@@ -221,12 +221,12 @@ export default function OhLPPAudioNDKTest() {
     });
 
     /**
-     * @tc.number     : TESTOHLPPAUDIO_MP4_ERROREVENT_0103
-     * @tc.name       : TESTOHLPPAUDIO_MP4_ERROREVENT_0103
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   TESTOHLPPAUDIO_MP4_ERROREVENT_0103
+     * @tc.number TESTOHLPPAUDIO_MP4_ERROREVENT_0103
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TESTOHLPPAUDIO_MP4_ERROREVENT_0103', Level.LEVEL0, async (done: Function) => {
       console.info(`TESTOHLPPAUDIO_MP4_ERROREVENT_0103 test start `);

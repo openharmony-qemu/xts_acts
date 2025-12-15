@@ -26,39 +26,39 @@ export default function stackHeightTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_HEIGHT_0100
-     * @tc.name       : testStackHeight001
-     * @tc.desc       : testing height for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackHeight001
+     * @tc.number SUB_ARKUI_CAPI_STACK_HEIGHT_0100
+     * @tc.desc   testing height for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackHeight001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackHeight001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_HEIGHT_0200
-     * @tc.name       : testStackHeight002
-     * @tc.desc       : testing height for stack with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testStackHeight002
+     * @tc.number SUB_ARKUI_CAPI_STACK_HEIGHT_0200
+     * @tc.desc   testing height for stack with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackHeight002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackHeight002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_HEIGHT_0300
-     * @tc.name       : testStackHeight003
-     * @tc.desc       : testing height for stack with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackHeight003
+     * @tc.number SUB_ARKUI_CAPI_STACK_HEIGHT_0300
+     * @tc.desc   testing height for stack with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackHeight003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackHeight003()).assertEqual(0)

@@ -44,12 +44,12 @@ export default function startAbilityOptions() {
       await sleep(2000);
     })
     /**
-     * @tc.number: appManager01
-     * @tc.name: appManager01
-     * @tc.desc: appManager01 code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   appManager01
+     * @tc.number appManager01
+     * @tc.desc   appManager01 code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('appManager01', Level.LEVEL0, async (done: Function) => {
 
@@ -112,12 +112,12 @@ export default function startAbilityOptions() {
 
     })
     /**
-     * @tc.number: appManager02
-     * @tc.name: appManager02
-     * @tc.desc: appManager02 code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   appManager02
+     * @tc.number appManager02
+     * @tc.desc   appManager02 code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('appManager02', Level.LEVEL0, async (done: Function) => {
 

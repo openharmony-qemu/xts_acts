@@ -43,6 +43,14 @@ export default function RatingUIJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   RatingUIJsunit_0100
+     * @tc.number RatingUIJsunit_0100
+     * @tc.desc   RatingUIJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RatingUIJsunit_0100', Level.LEVEL1, async (done: Function) => {
       // Get the information of the Rating component
       console.info('[RatingUIJsunit_0100] START');
@@ -59,6 +67,14 @@ export default function RatingUIJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   RatingUIJsunit_0200
+     * @tc.number RatingUIJsunit_0200
+     * @tc.desc   RatingUIJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RatingUIJsunit_0200', Level.LEVEL1, async (done: Function) => {
       // Modify the rating value of the Rating component
       console.info('[RatingUIJsunit_0200] START');
@@ -74,6 +90,14 @@ export default function RatingUIJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   RatingUIJsunit_0300
+     * @tc.number RatingUIJsunit_0300
+     * @tc.desc   RatingUIJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RatingUIJsunit_0300', Level.LEVEL1, async (done: Function) => {
       // Modify the indicator value of the Rating component
       console.info('[RatingUIJsunit_0300] START');
@@ -104,6 +128,14 @@ export default function RatingUIJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   RatingUIJsunit_0400
+     * @tc.number RatingUIJsunit_0400
+     * @tc.desc   RatingUIJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RatingUIJsunit_0400', Level.LEVEL1, async (done: Function) => {
       // Modify the stars value of the Rating component
       console.info('[RatingUIJsunit_0400] START');
@@ -119,6 +151,14 @@ export default function RatingUIJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   RatingUIJsunit_0500
+     * @tc.number RatingUIJsunit_0500
+     * @tc.desc   RatingUIJsunit_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RatingUIJsunit_0500', Level.LEVEL1, async (done: Function) => {
       // Modify the stepSize value of the Rating component
       console.info('[RatingUIJsunit_0500] START');
@@ -134,6 +174,14 @@ export default function RatingUIJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   RatingUIJsunit_0600
+     * @tc.number RatingUIJsunit_0600
+     * @tc.desc   RatingUIJsunit_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RatingUIJsunit_0600', Level.LEVEL1, async (done: Function) => {
       // Verify onChange event of the Rating component
       console.info('[RatingUIJsunit_0600] START');
@@ -176,6 +224,14 @@ export default function RatingUIJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   RatingUIJsunit_0700
+     * @tc.number RatingUIJsunit_0700
+     * @tc.desc   RatingUIJsunit_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RatingUIJsunit_0700', Level.LEVEL1, async (done: Function) => {
       // Get the default value of the Rating component
       console.info('[RatingUIJsunit_0700] START');

@@ -23,12 +23,12 @@ export default function bluetoothManagerTest() {
 
   describe('bluetoothManager_test', () => {
     /**
+     * @tc.name   test_get_bluetooth_info_0100
      * @tc.number SUB_CUSTOMIZATION_EDM_GET_BLUETOOTH_INFO_0100
-     * @tc.name test_get_bluetooth_info_0100
-     * @tc.desc test getBluetoothInfo method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.desc   test getBluetoothInfo method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_get_bluetooth_info_0100', Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -44,12 +44,12 @@ export default function bluetoothManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_ALLOWED_BLUETOOTH_DEVICES_0100
-     * @tc.name      : test_add_allowed_bluetooth_devices_0100
-     * @tc.desc      : test addallowedbluetoothdevices method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_add_allowed_bluetooth_devices_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADD_ALLOWED_BLUETOOTH_DEVICES_0100
+     * @tc.desc   test addallowedbluetoothdevices method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_add_allowed_bluetooth_devices_0100', Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -66,12 +66,12 @@ export default function bluetoothManagerTest() {
     })
 
     /**
+     * @tc.name   test_get_allowed_bluetooth_devices_0100
      * @tc.number SUB_CUSTOMIZATION_EDM_GET_ALLOWED_BLUETOOTH_DEVICES_0100
-     * @tc.name test_get_allowed_bluetooth_devices_0100
-     * @tc.desc test getAllowedBluetoothDevices method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.desc   test getAllowedBluetoothDevices method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_get_allowed_bluetooth_devices_0100', Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -86,12 +86,12 @@ export default function bluetoothManagerTest() {
     })
 
     /**
+     * @tc.name   test_remove_allowed_bluetooth_devices_0100
      * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_ALLOWED_BLUETOOTH_DEVICES_0100
-     * @tc.name test_remove_allowed_bluetooth_devices_0100
-     * @tc.desc test removeAllowedBluetoothDevices method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.desc   test removeAllowedBluetoothDevices method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_remove_allowed_bluetooth_devices_0100', Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -108,12 +108,12 @@ export default function bluetoothManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_BLUETOOTH_DEVICES_0100
-     * @tc.name      : test_add_disallowed_bluetooth_devices_0100
-     * @tc.desc      : test adddisallowedbluetoothdevices method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_add_disallowed_bluetooth_devices_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_BLUETOOTH_DEVICES_0100
+     * @tc.desc   test adddisallowedbluetoothdevices method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_add_disallowed_bluetooth_devices_0100', Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -130,12 +130,12 @@ export default function bluetoothManagerTest() {
     })
 
     /**
+     * @tc.name   test_get_disallowed_bluetooth_devices_0100
      * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_BLUETOOTH_DEVICES_0100
-     * @tc.name test_get_disallowed_bluetooth_devices_0100
-     * @tc.desc test getDisallowedBluetoothDevices method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.desc   test getDisallowedBluetoothDevices method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_get_disallowed_bluetooth_devices_0100', Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -150,12 +150,12 @@ export default function bluetoothManagerTest() {
     })
 
     /**
+     * @tc.name   test_remove_disallowed_bluetooth_devices_0100
      * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_BLUETOOTH_DEVICES_0100
-     * @tc.name test_remove_disallowed_bluetooth_devices_0100
-     * @tc.desc test removeDisallowedBluetoothDevices method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.desc   test removeDisallowedBluetoothDevices method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_remove_disallowed_bluetooth_devices_0100', Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -172,12 +172,12 @@ export default function bluetoothManagerTest() {
     })
 
     /**
+     * @tc.name   test_turnon_bluetooth_0100
      * @tc.number SUB_CUSTOMIZATION_EDM_TURNON_BLUETOOTH_0100
-     * @tc.name test_turnon_bluetooth_0100
-     * @tc.desc test turnOnBluetooth method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.desc   test turnOnBluetooth method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_turnon_bluetooth_0100', Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -193,12 +193,12 @@ export default function bluetoothManagerTest() {
     })
 
     /**
+     * @tc.name   test_turnoff_bluetooth_0100
      * @tc.number SUB_CUSTOMIZATION_EDM_TURNOFF_BLUETOOTH_0100
-     * @tc.name test_turnoff_bluetooth_0100
-     * @tc.desc test turnOnBluetooth method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.desc   test turnOnBluetooth method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_turnoff_bluetooth_0100', Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -214,12 +214,12 @@ export default function bluetoothManagerTest() {
     })
 
     /**
+     * @tc.name   test_add_disallowed_bluetooth_protocols_0100
      * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_BLUETOOTH_PROTOCOLS_0100
-     * @tc.name test_add_disallowed_bluetooth_protocols_0100
-     * @tc.desc test addDisallowedBluetoothProtocols method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.desc   test addDisallowedBluetoothProtocols method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_add_disallowed_bluetooth_protocols_0100', Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -238,12 +238,12 @@ export default function bluetoothManagerTest() {
     })
 
     /**
+     * @tc.name   test_remove_disallowed_bluetooth_protocols_0100
      * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_BLUETOOTH_PROTOCOLS_0100
-     * @tc.name test_remove_disallowed_bluetooth_protocols_0100
-     * @tc.desc test removeDisallowedBluetoothProtocols method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.desc   test removeDisallowedBluetoothProtocols method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_remove_disallowed_bluetooth_protocols_0100', Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -262,12 +262,12 @@ export default function bluetoothManagerTest() {
     })
 
     /**
+     * @tc.name   test_get_disallowed_bluetooth_protocols_0100
      * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_BLUETOOTH_PROTOCOLS_0100
-     * @tc.name test_get_disallowed_bluetooth_protocols_0100
-     * @tc.desc test getDisallowedBluetoothProtocols method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.desc   test getDisallowedBluetoothProtocols method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_get_disallowed_bluetooth_protocols_0100', Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);

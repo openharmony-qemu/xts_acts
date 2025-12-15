@@ -42,12 +42,12 @@ export default function BuiltinsBigIntLiteralTest() {
     })
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest0100
      * @tc.number SUB_BIGINT_LITERAL_TEST_0100
-     * @tc.name BuiltinsBigIntLiteralTest0100
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest0100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest0100';
@@ -72,12 +72,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest0200
      * @tc.number SUB_BIGINT_LITERAL_TEST_0200
-     * @tc.name BuiltinsBigIntLiteralTest0200
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest0200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest0200';
@@ -100,12 +100,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest0300
      * @tc.number SUB_BIGINT_LITERAL_TEST_0300
-     * @tc.name BuiltinsBigIntLiteralTest0300
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest0300',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest0300';
@@ -128,12 +128,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest0400
      * @tc.number SUB_BIGINT_LITERAL_TEST_0400
-     * @tc.name BuiltinsBigIntLiteralTest0400
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest0400',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest0400';
@@ -157,12 +157,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest0500
      * @tc.number SUB_BIGINT_LITERAL_TEST_0500
-     * @tc.name BuiltinsBigIntLiteralTest0500
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest0500',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest0500';
@@ -176,12 +176,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest0600
      * @tc.number SUB_BIGINT_LITERAL_TEST_0600
-     * @tc.name BuiltinsBigIntLiteralTest0600
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest0600',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest0600';
@@ -195,12 +195,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest0700
      * @tc.number SUB_BIGINT_LITERAL_TEST_0700
-     * @tc.name BuiltinsBigIntLiteralTest0700
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest0700',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest0700';
@@ -213,12 +213,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest0800
      * @tc.number SUB_BIGINT_LITERAL_TEST_0800
-     * @tc.name BuiltinsBigIntLiteralTest0800
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest0800',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest0800';
@@ -237,12 +237,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest0900
      * @tc.number SUB_BIGINT_LITERAL_TEST_0900
-     * @tc.name BuiltinsBigIntLiteralTest0900
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest0900',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest0900';
@@ -268,12 +268,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest1000
      * @tc.number SUB_BIGINT_LITERAL_TEST_1000
-     * @tc.name BuiltinsBigIntLiteralTest1000
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest1000',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest1000';
@@ -301,12 +301,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest1100
      * @tc.number SUB_BIGINT_LITERAL_TEST_1100
-     * @tc.name BuiltinsBigIntLiteralTest1100
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest1100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest1100';
@@ -332,12 +332,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest1200
      * @tc.number SUB_BIGINT_LITERAL_TEST_1200
-     * @tc.name BuiltinsBigIntLiteralTest1200
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest1200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest1200';
@@ -365,12 +365,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest1300
      * @tc.number SUB_BIGINT_LITERAL_TEST_1300
-     * @tc.name BuiltinsBigIntLiteralTest1300
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest1300',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest1300';
@@ -387,12 +387,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest1400
      * @tc.number SUB_BIGINT_LITERAL_TEST_1400
-     * @tc.name BuiltinsBigIntLiteralTest1400
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest1400',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest1400';
@@ -408,12 +408,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest1500
      * @tc.number SUB_BIGINT_LITERAL_TEST_1500
-     * @tc.name BuiltinsBigIntLiteralTest1500
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest1500',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest1500';
@@ -430,12 +430,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest1600
      * @tc.number SUB_BIGINT_LITERAL_TEST_1600
-     * @tc.name BuiltinsBigIntLiteralTest1600
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest1600',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest1600';
@@ -451,12 +451,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest1700
      * @tc.number SUB_BIGINT_LITERAL_TEST_1700
-     * @tc.name BuiltinsBigIntLiteralTest1700
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest1700',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest1700';
@@ -474,12 +474,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest1800
      * @tc.number SUB_BIGINT_LITERAL_TEST_1800
-     * @tc.name BuiltinsBigIntLiteralTest1800
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest1800',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest1800';
@@ -496,12 +496,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest1900
      * @tc.number SUB_BIGINT_LITERAL_TEST_1900
-     * @tc.name BuiltinsBigIntLiteralTest1900
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest1900',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest1900';
@@ -518,12 +518,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest2000
      * @tc.number SUB_BIGINT_LITERAL_TEST_2000
-     * @tc.name BuiltinsBigIntLiteralTest2000
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest2000',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest2000';
@@ -540,12 +540,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest2100
      * @tc.number SUB_BIGINT_LITERAL_TEST_2100
-     * @tc.name BuiltinsBigIntLiteralTest2100
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest2100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest2100';
@@ -561,12 +561,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest2200
      * @tc.number SUB_BIGINT_LITERAL_TEST_2200
-     * @tc.name BuiltinsBigIntLiteralTest2200
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest2200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest2200';
@@ -581,12 +581,12 @@ export default function BuiltinsBigIntLiteralTest() {
     });
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest2300
      * @tc.number SUB_BIGINT_LITERAL_TEST_2300
-     * @tc.name BuiltinsBigIntLiteralTest2300
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest2300',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest2300';
@@ -602,12 +602,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest2400
      * @tc.number SUB_BIGINT_LITERAL_TEST_2400
-     * @tc.name BuiltinsBigIntLiteralTest2400
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest2400',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest2400';
@@ -624,12 +624,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest2500
      * @tc.number SUB_BIGINT_LITERAL_TEST_2500
-     * @tc.name BuiltinsBigIntLiteralTest2500
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest2500',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest2500';
@@ -646,12 +646,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest2600
      * @tc.number SUB_BIGINT_LITERAL_TEST_2600
-     * @tc.name BuiltinsBigIntLiteralTest2600
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest2600',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest2600';
@@ -669,12 +669,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest2700
      * @tc.number SUB_BIGINT_LITERAL_TEST_2700
-     * @tc.name BuiltinsBigIntLiteralTest2700
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest2700',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest2700';
@@ -692,12 +692,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest2800
      * @tc.number SUB_BIGINT_LITERAL_TEST_2800
-     * @tc.name BuiltinsBigIntLiteralTest2800
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest2800',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest2800';
@@ -716,12 +716,12 @@ export default function BuiltinsBigIntLiteralTest() {
     })
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest2900
      * @tc.number SUB_BIGINT_LITERAL_TEST_2900
-     * @tc.name BuiltinsBigIntLiteralTest2900
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest2900',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest2900';
@@ -736,12 +736,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest3000
      * @tc.number SUB_BIGINT_LITERAL_TEST_3000
-     * @tc.name BuiltinsBigIntLiteralTest3000
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest3000',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest3000';
@@ -758,12 +758,12 @@ export default function BuiltinsBigIntLiteralTest() {
     })
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest3100
      * @tc.number SUB_BIGINT_LITERAL_TEST_3100
-     * @tc.name BuiltinsBigIntLiteralTest3100
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest3100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest3100';
@@ -778,12 +778,12 @@ export default function BuiltinsBigIntLiteralTest() {
     })
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest3200
      * @tc.number SUB_BIGINT_LITERAL_TEST_3200
-     * @tc.name BuiltinsBigIntLiteralTest3200
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest3200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest3200';
@@ -802,12 +802,12 @@ export default function BuiltinsBigIntLiteralTest() {
     })
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest3300
      * @tc.number SUB_BIGINT_LITERAL_TEST_3300
-     * @tc.name BuiltinsBigIntLiteralTest3300
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest3300',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest3300';
@@ -829,12 +829,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest3400
      * @tc.number SUB_BIGINT_LITERAL_TEST_3400
-     * @tc.name BuiltinsBigIntLiteralTest3400
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest3400',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest3400';
@@ -857,12 +857,12 @@ export default function BuiltinsBigIntLiteralTest() {
 
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest3500
      * @tc.number SUB_BIGINT_LITERAL_TEST_3500
-     * @tc.name BuiltinsBigIntLiteralTest3500
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest3500',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest3500';
@@ -886,12 +886,12 @@ export default function BuiltinsBigIntLiteralTest() {
     })
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest3600
      * @tc.number SUB_BIGINT_LITERAL_TEST_3600
-     * @tc.name BuiltinsBigIntLiteralTest3600
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest3600',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest3600';
@@ -911,12 +911,12 @@ export default function BuiltinsBigIntLiteralTest() {
     })
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest3700
      * @tc.number SUB_BIGINT_LITERAL_TEST_3700
-     * @tc.name BuiltinsBigIntLiteralTest3700
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest3700',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest3700';
@@ -939,12 +939,12 @@ export default function BuiltinsBigIntLiteralTest() {
     })
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest3800
      * @tc.number SUB_BIGINT_LITERAL_TEST_3800
-     * @tc.name BuiltinsBigIntLiteralTest3800
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest3800',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest3800';
@@ -960,12 +960,12 @@ export default function BuiltinsBigIntLiteralTest() {
     })
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest3900
      * @tc.number SUB_BIGINT_LITERAL_TEST_3900
-     * @tc.name BuiltinsBigIntLiteralTest3900
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest3900',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest3900';
@@ -986,12 +986,12 @@ export default function BuiltinsBigIntLiteralTest() {
     })
 
     /**
+     * @tc.name   BuiltinsBigIntLiteralTest4000
      * @tc.number SUB_BIGINT_LITERAL_TEST_4000
-     * @tc.name BuiltinsBigIntLiteralTest4000
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsBigIntLiteralTest4000',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsBigIntLiteralTest4000';

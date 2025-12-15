@@ -41,13 +41,13 @@ export default function updatePopupTest() {
         done();
       });
       /**
-     * @tc.number    updatePopup
-     * @tc.name      updatePopupTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
-     */
+       * @tc.name   updatePopupTest_0100
+       * @tc.number updatePopup
+       * @tc.desc   api
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
       it('updatePopupTest_0100', Level.LEVEL2, async (done: Function) => {
         let tagName = 'updatePopupTest_0100';
         console.info('[' + tagName + '] START============================');

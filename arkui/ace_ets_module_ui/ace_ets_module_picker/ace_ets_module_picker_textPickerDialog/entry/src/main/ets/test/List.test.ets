@@ -23,6 +23,18 @@ import textPickerDialogSelectedBgColorTest from './textPickerDialogTest/textPick
 import textPickerDialogSelectedTextStyleTest from './textPickerDialogTest/textPickerDialogSelectedTextStyle.test';
 import textPickerDialogShadowTest from './textPickerDialogTest/textPickerDialogShadow.test';
 import textPickerDialogTextStyleTest from './textPickerDialogTest/textPickerDialogTextStyle.test';
+import showTextPickerDialogBackgroundEffectTest from './textPickerDialogTest/showTextPickerDialogBackgroundEffect.test';
+import showTextPickerDialogBlurStyleOptionsTest from './textPickerDialogTest/showTextPickerDialogBlurStyleOptions.test';
+import textPickerDialogBackgroundEffectTest from './textPickerDialogTest/textPickerDialogBackgroundEffect.test';
+import textPickerDialogBlurStyleOptionsTest from './textPickerDialogTest/textPickerDialogBlurStyleOptions.test';
+import textPickerDialogAcceptButtonStyleTest from './textPickerDialogTest/textPickerDialogAcceptButtonStyle.test';
+import TextPickerDialogAppearTextTest from './textPickerDialogTest/TextPickerDialogAppearText.test';
+import TextPickerDialogCallbackTest from './textPickerDialogTest/TextPickerDialogCallback.test';
+import textPickerDialogCancelButtonStyleTest from './textPickerDialogTest/textPickerDialogCancelButtonStyle.test';
+import TextPickerDialogOptionsTest from './textPickerDialogTest/TextPickerDialogOptions.test';
+import TextPickerDialogUITest from './textPickerDialogTest/TextPickerDialogUI.test';
+import textPickerDialogWindowPropertiesTest from './textPickerDialogTest/textPickerDialogWindowProperties.test';
+import textPickerDialogOnScrollStopTest from './textPickerDialogTest/textPickerDialogOnScrollStopTest.test';
 
 export default function testsuite() {
   textPickerDialogBGBlurStyleTest();
@@ -36,4 +48,16 @@ export default function testsuite() {
   textPickerDialogSelectedTextStyleTest();
   textPickerDialogShadowTest();
   textPickerDialogTextStyleTest();
+  showTextPickerDialogBackgroundEffectTest();
+  showTextPickerDialogBlurStyleOptionsTest();
+  textPickerDialogBackgroundEffectTest();
+  textPickerDialogBlurStyleOptionsTest();
+  textPickerDialogAcceptButtonStyleTest();
+  TextPickerDialogAppearTextTest();
+  TextPickerDialogCallbackTest();
+  textPickerDialogCancelButtonStyleTest();
+  TextPickerDialogOptionsTest();
+  TextPickerDialogUITest();
+  textPickerDialogWindowPropertiesTest();
+  textPickerDialogOnScrollStopTest();
 }

@@ -43,12 +43,12 @@ export default function FromHtmlTest() {
     });
 
     /**
-     * @tc.number    fromHtmlTest_0010
-     * @tc.name      fromHtmlTest_0010
-     * @tc.desc      test the function of fromHtml
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   fromHtmlTest_0010
+     * @tc.number fromHtmlTest_0010
+     * @tc.desc   test the function of fromHtml
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('fromHtmlTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[fromHtmlTest_0010] START');
@@ -75,12 +75,12 @@ export default function FromHtmlTest() {
     });
 
     /**
-     * @tc.number    fromHtmlTest_0020
-     * @tc.name      fromHtmlTest_0020
-     * @tc.desc      test the function of fromHtmlErrorCode 170001
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   fromHtmlTest_0020
+     * @tc.number fromHtmlTest_0020
+     * @tc.desc   test the function of fromHtmlErrorCode 170001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('fromHtmlTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('[fromHtmlTest_0020] START');
@@ -96,12 +96,12 @@ export default function FromHtmlTest() {
     });
 
     /**
-     * @tc.number    fromHtmlTest_0030
-     * @tc.name      fromHtmlTest_0030
-     * @tc.desc      test the function of fromHtmlErrorCode 401
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   fromHtmlTest_0030
+     * @tc.number fromHtmlTest_0030
+     * @tc.desc   test the function of fromHtmlErrorCode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('fromHtmlTest_0030', Level.LEVEL2, async (done: Function) => {
       console.info('[fromHtmlTest_0030] START');

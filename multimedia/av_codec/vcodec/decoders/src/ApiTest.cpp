@@ -235,9 +235,12 @@ void DecApiNdkTest::TearDown()
 
 namespace {
 /**
- * @tc.number    : VIDEO_VC1DEC_CAP_API_0001
- * @tc.name      : VIDEO_VC1DEC_CAP_API_0001
- * @tc.desc      : api test
+ * @tc.name   VIDEO_VC1DEC_CAP_API_0001
+ * @tc.number VIDEO_VC1DEC_CAP_API_0001
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0001, TestSize.Level2)
 {
@@ -250,9 +253,12 @@ HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0001, TestSize.Level2)
 
 
 /**
- * @tc.number    : VIDEO_VC1DEC_CAP_API_0002
- * @tc.name      : VIDEO_VC1DEC_CAP_API_0002
- * @tc.desc      : function test
+ * @tc.name   VIDEO_VC1DEC_CAP_API_0002
+ * @tc.number VIDEO_VC1DEC_CAP_API_0002
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0002, TestSize.Level1)
 {
@@ -264,9 +270,12 @@ HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0002, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_VC1DEC_CAP_API_0003
- * @tc.name      : VIDEO_VC1DEC_CAP_API_0003
- * @tc.desc      : api test
+ * @tc.name   VIDEO_VC1DEC_CAP_API_0003
+ * @tc.number VIDEO_VC1DEC_CAP_API_0003
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0003, TestSize.Level1)
 {
@@ -285,9 +294,12 @@ HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0003, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_VC1DEC_CAP_API_0004
- * @tc.name      : VIDEO_VC1DEC_CAP_API_0004
- * @tc.desc      : api test
+ * @tc.name   VIDEO_VC1DEC_CAP_API_0004
+ * @tc.number VIDEO_VC1DEC_CAP_API_0004
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0004, TestSize.Level2)
 {
@@ -319,9 +331,12 @@ HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0004, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_VC1DEC_CAP_API_0005
- * @tc.name      : VIDEO_VC1DEC_CAP_API_0005
- * @tc.desc      : api test
+ * @tc.name   VIDEO_VC1DEC_CAP_API_0005
+ * @tc.number VIDEO_VC1DEC_CAP_API_0005
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0005, TestSize.Level1)
 {
@@ -362,9 +377,12 @@ HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0005, TestSize.Level1)
 
 
 /**
- * @tc.number    : VIDEO_VC1DEC_CAP_API_0006
- * @tc.name      : VIDEO_VC1DEC_CAP_API_0006
- * @tc.desc      : api test
+ * @tc.name   VIDEO_VC1DEC_CAP_API_0006
+ * @tc.number VIDEO_VC1DEC_CAP_API_0006
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0006, TestSize.Level1)
 {
@@ -385,9 +403,12 @@ HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0006, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_VC1DEC_CAP_API_0007
- * @tc.name      : VIDEO_VC1DEC_CAP_API_0007
- * @tc.desc      : api test
+ * @tc.name   VIDEO_VC1DEC_CAP_API_0007
+ * @tc.number VIDEO_VC1DEC_CAP_API_0007
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0007, TestSize.Level1)
 {
@@ -419,9 +440,12 @@ HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0007, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_VC1DEC_CAP_API_0008
- * @tc.name      : VIDEO_VC1DEC_CAP_API_0008
- * @tc.desc      : api test
+ * @tc.name   VIDEO_VC1DEC_CAP_API_0008
+ * @tc.number VIDEO_VC1DEC_CAP_API_0008
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0008, TestSize.Level1)
 {
@@ -452,9 +476,12 @@ HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0008, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_MSVIDEO1DEC_CAP_API_0009
- * @tc.name      : VIDEO_MSVIDEO1DEC_CAP_API_0009
- * @tc.desc      : api test
+ * @tc.name   VIDEO_MSVIDEO1DEC_CAP_API_0009
+ * @tc.number VIDEO_MSVIDEO1DEC_CAP_API_0009
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DecApiNdkTest, VIDEO_MSVIDEO1DEC_CAP_API_0009, TestSize.Level1)
 {
@@ -472,9 +499,12 @@ HWTEST_F(DecApiNdkTest, VIDEO_MSVIDEO1DEC_CAP_API_0009, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_MSVIDEO1DEC_CAP_API_0010
- * @tc.name      : VIDEO_MSVIDEO1DEC_CAP_API_0010
- * @tc.desc      : api test
+ * @tc.name   VIDEO_MSVIDEO1DEC_CAP_API_0010
+ * @tc.number VIDEO_MSVIDEO1DEC_CAP_API_0010
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DecApiNdkTest, VIDEO_MSVIDEO1DEC_CAP_API_0010, TestSize.Level1)
 {
@@ -495,9 +525,12 @@ HWTEST_F(DecApiNdkTest, VIDEO_MSVIDEO1DEC_CAP_API_0010, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_MSVIDEO1DEC_CAP_API_0011
- * @tc.name      : VIDEO_MSVIDEO1DEC_CAP_API_0011
- * @tc.desc      : api test
+ * @tc.name   VIDEO_MSVIDEO1DEC_CAP_API_0011
+ * @tc.number VIDEO_MSVIDEO1DEC_CAP_API_0011
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DecApiNdkTest, VIDEO_MSVIDEO1DEC_CAP_API_0011, TestSize.Level1)
 {

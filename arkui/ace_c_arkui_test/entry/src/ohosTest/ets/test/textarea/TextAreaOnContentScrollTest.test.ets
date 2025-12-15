@@ -26,14 +26,14 @@ export default function textAreaOnContentScrollTest() {
       await Utils.pushPage(`textarea/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXTAREA_ON_CONTENT_SCROLL_0001
-    * @tc.name       : testTextAreaOnContentScroll001
-    * @tc.desc       : test onContentScroll event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testTextAreaOnContentScroll001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_ON_CONTENT_SCROLL_0001
+     * @tc.desc   test onContentScroll event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextAreaOnContentScroll001', Level.LEVEL1, async (done: Function) => {
       focusControl.requestFocus('OnContentScrollTestTextArea')
       await Utils.sleep(1000)

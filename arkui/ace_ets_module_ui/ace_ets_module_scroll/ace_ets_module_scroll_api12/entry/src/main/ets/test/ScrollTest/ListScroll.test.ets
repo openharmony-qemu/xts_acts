@@ -41,12 +41,12 @@ export default function ListScrollTest1() {
       done();
     });
     /**
-     * @tc.number    ListScroll
-     * @tc.name      ListScrollTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ListScrollTest1_0100
+     * @tc.number ListScroll
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ListScrollTest1_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ListScrollTest_0100 START');

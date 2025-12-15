@@ -51,13 +51,13 @@ export default function AVSessionManager() {
             console.info('TestLog: End testing describe');
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_0100
-         * @tc.name      : create AVSession(audio) - promise
-         * @tc.desc      : Testing createAVSession with right parameter audio - promise
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_0100
+         * @tc.desc   Testing createAVSession with right parameter audio - promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await avSession.createAVSession(context, tag, "audio").then((data) => {
@@ -77,13 +77,13 @@ export default function AVSessionManager() {
             });
             done();
         })
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_0200
-         * @tc.name      : createAVSession(promise) with invalid param(errcode 401) - invalid value
-         * @tc.desc      : test createAVSession(promise) errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_0200
+         * @tc.desc   test createAVSession(promise) errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await avSession.createAVSession(context, tag, 'aaa').then((data) => {
@@ -97,13 +97,13 @@ export default function AVSessionManager() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_0300
-         * @tc.name      : createAVSession(promise) with invalid param(errcode 401) - empty string
-         * @tc.desc      : test createAVSession(promise) errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_0300
+         * @tc.desc   test createAVSession(promise) errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await avSession.createAVSession(context, '', type).then((data) => {
@@ -117,13 +117,13 @@ export default function AVSessionManager() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_0400
-         * @tc.name      : create AVSession(video) - promise
-         * @tc.desc      : Testing createAVSession with right parameter video - promise
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_0400
+         * @tc.desc   Testing createAVSession with right parameter video - promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await avSession.createAVSession(context, tag, "video").then((data) => {
@@ -147,13 +147,13 @@ export default function AVSessionManager() {
 
 
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_CALLBACK_0100
-         * @tc.name      : getavcastcontroller - callback
-         * @tc.desc      : Testing call getavcastcontroller(callback)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_CALLBACK_0100
+         * @tc.desc   Testing call getavcastcontroller(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -182,13 +182,13 @@ export default function AVSessionManager() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_PROMISE_0100
-         * @tc.name      : getavcastcontroller - promise
-         * @tc.desc      : Testing call getavcastcontroller(promise)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_PROMISE_0100
+         * @tc.desc   Testing call getavcastcontroller(promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -214,13 +214,13 @@ export default function AVSessionManager() {
 
 
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_STOPCASTING_CALLBACK_0100
-         * @tc.name      : stopCasting - callback
-         * @tc.desc      : Testing call stopCasting(callback)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_STOPCASTING_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_STOPCASTING_CALLBACK_0100
+         * @tc.desc   Testing call stopCasting(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_STOPCASTING_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -249,13 +249,13 @@ export default function AVSessionManager() {
             done();
         })
         
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_STOPCASTING_PROMISE_0100
-         * @tc.name      : stopCasting - promise
-         * @tc.desc      : Testing call stopCasting(promise)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_STOPCASTING_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_STOPCASTING_PROMISE_0100
+         * @tc.desc   Testing call stopCasting(promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_STOPCASTING_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -282,13 +282,13 @@ export default function AVSessionManager() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETCURRENTITEM_CALLBACK_0100
-         * @tc.name      : getCurrentItem - callback
-         * @tc.desc      : Testing call getCurrentItem(callback)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETCURRENTITEM_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETCURRENTITEM_CALLBACK_0100
+         * @tc.desc   Testing call getCurrentItem(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETCURRENTITEM_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -323,13 +323,13 @@ export default function AVSessionManager() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETCURRENTITEM_PROMISE_0100
-         * @tc.name      : getCurrentItem - promise
-         * @tc.desc      : Testing call getCurrentItem(promise)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETCURRENTITEM_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETCURRENTITEM_PROMISE_0100
+         * @tc.desc   Testing call getCurrentItem(promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETCURRENTITEM_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {

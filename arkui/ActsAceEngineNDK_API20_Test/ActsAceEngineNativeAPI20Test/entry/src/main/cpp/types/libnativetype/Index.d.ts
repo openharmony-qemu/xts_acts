@@ -127,3 +127,7 @@ export const ErrorCodeNotClonedPointerEvent: () => number;
 export const ErrorCodeBufferSizeNotEnough: () => number;
 
 export const ErrorCodePostCloned: () => number;
+
+export const GetRouterStateOnShow: () => number;
+export const GetRouterStateOnHide: () => number;
+export const GetRouterStateOnBackPressed: () => number;

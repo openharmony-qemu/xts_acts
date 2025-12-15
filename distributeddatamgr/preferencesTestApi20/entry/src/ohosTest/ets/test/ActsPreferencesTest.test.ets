@@ -19,7 +19,6 @@ import preferences from 'libpreferencestest.so'
 export default function ActsPreferencesTest() {
   describe('ActsPreferencesTest', () => {
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_OH_Preferences_IsStorageTypeSupported_0100
      * @tc.number SUB_OH_Preferences_IsStorageTypeSupported_0100
      * @tc.desc   Test the scenario that the parameter of the OH_Preferences_IsStorageTypeSupported interface is illegal.
@@ -43,7 +42,6 @@ export default function ActsPreferencesTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_PREFERENCES_STORAGE_XML_0200
      * @tc.number SUB_PREFERENCES_STORAGE_XML_0200
      * @tc.desc   Scenario for testing enumeration value PREFERENCES_STORAGE_XML
@@ -67,7 +65,6 @@ export default function ActsPreferencesTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_OH_PreferencesOption_SetStorageType_0300
      * @tc.number SUB_OH_PreferencesOption_SetStorageType_0300
      * @tc.desc   Test the scenario that the parameter of the OH_PreferencesOption_SetStorageType interface is illegal.

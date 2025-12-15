@@ -56,14 +56,14 @@ export default function webFontTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBSTANDARDFONT_0100
-    * @tc.name        : testWebStandardFont001
-    * @tc.desc        : test WebStandardFont
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebStandardFont001
+     * @tc.number SUB_WEB_WEBSTANDARDFONT_0100
+     * @tc.desc   test WebStandardFont
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebStandardFont001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont001", 150140)
       Utils.registerEvent("testWebStandardFont001", '"serif"', 150150, done);
@@ -71,14 +71,14 @@ export default function webFontTest() {
       await component.click();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBSTANDARDFONT_0200
-    * @tc.name        : testWebStandardFont002
-    * @tc.desc        : test WebStandardFont
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebStandardFont002
+     * @tc.number SUB_WEB_WEBSTANDARDFONT_0200
+     * @tc.desc   test WebStandardFont
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebStandardFont002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont002", 150140)
       Utils.registerEvent("testWebStandardFont002", '"monospace"', 150160, done);
@@ -86,14 +86,14 @@ export default function webFontTest() {
       await component.click();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBSTANDARDFONT_0300
-    * @tc.name        : testWebStandardFont003
-    * @tc.desc        : test WebStandardFont
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebStandardFont003
+     * @tc.number SUB_WEB_WEBSTANDARDFONT_0300
+     * @tc.desc   test WebStandardFont
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebStandardFont003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont003", 150140)
       Utils.registerEvent("testWebStandardFont003", '"Helvetica"', 150170, done);
@@ -101,14 +101,14 @@ export default function webFontTest() {
       await component.click();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBSTANDARDFONT_0400
-    * @tc.name        : testWebStandardFont004
-    * @tc.desc        : test WebStandardFont
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebStandardFont004
+     * @tc.number SUB_WEB_WEBSTANDARDFONT_0400
+     * @tc.desc   test WebStandardFont
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebStandardFont004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont004", 150140)
       Utils.registerEvent("testWebStandardFont004", '"Arial"', 150180, done);
@@ -116,14 +116,14 @@ export default function webFontTest() {
       await component.click();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBSTANDARDFONT_0500
-    * @tc.name        : testWebStandardFont005
-    * @tc.desc        : test WebStandardFont
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebStandardFont005
+     * @tc.number SUB_WEB_WEBSTANDARDFONT_0500
+     * @tc.desc   test WebStandardFont
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebStandardFont005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont005", 150140)
       Utils.registerEvent("testWebStandardFont005", '"\\"sans serif\\""', 150190, done);

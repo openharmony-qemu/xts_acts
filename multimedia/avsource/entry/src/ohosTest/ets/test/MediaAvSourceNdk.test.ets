@@ -73,12 +73,12 @@ export default function mediaAvSourceNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVSOURCE_OH_AVSOURCE_CREATEWITHURI_0100
-     * @tc.name       : testOHAVSourceCreateWithURI001
-     * @tc.desc       : test OH_AVSource_CreateWithURI
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAVSourceCreateWithURI001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVSOURCE_OH_AVSOURCE_CREATEWITHURI_0100
+     * @tc.desc   test OH_AVSource_CreateWithURI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVSourceCreateWithURI001', Level.LEVEL0, async (done: Function) => {
       expect(mediaavsourcendk.OH_AVSource_CreateWithURI()).assertEqual(-1);
@@ -86,12 +86,12 @@ export default function mediaAvSourceNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVSOURCE_OH_AVSOURCE_CREATEWITHFD_0100
-     * @tc.name       : testOHAVSourceCreateWithFD001
-     * @tc.desc       : test OH_AVSource_CreateWithFD
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAVSourceCreateWithFD001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVSOURCE_OH_AVSOURCE_CREATEWITHFD_0100
+     * @tc.desc   test OH_AVSource_CreateWithFD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVSourceCreateWithFD001', Level.LEVEL0, async (done: Function) => {
       expect(mediaavsourcendk.OH_AVSource_CreateWithFD()).assertEqual(0);
@@ -99,12 +99,12 @@ export default function mediaAvSourceNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVSOURCE_OH_AVSOURCE_DESTROY_0100
-     * @tc.name       : testOHAVSourceDestroy001
-     * @tc.desc       : test OH_AVSource_Destroy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAVSourceDestroy001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVSOURCE_OH_AVSOURCE_DESTROY_0100
+     * @tc.desc   test OH_AVSource_Destroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVSourceDestroy001', Level.LEVEL0, async (done: Function) => {
       expect(mediaavsourcendk.OH_AVSource_Destroy()).assertEqual(0);
@@ -112,12 +112,12 @@ export default function mediaAvSourceNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVSOURCE_OH_AVSOURCE_GETSOURCEFORMAT_0100
-     * @tc.name       : testOHAVSourceGetSourceFormat001
-     * @tc.desc       : test OH_AVSource_GetSourceFormat
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAVSourceGetSourceFormat001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVSOURCE_OH_AVSOURCE_GETSOURCEFORMAT_0100
+     * @tc.desc   test OH_AVSource_GetSourceFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVSourceGetSourceFormat001', Level.LEVEL0, async (done: Function) => {
       expect(mediaavsourcendk.OH_AVSource_GetSourceFormat()).assertEqual(0);
@@ -125,12 +125,12 @@ export default function mediaAvSourceNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVSOURCE_OH_AVSOURCE_GETTRACKFORMAT_0100
-     * @tc.name       : testOHAVSourceGetTrackFormat001
-     * @tc.desc       : test OH_AVSource_GetTrackFormat
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHAVSourceGetTrackFormat001
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVSOURCE_OH_AVSOURCE_GETTRACKFORMAT_0100
+     * @tc.desc   test OH_AVSource_GetTrackFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVSourceGetTrackFormat001', Level.LEVEL0, async (done: Function) => {
       expect(mediaavsourcendk.OH_AVSource_GetTrackFormat()).assertEqual(0);

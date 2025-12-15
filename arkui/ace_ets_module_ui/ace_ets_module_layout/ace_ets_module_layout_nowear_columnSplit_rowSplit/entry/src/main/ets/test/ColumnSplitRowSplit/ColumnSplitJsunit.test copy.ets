@@ -51,12 +51,12 @@ export default function ColumnSplitJsunit() {
 
    
     /**
-     * @tc.number: SUB_ARKUI_API_testColumnSplitResizeable01
-     * @tc.name: testColumnSplitResizeable01
-     * @tc.desc: ColumnSplitRowSplitAPI 
-     * @tc.level: Level 0
-     * @tc.type : ColumnSplitRowSplit
-     * @tc.size : ColumnSplitRowSplitTest
+     * @tc.name   testColumnSplitResizeable01
+     * @tc.number SUB_ARKUI_API_testColumnSplitResizeable01
+     * @tc.desc   ColumnSplitRowSplitAPI 
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnSplitResizeable01',  Level.LEVEL0, async (done: Function) => {
       let tagName = 'testColumnSplitResizeable01';

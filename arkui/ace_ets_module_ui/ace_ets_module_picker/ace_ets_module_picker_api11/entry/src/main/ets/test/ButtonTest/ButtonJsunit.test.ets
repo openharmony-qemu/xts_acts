@@ -57,9 +57,12 @@ export default function buttonJsunit() {
     });
 
     /**
+     * @tc.name   buttonGetInspectorByKey010
      * @tc.number SUB_ACE_BASIC_ETS_API_0640
-     * @tc.name testButtonGetInspectorByKey010
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buttonGetInspectorByKey010', Level.LEVEL1, async (done: Function) => {
       console.info('testGetInspectorByKey START');
@@ -76,9 +79,12 @@ export default function buttonJsunit() {
       done();
     });
     /**
+     * @tc.name   ButtonGetInspectorByKey020
      * @tc.number SUB_ACE_BASIC_ETS_API_0650
-     * @tc.name testButtonGetInspectorByKey020
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ButtonGetInspectorByKey020', Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('button1');
@@ -91,9 +97,12 @@ export default function buttonJsunit() {
     });
 
     /**
+     * @tc.name   ButtonGetInspectorByKey030
      * @tc.number SUB_ACE_BASIC_ETS_API_0660
-     * @tc.name testButtonGetInspectorByKey030
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ButtonGetInspectorByKey030', Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('button2');

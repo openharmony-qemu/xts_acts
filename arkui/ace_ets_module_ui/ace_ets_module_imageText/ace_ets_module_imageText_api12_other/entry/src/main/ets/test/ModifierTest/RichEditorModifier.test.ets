@@ -42,12 +42,12 @@ export default function RichEditorModifierTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichEditorModifierTest_0010
-     * @tc.name      RichEditorModifierTest_0010
-     * @tc.desc      test RichEditorModifier: width
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichEditorModifierTest_0010
+     * @tc.number SUB_ACE_RichEditorModifierTest_0010
+     * @tc.desc   test RichEditorModifier: width
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RichEditorModifierTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('RichEditorModifierTest_0010 START');
@@ -61,12 +61,12 @@ export default function RichEditorModifierTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichEditorModifierTest_0020
-     * @tc.name      RichEditorModifierTest_0020
-     * @tc.desc      test type of RichEditorInstance: undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichEditorModifierTest_0020
+     * @tc.number SUB_ACE_RichEditorModifierTest_0020
+     * @tc.desc   test type of RichEditorInstance: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RichEditorModifierTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('RichEditorModifierTest_0020 START');

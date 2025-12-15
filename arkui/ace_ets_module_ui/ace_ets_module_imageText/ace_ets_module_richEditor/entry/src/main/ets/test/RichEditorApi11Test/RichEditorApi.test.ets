@@ -45,11 +45,13 @@ export default function RichEditorApi() {
       console.info("RichEditorApi after each called");
     });
 
-    /*
-     * @tc.number      RichEditorApi_001
-     * @tc.name        RichEditorApi_001
-     * @tc.desc        RichEditorApi addBuilderSpan test
-     * @tc.level       Level 2
+    /**
+     * @tc.name   RichEditorApi_001
+     * @tc.number RichEditorApi_001
+     * @tc.desc   RichEditorApi addBuilderSpan test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorApi_001', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorApi_001] START');
@@ -65,11 +67,13 @@ export default function RichEditorApi() {
 
     });
 
-    /*
-     * @tc.number      RichEditorApi_002
-     * @tc.name        RichEditorApi_002
-     * @tc.desc        RichEditorApi getParagraphs test
-     * @tc.level       Level 2
+    /**
+     * @tc.name   RichEditorApi_002
+     * @tc.number RichEditorApi_002
+     * @tc.desc   RichEditorApi getParagraphs test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorApi_002', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorApi_002] START');
@@ -93,11 +97,13 @@ export default function RichEditorApi() {
       done();
     });
 
-    /*
-     * @tc.number      RichEditorApi_003
-     * @tc.name        RichEditorApi_003
-     * @tc.desc        RichEditorApi updateParagraphStyle test
-     * @tc.level       Level 2
+    /**
+     * @tc.name   RichEditorApi_003
+     * @tc.number RichEditorApi_003
+     * @tc.desc   RichEditorApi updateParagraphStyle test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorApi_003', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorApi_003] START');
@@ -127,12 +133,14 @@ export default function RichEditorApi() {
       done();
     });
 
-    /*
-    * @tc.number      RichEditorApi_004
-    * @tc.name        RichEditorApi_004
-    * @tc.desc        RichEditorApi RichEditorResponseType test
-    * @tc.level       Level 2
-    */
+    /**
+     * @tc.name   RichEditorApi_004
+     * @tc.number RichEditorApi_004
+     * @tc.desc   RichEditorApi RichEditorResponseType test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RichEditorApi_004', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorApi_004] START');
       await CommonFunc.sleep(1000);
@@ -155,12 +163,14 @@ export default function RichEditorApi() {
     });
 
 
-    /*
-    * @tc.number      RichEditorApi_005
-    * @tc.name        RichEditorApi_005
-    * @tc.desc        RichEditorApi RichEditorResponseType test
-    * @tc.level       Level 2
-    */
+    /**
+     * @tc.name   RichEditorApi_005
+     * @tc.number RichEditorApi_005
+     * @tc.desc   RichEditorApi RichEditorResponseType test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RichEditorApi_005', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorApi_005] START');
       await CommonFunc.sleep(1000);

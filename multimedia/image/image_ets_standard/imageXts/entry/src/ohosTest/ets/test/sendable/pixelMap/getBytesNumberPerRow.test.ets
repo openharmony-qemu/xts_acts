@@ -59,12 +59,12 @@ export default function sendableGetBytesNumberPerRowTest() {
     });
 
     /**
-     * @tc.number    : PIXEL_MAP_GET_BYTES_NUMBER_PER_ROW_001
-     * @tc.name      : getBytesNumberPerRow_sendable_promise_001
-     * @tc.desc      : getBytesNumberPerRow
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getBytesNumberPerRow_sendable_promise_001
+     * @tc.number PIXEL_MAP_GET_BYTES_NUMBER_PER_ROW_001
+     * @tc.desc   getBytesNumberPerRow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getBytesNumberPerRow_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getBytesNumberPerRow_sendable_promise_001';
@@ -74,12 +74,12 @@ export default function sendableGetBytesNumberPerRowTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_GET_BYTES_NUMBER_PER_ROW_002
-     * @tc.name      : getBytesNumberPerRow_sendable_promise_002
-     * @tc.desc      : getBytesNumberPerRow
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getBytesNumberPerRow_sendable_promise_002
+     * @tc.number PIXEL_MAP_GET_BYTES_NUMBER_PER_ROW_002
+     * @tc.desc   getBytesNumberPerRow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getBytesNumberPerRow_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'getBytesNumberPerRow_sendable_promise_002';

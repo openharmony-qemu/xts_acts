@@ -44,12 +44,12 @@ export default function symbolIsConcatSpreadableTest() {
     })
 
     /**
+     * @tc.name   ArrayDefaultSpreadTest001
      * @tc.number SUB_SYMBOL_ISCONCATSPREADABLE_STANDALONE_TEST_001
-     * @tc.name ArrayDefaultSpreadTest001
-     * @tc.desc Verify arrays are spread by default in concat()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify arrays are spread by default in concat()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayDefaultSpreadTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIsConcatSpreadableStandaloneTestUtils.test001_ArrayDefaultSpread();
@@ -57,12 +57,12 @@ export default function symbolIsConcatSpreadableTest() {
     });
 
     /**
+     * @tc.name   ArraySetFalseNotSpreadTest002
      * @tc.number SUB_SYMBOL_ISCONCATSPREADABLE_STANDALONE_TEST_002
-     * @tc.name ArraySetFalseNotSpreadTest002
-     * @tc.desc Verify arrays with isConcatSpreadable=false are not spread
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify arrays with isConcatSpreadable=false are not spread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArraySetFalseNotSpreadTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIsConcatSpreadableStandaloneTestUtils.test002_ArraySetFalseNotSpread();
@@ -70,12 +70,12 @@ export default function symbolIsConcatSpreadableTest() {
     });
 
     /**
+     * @tc.name   ArrayLikeSetTrueSpreadTest003
      * @tc.number SUB_SYMBOL_ISCONCATSPREADABLE_STANDALONE_TEST_003
-     * @tc.name ArrayLikeSetTrueSpreadTest003
-     * @tc.desc Verify array-like objects with isConcatSpreadable=true are spread
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify array-like objects with isConcatSpreadable=true are spread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayLikeSetTrueSpreadTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIsConcatSpreadableStandaloneTestUtils.test003_ArrayLikeSetTrueSpread();
@@ -83,12 +83,12 @@ export default function symbolIsConcatSpreadableTest() {
     });
 
     /**
+     * @tc.name   ArrayLikeDefaultNotSpreadTest004
      * @tc.number SUB_SYMBOL_ISCONCATSPREADABLE_STANDALONE_TEST_004
-     * @tc.name ArrayLikeDefaultNotSpreadTest004
-     * @tc.desc Verify array-like objects are not spread by default
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify array-like objects are not spread by default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayLikeDefaultNotSpreadTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIsConcatSpreadableStandaloneTestUtils.test004_ArrayLikeDefaultNotSpread();
@@ -99,12 +99,12 @@ export default function symbolIsConcatSpreadableTest() {
 
 
     /**
+     * @tc.name   NestedArraySpreadControlTest007
      * @tc.number SUB_SYMBOL_ISCONCATSPREADABLE_STANDALONE_TEST_007
-     * @tc.name NestedArraySpreadControlTest007
-     * @tc.desc Verify nested arrays respect isConcatSpreadable setting
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify nested arrays respect isConcatSpreadable setting
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NestedArraySpreadControlTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIsConcatSpreadableStandaloneTestUtils.test007_NestedArraySpreadControl();
@@ -113,12 +113,12 @@ export default function symbolIsConcatSpreadableTest() {
 
 
     /**
+     * @tc.name   NonBooleanCoercionTest009
      * @tc.number SUB_SYMBOL_ISCONCATSPREADABLE_STANDALONE_TEST_009
-     * @tc.name NonBooleanCoercionTest009
-     * @tc.desc Verify non-boolean values are coerced to control spread
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify non-boolean values are coerced to control spread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NonBooleanCoercionTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIsConcatSpreadableStandaloneTestUtils.test009_NonBooleanCoercion();
@@ -126,12 +126,12 @@ export default function symbolIsConcatSpreadableTest() {
     });
 
     /**
+     * @tc.name   ArrayLikeSetFalseNotSpreadTest011
      * @tc.number SUB_SYMBOL_ISCONCATSPREADABLE_STANDALONE_TEST_011
-     * @tc.name ArrayLikeSetFalseNotSpreadTest011
-     * @tc.desc Verify array-like objects with isConcatSpreadable=false are not spread
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify array-like objects with isConcatSpreadable=false are not spread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayLikeSetFalseNotSpreadTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIsConcatSpreadableStandaloneTestUtils.test011_ArrayLikeSetFalseNotSpread();
@@ -139,12 +139,12 @@ export default function symbolIsConcatSpreadableTest() {
     });
 
     /**
+     * @tc.name   EmptyArrayLikeSetTrueSpreadTest012
      * @tc.number SUB_SYMBOL_ISCONCATSPREADABLE_STANDALONE_TEST_012
-     * @tc.name EmptyArrayLikeSetTrueSpreadTest012
-     * @tc.desc Verify empty array-like with isConcatSpreadable=true spreads to empty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify empty array-like with isConcatSpreadable=true spreads to empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('EmptyArrayLikeSetTrueSpreadTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIsConcatSpreadableStandaloneTestUtils.test012_EmptyArrayLikeSetTrueSpread();
@@ -153,12 +153,12 @@ export default function symbolIsConcatSpreadableTest() {
 
 
     /**
+     * @tc.name   FunctionArrayLikeSpreadTest014
      * @tc.number SUB_SYMBOL_ISCONCATSPREADABLE_STANDALONE_TEST_014
-     * @tc.name FunctionArrayLikeSpreadTest014
-     * @tc.desc Verify function (array-like) with isConcatSpreadable=true is spread
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify function (array-like) with isConcatSpreadable=true is spread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('FunctionArrayLikeSpreadTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIsConcatSpreadableStandaloneTestUtils.test014_FunctionArrayLikeSpread();
@@ -166,12 +166,12 @@ export default function symbolIsConcatSpreadableTest() {
     });
 
     /**
+     * @tc.name   SetToNullCoercionTest015
      * @tc.number SUB_SYMBOL_ISCONCATSPREADABLE_STANDALONE_TEST_015
-     * @tc.name SetToNullCoercionTest015
-     * @tc.desc Verify isConcatSpreadable=null is coerced to false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify isConcatSpreadable=null is coerced to false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SetToNullCoercionTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIsConcatSpreadableStandaloneTestUtils.test015_SetToNullCoercion();
@@ -179,12 +179,12 @@ export default function symbolIsConcatSpreadableTest() {
     });
 
     /**
+     * @tc.name   SetToUndefinedDefaultTest016
      * @tc.number SUB_SYMBOL_ISCONCATSPREADABLE_STANDALONE_TEST_016
-     * @tc.name SetToUndefinedDefaultTest016
-     * @tc.desc Verify isConcatSpreadable=undefined uses default behavior
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify isConcatSpreadable=undefined uses default behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SetToUndefinedDefaultTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIsConcatSpreadableStandaloneTestUtils.test016_SetToUndefinedDefault();
@@ -193,12 +193,12 @@ export default function symbolIsConcatSpreadableTest() {
 
 
     /**
+     * @tc.name   MixedTypesConcatTest018
      * @tc.number SUB_SYMBOL_ISCONCATSPREADABLE_STANDALONE_TEST_018
-     * @tc.name MixedTypesConcatTest018
-     * @tc.desc Verify mixed types concat respect individual spread settings
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify mixed types concat respect individual spread settings
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MixedTypesConcatTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIsConcatSpreadableStandaloneTestUtils.test018_MixedTypesConcat();
@@ -206,12 +206,12 @@ export default function symbolIsConcatSpreadableTest() {
     });
 
     /**
+     * @tc.name   FrozenArrayLikeSpreadTest019
      * @tc.number SUB_SYMBOL_ISCONCATSPREADABLE_STANDALONE_TEST_019
-     * @tc.name FrozenArrayLikeSpreadTest019
-     * @tc.desc Verify frozen array-like with isConcatSpreadable=true is spread
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify frozen array-like with isConcatSpreadable=true is spread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('FrozenArrayLikeSpreadTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIsConcatSpreadableStandaloneTestUtils.test019_FrozenArrayLikeSpread();
@@ -221,12 +221,12 @@ export default function symbolIsConcatSpreadableTest() {
 
 
     /**
+     * @tc.name   ArraySubclassDefaultSpreadTest021
      * @tc.number SUB_SYMBOL_ISCONCATSPREADABLE_STANDALONE_TEST_021
-     * @tc.name ArraySubclassDefaultSpreadTest021
-     * @tc.desc Verify array subclass instance defaults to spread
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify array subclass instance defaults to spread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArraySubclassDefaultSpreadTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIsConcatSpreadableStandaloneTestUtils.test021_ArraySubclassDefaultSpread();
@@ -234,12 +234,12 @@ export default function symbolIsConcatSpreadableTest() {
     });
 
     /**
+     * @tc.name   ArraySubclassSetFalseNotSpreadTest022
      * @tc.number SUB_SYMBOL_ISCONCATSPREADABLE_STANDALONE_TEST_022
-     * @tc.name ArraySubclassSetFalseNotSpreadTest022
-     * @tc.desc Verify array subclass instance with isConcatSpreadable=false is not spread
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify array subclass instance with isConcatSpreadable=false is not spread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArraySubclassSetFalseNotSpreadTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIsConcatSpreadableStandaloneTestUtils.test022_ArraySubclassSetFalseNotSpread();
@@ -247,12 +247,12 @@ export default function symbolIsConcatSpreadableTest() {
     });
 
     /**
+     * @tc.name   SetToStringTrueCoercionTest023
      * @tc.number SUB_SYMBOL_ISCONCATSPREADABLE_STANDALONE_TEST_023
-     * @tc.name SetToStringTrueCoercionTest023
-     * @tc.desc Verify isConcatSpreadable="true" is coerced to true
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify isConcatSpreadable="true" is coerced to true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SetToStringTrueCoercionTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIsConcatSpreadableStandaloneTestUtils.test023_SetToStringTrueCoercion();
@@ -266,12 +266,12 @@ export default function symbolIsConcatSpreadableTest() {
 
 
     /**
+     * @tc.name   DynamicArrayLikeSpreadTest029
      * @tc.number SUB_SYMBOL_ISCONCATSPREADABLE_STANDALONE_TEST_029
-     * @tc.name DynamicArrayLikeSpreadTest029
-     * @tc.desc Verify dynamic array-like spreads latest properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify dynamic array-like spreads latest properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DynamicArrayLikeSpreadTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIsConcatSpreadableStandaloneTestUtils.test029_DynamicArrayLikeSpread();
@@ -279,12 +279,12 @@ export default function symbolIsConcatSpreadableTest() {
     });
 
     /**
+     * @tc.name   InheritedSpreadSettingTest030
      * @tc.number SUB_SYMBOL_ISCONCATSPREADABLE_STANDALONE_TEST_030
-     * @tc.name InheritedSpreadSettingTest030
-     * @tc.desc Verify array-like inherits spread setting from prototype
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify array-like inherits spread setting from prototype
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('InheritedSpreadSettingTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIsConcatSpreadableStandaloneTestUtils.test030_InheritedSpreadSetting();

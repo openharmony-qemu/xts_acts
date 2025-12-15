@@ -50,3 +50,4 @@ export const testSwiperArrowStyle003 : () =>number;
 export const testSwiperArrowStyle004 : () =>number;
 export const testSwiperArrowStyle005 : () =>number;
 export const testSwiperArrowStyle006 : () =>number;
+export const testExpectedFrameRate001: () => number;

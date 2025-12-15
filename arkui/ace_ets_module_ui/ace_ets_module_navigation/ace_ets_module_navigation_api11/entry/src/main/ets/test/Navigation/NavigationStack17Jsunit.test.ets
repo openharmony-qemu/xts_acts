@@ -39,12 +39,14 @@ export default function NavigationStack17Jsunit() {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_UI_COMPONENT_NAV_NAVIGATION_HIDENAVBAR_0050
-    * @tc.name  : NavigationStack17Jsunit_0100
-    * @tc.desc  : NavigationMode is set to auto, and NavigationMode is set to stack.
-    * @tc.level : Level 3
-    */
+    /**
+     * @tc.name   NavigationStack17Jsunit_0100
+     * @tc.number SUB_ACE_UI_COMPONENT_NAV_NAVIGATION_HIDENAVBAR_0050
+     * @tc.desc   NavigationMode is set to auto, and NavigationMode is set to stack.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavigationStack17Jsunit_0100',  Level.LEVEL0, async  (done:Function) =>{
       await CommonFunc.sleep(1000);
       let driver = await Driver.create();

@@ -20,7 +20,6 @@ export default function singleKvStoreEnumStageTest(){
   describe('singleKvStoreEnumStageTest', function () {
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsConstantsMaxKeyLength_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumEtsApiTest_0300
      * @tc.desc   Test Js Enum Value Constants.MAX_KEY_LENGTH
@@ -35,7 +34,6 @@ export default function singleKvStoreEnumStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsConstantsMaxValueLength_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumEtsApiTest_0600
      * @tc.desc   Test Js Enum Value Constants.MAX_VALUE_LENGTH
@@ -51,7 +49,6 @@ export default function singleKvStoreEnumStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsConstantsMaxValueLength_002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumEtsApiTest_0700
      * @tc.desc   Test Js Enum Value Constants.MAX_VALUE_LENGTH
@@ -69,7 +66,6 @@ export default function singleKvStoreEnumStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsConstantsMaxKeyLengthDevice_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumEtsApiTest_0200
      * @tc.desc   Test Js Enum Value Constants.MAX_KEY_LENGTH_DEVICE
@@ -84,7 +80,6 @@ export default function singleKvStoreEnumStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsConstantsMaxStoreIdLength_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumEtsApiTest_0500
      * @tc.desc   Test Js Enum Value Constants.MAX_STORE_ID_LENGTH
@@ -99,7 +94,6 @@ export default function singleKvStoreEnumStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsConstantsMaxQueryLength_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumEtsApiTest_0400
      * @tc.desc   Test Js Enum Value Constants.MAX_QUERY_LENGTH
@@ -114,7 +108,6 @@ export default function singleKvStoreEnumStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsConstantsMaxBatchSize_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumEtsApiTest_0100
      * @tc.desc   Test Js Enum Value Constants.MAX_BATCH_SIZE
@@ -129,7 +122,6 @@ export default function singleKvStoreEnumStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsValuetypeString_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumEtsApiTest_2900
      * @tc.desc   Test Js Enum Value Valuetype.STRING
@@ -144,7 +136,6 @@ export default function singleKvStoreEnumStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsValuetypeInteger_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumEtsApiTest_2800
      * @tc.desc   Test Js Enum Value Valuetype.INTEGER
@@ -159,7 +150,6 @@ export default function singleKvStoreEnumStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsValuetypeFloat_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumEtsApiTest_2700
      * @tc.desc   Test Js Enum Value Valuetype.FLOAT
@@ -174,7 +164,6 @@ export default function singleKvStoreEnumStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsValuetypeByteArray_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumEtsApiTest_2500
      * @tc.desc   Test Js Enum Value Valuetype.BYTEARRAY
@@ -189,7 +178,6 @@ export default function singleKvStoreEnumStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsValuetypeBoolean_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumEtsApiTest_2400
      * @tc.desc   Test Js Enum Value Valuetype.BOOLEAN
@@ -204,7 +192,6 @@ export default function singleKvStoreEnumStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsValuetypeDouble_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumEtsApiTest_2600
      * @tc.desc   Test Js Enum Value Valuetype.DOUBLE
@@ -219,7 +206,6 @@ export default function singleKvStoreEnumStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSyncmodePullOnly_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumEtsApiTest_2000
      * @tc.desc   Test Js Enum Value Syncmode.PULL_ONLY
@@ -234,7 +220,6 @@ export default function singleKvStoreEnumStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSyncmodePushOnly_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumEtsApiTest_2100
      * @tc.desc   Test Js Enum Value Syncmode.PUSH_ONLY
@@ -249,7 +234,6 @@ export default function singleKvStoreEnumStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSyncmodePushPull_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumEtsApiTest_2200
      * @tc.desc   Test Js Enum Value Syncmode.PUSH_PULL
@@ -264,7 +248,6 @@ export default function singleKvStoreEnumStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSubscribetypeSubscribeTypeLocal_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumEtsApiTest_1800
      * @tc.desc   Test Js Enum Value Subscribetype.SUBSCRIBE_TYPE_LOCAL
@@ -279,7 +262,6 @@ export default function singleKvStoreEnumStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSubscribetypeSubscribeTypeRemote_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumEtsApiTest_1900
      * @tc.desc   Test Js Enum Value Subscribetype.SUBSCRIBE_TYPE_REMOTE
@@ -294,7 +276,6 @@ export default function singleKvStoreEnumStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSubscribetypeSubscribeTypeAll_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumEtsApiTest_1700
      * @tc.desc   Test Js Enum Value Subscribetype.SUBSCRIBE_TYPE_ALL
@@ -309,7 +290,6 @@ export default function singleKvStoreEnumStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKvstoretypeDeviceCollaboration_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumEtsApiTest_0800
      * @tc.desc   Test Js Enum Value Kvstoretype.DEVICE_COLLABORATION
@@ -324,7 +304,6 @@ export default function singleKvStoreEnumStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsKvstoretypeSingleVersion_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumEtsApiTest_1000
      * @tc.desc   Test Js Enum Value Kvstoretype.SINGLE_VERSION
@@ -339,7 +318,6 @@ export default function singleKvStoreEnumStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSecuritylevelS1_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumEtsApiTest_1300
      * @tc.desc   Test Js Enum Value Securitylevel.S1
@@ -354,7 +332,6 @@ export default function singleKvStoreEnumStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSecuritylevelS2_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumEtsApiTest_1400
      * @tc.desc   Test Js Enum Value Securitylevel.S2
@@ -369,7 +346,6 @@ export default function singleKvStoreEnumStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSecuritylevelS3_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumEtsApiTest_1500
      * @tc.desc   Test Js Enum Value Securitylevel.S3
@@ -384,7 +360,6 @@ export default function singleKvStoreEnumStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testEtsSecuritylevelS4_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumEtsApiTest_1600
      * @tc.desc   Test Js Enum Value Securitylevel.S4

@@ -57,12 +57,12 @@ export default function RichEditorDoubleClick003() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_0029
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_0029
-     * @tc.desc  : Test RichEditor doubleClick event by double clicking the mouse after setting affine transformation
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 4
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_0029
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_0029
+     * @tc.desc   Test RichEditor doubleClick event by double clicking the mouse after setting affine transformation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_0029',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_0029 START');

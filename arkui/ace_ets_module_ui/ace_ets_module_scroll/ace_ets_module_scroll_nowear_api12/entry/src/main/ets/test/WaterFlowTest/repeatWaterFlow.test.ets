@@ -46,12 +46,12 @@ export default function repeatWaterFlow() {
     });
 
     /**
-     * @tc.number    repeatWaterFlow_0100
-     * @tc.name      repeatWaterFlow_0100
-     * @tc.desc      WaterFlow component set enableScrollInteraction properties
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   repeatWaterFlow_0100
+     * @tc.number repeatWaterFlow_0100
+     * @tc.desc   WaterFlow component set enableScrollInteraction properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('repeatWaterFlow_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[repeatWaterFlow_0100] START');
@@ -79,12 +79,12 @@ export default function repeatWaterFlow() {
     });
 
     /**
-     * @tc.number    repeatWaterFlow_0200
-     * @tc.name      repeatWaterFlow_0200
-     * @tc.desc      WaterFlow is used in conjunction with the repeat component to trigger events
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   repeatWaterFlow_0200
+     * @tc.number repeatWaterFlow_0200
+     * @tc.desc   WaterFlow is used in conjunction with the repeat component to trigger events
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('repeatWaterFlow_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[repeatWaterFlow_0200] START');

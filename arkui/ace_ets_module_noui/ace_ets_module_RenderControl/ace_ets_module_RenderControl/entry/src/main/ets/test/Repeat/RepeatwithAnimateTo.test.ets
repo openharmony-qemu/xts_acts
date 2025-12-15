@@ -46,12 +46,12 @@ export default function RepeatwithAnimateTo() {
     });
 
     /**
-     * @tc.number    RepeatwithAnimateTo_001
-     * @tc.name      RepeatwithAnimateTo_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   RepeatwithAnimateTo_001
+     * @tc.number RepeatwithAnimateTo_001
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RepeatwithAnimateTo_001', Level.LEVEL3, async (done: Function) => {
       console.info('[RepeatwithAnimateTo_001] START');

@@ -16,7 +16,6 @@ import {describe, it, expect, Level, Size, TestType } from 'deccjsunit/index'
 
 describe('assertFail', function () {
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   assertFail
      * @tc.number assertFail
      * @tc.desc   assertFail

@@ -46,12 +46,12 @@ export default function listAniAdd() {
     });
 
     /**
-     * @tc.number    listAniAdd_001
-     * @tc.name      listAniAdd_0100
-     * @tc.desc      Add the tail elements of the List when flipping pages.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   listAniAdd_0100
+     * @tc.number listAniAdd_001
+     * @tc.desc   Add the tail elements of the List when flipping pages.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listAniAdd_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[listAniAdd_0100] START');

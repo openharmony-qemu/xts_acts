@@ -47,9 +47,12 @@ export default function Grid_Row_Direction_Row() {
     });
 
     /**
+     * @tc.name   SUB_ACE_GridRowDirection_Row_0100
      * @tc.number SUB_ACE_GRIDROWDIRECTIONROW_0100
-     * @tc.name testDirectionRow
-     * @tc.desc Set the Direction of GridRow to Row
+     * @tc.desc   Set the Direction of GridRow to Row
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GridRowDirection_Row_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_GridRowDirection_Row_0100 START');

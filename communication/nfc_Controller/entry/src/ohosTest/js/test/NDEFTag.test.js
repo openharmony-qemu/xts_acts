@@ -115,7 +115,6 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0100
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0100
          * @tc.desc   Creates an ndef message using the original bytes.
@@ -144,7 +143,6 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0200
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0200
          * @tc.desc   Obtains all records of ndef messages.
@@ -181,7 +179,6 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0300
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0300
          * @tc.desc   Creates an ndef message using the original bytes.
@@ -219,7 +216,6 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0400
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0400
          * @tc.desc   Obtains the type of the Ndef tag.
@@ -239,7 +235,6 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0500
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0500
          * @tc.desc   Obtains the message read from the NDEF tag when the tag is discovered.
@@ -264,7 +259,6 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0600
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0600
          * @tc.desc   Check whether the NDEF label is writable,promise
@@ -312,7 +306,6 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0700
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0700
          * @tc.desc   Read the ndef message on the tag,promise
@@ -353,7 +346,6 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0800
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0800
          * @tc.desc   Read the ndef message on the tag,callback
@@ -387,7 +379,6 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0900
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0900
          * @tc.desc   Write ndef messages to this tag.promise
@@ -429,7 +420,6 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1000
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1000
          * @tc.desc   Write ndef messages to this tag.callback
@@ -473,7 +463,6 @@ export default function nfcNDEFTagTest() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1100
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1100
          * @tc.desc   Check whether the NDEF tag can be set to read-only.
@@ -512,7 +501,6 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1200
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1200
          * @tc.desc   Set the Ndef label to read-only.Promise
@@ -553,7 +541,6 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1300
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1300
          * @tc.desc   Set the Ndef label to read-only.callback
@@ -587,7 +574,6 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1400
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1400
          * @tc.desc   Converts the Nfc forum type to the byte array defined in the Nfc forum.
@@ -608,7 +594,6 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1500
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1500
          * @tc.desc   Formats the tag as an NDEF tag and writes the NDEF message to the NDEF tag.Promise
@@ -647,7 +632,6 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1600
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1600
          * @tc.desc   Formats the tag as an NDEF tag and writes the NDEF message to the NDEF tag.callback
@@ -684,7 +668,6 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1700
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1700
          * @tc.desc   Format as NDEF and set the NDEF message write label to read-only.Promise
@@ -726,7 +709,6 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1800
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1800
          * @tc.desc   Format as NDEF and set the NDEF message write label to read-only.callback
@@ -766,7 +748,6 @@ export default function nfcNDEFTagTest() {
 
 
          /**
-          * @generated.time 2025-11-09 20:49:45
           * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1900
           * @tc.number SUB_Communication_NFC_nfcNDEF_js_1900
           * @tc.desc   Obtains all records of ndef makeUriRecord.
@@ -795,7 +776,6 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_2000
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_2000
          * @tc.desc   Obtains all records of createNdefMessage NDEF
@@ -824,7 +804,6 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_2100
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_2100
          * @tc.desc   Obtains all records of ndef makeMimeRecord.
@@ -862,7 +841,6 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_2200
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_2200
          * @tc.desc   Obtains all records of ndef makeExternalRecord.
@@ -891,7 +869,6 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_2300
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_2300
          * @tc.desc   Obtains all records of ndef messageToBytes.
@@ -925,7 +902,6 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_2301
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_2301
          * @tc.desc   Obtains all records of ndef messageToBytes.
@@ -959,7 +935,6 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_2400
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_2400
          * @tc.desc   Obtains all records of ndef makeApplicationRecord

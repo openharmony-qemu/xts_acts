@@ -47,12 +47,12 @@ export default function SegmentButtonBorderTest() {
     });
 
     /**
-     * @tc.number    SegmentButtonBorderTest_001
-     * @tc.name      SegmentButtonBorderTest_001
-     * @tc.desc      Default rounded corners take effect
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   SegmentButtonBorderTest_001
+     * @tc.number SegmentButtonBorderTest_001
+     * @tc.desc   Default rounded corners take effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SegmentButtonBorderTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('[SegmentButtonBorderTest_001] START');
@@ -94,12 +94,12 @@ export default function SegmentButtonBorderTest() {
     });
 
     /**
-     * @tc.number    SegmentButtonBorderTest_002
-     * @tc.name      SegmentButtonBorderTest_002
-     * @tc.desc      Default rounded corners take effect
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   SegmentButtonBorderTest_002
+     * @tc.number SegmentButtonBorderTest_002
+     * @tc.desc   Default rounded corners take effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SegmentButtonBorderTest_002', Level.LEVEL0, async (done: Function) => {
       console.info('[SegmentButtonBorderTest_002] START');

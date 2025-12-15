@@ -46,12 +46,12 @@ export default function listOffsetJsunit() {
     });
 
     /**
-     * @tc.number    listOffsetJsunit_001
-     * @tc.name      listOffsetJsunit_001
-     * @tc.desc      Slide according to the specified offset when returning ScrollResult.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   listOffsetJsunit_001
+     * @tc.number listOffsetJsunit_001
+     * @tc.desc   Slide according to the specified offset when returning ScrollResult.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listOffsetJsunit_001', Level.LEVEL1, async (done: Function) => {
       console.info('[listOffsetJsunit_001] START');

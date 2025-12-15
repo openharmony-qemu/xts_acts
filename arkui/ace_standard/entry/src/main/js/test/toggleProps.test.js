@@ -80,9 +80,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleIdProp
-         * @tc.desc      ACE
+         * @tc.name   testtoggleIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleIdProp', Level.LEVEL0, async function(done) {
             console.info('testtoggleIdProp START');
@@ -98,9 +101,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleClassProp
-         * @tc.desc      ACE
+         * @tc.name   testtoggleClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleClassProp', Level.LEVEL0, async function(done) {
             console.info('testtoggleClassProp START');
@@ -117,9 +123,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtoggleClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testtoggleClassPropNone START');
@@ -137,9 +146,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleRefProp
-         * @tc.desc      ACE
+         * @tc.name   testtoggleRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleRefProp', Level.LEVEL0, async function(done) {
             console.info('testtoggleRefProp START');
@@ -156,9 +168,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtoggleRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testtoggleRefPropNone START');
@@ -176,9 +191,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testtoggleDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testtoggleDisabledPropTrue START');
@@ -195,9 +213,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testtoggleDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testtoggleDisabledPropFalse START');
@@ -214,9 +235,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtoggleDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testtoggleDisabledPropNone START');
@@ -233,9 +257,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testtoggleFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testtoggleFocusablePropTrue START');
@@ -252,9 +279,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testtoggleFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testtoggleFocusablePropFalse START');
@@ -271,9 +301,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testtoggleFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testtoggleFocusablePropNone START');
@@ -290,9 +323,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleDataProp
-         * @tc.desc      ACE
+         * @tc.name   testtoggleDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleDataProp', Level.LEVEL0, async function(done) {
             console.info('testtoggleDataProp START');
@@ -310,9 +346,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtoggleDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testtoggleDataPropNone START');
@@ -330,9 +369,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testtoggleClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testtoggleClickEffectPropSmall START');
@@ -349,9 +391,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testtoggleClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testtoggleClickEffectPropMedium START');
@@ -368,9 +413,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testtoggleClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testtoggleClickEffectPropLarge START');
@@ -387,9 +435,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtoggleClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testtoggleClickEffectPropNone START');
@@ -407,9 +458,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testtoggleDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testtoggleDirPropRtl START');
@@ -426,9 +480,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testtoggleDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testtoggleDirPropLtr START');
@@ -445,9 +502,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testtoggleDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testtoggleDirPropAuto START');
@@ -464,9 +524,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtoggleDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testtoggleDirPropNone START');
@@ -483,9 +546,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testtoggleForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleForPropNull', Level.LEVEL0, async function(done) {
             console.info('testtoggleForPropNull START');
@@ -503,9 +569,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testtoggleForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleForPropOne', Level.LEVEL0, async function(done) {
             console.info('testtoggleForPropOne START');
@@ -523,9 +592,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testtoggleForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleForPropThree', Level.LEVEL0, async function(done) {
             console.info('testtoggleForPropThree START');
@@ -543,9 +615,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testtoggleIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testtoggleIfPropTrue START');
@@ -563,9 +638,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testtoggleShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testtoggleShowPropTrue START');
@@ -583,9 +661,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testtoggleShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testtoggleShowPropFalse START');
@@ -603,9 +684,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtoggleShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testtoggleShowPropNone START');
@@ -623,9 +707,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtoggleValuePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleValuePropNone', Level.LEVEL0, async function(done) {
             console.info('testtoggleXsPropNone START');
@@ -643,9 +730,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtoggleValueProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleValueProp', Level.LEVEL0, async function(done) {
             console.info('testtoggleXsPropNone START');
@@ -663,9 +753,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtoggleCheckedPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleCheckedPropNone', Level.LEVEL0, async function(done) {
             console.info('testtoggleXsPropNone START');
@@ -683,9 +776,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtoggleCheckedPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleCheckedPropTrue', Level.LEVEL0, async function(done) {
             console.info('testtoggleXsPropNone START');
@@ -703,9 +799,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtoggleShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtoggleCheckedPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtoggleCheckedPropFalse', Level.LEVEL0, async function(done) {
             console.info('testtoggleXsPropNone START');

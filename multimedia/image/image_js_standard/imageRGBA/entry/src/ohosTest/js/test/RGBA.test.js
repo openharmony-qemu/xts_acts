@@ -46,16 +46,12 @@ describe("Image", function () {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0100
-     * @tc.name      : create pixelmap-promise (editable: true, pixelFormat: RGBA_F16,
-     *                                          size: { height: 4, width: 6 }, bytes = buffer)
-     * @tc.desc      : 1.create InitializationOptions object
-     *                 2.set editable,pixeFormat,size
-     *                 3.using color and opts create newPixelMap
-     *                 4.return newpixelmap not empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0100
+     * @tc.desc   1.create InitializationOptions object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0100", Level.LEVEL0, async function (done) {
         const Color = new ArrayBuffer(96);
@@ -76,16 +72,12 @@ describe("Image", function () {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0100
-     * @tc.name      : create pixelmap-callback (editable: true, pixelFormat: RGBA_F16,
-     *                                           size: { height: 4, width: 6 },bytes = buffer)
-     * @tc.desc      : 1.create InitializationOptions object
-     *                 2.set editable,pixelFormat,size
-     *                 3.using color and opts create newPixelMap
-     *                 4.return newpixelmap not empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0100
+     * @tc.desc   1.create InitializationOptions object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0100", Level.LEVEL0, async function (done) {
         const Color = new ArrayBuffer(96);
@@ -105,16 +97,12 @@ describe("Image", function () {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0200
-     * @tc.name      : create pixelmap-promise (editable: false, pixelFormat: RGBA_F16,
-     *                                          size: { height: 4, width: 6 }, bytes = buffer)
-     * @tc.desc      : 1.create InitializationOptions object
-     *                 2.set editable,pixeFormat,size
-     *                 3.using color and opts create newPixelMap
-     *                 4.return newpixelmap not empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0200
+     * @tc.desc   1.create InitializationOptions object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0200", Level.LEVEL0, async function (done) {
         const Color = new ArrayBuffer(96);
@@ -135,16 +123,12 @@ describe("Image", function () {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0200
-     * @tc.name      : create pixelmap-callback (editable: false, pixelFormat: RGBA_F16,
-     *                                           size: { height: 4, width: 6 },bytes = buffer)
-     * @tc.desc      : 1.create InitializationOptions object
-     *                 2.set editable,pixelFormat,size
-     *                 3.using color and opts create newPixelMap
-     *                 4.return newpixelmap not empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0200
+     * @tc.desc   1.create InitializationOptions object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0200", Level.LEVEL0, async function (done) {
         const Color = new ArrayBuffer(96);
@@ -164,16 +148,12 @@ describe("Image", function () {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0300
-     * @tc.name      : create pixelmap-promise (editable: true, pixelFormat: ALPHA_8,
-     *                                          size: { height: 4, width: 6 }, bytes = buffer)
-     * @tc.desc      : 1.create InitializationOptions object
-     *                 2.set editable,pixeFormat,size
-     *                 3.using color and opts create newPixelMap
-     *                 4.return newpixelmap not empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0300
+     * @tc.desc   1.create InitializationOptions object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0300", Level.LEVEL0, async function (done) {
         const Color = new ArrayBuffer(96);
@@ -194,16 +174,12 @@ describe("Image", function () {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0400
-     * @tc.name      : create pixelmap-promise (editable: true, pixelFormat: RGB_565,
-     *                                          size: { height: 4, width: 6 }, bytes = buffer)
-     * @tc.desc      : 1.create InitializationOptions object
-     *                 2.set editable,pixeFormat,size
-     *                 3.using color and opts create newPixelMap
-     *                 4.return newpixelmap not empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0400
+     * @tc.desc   1.create InitializationOptions object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0400", Level.LEVEL0, async function (done) {
         const Color = new ArrayBuffer(96);
@@ -224,16 +200,12 @@ describe("Image", function () {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0500
-     * @tc.name      : create pixelmap-promise (editable: true, pixelFormat: ARGB_8888,
-     *                                          size: { height: 4, width: 6 }, bytes = buffer)
-     * @tc.desc      : 1.create InitializationOptions object
-     *                 2.set editable,pixeFormat,size
-     *                 3.using color and opts create newPixelMap
-     *                 4.return newpixelmap not empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0500
+     * @tc.desc   1.create InitializationOptions object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0500", Level.LEVEL0, async function (done) {
         const Color = new ArrayBuffer(96);
@@ -254,16 +226,12 @@ describe("Image", function () {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0300
-     * @tc.name      : create pixelmap-callback (editable: true, pixelFormat: ALPHA_8,
-     *                                           size: { height: 4, width: 6 },bytes = buffer)
-     * @tc.desc      : 1.create InitializationOptions object
-     *                 2.set editable,pixelFormat,size
-     *                 3.using color and opts create newPixelMap
-     *                 4.return newpixelmap not empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0300
+     * @tc.desc   1.create InitializationOptions object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0300", Level.LEVEL0, async function (done) {
         const Color = new ArrayBuffer(96);
@@ -283,16 +251,12 @@ describe("Image", function () {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0400
-     * @tc.name      : create pixelmap-callback (editable: true, pixelFormat: RGB_565,
-     *                                           size: { height: 4, width: 6 },bytes = buffer)
-     * @tc.desc      : 1.create InitializationOptions object
-     *                 2.set editable,pixelFormat,size
-     *                 3.using color and opts create newPixelMap
-     *                 4.return newpixelmap not empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0400
+     * @tc.desc   1.create InitializationOptions object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0400", Level.LEVEL0, async function (done) {
         const Color = new ArrayBuffer(96);
@@ -312,16 +276,12 @@ describe("Image", function () {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0500
-     * @tc.name      : create pixelmap-callback (editable: true, pixelFormat: ARGB_8888,
-     *                                           size: { height: 4, width: 6 },bytes = buffer)
-     * @tc.desc      : 1.create InitializationOptions object
-     *                 2.set editable,pixelFormat,size
-     *                 3.using color and opts create newPixelMap
-     *                 4.return newpixelmap not empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0500
+     * @tc.desc   1.create InitializationOptions object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0500", Level.LEVEL0, async function (done) {
         const Color = new ArrayBuffer(96);
@@ -341,15 +301,12 @@ describe("Image", function () {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0600
-     * @tc.name      : create pixelmap-callback(editable: true, pixelFormat: unkonwn, size: { height: -1, width: 8 })
-     * @tc.desc      : 1.create InitializationOptions object
-     *                 2.set editable,pixeFormat,size
-     *                 3.using color and opts create newPixelMap
-     *                 4.return newpixelmap empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0600
+     * @tc.desc   1.create InitializationOptions object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0600", Level.LEVEL0, async function (done) {
         const Color = new ArrayBuffer(96);
@@ -368,15 +325,12 @@ describe("Image", function () {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0700
-     * @tc.name      : create pixelmap-callback(editable: true, pixelFormat: ARGB_8888, size: { height: 6, width: -1 })
-     * @tc.desc      : 1.create InitializationOptions object
-     *                 2.set editable,pixeFormat,size
-     *                 3.using color and opts create newPixelMap
-     *                 4.return newpixelmap empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0700
+     * @tc.desc   1.create InitializationOptions object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0700", Level.LEVEL0, async function (done) {
         const Color = new ArrayBuffer(96);
@@ -395,15 +349,12 @@ describe("Image", function () {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0600
-     * @tc.name      : create pixelmap-promise(editable: true, pixelFormat: unkonwn, size: { height: -1, width: 8 })
-     * @tc.desc      : 1.create InitializationOptions object
-     *                 2.set editable,pixeFormat,size
-     *                 3.using color and opts create newPixelMap
-     *                 4.return newpixelmap empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0600
+     * @tc.desc   1.create InitializationOptions object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0600", Level.LEVEL0, async function (done) {
         const Color = new ArrayBuffer(96);
@@ -422,15 +373,12 @@ describe("Image", function () {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0700
-     * @tc.name      : create pixelmap-promise(editable: true, pixelFormat: unkonwn, size: { height: 6, width: -1 })
-     * @tc.desc      : 1.create InitializationOptions object
-     *                 2.set editable,pixeFormat,size
-     *                 3.using color and opts create newPixelMap
-     *                 4.return newpixelmap empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0700
+     * @tc.desc   1.create InitializationOptions object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0700", Level.LEVEL0, async function (done) {
         const Color = new ArrayBuffer(96);
@@ -449,16 +397,12 @@ describe("Image", function () {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0800
-     * @tc.name      : create pixelmap-promise (editable: true, pixelFormat: BGRA_8888,
-     *                                          size: { height: 4, width: 6 }, bytes = buffer)
-     * @tc.desc      : 1.create InitializationOptions object
-     *                 2.set editable,pixeFormat,size
-     *                 3.using color and opts create newPixelMap
-     *                 4.return newpixelmap not empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0800
+     * @tc.desc   1.create InitializationOptions object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0800", Level.LEVEL0, async function (done) {
         const Color = new ArrayBuffer(96);
@@ -480,16 +424,12 @@ describe("Image", function () {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0900
-     * @tc.name      : create pixelmap-promise (editable: true, pixelFormat: RGB_888 ,
-     *                                          size: { height: 4, width: 6 }, bytes = buffer)
-     * @tc.desc      : 1.create InitializationOptions object
-     *                 2.set editable,pixeFormat,size
-     *                 3.using color and opts create newPixelMap
-     *                 4.return newpixelmap not empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0900
+     * @tc.desc   1.create InitializationOptions object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_PROMISE_0900", Level.LEVEL0, async function (done) {
         const Color = new ArrayBuffer(96);
@@ -510,16 +450,12 @@ describe("Image", function () {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0800
-     * @tc.name      : create pixelmap-callback (editable: true, pixelFormat: BGRA_8888,
-     *                                           size: { height: 4, width: 6 },bytes = buffer)
-     * @tc.desc      : 1.create InitializationOptions object
-     *                 2.set editable,pixelFormat,size
-     *                 3.using color and opts create newPixelMap
-     *                 4.return newpixelmap not empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0800
+     * @tc.desc   1.create InitializationOptions object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0800", Level.LEVEL0, async function (done) {
         const Color = new ArrayBuffer(96);
@@ -539,16 +475,12 @@ describe("Image", function () {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0900
-     * @tc.name      : create pixelmap-callback (editable: true, pixelFormat: RGB_888,
-     *                                           size: { height: 4, width: 6 },bytes = buffer)
-     * @tc.desc      : 1.create InitializationOptions object
-     *                 2.set editable,pixelFormat,size
-     *                 3.using color and opts create newPixelMap
-     *                 4.return newpixelmap not empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0900
+     * @tc.desc   1.create InitializationOptions object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RGBA_CREATE_PIXELMAP_CALLBACK_0900", Level.LEVEL0, async function (done) {
         const Color = new ArrayBuffer(96);

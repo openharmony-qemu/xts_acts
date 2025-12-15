@@ -50,13 +50,15 @@ export default function AlignContent_FlexAlign_SpaceEvenly_Margin_padding() {
       console.info("AlignContent_FlexAlign_SpaceEvenly_Margin_padding after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_SPACEEVENLY_0600
-     * @tc.name testAlignContentSpaceEvenlyFlexMarginAndPaddingNOSatisfy
-     * @tc.desc Set the alignContent property of the flex component to FlexAlign.SpaceEvenly and set the margin and
-     *               padding of the flex component so that it does not meet the child component size requirements.
-     */
 
+    /**
+     * @tc.name   testAlignContentSpaceEvenlyFlexMarginAndPaddingNOSatisfy
+     * @tc.number testAlignContentSpaceEvenlyFlexMarginAndPaddingNOSatisfy
+     * @tc.desc   testAlignContentSpaceEvenlyFlexMarginAndPaddingNOSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentSpaceEvenlyFlexMarginAndPaddingNOSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentSpaceEvenlyFlexMarginAndPaddingNOSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({
@@ -119,13 +121,15 @@ export default function AlignContent_FlexAlign_SpaceEvenly_Margin_padding() {
 
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_SPACEEVENLY_0700
-     * @tc.name testAlignContentSpaceEvenlyFlexMarginAndPaddingSatisfy
-     * @tc.desc Set the alignContent property of the flex component to FlexAlign.SpaceEvenly and set the margin and
-     *               padding of the flex component so that it meets the child component size requirements.
-     */
 
+    /**
+     * @tc.name   testAlignContentSpaceEvenlyFlexMarginAndPaddingSatisfy
+     * @tc.number testAlignContentSpaceEvenlyFlexMarginAndPaddingSatisfy
+     * @tc.desc   testAlignContentSpaceEvenlyFlexMarginAndPaddingSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentSpaceEvenlyFlexMarginAndPaddingSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentSpaceEvenlyFlexMarginAndPaddingSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({

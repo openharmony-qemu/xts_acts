@@ -20,7 +20,6 @@ export default function relationalstoreTest() {
   describe('relationalstoreTest', () => {
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testQuery001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0330
      * @tc.desc   OH_Rdb_Query Interface testing
@@ -36,7 +35,6 @@ export default function relationalstoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testQuery002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0340
      * @tc.desc   OH_Rdb_Query Interface testing
@@ -52,7 +50,6 @@ export default function relationalstoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testQuery003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0350
      * @tc.desc   OH_Rdb_Query Interface testing
@@ -68,7 +65,6 @@ export default function relationalstoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testQuery004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0360
      * @tc.desc   OH_Rdb_Query Interface testing
@@ -84,7 +80,6 @@ export default function relationalstoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testExecute001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0370
      * @tc.desc   OH_Rdb_Execute Interface testing
@@ -100,7 +95,6 @@ export default function relationalstoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testExecute002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0380
      * @tc.desc   OH_Rdb_Execute Interface testing
@@ -116,7 +110,6 @@ export default function relationalstoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testExecute003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0390
      * @tc.desc   OH_Rdb_Execute Interface testing
@@ -132,7 +125,6 @@ export default function relationalstoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testExecute004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0400
      * @tc.desc   OH_Rdb_Execute Interface testing
@@ -148,7 +140,6 @@ export default function relationalstoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testExecuteQuery001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0410
      * @tc.desc   OH_Rdb_ExecuteQuery Interface testing
@@ -164,7 +155,6 @@ export default function relationalstoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testExecuteQuery002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0420
      * @tc.desc   OH_Rdb_ExecuteQuery Interface testing
@@ -180,7 +170,6 @@ export default function relationalstoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testExecuteQuery003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0430
      * @tc.desc   OH_Rdb_ExecuteQuery Interface testing
@@ -196,7 +185,6 @@ export default function relationalstoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testExecuteQuery004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0440
      * @tc.desc   OH_Rdb_ExecuteQuery Interface testing
@@ -212,7 +200,6 @@ export default function relationalstoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testBeginTransaction001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0450
      * @tc.desc   OH_Rdb_BeginTransaction Interface testing
@@ -228,7 +215,6 @@ export default function relationalstoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testBeginTransaction002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0460
      * @tc.desc   OH_Rdb_BeginTransaction Interface testing
@@ -244,7 +230,6 @@ export default function relationalstoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testRollBack001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0470
      * @tc.desc   OH_Rdb_RollBack Interface testing
@@ -260,7 +245,6 @@ export default function relationalstoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testRollBack002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0480
      * @tc.desc   OH_Rdb_RollBack Interface testing
@@ -276,7 +260,6 @@ export default function relationalstoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testCommit001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0490
      * @tc.desc   OH_Rdb_Commit Interface testing
@@ -292,7 +275,6 @@ export default function relationalstoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testCommit002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0500
      * @tc.desc   OH_Rdb_Commit Interface testing
@@ -308,7 +290,6 @@ export default function relationalstoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testBackup001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0510
      * @tc.desc   OH_Rdb_Backup Interface testing
@@ -324,7 +305,6 @@ export default function relationalstoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testBackup002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0520
      * @tc.desc   OH_Rdb_Backup Interface testing
@@ -340,7 +320,6 @@ export default function relationalstoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testBackup003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0530
      * @tc.desc   OH_Rdb_Backup Interface testing
@@ -355,7 +334,6 @@ export default function relationalstoreTest() {
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testRestore001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0540
      * @tc.desc   OH_Rdb_Restore Interface testing
@@ -371,7 +349,6 @@ export default function relationalstoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testRestore002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0550
      * @tc.desc   OH_Rdb_Restore Interface testing
@@ -387,7 +364,6 @@ export default function relationalstoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testRestore003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0560
      * @tc.desc   OH_Rdb_Restore Interface testing
@@ -403,7 +379,6 @@ export default function relationalstoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testGetVersion001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0570
      * @tc.desc   OH_Rdb_GetVersion Interface testing
@@ -419,7 +394,6 @@ export default function relationalstoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testGetVersion002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0580
      * @tc.desc   OH_Rdb_GetVersion Interface testing
@@ -435,7 +409,6 @@ export default function relationalstoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testGetVersion003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0590
      * @tc.desc   OH_Rdb_GetVersion Interface testing
@@ -451,7 +424,6 @@ export default function relationalstoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testSetVersion001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0600
      * @tc.desc   OH_Rdb_SetVersion Interface testing
@@ -467,7 +439,6 @@ export default function relationalstoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testSetVersion002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0610
      * @tc.desc   OH_Rdb_SetVersion Interface testing
@@ -483,7 +454,6 @@ export default function relationalstoreTest() {
     });
  
      /**
-      * @generated.time 2025-11-09 20:49:53
       * @tc.name   testLockRow001
       * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0620
       * @tc.desc   OH_Rdb_LockRow Interface testing
@@ -499,7 +469,6 @@ export default function relationalstoreTest() {
     });
 
      /**
-      * @generated.time 2025-11-09 20:49:53
       * @tc.name   testUnLockRow001
       * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0630
       * @tc.desc   OH_Rdb_UnlockRow Interface testing
@@ -515,7 +484,6 @@ export default function relationalstoreTest() {
     });
 
      /**
-      * @generated.time 2025-11-09 20:49:53
       * @tc.name   testQueryLockRow001
       * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0630
       * @tc.desc   OH_Rdb_QueryLockedRow Interface testing

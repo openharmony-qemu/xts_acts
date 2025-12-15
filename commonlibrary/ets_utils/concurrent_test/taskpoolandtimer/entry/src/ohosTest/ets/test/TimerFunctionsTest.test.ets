@@ -50,12 +50,12 @@ export default function functionsInTimerTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   functionsInTimerTest0100
      * @tc.number SUB_FUNCTIONS_IN_TIMER_TEST_0100
-     * @tc.name functionsInTimerTest0100
-     * @tc.desc test Execute different time-consuming tasks in functions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Execute different time-consuming tasks in functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('functionsInTimerTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (Done: Function) => {
       const caseName = 'functionsInTimerTest0100';
@@ -75,12 +75,12 @@ export default function functionsInTimerTest() {
     })
 
     /**
+     * @tc.name   functionsInTimerTest0200
      * @tc.number SUB_FUNCTIONS_IN_TIMER_TEST_0200
-     * @tc.name functionsInTimerTest0200
-     * @tc.desc test Asynchronous tasks are used for nesting in functions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Asynchronous tasks are used for nesting in functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('functionsInTimerTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'functionsInTimerTest0200';
@@ -105,12 +105,12 @@ export default function functionsInTimerTest() {
     })
 
     /**
+     * @tc.name   functionsInTimerTest0300
      * @tc.number SUB_FUNCTIONS_IN_TIMER_TEST_0300
-     * @tc.name functionsInTimerTest0300
-     * @tc.desc test Exceptions are thrown in the function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Exceptions are thrown in the function
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('functionsInTimerTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'functionsInTimerTest0300';
@@ -134,12 +134,12 @@ export default function functionsInTimerTest() {
     })
 
     /**
+     * @tc.name   functionsInTimerTest0400
      * @tc.number SUB_FUNCTIONS_IN_TIMER_TEST_0400
-     * @tc.name functionsInTimerTest0400
-     * @tc.desc test Native calls uv thread
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Native calls uv thread
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('functionsInTimerTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'functionsInTimerTest0400';

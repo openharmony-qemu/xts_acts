@@ -34,6 +34,14 @@ describe("WorkSchedulerPerformanceTest", function () {
 })
 
 function performanceStartWork() {
+    /**
+     * @tc.name   WorkSchedulerPerformance_001
+     * @tc.number WorkSchedulerPerformance_001
+     * @tc.desc   WorkSchedulerPerformance_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('WorkSchedulerPerformance_001', Level.LEVEL0, async function(done) {
         workscheduler.stopAndClearWorks()
         let totalTime = 0
@@ -56,6 +64,14 @@ function performanceStartWork() {
 }
 
 function performanceStopWork() {
+    /**
+     * @tc.name   WorkSchedulerPerformance_002
+     * @tc.number WorkSchedulerPerformance_002
+     * @tc.desc   WorkSchedulerPerformance_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('WorkSchedulerPerformance_002', Level.LEVEL0, async function(done) {
         workscheduler.stopAndClearWorks()
         let totalTime = 0
@@ -90,6 +106,14 @@ function performanceStopWork() {
 }
 
 function performanceGetWorkStatusCallback() {
+    /**
+     * @tc.name   WorkSchedulerPerformance_003
+     * @tc.number WorkSchedulerPerformance_003
+     * @tc.desc   WorkSchedulerPerformance_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('WorkSchedulerPerformance_003', Level.LEVEL0, async function(done) {
         workscheduler.stopAndClearWorks()
         let workInfo = {
@@ -118,6 +142,14 @@ function performanceGetWorkStatusCallback() {
 }
 
 function performanceGetWorkStatusPromise() {
+    /**
+     * @tc.name   WorkSchedulerPerformance_004
+     * @tc.number WorkSchedulerPerformance_004
+     * @tc.desc   WorkSchedulerPerformance_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('WorkSchedulerPerformance_004', Level.LEVEL0, async function(done) {
         workscheduler.stopAndClearWorks()
         let workInfo = {
@@ -151,6 +183,14 @@ function performanceGetWorkStatusPromise() {
 }
 
 function performanceObtainAllWorksCallback() {
+    /**
+     * @tc.name   WorkSchedulerPerformance_005
+     * @tc.number WorkSchedulerPerformance_005
+     * @tc.desc   WorkSchedulerPerformance_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('WorkSchedulerPerformance_005', Level.LEVEL0, async function(done) {
         workscheduler.stopAndClearWorks()
         let workInfo = {
@@ -182,6 +222,14 @@ function performanceObtainAllWorksCallback() {
 }
 
 function performanceObtainAllWorksPromise() {
+    /**
+     * @tc.name   WorkSchedulerPerformance_006
+     * @tc.number WorkSchedulerPerformance_006
+     * @tc.desc   WorkSchedulerPerformance_006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('WorkSchedulerPerformance_006', Level.LEVEL0, async function(done) {
         workscheduler.stopAndClearWorks()
         let workInfo = {
@@ -217,6 +265,14 @@ function performanceObtainAllWorksPromise() {
 }
 
 function performanceIsLastWorkTimeOutCallback() {
+    /**
+     * @tc.name   WorkSchedulerPerformance_007
+     * @tc.number WorkSchedulerPerformance_007
+     * @tc.desc   WorkSchedulerPerformance_007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('WorkSchedulerPerformance_007', Level.LEVEL0, async function(done) {
         workscheduler.stopAndClearWorks()
         let workInfo = {
@@ -247,6 +303,14 @@ function performanceIsLastWorkTimeOutCallback() {
 }
 
 function performanceIsLastWorkTimeOutPromise() {
+    /**
+     * @tc.name   WorkSchedulerPerformance_008
+     * @tc.number WorkSchedulerPerformance_008
+     * @tc.desc   WorkSchedulerPerformance_008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('WorkSchedulerPerformance_008', Level.LEVEL0, async function(done) {
         workscheduler.stopAndClearWorks()
         let workInfo = {
@@ -281,6 +345,14 @@ function performanceIsLastWorkTimeOutPromise() {
 }
 
 function performanceStopAndClearWorks() {
+    /**
+     * @tc.name   WorkSchedulerPerformance_009
+     * @tc.number WorkSchedulerPerformance_009
+     * @tc.desc   WorkSchedulerPerformance_009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('WorkSchedulerPerformance_009', Level.LEVEL0, function() {
         workscheduler.stopAndClearWorks()
         let workInfo = {
@@ -303,6 +375,14 @@ function performanceStopAndClearWorks() {
 }
 
 function performanceObtainAllWorksCallbackresIsNull() {
+        /**
+         * @tc.name   WorkSchedulerPerformance_010
+         * @tc.number WorkSchedulerPerformance_010
+         * @tc.desc   WorkSchedulerPerformance_010
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it("WorkSchedulerPerformance_010", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun055---------------------------');
             workscheduler.stopAndClearWorks()
@@ -320,6 +400,14 @@ function performanceObtainAllWorksCallbackresIsNull() {
 }
 
 function performanceObtainAllWorksPromiseresIsNull() {
+        /**
+         * @tc.name   WorkSchedulerPerformance_011
+         * @tc.number WorkSchedulerPerformance_011
+         * @tc.desc   WorkSchedulerPerformance_011
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it("WorkSchedulerPerformance_011", Level.LEVEL0, async function (done) {
             console.info('----------------------testStartWorkFun055---------------------------');
             workscheduler.stopAndClearWorks()

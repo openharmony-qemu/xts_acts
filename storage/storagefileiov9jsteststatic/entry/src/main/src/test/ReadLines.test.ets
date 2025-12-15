@@ -32,14 +32,12 @@ export default function fileIOReadLines() {
     hilog.info(domain, tag, '%{public}s', 'fileIO_fs_readLines start');
 
     /**
+     * @tc.name   fileIO_test_readLines_sync_static_001
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_0100
-     * @tc.name fileIO_test_readLines_sync_static_001
-     * @tc.desc Test readLinesSync() interfaces.
-     * Read file content by line through path, verify normal function.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readLinesSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_readLines_sync_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_sync_static_001 start');
@@ -61,14 +59,12 @@ export default function fileIOReadLines() {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_sync_static_002
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_0200
-     * @tc.name fileIO_test_readLines_sync_static_002
-     * @tc.desc Test readLinesSync() interfaces.
-     * Read file content by line through path when encoding = 'utf-8'.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readLinesSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_readLines_sync_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_sync_static_002 start');
@@ -92,14 +88,12 @@ export default function fileIOReadLines() {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_sync_static_004
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_0400
-     * @tc.name fileIO_test_readLines_sync_static_004
-     * @tc.desc Test readLinesSync() interfaces.
-     * The path point to nothing, no such file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readLinesSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_readLines_sync_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_sync_static_004 start');
@@ -114,14 +108,12 @@ export default function fileIOReadLines() {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_sync_static_005
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_0500
-     * @tc.name fileIO_test_readLines_sync_static_005
-     * @tc.desc Test readLinesSync() interfaces.
-     * Undefined options arguments,use default option.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readLinesSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_readLines_sync_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_sync_static_005 start');
@@ -143,14 +135,12 @@ export default function fileIOReadLines() {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_sync_static_007
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_0700
-     * @tc.name fileIO_test_readLines_sync_static_007
-     * @tc.desc Test readLinesSync() interfaces.
-     * Read file content by line through path when encoding = 'utf-16'.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readLinesSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_readLines_sync_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_sync_static_007 start');
@@ -170,14 +160,12 @@ export default function fileIOReadLines() {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_sync_static_008
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_0800
-     * @tc.name fileIO_test_readLines_sync_static_008
-     * @tc.desc Test readLinesSync() interfaces.
-     * Read file content by line through path, verify normal function.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readLinesSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_readLines_sync_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_sync_static_008 start');
@@ -200,14 +188,12 @@ export default function fileIOReadLines() {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_async_static_001
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_0100
-     * @tc.name fileIO_test_readLines_async_static_001
-     * @tc.desc Test readLines() interfaces. Promise.
-     * Read file content by line through path, verify normal function.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readLines() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_readLines_async_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_001 start');
@@ -232,14 +218,12 @@ export default function fileIOReadLines() {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_async_static_002
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_0200
-     * @tc.name fileIO_test_readLines_async_static_002
-     * @tc.desc Test readLines() interfaces. Callback.
-     * Read file content by line through path, verify normal function.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readLines() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_readLines_async_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_002 start');
@@ -264,14 +248,12 @@ export default function fileIOReadLines() {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_async_static_003
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_0300
-     * @tc.name fileIO_test_readLines_async_static_003
-     * @tc.desc Test readLines() interfaces. Promise.
-     * Read file content by line through path when encoding = 'utf-8'.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readLines() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_readLines_async_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_003 start');
@@ -297,14 +279,12 @@ export default function fileIOReadLines() {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_async_static_004
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_0400
-     * @tc.name fileIO_test_readLines_async_static_004
-     * @tc.desc Test readLines() interfaces. Callback.
-     * Read file content by line through path when encoding = 'utf-8'.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readLines() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_readLines_async_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_004 start');
@@ -331,14 +311,12 @@ export default function fileIOReadLines() {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_async_static_005
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_0500
-     * @tc.name fileIO_test_readLines_async_static_005
-     * @tc.desc Test readLines() interfaces. Promise.then().catch()
-     * Read file content by line through path when encoding = 'utf-8'.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readLines() interfaces. Promise.then().catch()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_readLines_async_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_005 start');
@@ -368,14 +346,12 @@ export default function fileIOReadLines() {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_async_static_006
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_0600
-     * @tc.name fileIO_test_readLines_async_static_006
-     * @tc.desc Test readLines() interfaces. Promise.
-     * Read file content by line through path, verify normal function.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readLines() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_readLines_async_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_readLines_async_static_006');

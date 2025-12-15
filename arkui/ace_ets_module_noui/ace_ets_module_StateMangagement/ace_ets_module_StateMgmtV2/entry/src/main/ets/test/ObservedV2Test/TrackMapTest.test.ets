@@ -42,12 +42,12 @@ export default function TrackMapTest() {
       done();
     });
     /**
-     * @tc.number    TrackMap
-     * @tc.name      TrackMapTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TrackMapTest_0100
+     * @tc.number TrackMap
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TrackMapTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('TrackMapTest_0100 START');

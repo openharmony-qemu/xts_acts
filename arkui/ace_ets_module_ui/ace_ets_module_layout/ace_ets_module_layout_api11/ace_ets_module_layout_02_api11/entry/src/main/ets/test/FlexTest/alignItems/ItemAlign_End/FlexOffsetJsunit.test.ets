@@ -46,9 +46,12 @@ export default function flexOffset_EndJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignEndSetOffset
      * @tc.number SUB_ACE_FLEXALIGNITEMS_END_1000
-     * @tc.name testFlexItemAlignEndSetOffset
-     * @tc.desc First subcomponent set offset attribute.
+     * @tc.desc   First subcomponent set offset attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignEndSetOffset',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignEndSetOffset START');

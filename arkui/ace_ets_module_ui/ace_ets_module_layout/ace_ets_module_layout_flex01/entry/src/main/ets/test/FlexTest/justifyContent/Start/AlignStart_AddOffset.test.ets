@@ -47,9 +47,12 @@ export default function AlignStart_AddOffset() {
     });
 
     /**
+     * @tc.name   testFlexAlignStartTextOffset
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_START_TEST_0900
-     * @tc.name testFlexAlignStartTextOffset
-     * @tc.desc The interface display of the component that sets the offset position when drawing
+     * @tc.desc   The interface display of the component that sets the offset position when drawing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignStartTextOffset',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignStartTextOffset] START');

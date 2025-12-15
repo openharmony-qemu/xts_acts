@@ -36,12 +36,12 @@ export default function ServiceExtensionAbility() {
       context = AppStorage.get<common.UIAbilityContext>("testAbilityContext") as common.UIAbilityContext;
     })
     /**
-     * @tc.number: startUIServiceExtensionAbility_16000019
-     * @tc.name: startUIServiceExtensionAbility_16000019
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startUIServiceExtensionAbility_16000019
+     * @tc.number startUIServiceExtensionAbility_16000019
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startUIServiceExtensionAbility_16000019', Level.LEVEL0, (done: Function) => {
       let tag = 'startUIServiceExtensionAbility_16000019';
@@ -100,12 +100,12 @@ export default function ServiceExtensionAbility() {
     })
 
     /**
-     * @tc.number: moveAbilityToBackground_16000061
-     * @tc.name: moveAbilityToBackground_16000061
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   moveAbilityToBackground_16000061
+     * @tc.number moveAbilityToBackground_16000061
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('moveAbilityToBackground_16000061', Level.LEVEL0, async (done: Function) => {
       let tag = 'moveAbilityToBackground_16000061';
@@ -153,12 +153,12 @@ export default function ServiceExtensionAbility() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_disconnectServiceExtensionAbility_01
-     * @tc.name: SUB_Ability_AbilityRuntime_disconnectServiceExtensionAbility_01
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_disconnectServiceExtensionAbility_01
+     * @tc.number SUB_Ability_AbilityRuntime_disconnectServiceExtensionAbility_01
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_disconnectServiceExtensionAbility_01', Level.LEVEL0, async (done: Function) => {
       context.disconnectServiceExtensionAbility(-1).then(() => {
@@ -177,12 +177,12 @@ export default function ServiceExtensionAbility() {
       });
     })
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_disconnectServiceExtensionAbility_02
-     * @tc.name: SUB_Ability_AbilityRuntime_disconnectServiceExtensionAbility_02
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_disconnectServiceExtensionAbility_02
+     * @tc.number SUB_Ability_AbilityRuntime_disconnectServiceExtensionAbility_02
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_disconnectServiceExtensionAbility_02', Level.LEVEL0, async (done: Function) => {
       context.disconnectServiceExtensionAbility(-1, (err: BusinessError) => {
@@ -203,12 +203,12 @@ export default function ServiceExtensionAbility() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_requestDialogService_01
-     * @tc.name: SUB_Ability_AbilityRuntime_requestDialogService_01
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_requestDialogService_01
+     * @tc.number SUB_Ability_AbilityRuntime_requestDialogService_01
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_requestDialogService_01', Level.LEVEL0, async (done: Function) => {
       let want: Want = {
@@ -239,12 +239,12 @@ export default function ServiceExtensionAbility() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_requestDialogService_02
-     * @tc.name: SUB_Ability_AbilityRuntime_requestDialogService_02
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_requestDialogService_02
+     * @tc.number SUB_Ability_AbilityRuntime_requestDialogService_02
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_requestDialogService_02', Level.LEVEL0, async (done: Function) => {
       let want: Want = {
@@ -274,12 +274,12 @@ export default function ServiceExtensionAbility() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_requestDialogService_03
-     * @tc.name: SUB_Ability_AbilityRuntime_requestDialogService_03
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_requestDialogService_03
+     * @tc.number SUB_Ability_AbilityRuntime_requestDialogService_03
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_requestDialogService_03', Level.LEVEL0, async (done: Function) => {
       let want: Want = {
@@ -310,12 +310,12 @@ export default function ServiceExtensionAbility() {
 
     })
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_requestDialogService_04
-     * @tc.name: SUB_Ability_AbilityRuntime_requestDialogService_04
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_requestDialogService_04
+     * @tc.number SUB_Ability_AbilityRuntime_requestDialogService_04
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_requestDialogService_04', Level.LEVEL0, async (done: Function) => {
       let want: Want = {
@@ -347,6 +347,14 @@ export default function ServiceExtensionAbility() {
 
     })
 
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_requestDialogService_05
+     * @tc.number SUB_Ability_AbilityRuntime_requestDialogService_05
+     * @tc.desc   SUB_Ability_AbilityRuntime_requestDialogService_05
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_requestDialogService_05', Level.LEVEL0, async (done: Function) => {
       let want: Want = {
         bundleName: bundleName,
@@ -375,12 +383,12 @@ export default function ServiceExtensionAbility() {
       }
     })
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_requestDialogService_06
-     * @tc.name: SUB_Ability_AbilityRuntime_requestDialogService_06
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_requestDialogService_06
+     * @tc.number SUB_Ability_AbilityRuntime_requestDialogService_06
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_requestDialogService_06', Level.LEVEL0, async (done: Function) => {
       let want: Want = {
@@ -413,12 +421,12 @@ export default function ServiceExtensionAbility() {
 
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_moveAbilityToBackground_01
-     * @tc.name: SUB_Ability_AbilityRuntime_moveAbilityToBackground_01
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_moveAbilityToBackground_01
+     * @tc.number SUB_Ability_AbilityRuntime_moveAbilityToBackground_01
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_moveAbilityToBackground_01', Level.LEVEL0, async (done: Function) => {
       let mpEnable: string

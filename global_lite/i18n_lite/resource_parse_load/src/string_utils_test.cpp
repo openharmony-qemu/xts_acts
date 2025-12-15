@@ -58,10 +58,13 @@ void StringUtilsTest::TearDown()
     // step 4: input testcase teardown step
 }
 
-/*
- * @tc.name: StringUtilsFuncTest001
- * @tc.desc: Test FormatString, none file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   StringUtilsFuncTest001
+ * @tc.number StringUtilsFuncTest001
+ * @tc.desc   Test FormatString, none file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(StringUtilsTest, StringUtilsFuncTest001, TestSize.Level1)
 {

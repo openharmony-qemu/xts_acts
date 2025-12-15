@@ -42,12 +42,12 @@ export default function TextAreaXtsJsunit() {
     })
 
     /**
+     * @tc.name   TextAreaXtsJsunit_0101
      * @tc.number TextAreaXtsJsunit_0101
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextAreaXtsJsunit_0101',  Level.LEVEL0, async (done: Function) => {
       console.info('[TextAreaXtsJsunit_0101] START');
@@ -60,12 +60,12 @@ export default function TextAreaXtsJsunit() {
     });
 
     /**
+     * @tc.name   TextAreaXtsJsunit_0102
      * @tc.number TextAreaXtsJsunit_0102
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextAreaXtsJsunit_0102',  Level.LEVEL0, async (done: Function) => {
       console.info('[TextAreaXtsJsunit_0102] START');
@@ -80,12 +80,12 @@ export default function TextAreaXtsJsunit() {
     });
 
     /**
+     * @tc.name   TextAreaXtsJsunit_0103
      * @tc.number TextAreaXtsJsunit_0103
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextAreaXtsJsunit_0103',  Level.LEVEL0, async (done: Function) => {
       console.info('[TextAreaXtsJsunit_0103] START');
@@ -98,12 +98,12 @@ export default function TextAreaXtsJsunit() {
     });
 
     /**
+     * @tc.name   TextAreaXtsJsunit_0104
      * @tc.number TextAreaXtsJsunit_0104
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextAreaXtsJsunit_0104',  Level.LEVEL0, async (done: Function) => {
       console.info('[TextAreaXtsJsunit_0104] START');

@@ -193,12 +193,12 @@ export default function AddContactViaUITest() {
 
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_AddContactViaUI_0100
-     * @tc.name       : testTelephonyContactAddContactViaUI0100
-     * @tc.desc       : Call the contact AddContactViaUI interface, and use the Promise method as an asynchronous method for the AddContactViaUI contact 15
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactAddContactViaUI0100
+     * @tc.number SUB_Telephony_Contact_AddContactViaUI_0100
+     * @tc.desc   Call the contact AddContactViaUI interface, and use the Promise method as an asynchronous method for the AddContactViaUI contact 15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactAddContactViaUI0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
@@ -238,12 +238,12 @@ export default function AddContactViaUITest() {
     })
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_AddContactViaUI_0200
-     * @tc.name       : testTelephonyContactAddContactViaUI0200
-     * @tc.desc       : Call the contact AddContactViaUI interface, and use the Promise method as an asynchronous method for the AddContactViaUI contact 15
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactAddContactViaUI0200
+     * @tc.number SUB_Telephony_Contact_AddContactViaUI_0200
+     * @tc.desc   Call the contact AddContactViaUI interface, and use the Promise method as an asynchronous method for the AddContactViaUI contact 15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactAddContactViaUI0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
@@ -285,12 +285,12 @@ export default function AddContactViaUITest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_AddContactViaUI_0300
-     * @tc.name       : testTelephonyContactAddContactViaUI0300
-     * @tc.desc       : Call the contact AddContactViaUI interface, and use the Promise method as an asynchronous method for the AddContactViaUI contact 15
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactAddContactViaUI0300
+     * @tc.number SUB_Telephony_Contact_AddContactViaUI_0300
+     * @tc.desc   Call the contact AddContactViaUI interface, and use the Promise method as an asynchronous method for the AddContactViaUI contact 15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactAddContactViaUI0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);

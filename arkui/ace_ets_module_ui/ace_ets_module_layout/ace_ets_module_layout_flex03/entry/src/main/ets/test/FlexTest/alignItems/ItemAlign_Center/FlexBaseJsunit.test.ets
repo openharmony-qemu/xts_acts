@@ -47,9 +47,12 @@ export default function flexBase_CenterJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignCenter
      * @tc.number SUB_ACE_FLEXALIGNITEMS_CENTER_0100
-     * @tc.name testFlexItemAlignCenter
-     * @tc.desc The subcomponent is inside the parent component.
+     * @tc.desc   The subcomponent is inside the parent component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignCenter',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignCenter START');
@@ -86,9 +89,12 @@ export default function flexBase_CenterJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignCenterExceed
      * @tc.number SUB_ACE_FLEXALIGNITEMS_CENTER_0200
-     * @tc.name testFlexItemAlignCenterExceed
-     * @tc.desc The subcomponent exceeds the parent component.
+     * @tc.desc   The subcomponent exceeds the parent component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignCenterExceed',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignCenterExceed START');

@@ -41,12 +41,12 @@ export default function ParamTest() {
       done();
     });
     /**
-     * @tc.number    Param
-     * @tc.name      ParamTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 0
-     * @tc.type :    FUNC
-     * @tc.size :    MEDIUM
+     * @tc.name   ParamTest_0100
+     * @tc.number Param
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParamTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ParamTest_0100 START');

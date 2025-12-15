@@ -41,12 +41,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
     })
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest0100
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_0100
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest0100
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BuiltinsReadonlyArrayIndexOfTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: Function) => {
@@ -62,12 +62,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest0200
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_0200
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest0200
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BuiltinsReadonlyArrayIndexOfTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: Function) => {
@@ -83,12 +83,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest0300
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_0300
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest0300
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BuiltinsReadonlyArrayIndexOfTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: Function) => {
@@ -104,12 +104,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest0400
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_0400
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest0400
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -125,12 +125,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest0500
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_0500
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest0500
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -146,12 +146,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest0600
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_0600
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest0600
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -164,12 +164,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest0700
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_0700
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest0700
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -182,12 +182,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest0800
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_0800
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest0800
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -200,12 +200,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest0900
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_0900
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest0900
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -218,12 +218,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest1000
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_1000
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest1000
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -236,12 +236,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest1100
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_1100
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest1100
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -254,12 +254,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest1200
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_1200
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest1200
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -272,12 +272,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest1300
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_1300
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest1300
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -290,12 +290,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest1400
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_1400
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest1400
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -308,12 +308,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest1500
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_1500
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest1500
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -326,12 +326,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest1600
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_1600
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest1600
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -344,12 +344,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest1700
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_1700
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest1700
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -362,12 +362,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest1800
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_1800
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest1800
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -387,12 +387,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest1900
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_1900
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest1900
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -405,12 +405,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest2000
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_2000
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest2000
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -423,12 +423,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest2100
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_2100
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest2100
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -441,12 +441,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest2200
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_2200
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest2200
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -459,12 +459,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest2300
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_2300
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest2300
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -477,12 +477,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest2400
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_2400
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest2400
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -495,12 +495,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest2500
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_2500
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest2500
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -513,12 +513,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest2600
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_2600
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest2600
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -531,12 +531,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest2700
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_2700
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest2700
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -549,12 +549,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest2800
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_2800
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest2800
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -567,12 +567,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest2900
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_2900
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest2900
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -585,12 +585,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest3000
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_3000
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest3000
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -603,12 +603,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest3100
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_3100
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest3100
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -621,12 +621,12 @@ export default function builtinsReadonlyArrayIndexOfTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayIndexOfTest3200
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_INDEXOF_TEST_3200
-     * @tc.name BuiltinsReadonlyArrayIndexOfTest3200
-     * @tc.desc test IndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test IndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayIndexOfTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {

@@ -42,13 +42,15 @@ export default function TextStyle() {
       console.info("TextStyle after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_TEXT_styled_string_001
-     * @tc.desc      styled_string test
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   TextStyle_001
+     * @tc.number TextStyle_001
+     * @tc.desc   TextStyle_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('TextStyle_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[TextStyle_001] START');
       await CommonFunc.sleep(1000);
@@ -70,13 +72,15 @@ export default function TextStyle() {
 
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_TEXT_styled_string_002
-     * @tc.desc      styled_string test
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   TextStyle_002
+     * @tc.number TextStyle_002
+     * @tc.desc   TextStyle_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('TextStyle_002',  Level.LEVEL0, async (done: Function) => {
       console.info('[TextStyle_002] START');
       await CommonFunc.sleep(1000);
@@ -98,13 +102,15 @@ export default function TextStyle() {
 
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_TEXT_styled_string_003
-     * @tc.desc      styled_string test
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   TextStyle_003
+     * @tc.number TextStyle_003
+     * @tc.desc   TextStyle_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('TextStyle_003',  Level.LEVEL0, async (done: Function) => {
       console.info('[TextStyle_003] START');
       await CommonFunc.sleep(1000);
@@ -126,13 +132,15 @@ export default function TextStyle() {
 
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_TEXT_styled_string_004
-     * @tc.desc      styled_string test
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   TextStyle_004
+     * @tc.number TextStyle_004
+     * @tc.desc   TextStyle_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('TextStyle_004',  Level.LEVEL0, async (done: Function) => {
       console.info('[TextStyle_004] START');
       await CommonFunc.sleep(1000);
@@ -154,13 +162,15 @@ export default function TextStyle() {
 
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_TEXT_styled_string_005
-     * @tc.desc      styled_string test
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   TextStyle_005
+     * @tc.number TextStyle_005
+     * @tc.desc   TextStyle_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('TextStyle_005',  Level.LEVEL0, async (done: Function) => {
       console.info('[TextStyle_005] START');
       await CommonFunc.sleep(1000);
@@ -182,13 +192,15 @@ export default function TextStyle() {
 
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_TEXT_styled_string_006
-     * @tc.desc      styled_string test
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   TextStyle_006
+     * @tc.number TextStyle_006
+     * @tc.desc   TextStyle_006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('TextStyle_006',  Level.LEVEL0, async (done: Function) => {
       console.info('[TextStyle_006] START');
       await CommonFunc.sleep(1000);

@@ -23,15 +23,13 @@ export default function File_Nopermission_test() {
   describe('nopermission_test', function () {
 
     /**
-    * @tc.number SUB_BASIC_FM_FileAPI_FileShare_NoPermission_0100
-    * @tc.name FileShare_NoPermission_001
-    * @tc.desc Test persistPermission() interfaces
-    * Test normal uri and OperationMode is READ_MODE.
-    * @tc.size MEDIUM
-    * @tc.type Function
-    * @tc.level Level 0
-    * @tc.require
-    */
+     * @tc.name   FileShare_NoPermission_001
+     * @tc.number SUB_BASIC_FM_FileAPI_FileShare_NoPermission_0100
+     * @tc.desc   Test persistPermission() interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('FileShare_NoPermission_001', Level.LEVEL3, async function (done) {
       let fpath = await nextFileName('FileShare_NoPermission_001');
       expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -65,15 +63,13 @@ export default function File_Nopermission_test() {
     });
 
     /**
-      * @tc.number SUB_BASIC_FM_FileAPI_FileShare_NoPermission_0200
-      * @tc.name FileShare_NoPermission_002
-      * @tc.desc Test deactivatePermission() interfaces
-      * Test normal uri and OperationMode is READ_MODE.
-      * @tc.size MEDIUM
-      * @tc.type Function
-      * @tc.level Level 0
-      * @tc.require
-      */
+     * @tc.name   FileShare_NoPermission_002
+     * @tc.number SUB_BASIC_FM_FileAPI_FileShare_NoPermission_0200
+     * @tc.desc   Test deactivatePermission() interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('FileShare_NoPermission_002', Level.LEVEL0, async function (done) {
       let fpath = await nextFileName('FileShare_NoPermission_002');
       expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -106,15 +102,13 @@ export default function File_Nopermission_test() {
       }
     });
     /**
-      * @tc.number SUB_BASIC_FM_FileAPI_FileShare_NoPermission_0300
-      * @tc.name FileShare_NoPermission_003
-      * @tc.desc Test revokePermission() interfaces
-      * Test normal uri and OperationMode is READ_MODE.
-      * @tc.size MEDIUM
-      * @tc.type Function
-      * @tc.level Level 0
-      * @tc.require
-      */
+     * @tc.name   FileShare_NoPermission_003
+     * @tc.number SUB_BASIC_FM_FileAPI_FileShare_NoPermission_0300
+     * @tc.desc   Test revokePermission() interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('FileShare_NoPermission_003', Level.LEVEL0, async function (done) {
       let fpath = await nextFileName('FileShare_NoPermission_003');
       expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -148,14 +142,12 @@ export default function File_Nopermission_test() {
   });
 
   /**
+   * @tc.name   FileShare_NoPermission_004
    * @tc.number SUB_BASIC_FM_FileAPI_FileShare_NoPermission_0400
-   * @tc.name FileShare_NoPermission_004
-   * @tc.desc Test activatePermission() interfaces
-   * Test normal uri and OperationMode is READ_MODE.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test activatePermission() interfaces
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('FileShare_NoPermission_004', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('FileShare_NoPermission_004');

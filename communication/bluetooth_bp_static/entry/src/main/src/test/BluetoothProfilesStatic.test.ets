@@ -68,7 +68,6 @@ export default function bluetoothProfilesTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   createA2dpSrcProfileTest
          * @tc.number createA2dpSrcProfileTest
          * @tc.desc   Test createA2dpSrcProfileTest API functionality
@@ -94,7 +93,6 @@ export default function bluetoothProfilesTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   createHfpAgProfileTest
          * @tc.number createHfpAgProfileTest
          * @tc.desc   Test createHfpAgProfileTest API functionality
@@ -120,7 +118,6 @@ export default function bluetoothProfilesTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   createHidHostProfileTest
          * @tc.number createHidHostProfileTest
          * @tc.desc   Test createHidHostProfileTest API functionality
@@ -146,7 +143,6 @@ export default function bluetoothProfilesTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   connectionStateChangeTest
          * @tc.number connectionStateChangeTest
          * @tc.desc   Test connectionStateChangeTest API functionality
@@ -162,9 +158,9 @@ export default function bluetoothProfilesTest() {
             }
 
             try{
-                a2dp.createA2dpSrcProfile().on('connectionStateChange', onReceiveEvent);
-                hfp.createHfpAgProfile().on('connectionStateChange', onReceiveEvent);
-                hid.createHidHostProfile().on('connectionStateChange', onReceiveEvent);
+                a2dp.createA2dpSrcProfile().onConnectionStateChange(onReceiveEvent);
+                hfp.createHfpAgProfile().onConnectionStateChange(onReceiveEvent);
+                hid.createHidHostProfile().onConnectionStateChange(onReceiveEvent);
             }catch(err: BusinessError){
                 hilog.info(domain, tag, "connectionStateChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -176,9 +172,9 @@ export default function bluetoothProfilesTest() {
             }
             await Utils.msSleep(1000);
             try{
-                a2dp.createA2dpSrcProfile().off('connectionStateChange', onReceiveEvent);
-                hfp.createHfpAgProfile().off('connectionStateChange', onReceiveEvent);
-                hid.createHidHostProfile().off('connectionStateChange', onReceiveEvent);
+                a2dp.createA2dpSrcProfile().offConnectionStateChange(onReceiveEvent);
+                hfp.createHfpAgProfile().offConnectionStateChange(onReceiveEvent);
+                hid.createHidHostProfile().offConnectionStateChange(onReceiveEvent);
             }catch(err: BusinessError){
                 hilog.info(domain, tag, "connectionStateChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -192,7 +188,6 @@ export default function bluetoothProfilesTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   connectionStateChangeTest2
          * @tc.number connectionStateChangeTest2
          * @tc.desc   Test connectionStateChangeTest API functionality
@@ -206,9 +201,9 @@ export default function bluetoothProfilesTest() {
             }
 
             try{
-                a2dp.createA2dpSrcProfile().on('connectionStateChange', onReceiveEvent);
-                hfp.createHfpAgProfile().on('connectionStateChange', onReceiveEvent);
-                hid.createHidHostProfile().on('connectionStateChange', onReceiveEvent);
+                a2dp.createA2dpSrcProfile().onConnectionStateChange(onReceiveEvent);
+                hfp.createHfpAgProfile().onConnectionStateChange(onReceiveEvent);
+                hid.createHidHostProfile().onConnectionStateChange(onReceiveEvent);
             }catch(err: BusinessError){
                 hilog.info(domain, tag, "connectionStateChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -220,9 +215,9 @@ export default function bluetoothProfilesTest() {
             }
             await Utils.msSleep(1000);
             try{
-                a2dp.createA2dpSrcProfile().off('connectionStateChange');
-                hfp.createHfpAgProfile().off('connectionStateChange');
-                hid.createHidHostProfile().off('connectionStateChange');
+                a2dp.createA2dpSrcProfile().offConnectionStateChange();
+                hfp.createHfpAgProfile().offConnectionStateChange();
+                hid.createHidHostProfile().offConnectionStateChange();
             }catch(err: BusinessError){
                 hilog.info(domain, tag, "connectionStateChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -234,5 +229,6 @@ export default function bluetoothProfilesTest() {
             }
             done();
         })
+
     })
 }

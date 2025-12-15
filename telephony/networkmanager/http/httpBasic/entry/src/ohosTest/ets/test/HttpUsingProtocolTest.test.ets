@@ -35,12 +35,12 @@ export default function HttpUsingProtocolTest() {
   describe('HttpUsingProtocolTest',  ()=> {
 
     /**
+     * @tc.name   testTelephonyNETSTACKHttp2TestBasicGet0100
      * @tc.number SUB_Telephony_NETSTACK_Http2TestBasicGet_0100
-     * @tc.name testTelephonyNETSTACKHttp2TestBasicGet0100
-     * @tc.desc test http1_1
-     * @tc.level 2
-     * @tc.type Function
-     * @tc.size MEDIUMTEST
+     * @tc.desc   test http1_1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyNETSTACKHttp2TestBasicGet0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)=> {
       let caseName = 'testTelephonyNETSTACKHttp2TestBasicGet0100';
@@ -65,12 +65,12 @@ export default function HttpUsingProtocolTest() {
     });
 
     /**
+     * @tc.name   testTelephonyNETSTACKHttp2TestBasicGet0200
      * @tc.number SUB_Telephony_NETSTACK_Http2TestBasicGet_0200
-     * @tc.name testTelephonyNETSTACKHttp2TestBasicGet0200
-     * @tc.desc usingCache test
-     * @tc.level 2
-     * @tc.type Function
-     * @tc.size MEDIUMTEST
+     * @tc.desc   usingCache test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyNETSTACKHttp2TestBasicGet0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)=> {
       let caseName = 'testTelephonyNETSTACKHttp2TestBasicGet0200';
@@ -96,12 +96,12 @@ export default function HttpUsingProtocolTest() {
     });
 
     /**
+     * @tc.name   testTelephonyNETSTACKHttp2TestBasicGet0300
      * @tc.number SUB_Telephony_NETSTACK_Http2TestBasicGet_0300
-     * @tc.name testTelephonyNETSTACKHttp2TestBasicGet0300
-     * @tc.desc set usingCache to true
-     * @tc.level 2
-     * @tc.type Function
-     * @tc.size MEDIUMTEST
+     * @tc.desc   set usingCache to true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyNETSTACKHttp2TestBasicGet0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)=> {
       let caseName = 'testTelephonyNETSTACKHttp2TestBasicGet0300';
@@ -124,12 +124,12 @@ export default function HttpUsingProtocolTest() {
     });
 
     /**
+     * @tc.name   testTelephonyNETSTACKHttp2TestBasicGet0400
      * @tc.number SUB_Telephony_NETSTACK_Http2TestBasicGet_0400
-     * @tc.name testTelephonyNETSTACKHttp2TestBasicGet0400
-     * @tc.desc usingCache test
-     * @tc.level LEVEL0
-     * @tc.type Function
-     * @tc.size MEDIUMTEST
+     * @tc.desc   usingCache test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyNETSTACKHttp2TestBasicGet0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function)=> {
       let caseName = 'testTelephonyNETSTACKHttp2TestBasicGet0400';
@@ -147,12 +147,12 @@ export default function HttpUsingProtocolTest() {
 
     });
     /**
+     * @tc.name   testTelephonyNETSTACKHttp2TestBasicGet0500
      * @tc.number SUB_Telephony_NETSTACK_Http2TestBasicGet_0500
-     * @tc.name testTelephonyNETSTACKHttp2TestBasicGet0500
-     * @tc.desc usingCache test
-     * @tc.level 0
-     * @tc.type Function
-     * @tc.size MEDIUMTEST
+     * @tc.desc   usingCache test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyNETSTACKHttp2TestBasicGet0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function)=> {
       let caseName = 'testTelephonyNETSTACKHttp2TestBasicGet0500';
@@ -171,12 +171,12 @@ export default function HttpUsingProtocolTest() {
     });
 
     /**
+     * @tc.name   testTelephonyHttpHttpTestPriority0100
      * @tc.number SUB_Telephony_Http_HttpTestPriority_0100
-     * @tc.name testTelephonyHttpHttpTestPriority0100
-     * @tc.desc usingCache test
-     * @tc.level 2
-     * @tc.type Function
-     * @tc.size MEDIUMTEST
+     * @tc.desc   usingCache test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyHttpHttpTestPriority0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)=> {
       let caseName = 'testTelephonyHttpHttpTestPriority0100';

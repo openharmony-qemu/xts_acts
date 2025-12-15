@@ -168,7 +168,6 @@ export default function geolocationTest_geo7() {
 
 
      /**
-      * @generated.time 2025-11-09 20:53:27
       * @tc.name   testIsLocationEnabled06
       * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCSWITCH_0600
       * @tc.desc   Enabling the Location Service Function for a Third-Party App - Callback
@@ -192,7 +191,6 @@ export default function geolocationTest_geo7() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationEnabledChange07
      * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCSWITCH_0700
      * @tc.desc   Subscribe to the location service status change.
@@ -230,7 +228,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationEnabledChange08
      * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCSWITCH_0800
      * @tc.desc   Subscribe to the location service status change.
@@ -270,7 +267,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testGetCurrentLocation1500
      * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_1500
      * @tc.desc   Initiate a single location request in a specified scenario and set the navigation scenario.
@@ -301,7 +297,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testGetCurrentLocation1600
      * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_1600
      * @tc.desc   Initiate a single location request in a specified scenario and set the navigation scenario.
@@ -327,7 +322,6 @@ export default function geolocationTest_geo7() {
     })
 
      /**
-      * @generated.time 2025-11-09 20:53:27
       * @tc.name   testGetCurrentLocation1700
       * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_1700
       * @tc.desc   Initiate a single location request in a specified scenario and set the track tracing scenario.
@@ -354,7 +348,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testGetCurrentLocation18
      * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_1800
      * @tc.desc   Initiate a single location request in a specified scenario and set a car-sharing scenario.
@@ -380,7 +373,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testGetCurrentLocation19
      * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_1900
      * @tc.desc   Initiate a single location request in a specified scenario and set the life service scenario..
@@ -406,7 +398,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testGetCurrentLocation20
      * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_2000
      * @tc.desc   Initiate a single location request in a specified scenario
@@ -445,7 +436,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testGetCurrentLocation21
      * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_2100
      * @tc.desc   Initiate a single location request with the parameter set to high-precision priority location request.
@@ -471,7 +461,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testGetCurrentLocation22
      * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_2200
      * @tc.desc   Initiate a single location request with parameters set to fast location and priority location request.
@@ -497,7 +486,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testGetCurrentLocation23
      * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_2300
      * @tc.desc   Initiate a single location request with parameters set to low power consumption.
@@ -523,7 +511,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testGetCurrentLocation24
      * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_2400
      * @tc.desc   Initiate a single location request and set the location reporting precision.
@@ -562,7 +549,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testGetCurrentLocation25
      * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_2500
      * @tc.desc   Initiate a single location request for specific configuration
@@ -601,7 +587,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testGetCurrentLocation26
      * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_2600
      * @tc.desc   Initiate a single location request and set the location timeout interval.
@@ -640,7 +625,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testGetCurrentLocation27
      * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_2700
      * @tc.desc   Initiate a specified single location request and set the exception location timeout interval.
@@ -679,7 +663,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testSendCommand03
      * @tc.number SUB_HSS_SendCommand_0300
      * @tc.desc   Test sendCommand api .
@@ -716,7 +699,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testSendCommand04
      * @tc.number SUB_HSS_SendCommand_0400
      * @tc.desc   Test sendCommand1 api .
@@ -753,7 +735,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationChange16
      * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_1600
      * @tc.desc   Initiate a request for continuous positioning in a specified scenario and set the navigation scenario.
@@ -827,7 +808,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationChange17
      * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_1700
      * @tc.desc   Initiate a request for continuous positioning in a specified scenario and set a track tracing scenario.
@@ -860,7 +840,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationChange18
      * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_1800
      * @tc.desc   Initiate a continuous location request in a specified scenario and set a car-sharing scenario.
@@ -893,7 +872,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationChange19
      * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_1900
      * @tc.desc   Initiate a continuous location request in a specified scenario and set a life service scenario.
@@ -926,7 +904,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationChange20
      * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2000
      * @tc.desc   Initiate a continuous location request in a specified scenario
@@ -975,7 +952,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationChange21
      * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2100
      * @tc.desc   Initiate a specified continuous positioning request and
@@ -1008,7 +984,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationChange22
      * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2200
      * @tc.desc   Initiate a specified continuous positioning request with the parameter
@@ -1041,7 +1016,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationChange23
      * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2300
      * @tc.desc   Initiate a specified continuous positioning request with the parameter
@@ -1074,7 +1048,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationChange24
      * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2400
      * @tc.desc   Initiate a specified continuous location request and set the reporting interval.
@@ -1107,7 +1080,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationChange25
      * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2500
      * @tc.desc   Initiate a specified continuous location request and set the location reporting interval.
@@ -1140,7 +1112,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationChange26
      * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2600
      * @tc.desc   Initiate a specified continuous location request and set the interval for reporting exceptions.
@@ -1173,7 +1144,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationChange27
      * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2700
      * @tc.desc   Initiate a specified continuous location request and set the interval for reporting abnormal locations.
@@ -1225,7 +1195,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationChange28
      * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2800
      * @tc.desc   Initiate a specified continuous positioning request and set the positioning reporting precision.
@@ -1277,7 +1246,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationChange29
      * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_2900
      * @tc.desc   Initiate a specified continuous location request and set the reporting precision of abnormal location.
@@ -1329,7 +1297,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationChange30
      * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_3000
      * @tc.desc   Initiate a specified continuous location request and set the reporting precision of abnormal location.
@@ -1361,7 +1328,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationChange31
      * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_3100
      * @tc.desc   Initiate a specified continuous location request and set the reporting precision of abnormal location.
@@ -1393,7 +1359,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationChange32
      * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_3200
      * @tc.desc   Initiate a specified continuous location request and set the reporting precision of abnormal location.
@@ -1425,7 +1390,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationChange33
      * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_3300
      * @tc.desc   Initiate a specified continuous location request and set the reporting precision of abnormal location.
@@ -1457,7 +1421,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationChange34
      * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_3400
      * @tc.desc   Initiate a specified continuous location request and set the reporting precision of abnormal location.
@@ -1489,7 +1452,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationChange35
      * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_3500
      * @tc.desc   Initiate a specified continuous location request and set the reporting precision of abnormal location.
@@ -1521,7 +1483,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationChange36
      * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCREQUEST_3600
      * @tc.desc   Initiate a specified continuous location request and set the reporting precision of abnormal location.
@@ -1553,7 +1514,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationError01
      * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCATIONERROR_0100
      * @tc.desc   Initiate a specified continuous location request and set the reporting precision of abnormal location.
@@ -1592,7 +1552,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationError02
      * @tc.number SUB_HSS_LOCATIONSYSTEM_LOCATIONERROR_0200
      * @tc.desc   Initiate a specified continuous location request and set the reporting precision of abnormal location.
@@ -1633,7 +1592,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationChange03
      * @tc.number SUB_HSS_LOCATIONSYSTEM_LASTLOC_0300
      * @tc.desc   Obtain the last location after a single location.
@@ -1685,7 +1643,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testSatelliteStatusChange03
      * @tc.number SUB_HSS_LOCATIONSYSTEM_GNSS_0300
      * @tc.desc   Monitoring Satellite Information Reporting
@@ -1769,7 +1726,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testNmeaMessage04
      * @tc.number SUB_HSS_LOCATIONSYSTEM_GNSS_0400
      * @tc.desc   Monitoring NMEA Information Reporting
@@ -1841,7 +1797,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_HSS_LOCATIONSYSTEM_GNSS_0500
      * @tc.number SUB_HSS_LOCATIONSYSTEM_GNSS_0500
      * @tc.desc   off all location listeners
@@ -1893,7 +1848,6 @@ export default function geolocationTest_geo7() {
    })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_HSS_LOCATIONSYSTEM_GNSS_0600
      * @tc.number SUB_HSS_LOCATIONSYSTEM_GNSS_0600
      * @tc.desc   Monitoring Satellite Information Reporting
@@ -1963,7 +1917,6 @@ export default function geolocationTest_geo7() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_HSS_LOCATIONSYSTEM_GNSS_0700
      * @tc.number SUB_HSS_LOCATIONSYSTEM_GNSS_0700
      * @tc.desc   Monitoring NMEA Information Reporting
@@ -2010,7 +1963,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testCachedGnssLocationsChange07
      * @tc.number SUB_HSS_LOCATIONSYSTEM_BATCHING_0700
      * @tc.desc   Setting the Gnss Batching Reporting Interval
@@ -2086,7 +2038,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testCachedGnssLocationsChange08
      * @tc.number SUB_HSS_LOCATIONSYSTEM_BATCHING_0800
      * @tc.desc   Setting the Gnss Batching Cache Queue to Be Reported When the Gnss Batching Cache Queue Is Full
@@ -2127,7 +2078,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testCachedGnssLocationsChange09
      * @tc.number SUB_HSS_LOCATIONSYSTEM_BATCHING_0900
      * @tc.desc   Obtains the number of GNSS data records in the batching process.
@@ -2185,7 +2135,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testCachedGnssLocationsChange01
      * @tc.number SUB_HSS_LOCATIONSYSTEM_BATCHING_1000
      * @tc.desc   Obtains the number of GNSS data records in the batching process.
@@ -2240,7 +2189,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testCachedGnssLocationsChange11
      * @tc.number SUB_HSS_LOCATIONSYSTEM_BATCHING_1100
      * @tc.desc   Obtains the GNSS data of the current batching.
@@ -2302,7 +2250,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testCachedGnssLocationsChange12
      * @tc.number SUB_HSS_LOCATIONSYSTEM_BATCHING_1200
      * @tc.desc   Obtain the GNSS data of the current batching.
@@ -2362,7 +2309,6 @@ export default function geolocationTest_geo7() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testCachedGnssLocationsChange13
      * @tc.number SUB_HSS_LOCATIONSYSTEM_BATCHING_1300
      * @tc.desc   Obtain the GNSS data of the current batching.
@@ -2414,7 +2360,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testGnssFenceStatusChange02
      * @tc.number SUB_HSS_LOCATIONSYSTEM_GEOFENCE_0200
      * @tc.desc   Gnss fence function test
@@ -2473,7 +2418,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testGnssFenceStatusChange03
      * @tc.number SUB_HSS_LOCATIONSYSTEM_GEOFENCE_0300
      * @tc.desc   Test the function of locating the validity period of the fence.
@@ -2526,7 +2470,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testAddGnssGeofence04
      * @tc.number SUB_HSS_LOCATIONSYSTEM_GEOFENCE_0400
      * @tc.desc   Test the function of locating the validity period of the fence.
@@ -2604,7 +2547,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testGetGeofenceSupportedCoordTypes07
      * @tc.number SUB_HSS_LOCATIONSYSTEM_GEOFENCE_0700
      * @tc.desc   Test the function of locating the validity period of the fence.
@@ -2638,7 +2580,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testGetCurrentLocation35
      * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_3500
      * @tc.desc   Initiate a single location request in a specified scenario and set the navigation scenario..
@@ -2672,7 +2613,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testGetCurrentLocation36
      * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_3600
      * @tc.desc   Initiate a single location request in a specified scenario and set the navigation scenario..
@@ -2706,7 +2646,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testGetCurrentLocation37
      * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_3700
      * @tc.desc   Initiate a single location request in a specified scenario and set the navigation scenario..
@@ -2740,7 +2679,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testGetCurrentLocation38
      * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_3800
      * @tc.desc   Initiate a specified single location request and set the exception location timeout interval.
@@ -2770,7 +2708,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testGetCurrentLocation39
      * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_3900
      * @tc.desc   Initiate a specified single location request and set the exception location timeout interval.
@@ -2800,7 +2737,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testGetCurrentLocation40
      * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_4000
      * @tc.desc   Initiate a specified single location request and set the exception location timeout interval.
@@ -2834,7 +2770,6 @@ export default function geolocationTest_geo7() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testFenceExtensionAbility01
      * @tc.number SUB_HSS_LOCATIONSYSTEM_FENCE_EXTENSION_ABILITY_0001
      * @tc.desc   Test Report Fence Transition.

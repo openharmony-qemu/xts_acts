@@ -26,39 +26,39 @@ export default function scrollEdgeEffectTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_EDGEEFFECT_0100
-     * @tc.name       : testScrollEdgeEffect001
-     * @tc.desc       : testing edge effect for scroll with none value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollEdgeEffect001
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_EDGEEFFECT_0100
+     * @tc.desc   testing edge effect for scroll with none value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollEdgeEffect001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollEdgeEffect001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_EDGEEFFECT_0200
-     * @tc.name       : testScrollEdgeEffect002
-     * @tc.desc       : testing edge effect for scroll with spring value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollEdgeEffect002
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_EDGEEFFECT_0200
+     * @tc.desc   testing edge effect for scroll with spring value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollEdgeEffect002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollEdgeEffect002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_EDGEEFFECT_0300
-     * @tc.name       : testScrollEdgeEffect003
-     * @tc.desc       : testing edge effect for scroll with fade value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollEdgeEffect003
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_EDGEEFFECT_0300
+     * @tc.desc   testing edge effect for scroll with fade value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollEdgeEffect003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollEdgeEffect003()).assertEqual(0)

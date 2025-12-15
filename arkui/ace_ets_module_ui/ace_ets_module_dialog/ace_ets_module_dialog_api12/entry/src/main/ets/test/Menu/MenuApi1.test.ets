@@ -45,9 +45,12 @@ export default function MenuApi1() {
     });
 
     /**
+     * @tc.name   MenuApi1_0100
      * @tc.number MenuApi1_0100
-     * @tc.name   testFocus
-     * @tc.desc
+     * @tc.desc   MenuApi1_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MenuApi1_0100', Level.LEVEL2, async (done: Function) => {
       console.info('MenuApi1_0100 START');

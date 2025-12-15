@@ -46,9 +46,12 @@ export default function stackPaddingChange() {
     });
 
     /**
+     * @tc.name   testStackAlignPaddingAlignTopStart
      * @tc.number SUB_ACE_STACK_ALIGNPADDINGCHANGED_0100
-     * @tc.name testStackAlignPaddingAlignTopStart
-     * @tc.desc Set stack's  padding 10  and alignContent mode 'TopStart'.
+     * @tc.desc   Set stack's  padding 10  and alignContent mode 'TopStart'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignPaddingAlignTopStart',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackAlignPaddingAlignTopStart START');
@@ -82,9 +85,12 @@ export default function stackPaddingChange() {
     });
 
     /**
+     * @tc.name   testStackAlignPaddingAlignTop
      * @tc.number SUB_ACE_STACK_ALIGNPADDINGCHANGED_0200
-     * @tc.name testStackAlignPaddingAlignTop
-     * @tc.desc Set stack's  padding 10  and alignContent mode 'Top'.
+     * @tc.desc   Set stack's  padding 10  and alignContent mode 'Top'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignPaddingAlignTop',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackAlignPaddingAlignTop START');
@@ -115,9 +121,12 @@ export default function stackPaddingChange() {
     });
 
     /**
+     * @tc.name   testStackAlignPaddingAlignTopEnd
      * @tc.number SUB_ACE_STACK_ALIGNPADDINGCHANGED_0300
-     * @tc.name testStackAlignPaddingAlignTopEnd
-     * @tc.desc Set stack's  padding 10  and alignContent mode 'TopEnd'.
+     * @tc.desc   Set stack's  padding 10  and alignContent mode 'TopEnd'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignPaddingAlignTopEnd',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackAlignPaddingAlignTopEnd START');
@@ -151,9 +160,12 @@ export default function stackPaddingChange() {
     });
 
     /**
+     * @tc.name   testStackAlignPaddingAlignStart
      * @tc.number SUB_ACE_STACK_ALIGNPADDINGCHANGED_0400
-     * @tc.name testStackAlignPaddingAlignStart
-     * @tc.desc Set stack's  padding 10  and alignContent mode 'START'.
+     * @tc.desc   Set stack's  padding 10  and alignContent mode 'START'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignPaddingAlignStart',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackAlignPaddingAlignStart START');
@@ -185,9 +197,12 @@ export default function stackPaddingChange() {
     });
 
     /**
+     * @tc.name   testStackAlignPaddingAlignCenter
      * @tc.number SUB_ACE_STACK_ALIGNPADDINGCHANGED_0500
-     * @tc.name testStackAlignPaddingAlignCenter
-     * @tc.desc Set stack's  padding 10  and alignContent mode 'Center'.
+     * @tc.desc   Set stack's  padding 10  and alignContent mode 'Center'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignPaddingAlignCenter',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackAlignPaddingAlignCenter START');
@@ -215,9 +230,12 @@ export default function stackPaddingChange() {
     });
 
     /**
+     * @tc.name   testStackAlignPaddingAlignEnd
      * @tc.number SUB_ACE_STACK_ALIGNPADDINGCHANGED_0600
-     * @tc.name testStackAlignPaddingAlignEnd
-     * @tc.desc Set stack's  padding 10  and alignContent mode 'End'.
+     * @tc.desc   Set stack's  padding 10  and alignContent mode 'End'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignPaddingAlignEnd',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackAlignPaddingAlignEnd START');
@@ -245,9 +263,12 @@ export default function stackPaddingChange() {
     });
 
     /**
+     * @tc.name   testStackAlignPaddingAlignBottomStart
      * @tc.number SUB_ACE_STACK_ALIGNPADDINGCHANGED_0700
-     * @tc.name testStackAlignPaddingAlignBottomStart
-     * @tc.desc Set stack's  padding 10  and alignContent mode 'BottomStart'.
+     * @tc.desc   Set stack's  padding 10  and alignContent mode 'BottomStart'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignPaddingAlignBottomStart',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackAlignPaddingAlignBottomStart START');
@@ -281,9 +302,12 @@ export default function stackPaddingChange() {
     });
 
     /**
+     * @tc.name   testStackAlignPaddingAlignBottom
      * @tc.number SUB_ACE_STACK_ALIGNPADDINGCHANGED_0800
-     * @tc.name testStackAlignPaddingAlignBottom
-     * @tc.desc Set stack's  padding 10  and alignContent mode 'Bottom'.
+     * @tc.desc   Set stack's  padding 10  and alignContent mode 'Bottom'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignPaddingAlignBottom',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackAlignPaddingAlignBottom START');
@@ -315,9 +339,12 @@ export default function stackPaddingChange() {
     });
 
     /**
+     * @tc.name   testStackAlignPaddingAlignBottomEnd
      * @tc.number SUB_ACE_STACK_ALIGNPADDINGCHANGED_0900
-     * @tc.name testStackAlignPaddingAlignBottomEnd
-     * @tc.desc Set stack's  padding 10  and alignContent mode 'BottomEnd'.
+     * @tc.desc   Set stack's  padding 10  and alignContent mode 'BottomEnd'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignPaddingAlignBottomEnd',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackAlignPaddingAlignBottomEnd START');
@@ -351,9 +378,12 @@ export default function stackPaddingChange() {
     });
 
     /**
+     * @tc.name   testStackAlignPaddingExceedAlignTopStart
      * @tc.number SUB_ACE_STACK_ALIGNPADDINGCHANGED_1000
-     * @tc.name testStackAlignPaddingExceedAlignTopStart
-     * @tc.desc Set stack's  padding 30  and alignContent mode 'TopStart'.
+     * @tc.desc   Set stack's  padding 30  and alignContent mode 'TopStart'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignPaddingExceedAlignTopStart',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackAlignPaddingExceedAlignTopStart START');
@@ -387,9 +417,12 @@ export default function stackPaddingChange() {
     });
 
     /**
+     * @tc.name   testStackAlignPaddingExceedAlignTop
      * @tc.number SUB_ACE_STACK_ALIGNPADDINGCHANGED_1100
-     * @tc.name testStackAlignPaddingExceedAlignTop
-     * @tc.desc Set stack's  padding 30  and alignContent mode 'Top'.
+     * @tc.desc   Set stack's  padding 30  and alignContent mode 'Top'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignPaddingExceedAlignTop',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackAlignPaddingExceedAlignTop START');
@@ -421,9 +454,12 @@ export default function stackPaddingChange() {
     });
 
     /**
+     * @tc.name   testStackAlignPaddingExceedAlignTopEnd
      * @tc.number SUB_ACE_STACK_ALIGNPADDINGCHANGED_1200
-     * @tc.name testStackAlignPaddingExceedAlignTopEnd
-     * @tc.desc Set stack's  padding 30  and alignContent mode 'TopEnd'.
+     * @tc.desc   Set stack's  padding 30  and alignContent mode 'TopEnd'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignPaddingExceedAlignTopEnd',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackAlignPaddingExceedAlignTopEnd START');
@@ -457,9 +493,12 @@ export default function stackPaddingChange() {
     });
 
     /**
+     * @tc.name   testStackAlignPaddingExceedAlignStart
      * @tc.number SUB_ACE_STACK_ALIGNPADDINGCHANGED_1300
-     * @tc.name testStackAlignPaddingExceedAlignStart
-     * @tc.desc Set stack's  padding 30  and alignContent mode 'START'.
+     * @tc.desc   Set stack's  padding 30  and alignContent mode 'START'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignPaddingExceedAlignStart',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackAlignPaddingExceedAlignStart START');
@@ -491,9 +530,12 @@ export default function stackPaddingChange() {
     });
 
     /**
+     * @tc.name   testStackAlignPaddingExceedAlignCenter
      * @tc.number SUB_ACE_STACK_ALIGNPADDINGCHANGED_1400
-     * @tc.name testStackAlignPaddingExceedAlignCenter
-     * @tc.desc Set stack's  padding 30  and alignContent mode 'Center'.
+     * @tc.desc   Set stack's  padding 30  and alignContent mode 'Center'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignPaddingExceedAlignCenter',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackAlignPaddingExceedAlignCenter START');
@@ -523,9 +565,12 @@ export default function stackPaddingChange() {
     });
 
     /**
+     * @tc.name   testStackAlignPaddingExceedAlignEnd
      * @tc.number SUB_ACE_STACK_ALIGNPADDINGCHANGED_1500
-     * @tc.name testStackAlignPaddingExceedAlignEnd
-     * @tc.desc Set stack's  padding 30  and alignContent mode 'End'.
+     * @tc.desc   Set stack's  padding 30  and alignContent mode 'End'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignPaddingExceedAlignEnd',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackAlignPaddingExceedAlignEnd START');
@@ -557,9 +602,12 @@ export default function stackPaddingChange() {
     });
 
     /**
+     * @tc.name   testStackAlignPaddingExceedAlignBottomStart
      * @tc.number SUB_ACE_STACK_ALIGNPADDINGCHANGED_1600
-     * @tc.name testStackAlignPaddingExceedAlignBottomStart
-     * @tc.desc Set stack's  padding 30  and alignContent mode 'BottomStart'.
+     * @tc.desc   Set stack's  padding 30  and alignContent mode 'BottomStart'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignPaddingExceedAlignBottomStart',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackAlignPaddingExceedAlignBottomStart START');
@@ -593,9 +641,12 @@ export default function stackPaddingChange() {
     });
 
     /**
+     * @tc.name   testStackAlignPaddingExceedAlignBottom
      * @tc.number SUB_ACE_STACK_ALIGNPADDINGCHANGED_1700
-     * @tc.name testStackAlignPaddingExceedAlignBottom
-     * @tc.desc Set stack's  padding 30  and alignContent mode 'Bottom'.
+     * @tc.desc   Set stack's  padding 30  and alignContent mode 'Bottom'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignPaddingExceedAlignBottom',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackAlignPaddingExceedAlignBottom START');
@@ -628,9 +679,12 @@ export default function stackPaddingChange() {
     });
 
     /**
+     * @tc.name   testStackAlignPaddingExceedAlignBottomEnd
      * @tc.number SUB_ACE_STACK_ALIGNPADDINGCHANGED_1800
-     * @tc.name testStackAlignPaddingExceedAlignBottomEnd
-     * @tc.desc Set stack's  padding 30  and alignContent mode 'BottomEnd'.
+     * @tc.desc   Set stack's  padding 30  and alignContent mode 'BottomEnd'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignPaddingExceedAlignBottomEnd',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackAlignPaddingExceedAlignBottomEnd START');

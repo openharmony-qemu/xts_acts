@@ -65,9 +65,12 @@ export default function scrollbarJsunit() {
 
 
     /**
+     * @tc.name   testScrollbar010
      * @tc.number SUB_ACE_BASIC_ETS_API_1340
-     * @tc.name testScrollbar010
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollbar010', Level.LEVEL1, async (done: Function) => {
       console.info('testScrollbar010 START');
@@ -83,9 +86,12 @@ export default function scrollbarJsunit() {
 
 
     /**
+     * @tc.name   testScrollbar020
      * @tc.number SUB_ACE_BASIC_ETS_API_1350
-     * @tc.name testScrollbar020
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollbar020', Level.LEVEL1, async (done: Function) => {
       console.info('testScrollbar020 START');
@@ -101,9 +107,12 @@ export default function scrollbarJsunit() {
 
 
     /**
+     * @tc.name   testScrollbar030
      * @tc.number SUB_ACE_BASIC_ETS_API_1360
-     * @tc.name testScrollbar030
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollbar030', Level.LEVEL1, async (done: Function) => {
       console.info('testScrollbar030 START');
@@ -118,9 +127,12 @@ export default function scrollbarJsunit() {
     });
 
     /**
+     * @tc.name   testScrollbar040
      * @tc.number SUB_ACE_BASIC_ETS_API_1370
-     * @tc.name testScrollbar040
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollbar040', Level.LEVEL1, async (done: Function) => {
       console.info('testScrollbar040 START');
@@ -135,9 +147,12 @@ export default function scrollbarJsunit() {
     });
 
     /**
+     * @tc.name   testScrollbar050
      * @tc.number SUB_ACE_BASIC_ETS_API_1380
-     * @tc.name testScrollbar050
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollbar050', Level.LEVEL1, async (done: Function) => {
       console.info('testScrollbar050 START');
@@ -152,9 +167,12 @@ export default function scrollbarJsunit() {
     });
 
     /**
+     * @tc.name   testScrollbar060
      * @tc.number SUB_ACE_BASIC_ETS_API_1390
-     * @tc.name testScrollbar060
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollbar060', Level.LEVEL1, async (done: Function) => {
       console.info('testScrollbar060 START');

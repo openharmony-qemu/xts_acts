@@ -41,12 +41,12 @@ export default function pathNewTest() {
     });
 
     /**
+     * @tc.name   testPathNe0004
      * @tc.number testPathNe0004
-     * @tc.name Test the properties of components
-     * @tc.desc Set commands values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set commands values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPathNe0004', Level.LEVEL0, async (done: Function) => {
       console.info('pathNe testPathNe0004 START');
@@ -60,12 +60,12 @@ export default function pathNewTest() {
     });
 
     /**
+     * @tc.name   testPathNe0005
      * @tc.number testPathNe0005
-     * @tc.name Test the properties of components
-     * @tc.desc Change commands values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change commands values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPathNe0005', Level.LEVEL0, async (done: Function) => {
       console.info('testPathNe0005 START');

@@ -47,9 +47,12 @@ export default function webgl2_enum() {
             hilog.info(0x0000, 'testTag', '%{public}s', 'webgl1_test_01 end');
         });
         /**
+         * @tc.name   webgl2_test_enum
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_ENUM_0001
-         * @tc.name webgl2_test_enum
-         * @tc.desc Test enum.
+         * @tc.desc   Test enum.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_enum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl2_test_enum] enum");

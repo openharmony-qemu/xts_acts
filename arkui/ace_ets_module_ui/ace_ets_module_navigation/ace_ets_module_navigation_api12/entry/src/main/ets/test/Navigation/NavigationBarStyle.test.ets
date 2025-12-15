@@ -49,10 +49,12 @@ export default function NavigationBarStyle() {
 
 
     /**
-     * @tc.number    NavigationBarStyle_0100
-     * @tc.name      NavigationBarStyle_0100
-     * @tc.desc      Test Navigation BarStyle.STACK
-     * @tc.level     Level 2
+     * @tc.name   NavigationBarStyle_0100
+     * @tc.number NavigationBarStyle_0100
+     * @tc.desc   Test Navigation BarStyle.STACK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationBarStyle_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('NavigationBarStyle_0100 START');

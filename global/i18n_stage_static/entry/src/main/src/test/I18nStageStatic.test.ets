@@ -53,7 +53,6 @@ export default function i18nStageTest() {
       console.info("afterAll case");
     });
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_SR000IFGMS_static_0100
      * @tc.number SUB_GLOBAL_I18N_getTimeInMillis_static_0100
      * @tc.desc   hour=[21,5],local="en-US",at night
@@ -68,7 +67,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_SR000IFGMS_static_0200
      * @tc.number SUB_GLOBAL_I18N_getTimeInMillis_static_0200
      * @tc.desc   hour=[6,11],local="en-US",in the morning
@@ -83,7 +81,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_SR000IFGMS_static_0300
      * @tc.number SUB_GLOBAL_I18N_getTimeInMillis_static_0300
      * @tc.desc   hour=12,local="en-US",noon
@@ -98,7 +95,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_SR000IFGMS_static_0400
      * @tc.number SUB_GLOBAL_I18N_getTimeInMillis_static_0400
      * @tc.desc   hour=[13,17],local="en-US",in the afternoon
@@ -113,7 +109,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_SR000IFGMS_static_0500
      * @tc.number SUB_GLOBAL_I18N_getTimeInMillis_static_0500
      * @tc.desc   hour=[18,20],local="en-US",in the evening
@@ -128,7 +123,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_SR000IFGMS_static_0600
      * @tc.number SUB_GLOBAL_I18N_getTimeInMillis_static_0600
      * @tc.desc   hour=12,local=""
@@ -147,7 +141,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_SR000IFGMS_static_0700
      * @tc.number SUB_GLOBAL_I18N_SR000IFGMS_static_0700
      * @tc.desc   hour=12,local=invalid string
@@ -166,7 +159,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_i18n_SR000IFGNH_static_0010
      * @tc.number SUB_GLOBAL_i18n_HolidayManager_static_0010
      * @tc.desc   HolidayManager-input .ics file
@@ -185,7 +177,6 @@ export default function i18nStageTest() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_i18n_SR000IFGNH_static_0020
      * @tc.number SUB_GLOBAL_i18n_HolidayManager_static_0020
      * @tc.desc   HolidayManager-input .xml file
@@ -204,7 +195,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_SR000IFGNH_static_0030
      * @tc.number SUB_GLOBAL_I18N_isHoliday_static_0030
      * @tc.desc   isHoliday-input null(The current date is used by default)
@@ -220,7 +210,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_SR000IFGNH_static_0050
      * @tc.number SUB_GLOBAL_I18N_isHoliday_static_0050
      * @tc.desc   isHoliday-input correct date (is not holiday) parameter
@@ -236,7 +225,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_SR000IFGNH_static_0070
      * @tc.number SUB_GLOBAL_I18N_getHolidayInfoItemArray_static_0070
      * @tc.desc   getHolidayInfoItemArray-input null(The current year is used by default)
@@ -252,7 +240,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_SR000IFGNH_static_0080
      * @tc.number SUB_GLOBAL_I18N_getHolidayInfoItemArray_static_0080
      * @tc.desc   getHolidayInfoItemArray-input correct year parameter (contain holidays)
@@ -268,7 +255,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_SR000IFGNH_static_0090
      * @tc.number SUB_GLOBAL_I18N_getHolidayInfoItemArray_static_0090
      * @tc.desc   getHolidayInfoItemArray-input correct number parameter (don't contain holidays)
@@ -284,7 +270,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_SR000IET4P_static_0100
      * @tc.number SUB_GLOBAL_I18N_add_static_0100
      * @tc.desc   add - amount >= 0
@@ -303,7 +288,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_SR000IET4P_static_0200
      * @tc.number SUB_GLOBAL_I18N_add_static_0200
      * @tc.desc   add - amount parameter input 'week_of_year'
@@ -324,7 +308,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_SR000IET4P_static_0300
      * @tc.number SUB_GLOBAL_I18N_add_static_0300
      * @tc.desc   add - amount < 0
@@ -343,7 +326,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_SR000IET4P_static_0600
      * @tc.number SUB_GLOBAL_I18N_add_static_0600
      * @tc.desc   add - filed parameter input invalid parameter
@@ -367,7 +349,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_SR000IET4P_static_0700
      * @tc.number SUB_GLOBAL_I18N_getTimeInMillis_static_0700
      * @tc.desc   add - filed parameter input invalid parameter
@@ -384,7 +365,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_CompareDays_static_0100
      * @tc.number SUB_GLOBAL_I18N_compareDays_static_0100
      * @tc.desc   CompareDays - Compare the Date
@@ -402,7 +382,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_CompareDays_static_0200
      * @tc.number SUB_GLOBAL_I18N_compareDays_static_0200
      * @tc.desc   CompareDays - Compare the Date
@@ -420,7 +399,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_CompareDays_static_0300
      * @tc.number SUB_GLOBAL_I18N_compareDays_static_0300
      * @tc.desc   CompareDays - Compare the Date
@@ -438,7 +416,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_EntityRecognizer_static_0100
      * @tc.number SUB_GLOBAL_I18N_EntityRecognizer_static_0100
      * @tc.desc   findEntityInfo - Identifying Entity Information in Text
@@ -459,7 +436,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_EntityRecognizer_static_0200
      * @tc.number SUB_GLOBAL_I18N_EntityRecognizer_static_0200
      * @tc.desc   findEntityInfo - Identifying Entity Information in Text
@@ -480,7 +456,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_EntityRecognizer_static_0400
      * @tc.number SUB_GLOBAL_I18N_EntityRecognizer_static_0400
      * @tc.desc   findEntityInfo - no recognizable entity information in Text
@@ -497,7 +472,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_EntityRecognizer_static_0600
      * @tc.number SUB_GLOBAL_I18N_EntityRecognizer_static_0600
      * @tc.desc   findEntityInfo - Identifying Entity Information in Text
@@ -518,7 +492,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_EntityRecognizer_static_0800
      * @tc.number SUB_GLOBAL_I18N_EntityRecognizer_static_0800
      * @tc.desc   findEntityInfo - Identifying Entity Date Information in Text(Chinese)
@@ -539,7 +512,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_EntityRecognizer_static_0900
      * @tc.number SUB_GLOBAL_I18N_EntityRecognizer_static_0900
      * @tc.desc   findEntityInfo - Identifying Entity Date Information in Text(Chinese)
@@ -560,7 +532,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_EntityRecognizer_static_1000
      * @tc.number SUB_GLOBAL_I18N_EntityRecognizer_static_1000
      * @tc.desc   findEntityInfo - Identifying Entity Date Information in Text(English)
@@ -579,7 +550,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_EntityRecognizer_static_1100
      * @tc.number SUB_GLOBAL_I18N_EntityRecognizer_static_1100
      * @tc.desc   findEntityInfo - Identifying Entity Date Information in Text(English)
@@ -598,7 +568,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_i18n_AppPreferredLanguage_static_0100
      * @tc.number SUB_GLOBAL_i18n_AppPreferredLanguage_static_0100
      * @tc.desc   setAppPreferredLanguage - Set App Preferred Language
@@ -617,7 +586,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_AppPreferredLanguage_static_0200
      * @tc.number SUB_GLOBAL_I18N_AppPreferredLanguage_static_0200
      * @tc.desc   setAppPreferredLanguage - Set App Preferred Language to invalid language
@@ -636,7 +604,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_AppPreferredLanguage_static_0400
      * @tc.number SUB_GLOBAL_I18N_AppPreferredLanguage_static_0400
      * @tc.desc   setAppPreferredLanguage - Set App Preferred Language to zh-CN
@@ -652,7 +619,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testgetThreeLetterLanguage_static_0030
      * @tc.number testgetThreeLetterLanguage_static_0030
      * @tc.desc   transfer en and return eng
@@ -667,7 +633,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testGetThreeLetterLanguage_static_0100
      * @tc.number SUB_GLOBAL_getThreeLetterLanguage_static_0100
      * @tc.desc   param value is en
@@ -682,7 +647,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testgetThreeLetterRegion_static_0030
      * @tc.number testgetThreeLetterRegion_static_0030
      * @tc.desc   Get a three-letter abbreviation of the specified language
@@ -697,7 +661,6 @@ export default function i18nStageTest() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testGetThreeLetterLanguage_static_0040
      * @tc.number testGetThreeLetterLanguage_static_0040
      * @tc.desc   param value not valid
@@ -715,7 +678,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testGetThreeLetterRegion_static_0040
      * @tc.number testGetThreeLetterRegion_static_0040
      * @tc.desc   param value not valid
@@ -734,7 +696,6 @@ export default function i18nStageTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testGetThreeLetterRegion_static_0100
      * @tc.number SUB_GLOBAL_getThreeLetterRegion_static_0100
      * @tc.desc   transfer GB and return GBR
@@ -749,7 +710,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_getDisplayLanguage_static_0200
      * @tc.number SUB_GLOBAL_I18N_getDisplayLanguage_static_0200
      * @tc.desc   errcode 890001
@@ -768,7 +728,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_getSystemCountries_static_0100
      * @tc.number SUB_GLOBAL_I18N_getSystemCountries_static_0100
      * @tc.desc   errcode 890001
@@ -788,7 +747,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_isSuggested_static_0200
      * @tc.number SUB_GLOBAL_I18N_isSuggested_static_0200
      * @tc.desc   errcode 890001
@@ -808,7 +766,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_getTimePeriodName_static_0200
      * @tc.number SUB_GLOBAL_I18N_getTimePeriodName_static_0200
      * @tc.desc   getTimePeriodName errcode 890001
@@ -826,7 +783,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_unitConvert_static_0100
      * @tc.number SUB_GLOBAL_I18N_unitConvert_static_0100
      * @tc.desc   unitConvert
@@ -844,7 +800,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_calendar_test_static_2600
      * @tc.number i18n_calendar_test_static_2600
      * @tc.desc   getCalendar
@@ -861,7 +816,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_getHolidayInfoItemArray_static_0100
      * @tc.number SUB_GLOBAL_I18N_getHolidayInfoItemArray_static_0100
      * @tc.desc   getHolidayInfoItemArray error code 890001
@@ -880,7 +834,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_SR000IFGMS_static_0800
      * @tc.number SUB_GLOBAL_I18N_SR000IFGMS_static_0800
      * @tc.desc   hour=[21,5],at night
@@ -895,7 +848,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormatAdapt_test_static_0010
      * @tc.number SUB_GLOBAL_Localization_foramtAdapt_static_0010
      * @tc.desc   check the dateStyle is adapt to auto
@@ -913,7 +865,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormatAdapt_test_static_0020
      * @tc.number SUB_GLOBAL_Localization_foramtAdapt_static_0020
      * @tc.desc   check the timeStyle is adapt to auto
@@ -931,7 +882,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormatAdapt_test_static_0030
      * @tc.number SUB_GLOBAL_Localization_foramtAdapt_static_0030
      * @tc.desc   check the weekday is adapt to auto
@@ -949,7 +899,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormatAdapt_test_static_0040
      * @tc.number SUB_GLOBAL_Localization_foramtAdapt_static_0040
      * @tc.desc   check the month is adapt to auto
@@ -967,7 +916,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormatAdapt_test_static_0050
      * @tc.number SUB_GLOBAL_Localization_foramtAdapt_static_0050
      * @tc.desc   check the timeZoneName is adapt to auto
@@ -985,7 +933,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormatAdapt_test_static_0060
      * @tc.number SUB_GLOBAL_Localization_foramtAdapt_static_0060
      * @tc.desc   check the dayPeriod is adapt to auto
@@ -1003,7 +950,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormatAdapt_test_static_0070
      * @tc.number SUB_GLOBAL_Localization_foramtAdapt_static_0070
      * @tc.desc   check the option is null
@@ -1024,7 +970,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   numberFormatAdapt_test_static_0080
      * @tc.number SUB_GLOBAL_Localization_foramtAdapt_static_0080
      * @tc.desc   format the datetime with currencyDisplay symbol
@@ -1042,7 +987,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   numberFormatAdapt_test_static_0090
      * @tc.number SUB_GLOBAL_Localization_foramtAdapt_static_0090
      * @tc.desc   format the datetime with currencyDisplay short
@@ -1060,7 +1004,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   numberFormatAdapt_test_static_0150
      * @tc.number SUB_GLOBAL_Localization_foramtAdapt_static_0150
      * @tc.desc   format the datetime with unitDisplay long
@@ -1078,7 +1021,6 @@ export default function i18nStageTest() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   numberFormatAdapt_test_static_0160
      * @tc.number SUB_GLOBAL_Localization_foramtAdapt_static_0160
      * @tc.desc   format the datetime with unitDisplay long
@@ -1096,7 +1038,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   relativeTimeFormatAdapt_test_static_0100
      * @tc.number SUB_GLOBAL_Localization_foramtAdapt_static_0100
      * @tc.desc   format timeStyle is long
@@ -1115,7 +1056,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   relativeTimeFormatAdapt_test_static_0110
      * @tc.number SUB_GLOBAL_Localization_foramtAdapt_static_0110
      * @tc.desc   format the timeStyle is null
@@ -1139,7 +1079,6 @@ export default function i18nStageTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_numberFormatTyping_static_0100
      * @tc.number SUB_GLOBAL_numberFormatTyping_static_0100
      * @tc.desc   adapter in adding
@@ -1167,7 +1106,6 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_numberFormatTyping_static_0200
      * @tc.number SUB_GLOBAL_numberFormatTyping_static_0200
      * @tc.desc   adapter in delete
@@ -1187,7 +1125,6 @@ export default function i18nStageTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_numberFormatTyping_static_0300
      * @tc.number SUB_GLOBAL_numberFormatTyping_static_0300
      * @tc.desc   not CN phone number

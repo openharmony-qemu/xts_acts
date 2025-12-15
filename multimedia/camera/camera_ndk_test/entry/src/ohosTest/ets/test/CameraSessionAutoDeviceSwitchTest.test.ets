@@ -257,13 +257,13 @@ export default function CameraSessionAutoDeviceSwitchTest() {
       releaseCamera();
       console.info('afterAll case');
     });
-        /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OHSessionIsAutoDeviceSwitchSupportedTest100
-     * @tc.name      : testOHSessionIsAutoDeviceSwitchSupportedTest100
-     * @tc.desc      : Checks if the automatic switchover device is supported.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   testOHSessionIsAutoDeviceSwitchSupportedTest100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OHSessionIsAutoDeviceSwitchSupportedTest100
+     * @tc.desc   Checks if the automatic switchover device is supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionIsAutoDeviceSwitchSupportedTest100', Level.LEVEL2, async () => {
       console.info("--------------testOHSessionIsAutoDeviceSwitchSupportedTest100--------------");
@@ -277,12 +277,12 @@ export default function CameraSessionAutoDeviceSwitchTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OHSessionEnableAutoDeviceSwitchTest100
-     * @tc.name      : testOHSessionEnableAutoDeviceSwitchTest100
-     * @tc.desc      : Enables or disables the automatic switchover device.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHSessionEnableAutoDeviceSwitchTest100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OHSessionEnableAutoDeviceSwitchTest100
+     * @tc.desc   Enables or disables the automatic switchover device.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionEnableAutoDeviceSwitchTest100', Level.LEVEL2, async () => {
       console.info("--------------testOHSessionEnableAutoDeviceSwitchTest100--------------");
@@ -300,12 +300,12 @@ export default function CameraSessionAutoDeviceSwitchTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OHSessionRegisterAutoDeviceSwitchCallbackTest100
-     * @tc.name      : testOHSessionRegisterAutoDeviceSwitchCallbackTest100
-     * @tc.desc      : Check whether the interception switchover is successful.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHSessionRegisterAutoDeviceSwitchCallbackTest100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OHSessionRegisterAutoDeviceSwitchCallbackTest100
+     * @tc.desc   Check whether the interception switchover is successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionRegisterAutoDeviceSwitchCallbackTest100', Level.LEVEL2, async () => {
       console.info("--------------testOHSessionRegisterAutoDeviceSwitchCallbackTest100--------------");
@@ -327,12 +327,12 @@ export default function CameraSessionAutoDeviceSwitchTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OHSessionRegisterAutoDeviceSwitchCallbackTest200
-     * @tc.name      : testOHSessionRegisterAutoDeviceSwitchCallbackTest200
-     * @tc.desc      : Check whether the interception switchover is successful.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHSessionRegisterAutoDeviceSwitchCallbackTest200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OHSessionRegisterAutoDeviceSwitchCallbackTest200
+     * @tc.desc   Check whether the interception switchover is successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionRegisterAutoDeviceSwitchCallbackTest200', Level.LEVEL2, async () => {
       console.info("--------------testOHSessionRegisterAutoDeviceSwitchCallbackTest200--------------");
@@ -354,12 +354,12 @@ export default function CameraSessionAutoDeviceSwitchTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OHSessionRegisterAutoDeviceSwitchCallbackTest300
-     * @tc.name      : testOHSessionRegisterAutoDeviceSwitchCallbackTest300
-     * @tc.desc      : Check whether the interception switchover is successful.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHSessionRegisterAutoDeviceSwitchCallbackTest300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OHSessionRegisterAutoDeviceSwitchCallbackTest300
+     * @tc.desc   Check whether the interception switchover is successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionRegisterAutoDeviceSwitchCallbackTest300', Level.LEVEL2, async () => {
       console.info("--------------testOHSessionRegisterAutoDeviceSwitchCallbackTest300--------------");
@@ -381,12 +381,12 @@ export default function CameraSessionAutoDeviceSwitchTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OHSessionUnregisterAutoDeviceSwitchCallbackTest100
-     * @tc.name      : testOHSessionUnregisterAutoDeviceSwitchCallbackTest100
-     * @tc.desc      : Check whether the interception switchover is successful.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHSessionUnregisterAutoDeviceSwitchCallbackTest100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OHSessionUnregisterAutoDeviceSwitchCallbackTest100
+     * @tc.desc   Check whether the interception switchover is successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionUnregisterAutoDeviceSwitchCallbackTest100', Level.LEVEL2, async () => {
       console.info("--------------testOHSessionUnregisterAutoDeviceSwitchCallbackTest100--------------");
@@ -408,12 +408,12 @@ export default function CameraSessionAutoDeviceSwitchTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OHSessionUnregisterAutoDeviceSwitchCallbackTest200
-     * @tc.name      : testOHSessionUnregisterAutoDeviceSwitchCallbackTest200
-     * @tc.desc      : Check whether the interception switchover is successful.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHSessionUnregisterAutoDeviceSwitchCallbackTest200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OHSessionUnregisterAutoDeviceSwitchCallbackTest200
+     * @tc.desc   Check whether the interception switchover is successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionUnregisterAutoDeviceSwitchCallbackTest200', Level.LEVEL2, async () => {
       console.info("--------------testOHSessionUnregisterAutoDeviceSwitchCallbackTest200--------------");
@@ -435,12 +435,12 @@ export default function CameraSessionAutoDeviceSwitchTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OHSessionUnregisterAutoDeviceSwitchCallbackTest300
-     * @tc.name      : testOHSessionUnregisterAutoDeviceSwitchCallbackTest300
-     * @tc.desc      : Check whether the interception switchover is successful.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHSessionUnregisterAutoDeviceSwitchCallbackTest300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OHSessionUnregisterAutoDeviceSwitchCallbackTest300
+     * @tc.desc   Check whether the interception switchover is successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHSessionUnregisterAutoDeviceSwitchCallbackTest300', Level.LEVEL2, async () => {
       console.info("--------------testOHSessionUnregisterAutoDeviceSwitchCallbackTest300--------------");

@@ -100,12 +100,12 @@ export default function LifeCycleLinstenerStaticTest() {
     })
 
     /**
-     * @tc.number  SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_Static_0100
-     * @tc.name    SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_Static_0100
-     * @tc.desc    Call UIAbilityContext moveAbilityToBackground,expect current ability moved to background and onBackground() called.
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
+     * @tc.name   SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_Static_0100
+     * @tc.desc   Call UIAbilityContext moveAbilityToBackground,expect current ability moved to background and onBackground() called.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tag = `SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_Static_0100`;
@@ -120,12 +120,12 @@ export default function LifeCycleLinstenerStaticTest() {
     });
 
     /**
-     * @tc.number  SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0100
-     * @tc.name    SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0100
-     * @tc.desc    Call UIAbilityContext moveAbilityToBackground expect current ability moved to background and onBackground() called.
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
+     * @tc.name   SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0100
+     * @tc.desc   Call UIAbilityContext moveAbilityToBackground expect current ability moved to background and onBackground() called.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -160,12 +160,12 @@ export default function LifeCycleLinstenerStaticTest() {
       });
 
     /**
-     * @tc.number  SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0200
-     * @tc.name    SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0200
-     * @tc.desc    Call UIAbilityContext moveAbilityToBackground expect current ability moved to background and onBackground() called.
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
+     * @tc.name   SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0200
+     * @tc.number SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0200
+     * @tc.desc   Call UIAbilityContext moveAbilityToBackground expect current ability moved to background and onBackground() called.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -212,13 +212,13 @@ export default function LifeCycleLinstenerStaticTest() {
 
 
     /**
-     * @tc.number  SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0300
-     * @tc.name    SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0300
-     * @tc.desc    Call UIAbilityContext moveAbilityToBackground expect current ability moved to background and onBackground() called.
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
-   */
+     * @tc.name   SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0300
+     * @tc.number SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0300
+     * @tc.desc   Call UIAbilityContext moveAbilityToBackground expect current ability moved to background and onBackground() called.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         const itName = `SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0300`;
@@ -263,13 +263,13 @@ export default function LifeCycleLinstenerStaticTest() {
       });
 
     /**
-    * @tc.number  SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0100
-    * @tc.name    SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0100
-    * @tc.desc    onInteropAbilityLifecycle（）
-    * @tc.type    Function
-    * @tc.size    MediumTest
-    * @tc.level   0
-    */
+     * @tc.name   SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0100
+     * @tc.desc   onInteropAbilityLifecycle（）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         const itName = `SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0100`;
@@ -290,12 +290,12 @@ export default function LifeCycleLinstenerStaticTest() {
       })
 
     /**
-     * @tc.number  SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0200
-     * @tc.name    SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0200
-     * @tc.desc    offInteropAbilityLifecycle（） no param
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
+     * @tc.name   SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0200
+     * @tc.number SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0200
+     * @tc.desc   offInteropAbilityLifecycle（） no param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {

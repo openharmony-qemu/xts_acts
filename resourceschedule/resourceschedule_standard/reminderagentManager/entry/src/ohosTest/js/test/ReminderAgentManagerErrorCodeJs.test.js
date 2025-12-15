@@ -57,12 +57,12 @@ export default function ReminderAgentManagerErrorCodeTest() {
         console.info('start################################start');
 
         /**
-         * @tc.number: reminderErrorCode_0100
-         * @tc.name: reminderErrorCode_0100
-         * @tc.desc: test publishReminder funaction errorcode is 1700002
-         * @tc.level: Level 3
-         * @tc.type: Function
-         * @tc.size: MediumTest
+         * @tc.name   reminderErrorCode_0100
+         * @tc.number reminderErrorCode_0100
+         * @tc.desc   test publishReminder funaction errorcode is 1700002
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("reminderErrorCode_0100", Level.LEVEL3, async function (done) {
             console.info('----------------------reminderErrorCode_0100---------------------------');
@@ -118,12 +118,12 @@ export default function ReminderAgentManagerErrorCodeTest() {
         })
         
         /**
-         * @tc.number: reminderErrorCode_0200
-         * @tc.name: reminderErrorCode_0200
-         * @tc.desc: test cancelReminder callback funaction errorcode is 1700003
-         * @tc.level: Level 3
-         * @tc.type: Function
-         * @tc.size: MediumTest
+         * @tc.name   reminderErrorCode_0200
+         * @tc.number reminderErrorCode_0200
+         * @tc.desc   test cancelReminder callback funaction errorcode is 1700003
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("reminderErrorCode_0200", Level.LEVEL3, async function (done) {
             console.info('----------------------reminderErrorCode_0200---------------------------');
@@ -151,12 +151,12 @@ export default function ReminderAgentManagerErrorCodeTest() {
         })
         
         /**
-         * @tc.number: reminderErrorCode_0300
-         * @tc.name: reminderErrorCode_0100
-         * @tc.desc: test cancelReminder promomise funaction errorcode is 1700003
-         * @tc.level: Level 3
-         * @tc.type: Function
-         * @tc.size: MediumTest
+         * @tc.name   reminderErrorCode_0300
+         * @tc.number reminderErrorCode_0300
+         * @tc.desc   test cancelReminder promomise funaction errorcode is 1700003
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("reminderErrorCode_0300", Level.LEVEL3, async function (done) {
             console.info('----------------------reminderErrorCode_0300---------------------------');
@@ -180,12 +180,12 @@ export default function ReminderAgentManagerErrorCodeTest() {
         })
         
         /**
-         * @tc.number: reminderErrorCode_0400
-         * @tc.name: reminderErrorCode_0400
-         * @tc.desc: test addExcludeDate funaction errorcode is 1700003
-         * @tc.level: Level 3
-         * @tc.type: Function
-         * @tc.size: MediumTest
+         * @tc.name   reminderErrorCode_0400
+         * @tc.number reminderErrorCode_0400
+         * @tc.desc   test addExcludeDate funaction errorcode is 1700003
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("reminderErrorCode_0400", Level.LEVEL3, async function (done) {
             console.info('----------------------reminderErrorCode_0400---------------------------');
@@ -209,12 +209,12 @@ export default function ReminderAgentManagerErrorCodeTest() {
         })
         
         /**
-         * @tc.number: reminderErrorCode_0500
-         * @tc.name: reminderErrorCode_0500
-         * @tc.desc: test deleteExcludeDates funaction errorcode is 1700003
-         * @tc.level: Level 3
-         * @tc.type: Function
-         * @tc.size: MediumTest
+         * @tc.name   reminderErrorCode_0500
+         * @tc.number reminderErrorCode_0500
+         * @tc.desc   test deleteExcludeDates funaction errorcode is 1700003
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("reminderErrorCode_0500", Level.LEVEL3, async function (done) {
             console.info('----------------------reminderRequestAttribute_0033---------------------------');
@@ -238,12 +238,12 @@ export default function ReminderAgentManagerErrorCodeTest() {
         })
         
         /**
-         * @tc.number: reminderErrorCode_0600
-         * @tc.name: reminderErrorCode_0600
-         * @tc.desc: test getExcludeDates funaction errorcode is 1700003
-         * @tc.level: Level 3
-         * @tc.type: Function
-         * @tc.size: MediumTest
+         * @tc.name   reminderErrorCode_0600
+         * @tc.number reminderErrorCode_0600
+         * @tc.desc   test getExcludeDates funaction errorcode is 1700003
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("reminderErrorCode_0600", Level.LEVEL3, async function (done) {
             console.info('----------------------reminderRequestAttribute_0033---------------------------');
@@ -267,12 +267,12 @@ export default function ReminderAgentManagerErrorCodeTest() {
         })
 
         /**
-         * @tc.number: reminderErrorCode_0700
-         * @tc.name: reminderErrorCode_0700
-         * @tc.desc: test publishReminder promise funaction errorcode is 1700002
-         * @tc.level: Level 3
-         * @tc.type: Function
-         * @tc.size: MediumTest
+         * @tc.name   reminderErrorCode_0700
+         * @tc.number reminderErrorCode_0700
+         * @tc.desc   test publishReminder promise funaction errorcode is 1700002
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("reminderErrorCode_0700", Level.LEVEL3, async function (done) {
             console.info('----------------------reminderErrorCode_0700---------------------------');
@@ -314,12 +314,12 @@ export default function ReminderAgentManagerErrorCodeTest() {
         })
 
         /**
-         * @tc.number: reminderErrorCode_0800
-         * @tc.name: reminderErrorCode_0800
-         * @tc.desc: test updateReminder promise function with reminderId is not exist
-         * @tc.level: Level 3
-         * @tc.type: Function
-         * @tc.size: MediumTest
+         * @tc.name   reminderErrorCode_0800
+         * @tc.number reminderErrorCode_0800
+         * @tc.desc   test updateReminder promise function with reminderId is not exist
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("reminderErrorCode_0800", Level.LEVEL3, async function (done) {
             console.info('----------------------reminderErrorCode_0800---------------------------');
@@ -348,12 +348,12 @@ export default function ReminderAgentManagerErrorCodeTest() {
         })
         
         /**
-         * @tc.number: reminderErrorCode_0900
-         * @tc.name: reminderErrorCode_0900
-         * @tc.desc: test updateReminder promise function with reminderId is -1
-         * @tc.level: Level 3
-         * @tc.type: Function
-         * @tc.size: MediumTest
+         * @tc.name   reminderErrorCode_0900
+         * @tc.number reminderErrorCode_0900
+         * @tc.desc   test updateReminder promise function with reminderId is -1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("reminderErrorCode_0900", Level.LEVEL3, async function (done) {
             console.info('----------------------reminderErrorCode_0900---------------------------');

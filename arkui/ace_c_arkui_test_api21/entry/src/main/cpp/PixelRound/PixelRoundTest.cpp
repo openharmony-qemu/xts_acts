@@ -79,7 +79,7 @@ napi_value PixelRoundTest::CreatePixelRoundNativeRoot(napi_env env, napi_callbac
         napi_throw_type_error(env, NULL, "Wrong number of arguments");
         return nullptr;
     }
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "EdgesPositionTest", "napi_get_cb_info success");
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "PixelRoundTest", "napi_get_cb_info success");
     ArkUI_NodeContentHandle nodeContentHandle_ = nullptr;
     OH_ArkUI_GetNodeContentFromNapiValue(env, args[0], &nodeContentHandle_);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "List", "OH_ArkUI_GetNodeHandleFromNapiValue %{public}d");
@@ -189,6 +189,155 @@ napi_value PixelRoundTest::GetPixelRound(napi_env env, napi_callback_info info) 
     napi_value cppStr;
     napi_create_string_latin1(env, showStr.c_str(), showStr.size(), &(cppStr));
     return cppStr;
+}
+
+napi_value PixelRoundTest::TestPixelRoundPolicyGetTopErrorCode_001(napi_env env, napi_callback_info info) {
+    // create tsColumn
+    NAPI_START(tsColumn, ARKUI_NODE_COLUMN);
+
+    // SetTop
+    ArkUI_PixelRoundPolicy *policy = OH_ArkUI_PixelRoundPolicy_Create();
+    OH_ArkUI_PixelRoundPolicy_SetTop(policy, ARKUI_PIXELROUNDCALCPOLICY_NOFORCEROUND);
+    ArkUI_AttributeItem item = {.object = policy};
+    nodeAPI->setAttribute(tsColumn, NODE_PIXEL_ROUND, &item);
+    OH_ArkUI_PixelRoundPolicy_Dispose(policy);
+
+    // GetTop
+    const ArkUI_AttributeItem *get_item = nodeAPI->getAttribute(tsColumn, NODE_PIXEL_ROUND);
+    ArkUI_PixelRoundPolicy *get_policy = reinterpret_cast<ArkUI_PixelRoundPolicy *>(get_item->object);
+
+    ArkUI_PixelRoundCalcPolicy get_value;
+    auto ret = OH_ArkUI_PixelRoundPolicy_GetTop(get_policy, &get_value);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestPixelRoundPolicyGetTopErrorCode_001 ret=%{public}d", ret);
+
+    // Reset
+    nodeAPI->resetAttribute(tsColumn, NODE_PIXEL_ROUND);
+
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
+    NAPI_END;
+}
+
+napi_value PixelRoundTest::TestPixelRoundPolicyGetTopErrorCode_002(napi_env env, napi_callback_info info) {
+    ArkUI_PixelRoundCalcPolicy get_value;
+    auto ret = OH_ArkUI_PixelRoundPolicy_GetTop(nullptr, &get_value);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestPixelRoundPolicyGetTopErrorCode_002 ret=%{public}d", ret);
+
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
+
+napi_value PixelRoundTest::TestPixelRoundPolicyGetStartErrorCode_001(napi_env env, napi_callback_info info) {
+    // create tsColumn
+    NAPI_START(tsColumn, ARKUI_NODE_COLUMN);
+
+    // SetStart
+    ArkUI_PixelRoundPolicy *policy = OH_ArkUI_PixelRoundPolicy_Create();
+    OH_ArkUI_PixelRoundPolicy_SetStart(policy, ARKUI_PIXELROUNDCALCPOLICY_FORCECEIL);
+    ArkUI_AttributeItem item = {.object = policy};
+    nodeAPI->setAttribute(tsColumn, NODE_PIXEL_ROUND, &item);
+    OH_ArkUI_PixelRoundPolicy_Dispose(policy);
+
+    // GetStart
+    const ArkUI_AttributeItem *get_item = nodeAPI->getAttribute(tsColumn, NODE_PIXEL_ROUND);
+    ArkUI_PixelRoundPolicy *get_policy = reinterpret_cast<ArkUI_PixelRoundPolicy *>(get_item->object);
+
+    ArkUI_PixelRoundCalcPolicy get_value;
+    auto ret = OH_ArkUI_PixelRoundPolicy_GetStart(get_policy, &get_value);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestPixelRoundPolicyGetStartErrorCode_001 ret=%{public}d", ret);
+
+    // Reset
+    nodeAPI->resetAttribute(tsColumn, NODE_PIXEL_ROUND);
+
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
+    NAPI_END;
+}
+
+napi_value PixelRoundTest::TestPixelRoundPolicyGetStartErrorCode_002(napi_env env, napi_callback_info info) {
+    ArkUI_PixelRoundCalcPolicy get_value;
+    auto ret = OH_ArkUI_PixelRoundPolicy_GetStart(nullptr, &get_value);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestPixelRoundPolicyGetStartErrorCode_002 ret=%{public}d", ret);
+
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
+
+napi_value PixelRoundTest::TestPixelRoundPolicyGetBottomErrorCode_001(napi_env env, napi_callback_info info) {
+    // create tsColumn
+    NAPI_START(tsColumn, ARKUI_NODE_COLUMN);
+
+    // SetBottom
+    ArkUI_PixelRoundPolicy *policy = OH_ArkUI_PixelRoundPolicy_Create();
+    OH_ArkUI_PixelRoundPolicy_SetBottom(policy, ARKUI_PIXELROUNDCALCPOLICY_FORCEFLOOR);
+    ArkUI_AttributeItem item = {.object = policy};
+    nodeAPI->setAttribute(tsColumn, NODE_PIXEL_ROUND, &item);
+    OH_ArkUI_PixelRoundPolicy_Dispose(policy);
+
+    // GetBottom
+    const ArkUI_AttributeItem *get_item = nodeAPI->getAttribute(tsColumn, NODE_PIXEL_ROUND);
+    ArkUI_PixelRoundPolicy *get_policy = reinterpret_cast<ArkUI_PixelRoundPolicy *>(get_item->object);
+
+    ArkUI_PixelRoundCalcPolicy get_value;
+    auto ret = OH_ArkUI_PixelRoundPolicy_GetBottom(get_policy, &get_value);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestPixelRoundPolicyGetBottomErrorCode_001 ret=%{public}d", ret);
+
+    // Reset
+    nodeAPI->resetAttribute(tsColumn, NODE_PIXEL_ROUND);
+
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
+    NAPI_END;
+}
+
+napi_value PixelRoundTest::TestPixelRoundPolicyGetBottomErrorCode_002(napi_env env, napi_callback_info info) {
+    ArkUI_PixelRoundCalcPolicy get_value;
+    auto ret = OH_ArkUI_PixelRoundPolicy_GetBottom(nullptr, &get_value);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestPixelRoundPolicyGetBottomErrorCode_002 ret=%{public}d", ret);
+
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
+
+napi_value PixelRoundTest::TestPixelRoundPolicyGetEndErrorCode_001(napi_env env, napi_callback_info info) {
+    // create tsColumn
+    NAPI_START(tsColumn, ARKUI_NODE_COLUMN);
+
+    // SetEnd
+    ArkUI_PixelRoundPolicy *policy = OH_ArkUI_PixelRoundPolicy_Create();
+    OH_ArkUI_PixelRoundPolicy_SetEnd(policy, ARKUI_PIXELROUNDCALCPOLICY_FORCEFLOOR);
+    ArkUI_AttributeItem item = {.object = policy};
+    nodeAPI->setAttribute(tsColumn, NODE_PIXEL_ROUND, &item);
+    OH_ArkUI_PixelRoundPolicy_Dispose(policy);
+
+    // GetEnd
+    const ArkUI_AttributeItem *get_item = nodeAPI->getAttribute(tsColumn, NODE_PIXEL_ROUND);
+    ArkUI_PixelRoundPolicy *get_policy = reinterpret_cast<ArkUI_PixelRoundPolicy *>(get_item->object);
+
+    ArkUI_PixelRoundCalcPolicy get_value;
+    auto ret = OH_ArkUI_PixelRoundPolicy_GetEnd(get_policy, &get_value);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestPixelRoundPolicyGetEndErrorCode_001 ret=%{public}d", ret);
+
+    // Reset
+    nodeAPI->resetAttribute(tsColumn, NODE_PIXEL_ROUND);
+
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
+    NAPI_END;
+}
+
+napi_value PixelRoundTest::TestPixelRoundPolicyGetEndErrorCode_002(napi_env env, napi_callback_info info) {
+    ArkUI_PixelRoundCalcPolicy get_value;
+    auto ret = OH_ArkUI_PixelRoundPolicy_GetEnd(nullptr, &get_value);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestPixelRoundPolicyGetEndErrorCode_002 ret=%{public}d", ret);
+
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
+
+napi_value PixelRoundTest::TestPixelRoundPolicyCreateReturnNoNullptr(napi_env env, napi_callback_info info) {
+    ArkUI_PixelRoundPolicy *policy = OH_ArkUI_PixelRoundPolicy_Create();
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestPixelRoundPolicyCreateReturnNoNullptr copy=%{public}p", policy);
+
+    ASSERT_OBJ_NE(policy, nullptr);
+    OH_ArkUI_PixelRoundPolicy_Dispose(policy);
+    NAPI_END;
 }
 
 } // namespace ArkUICapiTest

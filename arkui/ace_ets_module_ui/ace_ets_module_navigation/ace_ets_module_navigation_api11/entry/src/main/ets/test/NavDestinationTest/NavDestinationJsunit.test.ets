@@ -58,6 +58,14 @@ export default function NavDestinationJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   NavDestinationJsunit_0100
+     * @tc.number NavDestinationJsunit_0100
+     * @tc.desc   NavDestinationJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavDestinationJsunit_0100',  Level.LEVEL0, async (done: Function) => {
       // Get title name of NavDestination component
       console.info('[NavDestinationJsunit_0100] START');
@@ -74,6 +82,14 @@ export default function NavDestinationJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   NavDestinationJsunit_0200
+     * @tc.number NavDestinationJsunit_0200
+     * @tc.desc   NavDestinationJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavDestinationJsunit_0200',  Level.LEVEL0, async (done: Function) => {
       // Get backgroundColor of NavDestination component
       console.info('[NavDestinationJsunit_0200] START');
@@ -87,6 +103,14 @@ export default function NavDestinationJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   NavDestinationJsunit_0300
+     * @tc.number NavDestinationJsunit_0300
+     * @tc.desc   NavDestinationJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavDestinationJsunit_0300',  Level.LEVEL0, async (done: Function) => {
       // Modify title name of NavDestination component
       console.info('[NavDestinationJsunit_0300] START');
@@ -104,6 +128,14 @@ export default function NavDestinationJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   NavDestinationJsunit_0400
+     * @tc.number NavDestinationJsunit_0400
+     * @tc.desc   NavDestinationJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavDestinationJsunit_0400',  Level.LEVEL0, async (done: Function) => {
       // Modify backgroundColor of NavDestination component
       console.info('[NavDestinationJsunit_0400] START');
@@ -120,6 +152,14 @@ export default function NavDestinationJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   NavDestinationJsunit_0500
+     * @tc.number NavDestinationJsunit_0500
+     * @tc.desc   NavDestinationJsunit_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavDestinationJsunit_0500',  Level.LEVEL0, async (done: Function) => {
       // illegal modify title name of NavDestination component
       console.info('[NavDestinationJsunit_0500] START');
@@ -137,6 +177,14 @@ export default function NavDestinationJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   NavDestinationJsunit_0600
+     * @tc.number NavDestinationJsunit_0600
+     * @tc.desc   NavDestinationJsunit_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavDestinationJsunit_0600',  Level.LEVEL0, async (done: Function) => {
       // illegal modify backgroundColor of NavDestination component
       console.info('[NavDestinationJsunit_0600] START');
@@ -153,6 +201,14 @@ export default function NavDestinationJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   NavDestinationJsunit_0700
+     * @tc.number NavDestinationJsunit_0700
+     * @tc.desc   NavDestinationJsunit_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavDestinationJsunit_0700',  Level.LEVEL0, async (done: Function) => {
       // Get hideTitleBar value of NavDestination component
       console.info('[NavDestinationJsunit_0700] START');
@@ -166,6 +222,14 @@ export default function NavDestinationJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   NavDestinationJsunit_0800
+     * @tc.number NavDestinationJsunit_0800
+     * @tc.desc   NavDestinationJsunit_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavDestinationJsunit_0800',  Level.LEVEL0, async (done: Function) => {
       // Modify hideTitleBar value of NavDestination component 
       console.info('[NavDestinationJsunit_0700] START');
@@ -182,6 +246,14 @@ export default function NavDestinationJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   NavDestinationJsunit_0900
+     * @tc.number NavDestinationJsunit_0900
+     * @tc.desc   NavDestinationJsunit_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavDestinationJsunit_0900',  Level.LEVEL0, async (done: Function) => {
       // illegal modify hideTitleBar value of NavDestination component 
       console.info('[NavDestinationJsunit_0900] START');

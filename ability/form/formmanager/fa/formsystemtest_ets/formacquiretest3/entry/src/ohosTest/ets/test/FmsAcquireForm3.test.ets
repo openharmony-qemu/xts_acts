@@ -77,7 +77,7 @@ export default function test() {
          * @tc.desc   Verify that a single host (using a single thread) can successfully create multiple normal
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  请输入文本
+         * @tc.level  [CORRECT ME] INVALID TCLEVEL.
          */
         it(`FMS_acquireForm_1600`, 0, async (done: () => void) => {
             console.info(`FMS_acquireForm_1600 start`);
@@ -222,7 +222,7 @@ export default function test() {
          * @tc.desc   Verify that multiple hosts can successfully create multiple normal and temporary forms respectively.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  请输入文本
+         * @tc.level  [CORRECT ME] INVALID TCLEVEL.
          */
         it(`FMS_acquireForm_1800`, 0, async (done: () => void) => {
             console.info(`FMS_acquireForm_1800 start`);
@@ -367,7 +367,7 @@ export default function test() {
          * @tc.desc   When the verification formId is set to 0, the temporary form is created successfully.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  请输入文本
+         * @tc.level  [CORRECT ME] INVALID TCLEVEL.
          */
         it(`FMS_acquireForm_1900`, 0, async (done: () => void) => {
             console.info(`FMS_acquireForm_1900 start`);
@@ -409,7 +409,7 @@ export default function test() {
          * @tc.desc   Failed to create a temporary form when verifying that the formId is set to create a normal formId.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  请输入文本
+         * @tc.level  [CORRECT ME] INVALID TCLEVEL.
          */
         it(`FMS_acquireForm_2100`, 0, async (done: () => void) => {
             console.info(`FMS_acquireForm_2100 start`);
@@ -473,7 +473,7 @@ export default function test() {
          * @tc.desc   Failed to Cast to normal form when the temporary formId is set to negative
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  请输入文本
+         * @tc.level  [CORRECT ME] INVALID TCLEVEL.
          */
         it(`FMS_acquireForm_2200`, 0, async (done: () => void) => {
             console.info(`FMS_acquireForm_2200 start`);
@@ -515,7 +515,7 @@ export default function test() {
          * @tc.desc   Failed to convert to normal form when verifying that the temporary formIdis set to 0
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  请输入文本
+         * @tc.level  [CORRECT ME] INVALID TCLEVEL.
          */
         it(`FMS_acquireForm_2300`, 0, async (done: () => void) => {
             console.info(`FMS_acquireForm_2300 start`);
@@ -554,7 +554,7 @@ export default function test() {
          * @tc.desc   Failed to convert non affiliated temporary form ID to normal form.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  请输入文本
+         * @tc.level  [CORRECT ME] INVALID TCLEVEL.
          */
         it(`FMS_acquireForm_2400`, 0, async (done: () => void) => {
             console.info(`FMS_acquireForm_2400 start`);
@@ -619,7 +619,7 @@ export default function test() {
          * @tc.desc   Failed to verify that the temporary formId that does not exist is casted to normal form.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  请输入文本
+         * @tc.level  [CORRECT ME] INVALID TCLEVEL.
          */
         it(`FMS_acquireForm_2500`, 0, async (done: () => void) => {
             console.info(`FMS_acquireForm_2500 start`);
@@ -658,7 +658,7 @@ export default function test() {
          * @tc.desc   Verify that when the normal form does not reach the maximum value created by the form.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  请输入文本
+         * @tc.level  [CORRECT ME] INVALID TCLEVEL.
          */
         it(`FMS_acquireForm_2600`, 0, async (done: () => void) => {
             console.info(`FMS_acquireForm_2600 start`);

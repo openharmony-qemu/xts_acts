@@ -43,12 +43,12 @@ export default function TextClockJsunit2() {
       done();
     });
     /**
-     * @tc.number    TextClock_0100
-     * @tc.name      TextClock_0100
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   TextClock_0100
+     * @tc.number TextClock_0100
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextClock_0100', Level.LEVEL2, async (done: Function) => {
       // Get the information of TextClock component
@@ -72,12 +72,12 @@ export default function TextClockJsunit2() {
       done();
     });
     /**
-     * @tc.number    TextClock_0200
-     * @tc.name      TextClock_0200
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   TextClock_0200
+     * @tc.number TextClock_0200
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextClock_0200', Level.LEVEL2, async (done: Function) => {
       // Modify the attribute of TextClock component
@@ -97,12 +97,12 @@ export default function TextClockJsunit2() {
       done();
     });
     /**
-     * @tc.number    TextClock_0300
-     * @tc.name      TextClock_0300
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   TextClock_0300
+     * @tc.number TextClock_0300
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextClock_0300', Level.LEVEL2, async (done: Function) => {
       // Verify the functions of the button of start

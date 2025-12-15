@@ -42,12 +42,12 @@ export default function scrollReachJsunit() {
       done();
     });
     /**
-     * @tc.number: SUB_ACE_SCROLL_scrollReachJsunit_0100
-     * @tc.name: scrollReachJsunit_0100
-     * @tc.desc: Trigger onWillScroll and onDidScroll callbacks
-     * @tc.level: Level 2
-     * @tc.type:
-     * @tc.size:
+     * @tc.name   scrollReachJsunit_0100
+     * @tc.number SUB_ACE_SCROLL_scrollReachJsunit_0100
+     * @tc.desc   Trigger onWillScroll and onDidScroll callbacks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('scrollReachJsunit_0100', Level.LEVEL1, async (done: Function) => {
       console.info('scrollReachJsunit_0100 START');

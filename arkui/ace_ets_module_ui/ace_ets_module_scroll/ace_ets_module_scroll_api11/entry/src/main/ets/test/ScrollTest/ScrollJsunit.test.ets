@@ -55,9 +55,12 @@ export default function ScrollJsunit() {
       console.info("Scroll after each called");
     });
     /**
+     * @tc.name   testScrollGetInspectorByKey010
      * @tc.number SUB_ACE_BASIC_ETS_API_1020
-     * @tc.name testScrollGetInspectorByKey010
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollGetInspectorByKey010', Level.LEVEL1, async (done: Function) => {
       console.info('testGetInspectorByKey START');
@@ -78,9 +81,12 @@ export default function ScrollJsunit() {
     });
 
     /**
+     * @tc.name   testScrollGetInspectorByKey020
      * @tc.number SUB_ACE_BASIC_ETS_API_1030
-     * @tc.name testScrollGetInspectorByKey020
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollGetInspectorByKey020', Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('scroll1');
@@ -95,9 +101,12 @@ export default function ScrollJsunit() {
     });
 
     /**
+     * @tc.name   testScrollGetInspectorByKey030
      * @tc.number SUB_ACE_BASIC_ETS_API_1040
-     * @tc.name testScrollGetInspectorByKey030
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollGetInspectorByKey030', Level.LEVEL1, async (done: Function) => {
       let strJson: ESObject = getInspectorByKey('scroll2');
@@ -112,9 +121,12 @@ export default function ScrollJsunit() {
     });
 
     /**
+     * @tc.name   testScrollGetInspectorByKey040
      * @tc.number SUB_ACE_BASIC_ETS_API_1050
-     * @tc.name testScrollGetInspectorByKey040
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollGetInspectorByKey040', Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('scroll3');

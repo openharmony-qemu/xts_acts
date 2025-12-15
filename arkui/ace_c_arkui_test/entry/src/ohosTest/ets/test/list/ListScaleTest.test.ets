@@ -26,65 +26,65 @@ export default function listScaleTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SCALE_0100
-     * @tc.name       : testListScale001
-     * @tc.desc       : testing scale for list with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListScale001
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCALE_0100
+     * @tc.desc   testing scale for list with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListScale001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListScale001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SCALE_0200
-     * @tc.name       : testListScale002
-     * @tc.desc       : testing scale for list with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListScale002
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCALE_0200
+     * @tc.desc   testing scale for list with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListScale002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListScale002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SCALE_0300
-     * @tc.name       : testListScale003
-     * @tc.desc       : testing scale for list with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListScale003
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCALE_0300
+     * @tc.desc   testing scale for list with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListScale003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListScale003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SCALE_0400
-     * @tc.name       : testListScale004
-     * @tc.desc       : testing scale for list with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListScale004
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCALE_0400
+     * @tc.desc   testing scale for list with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListScale004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListScale004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SCALE_0500
-     * @tc.name       : testListScale005
-     * @tc.desc       : testing scale for list with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListScale005
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCALE_0500
+     * @tc.desc   testing scale for list with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListScale005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListScale005()).assertEqual(0)

@@ -43,12 +43,12 @@ export default function Navigation3() {
 
 
     /**
-     * @tc.number    Navigation3_0200
-     * @tc.name      Navigation3_0200
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   Navigation3_0200
+     * @tc.number Navigation3_0200
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Navigation3_0200', Level.LEVEL2, async (done: Function) => {
       console.info('Navigation3_0200 START');

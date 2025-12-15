@@ -83,14 +83,12 @@ export default function FileIOFilerw_test() {
         }
 
         /**
+         * @tc.name   fileIO_test_read_random_promise_000
          * @tc.number SUB_DF_FILEIO_FILERW_READ_RANDOM_PROMISE_0000
-         * @tc.name fileIO_test_read_random_promise_000
-         * @tc.desc Test the read() interface. promise.
-         * Open the file, file read() in the random way.
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 3
-         * @tc.require
+         * @tc.desc   Test the read() interface. promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('fileIO_test_read_random_promise_000', Level.LEVEL0, async function (done) {
             let fpath = await nextFileName('fileIO_test_read_random_promise_000');
@@ -112,14 +110,12 @@ export default function FileIOFilerw_test() {
         });
 
         /**
+         * @tc.name   fileIO_test_write_random_promise_000
          * @tc.number SUB_DF_FILEIO_FILERW_WRITE_RANDOM_PROMISE_0000
-         * @tc.name fileIO_test_write_random_promise_000
-         * @tc.desc Test the write() interface. promise.
-         * Open the file, file write() in the random way.
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 3
-         * @tc.require
+         * @tc.desc   Test the write() interface. promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('fileIO_test_write_random_promise_000', Level.LEVEL0, async function (done) {
             let fpath = await nextFileName('fileIO_test_write_random_promise_000');
@@ -141,14 +137,12 @@ export default function FileIOFilerw_test() {
         });
 
         /**
+         * @tc.name   fileIO_test_read_sequence_promise_000
          * @tc.number SUB_DF_FILEIO_FILERW_READ_SEQUENCE_PROMISE_0000
-         * @tc.name fileIO_test_read_sequence_promise_000
-         * @tc.desc Test the read() interface. promise.
-         * Open the file, file read() in the sequence way.
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 3
-         * @tc.require
+         * @tc.desc   Test the read() interface. promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('fileIO_test_read_sequence_promise_000', Level.LEVEL0, async function (done) {
             let fpath = await nextFileName('fileIO_test_read_sequence_promise_000');
@@ -170,14 +164,12 @@ export default function FileIOFilerw_test() {
         });
 
         /**
+         * @tc.name   fileIO_test_write_sequence_promise_000
          * @tc.number SUB_DF_FILEIO_FILERW_WRITE_SEQUENCE_PROMISE_0000
-         * @tc.name fileIO_test_write_sequence_promise_000
-         * @tc.desc Test the write() interface. promise.
-         * Open the file, file write() in the sequence way.
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 3
-         * @tc.require
+         * @tc.desc   Test the write() interface. promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('fileIO_test_write_sequence_promise_000', Level.LEVEL0, async function (done) {
             let fpath = await nextFileName('fileIO_test_write_sequence_promise_000');
@@ -199,14 +191,12 @@ export default function FileIOFilerw_test() {
         });
 
         /**
+         * @tc.name   fileIO_test_read_random_callback_000
          * @tc.number SUB_DF_FILEIO_FILERW_READ_RANDOM_CALLBACK_0000
-         * @tc.name fileIO_test_read_random_callback_000
-         * @tc.desc Test the read() interface. callback.
-         * Open the file, file read() in the random way.
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 3
-         * @tc.require
+         * @tc.desc   Test the read() interface. callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('fileIO_test_read_random_callback_000', Level.LEVEL0, async function (done) {
             let fpath = await nextFileName('fileIO_test_read_random_callback_000');
@@ -228,14 +218,12 @@ export default function FileIOFilerw_test() {
         });
 
         /**
+         * @tc.name   fileIO_test_write_random_callback_000
          * @tc.number SUB_DF_FILEIO_FILERW_WRITE_RANDOM_CALLBACK_0000
-         * @tc.name fileIO_test_write_random_callback_000
-         * @tc.desc Test the write() interface. callback.
-         * Open the file, file write() in the random way.
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 3
-         * @tc.require
+         * @tc.desc   Test the write() interface. callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('fileIO_test_write_random_callback_000', Level.LEVEL0, async function (done) {
             let fpath = await nextFileName('fileIO_test_write_random_callback_000');
@@ -257,14 +245,12 @@ export default function FileIOFilerw_test() {
         });
 
         /**
+         * @tc.name   fileIO_test_read_sequence_callback_000
          * @tc.number SUB_DF_FILEIO_FILERW_READ_SEQUENCE_CALLBACK_0000
-         * @tc.name fileIO_test_read_sequence_callback_000
-         * @tc.desc Test the read() interface. callback.
-         * Open the file, file read() in the sequence way.
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 3
-         * @tc.require
+         * @tc.desc   Test the read() interface. callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('fileIO_test_read_sequence_callback_000', Level.LEVEL0, async function (done) {
             let fpath = await nextFileName('fileIO_test_read_sequence_callback_000');
@@ -286,14 +272,12 @@ export default function FileIOFilerw_test() {
         });
 
         /**
+         * @tc.name   fileIO_test_write_sequence_callback_000
          * @tc.number SUB_DF_FILEIO_FILERW_WRITE_SEQUENCE_CALLBACK_0000
-         * @tc.name fileIO_test_write_sequence_callback_000
-         * @tc.desc Test the write() interface. callback.
-         * Open the file, file write() in the sequence way.
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 3
-         * @tc.require
+         * @tc.desc   Test the write() interface. callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('fileIO_test_write_sequence_callback_000', Level.LEVEL0, async function (done) {
             let fpath = await nextFileName('fileIO_test_write_sequence_callback_000');

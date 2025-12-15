@@ -47,7 +47,6 @@ export default function MultimodalInputPointerTest() {
     }
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerStyle_0100
      * @tc.number SUB_MMI_Input_Api_Pointer_setPointerStyle_0100
      * @tc.desc   Test callback setPointerStyle interface to set the mouse style type.
@@ -77,7 +76,6 @@ export default function MultimodalInputPointerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerStyle_0200
      * @tc.number SUB_MMI_Input_Api_Pointer_setPointerStyle_0200
      * @tc.desc   Test promise setPointerStyle interface to set the mouse style type.
@@ -107,7 +105,6 @@ export default function MultimodalInputPointerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerStyle_0300
      * @tc.number SUB_MMI_Input_Api_Pointer_setPointerStyle_0300
      * @tc.desc   Test setPointerStyleSync interface to set the mouse style type.
@@ -135,7 +132,6 @@ export default function MultimodalInputPointerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_Pointer_PointerStyle_0100
      * @tc.number SUB_MMI_Input_Api_Pointer_PointerStyle_0100
      * @tc.desc   Test PointerStyle
@@ -203,7 +199,6 @@ export default function MultimodalInputPointerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_Pointer_PrimaryButton_0100
      * @tc.number SUB_MMI_Input_Api_Pointer_PrimaryButton_0100
      * @tc.desc   Test PrimaryButton
@@ -228,7 +223,6 @@ export default function MultimodalInputPointerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_Pointer_RightClickType_0100
      * @tc.number SUB_MMI_Input_Api_Pointer_RightClickType_0100
      * @tc.desc   Test RightClickType
@@ -254,7 +248,6 @@ export default function MultimodalInputPointerTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_Pointer_CursorConfig_0100
      * @tc.number SUB_MMI_Input_Api_Pointer_CursorConfig_0100
      * @tc.desc   Test CursorConfig

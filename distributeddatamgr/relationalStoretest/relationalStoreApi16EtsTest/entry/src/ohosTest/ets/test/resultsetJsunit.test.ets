@@ -110,7 +110,6 @@ export default function rdbResultSetSJsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeJsTest0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0100
      * @tc.desc   uerySharingResource test
@@ -178,7 +177,6 @@ export default function rdbResultSetSJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeJsTest0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0200
      * @tc.desc   uerySharingResource test
@@ -237,7 +235,6 @@ export default function rdbResultSetSJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeJsTest0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0300
      * @tc.desc   uerySharingResource test
@@ -273,7 +270,6 @@ export default function rdbResultSetSJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeJsTest0400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0400
      * @tc.desc   uerySharingResource test
@@ -308,7 +304,6 @@ export default function rdbResultSetSJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeJsTest0500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0500
      * @tc.desc   uerySharingResource test
@@ -347,7 +342,6 @@ export default function rdbResultSetSJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeJsTest0600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0600
      * @tc.desc   uerySharingResource test
@@ -384,7 +378,6 @@ export default function rdbResultSetSJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeJsTest0700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0700
      * @tc.desc   uerySharingResource test
@@ -421,7 +414,6 @@ export default function rdbResultSetSJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeJsTest0800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0800
      * @tc.desc   uerySharingResource test
@@ -456,7 +448,6 @@ export default function rdbResultSetSJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeJsTest0900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0900
      * @tc.desc   uerySharingResource test
@@ -491,7 +482,6 @@ export default function rdbResultSetSJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeJsTest1000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_1000
      * @tc.desc   uerySharingResource test
@@ -526,7 +516,6 @@ export default function rdbResultSetSJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeJsTest1100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_1100
      * @tc.desc   uerySharingResource test
@@ -594,7 +583,6 @@ export default function rdbResultSetSJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeJsTest1200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_1200
      * @tc.desc   uerySharingResource test
@@ -653,7 +641,6 @@ export default function rdbResultSetSJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeJsTest1300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_1300
      * @tc.desc   uerySharingResource test
@@ -692,7 +679,6 @@ export default function rdbResultSetSJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeJsTest1400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_1400
      * @tc.desc   uerySharingResource test
@@ -731,7 +717,6 @@ export default function rdbResultSetSJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeJsTest1500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_1500
      * @tc.desc   uerySharingResource test
@@ -767,7 +752,6 @@ export default function rdbResultSetSJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeJsTest1600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_1600
      * @tc.desc   uerySharingResource test
@@ -802,7 +786,6 @@ export default function rdbResultSetSJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeJsTest1700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_1700
      * @tc.desc   uerySharingResource test

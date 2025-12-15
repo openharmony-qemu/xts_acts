@@ -66,6 +66,14 @@ export default function ActsAceWebviewScrollBar() {
       done();
     })
 
+    /**
+     * @tc.name   testScrollBarKeep001
+     * @tc.number testScrollBarKeep001
+     * @tc.desc   testScrollBarKeep001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testScrollBarKeep001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async  (done: Function) => {
       emitKey = 'emitScrollBarKeep001';
       tcName = 'testScrollBarKeep001'
@@ -77,6 +85,14 @@ export default function ActsAceWebviewScrollBar() {
       done();
     });
 
+    /**
+     * @tc.name   testScrollBarKeep002
+     * @tc.number testScrollBarKeep002
+     * @tc.desc   testScrollBarKeep002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testScrollBarKeep002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async  (done: Function) =>{
       emitKey = 'emitScrollBarKeep002';
       tcName = 'testScrollBarKeep002'

@@ -229,4 +229,5 @@ napi_value OHNativeImageAcquireLatestNativeWindowBufferAbNormal01(napi_env env, 
 napi_value OHNativeImageAcquireLatestNativeWindowBufferAbNormal02(napi_env env, napi_callback_info info);
 napi_value OHNativeImageAcquireLatestNativeWindowBufferAbNormal03(napi_env env, napi_callback_info info);
 napi_value OHNativeImageAcquireLatestNativeWindowBufferCall(napi_env env, napi_callback_info info);
+napi_value OHNativeImageCreateWithSingleBufferModeChangeTextureTarget(napi_env env, napi_callback_info info);
 #endif // NATIVEIMAGE_TEST_H

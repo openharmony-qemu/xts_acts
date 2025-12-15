@@ -56,9 +56,12 @@ export default function linkJsunit() {
     });
 
     /**
+     * @tc.name   linkTest001
      * @tc.number SUB_ACE_BASIC_ETS_API_0370
-     * @tc.name linkTest001
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('linkTest001', Level.LEVEL0, async () => {
       console.info('linkTest001 START');
@@ -75,9 +78,12 @@ export default function linkJsunit() {
     });
 
     /**
+     * @tc.name   linkTest002
      * @tc.number SUB_ACE_BASIC_ETS_API_0380
-     * @tc.name linkTest001
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('linkTest002', Level.LEVEL0, async () => {
       console.info('linkTest002 START');

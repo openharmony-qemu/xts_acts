@@ -81,12 +81,12 @@ export default function HapNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0001
-     * @tc.name: test hap so load
-     * @tc.desc: Test the loading of SO files in the HAP package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HAP_NAPI_LOAD_0001
+     * @tc.number ARK_ETSRuntime_HAP_NAPI_LOAD_0001
+     * @tc.desc   Test the loading of SO files in the HAP package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('ARK_ETSRuntime_HAP_NAPI_LOAD_0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       TAG = 'ARK_ETSRuntime_HAP_NAPI_LOAD_0001';
@@ -99,12 +99,12 @@ export default function HapNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0002
-     * @tc.name: test har loading from hap
-     * @tc.desc: Test loading the HAR package into the HAP package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HAP_NAPI_LOAD_0002
+     * @tc.number ARK_ETSRuntime_HAP_NAPI_LOAD_0002
+     * @tc.desc   Test loading the HAR package into the HAP package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('ARK_ETSRuntime_HAP_NAPI_LOAD_0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       TAG = 'ARK_ETSRuntime_HAP_NAPI_LOAD_0002';
@@ -119,12 +119,12 @@ export default function HapNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0003
-     * @tc.name: test har file loading from hap
-     * @tc.desc: Test loading files from the Har package into the HAP package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HAP_NAPI_LOAD_0003
+     * @tc.number ARK_ETSRuntime_HAP_NAPI_LOAD_0003
+     * @tc.desc   Test loading files from the Har package into the HAP package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('ARK_ETSRuntime_HAP_NAPI_LOAD_0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       TAG = 'ARK_ETSRuntime_HAP_NAPI_LOAD_0003';
@@ -139,12 +139,12 @@ export default function HapNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0004
-     * @tc.name: test hsp loading from hap
-     * @tc.desc: Test loading the HSP package in the HAP package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HAP_NAPI_LOAD_0004
+     * @tc.number ARK_ETSRuntime_HAP_NAPI_LOAD_0004
+     * @tc.desc   Test loading the HSP package in the HAP package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('ARK_ETSRuntime_HAP_NAPI_LOAD_0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       TAG = 'ARK_ETSRuntime_HAP_NAPI_LOAD_0004';
@@ -159,12 +159,12 @@ export default function HapNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0005
-     * @tc.name: test hsp file loading from hap
-     * @tc.desc: Test loading files from the HSP package in the HAP package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HAP_NAPI_LOAD_0005
+     * @tc.number ARK_ETSRuntime_HAP_NAPI_LOAD_0005
+     * @tc.desc   Test loading files from the HSP package in the HAP package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('ARK_ETSRuntime_HAP_NAPI_LOAD_0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       TAG = 'ARK_ETSRuntime_HAP_NAPI_LOAD_0005';
@@ -179,12 +179,12 @@ export default function HapNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0006
-     * @tc.name: test loading system modules
-     * @tc.desc: Test loading system modules in HAP package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HAP_NAPI_LOAD_0006
+     * @tc.number ARK_ETSRuntime_HAP_NAPI_LOAD_0006
+     * @tc.desc   Test loading system modules in HAP package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('ARK_ETSRuntime_HAP_NAPI_LOAD_0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       TAG = 'ARK_ETSRuntime_HAP_NAPI_LOAD_0006';
@@ -199,12 +199,12 @@ export default function HapNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0007
-     * @tc.name: test moduleName is incorrect
-     * @tc.desc: Test moduleName incorrectly when loading har package in hap
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HAP_NAPI_LOAD_0007
+     * @tc.number ARK_ETSRuntime_HAP_NAPI_LOAD_0007
+     * @tc.desc   Test moduleName incorrectly when loading har package in hap
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('ARK_ETSRuntime_HAP_NAPI_LOAD_0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       try {
@@ -218,12 +218,12 @@ export default function HapNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0008
-     * @tc.name: test moduleName is incorrect
-     * @tc.desc: Test moduleName incorrectly when loading hsp package in hap
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HAP_NAPI_LOAD_0008
+     * @tc.number ARK_ETSRuntime_HAP_NAPI_LOAD_0008
+     * @tc.desc   Test moduleName incorrectly when loading hsp package in hap
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('ARK_ETSRuntime_HAP_NAPI_LOAD_0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       try {
@@ -238,12 +238,12 @@ export default function HapNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0009
-     * @tc.name: test loading shared module name from hap
-     * @tc.desc: Test loading the shared module name into the HAP package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HAP_NAPI_LOAD_0009
+     * @tc.number ARK_ETSRuntime_HAP_NAPI_LOAD_0009
+     * @tc.desc   Test loading the shared module name into the HAP package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('ARK_ETSRuntime_HAP_NAPI_LOAD_0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const sharedHarOne: TestModule = testNapi.loadModuleWithInfo("sharedHarOne", PATH)
@@ -251,12 +251,12 @@ export default function HapNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0010
-     * @tc.name: test loading shared module path from hap
-     * @tc.desc: Test loading the shared module path into the HAP package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HAP_NAPI_LOAD_0010
+     * @tc.number ARK_ETSRuntime_HAP_NAPI_LOAD_0010
+     * @tc.desc   Test loading the shared module path into the HAP package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('ARK_ETSRuntime_HAP_NAPI_LOAD_0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const sharedHarOne: TestModule = testNapi.loadModuleWithInfo("sharedHarOne/Index", PATH)
@@ -264,12 +264,12 @@ export default function HapNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0011
-     * @tc.name: test loading shared module name from hsp
-     * @tc.desc: Test loading the shared module name into the hsp package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HAP_NAPI_LOAD_0011
+     * @tc.number ARK_ETSRuntime_HAP_NAPI_LOAD_0011
+     * @tc.desc   Test loading the shared module name into the hsp package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('ARK_ETSRuntime_HAP_NAPI_LOAD_0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const sharedHspOne: TestModule = testNapi.loadModuleWithInfo("sharedHspOne", PATH)
@@ -277,12 +277,12 @@ export default function HapNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0012
-     * @tc.name: test loading shared module path from hsp
-     * @tc.desc: Test loading the shared module path into the hsp package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HAP_NAPI_LOAD_0012
+     * @tc.number ARK_ETSRuntime_HAP_NAPI_LOAD_0012
+     * @tc.desc   Test loading the shared module path into the hsp package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('ARK_ETSRuntime_HAP_NAPI_LOAD_0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const sharedHspOne: TestModule = testNapi.loadModuleWithInfo("sharedHspOne/Index", PATH)
@@ -290,12 +290,12 @@ export default function HapNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0013
-     * @tc.name: test loading Re-entrant from hap
-     * @tc.desc: Test loading the Re-entrant into the HAP package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HAP_NAPI_LOAD_0013
+     * @tc.number ARK_ETSRuntime_HAP_NAPI_LOAD_0013
+     * @tc.desc   Test loading the Re-entrant into the HAP package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('ARK_ETSRuntime_HAP_NAPI_LOAD_0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const sharedHarOne: TestModule = testNapi.loadModuleWithInfo("sharedHarOne", PATH)
@@ -303,12 +303,12 @@ export default function HapNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0014
-     * @tc.name: test loading shared module by taskpool from hap
-     * @tc.desc: Test loading the shared module by taskpool into the HAP package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HAP_NAPI_LOAD_0014
+     * @tc.number ARK_ETSRuntime_HAP_NAPI_LOAD_0014
+     * @tc.desc   Test loading the shared module by taskpool into the HAP package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('ARK_ETSRuntime_HAP_NAPI_LOAD_0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let res = await testNapiTaskPool()
@@ -316,12 +316,12 @@ export default function HapNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0015
-     * @tc.name: test re loading shared module by taskpool from hap
-     * @tc.desc: Test re loading the shared module by taskpool into the HAP package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HAP_NAPI_LOAD_0015
+     * @tc.number ARK_ETSRuntime_HAP_NAPI_LOAD_0015
+     * @tc.desc   Test re loading the shared module by taskpool into the HAP package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('ARK_ETSRuntime_HAP_NAPI_LOAD_0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let res = await testReNapiTaskPool()
@@ -329,12 +329,12 @@ export default function HapNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0016
-     * @tc.name: test har loading from hap
-     * @tc.desc: Test loading the HAR package into the HAP package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HAP_NAPI_LOAD_0016
+     * @tc.number ARK_ETSRuntime_HAP_NAPI_LOAD_0016
+     * @tc.desc   Test loading the HAR package into the HAP package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('ARK_ETSRuntime_HAP_NAPI_LOAD_0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       TAG = 'ARK_ETSRuntime_HAP_NAPI_LOAD_0016';
@@ -349,12 +349,12 @@ export default function HapNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0017
-     * @tc.name: test har file loading from hap
-     * @tc.desc: Test loading files from the Har package into the HAP package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HAP_NAPI_LOAD_0017
+     * @tc.number ARK_ETSRuntime_HAP_NAPI_LOAD_0017
+     * @tc.desc   Test loading files from the Har package into the HAP package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('ARK_ETSRuntime_HAP_NAPI_LOAD_0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       TAG = 'ARK_ETSRuntime_HAP_NAPI_LOAD_0017';
@@ -369,12 +369,12 @@ export default function HapNapiLoadTest() {
     })
     
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0018
-     * @tc.name: test hsp loading from hap
-     * @tc.desc: Test loading the HSP package in the HAP package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HAP_NAPI_LOAD_0018
+     * @tc.number ARK_ETSRuntime_HAP_NAPI_LOAD_0018
+     * @tc.desc   Test loading the HSP package in the HAP package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('ARK_ETSRuntime_HAP_NAPI_LOAD_0018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       TAG = 'ARK_ETSRuntime_HAP_NAPI_LOAD_0018';
@@ -389,12 +389,12 @@ export default function HapNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0019
-     * @tc.name: test hsp file loading from hap
-     * @tc.desc: Test loading files from the HSP package in the HAP package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HAP_NAPI_LOAD_0019
+     * @tc.number ARK_ETSRuntime_HAP_NAPI_LOAD_0019
+     * @tc.desc   Test loading files from the HSP package in the HAP package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('ARK_ETSRuntime_HAP_NAPI_LOAD_0019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       TAG = 'ARK_ETSRuntime_HAP_NAPI_LOAD_0019';
@@ -409,12 +409,12 @@ export default function HapNapiLoadTest() {
     })
     
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0020
-     * @tc.name: test loading system modules
-     * @tc.desc: Test loading system modules in HAP package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HAP_NAPI_LOAD_0020
+     * @tc.number ARK_ETSRuntime_HAP_NAPI_LOAD_0020
+     * @tc.desc   Test loading system modules in HAP package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('ARK_ETSRuntime_HAP_NAPI_LOAD_0020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       TAG = 'ARK_ETSRuntime_HAP_NAPI_LOAD_0020';
@@ -429,12 +429,12 @@ export default function HapNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0021
-     * @tc.name: test loading system modules
-     * @tc.desc: Test loading ets file with all path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HAP_NAPI_LOAD_0021
+     * @tc.number ARK_ETSRuntime_HAP_NAPI_LOAD_0021
+     * @tc.desc   Test loading ets file with all path
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('ARK_ETSRuntime_HAP_NAPI_LOAD_0021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       TAG = 'ARK_ETSRuntime_HAP_NAPI_LOAD_0021';
@@ -449,12 +449,12 @@ export default function HapNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0022
-     * @tc.name: test loading system modules
-     * @tc.desc: Test loading ets file with all path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HAP_NAPI_LOAD_0022
+     * @tc.number ARK_ETSRuntime_HAP_NAPI_LOAD_0022
+     * @tc.desc   Test loading ets file with all path
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('ARK_ETSRuntime_HAP_NAPI_LOAD_0022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       TAG = 'ARK_ETSRuntime_HAP_NAPI_LOAD_0022';
@@ -469,12 +469,12 @@ export default function HapNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HAP_NAPI_LOAD_0023
-     * @tc.name: test loading system modules
-     * @tc.desc: Test loading ets file with relative paths
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HAP_NAPI_LOAD_0023
+     * @tc.number ARK_ETSRuntime_HAP_NAPI_LOAD_0023
+     * @tc.desc   Test loading ets file with relative paths
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('ARK_ETSRuntime_HAP_NAPI_LOAD_0023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       TAG = 'ARK_ETSRuntime_HAP_NAPI_LOAD_0023';

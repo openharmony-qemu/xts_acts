@@ -31,13 +31,13 @@ export default function ActsLifeCycleFlowOrderTest() {
       context = AppStorage.get<common.UIAbilityContext>('testAbilityContext') as common.UIAbilityContext;
     })
 
-    /*
-     * @tc.number SUB_Ability_AbilityRuntime_OnWillForeground_0100
+    /**
      * @tc.name   SUB_Ability_AbilityRuntime_OnWillForeground_0100
+     * @tc.number SUB_Ability_AbilityRuntime_OnWillForeground_0100
      * @tc.desc   Check the timing sequence of the callback when the mobile app enters the foreground during cold start
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_OnWillForeground_0100', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_OnWillForeground_0100';
@@ -76,13 +76,13 @@ export default function ActsLifeCycleFlowOrderTest() {
       };
     })
 
-    /*
-     * @tc.number SUB_Ability_AbilityRuntime_OnWillForeground_0200
+    /**
      * @tc.name   SUB_Ability_AbilityRuntime_OnWillForeground_0200
+     * @tc.number SUB_Ability_AbilityRuntime_OnWillForeground_0200
      * @tc.desc   Check the timing sequence of the callback when the mobile app enters the foreground after a hot start
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_OnWillForeground_0200', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_OnWillForeground_0200';
@@ -138,13 +138,13 @@ export default function ActsLifeCycleFlowOrderTest() {
     })
 
 
-    /*
-     * @tc.number SUB_Ability_AbilityRuntime_OnWillForeground_0900
+    /**
      * @tc.name   SUB_Ability_AbilityRuntime_OnWillForeground_0900
+     * @tc.number SUB_Ability_AbilityRuntime_OnWillForeground_0900
      * @tc.desc   The delay in the onWillForeground interface when a mobile app is launched and enters the foreground
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_OnWillForeground_0900', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_OnWillForeground_0900';
@@ -182,13 +182,13 @@ export default function ActsLifeCycleFlowOrderTest() {
       };
     })
 
-    /*
-     * @tc.number SUB_Ability_AbilityRuntime_OnWillForeground_1000
+    /**
      * @tc.name   SUB_Ability_AbilityRuntime_OnWillForeground_1000
+     * @tc.number SUB_Ability_AbilityRuntime_OnWillForeground_1000
      * @tc.desc   Mobile app launches and enters the foreground onDidForeground: interface delay
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_OnWillForeground_1000', Level.LEVEL0, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_OnWillForeground_1000';

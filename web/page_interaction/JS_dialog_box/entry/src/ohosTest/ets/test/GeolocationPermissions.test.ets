@@ -54,14 +54,14 @@ export default function geolocationPermissions() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_DELETEALLGEOLOCATION_0100
-    * @tc.name       : testDeleteAllGeolocation001
-    * @tc.desc       : test deleteAllGeolocation
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testDeleteAllGeolocation001
+     * @tc.number SUB_WEB_DELETEALLGEOLOCATION_0100
+     * @tc.desc   test deleteAllGeolocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDeleteAllGeolocation001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testDeleteAllGeolocation001", 10)
       await Utils.sleep(2000);
@@ -69,14 +69,14 @@ export default function geolocationPermissions() {
       sendEventByKey('GeolocationPermissionsButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETSTOREDGEOLOCATION_0300
-    * @tc.name       : testGetStoredGeolocation003
-    * @tc.desc       : test getStoredGeolocation
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testGetStoredGeolocation003
+     * @tc.number SUB_WEB_GETSTOREDGEOLOCATION_0300
+     * @tc.desc   test getStoredGeolocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetStoredGeolocation003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetStoredGeolocation003", 10)
       await Utils.sleep(2000);
@@ -84,14 +84,14 @@ export default function geolocationPermissions() {
       sendEventByKey('GeolocationPermissionsButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETSTOREDGEOLOCATION_0400
-    * @tc.name       : testGetStoredGeolocation004
-    * @tc.desc       : test getStoredGeolocation
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testGetStoredGeolocation004
+     * @tc.number SUB_WEB_GETSTOREDGEOLOCATION_0400
+     * @tc.desc   test getStoredGeolocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetStoredGeolocation004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetStoredGeolocation004", 10)
       await Utils.sleep(2000);
@@ -99,14 +99,14 @@ export default function geolocationPermissions() {
       sendEventByKey('GeolocationPermissionsButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETSTOREDGEOLOCATION_0100
-    * @tc.name       : testGetStoredGeolocation001
-    * @tc.desc       : test getStoredGeolocation
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testGetStoredGeolocation001
+     * @tc.number SUB_WEB_GETSTOREDGEOLOCATION_0100
+     * @tc.desc   test getStoredGeolocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetStoredGeolocation001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetStoredGeolocation001", 10)
       await Utils.sleep(2000);
@@ -114,14 +114,14 @@ export default function geolocationPermissions() {
       sendEventByKey('GeolocationPermissionsButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETSTOREDGEOLOCATION_0200
-    * @tc.name       : testGetStoredGeolocation002
-    * @tc.desc       : test getStoredGeolocation
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testGetStoredGeolocation002
+     * @tc.number SUB_WEB_GETSTOREDGEOLOCATION_0200
+     * @tc.desc   test getStoredGeolocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetStoredGeolocation002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetStoredGeolocation002", 10)
       await Utils.sleep(2000);
@@ -130,14 +130,14 @@ export default function geolocationPermissions() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_GETACCESSIBLEGEOLOCATION_0100
-    * @tc.name       : testGetAccessibleGeolocation001
-    * @tc.desc       : test getAccessibleGeolocation
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testGetAccessibleGeolocation001
+     * @tc.number SUB_WEB_GETACCESSIBLEGEOLOCATION_0100
+     * @tc.desc   test getAccessibleGeolocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetAccessibleGeolocation001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetAccessibleGeolocation001", 10)
       await Utils.sleep(2000);
@@ -145,14 +145,14 @@ export default function geolocationPermissions() {
       sendEventByKey('GeolocationPermissionsButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETACCESSIBLEGEOLOCATION_0200
-    * @tc.name       : testGetAccessibleGeolocation002
-    * @tc.desc       : test getAccessibleGeolocation
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testGetAccessibleGeolocation002
+     * @tc.number SUB_WEB_GETACCESSIBLEGEOLOCATION_0200
+     * @tc.desc   test getAccessibleGeolocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetAccessibleGeolocation002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetAccessibleGeolocation002", 10)
       await Utils.sleep(2000);

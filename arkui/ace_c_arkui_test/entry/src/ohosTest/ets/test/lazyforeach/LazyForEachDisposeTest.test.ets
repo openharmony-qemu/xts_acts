@@ -26,26 +26,26 @@ export default function lazyForEachDisposeTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_DISPOSE_0100
-     * @tc.name       : testLazyForEachDispose001
-     * @tc.desc       : testing dispose for lazyForEach with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachDispose001
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_DISPOSE_0100
+     * @tc.desc   testing dispose for lazyForEach with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachDispose001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLazyForEachDispose001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_DISPOSE_0200
-     * @tc.name       : testLazyForEachDispose002
-     * @tc.desc       : testing dispose for lazyForEach with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachDispose002
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_DISPOSE_0200
+     * @tc.desc   testing dispose for lazyForEach with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachDispose002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLazyForEachDispose002()).assertEqual(0)

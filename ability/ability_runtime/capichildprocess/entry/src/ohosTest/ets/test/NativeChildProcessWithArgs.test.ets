@@ -50,14 +50,13 @@ export default function nativeProcessTest() {
     afterAll(() => {
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartNativeChildProcess_0100
-     * @tc.name   : Call StartNativeChildProcess to create a child process, give param correct entryPoint, args
-     *              and isolationMode false
-     * @tc.desc   : Expect: 1.Return child pid 2.read Result: 'SUCC'
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartNativeChildProcess_0100
+     * @tc.number SUB_Ability_AbilityRuntime_StartNativeChildProcess_0100
+     * @tc.desc   Expect: 1.Return child pid 2.read Result: 'SUCC'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartNativeChildProcess_0100', Level.LEVEL0, async (done: Function) => {
       let tag = `StartNativeChildProcess_0100`;
@@ -100,14 +99,13 @@ export default function nativeProcessTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartNativeChildProcess_0200
-     * @tc.name   : Call StartNativeChildProcess to create a child process, give param correct entryPoint, args
-     *              and isolationMode true
-     * @tc.desc   : Expect: 1.Return child pid 2.read Result: 'SUCC'
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartNativeChildProcess_0200
+     * @tc.number SUB_Ability_AbilityRuntime_StartNativeChildProcess_0200
+     * @tc.desc   Expect: 1.Return child pid 2.read Result: 'SUCC'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartNativeChildProcess_0200', Level.LEVEL0, async (done: Function) => {
       let tag = `StartNativeChildProcess_0200`;
@@ -150,13 +148,13 @@ export default function nativeProcessTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartNativeChildProcess_0300
-     * @tc.name   : Call StartNativeChildProcess to create a child process, give param correct entryPoint and no args
-     * @tc.desc   : Expect: 1.Return child pid 2.read Result: 'SUCC'
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartNativeChildProcess_0300
+     * @tc.number SUB_Ability_AbilityRuntime_StartNativeChildProcess_0300
+     * @tc.desc   Expect: 1.Return child pid 2.read Result: 'SUCC'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartNativeChildProcess_0300', Level.LEVEL0, async (done: Function) => {
       let tag = `StartNativeChildProcess_0300`;
@@ -185,14 +183,13 @@ export default function nativeProcessTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartNativeChildProcess_0400
-     * @tc.name   : Call OH_Ability_StartNativeChildProcess to create a child process, give param correct entryPoint,
-     *              args and isolationMode true
-     * @tc.desc   : Expect: 1.Return ret = 0 2.read Result: 'SUCC'
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartNativeChildProcess_0400
+     * @tc.number SUB_Ability_AbilityRuntime_StartNativeChildProcess_0400
+     * @tc.desc   Expect: 1.Return ret = 0 2.read Result: 'SUCC'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartNativeChildProcess_0400', Level.LEVEL0, async (done: Function) => {
       let tag = `StartNativeChildProcess_0400`;
@@ -219,14 +216,13 @@ export default function nativeProcessTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartNativeChildProcess_0500
-     * @tc.name   : Call OH_Ability_StartNativeChildProcess to create a child process, give param correct entryPoint,
-     *              args and isolationMode false
-     * @tc.desc   : Expect: 1.Return ret = 0 2.read Result: 'SUCC'
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartNativeChildProcess_0500
+     * @tc.number SUB_Ability_AbilityRuntime_StartNativeChildProcess_0500
+     * @tc.desc   Expect: 1.Return ret = 0 2.read Result: 'SUCC'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartNativeChildProcess_0500', Level.LEVEL0, async (done: Function) => {
       let tag = `StartNativeChildProcess_0500`;
@@ -253,14 +249,13 @@ export default function nativeProcessTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartNativeChildProcess_0600
-     * @tc.name   : Call OH_Ability_StartNativeChildProcess to create a child process, give param correct entryPoint,
-     *              no args and isolationMode true
-     * @tc.desc   : Expect: 1.Return ret = 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartNativeChildProcess_0600
+     * @tc.number SUB_Ability_AbilityRuntime_StartNativeChildProcess_0600
+     * @tc.desc   Expect: 1.Return ret = 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartNativeChildProcess_0600', Level.LEVEL0, async (done: Function) => {
       let tag = `StartNativeChildProcess_0600`;
@@ -284,15 +279,14 @@ export default function nativeProcessTest() {
       }
     });
 
-    /*
-    * @tc.number : SUB_Ability_AbilityRuntime_StartNativeChildProcess_0700
-    * @tc.name   : Call StartNativeChildProcess to create a child process, give param correct entryPoint, args
-    *              and isolationMode true
-    * @tc.desc   : Expect: 1.Return child pid 2.read Result: 'SUCC'
-    * @tc.type   : Function
-    * @tc.size   : MediumTest
-    * @tc.level  : 0
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartNativeChildProcess_0700
+     * @tc.number SUB_Ability_AbilityRuntime_StartNativeChildProcess_0700
+     * @tc.desc   Expect: 1.Return child pid 2.read Result: 'SUCC'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_StartNativeChildProcess_0700', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartNativeChildProcess_0700`;
       console.log(`${tag} it begin`);

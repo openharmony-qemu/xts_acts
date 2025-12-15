@@ -41,12 +41,12 @@ export default function TextInputXtsJsunit() {
     })
 
     /**
+     * @tc.name   TextInputXtsJsunit_0101
      * @tc.number TextInputXtsJsunit_0101
-     * @tc.name Test the properties of components
-     * @tc.desc Set attribute values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set attribute values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextInputXtsJsunit_0101',  Level.LEVEL0, async (done: Function) => {
       console.info('[TextInputXtsJsunit_0103] START');
@@ -59,12 +59,12 @@ export default function TextInputXtsJsunit() {
     });
 
     /**
+     * @tc.name   TextInputXtsJsunit_0102
      * @tc.number TextInputXtsJsunit_0102
-     * @tc.name Test the properties of components
-     * @tc.desc Set attribute values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set attribute values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextInputXtsJsunit_0102',  Level.LEVEL0, async (done: Function) => {
       console.info('[TextInputXtsJsunit_0102] START');
@@ -76,12 +76,12 @@ export default function TextInputXtsJsunit() {
       done();
     });
     /**
+     * @tc.name   TextInputXtsJsunit_0103
      * @tc.number TextInputXtsJsunit_0103
-     * @tc.name Test the properties of components
-     * @tc.desc Set attribute values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set attribute values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextInputXtsJsunit_0103',  Level.LEVEL0, async (done: Function) => {
       console.info('[TextInputXtsJsunit_0103] START');

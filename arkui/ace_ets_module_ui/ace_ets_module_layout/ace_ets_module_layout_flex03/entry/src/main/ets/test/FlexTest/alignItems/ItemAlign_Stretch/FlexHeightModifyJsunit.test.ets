@@ -47,9 +47,12 @@ export default function flexHeightModify_StretchJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignStretchDefaultSize
      * @tc.number SUB_ACE_FLEXALIGNITEMS_STRETCH_0800
-     * @tc.name testFlexItemAlignStretchDefaultSize
-     * @tc.desc Check the the default height of the first subcomponent.
+     * @tc.desc   Check the the default height of the first subcomponent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignStretchDefaultSize',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignStretchDefaultSize START');
@@ -88,9 +91,12 @@ export default function flexHeightModify_StretchJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignStretchHeightModify
      * @tc.number SUB_ACE_FLEXALIGNITEMS_STRETCH_0900
-     * @tc.name testFlexItemAlignStretchHeightModify
-     * @tc.desc Modify the first subcomponent's height.
+     * @tc.desc   Modify the first subcomponent's height.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignStretchHeightModify',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignStretchHeightModify START');

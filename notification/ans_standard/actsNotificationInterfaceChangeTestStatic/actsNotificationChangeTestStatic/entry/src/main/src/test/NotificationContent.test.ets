@@ -29,10 +29,12 @@ export default function ActsNotificationContentTest() {
     let ctx: common.UIAbilityContext;
 
     /**
-     * @tc.number  Acts_NotificationContent_Static_0100
-     * @tc.name  Acts_NotificationContent_Static_0100
-     * @tc.desc  Set notificationContentType attribute parameters
-     *           notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT.
+     * @tc.name   Acts_NotificationContent_Static_0100
+     * @tc.number Acts_NotificationContent_Static_0100
+     * @tc.desc   Set notificationContentType attribute parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Acts_NotificationContent_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -84,10 +86,12 @@ export default function ActsNotificationContentTest() {
       })
 
     /**
-     * @tc.number  Acts_NotificationContent_Static_0200
-     * @tc.name Acts_NotificationContent_Static_0200
-     * @tc.desc Set notificationContentType attribute parameters
-     *           notificationManager.ContentType.NOTIFICATION_CONTENT_LONG_TEXT.
+     * @tc.name   Acts_NotificationContent_Static_0200
+     * @tc.number Acts_NotificationContent_Static_0200
+     * @tc.desc   Set notificationContentType attribute parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Acts_NotificationContent_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -136,10 +140,12 @@ export default function ActsNotificationContentTest() {
       })
 
     /**
-     * @tc.number  Acts_NotificationContent_Static_0300
-     * @tc.name  Acts_NotificationContent_Static_0300
-     * @tc.desc  Set notificationContentType attribute parameters
-     *           notificationManager.ContentType.NOTIFICATION_CONTENT_PICTURE.
+     * @tc.name   Acts_NotificationContent_Static_0300
+     * @tc.number Acts_NotificationContent_Static_0300
+     * @tc.desc   Set notificationContentType attribute parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Acts_NotificationContent_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -208,13 +214,15 @@ export default function ActsNotificationContentTest() {
       })
 
 
-    /**
-     * @tc.number  Acts_NotificationContent_Static_0400
-     * @tc.name  Acts_NotificationContent_Static_0400
-     * @tc.desc  Set notificationContentType attribute parameters
-     *           notificationManager.ContentType.NOTIFICATION_CONTENT_MULTILINE.
-     */
     
+    /**
+     * @tc.name   Acts_NotificationContent_Static_0400
+     * @tc.number Acts_NotificationContent_Static_0400
+     * @tc.desc   Acts_NotificationContent_Static_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Acts_NotificationContent_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME = 'Acts_NotificationContent_Static_0400';

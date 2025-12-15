@@ -77,28 +77,28 @@ export default function ActsAvoidVisibleViewportBottomTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_ACE_EMITAVOIDVISIBLEVIEWPORTBOTTOM_API_0001
-    * @tc.name        : emitAvoidVisibleViewportBottom001
-    * @tc.desc        : emitAvoidVisibleViewportBottom001
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name   emitAvoidVisibleViewportBottom001
+     * @tc.number SUB_ACE_EMITAVOIDVISIBLEVIEWPORTBOTTOM_API_0001
+     * @tc.desc   emitAvoidVisibleViewportBottom001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitAvoidVisibleViewportBottom001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitAvoidVisibleViewportBottom001", 153910);
       Utils.registerEvent("emitAvoidVisibleViewportBottom001", 50, 153920, done);
       waitAndClickComponent("voidVisibleViewportBottomWebClick",driver);
     })
 
-    /*
-    * @tc.number      : SUB_ACE_EMITAVOIDVISIBLEVIEWPORTBOTTOM_API_0002
-    * @tc.name        : emitAvoidVisibleViewportBottom002
-    * @tc.desc        : emitAvoidVisibleViewportBottom002
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name   emitAvoidVisibleViewportBottom002
+     * @tc.number SUB_ACE_EMITAVOIDVISIBLEVIEWPORTBOTTOM_API_0002
+     * @tc.desc   emitAvoidVisibleViewportBottom002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitAvoidVisibleViewportBottom002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
     Utils.emitEvent("emitAvoidVisibleViewportBottom002", 153910);
       Utils.registerEvent("emitAvoidVisibleViewportBottom002", 100, 153930, done);

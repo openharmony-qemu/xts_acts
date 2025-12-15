@@ -30,14 +30,14 @@ export default function drmEnumTest() {
         afterAll(() => {
             console.log("afterAll");
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_CERTIFICATE_STATUS_ENUM_0100
-        * @tc.name      : testCertificateStatus
-        * @tc.desc      : test all CertificateStatus
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_CERTIFICATE_STATUS_ENUM_0100
+         * @tc.number SUB_MULTIMEDIA_DRM_CERTIFICATE_STATUS_ENUM_0100
+         * @tc.desc   test all CertificateStatus
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_CERTIFICATE_STATUS_ENUM_0100', Level.LEVEL0, (done: Function) => {
             expect(drm.CertificateStatus.CERT_STATUS_PROVISIONED == 0).assertTrue();
             console.log(`drm.CertificateStatus.CERT_STATUS_PROVISIONED: ${drm.CertificateStatus.CERT_STATUS_PROVISIONED}`);
@@ -51,14 +51,14 @@ export default function drmEnumTest() {
             console.log(`drm.CertificateStatus.CERT_STATUS_UNAVAILABLE: ${drm.CertificateStatus.CERT_STATUS_UNAVAILABLE}`);
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_MEDIA_KEY_REQUEST_TYPE_ENUM_0100
-        * @tc.name      : testMediaKeyRequestType
-        * @tc.desc      : test all MediaKeyRequestType
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_MEDIA_KEY_REQUEST_TYPE_ENUM_0100
+         * @tc.number SUB_MULTIMEDIA_DRM_MEDIA_KEY_REQUEST_TYPE_ENUM_0100
+         * @tc.desc   test all MediaKeyRequestType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_MEDIA_KEY_REQUEST_TYPE_ENUM_0100', Level.LEVEL0, (done: Function) => {
             expect(drm.MediaKeyRequestType.MEDIA_KEY_REQUEST_TYPE_UNKNOWN == 0).assertTrue();
             console.log(`drm.MediaKeyRequestType.MEDIA_KEY_REQUEST_TYPE_UNKNOWN: ${drm.MediaKeyRequestType.MEDIA_KEY_REQUEST_TYPE_UNKNOWN}`);
@@ -74,14 +74,14 @@ export default function drmEnumTest() {
             console.log(`drm.MediaKeyRequestType.MEDIA_KEY_REQUEST_TYPE_UPDATE : ${drm.MediaKeyRequestType.MEDIA_KEY_REQUEST_TYPE_UPDATE}`);
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_ERROR_CODE_ENUM_0100
-        * @tc.name      : testDrmErrorCode
-        * @tc.desc      : test all DrmErrorCode
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_ERROR_CODE_ENUM_0100
+         * @tc.number SUB_MULTIMEDIA_DRM_ERROR_CODE_ENUM_0100
+         * @tc.desc   test all DrmErrorCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_ERROR_CODE_ENUM_0100', Level.LEVEL0, (done: Function) => {
             expect(drm.DrmErrorCode.ERROR_UNKNOWN == 24700101).assertTrue();
             console.log(`drm.DrmErrorCode.ERROR_UNKNOWN: ${drm.DrmErrorCode.ERROR_UNKNOWN}`);
@@ -93,14 +93,14 @@ export default function drmEnumTest() {
             console.log(`drm.DrmErrorCode.SERVICE_FATAL_ERROR  : ${drm.DrmErrorCode.SERVICE_FATAL_ERROR}`);
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_PREDEFINED_CONFIG_NAME_ENUM_0100
-        * @tc.name      : testPreDefinedConfigName
-        * @tc.desc      : test all PreDefinedConfigName
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_PREDEFINED_CONFIG_NAME_ENUM_0100
+         * @tc.number SUB_MULTIMEDIA_DRM_PREDEFINED_CONFIG_NAME_ENUM_0100
+         * @tc.desc   test all PreDefinedConfigName
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_PREDEFINED_CONFIG_NAME_ENUM_0100', Level.LEVEL0, (done: Function) => {
             expect(drm.PreDefinedConfigName.CONFIG_DEVICE_VENDOR == 'vendor').assertTrue();
             console.log(`drm.PreDefinedConfigName.CONFIG_DEVICE_VENDOR: ${drm.PreDefinedConfigName.CONFIG_DEVICE_VENDOR}`);
@@ -118,14 +118,14 @@ export default function drmEnumTest() {
             console.log(`drm.PreDefinedConfigName.CONFIG_SESSION_CURRENT: ${drm.PreDefinedConfigName.CONFIG_SESSION_CURRENT}`);
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_MEDIA_KEY_TYPE_ENUM_0100
-        * @tc.name      : testMediaKeyType
-        * @tc.desc      : test all MediaKeyType
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_MEDIA_KEY_TYPE_ENUM_0100
+         * @tc.number SUB_MULTIMEDIA_DRM_MEDIA_KEY_TYPE_ENUM_0100
+         * @tc.desc   test all MediaKeyType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_MEDIA_KEY_TYPE_ENUM_0100', Level.LEVEL0, (done: Function) => {
             expect(drm.MediaKeyType.MEDIA_KEY_TYPE_OFFLINE == 0).assertTrue();
             console.log(`drm.MediaKeyType.MEDIA_KEY_TYPE_OFFLINE: ${drm.MediaKeyType.MEDIA_KEY_TYPE_OFFLINE}`);
@@ -133,14 +133,14 @@ export default function drmEnumTest() {
             console.log(`drm.MediaKeyType.MEDIA_KEY_TYPE_ONLINE: ${drm.MediaKeyType.MEDIA_KEY_TYPE_ONLINE}`);
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_OFFLINE_MEDIA_KEY_STATUS_ENUM_0100
-        * @tc.name      : testOfflineMediaKeyStatus
-        * @tc.desc      : test all OfflineMediaKeyStatus
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_OFFLINE_MEDIA_KEY_STATUS_ENUM_0100
+         * @tc.number SUB_MULTIMEDIA_DRM_OFFLINE_MEDIA_KEY_STATUS_ENUM_0100
+         * @tc.desc   test all OfflineMediaKeyStatus
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_OFFLINE_MEDIA_KEY_STATUS_ENUM_0100', Level.LEVEL0, (done: Function) => {
             expect(drm.OfflineMediaKeyStatus.OFFLINE_MEDIA_KEY_STATUS_UNKNOWN == 0).assertTrue();
             console.log(`drm.OfflineMediaKeyStatus.OFFLINE_MEDIA_KEY_STATUS_UNKNOWN: ${drm.OfflineMediaKeyStatus.OFFLINE_MEDIA_KEY_STATUS_UNKNOWN}`);
@@ -150,14 +150,14 @@ export default function drmEnumTest() {
             console.log(`drm.OfflineMediaKeyStatus.OFFLINE_MEDIA_KEY_STATUS_INACTIVE  : ${drm.OfflineMediaKeyStatus.OFFLINE_MEDIA_KEY_STATUS_INACTIVE}`);
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_CONTENT_PROTECTION_LEVEL_ENUM_0100
-        * @tc.name      : testContentProtectionLevel
-        * @tc.desc      : test all ContentProtectionLevel
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_CONTENT_PROTECTION_LEVEL_ENUM_0100
+         * @tc.number SUB_MULTIMEDIA_DRM_CONTENT_PROTECTION_LEVEL_ENUM_0100
+         * @tc.desc   test all ContentProtectionLevel
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_CONTENT_PROTECTION_LEVEL_ENUM_0100', Level.LEVEL0, (done: Function) => {
             expect(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_UNKNOWN == 0).assertTrue();
             console.log(`drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_UNKNOWN: ${drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_UNKNOWN}`);

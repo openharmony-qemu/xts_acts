@@ -44,12 +44,12 @@ export default function LengthUnitTest() {
       console.info("LengthUnitTest after each called");
     });
     /**
-     * @tc.number    LengthUnitTest_001
-     * @tc.name      testBack
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
+     * @tc.name   LengthUnitTest_001
+     * @tc.number LengthUnitTest_001
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LengthUnitTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('[LengthUnitTest_001] START');
@@ -62,12 +62,12 @@ export default function LengthUnitTest() {
       done();
     });
     /**
-     * @tc.number    LengthUnitTest_002
-     * @tc.name      testBack
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
+     * @tc.name   LengthUnitTest_002
+     * @tc.number LengthUnitTest_002
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LengthUnitTest_002', Level.LEVEL0, async (done: Function) => {
       console.info('[LengthUnitTest_002] START');
@@ -80,12 +80,12 @@ export default function LengthUnitTest() {
       done();
     });
     /**
-     * @tc.number    LengthUnitTest_003
-     * @tc.name      testBack
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
+     * @tc.name   LengthUnitTest_003
+     * @tc.number LengthUnitTest_003
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LengthUnitTest_003', Level.LEVEL0, async (done: Function) => {
       console.info('[LengthUnitTest_003] START');
@@ -99,12 +99,12 @@ export default function LengthUnitTest() {
       done();
     });
     /**
-     * @tc.number    LengthUnitTest_004
-     * @tc.name      testBack
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
+     * @tc.name   LengthUnitTest_004
+     * @tc.number LengthUnitTest_004
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LengthUnitTest_004', Level.LEVEL0, async (done: Function) => {
       console.info('[LengthUnitTest_004] START');

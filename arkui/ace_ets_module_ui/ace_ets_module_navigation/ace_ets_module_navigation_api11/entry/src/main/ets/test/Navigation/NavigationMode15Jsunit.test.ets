@@ -39,12 +39,14 @@ export default function NavigationMode15Jsunit() {
       }
       done();
     });
-   /* *
-    * @tc.number: SUB_ACE_UI_COMPONENT_NAV_NAVIGATION_MODE_0020
-    * @tc.name  : NavigationMode15Jsunit_0100
-    * @tc.desc  : When NavigationMode is set to Auto, a single column is displayed in Auto, and the mode is dynamically switched to the stack mode.
-    * @tc.level : Level 3
-    */
+    /**
+     * @tc.name   NavigationMode15Jsunit_0100
+     * @tc.number SUB_ACE_UI_COMPONENT_NAV_NAVIGATION_MODE_0020
+     * @tc.desc   When NavigationMode is set to Auto, a single column is displayed in Auto, and the mode is dynamically switched to the stack mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavigationMode15Jsunit_0100',  Level.LEVEL0, async  (done:Function) =>{
       await CommonFunc.sleep(1000);
       let driver = await UiDriver.create()

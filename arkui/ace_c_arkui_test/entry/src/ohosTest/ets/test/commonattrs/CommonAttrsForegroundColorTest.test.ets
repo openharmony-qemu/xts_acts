@@ -26,65 +26,65 @@ export default function commonAttrsForegroundColorTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_FOREGROUNDCOLOR_0100
-     * @tc.name       : testCommonAttrsForegroundColor001
-     * @tc.desc       : testing foreground color for commonAttrs with valid value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsForegroundColor001
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_FOREGROUNDCOLOR_0100
+     * @tc.desc   testing foreground color for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsForegroundColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsForegroundColor001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_FOREGROUNDCOLOR_0200
-     * @tc.name       : testCommonAttrsForegroundColor002
-     * @tc.desc       : testing foreground color for commonAttrs with valid value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsForegroundColor002
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_FOREGROUNDCOLOR_0200
+     * @tc.desc   testing foreground color for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsForegroundColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsForegroundColor002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_FOREGROUNDCOLOR_0300
-     * @tc.name       : testCommonAttrsForegroundColor003
-     * @tc.desc       : testing foreground color for commonAttrs with valid value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsForegroundColor003
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_FOREGROUNDCOLOR_0300
+     * @tc.desc   testing foreground color for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsForegroundColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsForegroundColor003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_FOREGROUNDCOLOR_0400
-     * @tc.name       : testCommonAttrsForegroundColor004
-     * @tc.desc       : testing foreground color for commonAttrs with valid value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsForegroundColor004
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_FOREGROUNDCOLOR_0400
+     * @tc.desc   testing foreground color for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsForegroundColor004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsForegroundColor004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_FOREGROUNDCOLOR_0500
-     * @tc.name       : testCommonAttrsForegroundColor005
-     * @tc.desc       : testing resetAttribute foreground color for commonAttrs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsForegroundColor005
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_FOREGROUNDCOLOR_0500
+     * @tc.desc   testing resetAttribute foreground color for commonAttrs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsForegroundColor005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsForegroundColor005()).assertEqual(0)

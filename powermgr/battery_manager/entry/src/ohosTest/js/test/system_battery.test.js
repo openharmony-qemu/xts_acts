@@ -42,7 +42,6 @@ export default function SystemBatteryTest() {
     console.log("*************System Battery Unit Test Begin*************");
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   get_status_success_test
      * @tc.number SUB_PowerSystem_SystemBattery_JSTest_0010
      * @tc.desc   Battery acquisition kit
@@ -66,7 +65,6 @@ export default function SystemBatteryTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   get_status_success_null_test
      * @tc.number SUB_PowerSystem_SystemBattery_JSTest_0020
      * @tc.desc   Battery acquisition kit
@@ -88,7 +86,6 @@ export default function SystemBatteryTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   get_status_success_empty_test
      * @tc.number SUB_PowerSystem_SystemBattery_JSTest_0030
      * @tc.desc   Battery acquisition kit
@@ -109,7 +106,6 @@ export default function SystemBatteryTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   get_status_fail_null_test
      * @tc.number SUB_PowerSystem_SystemBattery_JSTest_0040
      * @tc.desc   Battery acquisition kit
@@ -131,7 +127,6 @@ export default function SystemBatteryTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   get_status_fail_empty_test
      * @tc.number SUB_PowerSystem_SystemBattery_JSTest_0050
      * @tc.desc   Battery acquisition kit
@@ -152,7 +147,6 @@ export default function SystemBatteryTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   get_status_complete_null_test
      * @tc.number SUB_PowerSystem_SystemBattery_JSTest_0060
      * @tc.desc   Battery acquisition kit
@@ -174,7 +168,6 @@ export default function SystemBatteryTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   get_status_complete_empty_test
      * @tc.number SUB_PowerSystem_SystemBattery_JSTest_0070
      * @tc.desc   Battery acquisition kit
@@ -195,7 +188,6 @@ export default function SystemBatteryTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   get_status_all_null
      * @tc.number SUB_PowerSystem_SystemBattery_JSTest_0080
      * @tc.desc   Battery acquisition kit
@@ -214,7 +206,6 @@ export default function SystemBatteryTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   get_status_all_empty
      * @tc.number SUB_PowerSystem_SystemBattery_JSTest_0090
      * @tc.desc   Battery acquisition kit

@@ -42,12 +42,12 @@ export default function stepperItem() {
       })
 
     /**
+     * @tc.name   sArkUX_Stage_StepperItem_0100
      * @tc.number sArkUX_Stage_StepperItem_0100
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sArkUX_Stage_StepperItem_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[sArkUX_Stage_StepperItem_0100] START');

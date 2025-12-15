@@ -17,7 +17,7 @@ import AbilityDelegatorRegistry from "@ohos.app.ability.abilityDelegatorRegistry
 import { BusinessError } from '@ohos.base';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
-import { Driver, ON } from '@ohos.UiTest';
+import { Driver, ON, Component } from '@ohos.UiTest';
 
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 let deviceSupport = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
@@ -27,6 +27,19 @@ const START_ABILITY_TIMEOUT_THOUSAND = 1000;
 
 export default function BackgroundPromise() {
   describe("BackgroundPromise", () => {
+
+    beforeAll(async () => {
+      let driver = Driver.create();
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+    })
+
     beforeEach(async (done: Function) => {
       abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       abilityDelegator.startAbility({
@@ -40,12 +53,12 @@ export default function BackgroundPromise() {
     });
 
     /**
+     * @tc.name   ACTS_DO_ABILITY_BACKGROUND_PROMISE_0001
      * @tc.number ACTS_DO_ABILITY_BACKGROUND_PROMISE_0001
-     * @tc.name actsDoAbilityBackgroundPromise0001
-     * @tc.desc Test the api: doAbilityBackground, swith the ability to background.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api: doAbilityBackground, swith the ability to background.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_DO_ABILITY_BACKGROUND_PROMISE_0001", Level.LEVEL0, async (done: Function) => {
       abilityDelegator.printSync(
@@ -116,12 +129,12 @@ export default function BackgroundPromise() {
     });
 
     /**
+     * @tc.name   ACTS_DO_ABILITY_BACKGROUND_PROMISE_ERROR_0002
      * @tc.number ACTS_DO_ABILITY_BACKGROUND_PROMISE_ERROR_0002
-     * @tc.name actsDoAbilityBackgroundPromise0002
-     * @tc.desc Test the api: doAbilityBackground, swith the wrong ability to background.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api: doAbilityBackground, swith the wrong ability to background.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(
       "ACTS_DO_ABILITY_BACKGROUND_PROMISE_ERROR_0002",
@@ -201,12 +214,12 @@ export default function BackgroundPromise() {
     );
 
     /**
+     * @tc.name   ACTS_DO_ABILITY_BACKGROUND_PROMISE_0004
      * @tc.number ACTS_DO_ABILITY_BACKGROUND_PROMISE_0004
-     * @tc.name actsDoAbilityBackgroundPromise0004
-     * @tc.desc Test the api: doAbilityBackground, swith the ability which is background to background.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api: doAbilityBackground, swith the ability which is background to background.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_DO_ABILITY_BACKGROUND_PROMISE_0004", Level.LEVEL0, async (done: Function) => {
 
@@ -288,12 +301,12 @@ export default function BackgroundPromise() {
     });
 
     /**
+     * @tc.name   ACTS_DO_ABILITY_BACKGROUND_PROMISE_ERROR_0005
      * @tc.number ACTS_DO_ABILITY_BACKGROUND_PROMISE_ERROR_0005
-     * @tc.name actsDoAbilityBackgroundPromise0005
-     * @tc.desc Test the api: doAbilityBackground, swith the wrong ability to background.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api: doAbilityBackground, swith the wrong ability to background.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(
       "ACTS_DO_ABILITY_BACKGROUND_PROMISE_ERROR_0005",

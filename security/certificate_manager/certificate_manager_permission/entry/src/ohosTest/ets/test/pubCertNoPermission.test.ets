@@ -94,12 +94,12 @@ export default function pubCertJsAPINoPermissionTestUnit() {
   describe('pubCertJsAPINoPermissionTestUnit', () => {
 
     /**
+     * @tc.name   SUB_Security_CertManager_PubCertJsApi_NoPermission_Func_0100
      * @tc.number SUB_Security_CertManager_PubCertJsApi_NoPermission_Func_0100
-     * @tc.name test getPublicCertificate interface permission
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_PubCertJsApi_NoPermission_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let keyUri: string = 'aabb';
@@ -114,12 +114,12 @@ export default function pubCertJsAPINoPermissionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_PubCertJsApi_NoPermission_Func_0200
      * @tc.number SUB_Security_CertManager_PubCertJsApi_NoPermission_Func_0200
-     * @tc.name test isAuthorizedApp interface permission
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_PubCertJsApi_NoPermission_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let keyUri: string = 'aabb';
@@ -134,12 +134,12 @@ export default function pubCertJsAPINoPermissionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_GetPriCertJsApi_Func_0020
      * @tc.number SUB_Security_CertManager_GetPriCertJsApi_Func_0020
-     * @tc.name test getPublicCertificate with normal parameters
-     * @tc.desc not use promise type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   not use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Security_CertManager_GetPriCertJsApi_Func_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.log("Security_CertManager_GetPriCertJsApi_Func_0020: started.");
@@ -155,12 +155,12 @@ export default function pubCertJsAPINoPermissionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0010
      * @tc.number SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0010
-     * @tc.name test getPublicCertificate with normal parameters
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const test : common.Context = GlobalContext.getContext()
@@ -175,13 +175,13 @@ export default function pubCertJsAPINoPermissionTestUnit() {
       done();
     });
 
-        /**
+    /**
+     * @tc.name   SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0010
      * @tc.number SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0010
-     * @tc.name no permission to call interface openInstallCertificateDialog
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0010: started ");

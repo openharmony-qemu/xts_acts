@@ -41,12 +41,12 @@ export default function TextCommonTextComputing1() {
       done();
     });
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0010
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0010
-     * @tc.desc  : Test the MeasureTextSize function when the textContent is presented in Chinese, and view the return width/size result
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0010
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0010
+     * @tc.desc   Test the MeasureTextSize function when the textContent is presented in Chinese, and view the return width/size result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0010',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0010 START');
@@ -74,12 +74,12 @@ export default function TextCommonTextComputing1() {
       done();
     });
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0020
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0020
-     * @tc.desc  : Test the MeasureTextSize function when the textContent is presented in Chinese and English, and view the return width/size result
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0020
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0020
+     * @tc.desc   Test the MeasureTextSize function when the textContent is presented in Chinese and English, and view the return width/size result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0020',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0020 START');
@@ -107,12 +107,12 @@ export default function TextCommonTextComputing1() {
       done();
     });
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0030
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0030
-     * @tc.desc  : Test the MeasureTextSize function When the textContent vote is Chinese, Japanese, and Korean mixed English, and view the return width/size result
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0030
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0030
+     * @tc.desc   Test the MeasureTextSize function When the textContent vote is Chinese, Japanese, and Korean mixed English, and view the return width/size result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0030',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0030 START');
@@ -140,12 +140,12 @@ export default function TextCommonTextComputing1() {
       done();
     });
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0040
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0040
-     * @tc.desc  : Test the MeasureTextSize function When the textContent is Chinese+special symbols, and view the return width/size result
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0040
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0040
+     * @tc.desc   Test the MeasureTextSize function When the textContent is Chinese+special symbols, and view the return width/size result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0040',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0040 START');

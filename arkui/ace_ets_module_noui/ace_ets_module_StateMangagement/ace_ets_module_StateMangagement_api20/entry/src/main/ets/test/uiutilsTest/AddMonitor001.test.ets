@@ -46,12 +46,12 @@ export default function AddMonitor001() {
     });
 
     /**
-     * @tc.number    AddMonitor001_001
-     * @tc.name      AddMonitor001_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   AddMonitor001_001
+     * @tc.number AddMonitor001_001
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AddMonitor001_001', Level.LEVEL0, async (done: Function) => {
       console.info('[AddMonitor001_001] START');

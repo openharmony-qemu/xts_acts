@@ -39,13 +39,13 @@ export default function ConnectionPublicNopTest() {
   describe("ConnectionPublicNopTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
-    /*
-     * @tc.number:SUB_NetMgr_Connection_GetDefaultNet_Nop_0100
-     * @tc.name: testNetMgrConnectionGetDefaultNetNop_0100
-     * @tc.desc: Using the getDefaultNet (callback) method without permission
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
+    /**
+     * @tc.name   testNetMgrConnectionGetDefaultNetNop_0100
+     * @tc.number SUB_NetMgr_Connection_GetDefaultNet_Nop_0100
+     * @tc.desc   Using the getDefaultNet (callback) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetMgrConnectionGetDefaultNetNop_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetMgrConnectionGetDefaultNetNop_0100';
@@ -70,13 +70,13 @@ export default function ConnectionPublicNopTest() {
       }
     })
 
-    /*
-     * @tc.number:SUB_NetMgr_Connection_GetDefaultNet_Nop_0200
-     * @tc.name: testNetMgrConnectionGetDefaultNetNop_0200
-     * @tc.desc: Using the GetDefaultNet (promise) method without permission
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
+    /**
+     * @tc.name   testNetMgrConnectionGetDefaultNetNop_0200
+     * @tc.number SUB_NetMgr_Connection_GetDefaultNet_Nop_0200
+     * @tc.desc   Using the GetDefaultNet (promise) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testNetMgrConnectionGetDefaultNetNop_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetMgrConnectionGetDefaultNetNop_0200';
@@ -102,13 +102,13 @@ export default function ConnectionPublicNopTest() {
       }
     })
 
-    /*
-     * @tc.number:SUB_NetMgr_Connection_GetDefaultNetSync_Nop_0300
-     * @tc.name: testNetMgrConnectionGetDefaultNetSyncNop_0300
-     * @tc.desc: Using the getDefaultNetSync method without permission
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
+    /**
+     * @tc.name   testNetMgrConnectionGetDefaultNetSyncNop_0300
+     * @tc.number SUB_NetMgr_Connection_GetDefaultNetSync_Nop_0300
+     * @tc.desc   Using the getDefaultNetSync method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testNetMgrConnectionGetDefaultNetSyncNop_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetMgrConnectionGetDefaultNetSyncNop_0300';
@@ -127,13 +127,13 @@ export default function ConnectionPublicNopTest() {
       }
     })
 
-    /*
-     * @tc.number:SUB_NetMgr_Connection_GetAllNets_Nop_0100
-     * @tc.name: testNetMgrConnectionGetAllNetsNop_0100
-     * @tc.desc: Using the GetAllNets (callback) method without permission
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
+    /**
+     * @tc.name   testNetMgrConnectionGetAllNetsNop_0100
+     * @tc.number SUB_NetMgr_Connection_GetAllNets_Nop_0100
+     * @tc.desc   Using the GetAllNets (callback) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testNetMgrConnectionGetAllNetsNop_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetMgrConnectionGetAllNetsNop_0100';
@@ -158,13 +158,13 @@ export default function ConnectionPublicNopTest() {
       }
     })
 
-    /*
-     * @tc.number:SUB_NetMgr_Connection_GetAllNets_Nop_0200
-     * @tc.name: testNetMgrConnectionGetAllNetsNop_0200
-     * @tc.desc: Using the GetAllNets (promise) method without permission
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
+    /**
+     * @tc.name   testNetMgrConnectionGetAllNetsNop_0200
+     * @tc.number SUB_NetMgr_Connection_GetAllNets_Nop_0200
+     * @tc.desc   Using the GetAllNets (promise) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testNetMgrConnectionGetAllNetsNop_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetMgrConnectionGetAllNetsNop_0200';
@@ -189,13 +189,13 @@ export default function ConnectionPublicNopTest() {
       }
     })
 
-    /*
-     * @tc.number:SUB_NetMgr_Connection_GetAllNetsSync_Nop_0300
-     * @tc.name: testNetMgrConnectionGetAllNetsSyncNop_0300
-     * @tc.desc: Using the getAllNetsSync method without permission
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
+    /**
+     * @tc.name   testNetMgrConnectionGetAllNetsSyncNop_0300
+     * @tc.number SUB_NetMgr_Connection_GetAllNetsSync_Nop_0300
+     * @tc.desc   Using the getAllNetsSync method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testNetMgrConnectionGetAllNetsSyncNop_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetMgrConnectionGetAllNetsSyncNop_0300';
@@ -214,13 +214,13 @@ export default function ConnectionPublicNopTest() {
       }
     })
 
-    /*
-     * @tc.number:SUB_NetMgr_Connection_HasDefaultNet_Nop_0100
-     * @tc.name: testNetMgrConnectionHasDefaultNetNoP_0100
-     * @tc.desc: Using the hasDefaultNet (callback) method without permission
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
+    /**
+     * @tc.name   testNetMgrConnectionHasDefaultNetNoP_0100
+     * @tc.number SUB_NetMgr_Connection_HasDefaultNet_Nop_0100
+     * @tc.desc   Using the hasDefaultNet (callback) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testNetMgrConnectionHasDefaultNetNoP_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetMgrConnectionHasDefaultNetNoP_0100';
@@ -245,13 +245,13 @@ export default function ConnectionPublicNopTest() {
       }
     })
 
-    /*
-     * @tc.number:SUB_NetMgr_Connection_HasDefaultNet_Nop_0200
-     * @tc.name: testNetMgrConnectionHasDefaultNetNop_0200
-     * @tc.desc: Using the HasDefaultNet (promise) method without permission
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
+    /**
+     * @tc.name   testNetMgrConnectionHasDefaultNetNop_0200
+     * @tc.number SUB_NetMgr_Connection_HasDefaultNet_Nop_0200
+     * @tc.desc   Using the HasDefaultNet (promise) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testNetMgrConnectionHasDefaultNetNop_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetMgrConnectionHasDefaultNetNop_0200';
@@ -276,13 +276,13 @@ export default function ConnectionPublicNopTest() {
       }
     })
 
-    /*
-     * @tc.number:SUB_NetMgr_Connection_HasDefaultNetSync_Nop_0300
-     * @tc.name: testNetMgrConnectionHasDefaultNetSyncNop_0300
-     * @tc.desc: Using the hasDefaultNetSync method without permission
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
+    /**
+     * @tc.name   testNetMgrConnectionHasDefaultNetSyncNop_0300
+     * @tc.number SUB_NetMgr_Connection_HasDefaultNetSync_Nop_0300
+     * @tc.desc   Using the hasDefaultNetSync method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testNetMgrConnectionHasDefaultNetSyncNop_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetMgrConnectionHasDefaultNetSyncNop_0300';
@@ -300,14 +300,14 @@ export default function ConnectionPublicNopTest() {
         done();
       }
     })
-    /*
-         * @tc.number:SUB_NetMgr_Connection_GetConnectionProperties_Nop_0100
-         * @tc.name: testNetMgrConnectionGetConnectionProperties_0100
-         * @tc.desc: Using the getConnectionProperties (callback) method without permission
-         * @tc.level: Level 2
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
-         */
+    /**
+     * @tc.name   testNetMgrConnectionGetConnectionProperties_0100
+     * @tc.number SUB_NetMgr_Connection_GetConnectionProperties_Nop_0100
+     * @tc.desc   Using the getConnectionProperties (callback) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("testNetMgrConnectionGetConnectionProperties_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetMgrConnectionGetConnectionProperties_0100';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -332,13 +332,13 @@ export default function ConnectionPublicNopTest() {
       }
     })
 
-    /*
-     * @tc.number:SUB_NetMgr_Connection_GetConnectionProperties_Nop_0200
-     * @tc.name: testNetMgrConnectionGetConnectionPropertiesNop_0200
-     * @tc.desc: Using the GetConnectionProperties (promise) method without permission
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
+    /**
+     * @tc.name   testNetMgrConnectionGetConnectionPropertiesNop_0200
+     * @tc.number SUB_NetMgr_Connection_GetConnectionProperties_Nop_0200
+     * @tc.desc   Using the GetConnectionProperties (promise) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testNetMgrConnectionGetConnectionPropertiesNop_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetMgrConnectionGetConnectionPropertiesNop_0200';
@@ -363,14 +363,14 @@ export default function ConnectionPublicNopTest() {
         done();
       }
     })
-    /*
-       * @tc.number:SUB_NetMgr_Connection_GetConnectionPropertiesSync_Nop_0300
-       * @tc.name: testNetMgrConnectionGetConnectionPropertiesSyncNop_0300
-       * @tc.desc: Using the GetConnectionPropertiesSync method without permission
-       * @tc.level: Level 2
-       * @tc.type: Function
-       * @tc.size: MEDIUMTEST
-       */
+    /**
+     * @tc.name   testNetMgrConnectionGetConnectionPropertiesSyncNop_0300
+     * @tc.number SUB_NetMgr_Connection_GetConnectionPropertiesSync_Nop_0300
+     * @tc.desc   Using the GetConnectionPropertiesSync method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("testNetMgrConnectionGetConnectionPropertiesSyncNop_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetMgrConnectionGetConnectionPropertiesSyncNop_0300';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -389,14 +389,14 @@ export default function ConnectionPublicNopTest() {
       }
     })
 
-    /*
-        * @tc.number:SUB_NetMgr_Connection_GetNetCapabilities_Nop_0100
-        * @tc.name: testNetMgrConnectionGetNetCapabilities_0100
-        * @tc.desc: Using the GetNetCapabilities (callback) method without permission
-        * @tc.level: Level 2
-        * @tc.type: Function
-        * @tc.size: MEDIUMTEST
-        */
+    /**
+     * @tc.name   testNetMgrConnectionGetNetCapabilities_0100
+     * @tc.number SUB_NetMgr_Connection_GetNetCapabilities_Nop_0100
+     * @tc.desc   Using the GetNetCapabilities (callback) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("testNetMgrConnectionGetNetCapabilities_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetMgrConnectionGetNetCapabilities_0100';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -421,13 +421,13 @@ export default function ConnectionPublicNopTest() {
       }
     })
 
-    /*
-     * @tc.number:SUB_NetMgr_Connection_GetNetCapabilities_Nop_0200
-     * @tc.name: testNetMgrConnectionGetNetCapabilitiesNop_0200
-     * @tc.desc: Using the GetNetCapabilities (promise) method without permission
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
+    /**
+     * @tc.name   testNetMgrConnectionGetNetCapabilitiesNop_0200
+     * @tc.number SUB_NetMgr_Connection_GetNetCapabilities_Nop_0200
+     * @tc.desc   Using the GetNetCapabilities (promise) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testNetMgrConnectionGetNetCapabilitiesNop_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetMgrConnectionGetNetCapabilitiesNop_0200';
@@ -453,13 +453,13 @@ export default function ConnectionPublicNopTest() {
       }
     })
 
-    /*
-     * @tc.number:SUB_NetMgr_Connection_GetNetCapabilitiesSync_Nop_0300
-     * @tc.name: testNetMgrConnectionGetNetCapabilitiesSyncNop_0300
-     * @tc.desc: Using the GetNetCapabilitiesSync method without permission
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MEDIUMTEST
+    /**
+     * @tc.name   testNetMgrConnectionGetNetCapabilitiesSyncNop_0300
+     * @tc.number SUB_NetMgr_Connection_GetNetCapabilitiesSync_Nop_0300
+     * @tc.desc   Using the GetNetCapabilitiesSync method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testNetMgrConnectionGetNetCapabilitiesSyncNop_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetMgrConnectionGetNetCapabilitiesSyncNop_0300';

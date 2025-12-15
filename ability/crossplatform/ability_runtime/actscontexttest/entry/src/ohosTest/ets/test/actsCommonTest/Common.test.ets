@@ -36,12 +36,12 @@ export default function Common() {
     });
 
     /**
-     * @tc.number    : ABILITY_TEST_COMMON_0100
-     * @tc.name      : testCommon001
-     * @tc.desc      : test Common of UIAbilityContext
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testCommon001
+     * @tc.number ABILITY_TEST_COMMON_0100
+     * @tc.desc   test Common of UIAbilityContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCommon001', Level.LEVEL0, async  (done:Function) => {
       try {
@@ -57,12 +57,12 @@ export default function Common() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_COMMON_0200
-     * @tc.name      : testCommon002
-     * @tc.desc      : test Common of AbilityStageContext
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testCommon002
+     * @tc.number ABILITY_TEST_COMMON_0200
+     * @tc.desc   test Common of AbilityStageContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCommon002', Level.LEVEL0, async  (done:Function) => {
       try {
@@ -78,12 +78,12 @@ export default function Common() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_COMMON_0300
-     * @tc.name      : testCommon003
-     * @tc.desc      : test Common of ApplicationContext
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testCommon003
+     * @tc.number ABILITY_TEST_COMMON_0300
+     * @tc.desc   test Common of ApplicationContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCommon003', Level.LEVEL0, async  (done:Function) => {
       try {
@@ -101,12 +101,12 @@ export default function Common() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_COMMON_0400
-     * @tc.name      : testCommon004
-     * @tc.desc      : test Common of BaseContext
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testCommon004
+     * @tc.number ABILITY_TEST_COMMON_0400
+     * @tc.desc   test Common of BaseContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCommon004', Level.LEVEL0, async  (done:Function) => {
       try {
@@ -124,12 +124,12 @@ export default function Common() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_COMMON_0500
-     * @tc.name      : testCommon005
-     * @tc.desc      : test Common of Context
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testCommon005
+     * @tc.number ABILITY_TEST_COMMON_0500
+     * @tc.desc   test Common of Context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCommon005', Level.LEVEL0, async  (done:Function) => {
       try {

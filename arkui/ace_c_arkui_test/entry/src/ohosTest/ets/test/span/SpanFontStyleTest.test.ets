@@ -26,39 +26,39 @@ export default function spanFontStyleTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SPAN_FONTSTYLE_0100
-     * @tc.name: testSpanFontStyle001
-     * @tc.desc: testing fontStyle for span with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSpanFontStyle001
+     * @tc.number SUB_ARKUI_CAPI_SPAN_FONTSTYLE_0100
+     * @tc.desc   testing fontStyle for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanFontStyle001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanFontStyle001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SPAN_FONTSTYLE_0200
-     * @tc.name: testSpanFontStyle002
-     * @tc.desc: testing fontStyle for span with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSpanFontStyle002
+     * @tc.number SUB_ARKUI_CAPI_SPAN_FONTSTYLE_0200
+     * @tc.desc   testing fontStyle for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanFontStyle002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanFontStyle002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SPAN_FONTSTYLE_0300
-     * @tc.name: testSpanFontStyle003
-     * @tc.desc: testing fontStyle for span with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testSpanFontStyle003
+     * @tc.number SUB_ARKUI_CAPI_SPAN_FONTSTYLE_0300
+     * @tc.desc   testing fontStyle for span with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanFontStyle003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanFontStyle003()).assertEqual(0)

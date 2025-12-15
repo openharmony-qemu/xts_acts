@@ -46,9 +46,12 @@ export default function Grid_RowCol_TemplateChange() {
       console.info("Grid_RowCol_TemplateChange after each called")
     });
     /**
+     * @tc.name   testGridRowColTemplateChange01
      * @tc.number SUB_ACE_GRID_GRIDTEMPLATESALLSET_GRIDTEMPLATECHANGE_0100
-     * @tc.name testGridRowColTemplateChange01
-     * @tc.desc Grid is divided into 4 equal parts, 4 components
+     * @tc.desc   Grid is divided into 4 equal parts, 4 components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridRowColTemplateChange01',  Level.LEVEL0, async (done: Function) => {
       console.info('[testGridRowColTemplateChange01] START');
@@ -100,9 +103,12 @@ export default function Grid_RowCol_TemplateChange() {
       done();
     });
     /**
+     * @tc.name   testGridRowColTemplateChange02
      * @tc.number SUB_ACE_GRID_GRIDTEMPLATESALLSET_GRIDTEMPLATECHANGE_0200
-     * @tc.name testGridRowColTemplateChange02
-     * @tc.desc Grid is divided into 9 equal parts, 4 components
+     * @tc.desc   Grid is divided into 9 equal parts, 4 components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridRowColTemplateChange02',  Level.LEVEL0, async (done: Function) => {
       console.info('[testGridRowColTemplateChange02] START');

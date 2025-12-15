@@ -47,12 +47,14 @@ export default function ActsStServiceAbilityTest() {
         let CommonEventSubscribeInfo0500 = {
             events: ["ACTS_SerivceAbilityServer_onConnect_PageConnectService_0500",
             "ACTS_SerivceAbilityServer_onDisConnect_PageConnectService_0500",
+            "ACTS_SerivceAbilityServer_onConnectCallback_PageConnectService_0500"
             ],
         };
         let subscriber0600;
         let CommonEventSubscribeInfo0600 = {
             events: ["ACTS_SerivceAbilityServer_onConnect_PageConnectService_0600",
             "ACTS_SerivceAbilityServer_onDisConnect_PageConnectService_0600",
+            "ACTS_SerivceAbilityServer_onConnectCallback_PageConnectService_0600"
             ],
         };
         let subscriber0900;
@@ -69,18 +71,21 @@ export default function ActsStServiceAbilityTest() {
         let CommonEventSubscribeInfo1300 = {
             events: ["ACTS_SerivceAbilityServerSecond_onConnect_ServiceConnectService_1300",
             "ACTS_SerivceAbilityServerSecond_onDisConnect_ServiceConnectService_1300",
+            "ACTS_SerivceAbilityServerSecond_onConnectCallback_ServiceConnectService_1300"
             ],
         };
         let subscriber1400;
         let CommonEventSubscribeInfo1400 = {
             events: ["ACTS_SerivceAbilityServerSecond_onConnect_ServiceConnectService_1400",
             "ACTS_SerivceAbilityServerSecond_onDisConnect_ServiceConnectService_1400",
+            "ACTS_SerivceAbilityServerSecond_onConnectCallback_ServiceConnectService_1400"
             ],
         };
         let subscriber1500;
         let CommonEventSubscribeInfo1500 = {
             events: ["ACTS_SerivceAbilityServerSecond_onConnect_ServiceConnectService_1500",
             "ACTS_SerivceAbilityServer_onDisConnect_ServiceConnectService_1500",
+            "ACTS_SerivceAbilityServerSecond_onConnectCallback_ServiceConnectService_1500"
             ],
         };
 
@@ -103,11 +108,14 @@ export default function ActsStServiceAbilityTest() {
             }, gSetTimeout);
         })
 
-        /*
-        * @tc.number: ACTS_JsServiceAbility_0100
-        * @tc.name: featureAbility.startAbility : Use page to test startAbiltiy service.
-        * @tc.desc: Check the return value of the interface (by Promise)
-        */
+        /**
+         * @tc.name   ACTS_JsServiceAbility_0100
+         * @tc.number ACTS_JsServiceAbility_0100
+         * @tc.desc   Check the return value of the interface (by Promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ACTS_JsServiceAbility_0100', Level.LEVEL0, async function (done) {
             console.info('ACTS_JsServiceAbility_0100====<begin');
             try {
@@ -153,11 +161,14 @@ export default function ActsStServiceAbilityTest() {
             }
         })
 
-        /*
-        * @tc.number: ACTS_JsServiceAbility_0200
-        * @tc.name: featureAbility.startAbility : Use page to test startAbiltiy service.
-        * @tc.desc: Check the return value of the interface (by AsyncCallback)
-        */
+        /**
+         * @tc.name   ACTS_JsServiceAbility_0200
+         * @tc.number ACTS_JsServiceAbility_0200
+         * @tc.desc   Check the return value of the interface (by AsyncCallback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ACTS_JsServiceAbility_0200', Level.LEVEL0, async function (done) {
             console.info('ACTS_JsServiceAbility_0200====<begin');
             try {
@@ -200,11 +211,14 @@ export default function ActsStServiceAbilityTest() {
             }
         })
 
-        /*
-        * @tc.number: ACTS_JsServiceAbility_0300
-        * @tc.name: featureAbility.startAbility : Use page to test startAbiltiy service.
-        * @tc.desc: Check the return value of the interface (by Promise)
-        */
+        /**
+         * @tc.name   ACTS_JsServiceAbility_0300
+         * @tc.number ACTS_JsServiceAbility_0300
+         * @tc.desc   Check the return value of the interface (by Promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ACTS_JsServiceAbility_0300', Level.LEVEL0, async function (done) {
             console.info('ACTS_JsServiceAbility_0300====<begin');
             try {
@@ -273,11 +287,14 @@ export default function ActsStServiceAbilityTest() {
             }
         })
 
-        /*
-        * @tc.number: ACTS_JsServiceAbility_0400
-        * @tc.name: featureAbility.startAbility : Use page to test startAbiltiy service.
-        * @tc.desc: Check the return value of the interface (by AsyncCallback)
-        */
+        /**
+         * @tc.name   ACTS_JsServiceAbility_0400
+         * @tc.number ACTS_JsServiceAbility_0400
+         * @tc.desc   Check the return value of the interface (by AsyncCallback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ACTS_JsServiceAbility_0400', Level.LEVEL0, async function (done) {
             console.info('ACTS_JsServiceAbility_0400====<begin');
             try {
@@ -340,11 +357,14 @@ export default function ActsStServiceAbilityTest() {
             }
         })
 
-        /*
-        * @tc.number: ACTS_JsServiceAbility_0500
-        * @tc.name: featureAbility.ConnectAbility : Connects an ability to a Service ability.
-        * @tc.desc: Check the return value of the interface (by Promise)
-        */
+        /**
+         * @tc.name   ACTS_JsServiceAbility_0500
+         * @tc.number ACTS_JsServiceAbility_0500
+         * @tc.desc   Check the return value of the interface (by Promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ACTS_JsServiceAbility_0500', Level.LEVEL0, async function (done) {
             console.log('ACTS_JsServiceAbility_0500====<begin');
             try {
@@ -360,7 +380,7 @@ export default function ActsStServiceAbilityTest() {
                         + ("json err【") + JSON.stringify(err) + (" 】")
                         + ("json data【") + JSON.stringify(data) + (" 】")
                         + " ,err=" + err + " ,data=" + data);
-                        if (data.event == "ACTS_SerivceAbilityServer_onConnect_PageConnectService_0500") {
+                        if (data.event == "ACTS_SerivceAbilityServer_onConnectCallback_PageConnectService_0500") {
                             console.info("ACTS_JsServiceAbility_0500 disconnnectAbility start")
                             featureAbility.disconnectAbility(mConnIdJsPromise).then((err) => {
                                 console.info("=ACTS_JsServiceAbility_0500 disconnectAbility err====>"
@@ -370,6 +390,8 @@ export default function ActsStServiceAbilityTest() {
                                 console.info('ACTS_JsServiceAbility_0500==== err: ' + JSON.stringify(err));
                                 done()
                             })
+                        } else if (data.event == "ACTS_SerivceAbilityServer_onConnect_PageConnectService_0500") {
+                            console.info("ACTS_JsServiceAbility_0500 recive ACTS_SerivceAbilityServer_onConnect_PageConnectService_0500");
                         } else {
                             expect("ACTS_SerivceAbilityServer_onDisConnect_PageConnectService_0500")
                                 .assertEqual(data.event);
@@ -388,6 +410,10 @@ export default function ActsStServiceAbilityTest() {
                     + JSON.stringify(remote) + " , " + remote);
                     console.info('ACTS_JsServiceAbility_0500_onConnectCallback ====> remote is proxy:'
                     + (remote instanceof rpc.RemoteProxy));
+                    commonEvent.publish("ACTS_SerivceAbilityServer_onConnectCallback_PageConnectService_0500", () => {
+                        console.info("=ACTS_JsServiceAbility_0500 publish =======>"
+                        + "ACTS_SerivceAbilityServer_onConnectCallback_PageConnectService_0500");
+                    });
                 }
 
                 function onDisconnectCallback(element) {
@@ -419,11 +445,14 @@ export default function ActsStServiceAbilityTest() {
             }
         })
 
-        /*
-        * @tc.number: ACTS_JsServiceAbility_0600
-        * @tc.name: featureAbility.ConnectAbility : Connects an ability to a Service ability.
-        * @tc.desc: Check the return value of the interface (by AsyncCallback)
-        */
+        /**
+         * @tc.name   ACTS_JsServiceAbility_0600
+         * @tc.number ACTS_JsServiceAbility_0600
+         * @tc.desc   Check the return value of the interface (by AsyncCallback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ACTS_JsServiceAbility_0600', Level.LEVEL0, async function (done) {
             console.log('ACTS_JsServiceAbility_0600====<begin');
             try {
@@ -438,11 +467,13 @@ export default function ActsStServiceAbilityTest() {
                         + ("json err【") + JSON.stringify(err) + (" 】")
                         + ("json data【") + JSON.stringify(data) + (" 】")
                         + " ,err=" + err + " ,data=" + data);
-                        if (data.event == "ACTS_SerivceAbilityServer_onConnect_PageConnectService_0600") {
+                        if (data.event == "ACTS_SerivceAbilityServer_onConnectCallback_PageConnectService_0600") {
                             featureAbility.disconnectAbility(mConnIdJsAsyncCallback, (err) => {
                                 console.info("=ACTS_JsServiceAbility_0600 disconnectAbility err====>"
                                 + ("json err=") + JSON.stringify(err));
                             })
+                        } else if (data.event == "ACTS_SerivceAbilityServer_onConnect_PageConnectService_0600") {
+                            console.info("ACTS_JsServiceAbility_0600 recive ACTS_SerivceAbilityServer_onConnect_PageConnectService_0600");
                         } else {
                             expect("ACTS_SerivceAbilityServer_onDisConnect_PageConnectService_0600")
                                 .assertEqual(data.event);
@@ -461,6 +492,10 @@ export default function ActsStServiceAbilityTest() {
                     + JSON.stringify(remote) + " , " + remote);
                     console.info('ACTS_JsServiceAbility_0600_onConnectCallback ====> remote is proxy:'
                     + (remote instanceof rpc.RemoteProxy));
+                    commonEvent.publish("ACTS_SerivceAbilityServer_onConnectCallback_PageConnectService_0600", () => {
+                        console.info("=ACTS_JsServiceAbility_0600 publish =======>"
+                        + "ACTS_SerivceAbilityServer_onConnectCallback_PageConnectService_0600");
+                    });
                 }
 
                 function onDisconnectCallback(element) {
@@ -497,10 +532,13 @@ export default function ActsStServiceAbilityTest() {
             }
         })
 
-        /*
-         * @tc.number: ACTS_JsServiceAbility_0900
-         * @tc.name: particleability.startAbility : Use page to test startAbiltiy service.
-         * @tc.desc: Check the return value of the interface (by Promise)
+        /**
+         * @tc.name   ACTS_JsServiceAbility_0900
+         * @tc.number ACTS_JsServiceAbility_0900
+         * @tc.desc   Check the return value of the interface (by Promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_JsServiceAbility_0900', Level.LEVEL0, async function (done) {
             console.info('ACTS_JsServiceAbility_0900====<begin');
@@ -548,11 +586,14 @@ export default function ActsStServiceAbilityTest() {
             }
         })
 
-        /*
-        * @tc.number: ACTS_JsServiceAbility_1000
-        * @tc.name: particleability.startAbility : Use page to test startAbiltiy service.
-        * @tc.desc: Check the return value of the interface (by AsyncCallback)
-        */
+        /**
+         * @tc.name   ACTS_JsServiceAbility_1000
+         * @tc.number ACTS_JsServiceAbility_1000
+         * @tc.desc   Check the return value of the interface (by AsyncCallback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ACTS_JsServiceAbility_1000', Level.LEVEL0, async function (done) {
             console.info('ACTS_JsServiceAbility_1000====<begin');
             await sleep(2000)
@@ -597,10 +638,13 @@ export default function ActsStServiceAbilityTest() {
             }
         })
 
-        /*
-         * @tc.number: ACTS_JsServiceAbility_1300
-         * @tc.name: particleability.ConnectAbility : Connects an ability to a Service ability.
-         * @tc.desc: Check the return value of the interface (by Promise)
+        /**
+         * @tc.name   ACTS_JsServiceAbility_1300
+         * @tc.number ACTS_JsServiceAbility_1300
+         * @tc.desc   Check the return value of the interface (by Promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_JsServiceAbility_1300', Level.LEVEL0, async function (done) {
             console.log('ACTS_JsServiceAbility_1300====<begin');
@@ -616,13 +660,14 @@ export default function ActsStServiceAbilityTest() {
                         + ("json err【") + JSON.stringify(err) + (" 】")
                         + ("json data【") + JSON.stringify(data) + (" 】")
                         + " ,err=" + err + " ,data=" + data);
-                        if (data.event == "ACTS_SerivceAbilityServerSecond_onConnect_ServiceConnectService_1300") {
+                        if (data.event == "ACTS_SerivceAbilityServerSecond_onConnectCallback_ServiceConnectService_1300") {
                             featureAbility.disconnectAbility(mConnIdJsPromise).then((err) => {
                                 console.info("=ACTS_JsServiceAbility_1300 disconnectAbility err====>"
                                 + ("json err=") + JSON.stringify(err));
                             })
-                        }
-                        else {
+                        } else if (data.event == "ACTS_SerivceAbilityServerSecond_onConnect_ServiceConnectService_1300") {
+                            console.info("ACTS_JsServiceAbility_1300 recive ACTS_SerivceAbilityServerSecond_onConnect_ServiceConnectService_1300");
+                        } else {
                             expect("ACTS_SerivceAbilityServerSecond_onDisConnect_ServiceConnectService_1300")
                                 .assertEqual(data.event);
                             unsubscribe("ACTS_JsServiceAbility_1300_unsubscribe", subscriber1300);
@@ -640,6 +685,10 @@ export default function ActsStServiceAbilityTest() {
                     + JSON.stringify(remote) + " , " + remote);
                     console.info('ACTS_JsServiceAbility_1300_onConnectCallback ====> remote is proxy:'
                     + (remote instanceof rpc.RemoteProxy));
+                    commonEvent.publish("ACTS_SerivceAbilityServerSecond_onConnectCallback_ServiceConnectService_1300", () => {
+                        console.info("=ACTS_JsServiceAbility_1300 publish =======>"
+                        + "ACTS_SerivceAbilityServerSecond_onConnectCallback_ServiceConnectService_1300");
+                    });
                 }
 
                 function onDisconnectCallback(element) {
@@ -674,11 +723,14 @@ export default function ActsStServiceAbilityTest() {
             }
         })
 
-        /*
-        * @tc.number: ACTS_JsServiceAbility_1400
-        * @tc.name: particleability.ConnectAbility : Connects an ability to a Service ability.
-        * @tc.desc: Check the return value of the interface (by AsyncCallback)
-        */
+        /**
+         * @tc.name   ACTS_JsServiceAbility_1400
+         * @tc.number ACTS_JsServiceAbility_1400
+         * @tc.desc   Check the return value of the interface (by AsyncCallback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ACTS_JsServiceAbility_1400', Level.LEVEL0, async function (done) {
             console.log('ACTS_JsServiceAbility_1400====<begin');
             try {
@@ -693,11 +745,13 @@ export default function ActsStServiceAbilityTest() {
                         + ("json err【") + JSON.stringify(err) + (" 】")
                         + ("json data【") + JSON.stringify(data) + (" 】")
                         + " ,err=" + err + " ,data=" + data);
-                        if (data.event == "ACTS_SerivceAbilityServerSecond_onConnect_ServiceConnectService_1400") {
+                        if (data.event == "ACTS_SerivceAbilityServerSecond_onConnectCallback_ServiceConnectService_1400") {
                             featureAbility.disconnectAbility(mConnIdJsAsyncCallback, (err) => {
                                 console.info("=ACTS_JsServiceAbility_1400 disconnectAbility err====>"
                                 + ("json err=") + JSON.stringify(err));
                             })
+                        } else if (data.event == "ACTS_SerivceAbilityServerSecond_onConnect_ServiceConnectService_1400") {
+                            console.info("ACTS_JsServiceAbility_1400 recive ACTS_SerivceAbilityServerSecond_onConnect_ServiceConnectService_1400");
                         } else {
                             expect("ACTS_SerivceAbilityServerSecond_onDisConnect_ServiceConnectService_1400")
                                 .assertEqual(data.event);
@@ -716,6 +770,10 @@ export default function ActsStServiceAbilityTest() {
                     + JSON.stringify(remote) + " , " + remote);
                     console.info('ACTS_JsServiceAbility_1400_onConnectCallback ====> remote is proxy:'
                     + (remote instanceof rpc.RemoteProxy));
+                    commonEvent.publish("ACTS_SerivceAbilityServerSecond_onConnectCallback_ServiceConnectService_1400", () => {
+                        console.info("=ACTS_JsServiceAbility_1400 publish =======>"
+                        + "ACTS_SerivceAbilityServerSecond_onConnectCallback_ServiceConnectService_1400");
+                    });
                 }
 
                 function onDisconnectCallback(element) {
@@ -747,10 +805,13 @@ export default function ActsStServiceAbilityTest() {
             }
         })
 
-        /*
-         * @tc.number: ACTS_JsServiceAbility_1500
-         * @tc.name: particleability.ConnectAbility : Connects an ability to a Service ability.
-         * @tc.desc: Check the return value of the interface (by Promise)
+        /**
+         * @tc.name   ACTS_JsServiceAbility_1500
+         * @tc.number ACTS_JsServiceAbility_1500
+         * @tc.desc   Check the return value of the interface (by Promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_JsServiceAbility_1500', Level.LEVEL0, async function (done) {
             console.log('ACTS_JsServiceAbility_1500====<begin');
@@ -766,7 +827,7 @@ export default function ActsStServiceAbilityTest() {
                         + ("json err【") + JSON.stringify(err) + (" 】")
                         + ("json data【") + JSON.stringify(data) + (" 】")
                         + " ,err=" + err + " ,data=" + data);
-                        if (data.event == "ACTS_SerivceAbilityServerSecond_onConnect_ServiceConnectService_1500") {
+                        if (data.event == "ACTS_SerivceAbilityServerSecond_onConnectCallback_ServiceConnectService_1500") {
                             featureAbility.disconnectAbility(mConnIdJsPromise).then((err) => {
                                 console.info('ACTS_JsServiceAbility_1500===disconnectAbility data:' +
                                 JSON.stringify(err));
@@ -775,6 +836,8 @@ export default function ActsStServiceAbilityTest() {
                                 console.info('ACTS_JsServiceAbility_1500==== err: ' + JSON.stringify(err));
                                 done();
                             })
+                        } else if (data.event == "ACTS_SerivceAbilityServerSecond_onConnect_ServiceConnectService_1500") {
+                            console.info("ACTS_JsServiceAbility_1500 recive ACTS_SerivceAbilityServerSecond_onConnect_ServiceConnectService_1500");
                         } else {
                             expect("ACTS_SerivceAbilityServer_onDisConnect_ServiceConnectService_1500")
                                 .assertEqual(data.event);
@@ -791,6 +854,10 @@ export default function ActsStServiceAbilityTest() {
                     + JSON.stringify(element) + " , " + element);
                     console.info('ACTS_JsServiceAbility_1500_onConnectCallback ====> remote='
                     + JSON.stringify(remote) + " , " + remote);
+                    commonEvent.publish("ACTS_SerivceAbilityServerSecond_onConnectCallback_ServiceConnectService_1500", () => {
+                        console.info("=ACTS_JsServiceAbility_1500 publish =======>"
+                        + "ACTS_SerivceAbilityServerSecond_onConnectCallback_ServiceConnectService_1500");
+                    });
                 }
 
                 function onDisconnectCallback(element) {
@@ -825,10 +892,13 @@ export default function ActsStServiceAbilityTest() {
             }
         })
 
-        /*
-         * @tc.number: ACTS_JsServiceAbility_1600
-         * @tc.name: particleability.ConnectAbility : Connects an ability to a Service ability.
-         * @tc.desc: Check the return value of the interface (by Promise)
+        /**
+         * @tc.name   ACTS_JsServiceAbility_1600
+         * @tc.number ACTS_JsServiceAbility_1600
+         * @tc.desc   Check the return value of the interface (by Promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_JsServiceAbility_1600', Level.LEVEL0, async function (done) {
           console.log('ACTS_JsServiceAbility_1600====<begin');
@@ -865,10 +935,13 @@ export default function ActsStServiceAbilityTest() {
           }
       })
 
-        /*
-         * @tc.number: ACTS_JsServiceAbility_1700
-         * @tc.name: particleability.ConnectAbility : Connects an ability to a Service ability.
-         * @tc.desc: Check the return value of the interface (by Promise)
+        /**
+         * @tc.name   ACTS_JsServiceAbility_1700
+         * @tc.number ACTS_JsServiceAbility_1700
+         * @tc.desc   Check the return value of the interface (by Promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_JsServiceAbility_1700', Level.LEVEL0, async function (done) {
           console.log('ACTS_JsServiceAbility_1700====<begin');

@@ -26,14 +26,14 @@ export default function waterFlowScrollToIndex() {
       await Utils.pushPage(`waterflow/WaterFlowEmptyTest`)
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_WATERFLOW_SCROLL_TO_INDEX_0100
-    * @tc.name       : testWaterFlowScrollToIndex001
-    * @tc.desc       : test scrollToIndex normal index and normal align
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWaterFlowScrollToIndex001
+     * @tc.number SUB_ARKUI_CAPI_WATERFLOW_SCROLL_TO_INDEX_0100
+     * @tc.desc   test scrollToIndex normal index and normal align
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWaterFlowScrollToIndex001', Level.LEVEL1, async (done: Function) => {
       let option: WaterFlowScrollToIndexData =
         new WaterFlowScrollToIndexData('WaterFlowScrollToIndexTest001', 30, ScrollAlign.START)
@@ -46,14 +46,14 @@ export default function waterFlowScrollToIndex() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_WATERFLOW_SCROLL_TO_INDEX_0200
-    * @tc.name       : testWaterFlowScrollToIndex002
-    * @tc.desc       : test scrollToIndex downOverflow index and normal align
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWaterFlowScrollToIndex002
+     * @tc.number SUB_ARKUI_CAPI_WATERFLOW_SCROLL_TO_INDEX_0200
+     * @tc.desc   test scrollToIndex downOverflow index and normal align
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWaterFlowScrollToIndex002', Level.LEVEL1, async (done: Function) => {
       let option: WaterFlowScrollToIndexData =
         new WaterFlowScrollToIndexData('WaterFlowScrollToIndexTest002', -100, ScrollAlign.START)
@@ -66,14 +66,14 @@ export default function waterFlowScrollToIndex() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_WATERFLOW_SCROLL_TO_INDEX_0300
-    * @tc.name       : testWaterFlowScrollToIndex003
-    * @tc.desc       : test scrollToIndex upOverflow index and normal align
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWaterFlowScrollToIndex003
+     * @tc.number SUB_ARKUI_CAPI_WATERFLOW_SCROLL_TO_INDEX_0300
+     * @tc.desc   test scrollToIndex upOverflow index and normal align
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWaterFlowScrollToIndex003', Level.LEVEL1, async (done: Function) => {
       let option: WaterFlowScrollToIndexData =
         new WaterFlowScrollToIndexData('WaterFlowScrollToIndexTest003', 100, ScrollAlign.START)
@@ -86,14 +86,14 @@ export default function waterFlowScrollToIndex() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_WATERFLOW_SCROLL_TO_INDEX_0400
-    * @tc.name       : testWaterFlowScrollToIndex004
-    * @tc.desc       : test scrollToIndex normal index and normal align
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWaterFlowScrollToIndex004
+     * @tc.number SUB_ARKUI_CAPI_WATERFLOW_SCROLL_TO_INDEX_0400
+     * @tc.desc   test scrollToIndex normal index and normal align
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWaterFlowScrollToIndex004', Level.LEVEL1, async (done: Function) => {
       let option: WaterFlowScrollToIndexData =
         new WaterFlowScrollToIndexData('WaterFlowScrollToIndexTest004', 40, ScrollAlign.CENTER)
@@ -106,14 +106,14 @@ export default function waterFlowScrollToIndex() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_WATERFLOW_SCROLL_TO_INDEX_0500
-    * @tc.name       : testWaterFlowScrollToIndex005
-    * @tc.desc       : test scrollToIndex normal index and normal align
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWaterFlowScrollToIndex005
+     * @tc.number SUB_ARKUI_CAPI_WATERFLOW_SCROLL_TO_INDEX_0500
+     * @tc.desc   test scrollToIndex normal index and normal align
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWaterFlowScrollToIndex005', Level.LEVEL1, async (done: Function) => {
       let option: WaterFlowScrollToIndexData =
         new WaterFlowScrollToIndexData('WaterFlowScrollToIndexTest005', 20, ScrollAlign.END)
@@ -126,14 +126,14 @@ export default function waterFlowScrollToIndex() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_WATERFLOW_SCROLL_TO_INDEX_0600
-    * @tc.name       : testWaterFlowScrollToIndex006
-    * @tc.desc       : test scrollToIndex normal index and normal align
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWaterFlowScrollToIndex006
+     * @tc.number SUB_ARKUI_CAPI_WATERFLOW_SCROLL_TO_INDEX_0600
+     * @tc.desc   test scrollToIndex normal index and normal align
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWaterFlowScrollToIndex006', Level.LEVEL1, async (done: Function) => {
       let option: WaterFlowScrollToIndexData =
         new WaterFlowScrollToIndexData('WaterFlowScrollToIndexTest006', 40, ScrollAlign.AUTO)
@@ -146,14 +146,14 @@ export default function waterFlowScrollToIndex() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_WATERFLOW_SCROLL_TO_INDEX_0700
-    * @tc.name       : testWaterFlowScrollToIndex007
-    * @tc.desc       : test scrollToIndex normal index and downOverflow align
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWaterFlowScrollToIndex007
+     * @tc.number SUB_ARKUI_CAPI_WATERFLOW_SCROLL_TO_INDEX_0700
+     * @tc.desc   test scrollToIndex normal index and downOverflow align
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWaterFlowScrollToIndex007', Level.LEVEL1, async (done: Function) => {
       let option: WaterFlowScrollToIndexData = new WaterFlowScrollToIndexData('WaterFlowScrollToIndexTest007', 20, -1)
       await Utils.pushPageByParams(`waterflow/WaterFlowScrollToIndexTest`, option)
@@ -165,14 +165,14 @@ export default function waterFlowScrollToIndex() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_WATERFLOW_SCROLL_TO_INDEX_0800
-    * @tc.name       : testWaterFlowScrollToIndex008
-    * @tc.desc       : test scrollToIndex normal index and upOverflow align
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWaterFlowScrollToIndex008
+     * @tc.number SUB_ARKUI_CAPI_WATERFLOW_SCROLL_TO_INDEX_0800
+     * @tc.desc   test scrollToIndex normal index and upOverflow align
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWaterFlowScrollToIndex008', Level.LEVEL1, async (done: Function) => {
       let option: WaterFlowScrollToIndexData = new WaterFlowScrollToIndexData('WaterFlowScrollToIndexTest008', 40, 4)
       await Utils.pushPageByParams(`waterflow/WaterFlowScrollToIndexTest`, option)

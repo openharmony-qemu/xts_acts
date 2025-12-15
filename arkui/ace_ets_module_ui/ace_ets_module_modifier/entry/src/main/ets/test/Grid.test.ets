@@ -42,12 +42,12 @@ export default function gridJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0100
      * @tc.number GridJsunit_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set friction values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set friction values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0100] START');
@@ -62,12 +62,12 @@ export default function gridJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0101
      * @tc.number GridJsunit_0101
-     * @tc.name Test the properties of components
-     * @tc.desc Set enableScrollInteraction values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set enableScrollInteraction values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0101', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0101] START');
@@ -82,12 +82,12 @@ export default function gridJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0103
      * @tc.number GridJsunit_0103
-     * @tc.name Test the properties of components
-     * @tc.desc Set edgeEffect values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set edgeEffect values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0103', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0103] START');
@@ -102,12 +102,12 @@ export default function gridJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0104
      * @tc.number GridJsunit_0104
-     * @tc.name Test the properties of components
-     * @tc.desc Set rowsTemplate values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set rowsTemplate values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0104', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0104] START');
@@ -122,12 +122,12 @@ export default function gridJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0105
      * @tc.number GridJsunit_0105
-     * @tc.name Test the properties of components
-     * @tc.desc Set columnsTemplate values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set columnsTemplate values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0105', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0105] START');
@@ -142,12 +142,12 @@ export default function gridJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0106
      * @tc.number GridJsunit_0106
-     * @tc.name Test the properties of components
-     * @tc.desc Set columnsGap values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set columnsGap values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0106', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0106] START');
@@ -161,12 +161,12 @@ export default function gridJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0107
      * @tc.number GridJsunit_0107
-     * @tc.name Test the properties of components
-     * @tc.desc Set rowsGap values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set rowsGap values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0107', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0107] START');
@@ -181,12 +181,12 @@ export default function gridJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0108
      * @tc.number GridJsunit_0108
-     * @tc.name Test the properties of components
-     * @tc.desc Set scrollBarWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set scrollBarWidth values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0108', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0108] START');
@@ -201,12 +201,12 @@ export default function gridJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0109
      * @tc.number GridJsunit_0109
-     * @tc.name Test the properties of components
-     * @tc.desc Set scrollBarColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set scrollBarColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0109', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0109] START');
@@ -221,12 +221,12 @@ export default function gridJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0110
      * @tc.number GridJsunit_0110
-     * @tc.name Test the properties of components
-     * @tc.desc Set scrollBar values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set scrollBar values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0110', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0110] START');
@@ -241,12 +241,12 @@ export default function gridJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0111
      * @tc.number GridJsunit_0111
-     * @tc.name Test the properties of components
-     * @tc.desc Set editMode values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set editMode values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0111', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0111] START');
@@ -261,12 +261,12 @@ export default function gridJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0113
      * @tc.number GridJsunit_0113
-     * @tc.name Test the properties of components
-     * @tc.desc Set multiSelectable values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set multiSelectable values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0113', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0113] START');
@@ -281,12 +281,12 @@ export default function gridJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0114
      * @tc.number GridJsunit_0114
-     * @tc.name Test the properties of components
-     * @tc.desc Set maxCount values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set maxCount values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0114', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0114] START');
@@ -301,12 +301,12 @@ export default function gridJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0115
      * @tc.number GridJsunit_0115
-     * @tc.name Test the properties of components
-     * @tc.desc Set minCount values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set minCount values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0115', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0115] START');
@@ -321,12 +321,12 @@ export default function gridJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0116
      * @tc.number GridJsunit_0116
-     * @tc.name Test the properties of components
-     * @tc.desc Set cellLength values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set cellLength values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0116', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0116] START');
@@ -341,12 +341,12 @@ export default function gridJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0117
      * @tc.number GridJsunit_0117
-     * @tc.name Test the properties of components
-     * @tc.desc Set layoutDirection values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set layoutDirection values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0117', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0117] START');
@@ -361,12 +361,12 @@ export default function gridJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0118
      * @tc.number GridJsunit_0118
-     * @tc.name Test the properties of components
-     * @tc.desc Set supportAnimation values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set supportAnimation values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0118', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0118] START');
@@ -381,12 +381,12 @@ export default function gridJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0120
      * @tc.number GridJsunit_0120
-     * @tc.name Test the properties of components
-     * @tc.desc Set cachedCount values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set cachedCount values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0120', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0120] START');
@@ -401,12 +401,12 @@ export default function gridJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0119
      * @tc.number GridJsunit_0119
-     * @tc.name Test the properties of components
-     * @tc.desc Change rowsGap values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change rowsGap values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0119', Level.LEVEL0, async (done: Function) => {
       console.info('GridJsunit_0119 START');

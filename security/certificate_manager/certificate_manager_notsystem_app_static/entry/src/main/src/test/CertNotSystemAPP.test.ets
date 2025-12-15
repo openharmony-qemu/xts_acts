@@ -43,12 +43,12 @@ export default function certManagerNotSystemAPPTestUnit() {
     })
 
     /**
+     * @tc.name   Security_CertManager_NotSystemApp_Func_static_0100
      * @tc.number Security_CertManager_NotSystemApp_Func_static_0100
-     * @tc.name Security_CertManager_NotSystemApp_Func_static_0100
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level0
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Security_CertManager_NotSystemApp_Func_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -63,12 +63,12 @@ export default function certManagerNotSystemAPPTestUnit() {
     })
 
     /**
+     * @tc.name   Security_CertManager_NotSystemApp_Func_static_0200
      * @tc.number Security_CertManager_NotSystemApp_Func_static_0200
-     * @tc.name Security_CertManager_NotSystemApp_Func_static_0200
-     * @tc.desc use asynccallback type
-     * @tc.size SmallTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use asynccallback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_CertManager_NotSystemApp_Func_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -91,12 +91,12 @@ export default function certManagerNotSystemAPPTestUnit() {
     })
 
     /**
+     * @tc.name   SUB_Security_CertManager_SysCertJsApi_NotSystemApp_Func_static_0200
      * @tc.number SUB_Security_CertManager_SysCertJsApi_NotSystemApp_Func_static_0200
-     * @tc.name SUB_Security_CertManager_SysCertJsApi_NotSystemApp_Func_static_0200
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_SysCertJsApi_NotSystemApp_Func_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {

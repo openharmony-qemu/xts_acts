@@ -55,12 +55,14 @@ export default function CustomLayoutUniqueidTest() {
       done();
     });
 
-    /* *
-    * @tc.number: CustomLayoutUniqueidTest_0100
-    * @tc.name  : CustomLayoutUniqueidTest_0100
-    * @tc.desc  : Test uniqueId in onPlaceChildren. 
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   CustomLayoutUniqueidTest_0100
+     * @tc.number CustomLayoutUniqueidTest_0100
+     * @tc.desc   Test uniqueId in onPlaceChildren.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('CustomLayoutUniqueidTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[CustomLayoutUniqueidTest_0100] START');
       await CommonFunc.sleep(2000);
@@ -86,12 +88,14 @@ export default function CustomLayoutUniqueidTest() {
       done();
     });
 
-    /* *
-    * @tc.number: CustomLayoutUniqueidTest_0200
-    * @tc.name  : CustomLayoutUniqueidTest_0200
-    * @tc.desc  : Test uniqueId in onMeasureSize. 
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   CustomLayoutUniqueidTest_0200
+     * @tc.number CustomLayoutUniqueidTest_0200
+     * @tc.desc   Test uniqueId in onMeasureSize.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('CustomLayoutUniqueidTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('CustomLayoutUniqueidTest_0200 START');
       await CommonFunc.sleep(1000);

@@ -26,52 +26,52 @@ export default function imageSweepGradientTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_SWEEPGRADIENT_0100
-     * @tc.name       : testImageSweepGradient001
-     * @tc.desc       : testing sweepGradient for image with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageSweepGradient001
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_SWEEPGRADIENT_0100
+     * @tc.desc   testing sweepGradient for image with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSweepGradient001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSweepGradient001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_SWEEPGRADIENT_0200
-     * @tc.name       : testImageSweepGradient002
-     * @tc.desc       : testing sweepGradient for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageSweepGradient002
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_SWEEPGRADIENT_0200
+     * @tc.desc   testing sweepGradient for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSweepGradient002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSweepGradient002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_SWEEPGRADIENT_0300
-     * @tc.name       : testImageSweepGradient003
-     * @tc.desc       : testing sweepGradient for image with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testImageSweepGradient003
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_SWEEPGRADIENT_0300
+     * @tc.desc   testing sweepGradient for image with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSweepGradient003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSweepGradient003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_SWEEPGRADIENT_0400
-     * @tc.name       : testImageSweepGradient004
-     * @tc.desc       : testing sweepGradient for image with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageSweepGradient004
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_SWEEPGRADIENT_0400
+     * @tc.desc   testing sweepGradient for image with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSweepGradient004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSweepGradient004()).assertEqual(0)

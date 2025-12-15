@@ -51,7 +51,6 @@ describe('rdbStorePluginLibsTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testPluginLibs0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PluginLibsEtsAPITest_0100
      * @tc.desc   Test pluginLibs are empty
@@ -72,7 +71,6 @@ describe('rdbStorePluginLibsTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testPluginLibs0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PluginLibsEtsAPITest_0200
      * @tc.desc   Test pluginLib is current path
@@ -94,7 +92,6 @@ describe('rdbStorePluginLibsTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testPluginLibs0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PluginLibsEtsAPITest_0300
      * @tc.desc   Test pluginLib is no exist
@@ -116,7 +113,6 @@ describe('rdbStorePluginLibsTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testPluginLibs0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PluginLibsEtsAPITest_0400
      * @tc.desc   Test pluginLib as other app path
@@ -138,7 +134,6 @@ describe('rdbStorePluginLibsTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testPluginLibs0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PluginLibsEtsAPITest_0500
      * @tc.desc   Test pluginLib as current app dir
@@ -162,7 +157,6 @@ describe('rdbStorePluginLibsTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testPluginLibs0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PluginLibsEtsAPITest_0600
      * @tc.desc   Test plugin libs count exceeds 16
@@ -185,7 +179,6 @@ describe('rdbStorePluginLibsTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testPluginLibs0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PluginLibsEtsAPITest_0700
      * @tc.desc   Test plugin libs count exceeds 16
@@ -207,7 +200,6 @@ describe('rdbStorePluginLibsTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testPluginLibs0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PluginLibsEtsAPITest_0800
      * @tc.desc   Test plugin libs count exceeds 16
@@ -229,7 +221,6 @@ describe('rdbStorePluginLibsTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testPluginLibs0009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PluginLibsEtsAPITest_0900
      * @tc.desc   Test plugin libs count exceeds 16
@@ -249,7 +240,6 @@ describe('rdbStorePluginLibsTest', function () {
         console.log(TAG + "*************  testPluginLibs0009 end  *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testPluginLibs0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PluginLibsEtsAPITest_1000
      * @tc.desc   Test pluginLib as current app dir
@@ -282,7 +272,6 @@ describe('rdbStorePluginLibsTest', function () {
         console.log(TAG + "*************  testPluginLibs0010 end  *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testPluginLibs0011
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PluginLibsEtsAPITest_1100
      * @tc.desc   Test pluginLib as current app dir

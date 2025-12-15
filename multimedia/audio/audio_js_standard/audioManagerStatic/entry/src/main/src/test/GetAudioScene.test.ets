@@ -58,12 +58,12 @@ export default function getAudioSceneApi12() {
 
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_STATIC_0100
-     * @tc.desc        mute - AudioScene - AsyncCallback - AudioScene
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_STATIC_0100
+     * @tc.desc   mute - AudioScene - AsyncCallback - AudioScene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  (done: () => void): void => {
       try {
@@ -87,12 +87,12 @@ export default function getAudioSceneApi12() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_STATIC_0200
-     * @tc.desc        mute - AudioScene - Promise - AudioScene
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_STATIC_0200
+     * @tc.desc   mute - AudioScene - Promise - AudioScene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -111,12 +111,12 @@ export default function getAudioSceneApi12() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_STATIC_0300
-     * @tc.desc        mute - AudioScene - getAudioSceneSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_STATIC_0300
+     * @tc.desc   mute - AudioScene - getAudioSceneSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  (done: () => void): void => {
       try {

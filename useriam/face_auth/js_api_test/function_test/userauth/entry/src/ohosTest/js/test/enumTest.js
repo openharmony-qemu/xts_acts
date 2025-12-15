@@ -32,7 +32,6 @@ describe('userAuthTestEnum', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   Security_IAM_Face_JSAPI_Function_Enum_0100
      * @tc.number Security_IAM_Face_JSAPI_Function_Enum_0100
      * @tc.desc   Security_IAM_Face_JSAPI_Function_Enum_0100
@@ -46,7 +45,6 @@ describe('userAuthTestEnum', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   Security_IAM_Face_JSAPI_Function_Enum_0200
      * @tc.number Security_IAM_Face_JSAPI_Function_Enum_0200
      * @tc.desc   Security_IAM_Face_JSAPI_Function_Enum_0200
@@ -60,7 +58,6 @@ describe('userAuthTestEnum', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   Security_IAM_Face_JSAPI_Function_Enum_0300
      * @tc.number Security_IAM_Face_JSAPI_Function_Enum_0300
      * @tc.desc   Security_IAM_Face_JSAPI_Function_Enum_0300
@@ -74,7 +71,6 @@ describe('userAuthTestEnum', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   Security_IAM_Face_JSAPI_Function_Enum_0400
      * @tc.number Security_IAM_Face_JSAPI_Function_Enum_0400
      * @tc.desc   Security_IAM_Face_JSAPI_Function_Enum_0400
@@ -88,7 +84,6 @@ describe('userAuthTestEnum', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   Security_IAM_Face_JSAPI_Function_Enum_0500
      * @tc.number Security_IAM_Face_JSAPI_Function_Enum_0500
      * @tc.desc   Security_IAM_Face_JSAPI_Function_Enum_0500
@@ -102,7 +97,6 @@ describe('userAuthTestEnum', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   Security_IAM_Face_JSAPI_Function_Enum_0600
      * @tc.number Security_IAM_Face_JSAPI_Function_Enum_0600
      * @tc.desc   Security_IAM_Face_JSAPI_Function_Enum_0600
@@ -116,7 +110,6 @@ describe('userAuthTestEnum', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   Security_IAM_Face_JSAPI_Function_Enum_0700
      * @tc.number Security_IAM_Face_JSAPI_Function_Enum_0700
      * @tc.desc   Security_IAM_Face_JSAPI_Function_Enum_0700
@@ -130,7 +123,6 @@ describe('userAuthTestEnum', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   Security_IAM_Face_JSAPI_Function_Enum_0800
      * @tc.number Security_IAM_Face_JSAPI_Function_Enum_0800
      * @tc.desc   Security_IAM_Face_JSAPI_Function_Enum_0800
@@ -144,7 +136,6 @@ describe('userAuthTestEnum', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   Security_IAM_Face_JSAPI_Function_Enum_0900
      * @tc.number Security_IAM_Face_JSAPI_Function_Enum_0900
      * @tc.desc   Security_IAM_Face_JSAPI_Function_Enum_0900
@@ -158,7 +149,6 @@ describe('userAuthTestEnum', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   Security_IAM_Face_JSAPI_Function_Enum_1000
      * @tc.number Security_IAM_Face_JSAPI_Function_Enum_1000
      * @tc.desc   Security_IAM_Face_JSAPI_Function_Enum_1000
@@ -172,7 +162,6 @@ describe('userAuthTestEnum', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   Security_IAM_Face_JSAPI_Function_Enum_1100
      * @tc.number Security_IAM_Face_JSAPI_Function_Enum_1100
      * @tc.desc   Security_IAM_Face_JSAPI_Function_Enum_1100

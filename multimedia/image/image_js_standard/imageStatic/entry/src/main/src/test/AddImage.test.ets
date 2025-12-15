@@ -71,10 +71,10 @@ export default function addImage() {
       let offset: int = 0;
       if (type == "sourceOpts" && opts != undefined) {
         console.info(`${testNum} have sourceopts`);
-        incSouce = image.CreateIncrementalSource(new ArrayBuffer(1), opts);
+        incSouce = image.createIncrementalSource(new ArrayBuffer(1), opts);
       } else {
         console.info(`${testNum} no sourceopts`);
-        incSouce = image.CreateIncrementalSource(new ArrayBuffer(1));
+        incSouce = image.createIncrementalSource(new ArrayBuffer(1));
       }
       let ret: boolean;
       let isFinished: boolean = false;
@@ -85,17 +85,24 @@ export default function addImage() {
           isFinished = true;
         }
         try {
-          await incSouce!.updateData(oneStep, isFinished, 0, oneStep.byteLength as int);
-          offset = offset + oneStep.byteLength as int;
-          console.info(`${testNum} 0003 ` + offset);
-          ret = true;
+          if (incSouce == undefined) {
+            console.info(`${testNum} createIncrementalSource failed`);
+            ret = false;
+            expect(false).assertTrue();
+            done();
+          } else {
+            await incSouce!.updateData(oneStep, isFinished, 0, oneStep.byteLength as int);
+            offset = offset + oneStep.byteLength as int;
+            console.info(`${testNum} 0003 ` + offset);
+            ret = true;
+          }
         } catch (error) {
           console.info(`${testNum} updateData failed`);
           expect(false).assertTrue();
           ret = false;
         }
       }
-      if (ret) {
+      if (ret && incSouce != undefined) {
         console.info(`${testNum} updateData success `);
         let decodingOptions: image.DecodingOptions = {
           sampleSize: 1
@@ -127,9 +134,9 @@ export default function addImage() {
       let bufferSize = testimagebuffer.byteLength;
       let offset = 0;
       if (type == "sourceOpts" && opts != undefined) {
-        incSouce = image.CreateIncrementalSource(new ArrayBuffer(1), opts);
+        incSouce = image.createIncrementalSource(new ArrayBuffer(1), opts);
       } else {
-        incSouce = image.CreateIncrementalSource(new ArrayBuffer(1));
+        incSouce = image.createIncrementalSource(new ArrayBuffer(1));
       }
       let ret: boolean;
       let isFinished: boolean = false;
@@ -139,15 +146,22 @@ export default function addImage() {
         if (oneStep.byteLength < bufferSize) {
           isFinished = true;
         }
-        ret = await new Promise<boolean>((res) => {
-          incSouce!.updateData(oneStep, isFinished, 0, oneStep.byteLength as int, (err: BusinessError | null) => {
-            if (err && err.code) {
-              res(false);
-            } else {
-              res(true);
-            }
+        if (incSouce == undefined) {
+          console.info(`${testNum} createIncrementalSource failed`);
+          ret = false;
+          expect(false).assertTrue();
+          done();
+        } else {
+          ret = await new Promise<boolean>((res) => {
+            incSouce!.updateData(oneStep, isFinished, 0, oneStep.byteLength as int, (err: BusinessError | null) => {
+              if (err && err.code) {
+                res(false);
+              } else {
+                res(true);
+              }
+            });
           });
-        });
+        }
         if (!ret) {
           console.info(`${testNum} updateData failed`);
           expect(ret).assertTrue();
@@ -156,7 +170,7 @@ export default function addImage() {
         offset = offset + oneStep.byteLength as int;
         console.info(`${testNum} 0003 ` + offset);
       }
-      if (ret) {
+      if (ret && incSouce != undefined) {
         console.info(`${testNum} updateData success `);
         let decodingOptions: image.DecodingOptions = {
           sampleSize: 1
@@ -177,15 +191,12 @@ export default function addImage() {
       }
     }
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_PROMISE_STATIC_0100
-      * @tc.desc    createIncrementalSource-updateData-png-promise
-      *                 1.create imagesource
-      *                 2.update data
-      *                 3.create pixelmap
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_PROMISE_STATIC_0100
+     * @tc.desc   createIncrementalSource-updateData-png-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let sourceSize: image.Size ={ height: 4, width: 6 };
@@ -198,15 +209,12 @@ export default function addImage() {
         "SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_PROMISE_STATIC_0100", "noSourceOpts", undefined);
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_PROMISE_STATIC_0200
-      * @tc.desc    createIncrementalSource-updateData-png-promise
-      *                 1.create imagesource
-      *                 2.update data
-      *                 3.create pixelmap
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_PROMISE_STATIC_0200
+     * @tc.desc   createIncrementalSource-updateData-png-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_PROMISE_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let sourceSize: image.Size ={ height: 4, width: 6 };
@@ -219,15 +227,12 @@ export default function addImage() {
         "SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_PROMISE_STATIC_0200", "sourceOpts", opts);
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_CALLBACK_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_CALLBACK_STATIC_0100
-      * @tc.desc    createIncrementalSource-updateData-png-callback
-      *                 1.create imagesource
-      *                 2.update data
-      *                 3.create pixelmap
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_CALLBACK_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_CALLBACK_STATIC_0100
+     * @tc.desc   createIncrementalSource-updateData-png-callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_CALLBACK_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let sourceSize: image.Size ={ height: 4, width: 6 };
@@ -240,15 +245,12 @@ export default function addImage() {
         "noSourceOpts", undefined);
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_CALLBACK_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_CALLBACK_STATIC_0200
-      * @tc.desc    createIncrementalSource-updateData-png-callback
-      *                 1.create imagesource
-      *                 2.update data
-      *                 3.create pixelmap
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_CALLBACK_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_CALLBACK_STATIC_0200
+     * @tc.desc   createIncrementalSource-updateData-png-callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_CALLBACK_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let sourceSize: image.Size ={ height: 4, width: 6 };

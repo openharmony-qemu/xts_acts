@@ -45,9 +45,12 @@ export default function rotateAngleOptionsTest() {
     });
 
     /**
+     * @tc.name   rotateAngleOptionsTest_0100
      * @tc.number rotateAngleOptionsTest_0100
-     * @tc.name rotateAngleOptionsTest_0100
-     * @tc.desc The rotateAngleOptions(angleX,Y,Z, centerX,Y,Z, perspective) value is number type
+     * @tc.desc   The rotateAngleOptions(angleX,Y,Z, centerX,Y,Z, perspective) value is number type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rotateAngleOptionsTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('rotateAngleOptionsTest_0100 START');
@@ -75,9 +78,12 @@ export default function rotateAngleOptionsTest() {
     });
 
     /**
+     * @tc.name   rotateAngleOptionsTest_0200
      * @tc.number rotateAngleOptionsTest_0200
-     * @tc.name rotateAngleOptionsTest_0200
-     * @tc.desc The rotateAngleOptions(angleX,Y,Z, centerX,Y,Z, perspective) value is string type
+     * @tc.desc   The rotateAngleOptions(angleX,Y,Z, centerX,Y,Z, perspective) value is string type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rotateAngleOptionsTest_0200', Level.LEVEL2, async (done: Function) => {
       console.info('rotateAngleOptionsTest_0200 START');
@@ -101,9 +107,12 @@ export default function rotateAngleOptionsTest() {
     });
 
     /**
+     * @tc.name   rotateAngleOptionsTest_0300
      * @tc.number rotateAngleOptionsTest_0300
-     * @tc.name rotateAngleOptionsTest_0300
-     * @tc.desc test -angleX,-angleY,-angleZ
+     * @tc.desc   test -angleX,-angleY,-angleZ
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rotateAngleOptionsTest_0300', Level.LEVEL2, async (done: Function) => {
       console.info('rotateAngleOptionsTest_0300 START');
@@ -122,9 +131,12 @@ export default function rotateAngleOptionsTest() {
     });
 
     /**
+     * @tc.name   rotateAngleOptionsTest_0400
      * @tc.number rotateAngleOptionsTest_0400
-     * @tc.name rotateAngleOptionsTest_0400
-     * @tc.desc test rotateAngleOptions is null value
+     * @tc.desc   test rotateAngleOptions is null value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rotateAngleOptionsTest_0400', Level.LEVEL2, async (done: Function) => {
       console.info('rotateAngleOptionsTest_0400 START');
@@ -152,9 +164,12 @@ export default function rotateAngleOptionsTest() {
     });
 
     /**
+     * @tc.name   rotateAngleOptionsTest_0500
      * @tc.number rotateAngleOptionsTest_0500
-     * @tc.name rotateAngleOptionsTest_0500
-     * @tc.desc test the value of rotateAngleOptions(angleX,Y,Z, centerX,Y,Z, perspective) is undefined
+     * @tc.desc   test the value of rotateAngleOptions(angleX,Y,Z, centerX,Y,Z, perspective) is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rotateAngleOptionsTest_0500', Level.LEVEL2, async (done: Function) => {
       console.info('rotateAngleOptionsTest_0500 START');

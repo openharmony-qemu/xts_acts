@@ -56,12 +56,12 @@ export default function webRequestHeaderList() {
     })
 
     /**
+     * @tc.name   testWebView_warmupServiceWorker0002
      * @tc.number SUB_ACE_WEB_WarmupServiceWorker_0002
-     * @tc.name testWebView_warmupServiceWorker0002
-     * @tc.desc test warmupServiceWorker
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test warmupServiceWorker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_warmupServiceWorker0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -82,12 +82,12 @@ export default function webRequestHeaderList() {
     })
 
     /**
+     * @tc.name   testWebView_warmupServiceWorker0003
      * @tc.number SUB_ACE_WEB_WarmupServiceWorker_0003
-     * @tc.name testWebView_warmupServiceWorker0003
-     * @tc.desc test warmupServiceWorker
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test warmupServiceWorker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_warmupServiceWorker0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.

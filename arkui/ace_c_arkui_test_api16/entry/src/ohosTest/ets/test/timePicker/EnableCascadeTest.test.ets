@@ -24,13 +24,13 @@ export default function TimePickerTest() {
       done();
     })
 
-    /*
-     * @tc.number: EnableCascadeTest001
-     * @tc.name: EnableCascadeTest001
-     * @tc.desc: TimePicker enableCascade value true
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   EnableCascadeTest001
+     * @tc.number EnableCascadeTest001
+     * @tc.desc   TimePicker enableCascade value true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('EnableCascadeTest001', Level.LEVEL1, async (done: Function) => {
       console.info('EnableCascadeTest001 START');
@@ -47,13 +47,13 @@ export default function TimePickerTest() {
       done();
     })
 
-    /*
-     * @tc.number: EnableCascadeTest002
-     * @tc.name: EnableCascadeTest002
-     * @tc.desc: TimePicker enableCascade value false
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   EnableCascadeTest002
+     * @tc.number EnableCascadeTest002
+     * @tc.desc   TimePicker enableCascade value false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('EnableCascadeTest002', Level.LEVEL1, async (done: Function) => {
       console.info('EnableCascadeTest001 START');
@@ -70,14 +70,14 @@ export default function TimePickerTest() {
       done();
     })
 
-    /*
-    * @tc.number: EnableCascadeTest003
-    * @tc.name: EnableCascadeTest003
-    * @tc.desc: TimePicker enableCascade value null
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   EnableCascadeTest003
+     * @tc.number EnableCascadeTest003
+     * @tc.desc   TimePicker enableCascade value null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('EnableCascadeTest003', Level.LEVEL1, async (done: Function) => {
       console.info('EnableCascadeTest003 START');
       let PAGE_TAG = 'EnableCascadeTest';

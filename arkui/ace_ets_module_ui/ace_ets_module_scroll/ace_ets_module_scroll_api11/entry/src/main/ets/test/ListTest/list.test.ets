@@ -42,14 +42,15 @@ export default function listSContentTest() {
       console.info("listSContent after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_listSContentTest_0100
-     * @tc.desc      test contentStartOffset
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   listSContentTest_0100
+     * @tc.number listSContentTest_0100
+     * @tc.desc   listSContentTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('listSContentTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[listSContentTest_0100] START');
       await CommonFunc.sleep(2000);

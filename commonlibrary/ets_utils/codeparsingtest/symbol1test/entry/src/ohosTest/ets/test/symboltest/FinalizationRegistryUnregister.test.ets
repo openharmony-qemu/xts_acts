@@ -45,12 +45,12 @@ export default function finalizationRegistryUnregisterTest() {
     })
 
     /**
+     * @tc.name   ValidUnregisterWithObjectTokenTest001
      * @tc.number SUB_FINALIZATION_REGISTRY_UNREGISTER_TEST_001
-     * @tc.name ValidUnregisterWithObjectTokenTest001
-     * @tc.desc Verify valid unregistration: use object token from registration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid unregistration: use object token from registration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidUnregisterWithObjectTokenTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryUnregisterUtils.test001_ValidUnregisterWithObjectToken();
@@ -58,12 +58,12 @@ export default function finalizationRegistryUnregisterTest() {
     });
 
     /**
+     * @tc.name   ValidUnregisterWithSymbolTokenTest002
      * @tc.number SUB_FINALIZATION_REGISTRY_UNREGISTER_TEST_002
-     * @tc.name ValidUnregisterWithSymbolTokenTest002
-     * @tc.desc Verify valid unregistration: use non-registered Symbol token from registration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid unregistration: use non-registered Symbol token from registration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidUnregisterWithSymbolTokenTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryUnregisterUtils.test002_ValidUnregisterWithSymbolToken();
@@ -71,12 +71,12 @@ export default function finalizationRegistryUnregisterTest() {
     });
 
     /**
+     * @tc.name   InvalidUnregisterWithPrimitiveTokenTest003
      * @tc.number SUB_FINALIZATION_REGISTRY_UNREGISTER_TEST_003
-     * @tc.name InvalidUnregisterWithPrimitiveTokenTest003
-     * @tc.desc Verify invalid unregistration: primitive type token (throws TypeError)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify invalid unregistration: primitive type token (throws TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('InvalidUnregisterWithPrimitiveTokenTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryUnregisterUtils.test003_InvalidUnregisterWithPrimitiveToken();
@@ -84,12 +84,12 @@ export default function finalizationRegistryUnregisterTest() {
     });
 
     /**
+     * @tc.name   InvalidUnregisterNonExistentTokenTest004
      * @tc.number SUB_FINALIZATION_REGISTRY_UNREGISTER_TEST_004
-     * @tc.name InvalidUnregisterNonExistentTokenTest004
-     * @tc.desc Verify invalid unregistration: non-existent token (silent failure)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify invalid unregistration: non-existent token (silent failure)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('InvalidUnregisterNonExistentTokenTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryUnregisterUtils.test004_InvalidUnregisterNonExistentToken();
@@ -97,12 +97,12 @@ export default function finalizationRegistryUnregisterTest() {
     });
 
     /**
+     * @tc.name   ValidUnregisterMultipleTargetsWithSameTokenTest005
      * @tc.number SUB_FINALIZATION_REGISTRY_UNREGISTER_TEST_005
-     * @tc.name ValidUnregisterMultipleTargetsWithSameTokenTest005
-     * @tc.desc Verify valid unregistration: multiple targets with same token (cancels all)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid unregistration: multiple targets with same token (cancels all)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidUnregisterMultipleTargetsWithSameTokenTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryUnregisterUtils.test005_ValidUnregisterMultipleTargetsWithSameToken();
@@ -110,12 +110,12 @@ export default function finalizationRegistryUnregisterTest() {
     });
 
     /**
+     * @tc.name   ValidUnregisterWithFrozenTokenTest006
      * @tc.number SUB_FINALIZATION_REGISTRY_UNREGISTER_TEST_006
-     * @tc.name ValidUnregisterWithFrozenTokenTest006
-     * @tc.desc Verify valid unregistration: use frozen object as token
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid unregistration: use frozen object as token
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidUnregisterWithFrozenTokenTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryUnregisterUtils.test006_ValidUnregisterWithFrozenToken();
@@ -123,12 +123,12 @@ export default function finalizationRegistryUnregisterTest() {
     });
 
     /**
+     * @tc.name   InvalidUnregisterThisBindingTest007
      * @tc.number SUB_FINALIZATION_REGISTRY_UNREGISTER_TEST_007
-     * @tc.name InvalidUnregisterThisBindingTest007
-     * @tc.desc Verify invalid unregistration: incorrect this binding (throws TypeError)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify invalid unregistration: incorrect this binding (throws TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('InvalidUnregisterThisBindingTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryUnregisterUtils.test007_InvalidUnregisterThisBinding();
@@ -136,12 +136,12 @@ export default function finalizationRegistryUnregisterTest() {
     });
 
     /**
+     * @tc.name   ValidUnregisterAfterReregisterTest008
      * @tc.number SUB_FINALIZATION_REGISTRY_UNREGISTER_TEST_008
-     * @tc.name ValidUnregisterAfterReregisterTest008
-     * @tc.desc Verify valid unregistration: reregister after unregistration (still effective)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid unregistration: reregister after unregistration (still effective)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidUnregisterAfterReregisterTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryUnregisterUtils.test008_ValidUnregisterAfterReregister();
@@ -149,12 +149,12 @@ export default function finalizationRegistryUnregisterTest() {
     });
 
     /**
+     * @tc.name   InvalidUnregisterWithNullTokenTest009
      * @tc.number SUB_FINALIZATION_REGISTRY_UNREGISTER_TEST_009
-     * @tc.name InvalidUnregisterWithNullTokenTest009
-     * @tc.desc Verify invalid unregistration: null as token (throws TypeError)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify invalid unregistration: null as token (throws TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('InvalidUnregisterWithNullTokenTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryUnregisterUtils.test009_InvalidUnregisterWithNullToken();
@@ -162,12 +162,12 @@ export default function finalizationRegistryUnregisterTest() {
     });
 
     /**
+     * @tc.name   ValidRepeatUnregisterSameTokenTest010
      * @tc.number SUB_FINALIZATION_REGISTRY_UNREGISTER_TEST_010
-     * @tc.name ValidRepeatUnregisterSameTokenTest010
-     * @tc.desc Verify valid repeat unregistration: same token (second call silent failure)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid repeat unregistration: same token (second call silent failure)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidRepeatUnregisterSameTokenTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryUnregisterUtils.test010_ValidRepeatUnregisterSameToken();
@@ -175,12 +175,12 @@ export default function finalizationRegistryUnregisterTest() {
     });
 
     /**
+     * @tc.name   ValidUnregisterWithSealedTokenTest011
      * @tc.number SUB_FINALIZATION_REGISTRY_UNREGISTER_TEST_011
-     * @tc.name ValidUnregisterWithSealedTokenTest011
-     * @tc.desc Verify valid unregistration: use sealed object as token
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid unregistration: use sealed object as token
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidUnregisterWithSealedTokenTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryUnregisterUtils.test011_ValidUnregisterWithSealedToken();
@@ -188,12 +188,12 @@ export default function finalizationRegistryUnregisterTest() {
     });
 
     /**
+     * @tc.name   InvalidUnregisterWithUndefinedTokenTest012
      * @tc.number SUB_FINALIZATION_REGISTRY_UNREGISTER_TEST_012
-     * @tc.name InvalidUnregisterWithUndefinedTokenTest012
-     * @tc.desc Verify invalid unregistration: undefined as token (throws TypeError)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify invalid unregistration: undefined as token (throws TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('InvalidUnregisterWithUndefinedTokenTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryUnregisterUtils.test012_InvalidUnregisterWithUndefinedToken();
@@ -201,12 +201,12 @@ export default function finalizationRegistryUnregisterTest() {
     });
 
     /**
+     * @tc.name   ValidUnregisterWithArrayTokenTest013
      * @tc.number SUB_FINALIZATION_REGISTRY_UNREGISTER_TEST_013
-     * @tc.name ValidUnregisterWithArrayTokenTest013
-     * @tc.desc Verify valid unregistration: use Array instance as token
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid unregistration: use Array instance as token
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidUnregisterWithArrayTokenTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryUnregisterUtils.test013_ValidUnregisterWithArrayToken();
@@ -214,12 +214,12 @@ export default function finalizationRegistryUnregisterTest() {
     });
 
     /**
+     * @tc.name   ValidUnregisterLastTokenForSameTargetTest014
      * @tc.number SUB_FINALIZATION_REGISTRY_UNREGISTER_TEST_014
-     * @tc.name ValidUnregisterLastTokenForSameTargetTest014
-     * @tc.desc Verify valid unregistration: same target with different tokens (cancel last token)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid unregistration: same target with different tokens (cancel last token)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidUnregisterLastTokenForSameTargetTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryUnregisterUtils.test014_ValidUnregisterLastTokenForSameTarget();
@@ -227,12 +227,12 @@ export default function finalizationRegistryUnregisterTest() {
     });
 
     /**
+     * @tc.name   InvalidUnregisterCallWithWrongThisTest015
      * @tc.number SUB_FINALIZATION_REGISTRY_UNREGISTER_TEST_015
-     * @tc.name InvalidUnregisterCallWithWrongThisTest015
-     * @tc.desc Verify invalid unregistration: call with wrong this binding (throws TypeError)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify invalid unregistration: call with wrong this binding (throws TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('InvalidUnregisterCallWithWrongThisTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryUnregisterUtils.test015_InvalidUnregisterCallWithWrongThis();
@@ -240,12 +240,12 @@ export default function finalizationRegistryUnregisterTest() {
     });
 
     /**
+     * @tc.name   ValidUnregisterWithDateTokenTest016
      * @tc.number SUB_FINALIZATION_REGISTRY_UNREGISTER_TEST_016
-     * @tc.name ValidUnregisterWithDateTokenTest016
-     * @tc.desc Verify valid unregistration: use Date instance as token
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid unregistration: use Date instance as token
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidUnregisterWithDateTokenTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryUnregisterUtils.test016_ValidUnregisterWithDateToken();
@@ -254,12 +254,12 @@ export default function finalizationRegistryUnregisterTest() {
 
 
     /**
+     * @tc.name   ValidUnregisterWithFrozenSymbolTokenTest018
      * @tc.number SUB_FINALIZATION_REGISTRY_UNREGISTER_TEST_018
-     * @tc.name ValidUnregisterWithFrozenSymbolTokenTest018
-     * @tc.desc Verify valid unregistration: use frozen non-registered Symbol as token
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid unregistration: use frozen non-registered Symbol as token
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidUnregisterWithFrozenSymbolTokenTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryUnregisterUtils.test018_ValidUnregisterWithFrozenSymbolToken();
@@ -267,12 +267,12 @@ export default function finalizationRegistryUnregisterTest() {
     });
 
     /**
+     * @tc.name   ValidUnregisterWithWeakMapTokenTest019
      * @tc.number SUB_FINALIZATION_REGISTRY_UNREGISTER_TEST_019
-     * @tc.name ValidUnregisterWithWeakMapTokenTest019
-     * @tc.desc Verify valid unregistration: use WeakMap instance as token
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid unregistration: use WeakMap instance as token
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidUnregisterWithWeakMapTokenTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryUnregisterUtils.test019_ValidUnregisterWithWeakMapToken();
@@ -281,12 +281,12 @@ export default function finalizationRegistryUnregisterTest() {
 
 
     /**
+     * @tc.name   ValidUnregisterTokenModifiedAfterTest021
      * @tc.number SUB_FINALIZATION_REGISTRY_UNREGISTER_TEST_021
-     * @tc.name ValidUnregisterTokenModifiedAfterTest021
-     * @tc.desc Verify valid unregistration: token modified after unregistration (state unchanged)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid unregistration: token modified after unregistration (state unchanged)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidUnregisterTokenModifiedAfterTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryUnregisterUtils.test021_ValidUnregisterTokenModifiedAfter();
@@ -294,12 +294,12 @@ export default function finalizationRegistryUnregisterTest() {
     });
 
     /**
+     * @tc.name   InvalidUnregisterApplyWithWrongThisTest022
      * @tc.number SUB_FINALIZATION_REGISTRY_UNREGISTER_TEST_022
-     * @tc.name InvalidUnregisterApplyWithWrongThisTest022
-     * @tc.desc Verify invalid unregistration: apply with wrong this binding (throws TypeError)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify invalid unregistration: apply with wrong this binding (throws TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('InvalidUnregisterApplyWithWrongThisTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryUnregisterUtils.test022_InvalidUnregisterApplyWithWrongThis();
@@ -307,12 +307,12 @@ export default function finalizationRegistryUnregisterTest() {
     });
 
     /**
+     * @tc.name   ValidUnregisterWithClassInstanceTokenTest023
      * @tc.number SUB_FINALIZATION_REGISTRY_UNREGISTER_TEST_023
-     * @tc.name ValidUnregisterWithClassInstanceTokenTest023
-     * @tc.desc Verify valid unregistration: use custom class instance as token
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid unregistration: use custom class instance as token
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidUnregisterWithClassInstanceTokenTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryUnregisterUtils.test023_ValidUnregisterWithClassInstanceToken();
@@ -320,12 +320,12 @@ export default function finalizationRegistryUnregisterTest() {
     });
 
     /**
+     * @tc.name   ValidUnregisterTokenAcrossRegistriesTest024
      * @tc.number SUB_FINALIZATION_REGISTRY_UNREGISTER_TEST_024
-     * @tc.name ValidUnregisterTokenAcrossRegistriesTest024
-     * @tc.desc Verify valid unregistration: same token across registries (no cross-instance effect)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid unregistration: same token across registries (no cross-instance effect)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidUnregisterTokenAcrossRegistriesTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryUnregisterUtils.test024_ValidUnregisterTokenAcrossRegistries();
@@ -333,12 +333,12 @@ export default function finalizationRegistryUnregisterTest() {
     });
 
     /**
+     * @tc.name   InvalidUnregisterWithBooleanTokenTest025
      * @tc.number SUB_FINALIZATION_REGISTRY_UNREGISTER_TEST_025
-     * @tc.name InvalidUnregisterWithBooleanTokenTest025
-     * @tc.desc Verify invalid unregistration: boolean as token (throws TypeError)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify invalid unregistration: boolean as token (throws TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('InvalidUnregisterWithBooleanTokenTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryUnregisterUtils.test025_InvalidUnregisterWithBooleanToken();
@@ -346,12 +346,12 @@ export default function finalizationRegistryUnregisterTest() {
     });
 
     /**
+     * @tc.name   ValidUnregisterWithRegExpTokenTest026
      * @tc.number SUB_FINALIZATION_REGISTRY_UNREGISTER_TEST_026
-     * @tc.name ValidUnregisterWithRegExpTokenTest026
-     * @tc.desc Verify valid unregistration: use RegExp instance as token
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid unregistration: use RegExp instance as token
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidUnregisterWithRegExpTokenTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryUnregisterUtils.test026_ValidUnregisterWithRegExpToken();
@@ -359,12 +359,12 @@ export default function finalizationRegistryUnregisterTest() {
     });
 
     /**
+     * @tc.name   ValidUnregisterWithCircularTokenTest027
      * @tc.number SUB_FINALIZATION_REGISTRY_UNREGISTER_TEST_027
-     * @tc.name ValidUnregisterWithCircularTokenTest027
-     * @tc.desc Verify valid unregistration: use circular reference object as token
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid unregistration: use circular reference object as token
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidUnregisterWithCircularTokenTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryUnregisterUtils.test027_ValidUnregisterWithCircularToken();
@@ -372,12 +372,12 @@ export default function finalizationRegistryUnregisterTest() {
     });
 
     /**
+     * @tc.name   InvalidUnregisterWithoutParamsTest028
      * @tc.number SUB_FINALIZATION_REGISTRY_UNREGISTER_TEST_028
-     * @tc.name InvalidUnregisterWithoutParamsTest028
-     * @tc.desc Verify invalid unregistration: no parameters (throws TypeError)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify invalid unregistration: no parameters (throws TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('InvalidUnregisterWithoutParamsTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryUnregisterUtils.test028_InvalidUnregisterWithoutParams();
@@ -385,12 +385,12 @@ export default function finalizationRegistryUnregisterTest() {
     });
 
     /**
+     * @tc.name   ValidUnregisterWithMapTokenTest029
      * @tc.number SUB_FINALIZATION_REGISTRY_UNREGISTER_TEST_029
-     * @tc.name ValidUnregisterWithMapTokenTest029
-     * @tc.desc Verify valid unregistration: use Map instance as token
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid unregistration: use Map instance as token
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidUnregisterWithMapTokenTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryUnregisterUtils.test029_ValidUnregisterWithMapToken();
@@ -398,12 +398,12 @@ export default function finalizationRegistryUnregisterTest() {
     });
 
     /**
+     * @tc.name   ValidUnregisterWithBigIntObjectTokenTest030
      * @tc.number SUB_FINALIZATION_REGISTRY_UNREGISTER_TEST_030
-     * @tc.name ValidUnregisterWithBigIntObjectTokenTest030
-     * @tc.desc Verify valid unregistration: use BigInt object wrapper as token
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid unregistration: use BigInt object wrapper as token
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidUnregisterWithBigIntObjectTokenTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryUnregisterUtils.test030_ValidUnregisterWithBigIntObjectToken();

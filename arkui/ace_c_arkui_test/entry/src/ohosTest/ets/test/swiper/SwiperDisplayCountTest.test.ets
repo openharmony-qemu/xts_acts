@@ -26,39 +26,39 @@ export default function swiperDisplayCountTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_DISPLAYCOUNT_0100
-     * @tc.name       : testSwiperDisplayCount001
-     * @tc.desc       : testing displayCount for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperDisplayCount001
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_DISPLAYCOUNT_0100
+     * @tc.desc   testing displayCount for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperDisplayCount001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperDisplayCount001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_DISPLAYCOUNT_0200
-     * @tc.name       : testSwiperDisplayCount002
-     * @tc.desc       : testing displayCount for swiper with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperDisplayCount002
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_DISPLAYCOUNT_0200
+     * @tc.desc   testing displayCount for swiper with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperDisplayCount002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperDisplayCount002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_DISPLAYCOUNT_0400
-     * @tc.name       : testSwiperDisplayCount004
-     * @tc.desc       : testing displayCount for swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testSwiperDisplayCount004
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_DISPLAYCOUNT_0400
+     * @tc.desc   testing displayCount for swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperDisplayCount004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperDisplayCount004()).assertEqual(0)

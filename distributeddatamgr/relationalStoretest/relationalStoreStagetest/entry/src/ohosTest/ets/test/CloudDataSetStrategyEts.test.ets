@@ -43,7 +43,6 @@ export default function cloudDataSetStrategyEtsTest() {
     console.log(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   setCloudStrategyTest001
      * @tc.number SUB_DistributedData_CloudData_SDK_SetCloudStrategyTest_0100
      * @tc.desc   Test Js Api setCloudStrategy with null args.
@@ -69,7 +68,6 @@ export default function cloudDataSetStrategyEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   setCloudStrategyTest002
      * @tc.number SUB_DistributedData_CloudData_SDK_SetCloudStrategyTest_0200
      * @tc.desc   Test Js Api setCloudStrategy with undefined args.
@@ -95,7 +93,6 @@ export default function cloudDataSetStrategyEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   setCloudStrategyTest003
      * @tc.number SUB_DistributedData_CloudData_SDK_SetCloudStrategyTest_0300
      * @tc.desc   Test Js Api setCloudStrategy with undefined args.
@@ -121,7 +118,6 @@ export default function cloudDataSetStrategyEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   setCloudStrategyTest004
      * @tc.number SUB_DistributedData_CloudData_SDK_SetCloudStrategyTest_0400
      * @tc.desc   Test Js Api setCloudStrategy with error param args.
@@ -147,7 +143,6 @@ export default function cloudDataSetStrategyEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   setCloudStrategyTest005
      * @tc.number SUB_DistributedData_CloudData_SDK_SetCloudStrategyTest_0500
      * @tc.desc   Test Js Api setCloudStrategy with WIFI args.
@@ -177,7 +172,6 @@ export default function cloudDataSetStrategyEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   setCloudStrategyTest006
      * @tc.number SUB_DistributedData_CloudData_SDK_SetCloudStrategyTest_0600
      * @tc.desc   Test Js Api setCloudStrategy with CELLULAR args.
@@ -207,7 +201,6 @@ export default function cloudDataSetStrategyEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   setCloudStrategyTest007
      * @tc.number SUB_DistributedData_CloudData_SDK_SetCloudStrategyTest_0700
      * @tc.desc   Test Js Api setCloudStrategy with args.
@@ -237,7 +230,6 @@ export default function cloudDataSetStrategyEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   setCloudStrategyTest008
      * @tc.number SUB_DistributedData_CloudData_SDK_SetCloudStrategyTest_0800
      * @tc.desc   Test Js Api setCloudStrategy with undefined param args.
@@ -267,7 +259,6 @@ export default function cloudDataSetStrategyEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   setCloudStrategyTest009
      * @tc.number SUB_DistributedData_CloudData_SDK_SetCloudStrategyTest_0900
      * @tc.desc   Test Js Api setCloudStrategy with null param args.

@@ -61,14 +61,14 @@ export default function WebDataBaseTest() {
       console.info('web beforeEach start');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_SAVEHTTPAUTHCREDENTIALS_STATIC_0100
-    * @tc.name       : testSaveHttpAuthCredentialsStatic001
-    * @tc.desc       : test saveHttpAuthCredentials
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testSaveHttpAuthCredentialsStatic001
+     * @tc.number SUB_WEB_SAVEHTTPAUTHCREDENTIALS_STATIC_0100
+     * @tc.desc   test saveHttpAuthCredentials
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSaveHttpAuthCredentialsStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
@@ -81,14 +81,14 @@ export default function WebDataBaseTest() {
         done();
       })
 
-    /*
-    * @tc.number     : SUB_WEB_GETHTTPAUTHCREDENTIALS_STATIC_0100
-    * @tc.name       : testGetHttpAuthCredentialsStatic001
-    * @tc.desc       : test getHttpAuthCredentials
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testGetHttpAuthCredentialsStatic001
+     * @tc.number SUB_WEB_GETHTTPAUTHCREDENTIALS_STATIC_0100
+     * @tc.desc   test getHttpAuthCredentials
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetHttpAuthCredentialsStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testGetHttpAuthCredentials001', 10)
@@ -100,14 +100,14 @@ export default function WebDataBaseTest() {
         done();
       })
 
-    /*
-    * @tc.number     : SUB_WEB_EXISTHTTPAUTHCREDENTIALS_STATIC_0100
-    * @tc.name       : testExistHttpAuthCredentialsStatic001
-    * @tc.desc       : test existHttpAuthCredentials
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testExistHttpAuthCredentialsStatic001
+     * @tc.number SUB_WEB_EXISTHTTPAUTHCREDENTIALS_STATIC_0100
+     * @tc.desc   test existHttpAuthCredentials
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testExistHttpAuthCredentialsStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testExistHttpAuthCredentials001', 10)
@@ -119,14 +119,14 @@ export default function WebDataBaseTest() {
         done();
       })
 
-    /*
-    * @tc.number     : SUB_WEB_DELETEHTTPAUTHCREDENTIALS_STATIC_0100
-    * @tc.name       : testDeleteHttpAuthCredentialsStatic001
-    * @tc.desc       : test deleteHttpAuthCredentials
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testDeleteHttpAuthCredentialsStatic001
+     * @tc.number SUB_WEB_DELETEHTTPAUTHCREDENTIALS_STATIC_0100
+     * @tc.desc   test deleteHttpAuthCredentials
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testDeleteHttpAuthCredentialsStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testDeleteHttpAuthCredentials001', 10)

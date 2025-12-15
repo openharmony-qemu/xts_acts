@@ -87,7 +87,6 @@ export default function systemTimeCommonEventTest() {
     console.info('====>---------------systemTimeCommonEventTest start-----------------------');
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemTime_commonEvent_timeChanged_0010
      * @tc.number SUB_systemTime_commonEvent_timeChanged_0010
      * @tc.desc   SUB_systemTime_commonEvent_timeChanged_0010
@@ -114,7 +113,6 @@ export default function systemTimeCommonEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemTime_commonEvent_timeTick_0010
      * @tc.number SUB_systemTime_commonEvent_timeTick_0010
      * @tc.desc   SUB_systemTime_commonEvent_timeTick_0010
@@ -143,7 +141,6 @@ export default function systemTimeCommonEventTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemTime_commonEvent_timezoneChanged_0010
      * @tc.number SUB_systemTime_commonEvent_timezoneChanged_0010
      * @tc.desc   SUB_systemTime_commonEvent_timezoneChanged_0010

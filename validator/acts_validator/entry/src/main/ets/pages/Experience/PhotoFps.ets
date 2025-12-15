@@ -154,9 +154,9 @@ struct CustomContainerUser {
                     }
 
                     abilityContext.startAbility(str).then((data) => {
-
+                      console.info('start ability successfully:' + data)
                     }).catch((error: BusinessError) => {
-
+                      console.error('start ability failed:' + error)
                     })
                   })
               }

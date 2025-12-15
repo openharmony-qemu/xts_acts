@@ -48,12 +48,12 @@ export default function FlushStateNodeTest() {
     });
 
     /**
-     * @tc.number    FlushStateNodeTest_0100
-     * @tc.name      FlushStateNodeTest_0100
-     * @tc.desc      ReactiveBuilderNode FlushStateNodeTest
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   FlushStateNodeTest_0100
+     * @tc.number FlushStateNodeTest_0100
+     * @tc.desc   ReactiveBuilderNode FlushStateNodeTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FlushStateNodeTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('FlushStateNodeTest_0100 START');
@@ -76,12 +76,12 @@ export default function FlushStateNodeTest() {
     });
 
     /**
-     * @tc.number    FlushStateNodeTest_0200
-     * @tc.name      FlushStateNodeTest_0200
-     * @tc.desc      ReactiveBuilderNode FlushStateNodeTest
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   FlushStateNodeTest_0200
+     * @tc.number FlushStateNodeTest_0200
+     * @tc.desc   ReactiveBuilderNode FlushStateNodeTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FlushStateNodeTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('FlushStateNodeTest_0200 START');

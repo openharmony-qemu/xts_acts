@@ -25,12 +25,12 @@ export default function mntentNdk1Test() {
     })
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MNTENT_GETMNTENT_0100
-     * @tc.name     : testMuslMntentGetMnTent001
-     * @tc.desc     : test getmntent
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslMntentGetMnTent001
+     * @tc.number SUB_THIRDPARTY_MUSL_MNTENT_GETMNTENT_0100
+     * @tc.desc   test getmntent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMntentGetMnTent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(mntent.getMnTent()).assertEqual(0)
@@ -38,12 +38,12 @@ export default function mntentNdk1Test() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MNTENT_GETMNTENT_R_0100
-     * @tc.name     : testMuslMntentGetMnTentR001
-     * @tc.desc     : test getmntent_r
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslMntentGetMnTentR001
+     * @tc.number SUB_THIRDPARTY_MUSL_MNTENT_GETMNTENT_R_0100
+     * @tc.desc   test getmntent_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMntentGetMnTentR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(mntent.getMnTentR()).assertEqual(0)

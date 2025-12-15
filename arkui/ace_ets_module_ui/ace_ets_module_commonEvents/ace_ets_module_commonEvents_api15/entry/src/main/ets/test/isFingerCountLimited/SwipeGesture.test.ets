@@ -46,11 +46,13 @@ export default function swipeGestureTest() {
     });
 
     /**
-    * @tc.number
-    * @tc.name  : SwipeGesture1_0100
-    * @tc.desc  : To test whether isFingerCountLimited is effective.
-    * @tc.level : Level 2
-    */
+     * @tc.name   SwipeGesture1_0100
+     * @tc.number SwipeGesture1_0100
+     * @tc.desc   To test whether isFingerCountLimited is effective.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SwipeGesture1_0100', Level.LEVEL0, async (done: Function) => {
       console.info('SwipeGesture1_0100 START');
       await CommonFunc.sleep(1000);
@@ -78,11 +80,13 @@ export default function swipeGestureTest() {
     });
 
     /**
-    * @tc.number
-    * @tc.name  : SwipeGesture1_0200
-    * @tc.desc  : To test whether isFingerCountLimited is effective.
-    * @tc.level : Level 1
-    */
+     * @tc.name   SwipeGesture1_0200
+     * @tc.number SwipeGesture1_0200
+     * @tc.desc   To test whether isFingerCountLimited is effective.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SwipeGesture1_0200', Level.LEVEL0, async (done: Function) => {
       console.info('SwipeGesture1_0200 START');
       await CommonFunc.sleep(1000);

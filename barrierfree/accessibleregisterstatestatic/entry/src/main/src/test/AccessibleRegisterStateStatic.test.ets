@@ -9,14 +9,14 @@ export default function abilityTest() {
   describe("AccessibleRegisterStateStatic", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
-    /*
-    * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0100
-    * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0100
-    * @tc.desc    onAccessibilityStateChange
-    * @tc.size    MEDIUMTEST
-    * @tc.type    User
-    * @tc.level   Level 1
-    */
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0100
+     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0100
+     * @tc.desc   onAccessibilityStateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0100', TestType.FUNCTION | Size.MEDIUMTEST| Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0100');
       let callbackdata = (data:boolean) => {
@@ -33,14 +33,14 @@ export default function abilityTest() {
       }
     })
 
-    /*
-    * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0200
-    * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0200
-    * @tc.desc    onTouchGuideStateChange
-    * @tc.size    MEDIUMTEST
-    * @tc.type    User
-    * @tc.level   Level 1
-    */
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0200
+     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0200
+     * @tc.desc   onTouchGuideStateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0200', TestType.FUNCTION | Size.MEDIUMTEST| Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0200');
       let callbackdata = (data:boolean) => {
@@ -57,15 +57,15 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0300
-     * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0300
-     * @tc.desc    onScreenReaderStateChange
-     * @tc.size    MEDIUMTEST
-     * @tc.type    User
-     * @tc.level   Level 0
-     */
 
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0300
+     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0300
+     * @tc.desc   SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0300', TestType.FUNCTION | Size.MEDIUMTEST| Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0300');
       let callbackdata = (data:boolean) => {

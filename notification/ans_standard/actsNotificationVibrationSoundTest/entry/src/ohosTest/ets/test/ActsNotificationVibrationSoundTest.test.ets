@@ -26,14 +26,14 @@ export default function ActsNotificationVibrationSoundTest() {
         let TAG = 'SUB_NOTIFICATION_ANS_IS_VIBRATIONSOUND_ENABLED_TEST ===>'
         hilog.info(0x0000, TAG, 'SUB_NOTIFICATION_ANS_IS_VIBRATIONSOUND_ENABLED_TEST START')
 
-        /*
-        * @tc.number    : Sub_Ans_GetNotificationSettings_0100
-        * @tc.name      : Sub_Ans_GetNotificationSettings_0100
-        * @tc.desc      : Obtains whether the device supports VibrationSound notification
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */    
+        /**
+         * @tc.name   Sub_Ans_GetNotificationSettings_0100
+         * @tc.number Sub_Ans_GetNotificationSettings_0100
+         * @tc.desc   Obtains whether the device supports VibrationSound notification
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('Sub_Ans_GetNotificationSettings_0100', Level.LEVEL0, async (done:Function) => {
           hilog.info(DOMAIN, TAG, `${TAG} Sub_Ans_GetNotificationSettings_0100 START`)
             try{

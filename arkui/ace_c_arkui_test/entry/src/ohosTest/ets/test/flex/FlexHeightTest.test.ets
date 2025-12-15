@@ -26,39 +26,39 @@ export default function flexHeightTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_FLEX_HEIGHT_0100
-     * @tc.name: testFlexHeight001
-     * @tc.desc: testing height for flex with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testFlexHeight001
+     * @tc.number SUB_ARKUI_CAPI_FLEX_HEIGHT_0100
+     * @tc.desc   testing height for flex with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testFlexHeight001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testFlexHeight001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_FLEX_HEIGHT_0200
-     * @tc.name: testFlexHeight002
-     * @tc.desc: testing height for flex with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testFlexHeight002
+     * @tc.number SUB_ARKUI_CAPI_FLEX_HEIGHT_0200
+     * @tc.desc   testing height for flex with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testFlexHeight002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testFlexHeight002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_FLEX_HEIGHT_0300
-     * @tc.name: testFlexHeight003
-     * @tc.desc: testing height for flex with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testFlexHeight003
+     * @tc.number SUB_ARKUI_CAPI_FLEX_HEIGHT_0300
+     * @tc.desc   testing height for flex with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testFlexHeight003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testFlexHeight003()).assertEqual(0)

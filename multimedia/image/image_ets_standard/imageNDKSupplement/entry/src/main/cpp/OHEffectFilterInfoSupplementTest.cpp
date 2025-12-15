@@ -32,7 +32,7 @@
 #define IMAGE_EFFECT_NAME "imageEdit"
 #define CUSTOM_FILTER "CustomCrop"
 #define IMAGE_NULL_STRING ""
-#define IMAGE_NULLString ""
+
 
 #define CASE_INDEX_1 1
 #define CASE_INDEX_2 2
@@ -82,13 +82,13 @@ napi_value OHEffectFilterInfoSetFilterNameSupplementTest(napi_env env, napi_call
         code = OH_EffectFilterInfo_SetFilterName(filterInfo, nullptr);
         break;
     case CASE_INDEX_4:
-        code = OH_EffectFilterInfo_SetFilterName(filterInfo, IMAGE_NULLString);
+        code = OH_EffectFilterInfo_SetFilterName(filterInfo, IMAGE_NULL_STRING);
         break;
     default:
         break;
     }
     
-      OH_EffectFilterInfo_Release(filterInfo);
+    OH_EffectFilterInfo_Release(filterInfo);
 
     napi_value ret;
     napi_create_int32(env, code, &ret);
@@ -107,14 +107,13 @@ napi_value OHEffectFilterInfoGetFilterNameSupplementTest(napi_env env, napi_call
     char *getName = nullptr;
     ImageEffect_ErrorCode code;
     char getArgs[] = "";
-    char * getPtr = getArgs;
-    char * getNamePtr = getPtr;
+    char* getPtr = getArgs;
+    char* getNamePtr = getPtr;
     napi_value ret;
     switch (index) {
     case CASE_INDEX_1:
         code = OH_EffectFilterInfo_SetFilterName(filterInfo, OH_EFFECT_BRIGHTNESS_FILTER);
         code = OH_EffectFilterInfo_GetFilterName(filterInfo, &getName);
-        //判断  getName != OH_EFFECT_BRIGHTNESS_FILTER
         if (strcmp(getName, OH_EFFECT_BRIGHTNESS_FILTER) != 0) {
             napi_create_int32(env, -1, &ret);
             return ret;
@@ -126,7 +125,7 @@ napi_value OHEffectFilterInfoGetFilterNameSupplementTest(napi_env env, napi_call
     case CASE_INDEX_3:
         code = OH_EffectFilterInfo_GetFilterName(nullptr, &getName);
         break;
-   case CASE_INDEX_4:
+    case CASE_INDEX_4:
         code = OH_EffectFilterInfo_GetFilterName(filterInfo, &getNamePtr);
         break;
     default:
@@ -138,7 +137,7 @@ napi_value OHEffectFilterInfoGetFilterNameSupplementTest(napi_env env, napi_call
     return ret;
 }
 
-napi_value OHEffectFilterInfoSetSupportedBufferTypesSupplementTest(napi_env env, napi_callback_info info)
+napi_value OHEffectFilterInfoSetSupportedBufferTypesSuppTest(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
@@ -172,7 +171,7 @@ napi_value OHEffectFilterInfoSetSupportedBufferTypesSupplementTest(napi_env env,
     return ret;
 }
 
-napi_value OHEffectFilterInfoGetSupportedBufferTypesSupplementTest(napi_env env, napi_callback_info info)
+napi_value OHEffectFilterInfoGetSupportedBufferTypesSuppTest(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
@@ -217,7 +216,7 @@ napi_value OHEffectFilterInfoGetSupportedBufferTypesSupplementTest(napi_env env,
     return ret;
 }
 
-napi_value OHEffectFilterInfoSetSupportedFormatsSupplementTest(napi_env env, napi_callback_info info)
+napi_value OHEffectFilterInfoSetSupportedFormatsSuppTest(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
@@ -238,11 +237,6 @@ napi_value OHEffectFilterInfoSetSupportedFormatsSupplementTest(napi_env env, nap
     case CASE_INDEX_3:
         filterInfo = nullptr;
         break;
-    case CASE_INDEX_4:
-        formats[0] = ImageEffect_Format::EFFECT_PIXEL_FORMAT_RGBA8888;
-        formats[1] = ImageEffect_Format::EFFECT_PIXEL_FORMAT_NV12;
-        formats[3] = ImageEffect_Format::EFFECT_PIXEL_FORMAT_NV21;
-        break;
     default:
         break;
     }
@@ -255,7 +249,7 @@ napi_value OHEffectFilterInfoSetSupportedFormatsSupplementTest(napi_env env, nap
     return ret;
 }
 
-napi_value OHEffectFilterInfoGetSupportedFormatsSupplementTest(napi_env env, napi_callback_info info)
+napi_value OHEffectFilterInfoGetSupportedFormatsSuppTest(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
@@ -288,12 +282,6 @@ napi_value OHEffectFilterInfoGetSupportedFormatsSupplementTest(napi_env env, nap
         break;
     case CASE_INDEX_3:
         filterInfo = nullptr;
-        code = OH_EffectFilterInfo_GetSupportedFormats(filterInfo, &getSize, &formatArray);
-        break;
-   case CASE_INDEX_4:
-        formats[0] = ImageEffect_Format::EFFECT_PIXEL_FORMAT_RGBA8888;
-        formats[1] = ImageEffect_Format::EFFECT_PIXEL_FORMAT_NV12;
-        formats[3] = ImageEffect_Format::EFFECT_PIXEL_FORMAT_NV21;
         code = OH_EffectFilterInfo_GetSupportedFormats(filterInfo, &getSize, &formatArray);
         break;
     default:

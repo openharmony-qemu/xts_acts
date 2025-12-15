@@ -88,7 +88,6 @@ export default function PasteboardDelayCopyTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0100
      * @tc.number SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0100
      * @tc.desc   setUnifiedData parameter is null
@@ -127,7 +126,6 @@ export default function PasteboardDelayCopyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0200
      * @tc.number SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0200
      * @tc.desc   setUnifiedData parameter is undefined
@@ -167,7 +165,6 @@ export default function PasteboardDelayCopyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0300
      * @tc.number SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0300
      * @tc.desc   setUnifiedDataSync parameter is null
@@ -199,7 +196,6 @@ export default function PasteboardDelayCopyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0400
      * @tc.number SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0400
      * @tc.desc   setUnifiedDataSync parameter is undefined
@@ -231,7 +227,6 @@ export default function PasteboardDelayCopyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0500
      * @tc.number SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0500
      * @tc.desc   plainText test
@@ -285,7 +280,6 @@ export default function PasteboardDelayCopyTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0600
      * @tc.number SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0600
      * @tc.desc   text test
@@ -335,7 +329,6 @@ export default function PasteboardDelayCopyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0700
      * @tc.number SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0700
      * @tc.desc   Html test
@@ -385,7 +378,6 @@ export default function PasteboardDelayCopyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0800
      * @tc.number SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0800
      * @tc.desc   Hyperlink test
@@ -436,7 +428,6 @@ export default function PasteboardDelayCopyTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0900
      * @tc.number SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0900
      * @tc.desc   Image test
@@ -488,7 +479,6 @@ export default function PasteboardDelayCopyTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0110
      * @tc.number SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0110
      * @tc.desc   Folder test
@@ -538,7 +528,6 @@ export default function PasteboardDelayCopyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0120
      * @tc.number SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0120
      * @tc.desc   File test
@@ -589,7 +578,6 @@ export default function PasteboardDelayCopyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0130
      * @tc.number SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0130
      * @tc.desc   Audio test
@@ -639,7 +627,6 @@ export default function PasteboardDelayCopyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0140
      * @tc.number SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0140
      * @tc.desc   Video test
@@ -690,7 +677,6 @@ export default function PasteboardDelayCopyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0150
      * @tc.number SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0150
      * @tc.desc   ApplicationDefinedRecord test
@@ -739,7 +725,6 @@ export default function PasteboardDelayCopyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0160
      * @tc.number SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0160
      * @tc.desc   SystemDefinedForm test
@@ -797,7 +782,6 @@ export default function PasteboardDelayCopyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0170
      * @tc.number SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0170
      * @tc.desc   SystemDefinedAppItem test
@@ -857,7 +841,6 @@ export default function PasteboardDelayCopyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0180
      * @tc.number SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0180
      * @tc.desc   SystemDefinedPixelMap test
@@ -916,7 +899,6 @@ export default function PasteboardDelayCopyTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0190
      * @tc.number SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0190
      * @tc.desc   Want test
@@ -965,7 +947,6 @@ export default function PasteboardDelayCopyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0230
      * @tc.number SUB_Pasteboard_Local_SDK_DelayCopy_JsApiTest_0230
      * @tc.desc   setUnifiedDataSync and getUnifiedData test
@@ -1010,7 +991,6 @@ export default function PasteboardDelayCopyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_FromHtml_0100
      * @tc.number SUB_Pasteboard_Local_SDK_FromHtml_0100
      * @tc.desc   fromHtml interface test

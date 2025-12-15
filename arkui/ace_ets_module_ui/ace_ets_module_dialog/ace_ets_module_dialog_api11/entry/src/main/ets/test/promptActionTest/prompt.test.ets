@@ -45,10 +45,13 @@ export default function promptShowDialogJsunit() {
       console.info("promptShowDialog after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_001
-     * @tc.name         testpromptShowDialog001
-     * @tc.desic         acepromptShowDialogEtsTest001
+    /**
+     * @tc.name   testpromptShowDialog001
+     * @tc.number SUB_ACE_BASIC_ETS_API_001
+     * @tc.desc   testpromptShowDialog001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testpromptShowDialog001', Level.LEVEL2, async () => {
       console.info('promptShowDialog testpromptShowDialog001 START');
@@ -71,10 +74,13 @@ export default function promptShowDialogJsunit() {
       console.info('testpromptShowDialog001 END');
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_002
-     * @tc.name         testshowActionMenu0001
-     * @tc.desic         aceshowActionMenuEtsTest0001
+    /**
+     * @tc.name   testshowActionMenu0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_002
+     * @tc.desc   testshowActionMenu0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testshowActionMenu0001', Level.LEVEL2, async () => {
       console.info('promptShowDialog testshowActionMenu0001 START');

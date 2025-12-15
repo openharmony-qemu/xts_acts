@@ -41,12 +41,12 @@ export default function radioGroupJsunit() {
     });
 
     /**
+     * @tc.name   testRadioGroup001
      * @tc.number testRadioGroup001
-     * @tc.name Test the properties of components
-     * @tc.desc Set radioStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set radioStyle values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRadioGroup001', Level.LEVEL0, async (done: Function) => {
       console.info("[testRadioGroup001] START");
@@ -63,12 +63,12 @@ export default function radioGroupJsunit() {
     });
 
     /**
+     * @tc.name   testRadioGroup002
      * @tc.number testRadioGroup002
-     * @tc.name Test the properties of components
-     * @tc.desc Set checked values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set checked values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRadioGroup002', Level.LEVEL0, async (done: Function) => {
       console.info("[testRadioGroup002] START");
@@ -82,12 +82,12 @@ export default function radioGroupJsunit() {
     });
 
     /**
+     * @tc.name   testRadioGroup003
      * @tc.number testRadioGroup003
-     * @tc.name Test the properties of components
-     * @tc.desc Change checked values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change checked values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRadioGroup003', Level.LEVEL0, async (done: Function) => {
       console.info('testRadioGroup003 START');

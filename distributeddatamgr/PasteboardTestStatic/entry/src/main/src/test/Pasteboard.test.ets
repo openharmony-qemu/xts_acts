@@ -44,7 +44,6 @@ export default function pasteBoardTest() {
     console.info("----------SUB_Pasteboard_Local_Pasteboard_Static----------");
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_Pasteboard_Local_Pasteboard_Static_0010
      * @tc.number Pasteboard_test_0010
      * @tc.desc   Test pasteBoard add record fail with 1025 bit mimeType
@@ -74,7 +73,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_Pasteboard_Local_Pasteboard_Static_0020
      * @tc.number Pasteboard_test_0020
      * @tc.desc   Test pasteBoard add 613th record successful
@@ -102,7 +100,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_Pasteboard_Local_Pasteboard_Static_0030
      * @tc.number Pasteboard_test_0030
      * @tc.desc   Test pasteBoard SetProperty API functionality.
@@ -128,7 +125,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_Pasteboard_Local_Pasteboard_Static_0040
      * @tc.number Pasteboard_test_0040
      * @tc.desc   Get specified record success
@@ -151,7 +147,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_Pasteboard_Local_Pasteboard_Static_0050
      * @tc.number Pasteboard_test_0050
      * @tc.desc   Get specified record failed,index out of range
@@ -179,7 +174,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_Pasteboard_Local_Pasteboard_Static_0060
      * @tc.number Pasteboard_test_0060
      * @tc.desc   Test pasteBoard create data fail with 1025 bytes mimeType
@@ -207,7 +201,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_Pasteboard_Local_Pasteboard_Static_0070
      * @tc.number Pasteboard_test_0070
      * @tc.desc   Test pasteBoard create data fail with 0 bytes mimeType
@@ -235,7 +228,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_Pasteboard_Local_Pasteboard_Static_0080
      * @tc.number Pasteboard_test_0080
      * @tc.desc   Test pasteBoard create data success with self defined type
@@ -258,7 +250,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_Pasteboard_Local_Pasteboard_Static_0090
      * @tc.number Pasteboard_test_0090
      * @tc.desc   Test pasteBoard create data success with uri type
@@ -280,7 +271,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_Pasteboard_Local_Pasteboard_Static_0100
      * @tc.number Pasteboard_test_01000
      * @tc.desc   Test pasteBoard create data success with pasteboard.MIMETYPE_TEXT_PLAIN type
@@ -302,7 +292,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_Pasteboard_Local_Pasteboard_Static_0110
      * @tc.number Pasteboard_test_0110
      * @tc.desc   Test pasteBoard create data success with pasteboard.MIMETYPE_TEXT_HTML type
@@ -324,7 +313,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_Pasteboard_Local_Pasteboard_Static_0120
      * @tc.number Pasteboard_test_0120
      * @tc.desc   Test pasteBoard create data success with pasteboard.MIMETYPE_TEXT_WANT type
@@ -346,7 +334,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_Pasteboard_Local_Pasteboard_Static_0130
      * @tc.number Pasteboard_test_0130
      * @tc.desc   Test pasteBoard create data success with pasteboard.MIMETYPE_PIXELMAP type
@@ -369,7 +356,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_Pasteboard_Local_Pasteboard_Static_0140
      * @tc.number Pasteboard_test_0140
      * @tc.desc   Test pasteBoard create data success with record<> parameter
@@ -397,7 +383,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_Pasteboard_Local_Pasteboard_Static_0150
      * @tc.number Pasteboard_test_0150
      * @tc.desc   Test pasteBoard create data fail with record<> parameter, length of self defined type is more than 1024.
@@ -431,7 +416,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_Pasteboard_Local_Pasteboard_Static_0160
      * @tc.number Pasteboard_test_0160
      * @tc.desc   Test pasteBoard create data fail with record<> parameter, length of self defined type is empty.
@@ -465,7 +449,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_Pasteboard_Local_Pasteboard_Static_0170
      * @tc.number Pasteboard_test_0170
      * @tc.desc   Test pasteBoard create data fail with record<> parameter, length of self defined type is 1024.
@@ -494,7 +477,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_Pasteboard_Local_Pasteboard_Static_0180
      * @tc.number Pasteboard_test_0180
      * @tc.desc   Test pasteBoard create data fail with record<> parameter, length of self defined type is 1024.
@@ -516,7 +498,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_Pasteboard_Local_Pasteboard_Static_0190
      * @tc.number Pasteboard_test_0190
      * @tc.desc   Test pasteBoard add record fail with empty mimetype
@@ -539,7 +520,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_Pasteboard_Local_Pasteboard_Static_0200
      * @tc.number Pasteboard_test_0200
      * @tc.desc   Test pasteBoard add record success with all kinds of type
@@ -567,7 +547,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_Pasteboard_Local_Pasteboard_Static_0210
      * @tc.number Pasteboard_test_0210
      * @tc.desc   Test pasteBoard add record success with pastedataRecord parameter
@@ -593,7 +572,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_Pasteboard_Local_Pasteboard_Static_0220
      * @tc.number Pasteboard_test_0220
      * @tc.desc   Test pasteBoard add record fail with empty mimetype
@@ -616,7 +594,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_Pasteboard_Local_Pasteboard_Static_0230
      * @tc.number Pasteboard_test_0230
      * @tc.desc   Get specified record failed,index out of range
@@ -644,7 +621,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_Pasteboard_Local_Pasteboard_Static_0240
      * @tc.number Pasteboard_test_0240
      * @tc.desc   Test pasteBoard SetProperty API functionality.

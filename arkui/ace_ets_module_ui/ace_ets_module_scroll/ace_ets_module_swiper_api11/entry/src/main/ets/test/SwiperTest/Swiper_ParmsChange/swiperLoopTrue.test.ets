@@ -70,6 +70,14 @@ export default function swiperLoopTrue() {
     //     * @tc.name      testSwiperSetLoopTrue
     //     * @tc.desc      Set swiper's  Loop  value ' true '.
     //     */
+    /**
+     * @tc.name   testSwiperSetLoopTrue
+     * @tc.number testSwiperSetLoopTrue
+     * @tc.desc   testSwiperSetLoopTrue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     //    it('testSwiperSetLoopTrue', Level.LEVEL1, async  (done:Function)=> {
     //      console.info('new testSwiperSetLoopTrue START');
     //      await CommonFunc.sleep(1000);

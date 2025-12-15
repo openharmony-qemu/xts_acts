@@ -21,14 +21,14 @@ const ExpectFail = () => {
 export default function StatisticsErrorCodeTest() {
   describe('StatisticsErrorCodeTest', () => {
 
-       /* *
-        * @tc.number: SUB_NetworkMgr_Statistics_GetUidRxBytes_ErrCo_0100
-        * @tc.name  : testNetworkMgrStatisticsGetUidRxBytesErrCo0100
-        * @tc.desc  : Parameter error
-        * @tc.size  : MediumTest
-        * @tc.type  : Function
-        * @tc.level : level 3
-        */
+    /**
+     * @tc.name   testNetworkMgrStatisticsGetUidRxBytesErrCo0100
+     * @tc.number SUB_NetworkMgr_Statistics_GetUidRxBytes_ErrCo_0100
+     * @tc.desc   Parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrStatisticsGetUidRxBytesErrCo0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       let caseName: string = 'testNetworkMgrStatisticsGetUidRxBytesErrCo0100';
       console.info(`${caseName} test start`);
@@ -51,14 +51,14 @@ export default function StatisticsErrorCodeTest() {
       }
     });
 
-    /* *
-        * @tc.number: SUB_NetworkMgr_Statistics_GetUidRxBytes_ErrCo_0200
-        * @tc.name  : testNetworkMgrStatisticsGetUidRxBytesErrCo0200
-        * @tc.desc  : Parameter error
-        * @tc.size  : MediumTest
-        * @tc.type  : Function
-        * @tc.level : level 3
-        */
+    /**
+     * @tc.name   testNetworkMgrStatisticsGetUidRxBytesErrCo0200
+     * @tc.number SUB_NetworkMgr_Statistics_GetUidRxBytes_ErrCo_0200
+     * @tc.desc   Parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrStatisticsGetUidRxBytesErrCo0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       let caseName: string = 'testNetworkMgrStatisticsGetUidRxBytesErrCo0200';
       console.info(`${caseName} test start`);
@@ -79,14 +79,14 @@ export default function StatisticsErrorCodeTest() {
       }
     });
 
-    /* *
-        * @tc.number: SUB_NetworkMgr_Statistics_GetUidTxBytes_ErrCo_0300
-        * @tc.name  : testNetworkMgrStatisticsGetUidRxBytesErrCo0300
-        * @tc.desc  : Parameter error
-        * @tc.size  : MediumTest
-        * @tc.type  : Function
-        * @tc.level : level 3
-        */
+    /**
+     * @tc.name   testNetworkMgrStatisticsGetUidRxBytesErrCo0300
+     * @tc.number SUB_NetworkMgr_Statistics_GetUidTxBytes_ErrCo_0300
+     * @tc.desc   Parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrStatisticsGetUidRxBytesErrCo0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       let caseName: string = 'testNetworkMgrStatisticsGetUidRxBytesErrCo0300';
       console.info(`${caseName} test start`);
@@ -109,14 +109,14 @@ export default function StatisticsErrorCodeTest() {
       }
     });
 
-    /* *
-        * @tc.number: SUB_NetworkMgr_Statistics_GetUidTxBytes_ErrCo_0400
-        * @tc.name  : testNetworkMgrStatisticsGetUidTxBytesErrCo0400
-        * @tc.desc  : Parameter error
-        * @tc.size  : MediumTest
-        * @tc.type  : Function
-        * @tc.level : level 3
-        */
+    /**
+     * @tc.name   testNetworkMgrStatisticsGetUidTxBytesErrCo0400
+     * @tc.number SUB_NetworkMgr_Statistics_GetUidTxBytes_ErrCo_0400
+     * @tc.desc   Parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrStatisticsGetUidTxBytesErrCo0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       let caseName: string = 'testNetworkMgrStatisticsGetUidTxBytesErrCo0400';
       console.info(`${caseName} test start`);
@@ -138,12 +138,12 @@ export default function StatisticsErrorCodeTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Statistics_getSockRxBytes_ErrCo_0500
-     * @tc.name  : testNetworkMgrStatisticsgetSockRxBytesErrCo0500
-     * @tc.desc  : Test getSockRxBytes property
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+     * @tc.name   testNetworkMgrStatisticsgetSockRxBytesErrCo0500
+     * @tc.number SUB_NetworkMgr_Statistics_getSockRxBytes_ErrCo_0500
+     * @tc.desc   Test getSockRxBytes property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testNetworkMgrStatisticsgetSockRxBytesErrCo0500",  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       let caseName = "testNetworkMgrStatisticsgetSockRxBytesErrCo0500";
@@ -169,12 +169,12 @@ export default function StatisticsErrorCodeTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Statistics_getSockRxBytes_ErrCo_0600
-     * @tc.name  : testNetworkMgrStatisticsgetSockRxBytesErrCo0600
-     * @tc.desc  : Test getSockRxBytes property
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+     * @tc.name   testNetworkMgrStatisticsgetSockRxBytesErrCo0600
+     * @tc.number SUB_NetworkMgr_Statistics_getSockRxBytes_ErrCo_0600
+     * @tc.desc   Test getSockRxBytes property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testNetworkMgrStatisticsgetSockRxBytesErrCo0600",  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       let caseName = "testNetworkMgrStatisticsgetSockRxBytesErrCo0600";
@@ -200,12 +200,12 @@ export default function StatisticsErrorCodeTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Statistics_getSockTxBytes_ErrCo_0700
-     * @tc.name  : testNetworkMgrStatisticsgetSockTxBytesErrCo0700
-     * @tc.desc  : Test	Invalid parameter value.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+     * @tc.name   testNetworkMgrStatisticsgetSockTxBytesErrCo0700
+     * @tc.number SUB_NetworkMgr_Statistics_getSockTxBytes_ErrCo_0700
+     * @tc.desc   Test	Invalid parameter value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testNetworkMgrStatisticsgetSockTxBytesErrCo0700",  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       let caseName = "testNetworkMgrStatisticsgetSockTxBytesErrCo0700";
@@ -231,12 +231,12 @@ export default function StatisticsErrorCodeTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Statistics_getSockTxBytes_ErrCo_0800
-     * @tc.name  : testNetworkMgrStatisticsgetSockTxBytesErrCo0800
-     * @tc.desc  : Test Invalid parameter value.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+     * @tc.name   testNetworkMgrStatisticsgetSockTxBytesErrCo0800
+     * @tc.number SUB_NetworkMgr_Statistics_getSockTxBytes_ErrCo_0800
+     * @tc.desc   Test Invalid parameter value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testNetworkMgrStatisticsgetSockTxBytesErrCo0800",  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       let caseName = "testNetworkMgrStatisticsgetSockTxBytesErrCo0800";
@@ -261,14 +261,14 @@ export default function StatisticsErrorCodeTest() {
       }
     });
     
-    /*
-     * @tc.number: SUB_NetManager_Statistics_GetSockfdTxBytes_CallBackErrCo_0100
-     * @tc.name:  testNetManagerStatisticsGetSockfdTxBytesCallBackErrCo0100
-     * @tc.desc: Function test
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
-     */
+      /**
+       * @tc.name   testNetManagerStatisticsGetSockfdTxBytesCallBackErrCo0100
+       * @tc.number SUB_NetManager_Statistics_GetSockfdTxBytes_CallBackErrCo_0100
+       * @tc.desc   Function test
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it("testNetManagerStatisticsGetSockfdTxBytesCallBackErrCo0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         let caseName: string = "testNetManagerStatisticsGetSockfdTxBytesCallBackErrCo0100";
         console.info(`${caseName}---start`);
@@ -291,14 +291,14 @@ export default function StatisticsErrorCodeTest() {
         }
 
       });
-    /*
-     * @tc.number: SUB_NetManager_Statistics_GetSockfdTxBytes_PromiseErrCo_0200
-     * @tc.name:  testNetManagerStatisticsGetSockfdTxBytesPromiseErrCo0200
-     * @tc.desc: Function test
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
-     */
+      /**
+       * @tc.name   testNetManagerStatisticsGetSockfdTxBytesPromiseErrCo0200
+       * @tc.number SUB_NetManager_Statistics_GetSockfdTxBytes_PromiseErrCo_0200
+       * @tc.desc   Function test
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it("testNetManagerStatisticsGetSockfdTxBytesPromiseErrCo0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         let caseName: string = "testNetManagerStatisticsGetSockfdTxBytesPromiseErrCo0200";
         console.info(`${caseName}---start`);
@@ -321,11 +321,12 @@ export default function StatisticsErrorCodeTest() {
       });
 
       /**
+       * @tc.name   testNetManagerStatisticsGetSockfdTxBytesCallbackErrCo0300
        * @tc.number SUB_NetManager_Statistics_GetSockfdTxBytes_CallbackErrCo_0300
-       * @tc.name testNetManagerStatisticsGetSockfdTxBytesCallbackErrCo0300
-       * @tc.desc Test getSockfdTxBytes property
-       * @tc.type:Function
-       * @tc.size:MediumTest
+       * @tc.desc   Test getSockfdTxBytes property
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
        */
       it("testNetManagerStatisticsGetSockfdTxBytesCallbackErrCo0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         let caseName: string = "testNetManagerStatisticsGetSockfdTxBytesCallbackErrCo0300";
@@ -349,13 +350,13 @@ export default function StatisticsErrorCodeTest() {
         }
       });
 
-    /*
-     * @tc.number: SUB_NetManager_Statistics_GetSockfdTxBytes_PromiseErrCo_0400
-     * @tc.name:  testNetManagerStatisticsGetSockfdTxBytesPromiseErrCo0400
-     * @tc.desc: Function test
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testNetManagerStatisticsGetSockfdTxBytesPromiseErrCo0400
+     * @tc.number SUB_NetManager_Statistics_GetSockfdTxBytes_PromiseErrCo_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testNetManagerStatisticsGetSockfdTxBytesPromiseErrCo0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = "testNetManagerStatisticsGetSockfdTxBytesPromiseErrCo0400";
@@ -378,14 +379,14 @@ export default function StatisticsErrorCodeTest() {
       }
     });
 
-    /*
-   * @tc.number: SUB_NetManager_Statistics_GetSockfdTxBytes_CallBackErrCo_0500
-   * @tc.name:  testNetManagerStatisticsGetSockfdTxBytesCallBackErrCo0500
-   * @tc.desc: Function test
-   * @tc.level:Level 3
-   * @tc.type:Function
-   * @tc.size:MediumTest
-   */
+    /**
+     * @tc.name   testNetManagerStatisticsGetSockfdTxBytesCallBackErrCo0500
+     * @tc.number SUB_NetManager_Statistics_GetSockfdTxBytes_CallBackErrCo_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("testNetManagerStatisticsGetSockfdTxBytesCallBackErrCo0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = "testNetManagerStatisticsGetSockfdTxBytesCallBackErrCo0500";
       console.info(`${caseName}---start`);
@@ -408,13 +409,13 @@ export default function StatisticsErrorCodeTest() {
       }
 
     });
-    /*
-     * @tc.number: SUB_NetManager_Statistics_GetSockfdTxBytes_PromiseErrCo_0600
-     * @tc.name:  testNetManagerStatisticsGetSockfdTxBytesPromiseErrCo0600
-     * @tc.desc: Function test
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testNetManagerStatisticsGetSockfdTxBytesPromiseErrCo0600
+     * @tc.number SUB_NetManager_Statistics_GetSockfdTxBytes_PromiseErrCo_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testNetManagerStatisticsGetSockfdTxBytesPromiseErrCo0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = "testNetManagerStatisticsGetSockfdTxBytesPromiseErrCo0600";
@@ -437,13 +438,13 @@ export default function StatisticsErrorCodeTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_NetManager_Statistics_GetSockfdRxBytes_CallBackErrCo_0100
-     * @tc.name:  testNetManagerStatisticsGetSockfdRxBytesCallBackErrCo0100
-     * @tc.desc: Function test
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testNetManagerStatisticsGetSockfdRxBytesCallBackErrCo0100
+     * @tc.number SUB_NetManager_Statistics_GetSockfdRxBytes_CallBackErrCo_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testNetManagerStatisticsGetSockfdRxBytesCallBackErrCo0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = "testNetManagerStatisticsGetSockfdRxBytesCallBackErrCo0100";
@@ -467,13 +468,13 @@ export default function StatisticsErrorCodeTest() {
       }
 
     });
-    /*
-     * @tc.number: SUB_NetManager_Statistics_GetSockfdRxBytes_PromiseErrCo_0200
-     * @tc.name:  testNetManagerStatisticsGetSockfdRxBytesPromiseErrCo0200
-     * @tc.desc: Function test
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testNetManagerStatisticsGetSockfdRxBytesPromiseErrCo0200
+     * @tc.number SUB_NetManager_Statistics_GetSockfdRxBytes_PromiseErrCo_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testNetManagerStatisticsGetSockfdRxBytesPromiseErrCo0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = "testNetManagerStatisticsGetSockfdRxBytesPromiseErrCo0200";
@@ -497,11 +498,12 @@ export default function StatisticsErrorCodeTest() {
     });
 
     /**
+     * @tc.name   testNetManagerStatisticsGetSockfdRxBytesCallbackErrCo0300
      * @tc.number SUB_NetManager_Statistics_GetSockfdRxBytes_CallbackErrCo_0300
-     * @tc.name testNetManagerStatisticsGetSockfdRxBytesCallbackErrCo0300
-     * @tc.desc Test getSockfdTxBytes property
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.desc   Test getSockfdTxBytes property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testNetManagerStatisticsGetSockfdRxBytesCallbackErrCo0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = "testNetManagerStatisticsGetSockfdRxBytesCallbackErrCo0300";
@@ -525,13 +527,13 @@ export default function StatisticsErrorCodeTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_NetManager_Statistics_GetSockfdRxBytes_PromiseErrCo_0400
-     * @tc.name:  testNetManagerStatisticsGetSockfdRxBytesPromiseErrCo0400
-     * @tc.desc: Function test
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testNetManagerStatisticsGetSockfdRxBytesPromiseErrCo0400
+     * @tc.number SUB_NetManager_Statistics_GetSockfdRxBytes_PromiseErrCo_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testNetManagerStatisticsGetSockfdRxBytesPromiseErrCo0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = "testNetManagerStatisticsGetSockfdRxBytesPromiseErrCo0400";
@@ -554,14 +556,14 @@ export default function StatisticsErrorCodeTest() {
       }
     });
 
-    /*
-   * @tc.number: SUB_NetManager_Statistics_GetSockfdRxBytes_CallBackErrCo_0500
-   * @tc.name:  testNetManagerStatisticsGetSockfdRxBytesCallBackErrCo0500
-   * @tc.desc: Function test
-   * @tc.level:Level 3
-   * @tc.type:Function
-   * @tc.size:MediumTest
-   */
+    /**
+     * @tc.name   testNetManagerStatisticsGetSockfdRxBytesCallBackErrCo0500
+     * @tc.number SUB_NetManager_Statistics_GetSockfdRxBytes_CallBackErrCo_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("testNetManagerStatisticsGetSockfdRxBytesCallBackErrCo0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = "testNetManagerStatisticsGetSockfdRxBytesCallBackErrCo0500";
       console.info(`${caseName}---start`);
@@ -584,13 +586,13 @@ export default function StatisticsErrorCodeTest() {
       }
 
     });
-    /*
-     * @tc.number: SUB_NetManager_Statistics_GetSockfdRxBytes_PromiseErrCo_0600
-     * @tc.name:  testNetManagerStatisticsGetSockfdRxBytesPromiseErrCo0600
-     * @tc.desc: Function test
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testNetManagerStatisticsGetSockfdRxBytesPromiseErrCo0600
+     * @tc.number SUB_NetManager_Statistics_GetSockfdRxBytes_PromiseErrCo_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testNetManagerStatisticsGetSockfdRxBytesPromiseErrCo0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = "testNetManagerStatisticsGetSockfdRxBytesPromiseErrCo0600";

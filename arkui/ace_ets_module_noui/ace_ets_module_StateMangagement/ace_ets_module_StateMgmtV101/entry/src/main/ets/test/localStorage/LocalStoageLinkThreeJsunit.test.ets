@@ -41,12 +41,12 @@ export default function LocalStoageLinkThreeJsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_STATUSMANAGER_STORAGE_INTERFACE_0040
-     * @tc.name      LocalStoageLinkThreeTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 0
-     * @tc.type :    FUNC
-     * @tc.size :    MEDIUM
+     * @tc.name   LocalStoageLinkThreeTest_0100
+     * @tc.number SUB_ACE_STATUSMANAGER_STORAGE_INTERFACE_0040
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LocalStoageLinkThreeTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('LocalStoageLinkThreeTest_0100 START');

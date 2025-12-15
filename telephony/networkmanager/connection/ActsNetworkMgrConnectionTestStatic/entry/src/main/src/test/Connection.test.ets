@@ -44,12 +44,12 @@ export default function ConnectionTest() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
     /**
-     * @tc.number : SUB_Network_Connection_SetAppHttpProxy_0100
-     * @tc.name   : testConnectionSetHttpProxyCallback_static_0100
-     * @tc.desc   : Set network application level HTTP proxy configuration information.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testConnectionSetHttpProxyCallback_static_0100
+     * @tc.number SUB_Network_Connection_SetAppHttpProxy_0100
+     * @tc.desc   Set network application level HTTP proxy configuration information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectionSetHttpProxyCallback_static_0100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = 'testConnectionSetHttpProxyCallback_static_0100';
@@ -84,12 +84,12 @@ export default function ConnectionTest() {
     });
 
     /**
-     * @tc.number : SUB_Network_Connection_SetAppHttpProxy_0200
-     * @tc.name   : testConnectionSetHttpProxyCallback_static_0200
-     * @tc.desc   : Set network application level HTTP proxy configuration information.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testConnectionSetHttpProxyCallback_static_0200
+     * @tc.number SUB_Network_Connection_SetAppHttpProxy_0200
+     * @tc.desc   Set network application level HTTP proxy configuration information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectionSetHttpProxyCallback_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = 'testConnectionSetHttpProxyCallback_static_0200';
@@ -125,12 +125,12 @@ export default function ConnectionTest() {
 
 
     /**
-     * @tc.number : SUB_Network_Connection_SetAppHttpProxy_0400
-     * @tc.name   : testConnectionSetHttpProxyCallback_static_0400
-     * @tc.desc   : Set network application level HTTP proxy configuration information.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testConnectionSetHttpProxyCallback_static_0400
+     * @tc.number SUB_Network_Connection_SetAppHttpProxy_0400
+     * @tc.desc   Set network application level HTTP proxy configuration information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectionSetHttpProxyCallback_static_0400',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
       const caseName: string = 'testConnectionSetHttpProxyCallback_static_0400';
@@ -165,12 +165,12 @@ export default function ConnectionTest() {
     });
 
     /**
-     * @tc.number : SUB_Network_Connection_SetAppHttpProxy_0500
-     * @tc.name   : testConnectionSetHttpProxyCallback_static_0500
-     * @tc.desc   : Set network application level HTTP proxy configuration information.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testConnectionSetHttpProxyCallback_static_0500
+     * @tc.number SUB_Network_Connection_SetAppHttpProxy_0500
+     * @tc.desc   Set network application level HTTP proxy configuration information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectionSetHttpProxyCallback_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = 'testConnectionSetHttpProxyCallback_static_0500';
@@ -206,12 +206,12 @@ export default function ConnectionTest() {
 
 
     /**
-     * @tc.number : SUB_Network_Connection_SetAppHttpProxy_0800
-     * @tc.name   : testConnectionSetHttpProxyCallback_static_0800
-     * @tc.desc   : Set network application level HTTP proxy configuration information.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testConnectionSetHttpProxyCallback_static_0800
+     * @tc.number SUB_Network_Connection_SetAppHttpProxy_0800
+     * @tc.desc   Set network application level HTTP proxy configuration information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectionSetHttpProxyCallback_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = 'testConnectionSetHttpProxyCallback_static_0800';
@@ -247,12 +247,12 @@ export default function ConnectionTest() {
     });
 
     /**
-     * @tc.number : SUB_Network_Connection_SetAppHttpProxy_0900
-     * @tc.name   : testConnectionSetHttpProxyCallback_static_0900
-     * @tc.desc   : Set network application level HTTP proxy configuration information.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testConnectionSetHttpProxyCallback_static_0900
+     * @tc.number SUB_Network_Connection_SetAppHttpProxy_0900
+     * @tc.desc   Set network application level HTTP proxy configuration information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectionSetHttpProxyCallback_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = 'testConnectionSetHttpProxyCallback_static_0900';

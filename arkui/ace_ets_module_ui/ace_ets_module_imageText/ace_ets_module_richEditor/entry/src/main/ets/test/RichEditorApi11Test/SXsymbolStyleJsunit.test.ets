@@ -41,14 +41,14 @@ export default function SXsymbolStyleJsunit() {
       done();
     });
     
-    /*
-    * @tc.number  SXsymbolStyleJsunit_0100
-    * @tc.name    SXsymbolStyleJsunit_0100
-    * @tc.desc    test RichEditor
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   1
-    */
+    /**
+     * @tc.name   SXsymbolStyleJsunit_0100
+     * @tc.number SXsymbolStyleJsunit_0100
+     * @tc.desc   test RichEditor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SXsymbolStyleJsunit_0100', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('SXsymbolStyleJsunit_0100 START');

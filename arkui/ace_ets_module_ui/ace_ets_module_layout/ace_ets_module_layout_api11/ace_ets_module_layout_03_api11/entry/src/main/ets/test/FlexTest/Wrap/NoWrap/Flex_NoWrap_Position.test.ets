@@ -46,10 +46,12 @@ export default function flex_NoWrap_PositionTest() {
       console.info("Flex_NoWrap_Position after each called");
     });
     /**
+     * @tc.name   testWrapNoWrapTextPosition
      * @tc.number SUB_ACE_FLEXWRAP_NOWRAP_1900
-     * @tc.name testWrapNoWrapTextPosition
-     * @tc.desc The size of the parent component in the main axis direction meets the layout
-     *               of the child components when the first child components change position
+     * @tc.desc   The size of the parent component in the main axis direction meets the layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapNoWrapTextPosition',  Level.LEVEL0, async () => {
       console.info('[testWrapNoWrapTextPosition] START');

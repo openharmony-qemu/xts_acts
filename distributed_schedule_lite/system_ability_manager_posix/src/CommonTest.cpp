@@ -67,10 +67,13 @@ protected:
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_Common_0010
- * @tc.name      : The vector operation after initialization is correct
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testCommon0010
+ * @tc.number DMSLite_SAMGR_Common_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(CommonTest, testCommon0010, Function | MediumTest | Level2)
 {
     Vector nodeVector = VECTOR_Make((VECTOR_Key)GetNode, (VECTOR_Compare)CompareNode);
@@ -98,10 +101,13 @@ HWTEST_F(CommonTest, testCommon0010, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_Common_0020
- * @tc.name      : The vector operation is correct when only 1 element
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testCommon0020
+ * @tc.number DMSLite_SAMGR_Common_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(CommonTest, testCommon0020, Function | MediumTest | Level2)
 {
     Vector nodeVector = VECTOR_Make((VECTOR_Key)GetNode, (VECTOR_Compare)CompareNode);
@@ -133,10 +139,13 @@ HWTEST_F(CommonTest, testCommon0020, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_Common_0030
- * @tc.name      : The vector operation is correct when multi elements
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testCommon0030
+ * @tc.number DMSLite_SAMGR_Common_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(CommonTest, testCommon0030, Function | MediumTest | Level2)
 {
     Vector nodeVector = VECTOR_Make((VECTOR_Key)GetNode, (VECTOR_Compare)CompareNode);
@@ -186,10 +195,13 @@ HWTEST_F(CommonTest, testCommon0030, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_Common_0040
- * @tc.name      : The vector operation is correct after delete some elements
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testCommon0040
+ * @tc.number DMSLite_SAMGR_Common_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(CommonTest, testCommon0040, Function | MediumTest | Level2)
 {
     Vector nodeVector = VECTOR_Make((VECTOR_Key)GetNode, (VECTOR_Compare)CompareNode);
@@ -234,10 +246,13 @@ HWTEST_F(CommonTest, testCommon0040, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_Common_0050
- * @tc.name      : The vector operation is correct after add and delete some elements
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testCommon0050
+ * @tc.number DMSLite_SAMGR_Common_0050
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(CommonTest, testCommon0050, Function | MediumTest | Level2)
 {
     Vector nodeVector = VECTOR_Make((VECTOR_Key)GetNode, (VECTOR_Compare)CompareNode);
@@ -291,10 +306,13 @@ HWTEST_F(CommonTest, testCommon0050, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_Common_0060
- * @tc.name      : If vector or element is nullptr adding element fails
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testCommon0060
+ * @tc.number DMSLite_SAMGR_Common_0060
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(CommonTest, testCommon0060, Function | MediumTest | Level2)
 {
     Vector nodeVector = VECTOR_Make((VECTOR_Key)GetNode, (VECTOR_Compare)CompareNode);
@@ -310,10 +328,13 @@ HWTEST_F(CommonTest, testCommon0060, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_Common_0070
- * @tc.name      : If vector is nullptr deleting element fails
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testCommon0070
+ * @tc.number DMSLite_SAMGR_Common_0070
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(CommonTest, testCommon0070, Function | MediumTest | Level2)
 {
     Vector nodeVector = VECTOR_Make((VECTOR_Key)GetNode, (VECTOR_Compare)CompareNode);
@@ -327,10 +348,13 @@ HWTEST_F(CommonTest, testCommon0070, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_Common_0080
- * @tc.name      : If vector is nullptr getting information from vector fails
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testCommon0080
+ * @tc.number DMSLite_SAMGR_Common_0080
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(CommonTest, testCommon0080, Function | MediumTest | Level2)
 {
     Vector nodeVector = VECTOR_Make((VECTOR_Key)GetNode, (VECTOR_Compare)CompareNode);
@@ -350,10 +374,13 @@ HWTEST_F(CommonTest, testCommon0080, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_Common_0090
- * @tc.name      : If vector is nullptr searching from vector fails
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testCommon0090
+ * @tc.number DMSLite_SAMGR_Common_0090
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(CommonTest, testCommon0090, Function | MediumTest | Level2)
 {
     Vector nodeVector = VECTOR_Make((VECTOR_Key)GetNode, (VECTOR_Compare)CompareNode);

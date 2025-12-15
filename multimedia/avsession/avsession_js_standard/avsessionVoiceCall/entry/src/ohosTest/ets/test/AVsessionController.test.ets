@@ -113,15 +113,15 @@ export default function abilityTest() {
       console.info(`${TAG}: afterAll in`);
     })
 
-   /* *
-    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_0100
-    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_0100
-    * @tc.desc      : Testing call getAVQueueItems() of None and not None
-    * @tc.size      : MediumTest
-    * @tc.type      : Fault Tolerance
-    * @tc.level     : Level 3
-    */
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_0100
+     * @tc.desc   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try{
         await sleep(500);
@@ -142,15 +142,15 @@ export default function abilityTest() {
       done();
     })  
 
-   /* *
-    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_0200
-    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_0200
-    * @tc.desc      : Testing call getAVQueueItems(promise) of None and not None
-    * @tc.size      : MediumTest
-    * @tc.type      : Fault Tolerance
-    * @tc.level     : Level 3
-    */
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_0200
+     * @tc.desc   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try{
         await sleep(500);
@@ -170,15 +170,15 @@ export default function abilityTest() {
       done();
     })
 
-   /* *
-    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSSYNC_0100
-    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSSYNC_0100
-    * @tc.desc      : Testing call getAVQueueItemsSync() of None and not None
-    * @tc.size      : MediumTest
-    * @tc.type      : Fault Tolerance
-    * @tc.level     : Level 3
-    */
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSSYNC_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSSYNC_0100
+     * @tc.desc   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSSYNC_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSSYNC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let currentQueueItems: Array<avSession.AVQueueItem> = await controller.getAVQueueItemsSync();
@@ -196,15 +196,15 @@ export default function abilityTest() {
       done();
     })
 
-   /* *
-    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ISACTIVE_0100
-    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ISACTIVE_0100
-    * @tc.desc      : Testing call isActive() of None and not None
-    * @tc.size      : MediumTest
-    * @tc.type      : Fault Tolerance
-    * @tc.level     : Level 3
-    */
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ISACTIVE_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ISACTIVE_0100
+     * @tc.desc   SUB_MULTIMEDIA_AVSESSION_ISACTIVE_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVSESSION_ISACTIVE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try{
           await controller.isActive().then((isActive: boolean) => {
@@ -224,15 +224,15 @@ export default function abilityTest() {
       done();
     })          
 
-   /* *
-    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ISACTIVE_0200
-    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ISACTIVE_0200
-    * @tc.desc      : Testing call isActive() of None and not None
-    * @tc.size      : MediumTest
-    * @tc.type      : Fault Tolerance
-    * @tc.level     : Level 3
-    */
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ISACTIVE_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ISACTIVE_0200
+     * @tc.desc   SUB_MULTIMEDIA_AVSESSION_ISACTIVE_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVSESSION_ISACTIVE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try{
         await controller.isActive((err: BusinessError, isActive: boolean) => {
@@ -252,15 +252,15 @@ export default function abilityTest() {
     })  
 
 
-   /* *
-    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_0100
-    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_0100
-    * @tc.desc      : Testing call isActiveSync() of None and not None
-    * @tc.size      : MediumTest
-    * @tc.type      : Fault Tolerance
-    * @tc.level     : Level 3
-    */
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_0100
+     * @tc.desc   SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
             let isActive: boolean = await controller.isActiveSync();
@@ -278,15 +278,15 @@ export default function abilityTest() {
       done();
     })  
 
-   /* *
-    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_0100
-    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_0100
-    * @tc.desc      : Testing call getValidCommands() of None and not None
-    * @tc.size      : MediumTest
-    * @tc.type      : Fault Tolerance
-    * @tc.level     : Level 3
-    */
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_0100
+     * @tc.desc   SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try{
         await sleep(500);
@@ -309,15 +309,15 @@ export default function abilityTest() {
       done();
     })  
 
-   /* *
-    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_0200
-    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_0200
-    * @tc.desc      : Testing call getValidCommands(promise) of None and not None
-    * @tc.size      : MediumTest
-    * @tc.type      : Fault Tolerance
-    * @tc.level     : Level 3
-    */
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_0200
+     * @tc.desc   SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try{
         await sleep(500);
@@ -337,15 +337,15 @@ export default function abilityTest() {
       done();
     })
 
-   /* *
-    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_0100
-    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_0100
-    * @tc.desc      : Testing call getValidCommandsSync() of None and not None
-    * @tc.size      : MediumTest
-    * @tc.type      : Fault Tolerance
-    * @tc.level     : Level 3
-    */
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_0100
+     * @tc.desc   SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let validCommands: Array<avSession.AVControlCommandType> = await controller.getValidCommandsSync();
@@ -365,12 +365,12 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ON_SETTARGETLOOPMODE_REVENT_0100
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ON_SETTARGETLOOPMODE_REVENT_0100
-     * @tc.desc      : Testing on setTargetLoopMode callback
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_SETTARGETLOOPMODE_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_SETTARGETLOOPMODE_REVENT_0100
+     * @tc.desc   Testing on setTargetLoopMode callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ON_SETTARGETLOOPMODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         await session.on('setTargetLoopMode', (mode: number) => {

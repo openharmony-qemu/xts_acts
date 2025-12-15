@@ -41,12 +41,12 @@ export default function getPosition() {
     });
 
     /**
-     * @tc.number    SUB_ACE_getPosition_0100
-     * @tc.name      getPosition_0100
-     * @tc.desc      getPosition api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getPosition_0100
+     * @tc.number SUB_ACE_getPosition_0100
+     * @tc.desc   getPosition api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getPosition_0100', Level.LEVEL2, async (done: Function) => {
       console.info('getPosition_0100 START');

@@ -45,12 +45,12 @@ export default function RichEditorApi10() {
     });
 
     /**
+     * @tc.name   RichEditorApi10_0100
      * @tc.number RichEditorApi10_0100
-     * @tc.name   testFocus
      * @tc.desc   Test onWillChange interface.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RichEditorApi10_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('RichEditorApi10_0100 START');

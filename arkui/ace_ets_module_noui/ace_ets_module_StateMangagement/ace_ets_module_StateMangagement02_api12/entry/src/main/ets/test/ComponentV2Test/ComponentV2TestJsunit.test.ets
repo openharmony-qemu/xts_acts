@@ -46,12 +46,12 @@ export default function ComponentV2TestJsunit() {
     });
 
     /**
-     * @tc.number    ComponentV2TestJsunit_001
-     * @tc.name      ComponentV2TestJsunit_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ComponentV2TestJsunit_001
+     * @tc.number ComponentV2TestJsunit_001
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ComponentV2TestJsunit_001', Level.LEVEL0, async (done: Function) => {
       console.info('[ComponentV2TestJsunit_001] START');
@@ -70,12 +70,12 @@ export default function ComponentV2TestJsunit() {
     });
 
     /**
-     * @tc.number    ComponentV2TestJsunit_002
-     * @tc.name      ComponentV2TestJsunit_002
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ComponentV2TestJsunit_002
+     * @tc.number ComponentV2TestJsunit_002
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ComponentV2TestJsunit_002', Level.LEVEL0, async (done: Function) => {
       console.info('[ComponentV2TestJsunit_002] START');
@@ -94,12 +94,12 @@ export default function ComponentV2TestJsunit() {
     });
 
     /**
-     * @tc.number    ComponentV2TestJsunit_003
-     * @tc.name      ComponentV2TestJsunit_003
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ComponentV2TestJsunit_003
+     * @tc.number ComponentV2TestJsunit_003
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ComponentV2TestJsunit_003', Level.LEVEL0, async (done: Function) => {
       console.info('[ComponentV2TestJsunit_003] START');
@@ -118,12 +118,12 @@ export default function ComponentV2TestJsunit() {
     });
 
     /**
-     * @tc.number    ComponentV2TestJsunit_004
-     * @tc.name      ComponentV2TestJsunit_004
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ComponentV2TestJsunit_004
+     * @tc.number ComponentV2TestJsunit_004
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ComponentV2TestJsunit_004', Level.LEVEL0, async (done: Function) => {
       console.info('[ComponentV2TestJsunit_004] START');
@@ -147,12 +147,12 @@ export default function ComponentV2TestJsunit() {
     });
 
     /**
-     * @tc.number    ComponentV2TestJsunit_005
-     * @tc.name      ComponentV2TestJsunit_005
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ComponentV2TestJsunit_005
+     * @tc.number ComponentV2TestJsunit_005
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ComponentV2TestJsunit_005', Level.LEVEL0, async (done: Function) => {
       console.info('[ComponentV2TestJsunit_005] START');

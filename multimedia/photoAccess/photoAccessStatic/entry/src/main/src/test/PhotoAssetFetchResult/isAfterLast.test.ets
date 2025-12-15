@@ -53,12 +53,12 @@ export default function assetIsAfterLastTest() {
 
     //image
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_IS_AFTER_LAST_STATIC_0000
-      * @tc.name    isAfterLast_callback_static_000
-      * @tc.desc    isAfterLast image
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   isAfterLast_callback_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_IS_AFTER_LAST_STATIC_0000
+     * @tc.desc   isAfterLast image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isAfterLast_callback_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -74,12 +74,12 @@ export default function assetIsAfterLastTest() {
 
     //video
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_IS_AFTER_LAST_STATIC_0100
-      * @tc.name    isAfterLast_callback_static_001
-      * @tc.desc    isAfterLast video
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   isAfterLast_callback_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_IS_AFTER_LAST_STATIC_0100
+     * @tc.desc   isAfterLast video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isAfterLast_callback_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

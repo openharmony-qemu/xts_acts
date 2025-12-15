@@ -54,7 +54,6 @@ export default function BreakIteratorInI18nTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_iterator_static_0100
      * @tc.number i18n_test_iterator_static_0100
      * @tc.desc   test current interface
@@ -73,7 +72,6 @@ export default function BreakIteratorInI18nTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_iterator_static_0200
      * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_static_0200
      * @tc.desc   test first interface
@@ -92,7 +90,6 @@ export default function BreakIteratorInI18nTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_iterator_static_0300
      * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_static_0300
      * @tc.desc   test last interface
@@ -111,7 +108,6 @@ export default function BreakIteratorInI18nTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_iterator_static_0400
      * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_static_0400
      * @tc.desc   test next interface
@@ -129,7 +125,6 @@ export default function BreakIteratorInI18nTest() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_iterator_static_0500
      * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_static_0500
      * @tc.desc   check the next interface with param, test next interface with param
@@ -148,7 +143,6 @@ export default function BreakIteratorInI18nTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_iterator_static_0600
      * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_static_0600
      * @tc.desc   test previous interface
@@ -166,7 +160,6 @@ export default function BreakIteratorInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_iterator_static_0700
      * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_static_0700
      * @tc.desc   test following interface
@@ -184,7 +177,6 @@ export default function BreakIteratorInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_iterator_static_0800
      * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_static_0800
      * @tc.desc   test getLineBreakText interface
@@ -202,7 +194,6 @@ export default function BreakIteratorInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_iterator_static_0900
      * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_static_0900
      * @tc.desc   test isBoundary interface
@@ -224,7 +215,6 @@ export default function BreakIteratorInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_iterator_static_1000
      * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_static_1000
      * @tc.desc   test iterator interface

@@ -41,12 +41,12 @@ export default function PolylineResourceTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_PolylineResourceTest_0100
-     * @tc.name: PolylineResourceTest_0100
-     * @tc.desc: PolylineAPI 
-     * @tc.level: Level 2
-     * @tc.type : Polyline
-     * @tc.size : PolylineTest
+     * @tc.name   PolylineResourceTest_0100
+     * @tc.number SUB_ARKUI_API_PolylineResourceTest_0100
+     * @tc.desc   PolylineAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PolylineResourceTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[PolylineResourceTest_0100] START');

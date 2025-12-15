@@ -22,15 +22,14 @@ import { Level } from '@ohos/hypium';
 export default function fileioClose() {
 describe('fileio_close', function () {
 
-  /**
-   * @tc.number SUB_DF_FILEIO_CLOSESYNC_0000
-   * @tc.name fileio_test_close_sync_000
-   * @tc.desc Test closeSync() interfaces. Test file has been closed.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-   */
+   /**
+    * @tc.name   fileio_test_close_sync_000
+    * @tc.number SUB_DF_FILEIO_CLOSESYNC_0000
+    * @tc.desc   Test closeSync() interfaces. Test file has been closed.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('fileio_test_close_sync_000', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_close_sync_000');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -46,13 +45,12 @@ describe('fileio_close', function () {
   })
 
   /**
+   * @tc.name   fileio_test_close_sync_001
    * @tc.number SUB_DF_FILEIO_CLOSESYNC_0100
-   * @tc.name fileio_test_close_sync_001
-   * @tc.desc Test closeSync() interfaces, No parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test closeSync() interfaces, No parameters.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_close_sync_001', Level.LEVEL0, function () {
     try {
@@ -64,13 +62,12 @@ describe('fileio_close', function () {
   })
 
   /**
+   * @tc.name   fileio_test_close_sync_002
    * @tc.number SUB_DF_FILEIO_CLOSESYNC_0200
-   * @tc.name fileio_test_close_sync_002
-   * @tc.desc Test closeSync() interfaces, fd is illegal.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test closeSync() interfaces, fd is illegal.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_close_sync_002', Level.LEVEL0, function () {
     try {
@@ -83,13 +80,12 @@ describe('fileio_close', function () {
   })
 
   /**
+   * @tc.name   fileio_test_close_async_000
    * @tc.number SUB_DF_FILEIO_CLOSE_ASYNC_0000
-   * @tc.name fileio_test_close_async_000
-   * @tc.desc Test close() interfaces, return in callback mode. Test file has been closed.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test close() interfaces, return in callback mode. Test file has been closed.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_close_async_000', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_close_async_000');
@@ -108,13 +104,12 @@ describe('fileio_close', function () {
   })
 
   /**
+   * @tc.name   fileio_test_close_async_001
    * @tc.number SUB_DF_FILEIO_CLOSE_ASYNC_0100
-   * @tc.name fileio_test_close_async_001
-   * @tc.desc Test close() interfaces, return in promise mode. Test file has been closed.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test close() interfaces, return in promise mode. Test file has been closed.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_close_async_001', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_close_async_001');
@@ -133,13 +128,12 @@ describe('fileio_close', function () {
   })
 
   /**
+   * @tc.name   fileio_test_close_async_002
    * @tc.number SUB_DF_FILEIO_CLOSE_ASYNC_0200
-   * @tc.name fileio_test_close_async_002
-   * @tc.desc Test close() interfaces, there are multiple parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test close() interfaces, there are multiple parameters.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_close_async_002', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_close_async_002');
@@ -158,14 +152,13 @@ describe('fileio_close', function () {
   })
 
    /**
-   * @tc.number SUB_DF_FILEIO_CLOSE_ASYNC_0300
-   * @tc.name fileio_test_close_async_003
-   * @tc.desc Test close() interfaces, fd is illegal.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-   */
+    * @tc.name   fileio_test_close_async_003
+    * @tc.number SUB_DF_FILEIO_CLOSE_ASYNC_0300
+    * @tc.desc   Test close() interfaces, fd is illegal.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('fileio_test_close_async_003', Level.LEVEL0, async function (done) {
      try {
        await fileio.close(-1);
@@ -178,14 +171,13 @@ describe('fileio_close', function () {
    })
 
    /**
-   * @tc.number SUB_DF_FILEIO_CLOSE_ASYNC_0400
-   * @tc.name fileio_test_close_async_004
-   * @tc.desc Test close() interfaces, No parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-   */
+    * @tc.name   fileio_test_close_async_004
+    * @tc.number SUB_DF_FILEIO_CLOSE_ASYNC_0400
+    * @tc.desc   Test close() interfaces, No parameters.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('fileio_test_close_async_004', Level.LEVEL0, async function (done) {
      try {
        await fileio.close();

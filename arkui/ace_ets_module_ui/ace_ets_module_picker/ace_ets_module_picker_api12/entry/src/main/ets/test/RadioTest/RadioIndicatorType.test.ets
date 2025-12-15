@@ -47,12 +47,14 @@ export default function RadioIndicatorType() {
     });
 
 
-    /*
-    * @tc.number      RadioIndicatorType_001
-    * @tc.name        RadioIndicatorType_001
-    * @tc.desc        Test RadioIndicatorType.TICK
-    * @tc.level       Level 2
-    */
+    /**
+     * @tc.name   RadioIndicatorType_001
+     * @tc.number RadioIndicatorType_001
+     * @tc.desc   Test RadioIndicatorType.TICK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RadioIndicatorType_001', Level.LEVEL1, async (done: Function) => {
       console.info('[RadioIndicatorType_001] START');
       await Utils.sleep(1000);
@@ -69,12 +71,14 @@ export default function RadioIndicatorType() {
 
 
 
-    /*
-    * @tc.number      RadioIndicatorType_002
-    * @tc.name        RadioIndicatorType_002
-    * @tc.desc        Test RadioIndicatorType.DOT
-    * @tc.level       Level 2
-    */
+    /**
+     * @tc.name   RadioIndicatorType_002
+     * @tc.number RadioIndicatorType_002
+     * @tc.desc   Test RadioIndicatorType.DOT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RadioIndicatorType_002', Level.LEVEL1, async (done: Function) => {
       console.info('[RadioIndicatorType_002] START');
       await Utils.sleep(1000);
@@ -89,11 +93,13 @@ export default function RadioIndicatorType() {
       done();
     });
 
-    /*
-     * @tc.number      RadioIndicatorType_003
-     * @tc.name        RadioIndicatorType_003
-     * @tc.desc        Test indicatorBuilder
-     * @tc.level       Level 2
+    /**
+     * @tc.name   RadioIndicatorType_003
+     * @tc.number RadioIndicatorType_003
+     * @tc.desc   Test indicatorBuilder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RadioIndicatorType_003', Level.LEVEL1, async (done: Function) => {
       console.info('[RadioIndicatorType_003] START');

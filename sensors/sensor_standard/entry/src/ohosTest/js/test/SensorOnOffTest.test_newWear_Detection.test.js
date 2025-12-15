@@ -70,10 +70,13 @@ describe("SensorJsTest_sensor_59", function () {
     'ReferenceError: xxx is not defined']
     let errMessage
 
-     /*
-     * @tc.number:SUB_SensorsSystem_Wear_Detection_JSTest_0120
-     * @tc.name: newWear_Detection_SensorJsTest012
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newWear_Detection_SensorJsTest012
+     * @tc.number SUB_SensorsSystem_Wear_Detection_JSTest_0120
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newWear_Detection_SensorJsTest012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------newWear_Detection_SensorJsTest012--------');
@@ -91,10 +94,13 @@ describe("SensorJsTest_sensor_59", function () {
         }, 500);
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_Wear_Detection_JSTest_0130
-     * @tc.name: newWear_Detection_SensorJsTest013
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newWear_Detection_SensorJsTest013
+     * @tc.number SUB_SensorsSystem_Wear_Detection_JSTest_0130
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newWear_Detection_SensorJsTest013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------newWear_Detection_SensorJsTest013--------');
@@ -108,10 +114,13 @@ describe("SensorJsTest_sensor_59", function () {
         }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_Wear_Detection_JSTest_0140
-     * @tc.name: newWear_Detection_SensorJsTest014
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newWear_Detection_SensorJsTest014
+     * @tc.number SUB_SensorsSystem_Wear_Detection_JSTest_0140
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newWear_Detection_SensorJsTest014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------newWear_Detection_SensorJsTest014--------');
@@ -130,10 +139,13 @@ describe("SensorJsTest_sensor_59", function () {
         }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_Wear_Detection_JSTest_0150
-     * @tc.name: newWear_Detection_SensorJsTest015
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newWear_Detection_SensorJsTest015
+     * @tc.number SUB_SensorsSystem_Wear_Detection_JSTest_0150
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newWear_Detection_SensorJsTest015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------newWear_Detection_SensorJsTest015--------');
@@ -147,10 +159,13 @@ describe("SensorJsTest_sensor_59", function () {
         }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_Wear_Detection_JSTest_0160
-     * @tc.name: newWear_Detection_SensorJsTest016
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newWear_Detection_SensorJsTest016
+     * @tc.number SUB_SensorsSystem_Wear_Detection_JSTest_0160
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newWear_Detection_SensorJsTest016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------newWear_Detection_SensorJsTest016--------');
@@ -168,10 +183,13 @@ describe("SensorJsTest_sensor_59", function () {
         }
     })
 
-   /*
-     * @tc.number: SUB_SensorsSystem_Wear_Detection_JSTest_0170
-     * @tc.name: newWear_Detection_SensorJsTest017
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newWear_Detection_SensorJsTest017
+     * @tc.number SUB_SensorsSystem_Wear_Detection_JSTest_0170
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newWear_Detection_SensorJsTest017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------newWear_Detection_SensorJsTest017--------');
@@ -186,10 +204,13 @@ describe("SensorJsTest_sensor_59", function () {
         }
     })
 
-   /*
-     * @tc.number: SUB_SensorsSystem_Wear_Detection_JSTest_0180
-     * @tc.name: newWear_Detection_SensorJsTest018
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newWear_Detection_SensorJsTest018
+     * @tc.number SUB_SensorsSystem_Wear_Detection_JSTest_0180
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newWear_Detection_SensorJsTest018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------newWear_Detection_SensorJsTest018--------');
@@ -208,10 +229,13 @@ describe("SensorJsTest_sensor_59", function () {
         }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_Wear_Detection_JSTest_0190
-     * @tc.name: newWear_Detection_SensorJsTest019
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newWear_Detection_SensorJsTest019
+     * @tc.number SUB_SensorsSystem_Wear_Detection_JSTest_0190
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newWear_Detection_SensorJsTest019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------newWear_Detection_SensorJsTest019--------');
@@ -229,10 +253,13 @@ describe("SensorJsTest_sensor_59", function () {
         }
     })
 
-     /*
-     * @tc.number: SUB_SensorsSystem_Wear_Detection_JSTest_0200
-     * @tc.name: newWear_Detection_SensorJsTest020
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newWear_Detection_SensorJsTest020
+     * @tc.number SUB_SensorsSystem_Wear_Detection_JSTest_0200
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newWear_Detection_SensorJsTest020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------newWear_Detection_SensorJsTest020--------');
@@ -250,10 +277,13 @@ describe("SensorJsTest_sensor_59", function () {
         }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_Wear_Detection_JSTest_0210
-     * @tc.name: newWear_Detection_SensorJsTest021
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newWear_Detection_SensorJsTest021
+     * @tc.number SUB_SensorsSystem_Wear_Detection_JSTest_0210
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newWear_Detection_SensorJsTest021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------newWear_Detection_SensorJsTest021--------');
@@ -271,10 +301,13 @@ describe("SensorJsTest_sensor_59", function () {
         }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_Wear_Detection_JSTest_0220
-     * @tc.name: newWear_Detection_SensorJsTest022
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newWear_Detection_SensorJsTest022
+     * @tc.number SUB_SensorsSystem_Wear_Detection_JSTest_0220
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newWear_Detection_SensorJsTest022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------newWear_Detection_SensorJsTest022--------');
@@ -292,13 +325,13 @@ describe("SensorJsTest_sensor_59", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Wear_Detection_JSTest_0230
-     * @tc.name: newWear_Detection_SensorJsTest023
-     * @tc.desc: Functional Use Cases
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newWear_Detection_SensorJsTest023
+     * @tc.number SUB_SensorsSystem_Wear_Detection_JSTest_0230
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newWear_Detection_SensorJsTest023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------newWear_Detection_SensorJsTest023--------------');

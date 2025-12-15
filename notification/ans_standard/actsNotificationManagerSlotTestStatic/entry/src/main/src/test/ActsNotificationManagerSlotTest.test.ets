@@ -51,9 +51,12 @@ export default function ActsNotificationManagerSlotTest() {
 
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_8200
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_8200
-     * @tc.desc    NotificationSlot of an unknown SlotType
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_8200
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_8200
+     * @tc.desc   NotificationSlot of an unknown SlotType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_8200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_8200 '
@@ -81,9 +84,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_8250
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_8250
-     * @tc.desc    NotificationSlot for social communication
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_8250
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_8250
+     * @tc.desc   NotificationSlot for social communication
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_8250', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_8250 '
@@ -111,9 +117,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_8300
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_8300
-     * @tc.desc    NotificationSlot for service information
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_8300
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_8300
+     * @tc.desc   NotificationSlot for service information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_8300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_8300 '
@@ -141,9 +150,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_8350
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_8350
-     * @tc.desc    NotificationSlot for content information
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_8350
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_8350
+     * @tc.desc   NotificationSlot for content information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_8350', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_8350 '
@@ -171,9 +183,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_8400
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_8400
-     * @tc.desc    NotificationSlot for other purposes
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_8400
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_8400
+     * @tc.desc   NotificationSlot for other purposes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_8400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_8400 '
@@ -201,9 +216,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_8450
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_8450
-     * @tc.desc    NotificationSlot of an unknown type
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_8450
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_8450
+     * @tc.desc   NotificationSlot of an unknown type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_8450', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_8450 '
@@ -223,9 +241,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_8500
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_8500
-     * @tc.desc    NotificationSlot for social communication
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_8500
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_8500
+     * @tc.desc   NotificationSlot for social communication
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_8500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_8500 '
@@ -245,9 +266,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_8550
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_8550
-     * @tc.desc    NotificationSlot for service information
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_8550
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_8550
+     * @tc.desc   NotificationSlot for service information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_8550', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_8550 '
@@ -267,9 +291,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_8600
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_8600
-     * @tc.desc    NotificationSlot for content information
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_8600
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_8600
+     * @tc.desc   NotificationSlot for content information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_8600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_8600 '
@@ -289,9 +316,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_8650
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_8650
-     * @tc.desc    NotificationSlot for other purposes
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_8650
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_8650
+     * @tc.desc   NotificationSlot for other purposes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_8650', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_8650 '
@@ -311,9 +341,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_GetSlot_Static_1200
-     * @tc.name    Sub_Notification_Ans_Slot_GetSlot_Static_1200
-     * @tc.desc    Get the UNKNOWN_TYPE type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_GetSlot_Static_1200
+     * @tc.number Sub_Notification_Ans_Slot_GetSlot_Static_1200
+     * @tc.desc   Get the UNKNOWN_TYPE type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_GetSlot_Static_1200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_GetSlot_Static_1200 '
@@ -339,9 +372,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_GetSlot_Static_1300
-     * @tc.name    Sub_Notification_Ans_Slot_GetSlot_Static_1300
-     * @tc.desc    Get the SOCIAL_COMMUNICATION type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_GetSlot_Static_1300
+     * @tc.number Sub_Notification_Ans_Slot_GetSlot_Static_1300
+     * @tc.desc   Get the SOCIAL_COMMUNICATION type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_GetSlot_Static_1300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_GetSlot_Static_1300 '
@@ -367,9 +403,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_GetSlot_Static_1400
-     * @tc.name    Sub_Notification_Ans_Slot_GetSlot_Static_1400
-     * @tc.desc    Get the SERVICE_INFORMATION type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_GetSlot_Static_1400
+     * @tc.number Sub_Notification_Ans_Slot_GetSlot_Static_1400
+     * @tc.desc   Get the SERVICE_INFORMATION type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_GetSlot_Static_1400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_GetSlot_Static_1400 '
@@ -395,9 +434,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_GetSlot_Static_1500
-     * @tc.name       Sub_Notification_Ans_Slot_GetSlot_Static_1500
-     * @tc.desc       Get the CONTENT_INFORMATION type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_GetSlot_Static_1500
+     * @tc.number Sub_Notification_Ans_Slot_GetSlot_Static_1500
+     * @tc.desc   Get the CONTENT_INFORMATION type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_GetSlot_Static_1500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_GetSlot_Static_1500 '
@@ -423,9 +465,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_GetSlot_Static_1600
-     * @tc.name       Sub_Notification_Ans_Slot_GetSlot_Static_1600
-     * @tc.desc       Get the OTHER_TYPES type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_GetSlot_Static_1600
+     * @tc.number Sub_Notification_Ans_Slot_GetSlot_Static_1600
+     * @tc.desc   Get the OTHER_TYPES type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_GetSlot_Static_1600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_GetSlot_Static_1600 '
@@ -453,9 +498,12 @@ export default function ActsNotificationManagerSlotTest() {
 
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_GetSlot_Static_1700
-     * @tc.name       Sub_Notification_Ans_Slot_GetSlot_Static_1700
-     * @tc.desc       Get the UNKNOWN_TYPE type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_GetSlot_Static_1700
+     * @tc.number Sub_Notification_Ans_Slot_GetSlot_Static_1700
+     * @tc.desc   Get the UNKNOWN_TYPE type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_GetSlot_Static_1700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_GetSlot_Static_1700 '
@@ -474,9 +522,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_GetSlot_Static_1800
-     * @tc.name       Sub_Notification_Ans_Slot_GetSlot_Static_1800
-     * @tc.desc       Get the SOCIAL_COMMUNICATION type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_GetSlot_Static_1800
+     * @tc.number Sub_Notification_Ans_Slot_GetSlot_Static_1800
+     * @tc.desc   Get the SOCIAL_COMMUNICATION type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_GetSlot_Static_1800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_GetSlot_Static_1800 '
@@ -494,9 +545,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_GetSlot_Static_1900
-     * @tc.name       Sub_Notification_Ans_Slot_GetSlot_Static_1900
-     * @tc.desc       Get the SERVICE_INFORMATION type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_GetSlot_Static_1900
+     * @tc.number Sub_Notification_Ans_Slot_GetSlot_Static_1900
+     * @tc.desc   Get the SERVICE_INFORMATION type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_GetSlot_Static_1900',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_GetSlot_Static_1900 '
@@ -515,9 +569,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_GetSlot_Static_2000
-     * @tc.name       Sub_Notification_Ans_Slot_GetSlot_Static_2000
-     * @tc.desc       Get the CONTENT_INFORMATION type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_GetSlot_Static_2000
+     * @tc.number Sub_Notification_Ans_Slot_GetSlot_Static_2000
+     * @tc.desc   Get the CONTENT_INFORMATION type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_GetSlot_Static_2000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_GetSlot_Static_2000 '
@@ -535,9 +592,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_GetSlot_Static_2100
-     * @tc.name       Sub_Notification_Ans_Slot_GetSlot_Static_2100
-     * @tc.desc       Get the OTHER_TYPES type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_GetSlot_Static_2100
+     * @tc.number Sub_Notification_Ans_Slot_GetSlot_Static_2100
+     * @tc.desc   Get the OTHER_TYPES type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_GetSlot_Static_2100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_GetSlot_Static_2100 '
@@ -556,9 +616,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_DeleteSlot_Static_0700
-     * @tc.name       Sub_Notification_Ans_Slot_DeleteSlot_Static_0700
-     * @tc.desc       Remove the UNKNOWN_TYPE type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_DeleteSlot_Static_0700
+     * @tc.number Sub_Notification_Ans_Slot_DeleteSlot_Static_0700
+     * @tc.desc   Remove the UNKNOWN_TYPE type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_0700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_DeleteSlot_Static_0700 '
@@ -586,9 +649,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_DeleteSlot_Static_0800
-     * @tc.name       Sub_Notification_Ans_Slot_DeleteSlot_Static_0800
-     * @tc.desc       Remove the SOCIAL_COMMUNICATION type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_DeleteSlot_Static_0800
+     * @tc.number Sub_Notification_Ans_Slot_DeleteSlot_Static_0800
+     * @tc.desc   Remove the SOCIAL_COMMUNICATION type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_0800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_DeleteSlot_Static_0800 '
@@ -616,9 +682,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number    Sub_Notification_Ans_Slot_DeleteSlot_Static_0900
-     * @tc.name      Sub_Notification_Ans_Slot_DeleteSlot_Static_0900
-     * @tc.desc      Remove the SERVICE_INFORMATION type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_DeleteSlot_Static_0900
+     * @tc.number Sub_Notification_Ans_Slot_DeleteSlot_Static_0900
+     * @tc.desc   Remove the SERVICE_INFORMATION type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_0900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_DeleteSlot_Static_0900 '
@@ -646,9 +715,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_DeleteSlot_Static_1000
-     * @tc.name       Sub_Notification_Ans_Slot_DeleteSlot_Static_1000
-     * @tc.desc       Remove the CONTENT_INFORMATION type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_DeleteSlot_Static_1000
+     * @tc.number Sub_Notification_Ans_Slot_DeleteSlot_Static_1000
+     * @tc.desc   Remove the CONTENT_INFORMATION type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_1000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_DeleteSlot_Static_1000 '
@@ -676,9 +748,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_DeleteSlot_Static_1100
-     * @tc.name       Sub_Notification_Ans_Slot_DeleteSlot_Static_1100
-     * @tc.desc       Remove the OTHER_TYPES type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_DeleteSlot_Static_1100
+     * @tc.number Sub_Notification_Ans_Slot_DeleteSlot_Static_1100
+     * @tc.desc   Remove the OTHER_TYPES type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_1100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_DeleteSlot_Static_1100 '
@@ -706,9 +781,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_DeleteSlot_Static_1200
-     * @tc.name       Sub_Notification_Ans_Slot_DeleteSlot_Static_1200
-     * @tc.desc       Remove the UNKNOWN_TYPE type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_DeleteSlot_Static_1200
+     * @tc.number Sub_Notification_Ans_Slot_DeleteSlot_Static_1200
+     * @tc.desc   Remove the UNKNOWN_TYPE type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_1200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_DeleteSlot_Static_1200 '
@@ -729,9 +807,12 @@ export default function ActsNotificationManagerSlotTest() {
 
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_DeleteSlot_Static_1300
-     * @tc.name       Sub_Notification_Ans_Slot_DeleteSlot_Static_1300
-     * @tc.desc       Remove the SOCIAL_COMMUNICATION type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_DeleteSlot_Static_1300
+     * @tc.number Sub_Notification_Ans_Slot_DeleteSlot_Static_1300
+     * @tc.desc   Remove the SOCIAL_COMMUNICATION type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_1300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_DeleteSlot_Static_1300 '
@@ -751,9 +832,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_DeleteSlot_Static_1400
-     * @tc.name       Sub_Notification_Ans_Slot_DeleteSlot_Static_1400
-     * @tc.desc       Remove the SERVICE_INFORMATION type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_DeleteSlot_Static_1400
+     * @tc.number Sub_Notification_Ans_Slot_DeleteSlot_Static_1400
+     * @tc.desc   Remove the SERVICE_INFORMATION type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_1400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_DeleteSlot_Static_1400 '
@@ -773,9 +857,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_DeleteSlot_Static_1500
-     * @tc.name       Sub_Notification_Ans_Slot_DeleteSlot_Static_1500
-     * @tc.desc       Remove the CONTENT_INFORMATION type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_DeleteSlot_Static_1500
+     * @tc.number Sub_Notification_Ans_Slot_DeleteSlot_Static_1500
+     * @tc.desc   Remove the CONTENT_INFORMATION type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_1500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_DeleteSlot_Static_1500 '
@@ -795,9 +882,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_DeleteSlot_Static_1600
-     * @tc.name       Sub_Notification_Ans_Slot_DeleteSlot_Static_1600
-     * @tc.desc       Remove the OTHER_TYPES type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_DeleteSlot_Static_1600
+     * @tc.number Sub_Notification_Ans_Slot_DeleteSlot_Static_1600
+     * @tc.desc   Remove the OTHER_TYPES type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_1600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_DeleteSlot_Static_1600 '
@@ -817,9 +907,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_CreateSlot_Static_0200
-     * @tc.name       Sub_Notification_Ans_Slot_CreateSlot_Static_0200
-     * @tc.desc       Get Remove the UNKNOWN_TYPE type slot after add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_0200
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_0200
+     * @tc.desc   Get Remove the UNKNOWN_TYPE type slot after add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_0200 '
@@ -869,9 +962,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_CreateSlot_Static_0350
-     * @tc.name       Sub_Notification_Ans_Slot_CreateSlot_Static_0350
-     * @tc.desc       Get Remove the SOCIAL_COMMUNICATION type slot after add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_0350
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_0350
+     * @tc.desc   Get Remove the SOCIAL_COMMUNICATION type slot after add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_0350', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_0350 '
@@ -920,9 +1016,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_CreateSlot_Static_0500
-     * @tc.name       Sub_Notification_Ans_Slot_CreateSlot_Static_0500
-     * @tc.desc       Get Remove the SERVICE_INFORMATION type slot after add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_0500
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_0500
+     * @tc.desc   Get Remove the SERVICE_INFORMATION type slot after add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_0500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_0500 '
@@ -972,9 +1071,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_CreateSlot_Static_0650
-     * @tc.name       Sub_Notification_Ans_Slot_CreateSlot_Static_0650
-     * @tc.desc       Get Remove the CONTENT_INFORMATION type slot after add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_0650
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_0650
+     * @tc.desc   Get Remove the CONTENT_INFORMATION type slot after add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_0650', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_0650 '
@@ -1024,9 +1126,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_CreateSlot_Static_0800
-     * @tc.name       Sub_Notification_Ans_Slot_CreateSlot_Static_0800
-     * @tc.desc       Get Remove the OTHER_TYPES type slot after add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_0800
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_0800
+     * @tc.desc   Get Remove the OTHER_TYPES type slot after add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_0800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_0800 '
@@ -1075,9 +1180,12 @@ export default function ActsNotificationManagerSlotTest() {
       console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_Static_0800 END')
     })
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_CreateSlot_Static_0950
-     * @tc.name       Sub_Notification_Ans_Slot_CreateSlot_Static_0950
-     * @tc.desc       Get Remove the UNKNOWN_TYPE type slot after add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_0950
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_0950
+     * @tc.desc   Get Remove the UNKNOWN_TYPE type slot after add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_0950', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_0950 '
@@ -1118,9 +1226,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_CreateSlot_Static_1100
-     * @tc.name       Sub_Notification_Ans_Slot_CreateSlot_Static_1100
-     * @tc.desc       Get Remove the SOCIAL_COMMUNICATION type slot after add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_1100
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_1100
+     * @tc.desc   Get Remove the SOCIAL_COMMUNICATION type slot after add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_1100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_1100 '
@@ -1160,9 +1271,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_CreateSlot_Static_1250
-     * @tc.name       Sub_Notification_Ans_Slot_CreateSlot_Static_1250
-     * @tc.desc       Get Remove the SERVICE_INFORMATION type slot after add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_1250
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_1250
+     * @tc.desc   Get Remove the SERVICE_INFORMATION type slot after add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_1250', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_1250 '
@@ -1201,9 +1315,12 @@ export default function ActsNotificationManagerSlotTest() {
       console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_Static_1250 END')
     })
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_CreateSlot_Static_1400
-     * @tc.name       Sub_Notification_Ans_Slot_CreateSlot_Static_1400
-     * @tc.desc       Get Remove the CONTENT_INFORMATION type slot after add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_1400
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_1400
+     * @tc.desc   Get Remove the CONTENT_INFORMATION type slot after add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_1400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_1400 '
@@ -1242,9 +1359,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_CreateSlot_Static_1550
-     * @tc.name       Sub_Notification_Ans_Slot_CreateSlot_Static_1550
-     * @tc.desc       Get Remove the OTHER_TYPES type slot after add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_1550
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_1550
+     * @tc.desc   Get Remove the OTHER_TYPES type slot after add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_1550', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_1550 '
@@ -1284,9 +1404,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_CreateSlot_Static_1700
-     * @tc.name       Sub_Notification_Ans_Slot_CreateSlot_Static_1700
-     * @tc.desc       Get the Different type slot after add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_1700
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_1700
+     * @tc.desc   Get the Different type slot after add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_1700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_1700 '
@@ -1323,9 +1446,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_CreateSlot_Static_1850
-     * @tc.name       Sub_Notification_Ans_Slot_CreateSlot_Static_1850
-     * @tc.desc       Remove the Different type slot after add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_1850
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_1850
+     * @tc.desc   Remove the Different type slot after add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_1850', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_1850 '
@@ -1363,9 +1489,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_DeleteSlot_Static_1700
-     * @tc.name       Sub_Notification_Ans_Slot_DeleteSlot_Static_1700
-     * @tc.desc       Removes all NotificationSlot
+     * @tc.name   Sub_Notification_Ans_Slot_DeleteSlot_Static_1700
+     * @tc.number Sub_Notification_Ans_Slot_DeleteSlot_Static_1700
+     * @tc.desc   Removes all NotificationSlot
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_1700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_DeleteSlot_Static_1700 '
@@ -1393,9 +1522,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_DeleteSlot_Static_1800
-     * @tc.name       Sub_Notification_Ans_Slot_DeleteSlot_Static_1800
-     * @tc.desc       Removes all NotificationSlot
+     * @tc.name   Sub_Notification_Ans_Slot_DeleteSlot_Static_1800
+     * @tc.number Sub_Notification_Ans_Slot_DeleteSlot_Static_1800
+     * @tc.desc   Removes all NotificationSlot
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_1800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_DeleteSlot_Static_1800 '
@@ -1415,9 +1547,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_GetSlot_Static_2200
-     * @tc.name       Sub_Notification_Ans_Slot_GetSlot_Static_2200
-     * @tc.desc       Get all NotificationSlot without add
+     * @tc.name   Sub_Notification_Ans_Slot_GetSlot_Static_2200
+     * @tc.number Sub_Notification_Ans_Slot_GetSlot_Static_2200
+     * @tc.desc   Get all NotificationSlot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_GetSlot_Static_2200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_GetSlot_Static_2200 '
@@ -1450,9 +1585,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_GetSlot_Static_2300
-     * @tc.name       Sub_Notification_Ans_Slot_GetSlot_Static_2300
-     * @tc.desc       Get all NotificationSlot without add
+     * @tc.name   Sub_Notification_Ans_Slot_GetSlot_Static_2300
+     * @tc.number Sub_Notification_Ans_Slot_GetSlot_Static_2300
+     * @tc.desc   Get all NotificationSlot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_GetSlot_Static_2300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_GetSlot_Static_2300 '
@@ -1472,10 +1610,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_CreateSlot_Static_0100
-     * @tc.name       Sub_Notification_Ans_Slot_CreateSlot_Static_0100
-     * @tc.desc       Get all slots after add
-     *                 UNKNOWN_TYPE and OTHER_TYPES is same in ANS
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_0100
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_0100
+     * @tc.desc   Get all slots after add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_0100 '
@@ -1574,10 +1714,12 @@ export default function ActsNotificationManagerSlotTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_CreateSlot_Static_0250
-     * @tc.name       Sub_Notification_Ans_Slot_CreateSlot_Static_0250
-     * @tc.desc       Get all slots after add
-     *                UNKNOWN_TYPE and OTHER_TYPES is same in ANS
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_0250
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_0250
+     * @tc.desc   Get all slots after add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_0250', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_0250 '
@@ -1662,9 +1804,12 @@ export default function ActsNotificationManagerSlotTest() {
 
 
     /**
-     * @tc.number     Sub_Notification_Ans_Slot_CreateSlot_Static_8150
-     * @tc.name       Sub_Notification_Ans_Slot_CreateSlot_Static_8150
-     * @tc.desc       SlotType
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_8150
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_8150
+     * @tc.desc   SlotType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_8150', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_8150 '

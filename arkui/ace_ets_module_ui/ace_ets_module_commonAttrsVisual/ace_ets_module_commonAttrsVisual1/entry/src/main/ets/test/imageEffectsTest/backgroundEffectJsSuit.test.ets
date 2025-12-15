@@ -60,15 +60,15 @@ export default function backgroundEffectJsSuit() {
       console.info('overlay after each called');
     });
 
-    /**
-     * @tc.number backgroundEffectJsSuit_0100
-     * @tc.name backgroundEffectJsSuit_0100
-     * @tc.desc Confirm if there is a callback
-     * @tc.level Level 2
-     * @tc.type :
-     * @tc.size :
-     */
 
+    /**
+     * @tc.name   backgroundEffectJsSuit_0100
+     * @tc.number backgroundEffectJsSuit_0100
+     * @tc.desc   backgroundEffectJsSuit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('backgroundEffectJsSuit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[backgroundEffectJsSuit_0100] START');
       let driver = await Driver.create()

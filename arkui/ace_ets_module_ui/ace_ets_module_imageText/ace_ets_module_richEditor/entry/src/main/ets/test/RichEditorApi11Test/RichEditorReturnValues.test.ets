@@ -46,14 +46,14 @@ export default function RichEditorReturnValuesTest() {
       console.info("RichEditorReturnValuesTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_RichEditor_SetCaretOffsetFalse_0010
-    * @tc.name         RichEditorSetCaretOffsetFalse_0010
-    * @tc.desc        test return value of setCaretOffset: false
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   RichEditorSetCaretOffsetFalse_0010
+     * @tc.number SUB_ACE_BASIC_ETS_API_RichEditor_SetCaretOffsetFalse_0010
+     * @tc.desc   test return value of setCaretOffset: false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RichEditorSetCaretOffsetFalse_0010', Level.LEVEL1, async (done: Function) => {
       console.info('RichEditorSetCaretOffsetFalse_0010 START');
       let driver = Driver.create();
@@ -70,14 +70,14 @@ export default function RichEditorReturnValuesTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_RichEditor_SetCaretOffsetTrue_0020
-    * @tc.name         RichEditorSetCaretOffsetTrue_0020
-    * @tc.desc        test return value of setCaretOffset: true
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   RichEditorSetCaretOffsetTrue_0020
+     * @tc.number SUB_ACE_BASIC_ETS_API_RichEditor_SetCaretOffsetTrue_0020
+     * @tc.desc   test return value of setCaretOffset: true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RichEditorSetCaretOffsetTrue_0020', Level.LEVEL1, async (done: Function) => {
       console.info('RichEditorSetCaretOffsetTrue_0020 START');
       let driver = Driver.create();
@@ -94,14 +94,14 @@ export default function RichEditorReturnValuesTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_RichEditor_AddImageSpanNumber_0030
-    * @tc.name         RichEditorAddImageSpanNumber_0030
-    * @tc.desc        test return value of addImageSpan: number
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   RichEditorAddImageSpanNumber_0030
+     * @tc.number SUB_ACE_BASIC_ETS_API_RichEditor_AddImageSpanNumber_0030
+     * @tc.desc   test return value of addImageSpan: number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RichEditorAddImageSpanNumber_0030', Level.LEVEL1, async (done: Function) => {
       console.info('RichEditorAddImageSpanNumber_0030 START');
       let driver = Driver.create();
@@ -119,14 +119,14 @@ export default function RichEditorReturnValuesTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_RichEditor_GetSpansEmptyArray_0040
-    * @tc.name         RichEditorGetSpansEmptyArray_0040
-    * @tc.desc        test return value of getSpans: Empty array
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   RichEditorGetSpansEmptyArray_0040
+     * @tc.number SUB_ACE_BASIC_ETS_API_RichEditor_GetSpansEmptyArray_0040
+     * @tc.desc   test return value of getSpans: Empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RichEditorGetSpansEmptyArray_0040', Level.LEVEL1, async (done: Function) => {
       console.info('RichEditorGetSpansEmptyArray_0040 START');
       let driver = Driver.create();
@@ -143,14 +143,14 @@ export default function RichEditorReturnValuesTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_RichEditor_GetSpansNotEmptyArray_0050
-    * @tc.name         RichEditorGetSpansNotEmptyArray_0050
-    * @tc.desc        test return value of getSpans: Not empty array
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   RichEditorGetSpansNotEmptyArray_0050
+     * @tc.number SUB_ACE_BASIC_ETS_API_RichEditor_GetSpansNotEmptyArray_0050
+     * @tc.desc   test return value of getSpans: Not empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RichEditorGetSpansNotEmptyArray_0050', Level.LEVEL1, async (done: Function) => {
       console.info('RichEditorGetSpansNotEmptyArray_0050 START');
       let driver = Driver.create();
@@ -167,14 +167,14 @@ export default function RichEditorReturnValuesTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_RichEditor_GetParagraphsEmptyArray_0060
-    * @tc.name         RichEditorGetParagraphsEmptyArray_0060
-    * @tc.desc        test return value of getParagraphs: Empty array
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   RichEditorGetParagraphsEmptyArray_0060
+     * @tc.number SUB_ACE_BASIC_ETS_API_RichEditor_GetParagraphsEmptyArray_0060
+     * @tc.desc   test return value of getParagraphs: Empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RichEditorGetParagraphsEmptyArray_0060', Level.LEVEL1, async (done: Function) => {
       console.info('RichEditorGetParagraphsEmptyArray_0060 START');
       let driver = Driver.create();
@@ -191,14 +191,14 @@ export default function RichEditorReturnValuesTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_RichEditor_GetParagraphsNotEmptyArray_0070
-    * @tc.name         RichEditorGetParagraphsNotEmptyArray_0070
-    * @tc.desc        test return value of getParagraphs: Not empty array
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   RichEditorGetParagraphsNotEmptyArray_0070
+     * @tc.number SUB_ACE_BASIC_ETS_API_RichEditor_GetParagraphsNotEmptyArray_0070
+     * @tc.desc   test return value of getParagraphs: Not empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RichEditorGetParagraphsNotEmptyArray_0070', Level.LEVEL1, async (done: Function) => {
       console.info('RichEditorGetParagraphsNotEmptyArray_0070 START');
       let driver = Driver.create();

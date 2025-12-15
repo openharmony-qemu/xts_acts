@@ -58,14 +58,14 @@ export default function webViewGetRequestResourceType() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEBVIEWGETREQUESTRESOURCETYPE_0100
-    * @tc.name       : getRequestResourceType0100
-    * @tc.desc       : test webViewGetRequestResourceType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   getRequestResourceType0100
+     * @tc.number SUB_WEBVIEWGETREQUESTRESOURCETYPE_0100
+     * @tc.desc   test webViewGetRequestResourceType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getRequestResourceType0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("getRequestResourceType0100", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;

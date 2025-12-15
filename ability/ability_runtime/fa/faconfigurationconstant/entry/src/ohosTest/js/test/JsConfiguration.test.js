@@ -18,11 +18,13 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 export default function ConfigurationTest() {
 describe('ConfigurationTest', function () {
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_ConfigurationConstant_colorMode_0100
-     * @tc.name    colorMode is "ConfigurationConstant.ColorMode.COLOR_MODE_LIGHT"
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_ConfigurationConstant_colorMode_0100
+     * @tc.number SUB_AA_OpenHarmony_ConfigurationConstant_colorMode_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ConfigurationConstant_colorMode_0100', Level.LEVEL0, async function (done) {
         console.log("------------start SUB_AA_OpenHarmony_ConfigurationConstant_colorMode_0100-------------");
@@ -31,11 +33,13 @@ describe('ConfigurationTest', function () {
         console.log("------------end SUB_AA_OpenHarmony_ConfigurationConstant_colorMode_0100-------------");
     });
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_ConfigurationConstant_colorMode_0200
-     * @tc.name    colorMode is "ConfigurationConstant.ColorMode.COLOR_MODE_DARK"
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_ConfigurationConstant_colorMode_0200
+     * @tc.number SUB_AA_OpenHarmony_ConfigurationConstant_colorMode_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ConfigurationConstant_colorMode_0200', Level.LEVEL0, async function (done) {
         console.log("------------start SUB_AA_OpenHarmony_ConfigurationConstant_colorMode_0200-------------");
@@ -44,11 +48,13 @@ describe('ConfigurationTest', function () {
         console.log("------------end SUB_AA_OpenHarmony_ConfigurationConstant_colorMode_0200-------------");
     });
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_ConfigurationConstant_colorMode_0300
-     * @tc.name    colorMode is "ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET"
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_ConfigurationConstant_colorMode_0300
+     * @tc.number SUB_AA_OpenHarmony_ConfigurationConstant_colorMode_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ConfigurationConstant_colorMode_0300', Level.LEVEL0, async function (done) {
         console.log("------------start SUB_AA_OpenHarmony_ConfigurationConstant_colorMode_0300-------------");
@@ -57,11 +63,13 @@ describe('ConfigurationTest', function () {
         console.log("------------end SUB_AA_OpenHarmony_ConfigurationConstant_colorMode_0300-------------");
     });
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_ConfigurationConstant_Direction_0100
-     * @tc.name    Direction is "ConfigurationConstant.Direction.DIRECTION_VERTICAL"
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_ConfigurationConstant_Direction_0100
+     * @tc.number SUB_AA_OpenHarmony_ConfigurationConstant_Direction_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ConfigurationConstant_Direction_0100', Level.LEVEL0, async function (done) {
         console.log("------------start SUB_AA_OpenHarmony_ConfigurationConstant_Direction_0100-------------");
@@ -70,11 +78,13 @@ describe('ConfigurationTest', function () {
         console.log("------------end SUB_AA_OpenHarmony_ConfigurationConstant_Direction_0100-------------");
     });
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_ConfigurationConstant_Direction_0200
-     * @tc.name    Direction is "ConfigurationConstant.Direction.DIRECTION_HORIZONTAL"
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_ConfigurationConstant_Direction_0200
+     * @tc.number SUB_AA_OpenHarmony_ConfigurationConstant_Direction_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ConfigurationConstant_Direction_0200', Level.LEVEL0, async function (done) {
         console.log("------------start SUB_AA_OpenHarmony_ConfigurationConstant_Direction_0200-------------");
@@ -83,11 +93,13 @@ describe('ConfigurationTest', function () {
         console.log("------------end SUB_AA_OpenHarmony_ConfigurationConstant_Direction_0200-------------");
     });
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_ConfigurationConstant_Direction_0300
-     * @tc.name    Direction is "ConfigurationConstant.Direction.DIRECTION_NOT_SET"
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_ConfigurationConstant_Direction_0300
+     * @tc.number SUB_AA_OpenHarmony_ConfigurationConstant_Direction_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ConfigurationConstant_Direction_0300', Level.LEVEL0, async function (done) {
         console.log("------------start SUB_AA_OpenHarmony_ConfigurationConstant_Direction_0300-------------");
@@ -96,11 +108,13 @@ describe('ConfigurationTest', function () {
         console.log("------------end SUB_AA_OpenHarmony_ConfigurationConstant_Direction_0300-------------");
     });
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0100
-     * @tc.name    ScreenDensity is "ConfigurationConstant.ScreenDensity.SCREEN_DENSITY_SDPI"
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0100
+     * @tc.number SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0100', Level.LEVEL0, async function (done) {
         console.log("------------start SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0100-------------");
@@ -109,11 +123,13 @@ describe('ConfigurationTest', function () {
         console.log("------------end SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0100-------------");
     });
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0200
-     * @tc.name    ScreenDensity is "ConfigurationConstant.ScreenDensity.SCREEN_DENSITY_MDPI"
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0200
+     * @tc.number SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0200', Level.LEVEL0, async function (done) {
         console.log("------------start SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0200-------------");
@@ -122,11 +138,13 @@ describe('ConfigurationTest', function () {
         console.log("------------end SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0200-------------");
     });
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0300
-     * @tc.name    ScreenDensity is "ConfigurationConstant.ScreenDensity.SCREEN_DENSITY_LDPI"
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0300
+     * @tc.number SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0300', Level.LEVEL0, async function (done) {
         console.log("------------start SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0300-------------");
@@ -135,11 +153,13 @@ describe('ConfigurationTest', function () {
         console.log("------------end SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0300-------------");
     });
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0400
-     * @tc.name    ScreenDensity is "ConfigurationConstant.ScreenDensity.SCREEN_DENSITY_XLDPI"
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0400
+     * @tc.number SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0400', Level.LEVEL0, async function (done) {
         console.log("------------start SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0400-------------");
@@ -148,11 +168,13 @@ describe('ConfigurationTest', function () {
         console.log("------------end SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0400-------------");
     });
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0500
-     * @tc.name    ScreenDensity is "ConfigurationConstant.ScreenDensity.SCREEN_DENSITY_XXLDPI"
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0500
+     * @tc.number SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0500', Level.LEVEL0, async function (done) {
         console.log("------------start SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0500-------------");
@@ -161,11 +183,13 @@ describe('ConfigurationTest', function () {
         console.log("------------end SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0500-------------");
     });
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0600
-     * @tc.name    ScreenDensity is "ConfigurationConstant.ScreenDensity.SCREEN_DENSITY_XXXLDPI"
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0600
+     * @tc.number SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0600', Level.LEVEL0, async function (done) {
         console.log("------------start SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0600-------------");
@@ -174,11 +198,13 @@ describe('ConfigurationTest', function () {
         console.log("------------end SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0600-------------");
     });
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0700
-     * @tc.name    ScreenDensity is "ConfigurationConstant.ScreenDensity.SCREEN_DENSITY_NOT_SET"
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0700
+     * @tc.number SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0700', Level.LEVEL0, async function (done) {
         console.log("------------start SUB_AA_OpenHarmony_ConfigurationConstant_ScreenDensity_0700-------------");

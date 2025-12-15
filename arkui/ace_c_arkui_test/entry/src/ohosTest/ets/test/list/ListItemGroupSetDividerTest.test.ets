@@ -21,61 +21,61 @@ export default function listItemGroupSetDividerTest() {
 
   describe('ListItemGroupSetDividerTest', () => {
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ITEM_GROUP_SET_DIVIDER_0001
-     * @tc.name       : testListItemGroupSetDivider001
-     * @tc.desc       : testing item group set divider for list with {COLOR_YELLOW 1 1 1} value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemGroupSetDivider001
+     * @tc.number SUB_ARKUI_CAPI_LIST_ITEM_GROUP_SET_DIVIDER_0001
+     * @tc.desc   testing item group set divider for list with {COLOR_YELLOW 1 1 1} value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemGroupSetDivider001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemGroupSetDivider001()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ITEM_GROUP_SET_DIVIDER_0002
-     * @tc.name       : testListItemGroupSetDivider002
-     * @tc.desc       : testing item group set divider for list with {COLOR_YELLOW 0 0 0} value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemGroupSetDivider002
+     * @tc.number SUB_ARKUI_CAPI_LIST_ITEM_GROUP_SET_DIVIDER_0002
+     * @tc.desc   testing item group set divider for list with {COLOR_YELLOW 0 0 0} value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemGroupSetDivider002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemGroupSetDivider002()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ITEM_GROUP_SET_DIVIDER_0003
-     * @tc.name       : testListItemGroupSetDivider003
-     * @tc.desc       : testing item group set divider for list with {COLOR_YELLOW -1 -1 -1} value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemGroupSetDivider003
+     * @tc.number SUB_ARKUI_CAPI_LIST_ITEM_GROUP_SET_DIVIDER_0003
+     * @tc.desc   testing item group set divider for list with {COLOR_YELLOW -1 -1 -1} value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemGroupSetDivider003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemGroupSetDivider003()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ITEM_GROUP_SET_DIVIDER_0004
-     * @tc.name       : testListItemGroupSetDivider004
-     * @tc.desc       : testing item group set divider for list with {COLOR_YELLOW 1000 1000 1000} value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemGroupSetDivider004
+     * @tc.number SUB_ARKUI_CAPI_LIST_ITEM_GROUP_SET_DIVIDER_0004
+     * @tc.desc   testing item group set divider for list with {COLOR_YELLOW 1000 1000 1000} value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemGroupSetDivider004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemGroupSetDivider004()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ITEM_GROUP_SET_DIVIDER_0005
-     * @tc.name       : testListItemGroupSetDivider005
-     * @tc.desc       : testing item group set divider for list with resetAttribute
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemGroupSetDivider005
+     * @tc.number SUB_ARKUI_CAPI_LIST_ITEM_GROUP_SET_DIVIDER_0005
+     * @tc.desc   testing item group set divider for list with resetAttribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemGroupSetDivider005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemGroupSetDivider005()).assertEqual(0)

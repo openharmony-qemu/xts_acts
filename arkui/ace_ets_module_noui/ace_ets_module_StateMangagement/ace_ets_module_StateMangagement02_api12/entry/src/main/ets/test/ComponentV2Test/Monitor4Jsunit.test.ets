@@ -46,12 +46,12 @@ export default function Monitor4Jsunit() {
     });
 
     /**
-     * @tc.number    Monitor4Jsunit_001
-     * @tc.name      Monitor4Jsunit_001
-     * @tc.desc      Changing the same property being monitored by @ Monitor multiple times
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   Monitor4Jsunit_001
+     * @tc.number Monitor4Jsunit_001
+     * @tc.desc   Changing the same property being monitored by @ Monitor multiple times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Monitor4Jsunit_001', Level.LEVEL0, async (done: Function) => {
       console.info('[Monitor4Jsunit_001] START');

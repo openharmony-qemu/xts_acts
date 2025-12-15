@@ -45,9 +45,12 @@ export default function flexOffset_BaselineJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignBaselineSetOffset
      * @tc.number SUB_ACE_FLEXALIGNITEMS_BASELINE_1000
-     * @tc.name testFlexItemAlignBaselineSetOffset
-     * @tc.desc First subcomponent set offset attribute.
+     * @tc.desc   First subcomponent set offset attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignBaselineSetOffset',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignBaselineSetOffset START');

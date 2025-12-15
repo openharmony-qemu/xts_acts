@@ -24,9 +24,12 @@ export default function abilityTest() {
   describe('ActsGetAbilityStateStageTest', () => {
 
     /**
-     * @tc.number   ACTS_GetAbilityState_Static_0700
-     * @tc.name     ACTS_GetAbilityState_Static_0700
-     * @tc.desc     AbilityLifecycleState EnumValue
+     * @tc.name   ACTS_GetAbilityState_Static_0700
+     * @tc.number ACTS_GetAbilityState_Static_0700
+     * @tc.desc   AbilityLifecycleState EnumValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ACTS_GetAbilityState_Static_0700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '====>start ACTS_GetAbilityState_Static_0700====');

@@ -47,6 +47,14 @@ export default function ColumnWrapContentTest() {
       console.info("ColumnWrapContent after each called");
     });
 
+    /**
+     * @tc.name   ColumnWrapContentTest_0100
+     * @tc.number ColumnWrapContentTest_0100
+     * @tc.desc   ColumnWrapContentTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ColumnWrapContentTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[ColumnWrapContentTest_0100] START');
       await Utils.sleep(2000);

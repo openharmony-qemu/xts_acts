@@ -26,65 +26,65 @@ export default function customDialogShowTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SHOW_0100
-     * @tc.name       : testCustomDialogShow001
-     * @tc.desc       : testing show for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogShow001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SHOW_0100
+     * @tc.desc   testing show for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogShow001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogShow001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SHOW_0200
-     * @tc.name       : testCustomDialogShow002
-     * @tc.desc       : testing show for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogShow002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SHOW_0200
+     * @tc.desc   testing show for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogShow002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogShow002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SHOW_0300
-     * @tc.name       : testCustomDialogShow003
-     * @tc.desc       : testing show for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogShow003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SHOW_0300
+     * @tc.desc   testing show for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogShow003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogShow003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SHOW_0400
-     * @tc.name       : testCustomDialogShow004
-     * @tc.desc       : testing show for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogShow004
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SHOW_0400
+     * @tc.desc   testing show for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogShow004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogShow004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SHOW_0500
-     * @tc.name       : testCustomDialogShow005
-     * @tc.desc       : testing show for customDialog with callback function
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogShow005
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SHOW_0500
+     * @tc.desc   testing show for customDialog with callback function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogShow005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogShow005()).assertEqual(0)

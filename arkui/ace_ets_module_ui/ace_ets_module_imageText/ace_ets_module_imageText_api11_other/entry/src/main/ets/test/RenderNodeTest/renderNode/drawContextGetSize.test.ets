@@ -42,12 +42,12 @@ export default function drawContextGetSizeTest() {
     });
 
     /**
-     * @tc.number    drawContextGetSize
-     * @tc.name      drawContextGetSizeTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   drawContextGetSizeTest_0100
+     * @tc.number drawContextGetSize
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('drawContextGetSizeTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('drawContextGetSizeTest_0100 START');

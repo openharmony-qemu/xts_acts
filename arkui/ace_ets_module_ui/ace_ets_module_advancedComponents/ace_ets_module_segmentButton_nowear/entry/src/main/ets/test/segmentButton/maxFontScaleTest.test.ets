@@ -45,10 +45,12 @@ export default function maxFontScaleTest() {
     });
 
     /**
-     * @tc.number      maxFontScaleTest_0100
-     * @tc.name        maxFontScaleTest_0100
-     * @tc.desc        To test the maximum font magnification of text for the Segmentation button option: 2
-     * @tc.level       Level 3
+     * @tc.name   maxFontScaleTest_0100
+     * @tc.number maxFontScaleTest_0100
+     * @tc.desc   To test the maximum font magnification of text for the Segmentation button option: 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('maxFontScaleTest_0100', Level.LEVEL3, async (done: Function) => {
      console.info('[maxFontScaleTest_0100] START');

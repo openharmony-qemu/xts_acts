@@ -47,12 +47,12 @@ export default function idKeyJsunit() {
     })
 
     /**
+     * @tc.name   idkey0001
      * @tc.number idkey0001
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('idkey0001', Level.LEVEL0, async (done: Function) => {
       console.info('[idkey0001] START');
@@ -65,12 +65,12 @@ export default function idKeyJsunit() {
     });
 
     /**
+     * @tc.name   idkey0002
      * @tc.number idkey0002
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('idkey0002', Level.LEVEL0, async (done: Function) => {
       console.info('[idkey0002] START');

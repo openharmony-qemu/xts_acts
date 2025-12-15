@@ -36,12 +36,12 @@ export default function NetworkManagerSocketTest() {
   describe("NetworkManagerSocketTest", ()=> {
 
     /**
-     * @tc.number: SUB_Telephony_Netstack_UNIX_Socket_Xts_0100
-     * @tc.name: testTelephonyNetstackUNIXSocketXts0100
-     * @tc.desc: Function Test
-     * @tc.level 0
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   testTelephonyNetstackUNIXSocketXts0100
+     * @tc.number SUB_Telephony_Netstack_UNIX_Socket_Xts_0100
+     * @tc.desc   Function Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonyNetstackUNIXSocketXts0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "testTelephonyNetstackUNIXSocketXts0100";
@@ -57,12 +57,12 @@ export default function NetworkManagerSocketTest() {
     })
 
     /**
-     * @tc.number: SUB_Telephony_Netstack_UNIX_Socket_Xts_0200
-     * @tc.name: testTelephonyNetstackUNIXSocketXts0200
-     * @tc.desc: Function Test
-     * @tc.level 0
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   testTelephonyNetstackUNIXSocketXts0200
+     * @tc.number SUB_Telephony_Netstack_UNIX_Socket_Xts_0200
+     * @tc.desc   Function Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonyNetstackUNIXSocketXts0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "testTelephonyNetstackUNIXSocketXts0200";

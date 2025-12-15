@@ -48,12 +48,12 @@ export default function atomicServiceBarTest() {
     });
 
     /**
-     * @tc.number    SUB_ARKUI_ARKUICONTEXT_001
-     * @tc.name      ArkuiContext_0100
-     * @tc.desc      test setVisible interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   ArkuiContext_0100
+     * @tc.number SUB_ARKUI_ARKUICONTEXT_001
+     * @tc.desc   test setVisible interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkuiContext_0100', Level.LEVEL0, async  (done: Function) => {
       console.info('ArkuiContext_0100 START');
@@ -78,12 +78,12 @@ export default function atomicServiceBarTest() {
     });
 
     /**
-     * @tc.number    SUB_ARKUI_ARKUICONTEXT_002
-     * @tc.name      ArkuiContext_0200
-     * @tc.desc      test setBackgroundColor interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   ArkuiContext_0200
+     * @tc.number SUB_ARKUI_ARKUICONTEXT_002
+     * @tc.desc   test setBackgroundColor interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkuiContext_0200', Level.LEVEL0, async  (done: Function) => {
       console.info('ArkuiContext_0200 START');
@@ -107,12 +107,12 @@ export default function atomicServiceBarTest() {
     });
 
     /**
-     * @tc.number    SUB_ARKUI_ARKUICONTEXT_003
-     * @tc.name      ArkuiContext_0300
-     * @tc.desc      test setTitleContent interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   ArkuiContext_0300
+     * @tc.number SUB_ARKUI_ARKUICONTEXT_003
+     * @tc.desc   test setTitleContent interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkuiContext_0300', Level.LEVEL0, async  (done: Function) => {
       console.info('ArkuiContext_0300 START');
@@ -137,12 +137,12 @@ export default function atomicServiceBarTest() {
 
 
     /**
-     * @tc.number    SUB_ARKUI_ARKUICONTEXT_005
-     * @tc.name      ArkuiContext_0500
-     * @tc.desc      test setTitleFontStyle interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   ArkuiContext_0500
+     * @tc.number SUB_ARKUI_ARKUICONTEXT_005
+     * @tc.desc   test setTitleFontStyle interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkuiContext_0500', Level.LEVEL0, async  (done: Function) => {
       console.info('ArkuiContext_0500 START');
@@ -167,12 +167,12 @@ export default function atomicServiceBarTest() {
     });
 
     /**
-     * @tc.number    SUB_ARKUI_ARKUICONTEXT_006
-     * @tc.name      ArkuiContext_0600
-     * @tc.desc      test setIconColor interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   ArkuiContext_0600
+     * @tc.number SUB_ARKUI_ARKUICONTEXT_006
+     * @tc.desc   test setIconColor interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkuiContext_0600', Level.LEVEL0, async  (done: Function) => {
       console.info('ArkuiContext_0600 START');
@@ -196,12 +196,12 @@ export default function atomicServiceBarTest() {
     });
 
     /**
-     * @tc.number    SUB_ARKUI_ARKUICONTEXT_007
-     * @tc.name      ArkuiContext_0700
-     * @tc.desc      test getKeyboardAvoidMode interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   ArkuiContext_0700
+     * @tc.number SUB_ARKUI_ARKUICONTEXT_007
+     * @tc.desc   test getKeyboardAvoidMode interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkuiContext_0700', Level.LEVEL0, async  (done: Function) => {
       console.info('ArkuiContext_0700 START');

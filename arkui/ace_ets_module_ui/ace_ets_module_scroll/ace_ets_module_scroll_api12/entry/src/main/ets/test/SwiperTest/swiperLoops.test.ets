@@ -45,12 +45,12 @@ export default function swiperLoops() {
     });
 
     /**
-     * @tc.number    swiperLoops_001
-     * @tc.name      swiperLoops_0100
-     * @tc.desc      Set the loop attribute of the Swiper component multiple times
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   swiperLoops_0100
+     * @tc.number swiperLoops_001
+     * @tc.desc   Set the loop attribute of the Swiper component multiple times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('swiperLoops_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[swiperLoops_0100] START');

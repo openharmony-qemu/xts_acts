@@ -27,14 +27,14 @@ const ExpectTrue: (n: boolean, caseName?: string) => void = (n: boolean, caseNam
 export default function networkManagerWithWifiTest() {
   describe('NetworkManagerWithWifiTest', () => {
 
-    /* *
-    * @tc.number: SUB_NetworkMgr_Network_Subscribe_0400
-    * @tc.name  : testNetworkMgrNetworkSubscribe0400
-    * @tc.desc  : Subscribe to the network connection status of the current device;wifi.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testNetworkMgrNetworkSubscribe0400
+     * @tc.number SUB_NetworkMgr_Network_Subscribe_0400
+     * @tc.desc   Subscribe to the network connection status of the current device;wifi.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrNetworkSubscribe0400',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 ,  async (done: Function) => {
       let caseName: string = 'testNetworkMgrNetworkSubscribe0400';
       console.info(`${caseName} test start`);
@@ -70,13 +70,13 @@ export default function networkManagerWithWifiTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Network_getType_0200
-     * @tc.name  : testNetworkMgrNetworkGetType0200
-     * @tc.desc  : Gets the network type of the current device;wifi.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrNetworkGetType0200
+     * @tc.number SUB_NetworkMgr_Network_getType_0200
+     * @tc.desc   Gets the network type of the current device;wifi.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrNetworkGetType0200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 ,  async (done: Function) => {
       let caseName: string = 'testNetworkMgrNetworkGetType0200';
@@ -105,13 +105,13 @@ export default function networkManagerWithWifiTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Network_Subscribe_0200
-     * @tc.name  : testNetworkMgrNetworkSubscribe0200
-     * @tc.desc  : Subscribe to the network connection status of the current device;wifi.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrNetworkSubscribe0200
+     * @tc.number SUB_NetworkMgr_Network_Subscribe_0200
+     * @tc.desc   Subscribe to the network connection status of the current device;wifi.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrNetworkSubscribe0200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 ,  async (done: Function) => {
       let caseName: string = 'testNetworkMgrNetworkSubscribe0200';
@@ -139,13 +139,13 @@ export default function networkManagerWithWifiTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Network_Subscribe_0300
-     * @tc.name  : testNetworkMgrNetworkSubscribe0300
-     * @tc.desc  : Subscribe no Parameter
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrNetworkSubscribe0300
+     * @tc.number SUB_NetworkMgr_Network_Subscribe_0300
+     * @tc.desc   Subscribe no Parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrNetworkSubscribe0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrNetworkSubscribe0300';
@@ -161,13 +161,13 @@ export default function networkManagerWithWifiTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Network_Subscribe_0500
-     * @tc.name  : testNetworkMgrNetworkSubscribe0500
-     * @tc.desc  : Subscribe no Parameter
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrNetworkSubscribe0500
+     * @tc.number SUB_NetworkMgr_Network_Subscribe_0500
+     * @tc.desc   Subscribe no Parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrNetworkSubscribe0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrNetworkSubscribe0400';

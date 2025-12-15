@@ -49,11 +49,13 @@ export default function TextPickerDialogSelectedBgColorTest() {
       console.info('textPickerDialogSelectedBgColor after each called');
     });
 
-    /* *
-     * @tc.number: TextPickerDialogSelectedBgColorTest_001
-     * @tc.name  : TextPickerDialogSelectedBgColorTest_001
-     * @tc.desc  : To test the TextPickerDialog BackgroundColor Color.White
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TextPickerDialogSelectedBgColorTest_001
+     * @tc.number TextPickerDialogSelectedBgColorTest_001
+     * @tc.desc   To test the TextPickerDialog BackgroundColor Color.White
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogSelectedBgColorTest_001',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -74,11 +76,13 @@ export default function TextPickerDialogSelectedBgColorTest() {
       done();
     })
 
-    /* *
-     * @tc.number: TextPickerDialogSelectedBgColorTest_002
-     * @tc.name  : TextPickerDialogSelectedBgColorTest_002
-     * @tc.desc  : To test the TextPickerDialog BackgroundColor rgb(255, 100, 255)
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TextPickerDialogSelectedBgColorTest_002
+     * @tc.number TextPickerDialogSelectedBgColorTest_002
+     * @tc.desc   To test the TextPickerDialog BackgroundColor rgb(255, 100, 255)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogSelectedBgColorTest_002',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -99,11 +103,13 @@ export default function TextPickerDialogSelectedBgColorTest() {
       done();
     })
 
-    /* *
-     * @tc.number: TextPickerDialogSelectedBgColorTest_003
-     * @tc.name  : TextPickerDialogSelectedBgColorTest_003
-     * @tc.desc  : To test the TextPickerDialog BackgroundColor 0x008080
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TextPickerDialogSelectedBgColorTest_003
+     * @tc.number TextPickerDialogSelectedBgColorTest_003
+     * @tc.desc   To test the TextPickerDialog BackgroundColor 0x008080
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogSelectedBgColorTest_003',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -124,11 +130,13 @@ export default function TextPickerDialogSelectedBgColorTest() {
       done();
     })
 
-    /* *
-     * @tc.number: TextPickerDialogSelectedBgColorTest_004
-     * @tc.name  : TextPickerDialogSelectedBgColorTest_004
-     * @tc.desc  : To test the TextPickerDialog BackgroundColor #00FFFF
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TextPickerDialogSelectedBgColorTest_004
+     * @tc.number TextPickerDialogSelectedBgColorTest_004
+     * @tc.desc   To test the TextPickerDialog BackgroundColor #00FFFF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogSelectedBgColorTest_004',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -149,11 +157,13 @@ export default function TextPickerDialogSelectedBgColorTest() {
       done();
     })
 
-    /* *
-     * @tc.number: TextPickerDialogSelectedBgColorTest_005
-     * @tc.name  : TextPickerDialogSelectedBgColorTest_005
-     * @tc.desc  : To test the TextPickerDialog BackgroundColor $r(app.color.blue)
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TextPickerDialogSelectedBgColorTest_005
+     * @tc.number TextPickerDialogSelectedBgColorTest_005
+     * @tc.desc   To test the TextPickerDialog BackgroundColor $r(app.color.blue)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogSelectedBgColorTest_005',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -174,11 +184,13 @@ export default function TextPickerDialogSelectedBgColorTest() {
       done();
     })
 
-    /* *
-     * @tc.number: TextPickerDialogSelectedBgColorTest_006
-     * @tc.name  : TextPickerDialogSelectedBgColorTest_006
-     * @tc.desc  : To test the TextPickerDialog BackgroundColor null
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TextPickerDialogSelectedBgColorTest_006
+     * @tc.number TextPickerDialogSelectedBgColorTest_006
+     * @tc.desc   To test the TextPickerDialog BackgroundColor null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogSelectedBgColorTest_006',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -199,11 +211,13 @@ export default function TextPickerDialogSelectedBgColorTest() {
       done();
     })
 
-    /* *
-     * @tc.number: TextPickerDialogSelectedBgColorTest_007
-     * @tc.name  : TextPickerDialogSelectedBgColorTest_007
-     * @tc.desc  : To test the TextPickerDialog BackgroundColor undefined
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TextPickerDialogSelectedBgColorTest_007
+     * @tc.number TextPickerDialogSelectedBgColorTest_007
+     * @tc.desc   To test the TextPickerDialog BackgroundColor undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogSelectedBgColorTest_007',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -224,11 +238,13 @@ export default function TextPickerDialogSelectedBgColorTest() {
       done();
     })
 
-    /* *
-     * @tc.number: TextPickerDialogSelectedBgColorTest_008
-     * @tc.name  : TextPickerDialogSelectedBgColorTest_008
-     * @tc.desc  : To test the TextPickerDialog BackgroundColor 'XXX'
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TextPickerDialogSelectedBgColorTest_008
+     * @tc.number TextPickerDialogSelectedBgColorTest_008
+     * @tc.desc   To test the TextPickerDialog BackgroundColor 'XXX'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogSelectedBgColorTest_008',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -249,11 +265,13 @@ export default function TextPickerDialogSelectedBgColorTest() {
       done();
     })
 
-    /* *
-     * @tc.number: TextPickerDialogSelectedBgColorTest_009
-     * @tc.name  : TextPickerDialogSelectedBgColorTest_009
-     * @tc.desc  : To test the TextPickerDialog BackgroundColor -100
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TextPickerDialogSelectedBgColorTest_009
+     * @tc.number TextPickerDialogSelectedBgColorTest_009
+     * @tc.desc   To test the TextPickerDialog BackgroundColor -100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogSelectedBgColorTest_009',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();

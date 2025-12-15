@@ -41,14 +41,14 @@ export default function bindSheetKeyboardAvoidMode(){
       }
       done();
     });
-    /* *
-    * @tc.number: bindSheetKeyboardAvoidMode_0100
-    * @tc.name  : bindSheetTest_01
-    * @tc.desc  : To test the mode of sheet how to avoid keyboard
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   bindSheetKeyboardAvoidMode_0100
+     * @tc.number bindSheetKeyboardAvoidMode_0100
+     * @tc.desc   To test the mode of sheet how to avoid keyboard
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('bindSheetKeyboardAvoidMode_0100', Level.LEVEL0, async (done:Function) =>{
       console.info('bindSheetKeyboardAvoidMode_0100 START');
       let driver = await Driver.create()
@@ -72,14 +72,14 @@ export default function bindSheetKeyboardAvoidMode(){
       done();
     });
 
-    /* *
-    * @tc.number: bindSheetKeyboardAvoidMode_0200
-    * @tc.name  : bindSheetTest_01
-    * @tc.desc  : To test the mode of sheet how to avoid keyboard
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   bindSheetKeyboardAvoidMode_0200
+     * @tc.number bindSheetKeyboardAvoidMode_0200
+     * @tc.desc   To test the mode of sheet how to avoid keyboard
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('bindSheetKeyboardAvoidMode_0200', Level.LEVEL0, async (done:Function) =>{
       console.info('bindSheetKeyboardAvoidMode_0200 START');
       let driver = await Driver.create()
@@ -103,14 +103,14 @@ export default function bindSheetKeyboardAvoidMode(){
       done();
     });
     
-    /* *
-     * @tc.number: bindSheetKeyboardAvoidMode_0300
-     * @tc.name  : bindSheetTest_01
-     * @tc.desc  : To test the mode of sheet how to avoid keyboard
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
-     */ 
+    /**
+     * @tc.name   bindSheetKeyboardAvoidMode_0300
+     * @tc.number bindSheetKeyboardAvoidMode_0300
+     * @tc.desc   To test the mode of sheet how to avoid keyboard
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('bindSheetKeyboardAvoidMode_0300', Level.LEVEL0, async (done:Function) =>{
       console.info('bindSheetKeyboardAvoidMode_0300 START');
       let driver = await Driver.create()
@@ -133,13 +133,13 @@ export default function bindSheetKeyboardAvoidMode(){
       console.info('[bindSheetKeyboardAvoidMode_0300] END');
       done();
     });
-    /* *
-     * @tc.number: bindSheetKeyboardAvoidMode_0400
-     * @tc.name  : bindSheetTest_01
-     * @tc.desc  : To test the mode of sheet how to avoid keyboard
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   bindSheetKeyboardAvoidMode_0400
+     * @tc.number bindSheetKeyboardAvoidMode_0400
+     * @tc.desc   To test the mode of sheet how to avoid keyboard
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('bindSheetKeyboardAvoidMode_0400', Level.LEVEL0, async (done:Function) =>{
       console.info('bindSheetKeyboardAvoidMode_0400 START');

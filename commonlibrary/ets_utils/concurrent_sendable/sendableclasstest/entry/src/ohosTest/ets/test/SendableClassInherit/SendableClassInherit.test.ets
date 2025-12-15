@@ -36,12 +36,12 @@ import { ArkTSUtils, collections } from '@kit.ArkTS';
 export default function sendableInheritClassTest() {
   describe('ActsSendableInheritClassTest', () => {
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PRIVATE_INHERIT_CLASS_0100
-     * @tc.name       : testSendablePrivateInheritClass0001
-     * @tc.desc       : Test SendablePrivateInheritClass string is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePrivateInheritClass0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PRIVATE_INHERIT_CLASS_0100
+     * @tc.desc   Test SendablePrivateInheritClass string is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePrivateInheritClass0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePrivateInheritClass0001';
@@ -55,12 +55,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_0100
-     * @tc.name       : testSendableDefaultInheritClass0001
-     * @tc.desc       : Test SendableDefaultInheritClass string is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultInheritClass0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_0100
+     * @tc.desc   Test SendableDefaultInheritClass string is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultInheritClass0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultInheritClass0001';
@@ -76,12 +76,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_0200
-     * @tc.name       : testSendableDefaultInheritClass0002
-     * @tc.desc       : Test SendableDefaultInheritClass number properties and inheritance.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultInheritClass0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_0200
+     * @tc.desc   Test SendableDefaultInheritClass number properties and inheritance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultInheritClass0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultInheritClass0002';
@@ -97,12 +97,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_0300
-     * @tc.name       : testSendableDefaultInheritClass0003
-     * @tc.desc       : Test SendableDefaultInheritClass boolean properties and inheritance.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultInheritClass0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_0300
+     * @tc.desc   Test SendableDefaultInheritClass boolean properties and inheritance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultInheritClass0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultInheritClass0003';
@@ -119,12 +119,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_0400
-     * @tc.name       : testSendableDefaultInheritClass0004
-     * @tc.desc       : Test SendableDefaultInheritClass bigint properties and inheritance.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultInheritClass0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_0400
+     * @tc.desc   Test SendableDefaultInheritClass bigint properties and inheritance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultInheritClass0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultInheritClass0004';
@@ -141,12 +141,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_0500
-     * @tc.name       : testSendableDefaultInheritClass0005
-     * @tc.desc       : Test SendableDefaultInheritClass undefined property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultInheritClass0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_0500
+     * @tc.desc   Test SendableDefaultInheritClass undefined property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultInheritClass0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultInheritClass0005';
@@ -165,12 +165,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_0600
-     * @tc.name       : testSendableDefaultInheritClass0006
-     * @tc.desc       : Test SendableDefaultInheritClass null property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultInheritClass0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_0600
+     * @tc.desc   Test SendableDefaultInheritClass null property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultInheritClass0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultInheritClass0006';
@@ -187,12 +187,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_0700
-     * @tc.name       : testSendableDefaultInheritClass0007
-     * @tc.desc       : Test SendableDefaultInheritClass with top level class instance.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultInheritClass0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_0700
+     * @tc.desc   Test SendableDefaultInheritClass with top level class instance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultInheritClass0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultInheritClass0007';
@@ -209,12 +209,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_0800
-     * @tc.name       : testSendableDefaultInheritClass0008
-     * @tc.desc       : Test SendableDefaultInheritClass with top level function instance.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultInheritClass0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_0800
+     * @tc.desc   Test SendableDefaultInheritClass with top level function instance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultInheritClass0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultInheritClass0008';
@@ -231,12 +231,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_0900
-     * @tc.name       : testSendableDefaultInheritClass0009
-     * @tc.desc       : Test SendableDefaultInheritClass enum property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultInheritClass0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_0900
+     * @tc.desc   Test SendableDefaultInheritClass enum property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultInheritClass0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultInheritClass0009';
@@ -253,12 +253,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_1000
-     * @tc.name       : testSendableDefaultInheritClass0010
-     * @tc.desc       : Test SendableDefaultInheritClass array property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultInheritClass0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_1000
+     * @tc.desc   Test SendableDefaultInheritClass array property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultInheritClass0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultInheritClass0010';
@@ -275,12 +275,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_1100
-     * @tc.name       : testSendableDefaultInheritClass0011
-     * @tc.desc       : Test SendableDefaultInheritClass map property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultInheritClass0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_1100
+     * @tc.desc   Test SendableDefaultInheritClass map property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultInheritClass0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultInheritClass0011';
@@ -298,12 +298,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_1200
-     * @tc.name       : testSendableDefaultInheritClass0012
-     * @tc.desc       : Test SendableDefaultInheritClass set property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultInheritClass0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_1200
+     * @tc.desc   Test SendableDefaultInheritClass set property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultInheritClass0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultInheritClass0012';
@@ -321,12 +321,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_1300
-     * @tc.name       : testSendableDefaultInheritClass0013
-     * @tc.desc       : Test SendableDefaultInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultInheritClass0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_1300
+     * @tc.desc   Test SendableDefaultInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultInheritClass0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultInheritClass0013';
@@ -342,12 +342,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_1400
-     * @tc.name       : testSendableDefaultInheritClass0014
-     * @tc.desc       : Test SendableDefaultInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultInheritClass0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_1400
+     * @tc.desc   Test SendableDefaultInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultInheritClass0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultInheritClass0014';
@@ -363,12 +363,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_1500
-     * @tc.name       : testSendableDefaultInheritClass0015
-     * @tc.desc       : Test SendableDefaultInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultInheritClass0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_1500
+     * @tc.desc   Test SendableDefaultInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultInheritClass0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultInheritClass0015';
@@ -384,12 +384,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_1600
-     * @tc.name       : testSendableDefaultInheritClass0016
-     * @tc.desc       : Test SendableDefaultInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultInheritClass0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_1600
+     * @tc.desc   Test SendableDefaultInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultInheritClass0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultInheritClass0016';
@@ -405,12 +405,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_1700
-     * @tc.name       : testSendableDefaultInheritClass0017
-     * @tc.desc       : Test SendableDefaultInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultInheritClass0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_1700
+     * @tc.desc   Test SendableDefaultInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultInheritClass0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultInheritClass0017';
@@ -426,12 +426,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_1800
-     * @tc.name       : testSendableDefaultInheritClass0018
-     * @tc.desc       : Test SendableDefaultInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultInheritClass0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_1800
+     * @tc.desc   Test SendableDefaultInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultInheritClass0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultInheritClass0018';
@@ -447,12 +447,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_1900
-     * @tc.name       : testSendableDefaultInheritClass0019
-     * @tc.desc       : Test SendableDefaultInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultInheritClass0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_1900
+     * @tc.desc   Test SendableDefaultInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultInheritClass0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultInheritClass0019';
@@ -468,12 +468,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_2000
-     * @tc.name       : testSendableDefaultInheritClass0020
-     * @tc.desc       : Test SendableDefaultInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultInheritClass0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_2000
+     * @tc.desc   Test SendableDefaultInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultInheritClass0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultInheritClass0020';
@@ -489,12 +489,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_2100
-     * @tc.name       : testSendableDefaultInheritClass0021
-     * @tc.desc       : Test SendableDefaultInheritClass array buffer property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultInheritClass0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_2100
+     * @tc.desc   Test SendableDefaultInheritClass array buffer property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultInheritClass0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultInheritClass0021';
@@ -510,12 +510,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_2200
-     * @tc.name       : testSendableDefaultInheritClass0022
-     * @tc.desc       : Test SendableDefaultInheritClass concat array property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultInheritClass0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_2200
+     * @tc.desc   Test SendableDefaultInheritClass concat array property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultInheritClass0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultInheritClass0022';
@@ -531,12 +531,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_2300
-     * @tc.name       : testSendableDefaultInheritClass0023
-     * @tc.desc       : Test SendableDefaultInheritClass bit vector property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultInheritClass0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_2300
+     * @tc.desc   Test SendableDefaultInheritClass bit vector property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultInheritClass0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultInheritClass0023';
@@ -553,12 +553,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_2400
-     * @tc.name       : testSendableDefaultInheritClass0024
-     * @tc.desc       : Test SendableDefaultInheritClass ASON property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultInheritClass0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_2400
+     * @tc.desc   Test SendableDefaultInheritClass ASON property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultInheritClass0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultInheritClass0024';
@@ -576,12 +576,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_2500
-     * @tc.name       : testSendableDefaultInheritClass0025
-     * @tc.desc       : Test SendableDefaultInheritClass async lock property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultInheritClass0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_2500
+     * @tc.desc   Test SendableDefaultInheritClass async lock property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultInheritClass0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultInheritClass0025';
@@ -597,12 +597,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_2600
-     * @tc.name       : testSendableDefaultInheritClass0026
-     * @tc.desc       : Test SendableDefaultInheritClass sendable union property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultInheritClass0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_INHERIT_CLASS_2600
+     * @tc.desc   Test SendableDefaultInheritClass sendable union property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultInheritClass0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultInheritClass0026';
@@ -623,12 +623,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_0100
-     * @tc.name       : testSendablePublicInheritClass0001
-     * @tc.desc       : Test SendablePublicInheritClass string is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicInheritClass0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_0100
+     * @tc.desc   Test SendablePublicInheritClass string is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicInheritClass0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicInheritClass0001';
@@ -644,12 +644,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_0200
-     * @tc.name       : testSendablePublicInheritClass0002
-     * @tc.desc       : Test SendablePublicInheritClass number properties and inheritance.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicInheritClass0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_0200
+     * @tc.desc   Test SendablePublicInheritClass number properties and inheritance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicInheritClass0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicInheritClass0002';
@@ -665,12 +665,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_0300
-     * @tc.name       : testSendablePublicInheritClass0003
-     * @tc.desc       : Test SendablePublicInheritClass boolean properties and inheritance.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicInheritClass0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_0300
+     * @tc.desc   Test SendablePublicInheritClass boolean properties and inheritance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicInheritClass0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicInheritClass0003';
@@ -687,12 +687,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_0400
-     * @tc.name       : testSendablePublicInheritClass0004
-     * @tc.desc       : Test SendablePublicInheritClass bigint properties and inheritance.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicInheritClass0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_0400
+     * @tc.desc   Test SendablePublicInheritClass bigint properties and inheritance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicInheritClass0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicInheritClass0004';
@@ -709,12 +709,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_0500
-     * @tc.name       : testSendablePublicInheritClass0005
-     * @tc.desc       : Test SendablePublicInheritClass undefined property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicInheritClass0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_0500
+     * @tc.desc   Test SendablePublicInheritClass undefined property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicInheritClass0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicInheritClass0005';
@@ -733,12 +733,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_0600
-     * @tc.name       : testSendablePublicInheritClass0006
-     * @tc.desc       : Test SendablePublicInheritClass null property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicInheritClass0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_0600
+     * @tc.desc   Test SendablePublicInheritClass null property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicInheritClass0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicInheritClass0006';
@@ -755,12 +755,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_0700
-     * @tc.name       : testSendablePublicInheritClass0007
-     * @tc.desc       : Test SendablePublicInheritClass with top level class instance.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicInheritClass0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_0700
+     * @tc.desc   Test SendablePublicInheritClass with top level class instance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicInheritClass0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicInheritClass0007';
@@ -777,12 +777,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_0800
-     * @tc.name       : testSendablePublicInheritClass0008
-     * @tc.desc       : Test SendablePublicInheritClass with top level function instance.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicInheritClass0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_0800
+     * @tc.desc   Test SendablePublicInheritClass with top level function instance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicInheritClass0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicInheritClass0008';
@@ -799,12 +799,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_0900
-     * @tc.name       : testSendablePublicInheritClass0009
-     * @tc.desc       : Test SendablePublicInheritClass enum property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicInheritClass0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_0900
+     * @tc.desc   Test SendablePublicInheritClass enum property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicInheritClass0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicInheritClass0009';
@@ -821,12 +821,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_1000
-     * @tc.name       : testSendablePublicInheritClass0010
-     * @tc.desc       : Test SendablePublicInheritClass array property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicInheritClass0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_1000
+     * @tc.desc   Test SendablePublicInheritClass array property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicInheritClass0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicInheritClass0010';
@@ -843,12 +843,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_1100
-     * @tc.name       : testSendablePublicInheritClass0011
-     * @tc.desc       : Test SendablePublicInheritClass map property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicInheritClass0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_1100
+     * @tc.desc   Test SendablePublicInheritClass map property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicInheritClass0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicInheritClass0011';
@@ -866,12 +866,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_1200
-     * @tc.name       : testSendablePublicInheritClass0012
-     * @tc.desc       : Test SendablePublicInheritClass set property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicInheritClass0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_1200
+     * @tc.desc   Test SendablePublicInheritClass set property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicInheritClass0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicInheritClass0012';
@@ -889,12 +889,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_1300
-     * @tc.name       : testSendablePublicInheritClass0013
-     * @tc.desc       : Test SendablePublicInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicInheritClass0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_1300
+     * @tc.desc   Test SendablePublicInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicInheritClass0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicInheritClass0013';
@@ -910,12 +910,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_1400
-     * @tc.name       : testSendablePublicInheritClass0014
-     * @tc.desc       : Test SendablePublicInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicInheritClass0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_1400
+     * @tc.desc   Test SendablePublicInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicInheritClass0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicInheritClass0014';
@@ -931,12 +931,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_1500
-     * @tc.name       : testSendablePublicInheritClass0015
-     * @tc.desc       : Test SendablePublicInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicInheritClass0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_1500
+     * @tc.desc   Test SendablePublicInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicInheritClass0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicInheritClass0015';
@@ -952,12 +952,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_1600
-     * @tc.name       : testSendablePublicInheritClass0016
-     * @tc.desc       : Test SendablePublicInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicInheritClass0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_1600
+     * @tc.desc   Test SendablePublicInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicInheritClass0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicInheritClass0016';
@@ -973,12 +973,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_1700
-     * @tc.name       : testSendablePublicInheritClass0017
-     * @tc.desc       : Test SendablePublicInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicInheritClass0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_1700
+     * @tc.desc   Test SendablePublicInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicInheritClass0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicInheritClass0017';
@@ -994,12 +994,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_1800
-     * @tc.name       : testSendablePublicInheritClass0018
-     * @tc.desc       : Test SendablePublicInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicInheritClass0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_1800
+     * @tc.desc   Test SendablePublicInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicInheritClass0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicInheritClass0018';
@@ -1015,12 +1015,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_1900
-     * @tc.name       : testSendablePublicInheritClass0019
-     * @tc.desc       : Test SendablePublicInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicInheritClass0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_1900
+     * @tc.desc   Test SendablePublicInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicInheritClass0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicInheritClass0019';
@@ -1036,12 +1036,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_2000
-     * @tc.name       : testSendablePublicInheritClass0020
-     * @tc.desc       : Test SendablePublicInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicInheritClass0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_2000
+     * @tc.desc   Test SendablePublicInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicInheritClass0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicInheritClass0020';
@@ -1057,12 +1057,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_2100
-     * @tc.name       : testSendablePublicInheritClass0021
-     * @tc.desc       : Test SendablePublicInheritClass array buffer property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicInheritClass0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_2100
+     * @tc.desc   Test SendablePublicInheritClass array buffer property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicInheritClass0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicInheritClass0021';
@@ -1078,12 +1078,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_2200
-     * @tc.name       : testSendablePublicInheritClass0022
-     * @tc.desc       : Test SendablePublicInheritClass concat array property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicInheritClass0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_2200
+     * @tc.desc   Test SendablePublicInheritClass concat array property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicInheritClass0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicInheritClass0022';
@@ -1099,12 +1099,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_2300
-     * @tc.name       : testSendablePublicInheritClass0023
-     * @tc.desc       : Test SendablePublicInheritClass bit vector property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicInheritClass0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_2300
+     * @tc.desc   Test SendablePublicInheritClass bit vector property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicInheritClass0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicInheritClass0023';
@@ -1121,12 +1121,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_2400
-     * @tc.name       : testSendablePublicInheritClass0024
-     * @tc.desc       : Test SendablePublicInheritClass ASON property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicInheritClass0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_2400
+     * @tc.desc   Test SendablePublicInheritClass ASON property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicInheritClass0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicInheritClass0024';
@@ -1144,12 +1144,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_2500
-     * @tc.name       : testSendablePublicInheritClass0025
-     * @tc.desc       : Test SendablePublicInheritClass async lock property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicInheritClass0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_2500
+     * @tc.desc   Test SendablePublicInheritClass async lock property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicInheritClass0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicInheritClass0025';
@@ -1165,12 +1165,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_2600
-     * @tc.name       : testSendablePublicInheritClass0026
-     * @tc.desc       : Test SendablePublicInheritClass sendable union property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicInheritClass0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_INHERIT_CLASS_2600
+     * @tc.desc   Test SendablePublicInheritClass sendable union property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicInheritClass0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicInheritClass0026';
@@ -1191,12 +1191,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PRIVATE_FUNC_INHERIT_CLASS_0100
-     * @tc.name       : testSendablePrivateFuncInheritClass0001
-     * @tc.desc       : Test SendablePrivateFuncInheritClass string is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePrivateFuncInheritClass0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PRIVATE_FUNC_INHERIT_CLASS_0100
+     * @tc.desc   Test SendablePrivateFuncInheritClass string is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePrivateFuncInheritClass0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePrivateFuncInheritClass0001';
@@ -1211,12 +1211,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_0100
-     * @tc.name       : testSendableDefaultFuncInheritClass0001
-     * @tc.desc       : Test SendableDefaultFuncInheritClass string is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultFuncInheritClass0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_0100
+     * @tc.desc   Test SendableDefaultFuncInheritClass string is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultFuncInheritClass0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultFuncInheritClass0001';
@@ -1232,12 +1232,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_0200
-     * @tc.name       : testSendableDefaultFuncInheritClass0002
-     * @tc.desc       : Test SendableDefaultFuncInheritClass number is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultFuncInheritClass0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_0200
+     * @tc.desc   Test SendableDefaultFuncInheritClass number is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultFuncInheritClass0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultFuncInheritClass0002';
@@ -1253,12 +1253,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_0300
-     * @tc.name       : testSendableDefaultFuncInheritClass0003
-     * @tc.desc       : Test SendableDefaultFuncInheritClass boolean is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultFuncInheritClass0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_0300
+     * @tc.desc   Test SendableDefaultFuncInheritClass boolean is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultFuncInheritClass0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultFuncInheritClass0003';
@@ -1275,12 +1275,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_0400
-     * @tc.name       : testSendableDefaultFuncInheritClass0004
-     * @tc.desc       : Test SendableDefaultFuncInheritClass BigInt is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultFuncInheritClass0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_0400
+     * @tc.desc   Test SendableDefaultFuncInheritClass BigInt is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultFuncInheritClass0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultFuncInheritClass0004';
@@ -1296,12 +1296,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_0500
-     * @tc.name       : testSendableDefaultFuncInheritClass0005
-     * @tc.desc       : Test SendableDefaultFuncInheritClass undefined is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultFuncInheritClass0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_0500
+     * @tc.desc   Test SendableDefaultFuncInheritClass undefined is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultFuncInheritClass0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultFuncInheritClass0005';
@@ -1318,12 +1318,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_0600
-     * @tc.name       : testSendableDefaultFuncInheritClass0006
-     * @tc.desc       : Test SendableDefaultFuncInheritClass null is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultFuncInheritClass0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_0600
+     * @tc.desc   Test SendableDefaultFuncInheritClass null is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultFuncInheritClass0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultFuncInheritClass0006';
@@ -1339,12 +1339,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_0700
-     * @tc.name       : testSendableDefaultFuncInheritClass0007
-     * @tc.desc       : Test SendableDefaultFuncInheritClass topLevelSendableClass is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultFuncInheritClass0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_0700
+     * @tc.desc   Test SendableDefaultFuncInheritClass topLevelSendableClass is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultFuncInheritClass0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultFuncInheritClass0007';
@@ -1361,12 +1361,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_0800
-     * @tc.name       : testSendableDefaultFuncInheritClass0008
-     * @tc.desc       : Test SendableDefaultFuncInheritClass topLevelFunction is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultFuncInheritClass0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_0800
+     * @tc.desc   Test SendableDefaultFuncInheritClass topLevelFunction is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultFuncInheritClass0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultFuncInheritClass0008';
@@ -1383,12 +1383,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_0900
-     * @tc.name       : testSendableDefaultFuncInheritClass0009
-     * @tc.desc       : Test SendableDefaultFuncInheritClass Enum is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultFuncInheritClass0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_0900
+     * @tc.desc   Test SendableDefaultFuncInheritClass Enum is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultFuncInheritClass0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultFuncInheritClass0009';
@@ -1405,12 +1405,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_1000
-     * @tc.name       : testSendableDefaultFuncInheritClass0010
-     * @tc.desc       : Test SendableDefaultFuncInheritClass array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultFuncInheritClass0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_1000
+     * @tc.desc   Test SendableDefaultFuncInheritClass array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultFuncInheritClass0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultFuncInheritClass0010';
@@ -1426,12 +1426,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_1100
-     * @tc.name       : testSendableDefaultFuncInheritClass0011
-     * @tc.desc       : Test SendableDefaultFuncInheritClass map is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultFuncInheritClass0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_1100
+     * @tc.desc   Test SendableDefaultFuncInheritClass map is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultFuncInheritClass0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultFuncInheritClass0011';
@@ -1447,12 +1447,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_1200
-     * @tc.name       : testSendableDefaultFuncInheritClass0012
-     * @tc.desc       : Test SendableDefaultFuncInheritClass set is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultFuncInheritClass0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_1200
+     * @tc.desc   Test SendableDefaultFuncInheritClass set is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultFuncInheritClass0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultFuncInheritClass0012';
@@ -1467,12 +1467,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_1300
-     * @tc.name       : testSendableDefaultFuncInheritClass0013
-     * @tc.desc       : Test SendableDefaultFuncInheritClass Int8Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultFuncInheritClass0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_1300
+     * @tc.desc   Test SendableDefaultFuncInheritClass Int8Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultFuncInheritClass0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultFuncInheritClass0013';
@@ -1488,12 +1488,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_1400
-     * @tc.name       : testSendableDefaultFuncInheritClass0014
-     * @tc.desc       : Test SendableDefaultFuncInheritClass Uint8Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultFuncInheritClass0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_1400
+     * @tc.desc   Test SendableDefaultFuncInheritClass Uint8Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultFuncInheritClass0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultFuncInheritClass0014';
@@ -1509,12 +1509,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_1500
-     * @tc.name       : testSendableDefaultFuncInheritClass0015
-     * @tc.desc       : Test SendableDefaultFuncInheritClass Int16Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultFuncInheritClass0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_1500
+     * @tc.desc   Test SendableDefaultFuncInheritClass Int16Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultFuncInheritClass0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultFuncInheritClass0015';
@@ -1530,12 +1530,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_1600
-     * @tc.name       : testSendableDefaultFuncInheritClass0016
-     * @tc.desc       : Test SendableDefaultFuncInheritClass Uint16Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultFuncInheritClass0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_1600
+     * @tc.desc   Test SendableDefaultFuncInheritClass Uint16Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultFuncInheritClass0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultFuncInheritClass0016';
@@ -1551,12 +1551,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_1700
-     * @tc.name       : testSendableDefaultFuncInheritClass0017
-     * @tc.desc       : Test SendableDefaultFuncInheritClass Int32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultFuncInheritClass0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_1700
+     * @tc.desc   Test SendableDefaultFuncInheritClass Int32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultFuncInheritClass0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultFuncInheritClass0017';
@@ -1572,12 +1572,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_1800
-     * @tc.name       : testSendableDefaultFuncInheritClass0018
-     * @tc.desc       : Test SendableDefaultFuncInheritClass Uint32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultFuncInheritClass0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_1800
+     * @tc.desc   Test SendableDefaultFuncInheritClass Uint32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultFuncInheritClass0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultFuncInheritClass0018';
@@ -1593,12 +1593,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_1900
-     * @tc.name       : testSendableDefaultFuncInheritClass0019
-     * @tc.desc       : Test SendableDefaultFuncInheritClass Uint8ClampedArray is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultFuncInheritClass0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_1900
+     * @tc.desc   Test SendableDefaultFuncInheritClass Uint8ClampedArray is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultFuncInheritClass0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultFuncInheritClass0019';
@@ -1614,12 +1614,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_2000
-     * @tc.name       : testSendableDefaultFuncInheritClass0020
-     * @tc.desc       : Test SendableDefaultFuncInheritClass Float32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultFuncInheritClass0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_2000
+     * @tc.desc   Test SendableDefaultFuncInheritClass Float32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultFuncInheritClass0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultFuncInheritClass0020';
@@ -1635,12 +1635,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_2100
-     * @tc.name       : testSendableDefaultFuncInheritClass0021
-     * @tc.desc       : Test SendableDefaultFuncInheritClass ArrayBuffer is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultFuncInheritClass0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_2100
+     * @tc.desc   Test SendableDefaultFuncInheritClass ArrayBuffer is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultFuncInheritClass0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultFuncInheritClass0021';
@@ -1656,12 +1656,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_2200
-     * @tc.name       : testSendableDefaultFuncInheritClass0022
-     * @tc.desc       : Test SendableDefaultFuncInheritClass ConcatArray is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultFuncInheritClass0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_2200
+     * @tc.desc   Test SendableDefaultFuncInheritClass ConcatArray is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultFuncInheritClass0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultFuncInheritClass0022';
@@ -1677,12 +1677,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_2300
-     * @tc.name       : testSendableDefaultFuncInheritClass0023
-     * @tc.desc       : Test SendableDefaultFuncInheritClass BitVector is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultFuncInheritClass0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_2300
+     * @tc.desc   Test SendableDefaultFuncInheritClass BitVector is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultFuncInheritClass0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultFuncInheritClass0023';
@@ -1699,12 +1699,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_2400
-     * @tc.name       : testSendableDefaultFuncInheritClass0024
-     * @tc.desc       : Test SendableDefaultFuncInheritClass ASON is parsed correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultFuncInheritClass0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_2400
+     * @tc.desc   Test SendableDefaultFuncInheritClass ASON is parsed correctly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultFuncInheritClass0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultFuncInheritClass0024';
@@ -1722,12 +1722,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_2500
-     * @tc.name       : testSendableDefaultFuncInheritClass0025
-     * @tc.desc       : Test SendableDefaultFuncInheritClass AsyncLock is requested directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultFuncInheritClass0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_2500
+     * @tc.desc   Test SendableDefaultFuncInheritClass AsyncLock is requested directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultFuncInheritClass0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultFuncInheritClass0025';
@@ -1744,12 +1744,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_2600
-     * @tc.name       : testSendableDefaultFuncInheritClass0026
-     * @tc.desc       : Test SendableDefaultFuncInheritClass union type is assigned correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultFuncInheritClass0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_FUNC_INHERIT_CLASS_2600
+     * @tc.desc   Test SendableDefaultFuncInheritClass union type is assigned correctly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultFuncInheritClass0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultFuncInheritClass0026';
@@ -1770,12 +1770,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_0100
-     * @tc.name       : testSendablePublicFuncInheritClass0001
-     * @tc.desc       : Test SendablePublicFuncInheritClass string is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicFuncInheritClass0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_0100
+     * @tc.desc   Test SendablePublicFuncInheritClass string is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicFuncInheritClass0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicFuncInheritClass0001';
@@ -1791,12 +1791,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_0200
-     * @tc.name       : testSendablePublicFuncInheritClass0002
-     * @tc.desc       : Test SendablePublicFuncInheritClass number is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicFuncInheritClass0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_0200
+     * @tc.desc   Test SendablePublicFuncInheritClass number is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicFuncInheritClass0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicFuncInheritClass0002';
@@ -1812,12 +1812,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_0300
-     * @tc.name       : testSendablePublicFuncInheritClass0003
-     * @tc.desc       : Test SendablePublicFuncInheritClass boolean is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicFuncInheritClass0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_0300
+     * @tc.desc   Test SendablePublicFuncInheritClass boolean is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicFuncInheritClass0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicFuncInheritClass0003';
@@ -1834,12 +1834,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_0400
-     * @tc.name       : testSendablePublicFuncInheritClass0004
-     * @tc.desc       : Test SendablePublicFuncInheritClass BigInt is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicFuncInheritClass0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_0400
+     * @tc.desc   Test SendablePublicFuncInheritClass BigInt is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicFuncInheritClass0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicFuncInheritClass0004';
@@ -1855,12 +1855,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_0500
-     * @tc.name       : testSendablePublicFuncInheritClass0005
-     * @tc.desc       : Test SendablePublicFuncInheritClass undefined is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicFuncInheritClass0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_0500
+     * @tc.desc   Test SendablePublicFuncInheritClass undefined is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicFuncInheritClass0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicFuncInheritClass0005';
@@ -1877,12 +1877,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_0600
-     * @tc.name       : testSendablePublicFuncInheritClass0006
-     * @tc.desc       : Test SendablePublicFuncInheritClass null is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicFuncInheritClass0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_0600
+     * @tc.desc   Test SendablePublicFuncInheritClass null is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicFuncInheritClass0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicFuncInheritClass0006';
@@ -1898,12 +1898,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_0700
-     * @tc.name       : testSendablePublicFuncInheritClass0007
-     * @tc.desc       : Test SendablePublicFuncInheritClass topLevelSendableClass is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicFuncInheritClass0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_0700
+     * @tc.desc   Test SendablePublicFuncInheritClass topLevelSendableClass is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicFuncInheritClass0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicFuncInheritClass0007';
@@ -1920,12 +1920,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_0800
-     * @tc.name       : testSendablePublicFuncInheritClass0008
-     * @tc.desc       : Test SendablePublicFuncInheritClass topLevelFunction is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicFuncInheritClass0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_0800
+     * @tc.desc   Test SendablePublicFuncInheritClass topLevelFunction is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicFuncInheritClass0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicFuncInheritClass0008';
@@ -1942,12 +1942,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_0900
-     * @tc.name       : testSendablePublicFuncInheritClass0009
-     * @tc.desc       : Test SendablePublicFuncInheritClass Enum is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicFuncInheritClass0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_0900
+     * @tc.desc   Test SendablePublicFuncInheritClass Enum is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicFuncInheritClass0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicFuncInheritClass0009';
@@ -1964,12 +1964,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_1000
-     * @tc.name       : testSendablePublicFuncInheritClass0010
-     * @tc.desc       : Test SendablePublicFuncInheritClass array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicFuncInheritClass0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_1000
+     * @tc.desc   Test SendablePublicFuncInheritClass array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicFuncInheritClass0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicFuncInheritClass0010';
@@ -1985,12 +1985,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_1100
-     * @tc.name       : testSendablePublicFuncInheritClass0011
-     * @tc.desc       : Test SendablePublicFuncInheritClass map is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicFuncInheritClass0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_1100
+     * @tc.desc   Test SendablePublicFuncInheritClass map is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicFuncInheritClass0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicFuncInheritClass0011';
@@ -2006,12 +2006,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_1200
-     * @tc.name       : testSendablePublicFuncInheritClass0012
-     * @tc.desc       : Test SendablePublicFuncInheritClass set is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicFuncInheritClass0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_1200
+     * @tc.desc   Test SendablePublicFuncInheritClass set is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicFuncInheritClass0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicFuncInheritClass0012';
@@ -2026,12 +2026,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_1300
-     * @tc.name       : testSendablePublicFuncInheritClass0013
-     * @tc.desc       : Test SendablePublicFuncInheritClass Int8Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicFuncInheritClass0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_1300
+     * @tc.desc   Test SendablePublicFuncInheritClass Int8Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicFuncInheritClass0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicFuncInheritClass0013';
@@ -2047,12 +2047,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_1400
-     * @tc.name       : testSendablePublicFuncInheritClass0014
-     * @tc.desc       : Test SendablePublicFuncInheritClass Uint8Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicFuncInheritClass0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_1400
+     * @tc.desc   Test SendablePublicFuncInheritClass Uint8Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicFuncInheritClass0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicFuncInheritClass0014';
@@ -2068,12 +2068,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_1500
-     * @tc.name       : testSendablePublicFuncInheritClass0015
-     * @tc.desc       : Test SendablePublicFuncInheritClass Int16Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicFuncInheritClass0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_1500
+     * @tc.desc   Test SendablePublicFuncInheritClass Int16Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicFuncInheritClass0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicFuncInheritClass0015';
@@ -2089,12 +2089,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_1600
-     * @tc.name       : testSendablePublicFuncInheritClass0016
-     * @tc.desc       : Test SendablePublicFuncInheritClass Uint16Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicFuncInheritClass0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_1600
+     * @tc.desc   Test SendablePublicFuncInheritClass Uint16Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicFuncInheritClass0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicFuncInheritClass0016';
@@ -2110,12 +2110,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_1700
-     * @tc.name       : testSendablePublicFuncInheritClass0017
-     * @tc.desc       : Test SendablePublicFuncInheritClass Int32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicFuncInheritClass0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_1700
+     * @tc.desc   Test SendablePublicFuncInheritClass Int32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicFuncInheritClass0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicFuncInheritClass0017';
@@ -2131,12 +2131,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_1800
-     * @tc.name       : testSendablePublicFuncInheritClass0018
-     * @tc.desc       : Test SendablePublicFuncInheritClass Uint32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicFuncInheritClass0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_1800
+     * @tc.desc   Test SendablePublicFuncInheritClass Uint32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicFuncInheritClass0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicFuncInheritClass0018';
@@ -2152,12 +2152,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_1900
-     * @tc.name       : testSendablePublicFuncInheritClass0019
-     * @tc.desc       : Test SendablePublicFuncInheritClass Uint8ClampedArray is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicFuncInheritClass0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_1900
+     * @tc.desc   Test SendablePublicFuncInheritClass Uint8ClampedArray is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicFuncInheritClass0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicFuncInheritClass0019';
@@ -2173,12 +2173,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_2000
-     * @tc.name       : testSendablePublicFuncInheritClass0020
-     * @tc.desc       : Test SendablePublicFuncInheritClass Float32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicFuncInheritClass0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_2000
+     * @tc.desc   Test SendablePublicFuncInheritClass Float32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicFuncInheritClass0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicFuncInheritClass0020';
@@ -2194,12 +2194,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_2100
-     * @tc.name       : testSendablePublicFuncInheritClass0021
-     * @tc.desc       : Test SendablePublicFuncInheritClass ArrayBuffer is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicFuncInheritClass0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_2100
+     * @tc.desc   Test SendablePublicFuncInheritClass ArrayBuffer is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicFuncInheritClass0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicFuncInheritClass0021';
@@ -2215,12 +2215,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_2200
-     * @tc.name       : testSendablePublicFuncInheritClass0022
-     * @tc.desc       : Test SendablePublicFuncInheritClass ConcatArray is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicFuncInheritClass0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_2200
+     * @tc.desc   Test SendablePublicFuncInheritClass ConcatArray is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicFuncInheritClass0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicFuncInheritClass0022';
@@ -2236,12 +2236,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_2300
-     * @tc.name       : testSendablePublicFuncInheritClass0023
-     * @tc.desc       : Test SendablePublicFuncInheritClass BitVector is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicFuncInheritClass0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_2300
+     * @tc.desc   Test SendablePublicFuncInheritClass BitVector is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicFuncInheritClass0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicFuncInheritClass0023';
@@ -2258,12 +2258,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_2400
-     * @tc.name       : testSendablePublicFuncInheritClass0024
-     * @tc.desc       : Test SendablePublicFuncInheritClass ASON is parsed correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicFuncInheritClass0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_2400
+     * @tc.desc   Test SendablePublicFuncInheritClass ASON is parsed correctly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicFuncInheritClass0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicFuncInheritClass0024';
@@ -2281,12 +2281,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_2500
-     * @tc.name       : testSendablePublicFuncInheritClass0025
-     * @tc.desc       : Test SendablePublicFuncInheritClass AsyncLock is requested directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicFuncInheritClass0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_2500
+     * @tc.desc   Test SendablePublicFuncInheritClass AsyncLock is requested directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicFuncInheritClass0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicFuncInheritClass0025';
@@ -2303,12 +2303,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_2600
-     * @tc.name       : testSendablePublicFuncInheritClass0026
-     * @tc.desc       : Test SendablePublicFuncInheritClass union type is assigned correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicFuncInheritClass0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_FUNC_INHERIT_CLASS_2600
+     * @tc.desc   Test SendablePublicFuncInheritClass union type is assigned correctly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicFuncInheritClass0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicFuncInheritClass0026';
@@ -2329,12 +2329,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PRIVATE_GET_FUNC_INHERIT_CLASS_0100
-     * @tc.name       : testSendablePrivateGetFuncInheritClass0001
-     * @tc.desc       : Test SendablePrivateGetFuncInheritClass string is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePrivateGetFuncInheritClass0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PRIVATE_GET_FUNC_INHERIT_CLASS_0100
+     * @tc.desc   Test SendablePrivateGetFuncInheritClass string is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePrivateGetFuncInheritClass0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePrivateGetFuncInheritClass0001';
@@ -2348,12 +2348,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_0100
-     * @tc.name       : testSendableDefaultGetFuncInheritClass0001
-     * @tc.desc       : Test SendableDefaultGetFuncInheritClass string is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultGetFuncInheritClass0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_0100
+     * @tc.desc   Test SendableDefaultGetFuncInheritClass string is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultGetFuncInheritClass0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultGetFuncInheritClass0001';
@@ -2369,12 +2369,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_0200
-     * @tc.name       : testSendableDefaultGetFuncInheritClass0002
-     * @tc.desc       : Test SendableDefaultGetFuncInheritClass number properties and inheritance.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultGetFuncInheritClass0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_0200
+     * @tc.desc   Test SendableDefaultGetFuncInheritClass number properties and inheritance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultGetFuncInheritClass0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultGetFuncInheritClass0002';
@@ -2390,12 +2390,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_0300
-     * @tc.name       : testSendableDefaultGetFuncInheritClass0003
-     * @tc.desc       : Test SendableDefaultGetFuncInheritClass boolean properties and inheritance.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultGetFuncInheritClass0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_0300
+     * @tc.desc   Test SendableDefaultGetFuncInheritClass boolean properties and inheritance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultGetFuncInheritClass0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultGetFuncInheritClass0003';
@@ -2412,12 +2412,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_0400
-     * @tc.name       : testSendableDefaultGetFuncInheritClass0004
-     * @tc.desc       : Test SendableDefaultGetFuncInheritClass bigint properties and inheritance.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultGetFuncInheritClass0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_0400
+     * @tc.desc   Test SendableDefaultGetFuncInheritClass bigint properties and inheritance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultGetFuncInheritClass0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultGetFuncInheritClass0004';
@@ -2434,12 +2434,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_0500
-     * @tc.name       : testSendableDefaultGetFuncInheritClass0005
-     * @tc.desc       : Test SendableDefaultGetFuncInheritClass undefined property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultGetFuncInheritClass0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_0500
+     * @tc.desc   Test SendableDefaultGetFuncInheritClass undefined property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultGetFuncInheritClass0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultGetFuncInheritClass0005';
@@ -2458,12 +2458,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_0600
-     * @tc.name       : testSendableDefaultGetFuncInheritClass0006
-     * @tc.desc       : Test SendableDefaultGetFuncInheritClass null property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultGetFuncInheritClass0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_0600
+     * @tc.desc   Test SendableDefaultGetFuncInheritClass null property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultGetFuncInheritClass0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultGetFuncInheritClass0006';
@@ -2480,12 +2480,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_0700
-     * @tc.name       : testSendableDefaultGetFuncInheritClass0007
-     * @tc.desc       : Test SendableDefaultGetFuncInheritClass with top level class instance.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultGetFuncInheritClass0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_0700
+     * @tc.desc   Test SendableDefaultGetFuncInheritClass with top level class instance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultGetFuncInheritClass0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultGetFuncInheritClass0007';
@@ -2502,12 +2502,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_0800
-     * @tc.name       : testSendableDefaultGetFuncInheritClass0008
-     * @tc.desc       : Test SendableDefaultGetFuncInheritClass with top level function instance.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultGetFuncInheritClass0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_0800
+     * @tc.desc   Test SendableDefaultGetFuncInheritClass with top level function instance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultGetFuncInheritClass0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultGetFuncInheritClass0008';
@@ -2524,12 +2524,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_0900
-     * @tc.name       : testSendableDefaultGetFuncInheritClass0009
-     * @tc.desc       : Test SendableDefaultGetFuncInheritClass enum property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultGetFuncInheritClass0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_0900
+     * @tc.desc   Test SendableDefaultGetFuncInheritClass enum property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultGetFuncInheritClass0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultGetFuncInheritClass0009';
@@ -2546,12 +2546,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_1000
-     * @tc.name       : testSendableDefaultGetFuncInheritClass0010
-     * @tc.desc       : Test SendableDefaultGetFuncInheritClass array property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultGetFuncInheritClass0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_1000
+     * @tc.desc   Test SendableDefaultGetFuncInheritClass array property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultGetFuncInheritClass0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultGetFuncInheritClass0010';
@@ -2568,12 +2568,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_1100
-     * @tc.name       : testSendableDefaultGetFuncInheritClass0011
-     * @tc.desc       : Test SendableDefaultGetFuncInheritClass map property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultGetFuncInheritClass0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_1100
+     * @tc.desc   Test SendableDefaultGetFuncInheritClass map property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultGetFuncInheritClass0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultGetFuncInheritClass0011';
@@ -2591,12 +2591,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_1200
-     * @tc.name       : testSendableDefaultGetFuncInheritClass0012
-     * @tc.desc       : Test SendableDefaultGetFuncInheritClass set property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultGetFuncInheritClass0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_1200
+     * @tc.desc   Test SendableDefaultGetFuncInheritClass set property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultGetFuncInheritClass0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultGetFuncInheritClass0012';
@@ -2614,12 +2614,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_1300
-     * @tc.name       : testSendableDefaultGetFuncInheritClass0013
-     * @tc.desc       : Test SendableDefaultGetFuncInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultGetFuncInheritClass0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_1300
+     * @tc.desc   Test SendableDefaultGetFuncInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultGetFuncInheritClass0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultGetFuncInheritClass0013';
@@ -2635,12 +2635,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_1400
-     * @tc.name       : testSendableDefaultGetFuncInheritClass0014
-     * @tc.desc       : Test SendableDefaultGetFuncInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultGetFuncInheritClass0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_1400
+     * @tc.desc   Test SendableDefaultGetFuncInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultGetFuncInheritClass0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultGetFuncInheritClass0014';
@@ -2656,12 +2656,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_1500
-     * @tc.name       : testSendableDefaultGetFuncInheritClass0015
-     * @tc.desc       : Test SendableDefaultGetFuncInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultGetFuncInheritClass0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_1500
+     * @tc.desc   Test SendableDefaultGetFuncInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultGetFuncInheritClass0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultGetFuncInheritClass0015';
@@ -2677,12 +2677,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_1600
-     * @tc.name       : testSendableDefaultGetFuncInheritClass0016
-     * @tc.desc       : Test SendableDefaultGetFuncInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultGetFuncInheritClass0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_1600
+     * @tc.desc   Test SendableDefaultGetFuncInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultGetFuncInheritClass0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultGetFuncInheritClass0016';
@@ -2698,12 +2698,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_1700
-     * @tc.name       : testSendableDefaultGetFuncInheritClass0017
-     * @tc.desc       : Test SendableDefaultGetFuncInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultGetFuncInheritClass0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_1700
+     * @tc.desc   Test SendableDefaultGetFuncInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultGetFuncInheritClass0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultGetFuncInheritClass0017';
@@ -2719,12 +2719,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_1800
-     * @tc.name       : testSendableDefaultGetFuncInheritClass0018
-     * @tc.desc       : Test SendableDefaultGetFuncInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultGetFuncInheritClass0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_1800
+     * @tc.desc   Test SendableDefaultGetFuncInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultGetFuncInheritClass0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultGetFuncInheritClass0018';
@@ -2740,12 +2740,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_1900
-     * @tc.name       : testSendableDefaultGetFuncInheritClass0019
-     * @tc.desc       : Test SendableDefaultGetFuncInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultGetFuncInheritClass0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_1900
+     * @tc.desc   Test SendableDefaultGetFuncInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultGetFuncInheritClass0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultGetFuncInheritClass0019';
@@ -2761,12 +2761,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_2000
-     * @tc.name       : testSendableDefaultGetFuncInheritClass0020
-     * @tc.desc       : Test SendableDefaultGetFuncInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultGetFuncInheritClass0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_2000
+     * @tc.desc   Test SendableDefaultGetFuncInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultGetFuncInheritClass0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultGetFuncInheritClass0020';
@@ -2782,12 +2782,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_2100
-     * @tc.name       : testSendableDefaultGetFuncInheritClass0021
-     * @tc.desc       : Test SendableDefaultGetFuncInheritClass array buffer property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultGetFuncInheritClass0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_2100
+     * @tc.desc   Test SendableDefaultGetFuncInheritClass array buffer property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultGetFuncInheritClass0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultGetFuncInheritClass0021';
@@ -2803,12 +2803,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_2200
-     * @tc.name       : testSendableDefaultGetFuncInheritClass0022
-     * @tc.desc       : Test SendableDefaultGetFuncInheritClass concat array property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultGetFuncInheritClass0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_2200
+     * @tc.desc   Test SendableDefaultGetFuncInheritClass concat array property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultGetFuncInheritClass0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultGetFuncInheritClass0022';
@@ -2824,12 +2824,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_2300
-     * @tc.name       : testSendableDefaultGetFuncInheritClass0023
-     * @tc.desc       : Test SendableDefaultGetFuncInheritClass bit vector property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultGetFuncInheritClass0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_2300
+     * @tc.desc   Test SendableDefaultGetFuncInheritClass bit vector property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultGetFuncInheritClass0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultGetFuncInheritClass0023';
@@ -2846,12 +2846,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_2400
-     * @tc.name       : testSendableDefaultGetFuncInheritClass0024
-     * @tc.desc       : Test SendableDefaultGetFuncInheritClass ASON property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultGetFuncInheritClass0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_2400
+     * @tc.desc   Test SendableDefaultGetFuncInheritClass ASON property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultGetFuncInheritClass0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultGetFuncInheritClass0024';
@@ -2869,12 +2869,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_2500
-     * @tc.name       : testSendableDefaultGetFuncInheritClass0025
-     * @tc.desc       : Test SendableDefaultGetFuncInheritClass async lock property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultGetFuncInheritClass0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_2500
+     * @tc.desc   Test SendableDefaultGetFuncInheritClass async lock property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultGetFuncInheritClass0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultGetFuncInheritClass0025';
@@ -2890,12 +2890,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_2600
-     * @tc.name       : testSendableDefaultGetFuncInheritClass0026
-     * @tc.desc       : Test SendableDefaultGetFuncInheritClass sendable union property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultGetFuncInheritClass0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_GET_FUNC_INHERIT_CLASS_2600
+     * @tc.desc   Test SendableDefaultGetFuncInheritClass sendable union property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultGetFuncInheritClass0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultGetFuncInheritClass0026';
@@ -2916,12 +2916,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_0100
-     * @tc.name       : testSendablePublicGetFuncInheritClass0001
-     * @tc.desc       : Test SendablePublicGetFuncInheritClass string is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicGetFuncInheritClass0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_0100
+     * @tc.desc   Test SendablePublicGetFuncInheritClass string is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicGetFuncInheritClass0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicGetFuncInheritClass0001';
@@ -2937,12 +2937,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_0200
-     * @tc.name       : testSendablePublicGetFuncInheritClass0002
-     * @tc.desc       : Test SendablePublicGetFuncInheritClass number properties and inheritance.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicGetFuncInheritClass0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_0200
+     * @tc.desc   Test SendablePublicGetFuncInheritClass number properties and inheritance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicGetFuncInheritClass0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicGetFuncInheritClass0002';
@@ -2958,12 +2958,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_0300
-     * @tc.name       : testSendablePublicGetFuncInheritClass0003
-     * @tc.desc       : Test SendablePublicGetFuncInheritClass boolean properties and inheritance.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicGetFuncInheritClass0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_0300
+     * @tc.desc   Test SendablePublicGetFuncInheritClass boolean properties and inheritance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicGetFuncInheritClass0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicGetFuncInheritClass0003';
@@ -2980,12 +2980,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_0400
-     * @tc.name       : testSendablePublicGetFuncInheritClass0004
-     * @tc.desc       : Test SendablePublicGetFuncInheritClass bigint properties and inheritance.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicGetFuncInheritClass0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_0400
+     * @tc.desc   Test SendablePublicGetFuncInheritClass bigint properties and inheritance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicGetFuncInheritClass0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicGetFuncInheritClass0004';
@@ -3002,12 +3002,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_0500
-     * @tc.name       : testSendablePublicGetFuncInheritClass0005
-     * @tc.desc       : Test SendablePublicGetFuncInheritClass undefined property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicGetFuncInheritClass0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_0500
+     * @tc.desc   Test SendablePublicGetFuncInheritClass undefined property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicGetFuncInheritClass0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicGetFuncInheritClass0005';
@@ -3026,12 +3026,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_0600
-     * @tc.name       : testSendablePublicGetFuncInheritClass0006
-     * @tc.desc       : Test SendablePublicGetFuncInheritClass null property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicGetFuncInheritClass0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_0600
+     * @tc.desc   Test SendablePublicGetFuncInheritClass null property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicGetFuncInheritClass0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicGetFuncInheritClass0006';
@@ -3048,12 +3048,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_0700
-     * @tc.name       : testSendablePublicGetFuncInheritClass0007
-     * @tc.desc       : Test SendablePublicGetFuncInheritClass with top level class instance.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicGetFuncInheritClass0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_0700
+     * @tc.desc   Test SendablePublicGetFuncInheritClass with top level class instance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicGetFuncInheritClass0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicGetFuncInheritClass0007';
@@ -3070,12 +3070,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_0800
-     * @tc.name       : testSendablePublicGetFuncInheritClass0008
-     * @tc.desc       : Test SendablePublicGetFuncInheritClass with top level function instance.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicGetFuncInheritClass0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_0800
+     * @tc.desc   Test SendablePublicGetFuncInheritClass with top level function instance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicGetFuncInheritClass0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicGetFuncInheritClass0008';
@@ -3092,12 +3092,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_0900
-     * @tc.name       : testSendablePublicGetFuncInheritClass0009
-     * @tc.desc       : Test SendablePublicGetFuncInheritClass enum property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicGetFuncInheritClass0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_0900
+     * @tc.desc   Test SendablePublicGetFuncInheritClass enum property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicGetFuncInheritClass0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicGetFuncInheritClass0009';
@@ -3114,12 +3114,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_1000
-     * @tc.name       : testSendablePublicGetFuncInheritClass0010
-     * @tc.desc       : Test SendablePublicGetFuncInheritClass array property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicGetFuncInheritClass0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_1000
+     * @tc.desc   Test SendablePublicGetFuncInheritClass array property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicGetFuncInheritClass0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicGetFuncInheritClass0010';
@@ -3136,12 +3136,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_1100
-     * @tc.name       : testSendablePublicGetFuncInheritClass0011
-     * @tc.desc       : Test SendablePublicGetFuncInheritClass map property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicGetFuncInheritClass0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_1100
+     * @tc.desc   Test SendablePublicGetFuncInheritClass map property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicGetFuncInheritClass0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicGetFuncInheritClass0011';
@@ -3159,12 +3159,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_1200
-     * @tc.name       : testSendablePublicGetFuncInheritClass0012
-     * @tc.desc       : Test SendablePublicGetFuncInheritClass set property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicGetFuncInheritClass0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_1200
+     * @tc.desc   Test SendablePublicGetFuncInheritClass set property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicGetFuncInheritClass0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicGetFuncInheritClass0012';
@@ -3182,12 +3182,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_1300
-     * @tc.name       : testSendablePublicGetFuncInheritClass0013
-     * @tc.desc       : Test SendablePublicGetFuncInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicGetFuncInheritClass0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_1300
+     * @tc.desc   Test SendablePublicGetFuncInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicGetFuncInheritClass0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicGetFuncInheritClass0013';
@@ -3203,12 +3203,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_1400
-     * @tc.name       : testSendablePublicGetFuncInheritClass0014
-     * @tc.desc       : Test SendablePublicGetFuncInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicGetFuncInheritClass0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_1400
+     * @tc.desc   Test SendablePublicGetFuncInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicGetFuncInheritClass0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicGetFuncInheritClass0014';
@@ -3224,12 +3224,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_1500
-     * @tc.name       : testSendablePublicGetFuncInheritClass0015
-     * @tc.desc       : Test SendablePublicGetFuncInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicGetFuncInheritClass0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_1500
+     * @tc.desc   Test SendablePublicGetFuncInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicGetFuncInheritClass0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicGetFuncInheritClass0015';
@@ -3245,12 +3245,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_1600
-     * @tc.name       : testSendablePublicGetFuncInheritClass0016
-     * @tc.desc       : Test SendablePublicGetFuncInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicGetFuncInheritClass0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_1600
+     * @tc.desc   Test SendablePublicGetFuncInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicGetFuncInheritClass0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicGetFuncInheritClass0016';
@@ -3266,12 +3266,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_1700
-     * @tc.name       : testSendablePublicGetFuncInheritClass0017
-     * @tc.desc       : Test SendablePublicGetFuncInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicGetFuncInheritClass0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_1700
+     * @tc.desc   Test SendablePublicGetFuncInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicGetFuncInheritClass0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicGetFuncInheritClass0017';
@@ -3287,12 +3287,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_1800
-     * @tc.name       : testSendablePublicGetFuncInheritClass0018
-     * @tc.desc       : Test SendablePublicGetFuncInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicGetFuncInheritClass0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_1800
+     * @tc.desc   Test SendablePublicGetFuncInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicGetFuncInheritClass0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicGetFuncInheritClass0018';
@@ -3308,12 +3308,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_1900
-     * @tc.name       : testSendablePublicGetFuncInheritClass0019
-     * @tc.desc       : Test SendablePublicGetFuncInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicGetFuncInheritClass0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_1900
+     * @tc.desc   Test SendablePublicGetFuncInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicGetFuncInheritClass0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicGetFuncInheritClass0019';
@@ -3329,12 +3329,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_2000
-     * @tc.name       : testSendablePublicGetFuncInheritClass0020
-     * @tc.desc       : Test SendablePublicGetFuncInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicGetFuncInheritClass0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_2000
+     * @tc.desc   Test SendablePublicGetFuncInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicGetFuncInheritClass0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicGetFuncInheritClass0020';
@@ -3350,12 +3350,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_2100
-     * @tc.name       : testSendablePublicGetFuncInheritClass0021
-     * @tc.desc       : Test SendablePublicGetFuncInheritClass array buffer property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicGetFuncInheritClass0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_2100
+     * @tc.desc   Test SendablePublicGetFuncInheritClass array buffer property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicGetFuncInheritClass0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicGetFuncInheritClass0021';
@@ -3371,12 +3371,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_2200
-     * @tc.name       : testSendablePublicGetFuncInheritClass0022
-     * @tc.desc       : Test SendablePublicGetFuncInheritClass concat array property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicGetFuncInheritClass0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_2200
+     * @tc.desc   Test SendablePublicGetFuncInheritClass concat array property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicGetFuncInheritClass0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicGetFuncInheritClass0022';
@@ -3392,12 +3392,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_2300
-     * @tc.name       : testSendablePublicGetFuncInheritClass0023
-     * @tc.desc       : Test SendablePublicGetFuncInheritClass bit vector property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicGetFuncInheritClass0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_2300
+     * @tc.desc   Test SendablePublicGetFuncInheritClass bit vector property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicGetFuncInheritClass0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicGetFuncInheritClass0023';
@@ -3414,12 +3414,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_2400
-     * @tc.name       : testSendablePublicGetFuncInheritClass0024
-     * @tc.desc       : Test SendablePublicGetFuncInheritClass ASON property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicGetFuncInheritClass0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_2400
+     * @tc.desc   Test SendablePublicGetFuncInheritClass ASON property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicGetFuncInheritClass0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicGetFuncInheritClass0024';
@@ -3437,12 +3437,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_2500
-     * @tc.name       : testSendablePublicGetFuncInheritClass0025
-     * @tc.desc       : Test SendablePublicGetFuncInheritClass async lock property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicGetFuncInheritClass0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_2500
+     * @tc.desc   Test SendablePublicGetFuncInheritClass async lock property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicGetFuncInheritClass0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicGetFuncInheritClass0025';
@@ -3458,12 +3458,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_2600
-     * @tc.name       : testSendablePublicGetFuncInheritClass0026
-     * @tc.desc       : Test SendablePublicGetFuncInheritClass sendable union property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicGetFuncInheritClass0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_GET_FUNC_INHERIT_CLASS_2600
+     * @tc.desc   Test SendablePublicGetFuncInheritClass sendable union property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicGetFuncInheritClass0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicGetFuncInheritClass0026';
@@ -3484,12 +3484,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PRIVATE_SET_FUNC_INHERIT_CLASS_0100
-     * @tc.name       : testSendablePrivateSetFuncInheritClass0001
-     * @tc.desc       : Test SendablePrivateSetFuncInheritClass string is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePrivateSetFuncInheritClass0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PRIVATE_SET_FUNC_INHERIT_CLASS_0100
+     * @tc.desc   Test SendablePrivateSetFuncInheritClass string is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePrivateSetFuncInheritClass0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePrivateSetFuncInheritClass0001';
@@ -3503,12 +3503,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_0100
-     * @tc.name       : testSendablePublicSetFuncInheritClass0001
-     * @tc.desc       : Test SendablePublicSetFuncInheritClass string is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetFuncInheritClass0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_0100
+     * @tc.desc   Test SendablePublicSetFuncInheritClass string is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetFuncInheritClass0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetFuncInheritClass0001';
@@ -3524,12 +3524,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_0200
-     * @tc.name       : testSendablePublicSetFuncInheritClass0002
-     * @tc.desc       : Test SendablePublicSetFuncInheritClass number properties and inheritance.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetFuncInheritClass0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_0200
+     * @tc.desc   Test SendablePublicSetFuncInheritClass number properties and inheritance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetFuncInheritClass0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetFuncInheritClass0002';
@@ -3545,12 +3545,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_0300
-     * @tc.name       : testSendablePublicSetFuncInheritClass0003
-     * @tc.desc       : Test SendablePublicSetFuncInheritClass boolean properties and inheritance.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetFuncInheritClass0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_0300
+     * @tc.desc   Test SendablePublicSetFuncInheritClass boolean properties and inheritance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetFuncInheritClass0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetFuncInheritClass0003';
@@ -3567,12 +3567,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_0400
-     * @tc.name       : testSendablePublicSetFuncInheritClass0004
-     * @tc.desc       : Test SendablePublicSetFuncInheritClass bigint properties and inheritance.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetFuncInheritClass0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_0400
+     * @tc.desc   Test SendablePublicSetFuncInheritClass bigint properties and inheritance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetFuncInheritClass0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetFuncInheritClass0004';
@@ -3589,12 +3589,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_0500
-     * @tc.name       : testSendablePublicSetFuncInheritClass0005
-     * @tc.desc       : Test SendablePublicSetFuncInheritClass undefined property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetFuncInheritClass0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_0500
+     * @tc.desc   Test SendablePublicSetFuncInheritClass undefined property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetFuncInheritClass0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetFuncInheritClass0005';
@@ -3613,12 +3613,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_0600
-     * @tc.name       : testSendablePublicSetFuncInheritClass0006
-     * @tc.desc       : Test SendablePublicSetFuncInheritClass null property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetFuncInheritClass0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_0600
+     * @tc.desc   Test SendablePublicSetFuncInheritClass null property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetFuncInheritClass0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetFuncInheritClass0006';
@@ -3635,12 +3635,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_0700
-     * @tc.name       : testSendablePublicSetFuncInheritClass0007
-     * @tc.desc       : Test SendablePublicSetFuncInheritClass with top level class instance.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetFuncInheritClass0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_0700
+     * @tc.desc   Test SendablePublicSetFuncInheritClass with top level class instance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetFuncInheritClass0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetFuncInheritClass0007';
@@ -3657,12 +3657,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_0800
-     * @tc.name       : testSendablePublicSetFuncInheritClass0008
-     * @tc.desc       : Test SendablePublicSetFuncInheritClass with top level function instance.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetFuncInheritClass0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_0800
+     * @tc.desc   Test SendablePublicSetFuncInheritClass with top level function instance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetFuncInheritClass0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetFuncInheritClass0008';
@@ -3679,12 +3679,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_0900
-     * @tc.name       : testSendablePublicSetFuncInheritClass0009
-     * @tc.desc       : Test SendablePublicSetFuncInheritClass enum property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetFuncInheritClass0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_0900
+     * @tc.desc   Test SendablePublicSetFuncInheritClass enum property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetFuncInheritClass0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetFuncInheritClass0009';
@@ -3701,12 +3701,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_1000
-     * @tc.name       : testSendablePublicSetFuncInheritClass0010
-     * @tc.desc       : Test SendablePublicSetFuncInheritClass array property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetFuncInheritClass0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_1000
+     * @tc.desc   Test SendablePublicSetFuncInheritClass array property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetFuncInheritClass0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetFuncInheritClass0010';
@@ -3723,12 +3723,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_1100
-     * @tc.name       : testSendablePublicSetFuncInheritClass0011
-     * @tc.desc       : Test SendablePublicSetFuncInheritClass map property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetFuncInheritClass0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_1100
+     * @tc.desc   Test SendablePublicSetFuncInheritClass map property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetFuncInheritClass0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetFuncInheritClass0011';
@@ -3746,12 +3746,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_1200
-     * @tc.name       : testSendablePublicSetFuncInheritClass0012
-     * @tc.desc       : Test SendablePublicSetFuncInheritClass set property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetFuncInheritClass0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_1200
+     * @tc.desc   Test SendablePublicSetFuncInheritClass set property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetFuncInheritClass0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetFuncInheritClass0012';
@@ -3769,12 +3769,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_1300
-     * @tc.name       : testSendablePublicSetFuncInheritClass0013
-     * @tc.desc       : Test SendablePublicSetFuncInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetFuncInheritClass0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_1300
+     * @tc.desc   Test SendablePublicSetFuncInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetFuncInheritClass0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetFuncInheritClass0013';
@@ -3790,12 +3790,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_1400
-     * @tc.name       : testSendablePublicSetFuncInheritClass0014
-     * @tc.desc       : Test SendablePublicSetFuncInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetFuncInheritClass0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_1400
+     * @tc.desc   Test SendablePublicSetFuncInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetFuncInheritClass0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetFuncInheritClass0014';
@@ -3811,12 +3811,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_1500
-     * @tc.name       : testSendablePublicSetFuncInheritClass0015
-     * @tc.desc       : Test SendablePublicSetFuncInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetFuncInheritClass0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_1500
+     * @tc.desc   Test SendablePublicSetFuncInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetFuncInheritClass0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetFuncInheritClass0015';
@@ -3832,12 +3832,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_1600
-     * @tc.name       : testSendablePublicSetFuncInheritClass0016
-     * @tc.desc       : Test SendablePublicSetFuncInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetFuncInheritClass0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_1600
+     * @tc.desc   Test SendablePublicSetFuncInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetFuncInheritClass0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetFuncInheritClass0016';
@@ -3853,12 +3853,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_1700
-     * @tc.name       : testSendablePublicSetFuncInheritClass0017
-     * @tc.desc       : Test SendablePublicSetFuncInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetFuncInheritClass0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_1700
+     * @tc.desc   Test SendablePublicSetFuncInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetFuncInheritClass0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetFuncInheritClass0017';
@@ -3874,12 +3874,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_1800
-     * @tc.name       : testSendablePublicSetFuncInheritClass0018
-     * @tc.desc       : Test SendablePublicSetFuncInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetFuncInheritClass0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_1800
+     * @tc.desc   Test SendablePublicSetFuncInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetFuncInheritClass0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetFuncInheritClass0018';
@@ -3895,12 +3895,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_1900
-     * @tc.name       : testSendablePublicSetFuncInheritClass0019
-     * @tc.desc       : Test SendablePublicSetFuncInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetFuncInheritClass0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_1900
+     * @tc.desc   Test SendablePublicSetFuncInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetFuncInheritClass0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetFuncInheritClass0019';
@@ -3916,12 +3916,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_2000
-     * @tc.name       : testSendablePublicSetFuncInheritClass0020
-     * @tc.desc       : Test SendablePublicSetFuncInheritClass typed array properties.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetFuncInheritClass0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_2000
+     * @tc.desc   Test SendablePublicSetFuncInheritClass typed array properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetFuncInheritClass0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetFuncInheritClass0020';
@@ -3937,12 +3937,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_2100
-     * @tc.name       : testSendablePublicSetFuncInheritClass0021
-     * @tc.desc       : Test SendablePublicSetFuncInheritClass array buffer property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetFuncInheritClass0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_2100
+     * @tc.desc   Test SendablePublicSetFuncInheritClass array buffer property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetFuncInheritClass0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetFuncInheritClass0021';
@@ -3958,12 +3958,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_2200
-     * @tc.name       : testSendablePublicSetFuncInheritClass0022
-     * @tc.desc       : Test SendablePublicSetFuncInheritClass concat array property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetFuncInheritClass0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_2200
+     * @tc.desc   Test SendablePublicSetFuncInheritClass concat array property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetFuncInheritClass0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetFuncInheritClass0022';
@@ -3979,12 +3979,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_2300
-     * @tc.name       : testSendablePublicSetFuncInheritClass0023
-     * @tc.desc       : Test SendablePublicSetFuncInheritClass bit vector property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetFuncInheritClass0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_2300
+     * @tc.desc   Test SendablePublicSetFuncInheritClass bit vector property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetFuncInheritClass0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetFuncInheritClass0023';
@@ -4001,12 +4001,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_2400
-     * @tc.name       : testSendablePublicSetFuncInheritClass0024
-     * @tc.desc       : Test SendablePublicSetFuncInheritClass ASON property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetFuncInheritClass0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_2400
+     * @tc.desc   Test SendablePublicSetFuncInheritClass ASON property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetFuncInheritClass0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetFuncInheritClass0024';
@@ -4024,12 +4024,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_2500
-     * @tc.name       : testSendablePublicSetFuncInheritClass0025
-     * @tc.desc       : Test SendablePublicSetFuncInheritClass async lock property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetFuncInheritClass0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_2500
+     * @tc.desc   Test SendablePublicSetFuncInheritClass async lock property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetFuncInheritClass0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetFuncInheritClass0025';
@@ -4045,12 +4045,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_2600
-     * @tc.name       : testSendablePublicSetFuncInheritClass0026
-     * @tc.desc       : Test SendablePublicSetFuncInheritClass sendable union property.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetFuncInheritClass0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_FUNC_INHERIT_CLASS_2600
+     * @tc.desc   Test SendablePublicSetFuncInheritClass sendable union property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetFuncInheritClass0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetFuncInheritClass0026';
@@ -4071,12 +4071,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PRIVATE_SET_GET_FUNC_INHERIT_CLASS_0100
-     * @tc.name       : testSendablePrivateSetGetFuncInheritClass0001
-     * @tc.desc       : Test SendablePrivateSetGetFuncInheritClass string is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePrivateSetGetFuncInheritClass0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PRIVATE_SET_GET_FUNC_INHERIT_CLASS_0100
+     * @tc.desc   Test SendablePrivateSetGetFuncInheritClass string is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePrivateSetGetFuncInheritClass0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePrivateSetGetFuncInheritClass0001';
@@ -4090,12 +4090,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_0100
-     * @tc.name       : testSendableDefaultSetGetFuncInheritClass0001
-     * @tc.desc       : Test SendableDefaultSetGetFuncInheritClass string is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultSetGetFuncInheritClass0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_0100
+     * @tc.desc   Test SendableDefaultSetGetFuncInheritClass string is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultSetGetFuncInheritClass0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultSetGetFuncInheritClass0001';
@@ -4111,12 +4111,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_0200
-     * @tc.name       : testSendableDefaultSetGetFuncInheritClass0002
-     * @tc.desc       : Test SendableDefaultSetGetFuncInheritClass number is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultSetGetFuncInheritClass0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_0200
+     * @tc.desc   Test SendableDefaultSetGetFuncInheritClass number is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultSetGetFuncInheritClass0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultSetGetFuncInheritClass0002';
@@ -4132,12 +4132,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_0300
-     * @tc.name       : testSendableDefaultSetGetFuncInheritClass0003
-     * @tc.desc       : Test SendableDefaultSetGetFuncInheritClass boolean is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultSetGetFuncInheritClass0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_0300
+     * @tc.desc   Test SendableDefaultSetGetFuncInheritClass boolean is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultSetGetFuncInheritClass0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultSetGetFuncInheritClass0003';
@@ -4154,12 +4154,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_0400
-     * @tc.name       : testSendableDefaultSetGetFuncInheritClass0004
-     * @tc.desc       : Test SendableDefaultSetGetFuncInheritClass BigInt is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultSetGetFuncInheritClass0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_0400
+     * @tc.desc   Test SendableDefaultSetGetFuncInheritClass BigInt is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultSetGetFuncInheritClass0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultSetGetFuncInheritClass0004';
@@ -4175,12 +4175,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_0500
-     * @tc.name       : testSendableDefaultSetGetFuncInheritClass0005
-     * @tc.desc       : Test SendableDefaultSetGetFuncInheritClass undefined is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultSetGetFuncInheritClass0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_0500
+     * @tc.desc   Test SendableDefaultSetGetFuncInheritClass undefined is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultSetGetFuncInheritClass0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultSetGetFuncInheritClass0005';
@@ -4197,12 +4197,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_0600
-     * @tc.name       : testSendableDefaultSetGetFuncInheritClass0006
-     * @tc.desc       : Test SendableDefaultSetGetFuncInheritClass null is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultSetGetFuncInheritClass0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_0600
+     * @tc.desc   Test SendableDefaultSetGetFuncInheritClass null is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultSetGetFuncInheritClass0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultSetGetFuncInheritClass0006';
@@ -4218,12 +4218,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_0700
-     * @tc.name       : testSendableDefaultSetGetFuncInheritClass0007
-     * @tc.desc       : Test SendableDefaultSetGetFuncInheritClass topLevelSendableClass is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultSetGetFuncInheritClass0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_0700
+     * @tc.desc   Test SendableDefaultSetGetFuncInheritClass topLevelSendableClass is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultSetGetFuncInheritClass0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultSetGetFuncInheritClass0007';
@@ -4240,12 +4240,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_0800
-     * @tc.name       : testSendableDefaultSetGetFuncInheritClass0008
-     * @tc.desc       : Test SendableDefaultSetGetFuncInheritClass topLevelFunction is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultSetGetFuncInheritClass0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_0800
+     * @tc.desc   Test SendableDefaultSetGetFuncInheritClass topLevelFunction is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultSetGetFuncInheritClass0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultSetGetFuncInheritClass0008';
@@ -4262,12 +4262,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_0900
-     * @tc.name       : testSendableDefaultSetGetFuncInheritClass0009
-     * @tc.desc       : Test SendableDefaultSetGetFuncInheritClass Enum is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultSetGetFuncInheritClass0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_0900
+     * @tc.desc   Test SendableDefaultSetGetFuncInheritClass Enum is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultSetGetFuncInheritClass0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultSetGetFuncInheritClass0009';
@@ -4284,12 +4284,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_1000
-     * @tc.name       : testSendableDefaultSetGetFuncInheritClass0010
-     * @tc.desc       : Test SendableDefaultSetGetFuncInheritClass array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultSetGetFuncInheritClass0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_1000
+     * @tc.desc   Test SendableDefaultSetGetFuncInheritClass array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultSetGetFuncInheritClass0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultSetGetFuncInheritClass0010';
@@ -4305,12 +4305,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_1100
-     * @tc.name       : testSendableDefaultSetGetFuncInheritClass0011
-     * @tc.desc       : Test SendableDefaultSetGetFuncInheritClass map is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultSetGetFuncInheritClass0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_1100
+     * @tc.desc   Test SendableDefaultSetGetFuncInheritClass map is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultSetGetFuncInheritClass0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultSetGetFuncInheritClass0011';
@@ -4326,12 +4326,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_1200
-     * @tc.name       : testSendableDefaultSetGetFuncInheritClass0012
-     * @tc.desc       : Test SendableDefaultSetGetFuncInheritClass set is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultSetGetFuncInheritClass0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_1200
+     * @tc.desc   Test SendableDefaultSetGetFuncInheritClass set is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultSetGetFuncInheritClass0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultSetGetFuncInheritClass0012';
@@ -4346,12 +4346,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_1300
-     * @tc.name       : testSendableDefaultSetGetFuncInheritClass0013
-     * @tc.desc       : Test SendableDefaultSetGetFuncInheritClass Int8Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultSetGetFuncInheritClass0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_1300
+     * @tc.desc   Test SendableDefaultSetGetFuncInheritClass Int8Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultSetGetFuncInheritClass0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultSetGetFuncInheritClass0013';
@@ -4367,12 +4367,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_1400
-     * @tc.name       : testSendableDefaultSetGetFuncInheritClass0014
-     * @tc.desc       : Test SendableDefaultSetGetFuncInheritClass Uint8Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultSetGetFuncInheritClass0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_1400
+     * @tc.desc   Test SendableDefaultSetGetFuncInheritClass Uint8Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultSetGetFuncInheritClass0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultSetGetFuncInheritClass0014';
@@ -4388,12 +4388,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_1500
-     * @tc.name       : testSendableDefaultSetGetFuncInheritClass0015
-     * @tc.desc       : Test SendableDefaultSetGetFuncInheritClass Int16Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultSetGetFuncInheritClass0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_1500
+     * @tc.desc   Test SendableDefaultSetGetFuncInheritClass Int16Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultSetGetFuncInheritClass0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultSetGetFuncInheritClass0015';
@@ -4409,12 +4409,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_1600
-     * @tc.name       : testSendableDefaultSetGetFuncInheritClass0016
-     * @tc.desc       : Test SendableDefaultSetGetFuncInheritClass Uint16Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultSetGetFuncInheritClass0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_1600
+     * @tc.desc   Test SendableDefaultSetGetFuncInheritClass Uint16Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultSetGetFuncInheritClass0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultSetGetFuncInheritClass0016';
@@ -4430,12 +4430,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_1700
-     * @tc.name       : testSendableDefaultSetGetFuncInheritClass0017
-     * @tc.desc       : Test SendableDefaultSetGetFuncInheritClass Int32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultSetGetFuncInheritClass0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_1700
+     * @tc.desc   Test SendableDefaultSetGetFuncInheritClass Int32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultSetGetFuncInheritClass0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultSetGetFuncInheritClass0017';
@@ -4451,12 +4451,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_1800
-     * @tc.name       : testSendableDefaultSetGetFuncInheritClass0018
-     * @tc.desc       : Test SendableDefaultSetGetFuncInheritClass Uint32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultSetGetFuncInheritClass0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_1800
+     * @tc.desc   Test SendableDefaultSetGetFuncInheritClass Uint32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultSetGetFuncInheritClass0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultSetGetFuncInheritClass0018';
@@ -4472,12 +4472,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_1900
-     * @tc.name       : testSendableDefaultSetGetFuncInheritClass0019
-     * @tc.desc       : Test SendableDefaultSetGetFuncInheritClass Uint8ClampedArray is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultSetGetFuncInheritClass0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_1900
+     * @tc.desc   Test SendableDefaultSetGetFuncInheritClass Uint8ClampedArray is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultSetGetFuncInheritClass0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultSetGetFuncInheritClass0019';
@@ -4493,12 +4493,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_2000
-     * @tc.name       : testSendableDefaultSetGetFuncInheritClass0020
-     * @tc.desc       : Test SendableDefaultSetGetFuncInheritClass Float32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultSetGetFuncInheritClass0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_2000
+     * @tc.desc   Test SendableDefaultSetGetFuncInheritClass Float32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultSetGetFuncInheritClass0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultSetGetFuncInheritClass0020';
@@ -4514,12 +4514,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_2100
-     * @tc.name       : testSendableDefaultSetGetFuncInheritClass0021
-     * @tc.desc       : Test SendableDefaultSetGetFuncInheritClass ArrayBuffer is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultSetGetFuncInheritClass0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_2100
+     * @tc.desc   Test SendableDefaultSetGetFuncInheritClass ArrayBuffer is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultSetGetFuncInheritClass0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultSetGetFuncInheritClass0021';
@@ -4535,12 +4535,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_2200
-     * @tc.name       : testSendableDefaultSetGetFuncInheritClass0022
-     * @tc.desc       : Test SendableDefaultSetGetFuncInheritClass ConcatArray is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultSetGetFuncInheritClass0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_2200
+     * @tc.desc   Test SendableDefaultSetGetFuncInheritClass ConcatArray is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultSetGetFuncInheritClass0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultSetGetFuncInheritClass0022';
@@ -4556,12 +4556,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_2300
-     * @tc.name       : testSendableDefaultSetGetFuncInheritClass0023
-     * @tc.desc       : Test SendableDefaultSetGetFuncInheritClass BitVector is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultSetGetFuncInheritClass0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_2300
+     * @tc.desc   Test SendableDefaultSetGetFuncInheritClass BitVector is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultSetGetFuncInheritClass0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultSetGetFuncInheritClass0023';
@@ -4578,12 +4578,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_2400
-     * @tc.name       : testSendableDefaultSetGetFuncInheritClass0024
-     * @tc.desc       : Test SendableDefaultSetGetFuncInheritClass ASON is parsed correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultSetGetFuncInheritClass0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_2400
+     * @tc.desc   Test SendableDefaultSetGetFuncInheritClass ASON is parsed correctly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultSetGetFuncInheritClass0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultSetGetFuncInheritClass0024';
@@ -4601,12 +4601,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_2500
-     * @tc.name       : testSendableDefaultSetGetFuncInheritClass0025
-     * @tc.desc       : Test SendableDefaultSetGetFuncInheritClass AsyncLock is requested directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultSetGetFuncInheritClass0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_2500
+     * @tc.desc   Test SendableDefaultSetGetFuncInheritClass AsyncLock is requested directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultSetGetFuncInheritClass0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultSetGetFuncInheritClass0025';
@@ -4623,12 +4623,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_2600
-     * @tc.name       : testSendableDefaultSetGetFuncInheritClass0026
-     * @tc.desc       : Test SendableDefaultSetGetFuncInheritClass union type is assigned correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableDefaultSetGetFuncInheritClass0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_DEFAULT_SET_GET_FUNC_INHERIT_CLASS_2600
+     * @tc.desc   Test SendableDefaultSetGetFuncInheritClass union type is assigned correctly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableDefaultSetGetFuncInheritClass0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableDefaultSetGetFuncInheritClass0026';
@@ -4649,12 +4649,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_0100
-     * @tc.name       : testSendablePublicSetGetFuncInheritClass0001
-     * @tc.desc       : Test SendablePublicSetGetFuncInheritClass string is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetGetFuncInheritClass0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_0100
+     * @tc.desc   Test SendablePublicSetGetFuncInheritClass string is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetGetFuncInheritClass0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetGetFuncInheritClass0001';
@@ -4670,12 +4670,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_0200
-     * @tc.name       : testSendablePublicSetGetFuncInheritClass0002
-     * @tc.desc       : Test SendablePublicSetGetFuncInheritClass number is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetGetFuncInheritClass0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_0200
+     * @tc.desc   Test SendablePublicSetGetFuncInheritClass number is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetGetFuncInheritClass0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetGetFuncInheritClass0002';
@@ -4691,12 +4691,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_0300
-     * @tc.name       : testSendablePublicSetGetFuncInheritClass0003
-     * @tc.desc       : Test SendablePublicSetGetFuncInheritClass boolean is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetGetFuncInheritClass0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_0300
+     * @tc.desc   Test SendablePublicSetGetFuncInheritClass boolean is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetGetFuncInheritClass0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetGetFuncInheritClass0003';
@@ -4713,12 +4713,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_0400
-     * @tc.name       : testSendablePublicSetGetFuncInheritClass0004
-     * @tc.desc       : Test SendablePublicSetGetFuncInheritClass BigInt is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetGetFuncInheritClass0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_0400
+     * @tc.desc   Test SendablePublicSetGetFuncInheritClass BigInt is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetGetFuncInheritClass0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetGetFuncInheritClass0004';
@@ -4734,12 +4734,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_0500
-     * @tc.name       : testSendablePublicSetGetFuncInheritClass0005
-     * @tc.desc       : Test SendablePublicSetGetFuncInheritClass undefined is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetGetFuncInheritClass0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_0500
+     * @tc.desc   Test SendablePublicSetGetFuncInheritClass undefined is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetGetFuncInheritClass0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetGetFuncInheritClass0005';
@@ -4756,12 +4756,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_0600
-     * @tc.name       : testSendablePublicSetGetFuncInheritClass0006
-     * @tc.desc       : Test SendablePublicSetGetFuncInheritClass null is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetGetFuncInheritClass0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_0600
+     * @tc.desc   Test SendablePublicSetGetFuncInheritClass null is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetGetFuncInheritClass0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetGetFuncInheritClass0006';
@@ -4777,12 +4777,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_0700
-     * @tc.name       : testSendablePublicSetGetFuncInheritClass0007
-     * @tc.desc       : Test SendablePublicSetGetFuncInheritClass topLevelSendableClass is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetGetFuncInheritClass0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_0700
+     * @tc.desc   Test SendablePublicSetGetFuncInheritClass topLevelSendableClass is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetGetFuncInheritClass0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetGetFuncInheritClass0007';
@@ -4799,12 +4799,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_0800
-     * @tc.name       : testSendablePublicSetGetFuncInheritClass0008
-     * @tc.desc       : Test SendablePublicSetGetFuncInheritClass topLevelFunction is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetGetFuncInheritClass0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_0800
+     * @tc.desc   Test SendablePublicSetGetFuncInheritClass topLevelFunction is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetGetFuncInheritClass0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetGetFuncInheritClass0008';
@@ -4821,12 +4821,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_0900
-     * @tc.name       : testSendablePublicSetGetFuncInheritClass0009
-     * @tc.desc       : Test SendablePublicSetGetFuncInheritClass Enum is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetGetFuncInheritClass0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_0900
+     * @tc.desc   Test SendablePublicSetGetFuncInheritClass Enum is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetGetFuncInheritClass0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetGetFuncInheritClass0009';
@@ -4843,12 +4843,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_1000
-     * @tc.name       : testSendablePublicSetGetFuncInheritClass0010
-     * @tc.desc       : Test SendablePublicSetGetFuncInheritClass array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetGetFuncInheritClass0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_1000
+     * @tc.desc   Test SendablePublicSetGetFuncInheritClass array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetGetFuncInheritClass0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetGetFuncInheritClass0010';
@@ -4864,12 +4864,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_1100
-     * @tc.name       : testSendablePublicSetGetFuncInheritClass0011
-     * @tc.desc       : Test SendablePublicSetGetFuncInheritClass map is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetGetFuncInheritClass0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_1100
+     * @tc.desc   Test SendablePublicSetGetFuncInheritClass map is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetGetFuncInheritClass0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetGetFuncInheritClass0011';
@@ -4885,12 +4885,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_1200
-     * @tc.name       : testSendablePublicSetGetFuncInheritClass0012
-     * @tc.desc       : Test SendablePublicSetGetFuncInheritClass set is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetGetFuncInheritClass0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_1200
+     * @tc.desc   Test SendablePublicSetGetFuncInheritClass set is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetGetFuncInheritClass0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetGetFuncInheritClass0012';
@@ -4905,12 +4905,12 @@ export default function sendableInheritClassTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_1300
-     * @tc.name       : testSendablePublicSetGetFuncInheritClass0013
-     * @tc.desc       : Test SendablePublicSetGetFuncInheritClass Int8Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetGetFuncInheritClass0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_1300
+     * @tc.desc   Test SendablePublicSetGetFuncInheritClass Int8Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetGetFuncInheritClass0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetGetFuncInheritClass0013';
@@ -4926,12 +4926,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_1400
-     * @tc.name       : testSendablePublicSetGetFuncInheritClass0014
-     * @tc.desc       : Test SendablePublicSetGetFuncInheritClass Uint8Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetGetFuncInheritClass0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_1400
+     * @tc.desc   Test SendablePublicSetGetFuncInheritClass Uint8Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetGetFuncInheritClass0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetGetFuncInheritClass0014';
@@ -4947,12 +4947,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_1500
-     * @tc.name       : testSendablePublicSetGetFuncInheritClass0015
-     * @tc.desc       : Test SendablePublicSetGetFuncInheritClass Int16Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetGetFuncInheritClass0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_1500
+     * @tc.desc   Test SendablePublicSetGetFuncInheritClass Int16Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetGetFuncInheritClass0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetGetFuncInheritClass0015';
@@ -4968,12 +4968,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_1600
-     * @tc.name       : testSendablePublicSetGetFuncInheritClass0016
-     * @tc.desc       : Test SendablePublicSetGetFuncInheritClass Uint16Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetGetFuncInheritClass0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_1600
+     * @tc.desc   Test SendablePublicSetGetFuncInheritClass Uint16Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetGetFuncInheritClass0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetGetFuncInheritClass0016';
@@ -4989,12 +4989,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_1700
-     * @tc.name       : testSendablePublicSetGetFuncInheritClass0017
-     * @tc.desc       : Test SendablePublicSetGetFuncInheritClass Int32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetGetFuncInheritClass0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_1700
+     * @tc.desc   Test SendablePublicSetGetFuncInheritClass Int32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetGetFuncInheritClass0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetGetFuncInheritClass0017';
@@ -5010,12 +5010,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_1800
-     * @tc.name       : testSendablePublicSetGetFuncInheritClass0018
-     * @tc.desc       : Test SendablePublicSetGetFuncInheritClass Uint32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetGetFuncInheritClass0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_1800
+     * @tc.desc   Test SendablePublicSetGetFuncInheritClass Uint32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetGetFuncInheritClass0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetGetFuncInheritClass0018';
@@ -5031,12 +5031,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_1900
-     * @tc.name       : testSendablePublicSetGetFuncInheritClass0019
-     * @tc.desc       : Test SendablePublicSetGetFuncInheritClass Uint8ClampedArray is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetGetFuncInheritClass0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_1900
+     * @tc.desc   Test SendablePublicSetGetFuncInheritClass Uint8ClampedArray is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetGetFuncInheritClass0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetGetFuncInheritClass0019';
@@ -5052,12 +5052,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_2000
-     * @tc.name       : testSendablePublicSetGetFuncInheritClass0020
-     * @tc.desc       : Test SendablePublicSetGetFuncInheritClass Float32Array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetGetFuncInheritClass0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_2000
+     * @tc.desc   Test SendablePublicSetGetFuncInheritClass Float32Array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetGetFuncInheritClass0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetGetFuncInheritClass0020';
@@ -5073,12 +5073,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_2100
-     * @tc.name       : testSendablePublicSetGetFuncInheritClass0021
-     * @tc.desc       : Test SendablePublicSetGetFuncInheritClass ArrayBuffer is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetGetFuncInheritClass0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_2100
+     * @tc.desc   Test SendablePublicSetGetFuncInheritClass ArrayBuffer is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetGetFuncInheritClass0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetGetFuncInheritClass0021';
@@ -5094,12 +5094,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_2200
-     * @tc.name       : testSendablePublicSetGetFuncInheritClass0022
-     * @tc.desc       : Test SendablePublicSetGetFuncInheritClass ConcatArray is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetGetFuncInheritClass0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_2200
+     * @tc.desc   Test SendablePublicSetGetFuncInheritClass ConcatArray is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetGetFuncInheritClass0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetGetFuncInheritClass0022';
@@ -5115,12 +5115,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_2300
-     * @tc.name       : testSendablePublicSetGetFuncInheritClass0023
-     * @tc.desc       : Test SendablePublicSetGetFuncInheritClass BitVector is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetGetFuncInheritClass0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_2300
+     * @tc.desc   Test SendablePublicSetGetFuncInheritClass BitVector is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetGetFuncInheritClass0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetGetFuncInheritClass0023';
@@ -5137,12 +5137,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_2400
-     * @tc.name       : testSendablePublicSetGetFuncInheritClass0024
-     * @tc.desc       : Test SendablePublicSetGetFuncInheritClass ASON is parsed correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetGetFuncInheritClass0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_2400
+     * @tc.desc   Test SendablePublicSetGetFuncInheritClass ASON is parsed correctly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetGetFuncInheritClass0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetGetFuncInheritClass0024';
@@ -5160,12 +5160,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_2500
-     * @tc.name       : testSendablePublicSetGetFuncInheritClass0025
-     * @tc.desc       : Test SendablePublicSetGetFuncInheritClass AsyncLock is requested directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetGetFuncInheritClass0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_2500
+     * @tc.desc   Test SendablePublicSetGetFuncInheritClass AsyncLock is requested directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetGetFuncInheritClass0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetGetFuncInheritClass0025';
@@ -5182,12 +5182,12 @@ export default function sendableInheritClassTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_2600
-     * @tc.name       : testSendablePublicSetGetFuncInheritClass0026
-     * @tc.desc       : Test SendablePublicSetGetFuncInheritClass union type is assigned correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendablePublicSetGetFuncInheritClass0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_PUBLIC_SET_GET_FUNC_INHERIT_CLASS_2600
+     * @tc.desc   Test SendablePublicSetGetFuncInheritClass union type is assigned correctly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendablePublicSetGetFuncInheritClass0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendablePublicSetGetFuncInheritClass0026';

@@ -47,12 +47,12 @@ export default function RichEditor6() {
       console.info("RichEditor6 after each called");
     });
     /**
-     * @tc.number    RichEditor6_0100
-     * @tc.name      RichEditor6_0100
-     * @tc.desc      Test OnEditingChange callback return true when RichEditor in editing status.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   RichEditor6_0100
+     * @tc.number RichEditor6_0100
+     * @tc.desc   Test OnEditingChange callback return true when RichEditor in editing status.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditor6_0100', Level.LEVEL2, async (done: Function) => {
       // Test stop
@@ -76,12 +76,12 @@ export default function RichEditor6() {
     });
     
     /**
-     * @tc.number    RichEditor6_0200
-     * @tc.name      RichEditor6_0200
-     * @tc.desc      Test OnEditingChange callback return false when RichEditor in non editing status.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   RichEditor6_0200
+     * @tc.number RichEditor6_0200
+     * @tc.desc   Test OnEditingChange callback return false when RichEditor in non editing status.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditor6_0200', Level.LEVEL2, async (done: Function) => {
       // Test stop

@@ -49,12 +49,15 @@ export default function Row_VerticalAlign() {
       console.info("Row_VerticalAlign after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_ROW_PARENTCOMPONENTCHANGED_0900
-     * @tc.name testRowAlignItemsVerticalAlignTop
-     * @tc.desc Set the AlignItems property of the Row component to VerticalAlign.Top
-     */
 
+    /**
+     * @tc.name   testRowAlignItemsVerticalAlignTop
+     * @tc.number testRowAlignItemsVerticalAlignTop
+     * @tc.desc   testRowAlignItemsVerticalAlignTop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRowAlignItemsVerticalAlignTop',  Level.LEVEL0, async (done: Function) => {
       console.info('testRowAlignItemsVerticalAlignTop START');
       globalThis.value.message.notify({
@@ -95,12 +98,15 @@ export default function Row_VerticalAlign() {
       done();
     });
 
-    /**
-     * @tc.number SUB_ACE_ROW_PARENTCOMPONENTCHANGED_1000
-     * @tc.name testRowAlignItemsVerticalAlignBottom
-     * @tc.desc Set the AlignItems property of the Row component to VerticalAlign.Bottom
-     */
 
+    /**
+     * @tc.name   testRowAlignItemsVerticalAlignBottom
+     * @tc.number testRowAlignItemsVerticalAlignBottom
+     * @tc.desc   testRowAlignItemsVerticalAlignBottom
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRowAlignItemsVerticalAlignBottom',  Level.LEVEL0, async (done: Function) => {
       console.info('testRowAlignItemsVerticalAlignBottom START');
       globalThis.value.message.notify({

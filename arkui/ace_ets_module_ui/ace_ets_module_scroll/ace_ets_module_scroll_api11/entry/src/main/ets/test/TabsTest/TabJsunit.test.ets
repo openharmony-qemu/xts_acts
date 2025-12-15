@@ -57,9 +57,12 @@ export default function tabJsunit() {
     });
 
     /**
+     * @tc.name   tabTest001
      * @tc.number SUB_ACE_BASIC_ETS_API_0510
-     * @tc.name tabTest001
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('tabTest001', Level.LEVEL1, async () => {
       console.info('++++++++++++++++ Tab TestCase 1 START ++++++++++++++++');
@@ -82,9 +85,12 @@ export default function tabJsunit() {
     });
 
     /**
+     * @tc.name   tabTest003
      * @tc.number SUB_ACE_BASIC_ETS_API_0530
-     * @tc.name tabTest003
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('tabTest003', Level.LEVEL1, async () => {
       console.info('++++++++++++++++ Tab TestCase 3 START ++++++++++++++++');

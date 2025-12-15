@@ -22,14 +22,12 @@ export default function fileIOReadtext() {
 describe('fileIO_fs_readtext', function () {
 
   /**
+   * @tc.name   fileIO_test_readtext_sync_000
    * @tc.number SUB_DF_FILEIO_READ_TEXT_SYNC_0000
-   * @tc.name fileIO_test_readtext_sync_000
-   * @tc.desc Test readtextSync() interfaces.
-   * Read file content by path, verify normal function.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test readtextSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_readtext_sync_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_readtext_sync_000');
@@ -46,15 +44,12 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_sync_001
    * @tc.number SUB_DF_FILEIO_READ_TEXT_SYNC_0100
-   * @tc.name fileIO_test_readtext_sync_001
-   * @tc.desc Test readtextSync() interfaces.
-   * str.substring(startIndex, [endIndex - 1]): Extracts and returns a string by index.
-   * Read file content by path when offset = 1.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readtextSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_readtext_sync_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_readtext_sync_001');
@@ -71,14 +66,12 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_sync_002
    * @tc.number SUB_DF_FILEIO_READ_TEXT_SYNC_0200
-   * @tc.name fileIO_test_readtext_sync_002
-   * @tc.desc Test readtextSync() interfaces.
-   * Read file content by path when offset = 2, length = 4.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readtextSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_readtext_sync_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_readtext_sync_002');
@@ -98,14 +91,12 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_sync_003
    * @tc.number SUB_DF_FILEIO_READ_TEXT_SYNC_0300
-   * @tc.name fileIO_test_readtext_sync_003
-   * @tc.desc Test readtextSync() interfaces.
-   * Read file content by path when offset = 1, length = 11, encoding = 'utf-8'.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readtextSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_readtext_sync_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_readtext_sync_003');
@@ -126,14 +117,12 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_sync_004
    * @tc.number SUB_DF_FILEIO_READ_TEXT_SYNC_0400
-   * @tc.name fileIO_test_readtext_sync_004
-   * @tc.desc Test readtextSync() interfaces.
-   * Missing parameter.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readtextSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_readtext_sync_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
 
@@ -147,15 +136,13 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_sync_005
    * @tc.number SUB_DF_FILEIO_READ_TEXT_SYNC_0500
-   * @tc.name fileIO_test_readtext_sync_005
-   * @tc.desc Test readtextSync() interfaces.
-   * The path point to nothing, no such file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
-  */
+   * @tc.desc   Test readtextSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('fileIO_test_readtext_sync_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_readtext_sync_005');
 
@@ -169,15 +156,13 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_sync_006
    * @tc.number SUB_DF_FILEIO_READ_TEXT_SYNC_0600
-   * @tc.name fileIO_test_readtext_sync_006
-   * @tc.desc Test readtextSync() interfaces.
-   * Read file content with invalid offset < 0.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
-  */
+   * @tc.desc   Test readtextSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('fileIO_test_readtext_sync_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_readtext_sync_006');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -194,15 +179,13 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_sync_007
    * @tc.number SUB_DF_FILEIO_READ_TEXT_SYNC_0700
-   * @tc.name fileIO_test_readtext_sync_007
-   * @tc.desc Test readtextSync() interfaces.
-   * Read file content with invalid offset = 9999.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
-  */
+   * @tc.desc   Test readtextSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('fileIO_test_readtext_sync_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_readtext_sync_007');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -219,15 +202,13 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_sync_008
    * @tc.number SUB_DF_FILEIO_READ_TEXT_SYNC_0800
-   * @tc.name fileIO_test_readtext_sync_008
-   * @tc.desc Test readtextSync() interfaces.
-   * Read file content with invalid length < 0.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
-  */
+   * @tc.desc   Test readtextSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('fileIO_test_readtext_sync_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_readtext_sync_008');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -244,15 +225,13 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_sync_009
    * @tc.number SUB_DF_FILEIO_READ_TEXT_SYNC_0900
-   * @tc.name fileIO_test_readtext_sync_009
-   * @tc.desc Test readtextSync() interfaces.
-   * Use default option.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
-  */
+   * @tc.desc   Test readtextSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('fileIO_test_readtext_sync_009', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_readtext_sync_009');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -268,15 +247,13 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_sync_010
    * @tc.number SUB_DF_FILEIO_READ_TEXT_SYNC_1000
-   * @tc.name fileIO_test_readtext_sync_010
-   * @tc.desc Test readtextSync() interfaces.
-   * Use default option.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
-  */
+   * @tc.desc   Test readtextSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('fileIO_test_readtext_sync_010', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_readtext_sync_010');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -296,14 +273,12 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_sync_011
    * @tc.number SUB_DF_FILEIO_READ_TEXT_SYNC_1100
-   * @tc.name fileIO_test_readtext_sync_011
-   * @tc.desc Test readtextSync() interfaces.
-   * Is a directory.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test readtextSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_readtext_sync_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_readtext_sync_011');
@@ -319,14 +294,12 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_async_000
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_0000
-   * @tc.name fileIO_test_readtext_async_000
-   * @tc.desc Test readtext() interfaces. Promise.
-   * Read file content by path, verify normal function.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test readtext() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_readtext_async_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_readtext_async_000');
@@ -344,14 +317,12 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_async_001
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_0100
-   * @tc.name fileIO_test_readtext_async_001
-   * @tc.desc Test readtext() interfaces. Callback.
-   * Read file content by path, verify normal function.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test readtext() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_readtext_async_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_readtext_async_001');
@@ -374,15 +345,12 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_async_002
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_0200
-   * @tc.name fileIO_test_readtext_async_002
-   * @tc.desc Test readtext() interfaces. Promise.
-   * Read file content by path when offset = 1.
-   * str.substr(startIndex, [length]): Extracts and returns a string by index and length of str.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readtext() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_readtext_async_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_readtext_async_002');
@@ -400,14 +368,12 @@ describe('fileIO_fs_readtext', function () {
   });
   
   /**
+   * @tc.name   fileIO_test_readtext_async_003
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_0300
-   * @tc.name fileIO_test_readtext_async_003
-   * @tc.desc Test readtext() interfaces. Callback.
-   * Read file content by path when offset = 1.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readtext() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_readtext_async_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_readtext_async_003');
@@ -430,14 +396,12 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_async_004
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_0400
-   * @tc.name fileIO_test_readtext_async_004
-   * @tc.desc Test readtext() interfaces. Promise.
-   * Read file content by path when offset = 1, length = 2.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readtext() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_readtext_async_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_readtext_async_004');
@@ -458,14 +422,12 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_async_005
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_0500
-   * @tc.name fileIO_test_readtext_async_005
-   * @tc.desc Test readtext() interfaces. Callback.
-   * Read file content by path when offset = 1, length = 2.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readtext() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_readtext_async_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_readtext_async_005');
@@ -491,15 +453,12 @@ describe('fileIO_fs_readtext', function () {
   });
   
   /**
+   * @tc.name   fileIO_test_readtext_async_006
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_0600
-   * @tc.name fileIO_test_readtext_async_006
-   * @tc.desc Test readtext() interfaces. Promise.
-   * Read file content by path when offset = 1, length = 11, encoding = 'utf-8'.
-   * str.slice(startIndex, [endIndex - 1]): Extracts and returns a string by index.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readtext() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_readtext_async_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_readtext_async_006');
@@ -521,14 +480,12 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_async_007
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_0700
-   * @tc.name fileIO_test_readtext_async_007
-   * @tc.desc Test readtext() interfaces. Promise.then().catch()
-   * Read file content by path when offset = 1, length = 11, encoding = 'utf-8'.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readtext() interfaces. Promise.then().catch()
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_readtext_async_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_readtext_async_007');
@@ -554,14 +511,12 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_async_008
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_0800
-   * @tc.name fileIO_test_readtext_async_008
-   * @tc.desc Test readtext() interfaces. Callback.
-   * Read file content by path when offset = 1, length = 11, encoding = 'utf-8'.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readtext() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_readtext_async_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_readtext_async_008');
@@ -588,15 +543,12 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_async_009
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_0900
-   * @tc.name fileIO_test_readtext_async_009
-   * @tc.desc Test readtext() interfaces. Promise.
-   * Read file content by path when option parameter is empty.
-   * str.slice(startIndex, [endIndex - 1]): Extracts and returns a string by index.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readtext() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_readtext_async_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_readtext_async_009');
@@ -614,14 +566,12 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_async_010
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_1000
-   * @tc.name fileIO_test_readtext_async_010
-   * @tc.desc Test readtext() interfaces. Callback.
-   * Read file content by path when option parameter is empty.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readtext() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_readtext_async_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_readtext_async_010');
@@ -644,14 +594,12 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_async_011
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_1100
-   * @tc.name fileIO_test_readtext_async_011
-   * @tc.desc Test readtext() interfaces. Promise.
-   * The path point to nothing, no such file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readtext() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_readtext_async_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_readtext_async_011');
@@ -667,14 +615,12 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_async_012
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_1200
-   * @tc.name fileIO_test_readtext_async_012
-   * @tc.desc Test readtext() interfaces. Callback.
-   * The path point to nothing, no such file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readtext() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_readtext_async_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_readtext_async_012');
@@ -694,14 +640,12 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_async_013
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_1300
-   * @tc.name fileIO_test_readtext_async_013
-   * @tc.desc Test readtext() interfaces.
-   * Read file content with invalid offset < 0.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readtext() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_readtext_async_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_readtext_async_013');
@@ -720,14 +664,12 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_async_014
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_1400
-   * @tc.name fileIO_test_readtext_async_014
-   * @tc.desc Test readtext() interfaces.
-   * Read file content with invalid offset = 9999.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readtext() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_readtext_async_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_readtext_async_014');
@@ -746,14 +688,12 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_async_015
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_1500
-   * @tc.name fileIO_test_readtext_async_015
-   * @tc.desc Test readtext() interfaces.
-   * Read file content with invalid length < 0.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readtext() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_readtext_async_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_readtext_async_015');
@@ -772,14 +712,12 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_async_016
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_1600
-   * @tc.name fileIO_test_readtext_async_016
-   * @tc.desc Test readtext() interfaces. Promise.
-   * Use default option.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readtext() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_readtext_async_016', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileIO_test_readtext_async_016');
@@ -797,14 +735,12 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_async_017
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_1700
-   * @tc.name fileIO_test_readtext_async_017
-   * @tc.desc Test readtext() interfaces. Callback.
-   * Use default option.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readtext() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_readtext_async_017', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileIO_test_readtext_async_017');
@@ -827,14 +763,12 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_async_018
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_1800
-   * @tc.name fileIO_test_readtext_async_018
-   * @tc.desc Test readtext() interfaces. Promise.
-   * Use default option.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readtext() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_readtext_async_018', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileIO_test_readtext_async_018');
@@ -856,14 +790,12 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_async_019
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_1900
-   * @tc.name fileIO_test_readtext_async_019
-   * @tc.desc Test readtext() interfaces. Callback.
-   * Use default option.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test readtext() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_readtext_async_019', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileIO_test_readtext_async_019');
@@ -890,14 +822,12 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_async_020
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_2000
-   * @tc.name fileIO_test_readtext_async_020
-   * @tc.desc Test readtext() interfaces. Promise.
-   * Is a directory.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test readtext() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_readtext_async_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_readtext_async_020');
@@ -914,14 +844,12 @@ describe('fileIO_fs_readtext', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_readtext_async_021
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_2100
-   * @tc.name fileIO_test_readtext_async_021
-   * @tc.desc Test readtext() interfaces. Callback.
-   * Is a directory.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test readtext() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_readtext_async_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_readtext_async_021');

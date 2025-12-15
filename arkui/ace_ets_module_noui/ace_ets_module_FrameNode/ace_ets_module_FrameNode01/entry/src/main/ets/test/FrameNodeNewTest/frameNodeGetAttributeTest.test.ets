@@ -47,12 +47,12 @@ export default function frameNodeGetAttributeTest() {
     });
 
     /**
-     * @tc.number    frameNodeGetAttributeTest_0100
-     * @tc.name      frameNodeGetAttributeTest_0100
-     * @tc.desc      frameNode: frameNode getAttribute Test
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   frameNodeGetAttributeTest_0100
+     * @tc.number frameNodeGetAttributeTest_0100
+     * @tc.desc   frameNode: frameNode getAttribute Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('frameNodeGetAttributeTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('frameNodeGetAttributeTest_0100 START');
@@ -68,12 +68,12 @@ export default function frameNodeGetAttributeTest() {
     });
 
     /**
-     * @tc.number    frameNodeGetAttributeTest_0200
-     * @tc.name      frameNodeGetAttributeTest_0200
-     * @tc.desc      frameNode: frameNode getAttribute Test
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   frameNodeGetAttributeTest_0200
+     * @tc.number frameNodeGetAttributeTest_0200
+     * @tc.desc   frameNode: frameNode getAttribute Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('frameNodeGetAttributeTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('frameNodeGetAttributeTest_0200 START');

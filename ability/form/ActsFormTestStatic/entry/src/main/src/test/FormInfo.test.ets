@@ -135,9 +135,7 @@ export default function formInfoTest() {
                 abilityName: 'abilityName',
                 name: 'name',
                 displayName: 'displayName',
-                displayNameId: 123,
                 description: 'description',
-                descriptionId: 123,
                 type: formInfo.FormType.eTS,
                 jsComponentName: 'jsComponentName',
                 isDefault: true,
@@ -161,9 +159,7 @@ export default function formInfoTest() {
             expect('abilityName').assertEqual(formInfoFo.abilityName as string);
             expect('name').assertEqual(formInfoFo.name as string);
             expect('displayName').assertEqual(formInfoFo.displayName as string);
-            expect(123).assertEqual(formInfoFo.displayNameId as int);
             expect('description').assertEqual(formInfoFo.description as string);
-            expect(123).assertEqual(formInfoFo.descriptionId as int);
             expect(2).assertEqual(formInfoFo.type as int);
             expect('jsComponentName').assertEqual(formInfoFo.jsComponentName as string);
             expect(formInfoFo.isDefault).assertTrue();
@@ -214,7 +210,7 @@ export default function formInfoTest() {
             expect('moduleName').assertEqual(formInfoFilterFo.moduleName as string);
             expect(JSON.stringify([1,2,3])).assertEqual(JSON.stringify(formInfoFilterFo.supportedDimensions));
             expect(JSON.stringify([1,2,3])).assertEqual(JSON.stringify(formInfoFilterFo.supportedShapes));
-
+            hilog.info(DOMAIN, TAG, 'FormInfoStaticTest003 assert publishFormResultFo');
             let publishFormResultFo: formInfo.PublishFormResult = {
                 code: formInfo.PublishFormErrorCode.SUCCESS,
                 message: 'message',
@@ -234,38 +230,6 @@ export default function formInfoTest() {
             expect('moduleName').assertEqual(formProviderFilterFo.moduleName as string);
             expect('abilityName').assertEqual(formProviderFilterFo.abilityName as string);
             expect(true).assertEqual(formProviderFilterFo.isUnusedIncluded as boolean);
-
-            let extraData: Record<string, object> = {
-                'abc1': '123',
-                'abc2': '123',
-                'abc3': '123',
-            }
-            let runningFormInfoFo: formInfo.RunningFormInfo = {
-                formId: 'formId',
-                bundleName: 'bundleName',
-                hostBundleName: 'hostBundleName',
-                formLocation: formInfo.FormLocation.DESKTOP,
-                visibilityType: formInfo.VisibilityType.FORM_VISIBLE,
-                moduleName: 'moduleName',
-                abilityName: 'abilityName',
-                formName: 'formName',
-                dimension: 123,
-                formUsageState: formInfo.FormUsageState.UNUSED,
-                formDescription: 'formDescription',
-                extraData: extraData,
-            }
-            expect('formId').assertEqual(runningFormInfoFo.formId as string);
-            expect('bundleName').assertEqual(runningFormInfoFo.bundleName as string);
-            expect('hostBundleName').assertEqual(runningFormInfoFo.hostBundleName as string);
-            expect(0).assertEqual(runningFormInfoFo.formLocation as int);
-            expect(1).assertEqual(runningFormInfoFo.visibilityType as int);
-            expect('moduleName').assertEqual(runningFormInfoFo.moduleName as string);
-            expect('abilityName').assertEqual(runningFormInfoFo.abilityName as string);
-            expect('formName').assertEqual(runningFormInfoFo.formName as string);
-            expect(123).assertEqual(runningFormInfoFo.dimension as int);
-            expect(1).assertEqual(runningFormInfoFo.formUsageState as int);
-            expect('formDescription').assertEqual(runningFormInfoFo.formDescription as string);
-            expect('123').assertEqual(runningFormInfoFo.extraData!['abc1'] as string);
 
             done();
             hilog.info(DOMAIN, TAG, 'FormInfoStaticTest003 end');

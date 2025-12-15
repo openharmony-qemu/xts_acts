@@ -60,12 +60,12 @@ export default function StringDecoder() {
 
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRINGDECODER_0100
-     * @tc.name      : test_Decode_Test_001
-     * @tc.desc      : Test ENCODER and DOCODER.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Decode_Test_001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRINGDECODER_0100
+     * @tc.desc   Test ENCODER and DOCODER.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Decode_Test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -94,12 +94,12 @@ export default function StringDecoder() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRINGDECODER_0200
-     * @tc.name      : test_Decode_Test_002
-     * @tc.desc      : Test ENCODER and DOCODER.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Decode_Test_002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRINGDECODER_0200
+     * @tc.desc   Test ENCODER and DOCODER.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Decode_Test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -128,12 +128,12 @@ export default function StringDecoder() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRINGDECODER_0300
-     * @tc.name      : test_Decode_Test_003
-     * @tc.desc      : Test ENCODER and DOCODER.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Decode_Test_003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRINGDECODER_0300
+     * @tc.desc   Test ENCODER and DOCODER.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Decode_Test_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -162,12 +162,12 @@ export default function StringDecoder() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRINGDECODER_0400
-     * @tc.name      : test_Decode_Test_004
-     * @tc.desc      : Test ENCODER and DOCODER.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_Decode_Test_004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRINGDECODER_0400
+     * @tc.desc   Test ENCODER and DOCODER.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Decode_Test_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

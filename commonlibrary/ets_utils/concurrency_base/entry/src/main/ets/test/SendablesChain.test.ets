@@ -26,13 +26,12 @@ export default function SendableChainTest() {
         })
 
         /**
-         * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_CHAIN_001
-         * @tc.name: testChainedPath0
-         * @tc.desc: checks Sendable with primitive type
-         * @tc.author: oleg-ignatenko
-         * @tc.size: MediumTest
-         * @tc.type: Function
-         * @tc.level: Level 0
+         * @tc.name   testChainedPath0
+         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_CHAIN_001
+         * @tc.desc   checks Sendable with primitive type
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChainedPath0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
            let result = await skipConditional("testChainedPath0 in progress", true, testChainedPath0);
@@ -41,13 +40,12 @@ export default function SendableChainTest() {
         })
 
         /**
-         * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_CHAIN_002
-         * @tc.name: testChainedPath1
-         * @tc.desc: checks Sendable with primitive type
-         * @tc.author: oleg-ignatenko
-         * @tc.size: MediumTest
-         * @tc.type: Function
-         * @tc.level: Level 2
+         * @tc.name   testChainedPath1
+         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_CHAIN_002
+         * @tc.desc   checks Sendable with primitive type
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testChainedPath1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
            let result = await testChainedPath1();
@@ -56,13 +54,12 @@ export default function SendableChainTest() {
         })
 
         /**
-         * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_CHAIN_003
-         * @tc.name: testChainedPath0Negative
-         * @tc.desc: checks Sendable with primitive type
-         * @tc.author: oleg-ignatenko
-         * @tc.size: MediumTest
-         * @tc.type: Function
-         * @tc.level: Level 2
+         * @tc.name   testChainedPath0Negative
+         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_CHAIN_003
+         * @tc.desc   checks Sendable with primitive type
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testChainedPath0Negative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
            let result = await skipConditional("testChainedPath0Negative in progress", true, testChainedPath0Negative);
@@ -71,13 +68,12 @@ export default function SendableChainTest() {
         })
 
         /**
-         * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_CHAIN_004
-         * @tc.name: testChainedPath0Negative
-         * @tc.desc: checks Sendable with primitive type
-         * @tc.author: oleg-ignatenko
-         * @tc.size: MediumTest
-         * @tc.type: Function
-         * @tc.level: Level 2
+         * @tc.name   In_Progress_testChainedPath2
+         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_CHAIN_004
+         * @tc.desc   checks Sendable with primitive type
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('In_Progress_testChainedPath2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
            let result = await skipConditional("testChainedPath2 in progress", true, testChainedPath2);

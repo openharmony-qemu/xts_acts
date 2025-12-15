@@ -58,14 +58,14 @@ export default function webOnDataResubmitted() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEBENABLEDATADETECTOR_0100
-    * @tc.name        : testWebEnableDataDetector001
-    * @tc.desc        : testWebEnableDataDetector001 callback
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name   testWebEnableDataDetector001
+     * @tc.number SUB_WEBENABLEDATADETECTOR_0100
+     * @tc.desc   testWebEnableDataDetector001 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testWebEnableDataDetector001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = 'emitWebEnableDataDetector';
       tcName = 'testWebEnableDataDetector001'

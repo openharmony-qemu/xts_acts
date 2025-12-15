@@ -119,15 +119,15 @@ export default function AVPlayerVideoSeekTest() {
         // #endregion
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0100
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0100
-            * @tc.desc      : Sequential loop call seek in prepared state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0100
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0100', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -176,15 +176,15 @@ export default function AVPlayerVideoSeekTest() {
         })
         
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0200
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0200
-            * @tc.desc      : Randomized loop call seek in prepared state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0200
+         * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0200
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0200
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0200', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -233,15 +233,15 @@ export default function AVPlayerVideoSeekTest() {
         })
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0300
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0300
-            * @tc.desc      : Sequential loop call seek in playing state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0300
+         * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0300
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0300
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0300', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -293,15 +293,15 @@ export default function AVPlayerVideoSeekTest() {
         })
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0400
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0400
-            * @tc.desc      : Randomized loop call seek in playing state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0400
+         * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0400
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0400
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0400', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -353,15 +353,15 @@ export default function AVPlayerVideoSeekTest() {
         })
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0500
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0500
-            * @tc.desc      : Sequential loop call seek in pause state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0500
+         * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0500
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0500
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0500', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -416,15 +416,15 @@ export default function AVPlayerVideoSeekTest() {
         })
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0600
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0600
-            * @tc.desc      : Randomized loop call seek in pause state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0600
+         * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0600
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0600
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0600', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -479,15 +479,15 @@ export default function AVPlayerVideoSeekTest() {
         })
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0700
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0700
-            * @tc.desc      : Sequential loop call seek in initialized state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0700
+         * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0700
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0700
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0700', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -539,15 +539,15 @@ export default function AVPlayerVideoSeekTest() {
         })
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0800
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0800
-            * @tc.desc      : Randomized loop call seek in completed state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0800
+         * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0800
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0800
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0800', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -599,15 +599,15 @@ export default function AVPlayerVideoSeekTest() {
         })
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0900
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0900
-            * @tc.desc      : Set values outside the range and run in prepared state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0900
+         * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0900
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0900
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_0900', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -656,15 +656,15 @@ export default function AVPlayerVideoSeekTest() {
         })
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1000
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1000
-            * @tc.desc      : Set values outside the range and run in playing state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1000
+         * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1000
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1000
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1000', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -716,15 +716,15 @@ export default function AVPlayerVideoSeekTest() {
         })
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1100
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1100
-            * @tc.desc      : Set values outside the range and run in paused state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1100
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1100', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -779,15 +779,15 @@ export default function AVPlayerVideoSeekTest() {
         })
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1200
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1200
-            * @tc.desc      : Set values outside the range and run in completed state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1200
+         * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1200
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1200
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1200', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -839,15 +839,15 @@ export default function AVPlayerVideoSeekTest() {
         })
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1300
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1300
-            * @tc.desc      : Sequential loop call seek in idle state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1300
+         * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1300
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1300
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1300', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -890,15 +890,15 @@ export default function AVPlayerVideoSeekTest() {
         })
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1400
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1400
-            * @tc.desc      : Randomized loop call seek in idle state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1400
+         * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1400
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1400
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1400', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -941,15 +941,15 @@ export default function AVPlayerVideoSeekTest() {
         })
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1500
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1500
-            * @tc.desc      : Sequential loop call seek in initialized state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1500
+         * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1500
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1500
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1500', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -995,15 +995,15 @@ export default function AVPlayerVideoSeekTest() {
         })
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1600
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1600
-            * @tc.desc      : Randomized loop call seek in initialized state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1600
+         * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1600
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1600
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1600', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -1049,15 +1049,15 @@ export default function AVPlayerVideoSeekTest() {
         })
         
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1700
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1700
-            * @tc.desc      : Sequential loop call seek in stopped state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1700
+         * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1700
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1700
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1700', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -1109,15 +1109,15 @@ export default function AVPlayerVideoSeekTest() {
         })
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1800
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1800
-            * @tc.desc      : Randomized loop call seek in stopped state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1800
+         * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1800
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1800
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1800', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -1169,15 +1169,15 @@ export default function AVPlayerVideoSeekTest() {
         })
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1900
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1900
-            * @tc.desc      : Sequential loop call seek in released state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1900
+         * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1900
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1900
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_1900', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -1223,15 +1223,15 @@ export default function AVPlayerVideoSeekTest() {
         })
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_2000
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_2000
-            * @tc.desc      : Randomized loop call seek in released state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_2000
+         * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_2000
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_2000
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKTSINTERFACE_2000', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);

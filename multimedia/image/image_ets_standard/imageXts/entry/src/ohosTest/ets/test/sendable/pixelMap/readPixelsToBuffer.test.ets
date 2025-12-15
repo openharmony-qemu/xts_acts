@@ -63,12 +63,12 @@ export default function sendableReadPixelsToBufferTest() {
     });
 
     /**
-     * @tc.number    : PIXEL_MAP_READ_PIXELS_TO_BUFFER_001
-     * @tc.name      : readPixelsToBuffer_sendable_promise_001
-     * @tc.desc      : readPixelsToBuffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   readPixelsToBuffer_sendable_promise_001
+     * @tc.number PIXEL_MAP_READ_PIXELS_TO_BUFFER_001
+     * @tc.desc   readPixelsToBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('readPixelsToBuffer_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'readPixelsToBuffer_sendable_promise_001';
@@ -79,12 +79,12 @@ export default function sendableReadPixelsToBufferTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_READ_PIXELS_TO_BUFFER_002
-     * @tc.name      : readPixelsToBuffer_sendable_promise_002
-     * @tc.desc      : readPixelsToBuffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   readPixelsToBuffer_sendable_promise_002
+     * @tc.number PIXEL_MAP_READ_PIXELS_TO_BUFFER_002
+     * @tc.desc   readPixelsToBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('readPixelsToBuffer_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'readPixelsToBuffer_sendable_promise_002';
@@ -95,12 +95,12 @@ export default function sendableReadPixelsToBufferTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_READ_PIXELS_TO_BUFFER_003  //TODO 传异常参数会走catch 但是会超时  错误码62980246 返回格式有问题 同样格式 Sync 就不要会报错
-     * @tc.name      : readPixelsToBuffer_sendable_promise_003
-     * @tc.desc      : readPixelsToBuffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   readPixelsToBuffer_sendable_promise_003
+     * @tc.number PIXEL_MAP_READ_PIXELS_TO_BUFFER_003  //TODO 传异常参数会走catch 但是会超时  错误码62980246 返回格式有问题 同样格式 Sync 就不要会报错
+     * @tc.desc   readPixelsToBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('readPixelsToBuffer_sendable_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'readPixelsToBuffer_sendable_promise_003';

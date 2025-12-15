@@ -52,12 +52,12 @@ export default function webViewNativeMediaPlayerEnableFalse() {
         done();
     })
     /**
-     *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_0100
-     *@tc.name testWebViewNativeMediaPlayerEnableFalse
-     *@tc.desc test NativeMediaPlayerEnableFalse
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+     * @tc.name   testWebViewNativeMediaPlayerEnableFalse
+     * @tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_0100
+     * @tc.desc   test NativeMediaPlayerEnableFalse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewNativeMediaPlayerEnableFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
        emitKey = "emitWebViewNativeMediaPlayerEnableFalse"
@@ -67,12 +67,12 @@ export default function webViewNativeMediaPlayerEnableFalse() {
        await StartModel.click();
     })
     /**
-     *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_0200
-     *@tc.name testWebViewNativeMediaPlayerEnableFalseShouldOverlayFalse
-     *@tc.desc test NativeMediaPlayerEnableFalseShouldOverlayFalse
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+     * @tc.name   testWebViewNativeMediaPlayerEnableFalseShouldOverlayFalse
+     * @tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_0200
+     * @tc.desc   test NativeMediaPlayerEnableFalseShouldOverlayFalse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerEnableFalseShouldOverlayFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
        emitKey = "emitWebViewNativeMediaPlayerEnableFalseShouldOverlayFalse";

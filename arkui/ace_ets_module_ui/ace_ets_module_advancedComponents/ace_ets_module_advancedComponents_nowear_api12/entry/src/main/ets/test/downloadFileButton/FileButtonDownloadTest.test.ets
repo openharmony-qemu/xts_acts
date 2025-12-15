@@ -29,12 +29,12 @@ export default function FileButtonDownloadTest() {
     })
 
     /**
+     * @tc.name   FileButtonDownloadTest_0100
      * @tc.number FileButtonDownloadTest
-     * @tc.name FileButtonDownloadTest_0100
-     * @tc.desc Test FileButtonDownloadTest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test FileButtonDownloadTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FileButtonDownloadTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[FileButtonDownloadTest] START');

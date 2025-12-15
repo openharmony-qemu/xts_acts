@@ -71,12 +71,12 @@ export function CanIUseLPPTest() {
     })
 
     /**
-     * @tc.number     : TESTOHLPP_GETCAPABILITY_ERROREVENT_0100
-     * @tc.name       : TESTOHLPP_GETCAPABILITY_ERROREVENT_0100
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   TESTOHLPP_GETCAPABILITY_ERROREVENT_0100
+     * @tc.number TESTOHLPP_GETCAPABILITY_ERROREVENT_0100
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TESTOHLPP_GETCAPABILITY_ERROREVENT_0100', Level.LEVEL0, async (done: Function) => {
       console.info(`TESTOHLPP_GETCAPABILITY_ERROREVENT_0100 test start `);

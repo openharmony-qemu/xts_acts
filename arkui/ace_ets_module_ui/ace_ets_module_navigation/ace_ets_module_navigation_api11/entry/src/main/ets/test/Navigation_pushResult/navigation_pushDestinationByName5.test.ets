@@ -46,10 +46,12 @@ export default function navigation_pushDestinationByName5() {
     });
 
     /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_NAV_NAVIGATION_PUSH_006
-     * @tc.name      navigation_pushDestinationByName5_0100
-     * @tc.desc      Navigation pushDestinationByName result test
-     * @tc.level     Level 1
+     * @tc.name   navigation_pushDestinationByName5_0100
+     * @tc.number SUB_ACE_UI_COMPONENT_NAV_NAVIGATION_PUSH_006
+     * @tc.desc   Navigation pushDestinationByName result test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('navigation_pushDestinationByName5_0100',  Level.LEVEL0, async  (done:Function) =>{
       console.info('[navigation_pushDestinationByName5_0100] START');

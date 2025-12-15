@@ -53,10 +53,13 @@ export default function TextMenuItemId() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         TextMenuItemId0001
-     * @tc.desc        set TextMenuItem for text
+    /**
+     * @tc.name   TextMenuItemId0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   set TextMenuItem for text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextMenuItemId0001', Level.LEVEL0, async (done: Function) => {
       console.info("[TextMenuItemId0001] start");
@@ -80,10 +83,13 @@ export default function TextMenuItemId() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         TextMenuItemId0002
-     * @tc.desc        set TextMenuItem for textArea
+    /**
+     * @tc.name   TextMenuItemId0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   set TextMenuItem for textArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextMenuItemId0002', Level.LEVEL0, async (done: Function) => {
       console.info("[TextMenuItemId0002] start");
@@ -107,10 +113,13 @@ export default function TextMenuItemId() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name         TextMenuItemId0003
-     * @tc.desc        set TextMenuItem for textInput
+    /**
+     * @tc.name   TextMenuItemId0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   set TextMenuItem for textInput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextMenuItemId0003', Level.LEVEL0, async (done: Function) => {
       console.info("[TextMenuItemId0003] start");
@@ -134,10 +143,13 @@ export default function TextMenuItemId() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-     * @tc.name         TextMenuItemId0004
-     * @tc.desc        set TextMenuItem for richEditor
+    /**
+     * @tc.name   TextMenuItemId0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_0004
+     * @tc.desc   set TextMenuItem for richEditor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextMenuItemId0004', Level.LEVEL0, async (done: Function) => {
       console.info("[TextMenuItemId0004] start");
@@ -161,10 +173,13 @@ export default function TextMenuItemId() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0005
-     * @tc.name         TextMenuItemId0005
-     * @tc.desc        set TextMenuItem for search
+    /**
+     * @tc.name   TextMenuItemId0005
+     * @tc.number SUB_ACE_BASIC_ETS_API_0005
+     * @tc.desc   set TextMenuItem for search
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextMenuItemId0005', Level.LEVEL0, async (done: Function) => {
       console.info("[TextMenuItemId0005] start");

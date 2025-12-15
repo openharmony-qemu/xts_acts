@@ -28,12 +28,12 @@ export default function windowErrCode1300010() {
       windowStage = AppStorage.get('windowStage') as ohosWindow.WindowStage;
     })
     /**
-     * @tc.number    : testMoveWindowToGlobalPromiseErrCode1300010_0100
-     * @tc.name      : testMoveWindowToGlobalPromiseErrCode1300010_0100
-     * @tc.desc      : testMoveWindowToGlobalPromiseErrCode1300010_0100
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMoveWindowToGlobalPromiseErrCode1300010_0100
+     * @tc.number testMoveWindowToGlobalPromiseErrCode1300010_0100
+     * @tc.desc   testMoveWindowToGlobalPromiseErrCode1300010_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveWindowToGlobalPromiseErrCode1300010_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = 'testMoveWindowToGlobalPromiseErrCode1300010_0100';

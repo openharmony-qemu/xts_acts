@@ -65,9 +65,12 @@ export default function Tabs_barPosition() {
       });
     });
     /**
+     * @tc.name   TabsBarPositionStartWithVerticalFalse
      * @tc.number SUB_ACE_TABS_BARPOSITION_TEST_0100
-     * @tc.name TabsBarPositionStartWithVerticalFalse
-     * @tc.desc When vertical is set to the default value of false, barPosition is set to barPosition.Start
+     * @tc.desc   When vertical is set to the default value of false, barPosition is set to barPosition.Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TabsBarPositionStartWithVerticalFalse', Level.LEVEL1, async (done: Function) => {
       console.info('[TabsBarPositionStartWithVerticalFalse] START');
@@ -179,9 +182,12 @@ export default function Tabs_barPosition() {
       done();
     });
     /**
+     * @tc.name   TabsBarPositionEndWithVerticalFalse
      * @tc.number SUB_ACE_TABS_BARPOSITION_TEST_0200
-     * @tc.name TabsBarPositionEndWithVerticalFalse
-     * @tc.desc When vertical takes the default value of false, barPosition is set to barPosition.End
+     * @tc.desc   When vertical takes the default value of false, barPosition is set to barPosition.End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TabsBarPositionEndWithVerticalFalse', Level.LEVEL1, async (done: Function) => {
       console.info('[TabsBarPositionEndWithVerticalFalse] START');
@@ -293,9 +299,12 @@ export default function Tabs_barPosition() {
       done();
     });
     /**
+     * @tc.name   TabsBarPositionStartWithVerticalTrue
      * @tc.number SUB_ACE_TABS_BARPOSITION_TEST_0300
-     * @tc.name TabsBarPositionStartWithVerticalTrue
-     * @tc.desc When vertical is set to the default value of true, barPosition is set to barPosition.Start
+     * @tc.desc   When vertical is set to the default value of true, barPosition is set to barPosition.Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TabsBarPositionStartWithVerticalTrue', Level.LEVEL1, async (done: Function) => {
       console.info('[TabsBarPositionStartWithVerticalTrue] START');
@@ -415,9 +424,12 @@ export default function Tabs_barPosition() {
       done();
     });
     /**
+     * @tc.name   TabsBarPositionEndWithVerticalTrue
      * @tc.number SUB_ACE_TABS_BARPOSITION_TEST_0400
-     * @tc.name TabsBarPositionEndWithVerticalTrue
-     * @tc.desc When vertical takes the default value of true, barPosition is set to barPosition.End
+     * @tc.desc   When vertical takes the default value of true, barPosition is set to barPosition.End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TabsBarPositionEndWithVerticalTrue', Level.LEVEL1, async (done: Function) => {
       console.info('[TabsBarPositionEndWithVerticalTrue] START');

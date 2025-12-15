@@ -41,12 +41,12 @@ export default function ListMainChildrenTest() {
       done();
     });
     /**
-     * @tc.number    ListMainChildren
-     * @tc.name      ListMainChildrenTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ListMainChildrenTest_0100
+     * @tc.number ListMainChildren
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ListMainChildrenTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ListMainChildrenTest_0100 START');
@@ -63,12 +63,12 @@ export default function ListMainChildrenTest() {
       done();
     });
     /**
-     * @tc.number    ListMainChildren
-     * @tc.name      ListMainChildrenTest_0200
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ListMainChildrenTest_0200
+     * @tc.number ListMainChildren
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ListMainChildrenTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ListMainChildrenTest_0200 START');

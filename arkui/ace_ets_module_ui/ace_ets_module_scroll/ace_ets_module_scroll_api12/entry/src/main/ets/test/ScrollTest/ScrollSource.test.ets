@@ -42,12 +42,12 @@ export default function ScrollSource() {
     });
 
     /**
-     * @tc.number    ScrollSource_0100
-     * @tc.name      ScrollSource_0100
-     * @tc.desc      frameNode: ScrollSourceToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ScrollSource_0100
+     * @tc.number ScrollSource_0100
+     * @tc.desc   frameNode: ScrollSourceToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ScrollSource_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ScrollSource_0100 START');
@@ -66,12 +66,12 @@ export default function ScrollSource() {
     });
 
     /**
-     * @tc.number    ScrollSource_0200
-     * @tc.name      ScrollSource_0200
-     * @tc.desc      frameNode: ScrollSourceToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ScrollSource_0200
+     * @tc.number ScrollSource_0200
+     * @tc.desc   frameNode: ScrollSourceToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ScrollSource_0200', Level.LEVEL0, async (done: Function) => {
       console.info('ScrollSource_0200 START');

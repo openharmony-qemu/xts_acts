@@ -118,7 +118,6 @@ describe('rdbResultSetTest', function () {
     }
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGetBlob0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_0100
      * @tc.desc   resultSet getBlob normal test
@@ -151,7 +150,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGetBlob0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_0200
      * @tc.desc   resultSet getBlob normal test
@@ -185,7 +183,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGetBlob0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_0300
      * @tc.desc   resultSet getBlob normal test
@@ -217,7 +214,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testIsStarted0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_0400
      * @tc.desc   resultSet isStarted normal test
@@ -240,7 +236,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testIsStarted0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_0500
      * @tc.desc   resultSet isStarted normal test
@@ -264,7 +259,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testIsStarted0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_0600
      * @tc.desc   resultSet isStarted normal test
@@ -291,7 +285,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testIsStarted0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_0700
      * @tc.desc   resultSet isStarted with no result test
@@ -317,7 +310,6 @@ describe('rdbResultSetTest', function () {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testIsEnded0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_0800
      * @tc.desc   resultSet isEnded normal test
@@ -341,7 +333,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testIsEnded0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_0900
      * @tc.desc   resultSet isEnded normal test
@@ -365,7 +356,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testIsEnded0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_1000
      * @tc.desc   resultSet isEnded normal test
@@ -389,7 +379,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testIsEnded0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_1100
      * @tc.desc   resultSet isEnded normal test
@@ -414,7 +403,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRowCount0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_1200
      * @tc.desc   resultSet rowCount normal test
@@ -437,7 +425,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRowCount0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_1300
      * @tc.desc   resultSet rowCount with no result test
@@ -461,7 +448,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRowCount0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_1400
      * @tc.desc   resultSet rowCount test
@@ -485,7 +471,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRowCount0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_1500
      * @tc.desc   resultSet rowCount test
@@ -510,7 +495,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGetLong0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_1600
      * @tc.desc   resultSet getLong test
@@ -541,7 +525,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGetLong0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_1700
      * @tc.desc   resultSet getLong test
@@ -571,7 +554,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGetLong0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_1800
      * @tc.desc   resultSet getLong test
@@ -601,7 +583,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGetString0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_1900
      * @tc.desc   resultSet getString test
@@ -624,7 +605,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGetString0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_2000
      * @tc.desc   resultSet getString test
@@ -647,7 +627,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGetString0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_2100
      * @tc.desc   resultSet getString test
@@ -671,7 +650,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGetString0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_2200
      * @tc.desc   resultSet getString test
@@ -700,7 +678,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testIsClosed0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_2300
      * @tc.desc   resultSet isClosed test
@@ -723,7 +700,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testIsClosed0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_2400
      * @tc.desc   resultSet isClosed with not close test
@@ -743,7 +719,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testIsClosed0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_2500
      * @tc.desc   resultSet isClosed with not close test
@@ -764,7 +739,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testColumnCount0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_2600
      * @tc.desc   resultSet columnCount test
@@ -785,7 +759,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testColumnCount0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_2700
      * @tc.desc   resultSet columnCount test
@@ -807,7 +780,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRowIndex0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_2800
      * @tc.desc   resultSet rowIndex test
@@ -832,7 +804,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRowIndex0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_2900
      * @tc.desc   resultSet rowIndex at last row test
@@ -857,7 +828,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGoToFirstRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_3000
      * @tc.desc   resultSet goToFirstRow normal test
@@ -882,7 +852,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGoToFirstRow0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_3100
      * @tc.desc   resultSet goToFirstRow with no result test
@@ -907,7 +876,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGoToFirstRow0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_3200
      * @tc.desc   resultSet goToFirstRow test
@@ -933,7 +901,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGoToLastRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_3300
      * @tc.desc   resultSet goToFirstRow test
@@ -956,7 +923,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGoToLastRow0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_3400
      * @tc.desc   resultSet goToLastRow with no result test
@@ -980,7 +946,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGoToLastRow0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_3500
      * @tc.desc   resultSet goToLastRow test
@@ -1005,7 +970,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGoToNextRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_3600
      * @tc.desc   resultSet goToNextRow test
@@ -1028,7 +992,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGoToNextRow0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_3700
      * @tc.desc   resultSet goToNextRow with no result test
@@ -1052,7 +1015,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGoToNextRow0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_3800
      * @tc.desc   resultSet goToNextRow test
@@ -1078,7 +1040,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGoToNextRow0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_3900
      * @tc.desc   resultSet goToNextRow after last row test
@@ -1102,7 +1063,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGoToPreviousRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_4000
      * @tc.desc   resultSet goToPreviousRow test
@@ -1125,7 +1085,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGoToPreviousRow0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_4100
      * @tc.desc   resultSet goToPreviousRow with no result test
@@ -1149,7 +1108,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGoToPreviousRow0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_4200
      * @tc.desc   resultSet goToPreviousRow test
@@ -1174,7 +1132,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGoToPreviousRow0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_4300
      * @tc.desc   resultSet goToPreviousRow after last row test
@@ -1198,7 +1155,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGoTo0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_4400
      * @tc.desc   resultSet goTo test
@@ -1223,7 +1179,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGoTo0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_4500
      * @tc.desc   resultSet goTo with no result test
@@ -1248,7 +1203,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGoTo0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_4600
      * @tc.desc   resultSet goTo test
@@ -1274,7 +1228,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGoTo0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_4700
      * @tc.desc   resultSet goTo after last row test
@@ -1299,7 +1252,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGoToRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_4800
      * @tc.desc   resultSet goToRow test
@@ -1324,7 +1276,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGoToRow0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_4900
      * @tc.desc   resultSet goToRow with no result test
@@ -1349,7 +1300,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGoToRow0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_5000
      * @tc.desc   resultSet goToRow test
@@ -1376,7 +1326,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGoToRow0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_5100
      * @tc.desc   resultSet goToRow after last row test
@@ -1401,7 +1350,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testIsAtFirstRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_5200
      * @tc.desc   resultSet isAtFirstRow test
@@ -1425,7 +1373,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testIsAtFirstRow0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_5300
      * @tc.desc   resultSet isAtFirstRow with no result test
@@ -1449,7 +1396,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testIsAtFirstRow0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_5400
      * @tc.desc   resultSet isAtFirstRow test
@@ -1474,7 +1420,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testIsAtFirstRow0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_5500
      * @tc.desc   resultSet isAtFirstRow after last row test
@@ -1498,7 +1443,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testIsAtFirstRow0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_5600
      * @tc.desc   resultSet isAtFirstRow test
@@ -1523,7 +1467,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testIsAtFirstRow0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_5700
      * @tc.desc   resultSet isAtFirstRow test
@@ -1548,7 +1491,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testIsAtLastRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_5800
      * @tc.desc   resultSet isAtLastRow test
@@ -1572,7 +1514,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testIsAtLastRow0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_5900
      * @tc.desc   resultSet isAtLastRow with no result test
@@ -1596,7 +1537,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testIsAtLastRow0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_6000
      * @tc.desc   resultSet isAtLastRow test
@@ -1621,7 +1561,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testIsAtLastRow0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_6100
      * @tc.desc   resultSet isAtLastRow after last row test
@@ -1645,7 +1584,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testIsAtLastRow0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_6200
      * @tc.desc   resultSet isAtLastRow test
@@ -1670,7 +1608,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGetDouble0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_6300
      * @tc.desc   resultSet getDouble test
@@ -1695,7 +1632,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGetDouble0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_6400
      * @tc.desc   resultSet getDouble test
@@ -1720,7 +1656,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGetDouble0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_6500
      * @tc.desc   resultSet getDouble test
@@ -1745,7 +1680,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGetDouble0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_6600
      * @tc.desc   resultSet getDouble test
@@ -1770,7 +1704,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testIsColumnNull0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_6700
      * @tc.desc   resultSet isColumnNull test
@@ -1797,7 +1730,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testIsColumnNull0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_6800
      * @tc.desc   resultSet isColumnNull test
@@ -1824,7 +1756,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testIsColumnNull0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_6900
      * @tc.desc   resultSet isColumnNull test
@@ -1849,7 +1780,6 @@ describe('rdbResultSetTest', function () {
         }
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testIsColumnNull0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_7000
      * @tc.desc   resultSet isColumnNull test
@@ -1873,7 +1803,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGetColumnIndex0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_7100
      * @tc.desc   resultSet getColumnIndex test
@@ -1896,7 +1825,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGetColumnIndex0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_7200
      * @tc.desc   resultSet getColumnIndex test
@@ -1919,7 +1847,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGetColumnIndex0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_7300
      * @tc.desc   resultSet getColumnIndex test
@@ -1941,7 +1868,6 @@ describe('rdbResultSetTest', function () {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:51
       * @tc.name   testGetColumnIndex0004
       * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_7400
       * @tc.desc   resultSet getColumnIndex test
@@ -1963,7 +1889,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGetColumnName0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_7500
      * @tc.desc   resultSet getColumnName test
@@ -1987,7 +1912,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGetColumnName0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_7600
      * @tc.desc   resultSet getColumnName test
@@ -2012,7 +1936,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGetColumnName0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_7700
      * @tc.desc   resultSet getColumnName test
@@ -2035,7 +1958,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testGetColumnName0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_7800
      * @tc.desc   resultSet getColumnName test
@@ -2059,7 +1981,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testClose0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_7900
      * @tc.desc   resultSet close test
@@ -2083,7 +2004,6 @@ describe('rdbResultSetTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testClose0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_8000
      * @tc.desc   resultSet close test
@@ -2107,7 +2027,6 @@ describe('rdbResultSetTest', function () {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:51
       * @tc.name   testcolumnNames0001
       * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_8100
       * @tc.desc   resultSet columnNames test
@@ -2132,7 +2051,6 @@ describe('rdbResultSetTest', function () {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:51
       * @tc.name   testBigData0001
       * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBResultSetJsAPITest_8200
       * @tc.desc   big resultSet data test

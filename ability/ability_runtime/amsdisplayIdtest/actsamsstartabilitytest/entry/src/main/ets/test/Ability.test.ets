@@ -46,11 +46,14 @@ export default function abilityTest() {
       }, 3000)
     })
 
-    /*
-    * @tc.number: ACTS_StartAbility_2100
-    * @tc.name: Get the specified displayId to start Ability
-    * @tc.desc: Verify Get displayId to start Ability
-    */
+    /**
+     * @tc.name   ACTS_StartAbility_2100
+     * @tc.number ACTS_StartAbility_2100
+     * @tc.desc   Verify Get displayId to start Ability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_StartAbility_2100', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_StartAbility_2100====<begin');
       let id: number = -1;
@@ -91,11 +94,14 @@ export default function abilityTest() {
       });
     })
 
-    /*
-    * @tc.number: ACTS_StartAbility_2300
-    * @tc.name: Get the specified displayId to start Ability
-    * @tc.desc: Verify that the ability to start when displayId is a string
-    */
+    /**
+     * @tc.name   ACTS_StartAbility_2300
+     * @tc.number ACTS_StartAbility_2300
+     * @tc.desc   Verify that the ability to start when displayId is a string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_StartAbility_2300', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_StartAbility_2300====<begin');
       let id: number = -1;
@@ -136,11 +142,14 @@ export default function abilityTest() {
       });
     })
 
-    /*
-    * @tc.number: ACTS_StartAbility_2500
-    * @tc.name: Get the specified displayId to start Ability
-    * @tc.desc: Verify that the ability to start when the displayId is undefined
-    */
+    /**
+     * @tc.name   ACTS_StartAbility_2500
+     * @tc.number ACTS_StartAbility_2500
+     * @tc.desc   Verify that the ability to start when the displayId is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_StartAbility_2500', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_StartAbility_2500====<begin');
       let id: number = -1;
@@ -181,11 +190,14 @@ export default function abilityTest() {
       });
     })
 
-    /*
-    * @tc.number: ACTS_StartAbility_2700
-    * @tc.name: Get the specified displayId to start Ability
-    * @tc.desc: Validation parameters want to filter the DISPLAY_ID of parameters
-    */
+    /**
+     * @tc.name   ACTS_StartAbility_2700
+     * @tc.number ACTS_StartAbility_2700
+     * @tc.desc   Validation parameters want to filter the DISPLAY_ID of parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_StartAbility_2700', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_StartAbility_2700====<begin');
       let id: number = -1;

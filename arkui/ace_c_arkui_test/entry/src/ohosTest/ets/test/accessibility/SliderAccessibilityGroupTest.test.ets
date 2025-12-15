@@ -26,52 +26,52 @@ export default function sliderAccessibilityGroupTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SLIDER_ACCESSIBILITYGROUP_0100
-     * @tc.name       : testSliderAccessibilityGroup001
-     * @tc.desc       : testing accessibilityGroup for Slider with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSliderAccessibilityGroup001
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_ACCESSIBILITYGROUP_0100
+     * @tc.desc   testing accessibilityGroup for Slider with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderAccessibilityGroup001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderAccessibilityGroup001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SLIDER_ACCESSIBILITYGROUP_0200
-     * @tc.name       : testSliderAccessibilityGroup002
-     * @tc.desc       : testing accessibilityGroup for Slider with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSliderAccessibilityGroup002
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_ACCESSIBILITYGROUP_0200
+     * @tc.desc   testing accessibilityGroup for Slider with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderAccessibilityGroup002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderAccessibilityGroup002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SLIDER_ACCESSIBILITYGROUP_0300
-     * @tc.name       : testSliderAccessibilityGroup003
-     * @tc.desc       : testing accessibilityGroup for Slider with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testSliderAccessibilityGroup003
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_ACCESSIBILITYGROUP_0300
+     * @tc.desc   testing accessibilityGroup for Slider with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderAccessibilityGroup003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderAccessibilityGroup003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SLIDER_ACCESSIBILITYGROUP_0400
-     * @tc.name       : testSliderAccessibilityGroup004
-     * @tc.desc       : testing accessibilityGroup for Slider with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testSliderAccessibilityGroup004
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_ACCESSIBILITYGROUP_0400
+     * @tc.desc   testing accessibilityGroup for Slider with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderAccessibilityGroup004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderAccessibilityGroup004()).assertEqual(0)

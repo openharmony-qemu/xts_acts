@@ -25,12 +25,12 @@ export default function inttypesNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_INTTYPES_STRTOIMAX_0100
-     * @tc.name       : testMuslInttypesStrtoimax001
-     * @tc.desc       : test strtoimax
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslInttypesStrtoimax001
+     * @tc.number SUB_THIRDPARTY_MUSL_INTTYPES_STRTOIMAX_0100
+     * @tc.desc   test strtoimax
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslInttypesStrtoimax001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = '1000xyz';
@@ -43,12 +43,12 @@ export default function inttypesNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_INTTYPES_STRTOIMAX_0200
-     * @tc.name       : testMuslInttypesStrtoimax002
-     * @tc.desc       : test strtoimax
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslInttypesStrtoimax002
+     * @tc.number SUB_THIRDPARTY_MUSL_INTTYPES_STRTOIMAX_0200
+     * @tc.desc   test strtoimax
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslInttypesStrtoimax002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = 'ff';
@@ -61,12 +61,12 @@ export default function inttypesNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_INTTYPES_STRTOUMAX_0100
-     * @tc.name       : testMuslInttypesStrtoumax001
-     * @tc.desc       : test strtoumax
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslInttypesStrtoumax001
+     * @tc.number SUB_THIRDPARTY_MUSL_INTTYPES_STRTOUMAX_0100
+     * @tc.desc   test strtoumax
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslInttypesStrtoumax001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = '1000xyz';
@@ -79,12 +79,12 @@ export default function inttypesNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_INTTYPES_STRTOUMAX_0200
-     * @tc.name       : testMuslInttypesStrtoumax002
-     * @tc.desc       : test strtoimax
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslInttypesStrtoumax002
+     * @tc.number SUB_THIRDPARTY_MUSL_INTTYPES_STRTOUMAX_0200
+     * @tc.desc   test strtoimax
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslInttypesStrtoumax002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = 'ff';
@@ -96,12 +96,12 @@ export default function inttypesNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_INTTYPES_IMAXDIV_0100
-     * @tc.name       : testMuslInttypesImaxdiv001
-     * @tc.desc       : test imaxdiv
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslInttypesImaxdiv001
+     * @tc.number SUB_THIRDPARTY_MUSL_INTTYPES_IMAXDIV_0100
+     * @tc.desc   test imaxdiv
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslInttypesImaxdiv001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: object = inttypes.imaxdiv(5, 2);
@@ -110,12 +110,12 @@ export default function inttypesNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_INTTYPES_IMAXDIV_0200
-     * @tc.name       : testMuslInttypesImaxdiv002
-     * @tc.desc       : test imaxdiv
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslInttypesImaxdiv002
+     * @tc.number SUB_THIRDPARTY_MUSL_INTTYPES_IMAXDIV_0200
+     * @tc.desc   test imaxdiv
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslInttypesImaxdiv002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: object = inttypes.imaxdiv(4, 2);
@@ -125,12 +125,12 @@ export default function inttypesNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_INTTYPES_IMAXABS_0100
-     * @tc.name       : testMuslInttypesImaxabs001
-     * @tc.desc       : test imaxabs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslInttypesImaxabs001
+     * @tc.number SUB_THIRDPARTY_MUSL_INTTYPES_IMAXABS_0100
+     * @tc.desc   test imaxabs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslInttypesImaxabs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = inttypes.imaxabs(1)
@@ -138,12 +138,12 @@ export default function inttypesNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_INTTYPES_IMAXABS_0200
-     * @tc.name       : testMuslInttypesImaxabs002
-     * @tc.desc       : test imaxabs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslInttypesImaxabs002
+     * @tc.number SUB_THIRDPARTY_MUSL_INTTYPES_IMAXABS_0200
+     * @tc.desc   test imaxabs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslInttypesImaxabs002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = inttypes.imaxabs(-1)
@@ -151,12 +151,12 @@ export default function inttypesNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_INTTYPES_WCSTOIMAX_0100
-     * @tc.name       : testMuslInttypesWcstoimax001
-     * @tc.desc       : test wcstoimax
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslInttypesWcstoimax001
+     * @tc.number SUB_THIRDPARTY_MUSL_INTTYPES_WCSTOIMAX_0100
+     * @tc.desc   test wcstoimax
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslInttypesWcstoimax001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 10;
@@ -167,12 +167,12 @@ export default function inttypesNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_INTTYPES_WCSTOIMAX_0200
-     * @tc.name       : testMuslInttypesWcstoimax002
-     * @tc.desc       : test wcstoimax
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslInttypesWcstoimax002
+     * @tc.number SUB_THIRDPARTY_MUSL_INTTYPES_WCSTOIMAX_0200
+     * @tc.desc   test wcstoimax
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslInttypesWcstoimax002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0;
@@ -183,12 +183,12 @@ export default function inttypesNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_INTTYPES_WCSTOUMAX_0100
-     * @tc.name       : testMuslInttypesWcstoumax001
-     * @tc.desc       : test wcstoumax
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslInttypesWcstoumax001
+     * @tc.number SUB_THIRDPARTY_MUSL_INTTYPES_WCSTOUMAX_0100
+     * @tc.desc   test wcstoumax
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslInttypesWcstoumax001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 10;
@@ -199,12 +199,12 @@ export default function inttypesNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_INTTYPES_WCSTOUMAX_0200
-     * @tc.name       : testMuslInttypesWcstoumax002
-     * @tc.desc       : test wcstoumax
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslInttypesWcstoumax002
+     * @tc.number SUB_THIRDPARTY_MUSL_INTTYPES_WCSTOUMAX_0200
+     * @tc.desc   test wcstoumax
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslInttypesWcstoumax002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0;

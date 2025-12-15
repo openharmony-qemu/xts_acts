@@ -55,14 +55,14 @@ export default function webViewZoomRatio() {
       console.info('web beforeEach start');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ZOOMRATIO_0100
-    * @tc.name       : textZoomRatioStatic001
-    * @tc.desc       : test ZoomRatio
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   textZoomRatioStatic001
+     * @tc.number SUB_WEB_ZOOMRATIO_0100
+     * @tc.desc   test ZoomRatio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('textZoomRatioStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(3000);
@@ -79,6 +79,14 @@ export default function webViewZoomRatio() {
         done();
       })
 
+    /**
+     * @tc.name   SwitchNextPageStatic
+     * @tc.number SwitchNextPageStatic
+     * @tc.desc   SwitchNextPageStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);

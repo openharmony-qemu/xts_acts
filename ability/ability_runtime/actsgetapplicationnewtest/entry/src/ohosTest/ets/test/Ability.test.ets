@@ -35,12 +35,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_GetApplicationContext_0100
-     * @tc.name   : Call the global function GetApplicationContext in ets
-     * @tc.desc   : Call the global GetApplicationContext function to obtain applicationInfo and sandbox path.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_GetApplicationContext_0100
+     * @tc.number SUB_Ability_AbilityRuntime_GetApplicationContext_0100
+     * @tc.desc   Call the global GetApplicationContext function to obtain applicationInfo and sandbox path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_GetApplicationContext_0100', Level.LEVEL0, async (done: Function) => {
       try {
@@ -109,12 +109,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_GetApplicationContext_0200
-     * @tc.name   : Call the global function GetApplicationContext in ts
-     * @tc.desc   : Call the global GetApplicationContext function to obtain applicationInfo and sandbox path.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_GetApplicationContext_0200
+     * @tc.number SUB_Ability_AbilityRuntime_GetApplicationContext_0200
+     * @tc.desc   Call the global GetApplicationContext function to obtain applicationInfo and sandbox path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_GetApplicationContext_0200', Level.LEVEL0, async (done: Function) => {
       try {
@@ -180,12 +180,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_GetApplicationContext_0300
-     * @tc.name   : Call the global function GetApplicationContext in index.ets
-     * @tc.desc   : Call the global GetApplicationContext function to obtain applicationInfo and sandbox path.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_GetApplicationContext_0300
+     * @tc.number SUB_Ability_AbilityRuntime_GetApplicationContext_0300
+     * @tc.desc   Call the global GetApplicationContext function to obtain applicationInfo and sandbox path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_GetApplicationContext_0300', Level.LEVEL0, async (done: Function) => {
       try {
@@ -260,12 +260,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_GetApplicationContext_0400
-     * @tc.name   : Call the global function GetApplicationContext in UIAbility
-     * @tc.desc   : Call the global GetApplicationContext function to obtain applicationInfo and sandbox path.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_GetApplicationContext_0400
+     * @tc.number SUB_Ability_AbilityRuntime_GetApplicationContext_0400
+     * @tc.desc   Call the global GetApplicationContext function to obtain applicationInfo and sandbox path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_GetApplicationContext_0400', Level.LEVEL0, async (done: Function) => {
       try {
@@ -331,12 +331,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_GetApplicationContext_0500
-     * @tc.name   : Call the global function GetApplicationContext in multi module
-     * @tc.desc   : Call the global GetApplicationContext function to obtain applicationInfo and sandbox path.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_GetApplicationContext_0500
+     * @tc.number SUB_Ability_AbilityRuntime_GetApplicationContext_0500
+     * @tc.desc   Call the global GetApplicationContext function to obtain applicationInfo and sandbox path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_GetApplicationContext_0500', Level.LEVEL0, async (done: Function) => {
       try {
@@ -402,12 +402,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_GetApplicationContext_0600
-     * @tc.name   : Call the global function GetApplicationContext in hot start
-     * @tc.desc   : Call the global GetApplicationContext function to obtain applicationInfo and sandbox path.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_GetApplicationContext_0600
+     * @tc.number SUB_Ability_AbilityRuntime_GetApplicationContext_0600
+     * @tc.desc   Call the global GetApplicationContext function to obtain applicationInfo and sandbox path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_GetApplicationContext_0600', Level.LEVEL0, async (done: Function) => {
       try {
@@ -472,12 +472,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_GetApplicationContext_0700
-     * @tc.name   : Call the global function GetApplicationContext in UIExtensionAbility
-     * @tc.desc   : Call the global GetApplicationContext function to obtain applicationInfo and sandbox path.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_GetApplicationContext_0700
+     * @tc.number SUB_Ability_AbilityRuntime_GetApplicationContext_0700
+     * @tc.desc   Call the global GetApplicationContext function to obtain applicationInfo and sandbox path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_GetApplicationContext_0700', Level.LEVEL0, async (done: Function) => {
       try {
@@ -546,12 +546,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_GetApplicationContext_0800
-     * @tc.name   : Call the global function GetApplicationContext in worker
-     * @tc.desc   : Call the global GetApplicationContext function to obtain applicationInfo and sandbox path.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_GetApplicationContext_0800
+     * @tc.number SUB_Ability_AbilityRuntime_GetApplicationContext_0800
+     * @tc.desc   Call the global GetApplicationContext function to obtain applicationInfo and sandbox path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_GetApplicationContext_0800', Level.LEVEL0, async (done: Function) => {
       try {
@@ -622,12 +622,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_GetApplicationContext_0900
-     * @tc.name   : Call the global function GetApplicationContext in service
-     * @tc.desc   : Call the global GetApplicationContext function to obtain applicationInfo and sandbox path.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_GetApplicationContext_0900
+     * @tc.number SUB_Ability_AbilityRuntime_GetApplicationContext_0900
+     * @tc.desc   Call the global GetApplicationContext function to obtain applicationInfo and sandbox path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_GetApplicationContext_0900', Level.LEVEL0, async (done: Function) => {
       try {
@@ -696,12 +696,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_GetApplicationContext_1000
-     * @tc.name   : Call the global function GetApplicationContext in onCreate
-     * @tc.desc   : Call the global GetApplicationContext function to obtain applicationInfo and sandbox path.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_GetApplicationContext_1000
+     * @tc.number SUB_Ability_AbilityRuntime_GetApplicationContext_1000
+     * @tc.desc   Call the global GetApplicationContext function to obtain applicationInfo and sandbox path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_GetApplicationContext_1000', Level.LEVEL0, async (done: Function) => {
       try {
@@ -771,12 +771,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_GetApplicationContext_1100
-     * @tc.name   : Call the global function GetApplicationContext in onBackground
-     * @tc.desc   : Call the global GetApplicationContext function to obtain applicationInfo and sandbox path.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_GetApplicationContext_1100
+     * @tc.number SUB_Ability_AbilityRuntime_GetApplicationContext_1100
+     * @tc.desc   Call the global GetApplicationContext function to obtain applicationInfo and sandbox path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_GetApplicationContext_1100', Level.LEVEL0, async (done: Function) => {
       try {
@@ -846,12 +846,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_GetApplicationContext_1200
-     * @tc.name   : Call the global function GetApplicationContext in onDestroy
-     * @tc.desc   : Call the global GetApplicationContext function to obtain applicationInfo and sandbox path.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_GetApplicationContext_1200
+     * @tc.number SUB_Ability_AbilityRuntime_GetApplicationContext_1200
+     * @tc.desc   Call the global GetApplicationContext function to obtain applicationInfo and sandbox path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_GetApplicationContext_1200', Level.LEVEL0, async (done: Function) => {
       try {
@@ -921,12 +921,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_GetApplicationContext_1300
-     * @tc.name   : Call the global function GetApplicationContext in onWindowStageCreate
-     * @tc.desc   : Call the global GetApplicationContext function to obtain applicationInfo and sandbox path.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_GetApplicationContext_1300
+     * @tc.number SUB_Ability_AbilityRuntime_GetApplicationContext_1300
+     * @tc.desc   Call the global GetApplicationContext function to obtain applicationInfo and sandbox path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_GetApplicationContext_1300', Level.LEVEL0, async (done: Function) => {
       try {

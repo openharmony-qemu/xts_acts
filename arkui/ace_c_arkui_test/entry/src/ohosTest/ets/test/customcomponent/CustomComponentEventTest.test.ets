@@ -23,15 +23,14 @@ export default function customComponentEventTest() {
     beforeAll(async (done: Function) => {
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_EVENT_001
-    * @tc.name       : testCustomComponentEvent001
-    * @tc.desc       : test custom event callback
-    * @tc.size       : MediumTest
-    
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCustomComponentEvent001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_EVENT_001
+     * @tc.desc   test custom event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCustomComponentEvent001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'CustomComponentEventTest';
       await Utils.pushPage(`customcomponent/${PAGE_TAG}`, done);

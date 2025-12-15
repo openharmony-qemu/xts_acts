@@ -50,12 +50,12 @@ export default function ConvertXmlTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_0100
-     * @tc.name       : testConvertXmlConstructor0001
-     * @tc.desc       : Testing the convertxml convertToJSObject with trim is true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testConvertXmlConstructor0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_0100
+     * @tc.desc   Testing the convertxml convertToJSObject with trim is true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConvertXmlConstructor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testConvertXmlConstructor0001';
@@ -91,12 +91,12 @@ export default function ConvertXmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_0200
-     * @tc.name       : testConvertXmlConstructor0002
-     * @tc.desc       : Testing the convertxml convertToJSObject with trim is false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testConvertXmlConstructor0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_0200
+     * @tc.desc   Testing the convertxml convertToJSObject with trim is false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConvertXmlConstructor0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testConvertXmlConstructor0002';
@@ -132,12 +132,12 @@ export default function ConvertXmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_0300
-     * @tc.name       : testConvertXmlConstructor0003
-     * @tc.desc       : Testing the convertxml convertToJSObject with ignoreDeclaration is true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testConvertXmlConstructor0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_0300
+     * @tc.desc   Testing the convertxml convertToJSObject with ignoreDeclaration is true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConvertXmlConstructor0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testConvertXmlConstructor0003';
@@ -179,12 +179,12 @@ export default function ConvertXmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_0400
-     * @tc.name       : testConvertXmlConstructor0004
-     * @tc.desc       : Testing the convertxml convertToJSObject with ignoreDeclaration is false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testConvertXmlConstructor0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_0400
+     * @tc.desc   Testing the convertxml convertToJSObject with ignoreDeclaration is false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXmlConstructor0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testConvertXmlConstructor0004';
@@ -221,12 +221,12 @@ export default function ConvertXmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_0500
-     * @tc.name       : testConvertXmlConstructor0005
-     * @tc.desc       : Testing the convertxml convertToJSObject with ignoreAttributes is true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConvertXmlConstructor0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_0500
+     * @tc.desc   Testing the convertxml convertToJSObject with ignoreAttributes is true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXmlConstructor0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testConvertXmlConstructor0005';
@@ -268,12 +268,12 @@ export default function ConvertXmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_0600
-     * @tc.name       : testConvertXmlConstructor0006
-     * @tc.desc       : Testing the convertxml convertToJSObject with ignoreAttributes is false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConvertXmlConstructor0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_0600
+     * @tc.desc   Testing the convertxml convertToJSObject with ignoreAttributes is false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXmlConstructor0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testConvertXmlConstructor0006';
@@ -311,12 +311,12 @@ export default function ConvertXmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_0700
-     * @tc.name       : testConvertXmlConstructor0007
-     * @tc.desc       : Testing the convertxml convertToJSObject with ignoreComment is true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConvertXmlConstructor0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_0700
+     * @tc.desc   Testing the convertxml convertToJSObject with ignoreComment is true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXmlConstructor0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testConvertXmlConstructor0007';
@@ -361,12 +361,12 @@ export default function ConvertXmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_0800
-     * @tc.name       : testConvertXmlConstructor0008
-     * @tc.desc       : Testing the convertxml convertToJSObject with ignoreComment is false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConvertXmlConstructor0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_0800
+     * @tc.desc   Testing the convertxml convertToJSObject with ignoreComment is false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXmlConstructor0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testConvertXmlConstructor0008';
@@ -412,12 +412,12 @@ export default function ConvertXmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_0900
-     * @tc.name       : testConvertXmlConstructor0009
-     * @tc.desc       : Testing the convertxml convertToJSObject with ignoreCDATA is true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConvertXmlConstructor0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_0900
+     * @tc.desc   Testing the convertxml convertToJSObject with ignoreCDATA is true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXmlConstructor0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testConvertXmlConstructor0009';
@@ -462,12 +462,12 @@ export default function ConvertXmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_1000
-     * @tc.name       : testConvertXmlConstructor0010
-     * @tc.desc       : Testing the convertxml convertToJSObject with ignoreCDATA is false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConvertXmlConstructor0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_1000
+     * @tc.desc   Testing the convertxml convertToJSObject with ignoreCDATA is false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXmlConstructor0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testConvertXmlConstructor0010';
@@ -512,12 +512,12 @@ export default function ConvertXmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_1100
-     * @tc.name       : testConvertXmlConstructor0011
-     * @tc.desc       : Testing the convertxml convertToJSObject with ignoreDoctype is true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConvertXmlConstructor0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_1100
+     * @tc.desc   Testing the convertxml convertToJSObject with ignoreDoctype is true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXmlConstructor0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testConvertXmlConstructor0011';
@@ -564,12 +564,12 @@ export default function ConvertXmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_1200
-     * @tc.name       : testConvertXmlConstructor0012
-     * @tc.desc       : Testing the convertxml convertToJSObject with ignoreDoctype is false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConvertXmlConstructor0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_1200
+     * @tc.desc   Testing the convertxml convertToJSObject with ignoreDoctype is false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXmlConstructor0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testConvertXmlConstructor0012';
@@ -617,12 +617,12 @@ export default function ConvertXmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_1300
-     * @tc.name       : testConvertXmlConstructor0013
-     * @tc.desc       : Testing the convertxml convertToJSObject with ignoreText is true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConvertXmlConstructor0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_1300
+     * @tc.desc   Testing the convertxml convertToJSObject with ignoreText is true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXmlConstructor0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testConvertXmlConstructor0013';
@@ -668,12 +668,12 @@ export default function ConvertXmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_1400
-     * @tc.name       : testConvertXmlConstructor0014
-     * @tc.desc       : Testing the convertxml convertToJSObject with ignoreText is false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConvertXmlConstructor0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_1400
+     * @tc.desc   Testing the convertxml convertToJSObject with ignoreText is false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXmlConstructor0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testConvertXmlConstructor0014';
@@ -720,12 +720,12 @@ export default function ConvertXmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_1500
-     * @tc.name       : testConvertXmlConstructor0015
-     * @tc.desc       : Testing the convertxml convertToJSObject with ignoreText is false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConvertXmlConstructor0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_1500
+     * @tc.desc   Testing the convertxml convertToJSObject with ignoreText is false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvertXmlConstructor0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testConvertXmlConstructor0015';
@@ -757,12 +757,12 @@ export default function ConvertXmlTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0100
-     * @tc.name       : testFastConvertToJSObject0001
-     * @tc.desc       : Test the function of the interface fastConvertToJSObject.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testFastConvertToJSObject0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0100
+     * @tc.desc   Test the function of the interface fastConvertToJSObject.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testFastConvertToJSObject0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testFastConvertToJSObject0001';
@@ -788,6 +788,48 @@ export default function ConvertXmlTest() {
           elementsKey: "_elements"
         };
         const result = JSON.stringify(conv.fastConvertToJSObject(xml, options));
+        console.log(`${TAG}+${result}`);
+        const equal =
+          '{"_declaration":{"_attributes":{"version":"1.0","encoding":"utf-8"}},"_elements":[{"_type":"element","_name":"note","_attributes":{"importance":"high","logged":"true"},"_elements":[{"_type":"element","_name":"title","_parent":"note","_elements":[{"_type":"text","_text":"Hello\\nWorld"}]},{"_type":"element","_name":"todo","_parent":"note","_elements":[{"_type":"cdata","_cdata":"Work\\n"}]}]}]}';
+        expect(result.toString()).assertEqual(equal);
+      } catch (e) {
+        console.log((e as Error).toString());
+        console.error(`${TAG} failed: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.name   testLargeConvertToJSObject0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0101
+     * @tc.desc   Test the function of the interface largeConvertToJSObject.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLargeConvertToJSObject0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testLargeConvertToJSObject0001';
+      try {
+        const xml = `<?xml version="1.0" encoding="utf-8"?>
+                      <note importance="high" logged="true">
+                          <title>Hello\r\nWorld</title>
+                          <todo><![CDATA[Work\r\n]]></todo>
+                      </note>`;
+        const conv = new convertxml.ConvertXML();
+        const options: convertxml.ConvertOptions = {
+          trim: false,
+          declarationKey: "_declaration",
+          instructionKey: "_instruction",
+          attributesKey: "_attributes",
+          textKey: "_text",
+          cdataKey: "_cdata",
+          doctypeKey: "_doctype",
+          commentKey: "_comment",
+          parentKey: "_parent",
+          typeKey: "_type",
+          nameKey: "_name",
+          elementsKey: "_elements"
+        };
+        const result = JSON.stringify(conv.largeConvertToJSObject(xml, options));
         console.log(`${TAG}+${result}`);
         const equal =
           '{"_declaration":{"_attributes":{"version":"1.0","encoding":"utf-8"}},"_elements":[{"_type":"element","_name":"note","_attributes":{"importance":"high","logged":"true"},"_elements":[{"_type":"element","_name":"title","_parent":"note","_elements":[{"_type":"text","_text":"Hello\\nWorld"}]},{"_type":"element","_name":"todo","_parent":"note","_elements":[{"_type":"cdata","_cdata":"Work\\n"}]}]}]}';

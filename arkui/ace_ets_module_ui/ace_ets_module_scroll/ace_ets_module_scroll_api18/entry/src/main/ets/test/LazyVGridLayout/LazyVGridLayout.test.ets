@@ -43,12 +43,12 @@ export default function LazyVGridLayout() {
     });
 
     /**
-     * @tc.number    LazyVGridLayout_001
-     * @tc.name      LazyVGridLayout_0100
-     * @tc.desc      LazyVGridLayout component.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   LazyVGridLayout_0100
+     * @tc.number LazyVGridLayout_001
+     * @tc.desc   LazyVGridLayout component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LazyVGridLayout_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[LazyVGridLayout_0100] START');

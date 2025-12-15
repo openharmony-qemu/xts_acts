@@ -46,9 +46,12 @@ export default function layoutWeight_flexShrink() {
       console.info("layoutWeight_flexShrink after each called")
     });
     /**
+     * @tc.name   SUB_ACE_layoutWeight_flexShrink_TEST_0100
      * @tc.number SUB_ACE_layoutWeight_flexShrink_TEST_0100
-     * @tc.name testLayoutWeight
-     * @tc.desc colum1, column2, column3 set layoutWeight(3), layoutWeight(2), layoutWeight(1),the layoutWeight property takes precedence over flexShrink,the height ratio of colum1, column2, and column3 is 3:2:1
+     * @tc.desc   colum1, column2, column3 set layoutWeight(3), layoutWeight(2), layoutWeight(1),the layoutWeight property takes precedence over flexShrink,the height ratio of colum1, column2, and column3 is 3:2:1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_layoutWeight_flexShrink_TEST_0100',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_layoutWeight_flexShrink_TEST_0100] START');
@@ -98,9 +101,12 @@ export default function layoutWeight_flexShrink() {
       console.info('[SUB_ACE_layoutWeight_flexShrink_TEST_0100] END');
     });
     /**
+     * @tc.name   SUB_ACE_layoutWeight_flexShrink_TEST_0200
      * @tc.number SUB_ACE_layoutWeight_flexShrink_TEST_0200
-     * @tc.name testLayoutWeight
-     * @tc.desc colum1, column2, column3 set layoutWeight(3), layoutWeight(2), layoutWeight(1),the layoutWeight property takes precedence over flexShrink,the height ratio of colum1, column2, and column3 is 3:2:1
+     * @tc.desc   colum1, column2, column3 set layoutWeight(3), layoutWeight(2), layoutWeight(1),the layoutWeight property takes precedence over flexShrink,the height ratio of colum1, column2, and column3 is 3:2:1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_layoutWeight_flexShrink_TEST_0200',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_layoutWeight_flexShrink_TEST_0200] START');
@@ -150,9 +156,12 @@ export default function layoutWeight_flexShrink() {
       console.info('[SUB_ACE_layoutWeight_flexShrink_TEST_0200] END');
     });
     /**
+     * @tc.name   SUB_ACE_layoutWeight_flexShrink_TEST_0300
      * @tc.number SUB_ACE_layoutWeight_flexShrink_TEST_0300
-     * @tc.name testLayoutWeight
-     * @tc.desc colum1, column2, column3 set layoutWeight(3), layoutWeight(2), layoutWeight(1),the layoutWeight property takes precedence over flexShrink,the height ratio of colum1, column2, and column3 is 3:2:1
+     * @tc.desc   colum1, column2, column3 set layoutWeight(3), layoutWeight(2), layoutWeight(1),the layoutWeight property takes precedence over flexShrink,the height ratio of colum1, column2, and column3 is 3:2:1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_layoutWeight_flexShrink_TEST_0300',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_layoutWeight_flexShrink_TEST_0300] START');

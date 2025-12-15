@@ -26,39 +26,39 @@ export default function accessibilityStateTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_AccessibilityState_0100
-     * @tc.name       : accessibilityStateTest001
-     * @tc.desc       : testing create for AccessibilityState with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   accessibilityStateTest001
+     * @tc.number SUB_ARKUI_CAPI_AccessibilityState_0100
+     * @tc.desc   testing create for AccessibilityState with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('accessibilityStateTest001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.accessibilityState_001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_AccessibilityState_0200
-     * @tc.name       : accessibilityStateTest002
-     * @tc.desc       : testing create for AccessibilityState with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   accessibilityStateTest002
+     * @tc.number SUB_ARKUI_CAPI_AccessibilityState_0200
+     * @tc.desc   testing create for AccessibilityState with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('accessibilityStateTest002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.accessibilityState_002()).assertEqual(0)
       done()
     })
 
-     /*
-     * @tc.number     : SUB_ARKUI_CAPI_AccessibilityState_0300
-     * @tc.name       : accessibilityStateTest003
-     * @tc.desc       : testing create for AccessibilityState with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   accessibilityStateTest003
+     * @tc.number SUB_ARKUI_CAPI_AccessibilityState_0300
+     * @tc.desc   testing create for AccessibilityState with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('accessibilityStateTest003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.accessibilityState_003()).assertEqual(0)

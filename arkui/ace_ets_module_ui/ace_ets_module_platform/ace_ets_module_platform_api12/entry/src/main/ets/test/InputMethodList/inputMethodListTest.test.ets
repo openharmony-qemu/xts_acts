@@ -59,10 +59,12 @@ export default function inputMethodListTest() {
 
 
     /**
+     * @tc.name   inputMethodListTest_0100
      * @tc.number inputMethodListTest_0100
-     * @tc.name inputMethodListTest_0100
-     * @tc.desc Test defaultSelected
-     * @tc.level Level 2
+     * @tc.desc   Test defaultSelected
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('inputMethodListTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('inputMethodListTest_0100 START');

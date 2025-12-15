@@ -47,10 +47,13 @@ export default function PanelJsunit() {
     });
 
     /**
-    * @tc.number: PanelJsunit_0100
-    * @tc.name  : PanelJsunit_0100
-    * @tc.desc  : PanelJsunit_0100
-    */
+     * @tc.name   PanelJsunit_0100
+     * @tc.number PanelJsunit_0100
+     * @tc.desc   PanelJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('PanelJsunit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[PanelJsunit_0100] START');
       await CommonFunc.sleep(1000);

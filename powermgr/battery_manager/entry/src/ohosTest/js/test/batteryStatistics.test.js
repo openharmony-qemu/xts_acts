@@ -39,7 +39,6 @@ export default function BatteryStatisticsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   System_API_Test_batteryStats_Manager_0100
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0040
      * @tc.desc   Test the third-party application call getBatteryStats will be blocked
@@ -75,7 +74,6 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   System_API_Test_batteryStats_Manager_0200
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0050
      * @tc.desc   Test the third-party application call getBatteryStats will be blocked
@@ -107,7 +105,6 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   System_API_Test_batteryStats_Manager_0300
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0050
      * @tc.desc   Test the third-party application call getAppPowerValue will be blocked
@@ -136,7 +133,6 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   System_API_Test_batteryStats_Manager_0400
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0050
      * @tc.desc   Test the third-party application call getAppPowerPercent will be blocked
@@ -165,7 +161,6 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   System_API_Test_batteryStats_Manager_0500
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0050
      * @tc.desc   Test the third-party application call getHardwareUnitPowerValue will be blocked
@@ -194,7 +189,6 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   System_API_Test_batteryStats_Manager_0600
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0050
      * @tc.desc   Test the third-party application call getHardwareUnitPowerPercent will be blocked

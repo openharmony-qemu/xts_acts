@@ -76,12 +76,12 @@ export default function AceWeb() {
     })
 
     /**
+     * @tc.name   testAsyncMethodList0100
      * @tc.number Sub_WEB_javaScriptProxy_asyncMethodList_0100
-     * @tc.name testAsyncMethodList0100
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testAsyncMethodList0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitAsyncMethodList0100", 172120);
@@ -93,12 +93,12 @@ export default function AceWeb() {
     })
 
     /**
+     * @tc.name   testAsyncMethodList0200
      * @tc.number Sub_WEB_javaScriptProxy_asyncMethodList_0200
-     * @tc.name testAsyncMethodList0200
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testAsyncMethodList0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitAsyncMethodList0200", 172120);
@@ -110,12 +110,12 @@ export default function AceWeb() {
     })
 
     /**
+     * @tc.name   testRegisterJavaScriptProxyAsyncMethodList0100
      * @tc.number Sub_WEB_registerJavaScriptProxy_asyncMethodList_0100
-     * @tc.name testRegisterJavaScriptProxyAsyncMethodList0100
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testRegisterJavaScriptProxyAsyncMethodList0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitRegisterJavaScriptProxyAsyncMethodList0100", 172120);

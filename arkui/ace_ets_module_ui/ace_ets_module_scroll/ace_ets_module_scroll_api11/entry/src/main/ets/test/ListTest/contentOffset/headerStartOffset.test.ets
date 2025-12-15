@@ -46,12 +46,12 @@ export default function headerStartOffset() {
     });
 
     /**
-     * @tc.number    headerStartOffset_001
-     * @tc.name      headerStartOffset_0100
-     * @tc.desc      ScrollToItemInGroup alignment method.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   headerStartOffset_0100
+     * @tc.number headerStartOffset_001
+     * @tc.desc   ScrollToItemInGroup alignment method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('headerStartOffset_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[headerStartOffset_0100] START');

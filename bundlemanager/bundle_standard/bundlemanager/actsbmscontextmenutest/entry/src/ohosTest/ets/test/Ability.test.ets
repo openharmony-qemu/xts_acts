@@ -49,10 +49,13 @@ export default function abilityTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_7061
-     * @tc.name: getBundleInfoForSelfSyncFileContextMenu
-     * @tc.desc: Test getBundleInfoForSelfSync with fileContextMenuConfig flag.
+    /**
+     * @tc.name   getBundleInfoForSelfSyncFileContextMenu
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_7061
+     * @tc.desc   Test getBundleInfoForSelfSync with fileContextMenuConfig flag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getBundleInfoForSelfSyncFileContextMenu', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let data = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE |
@@ -87,10 +90,13 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo2_2200
-     * @tc.name: getBundleInfoOtherUnPermissionApi14
-     * @tc.desc: Test getBundleInfo unPermission query other bundle for api14.
+    /**
+     * @tc.name   getBundleInfoOtherUnPermissionApi14
+     * @tc.number Sub_Bms_Framework_Query_AppInfo2_2200
+     * @tc.desc   Test getBundleInfo unPermission query other bundle for api14.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getBundleInfoOtherUnPermissionApi14', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       try {
@@ -133,10 +139,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo2_2300
-     * @tc.name: getBundleInfoSyncOtherUnPermissionApi14
-     * @tc.desc: Test getBundleInfoSync unPermission query other bundle for api14.
+    /**
+     * @tc.name   getBundleInfoSyncOtherUnPermissionApi14
+     * @tc.number Sub_Bms_Framework_Query_AppInfo2_2300
+     * @tc.desc   Test getBundleInfoSync unPermission query other bundle for api14.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getBundleInfoSyncOtherUnPermissionApi14', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       try {
@@ -158,10 +167,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo2_2400
-     * @tc.name: getBundleNameByUidSyncUnPermissionApi14
-     * @tc.desc: Test getBundleNameByUidSync unPermission for api14.
+    /**
+     * @tc.name   getBundleNameByUidSyncUnPermissionApi14
+     * @tc.number Sub_Bms_Framework_Query_AppInfo2_2400
+     * @tc.desc   Test getBundleNameByUidSync unPermission for api14.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getBundleNameByUidSyncUnPermissionApi14', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       try {
@@ -175,10 +187,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo2_2500
-     * @tc.name: getBundleNameByUidUnPermissionApi14
-     * @tc.desc: Test getBundleNameByUid unPermission for api14.
+    /**
+     * @tc.name   getBundleNameByUidUnPermissionApi14
+     * @tc.number Sub_Bms_Framework_Query_AppInfo2_2500
+     * @tc.desc   Test getBundleNameByUid unPermission for api14.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleNameByUidUnPermissionApi14', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
       try {
@@ -209,10 +224,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo2_2600
-     * @tc.name: getAppCloneIdentityUnPermissionApi14
-     * @tc.desc: Test getAppCloneIdentity unPermission for api14.
+    /**
+     * @tc.name   getAppCloneIdentityUnPermissionApi14
+     * @tc.number Sub_Bms_Framework_Query_AppInfo2_2600
+     * @tc.desc   Test getAppCloneIdentity unPermission for api14.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getAppCloneIdentityUnPermissionApi14', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
       try {
@@ -232,10 +250,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Overlay_Query_0300
-     * @tc.name: GetOverlayModuleInfoModuleNameNotInstall
-     * @tc.desc: The query fails when the incoming moduleName is not installed
+    /**
+     * @tc.name   GetOverlayModuleInfoModuleNameNotInstall
+     * @tc.number Sub_Bms_Framework_Overlay_Query_0300
+     * @tc.desc   The query fails when the incoming moduleName is not installed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetOverlayModuleInfoModuleNameNotInstall',  TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async  (done: Function) =>{
       try {
@@ -264,10 +285,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Overlay_Query_0400
-     * @tc.name: GetOverlayModuleInfoModuleNameNotOverlay
-     * @tc.desc: The query fails when the incoming moduleName is not overlay
+    /**
+     * @tc.name   GetOverlayModuleInfoModuleNameNotOverlay
+     * @tc.number Sub_Bms_Framework_Overlay_Query_0400
+     * @tc.desc   The query fails when the incoming moduleName is not overlay
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetOverlayModuleInfoModuleNameNotOverlay',  TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async  (done: Function) =>{
       try {

@@ -40,12 +40,12 @@ export default function setShapeClipTest() {
       done();
     });
     /**
-     * @tc.number    setShapeClipTest_0010
-     * @tc.name      setShapeClipTest_0010
-     * @tc.desc      renderNode: setShapeClip
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   setShapeClipTest_0010
+     * @tc.number setShapeClipTest_0010
+     * @tc.desc   renderNode: setShapeClip
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setShapeClipTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('setShapeClipTest_0010 START');

@@ -47,12 +47,12 @@ export default function RichEditor7() {
       console.info("RichEditor7 after each called");
     });
     /**
-     * @tc.number    RichEditor7_0100
-     * @tc.name      RichEditor7_0100
-     * @tc.desc      Test stop edinting function in RichEditor.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   RichEditor7_0100
+     * @tc.number RichEditor7_0100
+     * @tc.desc   Test stop edinting function in RichEditor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditor7_0100', Level.LEVEL2, async (done: Function) => {
       // Test stop
@@ -76,12 +76,12 @@ export default function RichEditor7() {
       done();
     });
     /**
-     * @tc.number    RichEditor7_0200
-     * @tc.name      RichEditor7_0200
-     * @tc.desc      Test onSubmit callback return EnterKeyType when keepEditableState is false.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   RichEditor7_0200
+     * @tc.number RichEditor7_0200
+     * @tc.desc   Test onSubmit callback return EnterKeyType when keepEditableState is false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditor7_0200', Level.LEVEL2, async (done: Function) => {
       // Test stop
@@ -109,12 +109,12 @@ export default function RichEditor7() {
       done();
     });
     /**
-     * @tc.number    RichEditor7_0300
-     * @tc.name      RichEditor7_0300
-     * @tc.desc       Test onSubmit callback return EnterKeyType when keepEditableState is true.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   RichEditor7_0300
+     * @tc.number RichEditor7_0300
+     * @tc.desc   Test onSubmit callback return EnterKeyType when keepEditableState is true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditor7_0300', Level.LEVEL2, async (done: Function) => {
       // Test stop

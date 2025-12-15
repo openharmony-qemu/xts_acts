@@ -125,9 +125,12 @@ bool CanUseVideoCodec()
 }
 
 /**
- * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_0100
- * @tc.name      : stop at end of stream
- * @tc.desc      : Basic function test
+ * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_0100
+ * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_0100
+ * @tc.desc   Basic function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsVideoDecEncNdkTest, SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_0100, TestSize.Level1)
 {
@@ -185,9 +188,12 @@ HWTEST_F(ActsVideoDecEncNdkTest, SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_010
 }
 
 /**
- * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_0200
- * @tc.name      : reset at end of stream
- * @tc.desc      : Basic function test
+ * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_0200
+ * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_0200
+ * @tc.desc   Basic function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsVideoDecEncNdkTest, SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_0200, TestSize.Level1)
 {
@@ -229,10 +235,13 @@ HWTEST_F(ActsVideoDecEncNdkTest, SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_020
     ASSERT_EQ(AV_ERR_OK, vDecEncSample->CalcuError());
 }
 
- /**
- * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_0300
- * @tc.name      : release at end of stream
- * @tc.desc      : Basic function test
+/**
+ * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_0300
+ * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_0300
+ * @tc.desc   Basic function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsVideoDecEncNdkTest, SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_0300, TestSize.Level1)
 {
@@ -272,10 +281,13 @@ HWTEST_F(ActsVideoDecEncNdkTest, SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_030
 }
 
 /**
-* @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_0400
-* @tc.name      : flush at running
-* @tc.desc      : Basic function test
-*/
+ * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_0400
+ * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_0400
+ * @tc.desc   Basic function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsVideoDecEncNdkTest, SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_0400, TestSize.Level1)
 {
     if (!CanUseVideoCodec() || !g_capAvcResult) {
@@ -328,9 +340,12 @@ HWTEST_F(ActsVideoDecEncNdkTest, SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_040
 
 
 /**
- * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_0500
- * @tc.name      : flush dec at eos and restart
- * @tc.desc      : Basic function test
+ * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_0500
+ * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_0500
+ * @tc.desc   Basic function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsVideoDecEncNdkTest, SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_0500, TestSize.Level1)
 {
@@ -385,9 +400,12 @@ HWTEST_F(ActsVideoDecEncNdkTest, SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_050
 
 
 /**
- * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_0600
- * @tc.name      : stop at running and restart to eos
- * @tc.desc      : Basic function test
+ * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_0600
+ * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_0600
+ * @tc.desc   Basic function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsVideoDecEncNdkTest, SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_0600, TestSize.Level1)
 {
@@ -440,9 +458,12 @@ HWTEST_F(ActsVideoDecEncNdkTest, SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_060
 
 
 /**
- * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_0700
- * @tc.name      : stop dec at eos and restart to eos
- * @tc.desc      : Basic function test
+ * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_0700
+ * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_0700
+ * @tc.desc   Basic function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsVideoDecEncNdkTest, SUB_MULTIMEDIA_MEDIA_VIDEO_DEC_ENC_FUNCTION_0700, TestSize.Level1)
 {

@@ -65,70 +65,70 @@ export default function WebViewEnumAndFontLibrary() {
     //   done();
     // })
 
-    /*
-    * @tc.number     : SUB_WEB_MESSAGELEVEL_0100
-    * @tc.name       : testMessageLevel001
-    * @tc.desc       : test MessageLevel
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testMessageLevel001
+     * @tc.number SUB_WEB_MESSAGELEVEL_0100
+     * @tc.desc   test MessageLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMessageLevel001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitMessageLevelDebug", 170400)
       Utils.registerEvent("testMessageLevel001", '1', 170410, done);
       sendEventByKey('buttonEnumAndFontLibrary', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_MESSAGELEVEL_0200
-    * @tc.name       : testMessageLevel002
-    * @tc.desc       : test MessageLevel
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testMessageLevel002
+     * @tc.number SUB_WEB_MESSAGELEVEL_0200
+     * @tc.desc   test MessageLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMessageLevel002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitMessageLevelInfo", 170400)
       Utils.registerEvent("testMessageLevel002", '2', 170420, done);
       sendEventByKey('buttonEnumAndFontLibrary', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_MESSAGELEVEL_0300
-    * @tc.name       : testMessageLevel003
-    * @tc.desc       : test MessageLevel
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testMessageLevel003
+     * @tc.number SUB_WEB_MESSAGELEVEL_0300
+     * @tc.desc   test MessageLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMessageLevel003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitMessageLevelWarn", 170400)
       Utils.registerEvent("testMessageLevel003", '3', 170430, done);
       sendEventByKey('buttonEnumAndFontLibrary', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_MESSAGELEVEL_0400
-    * @tc.name       : testMessageLevel004
-    * @tc.desc       : test MessageLevel
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testMessageLevel004
+     * @tc.number SUB_WEB_MESSAGELEVEL_0400
+     * @tc.desc   test MessageLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMessageLevel004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitMessageLevelError", 170400)
       Utils.registerEvent("testMessageLevel004", '4', 170440, done);
       sendEventByKey('buttonEnumAndFontLibrary', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_MESSAGELEVEL_0500
-    * @tc.name       : testMessageLevel005
-    * @tc.desc       : test MessageLevel
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testMessageLevel005
+     * @tc.number SUB_WEB_MESSAGELEVEL_0500
+     * @tc.desc   test MessageLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMessageLevel005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitMessageLevelLog", 170400)
       Utils.registerEvent("testMessageLevel005", '2', 170450, done);

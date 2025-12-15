@@ -49,10 +49,13 @@ export default function AsyncLifecycleTest() {
       await sleep(800);
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_AsynchronousCallback_0100
-     * @tc.name: SUB_Ability_AbilityRuntime_AsynchronousCallback_0100
-     * @tc.desc: Test onAcceptWant triggered when start a specified UIAbility.
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AsynchronousCallback_0100
+     * @tc.number SUB_Ability_AbilityRuntime_AsynchronousCallback_0100
+     * @tc.desc   Test onAcceptWant triggered when start a specified UIAbility.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AsynchronousCallback_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -92,10 +95,13 @@ export default function AsyncLifecycleTest() {
       hilog.info(DOMAIN, 'testTag', '%{public}s', `${tag} end`);
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_AsynchronousCallback_0200
-     * @tc.name: SUB_Ability_AbilityRuntime_AsynchronousCallback_0200
-     * @tc.desc: Test onAcceptWantAsync triggered when start a specified UIAbility.
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AsynchronousCallback_0200
+     * @tc.number SUB_Ability_AbilityRuntime_AsynchronousCallback_0200
+     * @tc.desc   Test onAcceptWantAsync triggered when start a specified UIAbility.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AsynchronousCallback_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -133,10 +139,13 @@ export default function AsyncLifecycleTest() {
       hilog.info(DOMAIN, 'testTag', '%{public}s', `${tag} end`);
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_AsynchronousCallback_0300
-     * @tc.name: SUB_Ability_AbilityRuntime_AsynchronousCallback_0300
-     * @tc.desc: Test onAcceptWantAsync only triggered when start a specified UIAbility.
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AsynchronousCallback_0300
+     * @tc.number SUB_Ability_AbilityRuntime_AsynchronousCallback_0300
+     * @tc.desc   Test onAcceptWantAsync only triggered when start a specified UIAbility.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AsynchronousCallback_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -174,10 +183,13 @@ export default function AsyncLifecycleTest() {
       hilog.info(DOMAIN, 'testTag', '%{public}s', `${tag} end`);
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_AsynchronousCallback_1400
-     * @tc.name: SUB_Ability_AbilityRuntime_AsynchronousCallback_1400
-     * @tc.desc: Test onAcceptWantAsync only triggered when start a specified UIAbility in another module.
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AsynchronousCallback_1400
+     * @tc.number SUB_Ability_AbilityRuntime_AsynchronousCallback_1400
+     * @tc.desc   Test onAcceptWantAsync only triggered when start a specified UIAbility in another module.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AsynchronousCallback_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

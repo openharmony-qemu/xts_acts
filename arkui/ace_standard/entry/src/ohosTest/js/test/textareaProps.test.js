@@ -80,9 +80,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaIdProp
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaIdProp', Level.LEVEL0, async function(done) {
             console.info('testtextAreaIdProp START');
@@ -98,9 +101,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaClassProp
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaClassProp', Level.LEVEL0, async function(done) {
             console.info('testtextAreaClassProp START');
@@ -116,9 +122,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testtextAreaClassPropNone START');
@@ -136,9 +145,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaRefProp
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaRefProp', Level.LEVEL0, async function(done) {
             console.info('testtextAreaRefProp START');
@@ -155,9 +167,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testtextAreaRefPropNone START');
@@ -175,9 +190,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testtextAreaDisabledPropTrue START');
@@ -194,9 +212,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testtextAreaDisabledPropFalse START');
@@ -213,9 +234,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testtextAreaDisabledPropNone START');
@@ -232,9 +256,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testtextAreaFocusablePropTrue START');
@@ -251,9 +278,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testtextAreaFocusablePropFalse START');
@@ -270,9 +300,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testtextAreaFocusablePropNone START');
@@ -289,9 +322,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaDataProp
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaDataProp', Level.LEVEL0, async function(done) {
             console.info('testtextAreaDataProp START');
@@ -309,9 +345,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testtextAreaDataPropNone START');
@@ -329,9 +368,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testtextAreaClickEffectPropSmall START');
@@ -348,9 +390,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testtextAreaClickEffectPropMedium START');
@@ -367,9 +412,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testtextAreaClickEffectPropLarge START');
@@ -386,9 +434,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testtextAreaClickEffectPropNone START');
@@ -406,9 +457,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testtextAreaDirPropRtl START');
@@ -425,9 +479,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testtextAreaDirPropLtr START');
@@ -444,9 +501,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testtextAreaDirPropAuto START');
@@ -463,9 +523,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testtextAreaDirPropNone START');
@@ -482,9 +545,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaForPropNull', Level.LEVEL0, async function(done) {
             console.info('testtextAreaForPropNull START');
@@ -502,9 +568,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaForPropOne', Level.LEVEL0, async function(done) {
             console.info('testtextAreaForPropOne START');
@@ -522,9 +591,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaForPropThree', Level.LEVEL0, async function(done) {
             console.info('testtextAreaForPropThree START');
@@ -542,9 +614,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testtextAreaIfPropTrue START');
@@ -562,9 +637,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testtextAreaShowPropTrue START');
@@ -582,9 +660,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testtextAreaShowPropFalse START');
@@ -602,9 +683,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testtextAreaShowPropNone START');
@@ -622,9 +706,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaPlaceholderPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaPlaceholderPropNone', Level.LEVEL0, async function(done) {
             console.info('testtextAreaXsPropNone START');
@@ -642,9 +729,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaPlaceholderProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaPlaceholderProp', Level.LEVEL0, async function(done) {
             console.info('testtextAreaXsPropNone START');
@@ -662,9 +752,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaMaxlengthProp20
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaMaxlengthProp20', Level.LEVEL0, async function(done) {
             console.info('testtextAreaXsPropNone START');
@@ -682,9 +775,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaHeadericonPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaHeadericonPropNull', Level.LEVEL0, async function(done) {
             console.info('testtextAreaXsPropObject START');
@@ -702,9 +798,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaHeadericonProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaHeadericonProp', Level.LEVEL0, async function(done) {
             console.info('testtextAreaXsPropObject START');
@@ -722,9 +821,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaExtendPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaExtendPropNone', Level.LEVEL0, async function(done) {
             console.info('testtextAreaXsPropObject START');
@@ -742,9 +844,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaExtendPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaExtendPropFalse', Level.LEVEL0, async function(done) {
             console.info('testtextAreaXsPropObject START');
@@ -762,9 +867,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaExtendProptTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaExtendProptTrue', Level.LEVEL0, async function(done) {
             console.info('testtextAreaXsPropObject START');
@@ -782,9 +890,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaValuePropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaValuePropNull', Level.LEVEL0, async function(done) {
             console.info('testtextAreaXsPropObject START');
@@ -802,9 +913,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaValueProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaValueProp', Level.LEVEL0, async function(done) {
             console.info('testtextAreaXsPropObject START');
@@ -822,9 +936,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaShowcounterPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaShowcounterPropNone', Level.LEVEL0, async function(done) {
             console.info('testtextAreaXsPropObject START');
@@ -842,9 +959,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaShowcounterPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaShowcounterPropFalse', Level.LEVEL0, async function(done) {
             console.info('testtextAreaXsPropObject START');
@@ -862,9 +982,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaShowcounterProptTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaShowcounterProptTrue', Level.LEVEL0, async function(done) {
             console.info('testtextAreaXsPropObject START');
@@ -882,9 +1005,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaAutofocusPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaAutofocusPropNone', Level.LEVEL0, async function(done) {
             console.info('testtextAreaXsPropObject START');
@@ -902,9 +1028,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaAutofocusPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaAutofocusPropFalse', Level.LEVEL0, async function(done) {
             console.info('testtextAreaXsPropObject START');
@@ -922,9 +1051,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaAutofocusProptTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaAutofocusProptTrue', Level.LEVEL0, async function(done) {
             console.info('testtextAreaXsPropObject START');
@@ -942,9 +1074,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaSoftkeyboardenabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaSoftkeyboardenabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testtextAreaXsPropObject START');
@@ -962,9 +1097,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaSoftkeyboardenabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaSoftkeyboardenabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testtextAreaXsPropObject START');
@@ -982,9 +1120,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaSoftkeyboardenabledProptTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaSoftkeyboardenabledProptTrue', Level.LEVEL0, async function(done) {
             console.info('testtextAreaXsPropObject START');
@@ -1002,9 +1143,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaMenuoptionsPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaMenuoptionsPropNone', Level.LEVEL0, async function(done) {
             console.info('testtextAreaXsPropObject START');
@@ -1022,9 +1166,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaMenuoptionsProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaMenuoptionsProp', Level.LEVEL0, async function(done) {
             console.info('testtextAreaXsPropObject START');
@@ -1042,9 +1189,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaSelectedstartPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaSelectedstartPropNone', Level.LEVEL0, async function(done) {
             console.info('testtextAreaXsPropObject START');
@@ -1062,9 +1212,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaSelectedstartProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaSelectedstartProp', Level.LEVEL0, async function(done) {
             console.info('testtextAreaXsPropObject START');
@@ -1082,9 +1235,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaSelectedEndtPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaSelectedEndtPropNone', Level.LEVEL0, async function(done) {
             console.info('testtextAreaXsPropObject START');
@@ -1102,9 +1258,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testtextAreaShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testtextAreaSelectedEndProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testtextAreaSelectedEndProp', Level.LEVEL0, async function(done) {
             console.info('testtextAreaXsPropObject START');

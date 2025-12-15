@@ -30,12 +30,12 @@ export default function photoPickerPromise(abilityContext: Context) {
     })
 
     /**
-     * @tc.number   : SUB_STORAGE_PHOTOPICKER_SELECT_PROMISE_0000
-     * @tc.name   : test_Photopicker_Select_Promise_000
-     * @tc.desc   : select image
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 3
+     * @tc.name   test_Photopicker_Select_Promise_000
+     * @tc.number SUB_STORAGE_PHOTOPICKER_SELECT_PROMISE_0000
+     * @tc.desc   select image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Photopicker_Select_Promise_000", Level.LEVEL0, async (done: Function) => {
       let testNum = "test_Photopicker_Select_Promise_000";
@@ -46,12 +46,12 @@ export default function photoPickerPromise(abilityContext: Context) {
     });
 
     /**
-     * @tc.number   : SUB_STORAGE_PHOTOPICKER_SELECT_PROMISE_0100
-     * @tc.name   : test_Photopicker_Select_Promise_001
-     * @tc.desc   : select video
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 3
+     * @tc.name   test_Photopicker_Select_Promise_001
+     * @tc.number SUB_STORAGE_PHOTOPICKER_SELECT_PROMISE_0100
+     * @tc.desc   select video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Photopicker_Select_Promise_001", Level.LEVEL0, async (done: Function) => {
       let testNum = "test_Photopicker_Select_Promise_001";
@@ -62,12 +62,12 @@ export default function photoPickerPromise(abilityContext: Context) {
     });
 
     /**
-     * @tc.number   : SUB_STORAGE_PHOTOPICKER_SELECT_PROMISE_0200
-     * @tc.name   : test_Photopicker_Select_Promise_002
-     * @tc.desc   : select image&video
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 3
+     * @tc.name   test_Photopicker_Select_Promise_002
+     * @tc.number SUB_STORAGE_PHOTOPICKER_SELECT_PROMISE_0200
+     * @tc.desc   select image&video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Photopicker_Select_Promise_002", Level.LEVEL0, async (done: Function) => {
       let testNum = "test_Photopicker_Select_Promise_002";
@@ -78,12 +78,12 @@ export default function photoPickerPromise(abilityContext: Context) {
     });
 
     /**
-     * @tc.number   : SUB_STORAGE_PHOTOPICKER_SELECT_PROMISE_0300
-     * @tc.name   : test_Photopicker_Select_Promise_003
-     * @tc.desc   : select image&video, singleSelect
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 0
+     * @tc.name   test_Photopicker_Select_Promise_003
+     * @tc.number SUB_STORAGE_PHOTOPICKER_SELECT_PROMISE_0300
+     * @tc.desc   select image&video, singleSelect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Photopicker_Select_Promise_003", Level.LEVEL0, async (done: Function) => {
       let testNum = "test_Photopicker_Select_Promise_003";
@@ -95,12 +95,12 @@ export default function photoPickerPromise(abilityContext: Context) {
     });
 
     /**
-     * @tc.number   : SUB_STORAGE_PHOTOPICKER_SELECT_PROMISE_0400
-     * @tc.name   : test_Photopicker_Select_Promise_004
-     * @tc.desc   : select image&video, multipleselect
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 1
+     * @tc.name   test_Photopicker_Select_Promise_004
+     * @tc.number SUB_STORAGE_PHOTOPICKER_SELECT_PROMISE_0400
+     * @tc.desc   select image&video, multipleselect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Photopicker_Select_Promise_004", Level.LEVEL0, async (done: Function) => {
       let testNum = "test_Photopicker_Select_Promise_004";
@@ -112,12 +112,12 @@ export default function photoPickerPromise(abilityContext: Context) {
     });
 
     /**
-     * @tc.number   : SUB_STORAGE_PHOTOPICKER_SELECT_PROMISE_0500
-     * @tc.name   : test_Photopicker_Select_Promise_005
-     * @tc.desc   : select image&video, default selectNum
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 3
+     * @tc.name   test_Photopicker_Select_Promise_005
+     * @tc.number SUB_STORAGE_PHOTOPICKER_SELECT_PROMISE_0500
+     * @tc.desc   select image&video, default selectNum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Photopicker_Select_Promise_005", Level.LEVEL0, async (done: Function) => {
       let testNum = "test_Photopicker_Select_Promise_005";
@@ -129,12 +129,12 @@ export default function photoPickerPromise(abilityContext: Context) {
     });
 
     /**
-     * @tc.number   : SUB_STORAGE_PHOTOPICKER_SELECT_PROMISE_0600
-     * @tc.name   : test_Photopicker_Select_Promise_006
-     * @tc.desc   : select without option
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 3
+     * @tc.name   test_Photopicker_Select_Promise_006
+     * @tc.number SUB_STORAGE_PHOTOPICKER_SELECT_PROMISE_0600
+     * @tc.desc   select without option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Photopicker_Select_Promise_006", Level.LEVEL0, async (done: Function) => {
       let testNum = "test_Photopicker_Select_Promise_006";
@@ -144,12 +144,12 @@ export default function photoPickerPromise(abilityContext: Context) {
     });
 
     /**
-     * @tc.number   : SUB_STORAGE_PHOTOPICKER_SELECT_PROMISE_0700
-     * @tc.name   : test_Photopicker_Select_Promise_007
-     * @tc.desc   : select without option
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 3
+     * @tc.name   test_Photopicker_Select_Promise_007
+     * @tc.number SUB_STORAGE_PHOTOPICKER_SELECT_PROMISE_0700
+     * @tc.desc   select without option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Photopicker_Select_Promise_007", Level.LEVEL0, async (done: Function) => {
       try {
@@ -177,12 +177,12 @@ export default function photoPickerPromise(abilityContext: Context) {
     });
 
     /**
-     * @tc.number   : SUB_STORAGE_PHOTOPICKER_SAVE_PROMISE_0000
-     * @tc.name   : test_Photopicker_Save_Promise_000
-     * @tc.desc   : save jpg in Pictures
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 0
+     * @tc.name   test_Photopicker_Save_Promise_000
+     * @tc.number SUB_STORAGE_PHOTOPICKER_SAVE_PROMISE_0000
+     * @tc.desc   save jpg in Pictures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Photopicker_Save_Promise_000", Level.LEVEL0, async (done: Function) => {
       let testNum = "test_Photopicker_Save_Promise_000";
@@ -193,12 +193,12 @@ export default function photoPickerPromise(abilityContext: Context) {
     });
 
     /**
-     * @tc.number   : SUB_STORAGE_PHOTOPICKER_SAVE_PROMISE_0100
-     * @tc.name   : test_Photopicker_Save_Promise_001
-     * @tc.desc   : save mp4 in Videos
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 3
+     * @tc.name   test_Photopicker_Save_Promise_001
+     * @tc.number SUB_STORAGE_PHOTOPICKER_SAVE_PROMISE_0100
+     * @tc.desc   save mp4 in Videos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Photopicker_Save_Promise_001", Level.LEVEL0, async (done: Function) => {
       let testNum = "test_Photopicker_Save_Promise_001";
@@ -209,12 +209,12 @@ export default function photoPickerPromise(abilityContext: Context) {
     });
 
     /**
-     * @tc.number   : SUB_STORAGE_PHOTOPICKER_SAVE_PROMISE_0200
-     * @tc.name   : test_Photopicker_Save_Promise_002
-     * @tc.desc   : save without option, cancel
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 3
+     * @tc.name   test_Photopicker_Save_Promise_002
+     * @tc.number SUB_STORAGE_PHOTOPICKER_SAVE_PROMISE_0200
+     * @tc.desc   save without option, cancel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Photopicker_Save_Promise_002", Level.LEVEL0, async (done: Function) => {
       let testNum = "test_Photopicker_Save_Promise_002";

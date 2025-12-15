@@ -86,12 +86,12 @@ export default function getHdrComposedPixelmapTest() {
     });
 
     /**
-     * @tc.number    : PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_001
-     * @tc.name      : picture_getHdrComposedPixelmap_abnormal_promise_001
-     * @tc.desc      : getHdrComposedPixelmap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   picture_getHdrComposedPixelmap_abnormal_promise_001
+     * @tc.number PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_001
+     * @tc.desc   getHdrComposedPixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('picture_getHdrComposedPixelmap_abnormal_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'picture_getHdrComposedPixelmap_abnormal_promise_001';

@@ -46,13 +46,13 @@ export default function SelectionMenuOptions() {
       console.info("SelectionMenuOptions after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-    * @tc.name         SelectionMenuOptions0003
-    * @tc.desc        Test  Text by select
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   SelectionMenuOptions0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   Test  Text by select
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SelectionMenuOptions0003', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -78,13 +78,13 @@ export default function SelectionMenuOptions() {
     });
 
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0006
-    * @tc.name         SelectionMenuOptions0006
-    * @tc.desc        Test image Text by select
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   SelectionMenuOptions0006
+     * @tc.number SUB_ACE_BASIC_ETS_API_0006
+     * @tc.desc   Test image Text by select
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SelectionMenuOptions0006', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -110,13 +110,13 @@ export default function SelectionMenuOptions() {
     });
 
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0009
-    * @tc.name         SelectionMenuOptions0009
-    * @tc.desc        Test mixed Text by select
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   SelectionMenuOptions0009
+     * @tc.number SUB_ACE_BASIC_ETS_API_0009
+     * @tc.desc   Test mixed Text by select
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SelectionMenuOptions0009', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();

@@ -43,12 +43,12 @@ export default function navigationJsunit() {
     });
 
     /**
+     * @tc.name   NavigationJsunit_1000
      * @tc.number NavigationJsunit_1000
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationJsunit_1000', Level.LEVEL0, async (done: Function) => {
       console.info('[NavigationJsunit_1000] START');
@@ -62,12 +62,12 @@ export default function navigationJsunit() {
     });
 
     /**
+     * @tc.name   NavigationJsunit_1001
      * @tc.number NavigationJsunit_1001
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationJsunit_1001', Level.LEVEL0, async (done: Function) => {
      
@@ -82,12 +82,12 @@ export default function navigationJsunit() {
     });
 
     /**
+     * @tc.name   NavigationJsunit_1002
      * @tc.number NavigationJsunit_1002
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationJsunit_1002', Level.LEVEL0, async (done: Function) => {
      
@@ -102,12 +102,12 @@ export default function navigationJsunit() {
     });
 
     /**
+     * @tc.name   NavigationJsunit_1003
      * @tc.number NavigationJsunit_1003
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationJsunit_1003', Level.LEVEL0, async (done: Function) => {
      
@@ -122,12 +122,12 @@ export default function navigationJsunit() {
     });
 
     /**
+     * @tc.name   NavigationJsunit_1004
      * @tc.number NavigationJsunit_1004
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationJsunit_1004', Level.LEVEL0, async (done: Function) => {
      
@@ -142,12 +142,12 @@ export default function navigationJsunit() {
     });
 
     /**
+     * @tc.name   NavigationJsunit_1005
      * @tc.number NavigationJsunit_1005
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationJsunit_1005', Level.LEVEL0, async (done: Function) => {
      
@@ -162,12 +162,12 @@ export default function navigationJsunit() {
     });
 
     /**
+     * @tc.name   NavigationJsunit_1006
      * @tc.number NavigationJsunit_1006
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationJsunit_1006', Level.LEVEL0, async (done: Function) => {
      
@@ -182,12 +182,12 @@ export default function navigationJsunit() {
     });
 
     /**
+     * @tc.name   NavigationJsunit_1007
      * @tc.number NavigationJsunit_1007
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationJsunit_1007', Level.LEVEL0, async (done: Function) => {
      
@@ -202,12 +202,12 @@ export default function navigationJsunit() {
     });
 
     /**
+     * @tc.name   NavigationJsunit_1008
      * @tc.number NavigationJsunit_1008
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationJsunit_1008', Level.LEVEL0, async (done: Function) => {
       console.info('[NavigationJsunit_1008] START');
@@ -221,12 +221,12 @@ export default function navigationJsunit() {
     });
 
     /**
+     * @tc.name   NavigationJsunit_1009
      * @tc.number NavigationJsunit_1009
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationJsunit_1009', Level.LEVEL0, async (done: Function) => {
      
@@ -241,12 +241,12 @@ export default function navigationJsunit() {
     });
 
     /**
+     * @tc.name   NavigationJsunit_1010
      * @tc.number NavigationJsunit_1010
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationJsunit_1010', Level.LEVEL0, async (done: Function) => {
      
@@ -261,12 +261,12 @@ export default function navigationJsunit() {
     });
 
     /**
+     * @tc.name   NavigationJsunit_1011
      * @tc.number NavigationJsunit_1011
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationJsunit_1011', Level.LEVEL0, async (done: Function) => {
      

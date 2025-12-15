@@ -46,13 +46,13 @@ export default function ParagraphStyle3Test() {
       console.info("ParagraphStyle3 after each called");
     });
 
-    /*
-    * @tc.number       ParagraphStyle30001
-    * @tc.name         ParagraphStyle30001
-    * @tc.desc        The ParagraphStyle Attributes
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   ParagraphStyle30001
+     * @tc.number ParagraphStyle30001
+     * @tc.desc   The ParagraphStyle Attributes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ParagraphStyle30001', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();

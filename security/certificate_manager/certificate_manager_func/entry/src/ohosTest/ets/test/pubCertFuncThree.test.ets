@@ -32,12 +32,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_GetPriCertJsApi_Func_0100
      * @tc.number SUB_Security_CertManager_GetPriCertJsApi_Func_0100
-     * @tc.name test getPrivateCertificate
-     * @tc.desc abnormal test
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_GetPriCertJsApi_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0100: started ");
@@ -54,12 +54,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_GetPriCertJsApi_Func_0101
      * @tc.number SUB_Security_CertManager_GetPriCertJsApi_Func_0101
-     * @tc.name test getPrivateCertificate
-     * @tc.desc abnormal test
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_GetPriCertJsApi_Func_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0101: started ");
@@ -85,12 +85,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_GetPriCertJsApi_Func_0102
      * @tc.number SUB_Security_CertManager_GetPriCertJsApi_Func_0102
-     * @tc.name test getPrivateCertificate
-     * @tc.desc abnormal test
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_GetPriCertJsApi_Func_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0102: started ");
@@ -107,12 +107,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_GetPriCertJsApi_Func_0103
      * @tc.number SUB_Security_CertManager_GetPriCertJsApi_Func_0103
-     * @tc.name test getPrivateCertificate
-     * @tc.desc abnormal test
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_GetPriCertJsApi_Func_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0103: started ");
@@ -138,12 +138,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_GetPriCertJsApi_Func_0105
      * @tc.number SUB_Security_CertManager_GetPriCertJsApi_Func_0105
-     * @tc.name test init
-     * @tc.desc abnormal test
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_GetPriCertJsApi_Func_0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0105: started ");
@@ -174,12 +174,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_GetPriCertJsApi_Func_0106
      * @tc.number SUB_Security_CertManager_GetPriCertJsApi_Func_0106
-     * @tc.name test init
-     * @tc.desc abnormal test
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_GetPriCertJsApi_Func_0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0106: started ");
@@ -202,12 +202,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_GetPriCertJsApi_Func_0109
      * @tc.number SUB_Security_CertManager_GetPriCertJsApi_Func_0109
-     * @tc.name test init
-     * @tc.desc abnormal test
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_GetPriCertJsApi_Func_0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0109: started ");
@@ -223,12 +223,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_GetPriCertJsApi_Func_0110
      * @tc.number SUB_Security_CertManager_GetPriCertJsApi_Func_0110
-     * @tc.name test init
-     * @tc.desc abnormal test
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_GetPriCertJsApi_Func_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0110: started ");
@@ -245,12 +245,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_InstallPrivateCertificate_Func_0200
      * @tc.number SUB_Security_CertManager_InstallPrivateCertificate_Func_0200
-     * @tc.name test init
-     * @tc.desc abnormal test
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_InstallPrivateCertificate_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("SUB_Security_CertManager_InstallPrivateCertificate_Func_0200: started ");

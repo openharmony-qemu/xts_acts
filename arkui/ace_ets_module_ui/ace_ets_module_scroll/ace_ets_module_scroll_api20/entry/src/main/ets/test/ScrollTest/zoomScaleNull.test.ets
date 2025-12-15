@@ -44,12 +44,12 @@ export default function zoomScaleNull() {
     });
 
     /**
-     * @tc.number    zoomScaleNull_001
-     * @tc.name      zoomScaleNull_0100
-     * @tc.desc      Scale setting properties of Scroll component.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   zoomScaleNull_0100
+     * @tc.number zoomScaleNull_001
+     * @tc.desc   Scale setting properties of Scroll component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('zoomScaleNull_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[zoomScaleNull_0100] START');
@@ -70,12 +70,12 @@ export default function zoomScaleNull() {
     });
 
     /**
-     * @tc.number    zoomScaleNull_002
-     * @tc.name      zoomScaleNull_0200
-     * @tc.desc      Scale attribute callback of Scroll component.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   zoomScaleNull_0200
+     * @tc.number zoomScaleNull_002
+     * @tc.desc   Scale attribute callback of Scroll component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('zoomScaleNull_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[zoomScaleNull_0200] START');

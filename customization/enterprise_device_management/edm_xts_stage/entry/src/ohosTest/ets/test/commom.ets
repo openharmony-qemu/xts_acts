@@ -36,7 +36,17 @@ const SELFWANT: Want = {
 
 const INVALID_WANT: Want = {
   bundleName: 'com.example.myapplication'
-}
+};
+
+const OTHER_WANT: Want = {
+  bundleName: "com.example.extensionzerotest",
+  abilityName: "com.example.extensionzerotest.EnterpriseAdminAbility"
+};
+
+const NOT_EXIST_WANT: Want = {
+  bundleName: "not.exitst.bundle",
+  abilityName: "not.exitst.ability"
+};
 
 const AUTOSTARTAPP1: Want = {
   bundleName: "com.edm.acts.normal",
@@ -237,6 +247,13 @@ const APP_IDS_AND_IDENTIFIER_1: Array<string> = [
   "1234567890123456789",
 ];
 
+const MARKET_APPS: Array<string> = [
+  "test_bundle",
+  "test_bundle_2",
+];
+
+const ERROR_MARKET_APPS: Array<string> = [];
+
 export {
   BUNDLENAME1, ENTINFO1, SELFWANT, AUTOSTARTAPP1, AUTOSTARTAPP2, SELFHAPNAME, COMPANYNAME2, DESCRIPTION2,
   ENTINFO2, NETWORK_ETH_LOCAL, NETWORK_ETH_INVALID, DEFAULT_USER_ID, INVALID_USER_ID,
@@ -249,5 +266,6 @@ export {
   INVALID_BUNDLE_NAME, CURRENT_USER_ID, getCurrentUserId, DEFAULT_APP_INDEX, INVALID_APP_INDEX,
   bundleNamesInit, BUNDLE_NAME_200, BUNDLE_NAME_201, TEST_PERMISSION_MANAGED_STATE_GRANTED,
   TEST_PERMISSION_MANAGED_STATE_DENIED, TEST_PERMISSION_MANAGED_STATE_DEFAULT, TEST_APP_INSTANCE,
-  TEST_PERMISSION_LIST_1, TEST_PERMISSION_1, TEST_INVALID_APP_INSTANCE, APP_IDS_AND_IDENTIFIER_1
+  TEST_PERMISSION_LIST_1, TEST_PERMISSION_1, TEST_INVALID_APP_INSTANCE, APP_IDS_AND_IDENTIFIER_1,
+  OTHER_WANT, NOT_EXIST_WANT, MARKET_APPS, ERROR_MARKET_APPS
 }

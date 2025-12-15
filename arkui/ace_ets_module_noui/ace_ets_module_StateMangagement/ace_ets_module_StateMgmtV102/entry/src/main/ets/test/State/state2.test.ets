@@ -60,13 +60,13 @@ export default function state2() {
     });
 
     /**
-		 * @tc.number    state2_0100
-		 * @tc.name      state2_0100
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+     * @tc.name   state2_0100
+     * @tc.number state2_0100
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('state2_0100', Level.LEVEL0, async (done: Function) => {
       console.info('state2_0100 START');
       let driver = await UiDriver.create()
@@ -84,13 +84,13 @@ export default function state2() {
     });
 
     /**
-		 * @tc.number    state2_0200
-		 * @tc.name      state2_0200
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+     * @tc.name   state2_0200
+     * @tc.number state2_0200
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('state2_0200', Level.LEVEL0, async (done: Function) => {
       console.info('state2_0200 START');
       let driver = await UiDriver.create()
@@ -108,13 +108,13 @@ export default function state2() {
     });
 
     /**
-		 * @tc.number    state2_0300
-		 * @tc.name      state2_0300
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+     * @tc.name   state2_0300
+     * @tc.number state2_0300
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('state2_0300', Level.LEVEL0, async (done: Function) => {
       console.info('state2_0300 START');
       let driver = await UiDriver.create()
@@ -136,13 +136,13 @@ export default function state2() {
     });
 
     /**
-		 * @tc.number    state2_0400
-		 * @tc.name      state2_0400
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+     * @tc.name   state2_0400
+     * @tc.number state2_0400
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('state2_0400', Level.LEVEL0, async (done: Function) => {
       console.info('state2_0400 START');
       let driver = await UiDriver.create()

@@ -25,10 +25,13 @@ const ERROR_CODE = 401;
 
 export default function setOverlayEnabled() {
   describe('setOverlayEnabled', () => {
-    /*
-     * @tc.number: Sub_Bms_Framework_Status_OverlayEnable_0100
-     * @tc.name: SetOverlayEnabledModuleNameIsNull
-     * @tc.desc: Failed to set when the incoming moduleName is empty
+    /**
+     * @tc.name   SetOverlayEnabledModuleNameIsNull
+     * @tc.number Sub_Bms_Framework_Status_OverlayEnable_0100
+     * @tc.desc   Failed to set when the incoming moduleName is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetOverlayEnabledModuleNameIsNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       try {
@@ -54,10 +57,13 @@ export default function setOverlayEnabled() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Status_OverlayEnable_0500
-     * @tc.name: SetOverlayEnabledModuleNameNotInstall
-     * @tc.desc: Failed to set when the incoming moduleName is not installed
+    /**
+     * @tc.name   SetOverlayEnabledModuleNameNotInstall
+     * @tc.number Sub_Bms_Framework_Status_OverlayEnable_0500
+     * @tc.desc   Failed to set when the incoming moduleName is not installed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetOverlayEnabledModuleNameNotInstall', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async () => {
       try {
@@ -83,10 +89,13 @@ export default function setOverlayEnabled() {
 
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Status_OverlayEnable_0600
-     * @tc.name: SetOverlayEnabledModuleNameIsNotOverlay
-     * @tc.desc: Failed to set when the incoming moduleName is not overlay
+    /**
+     * @tc.name   SetOverlayEnabledModuleNameIsNotOverlay
+     * @tc.number Sub_Bms_Framework_Status_OverlayEnable_0600
+     * @tc.desc   Failed to set when the incoming moduleName is not overlay
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SetOverlayEnabledModuleNameIsNotOverlay', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async () => {
       try {

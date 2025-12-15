@@ -47,12 +47,12 @@ export default function ApplyNormalAttributeTest() {
     });
 
     /**
-     * @tc.number    ApplyNormalAttributeTest_0100
-     * @tc.name      ApplyNormalAttributeTest_0100
-     * @tc.desc      AttributeUpdater ApplyNormalAttribute Test
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ApplyNormalAttributeTest_0100
+     * @tc.number ApplyNormalAttributeTest_0100
+     * @tc.desc   AttributeUpdater ApplyNormalAttribute Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ApplyNormalAttributeTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('ApplyNormalAttributeTest_0100 START');

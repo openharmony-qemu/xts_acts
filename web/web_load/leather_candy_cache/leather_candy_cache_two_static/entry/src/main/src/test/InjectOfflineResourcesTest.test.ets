@@ -28,23 +28,22 @@ export default function InjectOfflineResourcesTest() {
 
   describe('injectOfflineResourcesTest', (): void => {
     beforeAll(async (): Promise<void> => {
-      await Utils.msSleep(3000);
       console.log("App start")
     });
 
     beforeEach(async () => {
-      await Utils.msSleep(2000);
+      await Utils.msSleep(500);
       console.info("injectOfflineResourcesTest beforeEach start");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_INJECTOFFLINERESOURCES_STATIC_0100
-    * @tc.name       : testInjectOfflineResourcesStatic001
-    * @tc.desc       : test injectOfflineResources
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testInjectOfflineResourcesStatic001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_INJECTOFFLINERESOURCES_STATIC_0100
+     * @tc.desc   test injectOfflineResources
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testInjectOfflineResourcesStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
@@ -53,54 +52,50 @@ export default function InjectOfflineResourcesTest() {
         Utils.registerEvent("testInjectOfflineResources001", 401, 20001, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('injectOfflineResourcesTestButton', 10, '');
-        await Utils.msSleep(5000);
+        await Utils.msSleep(4000);
         done();
       })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_INJECTOFFLINERESOURCES_STATIC_0200
-    * @tc.name       : testInjectOfflineResourcesStatic002
-    * @tc.desc       : test injectOfflineResources
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testInjectOfflineResourcesStatic002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_INJECTOFFLINERESOURCES_STATIC_0200
+     * @tc.desc   test injectOfflineResources
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testInjectOfflineResourcesStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        await Utils.msSleep(2000);
         Utils.emitEvent("testInjectOfflineResources002", 10)
-        await Utils.msSleep(2000);
+        await Utils.msSleep(500);
         Utils.registerEvent("testInjectOfflineResources002", 401, 20002, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('injectOfflineResourcesTestButton', 10, '');
-        await Utils.msSleep(5000);
+        await Utils.msSleep(2000);
         done();
       })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_OFFLINERESOURCETYPE_STATIC_0100
-    * @tc.name       : testOfflineResourceTypeStatic001
-    * @tc.desc       : test OfflineResourceType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testOfflineResourceTypeStatic001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_OFFLINERESOURCETYPE_STATIC_0100
+     * @tc.desc   test OfflineResourceType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testOfflineResourceTypeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testOfflineResourceType001", 10)
-        await Utils.msSleep(3000);
-        let num: int = 3
+        await Utils.msSleep(500);
+        let num: byte = 3
         Utils.registerEvent("testMODULE_JS", Type.of(num) + ' ' + num, 20003, done);
-        await Utils.msSleep(1000);
         num = 2
         Utils.registerEvent("testCLASSIC_JS", Type.of(num) + ' ' + num, 20004, done);
-        await Utils.msSleep(1000);
         num = 1
         Utils.registerEvent("testCSS", Type.of(num) + ' ' + num, 20005, done);
-        await Utils.msSleep(1000);
         num = 0
         Utils.registerEvent("testIMAGE", Type.of(num) + ' ' + num, 20006, done);
-        await Utils.msSleep(1000);
+        await Utils.msSleep(2000);
         inspector.sendEventByKey('injectOfflineResourcesTestButton', 10, '');
-        await Utils.msSleep(5000);
+        await Utils.msSleep(4000);
         done();
       })
   })

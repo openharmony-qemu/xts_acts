@@ -109,9 +109,12 @@ static void TestAieClientSyncProcess(bool isAsync, bool isSyncProcessInputInfoNu
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientSyncProcess_01_0100
- * @tc.name   : 01. algorithmInfo中isAsync=false，inputInfo不为空，调用AieClientSyncProcess返回成功
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   testAieClientSyncProcessFunction0101
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientSyncProcess_01_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(AieClientSyncProcessFunctionTest, testAieClientSyncProcessFunction0101, Function | MediumTest | Level2)
 {
@@ -120,9 +123,12 @@ HWTEST_F(AieClientSyncProcessFunctionTest, testAieClientSyncProcessFunction0101,
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientSyncProcess_01_0200
- * @tc.name   : 02 algorithmInfo中isAsync=false，inputInfo为空，调用AieClientSyncProcess返回成功
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   testAieClientSyncProcessFunction0102
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientSyncProcess_01_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AieClientSyncProcessFunctionTest, testAieClientSyncProcessFunction0102, Function | MediumTest | Level3)
 {
@@ -131,9 +137,12 @@ HWTEST_F(AieClientSyncProcessFunctionTest, testAieClientSyncProcessFunction0102,
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientSyncProcess_02_0100
- * @tc.name   : 01. algorithmInfo中isAsync=true，调用AieClientSyncProcess返回失败
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   testAieClientSyncProcessFunction0201
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientSyncProcess_02_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AieClientSyncProcessFunctionTest, testAieClientSyncProcessFunction0201, Function | MediumTest | Level3)
 {

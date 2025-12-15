@@ -30,12 +30,14 @@ describe('ActsAbilityRunningInfosTest', function () {
         return false;
     }
 
-    /*
-    * @tc.number: ACTS_getProcessRunningInfos_0100
-    * @tc.name: Application running ability information query
-    * @tc.desc: Verify applications are started to query getProcessRunningInfos ability information
-    *           （by promise）
-    */
+    /**
+     * @tc.name   ACTS_getProcessRunningInfos_0100
+     * @tc.number ACTS_getProcessRunningInfos_0100
+     * @tc.desc   Verify applications are started to query getProcessRunningInfos ability information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_getProcessRunningInfos_0100', Level.LEVEL0, async function (done) {
         console.log('ACTS_getProcessRunningInfos_0100====<begin');
         var data = await appManager.getProcessRunningInfos()
@@ -44,12 +46,14 @@ describe('ActsAbilityRunningInfosTest', function () {
         done();
     })
 
-    /*
-    * @tc.number: ACTS_getProcessRunningInfos_0200
-    * @tc.name: Application running ability information query
-    * @tc.desc: Verify applications are started to query getProcessRunningInfos ability information
-    *           （by callback）
-    */
+    /**
+     * @tc.name   ACTS_getProcessRunningInfos_0200
+     * @tc.number ACTS_getProcessRunningInfos_0200
+     * @tc.desc   Verify applications are started to query getProcessRunningInfos ability information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_getProcessRunningInfos_0200', Level.LEVEL0, async function (done) {
         console.log('ACTS_getProcessRunningInfos_0200====<begin');
         appManager.getProcessRunningInfos((err, data) => {

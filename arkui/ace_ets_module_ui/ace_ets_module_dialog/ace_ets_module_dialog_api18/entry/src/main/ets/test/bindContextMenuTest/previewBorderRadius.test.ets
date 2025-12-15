@@ -43,13 +43,13 @@ export default function previewBorderRadius() {
     });
 
     /**
-    * @tc.number    BindContextMenu_previewBorderRadius_001
-    * @tc.name      BindContextMenu_previewBorderRadius_001
-    * @tc.desc      set bindContextMenu previewBorderRadius:20
-    * @tc.level:    Level 1
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   BindContextMenu_previewBorderRadius_001
+     * @tc.number BindContextMenu_previewBorderRadius_001
+     * @tc.desc   set bindContextMenu previewBorderRadius:20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('BindContextMenu_previewBorderRadius_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let tagName = 'BindContextMenu_previewBorderRadius_001';
       console.info('[' + tagName + '] START============================');
@@ -66,13 +66,13 @@ export default function previewBorderRadius() {
       done();
     });
     /**
-    * @tc.number    BindContextMenu_previewBorderRadius_002
-    * @tc.name      BindContextMenu_previewBorderRadius_002
-    * @tc.desc      set bindContextMenu previewBorderRadius:undefined
-    * @tc.level:    Level 1
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   BindContextMenu_previewBorderRadius_002
+     * @tc.number BindContextMenu_previewBorderRadius_002
+     * @tc.desc   set bindContextMenu previewBorderRadius:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('BindContextMenu_previewBorderRadius_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let tagName = 'BindContextMenu_previewBorderRadius_002';
       console.info('[' + tagName + '] START============================');
@@ -89,13 +89,13 @@ export default function previewBorderRadius() {
       done();
     });
     /**
-    * @tc.number    BindContextMenu_previewBorderRadius_003
-    * @tc.name      BindContextMenu_previewBorderRadius_003
-    * @tc.desc      set bindContextMenu previewBorderRadius:null
-    * @tc.level:    Level 1
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   BindContextMenu_previewBorderRadius_003
+     * @tc.number BindContextMenu_previewBorderRadius_003
+     * @tc.desc   set bindContextMenu previewBorderRadius:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('BindContextMenu_previewBorderRadius_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let tagName = 'BindContextMenu_previewBorderRadius_003';
       console.info('[' + tagName + '] START============================');

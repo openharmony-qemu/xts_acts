@@ -199,9 +199,12 @@ static int32_t BaseTestDerive(uint32_t index)
 
 #ifndef _CUT_AUTHENTICATE_
 /**
- * @tc.name: HksDeriveTest.HksDeriveTest001
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @tc.name   HksDeriveTest001
+ * @tc.number HksDeriveTest001
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksDeriveTest, HksDeriveTest001, TestSize.Level1)
 {
@@ -211,9 +214,12 @@ HWTEST_F(HksDeriveTest, HksDeriveTest001, TestSize.Level1)
 #endif /* _CUT_AUTHENTICATE_ */
 
 /**
- * @tc.name: HksDeriveTest.HksDeriveTest002
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @tc.name   HksDeriveTest002
+ * @tc.number HksDeriveTest002
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksDeriveTest, HksDeriveTest002, TestSize.Level1)
 {

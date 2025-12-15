@@ -34,13 +34,13 @@ let ACTS_Register: commonEvent.CommonEventSubscribeInfo = {
 export default function abilityTest() {
   describe('ActsCleanTempFilesTest', () => {
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_AppManager_CleanCacheFiles_0100
-     * @tc.name: Support normal exit of application to clean up temp data
-     * @tc.desc: Clean up temp data when the application exits normally.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_CleanCacheFiles_0100
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_CleanCacheFiles_0100
+     * @tc.desc   Clean up temp data when the application exits normally.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_CleanCacheFiles_0100', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -119,14 +119,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_AppManager_CleanCacheFiles_0200
-     * @tc.name: Support normal exit of application to clean up temp data
-     * @tc.desc: When an application exception exits, the framework will not take the initiative to clean up the temp
-     *           directory data because it is too late to deal with it.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_CleanCacheFiles_0200
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_CleanCacheFiles_0200
+     * @tc.desc   When an application exception exits, the framework will not take the initiative to clean up the temp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_CleanCacheFiles_0200', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -207,13 +206,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_AppManager_CleanCacheFiles_0300
-     * @tc.name: Support normal exit of application to clean up temp data
-     * @tc.desc: The temp directory data will not be cleaned actively when the exception scenario exits abnormally.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_CleanCacheFiles_0300
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_CleanCacheFiles_0300
+     * @tc.desc   The temp directory data will not be cleaned actively when the exception scenario exits abnormally.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_CleanCacheFiles_0300', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -274,13 +273,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_AppManager_CleanCacheFiles_0400
-     * @tc.name: Support normal exit of application to clean up temp data
-     * @tc.desc: Use disconnect to disconnect serviceExtension and clean up temp data.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_CleanCacheFiles_0400
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_CleanCacheFiles_0400
+     * @tc.desc   Use disconnect to disconnect serviceExtension and clean up temp data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_CleanCacheFiles_0400', Level.LEVEL0, async (done: Function) => {
       console.info('Acts_CleanTempFiles_0400 start');

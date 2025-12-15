@@ -14,8 +14,10 @@
  */
 import webViewController from './WebViewController.test'
 import webAttributeTest from './WebAttributeTest.test'
+import onRefreshAccessedHistory from './OnRefreshAccessedHistory.test'
 
 export default function testsuite() {
   webAttributeTest()
   webViewController()
+  onRefreshAccessedHistory()
 }

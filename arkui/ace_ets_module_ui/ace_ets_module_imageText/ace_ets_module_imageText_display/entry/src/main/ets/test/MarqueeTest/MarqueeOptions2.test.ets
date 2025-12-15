@@ -44,12 +44,12 @@ export default function marqueeOptionsTest2() {
     });
     
     /**
-     * @tc.number marqueeOptionsTest2_0100
      * @tc.name   marqueeOptionsTest2_0100
+     * @tc.number marqueeOptionsTest2_0100
      * @tc.desc   Return specified page by index value
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('marqueeOptionsTest2_0100', Level.LEVEL0, async (done: Function) => {
       console.info('marqueeOptionsTest2_0100 START');

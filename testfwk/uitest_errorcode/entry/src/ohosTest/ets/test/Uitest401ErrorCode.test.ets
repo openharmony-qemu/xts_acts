@@ -29,9 +29,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   test_injectMultiPointerAction_401
      * @tc.number UiTest_uitest401_001
-     * @tc.name test_injectMultiPointerAction_401
-     * @tc.desc injectMultiPointerAction 401 test.
+     * @tc.desc   injectMultiPointerAction 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_injectMultiPointerAction_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_injectMultiPointerAction_401 start`);
@@ -70,9 +73,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   test_PointerMatrix_401
      * @tc.number UiTest_uitest401_002
-     * @tc.name test_PointerMatrix_401
-     * @tc.desc create 401 test.
+     * @tc.desc   create 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_PointerMatrix_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_PointerMatrix_401 start`);
@@ -110,9 +116,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   test_setPoint_401
      * @tc.number UiTest_uitest401_003
-     * @tc.name test_setPoint_401
-     * @tc.desc setPoint 401 test.
+     * @tc.desc   setPoint 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setPoint_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_setPoint_401 start`);
@@ -159,9 +168,12 @@ export default function abilityTest() {
       console.log(`${TestTag}, test_setPoint_401 END`);
     })
     /**
+     * @tc.name   test_swipe_401
      * @tc.number UiTest_uitest401_008
-     * @tc.name test_swipe_401
-     * @tc.desc swipe 401 test.
+     * @tc.desc   swipe 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_swipe_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_swipe_401 start`);
@@ -203,9 +215,12 @@ export default function abilityTest() {
       console.log(`${TestTag}, test_swipe_401 END`);
     })
     /**
+     * @tc.name   test_type_401
      * @tc.number UiTest_uitest401_009
-     * @tc.name test_type_401
-     * @tc.desc type 401 test.
+     * @tc.desc   type 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_type_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_type_401 start`);

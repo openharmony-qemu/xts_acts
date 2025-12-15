@@ -45,12 +45,12 @@ export default function SymbolSpanApi1Test() {
       console.info("symbolSpanApi1 after each called");
     });
     /**
-     * @tc.number    SUB_ACE_RICHEDITOR_SymbolSpanApi1_0100
-     * @tc.name      testSymbolSpan
-     * @tc.desc      set api
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   symbolSpanApi1_0100
+     * @tc.number SUB_ACE_RICHEDITOR_SymbolSpanApi1_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('symbolSpanApi1_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[symbolSpanApi1_0100] START');

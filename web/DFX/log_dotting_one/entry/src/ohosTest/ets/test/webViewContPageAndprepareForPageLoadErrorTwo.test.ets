@@ -57,10 +57,13 @@ export default function webViewContPageAndprepareForPageLoadErrorTwo() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS__WEBVIEWCONTPAGEANDPREPAREFORPAGELOADERRORTWO_0100
-     *tc.name testPostMessageInitErr
-     *tc.desc test interface of postMessage with not been associated with specific Web Components
+    /**
+     * @tc.name   PrefetchPageErr
+     * @tc.number SUB_ACE_BASIC_ETS__WEBVIEWCONTPAGEANDPREPAREFORPAGELOADERRORTWO_0100
+     * @tc.desc   test interface of postMessage with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PrefetchPageErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitPrefetchPageErr";
@@ -68,10 +71,13 @@ export default function webViewContPageAndprepareForPageLoadErrorTwo() {
       Utils.registerEvent("PrefetchPageErr", "17100002", 111860, done);
       await Utils.waitAndClickComponent(driver, "webViewContPageAndprepareForPageLoadErrorTwo");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS__WEBVIEWCONTPAGEANDPREPAREFORPAGELOADERROEONE_0200
-     *tc.name testPostMessageEventPortClose
-     *tc.desc test interface of postMessageEvent with WebMessagePort been closed by ets
+    /**
+     * @tc.name   PrepareForPageLoadErr
+     * @tc.number SUB_ACE_BASIC_ETS__WEBVIEWCONTPAGEANDPREPAREFORPAGELOADERROEONE_0200
+     * @tc.desc   test interface of postMessageEvent with WebMessagePort been closed by ets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PrepareForPageLoadErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitPrepareForPageLoadErr";
@@ -79,10 +85,13 @@ export default function webViewContPageAndprepareForPageLoadErrorTwo() {
       Utils.registerEvent("PrepareForPageLoadErr", "17100002", 111870, done);
       await Utils.waitAndClickComponent(driver, "webViewContPageAndprepareForPageLoadErrorTwo");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS__WEBVIEWCONTPAGEANDPREPAREFORPAGELOADERROEONE_0300
-     *tc.name testPostMessageEventPortClose
-     *tc.desc test interface of postMessageEvent with WebMessagePort been closed by ets
+    /**
+     * @tc.name   PrepareForPageLoadErrTwo
+     * @tc.number SUB_ACE_BASIC_ETS__WEBVIEWCONTPAGEANDPREPAREFORPAGELOADERROEONE_0300
+     * @tc.desc   test interface of postMessageEvent with WebMessagePort been closed by ets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PrepareForPageLoadErrTwo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitPrepareForPageLoadErrTwo";

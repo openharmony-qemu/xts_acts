@@ -26,39 +26,39 @@ export default function checkboxHeightTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_CHECKBOX_HEIGHT_0100
-     * @tc.name: testCheckboxHeight001
-     * @tc.desc: testing height for checkbox with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCheckboxHeight001
+     * @tc.number SUB_ARKUI_CAPI_CHECKBOX_HEIGHT_0100
+     * @tc.desc   testing height for checkbox with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckboxHeight001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCheckboxHeight001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_CHECKBOX_HEIGHT_0200
-     * @tc.name: testCheckboxHeight002
-     * @tc.desc: testing height for checkbox with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testCheckboxHeight002
+     * @tc.number SUB_ARKUI_CAPI_CHECKBOX_HEIGHT_0200
+     * @tc.desc   testing height for checkbox with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckboxHeight002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCheckboxHeight002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_CHECKBOX_HEIGHT_0300
-     * @tc.name: testCheckboxHeight003
-     * @tc.desc: testing height for checkbox with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCheckboxHeight003
+     * @tc.number SUB_ARKUI_CAPI_CHECKBOX_HEIGHT_0300
+     * @tc.desc   testing height for checkbox with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckboxHeight003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCheckboxHeight003()).assertEqual(0)

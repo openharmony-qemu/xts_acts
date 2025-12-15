@@ -30,14 +30,14 @@ export default function ActsLifeCycleMainBackgroundTest() {
     beforeAll(()=>{
       context = AppStorage.get<common.UIAbilityContext>('testAbilityContext') as common.UIAbilityContext;
     })
-    /*
-    * @tc.number SUB_Ability_AbilityRuntime_OnWillBackground_0100
-    * @tc.name   SUB_Ability_AbilityRuntime_OnWillBackground_0100
-    * @tc.desc   Check the callback timing sequence when a mobile application is normally switched to the background.
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level 3
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_OnWillBackground_0100
+     * @tc.number SUB_Ability_AbilityRuntime_OnWillBackground_0100
+     * @tc.desc   Check the callback timing sequence when a mobile application is normally switched to the background.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_Ability_AbilityRuntime_OnWillBackground_0100', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_OnWillBackground_0100';
       let subscriber: commonEventManager.CommonEventSubscriber;
@@ -79,13 +79,13 @@ export default function ActsLifeCycleMainBackgroundTest() {
         done()
       };
     })
-    /*
-     * @tc.number SUB_Ability_AbilityRuntime_OnWillBackground_0200
+    /**
      * @tc.name   SUB_Ability_AbilityRuntime_OnWillBackground_0200
+     * @tc.number SUB_Ability_AbilityRuntime_OnWillBackground_0200
      * @tc.desc   Mobile phone destruction application callback timing sequence check
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_OnWillBackground_0200', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_OnWillBackground_0200';
@@ -126,13 +126,13 @@ export default function ActsLifeCycleMainBackgroundTest() {
       };
     })
 
-    /*
-     * @tc.number SUB_Ability_AbilityRuntime_OnWillBackground_1300
+    /**
      * @tc.name   SUB_Ability_AbilityRuntime_OnWillBackground_1300
+     * @tc.number SUB_Ability_AbilityRuntime_OnWillBackground_1300
      * @tc.desc   Timing check of the delayed callback of the onWillBackground of the mobile phone destruction application
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_OnWillBackground_1300', Level.LEVEL3, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_OnWillBackground_1300';
@@ -172,13 +172,13 @@ export default function ActsLifeCycleMainBackgroundTest() {
       };
     })
 
-    /*
-     * @tc.number SUB_Ability_AbilityRuntime_OnWillBackground_1400
+    /**
      * @tc.name   SUB_Ability_AbilityRuntime_OnWillBackground_1400
+     * @tc.number SUB_Ability_AbilityRuntime_OnWillBackground_1400
      * @tc.desc   Mobile phone destruction application onBackground delay callback timing sequence check
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_OnWillBackground_1400', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_OnWillBackground_1400';

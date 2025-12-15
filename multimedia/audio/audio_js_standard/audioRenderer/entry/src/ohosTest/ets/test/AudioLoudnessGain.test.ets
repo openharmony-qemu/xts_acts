@@ -45,12 +45,12 @@ export default function audioLoudnessGainTest() {
       console.info(TAG + 'afterEach called')
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_001
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_001
-     * @tc.desc      : right test, set number is -90.0, streamtype is music,expect -89.9 < loudnessGain < -90.1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_001
+     * @tc.desc   right test, set number is -90.0, streamtype is music,expect -89.9 < loudnessGain < -90.1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_001", Level.LEVEL0, async (done: Function) => {
         let audioStreamInfo: audio.AudioStreamInfo = {
@@ -86,12 +86,12 @@ export default function audioLoudnessGainTest() {
         }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_002
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_002
-     * @tc.desc      : right test, set number is -89.9, streamtype is music,expect -89.8 < loudnessGain < -90.0
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_002
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_002
+     * @tc.desc   right test, set number is -89.9, streamtype is music,expect -89.8 < loudnessGain < -90.0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_002", Level.LEVEL0, async (done: Function) => {
         let audioStreamInfo: audio.AudioStreamInfo = {
@@ -128,12 +128,12 @@ export default function audioLoudnessGainTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_003
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_003
-     * @tc.desc      : right test, set number is 24.0, streamtype is movie,expect loudnessGain = 24.0
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_003
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_003
+     * @tc.desc   right test, set number is 24.0, streamtype is movie,expect loudnessGain = 24.0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_003", Level.LEVEL0, async (done: Function) => {
         let audioStreamInfo: audio.AudioStreamInfo = {
@@ -170,12 +170,12 @@ export default function audioLoudnessGainTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_004
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_004
-     * @tc.desc      : right test, set number is 23.9, streamtype is audiobook,expect 23.8 < loudnessGain < 24
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_004
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_004
+     * @tc.desc   right test, set number is 23.9, streamtype is audiobook,expect 23.8 < loudnessGain < 24
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_004", Level.LEVEL0, async (done: Function) => {
         let audioStreamInfo: audio.AudioStreamInfo = {
@@ -212,12 +212,12 @@ export default function audioLoudnessGainTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_005
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_005
-     * @tc.desc      : back test, set number is -90.1,expect error.code = 6800101
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_005
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_005
+     * @tc.desc   back test, set number is -90.1,expect error.code = 6800101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_005", Level.LEVEL2, async (done: Function) => {
         let audioStreamInfo: audio.AudioStreamInfo = {
@@ -258,12 +258,12 @@ export default function audioLoudnessGainTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_006
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_006
-     * @tc.desc      : back test, set number is 24.1,expect error.code = 6800101
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_006
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_006
+     * @tc.desc   back test, set number is 24.1,expect error.code = 6800101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_006", Level.LEVEL2, async (done: Function) => {
         let audioStreamInfo: audio.AudioStreamInfo = {
@@ -305,12 +305,12 @@ export default function audioLoudnessGainTest() {
     
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_007
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_007
-     * @tc.desc      : back test, set numgber is undefined,expect error.code = 401 
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_007
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_007
+     * @tc.desc   back test, set numgber is undefined,expect error.code = 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_007", Level.LEVEL2, async (done: Function) => {
         let audioStreamInfo: audio.AudioStreamInfo = {
@@ -345,12 +345,12 @@ export default function audioLoudnessGainTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_008
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_008
-     * @tc.desc      : back test, set numgber is null,expect error.code = 401 
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_008
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_008
+     * @tc.desc   back test, set numgber is null,expect error.code = 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_008", Level.LEVEL2, async (done: Function) => {
         let audioStreamInfo: audio.AudioStreamInfo = {
@@ -385,12 +385,12 @@ export default function audioLoudnessGainTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_009
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_009
-     * @tc.desc      : back test, set streamtype is STREAM_USAGE_UNKNOWN,expect error.code = 6800104
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_009
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_009
+     * @tc.desc   back test, set streamtype is STREAM_USAGE_UNKNOWN,expect error.code = 6800104
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_009", Level.LEVEL2, async (done: Function) => {
         let audioStreamInfo: audio.AudioStreamInfo = {
@@ -430,12 +430,12 @@ export default function audioLoudnessGainTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_010
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_010
-     * @tc.desc      : back test, set streamtype is STREAM_USAGE_VOICE_COMMUNICATION,expect error.code = 6800104
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_010
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_010
+     * @tc.desc   back test, set streamtype is STREAM_USAGE_VOICE_COMMUNICATION,expect error.code = 6800104
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_010", Level.LEVEL2, async (done: Function) => {
         let audioStreamInfo: audio.AudioStreamInfo = {
@@ -475,12 +475,12 @@ export default function audioLoudnessGainTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_011
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_011
-     * @tc.desc      : back test, set streamtype is STREAM_USAGE_VOICE_COMMUNICATION,expect error.code = 6800104
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_011
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_011
+     * @tc.desc   back test, set streamtype is STREAM_USAGE_VOICE_COMMUNICATION,expect error.code = 6800104
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_011", Level.LEVEL2, async (done: Function) => {
         let audioStreamInfo: audio.AudioStreamInfo = {
@@ -520,12 +520,12 @@ export default function audioLoudnessGainTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_012
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_012
-     * @tc.desc      : back test, set streamtype is STREAM_USAGE_VOICE_ALARM,expect error.code = 6800104
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_012
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_012
+     * @tc.desc   back test, set streamtype is STREAM_USAGE_VOICE_ALARM,expect error.code = 6800104
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_012", Level.LEVEL2, async (done: Function) => {
         let audioStreamInfo: audio.AudioStreamInfo = {
@@ -565,12 +565,12 @@ export default function audioLoudnessGainTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_013
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_013
-     * @tc.desc      : back test, set streamtype is STREAM_USAGE_VOICE_MESSAGE,expect error.code = 6800104
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_013
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_013
+     * @tc.desc   back test, set streamtype is STREAM_USAGE_VOICE_MESSAGE,expect error.code = 6800104
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_013", Level.LEVEL2, async (done: Function) => {
         let audioStreamInfo: audio.AudioStreamInfo = {
@@ -610,12 +610,12 @@ export default function audioLoudnessGainTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_014
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_014
-     * @tc.desc      : back test, set streamtype is STREAM_USAGE_NOTIFICATION,expect error.code = 6800104
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_014
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_014
+     * @tc.desc   back test, set streamtype is STREAM_USAGE_NOTIFICATION,expect error.code = 6800104
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_014", Level.LEVEL2, async (done: Function) => {
         let audioStreamInfo: audio.AudioStreamInfo = {
@@ -656,12 +656,12 @@ export default function audioLoudnessGainTest() {
 
     
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_016
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_016
-     * @tc.desc      : back test, set streamtype is STREAM_USAGE_GAME,expect error.code = 6800104
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_016
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_016
+     * @tc.desc   back test, set streamtype is STREAM_USAGE_GAME,expect error.code = 6800104
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_016", Level.LEVEL2, async (done: Function) => {
         let audioStreamInfo: audio.AudioStreamInfo = {
@@ -701,12 +701,12 @@ export default function audioLoudnessGainTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_017
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_017
-     * @tc.desc      : back test, set streamtype is STREAM_USAGE_NAVIGATION,expect error.code = 6800104
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_017
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_017
+     * @tc.desc   back test, set streamtype is STREAM_USAGE_NAVIGATION,expect error.code = 6800104
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_017", Level.LEVEL2, async (done: Function) => {
         let audioStreamInfo: audio.AudioStreamInfo = {
@@ -746,12 +746,12 @@ export default function audioLoudnessGainTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_018
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_018
-     * @tc.desc      : back test, set streamtype is STREAM_USAGE_VIDEO_COMMUNICATION,expect error.code = 6800104
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_018
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_018
+     * @tc.desc   back test, set streamtype is STREAM_USAGE_VIDEO_COMMUNICATION,expect error.code = 6800104
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_018", Level.LEVEL2, async (done: Function) => {
         let audioStreamInfo: audio.AudioStreamInfo = {

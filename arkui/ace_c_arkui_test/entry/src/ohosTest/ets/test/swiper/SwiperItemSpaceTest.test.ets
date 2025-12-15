@@ -26,39 +26,39 @@ export default function swiperItemSpaceTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_ITEMSPACE_0100
-     * @tc.name       : testSwiperItemSpace001
-     * @tc.desc       : testing itemSpace for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperItemSpace001
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_ITEMSPACE_0100
+     * @tc.desc   testing itemSpace for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperItemSpace001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperItemSpace001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_ITEMSPACE_0200
-     * @tc.name       : testSwiperItemSpace002
-     * @tc.desc       : testing itemSpace for swiper with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperItemSpace002
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_ITEMSPACE_0200
+     * @tc.desc   testing itemSpace for swiper with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperItemSpace002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperItemSpace002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_ITEMSPACE_0300
-     * @tc.name       : testSwiperItemSpace003
-     * @tc.desc       : testing itemSpace for swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testSwiperItemSpace003
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_ITEMSPACE_0300
+     * @tc.desc   testing itemSpace for swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperItemSpace003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperItemSpace003()).assertEqual(0)

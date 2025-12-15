@@ -55,14 +55,14 @@ export default function webViewControllerPart2() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_CLEARHISTORY_0100
-    * @tc.name       : testClearHistory001
-    * @tc.desc       : test clearHistory
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testClearHistory001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CLEARHISTORY_0100
+     * @tc.desc   test clearHistory
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testClearHistory001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testClearHistory001", 133300)
       Utils.registerEvent("testClearHistory001", false, 133310, done);

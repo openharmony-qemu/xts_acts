@@ -53,13 +53,13 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       }
       done();
     });
-   /**
-     * @tc.number    GestureReject_0100
-     * @tc.name    GestureReject_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+    /**
+     * @tc.name   GestureReject_0100
+     * @tc.number GestureReject_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GestureReject_0100', Level.LEVEL0, async (done: Function) => {
       console.info('GestureReject_0100 START');

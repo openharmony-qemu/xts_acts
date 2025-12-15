@@ -45,9 +45,12 @@ export default function TextAreaApi2() {
     });
 
     /**
+     * @tc.name   TextAreaApi2_0100
      * @tc.number TextAreaApi2_0100
-     * @tc.name   testFocus
-     * @tc.desc
+     * @tc.desc   TextAreaApi2_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextAreaApi2_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('TextAreaApi2_0100 START');

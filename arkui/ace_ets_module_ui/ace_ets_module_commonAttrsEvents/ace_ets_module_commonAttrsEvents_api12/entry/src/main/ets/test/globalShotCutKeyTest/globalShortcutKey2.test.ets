@@ -65,12 +65,12 @@ export default function globalShortcutKeyTest2() {
     });
 
     /**
-     * @tc.number
-     * @tc.name      SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0160
-     * @tc.desc      simulate the keyboard operate “SHIFT + TAB”
-     * @tc.level:    Level 3
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0160
+     * @tc.number SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0160
+     * @tc.desc   simulate the keyboard operate “SHIFT + TAB”
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0160', Level.LEVEL0, async (done: Function) => {
       let keyStrings: (string | FunctionKey)[] = [

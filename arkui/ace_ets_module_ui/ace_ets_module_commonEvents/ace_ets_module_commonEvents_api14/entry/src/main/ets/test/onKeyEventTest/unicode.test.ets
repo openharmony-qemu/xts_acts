@@ -43,12 +43,12 @@ export default function unicodeTest() {
     });
 
     /**
+     * @tc.name   ArkUI_KeyEvent_UnicodeTest_1000
      * @tc.number ArkUI_KeyEvent_UnicodeJsunit_1000
-     * @tc.name   Tests the unicode property of the keyEvent
      * @tc.desc   Confirm unicode value
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_KeyEvent_UnicodeTest_1000', Level.LEVEL0, async (done: Function) => {
       console.info('[ArkUI_KeyEvent_UnicodeTest_1000] START');

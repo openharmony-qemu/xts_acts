@@ -48,6 +48,14 @@ export default function text3Jsunit() {
     });
 	let resourceSize = getContext().resourceManager.getNumber($r('sys.float.ohos_id_text_font_size').id)    
   
+ /**
+  * @tc.name   testText_0100
+  * @tc.number testText_0100
+  * @tc.desc   testText_0100
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
 	it('testText_0100', Level.LEVEL2, async (done: Function) => {
       console.info('testText_0100 START');
       let strJson = getInspectorByKey('text');
@@ -59,6 +67,14 @@ export default function text3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testText_0200
+     * @tc.number testText_0200
+     * @tc.desc   testText_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testText_0200', Level.LEVEL2, async (done: Function) => {
       console.info('testText_0200 START');
       let strJson = getInspectorByKey('image');
@@ -69,6 +85,14 @@ export default function text3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testText_0300
+     * @tc.number testText_0300
+     * @tc.desc   testText_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testText_0300', Level.LEVEL2, async (done: Function) => {
       console.info('testText_0300 START');
       try {
@@ -95,6 +119,14 @@ export default function text3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testText_0400
+     * @tc.number testText_0400
+     * @tc.desc   testText_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testText_0400', Level.LEVEL2, async (done: Function) => {
       console.info('testText_0400 START');
       let strJson = getInspectorByKey('text');
@@ -106,6 +138,14 @@ export default function text3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testText_0500
+     * @tc.number testText_0500
+     * @tc.desc   testText_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testText_0500', Level.LEVEL2, async (done: Function) => {
       console.info('testText_0500 START');
       try {
@@ -132,6 +172,14 @@ export default function text3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testText_0600
+     * @tc.number testText_0600
+     * @tc.desc   testText_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testText_0600', Level.LEVEL2, async (done: Function) => {
       console.info('testText_0600 START');
       let strJson = getInspectorByKey('text');
@@ -143,6 +191,14 @@ export default function text3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testText_0700
+     * @tc.number testText_0700
+     * @tc.desc   testText_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testText_0700', Level.LEVEL2, async (done: Function) => {
       console.info('testText_0700 START');
       try {
@@ -168,6 +224,14 @@ export default function text3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testText_0800
+     * @tc.number testText_0800
+     * @tc.desc   testText_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testText_0800', Level.LEVEL2, async (done: Function) => {
       console.info('testText_0800 START');
       let strJson = getInspectorByKey('text');
@@ -179,6 +243,14 @@ export default function text3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testText_0900
+     * @tc.number testText_0900
+     * @tc.desc   testText_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testText_0900', Level.LEVEL2, async (done: Function) => {
       console.info('testText_0900 START');
       try {
@@ -205,6 +277,14 @@ export default function text3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testText_1000
+     * @tc.number testText_1000
+     * @tc.desc   testText_1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testText_1000', Level.LEVEL2, async (done: Function) => {
       console.info('testText_1000 START');
       let strJson = getInspectorByKey('text');
@@ -220,6 +300,14 @@ export default function text3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testText_1200
+     * @tc.number testText_1200
+     * @tc.desc   testText_1200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testText_1200', Level.LEVEL2, async (done: Function) => {
       console.info('testText_1200 START');
       try {
@@ -248,6 +336,14 @@ export default function text3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testText_1300
+     * @tc.number testText_1300
+     * @tc.desc   testText_1300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testText_1300', Level.LEVEL2, async (done: Function) => {
       console.info('testText_1300 START');
       try {
@@ -277,6 +373,14 @@ export default function text3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testText_1400
+     * @tc.number testText_1400
+     * @tc.desc   testText_1400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testText_1400', Level.LEVEL2, async (done: Function) => {
       console.info('testText_1400 START');
       try {

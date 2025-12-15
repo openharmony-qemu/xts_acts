@@ -79,9 +79,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testinputIdProp
-         * @tc.desc      ACE
+         * @tc.name   testInputIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputIdProp', Level.LEVEL0, async function(done) {
             console.info('testInputIdProp START');
@@ -97,9 +100,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputClassProp
-         * @tc.desc      ACE
+         * @tc.name   testinputClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testinputClassProp', Level.LEVEL0, async function(done) {
             console.info('testInputClassProp START');
@@ -115,9 +121,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testInputClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testInputClassPropNone START');
@@ -135,9 +144,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputRefProp
-         * @tc.desc      ACE
+         * @tc.name   testInputRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputRefProp', Level.LEVEL0, async function(done) {
             console.info('testInputRefProp START');
@@ -154,9 +166,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testInputRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testInputRefPropNone START');
@@ -174,9 +189,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testInputDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testInputDisabledPropTrue START');
@@ -193,9 +211,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testInputDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testInputDisabledPropFalse START');
@@ -212,9 +233,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testInputDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testInputDisabledPropNone START');
@@ -231,9 +255,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testInputFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testInputFocusablePropTrue START');
@@ -250,9 +277,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testInputFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testInputFocusablePropFalse START');
@@ -269,9 +299,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testInputFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testInputFocusablePropNone START');
@@ -288,9 +321,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputDataProp
-         * @tc.desc      ACE
+         * @tc.name   testInputDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputDataProp', Level.LEVEL0, async function(done) {
             console.info('testInputDataProp START');
@@ -308,9 +344,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testInputDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testInputDataPropNone START');
@@ -328,9 +367,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testInputClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testInputClickEffectPropSmall START');
@@ -347,9 +389,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testInputClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testInputClickEffectPropMedium START');
@@ -366,9 +411,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testInputClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testInputClickEffectPropLarge START');
@@ -385,9 +433,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testInputClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testInputClickEffectPropNone START');
@@ -405,9 +456,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testInputDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testInputDirPropRtl START');
@@ -424,9 +478,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testInputDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testInputDirPropLtr START');
@@ -443,9 +500,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testInputDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testInputDirPropAuto START');
@@ -462,9 +522,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testInputDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testInputDirPropNone START');
@@ -481,9 +544,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testInputForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputForPropNull', Level.LEVEL0, async function(done) {
             console.info('testInputForPropNull START');
@@ -501,9 +567,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testInputForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputForPropOne', Level.LEVEL0, async function(done) {
             console.info('testInputForPropOne START');
@@ -521,9 +590,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testInputForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputForPropThree', Level.LEVEL0, async function(done) {
             console.info('testInputForPropThree START');
@@ -541,9 +613,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testInputIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testInputIfPropTrue START');
@@ -561,9 +636,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testInputShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testInputShowPropTrue START');
@@ -581,9 +659,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testInputShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testInputShowPropFalse START');
@@ -601,9 +682,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testInputShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testInputShowPropNone START');
@@ -621,9 +705,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputTypeText
-         * @tc.desc      ACE
+         * @tc.name   testInputTypeText
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputTypeText', Level.LEVEL0, async function(done) {
             console.info('testInputTypeText START');
@@ -641,9 +728,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputTypeEmail
-         * @tc.desc      ACE
+         * @tc.name   testInputTypeEmail
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputTypeEmail', Level.LEVEL0, async function(done) {
             console.info('testInputTypeEmail START');
@@ -661,9 +751,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputTypeDate
-         * @tc.desc      ACE
+         * @tc.name   testInputTypeDate
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputTypeDate', Level.LEVEL0, async function(done) {
             console.info('testInputTypeDate START');
@@ -681,9 +774,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputTypeTime
-         * @tc.desc      ACE
+         * @tc.name   testInputTypeTime
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputTypeTime', Level.LEVEL0, async function(done) {
             console.info('testInputTypeTime START');
@@ -701,9 +797,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputTypeNumber
-         * @tc.desc      ACE
+         * @tc.name   testInputTypeNumber
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputTypeNumber', Level.LEVEL0, async function(done) {
             console.info('testInputTypeNumber START');
@@ -721,9 +820,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputTypePassword
-         * @tc.desc      ACE
+         * @tc.name   testInputTypePassword
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputTypePassword', Level.LEVEL0, async function(done) {
             console.info('testInputTypePassword START');
@@ -741,9 +843,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputTypeButton
-         * @tc.desc      ACE
+         * @tc.name   testInputTypeButton
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputTypeButton', Level.LEVEL0, async function(done) {
             console.info('testInputTypeButton START');
@@ -761,9 +866,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputTypeCheckbox
-         * @tc.desc      ACE
+         * @tc.name   testInputTypeCheckbox
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputTypeCheckbox', Level.LEVEL0, async function(done) {
             console.info('testInputTypeCheckbox START');
@@ -781,9 +889,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputTypeRadio
-         * @tc.desc      ACE
+         * @tc.name   testInputTypeRadio
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputTypeRadio', Level.LEVEL0, async function(done) {
             console.info('testInputTypeRadio START');
@@ -801,9 +912,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputTypeNone
-         * @tc.desc      ACE
+         * @tc.name   testInputTypeNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputTypeNone', Level.LEVEL0, async function(done) {
             console.info('testInputTypeNone START');
@@ -821,9 +935,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputCheckboxFalse
-         * @tc.desc      ACE
+         * @tc.name   testInputCheckboxFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputCheckboxFalse', Level.LEVEL0, async function(done) {
             console.info('testInputCheckboxFalse START');
@@ -842,9 +959,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputCheckboxTrue
-         * @tc.desc      ACE
+         * @tc.name   testInputCheckboxTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputCheckboxTrue', Level.LEVEL0, async function(done) {
             console.info('testInputCheckboxTrue START');
@@ -863,9 +983,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputCheckboxNone
-         * @tc.desc      ACE
+         * @tc.name   testInputCheckboxNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputCheckboxNone', Level.LEVEL0, async function(done) {
             console.info('testInputCheckboxNone START');
@@ -884,9 +1007,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputRadioFalse
-         * @tc.desc      ACE
+         * @tc.name   testInputRadioFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputRadioFalse', Level.LEVEL0, async function(done) {
             console.info('testInputRadioFalse START');
@@ -905,9 +1031,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputRadioTrue
-         * @tc.desc      ACE
+         * @tc.name   testInputRadioTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputRadioTrue', Level.LEVEL0, async function(done) {
             console.info('testInputRadioTrue START');
@@ -926,9 +1055,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputRadioNone
-         * @tc.desc      ACE
+         * @tc.name   testInputRadioNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputRadioNone', Level.LEVEL0, async function(done) {
             console.info('testInputRadioNone START');
@@ -947,9 +1079,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputInputName
-         * @tc.desc      ACE
+         * @tc.name   testInputInputName
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputInputName', Level.LEVEL0, async function(done) {
             console.info('testInputInputName START');
@@ -968,9 +1103,12 @@ export default function inputPropsJsTest() {
 
         //inputName
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputInputNameNone
-         * @tc.desc      ACE
+         * @tc.name   testInputInputNameNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputInputNameNone', Level.LEVEL0, async function(done) {
             console.info('testInputInputNameNone START');
@@ -988,9 +1126,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputInputValue
-         * @tc.desc      ACE
+         * @tc.name   testInputInputValue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputInputValue', Level.LEVEL0, async function(done) {
             console.info('testInputInputValue START');
@@ -1008,9 +1149,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputInputValueNone
-         * @tc.desc      ACE
+         * @tc.name   testInputInputValueNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputInputValueNone', Level.LEVEL0, async function(done) {
             console.info('testInputInputValueNone START');
@@ -1028,9 +1172,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputTextPlaceholder
-         * @tc.desc      ACE
+         * @tc.name   testInputTextPlaceholder
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputTextPlaceholder', Level.LEVEL0, async function(done) {
             console.info('testInputTextPlaceholder START');
@@ -1049,9 +1196,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputTextPlaceholderNone
-         * @tc.desc      ACE
+         * @tc.name   testInputTextPlaceholderNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputTextPlaceholderNone', Level.LEVEL0, async function(done) {
             console.info('testInputTextPlaceholderNone START');
@@ -1070,9 +1220,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputEmailPlaceholder
-         * @tc.desc      ACE
+         * @tc.name   testInputEmailPlaceholder
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputEmailPlaceholder', Level.LEVEL0, async function(done) {
             console.info('testInputEmailPlaceholder START');
@@ -1091,9 +1244,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputEmailPlaceholderNone
-         * @tc.desc      ACE
+         * @tc.name   testInputEmailPlaceholderNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputEmailPlaceholderNone', Level.LEVEL0, async function(done) {
             console.info('testInputEmailPlaceholderNone START');
@@ -1112,9 +1268,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputDatePlaceholder
-         * @tc.desc      ACE
+         * @tc.name   testInputDatePlaceholder
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputDatePlaceholder', Level.LEVEL0, async function(done) {
             console.info('testInputDatePlaceholder START');
@@ -1133,9 +1292,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputDatePlaceholderNone
-         * @tc.desc      ACE
+         * @tc.name   testInputDatePlaceholderNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputDatePlaceholderNone', Level.LEVEL0, async function(done) {
             console.info('testInputDatePlaceholderNone START');
@@ -1154,9 +1316,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputTimePlaceholder
-         * @tc.desc      ACE
+         * @tc.name   testInputTimePlaceholder
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputTimePlaceholder', Level.LEVEL0, async function(done) {
             console.info('testInputTimePlaceholder START');
@@ -1175,9 +1340,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputTimePlaceholderNone
-         * @tc.desc      ACE
+         * @tc.name   testInputTimePlaceholderNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputTimePlaceholderNone', Level.LEVEL0, async function(done) {
             console.info('testInputTimePlaceholderNone START');
@@ -1196,9 +1364,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputNumberPlaceholder
-         * @tc.desc      ACE
+         * @tc.name   testInputNumberPlaceholder
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputNumberPlaceholder', Level.LEVEL0, async function(done) {
             console.info('testInputNumberPlaceholder START');
@@ -1217,9 +1388,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputNumberPlaceholderNone
-         * @tc.desc      ACE
+         * @tc.name   testInputNumberPlaceholderNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputNumberPlaceholderNone', Level.LEVEL0, async function(done) {
             console.info('testInputNumberPlaceholderNone START');
@@ -1238,9 +1412,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputPasswordPlaceholder
-         * @tc.desc      ACE
+         * @tc.name   testInputPasswordPlaceholder
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputPasswordPlaceholder', Level.LEVEL0, async function(done) {
             console.info('testInputPasswordPlaceholder START');
@@ -1259,9 +1436,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputPasswordPlaceholderNone
-         * @tc.desc      ACE
+         * @tc.name   testInputPasswordPlaceholderNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputPasswordPlaceholderNone', Level.LEVEL0, async function(done) {
             console.info('testInputPasswordPlaceholderNone START');
@@ -1280,9 +1460,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputMaxlength
-         * @tc.desc      ACE
+         * @tc.name   testInputMaxlength
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputMaxlength', Level.LEVEL0, async function(done) {
             console.info('testInputMaxlength START');
@@ -1300,9 +1483,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputEnterkeytypeDefault
-         * @tc.desc      ACE
+         * @tc.name   testInputEnterkeytypeDefault
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputEnterkeytypeDefault', Level.LEVEL0, async function(done) {
             console.info('testInputEnterkeytypeDefault START');
@@ -1320,9 +1506,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputEnterkeytypeNext
-         * @tc.desc      ACE
+         * @tc.name   testInputEnterkeytypeNext
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputEnterkeytypeNext', Level.LEVEL0, async function(done) {
             console.info('testInputEnterkeytypeNext START');
@@ -1340,9 +1529,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputEnterkeytypeGo
-         * @tc.desc      ACE
+         * @tc.name   testInputEnterkeytypeGo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputEnterkeytypeGo', Level.LEVEL0, async function(done) {
             console.info('testInputEnterkeytypeGo START');
@@ -1360,9 +1552,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputEnterkeytypeDone
-         * @tc.desc      ACE
+         * @tc.name   testInputEnterkeytypeDone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputEnterkeytypeDone', Level.LEVEL0, async function(done) {
             console.info('testInputEnterkeytypeDone START');
@@ -1380,9 +1575,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputEnterkeytypeSend
-         * @tc.desc      ACE
+         * @tc.name   testInputEnterkeytypeSend
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputEnterkeytypeSend', Level.LEVEL0, async function(done) {
             console.info('testInputEnterkeytypeSend START');
@@ -1400,9 +1598,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputEnterkeytypeSearch
-         * @tc.desc      ACE
+         * @tc.name   testInputEnterkeytypeSearch
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputEnterkeytypeSearch', Level.LEVEL0, async function(done) {
             console.info('testInputEnterkeytypeSearch START');
@@ -1420,9 +1621,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputHeadericon
-         * @tc.desc      ACE
+         * @tc.name   testInputHeadericon
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputHeadericon', Level.LEVEL0, async function(done) {
             console.info('testInputHeadericon START');
@@ -1440,9 +1644,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputHeadericonNone
-         * @tc.desc      ACE
+         * @tc.name   testInputHeadericonNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputHeadericonNone', Level.LEVEL0, async function(done) {
             console.info('testInputHeadericonNone START');
@@ -1460,9 +1667,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputShowcounterTrue
-         * @tc.desc      ACE
+         * @tc.name   testInputShowcounterTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputShowcounterTrue', Level.LEVEL0, async function(done) {
             console.info('testInputShowcounterTrue START');
@@ -1481,9 +1691,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputShowcounterFalse
-         * @tc.desc      ACE
+         * @tc.name   testInputShowcounterFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputShowcounterFalse', Level.LEVEL0, async function(done) {
             console.info('testInputShowcounterFalse START');
@@ -1502,9 +1715,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputShowcounterNone
-         * @tc.desc      ACE
+         * @tc.name   testInputShowcounterNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputShowcounterNone', Level.LEVEL0, async function(done) {
             console.info('testInputShowcounterNone START');
@@ -1523,9 +1739,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputSelectedstart
-         * @tc.desc      ACE
+         * @tc.name   testInputSelectedstart
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputSelectedstart', Level.LEVEL0, async function(done) {
             console.info('testInputSelectedstart START');
@@ -1543,9 +1762,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputSelectedstartNone
-         * @tc.desc      ACE
+         * @tc.name   testInputSelectedstartNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputSelectedstartNone', Level.LEVEL0, async function(done) {
             console.info('testInputSelectedstartNone START');
@@ -1563,9 +1785,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputSelectedendTrue
-         * @tc.desc      ACE
+         * @tc.name   testInputSelectedendTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputSelectedendTrue', Level.LEVEL0, async function(done) {
             console.info('testInputSelectedendTrue START');
@@ -1583,9 +1808,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputSelectedendNone
-         * @tc.desc      ACE
+         * @tc.name   testInputSelectedendNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputSelectedendNone', Level.LEVEL0, async function(done) {
             console.info('testInputSelectedendNone START');
@@ -1603,9 +1831,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputSoftkeyboardenabledTrue
-         * @tc.desc      ACE
+         * @tc.name   testInputSoftkeyboardenabledTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputSoftkeyboardenabledTrue', Level.LEVEL0, async function(done) {
             console.info('testInputSoftkeyboardenabledTrue START');
@@ -1623,9 +1854,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputSoftkeyboardenabledFalse
-         * @tc.desc      ACE
+         * @tc.name   testInputSoftkeyboardenabledFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputSoftkeyboardenabledFalse', Level.LEVEL0, async function(done) {
             console.info('testInputSoftkeyboardenabledFalse START');
@@ -1643,9 +1877,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputSoftkeyboardenabledNone
-         * @tc.desc      ACE
+         * @tc.name   testInputSoftkeyboardenabledNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputSoftkeyboardenabledNone', Level.LEVEL0, async function(done) {
             console.info('testInputSoftkeyboardenabledNone START');
@@ -1663,9 +1900,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputShowpasswordiconTrue
-         * @tc.desc      ACE
+         * @tc.name   testInputShowpasswordiconTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputShowpasswordiconTrue', Level.LEVEL0, async function(done) {
             console.info('testInputShowpasswordiconTrue START');
@@ -1684,9 +1924,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputShowpasswordiconFalse
-         * @tc.desc      ACE
+         * @tc.name   testInputShowpasswordiconFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputShowpasswordiconFalse', Level.LEVEL0, async function(done) {
             console.info('testInputShowpasswordiconFalse START');
@@ -1705,9 +1948,12 @@ export default function inputPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testInputShowpasswordiconNone
-         * @tc.desc      ACE
+         * @tc.name   testInputShowpasswordiconNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputShowpasswordiconNone', Level.LEVEL0, async function(done) {
             console.info('testInputShowpasswordiconNone START');

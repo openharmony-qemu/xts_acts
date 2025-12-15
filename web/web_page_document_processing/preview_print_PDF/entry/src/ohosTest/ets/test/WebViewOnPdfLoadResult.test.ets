@@ -58,55 +58,55 @@ export default function ActsAceWebViewOnPdfLoadResult() {
       done();
     })
 
-    /*
-      * @tc.number      : SUB_ACE_WEB_WEBVIEWONPDFLOADRESULT_API_0001
-      * @tc.name        : emitWebViewOnPdfLoadResult001
-      * @tc.desc        : emitWebViewOnPdfLoadResult001
-      * @tc.size        : MediumTest
-      * @tc.type        : Function
-      * @tc.level       : Level 0
-      */
+    /**
+     * @tc.name   emitWebViewOnPdfLoadResult001
+     * @tc.number SUB_ACE_WEB_WEBVIEWONPDFLOADRESULT_API_0001
+     * @tc.desc   emitWebViewOnPdfLoadResult001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitWebViewOnPdfLoadResult001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebViewOnPdfLoadResult001", 300650)
       Utils.registerEvent("emitWebViewOnPdfLoadResult001", PdfLoadResult.LOAD_SUCCESS, 300660, done);
       sendEventByKey('WebViewOnPdfScrollAtBottomKey', 10, '');
     })
 
-    /*
-       * @tc.number      : SUB_ACE_WEB_WEBVIEWONPDFLOADRESULT_API_0002
-       * @tc.name        : emitWebViewOnPdfLoadResult002
-       * @tc.desc        : emitWebViewOnPdfLoadResult002
-       * @tc.size        : MediumTest
-       * @tc.type        : Function
-       * @tc.level       : Level 0
-       */
+    /**
+     * @tc.name   emitWebViewOnPdfLoadResult002
+     * @tc.number SUB_ACE_WEB_WEBVIEWONPDFLOADRESULT_API_0002
+     * @tc.desc   emitWebViewOnPdfLoadResult002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitWebViewOnPdfLoadResult002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebViewOnPdfLoadResult002", 300650)
       Utils.registerEvent("emitWebViewOnPdfLoadResult002", PdfLoadResult.PARSE_ERROR_FILE, 300670, done);
       sendEventByKey('WebViewOnPdfScrollAtBottomKey', 10, '');
     })
 
-      /*
-       * @tc.number      : SUB_ACE_WEB_WEBVIEWONPDFLOADRESULT_API_0003
-       * @tc.name        : emitWebViewOnPdfLoadResult003
-       * @tc.desc        : emitWebViewOnPdfLoadResult003
-       * @tc.size        : MediumTest
-       * @tc.type        : Function
-       * @tc.level       : Level 0
-       */
+    /**
+     * @tc.name   emitWebViewOnPdfLoadResult003
+     * @tc.number SUB_ACE_WEB_WEBVIEWONPDFLOADRESULT_API_0003
+     * @tc.desc   emitWebViewOnPdfLoadResult003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitWebViewOnPdfLoadResult003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebViewOnPdfLoadResult003", 300650)
       Utils.registerEvent("emitWebViewOnPdfLoadResult003", PdfLoadResult.PARSE_ERROR_FORMAT, 300680, done);
       sendEventByKey('WebViewOnPdfScrollAtBottomKey', 10, '');
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBVIEWONPDFLOADRESULT_API_0004
-     * @tc.name        : emitWebViewOnPdfLoadResult004
-     * @tc.desc        : emitWebViewOnPdfLoadResult004
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   emitWebViewOnPdfLoadResult004
+     * @tc.number SUB_ACE_WEB_WEBVIEWONPDFLOADRESULT_API_0004
+     * @tc.desc   emitWebViewOnPdfLoadResult004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitWebViewOnPdfLoadResult004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebViewOnPdfLoadResult004", 300650)
@@ -114,13 +114,13 @@ export default function ActsAceWebViewOnPdfLoadResult() {
       sendEventByKey('WebViewOnPdfScrollAtBottomKey', 10, '');
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBVIEWONPDFLOADRESULT_API_0005
-     * @tc.name        : emitWebViewOnPdfLoadResult005
-     * @tc.desc        : emitWebViewOnPdfLoadResult005
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   emitWebViewOnPdfLoadResult005
+     * @tc.number SUB_ACE_WEB_WEBVIEWONPDFLOADRESULT_API_0005
+     * @tc.desc   emitWebViewOnPdfLoadResult005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitWebViewOnPdfLoadResult005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebViewOnPdfLoadResult005", 300650)

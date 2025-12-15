@@ -47,12 +47,12 @@ export default function AddComponentContentErrorCodeTest() {
     });
 
     /**
-     * @tc.number    addComponentContentErrorCodeTest_0100
-     * @tc.name      addComponentContentErrorCodeTest_0100
-     * @tc.desc      frameNode: test Add ComponentContent error code
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   addComponentContentErrorCodeTest_0100
+     * @tc.number addComponentContentErrorCodeTest_0100
+     * @tc.desc   frameNode: test Add ComponentContent error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('addComponentContentErrorCodeTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('addComponentContentErrorCodeTest_0100 START');

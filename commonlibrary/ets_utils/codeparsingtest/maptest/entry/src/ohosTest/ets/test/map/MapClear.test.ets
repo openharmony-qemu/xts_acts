@@ -66,12 +66,12 @@ export default function MapClearTest() {
     })
 
     /**
+     * @tc.name   MapClearTest001
      * @tc.number MAP_CLEAR_TEST_001
-     * @tc.name MapClearTest001
-     * @tc.desc Clear an empty Map, check size is 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear an empty Map, check size is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<number,number> = new Map();
@@ -80,12 +80,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest002
      * @tc.number MAP_CLEAR_TEST_002
-     * @tc.name MapClearTest002
-     * @tc.desc Clear a Map with one element, check size is 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with one element, check size is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<string,string> = new Map();
@@ -95,12 +95,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest003
      * @tc.number MAP_CLEAR_TEST_003
-     * @tc.name MapClearTest003
-     * @tc.desc Clear a Map with multiple elements, check size is 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with multiple elements, check size is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<number,string> = new Map();
@@ -112,12 +112,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest004
      * @tc.number MAP_CLEAR_TEST_004
-     * @tc.name MapClearTest004
-     * @tc.desc After clear, check if original key exists
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   After clear, check if original key exists
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<string,string> = new Map();
@@ -127,12 +127,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest005
      * @tc.number MAP_CLEAR_TEST_005
-     * @tc.name MapClearTest005
-     * @tc.desc After clear, check if get returns undefined for original key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   After clear, check if get returns undefined for original key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<string,string> = new Map();
@@ -142,12 +142,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest006
      * @tc.number MAP_CLEAR_TEST_006
-     * @tc.name MapClearTest006
-     * @tc.desc Clear a Map with number keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with number keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<number,string> = new Map();
@@ -158,12 +158,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest007
      * @tc.number MAP_CLEAR_TEST_007
-     * @tc.name MapClearTest007
-     * @tc.desc Clear a Map with boolean keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with boolean keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<boolean,string> = new Map();
@@ -174,12 +174,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest008
      * @tc.number MAP_CLEAR_TEST_008
-     * @tc.name MapClearTest008
-     * @tc.desc Clear a Map with object keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with object keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const obj1 = NewObject();
@@ -192,12 +192,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest009
      * @tc.number MAP_CLEAR_TEST_009
-     * @tc.name MapClearTest009
-     * @tc.desc Clear a Map with null key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with null key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<ESObject,string> = new Map();
@@ -207,12 +207,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest010
      * @tc.number MAP_CLEAR_TEST_010
-     * @tc.name MapClearTest010
-     * @tc.desc Clear a Map with undefined key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with undefined key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<ESObject,string>  = new Map();
@@ -222,12 +222,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest011
      * @tc.number MAP_CLEAR_TEST_011
-     * @tc.name MapClearTest011
-     * @tc.desc Clear a Map with symbol keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with symbol keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<ESObject,ESObject> = MapClearTest011();
@@ -236,12 +236,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest012
      * @tc.number MAP_CLEAR_TEST_012
-     * @tc.name MapClearTest012
-     * @tc.desc Clear a Map with function keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with function keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const func1 = () => {};
@@ -254,12 +254,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest013
      * @tc.number MAP_CLEAR_TEST_013
-     * @tc.name MapClearTest013
-     * @tc.desc Clear a Map with array keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with array keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const arr1 = [1, 2];
@@ -272,12 +272,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest014
      * @tc.number MAP_CLEAR_TEST_014
-     * @tc.name MapClearTest014
-     * @tc.desc Clear a Map with mixed key types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with mixed key types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<ESObject,ESObject> = new Map();
@@ -290,12 +290,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest015
      * @tc.number MAP_CLEAR_TEST_015
-     * @tc.name MapClearTest015
-     * @tc.desc Clear a Map and check entries iterator is empty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and check entries iterator is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<ESObject,ESObject> = new Map();
@@ -306,12 +306,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest016
      * @tc.number MAP_CLEAR_TEST_016
-     * @tc.name MapClearTest016
-     * @tc.desc Clear a Map and check keys iterator is empty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and check keys iterator is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<ESObject,ESObject> = new Map();
@@ -322,12 +322,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest017
      * @tc.number MAP_CLEAR_TEST_017
-     * @tc.name MapClearTest017
-     * @tc.desc Clear a Map and check values iterator is empty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and check values iterator is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<ESObject,ESObject> = new Map();
@@ -338,12 +338,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest018
      * @tc.number MAP_CLEAR_TEST_018
-     * @tc.name MapClearTest018
-     * @tc.desc Call clear multiple times on the same Map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call clear multiple times on the same Map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<ESObject,ESObject> = new Map();
@@ -355,12 +355,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest019
      * @tc.number MAP_CLEAR_TEST_019
-     * @tc.name MapClearTest019
-     * @tc.desc Clear a Map and then add new elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and then add new elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<ESObject,ESObject> = new Map();
@@ -371,12 +371,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest020
      * @tc.number MAP_CLEAR_TEST_020
-     * @tc.name MapClearTest020
-     * @tc.desc Clear a Map created from an array of pairs
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map created from an array of pairs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map = new Map([['a', 1], ['b', 2], ['c', 3]]);
@@ -385,12 +385,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest021
      * @tc.number MAP_CLEAR_TEST_021
-     * @tc.name MapClearTest021
-     * @tc.desc Clear a Map created from another Map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map created from another Map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const original = new Map([['a', 1]]);
@@ -400,12 +400,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest022
      * @tc.number MAP_CLEAR_TEST_022
-     * @tc.name MapClearTest022
-     * @tc.desc Clear a large Map with 1000 elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a large Map with 1000 elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<ESObject,ESObject> = new Map();
@@ -417,12 +417,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest023
      * @tc.number MAP_CLEAR_TEST_023
-     * @tc.name MapClearTest023
-     * @tc.desc Check that clear returns undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check that clear returns undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<ESObject,ESObject> = new Map();
@@ -431,12 +431,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest024
      * @tc.number MAP_CLEAR_TEST_024
-     * @tc.name MapClearTest024
-     * @tc.desc Clear a Map and check forEach doesn't execute
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and check forEach doesn't execute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map = new Map([['a', 1]]);
@@ -447,12 +447,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest025
      * @tc.number MAP_CLEAR_TEST_025
-     * @tc.name MapClearTest025
-     * @tc.desc Clear a Map with nested objects as values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with nested objects as values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<ESObject,ESObject> = new Map();
@@ -463,12 +463,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest026
      * @tc.number MAP_CLEAR_TEST_026
-     * @tc.name MapClearTest026
-     * @tc.desc Clear a Map with Date objects as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with Date objects as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const date1 = new Date(2020, 0, 1);
@@ -481,12 +481,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest027
      * @tc.number MAP_CLEAR_TEST_027
-     * @tc.name MapClearTest027
-     * @tc.desc Clear a Map with RegExp objects as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with RegExp objects as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const regex1 = /test/;
@@ -499,12 +499,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest028
      * @tc.number MAP_CLEAR_TEST_028
-     * @tc.name MapClearTest028
-     * @tc.desc Clear a Map and verify with has() for multiple keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and verify with has() for multiple keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<ESObject,ESObject> = new Map();
@@ -519,12 +519,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest029
      * @tc.number MAP_CLEAR_TEST_029
-     * @tc.name MapClearTest029
-     * @tc.desc Clear a Map with numbers that are loosely equal but strictly different
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with numbers that are loosely equal but strictly different
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<ESObject,ESObject> = new Map();
@@ -535,12 +535,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest030
      * @tc.number MAP_CLEAR_TEST_030
-     * @tc.name MapClearTest030
-     * @tc.desc Clear a Map and check after setting same key again
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and check after setting same key again
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<ESObject,ESObject> = new Map();
@@ -552,12 +552,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest031
      * @tc.number MAP_CLEAR_TEST_031
-     * @tc.name MapClearTest031
-     * @tc.desc Clear a Map with Infinity as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with Infinity as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<ESObject,ESObject> = new Map();
@@ -568,12 +568,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest032
      * @tc.number MAP_CLEAR_TEST_032
-     * @tc.name MapClearTest032
-     * @tc.desc Clear a Map with NaN as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with NaN as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<ESObject,ESObject> = new Map();
@@ -583,12 +583,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest033
      * @tc.number MAP_CLEAR_TEST_033
-     * @tc.name MapClearTest033
-     * @tc.desc Clear a Map with multiple references to the same object key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with multiple references to the same object key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const obj = NewObject();
@@ -600,12 +600,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest034
      * @tc.number MAP_CLEAR_TEST_034
-     * @tc.name MapClearTest034
-     * @tc.desc Clear a Map and check if it's iterable (should be empty)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and check if it's iterable (should be empty)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map = new Map([[1, 'a'], [2, 'b']]);
@@ -618,12 +618,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest035
      * @tc.number MAP_CLEAR_TEST_035
-     * @tc.name MapClearTest035
-     * @tc.desc Clear a Map and check with JSON.stringify
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and check with JSON.stringify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map = new Map([['a', 1]]);
@@ -632,12 +632,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest036
      * @tc.number MAP_CLEAR_TEST_036
-     * @tc.name MapClearTest036
-     * @tc.desc Clear a Map that's been assigned to another variable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map that's been assigned to another variable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map1 = new Map([['key', 'value']]);
@@ -647,12 +647,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest037
      * @tc.number MAP_CLEAR_TEST_037
-     * @tc.name MapClearTest037
-     * @tc.desc Clear a Map inside a function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map inside a function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
 
@@ -661,12 +661,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest038
      * @tc.number MAP_CLEAR_TEST_038
-     * @tc.name MapClearTest038
-     * @tc.desc Clear a Map and check prototype methods still work
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and check prototype methods still work
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map = new Map([['a', 1]]);
@@ -676,12 +676,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest039
      * @tc.number MAP_CLEAR_TEST_039
-     * @tc.name MapClearTest039
-     * @tc.desc Clear a frozen Map (should throw error)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a frozen Map (should throw error)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
 
@@ -690,12 +690,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest040
      * @tc.number MAP_CLEAR_TEST_040
-     * @tc.name MapClearTest040
-     * @tc.desc Clear a sealed Map (should throw error)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a sealed Map (should throw error)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
 
@@ -703,12 +703,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest041
      * @tc.number MAP_CLEAR_TEST_041
-     * @tc.name MapClearTest041
-     * @tc.desc Clear a Map with elements added after previous clear
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with elements added after previous clear
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<ESObject,ESObject> = new Map();
@@ -720,12 +720,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest042
      * @tc.number MAP_CLEAR_TEST_042
-     * @tc.name MapClearTest042
-     * @tc.desc Clear a Map and check that keys are not weakly referenced
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and check that keys are not weakly referenced
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       let map:Map<ESObject,ESObject> = MapClearTest042()
@@ -733,12 +733,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest043
      * @tc.number MAP_CLEAR_TEST_043
-     * @tc.name MapClearTest043
-     * @tc.desc Clear a Map during iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
 
@@ -746,12 +746,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest044
      * @tc.number MAP_CLEAR_TEST_044
-     * @tc.name MapClearTest044
-     * @tc.desc Clear a Map with Unicode string keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with Unicode string keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<string,string> = new Map();
@@ -762,12 +762,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest045
      * @tc.number MAP_CLEAR_TEST_045
-     * @tc.name MapClearTest045
-     * @tc.desc Clear a Map with empty string key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with empty string key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<string,string> = new Map();
@@ -777,12 +777,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest046
      * @tc.number MAP_CLEAR_TEST_046
-     * @tc.name MapClearTest046
-     * @tc.desc Clear a Map with large integer keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with large integer keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<number,string> = new Map();
@@ -793,12 +793,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest047
      * @tc.number MAP_CLEAR_TEST_047
-     * @tc.name MapClearTest047
-     * @tc.desc Clear a Map with negative number keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with negative number keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<number,string> = new Map();
@@ -809,12 +809,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest048
      * @tc.number MAP_CLEAR_TEST_048
-     * @tc.name MapClearTest048
-     * @tc.desc Clear a Map with floating point number keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with floating point number keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<number,string> = new Map();
@@ -825,12 +825,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest049
      * @tc.number MAP_CLEAR_TEST_049
-     * @tc.name MapClearTest049
-     * @tc.desc Clear a Map with Symbol.iterator as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with Symbol.iterator as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<ESObject,string> = new Map();
@@ -840,24 +840,24 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest050
      * @tc.number MAP_CLEAR_TEST_050
-     * @tc.name MapClearTest050
-     * @tc.desc Clear a Map with well-known symbols as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with well-known symbols as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       expect(MapClearTest050()).assertEqual(0);
     });
 
     /**
+     * @tc.name   MapClearTest051
      * @tc.number MAP_CLEAR_TEST_051
-     * @tc.name MapClearTest051
-     * @tc.desc Clear a Map and check if it's empty using Array.from
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and check if it's empty using Array.from
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map = new Map([[1, 'a'], [2, 'b']]);
@@ -866,24 +866,24 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest052
      * @tc.number MAP_CLEAR_TEST_052
-     * @tc.name MapClearTest052
-     * @tc.desc Clear a Map and check with spread operator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and check with spread operator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       expect(MapClearTest052()).assertEqual(0);
     });
 
     /**
+     * @tc.name   MapClearTest053
      * @tc.number MAP_CLEAR_TEST_053
-     * @tc.name MapClearTest053
-     * @tc.desc Clear a Map and then delete a key (should have no effect)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and then delete a key (should have no effect)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map = new Map([['key', 'value']]);
@@ -893,12 +893,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest054
      * @tc.number MAP_CLEAR_TEST_054
-     * @tc.name MapClearTest054
-     * @tc.desc Clear a Map in a setTimeout
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map in a setTimeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map = new Map([['key', 'value']]);
@@ -911,12 +911,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest055
      * @tc.number MAP_CLEAR_TEST_055
-     * @tc.name MapClearTest055
-     * @tc.desc Clear a Map in a promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map in a promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ():Promise<void> => {
 
@@ -924,12 +924,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest056
      * @tc.number MAP_CLEAR_TEST_056
-     * @tc.name MapClearTest056
-     * @tc.desc Clear a Map with a Map as a value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with a Map as a value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const innerMap = new Map([['inner', 'value']]);
@@ -939,12 +939,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest057
      * @tc.number MAP_CLEAR_TEST_057
-     * @tc.name MapClearTest057
-     * @tc.desc Clear a Map with a Set as a value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with a Set as a value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const set = new Set([1, 2, 3]);
@@ -954,12 +954,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest058
      * @tc.number MAP_CLEAR_TEST_058
-     * @tc.name MapClearTest058
-     * @tc.desc Clear a Map with a function as a value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with a function as a value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const func = () => 'test';
@@ -969,12 +969,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest059
      * @tc.number MAP_CLEAR_TEST_059
-     * @tc.name MapClearTest059
-     * @tc.desc Clear a Map and check that the original values are still accessible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and check that the original values are still accessible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
 
@@ -982,12 +982,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest060
      * @tc.number MAP_CLEAR_TEST_060
-     * @tc.name MapClearTest060
-     * @tc.desc Clear a Map and check that the original keys are still accessible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and check that the original keys are still accessible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
 
@@ -995,12 +995,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest061
      * @tc.number MAP_CLEAR_TEST_061
-     * @tc.name MapClearTest061
-     * @tc.desc Clear a Map with a Date as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with a Date as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const date = new Date();
@@ -1010,12 +1010,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest062
      * @tc.number MAP_CLEAR_TEST_062
-     * @tc.name MapClearTest062
-     * @tc.desc Clear a Map with a RegExp as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with a RegExp as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const regex = /pattern/;
@@ -1025,12 +1025,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest063
      * @tc.number MAP_CLEAR_TEST_063
-     * @tc.name MapClearTest063
-     * @tc.desc Clear a Map with a class instance as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with a class instance as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       class TestClass {}
@@ -1041,12 +1041,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest064
      * @tc.number MAP_CLEAR_TEST_064
-     * @tc.name MapClearTest064
-     * @tc.desc Clear a Map with a class instance as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with a class instance as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       class TestClass {}
@@ -1057,36 +1057,36 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest065
      * @tc.number MAP_CLEAR_TEST_065
-     * @tc.name MapClearTest065
-     * @tc.desc Clear a Map with a Buffer as key (Node.js environment)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with a Buffer as key (Node.js environment)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       expect(MapClearTest065()).assertEqual(true);
     });
 
     /**
+     * @tc.name   MapClearTest066
      * @tc.number MAP_CLEAR_TEST_066
-     * @tc.name MapClearTest066
-     * @tc.desc Clear a Map with a Buffer as value (Node.js environment)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with a Buffer as value (Node.js environment)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       expect(MapClearTest066()).assertEqual(true);
     });
 
     /**
+     * @tc.name   MapClearTest067
      * @tc.number MAP_CLEAR_TEST_067
-     * @tc.name MapClearTest067
-     * @tc.desc Clear a Map with a Map as a key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with a Map as a key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const keyMap = new Map([['a', 1]]);
@@ -1096,12 +1096,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest068
      * @tc.number MAP_CLEAR_TEST_068
-     * @tc.name MapClearTest068
-     * @tc.desc Clear a Map with a Set as a key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with a Set as a key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const keySet = new Set([1, 2]);
@@ -1111,12 +1111,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest069
      * @tc.number MAP_CLEAR_TEST_069
-     * @tc.name MapClearTest069
-     * @tc.desc Clear a Map with a WeakMap reference as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with a WeakMap reference as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
 
@@ -1124,12 +1124,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest070
      * @tc.number MAP_CLEAR_TEST_070
-     * @tc.name MapClearTest070
-     * @tc.desc Clear a Map with a WeakSet reference as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with a WeakSet reference as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const weakSet = new WeakSet();
@@ -1141,12 +1141,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest071
      * @tc.number MAP_CLEAR_TEST_071
-     * @tc.name MapClearTest071
-     * @tc.desc Clear a Map with a generator function as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with a generator function as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
 
@@ -1154,12 +1154,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest072
      * @tc.number MAP_CLEAR_TEST_072
-     * @tc.name MapClearTest072
-     * @tc.desc Clear a Map with an async function as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with an async function as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
 
@@ -1167,12 +1167,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest073
      * @tc.number MAP_CLEAR_TEST_073
-     * @tc.name MapClearTest073
-     * @tc.desc Clear a Map and check with Map.prototype.keys.next()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and check with Map.prototype.keys.next()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map = new Map([[1, 'a'], [2, 'b']]);
@@ -1181,12 +1181,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest074
      * @tc.number MAP_CLEAR_TEST_074
-     * @tc.name MapClearTest074
-     * @tc.desc Clear a Map and check with Map.prototype.values.next()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and check with Map.prototype.values.next()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map = new Map([[1, 'a'], [2, 'b']]);
@@ -1195,12 +1195,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest075
      * @tc.number MAP_CLEAR_TEST_075
-     * @tc.name MapClearTest075
-     * @tc.desc Clear a Map and check with Map.prototype.entries.next()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and check with Map.prototype.entries.next()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map = new Map([[1, 'a'], [2, 'b']]);
@@ -1209,12 +1209,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest076
      * @tc.number MAP_CLEAR_TEST_076
-     * @tc.name MapClearTest076
-     * @tc.desc Clear a Map and check with Map.prototype[Symbol.iterator].next()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and check with Map.prototype[Symbol.iterator].next()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map = new Map([[1, 'a'], [2, 'b']]);
@@ -1223,12 +1223,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest077
      * @tc.number MAP_CLEAR_TEST_077
-     * @tc.name MapClearTest077
-     * @tc.desc Clear a Map and check if the map is empty with a custom function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and check if the map is empty with a custom function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
 
@@ -1236,24 +1236,24 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest078
      * @tc.number MAP_CLEAR_TEST_078
-     * @tc.name MapClearTest078
-     * @tc.desc Clear a Map and then check with a for...of loop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and then check with a for...of loop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       expect(MapClearTest078()).assertEqual(0);
     });
 
     /**
+     * @tc.name   MapClearTest079
      * @tc.number MAP_CLEAR_TEST_079
-     * @tc.name MapClearTest079
-     * @tc.desc Clear a Map and then check with a for loop using keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and then check with a for loop using keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map = new Map([[1, 'a'], [2, 'b']]);
@@ -1268,12 +1268,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest080
      * @tc.number MAP_CLEAR_TEST_080
-     * @tc.name MapClearTest080
-     * @tc.desc Clear a Map and then check with a for loop using values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and then check with a for loop using values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map = new Map([[1, 'a'], [2, 'b']]);
@@ -1288,12 +1288,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest081
      * @tc.number MAP_CLEAR_TEST_081
-     * @tc.name MapClearTest081
-     * @tc.desc Clear a Map with a key that's a reference to the map itself
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with a key that's a reference to the map itself
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:ESObject = new Map();
@@ -1303,12 +1303,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest082
      * @tc.number MAP_CLEAR_TEST_082
-     * @tc.name MapClearTest082
-     * @tc.desc Clear a Map with circular references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with circular references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
 
@@ -1316,36 +1316,36 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest083
      * @tc.number MAP_CLEAR_TEST_083
-     * @tc.name MapClearTest083
-     * @tc.desc Clear a Map with a key that's a DOM element (browser environment)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with a key that's a DOM element (browser environment)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       expect(MapClearTest083()).assertEqual(true);
     });
 
     /**
+     * @tc.name   MapClearTest084
      * @tc.number MAP_CLEAR_TEST_084
-     * @tc.name MapClearTest084
-     * @tc.desc Clear a Map with a value that's a DOM element (browser environment)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with a value that's a DOM element (browser environment)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       expect(MapClearTest084()).assertEqual(true);
     });
 
     /**
+     * @tc.name   MapClearTest085
      * @tc.number MAP_CLEAR_TEST_085
-     * @tc.name MapClearTest085
-     * @tc.desc Clear a Map and check with JSON.stringify after converting to array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and check with JSON.stringify after converting to array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map = new Map([[1, 'a'], [2, 'b']]);
@@ -1354,12 +1354,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest086
      * @tc.number MAP_CLEAR_TEST_086
-     * @tc.name MapClearTest086
-     * @tc.desc Clear a Map and then check if the map is equal to a new empty map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and then check if the map is equal to a new empty map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map = new Map([[1, 'a']]);
@@ -1369,24 +1369,24 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest087
      * @tc.number MAP_CLEAR_TEST_087
-     * @tc.name MapClearTest087
-     * @tc.desc Clear a Map and check that the map's prototype is unchanged
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and check that the map's prototype is unchanged
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       expect(MapClearTest087()).assertEqual(true);
     });
 
     /**
+     * @tc.name   MapClearTest088
      * @tc.number MAP_CLEAR_TEST_088
-     * @tc.name MapClearTest088
-     * @tc.desc Clear a Map and check that the map's constructor is Map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and check that the map's constructor is Map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map = new Map([[1, 'a']]);
@@ -1395,12 +1395,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest089
      * @tc.number MAP_CLEAR_TEST_089
-     * @tc.name MapClearTest089
-     * @tc.desc Clear a Map and check that the map is an instance of Map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and check that the map is an instance of Map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map = new Map([[1, 'a']]);
@@ -1409,24 +1409,24 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest090
      * @tc.number MAP_CLEAR_TEST_090
-     * @tc.name MapClearTest090
-     * @tc.desc Clear a Map and check that the map has not been converted to another type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and check that the map has not been converted to another type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       expect(MapClearTest090()).assertEqual('[object Map]');
     });
 
     /**
+     * @tc.name   MapClearTest091
      * @tc.number MAP_CLEAR_TEST_091
-     * @tc.name MapClearTest091
-     * @tc.desc Clear a Map with a key that's a BigInt
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with a key that's a BigInt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<bigint,string> = new Map();
@@ -1436,12 +1436,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest092
      * @tc.number MAP_CLEAR_TEST_092
-     * @tc.name MapClearTest092
-     * @tc.desc Clear a Map with a value that's a BigInt
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with a value that's a BigInt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map:Map<string,bigint> = new Map();
@@ -1451,12 +1451,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest093
      * @tc.number MAP_CLEAR_TEST_093
-     * @tc.name MapClearTest093
-     * @tc.desc Clear a Map with a key that's a typed array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with a key that's a typed array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const typedArray = new Uint8Array([1, 2, 3]);
@@ -1466,12 +1466,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest094
      * @tc.number MAP_CLEAR_TEST_094
-     * @tc.name MapClearTest094
-     * @tc.desc Clear a Map with a value that's a typed array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with a value that's a typed array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const typedArray = new Uint8Array([1, 2, 3]);
@@ -1481,12 +1481,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest095
      * @tc.number MAP_CLEAR_TEST_095
-     * @tc.name MapClearTest095
-     * @tc.desc Clear a Map with a key that's an ArrayBuffer
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with a key that's an ArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const buffer = new ArrayBuffer(8);
@@ -1496,12 +1496,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest096
      * @tc.number MAP_CLEAR_TEST_096
-     * @tc.name MapClearTest096
-     * @tc.desc Clear a Map with a value that's an ArrayBuffer
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with a value that's an ArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const buffer = new ArrayBuffer(8);
@@ -1511,12 +1511,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest097
      * @tc.number MAP_CLEAR_TEST_097
-     * @tc.name MapClearTest097
-     * @tc.desc Clear a Map and check that the clear method still exists
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map and check that the clear method still exists
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const map = new Map([[1, 'a']]);
@@ -1525,12 +1525,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest098
      * @tc.number MAP_CLEAR_TEST_098
-     * @tc.name MapClearTest098
-     * @tc.desc Clear a Map with a key that's a Proxy object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with a key that's a Proxy object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const target = NewObject();
@@ -1541,12 +1541,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest099
      * @tc.number MAP_CLEAR_TEST_099
-     * @tc.name MapClearTest099
-     * @tc.desc Clear a Map with a value that's a Proxy object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with a value that's a Proxy object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const target = NewObject();
@@ -1557,12 +1557,12 @@ export default function MapClearTest() {
     });
 
     /**
+     * @tc.name   MapClearTest100
      * @tc.number MAP_CLEAR_TEST_100
-     * @tc.name MapClearTest100
-     * @tc.desc Clear a Map with a key that's a Reflect object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Clear a Map with a key that's a Reflect object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapClearTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       expect(MapClearTest100()).assertEqual(0);

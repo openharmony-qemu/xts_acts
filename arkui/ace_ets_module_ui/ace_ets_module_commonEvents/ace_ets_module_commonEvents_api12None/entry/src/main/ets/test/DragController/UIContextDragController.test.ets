@@ -48,12 +48,12 @@ export default function UIContextDragControllerTest() {
     });
 
     /**
-     * @tc.number    UIContextDragController_0010
-     * @tc.name      UIContextDragController_0010
-     * @tc.desc      api: UIContext DragController
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UIContextDragController_0010
+     * @tc.number UIContextDragController_0010
+     * @tc.desc   api: UIContext DragController
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('UIContextDragController_0010', Level.LEVEL0, async (done: Function) => {
       console.info('UIContextDragController_0010 START');

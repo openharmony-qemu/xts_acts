@@ -26,104 +26,104 @@ export default function imageAnimatorFillModeTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_FILL_MODE_0100
-     * @tc.name: testImageAnimatorFillMode001
-     * @tc.desc: testing fillMode for imageAnimator with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageAnimatorFillMode001
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_FILL_MODE_0100
+     * @tc.desc   testing fillMode for imageAnimator with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAnimatorFillMode001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAnimatorFillMode001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_FILL_MODE_0200
-     * @tc.name: testImageAnimatorFillMode002
-     * @tc.desc: testing fillMode for imageAnimator with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageAnimatorFillMode002
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_FILL_MODE_0200
+     * @tc.desc   testing fillMode for imageAnimator with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAnimatorFillMode002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAnimatorFillMode002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_FILL_MODE_0300
-     * @tc.name: testImageAnimatorFillMode003
-     * @tc.desc: testing fillMode for imageAnimator with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageAnimatorFillMode003
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_FILL_MODE_0300
+     * @tc.desc   testing fillMode for imageAnimator with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAnimatorFillMode003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAnimatorFillMode003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_FILL_MODE_0400
-     * @tc.name: testImageAnimatorFillMode004
-     * @tc.desc: testing fillMode for imageAnimator with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageAnimatorFillMode004
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_FILL_MODE_0400
+     * @tc.desc   testing fillMode for imageAnimator with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAnimatorFillMode004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAnimatorFillMode004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_FILL_MODE_0500
-     * @tc.name: testImageAnimatorFillMode005
-     * @tc.desc: testing fillMode for imageAnimator with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageAnimatorFillMode005
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_FILL_MODE_0500
+     * @tc.desc   testing fillMode for imageAnimator with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAnimatorFillMode005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAnimatorFillMode005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_FILL_MODE_0600
-     * @tc.name: testImageAnimatorFillMode006
-     * @tc.desc: testing fillMode for imageAnimator with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageAnimatorFillMode006
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_FILL_MODE_0600
+     * @tc.desc   testing fillMode for imageAnimator with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAnimatorFillMode006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAnimatorFillMode006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_FILL_MODE_0700
-     * @tc.name: testImageAnimatorFillMode007
-     * @tc.desc: testing fillMode for imageAnimator with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageAnimatorFillMode007
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_FILL_MODE_0700
+     * @tc.desc   testing fillMode for imageAnimator with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAnimatorFillMode007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAnimatorFillMode007()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_FILL_MODE_0800
-     * @tc.name: testImageAnimatorFillMode008
-     * @tc.desc: testing fillMode for imageAnimator with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageAnimatorFillMode008
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_FILL_MODE_0800
+     * @tc.desc   testing fillMode for imageAnimator with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAnimatorFillMode008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAnimatorFillMode008()).assertEqual(0)

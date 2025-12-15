@@ -34,7 +34,6 @@ export default function dragWithOutPPermissionTest() {
       unifiedDataChannel.removeAppShareOptions(unifiedDataChannel.Intention.DRAG);
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0100
      * @tc.number SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0100
      * @tc.desc   setAppShareOptions
@@ -53,7 +52,6 @@ export default function dragWithOutPPermissionTest() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0200
      * @tc.number SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0200
      * @tc.desc   setAppShareOptions
@@ -74,7 +72,6 @@ export default function dragWithOutPPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0300
      * @tc.number SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0300
      * @tc.desc   setAppShareOptions

@@ -33,12 +33,12 @@ export default function rdbRekeyExNdkTest() {
     })
 
     /**
+     * @tc.name   OH_Rdb_RekeyEx0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_RekeyExTest_0100
-     * @tc.name OH_Rdb_RekeyEx0100
-     * @tc.desc OH_Rdb_RekeyEx0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Rdb_RekeyEx0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Rdb_RekeyEx0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testndk.OH_Rdb_RekeyEx0100();
@@ -47,12 +47,12 @@ export default function rdbRekeyExNdkTest() {
       done();
     });
     /**
+     * @tc.name   OH_Rdb_RekeyEx0200
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_RekeyExTest_0200
-     * @tc.name OH_Rdb_RekeyEx0200
-     * @tc.desc OH_Rdb_RekeyEx0200
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Rdb_RekeyEx0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Rdb_RekeyEx0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testndk.OH_Rdb_RekeyEx0200();
@@ -61,12 +61,12 @@ export default function rdbRekeyExNdkTest() {
       done();
     });
     /**
+     * @tc.name   OH_Rdb_RekeyEx0300
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_RekeyExTest_0300
-     * @tc.name OH_Rdb_RekeyEx0300
-     * @tc.desc OH_Rdb_RekeyEx0300
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Rdb_RekeyEx0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Rdb_RekeyEx0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testndk.OH_Rdb_RekeyEx0300();
@@ -75,12 +75,12 @@ export default function rdbRekeyExNdkTest() {
       done();
     });
     /**
+     * @tc.name   OH_Rdb_RekeyEx0400
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_RekeyExTest_0400
-     * @tc.name OH_Rdb_RekeyEx0400
-     * @tc.desc OH_Rdb_RekeyEx0400
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Rdb_RekeyEx0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Rdb_RekeyEx0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testndk.OH_Rdb_RekeyEx0400();
@@ -89,12 +89,12 @@ export default function rdbRekeyExNdkTest() {
       done();
     });
     /**
+     * @tc.name   OH_Rdb_RekeyEx0500
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_RekeyExTest_0500
-     * @tc.name OH_Rdb_RekeyEx0500
-     * @tc.desc OH_Rdb_RekeyEx0500
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Rdb_RekeyEx0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Rdb_RekeyEx0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testndk.OH_Rdb_RekeyEx0500();
@@ -103,12 +103,12 @@ export default function rdbRekeyExNdkTest() {
       done();
     });
     /**
+     * @tc.name   OH_Rdb_RekeyEx0600
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_RekeyExTest_0600
-     * @tc.name OH_Rdb_RekeyEx0600
-     * @tc.desc OH_Rdb_RekeyEx0600
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Rdb_RekeyEx0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Rdb_RekeyEx0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testndk.OH_Rdb_RekeyEx0600();
@@ -117,12 +117,12 @@ export default function rdbRekeyExNdkTest() {
       done();
     });
     /**
+     * @tc.name   OH_Rdb_RekeyEx0700
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_RekeyExTest_0700
-     * @tc.name OH_Rdb_RekeyEx0700
-     * @tc.desc OH_Rdb_RekeyEx0700
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Rdb_RekeyEx0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Rdb_RekeyEx0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testndk.OH_Rdb_RekeyEx0700();
@@ -131,12 +131,12 @@ export default function rdbRekeyExNdkTest() {
       done();
     });
     /**
+     * @tc.name   OH_Rdb_RekeyEx0900
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_RekeyExTest_0900
-     * @tc.name OH_Rdb_RekeyEx0900
-     * @tc.desc OH_Rdb_RekeyEx0900
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Rdb_RekeyEx0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Rdb_RekeyEx0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testndk.OH_Rdb_RekeyEx0900();
@@ -145,12 +145,12 @@ export default function rdbRekeyExNdkTest() {
       done();
     });
     /**
+     * @tc.name   OH_Rdb_RekeyEx1000
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_RekeyExTest_1000
-     * @tc.name OH_Rdb_RekeyEx1000
-     * @tc.desc OH_Rdb_RekeyEx1000
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Rdb_RekeyEx1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Rdb_RekeyEx1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testndk.OH_Rdb_RekeyEx1000();
@@ -159,12 +159,12 @@ export default function rdbRekeyExNdkTest() {
       done();
     });
     /**
+     * @tc.name   OH_Rdb_RekeyEx1100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_RekeyExTest_1100
-     * @tc.name OH_Rdb_RekeyEx1100
-     * @tc.desc OH_Rdb_RekeyEx1100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Rdb_RekeyEx1100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Rdb_RekeyEx1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testndk.OH_Rdb_RekeyEx1100();

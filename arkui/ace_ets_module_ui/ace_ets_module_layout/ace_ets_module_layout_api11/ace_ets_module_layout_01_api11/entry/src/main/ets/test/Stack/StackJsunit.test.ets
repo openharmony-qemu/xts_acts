@@ -56,9 +56,12 @@ export default function StackJsunit() {
       console.info("Stack after each called");
     });
     /**
+     * @tc.name   testStackGetInspectorByKey010
      * @tc.number SUB_ACE_BASIC_ETS_API_1110
-     * @tc.name testStackGetInspectorByKey010
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackGetInspectorByKey010',  Level.LEVEL0, async (done: Function) => {
       console.info('testGetInspectorByKey START');
@@ -74,9 +77,12 @@ export default function StackJsunit() {
     });
 
     /**
+     * @tc.name   testStackGetInspectorByKey020
      * @tc.number SUB_ACE_BASIC_ETS_API_1120
-     * @tc.name testStackGetInspectorByKey020
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackGetInspectorByKey020',  Level.LEVEL0, async (done: Function) => {
       let strJson = getInspectorByKey('stack1');
@@ -90,9 +96,12 @@ export default function StackJsunit() {
     });
 
     /**
+     * @tc.name   testStackGetInspectorByKey030
      * @tc.number SUB_ACE_BASIC_ETS_API_1130
-     * @tc.name testStackGetInspectorByKey030
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackGetInspectorByKey030',  Level.LEVEL0, async (done: Function) => {
       let strJson = getInspectorByKey('stack2');
@@ -105,9 +114,12 @@ export default function StackJsunit() {
     });
 
     /**
+     * @tc.name   testStackGetInspectorByKey040
      * @tc.number SUB_ACE_BASIC_ETS_API_1140
-     * @tc.name testStackGetInspectorByKey040
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackGetInspectorByKey040',  Level.LEVEL0, async (done: Function) => {
       let strJson = getInspectorByKey('stack3');
@@ -119,9 +131,12 @@ export default function StackJsunit() {
       done();
     });
     /**
+     * @tc.name   testStackGetInspectorByKey050
      * @tc.number SUB_ACE_BASIC_ETS_API_1150
-     * @tc.name testStackGetInspectorByKey050
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackGetInspectorByKey050',  Level.LEVEL0, async (done: Function) => {
       let strJson = getInspectorByKey('stack4');
@@ -134,9 +149,12 @@ export default function StackJsunit() {
     });
 
     /**
+     * @tc.name   testStackGetInspectorByKey060
      * @tc.number SUB_ACE_BASIC_ETS_API_1160
-     * @tc.name testStackGetInspectorByKey060
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackGetInspectorByKey060',  Level.LEVEL0, async (done: Function) => {
       let strJson = getInspectorByKey('stack5');
@@ -149,9 +167,12 @@ export default function StackJsunit() {
     });
 
     /**
+     * @tc.name   testStackGetInspectorByKey070
      * @tc.number SUB_ACE_BASIC_ETS_API_1170
-     * @tc.name testStackGetInspectorByKey070
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackGetInspectorByKey070',  Level.LEVEL0, async (done: Function) => {
       let strJson = getInspectorByKey('stack6');
@@ -164,9 +185,12 @@ export default function StackJsunit() {
     });
 
     /**
+     * @tc.name   testStackGetInspectorByKey080
      * @tc.number SUB_ACE_BASIC_ETS_API_1180
-     * @tc.name testStackGetInspectorByKey080
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackGetInspectorByKey080',  Level.LEVEL0, async (done: Function) => {
       let strJson = getInspectorByKey('stack7');
@@ -179,9 +203,12 @@ export default function StackJsunit() {
     });
 
     /**
+     * @tc.name   testStackGetInspectorByKey090
      * @tc.number SUB_ACE_BASIC_ETS_API_1190
-     * @tc.name testStackGetInspectorByKey090
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackGetInspectorByKey090',  Level.LEVEL0, async (done: Function) => {
       let strJson = getInspectorByKey('stack8');

@@ -30,10 +30,13 @@ const URI_0100 = "abcde://urigetabilityinfotest";
 
 export default function actsGetAbilityInfoTest() {
   describe('ActsGetAbilityInfoTest', () => {
-    /*
-     * @tc.number: Sub_Bms_Framework_GetAbilityInfo_0100
-     * @tc.name: Sub_Bms_Framework_GetAbilityInfo_0100
-     * @tc.desc: Test getAbilityInfo with valid value GET_ABILITY_INFO_DEFAULT.
+    /**
+     * @tc.name   Sub_Bms_Framework_GetAbilityInfo_0100
+     * @tc.number Sub_Bms_Framework_GetAbilityInfo_0100
+     * @tc.desc   Test getAbilityInfo with valid value GET_ABILITY_INFO_DEFAULT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Bms_Framework_GetAbilityInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -91,10 +94,13 @@ export default function actsGetAbilityInfoTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_GetAbilityInfo_0200
-     * @tc.name: Sub_Bms_Framework_GetAbilityInfo_0200
-     * @tc.desc: Test getAbilityInfo with parameter GET_ABILITY_INFO_WITH_PERMISSION.
+    /**
+     * @tc.name   Sub_Bms_Framework_GetAbilityInfo_0200
+     * @tc.number Sub_Bms_Framework_GetAbilityInfo_0200
+     * @tc.desc   Test getAbilityInfo with parameter GET_ABILITY_INFO_WITH_PERMISSION.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Bms_Framework_GetAbilityInfo_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -151,11 +157,14 @@ export default function actsGetAbilityInfoTest() {
       }
     })
 
-    /*
-      * @tc.number: Sub_Bms_Framework_GetAbilityInfo_0300
-      * @tc.name: Sub_Bms_Framework_GetAbilityInfo_0300
-      * @tc.desc: Test getAbilityInfo with parameter GET_ABILITY_INFO_WITH_APPLICATION.
-      */
+    /**
+     * @tc.name   Sub_Bms_Framework_GetAbilityInfo_0300
+     * @tc.number Sub_Bms_Framework_GetAbilityInfo_0300
+     * @tc.desc   Test getAbilityInfo with parameter GET_ABILITY_INFO_WITH_APPLICATION.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('Sub_Bms_Framework_GetAbilityInfo_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
       try {
@@ -211,11 +220,14 @@ export default function actsGetAbilityInfoTest() {
       }
     })
 
-    /*
-      * @tc.number: Sub_Bms_Framework_GetAbilityInfo_0400
-      * @tc.name: Sub_Bms_Framework_GetAbilityInfo_0400
-      * @tc.desc: Test getAbilityInfo with parameter GET_ABILITY_INFO_WITH_METADATA.
-      */
+    /**
+     * @tc.name   Sub_Bms_Framework_GetAbilityInfo_0400
+     * @tc.number Sub_Bms_Framework_GetAbilityInfo_0400
+     * @tc.desc   Test getAbilityInfo with parameter GET_ABILITY_INFO_WITH_METADATA.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('Sub_Bms_Framework_GetAbilityInfo_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
       try {
@@ -271,11 +283,14 @@ export default function actsGetAbilityInfoTest() {
       }
     })
 
-    /*
-      * @tc.number: Sub_Bms_Framework_GetAbilityInfo_0700
-      * @tc.name: Sub_Bms_Framework_GetAbilityInfo_0700
-      * @tc.desc: Test getAbilityInfo with parameter GET_ABILITY_INFO_WITH_SKILL.
-      */
+    /**
+     * @tc.name   Sub_Bms_Framework_GetAbilityInfo_0700
+     * @tc.number Sub_Bms_Framework_GetAbilityInfo_0700
+     * @tc.desc   Test getAbilityInfo with parameter GET_ABILITY_INFO_WITH_SKILL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('Sub_Bms_Framework_GetAbilityInfo_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
       try {
@@ -328,11 +343,14 @@ export default function actsGetAbilityInfoTest() {
       }
     })
 
-    /*
-      * @tc.number: Sub_Bms_Framework_GetAbilityInfo_1200
-      * @tc.name: Sub_Bms_Framework_GetAbilityInfo_1200
-      * @tc.desc: Test getAbilityInfo with parameter invaild ERROR_CODE17700003.
-      */
+    /**
+     * @tc.name   Sub_Bms_Framework_GetAbilityInfo_1200
+     * @tc.number Sub_Bms_Framework_GetAbilityInfo_1200
+     * @tc.desc   Test getAbilityInfo with parameter invaild ERROR_CODE17700003.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('Sub_Bms_Framework_GetAbilityInfo_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
       try {
@@ -363,10 +381,13 @@ export default function actsGetAbilityInfoTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_GetAbilityInfo_1600
-     * @tc.name: Sub_Bms_Framework_GetAbilityInfo_1600
-     * @tc.desc: Test getAbilityInfo with parameter uri null.
+    /**
+     * @tc.name   Sub_Bms_Framework_GetAbilityInfo_1600
+     * @tc.number Sub_Bms_Framework_GetAbilityInfo_1600
+     * @tc.desc   Test getAbilityInfo with parameter uri null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Bms_Framework_GetAbilityInfo_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -392,10 +413,13 @@ export default function actsGetAbilityInfoTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_GetAbilityInfo_1700
-     * @tc.name: Sub_Bms_Framework_GetAbilityInfo_1700
-     * @tc.desc: Test getAbilityInfo with parameter uri undefined.
+    /**
+     * @tc.name   Sub_Bms_Framework_GetAbilityInfo_1700
+     * @tc.number Sub_Bms_Framework_GetAbilityInfo_1700
+     * @tc.desc   Test getAbilityInfo with parameter uri undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Bms_Framework_GetAbilityInfo_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -421,10 +445,13 @@ export default function actsGetAbilityInfoTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_GetAbilityInfo_1800
-     * @tc.name: Sub_Bms_Framework_GetAbilityInfo_1800
-     * @tc.desc: Test getAbilityInfo with parameter uri "" invaild ERROR_CODE17700003.
+    /**
+     * @tc.name   Sub_Bms_Framework_GetAbilityInfo_1800
+     * @tc.number Sub_Bms_Framework_GetAbilityInfo_1800
+     * @tc.desc   Test getAbilityInfo with parameter uri "" invaild ERROR_CODE17700003.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Bms_Framework_GetAbilityInfo_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -450,10 +477,13 @@ export default function actsGetAbilityInfoTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_GetAbilityInfo_1900
-     * @tc.name: Sub_Bms_Framework_GetAbilityInfo_1900
-     * @tc.desc: Test getAbilityInfo with parameter AbilityFlag null.
+    /**
+     * @tc.name   Sub_Bms_Framework_GetAbilityInfo_1900
+     * @tc.number Sub_Bms_Framework_GetAbilityInfo_1900
+     * @tc.desc   Test getAbilityInfo with parameter AbilityFlag null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Bms_Framework_GetAbilityInfo_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -478,10 +508,13 @@ export default function actsGetAbilityInfoTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_GetAbilityInfo_2000
-     * @tc.name: Sub_Bms_Framework_GetAbilityInfo_2000
-     * @tc.desc: Test getAbilityInfo with parameter AbilityFlag undefined.
+    /**
+     * @tc.name   Sub_Bms_Framework_GetAbilityInfo_2000
+     * @tc.number Sub_Bms_Framework_GetAbilityInfo_2000
+     * @tc.desc   Test getAbilityInfo with parameter AbilityFlag undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Bms_Framework_GetAbilityInfo_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -506,10 +539,13 @@ export default function actsGetAbilityInfoTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_GetAbilityInfo_2100
-     * @tc.name: Sub_Bms_Framework_GetAbilityInfo_2100
-     * @tc.desc: Test getAbilityInfo with valid value GET_ABILITY_INFO_WITH_DISABLE.
+    /**
+     * @tc.name   Sub_Bms_Framework_GetAbilityInfo_2100
+     * @tc.number Sub_Bms_Framework_GetAbilityInfo_2100
+     * @tc.desc   Test getAbilityInfo with valid value GET_ABILITY_INFO_WITH_DISABLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Bms_Framework_GetAbilityInfo_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -565,10 +601,13 @@ export default function actsGetAbilityInfoTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_GetAbilityInfo_2200
-     * @tc.name: Sub_Bms_Framework_GetAbilityInfo_2200
-     * @tc.desc: Test getAbilityInfo with valid value GET_ABILITY_INFO_ONLY_SYSTEM_APP.
+    /**
+     * @tc.name   Sub_Bms_Framework_GetAbilityInfo_2200
+     * @tc.number Sub_Bms_Framework_GetAbilityInfo_2200
+     * @tc.desc   Test getAbilityInfo with valid value GET_ABILITY_INFO_ONLY_SYSTEM_APP.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Bms_Framework_GetAbilityInfo_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -599,10 +638,13 @@ export default function actsGetAbilityInfoTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_GetAbilityInfo_2300
-     * @tc.name: Sub_Bms_Framework_GetAbilityInfo_2300
-     * @tc.desc: Test getAbilityInfo with valid value GET_ABILITY_INFO_WITH_APP_LINKING.
+    /**
+     * @tc.name   Sub_Bms_Framework_GetAbilityInfo_2300
+     * @tc.number Sub_Bms_Framework_GetAbilityInfo_2300
+     * @tc.desc   Test getAbilityInfo with valid value GET_ABILITY_INFO_WITH_APP_LINKING.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Bms_Framework_GetAbilityInfo_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

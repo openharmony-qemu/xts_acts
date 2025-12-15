@@ -19,6 +19,9 @@ add_library(nativerender SHARED
     Column/ColumnMatchParentTest.cpp
     Column/ColumnWrapContentTest.cpp
     Column/ColumnFixAtiDealSizeTest.cpp
+    list/ListDraggingEventTest.cpp
+    list/ListFlingEventTest.cpp
+    Image/ImageSupportSvg2Test.cpp
 )
 
 add_library(nativefunc SHARED

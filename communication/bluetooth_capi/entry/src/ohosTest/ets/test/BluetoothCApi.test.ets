@@ -131,7 +131,6 @@ export default function bluetoothCApiTest() {
     afterAll(() => {
     })
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_NAPI_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_NAPI_0100
      * @tc.desc   test OH_Bluetooth_GetBluetoothSwitchState

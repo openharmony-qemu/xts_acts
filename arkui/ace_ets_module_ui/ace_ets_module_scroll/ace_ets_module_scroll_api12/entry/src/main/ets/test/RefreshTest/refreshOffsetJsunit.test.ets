@@ -47,14 +47,14 @@ export default function refreshOffsetJsunit() {
       console.info(" refreshOffsetJsunit after each called");
     });
 
-    /* *
-    * @tc.number: SUB_ACE_REFRESH_REFRESHOFFSET_0100
-    * @tc.name  : refreshOffsetJsunit_0100
-    * @tc.desc  : Add refreshOffset and pullToRefresh interfaces.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   refreshOffsetJsunit_0100
+     * @tc.number SUB_ACE_REFRESH_REFRESHOFFSET_0100
+     * @tc.desc   Add refreshOffset and pullToRefresh interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('refreshOffsetJsunit_0100', Level.LEVEL1, async (done: Function) => {
       console.info('refreshOffsetJsunit_0100 START');
       await CommonFunc.sleep(1000);
@@ -70,14 +70,14 @@ export default function refreshOffsetJsunit() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_REFRESH_REFRESHOFFSET_0200
-    * @tc.name  : refreshOffsetJsunit_0200
-    * @tc.desc  : trigger onOffsetChange callback.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   refreshOffsetJsunit_0200
+     * @tc.number SUB_ACE_REFRESH_REFRESHOFFSET_0200
+     * @tc.desc   trigger onOffsetChange callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('refreshOffsetJsunit_0200', Level.LEVEL1, async (done: Function) => {
       console.info('refreshOffsetJsunit_0200 START');
       let swiperOffset = CommonFunc.getComponentRectOnScreen('Refresh_Offset');

@@ -43,6 +43,14 @@ export default function textChangeEnabledJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textChangeEnabledJsunit_0100
+     * @tc.number textChangeEnabledJsunit_0100
+     * @tc.desc   textChangeEnabledJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('textChangeEnabledJsunit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('textChangeEnabledJsunit_0100 START');
       let strJson = getInspectorByKey('aCanEnable');
@@ -54,6 +62,14 @@ export default function textChangeEnabledJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textChangeEnabledJsunit_0200
+     * @tc.number textChangeEnabledJsunit_0200
+     * @tc.desc   textChangeEnabledJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('textChangeEnabledJsunit_0200', Level.LEVEL2, async (done: Function) => {
       console.info('textChangeEnabledJsunit_0200 START');
       let strJson = getInspectorByKey('vCanEnable');

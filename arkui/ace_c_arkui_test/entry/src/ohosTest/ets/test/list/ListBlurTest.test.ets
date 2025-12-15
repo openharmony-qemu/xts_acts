@@ -26,26 +26,26 @@ export default function listBlurTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_BLUR_0100
-     * @tc.name       : testListBlur001
-     * @tc.desc       : testing blur for list with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListBlur001
+     * @tc.number SUB_ARKUI_CAPI_LIST_BLUR_0100
+     * @tc.desc   testing blur for list with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListBlur001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListBlur001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_BLUR_0200
-     * @tc.name       : testListBlur002
-     * @tc.desc       : testing blur for list with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListBlur002
+     * @tc.number SUB_ARKUI_CAPI_LIST_BLUR_0200
+     * @tc.desc   testing blur for list with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListBlur002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListBlur002()).assertEqual(0)

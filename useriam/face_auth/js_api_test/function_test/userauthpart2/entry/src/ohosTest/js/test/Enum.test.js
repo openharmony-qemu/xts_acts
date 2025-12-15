@@ -19,7 +19,6 @@ import userAuth from '@ohos.userIAM.userAuth'
 export default function signNormalNotAccessBiometricEnumExecute() {
   describe('signNormalNotAccessBiometricEnumExecute', function () {
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_userAuthType_Kit_Func_0084
      * @tc.number Security_IAM_userAuthType_Kit_Func_0084
      * @tc.desc   Security_IAM_userAuthType_Kit_Func_0084
@@ -38,7 +37,6 @@ export default function signNormalNotAccessBiometricEnumExecute() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_widgetNotice_Kit_Func_0085
      * @tc.number Security_IAM_widgetNotice_Kit_Func_0085
      * @tc.desc   Security_IAM_widgetNotice_Kit_Func_0085
@@ -55,7 +53,6 @@ export default function signNormalNotAccessBiometricEnumExecute() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_widgetNotice_Kit_Func_0086
      * @tc.number Security_IAM_widgetNotice_Kit_Func_0086
      * @tc.desc   Security_IAM_widgetNotice_Kit_Func_0086
@@ -71,7 +68,6 @@ export default function signNormalNotAccessBiometricEnumExecute() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_userAuthResultCode_Kit_Func_0087
      * @tc.number Security_IAM_userAuthResultCode_Kit_Func_0087
      * @tc.desc   Security_IAM_userAuthResultCode_Kit_Func_0087

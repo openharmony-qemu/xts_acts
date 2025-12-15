@@ -37,13 +37,13 @@ export default function NetExtAttributeHasNetTest() {
  describe('NetExtAttributeHasNetTest', () => {
    
    /**
-     * @tc.number SUB_NetworkMgr_Connection_SetNetExtAttributeSync_0100
-     * @tc.name testNetworkMgrConnectionSetNetExtAttributeSync0100
-     * @tc.desc To test the extended network attribute function
-     * @tc.level Level 1
-     * @tc.type: Function
-     * @tc.size: SmallTest
-     */
+    * @tc.name   testNetworkMgrConnectionSetNetExtAttributeSync0100
+    * @tc.number SUB_NetworkMgr_Connection_SetNetExtAttributeSync_0100
+    * @tc.desc   To test the extended network attribute function
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL1
+    */
    it("testNetworkMgrConnectionSetNetExtAttributeSync0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
      let caseName: string = "testNetworkMgrConnectionSetNetExtAttributeSync0100";
      console.info(`${caseName}---Start`);
@@ -64,13 +64,13 @@ export default function NetExtAttributeHasNetTest() {
    })
    
    /**
-     * @tc.number SUB_NetworkMgr_Connection_SetNetExtAttribute_0100
-     * @tc.name testNetworkMgrConnectionSetNetExtAttribute0100
-     * @tc.desc To test the extended network attribute function
-     * @tc.level Level 1
-     * @tc.type: Function
-     * @tc.size: SmallTest
-     */
+    * @tc.name   testNetworkMgrConnectionSetNetExtAttribute0100
+    * @tc.number SUB_NetworkMgr_Connection_SetNetExtAttribute_0100
+    * @tc.desc   To test the extended network attribute function
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL1
+    */
    it("testNetworkMgrConnectionSetNetExtAttribute0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
      let caseName: string = "testNetworkMgrConnectionSetNetExtAttribute0100";
      console.info(`${caseName}---Start`);
@@ -95,13 +95,13 @@ export default function NetExtAttributeHasNetTest() {
      }
    });
    /**
-     * @tc.number SUB_NetworkMgr_Connection_GetNetExtAttributeSync_0100
-     * @tc.name testNetworkMgrConnectionGetNetExtAttributeSync0100
-     * @tc.desc To test the extended network attribute function
-     * @tc.level Level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
-     */
+    * @tc.name   testNetworkMgrConnectionGetNetExtAttributeSync0100
+    * @tc.number SUB_NetworkMgr_Connection_GetNetExtAttributeSync_0100
+    * @tc.desc   To test the extended network attribute function
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
    it("testNetworkMgrConnectionGetNetExtAttributeSync0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetworkMgrConnectionGetNetExtAttributeSync0100";
      console.info(`${caseName}---Start`);
@@ -120,13 +120,13 @@ export default function NetExtAttributeHasNetTest() {
    });
    
    /**
-     * @tc.number SUB_NetworkMgr_Connection_GetNetExtAttribute_0100
-     * @tc.name testNetworkMgrConnectionGetNetExtAttribute0100
-     * @tc.desc To test the extended network attribute function
-     * @tc.level Level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
-     */
+    * @tc.name   testNetworkMgrConnectionGetNetExtAttribute0100
+    * @tc.number SUB_NetworkMgr_Connection_GetNetExtAttribute_0100
+    * @tc.desc   To test the extended network attribute function
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
    it("testNetworkMgrConnectionGetNetExtAttribute0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetworkMgrConnectionGetNetExtAttribute0100";
      console.info(`${caseName}---Start`);
@@ -150,13 +150,13 @@ export default function NetExtAttributeHasNetTest() {
    });
    
    /**
-     * @tc.number SUB_NetworkMgr_Connection_SetNetExtAttributeSync_0200
-     * @tc.name testNetworkMgrConnectionSetNetExtAttributeSync0200
-     * @tc.desc To test the extended network attribute function
-     * @tc.level Level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
-     */
+    * @tc.name   testNetworkMgrConnectionSetNetExtAttributeSync0200
+    * @tc.number SUB_NetworkMgr_Connection_SetNetExtAttributeSync_0200
+    * @tc.desc   To test the extended network attribute function
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
    it("testNetworkMgrConnectionSetNetExtAttributeSync0200", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,async (done: Function) => {
      let caseName: string = "testNetworkMgrConnectionSetNetExtAttributeSync0200";
      console.info(`${caseName}---Start`);
@@ -176,13 +176,13 @@ export default function NetExtAttributeHasNetTest() {
    })
    
    /**
-     * @tc.number SUB_NetworkMgr_Connection_SetNetExtAttribute_0200
-     * @tc.name testNetworkMgrConnectionSetNetExtAttribute0200
-     * @tc.desc To test the extended network attribute function
-     * @tc.level Level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
-     */
+    * @tc.name   testNetworkMgrConnectionSetNetExtAttribute0200
+    * @tc.number SUB_NetworkMgr_Connection_SetNetExtAttribute_0200
+    * @tc.desc   To test the extended network attribute function
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
    it("testNetworkMgrConnectionSetNetExtAttribute0200", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetworkMgrConnectionSetNetExtAttribute0200";
      console.info(`${caseName}---Start`);
@@ -206,13 +206,13 @@ export default function NetExtAttributeHasNetTest() {
    });
    
    /**
-     * @tc.number SUB_NetworkMgr_Connection_GetNetExtAttributeSync_0200
-     * @tc.name testNetworkMgrConnectionGetNetExtAttributeSync0200
-     * @tc.desc To test the extended network attribute function
-     * @tc.level Level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
-     */
+    * @tc.name   testNetworkMgrConnectionGetNetExtAttributeSync0200
+    * @tc.number SUB_NetworkMgr_Connection_GetNetExtAttributeSync_0200
+    * @tc.desc   To test the extended network attribute function
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
    it("testNetworkMgrConnectionGetNetExtAttributeSync0200", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetworkMgrConnectionGetNetExtAttributeSync0200";
      console.info(`${caseName}---Start`);
@@ -230,13 +230,13 @@ export default function NetExtAttributeHasNetTest() {
    });
    
    /**
-     * @tc.number SUB_NetworkMgr_Connection_GetNetExtAttribute_0200
-     * @tc.name testNetworkMgrConnectionGetNetExtAttribute0200
-     * @tc.desc To test the extended network attribute function
-     * @tc.level Level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
-     */
+    * @tc.name   testNetworkMgrConnectionGetNetExtAttribute0200
+    * @tc.number SUB_NetworkMgr_Connection_GetNetExtAttribute_0200
+    * @tc.desc   To test the extended network attribute function
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
    it("testNetworkMgrConnectionGetNetExtAttribute0200", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetworkMgrConnectionGetNetExtAttribute0200";
      console.info(`${caseName}---Start`);
@@ -259,13 +259,13 @@ export default function NetExtAttributeHasNetTest() {
    });
    
    /**
-     * @tc.number SUB_NetworkMgr_Connection_SetNetExtAttributeSync_0300
-     * @tc.name testNetworkMgrConnectionSetNetExtAttributeSync0300
-     * @tc.desc To test the extended network attribute function
-     * @tc.level Level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
-     */
+    * @tc.name   testNetworkMgrConnectionSetNetExtAttributeSync0300
+    * @tc.number SUB_NetworkMgr_Connection_SetNetExtAttributeSync_0300
+    * @tc.desc   To test the extended network attribute function
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
    it("testNetworkMgrConnectionSetNetExtAttributeSync0300", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetworkMgrConnectionSetNetExtAttributeSync0300";
      console.info(`${caseName}---Start`);
@@ -287,13 +287,13 @@ export default function NetExtAttributeHasNetTest() {
    });
    
    /**
-     * @tc.number SUB_NetworkMgr_Connection_SetNetExtAttribute_0300
-     * @tc.name testNetworkMgrConnectionSetNetExtAttribute0300
-     * @tc.desc To test the extended network attribute function
-     * @tc.level Level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
-     */
+    * @tc.name   testNetworkMgrConnectionSetNetExtAttribute0300
+    * @tc.number SUB_NetworkMgr_Connection_SetNetExtAttribute_0300
+    * @tc.desc   To test the extended network attribute function
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
    it("testNetworkMgrConnectionSetNetExtAttribute0300", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetworkMgrConnectionSetNetExtAttribute0300";
      console.info(`${caseName}---Start`);
@@ -319,13 +319,13 @@ export default function NetExtAttributeHasNetTest() {
    });
    
    /**
-     * @tc.number SUB_NetworkMgr_Connection_GetNetExtAttributeSync_0300
-     * @tc.name testNetworkMgrConnectionGetNetExtAttributeSync0300
-     * @tc.desc To test the extended network attribute function
-     * @tc.level Level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
-     */
+    * @tc.name   testNetworkMgrConnectionGetNetExtAttributeSync0300
+    * @tc.number SUB_NetworkMgr_Connection_GetNetExtAttributeSync_0300
+    * @tc.desc   To test the extended network attribute function
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
    it("testNetworkMgrConnectionGetNetExtAttributeSync0300", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetworkMgrConnectionGetNetExtAttributeSync0300";
      console.info(`${caseName}---Start`);
@@ -345,13 +345,13 @@ export default function NetExtAttributeHasNetTest() {
    });
    
    /**
-     * @tc.number SUB_NetworkMgr_Connection_GetNetExtAttribute_0300
-     * @tc.name testNetworkMgrConnectionGetNetExtAttribute0300
-     * @tc.desc To test the extended network attribute function
-     * @tc.level Level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
-     */
+    * @tc.name   testNetworkMgrConnectionGetNetExtAttribute0300
+    * @tc.number SUB_NetworkMgr_Connection_GetNetExtAttribute_0300
+    * @tc.desc   To test the extended network attribute function
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
    it("testNetworkMgrConnectionGetNetExtAttribute0300", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetworkMgrConnectionGetNetExtAttribute0300";
      console.info(`${caseName}---Start`);
@@ -376,13 +376,13 @@ export default function NetExtAttributeHasNetTest() {
    });
    
    /**
-     * @tc.number SUB_NetworkMgr_Connection_SetNetExtAttributeSync_0400
-     * @tc.name testNetworkMgrConnectionSetNetExtAttributeSync0400
-     * @tc.desc To test the extended network attribute function
-     * @tc.level Level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
-     */
+    * @tc.name   testNetworkMgrConnectionSetNetExtAttributeSync0400
+    * @tc.number SUB_NetworkMgr_Connection_SetNetExtAttributeSync_0400
+    * @tc.desc   To test the extended network attribute function
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
    it("testNetworkMgrConnectionSetNetExtAttributeSync0400", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetworkMgrConnectionSetNetExtAttributeSync0400";
      console.info(`${caseName}---Start`);
@@ -403,13 +403,13 @@ export default function NetExtAttributeHasNetTest() {
    })
    
    /**
-     * @tc.number SUB_NetworkMgr_Connection_SetNetExtAttribute_0400
-     * @tc.name testNetworkMgrConnectionSetNetExtAttribute0400
-     * @tc.desc To test the extended network attribute function
-     * @tc.level Level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
-     */
+    * @tc.name   testNetworkMgrConnectionSetNetExtAttribute0400
+    * @tc.number SUB_NetworkMgr_Connection_SetNetExtAttribute_0400
+    * @tc.desc   To test the extended network attribute function
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
    it("testNetworkMgrConnectionSetNetExtAttribute0400", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetworkMgrConnectionSetNetExtAttribute0400";
      console.info(`${caseName}---Start`);
@@ -435,13 +435,13 @@ export default function NetExtAttributeHasNetTest() {
    });
    
    /**
-     * @tc.number SUB_NetworkMgr_Connection_GetNetExtAttributeSync_0400
-     * @tc.name testNetworkMgrConnectionGetNetExtAttributeSync0400
-     * @tc.desc To test the extended network attribute function
-     * @tc.level Level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
-     */
+    * @tc.name   testNetworkMgrConnectionGetNetExtAttributeSync0400
+    * @tc.number SUB_NetworkMgr_Connection_GetNetExtAttributeSync_0400
+    * @tc.desc   To test the extended network attribute function
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
    it("testNetworkMgrConnectionGetNetExtAttributeSync0400", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetworkMgrConnectionGetNetExtAttributeSync0400";
      console.info(`${caseName}---Start`);
@@ -461,13 +461,13 @@ export default function NetExtAttributeHasNetTest() {
    })
    
    /**
-     * @tc.number SUB_NetworkMgr_Connection_GetNetExtAttribute_0400
-     * @tc.name testNetworkMgrConnectionGetNetExtAttribute0400
-     * @tc.desc To test the extended network attribute function
-     * @tc.level Level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
-     */
+    * @tc.name   testNetworkMgrConnectionGetNetExtAttribute0400
+    * @tc.number SUB_NetworkMgr_Connection_GetNetExtAttribute_0400
+    * @tc.desc   To test the extended network attribute function
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
    it("testNetworkMgrConnectionGetNetExtAttribute0400", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetworkMgrConnectionGetNetExtAttribute0400";
      console.info(`${caseName}---Start`);
@@ -494,13 +494,13 @@ export default function NetExtAttributeHasNetTest() {
    });
    
    /**
-     * @tc.number SUB_NetworkMgr_Connection_SetNetExtAttributeSync_0500
-     * @tc.name testNetworkMgrConnectionSetNetExtAttributeSync0500
-     * @tc.desc To test the extended network attribute function
-     * @tc.level Level 0
-     * @tc.type: Function
-     * @tc.size: SmallTest
-     */
+    * @tc.name   testNetworkMgrConnectionSetNetExtAttributeSync0500
+    * @tc.number SUB_NetworkMgr_Connection_SetNetExtAttributeSync_0500
+    * @tc.desc   To test the extended network attribute function
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
    it("testNetworkMgrConnectionSetNetExtAttributeSync0500", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetworkMgrConnectionSetNetExtAttributeSync0500";
      console.info(`${caseName}---Start`);
@@ -520,13 +520,13 @@ export default function NetExtAttributeHasNetTest() {
    })
    
    /**
-     * @tc.number SUB_NetworkMgr_Connection_SetNetExtAttribute_0500
-     * @tc.name testNetworkMgrConnectionSetNetExtAttribute0500
-     * @tc.desc To test the extended network attribute function
-     * @tc.level Level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
-     */
+    * @tc.name   testNetworkMgrConnectionSetNetExtAttribute0500
+    * @tc.number SUB_NetworkMgr_Connection_SetNetExtAttribute_0500
+    * @tc.desc   To test the extended network attribute function
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
    it("testNetworkMgrConnectionSetNetExtAttribute0500", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,async (done: Function) => {
      let caseName: string = "testNetworkMgrConnectionSetNetExtAttribute0500";
      console.info(`${caseName}---Start`);

@@ -49,10 +49,12 @@ export default function CustomTransitionPage() {
 
 
     /**
-     * @tc.number    CustomTransitionPage_0100
-     * @tc.name      CustomTransitionPage_0100
-     * @tc.desc      Test customTransitionPage return undefined, push enter
-     * @tc.level     Level 2
+     * @tc.name   CustomTransitionPage_0100
+     * @tc.number CustomTransitionPage_0100
+     * @tc.desc   Test customTransitionPage return undefined, push enter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CustomTransitionPage_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('CustomTransitionPage_0100 START');
@@ -77,10 +79,12 @@ export default function CustomTransitionPage() {
     });
 
     /**
-     * @tc.number    CustomTransitionPage_0200
-     * @tc.name      CustomTransitionPage_0200
-     * @tc.desc      Test customTransitionPage return array, push enter and exit
-     * @tc.level     Level 2
+     * @tc.name   CustomTransitionPage_0200
+     * @tc.number CustomTransitionPage_0200
+     * @tc.desc   Test customTransitionPage return array, push enter and exit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CustomTransitionPage_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('CustomTransitionPage_0200 START');
@@ -112,10 +116,12 @@ export default function CustomTransitionPage() {
 
 
     /**
-     * @tc.number    CustomTransitionPage_0300
-     * @tc.name      CustomTransitionPage_0300
-     * @tc.desc      Test customTransitionPage return array, pop enter and exit
-     * @tc.level     Level 2
+     * @tc.name   CustomTransitionPage_0300
+     * @tc.number CustomTransitionPage_0300
+     * @tc.desc   Test customTransitionPage return array, pop enter and exit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CustomTransitionPage_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('CustomTransitionPage_0300 START');
@@ -146,10 +152,12 @@ export default function CustomTransitionPage() {
     });
 
     /**
-     * @tc.number    CustomTransitionPage_0400
-     * @tc.name      CustomTransitionPage_0400
-     * @tc.desc      Test customTransitionPage return array, replacePath enter and exit
-     * @tc.level     Level 2
+     * @tc.name   CustomTransitionPage_0400
+     * @tc.number CustomTransitionPage_0400
+     * @tc.desc   Test customTransitionPage return array, replacePath enter and exit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CustomTransitionPage_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('CustomTransitionPage_0400 START');

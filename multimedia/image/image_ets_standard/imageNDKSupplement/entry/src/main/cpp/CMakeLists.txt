@@ -24,7 +24,14 @@ add_library(imageEffect SHARED
     OHEffectBufferInfoGetTimestampTest.cpp
     OHEffectBufferInfoSetTextureIdTest.cpp
     OHEffectBufferInfoGetTextureIdTest.cpp
-    OHEffectFilterInfoSupplementTest.cpp)
+    OHEffectFilterInfoSupplementTest.cpp
+    imageEffectFilterSupp.cpp
+    OHImageErrorSuppTest.cpp
+    OHEffectFilterInfoSupplementTest.cpp
+    ImageEffectSuppTest.cpp
+    InitNativePixelMapTest.cpp
+    ImagePackerCreateTest.cpp
+    ImagePixelMapTest.cpp)
 
 
 find_library(
@@ -43,6 +50,7 @@ find_library(
     GLESv3
 )
 
+
 target_link_libraries(imageEffect PUBLIC
     libace_napi.z.so
     libhilog_ndk.z.so
@@ -53,6 +61,8 @@ target_link_libraries(imageEffect PUBLIC
     libpixelmap_ndk.z.so
     libimage_packer.so
     libimage_source.so
+    libimage_packer_ndk.z.so
+    libimage_source_ndk.z.so
     libpicture.so
     ${EGL-lib}
     ${GLES-lib}

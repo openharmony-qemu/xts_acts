@@ -40,12 +40,12 @@ export default function createNodeLoad() {
       done();
     });
     /**
-     * @tc.number    createNodeLoad_0100
-     * @tc.name      createNodeLoad_0100
-     * @tc.desc      frameNode: createNodeLoadToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   createNodeLoad_0100
+     * @tc.number createNodeLoad_0100
+     * @tc.desc   frameNode: createNodeLoadToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createNodeLoad_0100', Level.LEVEL0, async (done: Function) => {
       console.info('createNodeLoad_0100 START');

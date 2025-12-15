@@ -26,14 +26,14 @@ export default function commonAttrsEnabledTest() {
       await Utils.pushPage(`commonattrs/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_ENABLED_0100
-    * @tc.name       : testCommonAttrsEnabled001
-    * @tc.desc       : test onClick event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCommonAttrsEnabled001
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ENABLED_0100
+     * @tc.desc   test onClick event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCommonAttrsEnabled001', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('EnabledTestButton')
       await Utils.sleep(2000)
@@ -53,14 +53,14 @@ export default function commonAttrsEnabledTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_ENABLED_0200
-    * @tc.name       : testCommonAttrsEnabled002
-    * @tc.desc       : test onClick event not callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCommonAttrsEnabled002
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ENABLED_0200
+     * @tc.desc   test onClick event not callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCommonAttrsEnabled002', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('EnabledTestButtonDisable')
       await Utils.sleep(2000)

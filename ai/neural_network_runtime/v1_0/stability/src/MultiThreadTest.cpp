@@ -43,9 +43,12 @@ protected:
 
 
 /**
- * @tc.number : SUB_AI_NNR_Reliability_North_Stress_0100
- * @tc.name   : 模型编译并发长稳测试
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNR_Reliability_North_Stress_0100
+ * @tc.number SUB_AI_NNR_Reliability_North_Stress_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   RELIABILITY
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(MultiThreadTest, SUB_AI_NNR_Reliability_North_Stress_0100, Reliability | MediumTest | Level2)
 {
@@ -66,9 +69,12 @@ HWTEST_F(MultiThreadTest, SUB_AI_NNR_Reliability_North_Stress_0100, Reliability 
 }
 
 /**
- * @tc.number : SUB_AI_NNR_Reliability_North_Stress_0200
- * @tc.name   : 模型推理并发长稳测试
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNR_Reliability_North_Stress_0200
+ * @tc.number SUB_AI_NNR_Reliability_North_Stress_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   RELIABILITY
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(MultiThreadTest, SUB_AI_NNR_Reliability_North_Stress_0200, Reliability | MediumTest | Level2)
 {

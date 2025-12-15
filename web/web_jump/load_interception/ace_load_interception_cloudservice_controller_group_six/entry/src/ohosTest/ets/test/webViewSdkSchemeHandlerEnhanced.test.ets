@@ -61,14 +61,14 @@ export default function ActsAceWebViewSdkSchemeHandlerEnhanced() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_ACE_WEB_SdkSchemeHandler_setUrl_null_API_0001
-    * @tc.name        : testWebViewSdkSchemeHandler_setUrl_null
-    * @tc.desc        : test SdkSchemeHandler_setUrl_null
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name   testWebViewSdkSchemeHandler_setUrl_null
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_setUrl_null_API_0001
+     * @tc.desc   test SdkSchemeHandler_setUrl_null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testWebViewSdkSchemeHandler_setUrl_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         Utils.emitEvent('emitWebViewSdkSchemeHandler_setUrl_null', 134300);
         Utils.registerEvent('emitWebViewSdkSchemeHandler_setUrl_null', true, 134310, done);

@@ -31,12 +31,12 @@ export default function XComponentMouseTest() {
       await Utils.pushPageNoClear(`NativeXComponent/MouseNativeXComponent`, done);
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_MOUSEEVENTACTION_0400
-     * @tc.name    : testMouseEventAction004
-     * @tc.desc    : Test get native xcomopnent key event action works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testMouseEventAction004
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_MOUSEEVENTACTION_0400
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMouseEventAction004', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -53,12 +53,12 @@ export default function XComponentMouseTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_MOUSEEVENT_TIMESTAMP_0100
-     * @tc.name    : testMouseEventTimeStamp
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testMouseEventTimeStamp
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_MOUSEEVENT_TIMESTAMP_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMouseEventTimeStamp', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

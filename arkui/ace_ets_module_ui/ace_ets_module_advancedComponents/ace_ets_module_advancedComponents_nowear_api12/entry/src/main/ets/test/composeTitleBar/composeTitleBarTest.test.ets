@@ -53,12 +53,12 @@ export default function composeTitleBarTest() {
     })
 
     /**
-     * @tc.number composeTitleBarTest
      * @tc.name   testComposeTitleBar_0100
+     * @tc.number composeTitleBarTest
      * @tc.desc   Test composeTitleBar page
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testComposeTitleBar_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[testComposeTitleBar_0100] START');
@@ -80,12 +80,12 @@ export default function composeTitleBarTest() {
     });
 
     /**
-     * @tc.number composeTitleBarTest
      * @tc.name   testComposeTitleBar_0200
+     * @tc.number composeTitleBarTest
      * @tc.desc   Test composeTitleBar page
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testComposeTitleBar_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[testComposeTitleBar_0200] START');

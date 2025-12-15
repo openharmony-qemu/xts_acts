@@ -25,12 +25,12 @@ export default function stringNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRNCMP_0100
-     * @tc.name       : testMuslStringStrncmp001
-     * @tc.desc       : test strncmp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrncmp001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRNCMP_0100
+     * @tc.desc   test strncmp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrncmp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 'a';
@@ -43,12 +43,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRNCPY_0100
-     * @tc.name       : testMuslStringStrncpy001
-     * @tc.desc       : test strncpy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrncpy001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRNCPY_0100
+     * @tc.desc   test strncpy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrncpy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 'GGcdefg';
@@ -61,12 +61,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRNCPY_0200
-     * @tc.name       : testMuslStringStrncpy002
-     * @tc.desc       : test strncpy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrncpy002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRNCPY_0200
+     * @tc.desc   test strncpy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrncpy002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 'GGGcdefg';
@@ -79,12 +79,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRNCPY_0300
-     * @tc.name       : testMuslStringStrncpy003
-     * @tc.desc       : test strncpy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrncpy003
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRNCPY_0300
+     * @tc.desc   test strncpy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrncpy003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 'GGGcdefg';
@@ -97,12 +97,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRNDUP_0100
-     * @tc.name       : testMuslStringStrndup001
-     * @tc.desc       : test strndup
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrndup001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRNDUP_0100
+     * @tc.desc   test strndup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrndup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 'abcdefg';
@@ -114,12 +114,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRNDUP_0200
-     * @tc.name       : testMuslStringStrndup002
-     * @tc.desc       : test strndup
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrndup002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRNDUP_0200
+     * @tc.desc   test strndup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrndup002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 'abcdefg';
@@ -131,12 +131,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRNLEN_0200
-     * @tc.name       : testMuslStringStrnlen002
-     * @tc.desc       : test strnlen
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrnlen002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRNLEN_0200
+     * @tc.desc   test strnlen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrnlen002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 'abcdefg';
@@ -148,12 +148,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRPBRK_0100
-     * @tc.name       : testMuslStringStrpbrk001
-     * @tc.desc       : test strpbrk
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrpbrk001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRPBRK_0100
+     * @tc.desc   test strpbrk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrpbrk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 'abcdefg';
@@ -165,12 +165,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRPBRK_0200
-     * @tc.name       : testMuslStringStrpbrk002
-     * @tc.desc       : test strpbrk
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrpbrk002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRPBRK_0200
+     * @tc.desc   test strpbrk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrpbrk002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 'abcdefg';
@@ -182,12 +182,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRSEP_0100
-     * @tc.name       : testMuslStringStrsep001
-     * @tc.desc       : test strsep
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrsep001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRSEP_0100
+     * @tc.desc   test strsep
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrsep001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = '01234-56789';
@@ -199,12 +199,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRSPN_0200
-     * @tc.name       : testMuslStringStrspn002
-     * @tc.desc       : test strspn
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrspn002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRSPN_0200
+     * @tc.desc   test strspn
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrspn002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = '0123456789';
@@ -216,12 +216,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRSTR_0100
-     * @tc.name       : testMuslStringStrstr001
-     * @tc.desc       : test strstr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrstr001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRSTR_0100
+     * @tc.desc   test strstr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrstr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = '0123456789';
@@ -233,12 +233,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRSTR_0200
-     * @tc.name       : testMuslStringStrstr002
-     * @tc.desc       : test strstr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrstr002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRSTR_0200
+     * @tc.desc   test strstr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrstr002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = '0123456789';
@@ -250,12 +250,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRTOK_0100
-     * @tc.name       : testMuslStringStrtok001
-     * @tc.desc       : test strtok
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrtok001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRTOK_0100
+     * @tc.desc   test strtok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrtok001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = '01234-56789';
@@ -267,12 +267,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRTOK_0200
-     * @tc.name       : testMuslStringStrtok002
-     * @tc.desc       : test strtok
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrtok002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRTOK_0200
+     * @tc.desc   test strtok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrtok002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = '01234-56789';
@@ -284,12 +284,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRTOKR_0100
-     * @tc.name       : testMuslStringStrtokR001
-     * @tc.desc       : test strtok_r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrtokR001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRTOKR_0100
+     * @tc.desc   test strtok_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrtokR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 'ab,cd,ef';
@@ -301,12 +301,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRTOKR_0200
-     * @tc.name       : testMuslStringStrtokR002
-     * @tc.desc       : test strtok_r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrtokR002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRTOKR_0200
+     * @tc.desc   test strtok_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrtokR002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 'ab,cd,ef';
@@ -318,12 +318,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRXFRM_0100
-     * @tc.name       : testMuslStringStrxfrm001
-     * @tc.desc       : test strxfrm
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrxfrm001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRXFRM_0100
+     * @tc.desc   test strxfrm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrxfrm001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0;
@@ -336,12 +336,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRXFRM_0200
-     * @tc.name       : testMuslStringStrxfrm002
-     * @tc.desc       : test strxfrm
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrxfrm002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRXFRM_0200
+     * @tc.desc   test strxfrm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrxfrm002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1;
@@ -353,12 +353,12 @@ export default function stringNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRERROR_0100
-     * @tc.name       : testMuslStringStrerror001
-     * @tc.desc       : test strerror
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrerror001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRERROR_0100
+     * @tc.desc   test strerror
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrerror001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: String = string.strerror(0);
@@ -367,12 +367,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRERROR_0200
-     * @tc.name       : testMuslStringStrerror002
-     * @tc.desc       : test strerror
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrerror002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRERROR_0200
+     * @tc.desc   test strerror
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrerror002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: String = string.strerror(1);
@@ -381,12 +381,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRERROR_0300
-     * @tc.name       : testMuslStringStrerror003
-     * @tc.desc       : test strerror
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrerror003
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRERROR_0300
+     * @tc.desc   test strerror
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrerror003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: String = string.strerror(2);
@@ -395,12 +395,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRERROR_L_0100
-     * @tc.name       : testMuslStringStrerrorL001
-     * @tc.desc       : test strerror_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrerrorL001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRERROR_L_0100
+     * @tc.desc   test strerror_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrerrorL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: String = string.strerror_l(0);
@@ -409,12 +409,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRERROR_L_0200
-     * @tc.name       : testMuslStringStrerrorL002
-     * @tc.desc       : test strerror_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrerrorL002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRERROR_L_0200
+     * @tc.desc   test strerror_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrerrorL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: String = string.strerror_l(1);
@@ -423,12 +423,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRERROR_L_0300
-     * @tc.name       : testMuslStringStrerrorL003
-     * @tc.desc       : test strerror_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrerrorL003
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRERROR_L_0300
+     * @tc.desc   test strerror_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrerrorL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: String = string.strerror_l(2);
@@ -437,12 +437,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRERROR_R_0100
-     * @tc.name       : testMuslStringStrerrorR001
-     * @tc.desc       : test strerror_r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrerrorR001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRERROR_R_0100
+     * @tc.desc   test strerror_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrerrorR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = string.strerror_r(0);
@@ -450,12 +450,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRERROR_R_0200
-     * @tc.name       : testMuslStringStrerrorR002
-     * @tc.desc       : test strerror_r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrerrorR002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRERROR_R_0200
+     * @tc.desc   test strerror_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrerrorR002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = string.strerror_r(1);
@@ -463,12 +463,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRERROR_R_0300
-     * @tc.name       : testMuslStringStrerrorR003
-     * @tc.desc       : test strerror_r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrerrorR003
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRERROR_R_0300
+     * @tc.desc   test strerror_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrerrorR003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = string.strerror_r(2);
@@ -476,12 +476,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRERROR_R_0400
-     * @tc.name       : testMuslStringStrerrorR004
-     * @tc.desc       : test strerror_r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrerrorR004
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRERROR_R_0400
+     * @tc.desc   test strerror_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrerrorR004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = string.strerror_r(3);
@@ -489,12 +489,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRERROR_R_0500
-     * @tc.name       : testMuslStringStrerrorR005
-     * @tc.desc       : test strerror_r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrerrorR005
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRERROR_R_0500
+     * @tc.desc   test strerror_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrerrorR005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam: number = string.strerror_r(4);
@@ -502,12 +502,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRDUP_0100
-     * @tc.name       : testMuslStringStrdup001
-     * @tc.desc       : test strdup
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrdup001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRDUP_0100
+     * @tc.desc   test strdup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrdup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "AB"
@@ -516,12 +516,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRCAT_0100
-     * @tc.name       : testMuslStringStrcat001
-     * @tc.desc       : test strcat
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrcat001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRCAT_0100
+     * @tc.desc   test strcat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrcat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "AB"
@@ -532,12 +532,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRCHR_0100
-     * @tc.name       : testMuslStringStrchr001
-     * @tc.desc       : test strchr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrchr001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRCHR_0100
+     * @tc.desc   test strchr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrchr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "0009876"
@@ -546,12 +546,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRCMP_0100
-     * @tc.name       : testMuslStringStrcmp001
-     * @tc.desc       : test strcmp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrcmp001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRCMP_0100
+     * @tc.desc   test strcmp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrcmp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "ABCD"
@@ -562,12 +562,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRCMP_0200
-     * @tc.name       : testMuslStringStrcmp002
-     * @tc.desc       : test strcmp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrcmp002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRCMP_0200
+     * @tc.desc   test strcmp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrcmp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "ABCD"
@@ -578,12 +578,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRCMP_0300
-     * @tc.name       : testMuslStringStrcmp003
-     * @tc.desc       : test strcmp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrcmp003
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRCMP_0300
+     * @tc.desc   test strcmp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrcmp003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "ABCD"
@@ -594,12 +594,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRCOLL_0100
-     * @tc.name       : testMuslStringStrcoll001
-     * @tc.desc       : test strcoll
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrcoll001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRCOLL_0100
+     * @tc.desc   test strcoll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrcoll001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "ABCD"
@@ -610,12 +610,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRCOLL_0200
-     * @tc.name       : testMuslStringStrcoll002
-     * @tc.desc       : test strcoll
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrcoll002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRCOLL_0200
+     * @tc.desc   test strcoll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrcoll002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "ABCD"
@@ -626,12 +626,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRCOLL_0300
-     * @tc.name       : testMuslStringStrcoll003
-     * @tc.desc       : test strcoll
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrcoll003
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRCOLL_0300
+     * @tc.desc   test strcoll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrcoll003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "ABCD"
@@ -642,12 +642,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRCOLL_L_0100
-     * @tc.name       : testMuslStringStrcollL001
-     * @tc.desc       : test strcoll_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrcollL001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRCOLL_L_0100
+     * @tc.desc   test strcoll_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrcollL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "ABCD"
@@ -658,12 +658,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRCOLL_L_0200
-     * @tc.name       : testMuslStringStrcollL002
-     * @tc.desc       : test strcoll_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrcollL002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRCOLL_L_0200
+     * @tc.desc   test strcoll_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrcollL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "ABCD"
@@ -674,12 +674,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRCOLL_L_0300
-     * @tc.name       : testMuslStringStrcollL003
-     * @tc.desc       : test strcoll_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrcollL003
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRCOLL_L_0300
+     * @tc.desc   test strcoll_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrcollL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "ABCD"
@@ -690,12 +690,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRLEN_0100
-     * @tc.name       : testMuslStringStrlen001
-     * @tc.desc       : test strlen
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrlen001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRLEN_0100
+     * @tc.desc   test strlen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrlen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "ABCD"
@@ -704,12 +704,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRNCAT_0100
-     * @tc.name       : testMuslStringStrncat001
-     * @tc.desc       : test strncat
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrncat001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRNCAT_0100
+     * @tc.desc   test strncat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrncat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "ABCD"
@@ -720,12 +720,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRLCAT_0100
-     * @tc.name       : testMuslStringStrlcat001
-     * @tc.desc       : test strlcat
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringStrlcat001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRLCAT_0100
+     * @tc.desc   test strlcat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrlcat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "abcd"
@@ -734,12 +734,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRLCAT_0200
-     * @tc.name       : testMuslStringStrlcat002
-     * @tc.desc       : test strlcat
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringStrlcat002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRLCAT_0200
+     * @tc.desc   test strlcat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrlcat002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = ""
@@ -748,12 +748,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRLCPY_0100
-     * @tc.name       : testMuslStringStrlcpy001
-     * @tc.desc       : test strlcpy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringStrlcpy001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRLCPY_0100
+     * @tc.desc   test strlcpy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrlcpy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "abcd"
@@ -762,12 +762,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRLCPY_0200
-     * @tc.name       : testMuslStringStrlcpy002
-     * @tc.desc       : test strlcpy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringStrlcpy002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRLCPY_0200
+     * @tc.desc   test strlcpy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrlcpy002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = ""
@@ -776,12 +776,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRCHRNUL_0100
-     * @tc.name       : testMuslStringStrchrnul001
-     * @tc.desc       : test strchrnul
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringStrchrnul001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRCHRNUL_0100
+     * @tc.desc   test strchrnul
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrchrnul001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "Hello world"
@@ -791,12 +791,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRCHRNUL_0200
-     * @tc.name       : testMuslStringStrchrnul002
-     * @tc.desc       : test strchrnul
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringStrchrnul002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRCHRNUL_0200
+     * @tc.desc   test strchrnul
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrchrnul002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "Hello world"
@@ -806,12 +806,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRCHRNUL_0300
-     * @tc.name       : testMuslStringStrchrnul003
-     * @tc.desc       : test strchrnul
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringStrchrnul003
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRCHRNUL_0300
+     * @tc.desc   test strchrnul
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrchrnul003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "Hello world"
@@ -822,12 +822,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRCASESTR_0100
-     * @tc.name       : testMuslStringStrcasestr001
-     * @tc.desc       : test strcasestr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringStrcasestr001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRCASESTR_0100
+     * @tc.desc   test strcasestr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrcasestr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "abcdABCD"
@@ -837,12 +837,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRCASESTR_0200
-     * @tc.name       : testMuslStringStrcasestr002
-     * @tc.desc       : test strcasestr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringStrcasestr002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRCASESTR_0200
+     * @tc.desc   test strcasestr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrcasestr002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "abcdABCD"
@@ -852,12 +852,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRCASESTR_0300
-     * @tc.name       : testMuslStringStrcasestr003
-     * @tc.desc       : test strcasestr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringStrcasestr003
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRCASESTR_0300
+     * @tc.desc   test strcasestr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrcasestr003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "abcdABCD"
@@ -867,12 +867,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRCASESTR_0400
-     * @tc.name       : testMuslStringStrcasestr004
-     * @tc.desc       : test strcasestr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringStrcasestr004
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRCASESTR_0400
+     * @tc.desc   test strcasestr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrcasestr004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "abcdABCD"
@@ -882,12 +882,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRSIGNAL_0100
-     * @tc.name       : testMuslStringStrsignal001
-     * @tc.desc       : test strsignal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrsignal001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRSIGNAL_0100
+     * @tc.desc   test strsignal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrsignal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0
@@ -896,12 +896,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRSIGNAL_0200
-     * @tc.name       : testMuslStringStrsignal002
-     * @tc.desc       : test strsignal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrsignal002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRSIGNAL_0200
+     * @tc.desc   test strsignal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrsignal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1
@@ -911,12 +911,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRRCHR_0100
-     * @tc.name       : testMuslStringStrrchr001
-     * @tc.desc       : test strrchr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringStrrchr001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRRCHR_0100
+     * @tc.desc   test strrchr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrrchr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 'aabbdcc';
@@ -927,12 +927,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRRCHR_0200
-     * @tc.name       : testMuslStringStrrchr002
-     * @tc.desc       : test strrchr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringStrrchr002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRRCHR_0200
+     * @tc.desc   test strrchr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrrchr002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = '/aa/bb/cc';
@@ -943,12 +943,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRSPN_0100
-     * @tc.name       : testMuslStringStrspn001
-     * @tc.desc       : test strspn
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringStrspn001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRSPN_0100
+     * @tc.desc   test strspn
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrspn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = '0123456789';
@@ -960,12 +960,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRXFRML_0100
-     * @tc.name       : testMuslStringStrxfrmL001
-     * @tc.desc       : test strxfrm_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringStrxfrmL001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRXFRML_0100
+     * @tc.desc   test strxfrm_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrxfrmL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 0;
@@ -978,12 +978,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRXFRML_0200
-     * @tc.name       : testMuslStringStrxfrmL002
-     * @tc.desc       : test strxfrm_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringStrxfrmL002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRXFRML_0200
+     * @tc.desc   test strxfrm_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrxfrmL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 1;
@@ -995,12 +995,12 @@ export default function stringNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STPCPY_0100
-     * @tc.name       : testMuslStringStpcpy001
-     * @tc.desc       : test stpcpy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStpcpy001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STPCPY_0100
+     * @tc.desc   test stpcpy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStpcpy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "ABCD"
@@ -1009,12 +1009,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STPCPY_0200
-     * @tc.name       : testMuslStringStpcpy002
-     * @tc.desc       : test stpcpy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStpcpy002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STPCPY_0200
+     * @tc.desc   test stpcpy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStpcpy002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "ABCDEFG"
@@ -1023,12 +1023,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STPNCPY_0100
-     * @tc.name       : testMuslStringStpncpy001
-     * @tc.desc       : test stpncpy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStpncpy001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STPNCPY_0100
+     * @tc.desc   test stpncpy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStpncpy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "ABCD"
@@ -1037,12 +1037,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STPNCPY_0200
-     * @tc.name       : testMuslStringStpncpy002
-     * @tc.desc       : test stpncpy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStpncpy002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STPNCPY_0200
+     * @tc.desc   test stpncpy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStpncpy002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "ABCDEFG"
@@ -1051,12 +1051,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRCPY_0100
-     * @tc.name       : testMuslStringStrcpy001
-     * @tc.desc       : test strcpy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrcpy001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRCPY_0100
+     * @tc.desc   test strcpy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrcpy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "AB"
@@ -1065,12 +1065,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_MEMMOVECHK_0100
-     * @tc.name       : testMuslStringMemmoveChk001
-     * @tc.desc       : test memmoveChk
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringMemmoveChk001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_MEMMOVECHK_0100
+     * @tc.desc   test memmoveChk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringMemmoveChk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = string.memmoveChk();
@@ -1079,12 +1079,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_MEMSETCHK_0100
-     * @tc.name       : testMuslStringMemsetChk001
-     * @tc.desc       : test memsetChk
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringMemsetChk001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_MEMSETCHK_0100
+     * @tc.desc   test memsetChk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringMemsetChk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = string.memsetChk();
@@ -1093,12 +1093,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STPNCPYCHK_0100
-     * @tc.name       : testMuslStringStpncpyChk001
-     * @tc.desc       : test stpncpyChk
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStpncpyChk001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STPNCPYCHK_0100
+     * @tc.desc   test stpncpyChk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStpncpyChk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: String = string.stpncpyChk();
@@ -1107,12 +1107,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_MEMPCPYCHK_0100
-     * @tc.name       : testMuslStringMempcpyChk001
-     * @tc.desc       : test mempcpyChk
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringMempcpyChk001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_MEMPCPYCHK_0100
+     * @tc.desc   test mempcpyChk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringMempcpyChk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = string.mempcpyChk();
@@ -1121,12 +1121,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRLENCHK_0100
-     * @tc.name       : testMuslStringStrlenChk001
-     * @tc.desc       : test strlenChk
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrlenChk001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRLENCHK_0100
+     * @tc.desc   test strlenChk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrlenChk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = string.strlenChk();
@@ -1135,12 +1135,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRNCPYCHK_0100
-     * @tc.name       : testMuslStringStrncpyChk001
-     * @tc.desc       : test strncpyChk
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrncpyChk001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRNCPYCHK_0100
+     * @tc.desc   test strncpyChk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrncpyChk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: String = string.strncpyChk();
@@ -1148,12 +1148,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRCPY_0200
-     * @tc.name       : testMuslStringStrcpy002
-     * @tc.desc       : test strcpy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrcpy002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRCPY_0200
+     * @tc.desc   test strcpy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrcpy002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "ABCDEF"
@@ -1162,12 +1162,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRCSPN_0100
-     * @tc.name       : testMuslStringStrcspn001
-     * @tc.desc       : test strcspn
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrcspn001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRCSPN_0100
+     * @tc.desc   test strcspn
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrcspn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "ABCD"
@@ -1177,12 +1177,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRCSPN_0200
-     * @tc.name       : testMuslStringStrcspn002
-     * @tc.desc       : test strcspn
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrcspn002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRCSPN_0200
+     * @tc.desc   test strcspn
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrcspn002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "ABCDEF"
@@ -1192,12 +1192,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_MEMCPY_0100
-     * @tc.name       : testMuslStringMemCpy001
-     * @tc.desc       : test memcpy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringMemCpy001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_MEMCPY_0100
+     * @tc.desc   test memcpy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringMemCpy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "ABCD"
@@ -1206,12 +1206,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_MEMCPY_0200
-     * @tc.name       : testMuslStringMemCpy002
-     * @tc.desc       : test memcpy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringMemCpy002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_MEMCPY_0200
+     * @tc.desc   test memcpy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringMemCpy002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "ABDC"
@@ -1220,12 +1220,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_MEMCPY_0300
-     * @tc.name       : testMuslStringMemCpy003
-     * @tc.desc       : test memcpy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringMemCpy003
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_MEMCPY_0300
+     * @tc.desc   test memcpy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringMemCpy003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "ABDCEFGH"
@@ -1234,12 +1234,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_MEMMEM_0100
-     * @tc.name       : testMuslStringMemMem001
-     * @tc.desc       : test memmem
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMuslStringMemMem001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_MEMMEM_0100
+     * @tc.desc   test memmem
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringMemMem001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "BCD"
@@ -1248,12 +1248,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_MEMMEM_0200
-     * @tc.name       : testMuslStringMemMem002
-     * @tc.desc       : test memmem
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMuslStringMemMem002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_MEMMEM_0200
+     * @tc.desc   test memmem
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringMemMem002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "BCAD"
@@ -1262,12 +1262,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_MEMMOVE_0100
-     * @tc.name       : testMuslStringMemMove001
-     * @tc.desc       : test memmove
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringMemMove001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_MEMMOVE_0100
+     * @tc.desc   test memmove
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringMemMove001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "BCD"
@@ -1276,12 +1276,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_MEMPCPY_0100
-     * @tc.name       : testMuslStringMemPCpy001
-     * @tc.desc       : test mempcpy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringMemPCpy001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_MEMPCPY_0100
+     * @tc.desc   test mempcpy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringMemPCpy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "1234"
@@ -1290,12 +1290,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_MEMPCPY_0200
-     * @tc.name       : testMuslStringMemPCpy002
-     * @tc.desc       : test mempcpy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringMemPCpy002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_MEMPCPY_0200
+     * @tc.desc   test mempcpy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringMemPCpy002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "12345678910"
@@ -1304,12 +1304,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_MEMPCPY_0300
-     * @tc.name       : testMuslStringMemPCpy003
-     * @tc.desc       : test mempcpy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringMemPCpy003
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_MEMPCPY_0300
+     * @tc.desc   test mempcpy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringMemPCpy003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "1234"
@@ -1318,12 +1318,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_MEMPCPY_0400
-     * @tc.name       : testMuslStringMemPCpy004
-     * @tc.desc       : test mempcpy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringMemPCpy004
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_MEMPCPY_0400
+     * @tc.desc   test mempcpy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringMemPCpy004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "1234"
@@ -1332,12 +1332,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_MEMRCHR_0100
-     * @tc.name       : testMuslStringMemRChr001
-     * @tc.desc       : test mempcpy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringMemRChr001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_MEMRCHR_0100
+     * @tc.desc   test mempcpy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringMemRChr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: String = string.memrChr();
@@ -1345,12 +1345,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_MEMRCHR_0200
-     * @tc.name       : testMuslStringMemRChr002
-     * @tc.desc       : test mempcpy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringMemRChr002
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_MEMRCHR_0200
+     * @tc.desc   test mempcpy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringMemRChr002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = string.memrChr2();
@@ -1358,12 +1358,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_MEMSET_0100
-     * @tc.name       : testMuslStringMemSet001
-     * @tc.desc       : test memset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringMemSet001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_MEMSET_0100
+     * @tc.desc   test memset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringMemSet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = string.memSet();
@@ -1371,12 +1371,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_MEMCCPY_0100
-     * @tc.name       : testMuslStringMemCcpy001
-     * @tc.desc       : test memccpy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringMemCcpy001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_MEMCCPY_0100
+     * @tc.desc   test memccpy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringMemCcpy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = string.memCcpy();
@@ -1384,12 +1384,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_MEMCHR_0100
-     * @tc.name       : testMuslStringMemChr001
-     * @tc.desc       : test memChr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringMemChr001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_MEMCHR_0100
+     * @tc.desc   test memChr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringMemChr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = string.memChr();
@@ -1397,12 +1397,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_MEMCMP_0100
-     * @tc.name       : testMuslStringMemcmp001
-     * @tc.desc       : test memChr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringMemcmp001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_MEMCMP_0100
+     * @tc.desc   test memChr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringMemcmp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = string.memCmp();
@@ -1411,12 +1411,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRNCATCHK_0100
-     * @tc.name       : testMuslStringStrncatChk001
-     * @tc.desc       : test strncat_chk
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringStrncatChk001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRNCATCHK_0100
+     * @tc.desc   test strncat_chk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrncatChk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: String = string.strncatChk();
@@ -1426,12 +1426,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRCATCHK_0100
-     * @tc.name       : testMuslStringStrcatChk001
-     * @tc.desc       : test strcatChk
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringStrcatChk001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRCATCHK_0100
+     * @tc.desc   test strcatChk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrcatChk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "AB"
@@ -1443,12 +1443,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_MEMCPYCHK_0100
-     * @tc.name       : testMuslStdioMemcpyChk001
-     * @tc.desc       : test memcpyChk
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStdioMemcpyChk001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_MEMCPYCHK_0100
+     * @tc.desc   test memcpyChk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStdioMemcpyChk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = string.memcpyChk();
@@ -1456,12 +1456,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_MEMRCHR_CHK_0100
-     * @tc.name       : testMuslStringMemrchrChk001
-     * @tc.desc       : test __memrchr_chk
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringMemrchrChk001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_MEMRCHR_CHK_0100
+     * @tc.desc   test __memrchr_chk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringMemrchrChk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "this is __memrchr_chk test.";
@@ -1472,12 +1472,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRCPY_CHK_0100
-     * @tc.name       : testMuslStringStrcpyChk001
-     * @tc.desc       : test __strcpy_chk
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStrcpyChk001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRCPY_CHK_0100
+     * @tc.desc   test __strcpy_chk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrcpyChk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "this is __strcpy_chk test.";
@@ -1487,12 +1487,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STPCPY_CHK_0100
-     * @tc.name       : testMuslStringStpcpyChk001
-     * @tc.desc       : test __stpcpy_chk
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStringStpcpyChk001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STPCPY_CHK_0100
+     * @tc.desc   test __stpcpy_chk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStpcpyChk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "this is __stpcpy_chk test.";
@@ -1502,12 +1502,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRCHR_CHK_0100
-     * @tc.name       : testMuslStringStrchrChk001
-     * @tc.desc       : test __strchr_chk
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringStrchrChk001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRCHR_CHK_0100
+     * @tc.desc   test __strchr_chk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrchrChk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = "this is __strchr_chk test.";
@@ -1517,12 +1517,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRRCHR_CHK_0100
-     * @tc.name       : testMuslStringStrrchrChk001
-     * @tc.desc       : test __strrchr_chk
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringStrrchrChk001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRRCHR_CHK_0100
+     * @tc.desc   test __strrchr_chk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrrchrChk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number =string.__strrchr_chk();
@@ -1530,12 +1530,12 @@ export default function stringNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_MEMCHR_CHK_0100
-     * @tc.name       : testMuslStringMemchrChk001
-     * @tc.desc       : test __memchr_chk
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringMemchrChk001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_MEMCHR_CHK_0100
+     * @tc.desc   test __memchr_chk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringMemchrChk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -1545,12 +1545,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRLCPY_CHK_0100
-     * @tc.name       : testMuslStringStrlcpyChk001
-     * @tc.desc       : test __strlcpy_chk
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringStrlcpyChk001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRLCPY_CHK_0100
+     * @tc.desc   test __strlcpy_chk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrlcpyChk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number =string.__strlcpy_chk();
@@ -1559,12 +1559,12 @@ export default function stringNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STRING_STRLCAT_CHK_0100
-     * @tc.name       : testMuslStringStrlcatChk001
-     * @tc.desc       : test __strlcat_chk
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStringStrlcatChk001
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRLCAT_CHK_0100
+     * @tc.desc   test __strlcat_chk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStringStrlcatChk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number =string.__strlcat_chk();

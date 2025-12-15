@@ -53,12 +53,12 @@ export default function popupDirectionTest() {
     });
 
     /**
+     * @tc.name   testPopupDirectionTest_0100
      * @tc.number title direction
-     * @tc.name testPopupDirectionTest_0100
-     * @tc.desc Test Popup page
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test Popup page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPopupDirectionTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.log("testPopupDirectionTest_0100 ", "START");
@@ -83,12 +83,12 @@ export default function popupDirectionTest() {
     });
 
     /**
+     * @tc.name   testPopupDirectionTest_0100
      * @tc.number button direction
-     * @tc.name testPopupDirectionTest_0200
-     * @tc.desc Test Popup page
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test Popup page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPopupDirectionTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.log("testPopupDirectionTest_0100 ", "START");

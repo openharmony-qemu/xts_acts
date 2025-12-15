@@ -43,12 +43,12 @@ export default function KernelEnhanceKitTest() {
       // This API supports only one parameter: clear action function.
     });
     /**
-     * @tc.number    SUB_CstandardLibrary_calloc
-     * @tc.name      SUB_CstandardLibrary_calloc
-     * @tc.desc      test CstandardLibrary_calloc
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_CstandardLibrary_calloc
+     * @tc.number SUB_CstandardLibrary_calloc
+     * @tc.desc   test CstandardLibrary_calloc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_CstandardLibrary_calloc', Level.LEVEL1, () => {
       try {
@@ -61,12 +61,12 @@ export default function KernelEnhanceKitTest() {
     });
 
     /**
-     * @tc.number    SUB_CstandardLibrary_realloc
-     * @tc.name      SUB_CstandardLibrary_realloc
-     * @tc.desc      test CstandardLibrary_realloc
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_CstandardLibrary_realloc
+     * @tc.number SUB_CstandardLibrary_realloc
+     * @tc.desc   test CstandardLibrary_realloc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_CstandardLibrary_realloc', Level.LEVEL1, () => {
       try {
@@ -79,12 +79,12 @@ export default function KernelEnhanceKitTest() {
     });
 
     /**
-     * @tc.number    SUB_CstandardLibrary_valloc
-     * @tc.name      SUB_CstandardLibrary_valloc
-     * @tc.desc      test CstandardLibrary_valloc
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_CstandardLibrary_valloc
+     * @tc.number SUB_CstandardLibrary_valloc
+     * @tc.desc   test CstandardLibrary_valloc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_CstandardLibrary_valloc', Level.LEVEL1, () => {
       try {
@@ -97,12 +97,12 @@ export default function KernelEnhanceKitTest() {
     });
 
     /**
-     * @tc.number    SUB_CstandardLibrary_memalign
-     * @tc.name      SUB_CstandardLibrary_memalign
-     * @tc.desc      test CstandardLibrary_memalign
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_CstandardLibrary_memalign
+     * @tc.number SUB_CstandardLibrary_memalign
+     * @tc.desc   test CstandardLibrary_memalign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_CstandardLibrary_memalign', Level.LEVEL1, () => {
       try {
@@ -115,12 +115,12 @@ export default function KernelEnhanceKitTest() {
     });
 
     /**
-     * @tc.number    SUB_CstandardLibrary_mallinfo
-     * @tc.name      SUB_CstandardLibrary_mallinfo
-     * @tc.desc      test CstandardLibrary_mallinfo
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_CstandardLibrary_mallinfo
+     * @tc.number SUB_CstandardLibrary_mallinfo
+     * @tc.desc   test CstandardLibrary_mallinfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_CstandardLibrary_mallinfo', Level.LEVEL1, () => {
       try {
@@ -133,192 +133,12 @@ export default function KernelEnhanceKitTest() {
     });
 
     /**
-     * @tc.number    SUB_CstandardLibrary_mallinfo_arena
-     * @tc.name      SUB_CstandardLibrary_mallinfo_arena
-     * @tc.desc      test CstandardLibrary_mallinfo_arena
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     */
-    it('SUB_CstandardLibrary_mallinfo_arena', Level.LEVEL1, () => {
-      try {
-        let c: number = testNapi.cstandardLibrary_mallinfo_arena();
-        expect(c).assertEqual(1);
-      } catch (err) {
-        console.error("====>SUB_CstandardLibrary_mallinfo_arena catch err: " + err);
-        expect(false).assertEqual(0);
-      }
-    });
-
-    /**
-     * @tc.number    SUB_CstandardLibrary_mallinfo_ordblks
-     * @tc.name      SUB_CstandardLibrary_mallinfo_ordblks
-     * @tc.desc      test CstandardLibrary_mallinfo_ordblks
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     */
-    it('SUB_CstandardLibrary_mallinfo_ordblks', Level.LEVEL1, () => {
-      try {
-        let c: number = testNapi.cstandardLibrary_mallinfo_ordblks();
-        expect(c).assertEqual(1);
-      } catch (err) {
-        console.error("====>SUB_CstandardLibrary_mallinfo_ordblks catch err: " + err);
-        expect(false).assertEqual(0);
-      }
-    });
-
-    /**
-     * @tc.number    SUB_CstandardLibrary_mallinfo_smblks
-     * @tc.name      SUB_CstandardLibrary_mallinfo_smblks
-     * @tc.desc      test CstandardLibrary_mallinfo_smblks
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     */
-    it('SUB_CstandardLibrary_mallinfo_smblks', Level.LEVEL1, () => {
-      try {
-        let c: number = testNapi.cstandardLibrary_mallinfo_smblks();
-        expect(c).assertEqual(1);
-      } catch (err) {
-        console.error("====>SUB_CstandardLibrary_mallinfo_smblks catch err: " + err);
-        expect(false).assertEqual(0);
-      }
-    });
-
-    /**
-     * @tc.number    SUB_CstandardLibrary_mallinfo_hblks
-     * @tc.name      SUB_CstandardLibrary_mallinfo_hblks
-     * @tc.desc      test CstandardLibrary_mallinfo_hblks
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     */
-    it('SUB_CstandardLibrary_mallinfo_hblks', Level.LEVEL1, () => {
-      try {
-        let c: number = testNapi.cstandardLibrary_mallinfo_hblks();
-        expect(c).assertEqual(1);
-      } catch (err) {
-        console.error("====>SUB_CstandardLibrary_mallinfo_hblks catch err: " + err);
-        expect(false).assertEqual(0);
-      }
-    });
-
-    /**
-     * @tc.number    SUB_CstandardLibrary_mallinfo_hblkhd
-     * @tc.name      SUB_CstandardLibrary_mallinfo_hblkhd
-     * @tc.desc      test CstandardLibrary_mallinfo_hblkhd
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     */
-    it('SUB_CstandardLibrary_mallinfo_hblkhd', Level.LEVEL1, () => {
-      try {
-        let c: number = testNapi.cstandardLibrary_mallinfo_hblkhd();
-        expect(c).assertEqual(1);
-      } catch (err) {
-        console.error("====>SUB_CstandardLibrary_mallinfo_hblkhd catch err: " + err);
-        expect(false).assertEqual(0);
-      }
-    });
-
-    /**
-     * @tc.number    SUB_CstandardLibrary_mallinfo_usmblks
-     * @tc.name      SUB_CstandardLibrary_mallinfo_usmblks
-     * @tc.desc      test CstandardLibrary_mallinfo_usmblks
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     */
-    it('SUB_CstandardLibrary_mallinfo_usmblks', Level.LEVEL1, () => {
-      try {
-        let c: number = testNapi.cstandardLibrary_mallinfo_usmblks();
-        expect(c).assertEqual(1);
-      } catch (err) {
-        console.error("====>SUB_CstandardLibrary_mallinfo_usmblks catch err: " + err);
-        expect(false).assertEqual(0);
-      }
-    });
-
-    /**
-     * @tc.number    SUB_CstandardLibrary_mallinfo_fsmblks
-     * @tc.name      SUB_CstandardLibrary_mallinfo_fsmblks
-     * @tc.desc      test CstandardLibrary_mallinfo_fsmblks
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     */
-    it('SUB_CstandardLibrary_mallinfo_fsmblks', Level.LEVEL1, () => {
-      try {
-        let c: number = testNapi.cstandardLibrary_mallinfo_fsmblks();
-        expect(c).assertEqual(1);
-      } catch (err) {
-        console.error("====>SUB_CstandardLibrary_mallinfo_fsmblks catch err: " + err);
-        expect(false).assertEqual(0);
-      }
-    });
-
-    /**
-     * @tc.number    SUB_CstandardLibrary_mallinfo_uordblks
-     * @tc.name      SUB_CstandardLibrary_mallinfo_uordblks
-     * @tc.desc      test CstandardLibrary_mallinfo_uordblks
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     */
-    it('SUB_CstandardLibrary_mallinfo_uordblks', Level.LEVEL1, () => {
-      try {
-        let c: number = testNapi.cstandardLibrary_mallinfo_uordblks();
-        expect(c).assertEqual(1);
-      } catch (err) {
-        console.error("====>SUB_CstandardLibrary_mallinfo_uordblks catch err: " + err);
-        expect(false).assertEqual(0);
-      }
-    });
-
-    /**
-     * @tc.number    SUB_CstandardLibrary_mallinfo_fordblks
-     * @tc.name      SUB_CstandardLibrary_mallinfo_fordblks
-     * @tc.desc      test CstandardLibrary_mallinfo_fordblks
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     */
-    it('SUB_CstandardLibrary_mallinfo_fordblks', Level.LEVEL1, () => {
-      try {
-        let c: number = testNapi.cstandardLibrary_mallinfo_fordblks();
-        expect(c).assertEqual(1);
-      } catch (err) {
-        console.error("====>SUB_CstandardLibrary_mallinfo_fordblks catch err: " + err);
-        expect(false).assertEqual(0);
-      }
-    });
-
-    /**
-     * @tc.number    SUB_CstandardLibrary_mallinfo_keepcost
-     * @tc.name      SUB_CstandardLibrary_mallinfo_keepcost
-     * @tc.desc      test CstandardLibrary_mallinfo_keepcost
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     */
-    it('SUB_CstandardLibrary_mallinfo_keepcost', Level.LEVEL1, () => {
-      try {
-        let c: number = testNapi.cstandardLibrary_mallinfo_keepcost();
-        expect(c).assertEqual(1);
-      } catch (err) {
-        console.error("====>SUB_CstandardLibrary_mallinfo_keepcost catch err: " + err);
-        expect(false).assertEqual(0);
-      }
-    });
-
-    /**
-     * @tc.number    SUB_CstandardLibrary_mallinfo2
-     * @tc.name      SUB_CstandardLibrary_mallinfo2
-     * @tc.desc      test CstandardLibrary_mallinfo2
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_CstandardLibrary_mallinfo2
+     * @tc.number SUB_CstandardLibrary_mallinfo2
+     * @tc.desc   test CstandardLibrary_mallinfo2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_CstandardLibrary_mallinfo2', Level.LEVEL1, () => {
       try {
@@ -331,191 +151,12 @@ export default function KernelEnhanceKitTest() {
     });
 
     /**
-     * @tc.number    SUB_CstandardLibrary_mallinfo2_arena
-     * @tc.name      SUB_CstandardLibrary_mallinfo2_arena
-     * @tc.desc      test CstandardLibrary_mallinfo2_arena
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     */
-    it('SUB_CstandardLibrary_mallinfo2_arena', Level.LEVEL1, () => {
-      try {
-        let c: number = testNapi.cstandardLibrary_mallinfo2_arena();
-        expect(c).assertEqual(1);
-      } catch (err) {
-        console.error("====>SUB_CstandardLibrary_mallinfo2_arena catch err: " + err);
-        expect(false).assertEqual(0);
-      }
-    });
-
-    /**
-     * @tc.number    SUB_CstandardLibrary_mallinfo2_ordblks
-     * @tc.name      SUB_CstandardLibrary_mallinfo2_ordblks
-     * @tc.desc      test CstandardLibrary_mallinfo2_ordblks
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     */
-    it('SUB_CstandardLibrary_mallinfo2_ordblks', Level.LEVEL1, () => {
-      try {
-        let c: number = testNapi.cstandardLibrary_mallinfo2_ordblks();
-        expect(c).assertEqual(1);
-      } catch (err) {
-        console.error("====>SUB_CstandardLibrary_mallinfo2_ordblks catch err: " + err);
-        expect(false).assertEqual(0);
-      }
-    });
-
-    /**
-     * @tc.number    SUB_CstandardLibrary_mallinfo2_smblks
-     * @tc.name      SUB_CstandardLibrary_mallinfo2_smblks
-     * @tc.desc      test CstandardLibrary_mallinfo2_smblks
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     */
-    it('SUB_CstandardLibrary_mallinfo2_smblks', Level.LEVEL1, () => {
-      try {
-        let c: number = testNapi.cstandardLibrary_mallinfo2_smblks();
-        expect(c).assertEqual(1);
-      } catch (err) {
-        console.error("====>SUB_CstandardLibrary_mallinfo2_smblks catch err: " + err);
-        expect(false).assertEqual(0);
-      }
-    });
-
-    /**
-     * @tc.number    SUB_CstandardLibrary_mallinfo2_hblks
-     * @tc.name      SUB_CstandardLibrary_mallinfo2_hblks
-     * @tc.desc      test CstandardLibrary_mallinfo2_hblks
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     */
-    it('SUB_CstandardLibrary_mallinfo2_hblks', Level.LEVEL1, () => {
-      try {
-        let c: number = testNapi.cstandardLibrary_mallinfo2_hblks();
-        expect(c).assertEqual(1);
-      } catch (err) {
-        console.error("====>SUB_CstandardLibrary_mallinfo2_hblks catch err: " + err);
-        expect(false).assertEqual(0);
-      }
-    });
-
-    /**
-     * @tc.number    SUB_CstandardLibrary_mallinfo2_hblkhd
-     * @tc.name      SUB_CstandardLibrary_mallinfo2_hblkhd
-     * @tc.desc      test CstandardLibrary_mallinfo2_hblkhd
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     */
-    it('SUB_CstandardLibrary_mallinfo2_hblkhd', Level.LEVEL1, () => {
-      try {
-        let c: number = testNapi.cstandardLibrary_mallinfo2_hblkhd();
-        expect(c).assertEqual(1);
-      } catch (err) {
-        console.error("====>SUB_CstandardLibrary_mallinfo2_hblkhd catch err: " + err);
-        expect(false).assertEqual(0);
-      }
-    });
-
-    /**
-     * @tc.number    SUB_CstandardLibrary_mallinfo2_usmblks
-     * @tc.name      SUB_CstandardLibrary_mallinfo2_usmblks
-     * @tc.desc      test CstandardLibrary_mallinfo2_usmblks
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     */
-    it('SUB_CstandardLibrary_mallinfo2_usmblks', Level.LEVEL1, () => {
-      try {
-        let c: number = testNapi.cstandardLibrary_mallinfo2_usmblks();
-        expect(c).assertEqual(1);
-      } catch (err) {
-        console.error("====>SUB_CstandardLibrary_mallinfo2_usmblks catch err: " + err);
-        expect(false).assertEqual(0);
-      }
-    });
-
-    /**
-     * @tc.number    SUB_CstandardLibrary_mallinfo2_fsmblks
-     * @tc.name      SUB_CstandardLibrary_mallinfo2_fsmblks
-     * @tc.desc      test CstandardLibrary_mallinfo2_fsmblks
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     */
-    it('SUB_CstandardLibrary_mallinfo2_fsmblks', Level.LEVEL1, () => {
-      try {
-        let c: number = testNapi.cstandardLibrary_mallinfo2_fsmblks();
-        expect(c).assertEqual(1);
-      } catch (err) {
-        console.error("====>SUB_CstandardLibrary_mallinfo2_fsmblks catch err: " + err);
-        expect(false).assertEqual(0);
-      }
-    });
-
-    /**
-     * @tc.number    SUB_CstandardLibrary_mallinfo2_uordblks
-     * @tc.name      SUB_CstandardLibrary_mallinfo2_uordblks
-     * @tc.desc      test CstandardLibrary_mallinfo2_uordblks
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     */
-    it('SUB_CstandardLibrary_mallinfo2_uordblks', Level.LEVEL1, () => {
-      try {
-        let c: number = testNapi.cstandardLibrary_mallinfo2_uordblks();
-        expect(c).assertEqual(1);
-      } catch (err) {
-        console.error("====>SUB_CstandardLibrary_mallinfo2_uordblks catch err: " + err);
-        expect(false).assertEqual(0);
-      }
-    });
-
-    /**
-     * @tc.number    SUB_CstandardLibrary_mallinfo2_fordblks
-     * @tc.name      SUB_CstandardLibrary_mallinfo2_fordblks
-     * @tc.desc      test CstandardLibrary_mallinfo2_fordblks
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     */
-    it('SUB_CstandardLibrary_mallinfo2_fordblks', Level.LEVEL1, () => {
-      try {
-        let c: number = testNapi.cstandardLibrary_mallinfo2_fordblks();
-        expect(c).assertEqual(1);
-      } catch (err) {
-        console.error("====>SUB_CstandardLibrary_mallinfo2_fordblks catch err: " + err);
-        expect(false).assertEqual(0);
-      }
-    });
-
-    /**
-     * @tc.number    SUB_CstandardLibrary_mallinfo2_keepcost
-     * @tc.name      SUB_CstandardLibrary_mallinfo2_keepcost
-     * @tc.desc      test CstandardLibrary_mallinfo2_keepcost
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     */
-    it('SUB_CstandardLibrary_mallinfo2_keepcost', Level.LEVEL1, () => {
-      try {
-        let c: number = testNapi.cstandardLibrary_mallinfo2_keepcost();
-        expect(c).assertEqual(1);
-      } catch (err) {
-        console.error("====>SUB_CstandardLibrary_mallinfo2_keepcost catch err: " + err);
-        expect(false).assertEqual(0);
-      }
-    });
-    /**
-     * @tc.number    SUB_CstandardLibrary_malloc_check_from_ptr
-     * @tc.name      SUB_CstandardLibrary_malloc_check_from_ptr
-     * @tc.desc      test CstandardLibrary_mallinfo2_keepcost
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_CstandardLibrary_malloc_check_from_ptr
+     * @tc.number SUB_CstandardLibrary_malloc_check_from_ptr
+     * @tc.desc   test CstandardLibrary_mallinfo2_keepcost
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_CstandardLibrary_malloc_check_from_ptr', Level.LEVEL1, () => {
       try {

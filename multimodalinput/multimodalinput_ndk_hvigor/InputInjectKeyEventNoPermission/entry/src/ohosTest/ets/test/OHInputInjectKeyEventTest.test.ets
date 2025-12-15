@@ -20,7 +20,6 @@ export default function ActsInputInjectNoPermissionTest() {
   describe('ActsInputInjectNoPermissionTest', () => {
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Input_Inject_No_Permiss_0300
      * @tc.number SUB_Input_Inject_No_Permiss_0300
      * @tc.desc   Covering the enumeration value.
@@ -43,7 +42,6 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Input_Inject_No_Permiss_0400
      * @tc.number SUB_Input_Inject_No_Permiss_0400
      * @tc.desc   Covering the enumeration value.
@@ -66,7 +64,6 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Input_Inject_No_Permiss_0500
      * @tc.number SUB_Input_Inject_No_Permiss_0500
      * @tc.desc   Covering the enumeration value.
@@ -89,7 +86,6 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Input_Inject_No_Permiss_0600
      * @tc.number SUB_Input_Inject_No_Permiss_0600
      * @tc.desc   Covering the enumeration value.
@@ -112,7 +108,6 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Input_Inject_No_Permiss_0700
      * @tc.number SUB_Input_Inject_No_Permiss_0700
      * @tc.desc   Covering the enumeration value.
@@ -135,7 +130,6 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Input_Inject_No_Permiss_0800
      * @tc.number SUB_Input_Inject_No_Permiss_0800
      * @tc.desc   Covering the enumeration value.
@@ -158,7 +152,6 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Input_Inject_No_Permiss_0900
      * @tc.number SUB_Input_Inject_No_Permiss_0900
      * @tc.desc   Covering the enumeration value.
@@ -181,7 +174,6 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Input_Inject_No_Permiss_1000
      * @tc.number SUB_Input_Inject_No_Permiss_1000
      * @tc.desc   Covering the enumeration value.
@@ -204,7 +196,6 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Input_Inject_No_Permiss_1100
      * @tc.number SUB_Input_Inject_No_Permiss_1100
      * @tc.desc   Covering the enumeration value.
@@ -227,7 +218,6 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Input_Inject_No_Permiss_1200
      * @tc.number SUB_Input_Inject_No_Permiss_1200
      * @tc.desc   Covering the enumeration value.
@@ -250,7 +240,6 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Input_Inject_No_Permiss_1300
      * @tc.number SUB_Input_Inject_No_Permiss_1300
      * @tc.desc   Covering the enumeration value.
@@ -273,7 +262,6 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Input_Inject_No_Permiss_1400
      * @tc.number SUB_Input_Inject_No_Permiss_1400
      * @tc.desc   Covering the enumeration value.
@@ -296,7 +284,6 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Input_Inject_No_Permiss_1500
      * @tc.number SUB_Input_Inject_No_Permiss_1500
      * @tc.desc   Covering the enumeration value.
@@ -319,7 +306,6 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Input_Inject_No_Permiss_1600
      * @tc.number SUB_Input_Inject_No_Permiss_1600
      * @tc.desc   Covering the enumeration value.
@@ -342,7 +328,6 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Input_Inject_No_Permiss_1700
      * @tc.number SUB_Input_Inject_No_Permiss_1700
      * @tc.desc   Covering the enumeration value.
@@ -365,7 +350,6 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Input_Inject_No_Permiss_1800
      * @tc.number SUB_Input_Inject_No_Permiss_1800
      * @tc.desc   Covering the enumeration value.
@@ -388,7 +372,6 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Input_Inject_No_Permiss_1900
      * @tc.number SUB_Input_Inject_No_Permiss_1900
      * @tc.desc   Covering the enumeration value.
@@ -411,7 +394,6 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Input_Inject_No_Permiss_2000
      * @tc.number SUB_Input_Inject_No_Permiss_2000
      * @tc.desc   Covering the enumeration value.
@@ -434,7 +416,6 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Input_Inject_No_Permiss_2100
      * @tc.number SUB_Input_Inject_No_Permiss_2100
      * @tc.desc   Covering the enumeration value.
@@ -457,7 +438,6 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Input_Inject_No_Permiss_2200
      * @tc.number SUB_Input_Inject_No_Permiss_2200
      * @tc.desc   Covering the enumeration value.
@@ -480,7 +460,6 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Input_Inject_No_Permiss_2300
      * @tc.number SUB_Input_Inject_No_Permiss_2300
      * @tc.desc   Covering the enumeration value.
@@ -503,7 +482,6 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Input_Inject_No_Permiss_2400
      * @tc.number SUB_Input_Inject_No_Permiss_2400
      * @tc.desc   Covering the enumeration value.
@@ -526,7 +504,6 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Input_Inject_No_Permiss_2500
      * @tc.number SUB_Input_Inject_No_Permiss_2500
      * @tc.desc   Covering the enumeration value.
@@ -549,7 +526,6 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Input_Inject_No_Permiss_2600
      * @tc.number SUB_Input_Inject_No_Permiss_2600
      * @tc.desc   Covering the enumeration value.
@@ -572,7 +548,6 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Input_Inject_No_Permiss_2700
      * @tc.number SUB_Input_Inject_No_Permiss_2700
      * @tc.desc   Covering the enumeration value.

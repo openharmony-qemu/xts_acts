@@ -35,13 +35,13 @@ let addr: socket.NetAddress = {
 export default function TLSSocketTest() {
   describe('TLSSocketTest', () => {
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_ConstructTLSSocketInstance_0100
-     * @tc.name  :  testNetworkMgrSocketTLSSocketConstructTLSSocketInstance0100
-     * @tc.desc  :  Create and return a TLSSocket object
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketConstructTLSSocketInstance0100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_ConstructTLSSocketInstance_0100
+     * @tc.desc   Create and return a TLSSocket object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketConstructTLSSocketInstance0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketConstructTLSSocketInstance0100';
@@ -60,13 +60,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_Bind_0100
-     * @tc.name  :  testNetworkMgrSocketTLSSocketBind0100
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketBind0100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_Bind_0100
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketBind0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketBind0100';
@@ -92,13 +92,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_Bind_0300
-     * @tc.name  :  testNetworkMgrSocketTLSSocketBind0300
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketBind0300
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_Bind_0300
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketBind0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketBind0300';
@@ -126,13 +126,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_Bind_0400
-     * @tc.name  :  testNetworkMgrSocketTLSSocketBind0400
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketBind0400
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_Bind_0400
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketBind0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketBind0400';
@@ -162,13 +162,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_Bind_0500
-     * @tc.name  :  testNetworkMgrSocketTLSSocketBind0500
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketBind0500
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_Bind_0500
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketBind0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketBind0500';
@@ -198,13 +198,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_Bind_0600
-     * @tc.name  :  testNetworkMgrSocketTLSSocketBind0600
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketBind0600
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_Bind_0600
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketBind0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketBind0600';
@@ -234,13 +234,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_Bind_0700
-     * @tc.name  :  testNetworkMgrSocketTLSSocketBind0700
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketBind0700
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_Bind_0700
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketBind0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketBind0700';
@@ -270,13 +270,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_Bind_1100
-     * @tc.name  :  testNetworkMgrSocketTLSSocketBind1100
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketBind1100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_Bind_1100
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketBind1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketBind1100';
@@ -301,13 +301,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_Bind_1300
-     * @tc.name  :  testNetworkMgrSocketTLSSocketBind1300
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketBind1300
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_Bind_1300
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketBind1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketBind1300';
@@ -335,13 +335,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_Bind_1400
-     * @tc.name  :  testNetworkMgrSocketTLSSocketBind1400
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketBind1400
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_Bind_1400
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketBind1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketBind1400';
@@ -371,13 +371,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_Bind_1500
-     * @tc.name  :  testNetworkMgrSocketTLSSocketBind1500
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketBind1500
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_Bind_1500
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketBind1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketBind1500';
@@ -407,13 +407,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_Bind_1600
-     * @tc.name  :  testNetworkMgrSocketTLSSocketBind1600
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketBind1600
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_Bind_1600
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketBind1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketBind1600';
@@ -443,13 +443,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_Bind_1700
-     * @tc.name  :  testNetworkMgrSocketTLSSocketBind1700
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketBind1700
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_Bind_1700
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketBind1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketBind1700';
@@ -479,13 +479,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_Bind_1800
-     * @tc.name  :  testNetworkMgrSocketTLSSocketBind1800
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketBind1800
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_Bind_1800
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketBind1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketBind1800';
@@ -515,13 +515,13 @@ export default function TLSSocketTest() {
       }
     });
     
-        /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_Bind_1900
-     * @tc.name  :  testNetworkMgrSocketTLSSocketBind1900
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketBind1900
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_Bind_1900
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketBind1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketBind1900';
@@ -549,13 +549,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_GetState_0100
-     * @tc.name  :  testNetworkMgrSocketTLSSocketGetState0100
-     * @tc.desc  :  Get TLSSocket Status
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketGetState0100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_GetState_0100
+     * @tc.desc   Get TLSSocket Status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketGetState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketGetState0100';
@@ -587,13 +587,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_GetState_0300
-     * @tc.name  :  testNetworkMgrSocketTLSSocketGetState0300
-     * @tc.desc  :  Get TLSSocket Status
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketGetState0300
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_GetState_0300
+     * @tc.desc   Get TLSSocket Status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketGetState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketGetState0300';
@@ -623,13 +623,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_GetState_0500
-     * @tc.name  :  testNetworkMgrSocketTLSSocketGetState0500
-     * @tc.desc  :  Get TLSSocket Status
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketGetState0500
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_GetState_0500
+     * @tc.desc   Get TLSSocket Status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketGetState0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketGetState0500';
@@ -661,13 +661,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_GetState_0700
-     * @tc.name  :  testNetworkMgrSocketTLSSocketGetState0700
-     * @tc.desc  :  Get TLSSocket Status
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketGetState0700
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_GetState_0700
+     * @tc.desc   Get TLSSocket Status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketGetState0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketGetState0700';
@@ -697,13 +697,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_0100
-     * @tc.name  :  testNetworkMgrSocketTLSSocketSetExtraOptions0100
-     * @tc.desc  :  Set other properties for TCPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketSetExtraOptions0100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_0100
+     * @tc.desc   Set other properties for TCPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketSetExtraOptions0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketSetExtraOptions0100';
@@ -742,13 +742,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_0200
-     * @tc.name  :  testNetworkMgrSocketTLSSocketSetExtraOptions0200
-     * @tc.desc  :  Set other properties for TCPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketSetExtraOptions0200
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_0200
+     * @tc.desc   Set other properties for TCPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketSetExtraOptions0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketSetExtraOptions0200';
@@ -787,13 +787,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_0300
-     * @tc.name  :  testNetworkMgrSocketTLSSocketSetExtraOptions0300
-     * @tc.desc  :  Set other properties for TCPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketSetExtraOptions0300
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_0300
+     * @tc.desc   Set other properties for TCPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketSetExtraOptions0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketSetExtraOptions0300';
@@ -825,13 +825,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_0400
-     * @tc.name  :  testNetworkMgrSocketTLSSocketSetExtraOptions0400
-     * @tc.desc  :  Set other properties for TCPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketSetExtraOptions0400
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_0400
+     * @tc.desc   Set other properties for TCPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketSetExtraOptions0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketSetExtraOptions0400';
@@ -870,13 +870,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_0500
-     * @tc.name  :  testNetworkMgrSocketTLSSocketSetExtraOptions0500
-     * @tc.desc  :  Set other properties for TCPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketSetExtraOptions0500
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_0500
+     * @tc.desc   Set other properties for TCPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketSetExtraOptions0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketSetExtraOptions0500';
@@ -915,13 +915,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_0600
-     * @tc.name  :  testNetworkMgrSocketTLSSocketSetExtraOptions0600
-     * @tc.desc  :  Set other properties for TCPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketSetExtraOptions0600
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_0600
+     * @tc.desc   Set other properties for TCPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketSetExtraOptions0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketSetExtraOptions0600';
@@ -960,13 +960,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_0700
-     * @tc.name  :  testNetworkMgrSocketTLSSocketSetExtraOptions0700
-     * @tc.desc  :  Set other properties for TCPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketSetExtraOptions0700
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_0700
+     * @tc.desc   Set other properties for TCPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketSetExtraOptions0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketSetExtraOptions0700';
@@ -1005,13 +1005,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_0800
-     * @tc.name  :  testNetworkMgrSocketTLSSocketSetExtraOptions0800
-     * @tc.desc  :  Set other properties for TCPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketSetExtraOptions0800
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_0800
+     * @tc.desc   Set other properties for TCPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketSetExtraOptions0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketSetExtraOptions0800';
@@ -1050,13 +1050,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_1100
-     * @tc.name  :  testNetworkMgrSocketTLSSocketSetExtraOptions1100
-     * @tc.desc  :  Set other properties for TCPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketSetExtraOptions1100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_1100
+     * @tc.desc   Set other properties for TCPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketSetExtraOptions1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketSetExtraOptions1100';
@@ -1095,13 +1095,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_1200
-     * @tc.name  :  testNetworkMgrSocketTLSSocketSetExtraOptions1200
-     * @tc.desc  :  Set other properties for TCPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketSetExtraOptions1200
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_1200
+     * @tc.desc   Set other properties for TCPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketSetExtraOptions1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketSetExtraOptions1200';
@@ -1140,13 +1140,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_1300
-     * @tc.name  :  testNetworkMgrSocketTLSSocketSetExtraOptions1300
-     * @tc.desc  :  Set other properties for TCPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketSetExtraOptions1300
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_1300
+     * @tc.desc   Set other properties for TCPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketSetExtraOptions1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketSetExtraOptions1300';
@@ -1178,13 +1178,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_1400
-     * @tc.name  :  testNetworkMgrSocketTLSSocketSetExtraOptions1400
-     * @tc.desc  :  Set other properties for TCPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketSetExtraOptions1400
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_1400
+     * @tc.desc   Set other properties for TCPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketSetExtraOptions1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketSetExtraOptions1400';
@@ -1223,13 +1223,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_1500
-     * @tc.name  :  testNetworkMgrSocketTLSSocketSetExtraOptions1500
-     * @tc.desc  :  Set other properties for TCPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketSetExtraOptions1500
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_1500
+     * @tc.desc   Set other properties for TCPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketSetExtraOptions1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketSetExtraOptions1500';
@@ -1268,13 +1268,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_1600
-     * @tc.name  :  testNetworkMgrSocketTLSSocketSetExtraOptions1600
-     * @tc.desc  :  Set other properties for TCPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketSetExtraOptions1600
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_1600
+     * @tc.desc   Set other properties for TCPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketSetExtraOptions1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketSetExtraOptions1600';
@@ -1313,13 +1313,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_1700
-     * @tc.name  :  testNetworkMgrSocketTLSSocketSetExtraOptions1700
-     * @tc.desc  :  Set other properties for TCPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketSetExtraOptions1700
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_1700
+     * @tc.desc   Set other properties for TCPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketSetExtraOptions1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketSetExtraOptions1700';
@@ -1358,13 +1358,13 @@ export default function TLSSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_1800
-     * @tc.name  :  testNetworkMgrSocketTLSSocketSetExtraOptions1800
-     * @tc.desc  :  Set other properties for TCPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketSetExtraOptions1800
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_1800
+     * @tc.desc   Set other properties for TCPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketSetExtraOptions1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketSetExtraOptions1800';

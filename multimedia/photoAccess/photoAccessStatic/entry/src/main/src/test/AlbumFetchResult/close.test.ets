@@ -31,12 +31,12 @@ export default function albumCloseTest() {
     });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_ALBUM_CLOSE_STATIC_0000
-      * @tc.name    album_close_static_000
-      * @tc.desc    close system album
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   album_close_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_ALBUM_CLOSE_STATIC_0000
+     * @tc.desc   close system album
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_close_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
