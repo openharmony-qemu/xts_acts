@@ -19,7 +19,7 @@ import windowNdkTest from 'libentry.so';
 import { BusinessError } from '@ohos.base';
 import { image } from '@kit.ImageKit';
 import settings from '@ohos.settings';
-import { Driver, ON } from '@ohos.UiTest';
+import { Driver, ON, MouseButton } from '@ohos.UiTest';
 
 function sleep(ms: number): Promise<string> {
   return new Promise((resolve) => {
@@ -1811,14 +1811,14 @@ export default function windowNdk() {
         let xPoint = windowProperties.windowRect.left/2;
         let yPoint = windowProperties.windowRect.top/2;
         console.info(`${caseName} xPoint: ${JSON.stringify(xPoint)}, yPoint: ${JSON.stringify(yPoint)}`);
-        await driver.click(xPoint, yPoint);
+        await driver.mouseClick({xPoint, yPoint}, MouseButton.MOUSE_BUTTON_LEFT);
         let isSubFocus = subWindowClass.isFocused()
         console.info(`${caseName} isSubFocus: ${isSubFocus}`);
         expect(isSubFocus).assertEqual(true);
         let Result2: number = windowNdkTest.testLockCursorandUnLockCursor2(windowId);
         console.info(`${caseName} Result testLockCursorandUnLockCursor2: ${Result2}`);
         expect(Result2).assertEqual(0);
-        await driver.click(xPoint, yPoint);
+        await driver.mouseClick({xPoint, yPoint}, MouseButton.MOUSE_BUTTON_LEFT);
         let isSubFocus2 = subWindowClass.isFocused()
         console.info(`${caseName} isSubFocus2: ${isSubFocus2}`);
         expect(isSubFocus2).assertEqual(false);
