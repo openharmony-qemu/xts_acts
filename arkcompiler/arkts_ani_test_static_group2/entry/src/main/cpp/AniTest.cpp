@@ -3288,6 +3288,14 @@ namespace {
                             reinterpret_cast<void *>(test_Object_SetProp_By_Name_Ref_04)},
         ani_native_function{"test_Object_SetProp_By_Name_Ref_05", ":z",
                             reinterpret_cast<void *>(test_Object_SetProp_By_Name_Ref_05)},
+        ani_native_function{"test_Object_SetProp_By_Name_Ref_06", ":z",
+                            reinterpret_cast<void *>(test_Object_SetProp_By_Name_Ref_06)},
+        ani_native_function{"test_Object_SetProp_By_Name_Ref_07", ":z",
+                            reinterpret_cast<void *>(test_Object_SetProp_By_Name_Ref_07)},
+        ani_native_function{"test_Object_SetProp_By_Name_Ref_08", ":z",
+                            reinterpret_cast<void *>(test_Object_SetProp_By_Name_Ref_08)},
+        ani_native_function{"test_Object_SetProp_By_Name_Ref_09", ":z",
+                            reinterpret_cast<void *>(test_Object_SetProp_By_Name_Ref_09)},
     };
 }
 
