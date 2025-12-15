@@ -16,6 +16,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import { hilog } from '@kit.PerformanceAnalysisKit'
 import { any, exportObj2, lastIndexOf } from '../../testability/pages/ArrayFunOpen'
 import { sleep } from '../../testability/pages/Utils'
+import { collections } from '@kit.ArkTS'
 
 export default function builtinsArrayLastIndexOfTest() {
   describe('BuiltinsArrayLastIndexOfTest', () => {
@@ -50,7 +51,7 @@ export default function builtinsArrayLastIndexOfTest() {
      * @tc.level  LEVEL0
      */
     it('buildinsArrayLastIndexOfTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
-      let array = [1, 2, 3, 2, 4]
+      let array = collections.Array.from([1, 2, 3, 2, 4])
       expect(array.lastIndexOf(2)).assertEqual(3)
       Done()
     })
@@ -64,7 +65,7 @@ export default function builtinsArrayLastIndexOfTest() {
      * @tc.level  LEVEL0
      */
     it('buildinsArrayLastIndexOfTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
-      let array = [1, 2, 3, 2, 4];
+      let array = collections.Array.from([1, 2, 3, 2, 4]);
       expect(array.lastIndexOf(4)).assertEqual(4);
       Done();
     })
@@ -78,7 +79,7 @@ export default function builtinsArrayLastIndexOfTest() {
      * @tc.level  LEVEL0
      */
     it('buildinsArrayLastIndexOfTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
-      let array = [1, 2, 3, 2, 4];
+      let array = collections.Array.from([1, 2, 3, 2, 4]);
       expect(array.lastIndexOf(5)).assertEqual(-1);
       Done();
     })
@@ -92,7 +93,7 @@ export default function builtinsArrayLastIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayLastIndexOfTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [1, 2, 3, 2, 4]
+      let array = collections.Array.from([1, 2, 3, 2, 4])
       expect(array.lastIndexOf(2, 2)).assertEqual(1)
       Done()
     })
@@ -107,7 +108,7 @@ export default function builtinsArrayLastIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayLastIndexOfTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [1, 2, 3, 2, 4]
+      let array = collections.Array.from([1, 2, 3, 2, 4])
       expect(array.lastIndexOf(2, 3)).assertEqual(3)
       Done()
     })
@@ -122,7 +123,7 @@ export default function builtinsArrayLastIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayLastIndexOfTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [1, 2, 3, 2, 4]
+      let array = collections.Array.from([1, 2, 3, 2, 4])
       expect(array.lastIndexOf(2, 4)).assertEqual(3)
       Done()
     })
@@ -137,7 +138,7 @@ export default function builtinsArrayLastIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayLastIndexOfTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [1, , 3]
+      let array = collections.Array.from([1, , 3])
       expect(any(array).lastIndexOf(undefined)).assertEqual(-1)
       Done()
     })
@@ -151,7 +152,7 @@ export default function builtinsArrayLastIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayLastIndexOfTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [1, , 3]
+      let array = collections.Array.from([1, , 3])
       expect(array.lastIndexOf(2)).assertEqual(-1)
       Done()
     })
@@ -166,7 +167,7 @@ export default function builtinsArrayLastIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayLastIndexOfTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [NaN]
+      let array = collections.Array.from([NaN])
       expect(array.lastIndexOf(NaN)).assertEqual(-1)
       Done()
     })
@@ -180,7 +181,7 @@ export default function builtinsArrayLastIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayLastIndexOfTest1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [0, -0]
+      let array = collections.Array.from([0, -0])
       expect(array.lastIndexOf(0)).assertEqual(1)
       Done()
     })
@@ -194,8 +195,8 @@ export default function builtinsArrayLastIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayLastIndexOfTest1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [undefined]
-      expect(lastIndexOf(array, undefined)).assertEqual(0)
+      let array = collections.Array.from([undefined])
+      expect(array.lastIndexOf(undefined)).assertEqual(0)
       Done()
     })
 
@@ -208,7 +209,7 @@ export default function builtinsArrayLastIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayLastIndexOfTest1012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [1, 2, 3]
+      let array = collections.Array.from([1, 2, 3])
       expect(array.lastIndexOf(2, -1)).assertEqual(1)
       Done()
     })
@@ -222,7 +223,7 @@ export default function builtinsArrayLastIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayLastIndexOfTest1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [1, 2, 3]
+      let array = collections.Array.from([1, 2, 3])
       expect(array.lastIndexOf(3, -1)).assertEqual(2)
       Done()
     })
@@ -236,7 +237,7 @@ export default function builtinsArrayLastIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayLastIndexOfTest1014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [1, 2, 3]
+      let array = collections.Array.from([1, 2, 3])
       expect(array.lastIndexOf(2, 5)).assertEqual(1)
       Done()
     })
@@ -250,7 +251,7 @@ export default function builtinsArrayLastIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayLastIndexOfTest1015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [1, 2, 3]
+      let array = collections.Array.from([1, 2, 3])
       expect(array.lastIndexOf(2, -5)).assertEqual(-1)
       Done()
     })
@@ -264,8 +265,8 @@ export default function builtinsArrayLastIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayLastIndexOfTest1016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = []
-      expect(lastIndexOf(array, undefined)).assertEqual(-1)
+      let array = collections.Array.from<undefined>([])
+      expect(array.lastIndexOf(undefined)).assertEqual(-1)
       Done()
     })
 
@@ -279,7 +280,7 @@ export default function builtinsArrayLastIndexOfTest() {
      */
     it('buildinsArrayLastIndexOfTest1017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let obj: number[] = []
-      let array = [obj, [1], [2]]
+      let array = collections.Array.from([obj, [1], [2]])
       expect(array.lastIndexOf(obj)).assertEqual(0)
       expect(array.lastIndexOf([1])).assertEqual(-1)
       Done()
@@ -295,7 +296,7 @@ export default function builtinsArrayLastIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayLastIndexOfTest1018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [1, null, 3, 4]
+      let array = collections.Array.from([1, null, 3, 4])
       expect(array.lastIndexOf(null)).assertEqual(1)
       Done()
     })
@@ -325,7 +326,7 @@ export default function builtinsArrayLastIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayLastIndexOfTest1020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = ["apple", "banana", "cherry"]
+      let array = collections.Array.from(["apple", "banana", "cherry"])
       expect(array.lastIndexOf("banana")).assertEqual(1)
       Done()
     })
@@ -339,7 +340,7 @@ export default function builtinsArrayLastIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayLastIndexOfTest1021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = ["apple", "", "cherry"]
+      let array = collections.Array.from(["apple", "", "cherry"])
       expect(array.lastIndexOf("")).assertEqual(1)
       Done()
     })
@@ -353,7 +354,7 @@ export default function builtinsArrayLastIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayLastIndexOfTest1022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array: number[] = [Math.floor(1.5), -0]
+      let array = collections.Array.from([Math.floor(1.5), -0])
       expect(array.lastIndexOf(Math.floor(1.5))).assertEqual(0)
       expect(array.lastIndexOf(-0)).assertEqual(1)
       Done()
@@ -369,7 +370,7 @@ export default function builtinsArrayLastIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayLastIndexOfTest1023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array: number[] = []
+      let array = collections.Array.from<number>([])
       expect(array.lastIndexOf(Number.EPSILON)).assertEqual(-1)
       expect(array.lastIndexOf(Number.MIN_VALUE)).assertEqual(-1)
       expect(array.lastIndexOf(Number.MAX_VALUE)).assertEqual(-1)
@@ -388,7 +389,7 @@ export default function builtinsArrayLastIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayLastIndexOfTest1024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array: number[] = [123.456, 0xcafebabe, 0x0102, 0x01020304, 0x3]
+      let array = collections.Array.from([123.456, 0xcafebabe, 0x0102, 0x01020304, 0x3])
       expect(array.lastIndexOf(123.456)).assertEqual(0)
       expect(array.lastIndexOf(0xcafebabe)).assertEqual(1)
       expect(array.lastIndexOf(0x0102)).assertEqual(2)

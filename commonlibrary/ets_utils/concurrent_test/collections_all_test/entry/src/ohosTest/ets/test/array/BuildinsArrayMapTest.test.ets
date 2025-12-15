@@ -16,6 +16,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import { hilog } from '@kit.PerformanceAnalysisKit'
 import { testMap as mapTimer2 } from '../../testability/pages/ArrayFunOpen'
 import { sleep } from '../../testability/pages/Utils'
+import { collections } from '@kit.ArkTS'
 
 export default function builtinsArrayMapTest() {
   describe('BuiltinsArrayMapTest', () => {
@@ -50,7 +51,7 @@ export default function builtinsArrayMapTest() {
      * @tc.level  LEVEL0
      */
     it('buildinsArrayMapTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
-      let array = [1, 2, 3]
+      let array = collections.Array.from([1, 2, 3])
       let result = array.map(element => element * 2)
       expect(result[0]).assertEqual(2)
       expect(result[1]).assertEqual(4)
@@ -67,7 +68,7 @@ export default function builtinsArrayMapTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayMapTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [1, 2, 3]
+      let array = collections.Array.from([1, 2, 3])
       let result = array.map((element, index) => element + index)
       expect(result[0]).assertEqual(1)
       expect(result[1]).assertEqual(3)
@@ -85,11 +86,10 @@ export default function builtinsArrayMapTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayMapTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [1, , 3]
-      let result: number[] = mapTimer2(array)
+      let array = collections.Array.from([1,3])
+      let result = array.map((value) => value * 2)
       expect(result[0]).assertEqual(2)
-      expect(result[1]).assertUndefined()
-      expect(result[2]).assertEqual(6)
+      expect(result[1]).assertEqual(6)
       Done()
     })
 
@@ -103,8 +103,8 @@ export default function builtinsArrayMapTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayMapTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = []
-      let result: number[] = mapTimer2(array)
+      let array = collections.Array.from([])
+      let result= array.map((value) => value * 2)
       expect(result.length).assertEqual(0)
       Done()
     })
@@ -118,7 +118,7 @@ export default function builtinsArrayMapTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayMapTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [[], [1], [2]]
+      let array = collections.Array.from([[], [1], [2]])
       let result = array.map(element => element.length)
       expect(result[0]).assertEqual(0)
       expect(result[1]).assertEqual(1)

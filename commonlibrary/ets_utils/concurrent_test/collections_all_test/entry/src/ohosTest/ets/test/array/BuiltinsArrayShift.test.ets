@@ -16,6 +16,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it , Level, TestType, Size} from '@ohos/hypium';
 import { TestA } from '../../testability/pages/InterfaceDefined';
 import { sleep } from '../../testability/pages/Utils';
+import { collections } from '@kit.ArkTS'
 
 export default function builtinsArrayShiftTest() {
   describe('builtinsArrayShiftTest', () => {
@@ -53,7 +54,7 @@ export default function builtinsArrayShiftTest() {
       console.info(`${caseName} test start`);
       try {
         let exp: number[] = [2, 3];
-        let array: number[] = [1, 2, 3];
+        let array = collections.Array.from([1, 2, 3]);
         let newValue = array.shift();
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
@@ -82,7 +83,7 @@ export default function builtinsArrayShiftTest() {
       console.info(`${caseName} test start`);
       try {
         let exp: number[] = [];
-        let array: number[] = [];
+        let array = collections.Array.from([]);
         let newValue = array.shift();
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
@@ -109,7 +110,7 @@ export default function builtinsArrayShiftTest() {
       console.info(`${caseName} test start`);
       try {
         let exp: number[] = [];
-        let array: number[] = [5];
+        let array = collections.Array.from([5]);
         let newValue = array.shift();
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
@@ -136,7 +137,7 @@ export default function builtinsArrayShiftTest() {
       console.info(`${caseName} test start`);
       try {
         let exp: number[] = [2, 3, 4, 5];
-        let array: number[] = [1, 2, 3, 4, 5];
+        let array = collections.Array.from([1, 2, 3, 4, 5]);
         let newValue = array.shift();
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
@@ -167,7 +168,7 @@ export default function builtinsArrayShiftTest() {
       console.info(`${caseName} test start`);
       try {
         let exp: (null | number)[] = [null, 3, 4];
-        let array: (null | number)[] = [1, null, 3, 4];
+        let array = collections.Array.from([1, null, 3, 4]);
         let newValue = array.shift();
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
@@ -201,11 +202,11 @@ export default function builtinsArrayShiftTest() {
         }, {
           a: 1
         }, 3, 4];
-        let array: (number | TestA)[] = [1, {
+        let array = collections.Array.from<number|TestA>([1, {
           a: 1
         }, {
           a: 1
-        }, 3, 4];
+        }, 3, 4]);
         let newValue = array.shift();
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
@@ -232,7 +233,7 @@ export default function builtinsArrayShiftTest() {
       console.info(`${caseName} test start`);
       try {
         let exp: string[] = ['banana', 'cherry'];
-        let array: string[] = ['apple', 'banana', 'cherry'];
+        let array = collections.Array.from(['apple', 'banana', 'cherry']);
         let newValue = array.shift();
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
@@ -261,7 +262,7 @@ export default function builtinsArrayShiftTest() {
       console.info(`${caseName} test start`);
       try {
         let exp: string[] = ['', 'cherry'];
-        let array: string[] = ['apple', '', 'cherry'];
+        let array = collections.Array.from(['apple', '', 'cherry']);
         let newValue = array.shift();
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);

@@ -16,7 +16,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium';
 import { myNull } from '../../testability/pages/Data'
 import { sleep } from '../../testability/pages/Utils';
-
+import { collections } from '@kit.ArkTS'
 
 interface Keyof {
   prop: string;
@@ -54,7 +54,7 @@ export default function builtinsArrayJoinTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsArrayJoinTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
-      let array: Array<number> = [1, 2, 3];
+      let array = collections.Array.from([1, 2, 3]);
       let joinedString = array.join('');
       expect('123').assertEqual(joinedString);
       Done();
@@ -69,7 +69,7 @@ export default function builtinsArrayJoinTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsArrayJoinTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
-      let array: Array<number> = [1, 2, 3];
+      let array = collections.Array.from([1, 2, 3]);
       let joinedString = array.join('-');
       expect('1-2-3').assertEqual(joinedString);
       Done();
@@ -84,7 +84,7 @@ export default function builtinsArrayJoinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array: Array<number | undefined> = [1, , 3];
+      let array = collections.Array.from([1, , 3]);
       let joinedString = array.join('');
       expect('13').assertEqual(joinedString);
       Done();
@@ -99,7 +99,7 @@ export default function builtinsArrayJoinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array: Array<number | undefined> = [1, , 3];
+      let array = collections.Array.from([1, , 3]);
       let joinedString = array.join('-');
       expect('1--3').assertEqual(joinedString);
       Done();
@@ -114,7 +114,7 @@ export default function builtinsArrayJoinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array: Array<string | undefined | null> = [null, undefined, 'a'];
+      let array =collections.Array.from([null, undefined, 'a']);
       let joinedString = array.join('');
       expect('a').assertEqual(joinedString);
       Done();
@@ -129,7 +129,7 @@ export default function builtinsArrayJoinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array: Array<number> = [NaN];
+      let array = collections.Array.from([NaN]);
       let joinedString = array.join('');
       expect('NaN').assertEqual(joinedString);
       Done();
@@ -144,7 +144,7 @@ export default function builtinsArrayJoinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array: Array<number> = [1, 2, 3];
+      let array = collections.Array.from([1, 2, 3]);
       let joinedString = array.join(undefined);
       expect('1,2,3').assertEqual(joinedString);
       Done();
@@ -159,7 +159,7 @@ export default function builtinsArrayJoinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array: Array<number> = [1, 2, 3];
+      let array = collections.Array.from([1, 2, 3]);
       let joinedString = array.join();
       expect('1,2,3').assertEqual(joinedString);
       Done();
@@ -174,7 +174,7 @@ export default function builtinsArrayJoinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array: Array<number> = [1, 2, 3];
+      let array = collections.Array.from([1, 2, 3]);
       let joinedString = array.join('');
       expect('123').assertEqual(joinedString);
       Done();
@@ -189,7 +189,7 @@ export default function builtinsArrayJoinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array: string[] = [];
+      let array = collections.Array.from([]);
       let joinedString = array.join('');
       expect('').assertEqual(joinedString);
       Done();
@@ -204,7 +204,7 @@ export default function builtinsArrayJoinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array: Array<undefined> = [undefined, undefined];
+      let array = collections.Array.from([undefined, undefined]);
       let joinedString = array.join('');
       expect('').assertEqual(joinedString);
       Done();
@@ -219,7 +219,7 @@ export default function builtinsArrayJoinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array: Array<number> = [1, 2, 3];
+      let array = collections.Array.from([1, 2, 3]);
       let joinedString = array.join(',');
       expect('1,2,3').assertEqual(joinedString);
       Done();
@@ -234,9 +234,9 @@ export default function builtinsArrayJoinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array: Array<string | number | boolean | Keyof> = ["apple", 123, true, {
+      let array = collections.Array.from<string|number|boolean|Keyof>(["apple", 123, true, {
         prop: "value"
-      }];
+      }]);
       let joinedString = array.join(',');
       expect('apple,123,true,[object Object]').assertEqual(joinedString);
       Done();
@@ -251,7 +251,7 @@ export default function builtinsArrayJoinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array: Array<string> = ['a', 'b', 'c'];
+      let array = collections.Array.from(['a', 'b', 'c']);
       let joinedString = array.join('!');
       expect('a!b!c').assertEqual(joinedString);
       Done();
@@ -266,26 +266,13 @@ export default function builtinsArrayJoinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array: Array<string> = ['a', 'b', 'c'];
+      let array = collections.Array.from(['a', 'b', 'c']);
       let joinedString = array.join(undefined);
       expect('a,b,c').assertEqual(joinedString);
       Done();
     })
 
-    /**
-     * @tc.name   builtinsArrayJoinTest1016
-     * @tc.number SUB_BUILTINS_ARRAY_JOIN_TEST_1016
-     * @tc.desc   test builtins
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('builtinsArrayJoinTest1016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-    //   let array: Array<string|null> = ['a','b','c'];
-    //   let joinedString = array.join(null);
-    //   expect('a,b,c').assertEqual(joinedString);
-    //   Done();
-    // })
+
 
     /**
      * @tc.name   builtinsArrayJoinTest1017
@@ -296,7 +283,7 @@ export default function builtinsArrayJoinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array: Array<string> = ['a', 'b', 'c'];
+      let array = collections.Array.from(['a', 'b', 'c']);
       let joinedString = array.join('\u{1F600}');
       expect('a😀b😀c').assertEqual(joinedString);
       Done();
@@ -311,7 +298,7 @@ export default function builtinsArrayJoinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array: Array<string> = ['a', 'b', 'c'];
+      let array = collections.Array.from(['a', 'b', 'c']);
       let joinedString = array.join('\u{1Fabc}');
       expect('a🪼b🪼c').assertEqual(joinedString);
       Done();

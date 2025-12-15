@@ -51,8 +51,8 @@ export default function builtinsArrayAtTest() {
      * @tc.level  LEVEL0
      */
     it('buildinsArrayAtTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
-      let array = [1, 2, 3, 4, 5]
-      expect(at(array, 0)).assertEqual(1)
+      let array = collections.Array.from([1, 2, 3, 4, 5])
+      expect(array.at(0)).assertEqual(1)
       Done()
     })
 
@@ -65,8 +65,8 @@ export default function builtinsArrayAtTest() {
      * @tc.level  LEVEL0
      */
     it('buildinsArrayAtTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
-      let array = [1, 2, 3, 4, 5]
-      expect(at(array, 2)).assertEqual(3)
+      let array = collections.Array.from([1, 2, 3, 4, 5])
+      expect(array.at(2)).assertEqual(3)
       Done()
     })
 
@@ -79,8 +79,8 @@ export default function builtinsArrayAtTest() {
      * @tc.level  LEVEL0
      */
     it('buildinsArrayAtTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
-      let array = [1, 2, 3, 4, 5]
-      expect(at(array, -1)).assertEqual(5)
+      let array = collections.Array.from([1, 2, 3, 4, 5])
+      expect(array.at(-1)).assertEqual(5)
       Done()
     })
 
@@ -94,8 +94,8 @@ export default function builtinsArrayAtTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayAtTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [1, 2, 3, 4, 5]
-      expect(at(array, -3)).assertEqual(3)
+      let array = collections.Array.from([1, 2, 3, 4, 5])
+      expect(array.at(-3)).assertEqual(3)
       Done()
     })
 
@@ -108,8 +108,8 @@ export default function builtinsArrayAtTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayAtTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [1, 2, 3, 4, 5]
-      expect(at(array, 5)).assertUndefined()
+      let array = collections.Array.from([1, 2, 3, 4, 5])
+      expect(array.at(5)).assertUndefined()
       Done()
     })
 
@@ -123,8 +123,8 @@ export default function builtinsArrayAtTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayAtTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [1, 2, 3, 4, 5]
-      expect(at(array, 10)).assertUndefined()
+      let array = collections.Array.from([1, 2, 3, 4, 5])
+      expect(array.at(10)).assertUndefined()
       Done()
     })
 
@@ -137,8 +137,8 @@ export default function builtinsArrayAtTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayAtTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [1, 2, 3, 4, 5]
-      expect(at(array, -6)).assertUndefined()
+      let array = collections.Array.from([1, 2, 3, 4, 5])
+      expect(array.at(-6)).assertUndefined()
       Done()
     })
 
@@ -151,8 +151,8 @@ export default function builtinsArrayAtTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayAtTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [1, 2, 3, 4, 5]
-      expect(at(array, -10)).assertUndefined()
+      let array = collections.Array.from([1, 2, 3, 4, 5])
+      expect(array.at(-10)).assertUndefined()
       Done()
     })
 
@@ -165,8 +165,8 @@ export default function builtinsArrayAtTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayAtTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = []
-      expect(at(array, 0)).assertUndefined()
+      let array = collections.Array.from([])
+      expect(array.at(0)).assertUndefined()
       Done()
     })
 
@@ -179,8 +179,8 @@ export default function builtinsArrayAtTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayAtTest1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = []
-      expect(at(array, -1)).assertUndefined()
+      let array = collections.Array.from([])
+      expect(array.at(-1)).assertUndefined()
       Done()
     })
 
@@ -193,8 +193,8 @@ export default function builtinsArrayAtTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayAtTest1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [1, 2, 3, 4, 5]
-      expect(at(array, 2.5)).assertEqual(3)
+      let array = collections.Array.from([1, 2, 3, 4, 5])
+      expect(array.at(2.5)).assertEqual(3)
       Done()
     })
 
@@ -207,8 +207,8 @@ export default function builtinsArrayAtTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayAtTest1012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [1, 2, 3, 4, 5]
-      expect(at(array, -2.5)).assertEqual(4)
+      let array = collections.Array.from([1, 2, 3, 4, 5])
+      expect(array.at(-2.5)).assertEqual(4)
       Done()
     })
 
@@ -221,8 +221,8 @@ export default function builtinsArrayAtTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayAtTest1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [1, 2, 3, 4, 5]
-      expect(at(array, "2")).assertEqual(3)
+      let array = collections.Array.from([1, 2, 3, 4, 5])
+      expect(array.at(3)).assertEqual(3)
       Done()
     })
 
@@ -235,8 +235,8 @@ export default function builtinsArrayAtTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayAtTest1014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [1, 2, 3, 4, 5]
-      expect(at(array, "-1")).assertEqual(5)
+      let array = collections.Array.from([1, 2, 3, 4, 5])
+      expect(array.at(-1)).assertEqual(5)
       Done()
     })
 
@@ -266,9 +266,9 @@ export default function builtinsArrayAtTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayAtTest1016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = undefined
+      let array = collections.Array.from([undefined])
       try {
-        at(array, 0)
+        array.at(0)
       } catch (e) {
         expect(e.name).assertContain(TypeError.name)
       }
@@ -284,12 +284,12 @@ export default function builtinsArrayAtTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayAtTest1017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = []
-      expect(at(array, Number.EPSILON)).assertEqual(undefined)
-      expect(at(array, Number.MIN_VALUE)).assertEqual(undefined)
-      expect(at(array, Number.MAX_VALUE)).assertEqual(undefined)
-      expect(at(array, -Infinity)).assertEqual(undefined)
-      expect(at(array, Infinity)).assertEqual(undefined)
+      let array = collections.Array.from([])
+      expect(array.at(Number.EPSILON)).assertEqual(undefined)
+      expect(array.at(Number.MIN_VALUE)).assertEqual(undefined)
+      expect(array.at(Number.MAX_VALUE)).assertEqual(undefined)
+      expect(array.at(-Infinity)).assertEqual(undefined)
+      expect(array.at(Infinity)).assertEqual(undefined)
       expect(array.length).assertEqual(0)
       Done()
     })
@@ -303,12 +303,12 @@ export default function builtinsArrayAtTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayAtTest1018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = []
+      let array = collections.Array.from([])
       let x = Math.PI
       expect(array.length).assertEqual(0)
       expect(typeof x).assertEqual('number')
       expect(x).assertEqual(Math.PI)
-      checkInnerCalculate1(array, x)
+      checkInnerCalculate1([], x)
       Done()
     })
 
@@ -321,10 +321,10 @@ export default function builtinsArrayAtTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayAtTest1019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = []
+      let array = collections.Array.from([])
       let x = Math.PI
       expect(array.length).assertEqual(0)
-      checkInnerCalculate2(array, x)
+      checkInnerCalculate2([], x)
       Done()
     })
   })

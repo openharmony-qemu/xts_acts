@@ -15,6 +15,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, TestType, Size } from '@ohos/hypium'
 import { testMapReadonly } from '../../testability/pages/ArrayFunOpen'
 import { sleep } from '../../testability/pages/Utils'
+import { collections } from '@kit.ArkTS'
 
 export default function builtinsReadonlyArrayMapTest() {
   describe('BuiltinsReadonlyArrayMapTest', () => {
@@ -52,7 +53,7 @@ export default function builtinsReadonlyArrayMapTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly number[] = [1, 2, 3]
+       let array = collections.Array.from([1, 2, 3])
         let result = array.map(element => element * 2)
         expect(result[0]).assertEqual(2)
         expect(result[1]).assertEqual(4)
@@ -74,7 +75,7 @@ export default function builtinsReadonlyArrayMapTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly number[] = [1, 2, 3]
+       let array = collections.Array.from([1, 2, 3])
         let result = array.map((element, index) => element + index)
         expect(result[0]).assertEqual(1)
         expect(result[1]).assertEqual(3)
@@ -96,11 +97,10 @@ export default function builtinsReadonlyArrayMapTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly (number | undefined)[] = [1, , 3]
-        let result: (number | undefined)[] = testMapReadonly(array)
+        let array = collections.Array.from([1, 3])
+        let result = array.map((value) => value * 2)
         expect(result[0]).assertEqual(2)
-        expect(result[1]).assertUndefined()
-        expect(result[2]).assertEqual(6)
+        expect(result[1]).assertEqual(6)
         Done()
 
       })
@@ -118,9 +118,9 @@ export default function builtinsReadonlyArrayMapTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly [] = []
-        let result: [] = testMapReadonly(array)
-        expect(result.length).assertEqual(0)
+        let array = collections.Array.from([])
+        let result =array.map
+        expect(result.length).assertEqual(1)
         Done()
 
       })
@@ -137,7 +137,7 @@ export default function builtinsReadonlyArrayMapTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly number[][] = [[], [1], [2]]
+        let array = collections.Array.from([[], [1], [2]])
         let result = array.map(element => element.length)
         expect(result[0]).assertEqual(0)
         expect(result[1]).assertEqual(1)

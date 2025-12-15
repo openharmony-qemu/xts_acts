@@ -50,7 +50,7 @@ export default function builtinsArrayKeysTest() {
      * @tc.level  LEVEL0
      */
     it('buildinsArrayKeysTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
-      let array = [1, 2, 3]
+      let array = collections.Array.from([1, 2, 3])
       let keys = collections.Array.from(array.keys())
       expect(keys[0]).assertEqual(0)
       expect(keys[1]).assertEqual(1)
@@ -67,7 +67,7 @@ export default function builtinsArrayKeysTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayKeysTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [1, , 3]
+      let array = collections.Array.from([1, , 3])
       let keys = collections.Array.from(array.keys())
       expect(keys[0]).assertEqual(0)
       expect(keys[1]).assertEqual(1)
@@ -84,7 +84,7 @@ export default function builtinsArrayKeysTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayKeysTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = []
+      let array = collections.Array.from([])
       let keys = collections.Array.from(array.keys())
       expect(keys.length).assertEqual(0)
       Done()

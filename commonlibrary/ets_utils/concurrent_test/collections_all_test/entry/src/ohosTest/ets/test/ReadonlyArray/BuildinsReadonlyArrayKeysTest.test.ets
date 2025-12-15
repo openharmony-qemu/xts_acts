@@ -52,7 +52,7 @@ export default function builtinsReadonlyArrayKeysTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly number[] = [1, 2, 3]
+       let array = collections.Array.from([1, 2, 3])
         let keys = collections.Array.from(array.keys())
         expect(keys[0]).assertEqual(0)
         expect(keys[1]).assertEqual(1)
@@ -73,7 +73,7 @@ export default function builtinsReadonlyArrayKeysTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly (number | undefined) [] = [1, , 3]
+        let array = collections.Array.from([1, , 3])
         let keys = collections.Array.from(array.keys())
         expect(keys[0]).assertEqual(0)
         expect(keys[1]).assertEqual(1)
@@ -84,7 +84,7 @@ export default function builtinsReadonlyArrayKeysTest() {
 
     /**
      * @tc.name   buildinsReadonlyArrayKeysTest1003
-     * @tc.number SUB_BUILDINS_READONLY_ARRAY_KEYS_TEST_1003
+     * @tc.number SUB_BUILDINS_READONLY_ARRAY_KEYS_TEST_0200
      * @tc.desc   test Array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -94,7 +94,7 @@ export default function builtinsReadonlyArrayKeysTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly [] = []
+        let array = collections.Array.from([])
         let keys = collections.Array.from(array.keys())
         expect(keys.length).assertEqual(0)
         Done()

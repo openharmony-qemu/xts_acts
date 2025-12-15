@@ -122,7 +122,7 @@ export default function builtinsArrayConstructorTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayConstructorTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [];
+      let array = collections.Array.from([]);
       expect(array.length).assertEqual(0)
       expect(array.toString()).assertEqual("")
       Done()
@@ -213,7 +213,7 @@ export default function builtinsArrayConstructorTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayConstructorTest1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = ["\a", "\b", "\f", "\n", "\r", "\t", "\v", "\\", "\'", "\?", "\0", "\d12", "\x1d"];
+      let array = collections.Array.from(["\a", "\b", "\f", "\n", "\r", "\t", "\v", "\\", "\'", "\?", "\0", "\d12", "\x1d"]);
       expect(encodeURI(array.toString())).assertEqual("a,%08,%0C,%0A,%0D,%09,%0B,%5C,',?,%00,d12,%1D");
       Done()
     })
@@ -228,7 +228,7 @@ export default function builtinsArrayConstructorTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayConstructorTest1012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = ["", "\ud83d\udc46", "\ud83d"];
+      let array = collections.Array.from(["", "\ud83d\udc46", "\ud83d"]);
       expect(array.toString()).assertContain(",");
       expect(array.length).assertEqual(3);
       Done()
@@ -243,7 +243,7 @@ export default function builtinsArrayConstructorTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayConstructorTest1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [Math.floor(1.5)];
+      let array = collections.Array.from([Math.floor(1.5)]);
       expect(array.toString()).assertEqual('1');
       Done()
     })
@@ -257,7 +257,7 @@ export default function builtinsArrayConstructorTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayConstructorTest1014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [Number.EPSILON, Number.MIN_VALUE, Number.MAX_VALUE, -Infinity, Infinity];
+      let array = collections.Array.from([Number.EPSILON, Number.MIN_VALUE, Number.MAX_VALUE, -Infinity, Infinity]);
       expect(array.length).assertEqual(5);
       Done()
     })
@@ -272,7 +272,7 @@ export default function builtinsArrayConstructorTest() {
      */
     it('buildinsArrayConstructorTest1015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let x = Math.PI;
-      let array = [x + x, x * x];
+      let array = collections.Array.from([x + x, x * x]);
       expect(array.length).assertEqual(2);
       expect(array[0]).assertLarger(6)
       expect(array[1]).assertLarger(9)
@@ -288,7 +288,7 @@ export default function builtinsArrayConstructorTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayConstructorTest1016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = [123.456, 0xcafebabe, 0x0102, 0x01020304, 0x3];
+      let array = collections.Array.from([123.456, 0xcafebabe, 0x0102, 0x01020304, 0x3]);
       expect(array.length).assertEqual(5);
       expect(array[1]).assertEqual(0xcafebabe)
       expect(array[4]).assertEqual(0x3)

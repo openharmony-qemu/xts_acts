@@ -37,9 +37,9 @@ import builtinsArrayLastIndexOfTest from './array/BuildinsArrayLastIndexOfTest.t
 import BuiltinsArrayIndexOfTest from './array/BuiltinsArrayIndexOfTest.test';
 import BuiltinsArraySliceTest from './array/BuiltinsArraySliceTest.test';
 import BuiltinsArraySomeTest from './array/BuiltinsArraySomeTest.test';
-import ArrayConstructor1Test from './array/ArrayCombination1Test.test';
-import ArrayConstructor2Test from './array/ArrayCombination2Test.test';
-import ArrayConstructorTestErr from './array/ArrayCombinationTestErr.test';
+import builtinsArrayConstructor1Test from './array/BuiltinsArrayCombination1Test.test';
+import builtinsArrayConstructor2Test from './array/BuiltinsArrayCombination2Test.test';
+import builtinsArrayConstructorTestErr from './array/BuiltinsArrayCombinationTestErr.test';
 
 
 import builtinsArrayBufferByteLengthTest from "./ArrayBuffer/BuildinsArrayBufferByteLengthTest.test";
@@ -141,9 +141,9 @@ export default function testsuite() {
   BuiltinsArrayIndexOfTest();
   BuiltinsArraySliceTest();
   BuiltinsArraySomeTest();
-  ArrayConstructor1Test();
-  ArrayConstructor2Test();
-  ArrayConstructorTestErr();
+  builtinsArrayConstructor1Test();
+  builtinsArrayConstructor2Test();
+  builtinsArrayConstructorTestErr();
 
   builtinsArrayBufferByteLengthTest();
   builtinsArrayBufferConstructorTest();

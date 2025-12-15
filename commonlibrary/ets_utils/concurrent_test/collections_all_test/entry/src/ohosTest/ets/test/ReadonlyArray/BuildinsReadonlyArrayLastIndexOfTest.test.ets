@@ -15,6 +15,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, TestType, Size } from '@ohos/hypium'
 import { any, ExportObj2, exportObj2 } from '../../testability/pages/ArrayFunOpen'
 import { sleep } from '../../testability/pages/Utils'
+import { collections } from '@kit.ArkTS'
 
 export default function builtinsReadonlyArrayLastIndexOfTest() {
   describe('BuiltinsReadonlyArrayLastIndexOfTest', () => {
@@ -52,7 +53,7 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly number[] = [1, 2, 3, 2, 4]
+       let array = collections.Array.from([1, 2, 3, 2, 4])
         expect(array.lastIndexOf(2)).assertEqual(3)
         Done()
 
@@ -70,7 +71,7 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly number[] = [1, 2, 3, 2, 4]
+       let array = collections.Array.from([1, 2, 3, 2, 4])
         expect(array.lastIndexOf(4)).assertEqual(4)
         Done()
 
@@ -88,7 +89,7 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly number[] = [1, 2, 3, 2, 4]
+       let array = collections.Array.from([1, 2, 3, 2, 4])
         expect(array.lastIndexOf(5)).assertEqual(-1)
         Done()
 
@@ -106,7 +107,7 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly number[] = [1, 2, 3, 2, 4]
+       let array = collections.Array.from([1, 2, 3, 2, 4])
         expect(array.lastIndexOf(2, 2)).assertEqual(1)
         Done()
 
@@ -125,7 +126,7 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly number[] = [1, 2, 3, 2, 4]
+       let array = collections.Array.from([1, 2, 3, 2, 4])
         expect(array.lastIndexOf(2, 3)).assertEqual(3)
         Done()
 
@@ -144,7 +145,7 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly number[] = [1, 2, 3, 2, 4]
+       let array = collections.Array.from([1, 2, 3, 2, 4])
         expect(array.lastIndexOf(2, 4)).assertEqual(3)
         Done()
 
@@ -163,7 +164,7 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly (undefined | number)[] = [1, , 3]
+        let array = collections.Array.from([1, , 3])
         expect(any(array).lastIndexOf(undefined)).assertEqual(-1)
         Done()
 
@@ -181,7 +182,7 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly (undefined | number)[] = [1, , 3]
+        let array = collections.Array.from([1, , 3])
         expect(array.lastIndexOf(2)).assertEqual(-1)
         Done()
 
@@ -200,7 +201,7 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly number[] = [NaN]
+       let array = collections.Array.from([NaN])
         expect(array.lastIndexOf(NaN)).assertEqual(-1)
         Done()
 
@@ -218,7 +219,7 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly number[] = [0, -0]
+       let array = collections.Array.from([0, -0])
         expect(array.lastIndexOf(0)).assertEqual(1)
         Done()
 
@@ -236,7 +237,7 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly (undefined | number)[] = [undefined]
+        let array = collections.Array.from([undefined])
         expect(array.lastIndexOf(undefined)).assertEqual(0)
         Done()
 
@@ -254,7 +255,7 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly number[] = [1, 2, 3]
+       let array = collections.Array.from([1, 2, 3])
         expect(array.lastIndexOf(2, -1)).assertEqual(1)
         Done()
 
@@ -272,7 +273,7 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly number[] = [1, 2, 3]
+       let array = collections.Array.from([1, 2, 3])
         expect(array.lastIndexOf(3, -1)).assertEqual(2)
         Done()
 
@@ -290,7 +291,7 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly number[] = [1, 2, 3]
+       let array = collections.Array.from([1, 2, 3])
         expect(array.lastIndexOf(2, 5)).assertEqual(1)
         Done()
 
@@ -308,7 +309,7 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly number[] = [1, 2, 3]
+       let array = collections.Array.from([1, 2, 3])
         expect(array.lastIndexOf(2, -5)).assertEqual(-1)
         Done()
 
@@ -326,7 +327,7 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly (undefined | number)[] = []
+        let array = collections.Array.from<undefined>([])
         expect(array.lastIndexOf(undefined)).assertEqual(-1)
         Done()
 
@@ -365,7 +366,7 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly (number | null)[] = [1, null, 3, 4]
+        let array = collections.Array.from([1, null, 3, 4])
         expect(array.lastIndexOf(null)).assertEqual(1)
         Done()
 
@@ -384,7 +385,7 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly (number | ExportObj2)[] = [1, exportObj2, exportObj2, 3, 4]
+        let array = collections.Array.from([1, exportObj2, exportObj2, 3, 4])
         let result = array.lastIndexOf(exportObj2)
         expect(result).assertEqual(2)
         Done()
@@ -404,7 +405,7 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly string[] = ["apple", "banana", "cherry"]
+        let array = collections.Array.from(["apple", "banana", "cherry"])
         expect(array.lastIndexOf("banana")).assertEqual(1)
         Done()
 
@@ -422,7 +423,7 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly string[] = ["apple", "", "cherry"]
+        let array = collections.Array.from(["apple", "", "cherry"])
         expect(array.lastIndexOf("")).assertEqual(1)
         Done()
 
@@ -440,7 +441,7 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly number[] = [Math.floor(1.5), -0]
+       let array = collections.Array.from([Math.floor(1.5), -0])
         expect(array.lastIndexOf(Math.floor(1.5))).assertEqual(0)
         expect(array.lastIndexOf(-0)).assertEqual(1)
         Done()
@@ -460,7 +461,7 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly number[] = []
+       let array = collections.Array.from<number>([])
         array.lastIndexOf(Number.EPSILON)
         array.lastIndexOf(Number.MIN_VALUE)
         array.lastIndexOf(Number.MAX_VALUE)
@@ -483,7 +484,7 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       async (Done: Function) => {
 
         console.info('testTag', '%{public}s', 'it begin');
-        let array: readonly number[] = [123.456, 0xcafebabe, 0x0102, 0x01020304, 0x3]
+       let array = collections.Array.from([123.456, 0xcafebabe, 0x0102, 0x01020304, 0x3])
         expect(array.lastIndexOf(123.456)).assertEqual(0)
         expect(array.lastIndexOf(0xcafebabe)).assertEqual(1)
         expect(array.lastIndexOf(0x0102)).assertEqual(2)

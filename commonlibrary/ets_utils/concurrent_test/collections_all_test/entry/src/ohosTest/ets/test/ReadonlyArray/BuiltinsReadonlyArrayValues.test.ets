@@ -15,6 +15,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { sleep } from '../../testability/pages/Utils';
+import { collections } from '@kit.ArkTS'
 
 export default function builtinsReadonlyArrayValuesTest() {
   describe('builtinsReadonlyArrayValuesTest', () => {
@@ -52,7 +53,7 @@ export default function builtinsReadonlyArrayValuesTest() {
       const caseName = 'builtinsReadonlyArrayValuesTest0100';
       console.info(`${caseName} test start`);
       try {
-        let array: readonly number[] = [1, 2, 3];
+       let array = collections.Array.from([1, 2, 3]);
         let newValue = array.values();
         expect(newValue.next().value).assertEqual(1);
         expect(newValue.next().value).assertEqual(2);
@@ -79,7 +80,7 @@ export default function builtinsReadonlyArrayValuesTest() {
       const caseName = 'builtinsReadonlyArrayValuesTest0200';
       console.info(`${caseName} test start`);
       try {
-        let array: readonly number[] = [];
+       let array = collections.Array.from([]);
         let newValue = array.values();
         expect(newValue.next().value).assertUndefined();
         expect(array.toString()).assertEqual('');
@@ -104,7 +105,7 @@ export default function builtinsReadonlyArrayValuesTest() {
       const caseName = 'builtinsReadonlyArrayValuesTest0300';
       console.info(`${caseName} test start`);
       try {
-        let array: readonly (number | undefined)[] = [1, , 3];
+        let array = collections.Array.from([1, , 3]);
         let newValue = array.values();
         expect(newValue.next().value).assertEqual(1);
         expect(newValue.next().value).assertUndefined();
@@ -131,7 +132,7 @@ export default function builtinsReadonlyArrayValuesTest() {
       const caseName = 'builtinsReadonlyArrayValuesTest0400';
       console.info(`${caseName} test start`);
       try {
-        let array: readonly (number | undefined)[] = [undefined, 2, 3];
+        let array = collections.Array.from([undefined, 2, 3]);
         let newValue = array.values();
         expect(newValue.next().value).assertUndefined();
         expect(newValue.next().value).assertEqual(2);

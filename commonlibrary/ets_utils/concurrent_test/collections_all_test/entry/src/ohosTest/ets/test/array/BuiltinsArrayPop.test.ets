@@ -17,6 +17,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium';
 import { TestA } from '../../testability/pages/InterfaceDefined';
 import { sleep } from '../../testability/pages/Utils';
+import { collections } from '@kit.ArkTS'
 
 export default function builtinsArrayPopTest() {
   describe('builtinsArrayPopTest', () => {
@@ -54,7 +55,7 @@ export default function builtinsArrayPopTest() {
       console.info(`${caseName} test start`);
       try {
         let exp: number[] = [1, 2];
-        let array: number[] = [1, 2, 3];
+        let array = collections.Array.from([1, 2, 3]);
         let newValue = array.pop();
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
@@ -82,7 +83,7 @@ export default function builtinsArrayPopTest() {
       console.info(`${caseName} test start`);
       try {
         let exp: number[] = [];
-        let array: Array<number> = [];
+        let array = collections.Array.from([]);
         let newValue = array.pop();
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
@@ -110,7 +111,7 @@ export default function builtinsArrayPopTest() {
       console.info(`${caseName} test start`);
       try {
         let exp: number[] = [];
-        let array: Array<number> = [5];
+        let array = collections.Array.from([5]);
         let newValue = array.pop();
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
@@ -138,7 +139,7 @@ export default function builtinsArrayPopTest() {
       console.info(`${caseName} test start`);
       try {
         let exp: (number | undefined)[] = [];
-        let array: Array<number | undefined> = [,];
+        let array = collections.Array.from([,]);
         let newValue = array.pop();
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
@@ -166,7 +167,7 @@ export default function builtinsArrayPopTest() {
       console.info(`${caseName} test start`);
       try {
         let exp: (null|number)[] = [1, null, 3];
-        let array: (null|number)[] = [1, null, 3, 4];
+        let array = collections.Array.from([1, null, 3, 4]);
         let newValue = array.pop();
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
@@ -199,11 +200,11 @@ export default function builtinsArrayPopTest() {
           a: 1
         }, 3];
 
-        let array: (number | TestA)[] = [1, {
+        let array = collections.Array.from<number|TestA>([1, {
           a: 1
         }, {
           a: 1
-        }, 3, 4];
+        }, 3, 4]);
         let newValue = array.pop();
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
@@ -231,7 +232,7 @@ export default function builtinsArrayPopTest() {
       console.info(`${caseName} test start`);
       try {
         let exp: string[] = ['apple', 'banana'];
-        let array: string[] = ['apple', 'banana', 'cherry'];
+        let array = collections.Array.from(['apple', 'banana', 'cherry']);
         let newValue = array.pop();
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
@@ -260,7 +261,7 @@ export default function builtinsArrayPopTest() {
       try {
         let exp: string[] = ['apple', ''];
 
-        let array: string[] = ['apple', '', 'cherry'];
+        let array = collections.Array.from(['apple', '', 'cherry']);
         let newValue = array.pop();
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);

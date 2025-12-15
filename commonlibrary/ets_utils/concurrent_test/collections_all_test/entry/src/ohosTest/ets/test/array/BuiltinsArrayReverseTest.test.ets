@@ -14,7 +14,7 @@
   */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium';
 import { sleep } from '../../testability/pages/Utils';
-
+import { collections } from '@kit.ArkTS'
 
 export default function builtinsArrayReverseTest() {
   describe('builtinsArrayReverseTest', () => {
@@ -49,7 +49,7 @@ export default function builtinsArrayReverseTest() {
      */
     it('Builtins_Array_Reverse_Test_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
       const Tag: string = 'Builtins_Array_Reverse_Test_1000'
-      let array: Array<number> = [1, 2, 3];
+      let array = collections.Array.from([1, 2, 3]);
       let revers = array.reverse()
       expect('[3,2,1]').assertEqual(JSON.stringify(revers));
       Done();
@@ -65,7 +65,7 @@ export default function builtinsArrayReverseTest() {
      */
     it('Builtins_Array_Reverse_Test_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const Tag: string = 'Builtins_Array_Reverse_Test_1100'
-      let array: Array<number> = [];
+      let array = collections.Array.from([]);
       let revers = array.reverse()
       expect('[]').assertEqual(JSON.stringify(revers));
       Done();
@@ -81,7 +81,7 @@ export default function builtinsArrayReverseTest() {
      */
     it('Builtins_Array_Reverse_Test_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const Tag: string = 'Builtins_Array_Reverse_Test_1200'
-      let array: Array<number> = [1];
+      let array = collections.Array.from([1]);
       let revers = array.reverse()
       expect('[1]').assertEqual(JSON.stringify(revers));
       Done();
@@ -97,7 +97,7 @@ export default function builtinsArrayReverseTest() {
      */
     it('Builtins_Array_Reverse_Test_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const Tag: string = 'Builtins_Array_Reverse_Test_1300'
-      let array: Array<number | undefined> = [1, , 3];
+      let array = collections.Array.from([1, , 3]);
       console.log('ssss' + JSON.stringify(array))
       let revers = array.reverse()
       console.log('ddddd' + Array.isArray(revers))
@@ -115,7 +115,7 @@ export default function builtinsArrayReverseTest() {
      */
     it('Builtins_Array_Reverse_Test_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const Tag: string = 'Builtins_Array_Reverse_Test_1400'
-      let array: Array<number | undefined> = [, ,];
+      let array = collections.Array.from([, ,]);
       console.log('ssss' + JSON.stringify(array))
       let revers = array.reverse()
       console.log('ddddd' + Array.isArray(revers))
@@ -133,7 +133,7 @@ export default function builtinsArrayReverseTest() {
      */
     it('Builtins_Array_Reverse_Test_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const Tag: string = 'Builtins_Array_Reverse_Test_1500'
-      let array: Array<boolean> = [true, false];
+      let array = collections.Array.from([true, false]);
       console.log('ssss' + JSON.stringify(array))
       let revers = array.reverse()
       console.log('ddddd' + Array.isArray(revers))
@@ -151,7 +151,7 @@ export default function builtinsArrayReverseTest() {
      */
     it('Builtins_Array_Reverse_Test_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const Tag: string = 'Builtins_Array_Reverse_Test_1600'
-      let array: Array<number | null> = [1, null, 3, 4];
+      let array = collections.Array.from([1, null, 3, 4]);
       console.log('ssss' + JSON.stringify(array))
       let revers = array.reverse()
       console.log('ddddd' + JSON.stringify(revers))
@@ -169,7 +169,7 @@ export default function builtinsArrayReverseTest() {
      */
     it('Builtins_Array_Reverse_Test_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const Tag: string = 'Builtins_Array_Reverse_Test_1800'
-      let array: Array<string> = ['apple', 'banana,cherry']
+      let array = collections.Array.from(['apple', 'banana,cherry'])
       console.log('ssss' + JSON.stringify(array))
       let revers = array.reverse()
       console.log('ddddd' + JSON.stringify(revers))
@@ -187,7 +187,7 @@ export default function builtinsArrayReverseTest() {
      */
     it('Builtins_Array_Reverse_Test_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const Tag: string = 'Builtins_Array_Reverse_Test_1900'
-      let array: Array<string | undefined> = ['apple', , 'cherry']
+      let array = collections.Array.from(['apple', , 'cherry'])
       console.log('ssss' + JSON.stringify(array))
       let revers = array.reverse()
       console.log('ddddd' + JSON.stringify(revers))
@@ -205,7 +205,7 @@ export default function builtinsArrayReverseTest() {
      */
     it('Builtins_Array_Reverse_Test_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const Tag: string = 'Builtins_Array_Reverse_Test_2000'
-      let array: Array<Array<number>> = [[1, 2], [3, 4], [5, 6]]
+      let array = collections.Array.from([[1, 2], [3, 4], [5, 6]])
       console.log('ssss' + JSON.stringify(array))
       let revers = array.reverse()
       console.log('ddddd' + JSON.stringify(revers))

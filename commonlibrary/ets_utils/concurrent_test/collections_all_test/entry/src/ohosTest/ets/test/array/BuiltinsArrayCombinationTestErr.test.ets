@@ -20,8 +20,8 @@ function sleep(time: number) {
   return new Promise<void>((resolve) => setTimeout(resolve, time));
 }
 
-export default function ArrayConstructorTestErr() {
-  describe('ArrayConstructorTestErr', () => {
+export default function builtinsArrayConstructorTestErr() {
+  describe('BuiltinsArrayConstructorTestErr', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -44,14 +44,14 @@ export default function ArrayConstructorTestErr() {
     })
 
     /**
-     * @tc.name   ArrayConstructor1Test059
+     * @tc.name   builtinsArrayConstructorTestErr059
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST5900
      * @tc.desc   Test Method Combination in Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayConstructor1Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('builtinsArrayConstructorTestErr059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
     const seconds2020 = 1577836800;
     const seconds2021 = 1609459200;
 
@@ -67,14 +67,14 @@ export default function ArrayConstructorTestErr() {
   });
 
     /**
-     * @tc.name   ArrayConstructor1Test242
+     * @tc.name   builtinsArrayConstructorTestErr242
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST24200
      * @tc.desc   Test Method Combination in Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayConstructor1Test242', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('builtinsArrayConstructorTestErr242', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const d1 = new Date('2020-01-01');
       const d2 = new Date('2021-01-01');
       const r: Date[] = [d2, d1];

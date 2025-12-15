@@ -15,6 +15,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, TestType, Size } from '@ohos/hypium';
 import { sleep } from '../../testability/pages/Utils';
+import { collections } from '@kit.ArkTS'
 
 export default function builtinsArrayValuesTest() {
   describe('builtinsArrayValuesTest', () => {
@@ -51,7 +52,7 @@ export default function builtinsArrayValuesTest() {
       const caseName = 'builtinsArrayValuesTest0100';
       console.info(`${caseName} test start`);
       try {
-        let array: number[] = [1, 2, 3];
+        let array = collections.Array.from([1, 2, 3]);
         let newValue = array.values();
         expect(newValue.next().value).assertEqual(1);
         expect(newValue.next().value).assertEqual(2);
@@ -76,7 +77,7 @@ export default function builtinsArrayValuesTest() {
       const caseName = 'builtinsArrayValuesTest0200';
       console.info(`${caseName} test start`);
       try {
-        let array: number[] = [];
+        let array = collections.Array.from([]);
         let newValue = array.values();
         expect(newValue.next().value).assertUndefined();
       } catch (err) {
@@ -99,7 +100,7 @@ export default function builtinsArrayValuesTest() {
       const caseName = 'builtinsArrayValuesTest0300';
       console.info(`${caseName} test start`);
       try {
-        let array: (number | undefined)[] = [1, , 3];
+        let array = collections.Array.from([1, , 3]);
         let newValue = array.values();
         expect(newValue.next().value).assertEqual(1);
         expect(newValue.next().value).assertUndefined();
@@ -124,7 +125,7 @@ export default function builtinsArrayValuesTest() {
       const caseName = 'builtinsArrayValuesTest0400';
       console.info(`${caseName} test start`);
       try {
-        let array: (number | undefined)[] = [undefined, 2, 3];
+        let array = collections.Array.from([undefined, 2, 3]);
         let newValue = array.values();
         expect(newValue.next().value).assertUndefined();
         expect(newValue.next().value).assertEqual(2);

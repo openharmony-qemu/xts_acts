@@ -93,7 +93,7 @@ export default function builtinsRegExpMatchArrayGroupsTest() {
      */
     it('builtinsRegExpMatchArrayGroupsTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       (done: Function) => {
-        const caseName = 'builtinsRegExpMatchArrayGroupsTest0200';
+        const caseName = 'builtinsRegExpMatchArrayGroupsTest0100';
         console.info(`${caseName} test start`);
         try {
           const exp: string = '23-456-789';
@@ -116,6 +116,7 @@ export default function builtinsRegExpMatchArrayGroupsTest() {
 
             expect(match).assertNull()
           }
+
         } catch (err) {
           console.error(`${caseName} failed, error: ${err.message}`);
           expect().assertFail();
