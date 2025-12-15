@@ -231,7 +231,7 @@ export default function ndkBlanklessInfoWithKeyTest() {
      */
     it('testndkBlanklessInfoWithKey012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testndkBlanklessInfoWithKey012", 148101);
-      Utils.registerBaseEvent("testndkBlanklessInfoWithKey012", 0, 148220, done,
+      Utils.registerBaseEvent("testndkBlanklessInfoWithKey012", -2, 148220, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected)
         });
