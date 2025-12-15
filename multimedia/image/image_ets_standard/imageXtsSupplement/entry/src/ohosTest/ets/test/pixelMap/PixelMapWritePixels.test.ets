@@ -72,7 +72,7 @@ async function writePixelsAbnormalTest(done: Function, testName: string, pixelMa
 
 async function getArrayBufferByUri(pathUri: string): Promise<ArrayBuffer> {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-  let array = new ArrayBuffer(300000000);
+  let array = new ArrayBuffer(3000);
   let path = `file://${testContext.filesDir}/${pathUri}`;
   const fd = await fs.open(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
   let readLength = await fs.read(fd.fd, array);
@@ -317,7 +317,7 @@ export default function pixelMapWritePixelsTest() {
         { editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } };
       let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
       let area: image.PositionArea = {
-        pixels: new ArrayBuffer(160000),
+        pixels: new ArrayBuffer(3000),
         offset: 0,
         stride: 40000,
         region: { size: { height: 2, width: 20000 }, x: 0, y: 0 }
