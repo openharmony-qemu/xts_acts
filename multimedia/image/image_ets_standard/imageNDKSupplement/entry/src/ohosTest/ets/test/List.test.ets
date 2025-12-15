@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import ImageEffectFilterSuppTest from './ImageEffectFilterSupp.test';
 import ImageEffectSuppTest from './ImageEffectSupp.test';
 import ImageErrorSuppTest from './ImageErrorSupp.test';
 import ImageEffectInfoSupplementTest from './OHEffectFilterInfoSupplement.test';
@@ -21,6 +22,7 @@ import PixelMapInitNativePixelMap from './PixelMapInitNativePixelMap.test';
 
 export default function testsuite() {
   ImageEffectSuppTest();
+  ImageEffectFilterSuppTest();
   ImageErrorSuppTest();
   ImageEffectInfoSupplementTest();
   PixelMapInitNativePixelMap();

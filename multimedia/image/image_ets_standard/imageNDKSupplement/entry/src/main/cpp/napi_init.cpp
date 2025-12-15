@@ -18,6 +18,7 @@
 #include "napi/native_api.h"
 #include "InitNativePixelMapTest.h"
 #include "ImageEffectSuppTest.h"
+#include "imageEffectFilterSupp.h"
 #include "OHImageErrorSuppTest.h"
 #include "OHEffectFilterInfoSupplementTest.h"
 #include "ImagePackerCreateTest.h"
@@ -32,6 +33,14 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHImageEffectInsertFilterSupp", OHImageEffectInsertFilterSupp),
     DESCRIPTOR("OHImageEffectRemoveFilterSupp", OHImageEffectRemoveFilterSupp),
     DESCRIPTOR("OHImageEffectReplaceFilterSupp", OHImageEffectReplaceFilterSupp),
+    DESCRIPTOR("OHEffectFilterCreateSupp", OHEffectFilterCreateSupp),
+    DESCRIPTOR("OHEffectFilterLookUpFiltersSupp", OHEffectFilterLookUpFiltersSupp),
+    DESCRIPTOR("OHEffectFilterLookUpFiltersNullptrSupp", OHEffectFilterLookUpFiltersNullptrSupp),
+    DESCRIPTOR("OHEffectFilterSetValueSupp", OHEffectFilterSetValueSupp),
+    DESCRIPTOR("OHEffectFilterGetValueSupp", OHEffectFilterGetValueSupp),
+    DESCRIPTOR("OHEffectFilterRegisterSupp", OHEffectFilterRegisterSupp),
+    DESCRIPTOR("OHEffectFilterLookupFilterInfoSupp", OHEffectFilterLookupFilterInfoSupp),
+    DESCRIPTOR("OHEffectFilterReleaseSupp", OHEffectFilterReleaseSupp)
     DESCRIPTOR("OHImageAlphaTypeSupp", OHImageAlphaTypeSupp),
     DESCRIPTOR("OHImageErrorCodeSupp", OHImageErrorCodeSupp),
     DESCRIPTOR("OHImageScaleModeSupp", OHImageScaleModeSupp),
