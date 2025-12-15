@@ -40,7 +40,7 @@ group("ActsAceEtsModuleCommonEventsTest") {
       "ace_ets_module_commonEvents_gestureInterceptionEnhancement:ActsAceEtsModuleCommonEventsGestureInterceptionEnhancementTest",
       "ace_ets_module_commonEvents_customGestureRecognition:ActsAceEtsModuleCommonEventsCustomGestureRecognitionTest",
       "ace_ets_module_commonEvents_componentAreaChange:ActsAceEtsModuleCommonEventsComponentAreaChangeTest",
-      #"ace_ets_module_commonEvents_wear_api18_static:ActsAceEtsModuleCommonEventsWearApi18StaticTest",
+      "ace_ets_module_commonEvents_api14_static:ActsAceEtsModuleCommonEventsApi14StaticTest",
     ]
   } else {
     deps = [
@@ -78,7 +78,7 @@ group("ActsAceEtsModuleCommonEventsTest") {
       "ace_ets_module_commonEvents_componentAreaChange:ActsAceEtsModuleCommonEventsComponentAreaChangeTest",
       "ace_ets_module_commonEvents_dragEvent:ActsAceEtsModuleCommonEventsDragEventTest",
       "ace_ets_module_commonEvents_componentSnapshot:ActsAceEtsModuleCommonEventsComponentSnapshotTest",
-      "ace_ets_module_commonEvents_api17_static:ActsAceEtsModuleCommonEventsApi17StaticTest",
+      "ace_ets_module_commonEvents_api14_static:ActsAceEtsModuleCommonEventsApi14StaticTest",
     ]
   }
 }
