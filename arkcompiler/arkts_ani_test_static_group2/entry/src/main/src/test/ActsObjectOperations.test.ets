@@ -5235,3 +5235,841 @@ export default function objectOperationsTest() {
       done();
       console.log('test_Object_SetProp_By_Name_Float_0005 end');
     })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_FLOAT_0600
+     * @tc.name        test_Object_SetProp_By_Name_Float_0006
+     * @tc.desc        invalid argument
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Float_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Float_0006 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Float_06();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Float_0006 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Float_0006 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_FLOAT_0700
+     * @tc.name        test_Object_SetProp_By_Name_Float_0007
+     * @tc.desc        set field property invalid type
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Float_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Float_0007 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Float_07();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Float_0007 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Float_0007 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_FLOAT_0800
+     * @tc.name        test_Object_SetProp_By_Name_Float_0008
+     * @tc.desc        set setter property invalid type
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Float_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Float_0008 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Float_08();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Float_0008 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Float_0008 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_FLOAT_0900
+     * @tc.name        test_Object_SetProp_By_Name_Float_0009
+     * @tc.desc        set interface field
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Float_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Float_0009 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Float_09();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Float_0009 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Float_0009 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_FLOAT_1000
+     * @tc.name        test_Object_SetProp_By_Name_Float_0010
+     * @tc.desc        set interface property
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Float_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Float_0010 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Float_10();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Float_0010 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Float_0010 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_INT_0100
+     * @tc.name        test_Object_SetProp_By_Name_Int_0001
+     * @tc.desc        set field
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Int_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Int_0001 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Int_01();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Int_0001 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Int_0001 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_INT_0200
+     * @tc.name        test_Object_SetProp_By_Name_Int_0002
+     * @tc.desc        set field property
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Int_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Int_0002 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Int_02();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Int_0002 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Int_0002 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_INT_0300
+     * @tc.name        test_Object_SetProp_By_Name_Int_0003
+     * @tc.desc        set setter property
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Int_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Int_0003 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Int_03();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Int_0003 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Int_0003 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_INT_0400
+     * @tc.name        test_Object_SetProp_By_Name_Int_0004
+     * @tc.desc        invalid env
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Int_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Int_0004 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Int_04();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Int_0004 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Int_0004 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_INT_0500
+     * @tc.name        test_Object_SetProp_By_Name_Int_0005
+     * @tc.desc        invalid parameter
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Int_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Int_0005 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Int_05();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Int_0005 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Int_0005 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_INT_0600
+     * @tc.name        test_Object_SetProp_By_Name_Int_0006
+     * @tc.desc        invalid argument
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Int_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Int_0006 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Int_06();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Int_0006 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Int_0006 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_INT_0700
+     * @tc.name        test_Object_SetProp_By_Name_Int_0007
+     * @tc.desc        set field property invalid type
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Int_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Int_0007 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Int_07();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Int_0007 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Int_0007 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_INT_0800
+     * @tc.name        test_Object_SetProp_By_Name_Int_0008
+     * @tc.desc        set setter property invalid type
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Int_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Int_0008 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Int_08();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Int_0008 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Int_0008 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_INT_0900
+     * @tc.name        test_Object_SetProp_By_Name_Int_0009
+     * @tc.desc        set interface field
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Int_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Int_0009 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Int_09();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Int_0009 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Int_0009 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_INT_1000
+     * @tc.name        test_Object_SetProp_By_Name_Int_0010
+     * @tc.desc        set interface property
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Int_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Int_0010 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Int_10();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Int_0010 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Int_0010 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_LONG_0100
+     * @tc.name        test_Object_SetProp_By_Name_Long_0001
+     * @tc.desc        set field
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Long_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Long_0001 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Long_01();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Long_0001 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Long_0001 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_LONG_0200
+     * @tc.name        test_Object_SetProp_By_Name_Long_0002
+     * @tc.desc        set field property
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Long_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Long_0002 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Long_02();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Long_0002 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Long_0002 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_LONG_0300
+     * @tc.name        test_Object_SetProp_By_Name_Long_0003
+     * @tc.desc        set setter property
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Long_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Long_0003 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Long_03();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Long_0003 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Long_0003 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_LONG_0400
+     * @tc.name        test_Object_SetProp_By_Name_Long_0004
+     * @tc.desc        invalid env
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Long_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Long_0004 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Long_04();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Long_0004 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Long_0004 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_LONG_0500
+     * @tc.name        test_Object_SetProp_By_Name_Long_0005
+     * @tc.desc        invalid parameter
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Long_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Long_0005 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Long_05();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Long_0005 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Long_0005 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_LONG_0600
+     * @tc.name        test_Object_SetProp_By_Name_Long_0006
+     * @tc.desc        invalid argument
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Long_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Long_0006 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Long_06();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Long_0006 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Long_0006 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_LONG_0700
+     * @tc.name        test_Object_SetProp_By_Name_Long_0007
+     * @tc.desc        set field property invalid type
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Long_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Long_0007 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Long_07();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Long_0007 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Long_0007 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_LONG_0800
+     * @tc.name        test_Object_SetProp_By_Name_Long_0008
+     * @tc.desc        set setter property invalid type
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Long_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Long_0008 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Long_08();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Long_0008 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Long_0008 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_LONG_0900
+     * @tc.name        test_Object_SetProp_By_Name_Long_0009
+     * @tc.desc        set interface field
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Long_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Long_0009 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Long_09();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Long_0009 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Long_0009 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_LONG_1000
+     * @tc.name        test_Object_SetProp_By_Name_Long_0010
+     * @tc.desc        set interface property
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Long_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Long_0010 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Long_10();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Long_0010 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Long_0010 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_SHORT_0100
+     * @tc.name        test_Object_SetProp_By_Name_Short_0001
+     * @tc.desc        set field
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Short_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Short_0001 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Short_01();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Short_0001 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Short_0001 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_SHORT_0200
+     * @tc.name        test_Object_SetProp_By_Name_Short_0002
+     * @tc.desc        set field property
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Short_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Short_0002 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Short_02();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Short_0002 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Short_0002 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_SHORT_0300
+     * @tc.name        test_Object_SetProp_By_Name_Short_0003
+     * @tc.desc        set setter property
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Short_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Short_0003 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Short_03();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Short_0003 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Short_0003 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_SHORT_0400
+     * @tc.name        test_Object_SetProp_By_Name_Short_0004
+     * @tc.desc        invalid env
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Short_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Short_0004 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Short_04();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Short_0004 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Short_0004 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_SHORT_0500
+     * @tc.name        test_Object_SetProp_By_Name_Short_0005
+     * @tc.desc        invalid parameter
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Short_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Short_0005 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Short_05();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Short_0005 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Short_0005 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_SHORT_0600
+     * @tc.name        test_Object_SetProp_By_Name_Short_0006
+     * @tc.desc        invalid argument
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Short_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Short_0006 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Short_06();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Short_0006 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Short_0006 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_SHORT_0700
+     * @tc.name        test_Object_SetProp_By_Name_Short_0007
+     * @tc.desc        set field property invalid type
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Short_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Short_0007 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Short_07();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Short_0007 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Short_0007 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_SHORT_0800
+     * @tc.name        test_Object_SetProp_By_Name_Short_0008
+     * @tc.desc        set setter property invalid type
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Short_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Short_0008 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Short_08();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Short_0008 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Short_0008 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_SHORT_0900
+     * @tc.name        test_Object_SetProp_By_Name_Short_0009
+     * @tc.desc        set interface field
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Short_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Short_0009 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Short_09();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Short_0009 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Short_0009 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_SHORT_1000
+     * @tc.name        test_Object_SetProp_By_Name_Short_0010
+     * @tc.desc        set interface property
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Short_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Short_0010 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Short_10();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Short_0010 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Short_0010 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_REF_0100
+     * @tc.name        test_Object_SetProp_By_Name_Ref_0001
+     * @tc.desc        set field property
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Ref_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Ref_0001 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Ref_01();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Ref_0001 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Ref_0001 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_REF_0200
+     * @tc.name        test_Object_SetProp_By_Name_Ref_0002
+     * @tc.desc        set setter property
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Ref_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Ref_0002 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Ref_02();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Ref_0002 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Ref_0002 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_REF_0300
+     * @tc.name        test_Object_SetProp_By_Name_Ref_0003
+     * @tc.desc        invalid env
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Ref_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Ref_0003 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Ref_03();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Ref_0003 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Ref_0003 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_REF_0400
+     * @tc.name        test_Object_SetProp_By_Name_Ref_0004
+     * @tc.desc        invalid parameter
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Ref_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Ref_0004 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Ref_04();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Ref_0004 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Ref_0004 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_REF_0500
+     * @tc.name        test_Object_SetProp_By_Name_Ref_0005
+     * @tc.desc        invalid argument
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Ref_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Ref_0005 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Ref_05();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Ref_0005 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Ref_0005 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_REF_0600
+     * @tc.name        test_Object_SetProp_By_Name_Ref_0006
+     * @tc.desc        set field property invalid type
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Ref_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Ref_0006 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Ref_06();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Ref_0006 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Ref_0006 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_REF_0700
+     * @tc.name        test_Object_SetProp_By_Name_Ref_0007
+     * @tc.desc        set setter property invalid type
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Ref_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Ref_0007 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Ref_07();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Ref_0007 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Ref_0007 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_REF_0800
+     * @tc.name        test_Object_SetProp_By_Name_Ref_0008
+     * @tc.desc        set interface field
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Ref_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Ref_0008 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Ref_08();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Ref_0008 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Ref_0008 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_SETPROP_BY_NAME_REF_0900
+     * @tc.name        test_Object_SetProp_By_Name_Ref_0009
+     * @tc.desc        set interface property
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_SetProp_By_Name_Ref_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_SetProp_By_Name_Ref_0009 start');
+      let cls = new Foo();
+      let result = cls.test_Object_SetProp_By_Name_Ref_09();
+      expect(result).assertTrue();
+      console.log('test_Object_SetProp_By_Name_Ref_0009 done');
+      done();
+      console.log('test_Object_SetProp_By_Name_Ref_0009 end');
+    })
+  })
+}
