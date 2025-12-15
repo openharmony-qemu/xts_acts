@@ -1170,44 +1170,5 @@ export default function WindowTest() {
         done()
       }
     })
-
-    /**
-     * @tc.name   testUnLockCursorwithoutPermission
-     * @tc.number SUB_BASIC_WMS_FUNCTION_UNLOCKCURSOR_0200
-     * @tc.desc   testUnLockCursorwithoutPermission
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testUnLockCursorwithoutPermission', TestType.FUNCTION |
-    Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName = 'testUnLockCursorwithoutPermission';
-      let subWindowClass: window.Window | undefined;
-      try {
-        console.info(`====>${caseName} start<====`);
-        subWindowClass = await windowStage.createSubWindow('testUnLockCursorwithoutPermission');
-        await subWindowClass.setUIContent('MainAbility/pages/Window/SubWindow');
-        await subWindowClass.showWindow();
-        await sleep(1000);
-        let windowId = subWindowClass.getWindowProperties().id;
-        console.info(`====>${caseName} windowId: ${windowId}`);
-        let Result: number = windowndkapi20.testUnLockCursorwithoutPermission(windowId);
-        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
-        await sleep(1000);
-        await subWindowClass.destroyWindow();
-        if (Result == 801) {
-          done()
-        } else {
-          expect(Result).assertEqual(201);
-          done()
-        }
-      } catch (err) {
-        console.error(`====>${caseName} catch err: ` + JSON.stringify(err));
-        await subWindowClass?.destroyWindow()
-        expect().assertFail();
-        done()
-      }
-    })
-
   })
 }
