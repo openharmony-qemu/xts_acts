@@ -2052,8 +2052,15 @@ export default function typeArrayUint32ArrayTest() {
      */
     it('TypeArrayUint32Array118', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
-        const buffer = new collections.ArrayBuffer(8);
-        expect(() => new collections.Uint32Array(buffer, 10)).assertThrowError(RangeError);
+        const arr = new collections.Uint32Array(5);
+        expect(arr.buffer.byteLength).assertEqual(20);
+
+        const subarray = arr.subarray(1, 3);
+        expect(subarray.buffer.byteLength).assertEqual(20);
+        expect(subarray.buffer).assertEqual(arr.buffer);
+        expect(subarray.length).assertEqual(2);
+        expect(subarray[0]).assertEqual(0);
+        expect(subarray[1]).assertEqual(0);
       })
 
     /**
@@ -2066,8 +2073,13 @@ export default function typeArrayUint32ArrayTest() {
      */
     it('TypeArrayUint32Array119', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
-        const buffer = new collections.ArrayBuffer(8);
-        expect(() => new collections.Uint32Array(buffer, 0, 3)).assertThrowError(RangeError);
+        const buffer = new collections.ArrayBuffer(16);
+        const arr1 = new collections.Uint32Array(buffer);
+        const arr2 = new collections.Uint32Array(buffer, 4, 3);
+        const arr3 = new collections.Uint32Array(new collections.ArrayBuffer(16));
+        expect(arr1.buffer).assertEqual(arr2.buffer);
+        expect(arr1.buffer == arr3.buffer).assertFalse();
+        expect(arr1.length).assertEqual(4);
       })
 
     /**

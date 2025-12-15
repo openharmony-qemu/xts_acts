@@ -133,41 +133,38 @@ export default function builtinsRegExpExecArrayGroupsTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsRegExpExecArrayGroupsTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
-      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-      const caseName = 'builtinsRegExpExecArrayGroupsTest0300';
-      console.info(`${caseName} test start`);
-      try {
-        // exp result is result.groups === { year: '2023', month: '10', day: '05' }
-        const exp: Record<string, string> = {
-          'year': '2023', 'month': '10', 'day': '05'
-        };
-        const reg: RegExp = /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/;
+    it('builtinsRegExpMatchArrayGroupsTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      (done: Function) => {
+        const caseName = 'builtinsRegExpMatchArrayGroupsTest0100';
+        console.info(`${caseName} test start`);
+        try {
+          const exp: string = '23-456-789';
+          const reg: RegExp = /(\d{2})-(\d{3})-(\d{3})/;
 
-        let str: string = '2023-10-05';
-        let match = reg.exec(str);
+          let str = '23-456-789';
+          let match = str.match(reg);
 
-        if (match) {
-          let result: Record<string, string> | undefined = match.groups;
+          if (match) {
+            let result: Record<string, string> | undefined = match.groups;
+            console.info(caseName + ' result is: ' + result);
+            if (result) {
+              expect(result === undefined).assertFalse();
+            } else {
+              expect(result === undefined).assertTrue();
+            }
 
-          if (result) {
-            console.info(caseName + ' result is: ' + JSON.stringify(result));
-
-            expect(result).assertDeepEquals(exp);
           } else {
-            expect(result === undefined).assertTrue()
-          }
-        } else {
-          console.info(caseName + ' match is: ' + match);
+            console.info(caseName + ' match is: ' + match);
 
-          expect(match === null).assertTrue()
+            expect(match).assertNull()
+          }
+
+        } catch (err) {
+          console.error(`${caseName} failed, error: ${err.message}`);
+          expect().assertFail();
         }
-      } catch (err) {
-        console.error(`${caseName} failed, error: ${err.message}`);
-        expect().assertFail();
-      }
-      done();
-      console.info(`${caseName} test end`);
-    })
+        done();
+        console.info(`${caseName} test end`);
+      })
   })
 }

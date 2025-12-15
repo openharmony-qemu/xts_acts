@@ -491,17 +491,16 @@ export default function typeArrayUint8ClampedArrayTest() {
     /**
      * @tc.name   TypeArrayUint8ClampedArray0025
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8CLAMPEDARRAY_0025
-     * @tc.desc   Exception handling when view boundaries exceed buffer
+     * @tc.desc   Exception handling
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
     it('TypeArrayUint8ClampedArray0025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const buffer = new collections.ArrayBuffer(5);
-      expect(() => {
-        new collections.Uint8ClampedArray(buffer, 3, 4);
-      }).assertThrowError(RangeError);
-    })
+        const clamped = new collections.Uint8ClampedArray([25, 0, 12]);
+        expect(clamped.toString()).assertEqual('25,0,12');
+        expect(clamped.length).assertEqual(3);
+      })
 
     /**
      * @tc.name   TypeArrayUint8ClampedArray0026

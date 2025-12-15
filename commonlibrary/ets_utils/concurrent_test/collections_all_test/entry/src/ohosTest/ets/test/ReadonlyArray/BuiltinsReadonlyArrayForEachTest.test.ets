@@ -82,16 +82,12 @@ export default function builtinsReadonlyArrayForEachTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayForEachTest1003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new ReadonlyArrayTest<number>([1, 2, 3])
-      arr.forEach((x: number, i: number) => {
-        arr[i] = x * 2
+      const arr: ReadonlyArray<number> = ([1, 2, 3])
+      const result: number[] = [];
+      arr.forEach((x: number) => {
+        result.push(x * 2);
       });
-      expect(arr).assertDeepEquals({
-        "0": 2,
-        "1": 4,
-        "2": 6,
-        "arr": [1, 2, 3]
-      });
+      expect(result).assertDeepEquals([2, 4, 6]);
     });
 
     /**

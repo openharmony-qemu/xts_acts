@@ -2873,16 +2873,13 @@ export default function RegExpCombination1Test() {
      * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const re149 = /q/g;
-      const str149 = "qqxqq";
-      re149.exec(str149);
-      re149.exec(str149);
-      expect(re149.lastIndex).assertEqual(2);
-      let exec149_3 = re149.exec(str149);
-      expect(exec149_3).assertDeepEquals(["q"]);
-      expect(re149.lastIndex).assertEqual(4);
-      let exec149_4 = re149.exec(str149);
-      expect(exec149_4?.index).assertEqual(4);
+      const re149 = /t+(?=u)/g;
+      const str149 = "tttu ttu tu";
+      let exec149_1 = re149.exec(str149);
+      expect(exec149_1?.[0]).assertEqual("ttt");
+      expect(re149.lastIndex).assertEqual(3);
+      let exec149_2 = re149.exec(str149);
+      expect(exec149_2?.[0]).assertEqual("tt");
     });
 
     /**
