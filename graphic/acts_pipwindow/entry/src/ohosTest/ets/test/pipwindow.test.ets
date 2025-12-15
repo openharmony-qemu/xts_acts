@@ -4756,7 +4756,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               expect(data != null).assertTrue();
               pipController.on('activeStatusChange', callback);
               await pipController.startPiP();
-              await sleep(1000)
+              await sleep(3000)
               let pipWindowComponent = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
               console.log(`${caseName} pipWindowComponent: ${JSON.stringify(pipWindowComponent)}`);
               await sleep(1000)
@@ -4847,7 +4847,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               pipController.on('activeStatusChange', callback);
               pipController.on('activeStatusChange', callback2);
               await pipController.startPiP();
-              await sleep(1000)
+              await sleep(3000)
               let pipWindowComponent = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
               await sleep(1000)
               let pipWindowCenter = await pipWindowComponent.getBoundsCenter();

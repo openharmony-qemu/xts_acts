@@ -7676,7 +7676,7 @@ export default function windowPropertiesTest() {
           windowClass.on('frameMetricsMeasured', callback1);
           let windowProperties = windowClass.getWindowProperties();
           console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
-          let driver: Driver = await Driver.create();
+          let driver: Driver = Driver.create();
           let dragFromX = windowProperties.windowRect.width/4 +windowProperties.windowRect.left;
           console.log(`${caseName} dragFromX: ${JSON.stringify(dragFromX)}`);
           let dragToX = windowProperties.windowRect.width/2 +windowProperties.windowRect.left;
@@ -7751,7 +7751,7 @@ export default function windowPropertiesTest() {
           windowClass.on('frameMetricsMeasured', callback1);
           let windowProperties = windowClass.getWindowProperties();
           console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
-          let driver: Driver = await Driver.create();
+          let driver: Driver = Driver.create();
           let dragFromX = windowProperties.windowRect.width/4 +windowProperties.windowRect.left;
           console.log(`${caseName} dragFromX: ${JSON.stringify(dragFromX)}`);
           let dragToX = windowProperties.windowRect.width/2 +windowProperties.windowRect.left;
@@ -7761,6 +7761,7 @@ export default function windowPropertiesTest() {
           let dragToY = windowProperties.windowRect.height/2 +windowProperties.windowRect.top;
           console.log(`${caseName} dragToY: ${JSON.stringify(dragToY)}`);
           await driver.drag(dragFromX, dragFromY, dragToX, dragToY);
+          await sleep(3000)
         } catch (exception) {
           console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
           await windowClass?.destroyWindow()
@@ -7785,7 +7786,7 @@ export default function windowPropertiesTest() {
        */
       it('testOnFrameMetricsMeasuredCallbackwithDialogWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         let caseName = 'testOnFrameMetricsMeasuredCallbackwithDialogWindow';
-        let driver: Driver = await Driver.create();
+        let driver: Driver = Driver.create();
         await sleep(2000)
         let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
         console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
@@ -7821,6 +7822,7 @@ export default function windowPropertiesTest() {
           let dragToY = windowProperties.windowRect.height/2 +windowProperties.windowRect.top;
           console.log(`${caseName} dragToY: ${JSON.stringify(dragToY)}`);
           await driver.drag(dragFromX, dragFromY, dragToX, dragToY);
+          await sleep(3000)
         } catch (exception) {
           console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
           await windowClass?.destroyWindow()
@@ -7887,6 +7889,7 @@ export default function windowPropertiesTest() {
             let dragToY = windowProperties.windowRect.height/2 +windowProperties.windowRect.top;
             console.log(`${caseName} dragToY: ${JSON.stringify(dragToY)}`);
             await driver.drag(dragFromX, dragFromY, dragToX, dragToY);
+            await sleep(3000)
           }
         } catch (exception) {
           console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);

@@ -1796,6 +1796,10 @@ export default function windowNdk() {
         await subWindowClass.setUIContent('testability/pages/subWindow');
         await subWindowClass.showWindow();
         await sleep(1000)
+        await subWindowClass.resize(300, 300);
+        await sleep(300);
+        await subWindowClass.moveWindowTo(100, 100);
+        await sleep(300)
         let windowProperties = subWindowClass.getWindowProperties();
         console.info(`${caseName} sub windowProperties: ${JSON.stringify(windowProperties)}`);
         let windowId = windowProperties.id;
