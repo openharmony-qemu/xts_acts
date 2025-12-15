@@ -65,6 +65,7 @@
         "MainAbility/pages/FrameNodeMethod/AdoptChildTwoTest",
         "MainAbility/pages/FrameNodeMethod/AdoptChildThreeTest",
         "MainAbility/pages/FrameNodeMethod/AdoptChildTest",
-        "MainAbility/pages/FrameNode/frameNodeApi"
+        "MainAbility/pages/FrameNode/frameNodeApi",	
+        "MainAbility/pages/FrameNodeNew/GraphicsFourBoundary"
     ]
 }
