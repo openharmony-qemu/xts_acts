@@ -7616,6 +7616,84 @@ export default function windowPropertiesTest() {
     })
 
       /**
+       * @tc.name   testOnFrameMetricsMeasuredCallbackwithUECSubWindow
+       * @tc.number SUB_BASIC_WMS_FUNCTION_FRAMEMETRIC_MEASURED_0500
+       * @tc.desc   testOnFrameMetricsMeasuredCallbackwithUECSubWindow
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+      it('testOnFrameMetricsMeasuredCallbackwithUECSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let caseName = 'testOnFrameMetricsMeasuredCallbackwithUECSubWindow';
+        let driver = Driver.create();
+        await sleep(2000)
+        let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+        console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+        let windowClass: window.Window | undefined;
+        try {
+          windowClass = await windowStage.createSubWindow('testOnFrameMetricsMeasuredCallbackwithUECSubWindow');
+          await windowClass.setUIContent('testability/pages/WindowTest/EmbeddedComponentPage');
+          await sleep(2000);
+
+          let btn = await driver.findComponent(ON.id('Button'));
+          console.log(caseName + ' btn1 : ' + btn);
+          if (btn == undefined) {
+            console.log(caseName + 'device not support')
+            done()
+          } else {
+            await btn.click();
+            await sleep(1000);
+            let btn2 = await driver.findComponent(ON.id('HelloWorld'));
+            let txt = await btn2.getText();
+            console.log(caseName + ' btn2 : ' + txt);
+            expect(txt == 'true').assertTrue();
+            const callback1 = async (res: window.FrameMetrics) => {
+              console.log(`${caseName} callback1 res: ${JSON.stringify(res)}`);
+              expect(res.firstDrawFrame).assertEqual(false);
+              expect(res.vsyncTimestamp).assertLarger(0);
+              expect(res.inputHandlingDuration).assertLarger(0);
+              windowClass?.off('frameMetricsMeasured');
+              await windowClass?.destroyWindow()
+              done();
+            }
+            windowClass.on('frameMetricsMeasured', callback1);
+            let windowProperties = windowClass.getWindowProperties();
+            console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
+            let dragFromX = windowProperties.windowRect.width/4 +windowProperties.windowRect.left;
+            console.log(`${caseName} dragFromX: ${JSON.stringify(dragFromX)}`);
+            let dragToX = windowProperties.windowRect.width/2 +windowProperties.windowRect.left;
+            console.log(`${caseName} dragToX: ${JSON.stringify(dragToX)}`);
+            let dragFromY = windowProperties.windowRect.height/4 +windowProperties.windowRect.top;
+            console.log(`${caseName} dragFromY: ${JSON.stringify(dragFromY)}`);
+            let dragToY = windowProperties.windowRect.height/2 +windowProperties.windowRect.top;
+            console.log(`${caseName} dragToY: ${JSON.stringify(dragToY)}`);
+            await driver.drag(dragFromX, dragFromY, dragToX, dragToY);
+            await sleep(3000)
+          }
+        } catch (exception) {
+          console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+          await windowClass?.destroyWindow()
+          if(!canIUseRes){
+            expect(exception.code).assertEqual(801)
+          }else {
+            expect().assertFail();
+          }
+          done();
+        }
+
+      })
+
+    // 共建23用例
+    //   SUB_BASIC_WMS_FUNCTION_FRAMEMETRIC_MEASURED_0100	验证窗口销毁后调用onframeMetricsMeasured接口抛错误码1300002
+      //   testOnFrameMetricsMeasuredErrorcode 	"on('frameMetricsMeasured')
+    //   off('frameMetricsMeasured')"	使用canIuse查看该sycap是否支持，SystemCapability.Window.SessionManager 
+      //   "1.创建子窗
+    //   2.销毁子窗
+    //   3.子窗调用on、off接口"	"判断设备是否支持SystemCapability.Window.SessionManager，若不支持，返回801，
+    //   若支持，on、off接口都返回错误码1300002"	Level 2
+      // 改为1300002
+      // todo: 不支持返回1300002
+      /**
        * @tc.name   testOnFrameMetricsMeasuredErrorcode
        * @tc.number SUB_BASIC_WMS_FUNCTION_FRAMEMETRIC_MEASURED_0100
        * @tc.desc   testOnFrameMetricsMeasuredErrorcode
@@ -7891,73 +7969,6 @@ export default function windowPropertiesTest() {
         }
       })
 
-      /**
-       * @tc.name   testOnFrameMetricsMeasuredCallbackwithUECSubWindow
-       * @tc.number SUB_BASIC_WMS_FUNCTION_FRAMEMETRIC_MEASURED_0500
-       * @tc.desc   testOnFrameMetricsMeasuredCallbackwithUECSubWindow
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL0
-       */
-      it('testOnFrameMetricsMeasuredCallbackwithUECSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        let caseName = 'testOnFrameMetricsMeasuredCallbackwithUECSubWindow';
-        let driver = Driver.create();
-        await sleep(2000)
-        let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
-        console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
-        let windowClass: window.Window | undefined;
-        try {
-          windowClass = await windowStage.createSubWindow('testOnFrameMetricsMeasuredCallbackwithUECSubWindow');
-          await windowClass.setUIContent('testability/pages/WindowTest/EmbeddedComponentPage');
-          await sleep(2000);
-
-          let btn = await driver.findComponent(ON.id('Button'));
-          console.log(caseName + ' btn1 : ' + btn);
-          if (btn == undefined) {
-            console.log(caseName + 'device not support')
-            done()
-          } else {
-            await btn.click();
-            await sleep(1000);
-            let btn2 = await driver.findComponent(ON.id('HelloWorld'));
-            let txt = await btn2.getText();
-            console.log(caseName + ' btn2 : ' + txt);
-            expect(txt == 'true').assertTrue();
-            const callback1 = async (res: window.FrameMetrics) => {
-              console.log(`${caseName} callback1 res: ${JSON.stringify(res)}`);
-              expect(res.firstDrawFrame).assertEqual(false);
-              expect(res.vsyncTimestamp).assertLarger(0);
-              expect(res.inputHandlingDuration).assertLarger(0);
-              windowClass?.off('frameMetricsMeasured');
-              await windowClass?.destroyWindow()
-              done();
-            }
-            windowClass.on('frameMetricsMeasured', callback1);
-            let windowProperties = windowClass.getWindowProperties();
-            console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
-            let dragFromX = windowProperties.windowRect.width/4 +windowProperties.windowRect.left;
-            console.log(`${caseName} dragFromX: ${JSON.stringify(dragFromX)}`);
-            let dragToX = windowProperties.windowRect.width/2 +windowProperties.windowRect.left;
-            console.log(`${caseName} dragToX: ${JSON.stringify(dragToX)}`);
-            let dragFromY = windowProperties.windowRect.height/4 +windowProperties.windowRect.top;
-            console.log(`${caseName} dragFromY: ${JSON.stringify(dragFromY)}`);
-            let dragToY = windowProperties.windowRect.height/2 +windowProperties.windowRect.top;
-            console.log(`${caseName} dragToY: ${JSON.stringify(dragToY)}`);
-            await driver.drag(dragFromX, dragFromY, dragToX, dragToY);
-            await sleep(3000)
-          }
-        } catch (exception) {
-          console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
-          await windowClass?.destroyWindow()
-          if(!canIUseRes){
-            expect(exception.code).assertEqual(801)
-          }else {
-            expect().assertFail();
-          }
-          done();
-        }
-
-      })
 
 
     })
