@@ -74,8 +74,8 @@ export default function OHEffectBufferInfoGetTimestampTest() {
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_ROW_SIZE_SUPP_003', Level.LEVEL0, () => {
-      const testName = "SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_ROW_SIZE_SUPP_003"
+    it('SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TIMESTAMP_SUPP_003', Level.LEVEL0, () => {
+      const testName = "SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TIMESTAMP_SUPP_003"
       console.info(TAG, testName, 'Start',);
       let result: number = testNapi.OHEffectBufferInfoGetTimestampTest(CASE_INDEX_3);
       console.info(TAG, testName, 'Success', JSON.stringify(result));
