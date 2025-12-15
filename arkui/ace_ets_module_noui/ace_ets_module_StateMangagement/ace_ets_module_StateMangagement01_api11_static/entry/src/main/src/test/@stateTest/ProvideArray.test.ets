@@ -82,7 +82,8 @@ export default function ProvideArray() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   ProvideArray_static_0100
      * @tc.name     ProvideArray_static_0100
      * @tc.desc     ProvideArray_static_0100
@@ -104,7 +105,8 @@ it('ProvideArray_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   ProvideArray_static_0200
      * @tc.name     ProvideArray_static_0200
      * @tc.desc     ProvideArray_static_0200
@@ -126,7 +128,8 @@ it('ProvideArray_static_0200', Level.LEVEL0, async (done: () => void): Promise<v
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   ProvideArray_static_0300
      * @tc.name     ProvideArray_static_0300
      * @tc.desc     ProvideArray_static_0300
@@ -148,7 +151,8 @@ it('ProvideArray_static_0300', Level.LEVEL0, async (done: () => void): Promise<v
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   ProvideArray_static_0400
      * @tc.name     ProvideArray_static_0400
      * @tc.desc     ProvideArray_static_0400

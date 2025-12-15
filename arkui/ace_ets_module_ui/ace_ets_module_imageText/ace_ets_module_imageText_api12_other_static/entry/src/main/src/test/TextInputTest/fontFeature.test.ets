@@ -71,13 +71,14 @@ export default function fontFeatureTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   fontFeatureTest_static_0010
      * @tc.name     fontFeatureTest_static_0010
      * @tc.desc     fontFeatureTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-    it('fontFeatureTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('fontFeatureTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[fontFeatureTest_0010] START');
       let strJson = inspector.getInspectorByKey('TextInput_fontFeature_on');
       let obj = JSON.parseJsonElement(strJson);
@@ -90,13 +91,14 @@ export default function fontFeatureTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   fontFeatureTest_static_0020
      * @tc.name     fontFeatureTest_static_0020
      * @tc.desc     fontFeatureTest_static_0020
      * @tc.level    Level.LEVEL0
      */
-    it('fontFeatureTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('fontFeatureTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[fontFeatureTest_0020] START');
       let strJson = inspector.getInspectorByKey('TextInput_fontFeature_off');
       let obj = JSON.parseJsonElement(strJson);
@@ -109,13 +111,14 @@ export default function fontFeatureTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   fontFeatureTest_static_0030
      * @tc.name     fontFeatureTest_static_0030
      * @tc.desc     fontFeatureTest_static_0030
      * @tc.level    Level.LEVEL0
      */
-    it('fontFeatureTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('fontFeatureTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[fontFeatureTest_0030] START');
       let strJson = inspector.getInspectorByKey('TextInput_fontFeature_default');
       let obj = JSON.parseJsonElement(strJson);
@@ -128,13 +131,14 @@ export default function fontFeatureTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   fontFeatureTest_static_0040
      * @tc.name     fontFeatureTest_static_0040
      * @tc.desc     fontFeatureTest_static_0040
      * @tc.level    Level.LEVEL0
      */
-    it('fontFeatureTest_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('fontFeatureTest_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[fontFeatureTest_0040] START');
       let strJson = inspector.getInspectorByKey('TextInput_fontFeature_undefined');
       let obj = JSON.parseJsonElement(strJson);

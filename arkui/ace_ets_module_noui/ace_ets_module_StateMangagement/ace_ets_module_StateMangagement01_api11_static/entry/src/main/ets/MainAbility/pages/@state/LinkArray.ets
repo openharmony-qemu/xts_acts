@@ -42,6 +42,7 @@ import {
   State,
   Link,
   Prop,
+  UIUtils
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -104,7 +105,7 @@ struct Index_CM {
 
   build() {
     Column() {
-      Text("count type of " + JSON.stringify(CommonFunc.getType(this.Array)) + " number is " + JSON.stringify(this.Array))
+      Text("count type of " + JSON.stringify(CommonFunc.getType(this.Array)) + " number is " + JSON.stringify(UIUtils.getTarget(this.Array)))
         .fontSize(9).key('LinkArray').height('5%')
 
       Text("count type of " + JSON.stringify(CommonFunc.getType(this.Array)) + " number is " + this.getUIContext().getHostContext()?.resourceManager.getStringSync($r('app.string.number').id))

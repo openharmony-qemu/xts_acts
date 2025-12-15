@@ -50,7 +50,8 @@ export default function tabsFirstJsunit() {
 
   
     
-    /*
+    
+/**
      * @tc.number   ArkUI_Tabs_Divider_static_0300
      * @tc.name     ArkUI_Tabs_Divider_static_0300
      * @tc.desc     ArkUI_Tabs_Divider_static_0300
@@ -71,7 +72,8 @@ it('ArkUI_Tabs_Divider_static_0300', Level.LEVEL0, async (done: () => void): Pro
 
    
     
-    /*
+    
+/**
      * @tc.number   ArkUI_Tabs_FadingEdge_static_0100
      * @tc.name     ArkUI_Tabs_FadingEdge_static_0100
      * @tc.desc     ArkUI_Tabs_FadingEdge_static_0100

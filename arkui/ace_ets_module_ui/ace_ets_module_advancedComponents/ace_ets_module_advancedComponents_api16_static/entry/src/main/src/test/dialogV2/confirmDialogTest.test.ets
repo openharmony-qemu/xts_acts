@@ -63,13 +63,14 @@ export default function confirmDialogTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   confirmDialogTest_static_0100
      * @tc.name     confirmDialogTest_static_0100
      * @tc.desc     confirmDialogTest_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('confirmDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('confirmDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[confirmDialogTest_static_0100] START');
       let driver = Driver.create();
       await driver.delayMs(2000);

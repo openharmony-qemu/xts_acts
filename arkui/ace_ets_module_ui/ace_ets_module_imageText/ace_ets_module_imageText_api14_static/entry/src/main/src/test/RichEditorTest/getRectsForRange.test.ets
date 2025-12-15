@@ -64,13 +64,14 @@ export default function getRectsForRangeTest() {
 
     
     
-/*
+
+    /**
      * @tc.number   getRectsForRangeTest_static_0010
      * @tc.name     getRectsForRangeTest_static_0010
      * @tc.desc     getRectsForRangeTest_static_0010
      * @tc.level    Level.LEVEL2
      */
-    it('getRectsForRangeTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('getRectsForRangeTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('getRectsForRangeTest_0010 START');
       await CommonFunc.sleep(500);
 

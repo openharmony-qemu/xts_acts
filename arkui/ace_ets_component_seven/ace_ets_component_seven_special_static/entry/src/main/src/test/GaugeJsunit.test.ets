@@ -51,7 +51,8 @@ export default function gaugeJsunit() {
 
    
     
-    /*
+    
+/**
      * @tc.number   testGauge0121_static_01
      * @tc.name     testGauge0121_static_01
      * @tc.desc     testGauge0121_static_01
@@ -70,7 +71,8 @@ it('testGauge0121_static_01', Level.LEVEL0, async (done: () => void): Promise<vo
 
    
     
-    /*
+    
+/**
      * @tc.number   testGauge0122_static_02
      * @tc.name     testGauge0122_static_02
      * @tc.desc     testGauge0122_static_02
@@ -89,7 +91,8 @@ it('testGauge0122_static_02', Level.LEVEL0, async (done: () => void): Promise<vo
 
     
     
-    /*
+    
+/**
      * @tc.number   testGauge0123_static_03
      * @tc.name     testGauge0123_static_03
      * @tc.desc     testGauge0123_static_03
@@ -108,7 +111,8 @@ it('testGauge0123_static_03', Level.LEVEL0, async (done: () => void): Promise<vo
 
     
     
-    /*
+    
+/**
      * @tc.number   testGauge0124_static_04
      * @tc.name     testGauge0124_static_04
      * @tc.desc     testGauge0124_static_04
@@ -127,7 +131,8 @@ it('testGauge0124_static_04', Level.LEVEL0, async (done: () => void): Promise<vo
 
     
     
-    /*
+    
+/**
      * @tc.number   testGauge0125_static_05
      * @tc.name     testGauge0125_static_05
      * @tc.desc     testGauge0125_static_05
@@ -146,7 +151,8 @@ it('testGauge0125_static_05', Level.LEVEL0, async (done: () => void): Promise<vo
 
    
     
-    /*
+    
+/**
      * @tc.number   testGauge0126_static_06
      * @tc.name     testGauge0126_static_06
      * @tc.desc     testGauge0126_static_06
@@ -166,7 +172,8 @@ it('testGauge0126_static_06', Level.LEVEL0, async (done: () => void): Promise<vo
 
     
     
-    /*
+    
+/**
      * @tc.number   testGauge0127_static_07
      * @tc.name     testGauge0127_static_07
      * @tc.desc     testGauge0127_static_07
@@ -186,7 +193,8 @@ it('testGauge0127_static_07', Level.LEVEL0, async (done: () => void): Promise<vo
 
    
     
-    /*
+    
+/**
      * @tc.number   testGauge0128_static_08
      * @tc.name     testGauge0128_static_08
      * @tc.desc     testGauge0128_static_08

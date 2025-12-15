@@ -66,13 +66,14 @@ export default function CloseMenu() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   CloseMenu_static_0100
      * @tc.name     CloseMenu_static_0100
      * @tc.desc     CloseMenu_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('CloseMenu_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('CloseMenu_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('CloseMenu_0100 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()

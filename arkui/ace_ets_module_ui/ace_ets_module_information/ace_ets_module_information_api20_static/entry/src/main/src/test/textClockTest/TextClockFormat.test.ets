@@ -61,7 +61,8 @@ export default function TextClockFormatTest() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   TextClockFormatTest_static_001
      * @tc.name     TextClockFormatTest_static_001
      * @tc.desc     TextClockFormatTest_static_001
@@ -79,7 +80,8 @@ it('TextClockFormatTest_static_001', Level.LEVEL1, async (done: () => void): Pro
     });
   
     
-    /*
+    
+/**
      * @tc.number   TextClockFormatTest_static_002
      * @tc.name     TextClockFormatTest_static_002
      * @tc.desc     TextClockFormatTest_static_002
@@ -97,7 +99,8 @@ it('TextClockFormatTest_static_002', Level.LEVEL1, async (done: () => void): Pro
     });
     
     
-    /*
+    
+/**
      * @tc.number   TextClockFormatTest_static_003
      * @tc.name     TextClockFormatTest_static_003
      * @tc.desc     TextClockFormatTest_static_003
@@ -115,7 +118,8 @@ it('TextClockFormatTest_static_003', Level.LEVEL1, async (done: () => void): Pro
     });
     
     
-    /*
+    
+/**
      * @tc.number   TextClockFormatTest_static_004
      * @tc.name     TextClockFormatTest_static_004
      * @tc.desc     TextClockFormatTest_static_004

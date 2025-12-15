@@ -68,13 +68,14 @@ export default function TextAreaNodeTest() {
     })
 
     
-/*
+
+    /**
      * @tc.number   textAreaNode_static_0100
      * @tc.name     textAreaNode_static_0100
      * @tc.desc     textAreaNode_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('textAreaNode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('textAreaNode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       let tagName = 'textAreaNode0100';
       console.info('[' + tagName + '] START============================');
@@ -89,13 +90,14 @@ export default function TextAreaNodeTest() {
     
 
     
-/*
+
+    /**
      * @tc.number   textAreaNode_static_0200
      * @tc.name     textAreaNode_static_0200
      * @tc.desc     textAreaNode_static_0200
      * @tc.level    Level.LEVEL0
      */
-    it('textAreaNode_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('textAreaNode_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'textAreaNode0200';
       console.info('[' + tagName + '] START============================');
       let strJsonNew = inspector.getInspectorByKey('key_textArea_Node_001');
@@ -108,13 +110,14 @@ export default function TextAreaNodeTest() {
     
 
     
-/*
+
+    /**
      * @tc.number   textAreaNode_static_0300
      * @tc.name     textAreaNode_static_0300
      * @tc.desc     textAreaNode_static_0300
      * @tc.level    Level.LEVEL0
      */
-    it('textAreaNode_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('textAreaNode_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'textAreaNode0300';
       console.info('[' + tagName + '] START============================');
       let strJsonNew = inspector.getInspectorByKey('key_textArea_Node_001');

@@ -69,13 +69,14 @@ export default function textAreaFontScaleTest() {
 
     
     
-/*
+
+    /**
      * @tc.number   textAreaFontScaleTest_static_0001
      * @tc.name     textAreaFontScaleTest_static_0001
      * @tc.desc     textAreaFontScaleTest_static_0001
      * @tc.level    Level.LEVEL1
      */
-    it('textAreaFontScaleTest_static_0001', Level.LEVEL1, async () => {
+it('textAreaFontScaleTest_static_0001', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0001 START');
         await CommonFunc.sleep(1000);
@@ -90,13 +91,14 @@ export default function textAreaFontScaleTest() {
 
 
     
-/*
+
+    /**
      * @tc.number   textAreaFontScaleTest_static_0002
      * @tc.name     textAreaFontScaleTest_static_0002
      * @tc.desc     textAreaFontScaleTest_static_0002
      * @tc.level    Level.LEVEL1
      */
-    it('textAreaFontScaleTest_static_0002', Level.LEVEL1, async () => {
+it('textAreaFontScaleTest_static_0002', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0002 START');
         await CommonFunc.sleep(1000);
@@ -111,13 +113,14 @@ export default function textAreaFontScaleTest() {
 
 
     
-/*
+
+    /**
      * @tc.number   textAreaFontScaleTest_static_0003
      * @tc.name     textAreaFontScaleTest_static_0003
      * @tc.desc     textAreaFontScaleTest_static_0003
      * @tc.level    Level.LEVEL1
      */
-    it('textAreaFontScaleTest_static_0003', Level.LEVEL1, async () => {
+it('textAreaFontScaleTest_static_0003', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0003 START');
         await CommonFunc.sleep(1000);
@@ -132,13 +135,14 @@ export default function textAreaFontScaleTest() {
 
 
     
-/*
+
+    /**
      * @tc.number   textAreaFontScaleTest_static_0004
      * @tc.name     textAreaFontScaleTest_static_0004
      * @tc.desc     textAreaFontScaleTest_static_0004
      * @tc.level    Level.LEVEL1
      */
-    it('textAreaFontScaleTest_static_0004', Level.LEVEL1, async () => {
+it('textAreaFontScaleTest_static_0004', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0004 START');
         await CommonFunc.sleep(1000);
@@ -153,13 +157,14 @@ export default function textAreaFontScaleTest() {
 	
 	
     
-/*
+
+    /**
      * @tc.number   textAreaFontScaleTest_static_0005
      * @tc.name     textAreaFontScaleTest_static_0005
      * @tc.desc     textAreaFontScaleTest_static_0005
      * @tc.level    Level.LEVEL1
      */
-    it('textAreaFontScaleTest_static_0005', Level.LEVEL1, async () => {
+it('textAreaFontScaleTest_static_0005', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0005 START');
         await CommonFunc.sleep(1000);
@@ -174,13 +179,14 @@ export default function textAreaFontScaleTest() {
 
 
     
-/*
+
+    /**
      * @tc.number   textAreaFontScaleTest_static_0006
      * @tc.name     textAreaFontScaleTest_static_0006
      * @tc.desc     textAreaFontScaleTest_static_0006
      * @tc.level    Level.LEVEL1
      */
-    it('textAreaFontScaleTest_static_0006', Level.LEVEL1, async () => {
+it('textAreaFontScaleTest_static_0006', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0006 START');
         await CommonFunc.sleep(1000);
@@ -195,13 +201,14 @@ export default function textAreaFontScaleTest() {
 
 
     
-/*
+
+    /**
      * @tc.number   textAreaFontScaleTest_static_0007
      * @tc.name     textAreaFontScaleTest_static_0007
      * @tc.desc     textAreaFontScaleTest_static_0007
      * @tc.level    Level.LEVEL1
      */
-    it('textAreaFontScaleTest_static_0007', Level.LEVEL1, async () => {
+it('textAreaFontScaleTest_static_0007', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0007 START');
         await CommonFunc.sleep(1000);
@@ -216,13 +223,14 @@ export default function textAreaFontScaleTest() {
 
 
     
-/*
+
+    /**
      * @tc.number   textAreaFontScaleTest_static_0008
      * @tc.name     textAreaFontScaleTest_static_0008
      * @tc.desc     textAreaFontScaleTest_static_0008
      * @tc.level    Level.LEVEL1
      */
-    it('textAreaFontScaleTest_static_0008', Level.LEVEL1, async () => {
+it('textAreaFontScaleTest_static_0008', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0008 START');
         await CommonFunc.sleep(1000);
@@ -237,13 +245,14 @@ export default function textAreaFontScaleTest() {
 
 
     
-/*
+
+    /**
      * @tc.number   textAreaFontScaleTest_static_0009
      * @tc.name     textAreaFontScaleTest_static_0009
      * @tc.desc     textAreaFontScaleTest_static_0009
      * @tc.level    Level.LEVEL1
      */
-    it('textAreaFontScaleTest_static_0009', Level.LEVEL1, async () => {
+it('textAreaFontScaleTest_static_0009', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0009 START');
         await CommonFunc.sleep(1000);
@@ -259,13 +268,14 @@ export default function textAreaFontScaleTest() {
 
 
     
-/*
+
+    /**
      * @tc.number   textAreaFontScaleTest_static_0010
      * @tc.name     textAreaFontScaleTest_static_0010
      * @tc.desc     textAreaFontScaleTest_static_0010
      * @tc.level    Level.LEVEL1
      */
-    it('textAreaFontScaleTest_static_0010', Level.LEVEL1, async () => {
+it('textAreaFontScaleTest_static_0010', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0010 START');
         await CommonFunc.sleep(1000);
@@ -280,13 +290,14 @@ export default function textAreaFontScaleTest() {
 
 
     
-/*
+
+    /**
      * @tc.number   textAreaFontScaleTest_static_0011
      * @tc.name     textAreaFontScaleTest_static_0011
      * @tc.desc     textAreaFontScaleTest_static_0011
      * @tc.level    Level.LEVEL1
      */
-    it('textAreaFontScaleTest_static_0011', Level.LEVEL1, async () => {
+it('textAreaFontScaleTest_static_0011', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0011 START');
         await CommonFunc.sleep(1000);
@@ -302,13 +313,14 @@ export default function textAreaFontScaleTest() {
 
 
     
-/*
+
+    /**
      * @tc.number   textAreaFontScaleTest_static_0012
      * @tc.name     textAreaFontScaleTest_static_0012
      * @tc.desc     textAreaFontScaleTest_static_0012
      * @tc.level    Level.LEVEL1
      */
-    it('textAreaFontScaleTest_static_0012', Level.LEVEL1, async () => {
+it('textAreaFontScaleTest_static_0012', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0012 START');
         await CommonFunc.sleep(1000);
@@ -324,13 +336,14 @@ export default function textAreaFontScaleTest() {
 
 
     
-/*
+
+    /**
      * @tc.number   textAreaFontScaleTest_static_0013
      * @tc.name     textAreaFontScaleTest_static_0013
      * @tc.desc     textAreaFontScaleTest_static_0013
      * @tc.level    Level.LEVEL1
      */
-    it('textAreaFontScaleTest_static_0013', Level.LEVEL1, async () => {
+it('textAreaFontScaleTest_static_0013', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaFontScaleTest textAreaFontScaleTest0013 START');
         await CommonFunc.sleep(1000);

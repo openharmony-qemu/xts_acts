@@ -55,7 +55,8 @@ export default function back7() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   back7_static_0100
      * @tc.name     back7_static_0100
      * @tc.desc     back7_static_0100

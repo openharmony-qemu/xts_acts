@@ -63,13 +63,14 @@ export default function swipeRefresherPageTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   swipeRefresherPageTest_static_0100
      * @tc.name     swipeRefresherPageTest_static_0100
      * @tc.desc     swipeRefresherPageTest_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('swipeRefresherPageTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('swipeRefresherPageTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[swipeRefresherPageTest_static_0100] START');
       let driver = Driver.create();
       await driver.delayMs(2000);

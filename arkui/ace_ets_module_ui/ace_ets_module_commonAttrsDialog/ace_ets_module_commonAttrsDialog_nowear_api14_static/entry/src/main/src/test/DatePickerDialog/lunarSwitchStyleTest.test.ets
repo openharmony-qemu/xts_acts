@@ -78,13 +78,14 @@ export default function lunarSwitchStyleTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   lunarSwitchStyleTest_static_0100
      * @tc.name     lunarSwitchStyleTest_static_0100
      * @tc.desc     lunarSwitchStyleTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('lunarSwitchStyleTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('lunarSwitchStyleTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('lunarSwitchStyleTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

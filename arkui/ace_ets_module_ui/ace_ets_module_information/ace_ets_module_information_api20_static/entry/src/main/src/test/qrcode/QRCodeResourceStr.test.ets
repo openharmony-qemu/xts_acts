@@ -61,7 +61,8 @@ export default function QRCodeResourceStrTest() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   QRCodeResourceStrTest_static_001
      * @tc.name     QRCodeResourceStrTest_static_001
      * @tc.desc     QRCodeResourceStrTest_static_001
@@ -79,7 +80,8 @@ it('QRCodeResourceStrTest_static_001', Level.LEVEL1, async (done: () => void): P
     });
   
     
-    /*
+    
+/**
      * @tc.number   QRCodeResourceStrTest_static_002
      * @tc.name     QRCodeResourceStrTest_static_002
      * @tc.desc     QRCodeResourceStrTest_static_002
@@ -97,7 +99,8 @@ it('QRCodeResourceStrTest_static_002', Level.LEVEL1, async (done: () => void): P
     });
     
     
-    /*
+    
+/**
      * @tc.number   QRCodeResourceStrTest_static_003
      * @tc.name     QRCodeResourceStrTest_static_003
      * @tc.desc     QRCodeResourceStrTest_static_003
@@ -116,7 +119,8 @@ it('QRCodeResourceStrTest_static_003', Level.LEVEL1, async (done: () => void): P
 
     
     
-    /*
+    
+/**
      * @tc.number   QRCodeResourceStrTest_static_004
      * @tc.name     QRCodeResourceStrTest_static_004
      * @tc.desc     QRCodeResourceStrTest_static_004

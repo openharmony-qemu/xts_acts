@@ -24,12 +24,12 @@ import selectmenuTest from './SelectTest/SelectMenu.test';
 
 export default function testsuite() {
   SelectTest();
-  // calendarpicker()
-  // SelectAttr()
-  // selectJsunit()
-  // menuBackgroundBlurStyle()
-  // menuBackgroundColor()
-  // selectOnSelectJsunit()
-  // selectmenuTest()
-  // select()
+  calendarpicker()
+  SelectAttr()
+  selectJsunit()
+  menuBackgroundBlurStyle()
+  menuBackgroundColor()
+  selectOnSelectJsunit()
+  selectmenuTest()
+  select()
 }

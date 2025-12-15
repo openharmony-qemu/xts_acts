@@ -79,6 +79,10 @@
     {
       "name": "apple",
       "value": "apple"
+    },
+    {
+      "name": "text_string",
+      "value": "text"
     }
   ]
 }

@@ -49,7 +49,8 @@ export default function scrollOnScrollBeginJsunit() {
 
    
     
-    /*
+    
+/**
      * @tc.number   testScroll0001_static_01
      * @tc.name     testScroll0001_static_01
      * @tc.desc     testScroll0001_static_01
@@ -68,7 +69,8 @@ it('testScroll0001_static_01', Level.LEVEL0, async (done: () => void): Promise<v
 
   
     
-    /*
+    
+/**
      * @tc.number   testScroll0002_static_02
      * @tc.name     testScroll0002_static_02
      * @tc.desc     testScroll0002_static_02
@@ -87,7 +89,8 @@ it('testScroll0002_static_02', Level.LEVEL0, async (done: () => void): Promise<v
 
    
     
-    /*
+    
+/**
      * @tc.number   testScroll0003_static_03
      * @tc.name     testScroll0003_static_03
      * @tc.desc     testScroll0003_static_03
@@ -107,7 +110,8 @@ it('testScroll0003_static_03', Level.LEVEL0, async (done: () => void): Promise<v
 
   
     
-    /*
+    
+/**
      * @tc.number   testStestScroll0004croll0001_static_04
      * @tc.name     testStestScroll0004croll0001_static_04
      * @tc.desc     testStestScroll0004croll0001_static_04
@@ -127,7 +131,8 @@ it('testStestScroll0004croll0001_static_04', Level.LEVEL0, async (done: () => vo
 
   
     
-    /*
+    
+/**
      * @tc.number   testScroll0005_static_05
      * @tc.name     testScroll0005_static_05
      * @tc.desc     testScroll0005_static_05
@@ -146,7 +151,8 @@ it('testScroll0005_static_05', Level.LEVEL0, async (done: () => void): Promise<v
 
    
     
-    /*
+    
+/**
      * @tc.number   testScroll0006_static_06
      * @tc.name     testScroll0006_static_06
      * @tc.desc     testScroll0006_static_06
@@ -165,7 +171,8 @@ it('testScroll0006_static_06', Level.LEVEL0, async (done: () => void): Promise<v
 
    
     
-    /*
+    
+/**
      * @tc.number   testScroll0007_static_07
      * @tc.name     testScroll0007_static_07
      * @tc.desc     testScroll0007_static_07
@@ -184,7 +191,8 @@ it('testScroll0007_static_07', Level.LEVEL0, async (done: () => void): Promise<v
 
   
     
-    /*
+    
+/**
      * @tc.number   testScroll0008_static_08
      * @tc.name     testScroll0008_static_08
      * @tc.desc     testScroll0008_static_08
@@ -203,7 +211,8 @@ it('testScroll0008_static_08', Level.LEVEL0, async (done: () => void): Promise<v
 
   
     
-    /*
+    
+/**
      * @tc.number   testScroll0009_static_09
      * @tc.name     testScroll0009_static_09
      * @tc.desc     testScroll0009_static_09

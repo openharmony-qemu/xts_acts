@@ -36,7 +36,6 @@ export default function calendarPickerDialogBackgroundEffectTest() {
     beforeAll(() => {
       console.info("CalendarPickerDialogBackgroundEffectTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api19.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {
@@ -63,7 +62,8 @@ export default function calendarPickerDialogBackgroundEffectTest() {
     
     
     
-    /*
+    
+/**
      * @tc.number   calendarPickerDialogBackgroundEffectTest_static_0100
      * @tc.name     calendarPickerDialogBackgroundEffectTest_static_0100
      * @tc.desc     calendarPickerDialogBackgroundEffectTest_static_0100
@@ -112,7 +112,8 @@ it('calendarPickerDialogBackgroundEffectTest_static_0100', TestType.FUNCTION | S
     
     
     
-    /*
+    
+/**
      * @tc.number   calendarPickerDialogBackgroundEffectTest_static_0200
      * @tc.name     calendarPickerDialogBackgroundEffectTest_static_0200
      * @tc.desc     calendarPickerDialogBackgroundEffectTest_static_0200
@@ -148,7 +149,8 @@ it('calendarPickerDialogBackgroundEffectTest_static_0200', TestType.FUNCTION | S
 
 
     
-    /*
+    
+/**
      * @tc.number   calendarPickerDialogBackgroundEffectTest_static_0300
      * @tc.name     calendarPickerDialogBackgroundEffectTest_static_0300
      * @tc.desc     calendarPickerDialogBackgroundEffectTest_static_0300

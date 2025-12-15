@@ -83,13 +83,14 @@ export default function BindSheetTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   bindSheetTest_static_0100
      * @tc.name     bindSheetTest_static_0100
      * @tc.desc     bindSheetTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('bindSheetTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('bindSheetTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'bindSheetTest_0100';
       console.info('[' + tagName + '] START============================');
       let driver = Driver.create();
@@ -120,13 +121,14 @@ export default function BindSheetTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   bindSheetTest_static_0200
      * @tc.name     bindSheetTest_static_0200
      * @tc.desc     bindSheetTest_static_0200
      * @tc.level    Level.LEVEL0
      */
-    it('bindSheetTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('bindSheetTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'bindSheetTest_0200';
       console.info('[' + tagName + '] START============================');
       let driver = Driver.create();
@@ -152,13 +154,14 @@ export default function BindSheetTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   bindSheetTest_static_0300
      * @tc.name     bindSheetTest_static_0300
      * @tc.desc     bindSheetTest_static_0300
      * @tc.level    Level.LEVEL0
      */
-    it('bindSheetTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('bindSheetTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'bindSheetTest_0300';
       console.info('[' + tagName + '] START============================');
       let driver = Driver.create();
@@ -189,13 +192,14 @@ export default function BindSheetTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   bindSheetTest_static_0400
      * @tc.name     bindSheetTest_static_0400
      * @tc.desc     bindSheetTest_static_0400
      * @tc.level    Level.LEVEL0
      */
-    it('bindSheetTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('bindSheetTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'bindSheetTest_0400';
       console.info('[' + tagName + '] START============================');
       let driver = Driver.create();

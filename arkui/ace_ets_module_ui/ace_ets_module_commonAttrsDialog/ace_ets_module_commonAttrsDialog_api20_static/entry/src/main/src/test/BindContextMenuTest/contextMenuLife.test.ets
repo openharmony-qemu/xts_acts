@@ -70,7 +70,7 @@ export default function ContextMenuLife() {
       console.info('BindMenu after each called');
     })
 
-    /*
+    /**
      * @tc.number   contextMenu_static_0010
      * @tc.name     contextMenu_static_0010
      * @tc.desc     contextMenu_static_0010

@@ -57,7 +57,8 @@ export default function replaceUrl3() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   replaceUrl3_static_0100
      * @tc.name     replaceUrl3_static_0100
      * @tc.desc     replaceUrl3_static_0100

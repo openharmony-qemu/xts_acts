@@ -50,7 +50,8 @@ export default function sliderTest() {
 
    
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_Slider_blockBorderColor_static_0100
      * @tc.name     ArkUX_Stage_Slider_blockBorderColor_static_0100
      * @tc.desc     ArkUX_Stage_Slider_blockBorderColor_static_0100
@@ -75,7 +76,8 @@ it('ArkUX_Stage_Slider_blockBorderColor_static_0100', Level.LEVEL0, async (done:
 
     
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_Slider_blockBorderWidth_static_0100
      * @tc.name     ArkUX_Stage_Slider_blockBorderWidth_static_0100
      * @tc.desc     ArkUX_Stage_Slider_blockBorderWidth_static_0100
@@ -100,7 +102,8 @@ it('ArkUX_Stage_Slider_blockBorderWidth_static_0100', Level.LEVEL0, async (done:
 
    
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_Slider_stepColor_static_0100
      * @tc.name     ArkUX_Stage_Slider_stepColor_static_0100
      * @tc.desc     ArkUX_Stage_Slider_stepColor_static_0100
@@ -125,7 +128,8 @@ it('ArkUX_Stage_Slider_stepColor_static_0100', Level.LEVEL0, async (done: () => 
 
    
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_Slider_trackBorderRadius_static_0100
      * @tc.name     ArkUX_Stage_Slider_trackBorderRadius_static_0100
      * @tc.desc     ArkUX_Stage_Slider_trackBorderRadius_static_0100
@@ -150,7 +154,8 @@ it('ArkUX_Stage_Slider_trackBorderRadius_static_0100', Level.LEVEL0, async (done
 
    
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_Slider_blockSize_static_0100
      * @tc.name     ArkUX_Stage_Slider_blockSize_static_0100
      * @tc.desc     ArkUX_Stage_Slider_blockSize_static_0100
@@ -180,7 +185,8 @@ it('ArkUX_Stage_Slider_blockSize_static_0100', Level.LEVEL0, async (done: () => 
 
    
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_Slider_stepSize_static_0100
      * @tc.name     ArkUX_Stage_Slider_stepSize_static_0100
      * @tc.desc     ArkUX_Stage_Slider_stepSize_static_0100
@@ -204,7 +210,8 @@ it('ArkUX_Stage_Slider_stepSize_static_0100', Level.LEVEL0, async (done: () => v
 
     
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_Slider_blockStyle_static_0100
      * @tc.name     ArkUX_Stage_Slider_blockStyle_static_0100
      * @tc.desc     ArkUX_Stage_Slider_blockStyle_static_0100
@@ -229,7 +236,8 @@ it('ArkUX_Stage_Slider_blockStyle_static_0100', Level.LEVEL0, async (done: () =>
 
    
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_Slider_blockColor_static_0100
      * @tc.name     ArkUX_Stage_Slider_blockColor_static_0100
      * @tc.desc     ArkUX_Stage_Slider_blockColor_static_0100
@@ -254,7 +262,8 @@ it('ArkUX_Stage_Slider_blockColor_static_0100', Level.LEVEL0, async (done: () =>
 
    
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_Slider_trackColor_static_0100
      * @tc.name     ArkUX_Stage_Slider_trackColor_static_0100
      * @tc.desc     ArkUX_Stage_Slider_trackColor_static_0100
@@ -279,7 +288,8 @@ it('ArkUX_Stage_Slider_trackColor_static_0100', Level.LEVEL0, async (done: () =>
 
     
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_Slider_selectedColor_static_0100
      * @tc.name     ArkUX_Stage_Slider_selectedColor_static_0100
      * @tc.desc     ArkUX_Stage_Slider_selectedColor_static_0100
@@ -304,7 +314,8 @@ it('ArkUX_Stage_Slider_selectedColor_static_0100', Level.LEVEL0, async (done: ()
 
    
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_Slider_showSteps_static_0100
      * @tc.name     ArkUX_Stage_Slider_showSteps_static_0100
      * @tc.desc     ArkUX_Stage_Slider_showSteps_static_0100
@@ -329,7 +340,8 @@ it('ArkUX_Stage_Slider_showSteps_static_0100', Level.LEVEL0, async (done: () => 
 
     
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_Slider_showTips_static_0100
      * @tc.name     ArkUX_Stage_Slider_showTips_static_0100
      * @tc.desc     ArkUX_Stage_Slider_showTips_static_0100
@@ -354,7 +366,8 @@ it('ArkUX_Stage_Slider_showTips_static_0100', Level.LEVEL0, async (done: () => v
 
    
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_Slider_trackThickness_static_0100
      * @tc.name     ArkUX_Stage_Slider_trackThickness_static_0100
      * @tc.desc     ArkUX_Stage_Slider_trackThickness_static_0100

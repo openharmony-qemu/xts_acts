@@ -82,7 +82,8 @@ export default function provideParent4() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   provideParentFourTest_static_0100
      * @tc.name     provideParentFourTest_static_0100
      * @tc.desc     provideParentFourTest_static_0100

@@ -52,7 +52,8 @@ export default function TextClockJsunit() {
 
   
     
-    /*
+    
+/**
      * @tc.number   TextClock_static_0100
      * @tc.name     TextClock_static_0100
      * @tc.desc     TextClock_static_0100
@@ -72,7 +73,8 @@ it('TextClock_static_0100', Level.LEVEL0, async (done: () => void): Promise<void
 
    
     
-    /*
+    
+/**
      * @tc.number   TextClock_static_0200
      * @tc.name     TextClock_static_0200
      * @tc.desc     TextClock_static_0200
@@ -91,7 +93,8 @@ it('TextClock_static_0200', Level.LEVEL0, async (done: () => void): Promise<void
 
   
     
-    /*
+    
+/**
      * @tc.number   TextClock_static_0300
      * @tc.name     TextClock_static_0300
      * @tc.desc     TextClock_static_0300
@@ -110,7 +113,8 @@ it('TextClock_static_0300', Level.LEVEL0, async (done: () => void): Promise<void
 
    
     
-    /*
+    
+/**
      * @tc.number   TextClock_static_0400
      * @tc.name     TextClock_static_0400
      * @tc.desc     TextClock_static_0400
@@ -130,7 +134,8 @@ it('TextClock_static_0400', Level.LEVEL0, async (done: () => void): Promise<void
 
    
     
-    /*
+    
+/**
      * @tc.number   TextClock_static_0500
      * @tc.name     TextClock_static_0500
      * @tc.desc     TextClock_static_0500
@@ -149,7 +154,8 @@ it('TextClock_static_0500', Level.LEVEL0, async (done: () => void): Promise<void
 
    
     
-    /*
+    
+/**
      * @tc.number   TextClock_static_0600
      * @tc.name     TextClock_static_0600
      * @tc.desc     TextClock_static_0600

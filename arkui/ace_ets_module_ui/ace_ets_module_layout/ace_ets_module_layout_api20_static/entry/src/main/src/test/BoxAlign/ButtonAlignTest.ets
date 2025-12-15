@@ -78,7 +78,8 @@ export default function ButtonAlignTest() {
     });
 
 
-    /*
+    
+/**
      * @tc.number   ButtonAlignTest_static_0100
      * @tc.name     ButtonAlignTest_static_0100
      * @tc.desc     ButtonAlignTest_static_0100

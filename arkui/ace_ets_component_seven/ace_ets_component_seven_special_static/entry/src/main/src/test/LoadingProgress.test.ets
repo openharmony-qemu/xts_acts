@@ -50,7 +50,8 @@ export default function loadingProgressJsunit() {
 
     
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_loadingProgress_attrs_static_0100
      * @tc.name     ArkUX_Stage_loadingProgress_attrs_static_0100
      * @tc.desc     ArkUX_Stage_loadingProgress_attrs_static_0100
@@ -74,7 +75,8 @@ it('ArkUX_Stage_loadingProgress_attrs_static_0100', Level.LEVEL0, async (done: (
 
    
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_loadingProgress_attrs_static_0101
      * @tc.name     ArkUX_Stage_loadingProgress_attrs_static_0101
      * @tc.desc     ArkUX_Stage_loadingProgress_attrs_static_0101

@@ -55,7 +55,8 @@ export default function shortcutKeyJsunit() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   ArkUI_Shortcut_Key_0100
      * @tc.name     ArkUI_Shortcut_Key_0100
      * @tc.desc     ArkUI_Shortcut_Key_0100

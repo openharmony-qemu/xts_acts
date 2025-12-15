@@ -76,13 +76,14 @@ export default function BounceSymbolEffectTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   BounceSymbolEffectTest_static_001
      * @tc.name     BounceSymbolEffectTest_static_001
      * @tc.desc     BounceSymbolEffectTest_static_001
      * @tc.level    Level.LEVEL1
      */
-    it('BounceSymbolEffectTest_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('BounceSymbolEffectTest_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[BounceSymbolEffectTest_001] START');
       let strJson: string = inspector.getInspectorByKey('SymbolGlyph_1');
       await CommonFunc.sleep(200);
@@ -98,13 +99,14 @@ export default function BounceSymbolEffectTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   BounceSymbolEffectTest_static_002
      * @tc.name     BounceSymbolEffectTest_static_002
      * @tc.desc     BounceSymbolEffectTest_static_002
      * @tc.level    Level.LEVEL1
      */
-    it('BounceSymbolEffectTest_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('BounceSymbolEffectTest_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[BounceSymbolEffectTest_002] START');
 
       await CommonFunc.sleep(1000);
@@ -122,13 +124,14 @@ export default function BounceSymbolEffectTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   BounceSymbolEffectTest_static_003
      * @tc.name     BounceSymbolEffectTest_static_003
      * @tc.desc     BounceSymbolEffectTest_static_003
      * @tc.level    Level.LEVEL1
      */
-    it('BounceSymbolEffectTest_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('BounceSymbolEffectTest_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[BounceSymbolEffectTest_003] START');
       let strJson: string = inspector.getInspectorByKey('SymbolGlyph_3');
       await CommonFunc.sleep(200);
@@ -144,13 +147,14 @@ export default function BounceSymbolEffectTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   BounceSymbolEffectTest_static_004
      * @tc.name     BounceSymbolEffectTest_static_004
      * @tc.desc     BounceSymbolEffectTest_static_004
      * @tc.level    Level.LEVEL1
      */
-    it('BounceSymbolEffectTest_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('BounceSymbolEffectTest_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[BounceSymbolEffectTest_004] START');
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('SymbolGlyph_4');
@@ -167,13 +171,14 @@ export default function BounceSymbolEffectTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   BounceSymbolEffectTest_static_005
      * @tc.name     BounceSymbolEffectTest_static_005
      * @tc.desc     BounceSymbolEffectTest_static_005
      * @tc.level    Level.LEVEL1
      */
-    it('BounceSymbolEffectTest_static_005', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('BounceSymbolEffectTest_static_005', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[BounceSymbolEffectTest_005] START');
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('SymbolGlyph_5');

@@ -82,7 +82,8 @@ export default function provideComponent1() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   provideComponentOneTest_static_0100
      * @tc.name     provideComponentOneTest_static_0100
      * @tc.desc     provideComponentOneTest_static_0100

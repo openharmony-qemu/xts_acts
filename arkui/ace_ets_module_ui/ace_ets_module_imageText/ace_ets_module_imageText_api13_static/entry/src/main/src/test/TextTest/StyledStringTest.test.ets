@@ -78,13 +78,15 @@ export default function StyledStringUrl() {
     });
 
 
-    /*
-         * @tc.number   StyledString_static_0100
-         * @tc.name     StyledString_static_0100
-         * @tc.desc     StyledString_static_0100
-         * @tc.level    Level.LEVEL2
-         */
-    it('StyledString_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    
+    
+/**
+     * @tc.number   StyledString_static_0100
+     * @tc.name     StyledString_static_0100
+     * @tc.desc     StyledString_static_0100
+     * @tc.level    Level.LEVEL2
+     */
+it('StyledString_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[StyledString_static_0100] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);

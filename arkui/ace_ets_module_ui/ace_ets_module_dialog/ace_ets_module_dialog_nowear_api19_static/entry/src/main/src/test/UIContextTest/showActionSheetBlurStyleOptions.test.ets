@@ -37,7 +37,6 @@ export default function showActionSheetBlurStyleOptionsTest() {
     beforeAll(() => {
       console.info("ShowActionSheetBlurStyleOptionsTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api19.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {
@@ -61,7 +60,8 @@ export default function showActionSheetBlurStyleOptionsTest() {
     
     
     
-    /*
+    
+/**
      * @tc.number   showActionSheetBlurStyleOptionsTest_static_0100
      * @tc.name     showActionSheetBlurStyleOptionsTest_static_0100
      * @tc.desc     showActionSheetBlurStyleOptionsTest_static_0100
@@ -104,7 +104,8 @@ it('showActionSheetBlurStyleOptionsTest_static_0100', TestType.FUNCTION | Size.M
     
     
     
-    /*
+    
+/**
      * @tc.number   showActionSheetBlurStyleOptionsTest_static_0200
      * @tc.name     showActionSheetBlurStyleOptionsTest_static_0200
      * @tc.desc     showActionSheetBlurStyleOptionsTest_static_0200
@@ -137,7 +138,8 @@ it('showActionSheetBlurStyleOptionsTest_static_0200', TestType.FUNCTION | Size.M
     
     
     
-    /*
+    
+/**
      * @tc.number   showActionSheetBlurStyleOptionsTest_static_0300
      * @tc.name     showActionSheetBlurStyleOptionsTest_static_0300
      * @tc.desc     showActionSheetBlurStyleOptionsTest_static_0300

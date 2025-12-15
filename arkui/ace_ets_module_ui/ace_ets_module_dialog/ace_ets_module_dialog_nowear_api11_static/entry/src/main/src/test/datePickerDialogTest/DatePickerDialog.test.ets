@@ -69,13 +69,14 @@ export default function DatePickerDialog() {
 
     
     
-/*
+
+    /**
      * @tc.number   DatePickerDialog_static_0100
      * @tc.name     DatePickerDialog_static_0100
      * @tc.desc     DatePickerDialog_static_0100
      * @tc.level    Level.LEVEL2
      */
-    it('DatePickerDialog_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('DatePickerDialog_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('DatePickerDialog_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

@@ -65,6 +65,7 @@ export default function selectOnSelectJsunit() {
     
     
 
+
 /**
      * @tc.number   testselectOnSelect_static_0001
      * @tc.name     testselectOnSelect_static_0001
@@ -86,6 +87,7 @@ it('testselectOnSelect_static_0001', Level.LEVEL1, async () => {
 
     
     
+
 
 /**
      * @tc.number   testselectOnSelect_static_0002

@@ -80,7 +80,8 @@ export default function FlexLayoutPolicyTest() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   FlexLayoutPolicyTest_static_0100
      * @tc.name     FlexLayoutPolicyTest_static_0100
      * @tc.desc     FlexLayoutPolicyTest_static_0100

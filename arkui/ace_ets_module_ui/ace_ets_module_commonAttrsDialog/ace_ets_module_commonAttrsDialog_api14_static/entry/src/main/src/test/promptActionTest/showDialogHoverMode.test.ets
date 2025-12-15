@@ -76,13 +76,14 @@ export default function showDialogHoverMode() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   showDialogHoverMode_0100
      * @tc.name     showDialogHoverMode_0100
      * @tc.desc     showDialogHoverMode_0100
      * @tc.level    Level.LEVEL0
      */
-    it('showDialogHoverMode_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('showDialogHoverMode_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('showDialogHoverMode_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -106,13 +107,14 @@ export default function showDialogHoverMode() {
       done();
     });
     
-    /*
+    
+    /**
      * @tc.number   showDialogHoverMode_0200
      * @tc.name     showDialogHoverMode_0200
      * @tc.desc     showDialogHoverMode_0200
      * @tc.level    Level.LEVEL0
      */
-    it('showDialogHoverMode_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('showDialogHoverMode_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('showDialogHoverMode_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -140,13 +142,14 @@ export default function showDialogHoverMode() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   showDialogHoverMode_0300
      * @tc.name     showDialogHoverMode_0300
      * @tc.desc     showDialogHoverMode_0300
      * @tc.level    Level.LEVEL0
      */
-    it('showDialogHoverMode_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('showDialogHoverMode_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('showDialogHoverMode_0300 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -174,13 +177,14 @@ export default function showDialogHoverMode() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   showDialogHoverMode_0400
      * @tc.name     showDialogHoverMode_0400
      * @tc.desc     showDialogHoverMode_0400
      * @tc.level    Level.LEVEL0
      */
-    it('showDialogHoverMode_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('showDialogHoverMode_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('showDialogHoverMode_0400 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -211,13 +215,14 @@ export default function showDialogHoverMode() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   showDialogHoverMode_0500
      * @tc.name     showDialogHoverMode_0500
      * @tc.desc     showDialogHoverMode_0500
      * @tc.level    Level.LEVEL0
      */
-    it('showDialogHoverMode_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('showDialogHoverMode_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id('init'));
@@ -249,13 +254,14 @@ export default function showDialogHoverMode() {
       done();
     });
     
-    /*
+    
+    /**
      * @tc.number   showDialogHoverMode_0600
      * @tc.name     showDialogHoverMode_0600
      * @tc.desc     showDialogHoverMode_0600
      * @tc.level    Level.LEVEL0
      */
-    it('showDialogHoverMode_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('showDialogHoverMode_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('showDialogHoverMode_0600 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

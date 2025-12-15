@@ -64,13 +64,14 @@ export default function aboutToDisappearFalse() {
       }
     });
     
-    /*
+    
+    /**
      * @tc.number   aboutToDisappearFalse_static_0100
      * @tc.name     aboutToDisappearFalse_static_0100
      * @tc.desc     aboutToDisappearFalse_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('aboutToDisappearFalse_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('aboutToDisappearFalse_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('aboutToDisappearFalse_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

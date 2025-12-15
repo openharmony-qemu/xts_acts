@@ -51,7 +51,8 @@ export default function toggleJsunit() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   ToggleJsunit001
      * @tc.name     ToggleJsunit001
      * @tc.desc     ToggleJsunit001
@@ -69,7 +70,8 @@ it('ToggleJsunit001', Level.LEVEL0, async (done: () => void): Promise<void> => {
     });
 
     
-    /*
+    
+/**
      * @tc.number   ToggleJsunit002
      * @tc.name     ToggleJsunit002
      * @tc.desc     ToggleJsunit002

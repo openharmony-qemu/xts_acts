@@ -79,13 +79,14 @@ export default function TextOnChangeOptionsTest() {
     });
 
 
-    /*
-         * @tc.number   TextOnChangeOptionsTest_static_0001
-         * @tc.name     TextOnChangeOptionsTest_static_0001
-         * @tc.desc     TextOnChangeOptionsTest_static_0001
-         * @tc.level    Level.LEVEL1
-         */
-    it('TextOnChangeOptionsTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    
+    /**
+     * @tc.number   TextOnChangeOptionsTest_static_0001
+     * @tc.name     TextOnChangeOptionsTest_static_0001
+     * @tc.desc     TextOnChangeOptionsTest_static_0001
+     * @tc.level    Level.LEVEL1
+     */
+it('TextOnChangeOptionsTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('TextOnChangeOptionsTest TextOnChangeOptionsTest0001 START');
       await CommonFunc.sleep(1000);
@@ -146,13 +147,14 @@ export default function TextOnChangeOptionsTest() {
     });
 
 
-    /*
-         * @tc.number   TextOnChangeOptionsTest_static_0002
-         * @tc.name     TextOnChangeOptionsTest_static_0002
-         * @tc.desc     TextOnChangeOptionsTest_static_0002
-         * @tc.level    Level.LEVEL1
-         */
-    it('TextOnChangeOptionsTest_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    
+    /**
+     * @tc.number   TextOnChangeOptionsTest_static_0002
+     * @tc.name     TextOnChangeOptionsTest_static_0002
+     * @tc.desc     TextOnChangeOptionsTest_static_0002
+     * @tc.level    Level.LEVEL1
+     */
+it('TextOnChangeOptionsTest_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('TextOnChangeOptionsTest TextOnChangeOptionsTest0002 START');
 
@@ -213,13 +215,14 @@ export default function TextOnChangeOptionsTest() {
     });
 
 
-    /*
-         * @tc.number   TextOnChangeOptionsTest_static_0003
-         * @tc.name     TextOnChangeOptionsTest_static_0003
-         * @tc.desc     TextOnChangeOptionsTest_static_0003
-         * @tc.level    Level.LEVEL1
-         */
-    it('TextOnChangeOptionsTest_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    
+    /**
+     * @tc.number   TextOnChangeOptionsTest_static_0003
+     * @tc.name     TextOnChangeOptionsTest_static_0003
+     * @tc.desc     TextOnChangeOptionsTest_static_0003
+     * @tc.level    Level.LEVEL1
+     */
+it('TextOnChangeOptionsTest_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('TextOnChangeOptionsTest TextOnChangeOptionsTest0003 START');
       await CommonFunc.sleep(1000);
@@ -280,13 +283,14 @@ export default function TextOnChangeOptionsTest() {
     });
 
 
-    /*
-         * @tc.number   TextOnChangeOptionsTest_static_0004
-         * @tc.name     TextOnChangeOptionsTest_static_0004
-         * @tc.desc     TextOnChangeOptionsTest_static_0004
-         * @tc.level    Level.LEVEL1
-         */
-    it('TextOnChangeOptionsTest_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    
+    /**
+     * @tc.number   TextOnChangeOptionsTest_static_0004
+     * @tc.name     TextOnChangeOptionsTest_static_0004
+     * @tc.desc     TextOnChangeOptionsTest_static_0004
+     * @tc.level    Level.LEVEL1
+     */
+it('TextOnChangeOptionsTest_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('TextOnChangeOptionsTest TextOnChangeOptionsTest0004 START');
 
@@ -347,13 +351,14 @@ export default function TextOnChangeOptionsTest() {
     });
 
 
-    /*
-         * @tc.number   TextOnChangeOptionsTest_static_0005
-         * @tc.name     TextOnChangeOptionsTest_static_0005
-         * @tc.desc     TextOnChangeOptionsTest_static_0005
-         * @tc.level    Level.LEVEL1
-         */
-    it('TextOnChangeOptionsTest_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    
+    /**
+     * @tc.number   TextOnChangeOptionsTest_static_0005
+     * @tc.name     TextOnChangeOptionsTest_static_0005
+     * @tc.desc     TextOnChangeOptionsTest_static_0005
+     * @tc.level    Level.LEVEL1
+     */
+it('TextOnChangeOptionsTest_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('TextOnChangeOptionsTest TextOnChangeOptionsTest0005 START');
       await CommonFunc.sleep(1000);
@@ -414,13 +419,14 @@ export default function TextOnChangeOptionsTest() {
     });
 
 
-    /*
-         * @tc.number   TextOnChangeOptionsTest_static_0006
-         * @tc.name     TextOnChangeOptionsTest_static_0006
-         * @tc.desc     TextOnChangeOptionsTest_static_0006
-         * @tc.level    Level.LEVEL1
-         */
-    it('TextOnChangeOptionsTest_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    
+    /**
+     * @tc.number   TextOnChangeOptionsTest_static_0006
+     * @tc.name     TextOnChangeOptionsTest_static_0006
+     * @tc.desc     TextOnChangeOptionsTest_static_0006
+     * @tc.level    Level.LEVEL1
+     */
+it('TextOnChangeOptionsTest_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('TextOnChangeOptionsTest TextOnChangeOptionsTest0006 START');
 

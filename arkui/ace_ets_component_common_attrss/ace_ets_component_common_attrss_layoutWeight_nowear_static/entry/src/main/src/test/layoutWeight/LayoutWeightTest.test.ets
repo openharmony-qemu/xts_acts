@@ -33,11 +33,14 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 export default function layoutWeightTest() {
+  console.info("layoutWeightTest beforeAll start 11111");
   await UtilsTest.msSleep(4000)
   await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.layoutWeight.nowear.test.static", "EntryAbility")
   await UtilsTest.msSleep(4000)
 
-  const uiContext = AppStorage.get<UIContext>('uiContent')!
+  console.info("layoutWeightTest beforeAll start 222222222222222");
+  let uiContext = AppStorage.get<UIContext>('uiContext')!
+  console.info("layoutWeightTest beforeAll start 33333333333333");
   let supportView: Array<string> = new Array<string>(
     'Select',
     'Stepper',

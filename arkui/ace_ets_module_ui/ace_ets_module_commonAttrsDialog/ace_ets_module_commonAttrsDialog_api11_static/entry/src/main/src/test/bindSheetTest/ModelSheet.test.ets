@@ -76,13 +76,14 @@ export default function ModelSheetTest() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   ArkUX_Model_Visual_static_0150
      * @tc.name     ArkUX_Model_Visual_static_0150
      * @tc.desc     ArkUX_Model_Visual_static_0150
      * @tc.level    Level.LEVEL0
      */
-    it('ArkUX_Model_Visual_static_0150', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUX_Model_Visual_static_0150', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Model_Visual_0150 START');
       try {
         let indexEvent: emitter.InnerEvent = {
@@ -120,13 +121,14 @@ export default function ModelSheetTest() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   ArkUX_Model_Visual_static_0160
      * @tc.name     ArkUX_Model_Visual_static_0160
      * @tc.desc     ArkUX_Model_Visual_static_0160
      * @tc.level    Level.LEVEL0
      */
-    it('ArkUX_Model_Visual_static_0160', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUX_Model_Visual_static_0160', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Model_Visual_0160 START');
       try {
         let indexEvent: emitter.InnerEvent = {
@@ -164,13 +166,14 @@ export default function ModelSheetTest() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   ArkUX_Model_Visual_static_0170
      * @tc.name     ArkUX_Model_Visual_static_0170
      * @tc.desc     ArkUX_Model_Visual_static_0170
      * @tc.level    Level.LEVEL0
      */
-    it('ArkUX_Model_Visual_static_0170', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUX_Model_Visual_static_0170', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Model_Visual_0170 START');
       try {
         let indexEvent: emitter.InnerEvent = {
@@ -207,13 +210,14 @@ export default function ModelSheetTest() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   ArkUX_Model_Visual_static_0180
      * @tc.name     ArkUX_Model_Visual_static_0180
      * @tc.desc     ArkUX_Model_Visual_static_0180
      * @tc.level    Level.LEVEL0
      */
-    it('ArkUX_Model_Visual_static_0180', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUX_Model_Visual_static_0180', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Model_Visual_0180 START');
       try {
         let indexEvent: emitter.InnerEvent = {
@@ -249,13 +253,14 @@ export default function ModelSheetTest() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   ArkUX_Model_Visual_static_0190
      * @tc.name     ArkUX_Model_Visual_static_0190
      * @tc.desc     ArkUX_Model_Visual_static_0190
      * @tc.level    Level.LEVEL0
      */
-    it('ArkUX_Model_Visual_static_0190', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUX_Model_Visual_static_0190', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Model_Visual_0190 START');
       try {
         let indexEvent: emitter.InnerEvent = {
@@ -293,13 +298,14 @@ export default function ModelSheetTest() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   ArkUX_Model_Visual_static_0200
      * @tc.name     ArkUX_Model_Visual_static_0200
      * @tc.desc     ArkUX_Model_Visual_static_0200
      * @tc.level    Level.LEVEL0
      */
-    it('ArkUX_Model_Visual_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUX_Model_Visual_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Model_Visual_0200 START');
       try {
         let indexEvent: emitter.InnerEvent = {
@@ -336,13 +342,14 @@ export default function ModelSheetTest() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   ArkUX_Model_Visual_static_0210
      * @tc.name     ArkUX_Model_Visual_static_0210
      * @tc.desc     ArkUX_Model_Visual_static_0210
      * @tc.level    Level.LEVEL0
      */
-    it('ArkUX_Model_Visual_static_0210', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUX_Model_Visual_static_0210', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Model_Visual_0210 START');
       try {
         let indexEvent: emitter.InnerEvent = {
@@ -379,13 +386,14 @@ export default function ModelSheetTest() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   ArkUX_Model_Visual_static_0220
      * @tc.name     ArkUX_Model_Visual_static_0220
      * @tc.desc     ArkUX_Model_Visual_static_0220
      * @tc.level    Level.LEVEL0
      */
-    it('ArkUX_Model_Visual_static_0220', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUX_Model_Visual_static_0220', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Model_Visual_0220 START');
       try {
         let indexEvent: emitter.InnerEvent = {

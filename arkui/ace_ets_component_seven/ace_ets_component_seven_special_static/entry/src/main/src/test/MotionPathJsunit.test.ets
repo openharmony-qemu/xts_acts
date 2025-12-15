@@ -55,7 +55,8 @@ export default function motionPathJsunit() {
 
    
     
-    /*
+    
+/**
      * @tc.number   motionPathTest_static_0100
      * @tc.name     motionPathTest_static_0100
      * @tc.desc     motionPathTest_static_0100
@@ -82,7 +83,7 @@ it('motionPathTest_static_0100', Level.LEVEL0, async (done: () => void): Promise
       console.info("motionPathTest_static_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('button', 10, "")));
       await Utils.sleep(1000);
       console.info('motionPathTest_static_0100 END');
-      // done();
+      done();
     });
   })
 }

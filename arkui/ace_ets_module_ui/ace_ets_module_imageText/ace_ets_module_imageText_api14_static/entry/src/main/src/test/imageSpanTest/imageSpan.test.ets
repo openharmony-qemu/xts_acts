@@ -68,13 +68,14 @@ export default function imageSpanJsunit() {
 
        
     
-/*
+
+    /**
      * @tc.number   imageSpanJsunit_static_0100
      * @tc.name     imageSpanJsunit_static_0100
      * @tc.desc     imageSpanJsunit_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('imageSpanJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('imageSpanJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageSpanJsunit_0100 START');
       await CommonFunc.sleep(1000);
       // get the image component and test attribute

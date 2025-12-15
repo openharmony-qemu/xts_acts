@@ -39,7 +39,7 @@ import {
 import {
   State,
   Link,
-  Prop,Consume,Provide
+  Prop,Consume,Provide,UIUtils
 } from '@ohos.arkui.stateManagement'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -74,7 +74,7 @@ struct Ancestors_AI {
 
   build() {
     Column() {
-      Text("count type of " + JSON.stringify(CommonFunc.getType(this.Array)) + " number is " + JSON.stringify(this.Array))
+      Text("count type of " + JSON.stringify(CommonFunc.getType(this.Array)) + " number is " + JSON.stringify(UIUtils.getTarget(this.Array)))
         .fontSize(9).key('ProvideArray').height('5%')
 
       Text("count type of " + JSON.stringify(CommonFunc.getType(this.Array)) + " number is " + AppStorage.get<common.UIAbilityContext>('UIAbilityContext')?.resourceManager.getStringSync($r('app.string.number').id))

@@ -60,13 +60,14 @@ export default function nodeWaterFlow() {
 
 
     
-/*
+
+    /**
      * @tc.number   nodeWaterFlow_static_0100
      * @tc.name     nodeWaterFlow_static_0100
      * @tc.desc     nodeWaterFlow_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('nodeWaterFlow_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('nodeWaterFlow_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('nodeWaterFlow_0100 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -89,13 +90,14 @@ export default function nodeWaterFlow() {
 
 
     
-/*
+
+    /**
      * @tc.number   nodeWaterFlow_static_0200
      * @tc.name     nodeWaterFlow_static_0200
      * @tc.desc     nodeWaterFlow_static_0200
      * @tc.level    Level.LEVEL0
      */
-    it('nodeWaterFlow_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('nodeWaterFlow_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('nodeWaterFlow_0200 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

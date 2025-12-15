@@ -54,7 +54,8 @@ export default function calendarPickerDialogStartEndTest() {
 
     
 
-    /*
+    
+/**
      * @tc.number   CalendarPickerDialog_StartEnd_static_001
      * @tc.name     CalendarPickerDialog_StartEnd_static_001
      * @tc.desc     CalendarPickerDialog_StartEnd_static_001
@@ -83,7 +84,8 @@ it('CalendarPickerDialog_StartEnd_static_001', Level.LEVEL1, async (done: () => 
     });
 
     
-    /*
+    
+/**
      * @tc.number   CalendarPickerDialog_StartEnd_static_002
      * @tc.name     CalendarPickerDialog_StartEnd_static_002
      * @tc.desc     CalendarPickerDialog_StartEnd_static_002
@@ -111,7 +113,8 @@ it('CalendarPickerDialog_StartEnd_static_002', Level.LEVEL1, async (done: () => 
     });
 
     
-    /*
+    
+/**
      * @tc.number   CalendarPickerDialog_StartEnd_static_003
      * @tc.name     CalendarPickerDialog_StartEnd_static_003
      * @tc.desc     CalendarPickerDialog_StartEnd_static_003
@@ -140,7 +143,8 @@ it('CalendarPickerDialog_StartEnd_static_003', Level.LEVEL1, async (done: () => 
     });
 
     
-    /*
+    
+/**
      * @tc.number   CalendarPickerDialog_StartEnd_static_004
      * @tc.name     CalendarPickerDialog_StartEnd_static_004
      * @tc.desc     CalendarPickerDialog_StartEnd_static_004
@@ -169,7 +173,8 @@ it('CalendarPickerDialog_StartEnd_static_004', Level.LEVEL1, async (done: () => 
     });
 
     
-    /*
+    
+/**
      * @tc.number   CalendarPickerDialog_StartEnd_static_005
      * @tc.name     CalendarPickerDialog_StartEnd_static_005
      * @tc.desc     CalendarPickerDialog_StartEnd_static_005

@@ -62,6 +62,7 @@ export default function SelectTest() {
 
     
     
+
 /**
      * @tc.number   ArkUX_Select_Visual_0030
      * @tc.name     ArkUX_Select_Visual_0030
@@ -91,6 +92,7 @@ it('ArkUX_Select_Visual_0030', Level.LEVEL1, async (done: () => void): Promise<v
 
     
     
+
 /**
      * @tc.number   ArkUX_Select_Visual_0040
      * @tc.name     ArkUX_Select_Visual_0040
@@ -120,6 +122,7 @@ it('ArkUX_Select_Visual_0040', Level.LEVEL1, async (done: () => void): Promise<v
 
     
     
+
 /**
      * @tc.number   ArkUX_Select_Visual_0050
      * @tc.name     ArkUX_Select_Visual_0050
@@ -149,6 +152,7 @@ it('ArkUX_Select_Visual_0050', Level.LEVEL1, async (done: () => void): Promise<v
 
     
     
+
 /**
      * @tc.number   ArkUX_Select_Visual_0060
      * @tc.name     ArkUX_Select_Visual_0060
@@ -178,6 +182,7 @@ it('ArkUX_Select_Visual_0060', Level.LEVEL1, async (done: () => void): Promise<v
 
     
     
+
 /**
      * @tc.number   ArkUX_Select_Visual_0070
      * @tc.name     ArkUX_Select_Visual_0070

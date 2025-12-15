@@ -243,7 +243,8 @@ export default function GridRowNoColumnsTest() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   GridRowNoColumnsTest_static_0100
      * @tc.name     GridRowNoColumnsTest_static_0100
      * @tc.desc     GridRowNoColumnsTest_static_0100

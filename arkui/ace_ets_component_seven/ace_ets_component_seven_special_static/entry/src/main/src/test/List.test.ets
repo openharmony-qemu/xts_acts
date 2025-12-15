@@ -51,7 +51,8 @@ export default function list() {
 
     
     
-    /*
+    
+/**
      * @tc.number   ListJsunit_static_0100
      * @tc.name     ListJsunit_static_0100
      * @tc.desc     ListJsunit_static_0100
@@ -72,7 +73,8 @@ it('ListJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
 
    
     
-    /*
+    
+/**
      * @tc.number   ListJsunit_static_0101
      * @tc.name     ListJsunit_static_0101
      * @tc.desc     ListJsunit_static_0101
@@ -91,7 +93,8 @@ it('ListJsunit_static_0101', Level.LEVEL0, async (done: () => void): Promise<voi
 
    
     
-    /*
+    
+/**
      * @tc.number   ListJsunit_static_0102
      * @tc.name     ListJsunit_static_0102
      * @tc.desc     ListJsunit_static_0102
@@ -110,7 +113,8 @@ it('ListJsunit_static_0102', Level.LEVEL0, async (done: () => void): Promise<voi
 
     
     
-    /*
+    
+/**
      * @tc.number   ListJsunit_static_0103
      * @tc.name     ListJsunit_static_0103
      * @tc.desc     ListJsunit_static_0103
@@ -129,7 +133,8 @@ it('ListJsunit_static_0103', Level.LEVEL0, async (done: () => void): Promise<voi
 
     
     
-    /*
+    
+/**
      * @tc.number   ListJsunit_static_0104
      * @tc.name     ListJsunit_static_0104
      * @tc.desc     ListJsunit_static_0104
@@ -149,7 +154,8 @@ it('ListJsunit_static_0104', Level.LEVEL0, async (done: () => void): Promise<voi
 
     
     
-    /*
+    
+/**
      * @tc.number   ListJsunit_static_0105
      * @tc.name     ListJsunit_static_0105
      * @tc.desc     ListJsunit_static_0105
@@ -169,7 +175,8 @@ it('ListJsunit_static_0105', Level.LEVEL0, async (done: () => void): Promise<voi
 
     
     
-    /*
+    
+/**
      * @tc.number   ListJsunit_static_0106
      * @tc.name     ListJsunit_static_0106
      * @tc.desc     ListJsunit_static_0106
@@ -188,7 +195,8 @@ it('ListJsunit_static_0106', Level.LEVEL0, async (done: () => void): Promise<voi
 
    
     
-    /*
+    
+/**
      * @tc.number   ListJsunit_static_0107
      * @tc.name     ListJsunit_static_0107
      * @tc.desc     ListJsunit_static_0107
@@ -206,7 +214,8 @@ it('ListJsunit_static_0107', Level.LEVEL0, async (done: () => void): Promise<voi
     });
 
     
-    /*
+    
+/**
      * @tc.number   ListJsunit_static_0108
      * @tc.name     ListJsunit_static_0108
      * @tc.desc     ListJsunit_static_0108
@@ -225,7 +234,8 @@ it('ListJsunit_static_0108', Level.LEVEL0, async (done: () => void): Promise<voi
 
    
     
-    /*
+    
+/**
      * @tc.number   ListJsunit_static_0109
      * @tc.name     ListJsunit_static_0109
      * @tc.desc     ListJsunit_static_0109
@@ -244,7 +254,8 @@ it('ListJsunit_static_0109', Level.LEVEL0, async (done: () => void): Promise<voi
 
    
     
-    /*
+    
+/**
      * @tc.number   ListJsunit_static_0110
      * @tc.name     ListJsunit_static_0110
      * @tc.desc     ListJsunit_static_0110
@@ -265,7 +276,8 @@ it('ListJsunit_static_0110', Level.LEVEL0, async (done: () => void): Promise<voi
     });
 
     
-    /*
+    
+/**
      * @tc.number   ListJsunit_static_0112
      * @tc.name     ListJsunit_static_0112
      * @tc.desc     ListJsunit_static_0112
@@ -284,7 +296,8 @@ it('ListJsunit_static_0112', Level.LEVEL0, async (done: () => void): Promise<voi
 
     
     
-    /*
+    
+/**
      * @tc.number   ListJsunit_static_0113
      * @tc.name     ListJsunit_static_0113
      * @tc.desc     ListJsunit_static_0113
@@ -303,7 +316,8 @@ it('ListJsunit_static_0113', Level.LEVEL0, async (done: () => void): Promise<voi
 
     
     
-    /*
+    
+/**
      * @tc.number   ListJsunit_static_0114
      * @tc.name     ListJsunit_static_0114
      * @tc.desc     ListJsunit_static_0114
@@ -322,7 +336,8 @@ it('ListJsunit_static_0114', Level.LEVEL0, async (done: () => void): Promise<voi
 
    
     
-    /*
+    
+/**
      * @tc.number   ListJsunit_static_0115
      * @tc.name     ListJsunit_static_0115
      * @tc.desc     ListJsunit_static_0115

@@ -79,7 +79,8 @@ export default function LinkNumber() {
       console.info("LinkNumber beforeEach end");
     });
     
-    /*
+    
+/**
      * @tc.number   LinkNumber_static_0100
      * @tc.name     LinkNumber_static_0100
      * @tc.desc     LinkNumber_static_0100
@@ -101,7 +102,8 @@ it('LinkNumber_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   LinkNumber_static_0200
      * @tc.name     LinkNumber_static_0200
      * @tc.desc     LinkNumber_static_0200
@@ -123,11 +125,12 @@ it('LinkNumber_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   LinkNumber_static_0300
      * @tc.name     LinkNumber_static_0300
      * @tc.desc     LinkNumber_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkNumber_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('LinkNumber_static_0100 START');
@@ -145,11 +148,12 @@ it('LinkNumber_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   LinkNumber_static_0400
      * @tc.name     LinkNumber_static_0400
      * @tc.desc     LinkNumber_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkNumber_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('LinkNumber_static_0100 START');
@@ -167,11 +171,12 @@ it('LinkNumber_static_0400', Level.LEVEL0, async (done: () => void): Promise<voi
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   LinkNumber_static_0500
      * @tc.name     LinkNumber_static_0500
      * @tc.desc     LinkNumber_static_0500
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkNumber_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('LinkNumber_static_0100 START');

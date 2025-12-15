@@ -57,13 +57,14 @@ export default function BindPopupTest() {
     })
 
     
-    /*
+    
+    /**
      * @tc.number   bindPopupTest_static_001
      * @tc.name     bindPopupTest_static_001
      * @tc.desc     bindPopupTest_static_001
      * @tc.level    Level.LEVEL0
      */
-    it('bindPopupTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('bindPopupTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       let btn1 = await driver.findComponent(ON.id('bindPopup001'));

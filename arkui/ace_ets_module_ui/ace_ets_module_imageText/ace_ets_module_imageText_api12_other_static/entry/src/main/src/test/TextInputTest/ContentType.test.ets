@@ -71,13 +71,14 @@ export default function ContentTypeTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   ContentTypeTest_static_0010
      * @tc.name     ContentTypeTest_static_0010
      * @tc.desc     ContentTypeTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-    it('ContentTypeTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ContentTypeTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ContentTypeTest_0010 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ContentType_USER_NAME');
@@ -91,13 +92,14 @@ export default function ContentTypeTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   ContentTypeTest_static_0020
      * @tc.name     ContentTypeTest_static_0020
      * @tc.desc     ContentTypeTest_static_0020
      * @tc.level    Level.LEVEL0
      */
-    it('ContentTypeTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ContentTypeTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ContentTypeTest_0020 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ContentType_NEW_PASSWORD');

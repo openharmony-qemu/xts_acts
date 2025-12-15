@@ -55,7 +55,8 @@ export default function router_getStateByUrl5() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   router_getStateByUrl5_static_0100
      * @tc.name     router_getStateByUrl5_static_0100
      * @tc.desc     router_getStateByUrl5_static_0100
@@ -80,7 +81,8 @@ it('router_getStateByUrl5_static_0100', Level.LEVEL3, async (done: () => void): 
     });
 
     
-    /*
+    
+/**
      * @tc.number   router_getStateByUrl5_static_0200
      * @tc.name     router_getStateByUrl5_static_0200
      * @tc.desc     router_getStateByUrl5_static_0200
@@ -106,7 +108,8 @@ it('router_getStateByUrl5_static_0200', Level.LEVEL2, async (done: () => void): 
 
 
     
-    /*
+    
+/**
      * @tc.number   router_getStateByUrl5_static_0300
      * @tc.name     router_getStateByUrl5_static_0300
      * @tc.desc     router_getStateByUrl5_static_0300

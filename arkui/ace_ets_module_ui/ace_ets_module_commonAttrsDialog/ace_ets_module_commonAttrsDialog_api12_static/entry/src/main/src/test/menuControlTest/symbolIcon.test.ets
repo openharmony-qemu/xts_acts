@@ -65,13 +65,14 @@ export default function symbolIcon() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   symbolIcon_static_0100
      * @tc.name     symbolIcon_static_0100
      * @tc.desc     symbolIcon_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('symbolIcon_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('symbolIcon_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('symbolIcon_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

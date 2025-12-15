@@ -80,7 +80,8 @@ export default function StackChildAlignmentTest() {
     afterEach(async () => {
     });
 
-    /*
+    
+/**
      * @tc.number   StackChildAlignmentTest_static_0100
      * @tc.name     StackChildAlignmentTest_static_0100
      * @tc.desc     StackChildAlignmentTest_static_0100

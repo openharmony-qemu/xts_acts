@@ -118,7 +118,7 @@ export default function testsuite() {
   router_getStateByUrl5();//11.13SDK pass:3
   router_back6();//11.13SDK pass:1
   router_back7();//11.13SDK pass:1
-  router_back8();//11.13SDK failed:1 showAlertBeforeBackPage执行后不走后面的逻辑
+  router_back8();//11.13SDK pass:1
   router_back9();//11.13SDK pass:1
   router_back10();//11.13SDK pass:1
   router_back11();//11.13SDK pass:1
@@ -139,11 +139,11 @@ export default function testsuite() {
   replaceUrl13();//11.17SDK pass:1
   replaceUrl14();//11.26SDK pass:1
 
-  replaceNamedRoute2();//11.17SDK pass:1  
+  replaceNamedRoute2();//11.17SDK pass:1
   replaceNamedRoute3();//11.26SDK pass:1
   replaceNamedRoute5();//11.17SDK pass:1
   replaceNamedRoute6();//11.26SDK pass:1
-  replaceNamedRoute8();//11.17SDK failed:1    expect undefined;replaceNamedRoute8_aboutToAppear equals undefined;replaceNamedRoute8_aboutToAppear;replaceNamedRoute8_aboutToAppear
+  replaceNamedRoute8();//11.17SDK pass:1
   replaceNamedRoute9();//11.17SDK pass:1
   replaceNamedRoute10();//11.26SDK pass:1
   replaceNamedRoute12();//11.17SDK pass:1
@@ -163,17 +163,17 @@ export default function testsuite() {
   back11();//11.17SDK pass:1
 
   clear1();//11.26SDK pass:1
-  getLength1();//11.26SDK pass:1
-  getLength2();//11.26SDK pass:1
+  getLength1();//12.09SDK failed:1
+  getLength2();//12.09SDK failed:1
   getLength3();//11.17SDK failed:1 getLength导致cppcrash
   getState1();//11.17SDK pass:1
   getStateByIndex1();//11.17SDK pass:1
 
   pushUrl2();;//11.17SDK pass:1
-  pushUrl3();//11.17SDK  expect  equals 100003,页面显示正常
+  pushUrl3();//12.09SDK pass:1
   pushUrl4();;//11.17SDK pass:1
   pushUrl6();//11.26SDK pass:1
-  pushUrl7();//11.17SDK ui页面点击跳转无反应
+  pushUrl7();//12.09SDK pass:1
   pushUrl8();//11.26SDK pass:1
   pushUrl10();//11.17SDK pass:1
   pushUrl11();//11.17SDK pass:1
@@ -182,7 +182,7 @@ export default function testsuite() {
   pushUrl15();//11.17SDK pass:1
   pushUrl16();//11.17SDK pass:1
   pushUrl18();//11.26SDK pass:1
-  pushUrl19();//11.17SDK ui页面点击跳转无反应
+  pushUrl19();//12.09SDK pass:1
   pushUrl20();//11.26SDK pass:1
   pushUrl22();//11.26SDK pass:1
   pushUrl23();//11.26SDK pass:1
@@ -206,4 +206,7 @@ export default function testsuite() {
   pushNamedRoute22();//11.26SDK pass:1
   pushNamedRoute23();//11.17SDK pass:1
   pushNamedRoute24();//11.26SDK pass:1
+  //
+
+
 }

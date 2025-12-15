@@ -34,7 +34,6 @@ export default function timePickerDialogBackgroundEffectTest() {
     beforeAll(() => {
       console.info("timePickerDialogBackgroundEffectTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api19.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {
@@ -56,7 +55,8 @@ export default function timePickerDialogBackgroundEffectTest() {
     
     
     
-    /*
+    
+/**
      * @tc.number   timePickerDialogBackgroundEffectTest_static_0100
      * @tc.name     timePickerDialogBackgroundEffectTest_static_0100
      * @tc.desc     timePickerDialogBackgroundEffectTest_static_0100
@@ -105,7 +105,8 @@ it('timePickerDialogBackgroundEffectTest_static_0100', TestType.FUNCTION | Size.
     
     
     
-    /*
+    
+/**
      * @tc.number   timePickerDialogBackgroundEffectTest_static_0200
      * @tc.name     timePickerDialogBackgroundEffectTest_static_0200
      * @tc.desc     timePickerDialogBackgroundEffectTest_static_0200
@@ -141,7 +142,8 @@ it('timePickerDialogBackgroundEffectTest_static_0200', TestType.FUNCTION | Size.
     
     
     
-    /*
+    
+/**
      * @tc.number   timePickerDialogBackgroundEffectTest_static_0300
      * @tc.name     timePickerDialogBackgroundEffectTest_static_0300
      * @tc.desc     timePickerDialogBackgroundEffectTest_static_0300

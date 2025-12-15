@@ -68,13 +68,14 @@ export default function MarqueeModifierTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   MarqueeModifierTest_static_0010
      * @tc.name     MarqueeModifierTest_static_0010
      * @tc.desc     MarqueeModifierTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-    it('MarqueeModifierTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('MarqueeModifierTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('MarqueeModifierTest_static_0010 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('MarqueeModifier_get_fontSize');
@@ -88,13 +89,14 @@ export default function MarqueeModifierTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   MarqueeModifierTest_static_0020
      * @tc.name     MarqueeModifierTest_static_0020
      * @tc.desc     MarqueeModifierTest_static_0020
      * @tc.level    Level.LEVEL0
      */
-    it('MarqueeModifierTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('MarqueeModifierTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('MarqueeModifierTest_static_0020 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('MarqueeModifier_get_type');

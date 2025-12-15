@@ -68,13 +68,14 @@ export default function IsShowFalse() {
 
     });
     
-    /*
+    
+    /**
      * @tc.number   IsShowFalse_static_0100
      * @tc.name     IsShowFalse_static_0100
      * @tc.desc     IsShowFalse_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('IsShowFalse_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('IsShowFalse_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('IsShowFalse_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -95,13 +96,14 @@ export default function IsShowFalse() {
       done();
     });
     
-    /*
+    
+    /**
      * @tc.number   IsShowFalse_0200
      * @tc.name     IsShowFalse_0200
      * @tc.desc     IsShowFalse_0200
      * @tc.level    Level.LEVEL0
      */
-    it('IsShowFalse_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('IsShowFalse_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('IsShowFalse_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -119,13 +121,14 @@ export default function IsShowFalse() {
       done();
     });
     
-    /*
+    
+    /**
      * @tc.number   IsShowFalse_0300
      * @tc.name     IsShowFalse_0300
      * @tc.desc     IsShowFalse_0300
      * @tc.level    Level.LEVEL0
      */
-    it('IsShowFalse_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('IsShowFalse_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('IsShowFalse_0300 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

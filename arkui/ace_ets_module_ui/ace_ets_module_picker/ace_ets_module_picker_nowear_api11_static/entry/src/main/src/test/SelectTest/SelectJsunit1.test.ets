@@ -70,6 +70,7 @@ export default function selectJsunit() {
 
     
 
+
 /**
      * @tc.number   selectTest_static_0100
      * @tc.name     selectTest_static_0100
@@ -88,6 +89,7 @@ it('selectTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<voi
     });
 
     
+
 
 /**
      * @tc.number   selectTest_static_0200
@@ -126,6 +128,7 @@ it('selectTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<voi
 
     
 
+
 /**
      * @tc.number   selectTest_static_0300
      * @tc.name     selectTest_static_0300
@@ -151,6 +154,7 @@ it('selectTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<voi
     });
 
     
+
 
 /**
      * @tc.number   selectTest_static_0400
@@ -200,6 +204,7 @@ it('selectTest_static_0400', Level.LEVEL1, async (done: () => void): Promise<voi
 
     
 
+
 /**
      * @tc.number   selectTest_static_0500
      * @tc.name     selectTest_static_0500
@@ -218,6 +223,7 @@ it('selectTest_static_0500', Level.LEVEL1, async (done: () => void): Promise<voi
     });
 
     
+
 
 /**
      * @tc.number   selectTest_static_0600
@@ -253,6 +259,7 @@ it('selectTest_static_0600', Level.LEVEL1, async (done: () => void): Promise<voi
 
     
 
+
 /**
      * @tc.number   selectTest_static_0700
      * @tc.name     selectTest_static_0700
@@ -286,6 +293,7 @@ it('selectTest_static_0700', Level.LEVEL1, async (done: () => void): Promise<voi
     });
 
     
+
 
 /**
      * @tc.number   selectTest_static_0800
@@ -321,6 +329,7 @@ it('selectTest_static_0800', Level.LEVEL1, async (done: () => void): Promise<voi
 
     
 
+
 /**
      * @tc.number   selectTest_static_0900
      * @tc.name     selectTest_static_0900
@@ -354,6 +363,7 @@ it('selectTest_static_0900', Level.LEVEL1, async (done: () => void): Promise<voi
     });
 
     
+
 
 /**
      * @tc.number   selectTest_static_1000

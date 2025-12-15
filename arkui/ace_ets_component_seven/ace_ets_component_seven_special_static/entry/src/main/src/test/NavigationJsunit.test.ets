@@ -61,13 +61,14 @@ export default function navigationJsunit() {
     });
 
 
-    /*
-    * @tc.number   NavigationJsunit_static_1000
-    * @tc.name     NavigationJsunit_static_1000
-    * @tc.desc     NavigationJsunit_static_1000
-    * @tc.level    Level.LEVEL0
-    */
-    it('NavigationJsunit_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    
+    /**
+     * @tc.number   NavigationJsunit_static_1000
+     * @tc.name     NavigationJsunit_static_1000
+     * @tc.desc     NavigationJsunit_static_1000
+     * @tc.level    Level.LEVEL0
+     */
+it('NavigationJsunit_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[NavigationJsunit_static_1000] START');
       let strJson = inspector.getInspectorByKey('navigation1');
       let obj = JSON.parseJsonElement(strJson);
@@ -79,13 +80,14 @@ export default function navigationJsunit() {
     });
 
 
-    /*
-    * @tc.number   NavigationJsunit_static_1001
-    * @tc.name     NavigationJsunit_static_1001
-    * @tc.desc     NavigationJsunit_static_1001
-    * @tc.level    Level.LEVEL0
-    */
-    it('NavigationJsunit_static_1001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    
+    /**
+     * @tc.number   NavigationJsunit_static_1001
+     * @tc.name     NavigationJsunit_static_1001
+     * @tc.desc     NavigationJsunit_static_1001
+     * @tc.level    Level.LEVEL0
+     */
+it('NavigationJsunit_static_1001', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[NavigationJsunit_static_1001] START');
       let strJson = inspector.getInspectorByKey('navigation1');
@@ -98,13 +100,14 @@ export default function navigationJsunit() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   NavigationJsunit_static_1002
      * @tc.name     NavigationJsunit_static_1002
      * @tc.desc     NavigationJsunit_static_1002
      * @tc.level    Level.LEVEL0
      */
-    it('NavigationJsunit_static_1002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('NavigationJsunit_static_1002', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[NavigationJsunit_static_1002] START');
       let strJson = inspector.getInspectorByKey('navigation1');
@@ -117,13 +120,14 @@ export default function navigationJsunit() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   NavigationJsunit_static_1003
      * @tc.name     NavigationJsunit_static_1003
      * @tc.desc     NavigationJsunit_static_1003
      * @tc.level    Level.LEVEL0
      */
-    it('NavigationJsunit_static_1003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('NavigationJsunit_static_1003', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[NavigationJsunit_static_1003] START');
       let strJson = inspector.getInspectorByKey('navigation1');
@@ -136,13 +140,14 @@ export default function navigationJsunit() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   NavigationJsunit_static_1004
      * @tc.name     NavigationJsunit_static_1004
      * @tc.desc     NavigationJsunit_static_1004
      * @tc.level    Level.LEVEL0
      */
-    it('NavigationJsunit_static_1004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('NavigationJsunit_static_1004', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[NavigationJsunit_static_1004] START');
       let strJson = inspector.getInspectorByKey('navigation1');
@@ -155,13 +160,14 @@ export default function navigationJsunit() {
       done();
     });
 
-    /*
+    
+    /**
      * @tc.number   NavigationJsunit_static_1005
      * @tc.name     NavigationJsunit_static_1005
      * @tc.desc     NavigationJsunit_static_1005
      * @tc.level    Level.LEVEL0
      */
-    it('NavigationJsunit_static_1005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('NavigationJsunit_static_1005', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[NavigationJsunit_static_1005] START');
       let strJson = inspector.getInspectorByKey('navigation1');
@@ -174,13 +180,14 @@ export default function navigationJsunit() {
       done();
     });
 
-    /*
+    
+    /**
      * @tc.number   NavigationJsunit_static_1006
      * @tc.name     NavigationJsunit_static_1006
      * @tc.desc     NavigationJsunit_static_1006
      * @tc.level    Level.LEVEL0
      */
-    it('NavigationJsunit_static_1006', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('NavigationJsunit_static_1006', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[NavigationJsunit_static_1006] START');
       let strJson = inspector.getInspectorByKey('navigation1');
@@ -192,13 +199,14 @@ export default function navigationJsunit() {
       done();
     });
 
-    /*
+    
+    /**
      * @tc.number   NavigationJsunit_static_1007
      * @tc.name     NavigationJsunit_static_1007
      * @tc.desc     NavigationJsunit_static_1007
      * @tc.level    Level.LEVEL0
      */
-    it('NavigationJsunit_static_1007', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('NavigationJsunit_static_1007', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[NavigationJsunit_static_1007] START');
       let strJson = inspector.getInspectorByKey('navigation1');
@@ -211,13 +219,14 @@ export default function navigationJsunit() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   NavigationJsunit_static_1008
      * @tc.name     NavigationJsunit_static_1008
      * @tc.desc     NavigationJsunit_static_1008
      * @tc.level    Level.LEVEL0
      */
-    it('NavigationJsunit_static_1008', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('NavigationJsunit_static_1008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[NavigationJsunit_static_1008] START');
       let strJson = inspector.getInspectorByKey('navigation1');
       let obj = JSON.parseJsonElement(strJson);
@@ -229,13 +238,14 @@ export default function navigationJsunit() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   NavigationJsunit_static_1009
      * @tc.name     NavigationJsunit_static_1009
      * @tc.desc     NavigationJsunit_static_1009
      * @tc.level    Level.LEVEL0
      */
-    it('NavigationJsunit_static_1009', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('NavigationJsunit_static_1009', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[NavigationJsunit_static_1009] START');
       let strJson = inspector.getInspectorByKey('navigation1');
@@ -248,13 +258,14 @@ export default function navigationJsunit() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   NavigationJsunit_static_1010
      * @tc.name     NavigationJsunit_static_1010
      * @tc.desc     NavigationJsunit_static_1010
      * @tc.level    Level.LEVEL0
      */
-    it('NavigationJsunit_static_1010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('NavigationJsunit_static_1010', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[NavigationJsunit_static_1010] START');
       let strJson = inspector.getInspectorByKey('navigation1');
@@ -267,13 +278,14 @@ export default function navigationJsunit() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   NavigationJsunit_static_1011
      * @tc.name     NavigationJsunit_static_1011
      * @tc.desc     NavigationJsunit_static_1011
      * @tc.level    Level.LEVEL0
      */
-    it('NavigationJsunit_static_1011', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('NavigationJsunit_static_1011', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[NavigationJsunit_static_1011] START');
       let strJson = inspector.getInspectorByKey('navigation1');

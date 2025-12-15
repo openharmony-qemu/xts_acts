@@ -62,13 +62,14 @@ export default function monopolizeTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   monopolizeTest_static_0100
      * @tc.name     monopolizeTest_static_0100
      * @tc.desc     monopolizeTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('monopolizeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('monopolizeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('monopolizeTest_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

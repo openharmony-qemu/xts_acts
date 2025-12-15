@@ -49,7 +49,8 @@ export default function checkBoxGroupTest() {
 
    
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_CheckboxGroup_static_1000
      * @tc.name     ArkUX_Stage_CheckboxGroup_static_1000
      * @tc.desc     ArkUX_Stage_CheckboxGroup_static_1000
@@ -75,7 +76,8 @@ it('ArkUX_Stage_CheckboxGroup_static_1000', Level.LEVEL0, async (done: () => voi
 
     
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_CheckboxGroup_CheckMarkWidth_static_1001
      * @tc.name     ArkUX_Stage_CheckboxGroup_CheckMarkWidth_static_1001
      * @tc.desc     ArkUX_Stage_CheckboxGroup_CheckMarkWidth_static_1001
@@ -99,7 +101,8 @@ it('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_static_1001', Level.LEVEL0, async (
 
     
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_CheckboxGroup_CheckMarkWidth_static_1002
      * @tc.name     ArkUX_Stage_CheckboxGroup_CheckMarkWidth_static_1002
      * @tc.desc     ArkUX_Stage_CheckboxGroup_CheckMarkWidth_static_1002
@@ -123,7 +126,8 @@ it('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_static_1002', Level.LEVEL0, async (
 
     
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_CheckboxGroup_CheckMarkWidth_static_1003
      * @tc.name     ArkUX_Stage_CheckboxGroup_CheckMarkWidth_static_1003
      * @tc.desc     ArkUX_Stage_CheckboxGroup_CheckMarkWidth_static_1003

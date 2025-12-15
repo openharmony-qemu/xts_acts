@@ -52,13 +52,14 @@ export default function TextPickerDialogJsunit() {
 
 
     
-/*
+
+    /**
      * @tc.number   TextPickerDialogJsunit_static_0100
      * @tc.name     TextPickerDialogJsunit_static_0100
      * @tc.desc     TextPickerDialogJsunit_static_0100
      * @tc.level    Level.LEVEL2
      */
-    it('TextPickerDialogJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('TextPickerDialogJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('TextPickerDialogJsunit_0100 START');
 	    let driver = Driver.create()
       let button = await driver.findComponent(ON.id('TextPickerDialog'));

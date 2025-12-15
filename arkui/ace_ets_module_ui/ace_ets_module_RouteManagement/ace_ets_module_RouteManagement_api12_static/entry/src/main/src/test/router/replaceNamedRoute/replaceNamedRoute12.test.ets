@@ -57,7 +57,8 @@ export default function replaceNamedRoute12() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   replaceNamedRoute12_static_0100
      * @tc.name     replaceNamedRoute12_static_0100
      * @tc.desc     replaceNamedRoute12_static_0100

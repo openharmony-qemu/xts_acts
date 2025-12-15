@@ -101,15 +101,7 @@ struct RichEditorTextStyleDemo {
       }).fontSize(10).height('5%').id('getSpans')
 
       Button('getTypingStyle').onClick((e:ClickEvent) => {
-        this.richEditorTextStyle = {
-          fontWeight: 'medium',
-          fontFamily: 'MiSans-Bold',
-          fontColor: Color.Blue,
-          fontSize: 50,
-          fontStyle: FontStyle.Italic,
-          decoration: { type: TextDecorationType.Underline, color: Color.Green },
-          halfLeading: undefined
-        }
+        this.richEditorTextStyle = this.controller.getTypingStyle()!
         this.str = JSON.stringify(this.richEditorTextStyle.halfLeading)
       }).height('5%').fontSize(10).id('getTypingStyle')
       Row(){

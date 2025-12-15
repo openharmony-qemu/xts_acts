@@ -55,7 +55,8 @@ export default function router_getStateByIndex4() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   router_getStateByIndex4_static_0100
      * @tc.name     router_getStateByIndex4_static_0100
      * @tc.desc     router_getStateByIndex4_static_0100

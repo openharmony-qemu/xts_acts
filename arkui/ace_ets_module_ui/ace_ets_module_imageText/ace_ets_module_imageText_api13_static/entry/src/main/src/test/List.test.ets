@@ -25,13 +25,12 @@ import CustomSpan from './StyledStringTest/CustomSpan.test';
 import UnmarshallingErrorCodeTest from './StyledStringTest/unmarshalling.test'
 
 export default function testsuite() {
+  textAreaInputTest();//11.17SDK  pass:1
   RichEditorMenuType();//11.17SDK  pass:2
   RichEditorStyledStringTest();//11.17SDK  pass:1
   BarStateTest();//11.17SDK  pass:5
   EnableHapticFeedbackTest();//11.17SDK  pass:20
   StyledStringUrl();//11.17SDK  pass:1
-  textAreaInputTest();//11.17SDK  pass:1
   TextMenuType();//11.17SDK  pass:2
   CustomSpan();//11.17SDK  pass:1
-  UnmarshallingErrorCodeTest();//11.17SDK  failed:1 StyledString.unmarshalling(undefined)
 }

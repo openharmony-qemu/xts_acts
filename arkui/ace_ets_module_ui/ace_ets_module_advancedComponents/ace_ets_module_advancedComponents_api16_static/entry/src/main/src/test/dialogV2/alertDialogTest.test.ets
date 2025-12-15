@@ -62,13 +62,14 @@ export default function alertDialogTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   alertDialogTest_static_0100
      * @tc.name     alertDialogTest_static_0100
      * @tc.desc     alertDialogTest_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('alertDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('alertDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[alertDialogTest_static_0100] START');
       let driver = Driver.create();
       await driver.delayMs(2000);

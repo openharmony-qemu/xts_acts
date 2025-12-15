@@ -64,13 +64,15 @@ export default function EnableHapticFeedbackTest() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   EnableHapticFeedbackTest_static_0010
      * @tc.name     EnableHapticFeedbackTest_static_0010
      * @tc.desc     EnableHapticFeedbackTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-    it('EnableHapticFeedbackTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('EnableHapticFeedbackTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[EnableHapticFeedbackTest_static_0010] START');
       let strJson = inspector.getInspectorByKey('Text_enableHapticFeedback_default');
       let obj= JSON.parseJsonElement(strJson);
@@ -82,13 +84,15 @@ export default function EnableHapticFeedbackTest() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   EnableHapticFeedbackTest_static_0020
      * @tc.name     EnableHapticFeedbackTest_static_0020
      * @tc.desc     EnableHapticFeedbackTest_static_0020
      * @tc.level    Level.LEVEL0
      */
-    it('EnableHapticFeedbackTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('EnableHapticFeedbackTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[EnableHapticFeedbackTest_static_0020] START');
       let strJson =inspector.getInspectorByKey('Text_enableHapticFeedback');
       let obj= JSON.parseJsonElement(strJson);
@@ -100,13 +104,15 @@ export default function EnableHapticFeedbackTest() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   EnableHapticFeedbackTest_static_0030
      * @tc.name     EnableHapticFeedbackTest_static_0030
      * @tc.desc     EnableHapticFeedbackTest_static_0030
      * @tc.level    Level.LEVEL0
      */
-    it('EnableHapticFeedbackTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('EnableHapticFeedbackTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[EnableHapticFeedbackTest_static_0030] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
@@ -124,13 +130,15 @@ export default function EnableHapticFeedbackTest() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   EnableHapticFeedbackTest_static_0040
      * @tc.name     EnableHapticFeedbackTest_static_0040
      * @tc.desc     EnableHapticFeedbackTest_static_0040
      * @tc.level    Level.LEVEL0
      */
-    it('EnableHapticFeedbackTest_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('EnableHapticFeedbackTest_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[EnableHapticFeedbackTest_static_0040] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
@@ -148,13 +156,15 @@ export default function EnableHapticFeedbackTest() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   EnableHapticFeedbackTest_static_0050
      * @tc.name     EnableHapticFeedbackTest_static_0050
      * @tc.desc     EnableHapticFeedbackTest_static_0050
      * @tc.level    Level.LEVEL0
      */
-    it('EnableHapticFeedbackTest_static_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('EnableHapticFeedbackTest_static_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[EnableHapticFeedbackTest_static_0050] START');
       let strJson = inspector.getInspectorByKey('TextInput_enableHapticFeedback_default');
       let obj= JSON.parseJsonElement(strJson);
@@ -166,13 +176,15 @@ export default function EnableHapticFeedbackTest() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   EnableHapticFeedbackTest_static_0060
      * @tc.name     EnableHapticFeedbackTest_static_0060
      * @tc.desc     EnableHapticFeedbackTest_static_0060
      * @tc.level    Level.LEVEL0
      */
-    it('EnableHapticFeedbackTest_static_0060', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('EnableHapticFeedbackTest_static_0060', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[EnableHapticFeedbackTest_static_0060] START');
       let strJson = inspector.getInspectorByKey('TextInput_enableHapticFeedback');
       let obj= JSON.parseJsonElement(strJson);
@@ -184,13 +196,15 @@ export default function EnableHapticFeedbackTest() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   EnableHapticFeedbackTest_static_0070
      * @tc.name     EnableHapticFeedbackTest_static_0070
      * @tc.desc     EnableHapticFeedbackTest_static_0070
      * @tc.level    Level.LEVEL0
      */
-    it('EnableHapticFeedbackTest_static_0070', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('EnableHapticFeedbackTest_static_0070', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[EnableHapticFeedbackTest_static_0070] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
@@ -208,13 +222,15 @@ export default function EnableHapticFeedbackTest() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   EnableHapticFeedbackTest_static_0080
      * @tc.name     EnableHapticFeedbackTest_static_0080
      * @tc.desc     EnableHapticFeedbackTest_static_0080
      * @tc.level    Level.LEVEL0
      */
-    it('EnableHapticFeedbackTest_static_0080', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('EnableHapticFeedbackTest_static_0080', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[EnableHapticFeedbackTest_static_0080] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
@@ -232,13 +248,15 @@ export default function EnableHapticFeedbackTest() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   EnableHapticFeedbackTest_static_0090
      * @tc.name     EnableHapticFeedbackTest_static_0090
      * @tc.desc     EnableHapticFeedbackTest_static_0090
      * @tc.level    Level.LEVEL0
      */
-    it('EnableHapticFeedbackTest_static_0090', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('EnableHapticFeedbackTest_static_0090', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[EnableHapticFeedbackTest_static_0090] START');
       let strJson = inspector.getInspectorByKey('TextArea_enableHapticFeedback_default');
       let obj= JSON.parseJsonElement(strJson);
@@ -250,13 +268,15 @@ export default function EnableHapticFeedbackTest() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   EnableHapticFeedbackTest_static_0100
      * @tc.name     EnableHapticFeedbackTest_static_0100
      * @tc.desc     EnableHapticFeedbackTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('EnableHapticFeedbackTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('EnableHapticFeedbackTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[EnableHapticFeedbackTest_static_0100] START');
       let strJson = inspector.getInspectorByKey('TextArea_enableHapticFeedback');
       let obj= JSON.parseJsonElement(strJson);
@@ -268,13 +288,15 @@ export default function EnableHapticFeedbackTest() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   EnableHapticFeedbackTest_static_0110
      * @tc.name     EnableHapticFeedbackTest_static_0110
      * @tc.desc     EnableHapticFeedbackTest_static_0110
      * @tc.level    Level.LEVEL0
      */
-    it('EnableHapticFeedbackTest_static_0110', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('EnableHapticFeedbackTest_static_0110', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[EnableHapticFeedbackTest_static_0110] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
@@ -292,13 +314,15 @@ export default function EnableHapticFeedbackTest() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   EnableHapticFeedbackTest_static_0120
      * @tc.name     EnableHapticFeedbackTest_static_0120
      * @tc.desc     EnableHapticFeedbackTest_static_0120
      * @tc.level    Level.LEVEL0
      */
-    it('EnableHapticFeedbackTest_static_0120', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('EnableHapticFeedbackTest_static_0120', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[EnableHapticFeedbackTest_static_0120] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
@@ -316,13 +340,15 @@ export default function EnableHapticFeedbackTest() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   EnableHapticFeedbackTest_static_0130
      * @tc.name     EnableHapticFeedbackTest_static_0130
      * @tc.desc     EnableHapticFeedbackTest_static_0130
      * @tc.level    Level.LEVEL0
      */
-    it('EnableHapticFeedbackTest_static_0130', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('EnableHapticFeedbackTest_static_0130', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[EnableHapticFeedbackTest_static_0130] START');
       let strJson = inspector.getInspectorByKey('Search_enableHapticFeedback_default');
       let obj= JSON.parseJsonElement(strJson);
@@ -334,13 +360,15 @@ export default function EnableHapticFeedbackTest() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   EnableHapticFeedbackTest_static_0140
      * @tc.name     EnableHapticFeedbackTest_static_0140
      * @tc.desc     EnableHapticFeedbackTest_static_0140
      * @tc.level    Level.LEVEL0
      */
-    it('EnableHapticFeedbackTest_static_0140', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('EnableHapticFeedbackTest_static_0140', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[EnableHapticFeedbackTest_static_0140] START');
       let strJson = inspector.getInspectorByKey('Search_enableHapticFeedback');
       let obj= JSON.parseJsonElement(strJson);
@@ -352,13 +380,15 @@ export default function EnableHapticFeedbackTest() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   EnableHapticFeedbackTest_static_0150
      * @tc.name     EnableHapticFeedbackTest_static_0150
      * @tc.desc     EnableHapticFeedbackTest_static_0150
      * @tc.level    Level.LEVEL0
      */
-    it('EnableHapticFeedbackTest_static_0150', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('EnableHapticFeedbackTest_static_0150', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[EnableHapticFeedbackTest_static_0150] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
@@ -376,13 +406,15 @@ export default function EnableHapticFeedbackTest() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   EnableHapticFeedbackTest_static_0160
      * @tc.name     EnableHapticFeedbackTest_static_0160
      * @tc.desc     EnableHapticFeedbackTest_static_0160
      * @tc.level    Level.LEVEL0
      */
-    it('EnableHapticFeedbackTest_static_0160', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('EnableHapticFeedbackTest_static_0160', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[EnableHapticFeedbackTest_static_0160] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
@@ -400,13 +432,15 @@ export default function EnableHapticFeedbackTest() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   EnableHapticFeedbackTest_static_0170
      * @tc.name     EnableHapticFeedbackTest_static_0170
      * @tc.desc     EnableHapticFeedbackTest_static_0170
      * @tc.level    Level.LEVEL0
      */
-    it('EnableHapticFeedbackTest_static_0170', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('EnableHapticFeedbackTest_static_0170', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[EnableHapticFeedbackTest_static_0170] START');
       let strJson = inspector.getInspectorByKey('RichEditor_enableHapticFeedback_default');
       let obj= JSON.parseJsonElement(strJson);
@@ -418,13 +452,15 @@ export default function EnableHapticFeedbackTest() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   EnableHapticFeedbackTest_static_0180
      * @tc.name     EnableHapticFeedbackTest_static_0180
      * @tc.desc     EnableHapticFeedbackTest_static_0180
      * @tc.level    Level.LEVEL0
      */
-    it('EnableHapticFeedbackTest_static_0180', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('EnableHapticFeedbackTest_static_0180', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[EnableHapticFeedbackTest_static_0180] START');
       let strJson = inspector.getInspectorByKey('RichEditor_enableHapticFeedback');
       let obj= JSON.parseJsonElement(strJson);
@@ -436,13 +472,15 @@ export default function EnableHapticFeedbackTest() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   EnableHapticFeedbackTest_static_0190
      * @tc.name     EnableHapticFeedbackTest_static_0190
      * @tc.desc     EnableHapticFeedbackTest_static_0190
      * @tc.level    Level.LEVEL0
      */
-    it('EnableHapticFeedbackTest_static_0190', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('EnableHapticFeedbackTest_static_0190', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[EnableHapticFeedbackTest_static_0190] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
@@ -460,13 +498,15 @@ export default function EnableHapticFeedbackTest() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   EnableHapticFeedbackTest_static_0200
      * @tc.name     EnableHapticFeedbackTest_static_0200
      * @tc.desc     EnableHapticFeedbackTest_static_0200
      * @tc.level    Level.LEVEL0
      */
-    it('EnableHapticFeedbackTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('EnableHapticFeedbackTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[EnableHapticFeedbackTest_static_0200] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);

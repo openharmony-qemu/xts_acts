@@ -60,13 +60,14 @@ export default function BindMenuTest() {
       console.info("BindMenuTest beforeEach end");
     });
 
-    /*
+    
+    /**
      * @tc.number   ArkUI_Menu_static_0100
      * @tc.name     ArkUI_Menu_static_0100
      * @tc.desc     ArkUI_Menu_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('ArkUI_Menu_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUI_Menu_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let CASE: string = 'ArkUI_Menu_0100'
       console.info(`${SUITE} ${CASE} START`);
       let callback = (event: events_emitter.EventData) => {
@@ -90,13 +91,14 @@ export default function BindMenuTest() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   ArkUI_Menu_static_0200
      * @tc.name     ArkUI_Menu_static_0200
      * @tc.desc     ArkUI_Menu_static_0200
      * @tc.level    Level.LEVEL0
      */
-    it('ArkUI_Menu_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUI_Menu_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let CASE: string = 'ArkUI_Menu_0200'
       console.info(`${SUITE} ${CASE} START`);
       let callback = (event: events_emitter.EventData) => {

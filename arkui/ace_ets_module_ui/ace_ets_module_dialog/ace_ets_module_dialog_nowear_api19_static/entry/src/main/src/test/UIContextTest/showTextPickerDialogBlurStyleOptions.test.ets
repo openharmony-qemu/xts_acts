@@ -37,7 +37,6 @@ export default function showTextPickerDialogBlurStyleOptionsTest() {
     beforeAll(() => {
       console.info("ShowTextPickerDialogBlurStyleOptionsTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api19.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {
@@ -61,7 +60,8 @@ export default function showTextPickerDialogBlurStyleOptionsTest() {
     
     
     
-    /*
+    
+/**
      * @tc.number   showTextPickerDialogBlurStyleOptions_static_0100
      * @tc.name     showTextPickerDialogBlurStyleOptions_static_0100
      * @tc.desc     showTextPickerDialogBlurStyleOptions_static_0100
@@ -104,7 +104,8 @@ it('showTextPickerDialogBlurStyleOptions_static_0100', TestType.FUNCTION | Size.
     
     
     
-    /*
+    
+/**
      * @tc.number   showTextPickerDialogBlurStyleOptions_static_0200
      * @tc.name     showTextPickerDialogBlurStyleOptions_static_0200
      * @tc.desc     showTextPickerDialogBlurStyleOptions_static_0200
@@ -137,7 +138,8 @@ it('showTextPickerDialogBlurStyleOptions_static_0200', TestType.FUNCTION | Size.
     
     
     
-    /*
+    
+/**
      * @tc.number   showTextPickerDialogBlurStyleOptions_static_0300
      * @tc.name     showTextPickerDialogBlurStyleOptions_static_0300
      * @tc.desc     showTextPickerDialogBlurStyleOptions_static_0300

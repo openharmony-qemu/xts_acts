@@ -85,7 +85,8 @@ export default function StorageDeprecatedTest() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   StorageDeprecatedTest_static_001
      * @tc.name     StorageDeprecatedTest_static_001
      * @tc.desc     StorageDeprecatedTest_static_001
@@ -115,7 +116,8 @@ it('StorageDeprecatedTest_static_001', Level.LEVEL0, async (done: () => void): P
     });
 
     
-    /*
+    
+/**
      * @tc.number   StorageDeprecatedTest_static_002
      * @tc.name     StorageDeprecatedTest_static_002
      * @tc.desc     StorageDeprecatedTest_static_002

@@ -61,13 +61,14 @@ export default function springBack() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   springBack_static_0100
      * @tc.name     springBack_static_0100
      * @tc.desc     springBack_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('springBack_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('springBack_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('springBack_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

@@ -82,7 +82,8 @@ export default function ProvideNumber() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   ProvideNumber_static_0100
      * @tc.name     ProvideNumber_static_0100
      * @tc.desc     ProvideNumber_static_0100
@@ -104,7 +105,8 @@ it('ProvideNumber_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   ProvideNumber_static_0200
      * @tc.name     ProvideNumber_static_0200
      * @tc.desc     ProvideNumber_static_0200
@@ -126,7 +128,8 @@ it('ProvideNumber_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   ProvideNumber_static_0300
      * @tc.name     ProvideNumber_static_0300
      * @tc.desc     ProvideNumber_static_0300
@@ -148,7 +151,8 @@ it('ProvideNumber_static_0300', Level.LEVEL0, async (done: () => void): Promise<
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   ProvideNumber_static_0400
      * @tc.name     ProvideNumber_static_0400
      * @tc.desc     ProvideNumber_static_0400
@@ -170,7 +174,8 @@ it('ProvideNumber_static_0400', Level.LEVEL0, async (done: () => void): Promise<
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   ProvideNumber_static_0500
      * @tc.name     ProvideNumber_static_0500
      * @tc.desc     ProvideNumber_static_0500

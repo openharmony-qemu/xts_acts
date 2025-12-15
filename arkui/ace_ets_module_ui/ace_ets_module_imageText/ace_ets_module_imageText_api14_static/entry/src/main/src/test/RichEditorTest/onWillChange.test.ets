@@ -63,13 +63,14 @@ export default function RichEditorOnWillChangeTest() {
 
      
     
-/*
+
+    /**
      * @tc.number   SUB_ACE_RichEditorOnWillChange_static_0010
      * @tc.name     SUB_ACE_RichEditorOnWillChange_static_0010
      * @tc.desc     SUB_ACE_RichEditorOnWillChange_static_0010
      * @tc.level    Level.LEVEL2
      */
-    it('SUB_ACE_RichEditorOnWillChange_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('SUB_ACE_RichEditorOnWillChange_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_RichEditorOnWillChange_0010 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(500);

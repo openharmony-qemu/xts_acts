@@ -67,13 +67,14 @@ export default function SymbolSpanModifierTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   SymbolSpanModifierTest_static_0010
      * @tc.name     SymbolSpanModifierTest_static_0010
      * @tc.desc     SymbolSpanModifierTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-    it('SymbolSpanModifierTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SymbolSpanModifierTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SymbolSpanModifierTest_static_0010 START');
       await CommonFunc.sleep(1000);
       console.info('SymbolSpanModifierTest_static_0010 SymbolSpanModifier_get_fontSize');
@@ -89,13 +90,14 @@ export default function SymbolSpanModifierTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   SymbolSpanModifierTest_static_0020
      * @tc.name     SymbolSpanModifierTest_static_0020
      * @tc.desc     SymbolSpanModifierTest_static_0020
      * @tc.level    Level.LEVEL0
      */
-    it('SymbolSpanModifierTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SymbolSpanModifierTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SymbolSpanModifierTest_static_0020 START');
       await CommonFunc.sleep(1000);
       console.info('SymbolSpanModifierTest_static_0010 SymbolSpanModifier_get_type');

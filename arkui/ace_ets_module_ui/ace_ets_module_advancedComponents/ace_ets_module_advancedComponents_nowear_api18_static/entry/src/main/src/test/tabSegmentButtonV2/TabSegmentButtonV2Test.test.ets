@@ -62,11 +62,11 @@ export default function TabSegmentButtonV2Test() {
     });
 
 
-    /*
-     * @tc.number   TabSegmentButtonV2Test_static_0100
-     * @tc.name     TabSegmentButtonV2Test_static_0100
-     * @tc.desc     TabSegmentButtonV2Test_static_0100
-     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+    /**
+     * @tc.number    TabSegmentButtonV2Test_static_0100
+     * @tc.name      TabSegmentButtonV2Test_static_0100
+     * @tc.desc      TabSegmentButtonV2Test_static_0100
+     * @tc.level     2
      */
     it('TabSegmentButtonV2Test_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -99,12 +99,12 @@ export default function TabSegmentButtonV2Test() {
 
 
 
-    /*
-    * @tc.number   TabSegmentButtonV2Test_static_0110
-    * @tc.name     TabSegmentButtonV2Test_static_0110
-    * @tc.desc     TabSegmentButtonV2Test_static_0110
-    * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
-    */
+     /**
+      * @tc.number    TabSegmentButtonV2Test_static_0110
+      * @tc.name      TabSegmentButtonV2Test_static_0110
+      * @tc.desc      TabSegmentButtonV2Test_static_0110
+      * @tc.level     2
+      */
      it('TabSegmentButtonV2Test_static_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log("TabSegmentButtonV2Test_static_0110", "START");
@@ -124,11 +124,11 @@ export default function TabSegmentButtonV2Test() {
       });
 
 
-     /*
-      * @tc.number   TabSegmentButtonV2Test_static_0120
-      * @tc.name     TabSegmentButtonV2Test_static_0120
-      * @tc.desc     TabSegmentButtonV2Test_static_0120
-      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     /**
+      * @tc.number    TabSegmentButtonV2Test_static_0120
+      * @tc.name      TabSegmentButtonV2Test_static_0120
+      * @tc.desc      TabSegmentButtonV2Test_static_0120
+      * @tc.level     2
       */
       it('TabSegmentButtonV2Test_static_0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -167,12 +167,12 @@ export default function TabSegmentButtonV2Test() {
       });
 
 
-    /*
-    * @tc.number   TabSegmentButtonV2Test_static_0130
-    * @tc.name     TabSegmentButtonV2Test_static_0130
-    * @tc.desc     TabSegmentButtonV2Test_static_0130
-    * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
-    */
+      /**
+       * @tc.number    TabSegmentButtonV2Test_static_0130
+       * @tc.name      TabSegmentButtonV2Test_static_0130
+       * @tc.desc      TabSegmentButtonV2Test_static_0130
+       * @tc.level     2
+       */
       it('TabSegmentButtonV2Test_static_0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log("TabSegmentButtonV2Test_static_0130", "START");
@@ -195,11 +195,11 @@ export default function TabSegmentButtonV2Test() {
 
 
 
-     /*
-      * @tc.number   TabSegmentButtonV2Test_static_0140
-      * @tc.name     TabSegmentButtonV2Test_static_0140
-      * @tc.desc     TabSegmentButtonV2Test_static_0140
-      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     /**
+      * @tc.number    TabSegmentButtonV2Test_static_0140
+      * @tc.name      TabSegmentButtonV2Test_static_0140
+      * @tc.desc      TabSegmentButtonV2Test_static_0140
+      * @tc.level     2
       */
       it('TabSegmentButtonV2Test_static_0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -220,12 +220,12 @@ export default function TabSegmentButtonV2Test() {
       });
 
 
-    /*
-      * @tc.number   TabSegmentButtonV2Test_static_0150
-      * @tc.name     TabSegmentButtonV2Test_static_0150
-      * @tc.desc     TabSegmentButtonV2Test_static_0150
-      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
-      */
+      /**
+       * @tc.number    TabSegmentButtonV2Test_static_0150
+       * @tc.name      TabSegmentButtonV2Test_static_0150
+       * @tc.desc      TabSegmentButtonV2Test_static_0150
+       * @tc.level     2
+       */
       it('TabSegmentButtonV2Test_static_0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log("TabSegmentButtonV2Test_static_0150", "START");
@@ -249,12 +249,12 @@ export default function TabSegmentButtonV2Test() {
       });
 
 
-    /*
-    * @tc.number   TabSegmentButtonV2Test_static_0160
-    * @tc.name     TabSegmentButtonV2Test_static_0160
-    * @tc.desc     TabSegmentButtonV2Test_static_0160
-    * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
-    */
+    /**
+     * @tc.number    TabSegmentButtonV2Test_static_0160
+     * @tc.name      TabSegmentButtonV2Test_static_0160
+     * @tc.desc      TabSegmentButtonV2Test_static_0160
+     * @tc.level     2
+     */
       it('TabSegmentButtonV2Test_static_0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log("TabSegmentButtonV2Test_static_0160", "START");

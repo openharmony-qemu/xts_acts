@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Row, Button, ClickEvent, BlurStyle, Flex, FlexWrap } from '@ohos.arkui.component'
+import { Entry, Column, Component, Row, Button, ClickEvent, BlurStyle, Flex, FlexWrap, TextPickerDialogOptions } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
@@ -25,7 +25,7 @@ struct TextPickerDialogBGBlurStyle {
       range: ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'],
       defaultPickerItemHeight: 40,
       backgroundBlurStyle: (style as BlurStyle|undefined),
-    })
+    } as TextPickerDialogOptions)
   }
   build() {
     Flex({wrap: FlexWrap.Wrap}) {

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, ColumnOptions, RowOptions, Component, Row, Button, ClickEvent, BlurStyle, Flex, FlexWrap, Color, TextPickerResult, Margin, TextAlign, Text } from '@ohos.arkui.component'
+import { Entry, Column, ColumnOptions, RowOptions, Component, Row, Button, ClickEvent, BlurStyle, Flex, FlexWrap, Color, TextPickerResult, Margin, TextAlign, Text, TextPickerDialogOptions } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
 class SelectedValue{
@@ -64,7 +64,7 @@ struct TextPickerDialogSelectedAreaExample {
               this.selectedFlag = 'enter'
               console.info('TextPickerDialog:onEnterSelectedArea()' + JSON.stringify(value))
             }
-          })
+          } as TextPickerDialogOptions)
         })
       Text(this.selectedFlag).id('textFlag').height('5%').width('90%').margin({ top: 10, bottom: 10 } as Margin).textAlign(TextAlign.Center)
     }.width('100%').height('100%').margin({ top: 5 } as Margin).id('colComponent')

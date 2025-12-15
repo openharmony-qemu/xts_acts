@@ -79,13 +79,14 @@ export default function calendarPickerDialogHoverMode() {
       console.info("MultiNavigation after each called");
     });
     
-    /*
+    
+    /**
      * @tc.number   calendarPickerDialogHoverMode_static_0100
      * @tc.name     calendarPickerDialogHoverMode_static_0100
      * @tc.desc     calendarPickerDialogHoverMode_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('calendarPickerDialogHoverMode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('calendarPickerDialogHoverMode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('calendarPickerDialogHoverMode_0100 START');
       if (display.isFoldable() && display.getFoldStatus() == 3) {
         let driver = Driver.create()
@@ -111,13 +112,14 @@ export default function calendarPickerDialogHoverMode() {
       done();
     });
     
-    /*
+    
+    /**
      * @tc.number   calendarPickerDialogHoverMode_static_0200
      * @tc.name     calendarPickerDialogHoverMode_static_0200
      * @tc.desc     calendarPickerDialogHoverMode_static_0200
      * @tc.level    Level.LEVEL0
      */
-    it('calendarPickerDialogHoverMode_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('calendarPickerDialogHoverMode_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('calendarPickerDialogHoverMode_0200 START');
       if (display.isFoldable() && display.getFoldStatus() == 3) {
         let driver = Driver.create()

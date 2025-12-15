@@ -63,13 +63,14 @@ export default function ChipGroupSymbolItemOptionsTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   ChipGroupSymbolItemOptionsTest_static_001
      * @tc.name     ChipGroupSymbolItemOptionsTest_static_001
      * @tc.desc     ChipGroupSymbolItemOptionsTest_static_001
      * @tc.level    Level.LEVEL0
      */
-    it('ChipGroupSymbolItemOptionsTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ChipGroupSymbolItemOptionsTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ChipGroupSymbolItemOptionsTest_static_001] START');
       await CommonFunc.sleep(1000);
 

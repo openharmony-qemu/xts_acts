@@ -42,7 +42,7 @@ export default function tipsDialogTest() {
         // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get tipsDialogTest state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/dialogV2/tipsDialogV2TestPage" == pages.name)) {
+        if (!("tipsDialogV2TestPage" == pages.name)) {
           console.info("get tipsDialogTest pages.name:" + JSON.stringify(pages.name));
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
@@ -67,13 +67,14 @@ export default function tipsDialogTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   tipsDialogTest_static_0100
      * @tc.name     tipsDialogTest_static_0100
      * @tc.desc     tipsDialogTest_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('tipsDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('tipsDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[tipsDialogTest_static_0100] START');
       let driver = Driver.create();
       await driver.delayMs(2000);
@@ -106,13 +107,14 @@ export default function tipsDialogTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   tipsDialogTest_static_0200
      * @tc.name     tipsDialogTest_static_0200
      * @tc.desc     tipsDialogTest_static_0200
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('tipsDialogTest_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('tipsDialogTest_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[tipsDialogTest_static_0200] START');
       let driver = Driver.create();
       await driver.delayMs(2000);

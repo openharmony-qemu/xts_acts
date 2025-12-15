@@ -58,7 +58,8 @@ export default function buttonJsunit() {
 
 
     
-    /*
+    
+/**
      * @tc.number   testButton1601_static_01
      * @tc.name     testButton1601_static_01
      * @tc.desc     testButton1601_static_01
@@ -75,7 +76,8 @@ it('testButton1601_static_01', Level.LEVEL0, async (done: () => void): Promise<v
     });
 
     
-    /*
+    
+/**
      * @tc.number   testButton1602_static_02
      * @tc.name     testButton1602_static_02
      * @tc.desc     testButton1602_static_02
@@ -93,7 +95,8 @@ it('testButton1602_static_02', Level.LEVEL0, async (done: () => void): Promise<v
 
 
     
-    /*
+    
+/**
      * @tc.number   testButton1603_static_03
      * @tc.name     testButton1603_static_03
      * @tc.desc     testButton1603_static_03
@@ -110,7 +113,8 @@ it('testButton1603_static_03', Level.LEVEL0, async (done: () => void): Promise<v
     });
 
     
-    /*
+    
+/**
      * @tc.number   testButton1604_static_04
      * @tc.name     testButton1604_static_04
      * @tc.desc     testButton1604_static_04
@@ -127,7 +131,8 @@ it('testButton1604_static_04', Level.LEVEL0, async (done: () => void): Promise<v
     });
 
     
-    /*
+    
+/**
      * @tc.number   testButton1605_static_05
      * @tc.name     testButton1605_static_05
      * @tc.desc     testButton1605_static_05
@@ -144,7 +149,8 @@ it('testButton1605_static_05', Level.LEVEL0, async (done: () => void): Promise<v
     });
 
     
-    /*
+    
+/**
      * @tc.number   testButton1606_static_06
      * @tc.name     testButton1606_static_06
      * @tc.desc     testButton1606_static_06
@@ -161,7 +167,8 @@ it('testButton1606_static_06', Level.LEVEL0, async (done: () => void): Promise<v
     });
 
     
-    /*
+    
+/**
      * @tc.number   testButton1607_static_07
      * @tc.name     testButton1607_static_07
      * @tc.desc     testButton1607_static_07
@@ -178,7 +185,8 @@ it('testButton1607_static_07', Level.LEVEL0, async (done: () => void): Promise<v
     });
 
     
-    /*
+    
+/**
      * @tc.number   testButton1608_static_08
      * @tc.name     testButton1608_static_08
      * @tc.desc     testButton1608_static_08

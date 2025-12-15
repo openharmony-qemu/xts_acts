@@ -83,7 +83,8 @@ export default function allowOverride() {
 
 
     
-    /*
+    
+/**
      * @tc.number   allowOverride_static_0100
      * @tc.name     allowOverride_static_0100
      * @tc.desc     allowOverride_static_0100

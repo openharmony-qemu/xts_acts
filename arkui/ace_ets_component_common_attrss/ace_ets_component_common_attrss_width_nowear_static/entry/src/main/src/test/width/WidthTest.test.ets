@@ -40,8 +40,10 @@ export default function widthTest() {
   await UtilsTest.msSleep(4000)
   await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.width.nowear.test.static", "EntryAbility")
   await UtilsTest.msSleep(4000)
+
   console.info("WidthTest beforeEach start 111111111111");
-  const uiContext = AppStorage.get<UIContext>('uiContext')!
+  let uiContext = AppStorage.get<UIContext>('uiContext')!
+  console.info("WidthTest beforeEach start 2222222222");
 
   //A list of components that support width attributes is required.
   let supportView = new Array<string>(
@@ -117,10 +119,6 @@ export default function widthTest() {
   describe('WidthTest', () => {
     beforeAll(() => {
       console.info("WidthTest beforeEach start");
-      
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.width.nowear.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     //Generate test cases (it) through a loop based on the support view * test values.
 CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {

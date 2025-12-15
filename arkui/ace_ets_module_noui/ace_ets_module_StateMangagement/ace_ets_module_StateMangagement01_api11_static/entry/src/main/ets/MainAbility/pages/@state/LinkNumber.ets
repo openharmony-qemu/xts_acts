@@ -42,6 +42,7 @@ import {
   State,
   Link,
   Prop,
+  UIUtils
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -119,7 +120,7 @@ struct Index_CP {
   }
   build() {
     Column() {
-      Text("count type of " + JSON.stringify(CommonFunc.getType(this.count)) + " number is " + JSON.stringify(this.count))
+      Text("count type of " + JSON.stringify(CommonFunc.getType(this.count)) + " number is " + JSON.stringify(UIUtils.getTarget(this.count)))
         .fontSize(9).key('LinkNumber').height('5%')
       Child_CP({count: this.count})
 

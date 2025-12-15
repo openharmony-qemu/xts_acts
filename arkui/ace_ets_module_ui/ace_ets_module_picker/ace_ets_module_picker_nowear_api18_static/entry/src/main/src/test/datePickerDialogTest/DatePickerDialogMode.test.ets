@@ -51,7 +51,8 @@ export default function datePickerDialogModeTest() {
     });
 
      
-     /*
+     
+/**
      * @tc.number   DatePickerDialog_static_0010
      * @tc.name     DatePickerDialog_static_0010
      * @tc.desc     DatePickerDialog_static_0010
@@ -76,7 +77,8 @@ it('DatePickerDialog_static_0010', Level.LEVEL1, async (done: () => void): Promi
       });
   
        
-      /*
+      
+/**
      * @tc.number   DatePickerDialog_static_0020
      * @tc.name     DatePickerDialog_static_0020
      * @tc.desc     DatePickerDialog_static_0020
@@ -101,7 +103,8 @@ it('DatePickerDialog_static_0020', Level.LEVEL1, async (done: () => void): Promi
       });
   
        
-      /*
+      
+/**
      * @tc.number   DatePickerDialog_static_0030
      * @tc.name     DatePickerDialog_static_0030
      * @tc.desc     DatePickerDialog_static_0030
@@ -127,7 +130,8 @@ it('DatePickerDialog_static_0030', Level.LEVEL1, async (done: () => void): Promi
       });
   
        
-      /*
+      
+/**
      * @tc.number   DatePickerDialog_static_0040
      * @tc.name     DatePickerDialog_static_0040
      * @tc.desc     DatePickerDialog_static_0040
@@ -152,7 +156,8 @@ it('DatePickerDialog_static_0040', Level.LEVEL1, async (done: () => void): Promi
       });
   
        
-      /*
+      
+/**
      * @tc.number   DatePickerDialog_static_0050
      * @tc.name     DatePickerDialog_static_0050
      * @tc.desc     DatePickerDialog_static_0050
@@ -177,7 +182,8 @@ it('DatePickerDialog_static_0050', Level.LEVEL1, async (done: () => void): Promi
       });
   
        
-      /*
+      
+/**
      * @tc.number   DatePickerDialog_static_0060
      * @tc.name     DatePickerDialog_static_0060
      * @tc.desc     DatePickerDialog_static_0060
@@ -203,7 +209,8 @@ it('DatePickerDialog_static_0060', Level.LEVEL1, async (done: () => void): Promi
       });
   
        
-      /*
+      
+/**
      * @tc.number   DatePickerDialog_static_0070
      * @tc.name     DatePickerDialog_static_0070
      * @tc.desc     DatePickerDialog_static_0070

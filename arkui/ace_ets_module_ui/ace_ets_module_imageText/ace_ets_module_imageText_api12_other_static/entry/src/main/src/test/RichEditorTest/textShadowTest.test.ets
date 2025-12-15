@@ -69,13 +69,14 @@ export default function textShadowTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   textShadowTest_static_0001
      * @tc.name     textShadowTest_static_0001
      * @tc.desc     textShadowTest_static_0001
      * @tc.level    Level.LEVEL1
      */
-    it('textShadowTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('textShadowTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('RichEditorTextStyle textShadowTest0001 START');
       await CommonFunc.sleep(1000);
@@ -109,13 +110,14 @@ export default function textShadowTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   textShadowTest_static_0002
      * @tc.name     textShadowTest_static_0002
      * @tc.desc     textShadowTest_static_0002
      * @tc.level    Level.LEVEL1
      */
-    it('textShadowTest_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('textShadowTest_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('RichEditorTextStyle textShadowTest0002 START');
       await CommonFunc.sleep(1000);
@@ -141,13 +143,14 @@ export default function textShadowTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   textShadowTest_static_0003
      * @tc.name     textShadowTest_static_0003
      * @tc.desc     textShadowTest_static_0003
      * @tc.level    Level.LEVEL1
      */
-    it('textShadowTest_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('textShadowTest_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('RichEditorTextStyle textShadowTest0003 START');
       await CommonFunc.sleep(1000);
@@ -173,13 +176,14 @@ export default function textShadowTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   textShadowTest_static_0004
      * @tc.name     textShadowTest_static_0004
      * @tc.desc     textShadowTest_static_0004
      * @tc.level    Level.LEVEL1
      */
-    it('textShadowTest_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('textShadowTest_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('RichEditorTextStyle textShadowTest0004 START');
       await CommonFunc.sleep(1000);
@@ -205,13 +209,14 @@ export default function textShadowTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   textShadowTest_static_0005
      * @tc.name     textShadowTest_static_0005
      * @tc.desc     textShadowTest_static_0005
      * @tc.level    Level.LEVEL1
      */
-    it('textShadowTest_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('textShadowTest_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('RichEditorTextStyle textShadowTest0005 START');
       await CommonFunc.sleep(1000);
@@ -237,13 +242,14 @@ export default function textShadowTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   textShadowTest_static_0006
      * @tc.name     textShadowTest_static_0006
      * @tc.desc     textShadowTest_static_0006
      * @tc.level    Level.LEVEL1
      */
-    it('textShadowTest_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('textShadowTest_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('RichEditorTextStyle textShadowTest0006 START');
       await CommonFunc.sleep(1000);

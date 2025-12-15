@@ -36,10 +36,6 @@ interface Attrs{
   $attrs: number
 }
 export default function gridSpanTest() {
-  await UtilsTest.msSleep(4000)
-  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.gridSpan.nowear.test.static", "EntryAbility")
-  await UtilsTest.msSleep(4000)
-  const uiContext = AppStorage.get<UIContext>('uiContext')!
   let supportView:Array<string> = new Array <string>(
     'Select',
     'Stepper',
@@ -76,7 +72,10 @@ export default function gridSpanTest() {
 
   describe('GridSpanTest', () => {
     beforeAll(() => {
-
+      console.info("GridSpanTest beforeEach start");
+      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.gridSpan.nowear.test.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       console.info('[' + data.caseTag + ']' + 'gridSpan is:' + data.viewObj?.getElement('$attrs').getString('span'));

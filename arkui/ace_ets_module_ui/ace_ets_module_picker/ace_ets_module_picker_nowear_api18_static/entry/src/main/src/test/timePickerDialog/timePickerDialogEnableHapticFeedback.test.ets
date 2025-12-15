@@ -54,7 +54,8 @@ export default function TimePickerDialogEnableHapticFeedbackTest() {
 
     
 
-     /*
+     
+/**
      * @tc.number   TimePickerDialog_EnableHapticFeedback_static_001
      * @tc.name     TimePickerDialog_EnableHapticFeedback_static_001
      * @tc.desc     TimePickerDialog_EnableHapticFeedback_static_001
@@ -80,7 +81,8 @@ it('TimePickerDialog_EnableHapticFeedback_static_001', Level.LEVEL1, async (done
 
     
 
-    /*
+    
+/**
      * @tc.number   TimePickerDialog_EnableHapticFeedback_static_002
      * @tc.name     TimePickerDialog_EnableHapticFeedback_static_002
      * @tc.desc     TimePickerDialog_EnableHapticFeedback_static_002
@@ -106,7 +108,8 @@ it('TimePickerDialog_EnableHapticFeedback_static_002', Level.LEVEL1, async (done
 
     
 
-    /*
+    
+/**
      * @tc.number   TimePickerDialog_EnableHapticFeedback_static_003
      * @tc.name     TimePickerDialog_EnableHapticFeedback_static_003
      * @tc.desc     TimePickerDialog_EnableHapticFeedback_static_003
@@ -132,7 +135,8 @@ it('TimePickerDialog_EnableHapticFeedback_static_003', Level.LEVEL1, async (done
 
     
 
-    /*
+    
+/**
      * @tc.number   TimePickerDialog_EnableHapticFeedback_static_004
      * @tc.name     TimePickerDialog_EnableHapticFeedback_static_004
      * @tc.desc     TimePickerDialog_EnableHapticFeedback_static_004

@@ -63,13 +63,14 @@ export default function ChipTest0010() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   ChipTest0010_static_001
      * @tc.name     ChipTest0010_static_001
      * @tc.desc     ChipTest0010_static_001
      * @tc.level    Level.LEVEL0
      */
-    it('ChipTest0010_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ChipTest0010_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ChipTest0010_static_001] START');
       await CommonFunc.sleep(1000);
 

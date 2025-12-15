@@ -82,13 +82,14 @@ export default function PopupOptionsFalse() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   PopupOptionsFalse_static_0100
      * @tc.name     PopupOptionsFalse_static_0100
      * @tc.desc     PopupOptionsFalse_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('PopupOptionsFalse_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('PopupOptionsFalse_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PopupOptionsFalse_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

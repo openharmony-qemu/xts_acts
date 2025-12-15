@@ -83,7 +83,8 @@ export default function objectLinkNumber() {
 
 
     
-    /*
+    
+/**
      * @tc.number   objectLinkNumber_static_0100
      * @tc.name     objectLinkNumber_static_0100
      * @tc.desc     objectLinkNumber_static_0100
@@ -105,7 +106,8 @@ it('objectLinkNumber_static_0100', Level.LEVEL0, async (done: () => void): Promi
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   objectLinkNumber_static_0200
      * @tc.name     objectLinkNumber_static_0200
      * @tc.desc     objectLinkNumber_static_0200
@@ -127,7 +129,8 @@ it('objectLinkNumber_static_0200', Level.LEVEL0, async (done: () => void): Promi
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   objectLinkNumber_static_0300
      * @tc.name     objectLinkNumber_static_0300
      * @tc.desc     objectLinkNumber_static_0300
@@ -149,7 +152,8 @@ it('objectLinkNumber_static_0300', Level.LEVEL0, async (done: () => void): Promi
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   objectLinkNumber_static_0400
      * @tc.name     objectLinkNumber_static_0400
      * @tc.desc     objectLinkNumber_static_0400

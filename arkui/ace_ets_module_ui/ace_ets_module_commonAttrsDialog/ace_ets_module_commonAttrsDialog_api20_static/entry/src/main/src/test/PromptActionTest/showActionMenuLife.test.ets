@@ -69,7 +69,7 @@ export default function ShowActionMenuLife() {
       console.info('PromptAction after each called');
     })
 
-    /*
+    /**
      * @tc.number   showActionMenu_static_0010
      * @tc.name     showActionMenu_static_0010
      * @tc.desc     showActionMenu_static_0010

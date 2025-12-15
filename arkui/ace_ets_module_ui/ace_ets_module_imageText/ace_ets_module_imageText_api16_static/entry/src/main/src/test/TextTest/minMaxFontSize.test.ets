@@ -69,13 +69,14 @@ export default function minMaxFontSize() {
 
     
     
-/*
+
+    /**
      * @tc.number   minMaxFontSize_static_0001
      * @tc.name     minMaxFontSize_static_0001
      * @tc.desc     minMaxFontSize_static_0001
      * @tc.level    Level.LEVEL0
      */
-    it('minMaxFontSize_static_0001', Level.LEVEL0, async () => {
+it('minMaxFontSize_static_0001', Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('minMaxFontSize minMaxFontSize_static_0001 START');
         await CommonFunc.sleep(500);

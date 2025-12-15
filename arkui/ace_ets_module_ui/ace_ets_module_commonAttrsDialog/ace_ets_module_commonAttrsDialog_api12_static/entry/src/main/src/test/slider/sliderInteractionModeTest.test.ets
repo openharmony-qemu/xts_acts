@@ -71,13 +71,14 @@ export default function sliderInteractionModeTest() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   sliderInteractionModeTest_static_0100
      * @tc.name     sliderInteractionModeTest_static_0100
      * @tc.desc     sliderInteractionModeTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('sliderInteractionModeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('sliderInteractionModeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sliderInteractionModeTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -99,13 +100,14 @@ export default function sliderInteractionModeTest() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   sliderInteractionModeTest_static_0200
      * @tc.name     sliderInteractionModeTest_static_0200
      * @tc.desc     sliderInteractionModeTest_static_0200
      * @tc.level    Level.LEVEL0
      */
-    it('sliderInteractionModeTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('sliderInteractionModeTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sliderInteractionModeTest_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -127,13 +129,14 @@ export default function sliderInteractionModeTest() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   sliderInteractionModeTest_static_0300
      * @tc.name     sliderInteractionModeTest_static_0300
      * @tc.desc     sliderInteractionModeTest_static_0300
      * @tc.level    Level.LEVEL0
      */
-    it('sliderInteractionModeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('sliderInteractionModeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sliderInteractionModeTest_0300 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

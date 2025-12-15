@@ -31,19 +31,6 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-
-
-// export function getUIContext1() {
-//   console.log("=========================start")
-//   console.log("uiContext======" + uiContext)
-//   console.log('===============================')
-//   console.log("uiContext.vp2px(20)======" + uiContext!.vp2px(20))
-//   console.log("UIContext.getFocusedUIContext()======" + UIContext.getFocusedUIContext())
-//   console.log("=========================start2")
-//   //console.log("UIContext.getFocusedUIContext().vp2px(20)======" + UIContext.getFocusedUIContext()!.vp2px(20))
-//   console.log("=========================end")
-// }
-
 export default function layoutWeightRowTest() {
   console.info("layoutWeightRowTest beforeAll start 11111111111");
   await UtilsTest.msSleep(4000)
@@ -51,7 +38,7 @@ export default function layoutWeightRowTest() {
   await UtilsTest.msSleep(4000)
 
   console.info("layoutWeightRowTest beforeAll start 222222222222222");
-  const uiContext = AppStorage.get<UIContext>('uiContext')!
+  let uiContext = AppStorage.get<UIContext>('uiContext')!
   console.info("layoutWeightRowTest beforeAll start 33333333333333");
 
   let supportView: Array<string> = new Array<string>(

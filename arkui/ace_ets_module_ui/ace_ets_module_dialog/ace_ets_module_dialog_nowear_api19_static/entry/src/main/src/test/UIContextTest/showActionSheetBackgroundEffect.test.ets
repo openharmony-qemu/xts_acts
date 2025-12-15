@@ -36,7 +36,6 @@ export default function showActionSheetBackgroundEffectTest() {
     beforeAll(() => {
       console.info("ShowActionSheetBackgroundEffectTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api19.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {
@@ -61,7 +60,8 @@ export default function showActionSheetBackgroundEffectTest() {
     
     
     
-    /*
+    
+/**
      * @tc.number   showActionSheetBackgroundEffectTest_static_0100
      * @tc.name     showActionSheetBackgroundEffectTest_static_0100
      * @tc.desc     showActionSheetBackgroundEffectTest_static_0100
@@ -110,7 +110,8 @@ it('showActionSheetBackgroundEffectTest_static_0100', TestType.FUNCTION | Size.M
     
     
     
-    /*
+    
+/**
      * @tc.number   showActionSheetBackgroundEffectTest_static_0200
      * @tc.name     showActionSheetBackgroundEffectTest_static_0200
      * @tc.desc     showActionSheetBackgroundEffectTest_static_0200
@@ -146,7 +147,8 @@ it('showActionSheetBackgroundEffectTest_static_0200', TestType.FUNCTION | Size.M
     
     
     
-    /*
+    
+/**
      * @tc.number   showActionSheetBackgroundEffectTest_static_0300
      * @tc.name     showActionSheetBackgroundEffectTest_static_0300
      * @tc.desc     showActionSheetBackgroundEffectTest_static_0300

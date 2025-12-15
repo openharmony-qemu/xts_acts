@@ -76,13 +76,14 @@ export default function bindSheetShowClose() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   bindSheetShowClose_static_0100
      * @tc.name     bindSheetShowClose_static_0100
      * @tc.desc     bindSheetShowClose_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('bindSheetShowClose_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('bindSheetShowClose_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('bindSheetShowClose_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

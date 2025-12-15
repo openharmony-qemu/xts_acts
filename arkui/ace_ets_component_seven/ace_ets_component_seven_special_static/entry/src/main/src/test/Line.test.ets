@@ -48,7 +48,8 @@ export default function lineNeJsunit() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   testLineNe00071
      * @tc.name     testLineNe00071
      * @tc.desc     testLineNe00071
@@ -65,7 +66,8 @@ it('testLineNe00071', Level.LEVEL0, async (done: () => void): Promise<void> => {
     });
 
     
-    /*
+    
+/**
      * @tc.number   testLineNe00072
      * @tc.name     testLineNe00072
      * @tc.desc     testLineNe00072

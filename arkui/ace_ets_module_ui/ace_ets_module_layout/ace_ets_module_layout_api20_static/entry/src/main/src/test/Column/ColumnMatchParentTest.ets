@@ -80,7 +80,8 @@ export default function ColumnMatchParentTest() {
     });
 
 
-    /*
+    
+/**
      * @tc.number   ColumnMatchParentTest_static_0100
      * @tc.name     ColumnMatchParentTest_static_0100
      * @tc.desc     ColumnMatchParentTest_static_0100

@@ -57,7 +57,8 @@ export default function getLength3() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   getLength3_static_0100
      * @tc.name     getLength3_static_0100
      * @tc.desc     getLength3_static_0100

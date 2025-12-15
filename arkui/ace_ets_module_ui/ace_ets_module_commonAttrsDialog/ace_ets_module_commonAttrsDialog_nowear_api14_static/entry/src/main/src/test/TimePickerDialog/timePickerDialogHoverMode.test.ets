@@ -83,13 +83,14 @@ export default function timePickerDialogHoverMode() {
       console.info("MultiNavigation after each called");
     });
     
-    /*
+    
+    /**
      * @tc.number   timePickerDialogHoverMode_static_0100
      * @tc.name     timePickerDialogHoverMode_static_0100
      * @tc.desc     timePickerDialogHoverMode_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('timePickerDialogHoverMode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('timePickerDialogHoverMode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('timePickerDialogHoverMode_0100 START');
       if (display.isFoldable() && display.getFoldStatus() == 3) {
         let driver = Driver.create()
@@ -115,13 +116,14 @@ export default function timePickerDialogHoverMode() {
       done();
     });
     
-    /*
+    
+    /**
      * @tc.number   timePickerDialogHoverMode_static_0200
      * @tc.name     timePickerDialogHoverMode_static_0200
      * @tc.desc     timePickerDialogHoverMode_static_0200
      * @tc.level    Level.LEVEL0
      */
-    it('timePickerDialogHoverMode_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('timePickerDialogHoverMode_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('timePickerDialogHoverMode_0200 START');
       if (display.isFoldable() && display.getFoldStatus() == 3) {
         let driver = Driver.create()

@@ -68,13 +68,14 @@ export default function MarqueeNodeTest() {
 
     
     
-/*
+
+    /**
      * @tc.number   marqueeNode_static_0100
      * @tc.name     marqueeNode_static_0100
      * @tc.desc     marqueeNode_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('marqueeNode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('marqueeNode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.log('marqueeNode0100: test' + new Date().getTime())
       let tagName = 'marqueeNode0100';
       console.info('[' + tagName + '] START============================');
@@ -89,13 +90,14 @@ export default function MarqueeNodeTest() {
 
     
     
-/*
+
+    /**
      * @tc.number   marqueeNode_static_0200
      * @tc.name     marqueeNode_static_0200
      * @tc.desc     marqueeNode_static_0200
      * @tc.level    Level.LEVEL0
      */
-    it('marqueeNode_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('marqueeNode_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'marqueeNode0200';
       console.info('[' + tagName + '] START============================');
       let strJson = inspector.getInspectorByKey('key_marquee_Node_001');

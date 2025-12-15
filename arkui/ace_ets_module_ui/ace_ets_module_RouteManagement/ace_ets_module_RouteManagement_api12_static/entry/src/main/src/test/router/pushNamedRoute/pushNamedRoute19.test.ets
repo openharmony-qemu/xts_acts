@@ -55,7 +55,8 @@ export default function pushNamedRoute19() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   pushNamedRoute19_static_0100
      * @tc.name     pushNamedRoute19_static_0100
      * @tc.desc     pushNamedRoute19_static_0100

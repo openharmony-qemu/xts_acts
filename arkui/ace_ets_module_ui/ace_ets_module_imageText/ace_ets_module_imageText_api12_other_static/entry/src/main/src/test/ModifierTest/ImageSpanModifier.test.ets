@@ -65,13 +65,14 @@ export default function ImageSpanModifierTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   ImageSpanModifierTest_static_0010
      * @tc.name     ImageSpanModifierTest_static_0010
      * @tc.desc     ImageSpanModifierTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-    it('ImageSpanModifierTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ImageSpanModifierTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ImageSpanModifierTest_static_0010 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ImageSpanModifier_get_Size_width');
@@ -85,13 +86,14 @@ export default function ImageSpanModifierTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   ImageSpanModifierTest_static_0020
      * @tc.name     ImageSpanModifierTest_static_0020
      * @tc.desc     ImageSpanModifierTest_static_0020
      * @tc.level    Level.LEVEL0
      */
-    it('ImageSpanModifierTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ImageSpanModifierTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ImageSpanModifierTest_static_0020 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ImageSpanModifier_get_type');

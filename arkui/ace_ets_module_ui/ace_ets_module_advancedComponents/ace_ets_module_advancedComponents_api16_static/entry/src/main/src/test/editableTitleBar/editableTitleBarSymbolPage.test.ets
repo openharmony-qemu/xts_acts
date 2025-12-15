@@ -62,13 +62,14 @@ export default function editableTitleBarSymbolTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   editableTitleBarSymbolPage_static_0100
      * @tc.name     editableTitleBarSymbolPage_static_0100
      * @tc.desc     editableTitleBarSymbolPage_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('editableTitleBarSymbolPage_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('editableTitleBarSymbolPage_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[editableTitleBarSymbolPage_static_0100] START');
       let driver = Driver.create();
       await driver.delayMs(2000);

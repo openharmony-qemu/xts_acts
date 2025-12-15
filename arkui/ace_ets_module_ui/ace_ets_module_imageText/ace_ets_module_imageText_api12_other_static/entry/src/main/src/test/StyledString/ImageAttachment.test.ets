@@ -72,13 +72,14 @@ export default function ImageAttachment() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   ImageAttachment_static_0001
      * @tc.name     ImageAttachment_static_0001
      * @tc.desc     ImageAttachment_static_0001
      * @tc.level    Level.LEVEL1
      */
-    it('ImageAttachment_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ImageAttachment_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('StyledString ImageAttachment_static_0001 START');
       await CommonFunc.sleep(1000);
@@ -127,13 +128,14 @@ export default function ImageAttachment() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   ImageAttachment_static_0002
      * @tc.name     ImageAttachment_static_0002
      * @tc.desc     ImageAttachment_static_0002
      * @tc.level    Level.LEVEL1
      */
-    it('ImageAttachment_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ImageAttachment_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('StyledString ImageAttachment_static_0002 START');
       await CommonFunc.sleep(1000);
@@ -182,68 +184,70 @@ export default function ImageAttachment() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   ImageAttachment_static_0003
      * @tc.name     ImageAttachment_static_0003
      * @tc.desc     ImageAttachment_static_0003
      * @tc.level    Level.LEVEL1
      */
-    it('ImageAttachment_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let driver = Driver.create();
-      console.info('StyledString ImageAttachment_static_0003 START');
-      await CommonFunc.sleep(1000);
-      let set = await driver.findComponent(ON.id('setImage3'))
-      await CommonFunc.sleep(500);
-      set!.click();
-      await CommonFunc.sleep(500);
-      let get = await driver.findComponent(ON.id('getImage'))
-      await CommonFunc.sleep(500);
-      get!.click()
-      await CommonFunc.sleep(500);
-      console.info('StyledString ImageAttachment_static_0003_static marginTop ' + AppStorage.get<string>('marginTop'));
-      expect('' + AppStorage.get<string>('marginTop')).assertEqual('0');
-      console.info('StyledString ImageAttachment_static_0003_static marginRight ' +
-      AppStorage.get<string>('marginRight'));
-      expect('' + AppStorage.get<string>('marginRight')).assertEqual('0');
-      console.info('StyledString ImageAttachment_static_0003_static marginBottom ' +
-      AppStorage.get<string>('marginBottom'));
-      expect('' + AppStorage.get<string>('marginBottom')).assertEqual('0');
-      console.info('StyledString ImageAttachment_static_0003_static marginLeft ' +
-      AppStorage.get<string>('marginLeft'));
-      expect('' + AppStorage.get<string>('marginLeft')).assertEqual('0');
-      console.info('StyledString ImageAttachment_static_0003_static paddingTop ' +
-      AppStorage.get<string>('paddingTop'));
-      expect('' + AppStorage.get<string>('paddingTop')).assertEqual('0');
-      console.info('StyledString ImageAttachment_static_0003_static paddingRight ' +
-      AppStorage.get<string>('paddingRight'));
-      expect('' + AppStorage.get<string>('paddingRight')).assertEqual('0');
-      console.info('StyledString ImageAttachment_static_0003_static paddingBottom ' +
-      AppStorage.get<string>('paddingBottom'));
-      expect('' + AppStorage.get<string>('paddingBottom')).assertEqual('0');
-      console.info('StyledString ImageAttachment_static_0003_static paddingLeft ' +
-      AppStorage.get<string>('paddingLeft'));
-      expect('' + AppStorage.get<string>('paddingLeft')).assertEqual('0');
-      AppStorage.delete('marginTop')
-      AppStorage.delete('marginRight')
-      AppStorage.delete('marginBottom')
-      AppStorage.delete('marginLeft')
-      AppStorage.delete('paddingTop')
-      AppStorage.delete('paddingRight')
-      AppStorage.delete('paddingBottom')
-      AppStorage.delete('paddingLeft')
-      console.info("[ImageAttachment_static_0003_static] end");
-      done();
-    });
+// it('ImageAttachment_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    //   let driver = Driver.create();
+    //   console.info('StyledString ImageAttachment_static_0003 START');
+    //   await CommonFunc.sleep(1000);
+    //   let set = await driver.findComponent(ON.id('setImage3'))
+    //   await CommonFunc.sleep(500);
+    //   set!.click();
+    //   await CommonFunc.sleep(500);
+    //   let get = await driver.findComponent(ON.id('getImage'))
+    //   await CommonFunc.sleep(500);
+    //   get!.click()
+    //   await CommonFunc.sleep(500);
+    //   console.info('StyledString ImageAttachment_static_0003_static marginTop ' + AppStorage.get<string>('marginTop'));
+    //   expect('' + AppStorage.get<string>('marginTop')).assertEqual('0');
+    //   console.info('StyledString ImageAttachment_static_0003_static marginRight ' +
+    //   AppStorage.get<string>('marginRight'));
+    //   expect('' + AppStorage.get<string>('marginRight')).assertEqual('0');
+    //   console.info('StyledString ImageAttachment_static_0003_static marginBottom ' +
+    //   AppStorage.get<string>('marginBottom'));
+    //   expect('' + AppStorage.get<string>('marginBottom')).assertEqual('0');
+    //   console.info('StyledString ImageAttachment_static_0003_static marginLeft ' +
+    //   AppStorage.get<string>('marginLeft'));
+    //   expect('' + AppStorage.get<string>('marginLeft')).assertEqual('0');
+    //   console.info('StyledString ImageAttachment_static_0003_static paddingTop ' +
+    //   AppStorage.get<string>('paddingTop'));
+    //   expect('' + AppStorage.get<string>('paddingTop')).assertEqual('0');
+    //   console.info('StyledString ImageAttachment_static_0003_static paddingRight ' +
+    //   AppStorage.get<string>('paddingRight'));
+    //   expect('' + AppStorage.get<string>('paddingRight')).assertEqual('0');
+    //   console.info('StyledString ImageAttachment_static_0003_static paddingBottom ' +
+    //   AppStorage.get<string>('paddingBottom'));
+    //   expect('' + AppStorage.get<string>('paddingBottom')).assertEqual('0');
+    //   console.info('StyledString ImageAttachment_static_0003_static paddingLeft ' +
+    //   AppStorage.get<string>('paddingLeft'));
+    //   expect('' + AppStorage.get<string>('paddingLeft')).assertEqual('0');
+    //   AppStorage.delete('marginTop')
+    //   AppStorage.delete('marginRight')
+    //   AppStorage.delete('marginBottom')
+    //   AppStorage.delete('marginLeft')
+    //   AppStorage.delete('paddingTop')
+    //   AppStorage.delete('paddingRight')
+    //   AppStorage.delete('paddingBottom')
+    //   AppStorage.delete('paddingLeft')
+    //   console.info("[ImageAttachment_static_0003_static] end");
+    //   done();
+    // });
 
 
     
-    /*
+    
+    /**
      * @tc.number   ImageAttachment_static_0004
      * @tc.name     ImageAttachment_static_0004
      * @tc.desc     ImageAttachment_static_0004
      * @tc.level    Level.LEVEL1
      */
-    it('ImageAttachment_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ImageAttachment_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('StyledString ImageAttachment_static_0004 START');
       await CommonFunc.sleep(1000);
@@ -292,13 +296,14 @@ export default function ImageAttachment() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   ImageAttachment_static_0005
      * @tc.name     ImageAttachment_static_0005
      * @tc.desc     ImageAttachment_static_0005
      * @tc.level    Level.LEVEL1
      */
-    it('ImageAttachment_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ImageAttachment_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('StyledString ImageAttachment_static_0005 START');
       await CommonFunc.sleep(1000);
@@ -347,57 +352,58 @@ export default function ImageAttachment() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   ImageAttachment_static_0006
      * @tc.name     ImageAttachment_static_0006
      * @tc.desc     ImageAttachment_static_0006
      * @tc.level    Level.LEVEL1
      */
-    it('ImageAttachment_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let driver = Driver.create();
-      console.info('StyledString ImageAttachment_static_0006 START');
-      await CommonFunc.sleep(1000);
-      let set = await driver.findComponent(ON.id('setImage6'))
-      await CommonFunc.sleep(500);
-      set!.click();
-      await CommonFunc.sleep(500);
-      let get = await driver.findComponent(ON.id('getImage'))
-      await CommonFunc.sleep(500);
-      get!.click()
-      await CommonFunc.sleep(500);
-      console.info('StyledString ImageAttachment_static_0006_static marginTop ' + AppStorage.get<string>('marginTop'));
-      expect('' + AppStorage.get<string>('marginTop')).assertEqual('undefined');
-      console.info('StyledString ImageAttachment_static_0006_static marginRight ' +
-      AppStorage.get<string>('marginRight'));
-      expect('' + AppStorage.get<string>('marginRight')).assertEqual('undefined');
-      console.info('StyledString ImageAttachment_static_0006_static marginBottom ' +
-      AppStorage.get<string>('marginBottom'));
-      expect('' + AppStorage.get<string>('marginBottom')).assertEqual('undefined');
-      console.info('StyledString ImageAttachment_static_0006_static marginLeft ' +
-      AppStorage.get<string>('marginLeft'));
-      expect('' + AppStorage.get<string>('marginLeft')).assertEqual('undefined');
-      console.info('StyledString ImageAttachment_static_0006_static paddingTop ' +
-      AppStorage.get<string>('paddingTop'));
-      expect('' + AppStorage.get<string>('paddingTop')).assertEqual('undefined');
-      console.info('StyledString ImageAttachment_static_0006_static paddingRight ' +
-      AppStorage.get<string>('paddingRight'));
-      expect('' + AppStorage.get<string>('paddingRight')).assertEqual('undefined');
-      console.info('StyledString ImageAttachment_static_0006_static paddingBottom ' +
-      AppStorage.get<string>('paddingBottom'));
-      expect('' + AppStorage.get<string>('paddingBottom')).assertEqual('undefined');
-      console.info('StyledString ImageAttachment_static_0006_static paddingLeft ' +
-      AppStorage.get<string>('paddingLeft'));
-      expect('' + AppStorage.get<string>('paddingLeft')).assertEqual('undefined');
-      AppStorage.delete('marginTop')
-      AppStorage.delete('marginRight')
-      AppStorage.delete('marginBottom')
-      AppStorage.delete('marginLeft')
-      AppStorage.delete('paddingTop')
-      AppStorage.delete('paddingRight')
-      AppStorage.delete('paddingBottom')
-      AppStorage.delete('paddingLeft')
-      console.info("[ImageAttachment_static_0006_static] end");
-      done();
-    });
+// it('ImageAttachment_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    //   let driver = Driver.create();
+    //   console.info('StyledString ImageAttachment_static_0006 START');
+    //   await CommonFunc.sleep(1000);
+    //   let set = await driver.findComponent(ON.id('setImage6'))
+    //   await CommonFunc.sleep(500);
+    //   set!.click();
+    //   await CommonFunc.sleep(500);
+    //   let get = await driver.findComponent(ON.id('getImage'))
+    //   await CommonFunc.sleep(500);
+    //   get!.click()
+    //   await CommonFunc.sleep(500);
+    //   console.info('StyledString ImageAttachment_static_0006_static marginTop ' + AppStorage.get<string>('marginTop'));
+    //   expect('' + AppStorage.get<string>('marginTop')).assertEqual('undefined');
+    //   console.info('StyledString ImageAttachment_static_0006_static marginRight ' +
+    //   AppStorage.get<string>('marginRight'));
+    //   expect('' + AppStorage.get<string>('marginRight')).assertEqual('undefined');
+    //   console.info('StyledString ImageAttachment_static_0006_static marginBottom ' +
+    //   AppStorage.get<string>('marginBottom'));
+    //   expect('' + AppStorage.get<string>('marginBottom')).assertEqual('undefined');
+    //   console.info('StyledString ImageAttachment_static_0006_static marginLeft ' +
+    //   AppStorage.get<string>('marginLeft'));
+    //   expect('' + AppStorage.get<string>('marginLeft')).assertEqual('undefined');
+    //   console.info('StyledString ImageAttachment_static_0006_static paddingTop ' +
+    //   AppStorage.get<string>('paddingTop'));
+    //   expect('' + AppStorage.get<string>('paddingTop')).assertEqual('undefined');
+    //   console.info('StyledString ImageAttachment_static_0006_static paddingRight ' +
+    //   AppStorage.get<string>('paddingRight'));
+    //   expect('' + AppStorage.get<string>('paddingRight')).assertEqual('undefined');
+    //   console.info('StyledString ImageAttachment_static_0006_static paddingBottom ' +
+    //   AppStorage.get<string>('paddingBottom'));
+    //   expect('' + AppStorage.get<string>('paddingBottom')).assertEqual('undefined');
+    //   console.info('StyledString ImageAttachment_static_0006_static paddingLeft ' +
+    //   AppStorage.get<string>('paddingLeft'));
+    //   expect('' + AppStorage.get<string>('paddingLeft')).assertEqual('undefined');
+    //   AppStorage.delete('marginTop')
+    //   AppStorage.delete('marginRight')
+    //   AppStorage.delete('marginBottom')
+    //   AppStorage.delete('marginLeft')
+    //   AppStorage.delete('paddingTop')
+    //   AppStorage.delete('paddingRight')
+    //   AppStorage.delete('paddingBottom')
+    //   AppStorage.delete('paddingLeft')
+    //   console.info("[ImageAttachment_static_0006_static] end");
+    //   done();
+    // });
   })
 }

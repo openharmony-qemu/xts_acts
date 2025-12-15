@@ -55,7 +55,8 @@ export default function pushNamedRoute22() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   pushNamedRoute22_static_0100
      * @tc.name     pushNamedRoute22_static_0100
      * @tc.desc     pushNamedRoute22_static_0100

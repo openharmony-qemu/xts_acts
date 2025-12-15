@@ -52,13 +52,14 @@ export default function DatePickerDialogJsunit() {
     
     
     
-/*
+
+    /**
      * @tc.number   DatePickerDialogJsunit_static_0100
      * @tc.name     DatePickerDialogJsunit_static_0100
      * @tc.desc     DatePickerDialogJsunit_static_0100
      * @tc.level    Level.LEVEL2
      */
-    it('DatePickerDialogJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('DatePickerDialogJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
 
       console.info('DatePickerDialogJsunit_0100 START');
 	    let driver = Driver.create()

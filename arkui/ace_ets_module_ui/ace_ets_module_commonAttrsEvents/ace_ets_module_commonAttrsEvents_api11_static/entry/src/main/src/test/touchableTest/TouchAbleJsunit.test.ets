@@ -69,26 +69,28 @@ export default function touchAbleJsunit() {
       console.info("touchAble after each called");
     });
 
-    /*
+    
+    /**
      * @tc.number   testTouchAble_static_001
      * @tc.name     testTouchAble_static_001
      * @tc.desc     testTouchAble_static_001
      * @tc.level    Level.LEVEL0
      */
-    it('testTouchAble_static_001', Level.LEVEL0, async (): Promise<void> => {
+it('testTouchAble_static_001', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(1000)
       let strJson: string = inspector.getInspectorByKey('ellipse');
       console.info("[testTouchAble001] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('focusable')).assertEqual(false);
     });
 
-    /*
+    
+    /**
      * @tc.number   testTouchAble_static_002
      * @tc.name     testTouchAble_static_002
      * @tc.desc     testTouchAble_static_002
      * @tc.level    Level.LEVEL0
      */
-    it('testTouchAble_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testTouchAble_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await CommonFunc.sleep(1000);
       let callbackTwo = (eventData: events_emitter.EventData) => {
         console.info("[testTouchAble002] get event state result is: " + JSON.stringify(eventData));

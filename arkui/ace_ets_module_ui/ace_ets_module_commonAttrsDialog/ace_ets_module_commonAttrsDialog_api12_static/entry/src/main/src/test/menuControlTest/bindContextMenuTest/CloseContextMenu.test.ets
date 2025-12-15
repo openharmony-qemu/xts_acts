@@ -52,13 +52,14 @@ export default function CloseContextMenu() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   CloseContextMenu_static_0100
      * @tc.name     CloseContextMenu_static_0100
      * @tc.desc     CloseContextMenu_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('CloseContextMenu_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('CloseContextMenu_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('CloseContextMenu_0100 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()

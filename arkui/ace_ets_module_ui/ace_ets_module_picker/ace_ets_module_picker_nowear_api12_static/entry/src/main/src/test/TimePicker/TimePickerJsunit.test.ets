@@ -37,7 +37,7 @@ export default function timepickerJsunit() {
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api12.static", "EntryAbility")
     });
 
-    beforeEach(async (done: () => void): Promise<void> => {
+    beforeEach(async () => {
       console.info("timepickerJsunit beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/TimePicker/timePicker',
@@ -58,7 +58,8 @@ export default function timepickerJsunit() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   ArkUI_Stage_timepicker_static_1000
      * @tc.name     ArkUI_Stage_timepicker_static_1000
      * @tc.desc     ArkUI_Stage_timepicker_static_1000
@@ -79,7 +80,8 @@ it('ArkUI_Stage_timepicker_static_1000', Level.LEVEL1, async (done: () => void):
     });
 
     
-    /*
+    
+/**
      * @tc.number   ArkUI_Stage_timepicker_static_2000
      * @tc.name     ArkUI_Stage_timepicker_static_2000
      * @tc.desc     ArkUI_Stage_timepicker_static_2000
@@ -99,7 +101,8 @@ it('ArkUI_Stage_timepicker_static_2000', Level.LEVEL1, async (done: () => void):
     });
 
     
-    /*
+    
+/**
      * @tc.number   ArkUI_Stage_timepicker_static_3000
      * @tc.name     ArkUI_Stage_timepicker_static_3000
      * @tc.desc     ArkUI_Stage_timepicker_static_3000

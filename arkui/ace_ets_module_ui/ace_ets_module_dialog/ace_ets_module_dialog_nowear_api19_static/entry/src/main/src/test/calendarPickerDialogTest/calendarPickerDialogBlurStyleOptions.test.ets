@@ -36,7 +36,6 @@ export default function calendarPickerDialogBlurStyleOptionsTest() {
     beforeAll(() => {
       console.info("CalendarPickerDialogBlurStyleOptionsTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api19.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {
@@ -58,7 +57,8 @@ export default function calendarPickerDialogBlurStyleOptionsTest() {
     
     
     
-    /*
+    
+/**
      * @tc.number   calendarPickerDialogBlurStyleOptions_static_0100
      * @tc.name     calendarPickerDialogBlurStyleOptions_static_0100
      * @tc.desc     calendarPickerDialogBlurStyleOptions_static_0100
@@ -100,7 +100,8 @@ it('calendarPickerDialogBlurStyleOptions_static_0100', TestType.FUNCTION | Size.
     
     
     
-    /*
+    
+/**
      * @tc.number   calendarPickerDialogBlurStyleOptions_static_0200
      * @tc.name     calendarPickerDialogBlurStyleOptions_static_0200
      * @tc.desc     calendarPickerDialogBlurStyleOptions_static_0200
@@ -132,7 +133,8 @@ it('calendarPickerDialogBlurStyleOptions_static_0200', TestType.FUNCTION | Size.
     
     
     
-    /*
+    
+/**
      * @tc.number   calendarPickerDialogBlurStyleOptions_static_0300
      * @tc.name     calendarPickerDialogBlurStyleOptions_static_0300
      * @tc.desc     calendarPickerDialogBlurStyleOptions_static_0300

@@ -81,7 +81,8 @@ export default function PropArray1() {
 
 
     
-    /*
+    
+/**
      * @tc.number   PropArray_static_0500
      * @tc.name     PropArray_static_0500
      * @tc.desc     PropArray_static_0500
@@ -103,7 +104,8 @@ it('PropArray_static_0500', Level.LEVEL0, async (done: () => void): Promise<void
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   PropArray_static_0600
      * @tc.name     PropArray_static_0600
      * @tc.desc     PropArray_static_0600
@@ -125,7 +127,8 @@ it('PropArray_static_0600', Level.LEVEL0, async (done: () => void): Promise<void
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   PropArray_static_0700
      * @tc.name     PropArray_static_0700
      * @tc.desc     PropArray_static_0700
@@ -147,7 +150,8 @@ it('PropArray_static_0700', Level.LEVEL0, async (done: () => void): Promise<void
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   PropArray_static_0800
      * @tc.name     PropArray_static_0800
      * @tc.desc     PropArray_static_0800
@@ -169,7 +173,8 @@ it('PropArray_static_0800', Level.LEVEL0, async (done: () => void): Promise<void
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   PropArray_static_0900
      * @tc.name     PropArray_static_0900
      * @tc.desc     PropArray_static_0900

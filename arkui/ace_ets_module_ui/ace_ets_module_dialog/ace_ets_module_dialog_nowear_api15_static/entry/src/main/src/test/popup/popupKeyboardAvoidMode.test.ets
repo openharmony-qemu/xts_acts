@@ -74,7 +74,7 @@ export default function popupKeyboardAvoidMode() {
       }
     })
 
-    /*
+    /**
      * @tc.number   popupKeyboardAvoidMode_static_0100
      * @tc.name     popupKeyboardAvoidMode_static_0100
      * @tc.desc     popupKeyboardAvoidMode_static_0100
@@ -113,12 +113,12 @@ export default function popupKeyboardAvoidMode() {
       done()
     })
 
-    /*
-         * @tc.number   popupKeyboardAvoidMode_static_0200
-         * @tc.name     popupKeyboardAvoidMode_static_0200
-         * @tc.desc     popupKeyboardAvoidMode_static_0200
-         * @tc.level    Level.LEVEL1
-         */
+    /**
+     * @tc.number   popupKeyboardAvoidMode_static_0200
+     * @tc.name     popupKeyboardAvoidMode_static_0200
+     * @tc.desc     popupKeyboardAvoidMode_static_0200
+     * @tc.level    Level.LEVEL1
+     */
     it("popupKeyboardAvoidMode_static_0200", Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("popupKeyboardAvoidMode_static_0200 START")
       if (!currentDeviceIsPC) {
@@ -150,7 +150,7 @@ export default function popupKeyboardAvoidMode() {
       done()
     })
 
-    /*
+    /**
      * @tc.number   popupKeyboardAvoidMode_static_0300
      * @tc.name     popupKeyboardAvoidMode_static_0300
      * @tc.desc     popupKeyboardAvoidMode_static_0300
@@ -197,12 +197,12 @@ export default function popupKeyboardAvoidMode() {
       done()
     })
 
-    /*
-         * @tc.number   popupKeyboardAvoidMode_static_0400
-         * @tc.name     popupKeyboardAvoidMode_static_0400
-         * @tc.desc     popupKeyboardAvoidMode_static_0400
-         * @tc.level    Level.LEVEL1
-         */
+    /**
+     * @tc.number   popupKeyboardAvoidMode_static_0400
+     * @tc.name     popupKeyboardAvoidMode_static_0400
+     * @tc.desc     popupKeyboardAvoidMode_static_0400
+     * @tc.level    Level.LEVEL1
+     */
     it("popupKeyboardAvoidMode_static_0400", Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("popupKeyboardAvoidMode_static_0400 START")
       if (!currentDeviceIsPC) {

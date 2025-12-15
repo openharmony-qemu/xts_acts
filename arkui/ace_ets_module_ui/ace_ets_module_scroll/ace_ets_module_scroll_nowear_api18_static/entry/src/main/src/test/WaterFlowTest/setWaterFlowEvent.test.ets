@@ -55,13 +55,12 @@ export default function setWaterFlowEvent() {
       console.info("setWaterFlowEvent beforeEach end");
     });
 
-    /**
-     * @tc.number    setWaterFlowEvent_001
-     * @tc.name      setWaterFlowEvent_static_0100
-     * @tc.desc      Set scrolling events for the WaterFlow component.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    
+/**
+     * @tc.number   setWaterFlowEvent_static_0100
+     * @tc.name     setWaterFlowEvent_static_0100
+     * @tc.desc     setWaterFlowEvent_static_0100
+     * @tc.level    Level.LEVEL0
      */
 it('setWaterFlowEvent_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[setWaterFlowEvent_static_0100] START');

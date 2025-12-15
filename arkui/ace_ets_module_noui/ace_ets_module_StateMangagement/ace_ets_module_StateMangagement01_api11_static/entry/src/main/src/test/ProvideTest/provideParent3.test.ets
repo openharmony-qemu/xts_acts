@@ -82,7 +82,8 @@ export default function provideParent3() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   provideParentTreeTest_static_0100
      * @tc.name     provideParentTreeTest_static_0100
      * @tc.desc     provideParentTreeTest_static_0100

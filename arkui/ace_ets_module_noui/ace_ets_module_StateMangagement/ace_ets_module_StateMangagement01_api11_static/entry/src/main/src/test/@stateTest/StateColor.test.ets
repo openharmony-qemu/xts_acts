@@ -81,7 +81,8 @@ export default function StateColor() {
 
 
     
-    /*
+    
+/**
      * @tc.number   StateColor_static_0100
      * @tc.name     StateColor_static_0100
      * @tc.desc     StateColor_static_0100
@@ -103,7 +104,8 @@ it('StateColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   StateColor_static_0200
      * @tc.name     StateColor_static_0200
      * @tc.desc     StateColor_static_0200
@@ -125,7 +127,8 @@ it('StateColor_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   StateColor_static_0300
      * @tc.name     StateColor_static_0300
      * @tc.desc     StateColor_static_0300
@@ -147,7 +150,8 @@ it('StateColor_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   StateColor_static_0400
      * @tc.name     StateColor_static_0400
      * @tc.desc     StateColor_static_0400
@@ -169,7 +173,8 @@ it('StateColor_static_0400', Level.LEVEL0, async (done: () => void): Promise<voi
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   StateColor_static_0500
      * @tc.name     StateColor_static_0500
      * @tc.desc     StateColor_static_0500
@@ -193,7 +198,8 @@ it('StateColor_static_0500', Level.LEVEL0, async (done: () => void): Promise<voi
 
 
     
-    /*
+    
+/**
      * @tc.number   StateColor_static_0600
      * @tc.name     StateColor_static_0600
      * @tc.desc     StateColor_static_0600

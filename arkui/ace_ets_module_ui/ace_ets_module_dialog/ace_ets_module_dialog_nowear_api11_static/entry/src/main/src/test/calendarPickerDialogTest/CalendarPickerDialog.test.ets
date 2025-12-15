@@ -62,13 +62,14 @@ export default function CalendarPickerDialog() {
 
     
     
-/*
+
+    /**
      * @tc.number   CalendarPickerDialog_static_0100
      * @tc.name     CalendarPickerDialog_static_0100
      * @tc.desc     CalendarPickerDialog_static_0100
      * @tc.level    Level.LEVEL2
      */
-    it('CalendarPickerDialog_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('CalendarPickerDialog_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('CalendarPickerDialog_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

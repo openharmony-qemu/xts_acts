@@ -17,6 +17,7 @@
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
 import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export type CallbackWithReturn = (data: BasePageConfig) => Promise<void> ;
 
@@ -31,7 +32,7 @@ export default class CommonTest {
   static initTest(pageConfig: PageConfig, supportView: string[], testValues: TestValue[], ...functions: (CallbackWithReturn | CallbackWithReturn[])[]) {
     console.log('functionsfunctions' + functions?.length)
     supportView.forEach(targetView => {
-
+      console.log('targetViewtargetView 1111' + targetView)
       //Obtain the last index of cases that need to be executed.
       let lastIndex: Int = 0;
 
@@ -40,8 +41,10 @@ export default class CommonTest {
           lastIndex = index;
         }
       });
+      console.log('targetViewtargetView 2222' + targetView)
 
       testValues.forEach((testValue: TestValue, index: Int) => {
+        console.log('targetViewtargetView 3333' + JSON.stringify(testValue))
 
         //If there are components that need to be excluded, do not generate cases.
         if (testValue.exceptView.indexOf(targetView) < 0) {
@@ -50,6 +53,7 @@ export default class CommonTest {
           if (pageConfig.sharePage != undefined) {
             sharePage = pageConfig.sharePage!;
           }
+          console.log('targetViewtargetView 4444' + JSON.stringify(targetView))
 
           //Create case name.
           let caseTag = pageConfig.testName + targetView + '_static_' + testValue.describe;
@@ -61,12 +65,7 @@ export default class CommonTest {
             caseTag = pageConfig.testName + containerView + targetView + testValue.describe;
           }
 
-          /**
-           * @tc.number SUB_ACE_ETS_COMPONENT_COMMON_ATTRS_0100
-           * @tc.name caseTag, like:testPositionAlphabetIndexerSetNumber
-           * @tc.desc Test whether the state of different components
-           *            after modifying their properties meets expectations
-           */
+          
           it(caseTag, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             console.info('[' + caseTag + '] START');
             //Push page.
@@ -76,7 +75,7 @@ export default class CommonTest {
             pageConfig.containerView = containerView;
             pageConfig.testValue = testValue;
             await Utils.pushPage(pageConfig);
-            //try {
+            try {
               //If there is no call back functions, do nothing.
               if (functions.length === 0) {
                 done();
@@ -95,24 +94,33 @@ export default class CommonTest {
                 caseTag: caseTag,
                 testValue: testValue,
               }
-              console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
+            if (funcs.length > 1) {
+              let customParams = await (functions[0] as CallbackWithReturn)(data) ?? '';
+              //Set custom params to data, can be used by check test result.
+              if (customParams) {
+                data.customParams = customParams;
+              }
+            } else {
+              //If there is only an assertion function, automatically modify the status value
+              AppStorage.setOrCreate<number | string>('_layoutWeight', data.testValue.setValue.layoutWeight) // 页面不更新
+              console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue.layoutWeight));
               await Utils.sleep(1000);
+            }
               //Check test result
               let strJson = inspector.getInspectorByKey(pageConfig.componentKey);
-              await Utils.sleep(1000);
               console.info('[' + caseTag + '] ================== strJson: ' + strJson);
               data.viewObj = JSON.parseJsonElement(strJson);
               await (functions[functions.length - 1] as CallbackWithReturn)(data);
 
-            // } catch (err: Error) {
-            //   let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
-            //   console.error(msg);
-            //   console.error(err.stack);
-            //   if (err.name != 'AssertException') {
-            //     await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
-            //     expect().assertFail();
-            //   }
-            // }
+            } catch (err: Error) {
+              let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
+              console.error(msg);
+              console.error(err.stack);
+              if (err.name != 'AssertException') {
+                await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
+                expect().assertFail();
+              }
+            }
 
             await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
 

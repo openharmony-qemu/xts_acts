@@ -54,7 +54,8 @@ export default function DatePickerDialogShadowTest() {
       console.info('textAreaInputTest after each called');
     });
     
-    /*
+    
+/**
      * @tc.number   DatePickerDialogShadowTest_static_001
      * @tc.name     DatePickerDialogShadowTest_static_001
      * @tc.desc     DatePickerDialogShadowTest_static_001
@@ -75,7 +76,8 @@ it('DatePickerDialogShadowTest_static_001', Level.LEVEL0, async (done: () => voi
       done();
     })
     
-    /*
+    
+/**
      * @tc.number   DatePickerDialogShadowTest_static_002
      * @tc.name     DatePickerDialogShadowTest_static_002
      * @tc.desc     DatePickerDialogShadowTest_static_002
@@ -96,7 +98,8 @@ it('DatePickerDialogShadowTest_static_002', Level.LEVEL0, async (done: () => voi
       done();
     })
     
-    /*
+    
+/**
      * @tc.number   DatePickerDialogShadowTest_static_003
      * @tc.name     DatePickerDialogShadowTest_static_003
      * @tc.desc     DatePickerDialogShadowTest_static_003
@@ -117,7 +120,8 @@ it('DatePickerDialogShadowTest_static_003', Level.LEVEL0, async (done: () => voi
       done();
     })
     
-    /*
+    
+/**
      * @tc.number   DatePickerDialogShadowTest_static_004
      * @tc.name     DatePickerDialogShadowTest_static_004
      * @tc.desc     DatePickerDialogShadowTest_static_004
@@ -138,7 +142,8 @@ it('DatePickerDialogShadowTest_static_004', Level.LEVEL0, async (done: () => voi
       done();
     })
     
-    /*
+    
+/**
      * @tc.number   DatePickerDialogShadowTest_static_005
      * @tc.name     DatePickerDialogShadowTest_static_005
      * @tc.desc     DatePickerDialogShadowTest_static_005
@@ -159,7 +164,8 @@ it('DatePickerDialogShadowTest_static_005', Level.LEVEL0, async (done: () => voi
       done();
     })
     
-    /*
+    
+/**
      * @tc.number   DatePickerDialogShadowTest_static_006
      * @tc.name     DatePickerDialogShadowTest_static_006
      * @tc.desc     DatePickerDialogShadowTest_static_006
@@ -180,7 +186,8 @@ it('DatePickerDialogShadowTest_static_006', Level.LEVEL0, async (done: () => voi
       done();
     })
     
-    /*
+    
+/**
      * @tc.number   DatePickerDialogShadowTest_static_007
      * @tc.name     DatePickerDialogShadowTest_static_007
      * @tc.desc     DatePickerDialogShadowTest_static_007

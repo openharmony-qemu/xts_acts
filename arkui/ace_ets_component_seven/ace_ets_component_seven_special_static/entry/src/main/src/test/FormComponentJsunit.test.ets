@@ -49,7 +49,8 @@ export default function formComponentJsunitJsunit() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   test_formComponentJsunit001
      * @tc.name     test_formComponentJsunit001
      * @tc.desc     test_formComponentJsunit001
@@ -65,8 +66,9 @@ it('test_formComponentJsunit001', Level.LEVEL0, async (done: () => void): Promis
       done();
     });
 
+
     
-    /*
+/**
      * @tc.number   test_formComponentJsunit002
      * @tc.name     test_formComponentJsunit002
      * @tc.desc     test_formComponentJsunit002
@@ -83,8 +85,9 @@ it('test_formComponentJsunit002', Level.LEVEL0, async (done: () => void): Promis
       done();
     });
 
+
     
-    /*
+/**
      * @tc.number   test_formComponentJsunit003
      * @tc.name     test_formComponentJsunit003
      * @tc.desc     test_formComponentJsunit003
@@ -102,7 +105,8 @@ it('test_formComponentJsunit003', Level.LEVEL0, async (done: () => void): Promis
     });
 
     
-    /*
+    
+/**
      * @tc.number   test_formComponentJsunit004
      * @tc.name     test_formComponentJsunit004
      * @tc.desc     test_formComponentJsunit004
@@ -111,6 +115,7 @@ it('test_formComponentJsunit003', Level.LEVEL0, async (done: () => void): Promis
 it('test_formComponentJsunit004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_formComponentJsunit004] START');
       let strJson = inspector.getInspectorByKey('FormComponentKey1');
+      await Utils.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[test_formComponentJsunit004] obj is: " + JSON.stringify(obj!.getElement('$attrs')));
       expect(obj!.getElement('$attrs').getElement('size').getString('width')).assertEqual("200.00vp");
@@ -120,7 +125,8 @@ it('test_formComponentJsunit004', Level.LEVEL0, async (done: () => void): Promis
     });
 
     
-    /*
+    
+/**
      * @tc.number   test_formComponentJsunit005
      * @tc.name     test_formComponentJsunit005
      * @tc.desc     test_formComponentJsunit005
@@ -129,9 +135,11 @@ it('test_formComponentJsunit004', Level.LEVEL0, async (done: () => void): Promis
 it('test_formComponentJsunit005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_formComponentJsunit005] START');
       let strJson = inspector.getInspectorByKey('FormComponentKey1');
+      await Utils.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[test_formComponentJsunit005] obj is: " + JSON.stringify(obj!.getElement('$attrs')));
       let strJson1 = inspector.getInspectorByKey('FormComponentKey2');
+      await Utils.sleep(1000);
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[test_formComponentJsunit005] obj1 is: " + JSON.stringify(obj1!.getElement('$attrs')));
       //得到json值与 设置不一致，与原生json返回做对比验证

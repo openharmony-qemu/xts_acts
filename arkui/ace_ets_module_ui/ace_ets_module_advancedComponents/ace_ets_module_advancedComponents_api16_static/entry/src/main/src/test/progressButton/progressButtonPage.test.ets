@@ -56,20 +56,21 @@ export default function progressButtonPageTest() {
       console.info("progressButtonPageTest beforeEach end");
     });
 
-    afterEach(async (): Promise<void> => {
+    afterEach(async () => {
       await Utils.sleep(1000);
       console.info('progressButtonPage after each called');
     })
 
     
     
-    /*
+    
+    /**
      * @tc.number   progressButtonPageTest_static_0100
      * @tc.name     progressButtonPageTest_static_0100
      * @tc.desc     progressButtonPageTest_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('progressButtonPageTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('progressButtonPageTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[progressButtonPageTest_static_0100] START');
       let driver = Driver.create();
       await driver.delayMs(2000);

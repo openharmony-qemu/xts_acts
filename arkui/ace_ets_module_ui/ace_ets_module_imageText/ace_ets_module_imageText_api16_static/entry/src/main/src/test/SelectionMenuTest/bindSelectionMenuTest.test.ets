@@ -81,13 +81,14 @@ export default function bindSelectionMenuTest() {
     });
 
 
-    /*
-         * @tc.number   bindSelectionMenuTest_static_0001
-         * @tc.name     bindSelectionMenuTest_static_0001
-         * @tc.desc     bindSelectionMenuTest_static_0001
-         * @tc.level    Level.LEVEL1
-         */
-    it('bindSelectionMenuTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    
+    /**
+     * @tc.number   bindSelectionMenuTest_static_0001
+     * @tc.name     bindSelectionMenuTest_static_0001
+     * @tc.desc     bindSelectionMenuTest_static_0001
+     * @tc.level    Level.LEVEL1
+     */
+it('bindSelectionMenuTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
           console.info('bindSelectionMenuTest bindSelectionMenuTest0001 START');
@@ -108,13 +109,14 @@ export default function bindSelectionMenuTest() {
     });
 
 
-    /*
-         * @tc.number   bindSelectionMenuTest_static_0002
-         * @tc.name     bindSelectionMenuTest_static_0002
-         * @tc.desc     bindSelectionMenuTest_static_0002
-         * @tc.level    Level.LEVEL1
-         */
-    it('bindSelectionMenuTest_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    
+    /**
+     * @tc.number   bindSelectionMenuTest_static_0002
+     * @tc.name     bindSelectionMenuTest_static_0002
+     * @tc.desc     bindSelectionMenuTest_static_0002
+     * @tc.level    Level.LEVEL1
+     */
+it('bindSelectionMenuTest_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
           console.info('bindSelectionMenuTest bindSelectionMenuTest0002 START');
@@ -132,13 +134,14 @@ export default function bindSelectionMenuTest() {
     });
 
 
-    /*
-         * @tc.number   bindSelectionMenuTest_static_0003
-         * @tc.name     bindSelectionMenuTest_static_0003
-         * @tc.desc     bindSelectionMenuTest_static_0003
-         * @tc.level    Level.LEVEL1
-         */
-    it('bindSelectionMenuTest_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    
+    /**
+     * @tc.number   bindSelectionMenuTest_static_0003
+     * @tc.name     bindSelectionMenuTest_static_0003
+     * @tc.desc     bindSelectionMenuTest_static_0003
+     * @tc.level    Level.LEVEL1
+     */
+it('bindSelectionMenuTest_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
           console.info('bindSelectionMenuTest bindSelectionMenuTest0003 START');
@@ -162,13 +165,14 @@ export default function bindSelectionMenuTest() {
     });
 
 
-    /*
-         * @tc.number   bindSelectionMenuTest_static_0004
-         * @tc.name     bindSelectionMenuTest_static_0004
-         * @tc.desc     bindSelectionMenuTest_static_0004
-         * @tc.level    Level.LEVEL1
-         */
-    it('bindSelectionMenuTest_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    
+    /**
+     * @tc.number   bindSelectionMenuTest_static_0004
+     * @tc.name     bindSelectionMenuTest_static_0004
+     * @tc.desc     bindSelectionMenuTest_static_0004
+     * @tc.level    Level.LEVEL1
+     */
+it('bindSelectionMenuTest_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
           console.info('bindSelectionMenuTest bindSelectionMenuTest0004 START');
@@ -188,13 +192,14 @@ export default function bindSelectionMenuTest() {
     });
 
 
-    /*
-         * @tc.number   bindSelectionMenuTest_static_0005
-         * @tc.name     bindSelectionMenuTest_static_0005
-         * @tc.desc     bindSelectionMenuTest_static_0005
-         * @tc.level    Level.LEVEL1
-         */
-    it('bindSelectionMenuTest_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    
+    /**
+     * @tc.number   bindSelectionMenuTest_static_0005
+     * @tc.name     bindSelectionMenuTest_static_0005
+     * @tc.desc     bindSelectionMenuTest_static_0005
+     * @tc.level    Level.LEVEL1
+     */
+it('bindSelectionMenuTest_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
           console.info('bindSelectionMenuTest bindSelectionMenuTest0005 START');
@@ -212,13 +217,14 @@ export default function bindSelectionMenuTest() {
     });
 
 
-    /*
-         * @tc.number   bindSelectionMenuTest_static_0006
-         * @tc.name     bindSelectionMenuTest_static_0006
-         * @tc.desc     bindSelectionMenuTest_static_0006
-         * @tc.level    Level.LEVEL1
-         */
-    it('bindSelectionMenuTest_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    
+    /**
+     * @tc.number   bindSelectionMenuTest_static_0006
+     * @tc.name     bindSelectionMenuTest_static_0006
+     * @tc.desc     bindSelectionMenuTest_static_0006
+     * @tc.level    Level.LEVEL1
+     */
+it('bindSelectionMenuTest_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
           console.info('bindSelectionMenuTest bindSelectionMenuTest0006 START');
@@ -242,13 +248,14 @@ export default function bindSelectionMenuTest() {
     });
 
 
-    /*
-         * @tc.number   bindSelectionMenuTest_static_0007
-         * @tc.name     bindSelectionMenuTest_static_0007
-         * @tc.desc     bindSelectionMenuTest_static_0007
-         * @tc.level    Level.LEVEL1
-         */
-    it('bindSelectionMenuTest_static_0007', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    
+    /**
+     * @tc.number   bindSelectionMenuTest_static_0007
+     * @tc.name     bindSelectionMenuTest_static_0007
+     * @tc.desc     bindSelectionMenuTest_static_0007
+     * @tc.level    Level.LEVEL1
+     */
+it('bindSelectionMenuTest_static_0007', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
           console.info('bindSelectionMenuTest bindSelectionMenuTest0007 START');
@@ -268,13 +275,14 @@ export default function bindSelectionMenuTest() {
     });
 
 
-    /*
-         * @tc.number   bindSelectionMenuTest_static_0008
-         * @tc.name     bindSelectionMenuTest_static_0008
-         * @tc.desc     bindSelectionMenuTest_static_0008
-         * @tc.level    Level.LEVEL1
-         */
-    it('bindSelectionMenuTest_static_0008', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    
+    /**
+     * @tc.number   bindSelectionMenuTest_static_0008
+     * @tc.name     bindSelectionMenuTest_static_0008
+     * @tc.desc     bindSelectionMenuTest_static_0008
+     * @tc.level    Level.LEVEL1
+     */
+it('bindSelectionMenuTest_static_0008', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
           console.info('bindSelectionMenuTest bindSelectionMenuTest0008 START');
@@ -293,13 +301,14 @@ export default function bindSelectionMenuTest() {
     });
 
 
-    /*
-         * @tc.number   bindSelectionMenuTest_static_0009
-         * @tc.name     bindSelectionMenuTest_static_0009
-         * @tc.desc     bindSelectionMenuTest_static_0009
-         * @tc.level    Level.LEVEL1
-         */
-    it('bindSelectionMenuTest_static_0009', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    
+    /**
+     * @tc.number   bindSelectionMenuTest_static_0009
+     * @tc.name     bindSelectionMenuTest_static_0009
+     * @tc.desc     bindSelectionMenuTest_static_0009
+     * @tc.level    Level.LEVEL1
+     */
+it('bindSelectionMenuTest_static_0009', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
           console.info('bindSelectionMenuTest bindSelectionMenuTest0009 START');

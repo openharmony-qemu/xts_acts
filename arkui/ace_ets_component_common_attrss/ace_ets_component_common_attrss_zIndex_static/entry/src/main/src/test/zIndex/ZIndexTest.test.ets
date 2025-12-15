@@ -128,13 +128,8 @@ export default function zIndexTest() {
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
-    beforeEach(() => {
-      AppStorage.setOrCreate<Int>('_zIndex', 0)
-    })
+
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
-      let strJson = inspector.getInspectorByKey(pageConfig.componentKey);
-      await CommonFunc.sleep(2000);
-      data.viewObj = JSON.parseJsonElement(strJson);
       console.info('[' + data.caseTag + ']' + 'zIndex is:' + data.viewObj?.getElement('$attrs').getDouble('zIndex'));
       expect(data.viewObj?.getElement('$attrs').getDouble('zIndex')).assertEqual(data.testValue.expectValue.zIndex);
     });

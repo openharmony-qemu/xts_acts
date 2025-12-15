@@ -80,13 +80,14 @@ export default function textPickerDialogHoverMode() {
       console.info("MultiNavigation after each called");
     });
     
-    /*
+    
+    /**
      * @tc.number   textPickerDialogHoverMode_static_0100
      * @tc.name     textPickerDialogHoverMode_static_0100
      * @tc.desc     textPickerDialogHoverMode_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('textPickerDialogHoverMode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('textPickerDialogHoverMode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textPickerDialogHoverMode_0100 START');
       if (display.isFoldable() && display.getFoldStatus() == 3) {
         let driver = Driver.create()
@@ -112,13 +113,14 @@ export default function textPickerDialogHoverMode() {
       done();
     });
     
-    /*
+    
+    /**
      * @tc.number   textPickerDialogHoverMode_static_0200
      * @tc.name     textPickerDialogHoverMode_static_0200
      * @tc.desc     textPickerDialogHoverMode_static_0200
      * @tc.level    Level.LEVEL0
      */
-    it('textPickerDialogHoverMode_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('textPickerDialogHoverMode_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textPickerDialogHoverMode_0200 START');
       if (display.isFoldable() && display.getFoldStatus() == 3) {
         let driver = Driver.create()

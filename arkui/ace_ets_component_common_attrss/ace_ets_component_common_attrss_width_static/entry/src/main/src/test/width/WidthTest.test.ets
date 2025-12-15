@@ -37,10 +37,15 @@ interface Attrs{
  * Test of common attribute: width
  */
 export default function widthTest() {
+  console.info("widthTest beforeEach start");
   await UtilsTest.msSleep(4000)
   await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
   await UtilsTest.msSleep(4000)
-  const uiContext = AppStorage.get<UIContext>('uiContext')!
+
+  console.info("WidthTest beforeEach start 111111111111");
+  let uiContext = AppStorage.get<UIContext>('uiContext')!
+  console.info("WidthTest beforeEach start 2222222222");
+
   //A list of components that support width attributes is required.
   let supportView = new Array<string>(
     'AlphabetIndexer',
@@ -161,9 +166,7 @@ export default function widthTest() {
       
 
     });
-    afterEach(() => {
-      AppStorage.setOrCreate<Length>('_width', 400)
-    })
+
     //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       // AppStorage.setOrCreate<Length>('_width', data.testValue.setValue.width)

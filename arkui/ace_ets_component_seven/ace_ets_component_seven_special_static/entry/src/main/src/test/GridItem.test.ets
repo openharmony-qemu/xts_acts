@@ -51,7 +51,8 @@ export default function gridItemOnSelectJsunit() {
     
    
     
-    /*
+    
+/**
      * @tc.number   testGridItem_static_0100
      * @tc.name     testGridItem_static_0100
      * @tc.desc     testGridItem_static_0100
@@ -71,7 +72,8 @@ it('testGridItem_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
 
     
     
-    /*
+    
+/**
      * @tc.number   testGridItem_static_0101
      * @tc.name     testGridItem_static_0101
      * @tc.desc     testGridItem_static_0101
@@ -90,7 +92,8 @@ it('testGridItem_static_0101', Level.LEVEL0, async (done: () => void): Promise<v
 
    
     
-    /*
+    
+/**
      * @tc.number   testGridItem_static_0102
      * @tc.name     testGridItem_static_0102
      * @tc.desc     testGridItem_static_0102
@@ -109,7 +112,8 @@ it('testGridItem_static_0102', Level.LEVEL0, async (done: () => void): Promise<v
 
    
     
-    /*
+    
+/**
      * @tc.number   testGridItem_static_0103
      * @tc.name     testGridItem_static_0103
      * @tc.desc     testGridItem_static_0103
@@ -128,7 +132,8 @@ it('testGridItem_static_0103', Level.LEVEL0, async (done: () => void): Promise<v
 
     
     
-    /*
+    
+/**
      * @tc.number   testGridItem_static_0104
      * @tc.name     testGridItem_static_0104
      * @tc.desc     testGridItem_static_0104
@@ -147,7 +152,8 @@ it('testGridItem_static_0104', Level.LEVEL0, async (done: () => void): Promise<v
 
     
     
-    /*
+    
+/**
      * @tc.number   testGridItem_static_0105
      * @tc.name     testGridItem_static_0105
      * @tc.desc     testGridItem_static_0105

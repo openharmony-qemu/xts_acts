@@ -57,7 +57,8 @@ export default function selectJsunit() {
     })
 
     
-    /*
+    
+/**
      * @tc.number   ArkUI_Stage_Select_Layout_static_0100
      * @tc.name     ArkUI_Stage_Select_Layout_static_0100
      * @tc.desc     ArkUI_Stage_Select_Layout_static_0100
@@ -73,7 +74,8 @@ it('ArkUI_Stage_Select_Layout_static_0100', Level.LEVEL1, async (done: () => voi
     });
 
     
-    /*
+    
+/**
      * @tc.number   ArkUI_Stage_Select_Space_static_0100
      * @tc.name     ArkUI_Stage_Select_Space_static_0100
      * @tc.desc     ArkUI_Stage_Select_Space_static_0100
@@ -89,7 +91,8 @@ it('ArkUI_Stage_Select_Space_static_0100', Level.LEVEL1, async (done: () => void
     });
 
     
-    /*
+    
+/**
      * @tc.number   ArkUI_Stage_Select_selected_static_0100
      * @tc.name     ArkUI_Stage_Select_selected_static_0100
      * @tc.desc     ArkUI_Stage_Select_selected_static_0100
@@ -105,7 +108,8 @@ it('ArkUI_Stage_Select_selected_static_0100', Level.LEVEL1, async (done: () => v
     });
 
     
-    /*
+    
+/**
      * @tc.number   ArkUI_Stage_Select_value_static_0100
      * @tc.name     ArkUI_Stage_Select_value_static_0100
      * @tc.desc     ArkUI_Stage_Select_value_static_0100
@@ -121,7 +125,8 @@ it('ArkUI_Stage_Select_value_static_0100', Level.LEVEL1, async (done: () => void
     });
 
     
-    /*
+    
+/**
      * @tc.number   ArkUI_Stage_Select_font_static_0100
      * @tc.name     ArkUI_Stage_Select_font_static_0100
      * @tc.desc     ArkUI_Stage_Select_font_static_0100
@@ -131,13 +136,14 @@ it('ArkUI_Stage_Select_font_static_0100', Level.LEVEL1, async (done: () => void)
       console.info("ArkUI_Stage_Select_font_static_0100 start");
       let strJson = inspector.getInspectorByKey('selectTest');
       let objNew = JSON.parseJsonElement(strJson);
-      console.info("ArkUI_Stage_Select_font_static_0100: space=" + objNew.getElement('$attrs').getElement('font').getString('size'));
-      expect(objNew.getElement('$attrs').getElement('font').getString('size')).assertEqual('30.00fp');
+      console.info("ArkUI_Stage_Select_font_static_0100: space=" + JSON.parseJsonElement(objNew.getElement('$attrs').getString('font')).getString('size'));
+      expect(JSON.parseJsonElement(objNew.getElement('$attrs').getString('font')).getString('size')).assertEqual('30.00fp');
       done();
     });
 
     
-    /*
+    
+/**
      * @tc.number   ArkUI_Stage_Select_fontColor_static_0100
      * @tc.name     ArkUI_Stage_Select_fontColor_static_0100
      * @tc.desc     ArkUI_Stage_Select_fontColor_static_0100
@@ -153,7 +159,8 @@ it('ArkUI_Stage_Select_fontColor_static_0100', Level.LEVEL1, async (done: () => 
     });
 
     
-    /*
+    
+/**
      * @tc.number   ArkUI_Stage_Select_selectedOptionFont_static_0100
      * @tc.name     ArkUI_Stage_Select_selectedOptionFont_static_0100
      * @tc.desc     ArkUI_Stage_Select_selectedOptionFont_static_0100
@@ -163,13 +170,15 @@ it('ArkUI_Stage_Select_selectedOptionFont_static_0100', Level.LEVEL1, async (don
       console.info("ArkUI_Stage_Select_selectedOptionFont_static_0100 start");
       let strJson = inspector.getInspectorByKey('selectTest');
       let objNew = JSON.parseJsonElement(strJson);
-      console.info("ArkUI_Stage_Select_selectedOptionFont_static_0100: space=" + objNew.getElement('$attrs').getElement('selectedOptionFont').getString('size'));
-      expect(objNew.getElement('$attrs').getElement('selectedOptionFont').getString('size')).assertEqual('40.00fp');
+      console.info("ArkUI_Stage_Select_selectedOptionFont_static_0100: space=" +
+      JSON.parseJsonElement(objNew.getElement('$attrs').getString('selectedOptionFont')).getString('size'));
+      expect(JSON.parseJsonElement(objNew.getElement('$attrs').getString('selectedOptionFont')).getString('size')).assertEqual('40.00fp');
       done();
     });
 
     
-    /*
+    
+/**
      * @tc.number   ArkUI_Stage_Select_selectedOptionFontColor_static_0100
      * @tc.name     ArkUI_Stage_Select_selectedOptionFontColor_static_0100
      * @tc.desc     ArkUI_Stage_Select_selectedOptionFontColor_static_0100
@@ -184,7 +193,8 @@ it('ArkUI_Stage_Select_selectedOptionFontColor_static_0100', Level.LEVEL1, async
     });
 
     
-    /*
+    
+/**
      * @tc.number   ArkUI_Stage_Select_selectedOptionFontColor_static_0200
      * @tc.name     ArkUI_Stage_Select_selectedOptionFontColor_static_0200
      * @tc.desc     ArkUI_Stage_Select_selectedOptionFontColor_static_0200
@@ -199,7 +209,8 @@ it('ArkUI_Stage_Select_selectedOptionFontColor_static_0200', Level.LEVEL1, async
     });
 
     
-    /*
+    
+/**
      * @tc.number   ArkUI_Stage_Select_selectedOptionBgColor_static_0100
      * @tc.name     ArkUI_Stage_Select_selectedOptionBgColor_static_0100
      * @tc.desc     ArkUI_Stage_Select_selectedOptionBgColor_static_0100
@@ -215,7 +226,8 @@ it('ArkUI_Stage_Select_selectedOptionBgColor_static_0100', Level.LEVEL1, async (
     });
 
     
-    /*
+    
+/**
      * @tc.number   ArkUI_Stage_Select_optionBgColor_static_0100
      * @tc.name     ArkUI_Stage_Select_optionBgColor_static_0100
      * @tc.desc     ArkUI_Stage_Select_optionBgColor_static_0100
@@ -231,7 +243,8 @@ it('ArkUI_Stage_Select_optionBgColor_static_0100', Level.LEVEL1, async (done: ()
     });
 
     
-    /*
+    
+/**
      * @tc.number   ArkUI_Stage_Select_optionFont_static_0100
      * @tc.name     ArkUI_Stage_Select_optionFont_static_0100
      * @tc.desc     ArkUI_Stage_Select_optionFont_static_0100
@@ -241,13 +254,15 @@ it('ArkUI_Stage_Select_optionFont_static_0100', Level.LEVEL1, async (done: () =>
       console.info("ArkUI_Stage_Select_optionFont_static_0100 start");
       let strJson = inspector.getInspectorByKey('selectTest');
       let objNew = JSON.parseJsonElement(strJson);
-      console.info("ArkUI_Stage_Select_optionFont_static_0100: space=" + objNew.getElement('$attrs').getElement('optionFont').getString('size'));
-      expect(objNew.getElement('$attrs').getElement('optionFont').getString('size')).assertEqual('30.00fp');
+      console.info("ArkUI_Stage_Select_optionFont_static_0100: space=" +
+      JSON.parseJsonElement(objNew.getElement('$attrs').getString('optionFont')).getString('size'));
+      expect(JSON.parseJsonElement(objNew.getElement('$attrs').getString('optionFont')).getString('size')).assertEqual('30.00fp');
       done();
     });
 
     
-    /*
+    
+/**
      * @tc.number   ArkUI_Stage_Select_optionFontColor_static_0100
      * @tc.name     ArkUI_Stage_Select_optionFontColor_static_0100
      * @tc.desc     ArkUI_Stage_Select_optionFontColor_static_0100

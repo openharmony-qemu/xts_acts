@@ -79,7 +79,8 @@ export default function LinkColor() {
       console.info("LinkColor beforeEach end");
     });
     
-    /*
+    
+/**
      * @tc.number   LinkColor_static_0100
      * @tc.name     LinkColor_static_0100
      * @tc.desc     LinkColor_static_0100
@@ -103,7 +104,8 @@ it('LinkColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void
 
 
     
-    /*
+    
+/**
      * @tc.number   LinkColor_static_0200
      * @tc.name     LinkColor_static_0200
      * @tc.desc     LinkColor_static_0200
@@ -125,7 +127,8 @@ it('LinkColor_static_0200', Level.LEVEL0, async (done: () => void): Promise<void
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   LinkColor_static_0300
      * @tc.name     LinkColor_static_0300
      * @tc.desc     LinkColor_static_0300
@@ -147,7 +150,8 @@ it('LinkColor_static_0300', Level.LEVEL0, async (done: () => void): Promise<void
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   LinkColor_static_0400
      * @tc.name     LinkColor_static_0400
      * @tc.desc     LinkColor_static_0400
@@ -170,7 +174,8 @@ it('LinkColor_static_0400', Level.LEVEL0, async (done: () => void): Promise<void
     });
 
     
-    /*
+    
+/**
      * @tc.number   LinkColor_static_0500
      * @tc.name     LinkColor_static_0500
      * @tc.desc     LinkColor_static_0500
@@ -194,7 +199,8 @@ it('LinkColor_static_0500', Level.LEVEL0, async (done: () => void): Promise<void
 
 
     
-    /*
+    
+/**
      * @tc.number   LinkColor_static_0600
      * @tc.name     LinkColor_static_0600
      * @tc.desc     LinkColor_static_0600

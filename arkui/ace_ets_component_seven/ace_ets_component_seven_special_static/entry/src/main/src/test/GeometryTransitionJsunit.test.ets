@@ -53,7 +53,8 @@ export default function geometryTransitionJsunit() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   geometryTransitionTest_0100
      * @tc.name     geometryTransitionTest_0100
      * @tc.desc     geometryTransitionTest_0100

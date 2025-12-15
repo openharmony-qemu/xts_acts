@@ -55,7 +55,8 @@ export default function clear1() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   clear1_static_0100
      * @tc.name     clear1_static_0100
      * @tc.desc     clear1_static_0100

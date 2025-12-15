@@ -45,18 +45,18 @@ struct ShowTextPickerDialog2 {
               this.v = value.value as string
               console.info('TextPickerDialog:onAccept()' + JSON.stringify(value))
             },
-            backgroundEffect: {
-              radius: 40,
-              saturation: 25,
-              brightness: 2,
-              color: Color.Pink,
-              adaptiveColor: AdaptiveColor.DEFAULT,
-              policy:BlurStyleActivePolicy.ALWAYS_ACTIVE,
-              inactiveColor:Color.Blue,
-              blurOptions: {
-                grayscale: [20,20]
-              }
-            } as BackgroundEffectOptions
+            // backgroundEffect: {
+            //   radius: 40,
+            //   saturation: 25,
+            //   brightness: 2,
+            //   color: Color.Pink,
+            //   adaptiveColor: AdaptiveColor.DEFAULT,
+            //   policy:BlurStyleActivePolicy.ALWAYS_ACTIVE,
+            //   inactiveColor:Color.Blue,
+            //   blurOptions: {
+            //     grayscale: [20,20]
+            //   }
+            // } as BackgroundEffectOptions
           })
         })
       Button('ShowTextPickerDialog_Effect002')

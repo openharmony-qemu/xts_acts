@@ -66,13 +66,14 @@ export default function TextInputStopBackPressTest() {
 
     
     
-/*
+
+    /**
      * @tc.number   TextInputStopBackPressTest_static_0010
      * @tc.name     TextInputStopBackPressTest_static_0010
      * @tc.desc     TextInputStopBackPressTest_static_0010
      * @tc.level    Level.LEVEL2
      */
-    it('TextInputStopBackPressTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('TextInputStopBackPressTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextInputStopBackPressTest_static_0010] START');
       let strJson = inspector.getInspectorByKey('TextInput_stopBackPress_true');
       let obj = JSON.parseJsonElement(strJson);
@@ -84,13 +85,14 @@ export default function TextInputStopBackPressTest() {
 
     
     
-/*
+
+    /**
      * @tc.number   TextInputStopBackPressTest_static_0020
      * @tc.name     TextInputStopBackPressTest_static_0020
      * @tc.desc     TextInputStopBackPressTest_static_0020
      * @tc.level    Level.LEVEL2
      */
-    it('TextInputStopBackPressTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('TextInputStopBackPressTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextInputStopBackPressTest_static_0020] START');
       let strJson = inspector.getInspectorByKey('TextInput_stopBackPress_false');
       let obj = JSON.parseJsonElement(strJson);
@@ -102,13 +104,14 @@ export default function TextInputStopBackPressTest() {
 
     
     
-/*
+
+    /**
      * @tc.number   TextInputStopBackPressTest_static_0030
      * @tc.name     TextInputStopBackPressTest_static_0030
      * @tc.desc     TextInputStopBackPressTest_static_0030
      * @tc.level    Level.LEVEL2
      */
-    it('TextInputStopBackPressTest_static_0030', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('TextInputStopBackPressTest_static_0030', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextInputStopBackPressTest_static_0030] START');
       let strJson = inspector.getInspectorByKey('TextInput_stopBackPress_default');
       let obj = JSON.parseJsonElement(strJson);
@@ -120,13 +123,14 @@ export default function TextInputStopBackPressTest() {
 
     
     
-/*
+
+    /**
      * @tc.number   TextInputStopBackPressTest_static_0040
      * @tc.name     TextInputStopBackPressTest_static_0040
      * @tc.desc     TextInputStopBackPressTest_static_0040
      * @tc.level    Level.LEVEL2
      */
-    it('TextInputStopBackPressTest_static_0040', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('TextInputStopBackPressTest_static_0040', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextInputStopBackPressTest_static_0040] START');
       let strJson = inspector.getInspectorByKey('TextInput_stopBackPress_undefined');
       let obj = JSON.parseJsonElement(strJson);

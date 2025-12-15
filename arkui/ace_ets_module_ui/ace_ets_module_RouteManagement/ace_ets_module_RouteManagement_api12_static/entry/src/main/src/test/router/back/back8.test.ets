@@ -55,7 +55,8 @@ export default function back8() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   back8_static_0100
      * @tc.name     back8_static_0100
      * @tc.desc     back8_static_0100

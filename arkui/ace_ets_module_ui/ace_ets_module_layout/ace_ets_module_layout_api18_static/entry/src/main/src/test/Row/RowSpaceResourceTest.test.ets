@@ -50,7 +50,6 @@ import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-const uiContext = new UIContext();
 
 export default function RowSpaceResourceTest() {
   describe('RowSpaceResourceTest', () => {
@@ -87,13 +86,14 @@ export default function RowSpaceResourceTest() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   RowSpaceResourceTest_static_0100
      * @tc.name     RowSpaceResourceTest_static_0100
      * @tc.desc     RowSpaceResourceTest_static_0100
      * @tc.level    Level.LEVEL1
      */
-    it('RowSpaceResourceTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('RowSpaceResourceTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[RowSpaceResourceTest_0100] START');
       await CommonFunc.sleep(1000);
 
@@ -118,13 +118,14 @@ export default function RowSpaceResourceTest() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   RowSpaceResourceTest_static_0200
      * @tc.name     RowSpaceResourceTest_static_0200
      * @tc.desc     RowSpaceResourceTest_static_0200
      * @tc.level    Level.LEVEL1
      */
-    it('RowSpaceResourceTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('RowSpaceResourceTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[RowSpaceResourceTest_0200] START');
       await CommonFunc.sleep(1000);
 
@@ -149,13 +150,14 @@ export default function RowSpaceResourceTest() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   RowSpaceResourceTest_static_0300
      * @tc.name     RowSpaceResourceTest_static_0300
      * @tc.desc     RowSpaceResourceTest_static_0300
      * @tc.level    Level.LEVEL1
      */
-    it('RowSpaceResourceTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('RowSpaceResourceTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[RowSpaceResourceTest_0300] START');
       await CommonFunc.sleep(1000);
 

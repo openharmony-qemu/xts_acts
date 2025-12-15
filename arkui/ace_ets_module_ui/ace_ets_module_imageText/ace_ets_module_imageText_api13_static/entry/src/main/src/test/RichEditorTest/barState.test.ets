@@ -66,13 +66,15 @@ export default function BarStateTest() {
     });
 
     
-/*
+
+    
+/**
      * @tc.number   BarStateTest_static_0010
      * @tc.name     BarStateTest_static_0010
      * @tc.desc     BarStateTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-    it('BarStateTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('BarStateTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[BarStateTest_static_0010] START');
       let strJson =inspector.getInspectorByKey('RichEditor_BarState_Auto');
       await CommonFunc.sleep(2000);
@@ -85,13 +87,15 @@ export default function BarStateTest() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   BarStateTest_static_0020
      * @tc.name     BarStateTest_static_0020
      * @tc.desc     BarStateTest_static_0020
      * @tc.level    Level.LEVEL0
      */
-    it('BarStateTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('BarStateTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[BarStateTest_static_0020] START');
       let strJson = inspector.getInspectorByKey('RichEditor_BarState_Off');
       await CommonFunc.sleep(2000);
@@ -104,13 +108,15 @@ export default function BarStateTest() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   BarStateTest_static_0030
      * @tc.name     BarStateTest_static_0030
      * @tc.desc     BarStateTest_static_0030
      * @tc.level    Level.LEVEL0
      */
-    it('BarStateTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('BarStateTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[BarStateTest_static_0030] START');
       let strJson =inspector.getInspectorByKey('RichEditor_BarState_On');
       await CommonFunc.sleep(2000);
@@ -123,13 +129,15 @@ export default function BarStateTest() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   BarStateTest_static_0040
      * @tc.name     BarStateTest_static_0040
      * @tc.desc     BarStateTest_static_0040
      * @tc.level    Level.LEVEL0
      */
-    it('BarStateTest_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('BarStateTest_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[BarStateTest_static_0040] START');
       let strJson =inspector.getInspectorByKey('RichEditor_barState_default');
       await CommonFunc.sleep(2000);
@@ -142,13 +150,15 @@ export default function BarStateTest() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   BarStateTest_static_0050
      * @tc.name     BarStateTest_static_0050
      * @tc.desc     BarStateTest_static_0050
      * @tc.level    Level.LEVEL0
      */
-    it('BarStateTest_static_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('BarStateTest_static_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[BarStateTest_static_0050] START');
       let strJson = inspector.getInspectorByKey('RichEditor_barState_undefined');
       await CommonFunc.sleep(2000);

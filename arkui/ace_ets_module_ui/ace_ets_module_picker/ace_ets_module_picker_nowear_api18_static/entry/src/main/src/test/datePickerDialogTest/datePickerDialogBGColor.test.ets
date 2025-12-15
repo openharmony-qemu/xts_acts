@@ -55,7 +55,8 @@ export default function DatePickerDialogBGColorTest() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   DatePickerDialogBGColorTest_static_001
      * @tc.name     DatePickerDialogBGColorTest_static_001
      * @tc.desc     DatePickerDialogBGColorTest_static_001
@@ -76,7 +77,8 @@ it('DatePickerDialogBGColorTest_static_001', Level.LEVEL0, async (done: () => vo
       done();
     })
     
-    /*
+    
+/**
      * @tc.number   DatePickerDialogBGColorTest_static_002
      * @tc.name     DatePickerDialogBGColorTest_static_002
      * @tc.desc     DatePickerDialogBGColorTest_static_002
@@ -97,7 +99,8 @@ it('DatePickerDialogBGColorTest_static_002', Level.LEVEL0, async (done: () => vo
       done();
     })
     
-    /*
+    
+/**
      * @tc.number   DatePickerDialogBGColorTest_static_003
      * @tc.name     DatePickerDialogBGColorTest_static_003
      * @tc.desc     DatePickerDialogBGColorTest_static_003
@@ -118,7 +121,8 @@ it('DatePickerDialogBGColorTest_static_003', Level.LEVEL0, async (done: () => vo
       done();
     })
     
-    /*
+    
+/**
      * @tc.number   DatePickerDialogBGColorTest_static_004
      * @tc.name     DatePickerDialogBGColorTest_static_004
      * @tc.desc     DatePickerDialogBGColorTest_static_004
@@ -139,7 +143,8 @@ it('DatePickerDialogBGColorTest_static_004', Level.LEVEL0, async (done: () => vo
       done();
     })
     
-    /*
+    
+/**
      * @tc.number   DatePickerDialogBGColorTest_static_005
      * @tc.name     DatePickerDialogBGColorTest_static_005
      * @tc.desc     DatePickerDialogBGColorTest_static_005
@@ -160,7 +165,8 @@ it('DatePickerDialogBGColorTest_static_005', Level.LEVEL0, async (done: () => vo
       done();
     })
     
-    /*
+    
+/**
      * @tc.number   DatePickerDialogBGColorTest_static_006
      * @tc.name     DatePickerDialogBGColorTest_static_006
      * @tc.desc     DatePickerDialogBGColorTest_static_006
@@ -186,7 +192,8 @@ it('DatePickerDialogBGColorTest_static_006', Level.LEVEL0, async (done: () => vo
       done();
     })
     
-    /*
+    
+/**
      * @tc.number   DatePickerDialogBGColorTest_static_007
      * @tc.name     DatePickerDialogBGColorTest_static_007
      * @tc.desc     DatePickerDialogBGColorTest_static_007
@@ -212,7 +219,8 @@ it('DatePickerDialogBGColorTest_static_007', Level.LEVEL0, async (done: () => vo
       done();
     })
     
-    /*
+    
+/**
      * @tc.number   DatePickerDialogBGColorTest_static_008
      * @tc.name     DatePickerDialogBGColorTest_static_008
      * @tc.desc     DatePickerDialogBGColorTest_static_008
@@ -238,7 +246,8 @@ it('DatePickerDialogBGColorTest_static_008', Level.LEVEL0, async (done: () => vo
       done();
     })
     
-    /*
+    
+/**
      * @tc.number   DatePickerDialogBGColorTest_static_009
      * @tc.name     DatePickerDialogBGColorTest_static_009
      * @tc.desc     DatePickerDialogBGColorTest_static_009

@@ -85,7 +85,8 @@ export default function PersistentTest0040() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   PersistentTest0040_static_001
      * @tc.name     PersistentTest0040_static_001
      * @tc.desc     PersistentTest0040_static_001

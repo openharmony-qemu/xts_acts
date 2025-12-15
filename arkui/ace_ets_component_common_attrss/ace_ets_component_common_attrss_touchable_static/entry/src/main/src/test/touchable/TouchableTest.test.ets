@@ -139,9 +139,7 @@ export default function touchableTest() {
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
-    beforeEach(() => {
-      AppStorage.setOrCreate<HitTestMode>('_hitTestBehavior', HitTestMode.Default)
-    })
+
     //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues,  async (data: BasePageConfig): Promise<void> => {
       let strJson = inspector.getInspectorByKey(pageConfig.componentKey);

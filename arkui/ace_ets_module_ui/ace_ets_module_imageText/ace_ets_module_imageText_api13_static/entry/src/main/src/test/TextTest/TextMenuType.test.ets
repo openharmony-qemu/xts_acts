@@ -59,13 +59,15 @@ export default function TextMenuType() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   TextMenuType_static_0100
      * @tc.name     TextMenuType_static_0100
      * @tc.desc     TextMenuType_static_0100
      * @tc.level    Level.LEVEL2
      */
-    it('TextMenuType_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('TextMenuType_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('TextMenuType_static_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('textMenuType1');
@@ -78,13 +80,15 @@ export default function TextMenuType() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   TextMenuType_static_0200
      * @tc.name     TextMenuType_static_0200
      * @tc.desc     TextMenuType_static_0200
      * @tc.level    Level.LEVEL2
      */
-    it('TextMenuType_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('TextMenuType_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('TextMenuType_static_0200 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('textMenuType2');

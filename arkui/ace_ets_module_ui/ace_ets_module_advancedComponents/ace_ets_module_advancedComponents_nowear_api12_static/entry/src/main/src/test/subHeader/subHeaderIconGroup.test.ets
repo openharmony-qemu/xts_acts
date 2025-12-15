@@ -62,13 +62,14 @@ export default function subHeaderIconGroup() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   subHeaderIconGroup_static_0100
      * @tc.name     subHeaderIconGroup_static_0100
      * @tc.desc     subHeaderIconGroup_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('subHeaderIconGroup_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('subHeaderIconGroup_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[subHeaderIconGroup_static_0100] START');
       let driver = Driver.create();
       await driver.delayMs(2000);

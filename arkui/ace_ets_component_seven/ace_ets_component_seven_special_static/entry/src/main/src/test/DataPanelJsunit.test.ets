@@ -53,13 +53,14 @@ export default function datapanelJsunit() {
     });
 
 
-    /*
-      * @tc.number   testDataPanel01_static_01
-      * @tc.name     testDataPanel01_static_01
-      * @tc.desc     testDataPanel01_static_01
-      * @tc.level    Level.LEVEL0
-      */
-    it('testDataPanel01_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    
+    /**
+     * @tc.number   testDataPanel01_static_01
+     * @tc.name     testDataPanel01_static_01
+     * @tc.desc     testDataPanel01_static_01
+     * @tc.level    Level.LEVEL0
+     */
+it('testDataPanel01_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testDataPanel01_static_01 START');
       let strJson = inspector.getInspectorByKey('DataPanelKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -71,13 +72,14 @@ export default function datapanelJsunit() {
       done();
     });
 
-    /*
+    
+    /**
      * @tc.number   testDataPanel02_static_02
      * @tc.name     testDataPanel02_static_02
      * @tc.desc     testDataPanel02_static_02
      * @tc.level    Level.LEVEL0
      */
-    it('testDataPanel02_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testDataPanel02_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testDataPanel02_static_02 START');
       let strJson = inspector.getInspectorByKey('DataPanelKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -88,13 +90,14 @@ export default function datapanelJsunit() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   testDataPanel03_static_03
      * @tc.name     testDataPanel03_static_03
      * @tc.desc     testDataPanel03_static_03
      * @tc.level    Level.LEVEL0
      */
-    it('testDataPanel03_static_03', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testDataPanel03_static_03', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testDataPanel03_static_03 START');
       let strJson = inspector.getInspectorByKey('DataPanelKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -105,13 +108,14 @@ export default function datapanelJsunit() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   testDataPanel04_static_04
      * @tc.name     testDataPanel04_static_04
      * @tc.desc     testDataPanel04_static_04
      * @tc.level    Level.LEVEL0
      */
-    it('testDataPanel04_static_04', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testDataPanel04_static_04', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testDataPanel04_static_04 START');
       let strJson = inspector.getInspectorByKey('DataPanelKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -129,13 +133,14 @@ export default function datapanelJsunit() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   testDataPanel05_static_05
      * @tc.name     testDataPanel05_static_05
      * @tc.desc     testDataPanel05_static_05
      * @tc.level    Level.LEVEL0
      */
-    it('testDataPanel05_static_05', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testDataPanel05_static_05', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testDataPanel05_static_05 START');
       let strJson = inspector.getInspectorByKey('DataPanelKey1');
       let obj = JSON.parseJsonElement(strJson);

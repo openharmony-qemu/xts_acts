@@ -25,10 +25,10 @@ import loadingDialogTest from './dialog/loadingDialogTest.test';
 
 export default function testsuite() {
   counterDirectionTest();//11-14：未交付
-  alertDialogTest();//11-14:运行报错
-  confirmDialogTest();//11-14:运行报错
-  customContentDialogTest();//11-14:运行报错
-  selectDialogTest();//11-14:运行报错
-  tipsDialogTest();//11-14:运行报错
-  loadingDialogTest();//11-14:运行报错
+  alertDialogTest();
+  confirmDialogTest();
+  customContentDialogTest();
+  selectDialogTest();
+  tipsDialogTest();
+  loadingDialogTest();
 }

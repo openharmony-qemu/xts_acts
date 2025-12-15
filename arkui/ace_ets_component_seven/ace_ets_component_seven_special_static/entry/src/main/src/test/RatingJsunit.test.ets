@@ -50,7 +50,8 @@ export default function RatingJsunit() {
 
    
     
-    /*
+    
+/**
      * @tc.number   RatingJsunit_static_0100
      * @tc.name     RatingJsunit_static_0100
      * @tc.desc     RatingJsunit_static_0100
@@ -69,7 +70,8 @@ it('RatingJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
 
    
     
-    /*
+    
+/**
      * @tc.number   RatingJsunit_static_0200
      * @tc.name     RatingJsunit_static_0200
      * @tc.desc     RatingJsunit_static_0200
@@ -90,7 +92,8 @@ it('RatingJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<v
 
    
     
-    /*
+    
+/**
      * @tc.number   RatingJsunit_static_0300
      * @tc.name     RatingJsunit_static_0300
      * @tc.desc     RatingJsunit_static_0300

@@ -62,13 +62,14 @@ export default function onSubmitTest() {
 
     
     
-/*
+
+    /**
      * @tc.number   onSubmitTest_static_0010
      * @tc.name     onSubmitTest_static_0010
      * @tc.desc     onSubmitTest_static_0010
      * @tc.level    Level.LEVEL2
      */
-    it('onSubmitTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('onSubmitTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('onSubmitTest_0010 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -94,13 +95,14 @@ export default function onSubmitTest() {
     });
     
     
-/*
+
+    /**
      * @tc.number   onSubmitTest_static_0020
      * @tc.name     onSubmitTest_static_0020
      * @tc.desc     onSubmitTest_static_0020
      * @tc.level    Level.LEVEL2
      */
-    it('onSubmitTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('onSubmitTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('onSubmitTest_0020 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -131,13 +133,14 @@ export default function onSubmitTest() {
 
     
     
-/*
+
+    /**
      * @tc.number   onSubmitTest_static_0030
      * @tc.name     onSubmitTest_static_0030
      * @tc.desc     onSubmitTest_static_0030
      * @tc.level    Level.LEVEL2
      */
-    it('onSubmitTest_static_0030', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('onSubmitTest_static_0030', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('onSubmitTest_0030 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -163,13 +166,14 @@ export default function onSubmitTest() {
     });
     
     
-/*
+
+    /**
      * @tc.number   onSubmitTest_static_0040
      * @tc.name     onSubmitTest_static_0040
      * @tc.desc     onSubmitTest_static_0040
      * @tc.level    Level.LEVEL2
      */
-    it('onSubmitTest_static_0040', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('onSubmitTest_static_0040', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('onSubmitTest_0040 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

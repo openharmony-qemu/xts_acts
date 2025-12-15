@@ -76,13 +76,14 @@ export default function activeTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   activeTest_static_0010
      * @tc.name     activeTest_static_0010
      * @tc.desc     activeTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-    it('activeTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('activeTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('activeTest_0010 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);
@@ -104,13 +105,14 @@ export default function activeTest() {
       done();
     });
     
-    /*
+    
+    /**
      * @tc.number   activeTest_static_0020
      * @tc.name     activeTest_static_0020
      * @tc.desc     activeTest_static_0020
      * @tc.level    Level.LEVEL0
      */
-    it('activeTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('activeTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('activeTest_0020 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);
@@ -132,13 +134,14 @@ export default function activeTest() {
       done();
     });
     
-    /*
+    
+    /**
      * @tc.number   activeTest_static_0030
      * @tc.name     activeTest_static_0030
      * @tc.desc     activeTest_static_0030
      * @tc.level    Level.LEVEL0
      */
-    it('activeTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('activeTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('activeTest_0030 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);
@@ -158,13 +161,14 @@ export default function activeTest() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   activeTest_static_0040
      * @tc.name     activeTest_static_0040
      * @tc.desc     activeTest_static_0040
      * @tc.level    Level.LEVEL0
      */
-    it('activeTest_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('activeTest_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('activeTest_0040 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);
@@ -188,13 +192,14 @@ export default function activeTest() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   activeTest_static_0050
      * @tc.name     activeTest_static_0050
      * @tc.desc     activeTest_static_0050
      * @tc.level    Level.LEVEL0
      */
-    it('activeTest_static_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('activeTest_static_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('activeTest_0040 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);
@@ -217,13 +222,14 @@ export default function activeTest() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   activeTest_static_0060
      * @tc.name     activeTest_static_0060
      * @tc.desc     activeTest_static_0060
      * @tc.level    Level.LEVEL0
      */
-    it('activeTest_static_0060', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('activeTest_static_0060', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('activeTest_0040 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);

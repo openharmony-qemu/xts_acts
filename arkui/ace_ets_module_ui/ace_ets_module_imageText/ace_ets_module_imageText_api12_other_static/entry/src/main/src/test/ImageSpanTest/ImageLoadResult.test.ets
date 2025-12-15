@@ -63,13 +63,14 @@ export default function ImageLoadResultTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   ImageLoadResultTest_static_0010
      * @tc.name     ImageLoadResultTest_static_0010
      * @tc.desc     ImageLoadResultTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-    it('ImageLoadResultTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ImageLoadResultTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ImageLoadResultTest_0010 START');
       await CommonFunc.sleep(500);
       console.info("[ImageLoadResultTest_0010] width:" +
@@ -86,13 +87,14 @@ export default function ImageLoadResultTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   ImageLoadResultTest_static_0020
      * @tc.name     ImageLoadResultTest_static_0020
      * @tc.desc     ImageLoadResultTest_static_0020
      * @tc.level    Level.LEVEL0
      */
-    it('ImageLoadResultTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ImageLoadResultTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ImageLoadResultTest_0020] START');
       await CommonFunc.sleep(500);
       console.info("[ImageLoadResultTest_0020] componentWidth:"

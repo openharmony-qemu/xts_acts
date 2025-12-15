@@ -67,7 +67,7 @@ export default function selectDialogTest() {
       console.info('selectDialogTest after each called');
     })
 
-    /*
+    /**
      * @tc.number   selectDialogTest_static_0100
      * @tc.name     selectDialogTest_static_0100
      * @tc.desc     selectDialogTest_static_0100

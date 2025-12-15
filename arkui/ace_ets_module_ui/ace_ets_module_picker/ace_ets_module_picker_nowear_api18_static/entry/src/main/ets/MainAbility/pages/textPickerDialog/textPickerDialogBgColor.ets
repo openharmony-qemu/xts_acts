@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, $r, TextOverflow, Row, Button, ClickEvent, BlurStyle, Flex, FlexWrap, Color, ResourceColor } from '@ohos.arkui.component'
+import { Entry, Column, Component, $r, TextOverflow, Row, Button, ClickEvent, BlurStyle, Flex, FlexWrap, Color, ResourceColor, TextPickerDialogOptions } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
@@ -26,7 +26,7 @@ struct TextPickerDialogBgColor {
       defaultPickerItemHeight: 40,
       backgroundColor: (color as ResourceColor|undefined),
       backgroundBlurStyle: BlurStyle.NONE,
-    })
+    } as TextPickerDialogOptions)
 }
   build() {
     Flex({wrap: FlexWrap.Wrap}) {

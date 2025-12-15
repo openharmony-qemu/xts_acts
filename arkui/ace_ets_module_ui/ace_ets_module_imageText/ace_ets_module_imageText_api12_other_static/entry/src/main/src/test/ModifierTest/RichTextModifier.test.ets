@@ -67,13 +67,14 @@ export default function RichTextModifierTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   RichTextModifierTest_static_0010
      * @tc.name     RichTextModifierTest_static_0010
      * @tc.desc     RichTextModifierTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-    it('RichTextModifierTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('RichTextModifierTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RichTextModifierTest_static_0010 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('RichTextModifier_get_width');
@@ -87,13 +88,14 @@ export default function RichTextModifierTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   RichTextModifierTest_static_0020
      * @tc.name     RichTextModifierTest_static_0020
      * @tc.desc     RichTextModifierTest_static_0020
      * @tc.level    Level.LEVEL0
      */
-    it('RichTextModifierTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('RichTextModifierTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RichTextModifierTest_static_0020 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('RichTextModifier_get_type');

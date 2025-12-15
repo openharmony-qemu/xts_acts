@@ -62,13 +62,14 @@ export default function SegmentButtonTest005() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   SegmentButtonTest005_static_001
      * @tc.name     SegmentButtonTest005_static_001
      * @tc.desc     SegmentButtonTest005_static_001
      * @tc.level    Level.LEVEL1
      */
-    it('SegmentButtonTest005_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('SegmentButtonTest005_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SegmentButtonTest005_static_001] START');
       await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
@@ -88,13 +89,14 @@ export default function SegmentButtonTest005() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   SegmentButtonTest005_static_002
      * @tc.name     SegmentButtonTest005_static_002
      * @tc.desc     SegmentButtonTest005_static_002
      * @tc.level    Level.LEVEL1
      */
-    it('SegmentButtonTest005_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('SegmentButtonTest005_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SegmentButtonTest005_static_002] START');
       await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
@@ -113,13 +115,14 @@ export default function SegmentButtonTest005() {
       done();
     });
     
-    /*
+    
+    /**
      * @tc.number   SegmentButtonTest005_static_003
      * @tc.name     SegmentButtonTest005_static_003
      * @tc.desc     SegmentButtonTest005_static_003
      * @tc.level    Level.LEVEL1
      */
-    it('SegmentButtonTest005_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('SegmentButtonTest005_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SegmentButtonTest005_static_003] START');
       await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
@@ -135,13 +138,14 @@ export default function SegmentButtonTest005() {
       done();
     });
     
-    /*
+    
+    /**
      * @tc.number   SegmentButtonTest005_static_004
      * @tc.name     SegmentButtonTest005_static_004
      * @tc.desc     SegmentButtonTest005_static_004
      * @tc.level    Level.LEVEL1
      */
-    it('SegmentButtonTest005_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('SegmentButtonTest005_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SegmentButtonTest005_static_004] START');
       await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))

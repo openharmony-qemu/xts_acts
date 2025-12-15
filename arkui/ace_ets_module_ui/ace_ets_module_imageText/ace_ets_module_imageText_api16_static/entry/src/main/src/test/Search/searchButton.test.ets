@@ -71,13 +71,14 @@ export default function searchButton() {
     });
 
 
-    /*
-         * @tc.number   searchButton_static_0001
-         * @tc.name     searchButton_static_0001
-         * @tc.desc     searchButton_static_0001
-         * @tc.level    Level.LEVEL1
-         */
-    it('searchButton_static_0001', Level.LEVEL1, async () => {
+    
+    /**
+     * @tc.number   searchButton_static_0001
+     * @tc.name     searchButton_static_0001
+     * @tc.desc     searchButton_static_0001
+     * @tc.level    Level.LEVEL1
+     */
+it('searchButton_static_0001', Level.LEVEL1, async () => {
       let driver = Driver.create();
       console.info('searchButton searchButton_static_0001 START');
       await CommonFunc.sleep(500);

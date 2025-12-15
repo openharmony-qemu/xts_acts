@@ -81,7 +81,8 @@ export default function ConsumeArray() {
     });
 
       
-    /*
+    
+/**
      * @tc.number   ConsumeArray_static_0100
      * @tc.name     ConsumeArray_static_0100
      * @tc.desc     ConsumeArray_static_0100
@@ -103,7 +104,8 @@ it('ConsumeArray_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   ConsumeArray_static_0200
      * @tc.name     ConsumeArray_static_0200
      * @tc.desc     ConsumeArray_static_0200
@@ -125,7 +127,8 @@ it('ConsumeArray_static_0200', Level.LEVEL0, async (done: () => void): Promise<v
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   ConsumeArray_static_0300
      * @tc.name     ConsumeArray_static_0300
      * @tc.desc     ConsumeArray_static_0300
@@ -147,7 +150,8 @@ it('ConsumeArray_static_0300', Level.LEVEL0, async (done: () => void): Promise<v
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   ConsumeArray_static_0400
      * @tc.name     ConsumeArray_static_0400
      * @tc.desc     ConsumeArray_static_0400

@@ -79,7 +79,8 @@ export default function StateNumber() {
       console.info("StateNumber beforeEach end");
     });
     
-    /*
+    
+/**
      * @tc.number   StateNumber_static_0100
      * @tc.name     StateNumber_static_0100
      * @tc.desc     StateNumber_static_0100
@@ -101,7 +102,8 @@ it('StateNumber_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   StateNumber_static_0200
      * @tc.name     StateNumber_static_0200
      * @tc.desc     StateNumber_static_0200
@@ -123,7 +125,8 @@ it('StateNumber_static_0200', Level.LEVEL0, async (done: () => void): Promise<vo
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   StateNumber_static_0300
      * @tc.name     StateNumber_static_0300
      * @tc.desc     StateNumber_static_0300
@@ -145,7 +148,8 @@ it('StateNumber_static_0300', Level.LEVEL0, async (done: () => void): Promise<vo
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   StateNumber_static_0400
      * @tc.name     StateNumber_static_0400
      * @tc.desc     StateNumber_static_0400
@@ -167,7 +171,8 @@ it('StateNumber_static_0400', Level.LEVEL0, async (done: () => void): Promise<vo
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   StateNumber_static_0500
      * @tc.name     StateNumber_static_0500
      * @tc.desc     StateNumber_static_0500

@@ -66,13 +66,14 @@ export default function popupDirectionTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   testPopupDirectionTest_static_0100
      * @tc.name     testPopupDirectionTest_static_0100
      * @tc.desc     testPopupDirectionTest_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('testPopupDirectionTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testPopupDirectionTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.log("testPopupDirectionTest_static_0100 ", "START");
       const driver = Driver.create();
       let buttonAuto = await driver.findComponent(ON.id("Auto"));
@@ -96,13 +97,14 @@ export default function popupDirectionTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   testPopupDirectionTest_static_0200
      * @tc.name     testPopupDirectionTest_static_0200
      * @tc.desc     testPopupDirectionTest_static_0200
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('testPopupDirectionTest_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testPopupDirectionTest_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.log("testPopupDirectionTest_static_0200 ", "START");
       const driver = Driver.create();
       let buttonAuto = await driver.findComponent(ON.id("Auto"));

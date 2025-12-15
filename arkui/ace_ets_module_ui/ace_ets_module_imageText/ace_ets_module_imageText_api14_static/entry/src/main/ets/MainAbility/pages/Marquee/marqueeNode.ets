@@ -31,7 +31,7 @@ interface Info {
   src: string;
 }
 
-let data: Info = {
+let data: MarqueeOptions = {
   start: true,
   step: 6,
   loop: undefined,

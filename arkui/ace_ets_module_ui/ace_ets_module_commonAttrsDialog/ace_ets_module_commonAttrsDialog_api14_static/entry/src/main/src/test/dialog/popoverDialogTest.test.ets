@@ -76,13 +76,14 @@ export default function popoverDialogTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   popoverDialogTest_static_0100
      * @tc.name     popoverDialogTest_static_0100
      * @tc.desc     popoverDialogTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('popoverDialogTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('popoverDialogTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('popoverDialogTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

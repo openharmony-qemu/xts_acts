@@ -50,7 +50,8 @@ export default function tabsThirdJsunit() {
 
    
     
-    /*
+    
+/**
      * @tc.number   ArkUI_Tabs_BarGridAlign_static_0200
      * @tc.name     ArkUI_Tabs_BarGridAlign_static_0200
      * @tc.desc     ArkUI_Tabs_BarGridAlign_static_0200
@@ -73,7 +74,8 @@ it('ArkUI_Tabs_BarGridAlign_static_0200', Level.LEVEL0, async (done: () => void)
 
    
     
-    /*
+    
+/**
      * @tc.number   ArkUI_Tabs_BarMode_static_0200
      * @tc.name     ArkUI_Tabs_BarMode_static_0200
      * @tc.desc     ArkUI_Tabs_BarMode_static_0200

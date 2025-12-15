@@ -37,7 +37,6 @@ export default function showTimePickerDialogBlurStyleOptionsTest() {
     beforeAll(() => {
       console.info("ShowTimePickerDialogBlurStyleOptionsTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api19.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {
@@ -61,7 +60,8 @@ export default function showTimePickerDialogBlurStyleOptionsTest() {
     
     
     
-    /*
+    
+/**
      * @tc.number   showTimePickerDialogBlurStyleOptions_static_0100
      * @tc.name     showTimePickerDialogBlurStyleOptions_static_0100
      * @tc.desc     showTimePickerDialogBlurStyleOptions_static_0100
@@ -104,7 +104,8 @@ it('showTimePickerDialogBlurStyleOptions_static_0100', TestType.FUNCTION | Size.
     
     
     
-    /*
+    
+/**
      * @tc.number   showTimePickerDialogBlurStyleOptions_static_0200
      * @tc.name     showTimePickerDialogBlurStyleOptions_static_0200
      * @tc.desc     showTimePickerDialogBlurStyleOptions_static_0200
@@ -137,7 +138,8 @@ it('showTimePickerDialogBlurStyleOptions_static_0200', TestType.FUNCTION | Size.
     
     
     
-    /*
+    
+/**
      * @tc.number   showTimePickerDialogBlurStyleOptions_static_0300
      * @tc.name     showTimePickerDialogBlurStyleOptions_static_0300
      * @tc.desc     showTimePickerDialogBlurStyleOptions_static_0300

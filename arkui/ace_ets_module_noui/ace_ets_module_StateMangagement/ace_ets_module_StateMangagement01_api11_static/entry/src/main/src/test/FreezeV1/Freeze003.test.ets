@@ -95,11 +95,12 @@ export default function FreezeV1Test03() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   FreezeTest_static_0013
      * @tc.name     FreezeTest_static_0013
      * @tc.desc     FreezeTest_static_0013
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('FreezeTest_static_0013', Level.LEVEL0, async () => {
       console.info('FreezeTest_static_001 START');
@@ -128,11 +129,12 @@ it('FreezeTest_static_0013', Level.LEVEL0, async () => {
     });
 
     
-    /*
+    
+/**
      * @tc.number   FreezeTest_static_0023
      * @tc.name     FreezeTest_static_0023
      * @tc.desc     FreezeTest_static_0023
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('FreezeTest_static_0023', Level.LEVEL0, async () => {
       console.info('FreezeTest_static_002 START');
@@ -159,11 +161,12 @@ it('FreezeTest_static_0023', Level.LEVEL0, async () => {
     });
 
     
-    /*
+    
+/**
      * @tc.number   FreezeTest_static_0033
      * @tc.name     FreezeTest_static_0033
      * @tc.desc     FreezeTest_static_0033
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('FreezeTest_static_0033', Level.LEVEL0, async () => {
       console.info('FreezeTest_static_003 START');
@@ -190,11 +193,12 @@ it('FreezeTest_static_0033', Level.LEVEL0, async () => {
     });
 
     
-    /*
+    
+/**
      * @tc.number   FreezeTest_static_0043
      * @tc.name     FreezeTest_static_0043
      * @tc.desc     FreezeTest_static_0043
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('FreezeTest_static_0043', Level.LEVEL0, async () => {
       console.info('FreezeTest_static_004 START');
@@ -218,11 +222,12 @@ it('FreezeTest_static_0043', Level.LEVEL0, async () => {
     });
 
     
-    /*
+    
+/**
      * @tc.number   FreezeTest_static_0053
      * @tc.name     FreezeTest_static_0053
      * @tc.desc     FreezeTest_static_0053
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('FreezeTest_static_0053', Level.LEVEL0, async () => {
       console.info('FreezeTest_static_005 START');

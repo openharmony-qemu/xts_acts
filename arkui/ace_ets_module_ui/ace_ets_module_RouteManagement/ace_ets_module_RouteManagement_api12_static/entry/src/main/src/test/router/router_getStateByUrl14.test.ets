@@ -55,7 +55,8 @@ export default function router_getStateByUrl14() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   router_getStateByUrl14_static_0100
      * @tc.name     router_getStateByUrl14_static_0100
      * @tc.desc     router_getStateByUrl14_static_0100

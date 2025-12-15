@@ -66,13 +66,14 @@ export default function aboutToDisappearJsunit() {
       console.info("aboutToDisappear after each called");
     });
 
-    /*
+    
+    /**
      * @tc.number   aboutToDisappearTest_static_0100
      * @tc.name     aboutToDisappearTest_static_0100
      * @tc.desc     aboutToDisappearTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('aboutToDisappearTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('aboutToDisappearTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('aboutToDisappearTest_static_0100 START');
       await Utils.sleep(1500);
       let callback = (indexEvent: events_emitter.EventData) => {

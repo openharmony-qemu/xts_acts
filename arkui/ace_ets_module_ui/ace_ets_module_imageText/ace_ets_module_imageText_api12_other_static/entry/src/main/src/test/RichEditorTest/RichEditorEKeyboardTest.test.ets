@@ -69,13 +69,14 @@ export default function RichEditorEKeyboardTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   RichEditorEKeyboardTest_static_0001
      * @tc.name     RichEditorEKeyboardTest_static_0001
      * @tc.desc     RichEditorEKeyboardTest_static_0001
      * @tc.level    Level.LEVEL1
      */
-    it('RichEditorEKeyboardTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('RichEditorEKeyboardTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('RichEditorEKeyboardTest0001 START');
       let strJson = inspector.getInspectorByKey('RichEditor');
@@ -88,13 +89,14 @@ export default function RichEditorEKeyboardTest() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   RichEditorEKeyboardTest_static_0002
      * @tc.name     RichEditorEKeyboardTest_static_0002
      * @tc.desc     RichEditorEKeyboardTest_static_0002
      * @tc.level    Level.LEVEL1
      */
-    it('RichEditorEKeyboardTest_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('RichEditorEKeyboardTest_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('RichEditorEKeyboardTest0002 START');
       let strJson = inspector.getInspectorByKey('RichEditor1');
@@ -107,13 +109,14 @@ export default function RichEditorEKeyboardTest() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   RichEditorEKeyboardTest_static_0003
      * @tc.name     RichEditorEKeyboardTest_static_0003
      * @tc.desc     RichEditorEKeyboardTest_static_0003
      * @tc.level    Level.LEVEL1
      */
-    it('RichEditorEKeyboardTest_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('RichEditorEKeyboardTest_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info(' RichEditorEKeyboardTest0003 START');
       let strJson = inspector.getInspectorByKey('RichEditor2');
@@ -126,13 +129,14 @@ export default function RichEditorEKeyboardTest() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   RichEditorEKeyboardTest_static_0004
      * @tc.name     RichEditorEKeyboardTest_static_0004
      * @tc.desc     RichEditorEKeyboardTest_static_0004
      * @tc.level    Level.LEVEL1
      */
-    it('RichEditorEKeyboardTest_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('RichEditorEKeyboardTest_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info(' RichEditorEKeyboardTest0004 START');
       let strJson = inspector.getInspectorByKey('RichEditor3');
