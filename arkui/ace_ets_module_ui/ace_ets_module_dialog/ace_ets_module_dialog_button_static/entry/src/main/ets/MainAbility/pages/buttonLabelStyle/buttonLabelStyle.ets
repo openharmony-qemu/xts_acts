@@ -19,6 +19,7 @@ import {
   Entry,
   Component,
   Column,
+  ColumnOptions,
   Button,
   TextAlign,
   ButtonLabelStyle,
@@ -29,28 +30,35 @@ import {
 @Component
 struct ButtonLabelStylePage {
   build() {
-    Column() {
-      Button('ButtonLabelStyle textAlign Start')
+    Column({ space: 2 } as ColumnOptions) {
+      Button('align·Start')
         .labelStyle({ textAlign: TextAlign.Start } as ButtonLabelStyle)
         .key('buttonLabelStyleTextAlignStart')
         .id('buttonLabelStyleTextAlignStart')
-        .width(260)
-        .height(48)
-      Button('ButtonLabelStyle textAlign Center')
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '30%' })
+        .fontSize(11)
+      Button('align·Center')
         .labelStyle({ textAlign: TextAlign.Center } as ButtonLabelStyle)
         .key('buttonLabelStyleTextAlignCenter')
         .id('buttonLabelStyleTextAlignCenter')
-        .width(260)
-        .height(48)
-      Button('ButtonLabelStyle textAlign End')
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '30%' })
+        .fontSize(11)
+      Button('align·End')
         .labelStyle({ textAlign: TextAlign.End } as ButtonLabelStyle)
         .key('buttonLabelStyleTextAlignEnd')
         .id('buttonLabelStyleTextAlignEnd')
-        .width(260)
-        .height(48)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '30%' })
+        .fontSize(11)
     }
     .width('100%')
     .height('100%')
-    .justifyContent(FlexAlign.Center)
+    .padding({ left: '4%', right: '4%', top: '2%', bottom: '2%' })
+    .justifyContent(FlexAlign.SpaceEvenly)
   }
 }

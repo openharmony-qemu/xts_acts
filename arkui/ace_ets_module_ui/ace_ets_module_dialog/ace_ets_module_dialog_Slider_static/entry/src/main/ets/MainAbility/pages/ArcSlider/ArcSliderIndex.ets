@@ -27,7 +27,8 @@ import {
   ComponentV2,
   CrownSensitivity,
   TouchEvent,
-  Text
+  Text,
+  FlexAlign
 } from '@ohos.arkui.component';
 import {
   ArcSlider,
@@ -125,10 +126,19 @@ struct ArcSliderExample {
       ArcSlider({ options: this.arcSliderOptions })
         .key('arcSliderAllOptions')
         .id('arcSliderAllOptions')
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '48%' })
       ArcSlider({ options: this.leftArcSliderOptions })
         .key('arcSliderLeft')
         .id('arcSliderLeft')
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '48%' })
     }
     .width('100%')
+    .height('100%')
+    .padding({ left: '2%', right: '2%', top: '1%', bottom: '1%' })
+    .justifyContent(FlexAlign.SpaceEvenly)
   }
 }

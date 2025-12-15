@@ -19,6 +19,7 @@ import { describe, it, expect, beforeAll, afterEach, afterAll, Level, beforeEach
 import { abilityDelegatorRegistry, Driver, ON, MatchPattern } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -105,12 +106,12 @@ export default function ButtonOptionsTest() {
         await (openDialogButton?.click() as Promise<void>);
         await Utils.sleep(1000);
 
-        const dialogButton = await driver.findComponent(ON.text('取消', MatchPattern.EQUALS));
+        const dialogButton = await driver.findComponent(ON.text('Cancel', MatchPattern.EQUALS));
         expect(!!dialogButton).assertTrue();
         await (dialogButton?.click() as Promise<void>);
         await Utils.sleep(500);
 
-        expect(AppStorage.get<string>('buttonValue')).assertEqual('取消');
+        expect(AppStorage.get<string>('buttonValue')).assertEqual('Cancel');
         expect(AppStorage.get<boolean>('buttonActionCalled')).assertTrue();
         expect(AppStorage.get<number>('buttonStyle')).assertEqual(ButtonStyleMode.NORMAL);
         expect(AppStorage.get<number>('buttonRole')).assertEqual(ButtonRole.NORMAL);
@@ -141,12 +142,12 @@ export default function ButtonOptionsTest() {
         await (openDialogButton?.click() as Promise<void>);
         await Utils.sleep(1000);
 
-        const dialogButton = await driver.findComponent(ON.text('删除', MatchPattern.EQUALS));
+        const dialogButton = await driver.findComponent(ON.text('Delete', MatchPattern.EQUALS));
         expect(!!dialogButton).assertTrue();
         await (dialogButton?.click() as Promise<void>);
         await Utils.sleep(500);
 
-        expect(AppStorage.get<string>('buttonValue')).assertEqual('删除');
+        expect(AppStorage.get<string>('buttonValue')).assertEqual('Delete');
         expect(AppStorage.get<boolean>('buttonActionCalled')).assertTrue();
         expect(AppStorage.get<number>('buttonStyle')).assertEqual(ButtonStyleMode.NORMAL);
         expect(AppStorage.get<number>('buttonRole')).assertEqual(ButtonRole.ERROR);
@@ -177,12 +178,15 @@ export default function ButtonOptionsTest() {
         await (openDialogButton?.click() as Promise<void>);
         await Utils.sleep(1000);
 
-        const dialogButton = await driver.findComponent(ON.text('确认', MatchPattern.EQUALS));
+        let dialogButton = await driver.findComponent(ON.text('Confirm', MatchPattern.EQUALS));
+        if (!dialogButton) {
+          dialogButton = await driver.findComponent(ON.text('确认', MatchPattern.EQUALS));
+        }
         expect(!!dialogButton).assertTrue();
         await (dialogButton?.click() as Promise<void>);
         await Utils.sleep(500);
 
-        expect(AppStorage.get<string>('buttonValue')).assertEqual('确认');
+        expect(AppStorage.get<string>('buttonValue')).assertEqual('Confirm');
         expect(AppStorage.get<boolean>('buttonActionCalled')).assertTrue();
         expect(AppStorage.get<number>('buttonStyle')).assertEqual(ButtonStyleMode.EMPHASIZED);
         expect(AppStorage.get<number>('buttonRole')).assertEqual(ButtonRole.NORMAL);
@@ -213,12 +217,15 @@ export default function ButtonOptionsTest() {
         await (openDialogButton?.click() as Promise<void>);
         await Utils.sleep(1000);
 
-        const dialogButton = await driver.findComponent(ON.text('危险操作', MatchPattern.EQUALS));
-        expect(!!dialogButton).assertTrue();
-        await (dialogButton?.click() as Promise<void>);
+        let dialogButtonErr = await driver.findComponent(ON.text('Danger', MatchPattern.EQUALS));
+        if (!dialogButtonErr) {
+          dialogButtonErr = await driver.findComponent(ON.text('危险操作', MatchPattern.EQUALS));
+        }
+        expect(!!dialogButtonErr).assertTrue();
+        await (dialogButtonErr?.click() as Promise<void>);
         await Utils.sleep(500);
 
-        expect(AppStorage.get<string>('buttonValue')).assertEqual('危险操作');
+        expect(AppStorage.get<string>('buttonValue')).assertEqual('Danger');
         expect(AppStorage.get<boolean>('buttonActionCalled')).assertTrue();
         expect(AppStorage.get<number>('buttonStyle')).assertEqual(ButtonStyleMode.EMPHASIZED);
         expect(AppStorage.get<number>('buttonRole')).assertEqual(ButtonRole.ERROR);
@@ -249,12 +256,12 @@ export default function ButtonOptionsTest() {
         await (openDialogButton?.click() as Promise<void>);
         await Utils.sleep(1000);
 
-        const dialogButton = await driver.findComponent(ON.text('文本按钮', MatchPattern.EQUALS));
+        const dialogButton = await driver.findComponent(ON.text('Text Button', MatchPattern.EQUALS));
         expect(!!dialogButton).assertTrue();
         await (dialogButton?.click() as Promise<void>);
         await Utils.sleep(500);
 
-        expect(AppStorage.get<string>('buttonValue')).assertEqual('文本按钮');
+        expect(AppStorage.get<string>('buttonValue')).assertEqual('Text Button');
         expect(AppStorage.get<boolean>('buttonActionCalled')).assertTrue();
         expect(AppStorage.get<number>('buttonStyle')).assertEqual(ButtonStyleMode.TEXTUAL);
         expect(AppStorage.get<number>('buttonRole')).assertEqual(ButtonRole.NORMAL);
@@ -285,12 +292,12 @@ export default function ButtonOptionsTest() {
         await (openDialogButton?.click() as Promise<void>);
         await Utils.sleep(1000);
 
-        const dialogButton = await driver.findComponent(ON.text('文本错误', MatchPattern.EQUALS));
+        const dialogButton = await driver.findComponent(ON.text('Text Error', MatchPattern.EQUALS));
         expect(!!dialogButton).assertTrue();
         await (dialogButton?.click() as Promise<void>);
         await Utils.sleep(500);
 
-        expect(AppStorage.get<string>('buttonValue')).assertEqual('文本错误');
+        expect(AppStorage.get<string>('buttonValue')).assertEqual('Text Error');
         expect(AppStorage.get<boolean>('buttonActionCalled')).assertTrue();
         expect(AppStorage.get<number>('buttonStyle')).assertEqual(ButtonStyleMode.TEXTUAL);
         expect(AppStorage.get<number>('buttonRole')).assertEqual(ButtonRole.ERROR);

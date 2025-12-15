@@ -51,11 +51,11 @@ struct ButtonOptions {
   dialogController1: CustomDialogController = new CustomDialogController({
     builder: TipsDialog({
       imageRes: $r('sys.media.ohos_ic_public_voice'),
-      content: '测试 NORMAL + NORMAL',
+      content: 'Test NORMAL + NORMAL',
       primaryButton: {
-        value: '取消',
+        value: 'Cancel',
         action: () => {
-          AppStorage.setOrCreate<string>('buttonValue', '取消');
+          AppStorage.setOrCreate<string>('buttonValue', 'Cancel');
           AppStorage.setOrCreate<boolean>('buttonActionCalled', true);
           AppStorage.setOrCreate<number>('buttonStyle', ButtonStyleMode.NORMAL);
           AppStorage.setOrCreate<number>('buttonRole', ButtonRole.NORMAL);
@@ -70,11 +70,11 @@ struct ButtonOptions {
   dialogController2: CustomDialogController = new CustomDialogController({
     builder: TipsDialog({
       imageRes: $r('sys.media.ohos_ic_public_voice'),
-      content: '测试 NORMAL + ERROR',
+      content: 'Test NORMAL + ERROR',
       secondaryButton: {
-        value: '删除',
+        value: 'Delete',
         action: () => {
-          AppStorage.setOrCreate<string>('buttonValue', '删除');
+          AppStorage.setOrCreate<string>('buttonValue', 'Delete');
           AppStorage.setOrCreate<boolean>('buttonActionCalled', true);
           AppStorage.setOrCreate<number>('buttonStyle', ButtonStyleMode.NORMAL);
           AppStorage.setOrCreate<number>('buttonRole', ButtonRole.ERROR);
@@ -89,11 +89,11 @@ struct ButtonOptions {
   dialogController3: CustomDialogController = new CustomDialogController({
     builder: TipsDialog({
       imageRes: $r('sys.media.ohos_ic_public_voice'),
-      content: '测试 EMPHASIZED + NORMAL',
+      content: 'Test EMPHASIZED + NORMAL',
       primaryButton: {
-        value: '确认',
+        value: 'Confirm',
         action: () => {
-          AppStorage.setOrCreate<string>('buttonValue', '确认');
+          AppStorage.setOrCreate<string>('buttonValue', 'Confirm');
           AppStorage.setOrCreate<boolean>('buttonActionCalled', true);
           AppStorage.setOrCreate<number>('buttonStyle', ButtonStyleMode.EMPHASIZED);
           AppStorage.setOrCreate<number>('buttonRole', ButtonRole.NORMAL);
@@ -108,11 +108,11 @@ struct ButtonOptions {
   dialogController4: CustomDialogController = new CustomDialogController({
     builder: TipsDialog({
       imageRes: $r('sys.media.ohos_ic_public_voice'),
-      content: '测试 EMPHASIZED + ERROR',
+      content: 'Test EMPHASIZED + ERROR',
       secondaryButton: {
-        value: '危险操作',
+        value: 'Danger',
         action: () => {
-          AppStorage.setOrCreate<string>('buttonValue', '危险操作');
+          AppStorage.setOrCreate<string>('buttonValue', 'Danger');
           AppStorage.setOrCreate<boolean>('buttonActionCalled', true);
           AppStorage.setOrCreate<number>('buttonStyle', ButtonStyleMode.EMPHASIZED);
           AppStorage.setOrCreate<number>('buttonRole', ButtonRole.ERROR);
@@ -127,11 +127,11 @@ struct ButtonOptions {
   dialogController5: CustomDialogController = new CustomDialogController({
     builder: TipsDialog({
       imageRes: $r('sys.media.ohos_ic_public_voice'),
-      content: '测试 TEXTUAL + NORMAL',
+      content: 'Test TEXTUAL + NORMAL',
       primaryButton: {
-        value: '文本按钮',
+        value: 'Text Button',
         action: () => {
-          AppStorage.setOrCreate<string>('buttonValue', '文本按钮');
+          AppStorage.setOrCreate<string>('buttonValue', 'Text Button');
           AppStorage.setOrCreate<boolean>('buttonActionCalled', true);
           AppStorage.setOrCreate<number>('buttonStyle', ButtonStyleMode.TEXTUAL);
           AppStorage.setOrCreate<number>('buttonRole', ButtonRole.NORMAL);
@@ -146,11 +146,11 @@ struct ButtonOptions {
   dialogController6: CustomDialogController = new CustomDialogController({
     builder: TipsDialog({
       imageRes: $r('sys.media.ohos_ic_public_voice'),
-      content: '测试 TEXTUAL + ERROR',
+      content: 'Test TEXTUAL + ERROR',
       secondaryButton: {
-        value: '文本错误',
+        value: 'Text Error',
         action: () => {
-          AppStorage.setOrCreate<string>('buttonValue', '文本错误');
+          AppStorage.setOrCreate<string>('buttonValue', 'Text Error');
           AppStorage.setOrCreate<boolean>('buttonActionCalled', true);
           AppStorage.setOrCreate<number>('buttonStyle', ButtonStyleMode.TEXTUAL);
           AppStorage.setOrCreate<number>('buttonRole', ButtonRole.ERROR);
@@ -162,52 +162,65 @@ struct ButtonOptions {
   })
 
   build() {
-    Column({ space: 20 } as ColumnOptions) {
-      Button('NORMAL + NORMAL')
+    Column({ space: 2 } as ColumnOptions) {
+      Button('N+N')
         .id('btnButtonOptions1')
-        .width(240)
-        .height(60)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '14%' })
+        .fontSize(11)
         .onClick(() => {
           this.dialogController1.open()
         })
-      Button('NORMAL + ERROR')
+      Button('N+E')
         .id('btnButtonOptions2')
-        .width(240)
-        .height(60)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '14%' })
+        .fontSize(11)
         .onClick(() => {
           this.dialogController2.open()
         })
-      Button('EMPHASIZED + NORMAL')
+      Button('E+N')
         .id('btnButtonOptions3')
-        .width(240)
-        .height(60)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '14%' })
+        .fontSize(11)
         .onClick(() => {
           this.dialogController3.open()
         })
-      Button('EMPHASIZED + ERROR')
+      Button('E+E')
         .id('btnButtonOptions4')
-        .width(240)
-        .height(60)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '14%' })
+        .fontSize(11)
         .onClick(() => {
           this.dialogController4.open()
         })
-      Button('TEXTUAL + NORMAL')
+      Button('T+N')
         .id('btnButtonOptions5')
-        .width(240)
-        .height(60)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '14%' })
+        .fontSize(11)
         .onClick(() => {
           this.dialogController5.open()
         })
-      Button('TEXTUAL + ERROR')
+      Button('T+E')
         .id('btnButtonOptions6')
-        .width(240)
-        .height(60)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '14%' })
+        .fontSize(11)
         .onClick(() => {
           this.dialogController6.open()
         })
     }
     .width('100%')
     .height('100%')
-    .justifyContent(FlexAlign.Center)
+    .padding({ left: '3%', right: '3%', top: '2%', bottom: '2%' })
+    .justifyContent(FlexAlign.SpaceEvenly)
   }
 }
