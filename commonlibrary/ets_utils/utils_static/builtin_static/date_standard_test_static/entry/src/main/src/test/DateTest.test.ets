@@ -70,7 +70,6 @@ export default function dateTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-
     it('testGetDate0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetDate0002";
       try {
@@ -396,7 +395,6 @@ export default function dateTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-
     it('testGetDay0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetDay0007";
       try {
@@ -1111,7 +1109,7 @@ export default function dateTest() {
         const moonLanding = new Date();
         const copy = new Date();
         console.log(`${TAG} result:` + copy.setTime(moonLanding.getTime()));
-        expect(String(copy.setTime(moonLanding.getTime()))).assertEqual(String(copy.setTime(moonLanding.getTime())));
+        expect(String(copy.setTime(moonLanding.getTime())).length).assertEqual(13);
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
