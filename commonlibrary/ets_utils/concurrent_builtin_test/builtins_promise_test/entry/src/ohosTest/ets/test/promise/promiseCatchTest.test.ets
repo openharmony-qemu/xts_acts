@@ -1085,6 +1085,7 @@ export default function promiseCatchTest() {
 
     /**
      * @tc.number SUB_BUILTINS_PROMISE_CATCH_TEST_4300
+     * @tc.name PromiseCatchTest043
      * @tc.desc catch() skips downstream then() until next catch() on re-throw
      * @tc.size MediumTest
      * @tc.type Function
@@ -1118,6 +1119,7 @@ export default function promiseCatchTest() {
 
     /**
      * @tc.number SUB_BUILTINS_PROMISE_CATCH_TEST_4400
+     * @tc.name PromiseCatchTest044
      * @tc.desc catch() in chain handles errors from Promise.all() in upstream then()
      * @tc.size MediumTest
      * @tc.type Function
