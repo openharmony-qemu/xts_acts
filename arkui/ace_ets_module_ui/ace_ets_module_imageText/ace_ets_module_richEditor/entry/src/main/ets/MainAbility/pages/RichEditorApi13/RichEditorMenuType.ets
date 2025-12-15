@@ -78,7 +78,18 @@ struct RichEditorMenuType1 {
   @State iconBgColor: ResourceColor[] = new Array(this.iconArr.length).fill(this.colorTransparent)
   @State pasteEnable: boolean = false
   @State visibilityValue: Visibility = Visibility.Visible
-  @State textStyle: RichEditorTextStyle = {}
+  @State textStyle: RichEditorTextStyleResult = {
+    fontColor: '',
+    fontSize: 0,
+    fontStyle: FontStyle.Normal,
+    fontWeight: 0,
+    fontFamily: '',
+    decoration: {
+      type: TextDecorationType.None,
+      color: Color.Black,
+      style: TextDecorationStyle.SOLID
+    }
+  }
   private fontWeightTable: string[] = ["100", "200", "300", "400", "500", "600", "700", "800",
    "900", "bold", "normal", "bolder", "lighter", "medium", "regular"]
   private theme: SelectionMenuTheme = defaultTheme;
@@ -319,7 +330,7 @@ struct RichEditorMenuType1 {
                     this.controller.updateSpanStyle({
                       start: offset + start,
                       end: offset + end,
-                      textStyle: this.textStyle
+                      textStyle: { fontWeight: this.textStyle.fontWeight }
                     })
                   }
                 })
@@ -344,7 +355,7 @@ struct RichEditorMenuType1 {
                     this.controller.updateSpanStyle({
                       start: offset + start,
                       end: offset + end,
-                      textStyle: this.textStyle
+                      textStyle: { fontStyle: this.textStyle.fontStyle }
                     })
                   }
                 })
@@ -376,7 +387,7 @@ struct RichEditorMenuType1 {
                     this.controller.updateSpanStyle({
                       start: offset + start,
                       end: offset + end,
-                      textStyle: this.textStyle
+                      textStyle: { decoration: this.textStyle.decoration }
                     })
                   }
                 })
@@ -403,7 +414,7 @@ struct RichEditorMenuType1 {
                     this.controller.updateSpanStyle({
                       start: offset + start,
                       end: offset + end,
-                      textStyle: this.textStyle
+                      textStyle: { fontColor: this.textStyle.fontColor }
                     })
                   }
                 })

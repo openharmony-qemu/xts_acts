@@ -27,7 +27,18 @@ struct Index {
   @State end: number = -1
   @State visibleValue: Visibility = Visibility.Visible
   @State colorTransparent: Color = Color.Transparent
-  @State textStyle: RichEditorTextStyle = {}
+  @State textStyle: RichEditorTextStyleResult = {
+    fontColor: '',
+    fontSize: 0,
+    fontStyle: FontStyle.Normal,
+    fontWeight: 0,
+    fontFamily: '',
+    decoration: {
+      type: TextDecorationType.None,
+      color: Color.Black,
+      style: TextDecorationStyle.SOLID
+    }
+  }
   private editorMenuOptions: Array<EditorMenuOptions> =
     [
       { icon: $r("app.media.icon"), action: () => {
@@ -49,7 +60,7 @@ struct Index {
               this.controller.updateSpanStyle({
                 start: offset + start,
                 end: offset + end,
-                textStyle: this.textStyle
+                textStyle: { fontWeight: this.textStyle.fontWeight }
               })
             }
           })
@@ -74,7 +85,7 @@ struct Index {
               this.controller.updateSpanStyle({
                 start: offset + start,
                 end: offset + end,
-                textStyle: this.textStyle
+                textStyle: { fontStyle: this.textStyle.fontStyle }
               })
             }
           })
@@ -104,7 +115,7 @@ struct Index {
                 this.controller.updateSpanStyle({
                   start: offset + start,
                   end: offset + end,
-                  textStyle: this.textStyle
+                  textStyle: { decoration: this.textStyle.decoration }
                 })
               }
             })
@@ -132,7 +143,7 @@ struct Index {
               this.controller.updateSpanStyle({
                 start: offset + start,
                 end: offset + end,
-                textStyle: this.textStyle
+                textStyle: { fontColor: this.textStyle.fontColor }
               })
             }
           })
