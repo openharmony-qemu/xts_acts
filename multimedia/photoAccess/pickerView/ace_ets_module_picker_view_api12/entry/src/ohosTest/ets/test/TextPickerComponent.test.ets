@@ -53,6 +53,7 @@ import { fileUri } from '@kit.CoreFileKit';
 const SEEK_START = 3;
 const SEEK_FINISH = 4;
 const SELECTED_STATUS = 0;
+const MEDIA_TYPE_OF_VIDEO = '2';
 
 async function routeToUrl(options: router.RouterOptions) {
   try {
@@ -864,6 +865,10 @@ export default function TextPicker() {
         expect(result.photoSubType).not().assertUndefined();
         expect(result.dynamicRangeType).not().assertUndefined();
         expect(result.orientation).not().assertUndefined();
+        if (result.mimeType === MEDIA_TYPE_OF_VIDEO) { //如果是 视频 则有返回值
+          expect(result.videoMode).not().assertUndefined();
+        }
+        
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -2729,6 +2734,7 @@ export default function TextPicker() {
         let expectedBackgroundColor: String = '#f00000';
         let expectedBrowserColorMode: PickerColorMode = PickerColorMode.DARK;
         let expectedUiComponentColorMode: PickerColorMode = PickerColorMode.DARK;
+        let expectedIsSlidingSupported: boolean = true;
 
         let msg: PhotoPickerResult = event?.data?.msg;
         console.info('testPicker56 result msg ' + JSON.stringify(msg));
@@ -2740,6 +2746,7 @@ export default function TextPicker() {
         expect(expectedBackgroundColor).assertEqual(msg.backgroundColor);
         expect(expectedBrowserColorMode).assertEqual(msg.photoBrowserBackgroundColorMode);
         expect(expectedUiComponentColorMode).assertEqual(msg.uiComponentColorMode);
+        expect(expectedIsSlidingSupported).assertEqual(msg.isSlidingSupported);
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -2807,6 +2814,111 @@ export default function TextPicker() {
       router.back();
       console.info("testPicker57 finish");
       events_emitter.off(event.eventId);
+      done();
+    });
+
+    /**
+      * @tc.number      testPicker58
+      * @tc.name        testPicker58
+      * @tc.desc        Testing PhotoPicker assetFilter
+      * @tc.size        MediumTest
+      * @tc.type        Function
+      * @tc.level       Level 0
+      */
+    it('testPicker58', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let code: number = EventType.PHOTO_PICKER_INFO;
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      const operationItems: photoAccessHelper.OperationItem[] = [
+        {
+          operationType: photoAccessHelper.OperationType.BEGIN_WRAP,
+          field: undefined,
+          value: undefined
+        },
+        {
+          operationType: photoAccessHelper.OperationType.EQUAL_TO,
+          field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
+          value: [1]
+        },
+        {
+          operationType: photoAccessHelper.OperationType.AND,
+          field: undefined,
+          value: undefined
+        },
+        {
+          operationType: photoAccessHelper.OperationType.EQUAL_TO,
+          field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
+          value: [0]
+        },
+        {
+          operationType: photoAccessHelper.OperationType.OR,
+          field: undefined,
+          value: undefined
+        },
+        {
+          operationType: photoAccessHelper.OperationType.GREATER_THAN,
+          field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
+          value: [0]
+        },
+        {
+          operationType: photoAccessHelper.OperationType.LESS_THAN,
+          field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
+          value: [0]
+        },
+        {
+          operationType: photoAccessHelper.OperationType.GREATER_THAN_OR_EQUAL_TO,
+          field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
+          value: [0]
+        },
+        {
+          operationType: photoAccessHelper.OperationType.LESS_THAN_OR_EQUAL_TO,
+          field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
+          value: [0]
+        },
+        {
+          operationType: photoAccessHelper.OperationType.IN,
+          field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
+          value: [0]
+        },
+        {
+          operationType: photoAccessHelper.OperationType.NOT_IN,
+          field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
+          value: [0]
+        },
+        {
+          operationType: photoAccessHelper.OperationType.BETWEEN,
+          field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
+          value: [0]
+        },
+        {
+          operationType: photoAccessHelper.OperationType.NOT_BETWEEN,
+          field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
+          value: [0]
+        },
+        {
+          operationType: photoAccessHelper.OperationType.END_WRAP,
+          field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
+          value: [0]
+        },
+      ]
+      pickerOptions.assetFilter = operationItems;
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: {
+          eventId: code,
+          pickerOptions: pickerOptions,
+        }
+      }
+      await routeToUrl(options);
+      let strJson: string = getInspectorByKey('PhotoPickerComponent');
+      console.info("testPicker58 JSON.parse(strJson) is" + strJson);
+      expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
+      await CommonFunc.sleep(2000);
+      router.back();
+      console.info("testPicker58 finish");
       done();
     });
   })
