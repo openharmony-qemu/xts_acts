@@ -3288,6 +3288,121 @@ export default function windowPropertiesTest2() {
       }
     });
 
+    /**
+     * @tc.number  SUB_BASIC_WMS_FUNCTION_SET_START_BACKGROUND_COLOR_0100
+     * @tc.name    testSetStartWindowBackgroundColor_0
+     * @tc.desc    setStartWindowBackgroundColor入参长度0
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it('testSetStartWindowBackgroundColor_0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let caseName = 'testSetStartWindowBackgroundColor_0';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.info(caseName+ ' isSupport:'+isSupport);
+      try {
+        let promise = window.setStartWindowBackgroundColor('', '', ColorMetrics.numeric(0xff000000));
+        promise.then(() => {
+          console.info(caseName+ ' Succeeded in setting the starting window color.');
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`caseName+ Failed to set the starting window color. Cause code: ${err.code}, message: ${err.message}`);
+          if(!isSupport){
+            expect(err.code).assertEqual(801);
+            expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setStartWindowBackgroundColor]');
+            done()
+          }else {
+            expect(err.code).assertEqual(1300003);
+            expect(err.message).assertEqual('This window manager service works abnormally.[window][setStartWindowBackgroundColor]');
+            done()
+
+          }
+        });
+      } catch(e) {
+        console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.number  SUB_BASIC_WMS_FUNCTION_SET_START_BACKGROUND_COLOR_0200
+     * @tc.name    testSetStartWindowBackgroundColor_200
+     * @tc.desc    setStartWindowBackgroundColor入参长度200
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it('testSetStartWindowBackgroundColor_200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let caseName = 'testSetStartWindowBackgroundColor_200';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.info(caseName+ ' isSupport:'+isSupport);
+      try {
+        let promise = window.setStartWindowBackgroundColor('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+          'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+          ColorMetrics.numeric(0xff000000));
+        promise.then(() => {
+          console.info(caseName+ ' Succeeded in setting the starting window color.');
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`caseName+ Failed to set the starting window color. Cause code: ${err.code}, message: ${err.message}`);
+          if(!isSupport){
+            expect(err.code).assertEqual(801);
+            expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setStartWindowBackgroundColor]');
+            done()
+          }else {
+            expect(err.code).assertEqual(1300003);
+            expect(err.message).assertEqual('This window manager service works abnormally.[window][setStartWindowBackgroundColor]');
+            done()
+
+          }
+        });
+      } catch(e) {
+        console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.number  SUB_BASIC_WMS_FUNCTION_SET_START_BACKGROUND_COLOR_0300
+     * @tc.name    testSetStartWindowBackgroundColor_201
+     * @tc.desc    setStartWindowBackgroundColor入参长度201
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it('testSetStartWindowBackgroundColor_201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let caseName = 'testSetStartWindowBackgroundColor_201';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.info(caseName+ ' isSupport:'+isSupport);
+      try {
+        let promise = window.setStartWindowBackgroundColor('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+          'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+          ColorMetrics.numeric(0xff000000));
+        promise.then(() => {
+          console.info(caseName+ ' Succeeded in setting the starting window color.');
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(caseName+` Failed to set the starting window color. Cause code: ${err.code}, message: ${err.message}`);
+          if(!isSupport){
+            expect(err.code).assertEqual(801);
+            expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setStartWindowBackgroundColor]');
+            done()
+          }else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch(e) {
+        console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        expect(e.code).assertEqual(1300016);
+        expect(e.message).assertEqual('Parameter validation error.[window][setStartWindowBackgroundColor]msg: Parameter moduleName exceeds the allowed length');
+        done();
+      }
+    })
+
   })
 }
 

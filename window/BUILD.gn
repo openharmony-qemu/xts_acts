@@ -25,5 +25,6 @@ group("window") {
     "ActsDisplayTestStatic:ActsDisplayStaticTest",
     "ActsWindowTestStatic:ActsWindowStaticTest",
     "ActsWindowErrorCodeTestStatic:ActsWindowErrorCodeStaticTest",
+    "ActsWindowEnterpriseTestStatic:ActsWindowEnterpriseStaticTest",
   ]
 }

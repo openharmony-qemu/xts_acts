@@ -103,6 +103,10 @@
         "MainAbility/pages/TextInputApi20/TextInputEnableAutoSpacing",
         "MainAbility/pages/TextInputApi20/TextInputEnableAutoFillAnimation",
         "MainAbility/pages/TextInputApi20/TextInputBindControllerTest",
-        "MainAbility/pages/TextInputApi22/textInputObserver"
+        "MainAbility/pages/TextInputApi22/textInputObserver",
+        "MainAbility/pages/TextArea/TextAreaCompressLeadingPunctuation",
+        "MainAbility/pages/TextArea/TextAreaCompressLeadingPunctuationModifier",
+        "MainAbility/pages/TextInput/TextInputCompressLeadingPunctuation",
+        "MainAbility/pages/TextInput/TextInputCompressLeadingPunctuationModifier"
     ]
 }
