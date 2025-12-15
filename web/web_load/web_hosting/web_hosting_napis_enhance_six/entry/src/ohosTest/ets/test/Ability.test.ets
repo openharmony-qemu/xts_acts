@@ -39,13 +39,13 @@ export default function abilityTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    /*
-     * @tc.number     : ASSERTCONTAIN_0100
-     * @tc.name       : assertContain
-     * @tc.desc       : test assertContain
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   assertContain
+     * @tc.number ASSERTCONTAIN_0100
+     * @tc.desc   test assertContain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('assertContain',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.

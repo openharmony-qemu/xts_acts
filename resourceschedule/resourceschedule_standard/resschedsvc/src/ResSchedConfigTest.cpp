@@ -41,10 +41,12 @@ protected:
 };
 
 /**
- * @tc.name: CheckConfig
- * @tc.desc: CheckConfig.
- * @tc.type: FUNC
- * @tc.number: 001
+ * @tc.name   CheckConfig
+ * @tc.number 001
+ * @tc.desc   CheckConfig.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResSchedConfigTestSuite, CheckConfig, Function | MediumTest | Level1)
 {
@@ -59,10 +61,12 @@ HWTEST_F(ResSchedConfigTestSuite, CheckConfig, Function | MediumTest | Level1)
 }
 
 /**
- * @tc.name: CheckPluginSwitch
- * @tc.desc: CheckPluginSwitch.
- * @tc.type: FUNC
- * @tc.number: 002
+ * @tc.name   CheckPluginSwitch
+ * @tc.number 002
+ * @tc.desc   CheckPluginSwitch.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResSchedConfigTestSuite, CheckPluginSwitch, Function | MediumTest | Level1)
 {

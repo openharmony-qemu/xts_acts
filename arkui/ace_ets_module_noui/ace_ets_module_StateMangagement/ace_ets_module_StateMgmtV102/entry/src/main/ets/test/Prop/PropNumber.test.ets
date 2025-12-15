@@ -53,12 +53,14 @@ export default function PropNumber() {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0470
-    * @tc.name  : PropNumber_0100
-    * @tc.desc  : To test that the Prop decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   PropNumber_0100
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0470
+     * @tc.desc   To test that the Prop decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropNumber_0100', Level.LEVEL0, async (done: Function) => {
       console.info('PropNumber_0100 START');
       let driver = await Driver.create()
@@ -74,12 +76,14 @@ export default function PropNumber() {
       console.info('[PropNumber_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0480
-    * @tc.name  : PropNumber_0200
-    * @tc.desc  : To test that the Prop decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   PropNumber_0200
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0480
+     * @tc.desc   To test that the Prop decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropNumber_0200', Level.LEVEL0, async (done: Function) => {
       console.info('PropNumber_0100 START');
       let driver = await Driver.create()
@@ -95,12 +99,14 @@ export default function PropNumber() {
       console.info('[PropNumber_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0490
-    * @tc.name  : PropNumber_0300
-    * @tc.desc  : To test that the Prop decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   PropNumber_0300
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0490
+     * @tc.desc   To test that the Prop decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropNumber_0300', Level.LEVEL0, async (done: Function) => {
       console.info('PropNumber_0100 START');
       let driver = await Driver.create()
@@ -116,12 +122,14 @@ export default function PropNumber() {
       console.info('[PropNumber_0300] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0500
-    * @tc.name  : PropNumber_0400
-    * @tc.desc  : To test that the Prop decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   PropNumber_0400
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0500
+     * @tc.desc   To test that the Prop decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropNumber_0400', Level.LEVEL0, async (done: Function) => {
       console.info('PropNumber_0100 START');
       let driver = await Driver.create()
@@ -137,12 +145,14 @@ export default function PropNumber() {
       console.info('[PropNumber_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0510
-    * @tc.name  : PropNumber_0500
-    * @tc.desc  : To test that the Prop decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   PropNumber_0500
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0510
+     * @tc.desc   To test that the Prop decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropNumber_0500', Level.LEVEL0, async (done: Function) => {
       console.info('PropNumber_0100 START');
       let driver = await Driver.create()

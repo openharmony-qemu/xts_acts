@@ -983,15 +983,12 @@ export default function image10bitPixelMap() {
     }
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0100
-     * @tc.name      : test writeBufferToPixels and readPixelsToBuffer promise
-     * @tc.desc      : 1.create PixelMap
-     *                 2.call writeBufferToPixels
-     *                 3.call return undefined
-     *                 4.call readPixelsToBuffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0100
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0100', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0100');
@@ -1004,15 +1001,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0200
-     * @tc.name      : test writeBufferToPixels and readPixelsToBuffer callback
-     * @tc.desc      : 1.create PixelMap
-     *                 2.call writeBufferToPixels
-     *                 3.call return undefined
-     *                 4.call readPixelsToBuffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0200
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0200', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0200');
@@ -1025,15 +1019,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0300
-     * @tc.name      : test writeBufferToPixels and readPixelsToBuffer sync
-     * @tc.desc      : 1.create PixelMap
-     *                 2.call writeBufferToPixels
-     *                 3.call return undefined
-     *                 4.call readPixelsToBuffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0300
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0300', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0300');
@@ -1046,15 +1037,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0400
-     * @tc.name      : test writePixels and readPixels promise
-     * @tc.desc      : 1.create PixelMap
-     *                 2.call writePixels
-     *                 3.call return undefined
-     *                 4.call readPixels
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0400
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0400', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0400');
@@ -1067,15 +1055,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0500
-     * @tc.name      : test writePixels and readPixels callback
-     * @tc.desc      : 1.create PixelMap
-     *                 2.call writePixels
-     *                 3.call return undefined
-     *                 4.call readPixels
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0500
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0500', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0500');
@@ -1088,15 +1073,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0600
-     * @tc.name      : test writePixels and readPixels sync
-     * @tc.desc      : 1.create PixelMap
-     *                 2.call writePixels
-     *                 3.call return undefined
-     *                 4.call readPixels
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0600
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0600', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0600');
@@ -1109,13 +1091,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0700
-     * @tc.name      : test pixelmap.getImageInfo
-     * @tc.desc      : 1. create pixelmap
-     *               : 2. call getImageInfo-promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0700
+     * @tc.desc   1. create pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0700', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1127,13 +1108,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0800
-     * @tc.name      : test pixelmap.getImageInfo callback
-     * @tc.desc      : 1. create pixelmap
-     *               : 2. call getImageInfo-callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0800
+     * @tc.desc   1. create pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0800', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1145,13 +1125,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0900
-     * @tc.name      : test pixelmap.getImageInfoSync
-     * @tc.desc      : 1. create pixelmap
-     *               : 2. call getImageInfo-sync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0900
+     * @tc.desc   1. create pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_0900', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1163,13 +1142,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1000
-     * @tc.name      : test pixelmap.getBytesNumberPerRow
-     * @tc.desc      : 1. create pixelmap
-     *               : 2. call getBytesNumberPerRow
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1000
+     * @tc.desc   1. create pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1000', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1181,13 +1159,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1100
-     * @tc.name      : test pixelmap.getBytesNumberPerRow
-     * @tc.desc      : 1. create pixelmap
-     *               : 2. call getBytesNumberPerRow
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1100
+     * @tc.desc   1. create pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1100', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1199,13 +1176,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1200
-     * @tc.name      : test pixelmap.getBytesNumberPerRow
-     * @tc.desc      : 1. create pixelmap
-     *               : 2. call getBytesNumberPerRow
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1200
+     * @tc.desc   1. create pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1200', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1217,13 +1193,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1300
-     * @tc.name      : test pixelmap.getBytesNumberPerRow
-     * @tc.desc      : 1. create pixelmap
-     *               : 2. call getBytesNumberPerRow
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1300
+     * @tc.desc   1. create pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1300', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1235,13 +1210,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1400
-     * @tc.name      : test pixelmap.getBytesNumberPerRow
-     * @tc.desc      : 1. create pixelmap
-     *               : 2. call getBytesNumberPerRow
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1400
+     * @tc.desc   1. create pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1400', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1253,15 +1227,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_8800
-     * @tc.name      : test pixelmap.createAlphaPixelmap
-     * @tc.desc      : 1.create imagesource
-     *               : 2.create pixelmap
-     *               : 3.create AlphaPixelmap
-     *               : 4.call getImageInfo
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_8800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_8800
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_8800', Level.LEVEL0, async (done: Function) => {
       const surfaceId = null; 
@@ -1277,15 +1248,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_9000
-     * @tc.name      : test pixelmap.createAlphaPixelmap
-     * @tc.desc      : 1.create imagesource
-     *               : 2.create pixelmap
-     *               : 3.create AlphaPixelmap
-     *               : 4.call getImageInfo
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_9000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_9000
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_9000', Level.LEVEL0, async (done: Function) => {
       const surfaceId = null; 
@@ -1301,12 +1269,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0800
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0800
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0800
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0800', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0200"
@@ -1331,13 +1299,13 @@ export default function image10bitPixelMap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_Image_Receiver_Off_ImageArrival_0900
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_Image_Receiver_Off_ImageArrival_0900
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_Image_Receiver_Off_ImageArrival_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_Image_Receiver_Off_ImageArrival_0900
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_Image_Receiver_Off_ImageArrival_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_IMAGE_Image_Receiver_Off_ImageArrival_0900', Level.LEVEL0 , async (done: Function) => {
       let receiver: image.ImageReceiver = image.createImageReceiver(8192, 8, image.ImageFormat.JPEG, 8);
       let callbackFunc = ()=>{
@@ -1355,12 +1323,12 @@ export default function image10bitPixelMap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_Image_Creator_Off_ImageRelease_1000
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_Image_Creator_Off_ImageRelease_1000
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_Image_Creator_Off_ImageRelease_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_Image_Creator_Off_ImageRelease_1000
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_Image_Creator_Off_ImageRelease_1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_Image_Creator_Off_ImageRelease_1000', Level.LEVEL0 , async (done: Function) => {
       let creator: image.ImageCreator = image.createImageCreator(8192, 8, image.ImageFormat.JPEG, 8);
@@ -1378,16 +1346,13 @@ export default function image10bitPixelMap() {
       }
     })  
 
-	/**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_8800
-     * @tc.name      : test pixelmap.createAlphaPixelmap
-     * @tc.desc      : 1.create imagesource
-     *               : 2.create pixelmap
-     *               : 3.create AlphaPixelmap
-     *               : 4.call getImageInfo
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_8800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_8800
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_8800', Level.LEVEL0, async (done: Function) => {
       const surfaceId = null; 
@@ -1403,15 +1368,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_9000
-     * @tc.name      : test pixelmap.createAlphaPixelmap
-     * @tc.desc      : 1.create imagesource
-     *               : 2.create pixelmap
-     *               : 3.create AlphaPixelmap
-     *               : 4.call getImageInfo
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_9000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_9000
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_9000', Level.LEVEL0, async (done: Function) => {
       const surfaceId = null; 
@@ -1427,12 +1389,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0800
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0800
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0800
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0800', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0200"
@@ -1457,13 +1419,13 @@ export default function image10bitPixelMap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0900
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0900
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_9000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0900
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_9000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_9000', Level.LEVEL0 , async (done: Function) => {
       let receiver: image.ImageReceiver = image.createImageReceiver(8192, 8, image.ImageFormat.JPEG, 8);
       let callbackFunc = ()=>{
@@ -1481,12 +1443,12 @@ export default function image10bitPixelMap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_1000
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_1000
-     * @tc.desc      : 
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_1000
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_1000', Level.LEVEL0 , async (done: Function) => {
       let creator: image.ImageCreator = image.createImageCreator(8192, 8, image.ImageFormat.JPEG, 8);
@@ -1504,13 +1466,13 @@ export default function image10bitPixelMap() {
       }
     })  
 
-/**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5800
-     * @tc.name      : 
-     * @tc.desc      : 
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5800
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5800", Level.LEVEL0, async (done: Function) => {
       let num =  image.AlphaType.UNPREMUL
@@ -1520,12 +1482,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5900
-     * @tc.name      : 
-     * @tc.desc      : 
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5900
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5900", Level.LEVEL0, async (done: Function) => {
       console.info(`----------------SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5900--------------`)
@@ -1536,12 +1498,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6000
-     * @tc.name      : 
-     * @tc.desc      : 
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6000
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6000", Level.LEVEL0, async (done: Function) => {
       console.info(`----------------SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6000--------------`)
@@ -1552,12 +1514,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6100
-     * @tc.name      : 
-     * @tc.desc      : 
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6100
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6100", Level.LEVEL0, async (done: Function) => {
       console.info(`-------------BEGIN   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6100  -------------`)
@@ -1568,12 +1530,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6200
-     * @tc.name      : 
-     * @tc.desc      : 
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6200
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6200", Level.LEVEL0, async (done: Function) => {
       console.info(`-------------BEGIN   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6200  -------------`)
@@ -1584,12 +1546,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6300
-     * @tc.name      : 
-     * @tc.desc      : 
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6300
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6300", Level.LEVEL0, async (done: Function) => {
       console.info(`-------------BEGIN   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6300  -------------`)
@@ -1600,12 +1562,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6400
-     * @tc.name      : 
-     * @tc.desc      : 
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6400
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6400", Level.LEVEL0, async (done: Function) => {
       console.info(`-------------BEGIN   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6400  -------------`)
@@ -1616,12 +1578,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6500
-     * @tc.name      : 
-     * @tc.desc      : 
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6500
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6500", Level.LEVEL0, async (done: Function) => {
       console.info(`-------------BEGIN   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6500  -------------`)
@@ -1632,12 +1594,12 @@ export default function image10bitPixelMap() {
     });
   
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6600
-     * @tc.name      : 
-     * @tc.desc      : 
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6600
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6600", Level.LEVEL0, async (done: Function) => {
       let low_quality = image.ResolutionQuality.LOW
@@ -1653,12 +1615,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6900
-     * @tc.name      : 
-     * @tc.desc      : 
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6900
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6900", Level.LEVEL0, async (done: Function) => {
       console.info(`-------------BEGIN   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_6900  -------------`)
@@ -1671,13 +1633,12 @@ export default function image10bitPixelMap() {
         done();}
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1500
-     * @tc.name      : test pixelmap.getBytesNumberPerRow
-     * @tc.desc      : 1. create pixelmap
-     *               : 2. call getBytesNumberPerRow
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1500
+     * @tc.desc   1. create pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1500', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1689,13 +1650,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1600
-     * @tc.name      : test pixelmap.getDensity
-     * @tc.desc      : 1. create pixelmap
-     *               : 2. call getDensity
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1600
+     * @tc.desc   1. create pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1600', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1707,13 +1667,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1700
-     * @tc.name      : test pixelmap.getDensity
-     * @tc.desc      : 1. create pixelmap
-     *               : 2. call getDensity
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1700
+     * @tc.desc   1. create pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1700', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1725,13 +1684,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1800
-     * @tc.name      : test pixelmap.getDensity
-     * @tc.desc      : 1. create pixelmap
-     *               : 2. call getDensity
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1800
+     * @tc.desc   1. create pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1800', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1743,13 +1701,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1900
-     * @tc.name      : test pixelmap.opacity
-     * @tc.desc      : 1. create pixelmap
-     *               : 2. call opacity-promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1900
+     * @tc.desc   1. create pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_1900', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1761,13 +1718,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2000
-     * @tc.name      : test pixelmap.opacity callback
-     * @tc.desc      : 1. create pixelmap
-     *               : 2. call opacity-callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2000
+     * @tc.desc   1. create pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2000', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1779,13 +1735,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2100
-     * @tc.name      : test pixelmap.opacitySync
-     * @tc.desc      : 1. create pixelmap
-     *               : 2. call opacity-sync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2100
+     * @tc.desc   1. create pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2100', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1797,15 +1752,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2200
-     * @tc.name      : test pixelmap.createAlphaPixelmap
-     * @tc.desc      : 1.create imagesource
-     *               : 2.create pixelmap
-     *               : 3.create AlphaPixelmap
-     *               : 4.call getImageInfo
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2200', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1817,15 +1769,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2300
-     * @tc.name      : test pixelmap.createAlphaPixelmap callback
-     * @tc.desc      : 1.create imagesource
-     *               : 2.create pixelmap
-     *               : 3.create AlphaPixelmap
-     *               : 4.call getImageInfo
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2300', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1837,15 +1786,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2400
-     * @tc.name      : test pixelmap.createAlphaPixelmapSync
-     * @tc.desc      : 1.create imagesource
-     *               : 2.create pixelmap
-     *               : 3.create AlphaPixelmap
-     *               : 4.call getImageInfo
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2400', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1857,14 +1803,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2500
-     * @tc.name      : test RGBA_1010102 pixelmap.setColorSpace and pixelmap.getColorSpace
-     * @tc.desc      : 1.create imagesource
-     *               : 2.create pixelmap
-     *               : 3.call getColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2500
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2500', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1876,14 +1820,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2600
-     * @tc.name      : test YCBCR_P010 pixelmap.setColorSpace and pixelmap.getColorSpace
-     * @tc.desc      : 1.create imagesource
-     *               : 2.create pixelmap
-     *               : 3.call getColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2600
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2600', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1895,14 +1837,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2700
-     * @tc.name      : test YCRCB_P010 pixelmap.setColorSpace and pixelmap.getColorSpace
-     * @tc.desc      : 1.create imagesource
-     *               : 2.create pixelmap
-     *               : 3.call getColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2700
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2700', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1914,14 +1854,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2800
-     * @tc.name      : test pixelmap.applyColorSpace
-     * @tc.desc      : 1.create imagesource
-     *               : 2.create pixelmap
-     *               : 3. call applyColorSpace-promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2800
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2800', Level.LEVEL1, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1933,14 +1871,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2900
-     * @tc.name      : test pixelmap.applyColorSpace callback
-     * @tc.desc      : 1.create imagesource
-     *               : 2.create pixelmap
-     *               : 3. call applyColorSpace-callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2900
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_2900', Level.LEVEL1, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1952,17 +1888,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3000
-     * @tc.name      : test RGBA_1010102 pixelmap.marshalling and pixelmap.unmarshalling
-     * @tc.desc      : 1.create InitializationOptions object
-     *                 2.set editable,pixelFormat,size
-     *                 3.using color and opts create newPixelMap
-     *                 4.marshalling pixelmap into the messageSequence
-     *                 5.unmarshalling pixelmap from the messageSequence
-     *                 6.return pixelmap not empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3000
+     * @tc.desc   1.create InitializationOptions object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3000', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -1973,20 +1904,15 @@ export default function image10bitPixelMap() {
       }
     });
 
-    /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3100
-     * @tc.name      : test YCBCR_P010 pixelmap.marshalling and pixelmap.unmarshalling
-     * @tc.desc      : 1.create InitializationOptions object
-     *                 2.set editable,pixelFormat,size
-     *                 3.using color and opts create newPixelMap
-     *                 4.marshalling pixelmap into the messageSequence
-     *                 5.unmarshalling pixelmap from the messageSequence
-     *                 6.return pixelmap not empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
-     */
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3100
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3100', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
         hilog.info(0x0000, "image10bitPixelMap", 'case: %{public}s msg:%{public}s', 'SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3100', 'device is not support hdr');
@@ -1997,17 +1923,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3200
-     * @tc.name      : test YCRCB_P010 pixelmap.marshalling and pixelmap.unmarshalling
-     * @tc.desc      : 1.create InitializationOptions object
-     *                 2.set editable,pixelFormat,size
-     *                 3.using color and opts create newPixelMap
-     *                 4.marshalling pixelmap into the messageSequence
-     *                 5.unmarshalling pixelmap from the messageSequence
-     *                 6.return pixelmap not empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3200
+     * @tc.desc   1.create InitializationOptions object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3200', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2019,15 +1940,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3300
-     * @tc.name      : test pixelmap.scale
-     * @tc.desc      : 1.create pixelmap
-     *               : 2.call scale-promise
-     *               : 3.get pixelbytesnumber
-     *               : 4.read pixels to buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3300
+     * @tc.desc   1.create pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3300', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2047,15 +1965,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3400
-     * @tc.name      : test pixelmap.scale callback
-     * @tc.desc      : 1.create pixelmap
-     *               : 2.call scale-callback
-     *               : 3.get pixelbytesnumber
-     *               : 4.read pixels to buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3400
+     * @tc.desc   1.create pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3400', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2075,15 +1990,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3500
-     * @tc.name      : test pixelmap.scaleSync
-     * @tc.desc      : 1.create pixelmap
-     *               : 2.call scaleSync
-     *               : 3.get pixelbytesnumber
-     *               : 4.read pixels to buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3500
+     * @tc.desc   1.create pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3500', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2103,15 +2015,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3600
-     * @tc.name      : test pixelmap.translate
-     * @tc.desc      : 1.create pixelmap
-     *               : 2.call translate -promise
-     *               : 3.get pixelbytesnumber
-     *               : 4.read pixels to buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3600
+     * @tc.desc   1.create pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3600', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2131,15 +2040,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3700
-     * @tc.name      : test pixelmap.translate callback
-     * @tc.desc      : 1.create pixelmap
-     *               : 2.call translate -callback
-     *               : 3.get pixelbytesnumber
-     *               : 4.read pixels to buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3700
+     * @tc.desc   1.create pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3700', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2159,15 +2065,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3800
-     * @tc.name      : test pixelmap.translateSync
-     * @tc.desc      : 1.create pixelmap
-     *               : 2.call translateSync
-     *               : 3.get pixelbytesnumber
-     *               : 4.read pixels to buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3800
+     * @tc.desc   1.create pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3800', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2187,15 +2090,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3900
-     * @tc.name      : test pixelmap.rotate
-     * @tc.desc      : 1.create pixelmap
-     *               : 2.call rotate -promise
-     *               : 3.get pixelbytesnumber
-     *               : 4.read pixels to buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3900
+     * @tc.desc   1.create pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_3900', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2215,15 +2115,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4000
-     * @tc.name      : test pixelmap.rotate callback
-     * @tc.desc      : 1.create pixelmap
-     *               : 2.call rotate -callback
-     *               : 3.get pixelbytesnumber
-     *               : 4.read pixels to buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4000
+     * @tc.desc   1.create pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4000', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2243,15 +2140,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4100
-     * @tc.name      : test pixelmap.rotateSync
-     * @tc.desc      : 1.create pixelmap
-     *               : 2.call rotateSync
-     *               : 3.get pixelbytesnumber
-     *               : 4.read pixels to buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4100
+     * @tc.desc   1.create pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4100', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2271,15 +2165,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4200
-     * @tc.name      : test pixelmap.flip
-     * @tc.desc      : 1.create pixelmap
-     *               : 2.call flip -promise
-     *               : 3.get pixelbytesnumber
-     *               : 4.read pixels to buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4200
+     * @tc.desc   1.create pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4200', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2299,15 +2190,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4300
-     * @tc.name      : test pixelmap.flip callback
-     * @tc.desc      : 1.create pixelmap
-     *               : 2.call flip -callback
-     *               : 3.get pixelbytesnumber
-     *               : 4.read pixels to buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4300
+     * @tc.desc   1.create pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4300', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2327,15 +2215,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4400
-     * @tc.name      : test pixelmap.flipSync
-     * @tc.desc      : 1.create pixelmap
-     *               : 2.call flipSync
-     *               : 3.get pixelbytesnumber
-     *               : 4.read pixels to buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4400
+     * @tc.desc   1.create pixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4400', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2355,16 +2240,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4500
-     * @tc.name      : test pixelmap.crop
-     * @tc.desc      : 1.create PixelMap
-     *               : 2.call crop -promise
-     *               : 3.getImageInfo
-     *               : 4.getPixelBytesNumber
-     *               : 5.readPixelsToBuffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4500
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4500', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2385,16 +2266,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4600
-     * @tc.name      : test pixelmap.crop callback
-     * @tc.desc      : 1.create PixelMap
-     *               : 2.call crop -callback
-     *               : 3.getImageInfo
-     *               : 4.getPixelBytesNumber
-     *               : 5.readPixelsToBuffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4600
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4600', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2415,16 +2292,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4700
-     * @tc.name      : test pixelmap.cropSync
-     * @tc.desc      : 1.create PixelMap
-     *               : 2.call cropSync
-     *               : 3.getImageInfo
-     *               : 4.getPixelBytesNumber
-     *               : 5.readPixelsToBuffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4700
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4700', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2445,13 +2318,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4800
-     * @tc.name      : test pixelmap.release
-     * @tc.desc      : 1.create PixelMap
-     *               : 2.call release
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4800
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4800', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2463,13 +2335,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4900
-     * @tc.name      : test pixelmap.release
-     * @tc.desc      : 1.create PixelMap
-     *               : 2.call release
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4900
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_4900', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2482,13 +2353,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5000
-     * @tc.name      : test pixelmap.release
-     * @tc.desc      : 1.create PixelMap
-     *               : 2.call release
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5000
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5000', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2500,13 +2370,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5100
-     * @tc.name      : test pack pixelmap to file --promise
-     * @tc.desc      : 1.create PixelMap
-     *               : 2.pack pixelmap to file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5100
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5100', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5100");
@@ -2521,13 +2390,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5200
-     * @tc.name      : test pack pixelmap to file --callback
-     * @tc.desc      : 1.create PixelMap
-     *               : 2.pack pixelmap to file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5200
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5200', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5200");
@@ -2546,13 +2414,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5300
-     * @tc.name      : test pack pixelmap to buffer --promise
-     * @tc.desc      : 1.create PixelMap
-     *               : 2.pack pixelmap to buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5300
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5300', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5300");
@@ -2566,13 +2433,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5400
-     * @tc.name      : test pack pixelmap to buffer --promise
-     * @tc.desc      : 1.create PixelMap
-     *               : 2.pack pixelmap to buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5400
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5400', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5400");
@@ -2590,13 +2456,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5500
-     * @tc.name      : test pixelmap.toSdr
-     * @tc.desc      : 1.create PixelMap
-     *               : 2.call toSdr
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5500
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5500', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2608,13 +2473,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5600
-     * @tc.name      : test pixelmap.toSdr
-     * @tc.desc      : 1.create PixelMap
-     *               : 2.call toSdr
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5600
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5600', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {
@@ -2626,13 +2490,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5700
-     * @tc.name      : test pixelmap.toSdr
-     * @tc.desc      : 1.create PixelMap
-     *               : 2.call toSdr
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5700
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_5700', Level.LEVEL0, async (done: Function) => {
       if (!isSupportHdr) {

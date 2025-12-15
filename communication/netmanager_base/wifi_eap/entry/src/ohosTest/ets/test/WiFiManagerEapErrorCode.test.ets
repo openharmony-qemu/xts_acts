@@ -43,7 +43,6 @@ export default function wifiEapErrorTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_Netmanager_Eap_ErrorCode_0100
          * @tc.number SUB_Communication_Netmanager_Eap_ErrorCode_0100
          * @tc.desc   Test eap register api functionality.
@@ -119,7 +118,6 @@ export default function wifiEapErrorTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_Netmanager_Eap_ErrorCode_0200
          * @tc.number SUB_Communication_Netmanager_Eap_ErrorCode_0200
          * @tc.desc   Test eap register api functionality.
@@ -196,7 +194,6 @@ export default function wifiEapErrorTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_Netmanager_Eap_ErrorCode_0300
          * @tc.number SUB_Communication_Netmanager_Eap_ErrorCode_0300
          * @tc.desc   Test eap register api functionality.
@@ -272,7 +269,6 @@ export default function wifiEapErrorTest(){
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_Netmanager_Eap_ErrorCode_0400
          * @tc.number SUB_Communication_Netmanager_Eap_ErrorCode_0400
          * @tc.desc   Test eap register api functionality.
@@ -341,7 +337,6 @@ export default function wifiEapErrorTest(){
             }
         })   
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_Netmanager_Eap_ErrorCode_0500
          * @tc.number SUB_Communication_Netmanager_Eap_ErrorCode_0500
          * @tc.desc   Test eap register api functionality.
@@ -410,7 +405,6 @@ export default function wifiEapErrorTest(){
             }
         })
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_Netmanager_Eap_ErrorCode_0600
          * @tc.number SUB_Communication_Netmanager_Eap_ErrorCode_0600
          * @tc.desc   Test eap unregister api functionality.
@@ -481,7 +475,6 @@ export default function wifiEapErrorTest(){
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_Netmanager_Eap_ErrorCode_0700
          * @tc.number SUB_Communication_Netmanager_Eap_ErrorCode_0700
          * @tc.desc   Test eap reply api functionality.
@@ -532,7 +525,6 @@ export default function wifiEapErrorTest(){
             }
         })
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_Netmanager_Eap_ErrorCode_0800
          * @tc.number SUB_Communication_Netmanager_Eap_ErrorCode_0800
          * @tc.desc   Test eap reply api functionality.

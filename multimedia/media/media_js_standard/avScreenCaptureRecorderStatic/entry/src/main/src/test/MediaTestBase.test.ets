@@ -455,7 +455,7 @@ export default class MediaTestBase {
     }
   }
 
-  audioRen: audio.AudioRenderer | undefined;
+  audioRen: audio.AudioRenderer | undefined | null;
 
   async playPcmPromise() {
     console.info(`${this.TAG}: Promise : Audio playPcmPromise Function`);
@@ -480,7 +480,7 @@ export default class MediaTestBase {
       return undefined;
     }
 
-    await audio.createAudioRenderer(audioRendererOptions).then((data: audio.AudioRenderer) => {
+    await audio.createAudioRenderer(audioRendererOptions).then((data: audio.AudioRenderer | null) => {
       this.audioRen = data;
       console.info(`${this.TAG}: AudioRender Created : Success : Stream Type: SUCCESS`);
     }).catch((err: Error) => {

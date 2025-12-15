@@ -59,14 +59,14 @@ export default function StateArrayBoolean() {
       await CommonFunc.sleep(1000);
       console.info("StateArrayBoolean after each called");
     });
-    /* *
-    * @tc.number: StateArrayBoolean_0100
-    * @tc.name  : StateArrayBoolean_0100
-    * @tc.desc  : Test if the state decorator supports StateArrayBoolean types.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   StateArrayBoolean_0100
+     * @tc.number StateArrayBoolean_0100
+     * @tc.desc   Test if the state decorator supports StateArrayBoolean types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateArrayBoolean_0100', Level.LEVEL0, async (done: Function) => {
       console.info('StateArrayBoolean_0100 START');
       let driver: Driver = await Driver.create()
@@ -84,14 +84,14 @@ export default function StateArrayBoolean() {
       console.info('[StateArrayBoolean_0100] END');
       done();
     });
-    /* *
-    * @tc.number: StateArrayBoolean_0200
-    * @tc.name  : StateArrayBoolean_0200
-    * @tc.desc  : Test if the state decorator supports StateArrayBoolean types.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   StateArrayBoolean_0200
+     * @tc.number StateArrayBoolean_0200
+     * @tc.desc   Test if the state decorator supports StateArrayBoolean types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateArrayBoolean_0200', Level.LEVEL0, async (done: Function) => {
       console.info('StateArrayBoolean_0200 START');
       let driver: Driver = await Driver.create()
@@ -109,14 +109,14 @@ export default function StateArrayBoolean() {
       console.info('[StateArrayBoolean_0200] END');
       done();
     });
-    /* *
-    * @tc.number: StateArrayBoolean_0300
-    * @tc.name  : StateArrayBoolean_0300
-    * @tc.desc  : Test if the state decorator supports StateArrayBoolean types.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   StateArrayBoolean_0300
+     * @tc.number StateArrayBoolean_0300
+     * @tc.desc   Test if the state decorator supports StateArrayBoolean types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateArrayBoolean_0300', Level.LEVEL0, async (done: Function) => {
       console.info('StateArrayBoolean_0300 START');
       let driver: Driver = await Driver.create()
@@ -134,14 +134,14 @@ export default function StateArrayBoolean() {
       console.info('[StateArrayBoolean_0300] END');
       done();
     });
-    /* *
-    * @tc.number: StateArrayBoolean_0400
-    * @tc.name  : StateArrayBoolean_0400
-    * @tc.desc  : Test if the state decorator supports StateArrayBoolean types.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   StateArrayBoolean_0400
+     * @tc.number StateArrayBoolean_0400
+     * @tc.desc   Test if the state decorator supports StateArrayBoolean types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateArrayBoolean_0400', Level.LEVEL0, async (done: Function) => {
       console.info('StateArrayBoolean_0400 START');
       let driver: Driver = await Driver.create()

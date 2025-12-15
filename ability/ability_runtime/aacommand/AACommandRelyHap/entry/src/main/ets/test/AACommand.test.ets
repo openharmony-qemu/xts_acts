@@ -18,14 +18,14 @@ import { describe, it, expect, Level } from '@ohos/hypium'
 
 export default function abilityTest() {
     describe('AACommandTest', () => {
-        /**
-         * @tc.number: ACTS_AACommand_finishTest_01_0100
-         * @tc.name: Each parameter of the test command is valid, and the finishTest interface is called
-         *           in AsyncCallback mode.
-         *           The msg parameter is valid (including Chinese and special characters) and the code parameter
-         *           is valid (1).
-         * @tc.desc: Verify that the process of the test framework can be stopped by calling this interface.
-         */
+         /**
+          * @tc.name   ACTS_AACommand_finish_01_0100
+          * @tc.number ACTS_AACommand_finishTest_01_0100
+          * @tc.desc   Verify that the process of the test framework can be stopped by calling this interface.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL0
+          */
          it('ACTS_AACommand_finish_01_0100', Level.LEVEL0, async (done: Function) => {
             let msg = '测试日志!@#$%^&*()_+QWE{}|?><Fafq3146ACTS_AACommand_finish_01_0100'
             globalThis.abilityDelegator.finishTest(msg, 1,()=>{
@@ -35,11 +35,13 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_AACommand_finishTest_01_0200
-         * @tc.name: The parameters of the test command are valid, and the finishTest interface is called in AsyncCallback
-         *           mode. The msg parameter is invalid (null) and the code parameter is valid (1)
-         * @tc.desc: Verify that the process of the test framework can be stopped by calling this interface.
-        */
+         * @tc.name   ACTS_AACommand_finish_01_0200
+         * @tc.number ACTS_AACommand_finishTest_01_0200
+         * @tc.desc   Verify that the process of the test framework can be stopped by calling this interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ACTS_AACommand_finish_01_0200', Level.LEVEL0, async (done: Function) => {
             done();
             let code:string = globalThis.abilityDelegator.finishTest(null, 1,()=>{
@@ -56,11 +58,13 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_AACommand_finishTest_01_0300
-         * @tc.name: The parameters of the test command are valid, and the finishTest interface is called in AsyncCallback
-         *           mode. The msg parameter is invalid (Undefined) and the code parameter is valid (1)
-         * @tc.desc: Verify that the process of the test framework can be stopped by calling this interface.
-        */
+         * @tc.name   ACTS_AACommand_finish_01_0300
+         * @tc.number ACTS_AACommand_finishTest_01_0300
+         * @tc.desc   Verify that the process of the test framework can be stopped by calling this interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ACTS_AACommand_finish_01_0300', Level.LEVEL0, async (done: Function) => {
             let code:string = globalThis.abilityDelegator.finishTest(undefined, 1,()=>{
                 console.log(" ACTS_AACommand_finish_01_0300 finishTest  test  end ========> callback " )
@@ -77,11 +81,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_AACommand_finishTest_01_0400
-         * @tc.name: The parameters of the test command are valid, and the finishTest interface is called in AsyncCallback
-         *           mode. The msg parameter is invalid(including Chinese and special characters) and the code parameter
-         *           is valid (Number.MAX_VALUE)
-         * @tc.desc: Verify that the process of the test framework can be stopped by calling this interface.
+         * @tc.name   ACTS_AACommand_finish_01_0400
+         * @tc.number ACTS_AACommand_finishTest_01_0400
+         * @tc.desc   Verify that the process of the test framework can be stopped by calling this interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_AACommand_finish_01_0400', Level.LEVEL0, async (done: Function) => {
             let msg = '测试日志!@#$%^&*()_+QWE{}|?><Fafq3146'
@@ -92,11 +97,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_AACommand_finishTest_01_0500
-         * @tc.name: The parameters of the test command are valid, and the finishTest interface is called in AsyncCallback
-         *           mode. The msg parameter is invalid(including Chinese and special characters) and the code parameter
-         *           is valid (Number.MIN_VALUE)
-         * @tc.desc: Verify that the process of the test framework can be stopped by calling this interface.
+         * @tc.name   ACTS_AACommand_finish_01_0500
+         * @tc.number ACTS_AACommand_finishTest_01_0500
+         * @tc.desc   Verify that the process of the test framework can be stopped by calling this interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_AACommand_finish_01_0500', Level.LEVEL0, async (done: Function) => {
             let msg = '测试日志!@#$%^&*()_+QWE{}|?><Fafq3146'
@@ -107,11 +113,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_AACommand_finishTest_01_0600
-         * @tc.name: The parameters of the test command are valid, and the finishTest interface is called in AsyncCallback
-         *           mode. The msg parameter is invalid(including Chinese and special characters) and the code parameter
-         *           is valid (Number.MAX_VALUE+1)
-         * @tc.desc: Verify that the process of the test framework can be stopped by calling this interface.
+         * @tc.name   ACTS_AACommand_finish_01_0600
+         * @tc.number ACTS_AACommand_finishTest_01_0600
+         * @tc.desc   Verify that the process of the test framework can be stopped by calling this interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_AACommand_finish_01_0600', Level.LEVEL0, async (done: Function) => {
             let msg = '测试日志!@#$%^&*()_+QWE{}|?><Fafq3146'
@@ -122,11 +129,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_AACommand_finishTest_01_0700
-         * @tc.name: The parameters of the test command are valid, and the finishTest interface is called in AsyncCallback
-         *           mode. The msg parameter is invalid(including Chinese and special characters) and the code parameter
-         *           is valid (Number.MIN_VALUE-1)
-         * @tc.desc: Verify that the process of the test framework can be stopped by calling this interface.
+         * @tc.name   ACTS_AACommand_finish_01_0700
+         * @tc.number ACTS_AACommand_finishTest_01_0700
+         * @tc.desc   Verify that the process of the test framework can be stopped by calling this interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_AACommand_finish_01_0700', Level.LEVEL0, async (done: Function) => {
             let msg = '测试日志!@#$%^&*()_+QWE{}|?><Fafq3146'
@@ -137,11 +145,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_AACommand_finishTest_01_0800
-         * @tc.name: The parameters of the test command are valid, and the finishTest interface is called in AsyncCallback
-         *           mode. The msg parameter is invalid(including Chinese and special characters) and the
-         *           code parameter is valid (“ABCD”)
-         * @tc.desc: Verify that the process of the test framework is not stopped by calling this interface.
+         * @tc.name   ACTS_AACommand_finish_01_0800
+         * @tc.number ACTS_AACommand_finishTest_01_0800
+         * @tc.desc   Verify that the process of the test framework is not stopped by calling this interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_AACommand_finish_01_0800', Level.LEVEL0, async (done: Function) => {
             done();
@@ -154,11 +163,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_AACommand_finishTest_01_0900
-         * @tc.name: The parameters of the test command are valid, and the finishTest interface is called in Promise
-         *           mode. The msg parameter is valid(including Chinese and special characters) and the code parameter
-         *           is valid (1)
-         * @tc.desc: Verify that the process of the test framework can be stopped by calling this interface.
+         * @tc.name   ACTS_AACommand_finish_01_0900
+         * @tc.number ACTS_AACommand_finishTest_01_0900
+         * @tc.desc   Verify that the process of the test framework can be stopped by calling this interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_AACommand_finish_01_0900', Level.LEVEL0, async (done: Function) => {
             let msg = '测试日志!@#$%^&*()_+QWE{}|?><Fafq3146'
@@ -169,10 +179,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_AACommand_finishTest_01_1000
-         * @tc.name: The parameters of the test command are valid, and the finishTest interface is called in Promise
-         *           mode. The msg parameter is invalid(null) and the code parameter is valid (1)
-         * @tc.desc: Verify that the process of the test framework can be stopped by calling this interface.
+         * @tc.name   ACTS_AACommand_finish_01_1000
+         * @tc.number ACTS_AACommand_finishTest_01_1000
+         * @tc.desc   Verify that the process of the test framework can be stopped by calling this interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_AACommand_finish_01_1000', Level.LEVEL0, async (done: Function) => {
             done()
@@ -181,10 +193,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_AACommand_finishTest_01_1100
-         * @tc.name: The parameters of the test command are valid, and the finishTest interface is called in Promise
-         *           mode. The msg parameter is invalid(undefined) and the code parameter is valid (1)
-         * @tc.desc: Verify that the process of the test framework can be stopped by calling this interface.
+         * @tc.name   ACTS_AACommand_finish_01_1100
+         * @tc.number ACTS_AACommand_finishTest_01_1100
+         * @tc.desc   Verify that the process of the test framework can be stopped by calling this interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_AACommand_finish_01_1100', Level.LEVEL0, async (done: Function) => {
             done()
@@ -193,11 +207,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_AACommand_finishTest_01_1200
-         * @tc.name: The parameters of the test command are valid, and the finishTest interface is called in Promise
-         *           mode. The msg parameter is valid(including Chinese and special characters) and the code parameter
-         *           is valid (Number.MAX_VALUE)
-         * @tc.desc: Verify that the process of the test framework can be stopped by calling this interface.
+         * @tc.name   ACTS_AACommand_finish_01_1200
+         * @tc.number ACTS_AACommand_finishTest_01_1200
+         * @tc.desc   Verify that the process of the test framework can be stopped by calling this interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_AACommand_finish_01_1200', Level.LEVEL0, async (done: Function) => {
             let msg = '测试日志!@#$%^&*()_+QWE{}|?><Fafq3146'
@@ -208,11 +223,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_AACommand_finishTest_01_1300
-         * @tc.name: The parameters of the test command are valid, and the finishTest interface is called in Promise
-         *           mode. The msg parameter is valid(including Chinese and special characters) and the code parameter
-         *           is valid (Number.MIN_VALUE)
-         * @tc.desc: Verify that the process of the test framework can be stopped by calling this interface.
+         * @tc.name   ACTS_AACommand_finish_01_1300
+         * @tc.number ACTS_AACommand_finishTest_01_1300
+         * @tc.desc   Verify that the process of the test framework can be stopped by calling this interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_AACommand_finish_01_1300', Level.LEVEL0, async (done: Function) => {
             let msg = '测试日志!@#$%^&*()_+QWE{}|?><Fafq3146'
@@ -223,11 +239,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_AACommand_finishTest_01_1400
-         * @tc.name: The parameters of the test command are valid, and the finishTest interface is called in Promise
-         *           mode. The msg parameter is valid(including Chinese and special characters) and the code parameter
-         *           is valid (Number.MAX_VALUE+1)
-         * @tc.desc: Verify that the process of the test framework can be stopped by calling this interface.
+         * @tc.name   ACTS_AACommand_finish_01_1400
+         * @tc.number ACTS_AACommand_finishTest_01_1400
+         * @tc.desc   Verify that the process of the test framework can be stopped by calling this interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_AACommand_finish_01_1400', Level.LEVEL0, async (done: Function) => {
             let msg = '测试日志!@#$%^&*()_+QWE{}|?><Fafq3146'
@@ -238,11 +255,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_AACommand_finishTest_01_1500
-         * @tc.name: The parameters of the test command are valid, and the finishTest interface is called in Promise
-         *           mode. The msg parameter is valid(including Chinese and special characters) and the code parameter
-         *           is valid (Number.MIN_VALUE-1)
-         * @tc.desc: Verify that the process of the test framework can be stopped by calling this interface.
+         * @tc.name   ACTS_AACommand_finish_01_1500
+         * @tc.number ACTS_AACommand_finishTest_01_1500
+         * @tc.desc   Verify that the process of the test framework can be stopped by calling this interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_AACommand_finish_01_1500', Level.LEVEL0, async (done: Function) => {
             let msg = '测试日志!@#$%^&*()_+QWE{}|?><Fafq3146'
@@ -253,11 +271,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_AACommand_finishTest_01_1600
-         * @tc.name: The parameters of the test command are valid, and the finishTest interface is called in Promise
-         *           mode. The msg parameter is valid(including Chinese and special characters) and the code parameter
-         *           is valid (ABCD)
-         * @tc.desc: Verify that the process of the test framework can be stopped by calling this interface.
+         * @tc.name   ACTS_AACommand_finish_01_1600
+         * @tc.number ACTS_AACommand_finishTest_01_1600
+         * @tc.desc   Verify that the process of the test framework can be stopped by calling this interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_AACommand_finish_01_1600', Level.LEVEL0, async (done: Function) => {
             let code = null

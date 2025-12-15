@@ -64,6 +64,14 @@ export default function ObjectLinkFarJsunit() {
       await CommonFunc.sleep(1000);
     });
 
+    /**
+     * @tc.name   ObjectLinkFarJsunit_0100
+     * @tc.number ObjectLinkFarJsunit_0100
+     * @tc.desc   ObjectLinkFarJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ObjectLinkFarJsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkFarJsunit_0100 START');
@@ -87,6 +95,14 @@ export default function ObjectLinkFarJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ObjectLinkFarJsunit_0200
+     * @tc.number ObjectLinkFarJsunit_0200
+     * @tc.desc   ObjectLinkFarJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ObjectLinkFarJsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkFarJsunit_0200 START');
@@ -110,6 +126,14 @@ export default function ObjectLinkFarJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ObjectLinkFarJsunit_0300
+     * @tc.number ObjectLinkFarJsunit_0300
+     * @tc.desc   ObjectLinkFarJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ObjectLinkFarJsunit_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkFarJsunit_0300 START');

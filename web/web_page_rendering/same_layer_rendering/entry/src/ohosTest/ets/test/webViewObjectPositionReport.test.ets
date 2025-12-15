@@ -47,13 +47,13 @@ export default function ActsAceWebViewObjectPositionReport() {
       done()
     });
 
-    /*
-     *@tc.number SUB_ACE_WEB_OBJECTPOSITIONREPORT_API_0001
-     *@tc.name testWebViewObjectPositionReport
-     *@tc.desc test objectPositionReport
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewObjectPositionReport
+     * @tc.number SUB_ACE_WEB_OBJECTPOSITIONREPORT_API_0001
+     * @tc.desc   test objectPositionReport
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewObjectPositionReport', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectPositionReport"

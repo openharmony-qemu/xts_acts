@@ -49,10 +49,12 @@ export default function EnableToolBarAdaptation() {
 
 
     /**
-     * @tc.number    EnableToolBarAdaptation_0100
-     * @tc.name      EnableToolBarAdaptation_0100
-     * @tc.desc      Test Navigation\NavDestination hideItemValue is false
-     * @tc.level     Level 2
+     * @tc.name   EnableToolBarAdaptation_0100
+     * @tc.number EnableToolBarAdaptation_0100
+     * @tc.desc   Test Navigation\NavDestination hideItemValue is false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableToolBarAdaptation_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('EnableToolBarAdaptation_0100 START');
@@ -76,10 +78,12 @@ export default function EnableToolBarAdaptation() {
     });
 
     /**
-     * @tc.number    EnableToolBarAdaptation_0200
-     * @tc.name      EnableToolBarAdaptation_0200
-     * @tc.desc      Test navDestination hideItemValue is true and false
-     * @tc.level     Level 2
+     * @tc.name   EnableToolBarAdaptation_0200
+     * @tc.number EnableToolBarAdaptation_0200
+     * @tc.desc   Test navDestination hideItemValue is true and false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableToolBarAdaptation_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('EnableToolBarAdaptation_0200 START');
@@ -112,10 +116,12 @@ export default function EnableToolBarAdaptation() {
     });
 
     /**
-     * @tc.number    EnableToolBarAdaptation_0300
-     * @tc.name      EnableToolBarAdaptation_0300
-     * @tc.desc      Test Navigation EnableToolBarAdaptation is false
-     * @tc.level     Level 2
+     * @tc.name   EnableToolBarAdaptation_0300
+     * @tc.number EnableToolBarAdaptation_0300
+     * @tc.desc   Test Navigation EnableToolBarAdaptation is false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableToolBarAdaptation_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('EnableToolBarAdaptation_0300 START');
@@ -159,10 +165,12 @@ export default function EnableToolBarAdaptation() {
     });
 
     /**
-     * @tc.number    EnableToolBarAdaptation_0400
-     * @tc.name      EnableToolBarAdaptation_0400
-     * @tc.desc      Test Navigation\navDestination EnableToolBarAdaptation is true
-     * @tc.level     Level 2
+     * @tc.name   EnableToolBarAdaptation_0400
+     * @tc.number EnableToolBarAdaptation_0400
+     * @tc.desc   Test Navigation\navDestination EnableToolBarAdaptation is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableToolBarAdaptation_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('EnableToolBarAdaptation_0400 START');

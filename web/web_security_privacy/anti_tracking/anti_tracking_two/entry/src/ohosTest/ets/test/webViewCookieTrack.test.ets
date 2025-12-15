@@ -42,13 +42,13 @@ export default function ActsAcewebViewCookieTrack() {
     });
 
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_enableIntelligentTrackingPrevention_API_0001
-     * @tc.name       : testWebViewCookieTrackEnableTrue
-     * @tc.desc       : test enableIntelligentTrackingPrevention true
-     * @tc.size_t     : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWebViewCookieTrackEnableTrue
+     * @tc.number SUB_ACE_WEB_enableIntelligentTrackingPrevention_API_0001
+     * @tc.desc   test enableIntelligentTrackingPrevention true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewCookieTrackEnableTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let emitKey = "emitWebViewCookieTrackEnableTrue";
@@ -58,13 +58,13 @@ export default function ActsAcewebViewCookieTrack() {
     })
 
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_enableIntelligentTrackingPrevention_API_0002
-     * @tc.name       : testWebViewCookieTrackEnableFalse
-     * @tc.desc       : test enableIntelligentTrackingPrevention false
-     * @tc.size_t     : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testWebViewCookieTrackEnableFalse
+     * @tc.number SUB_ACE_WEB_enableIntelligentTrackingPrevention_API_0002
+     * @tc.desc   test enableIntelligentTrackingPrevention false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebViewCookieTrackEnableFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let emitKey = "emitWebViewCookieTrackEnableFalse";
@@ -74,14 +74,14 @@ export default function ActsAcewebViewCookieTrack() {
     })
 
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_clearIntelligentTrackingPreventionByPassingList_API_0005
-    * @tc.name       : testCookieTrackClearTrackingPrevention
-    * @tc.desc       : test clearIntelligentTrackingPreventionByPassingList
-    * @tc.size_t     : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testCookieTrackClearTrackingPrevention
+     * @tc.number SUB_ACE_WEB_clearIntelligentTrackingPreventionByPassingList_API_0005
+     * @tc.desc   test clearIntelligentTrackingPreventionByPassingList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testCookieTrackClearTrackingPrevention', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let emitKey = "emitCookieTrackClearTrackingPrevention";
       Utils.emitEvent(emitKey, 160060)

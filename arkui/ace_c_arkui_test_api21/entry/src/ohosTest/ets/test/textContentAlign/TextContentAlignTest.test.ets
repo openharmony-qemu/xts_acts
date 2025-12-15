@@ -28,12 +28,12 @@ export default function textContentAlignTest() {
     });
 
     /**
-     * @tc.number    textContentAlignTest_001
-     * @tc.name      textContentAlignTest_001
-     * @tc.desc      test the attr of Text: textContentAlign(TextContentAlign.TOP)
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   textContentAlignTest_001
+     * @tc.number textContentAlignTest_001
+     * @tc.desc   test the attr of Text: textContentAlign(TextContentAlign.TOP)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textContentAlignTest_001', Level.LEVEL1, async (done: Function) => {
       console.info('[textContentAlignTest_001] START');
@@ -50,12 +50,12 @@ export default function textContentAlignTest() {
     })
 
     /**
-     * @tc.number    textContentAlignTest_002
-     * @tc.name      textContentAlignTest_002
-     * @tc.desc      test the attr of Text: textContentAlign(TextContentAlign.CENTER)
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   textContentAlignTest_002
+     * @tc.number textContentAlignTest_002
+     * @tc.desc   test the attr of Text: textContentAlign(TextContentAlign.CENTER)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textContentAlignTest_002', Level.LEVEL1, async (done: Function) => {
       console.info('[textContentAlignTest_002] START');
@@ -72,12 +72,12 @@ export default function textContentAlignTest() {
     })
 
     /**
-     * @tc.number    textContentAlignTest_003
-     * @tc.name      textContentAlignTest_003
-     * @tc.desc      test the attr of Text: textContentAlign(TextContentAlign.BOTTOM)
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   textContentAlignTest_003
+     * @tc.number textContentAlignTest_003
+     * @tc.desc   test the attr of Text: textContentAlign(TextContentAlign.BOTTOM)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textContentAlignTest_003', Level.LEVEL1, async (done: Function) => {
       console.info('[textContentAlignTest_003] START');

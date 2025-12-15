@@ -25,12 +25,12 @@ export default function ArkUIKeySourceTypeTest() {
     });
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_SOURCE_UNKNOWN_0100
-     * @tc.name    : testArkUIKeySourceUnknown0100
-     * @tc.desc    : Test whether the key ARKUI_KEY_SOURCE_UNKNOWN are working properly.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeySourceUnknown0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_SOURCE_UNKNOWN_0100
+     * @tc.desc   Test whether the key ARKUI_KEY_SOURCE_UNKNOWN are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeySourceUnknown0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -62,12 +62,12 @@ export default function ArkUIKeySourceTypeTest() {
 
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_SOURCE_TYPE_MOUSE_0100
-     * @tc.name    : testArkUIKeySourceTypeMouse0100
-     * @tc.desc    : Test whether the key ARKUI_KEY_SOURCE_TYPE_MOUSE are working properly.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeySourceTypeMouse0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_SOURCE_TYPE_MOUSE_0100
+     * @tc.desc   Test whether the key ARKUI_KEY_SOURCE_TYPE_MOUSE are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeySourceTypeMouse0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -98,12 +98,12 @@ export default function ArkUIKeySourceTypeTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_SOURCE_TYPE_KEYBOARD_0100
-     * @tc.name    : testArkUIKeySourceTypeKeyboard0100
-     * @tc.desc    : Test whether the key ARKUI_KEY_SOURCE_TYPE_KEYBOARD are working properly.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeySourceTypeKeyboard0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_SOURCE_TYPE_KEYBOARD_0100
+     * @tc.desc   Test whether the key ARKUI_KEY_SOURCE_TYPE_KEYBOARD are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeySourceTypeKeyboard0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -134,12 +134,12 @@ export default function ArkUIKeySourceTypeTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_SOURCE_TYPE_JOYSTICK_0100
-     * @tc.name    : testArkUIKeySourceTypeJoystick0100
-     * @tc.desc    : Test whether the key ARKUI_KEY_SOURCE_TYPE_JOYSTICK are working properly.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeySourceTypeJoystick0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_SOURCE_TYPE_JOYSTICK_0100
+     * @tc.desc   Test whether the key ARKUI_KEY_SOURCE_TYPE_JOYSTICK are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeySourceTypeJoystick0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

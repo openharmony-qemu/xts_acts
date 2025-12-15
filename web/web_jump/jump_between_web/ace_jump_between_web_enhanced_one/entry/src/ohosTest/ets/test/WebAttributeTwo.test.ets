@@ -55,14 +55,14 @@ export default function webAttributeTwo() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONWINDOWEXIT_0100
-    * @tc.name       : testOnWindowExit001
-    * @tc.desc       : test onWindowExit
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOnWindowExit001
+     * @tc.number SUB_WEB_ONWINDOWEXIT_0100
+     * @tc.desc   test onWindowExit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnWindowExit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testOnWindowExit001", 133950);
       Utils.registerEvent("testOnWindowExit001", true, 133960, done);

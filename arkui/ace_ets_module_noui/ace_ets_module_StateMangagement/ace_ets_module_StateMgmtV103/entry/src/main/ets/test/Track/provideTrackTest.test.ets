@@ -63,12 +63,12 @@ export default function provideTrackTest() {
       await CommonFunc.sleep(2000);
     });
     /**
+     * @tc.name   provideTrackTest_0100
      * @tc.number SUB_ACE_provideTrackTest_0100
-     * @tc.name provideTrackTest_0100
-     * @tc.desc provideTrack
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   provideTrack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('provideTrackTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('provideTrackTest_0100 START');
@@ -95,12 +95,12 @@ export default function provideTrackTest() {
       done();
     });
     /**
+     * @tc.name   provideTrackTest_0200
      * @tc.number SUB_ACE_provideTrackTest_0200
-     * @tc.name provideTrackTest_0200
-     * @tc.desc provideTrack
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   provideTrack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('provideTrackTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('provideTrackTest_0100 START');

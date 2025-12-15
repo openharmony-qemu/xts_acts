@@ -47,9 +47,12 @@ export default function Grid_Row_Gutter() {
     });
 
     /**
+     * @tc.name   SUB_ACE_Grid_Row_Gutter_TEST_0100
      * @tc.number SUB_ACE_Grid_Row_Gutter_TEST_0100
-     * @tc.name testGridColOffset
-     * @tc.desc GridCol set offset to -2
+     * @tc.desc   GridCol set offset to -2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Grid_Row_Gutter_TEST_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Grid_Row_Gutter_TEST_0100] START');
@@ -95,9 +98,12 @@ export default function Grid_Row_Gutter() {
 
 
     /**
+     * @tc.name   SUB_ACE_Grid_Row_Gutter_TEST_0200
      * @tc.number SUB_ACE_Grid_Row_Gutter_TEST_0200
-     * @tc.name testGridColOffset
-     * @tc.desc GridCol set offset to 0
+     * @tc.desc   GridCol set offset to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Grid_Row_Gutter_TEST_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Grid_Row_Gutter_TEST_0200] START');
@@ -141,9 +147,12 @@ export default function Grid_Row_Gutter() {
     });
 
     /**
+     * @tc.name   SUB_ACE_Grid_Row_Gutter_TEST_0300
      * @tc.number SUB_ACE_Grid_Row_Gutter_TEST_0300
-     * @tc.name testGridColOffset
-     * @tc.desc GridCol set offset to 0
+     * @tc.desc   GridCol set offset to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Grid_Row_Gutter_TEST_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Grid_Row_Gutter_TEST_0200] START');
@@ -186,9 +195,12 @@ export default function Grid_Row_Gutter() {
     });
 
     /**
+     * @tc.name   SUB_ACE_Grid_Row_Gutter_TEST_0400
      * @tc.number SUB_ACE_Grid_Row_Gutter_TEST_0400
-     * @tc.name testGridColOffset
-     * @tc.desc GridCol set offset to 0
+     * @tc.desc   GridCol set offset to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Grid_Row_Gutter_TEST_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Grid_Row_Gutter_TEST_0400] START');

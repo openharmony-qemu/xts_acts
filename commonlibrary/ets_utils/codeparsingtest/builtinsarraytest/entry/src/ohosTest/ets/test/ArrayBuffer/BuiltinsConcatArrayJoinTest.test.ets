@@ -40,12 +40,12 @@ export default function builtinsConcatArrayJoinTest() {
     })
 
     /**
+     * @tc.name   builtinsConcatArrayJoinTest1001
      * @tc.number SUB_CONCAT_ARRAY_JOIN_TEST_0100
-     * @tc.name builtinsConcatArrayJoinTest1001
-     * @tc.desc Test basic join with empty separator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Test basic join with empty separator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsConcatArrayJoinTest1001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let arr = new ConcatArrayTest<number>([1, 2, 3]);
@@ -53,12 +53,12 @@ export default function builtinsConcatArrayJoinTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArrayJoinTest1002
      * @tc.number SUB_CONCAT_ARRAY_JOIN_TEST_0200
-     * @tc.name builtinsConcatArrayJoinTest1002
-     * @tc.desc Test hyphen separator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test hyphen separator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayJoinTest1002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr = new ConcatArrayTest<number>([1, 2, 3]);
@@ -66,12 +66,12 @@ export default function builtinsConcatArrayJoinTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArrayJoinTest1003
      * @tc.number SUB_CONCAT_ARRAY_JOIN_TEST_0300
-     * @tc.name builtinsConcatArrayJoinTest1003
-     * @tc.desc Test sparse array with empty separator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test sparse array with empty separator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayJoinTest1003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let sparseArr = new ConcatArrayTest<number | undefined>([1, , 3]);
@@ -79,12 +79,12 @@ export default function builtinsConcatArrayJoinTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArrayJoinTest1004
      * @tc.number SUB_CONCAT_ARRAY_JOIN_TEST_0400
-     * @tc.name builtinsConcatArrayJoinTest1004
-     * @tc.desc Test sparse array with hyphen separator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test sparse array with hyphen separator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayJoinTest1004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let sparseArr = new ConcatArrayTest<number | undefined>([1, , 3]);
@@ -92,12 +92,12 @@ export default function builtinsConcatArrayJoinTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArrayJoinTest1005
      * @tc.number SUB_CONCAT_ARRAY_JOIN_TEST_0500
-     * @tc.name builtinsConcatArrayJoinTest1005
-     * @tc.desc Test null/undefined elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test null/undefined elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayJoinTest1005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let sparseArr = new ConcatArrayTest<string | undefined | null>([null, undefined, 'a']);
@@ -105,12 +105,12 @@ export default function builtinsConcatArrayJoinTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArrayJoinTest1006
      * @tc.number SUB_CONCAT_ARRAY_JOIN_TEST_0600
-     * @tc.name builtinsConcatArrayJoinTest1006
-     * @tc.desc Test NaN element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test NaN element
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayJoinTest1006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let sparseArr = new ConcatArrayTest<number>([NaN]);
@@ -118,12 +118,12 @@ export default function builtinsConcatArrayJoinTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArrayJoinTest1007
      * @tc.number SUB_CONCAT_ARRAY_JOIN_TEST_0700
-     * @tc.name builtinsConcatArrayJoinTest1007
-     * @tc.desc Test undefined separator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test undefined separator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayJoinTest1007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let sparseArr = new ConcatArrayTest<number>([1, 2, 3]);
@@ -132,12 +132,12 @@ export default function builtinsConcatArrayJoinTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArrayJoinTest1008
      * @tc.number SUB_CONCAT_ARRAY_JOIN_TEST_0800
-     * @tc.name builtinsConcatArrayJoinTest1008
-     * @tc.desc Test '' char
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test '' char
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayJoinTest1008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let sparseArr = new ConcatArrayTest<number>([1, 2, 3]);
@@ -145,12 +145,12 @@ export default function builtinsConcatArrayJoinTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArrayJoinTest1009
      * @tc.number SUB_CONCAT_ARRAY_JOIN_TEST_0900
-     * @tc.name builtinsConcatArrayJoinTest1009
-     * @tc.desc Test empty array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayJoinTest1009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let sparseArr = new ConcatArrayTest([]);
@@ -158,12 +158,12 @@ export default function builtinsConcatArrayJoinTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArrayJoinTest1010
      * @tc.number SUB_CONCAT_ARRAY_JOIN_TEST_1000
-     * @tc.name builtinsConcatArrayJoinTest1010
-     * @tc.desc Test all undefined elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test all undefined elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayJoinTest1010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let sparseArr = new ConcatArrayTest([undefined, undefined]);
@@ -171,12 +171,12 @@ export default function builtinsConcatArrayJoinTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArrayJoinTest1011
      * @tc.number SUB_CONCAT_ARRAY_JOIN_TEST_1100
-     * @tc.name builtinsConcatArrayJoinTest1011
-     * @tc.desc Test ',' separator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test ',' separator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayJoinTest1011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let sparseArr = new ConcatArrayTest<number>([1, 2, 3]);
@@ -184,12 +184,12 @@ export default function builtinsConcatArrayJoinTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArrayJoinTest1012
      * @tc.number SUB_CONCAT_ARRAY_JOIN_TEST_1200
-     * @tc.name builtinsConcatArrayJoinTest1012
-     * @tc.desc Test mixed types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test mixed types
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayJoinTest1012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const prop: PropParam = {
@@ -200,12 +200,12 @@ export default function builtinsConcatArrayJoinTest() {
     });
 
     /**
+     * @tc.name   builtinsConcatArrayJoinTest1013
      * @tc.number SUB_CONCAT_ARRAY_JOIN_TEST_1300
-     * @tc.name builtinsConcatArrayJoinTest1013
-     * @tc.desc Test special characters separator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test special characters separator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayJoinTest1013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr = new ConcatArrayTest<number>([1, 2, 3]);

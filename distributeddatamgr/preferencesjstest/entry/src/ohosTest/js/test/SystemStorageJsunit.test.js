@@ -49,7 +49,6 @@ export default function SystemStorageJsunit(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testSet001
          * @tc.number SUB_DistributedData_Preference_SDK_StorageSystemApiTest_1200
          * @tc.desc   set and can get correct value in success callback, finally get complete callback
@@ -88,7 +87,6 @@ export default function SystemStorageJsunit(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testSet002
          * @tc.number SUB_DistributedData_Preference_SDK_StorageSystemApiTest_0900
          * @tc.desc   set null key can receive fail callback
@@ -126,7 +124,6 @@ export default function SystemStorageJsunit(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testSet003
          * @tc.number SUB_DistributedData_Preference_SDK_StorageSystemApiTest_1000
          * @tc.desc   set key which size over 32 bytes and can receive fail callback
@@ -165,7 +162,6 @@ export default function SystemStorageJsunit(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testSet004
          * @tc.number SUB_DistributedData_Preference_SDK_StorageSystemApiTest_1100
          * @tc.desc   set value which size over 128 bytes and can receive fail callback
@@ -202,7 +198,6 @@ export default function SystemStorageJsunit(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGet001
          * @tc.number SUB_DistributedData_Preference_SDK_StorageSystemApiTest_0800
          * @tc.desc   set and can get correct value in success callback, finally receive a get complete callback
@@ -244,7 +239,6 @@ export default function SystemStorageJsunit(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGet002
          * @tc.number SUB_DistributedData_Preference_SDK_StorageSystemApiTest_0700
          * @tc.desc   get value without set any value and can get default in success callback
@@ -279,7 +273,6 @@ export default function SystemStorageJsunit(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGet003
          * @tc.number SUB_DistributedData_Preference_SDK_StorageSystemApiTest_0500
          * @tc.desc   get default size over 128 and can receive fail callback
@@ -323,7 +316,6 @@ export default function SystemStorageJsunit(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGet004
          * @tc.number SUB_DistributedData_Preference_SDK_StorageSystemApiTest_0600
          * @tc.desc   get null key and can return default value
@@ -358,7 +350,6 @@ export default function SystemStorageJsunit(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testDelete001
          * @tc.number SUB_DistributedData_Preference_SDK_StorageSystemApiTest_0400
          * @tc.desc   delete value and can not get value
@@ -411,7 +402,6 @@ export default function SystemStorageJsunit(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testDelete002
          * @tc.number SUB_DistributedData_Preference_SDK_StorageSystemApiTest_0200
          * @tc.desc   delete null key and can get fail callback
@@ -464,7 +454,6 @@ export default function SystemStorageJsunit(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testDelete003
          * @tc.number SUB_DistributedData_Preference_SDK_StorageSystemApiTest_0300
          * @tc.desc   delete incorrect key and can get success callback
@@ -520,7 +509,6 @@ export default function SystemStorageJsunit(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testClear001
          * @tc.number SUB_DistributedData_Preference_SDK_StorageSystemApiTest_0100
          * @tc.desc   clear and can receive success callback

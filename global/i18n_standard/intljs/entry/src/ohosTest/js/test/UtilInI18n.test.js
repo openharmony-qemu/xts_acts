@@ -58,7 +58,6 @@ describe('UtilInI18nTest', function () {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:57
       * @tc.name   i18n_util_test_0100
       * @tc.number SUB_GLOBAL_I18N_UTIL_JS_0100
       * @tc.desc   get the unitConvert value
@@ -79,7 +78,6 @@ describe('UtilInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_util_test_0200
      * @tc.number SUB_GLOBAL_I18N_UTIL_JS_0200
      * @tc.desc   get the unitConvert value
@@ -105,7 +103,6 @@ describe('UtilInI18nTest', function () {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:57
       * @tc.name   i18n_util_test_0300
       * @tc.number SUB_GLOBAL_I18N_UTIL_JS_0300
       * @tc.desc   get the unitConvert value
@@ -131,7 +128,6 @@ describe('UtilInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_util_test_0400
      * @tc.number SUB_GLOBAL_I18N_UTIL_JS_0400
      * @tc.desc   get the unitConvert value
@@ -157,7 +153,6 @@ describe('UtilInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_util_test_0500
      * @tc.number SUB_GLOBAL_I18N_UTIL_JS_0500
      * @tc.desc   get the unitConvert value
@@ -178,7 +173,6 @@ describe('UtilInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_util_test_0600
      * @tc.number SUB_GLOBAL_I18N_UTIL_JS_0600
      * @tc.desc   get the unitConvert value
@@ -199,7 +193,6 @@ describe('UtilInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_util_test_0700
      * @tc.number SUB_GLOBAL_I18N_UTIL_JS_0700
      * @tc.desc   get the unitConvert value
@@ -220,7 +213,6 @@ describe('UtilInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_util_test_0800
      * @tc.number SUB_GLOBAL_I18N_UTIL_JS_0800
      * @tc.desc   get the unitConvert value
@@ -246,7 +238,6 @@ describe('UtilInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_util_test_0900
      * @tc.number SUB_GLOBAL_I18N_UTIL_JS_0900
      * @tc.desc   get the unitConvert value
@@ -267,7 +258,6 @@ describe('UtilInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_util_test_1000
      * @tc.number SUB_GLOBAL_I18N_UTIL_JS_1000
      * @tc.desc   get the unitConvert value
@@ -288,7 +278,6 @@ describe('UtilInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_util_test_1100
      * @tc.number SUB_GLOBAL_I18N_UTIL_JS_1100
      * @tc.desc   get the unitConvert value
@@ -309,7 +298,6 @@ describe('UtilInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_util_test_1200
      * @tc.number SUB_GLOBAL_I18N_UTIL_JS_1200
      * @tc.desc   get the unitConvert value
@@ -330,7 +318,6 @@ describe('UtilInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_util_test_1300
      * @tc.number SUB_GLOBAL_I18N_UTIL_JS_1300
      * @tc.desc   get the unitConvert value
@@ -351,7 +338,6 @@ describe('UtilInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_util_test_1400
      * @tc.number SUB_GLOBAL_I18N_UTIL_JS_1400
      * @tc.desc   get the unitConvert value
@@ -372,7 +358,6 @@ describe('UtilInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_util_test_1500
      * @tc.number SUB_GLOBAL_I18N_UTIL_JS_1500
      * @tc.desc   get the unitConvert value
@@ -393,7 +378,6 @@ describe('UtilInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_util_test_1600
      * @tc.number i18n_util_test_1600
      * @tc.desc   unitConvert

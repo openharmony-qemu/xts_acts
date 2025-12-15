@@ -118,7 +118,6 @@ export default function UsbApiBulkTransferTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbSubmitTransfer001
      * @tc.number SUB_USB_Host_JS_usbSubmitTransfer_Func_0100
      * @tc.desc   bulk transfer write successfully.
@@ -158,7 +157,6 @@ export default function UsbApiBulkTransferTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbSubmitTransfer002
      * @tc.number SUB_USB_Host_JS_usbSubmitTransfer_Func_0200
      * @tc.desc   bulk transfer read successfully.
@@ -197,7 +195,6 @@ export default function UsbApiBulkTransferTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbSubmitTransfer003
      * @tc.number SUB_USB_Host_JS_usbSubmitTransfer_ErrCode_0100
      * @tc.desc   bulk transfer error endpoint. IO error.
@@ -232,7 +229,6 @@ export default function UsbApiBulkTransferTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbSubmitTransfer004
      * @tc.number SUB_USB_Host_JS_usbSubmitTransfer_Func_0300
      * @tc.desc   bulk transfer claimInterface no call. connectDevice no call.
@@ -268,7 +264,6 @@ export default function UsbApiBulkTransferTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbCancelTransfer001
      * @tc.number SUB_USB_Host_JS_UsbCancelTransfer_Func_0100
      * @tc.desc   bulk transfer cancel successfully.
@@ -303,7 +298,6 @@ export default function UsbApiBulkTransferTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbCancelTransfer002
      * @tc.number SUB_USB_Host_JS_UsbCancelTransfer_ErrCode_0100
      * @tc.desc   bulk transfer cancel failed.

@@ -44,12 +44,12 @@ export default function APIremoveGestureByTag() {
     });
 
     /**
-     * @tc.number    api
-     * @tc.name      APIremoveGestureByTag_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :    Column
-     * @tc.size :
+     * @tc.name   APIremoveGestureByTag_0100
+     * @tc.number api
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIremoveGestureByTag_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('APIremoveGestureByTag_0100 START');

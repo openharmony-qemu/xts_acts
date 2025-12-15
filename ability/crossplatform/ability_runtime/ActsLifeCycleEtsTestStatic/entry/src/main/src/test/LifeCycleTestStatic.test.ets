@@ -71,12 +71,12 @@ export default function lifecycleStaticTest() {
 
 
     /**
-     * @tc.number  Crossplatform_Singlehap_LifeCycleTest_Static_0700
-     * @tc.name    Crossplatform_Singlehap_LifeCycleTest_Static_0700
-     * @tc.desc    Multiple registration/unregistration
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   0
+     * @tc.name   Crossplatform_Singlehap_LifeCycleTest_Static_0700
+     * @tc.number Crossplatform_Singlehap_LifeCycleTest_Static_0700
+     * @tc.desc   Multiple registration/unregistration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Crossplatform_Singlehap_LifeCycleTest_Static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

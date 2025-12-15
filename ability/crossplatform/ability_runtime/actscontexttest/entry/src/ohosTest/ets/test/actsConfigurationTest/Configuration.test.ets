@@ -37,12 +37,12 @@ export default function Configuration() {
     });
 
     /**
-     * @tc.number    : ABILITY_TEST_COLORMODE_0100
-     * @tc.name      : testColorMode001
-     * @tc.desc      : test filed of colorMode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testColorMode001
+     * @tc.number ABILITY_TEST_COLORMODE_0100
+     * @tc.desc   test filed of colorMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColorMode001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -70,12 +70,12 @@ export default function Configuration() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_DIRECTION_0100
-     * @tc.name      : testDirection001
-     * @tc.desc      : test filed of direction
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testDirection001
+     * @tc.number ABILITY_TEST_DIRECTION_0100
+     * @tc.desc   test filed of direction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDirection001', Level.LEVEL0, async (done: Function) => {
       try {

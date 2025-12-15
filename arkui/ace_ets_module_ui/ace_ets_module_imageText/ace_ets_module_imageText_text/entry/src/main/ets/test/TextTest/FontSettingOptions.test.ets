@@ -43,12 +43,12 @@ export default function FontSettingOptions() {
     });
 
     /**
-     * @tc.number: FontSettingOptions_0010
-     * @tc.name  : FontSettingOptions_0010
-     * @tc.desc  : set Text: FontSettingOptions
-     * @tc.level : Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   FontSettingOptions_0010
+     * @tc.number FontSettingOptions_0010
+     * @tc.desc   set Text: FontSettingOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FontSettingOptions_0010',  Level.LEVEL0, async (done: Function) => {
       console.info('FontSettingOptions_0010 START');
@@ -59,13 +59,13 @@ export default function FontSettingOptions() {
       done();
     });
 	
-	/**
-     * @tc.number: FontSettingOptions_0020
-     * @tc.name  : FontSettingOptions_0020
-     * @tc.desc  : set Text: FontSettingOptions
-     * @tc.level : Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   FontSettingOptions_0020
+     * @tc.number FontSettingOptions_0020
+     * @tc.desc   set Text: FontSettingOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FontSettingOptions_0020',  Level.LEVEL0, async (done: Function) => {
       console.info('FontSettingOptions_0020 START');

@@ -27,12 +27,12 @@ export default function displayAndWindowRefactorInterfaceTest() {
     let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0450
-     * @tc.name      : tesGetAllDisplays_Promise
-     * @tc.desc      : Gets all current display objects
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   tesGetAllDisplays_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0450
+     * @tc.desc   Gets all current display objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('tesGetAllDisplays_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'tesGetAllDisplays_Promise';
@@ -61,12 +61,12 @@ export default function displayAndWindowRefactorInterfaceTest() {
       });
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0440
-     * @tc.name      : tesGetAllDisplays_Callback
-     * @tc.desc      : Gets all current display objects
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   tesGetAllDisplays_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0440
+     * @tc.desc   Gets all current display objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('tesGetAllDisplays_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'tesGetAllDisplays_Callback';
@@ -102,12 +102,12 @@ export default function displayAndWindowRefactorInterfaceTest() {
       });
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1810
-     * @tc.name      : testSetExpectedFrameRateRange
-     * @tc.desc      : test the enum value of hdrFormats
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.name   testSetExpectedFrameRateRange
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1810
+     * @tc.desc   test the enum value of hdrFormats
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetExpectedFrameRateRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let msg = "testSetExpectedFrameRateRange";
@@ -134,12 +134,12 @@ export default function displayAndWindowRefactorInterfaceTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1820
-     * @tc.name      : testTargetTimestamp
-     * @tc.desc      : test the enum value of IntervalInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testTargetTimestamp
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1820
+     * @tc.desc   test the enum value of IntervalInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTargetTimestamp', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let msg = "testTargetTimestamp";
@@ -163,12 +163,12 @@ export default function displayAndWindowRefactorInterfaceTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_CREATE_VIRTUALSCREEN_ERRORCODE_0200
-     * @tc.name      : test_CreateVirtualScreen_ErrorCode201
-     * @tc.desc      : test_CreateVirtualScreen_ErrorCode201 when without permissions
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_CreateVirtualScreen_ErrorCode201
+     * @tc.number SUB_BASIC_WMS_CREATE_VIRTUALSCREEN_ERRORCODE_0200
+     * @tc.desc   test_CreateVirtualScreen_ErrorCode201 when without permissions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_CreateVirtualScreen_ErrorCode201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_CreateVirtualScreen_ErrorCode201 ';

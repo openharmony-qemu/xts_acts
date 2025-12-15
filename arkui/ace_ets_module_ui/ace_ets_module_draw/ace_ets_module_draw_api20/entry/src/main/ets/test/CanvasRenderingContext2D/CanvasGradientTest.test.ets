@@ -40,12 +40,12 @@ export default function CanvasGradientTest() {
       done();
     });
     /**
-     * @tc.number    CanvasGradientTest_0100
-     * @tc.name      CanvasGradientTest_0100
-     * @tc.desc      CanvasGradient support p3 color gamut
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   CanvasGradientTest_0100
+     * @tc.number CanvasGradientTest_0100
+     * @tc.desc   CanvasGradient support p3 color gamut
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CanvasGradientTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[CanvasGradientTest_0100] START');

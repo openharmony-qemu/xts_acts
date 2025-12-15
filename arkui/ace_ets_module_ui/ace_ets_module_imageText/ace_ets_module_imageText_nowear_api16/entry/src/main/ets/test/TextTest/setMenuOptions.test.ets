@@ -43,12 +43,12 @@ export default function SetMenuOptionsTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SetMenuOptionsTest_0010
-     * @tc.name      SetMenuOptionsTest_0010
-     * @tc.desc      get TextInput setMenuOptions: default
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SetMenuOptionsTest_0010
+     * @tc.number SUB_ACE_SetMenuOptionsTest_0010
+     * @tc.desc   get TextInput setMenuOptions: default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetMenuOptionsTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('[SetMenuOptionsTest_0010] START');
@@ -62,17 +62,19 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0010] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0010] END');
       done();
     });
 
     /**
-     * @tc.number    SUB_ACE_SetMenuOptionsTest_0020
-     * @tc.name      SetMenuOptionsTest_0020
-     * @tc.desc      set TextInput setMenuOptions: TextMenuShowMode.DEFAULT
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SetMenuOptionsTest_0020
+     * @tc.number SUB_ACE_SetMenuOptionsTest_0020
+     * @tc.desc   set TextInput setMenuOptions: TextMenuShowMode.DEFAULT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetMenuOptionsTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('[SetMenuOptionsTest_0020] START');
@@ -95,12 +97,12 @@ export default function SetMenuOptionsTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SetMenuOptionsTest_0030
-     * @tc.name      SetMenuOptionsTest_0030
-     * @tc.desc      set TextInput setMenuOptions: TextMenuShowMode.PREFER_WINDOW
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SetMenuOptionsTest_0030
+     * @tc.number SUB_ACE_SetMenuOptionsTest_0030
+     * @tc.desc   set TextInput setMenuOptions: TextMenuShowMode.PREFER_WINDOW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetMenuOptionsTest_0030', Level.LEVEL0, async (done: Function) => {
       console.info('[SetMenuOptionsTest_0030] START');
@@ -118,17 +120,19 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0030] mode: ' + JSON.stringify(mode));
       expect('0, 2, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0030] END');
       done();
     });
 
     /**
-     * @tc.number    SUB_ACE_SetMenuOptionsTest_0040
-     * @tc.name      SetMenuOptionsTest_0040
-     * @tc.desc      set TextInput setMenuOptions: undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SetMenuOptionsTest_0040
+     * @tc.number SUB_ACE_SetMenuOptionsTest_0040
+     * @tc.desc   set TextInput setMenuOptions: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetMenuOptionsTest_0040', Level.LEVEL0, async (done: Function) => {
       console.info('[SetMenuOptionsTest_0040] START');
@@ -146,17 +150,19 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0040] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0040] END');
       done();
     });
 
     /**
-     * @tc.number    SUB_ACE_SetMenuOptionsTest_0050
-     * @tc.name      SetMenuOptionsTest_0050
-     * @tc.desc      get Text setMenuOptions: default
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SetMenuOptionsTest_0050
+     * @tc.number SUB_ACE_SetMenuOptionsTest_0050
+     * @tc.desc   get Text setMenuOptions: default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetMenuOptionsTest_0050', Level.LEVEL0, async (done: Function) => {
       console.info('[SetMenuOptionsTest_0050] START');
@@ -170,17 +176,19 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0050] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await Button.click()
       console.info('[SetMenuOptionsTest_0050] END');
       done();
     });
 
     /**
-     * @tc.number    SUB_ACE_SetMenuOptionsTest_0060
-     * @tc.name      SetMenuOptionsTest_0060
-     * @tc.desc      set Text setMenuOptions: TextMenuShowMode.DEFAULT
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SetMenuOptionsTest_0060
+     * @tc.number SUB_ACE_SetMenuOptionsTest_0060
+     * @tc.desc   set Text setMenuOptions: TextMenuShowMode.DEFAULT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetMenuOptionsTest_0060', Level.LEVEL0, async (done: Function) => {
       console.info('[SetMenuOptionsTest_0060] START');
@@ -198,17 +206,19 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0060] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await TextInput.click()
       console.info('[SetMenuOptionsTest_0060] END');
       done();
     });
 
     /**
-     * @tc.number    SUB_ACE_SetMenuOptionsTest_0070
-     * @tc.name      SetMenuOptionsTest_0030
-     * @tc.desc      set Text setMenuOptions: TextMenuShowMode.PREFER_WINDOW
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SetMenuOptionsTest_0070
+     * @tc.number SUB_ACE_SetMenuOptionsTest_0070
+     * @tc.desc   set Text setMenuOptions: TextMenuShowMode.PREFER_WINDOW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetMenuOptionsTest_0070', Level.LEVEL0, async (done: Function) => {
       console.info('[SetMenuOptionsTest_0070] START');
@@ -226,17 +236,19 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0070] mode: ' + JSON.stringify(mode));
       expect('0, 2, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await TextInput.click()
       console.info('[SetMenuOptionsTest_0070] END');
       done();
     });
 
     /**
-     * @tc.number    SUB_ACE_SetMenuOptionsTest_0080
-     * @tc.name      SetMenuOptionsTest_0080
-     * @tc.desc      set Text setMenuOptions: undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SetMenuOptionsTest_0080
+     * @tc.number SUB_ACE_SetMenuOptionsTest_0080
+     * @tc.desc   set Text setMenuOptions: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetMenuOptionsTest_0080', Level.LEVEL0, async (done: Function) => {
       console.info('[SetMenuOptionsTest_0080] START');
@@ -254,17 +266,19 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0080] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await TextInput.click()
       console.info('[SetMenuOptionsTest_0080] END');
       done();
     });
 
     /**
-     * @tc.number    SUB_ACE_SetMenuOptionsTest_0090
-     * @tc.name      SetMenuOptionsTest_0090
-     * @tc.desc      get TextArea setMenuOptions: default
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SetMenuOptionsTest_0090
+     * @tc.number SUB_ACE_SetMenuOptionsTest_0090
+     * @tc.desc   get TextArea setMenuOptions: default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetMenuOptionsTest_0090', Level.LEVEL0, async (done: Function) => {
       console.info('[SetMenuOptionsTest_0090] START');
@@ -278,17 +292,19 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0090] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0090] END');
       done();
     });
 
     /**
-     * @tc.number    SUB_ACE_SetMenuOptionsTest_0100
-     * @tc.name      SetMenuOptionsTest_0100
-     * @tc.desc      set TextArea setMenuOptions: TextMenuShowMode.DEFAULT
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SetMenuOptionsTest_0100
+     * @tc.number SUB_ACE_SetMenuOptionsTest_0100
+     * @tc.desc   set TextArea setMenuOptions: TextMenuShowMode.DEFAULT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetMenuOptionsTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[SetMenuOptionsTest_0100] START');
@@ -311,12 +327,12 @@ export default function SetMenuOptionsTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SetMenuOptionsTest_0110
-     * @tc.name      SetMenuOptionsTest_0110
-     * @tc.desc      set TextArea setMenuOptions: TextMenuShowMode.PREFER_WINDOW
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SetMenuOptionsTest_0110
+     * @tc.number SUB_ACE_SetMenuOptionsTest_0110
+     * @tc.desc   set TextArea setMenuOptions: TextMenuShowMode.PREFER_WINDOW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetMenuOptionsTest_0110', Level.LEVEL0, async (done: Function) => {
       console.info('[SetMenuOptionsTest_0110] START');
@@ -334,17 +350,19 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0110] mode: ' + JSON.stringify(mode));
       expect('0, 2, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0110] END');
       done();
     });
 
     /**
-     * @tc.number    SUB_ACE_SetMenuOptionsTest_0120
-     * @tc.name      SetMenuOptionsTest_0120
-     * @tc.desc      set TextArea setMenuOptions: undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SetMenuOptionsTest_0120
+     * @tc.number SUB_ACE_SetMenuOptionsTest_0120
+     * @tc.desc   set TextArea setMenuOptions: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetMenuOptionsTest_0120', Level.LEVEL0, async (done: Function) => {
       console.info('[SetMenuOptionsTest_0120] START');
@@ -362,17 +380,19 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0120] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0120] END');
       done();
     });
 
     /**
-     * @tc.number    SUB_ACE_SetMenuOptionsTest_0130
-     * @tc.name      SetMenuOptionsTest_0130
-     * @tc.desc      get Search setMenuOptions: default
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SetMenuOptionsTest_0130
+     * @tc.number SUB_ACE_SetMenuOptionsTest_0130
+     * @tc.desc   get Search setMenuOptions: default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetMenuOptionsTest_0130', Level.LEVEL0, async (done: Function) => {
       console.info('[SetMenuOptionsTest_0130] START');
@@ -386,17 +406,19 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0130] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0130] END');
       done();
     });
 
     /**
-     * @tc.number    SUB_ACE_SetMenuOptionsTest_0140
-     * @tc.name      SetMenuOptionsTest_0140
-     * @tc.desc      set Search setMenuOptions: TextMenuShowMode.DEFAULT
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SetMenuOptionsTest_0140
+     * @tc.number SUB_ACE_SetMenuOptionsTest_0140
+     * @tc.desc   set Search setMenuOptions: TextMenuShowMode.DEFAULT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetMenuOptionsTest_0140', Level.LEVEL0, async (done: Function) => {
       console.info('[SetMenuOptionsTest_0140] START');
@@ -419,12 +441,12 @@ export default function SetMenuOptionsTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SetMenuOptionsTest_0150
-     * @tc.name      SetMenuOptionsTest_0150
-     * @tc.desc      set Search setMenuOptions: TextMenuShowMode.PREFER_WINDOW
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SetMenuOptionsTest_0150
+     * @tc.number SUB_ACE_SetMenuOptionsTest_0150
+     * @tc.desc   set Search setMenuOptions: TextMenuShowMode.PREFER_WINDOW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetMenuOptionsTest_0150', Level.LEVEL0, async (done: Function) => {
       console.info('[SetMenuOptionsTest_0150] START');
@@ -442,17 +464,19 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0150] mode: ' + JSON.stringify(mode));
       expect('0, 2, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0150] END');
       done();
     });
 
     /**
-     * @tc.number    SUB_ACE_SetMenuOptionsTest_0160
-     * @tc.name      SetMenuOptionsTest_0160
-     * @tc.desc      set Search setMenuOptions: undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SetMenuOptionsTest_0160
+     * @tc.number SUB_ACE_SetMenuOptionsTest_0160
+     * @tc.desc   set Search setMenuOptions: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetMenuOptionsTest_0160', Level.LEVEL0, async (done: Function) => {
       console.info('[SetMenuOptionsTest_0160] START');
@@ -470,17 +494,19 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0160] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0160] END');
       done();
     });
 
     /**
-     * @tc.number    SUB_ACE_SetMenuOptionsTest_0170
-     * @tc.name      SetMenuOptionsTest_0170
-     * @tc.desc      get RichEditor setMenuOptions: default
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SetMenuOptionsTest_0170
+     * @tc.number SUB_ACE_SetMenuOptionsTest_0170
+     * @tc.desc   get RichEditor setMenuOptions: default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetMenuOptionsTest_0170', Level.LEVEL0, async (done: Function) => {
       console.info('[SetMenuOptionsTest_0170] START');
@@ -494,17 +520,19 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0170] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0170] END');
       done();
     });
 
     /**
-     * @tc.number    SUB_ACE_SetMenuOptionsTest_0180
-     * @tc.name      SetMenuOptionsTest_0180
-     * @tc.desc      set RichEditor setMenuOptions: TextMenuShowMode.DEFAULT
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SetMenuOptionsTest_0180
+     * @tc.number SUB_ACE_SetMenuOptionsTest_0180
+     * @tc.desc   set RichEditor setMenuOptions: TextMenuShowMode.DEFAULT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetMenuOptionsTest_0180', Level.LEVEL0, async (done: Function) => {
       console.info('[SetMenuOptionsTest_0180] START');
@@ -522,17 +550,19 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0180] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0180] END');
       done();
     });
 
     /**
-     * @tc.number    SUB_ACE_SetMenuOptionsTest_0190
-     * @tc.name      SetMenuOptionsTest_0190
-     * @tc.desc      set RichEditor setMenuOptions: TextMenuShowMode.PREFER_WINDOW
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SetMenuOptionsTest_0190
+     * @tc.number SUB_ACE_SetMenuOptionsTest_0190
+     * @tc.desc   set RichEditor setMenuOptions: TextMenuShowMode.PREFER_WINDOW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetMenuOptionsTest_0190', Level.LEVEL0, async (done: Function) => {
       console.info('[SetMenuOptionsTest_0190] START');
@@ -550,17 +580,19 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0190] mode: ' + JSON.stringify(mode));
       expect('0, 2, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0190] END');
       done();
     });
 
     /**
-     * @tc.number    SUB_ACE_SetMenuOptionsTest_0200
-     * @tc.name      SetMenuOptionsTest_0200
-     * @tc.desc      set RichEditor setMenuOptions: undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SetMenuOptionsTest_0200
+     * @tc.number SUB_ACE_SetMenuOptionsTest_0200
+     * @tc.desc   set RichEditor setMenuOptions: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetMenuOptionsTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[SetMenuOptionsTest_0200] START');
@@ -578,17 +610,19 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0200] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0200] END');
       done();
     });
 
     /**
-     * @tc.number    SUB_ACE_SetMenuOptionsTest_0210
-     * @tc.name      SetMenuOptionsTest_0210
-     * @tc.desc      set RichEditor setMenuOptions: null
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SetMenuOptionsTest_0210
+     * @tc.number SUB_ACE_SetMenuOptionsTest_0210
+     * @tc.desc   set RichEditor setMenuOptions: null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetMenuOptionsTest_0210', Level.LEVEL0, async (done: Function) => {
       console.info('[SetMenuOptionsTest_0210] START');
@@ -606,17 +640,19 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0210] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0210] END');
       done();
     });
 
     /**
-     * @tc.number    SUB_ACE_SetMenuOptionsTest_0220
-     * @tc.name      SetMenuOptionsTest_0220
-     * @tc.desc      set Text setMenuOptions: null
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SetMenuOptionsTest_0220
+     * @tc.number SUB_ACE_SetMenuOptionsTest_0220
+     * @tc.desc   set Text setMenuOptions: null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetMenuOptionsTest_0220', Level.LEVEL0, async (done: Function) => {
       console.info('[SetMenuOptionsTest_0220] START');
@@ -634,17 +670,19 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0220] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await TextInput.click()
       console.info('[SetMenuOptionsTest_0220] END');
       done();
     });
 
     /**
-     * @tc.number    SUB_ACE_SetMenuOptionsTest_0230
-     * @tc.name      SetMenuOptionsTest_0230
-     * @tc.desc      set TextInput setMenuOptions: null
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SetMenuOptionsTest_0230
+     * @tc.number SUB_ACE_SetMenuOptionsTest_0230
+     * @tc.desc   set TextInput setMenuOptions: null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetMenuOptionsTest_0230', Level.LEVEL0, async (done: Function) => {
       console.info('[SetMenuOptionsTest_0230] START');
@@ -662,17 +700,19 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0230] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0230] END');
       done();
     });
 
     /**
-     * @tc.number    SUB_ACE_SetMenuOptionsTest_0240
-     * @tc.name      SetMenuOptionsTest_0240
-     * @tc.desc      set TextArea setMenuOptions: null
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SetMenuOptionsTest_0240
+     * @tc.number SUB_ACE_SetMenuOptionsTest_0240
+     * @tc.desc   set TextArea setMenuOptions: null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetMenuOptionsTest_0240', Level.LEVEL0, async (done: Function) => {
       console.info('[SetMenuOptionsTest_0240] START');
@@ -690,17 +730,19 @@ export default function SetMenuOptionsTest() {
       let mode = await window.getWindowMode();
       console.info('[SetMenuOptionsTest_0240] mode: ' + JSON.stringify(mode));
       expect('0, 3').assertContain(mode);
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
       console.info('[SetMenuOptionsTest_0240] END');
       done();
     });
 
     /**
-     * @tc.number    SUB_ACE_SetMenuOptionsTest_0250
-     * @tc.name      SetMenuOptionsTest_0250
-     * @tc.desc      set Search setMenuOptions: null
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SetMenuOptionsTest_0250
+     * @tc.number SUB_ACE_SetMenuOptionsTest_0250
+     * @tc.desc   set Search setMenuOptions: null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetMenuOptionsTest_0250', Level.LEVEL0, async (done: Function) => {
       console.info('[SetMenuOptionsTest_0250] START');

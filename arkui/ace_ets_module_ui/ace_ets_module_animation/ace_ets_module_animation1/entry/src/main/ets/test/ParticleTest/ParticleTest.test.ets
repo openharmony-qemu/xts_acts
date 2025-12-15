@@ -58,9 +58,12 @@ export default function ParticleTest() {
     });
 
     /**
+     * @tc.name   ParticleTest_001
      * @tc.number ParticleTest_001
-     * @tc.desc ParticleTest_001
-     * @tc.level Level 0
+     * @tc.desc   ParticleTest_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ParticleTest_001", Level.LEVEL0, async (done: Function) => {
       console.info("[ParticleTest_001] START");
@@ -77,9 +80,12 @@ export default function ParticleTest() {
     });
 
     /**
+     * @tc.name   ParticleTest_002
      * @tc.number ParticleTest_002
-     * @tc.desc ParticleTest_002
-     * @tc.level Level 0
+     * @tc.desc   ParticleTest_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ParticleTest_002", Level.LEVEL0, async (done: Function) => {
       console.info("[ParticleTest_002] START");
@@ -96,9 +102,12 @@ export default function ParticleTest() {
     });
 
     /**
+     * @tc.name   ParticleTest_003
      * @tc.number ParticleTest_003
-     * @tc.desc ParticleTest_003
-     * @tc.level Level 0
+     * @tc.desc   ParticleTest_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ParticleTest_003", Level.LEVEL0, async (done: Function) => {
       console.info("[ParticleTest_003] START");
@@ -115,9 +124,12 @@ export default function ParticleTest() {
     });
 
     /**
+     * @tc.name   ParticleTest_004
      * @tc.number ParticleTest_004
-     * @tc.desc ParticleTest_004
-     * @tc.level Level 0
+     * @tc.desc   ParticleTest_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ParticleTest_004", Level.LEVEL0, async (done: Function) => {
       console.info("[ParticleTest_004] START");

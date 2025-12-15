@@ -40,12 +40,12 @@ export default function CanvasAttrsTabTest() {
       done();
     });
     /**
-     * @tc.number
-     * @tc.name      CanvasAttrsTabTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   CanvasAttrsTabTest_0100
+     * @tc.number CanvasAttrsTabTest_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CanvasAttrsTabTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('CanvasAttrsTabTest_0100 START');

@@ -59,12 +59,12 @@ export default function ActsWebSiteIsolationMode() {
 
 
     /**
-     * @tc.number      SUB_ACE_WEB_WEBSITEISOLATIONMODE_API_0001
-     * @tc.name        emitWebSiteIsolationMode001
-     * @tc.desc        emitWebSiteIsolationMode001
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   emitWebSiteIsolationMode001
+     * @tc.number SUB_ACE_WEB_WEBSITEISOLATIONMODE_API_0001
+     * @tc.desc   emitWebSiteIsolationMode001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitWebSiteIsolationMode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebSiteIsolationMode001", 162001)
@@ -73,12 +73,12 @@ export default function ActsWebSiteIsolationMode() {
     })
 
     /**
-     * @tc.number      SUB_ACE_WEB_WEBSITEISOLATIONMODE_API_0002
-     * @tc.name        emitWebSiteIsolationMode002
-     * @tc.desc        emitWebSiteIsolationMode002
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   emitWebSiteIsolationMode002
+     * @tc.number SUB_ACE_WEB_WEBSITEISOLATIONMODE_API_0002
+     * @tc.desc   emitWebSiteIsolationMode002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitWebSiteIsolationMode002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebSiteIsolationMode002", 162001)
@@ -87,12 +87,12 @@ export default function ActsWebSiteIsolationMode() {
     })
 
     /**
-     * @tc.number      SUB_ACE_WEB_WEBSITEISOLATIONMODE_API_0003
-     * @tc.name        emitWebSiteIsolationMode003
-     * @tc.desc        emitWebSiteIsolationMode003
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   emitWebSiteIsolationMode003
+     * @tc.number SUB_ACE_WEB_WEBSITEISOLATIONMODE_API_0003
+     * @tc.desc   emitWebSiteIsolationMode003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitWebSiteIsolationMode003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebSiteIsolationMode003", 162001)
@@ -101,12 +101,12 @@ export default function ActsWebSiteIsolationMode() {
     })
 
     /**
-     * @tc.number      SUB_ACE_WEB_WEBSITEISOLATIONMODE_API_0004
-     * @tc.name        emitWebSiteIsolationMode004
-     * @tc.desc        emitWebSiteIsolationMode004
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   emitWebSiteIsolationMode004
+     * @tc.number SUB_ACE_WEB_WEBSITEISOLATIONMODE_API_0004
+     * @tc.desc   emitWebSiteIsolationMode004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitWebSiteIsolationMode004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebSiteIsolationMode004", 162001)

@@ -58,10 +58,13 @@ export default function webViewContStoreWebArchiveError() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_5100
-     *tc.name testStoreWebArchiveInitErr
-     *tc.desc test interface of storeWebArchive with not been associated with specific Web Components
+    /**
+     * @tc.name   teststoreWebArchiveInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_5100
+     * @tc.desc   test interface of storeWebArchive with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('teststoreWebArchiveInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitStoreWebArchiveCallBackInitErr";
@@ -70,10 +73,13 @@ export default function webViewContStoreWebArchiveError() {
       Utils.registerEvent("teststoreWebArchiveInitErr", "Init error. The WebviewController must be associated with a Web component", 112110, done);
       await Utils.waitAndClickComponent(driver, "webViewContStoreWebArchiveError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_5200
-     *tc.name testStoreWebArchiveCallBackPathErr
-     *tc.desc test interface of storeWebArchive with wrong resource path
+    /**
+     * @tc.name   testStoreWebArchiveCallBackPathErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_5200
+     * @tc.desc   test interface of storeWebArchive with wrong resource path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStoreWebArchiveCallBackPathErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitStoreWebArchiveCallBackPathErr";
@@ -82,10 +88,13 @@ export default function webViewContStoreWebArchiveError() {
       Utils.registerEvent("testStoreWebArchiveCallBackPathErr", "Invalid resource path or file type", 112130, done);
       await Utils.waitAndClickComponent(driver, "webViewContStoreWebArchiveError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_5300
-     *tc.name testStoreWebArchiveCallBackUnAccessErr
-     *tc.desc test interface of storeWebArchive with resource path cannot access
+    /**
+     * @tc.name   testStoreWebArchiveCallBackUnAccessErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_5300
+     * @tc.desc   test interface of storeWebArchive with resource path cannot access
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStoreWebArchiveCallBackUnAccessErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitStoreWebArchiveCallBackUnAccessErr";
@@ -94,10 +103,13 @@ export default function webViewContStoreWebArchiveError() {
       Utils.registerEvent("testStoreWebArchiveCallBackUnAccessErr", "Invalid resource path or file type", 112150, done);
       await Utils.waitAndClickComponent(driver, "webViewContStoreWebArchiveError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_5400
-     *tc.name testStoreWebArchivePromiseInitErr
-     *tc.desc test interface of storeWebArchive promise with not been associated with specific Web Components
+    /**
+     * @tc.name   testStoreWebArchivePromiseInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_5400
+     * @tc.desc   test interface of storeWebArchive promise with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStoreWebArchivePromiseInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitStoreWebArchivePromiseInitErr";
@@ -106,10 +118,13 @@ export default function webViewContStoreWebArchiveError() {
       Utils.registerEvent("testStoreWebArchivePromiseInitErr", "Init error. The WebviewController must be associated with a Web component", 112170, done);
       await Utils.waitAndClickComponent(driver, "webViewContStoreWebArchiveError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_5500
-     *tc.name testStoreWebArchivePromisePathErr
-     *tc.desc test interface of storeWebArchive promise with wrong resource path
+    /**
+     * @tc.name   testStoreWebArchivePromisePathErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_5500
+     * @tc.desc   test interface of storeWebArchive promise with wrong resource path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStoreWebArchivePromisePathErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitStoreWebArchivePromisePathErr";
@@ -118,10 +133,13 @@ export default function webViewContStoreWebArchiveError() {
       Utils.registerEvent("testStoreWebArchivePromisePathErr", "Invalid resource path or file type", 112190, done);
       await Utils.waitAndClickComponent(driver, "webViewContStoreWebArchiveError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_5600
-     *tc.name testStoreWebArchivePromiseUnAccessErr
-     *tc.desc test interface of storeWebArchive promise with resource path cannot access
+    /**
+     * @tc.name   testStoreWebArchivePromiseUnAccessErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_5600
+     * @tc.desc   test interface of storeWebArchive promise with resource path cannot access
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStoreWebArchivePromiseUnAccessErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitStoreWebArchivePromiseUnAccessErr";

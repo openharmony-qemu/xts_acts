@@ -144,12 +144,12 @@ export default function AVPlayerVideoScaleTypeTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_0100
-         * @tc.name      : 001.test videoScaleType in prepared state
-         * @tc.desc      : Verify that videoScaleType can be set and retrieved in the prepared state.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_0100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_0100
+         * @tc.desc   Verify that videoScaleType can be set and retrieved in the prepared state.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let operationRecord: Record<string, Function> = {}
@@ -163,12 +163,12 @@ export default function AVPlayerVideoScaleTypeTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_0200
-         * @tc.name      : 002.test videoScaleType in playing state
-         * @tc.desc      : Verify that videoScaleType can be set and retrieved in the playing state.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_0200
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_0200
+         * @tc.desc   Verify that videoScaleType can be set and retrieved in the playing state.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let operationRecord: Record<string, Function> = {}
@@ -182,12 +182,12 @@ export default function AVPlayerVideoScaleTypeTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_0300
-         * @tc.name      : 003.test videoScaleType in paused state
-         * @tc.desc      : Verify that videoScaleType can be set and retrieved in the paused state.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_0300
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_0300
+         * @tc.desc   Verify that videoScaleType can be set and retrieved in the paused state.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let operationRecord: Record<string, Function> = {}
@@ -206,12 +206,12 @@ export default function AVPlayerVideoScaleTypeTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_0400
-         * @tc.name      : 004.test videoScaleType in completed state
-         * @tc.desc      : Verify that videoScaleType can be set and retrieved in the completed state.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_0400
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_0400
+         * @tc.desc   Verify that videoScaleType can be set and retrieved in the completed state.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let operationRecord: Record<string, Function> = {}
@@ -225,12 +225,12 @@ export default function AVPlayerVideoScaleTypeTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_ERROR_0100
-         * @tc.name      : 005.test videoScaleType in idle state
-         * @tc.desc      : Verify that setting videoScaleType in the idle state triggers an error.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_ERROR_0100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_ERROR_0100
+         * @tc.desc   Verify that setting videoScaleType in the idle state triggers an error.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let operationRecord: Record<string, Function> = {}
@@ -249,12 +249,12 @@ export default function AVPlayerVideoScaleTypeTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_ERROR_0200
-         * @tc.name      : 006.test videoScaleType in initialized state
-         * @tc.desc      : Verify that setting videoScaleType in the initialized state triggers an error.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_ERROR_0200
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_ERROR_0200
+         * @tc.desc   Verify that setting videoScaleType in the initialized state triggers an error.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_ERROR_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let operationRecord: Record<string, Function> = {}
@@ -270,12 +270,12 @@ export default function AVPlayerVideoScaleTypeTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_ERROR_0300
-         * @tc.name      : 007.test videoScaleType in stopped state
-         * @tc.desc      : Verify that setting videoScaleType in the stopped state triggers an error.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_ERROR_0300
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_ERROR_0300
+         * @tc.desc   Verify that setting videoScaleType in the stopped state triggers an error.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_ERROR_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let operationRecord: Record<string, Function> = {}
@@ -294,12 +294,12 @@ export default function AVPlayerVideoScaleTypeTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_ERROR_0400
-         * @tc.name      : 008.test videoScaleType in released state
-         * @tc.desc      : Verify that setting videoScaleType in the released state triggers an error.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_ERROR_0400
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_ERROR_0400
+         * @tc.desc   Verify that setting videoScaleType in the released state triggers an error.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_VIDEOSCALETYPE_ERROR_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let operationRecord: Record<string, Function> = {}

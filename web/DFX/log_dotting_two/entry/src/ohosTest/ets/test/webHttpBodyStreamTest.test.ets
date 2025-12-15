@@ -59,13 +59,13 @@ export default function webHttpBodyStreamTest() {
         done();
       })
 
-      /*
-       *@tc.number  :SUB_ACE_WEB_WebHttpBodyStream_READ_0100
-       *@tc.name  :testWebView_WebHttpBodyStream_READ
-       *@tc.desc  :test WebView_WebHttpBodyStream_READ
-       *@tc.size  :MediumTest
-       *@tc.type  :Function
-       *@tc.level  :Level 1
+      /**
+       * @tc.name   testWebView_WebHttpBodyStream_READ
+       * @tc.number SUB_ACE_WEB_WebHttpBodyStream_READ_0100
+       * @tc.desc   test WebView_WebHttpBodyStream_READ
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('testWebView_WebHttpBodyStream_READ', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         emitKey = "emitWebView_WebHttpBodyStream_READ"

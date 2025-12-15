@@ -41,12 +41,12 @@ export default function CircleResourceTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_CircleResourceTest_0100
-     * @tc.name: CircleResourceTest_0100
-     * @tc.desc: CircleAPI 
-     * @tc.level: Level 2
-     * @tc.type : Circle
-     * @tc.size : CircleTest
+     * @tc.name   CircleResourceTest_0100
+     * @tc.number SUB_ARKUI_API_CircleResourceTest_0100
+     * @tc.desc   CircleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CircleResourceTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[CircleResourceTest_0100] START');

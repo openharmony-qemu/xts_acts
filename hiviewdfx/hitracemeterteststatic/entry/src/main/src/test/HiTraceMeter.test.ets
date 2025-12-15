@@ -20,13 +20,13 @@ let tag: string = 'HITRACEMETER_STATIC_TEST'; //日志标识字符串,作为tag�
 
 export default function HitraceMeterTest() {
   describe('hiTraceMeterEtsTest', (): void => {
-    /*
-     * @tc.number  DFX_DFR_HitraceMeter_Static_0100
-     * @tc.name    DFX_DFR_HitraceMeter_Static_0100
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    Test hiviewdfx.hiTraceMeter api.
-     * @tc.level   3
+    /**
+     * @tc.name   DFX_DFR_HitraceMeter_Static_0100
+     * @tc.number DFX_DFR_HitraceMeter_Static_0100
+     * @tc.desc   Test hiviewdfx.hiTraceMeter api.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("DFX_DFR_HitraceMeter_Static_0100", Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       console.info("-------DFX_DFR_HitraceMeter_0100 start--------");
@@ -41,13 +41,13 @@ export default function HitraceMeterTest() {
       done();
     })
 
-    /*
-     * @tc.number  DFX_DFR_HitraceMeter_Static_0200
-     * @tc.name    DFX_DFR_HitraceMeter_Static_0200
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    Test hiviewdfx.hiTraceMeter api.
-     * @tc.level   3
+    /**
+     * @tc.name   DFX_DFR_HitraceMeter_Static_0200
+     * @tc.number DFX_DFR_HitraceMeter_Static_0200
+     * @tc.desc   Test hiviewdfx.hiTraceMeter api.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("DFX_DFR_HitraceMeter_Static_0200", Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       console.info("------DFX_DFR_HitraceMeter_Static_0200 start------");
@@ -66,13 +66,13 @@ export default function HitraceMeterTest() {
       done();
     })
 
-    /*
-     * @tc.number  DFX_DFR_HitraceMeter_Static_0300
-     * @tc.name    DFX_DFR_HitraceMeter_Static_0300
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    Test hiviewdfx.hiTraceMeter api.
-     * @tc.level   3
+    /**
+     * @tc.name   DFX_DFR_HitraceMeter_Static_0300
+     * @tc.number DFX_DFR_HitraceMeter_Static_0300
+     * @tc.desc   Test hiviewdfx.hiTraceMeter api.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("DFX_DFR_HitraceMeter_Static_0300", Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       console.info("------DFX_DFR_HitraceMeter_Static_0300 start------");
@@ -91,13 +91,13 @@ export default function HitraceMeterTest() {
       done();
     })
 
-    /*
-     * @tc.number  DFX_DFR_HitraceMeter_Static_0400
-     * @tc.name    DFX_DFR_HitraceMeter_Static_0400
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    Test hiviewdfx.hiTraceMeter api.
-     * @tc.level   3
+    /**
+     * @tc.name   DFX_DFR_HitraceMeter_Static_0400
+     * @tc.number DFX_DFR_HitraceMeter_Static_0400
+     * @tc.desc   Test hiviewdfx.hiTraceMeter api.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("DFX_DFR_HitraceMeter_Static_0400", Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       console.info("-------DFX_DFR_HitraceMeter_Static_0400 start--------");
@@ -110,13 +110,13 @@ export default function HitraceMeterTest() {
       done();
     })
 
-    /*
-     * @tc.number  DFX_DFR_HitraceMeter_Static_0500
-     * @tc.name    DFX_DFR_HitraceMeter_Static_0500
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    Test hiviewdfx.hiTraceMeter api.
-     * @tc.level   3
+    /**
+     * @tc.name   DFX_DFR_HitraceMeter_Static_0500
+     * @tc.number DFX_DFR_HitraceMeter_Static_0500
+     * @tc.desc   Test hiviewdfx.hiTraceMeter api.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("DFX_DFR_HitraceMeter_Static_0500", Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       console.info("-------DFX_DFR_HitraceMeter_Static_0500 start--------");
@@ -135,13 +135,13 @@ export default function HitraceMeterTest() {
       done();
     })
 
-    /*
-     * @tc.number  DFX_DFR_HitraceMeter_Static_0600
-     * @tc.name    DFX_DFR_HitraceMeter_Static_0600
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    Test hiviewdfx.hiTraceMeter api.
-     * @tc.level   3
+    /**
+     * @tc.name   DFX_DFR_HitraceMeter_Static_0600
+     * @tc.number DFX_DFR_HitraceMeter_Static_0600
+     * @tc.desc   Test hiviewdfx.hiTraceMeter api.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("DFX_DFR_HitraceMeter_Static_0600", Level.LEVEL3, async (done:()=>void) : Promise<void> => {
         console.info("-------DFX_DFR_HitraceMeter_Static_0600 start--------");
@@ -167,13 +167,13 @@ export default function HitraceMeterTest() {
       done();
     })
 
-    /*
-     * @tc.number  DFX_DFR_HitraceMeter_Static_0700
-     * @tc.name    DFX_DFR_HitraceMeter_Static_0700
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    Test hiviewdfx.hiTraceMeter api.
-     * @tc.level   3
+    /**
+     * @tc.name   DFX_DFR_HitraceMeter_Static_0700
+     * @tc.number DFX_DFR_HitraceMeter_Static_0700
+     * @tc.desc   Test hiviewdfx.hiTraceMeter api.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("DFX_DFR_HitraceMeter_Static_0700", Level.LEVEL3, async (done:()=>void) : Promise<void> => {
         console.info("-------DFX_DFR_HitraceMeter_Static_0700 start--------");
@@ -190,13 +190,13 @@ export default function HitraceMeterTest() {
         done();
     })
 
-    /*
-     * @tc.number  DFX_DFR_HitraceMeter_Static_0800
-     * @tc.name    DFX_DFR_HitraceMeter_Static_0800
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    Test hiviewdfx.hiTraceMeter api.
-     * @tc.level   3
+    /**
+     * @tc.name   DFX_DFR_HitraceMeter_Static_0800
+     * @tc.number DFX_DFR_HitraceMeter_Static_0800
+     * @tc.desc   Test hiviewdfx.hiTraceMeter api.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("DFX_DFR_HitraceMeter_Static_0800", Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       console.info("-------DFX_DFR_HitraceMeter_Static_0800 start--------");

@@ -52,9 +52,12 @@ export default function networkManagerSocketTest() {
       console.log('Telephony_NetworkManager_ActsNetworkManagerSocketTest afterAll end');
     });
     /**
+     * @tc.name   Telephony_NetworkManager_constructTLSSocketInstance_0100
      * @tc.number Telephony_NetworkManager_constructTLSSocketInstance_0100
-     * @tc.name Test create TLSSocket object
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_constructTLSSocketInstance_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let instance = socket.constructTLSSocketInstance();
@@ -67,9 +70,12 @@ export default function networkManagerSocketTest() {
       }
     });
     /**
+     * @tc.name   Telephony_NetworkManager_connect_Async_0100
      * @tc.number Telephony_NetworkManager_connect_Async_0100
-     * @tc.name Test connect() interface
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_connect_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let instance = socket.constructTLSSocketInstance();
@@ -97,9 +103,12 @@ export default function networkManagerSocketTest() {
       });
     });
     /**
+     * @tc.name   Telephony_NetworkManager_connect_Promise_0100
      * @tc.number Telephony_NetworkManager_connect_Promise_0100
-     * @tc.name Test connect() interface
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_connect_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let instance = socket.constructTLSSocketInstance();
@@ -112,9 +121,12 @@ export default function networkManagerSocketTest() {
       });
     });
     /**
+     * @tc.name   Telephony_NetworkManager_close_Async_0100
      * @tc.number Telephony_NetworkManager_close_Async_0100
-     * @tc.name Test close() interface
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_close_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let instance = socket.constructTLSSocketInstance();
@@ -129,9 +141,12 @@ export default function networkManagerSocketTest() {
       });
     });
     /**
+     * @tc.name   Telephony_NetworkManager_close_Promise_0100
      * @tc.number Telephony_NetworkManager_close_Promise_0100
-     * @tc.name Test close() interface
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_close_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let instance = socket.constructTLSSocketInstance();
@@ -144,9 +159,12 @@ export default function networkManagerSocketTest() {
       });
     });
     /**
+     * @tc.name   Telephony_NetworkManager_getCertificate_Async_0100
      * @tc.number Telephony_NetworkManager_getCertificate_Async_0100
-     * @tc.name Test getCertificate() interface
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_getCertificate_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let instance = socket.constructTLSSocketInstance();
@@ -162,9 +180,12 @@ export default function networkManagerSocketTest() {
       });
     });
     /**
+     * @tc.name   Telephony_NetworkManager_getCertificate_Promise_0100
      * @tc.number Telephony_NetworkManager_getCertificate_Promise_0100
-     * @tc.name Test getCertificate() interface
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_getCertificate_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let instance = socket.constructTLSSocketInstance();
@@ -178,9 +199,12 @@ export default function networkManagerSocketTest() {
       });
     });
     /**
+     * @tc.name   Telephony_NetworkManager_getRemoteCertificate_Async_0100
      * @tc.number Telephony_NetworkManager_getRemoteCertificate_Async_0100
-     * @tc.name Test getRemoteCertificate() interface
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_getRemoteCertificate_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let instance = socket.constructTLSSocketInstance();
@@ -196,9 +220,12 @@ export default function networkManagerSocketTest() {
       });
     });
     /**
+     * @tc.name   Telephony_NetworkManager_getRemoteCertificate_Promise_0100
      * @tc.number Telephony_NetworkManager_getRemoteCertificate_Promise_0100
-     * @tc.name Test getRemoteCertificate() interface
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_getRemoteCertificate_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let instance = socket.constructTLSSocketInstance();
@@ -212,9 +239,12 @@ export default function networkManagerSocketTest() {
       });
     });
     /**
+     * @tc.name   Telephony_NetworkManager_getProtocol_Async_0100
      * @tc.number Telephony_NetworkManager_getProtocol_Async_0100
-     * @tc.name Test getProtocol() interface
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_getProtocol_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let instance = socket.constructTLSSocketInstance();
@@ -230,9 +260,12 @@ export default function networkManagerSocketTest() {
       });
     });
     /**
+     * @tc.name   Telephony_NetworkManager_getProtocol_Promise_0100
      * @tc.number Telephony_NetworkManager_getProtocol_Promise_0100
-     * @tc.name Test getProtocol() interface
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_getProtocol_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let instance = socket.constructTLSSocketInstance();
@@ -246,9 +279,12 @@ export default function networkManagerSocketTest() {
       });
     });
     /**
+     * @tc.name   Telephony_NetworkManager_getCipherSuites_Async_0100
      * @tc.number Telephony_NetworkManager_getCipherSuites_Async_0100
-     * @tc.name Test getCipherSuite() interface
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_getCipherSuites_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let instance = socket.constructTLSSocketInstance();
@@ -264,9 +300,12 @@ export default function networkManagerSocketTest() {
       });
     });
     /**
+     * @tc.name   Telephony_NetworkManager_getCipherSuites_Promise_0100
      * @tc.number Telephony_NetworkManager_getCipherSuites_Promise_0100
-     * @tc.name Test getCipherSuite() interface
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_getCipherSuites_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let instance = socket.constructTLSSocketInstance();
@@ -280,9 +319,12 @@ export default function networkManagerSocketTest() {
       });
     });
     /**
+     * @tc.name   Telephony_NetworkManager_getSignatureAlgorithms_Async_0100
      * @tc.number Telephony_NetworkManager_getSignatureAlgorithms_Async_0100
-     * @tc.name Test getSignatureAlgorithms() interface
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_getSignatureAlgorithms_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let instance = socket.constructTLSSocketInstance();
@@ -298,9 +340,12 @@ export default function networkManagerSocketTest() {
       });
     });
     /**
+     * @tc.name   Telephony_NetworkManager_getSignatureAlgorithms_Promise_0100
      * @tc.number Telephony_NetworkManager_getSignatureAlgorithms_Promise_0100
-     * @tc.name Test getSignatureAlgorithms() interface
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_getSignatureAlgorithms_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let instance = socket.constructTLSSocketInstance();
@@ -314,9 +359,12 @@ export default function networkManagerSocketTest() {
       });
     });
     /**
+     * @tc.name   Telephony_NetworkManager_send_Async_0100
      * @tc.number Telephony_NetworkManager_send_Async_0100
-     * @tc.name Test send() interface
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_send_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let instance = socket.constructTLSSocketInstance();
@@ -331,9 +379,12 @@ export default function networkManagerSocketTest() {
       });
     });
     /**
+     * @tc.name   Telephony_NetworkManager_send_Promise_0100
      * @tc.number Telephony_NetworkManager_send_Promise_0100
-     * @tc.name Test send() interface
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkManager_send_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let instance = socket.constructTLSSocketInstance();
@@ -346,9 +397,12 @@ export default function networkManagerSocketTest() {
       });
     });
     /**
+     * @tc.name   Telephony_TLSSocket_on_message_0100
      * @tc.number Telephony_TLSSocket_on_message_0100
-     * @tc.name Test on_message interface
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_TLSSocket_on_message_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -364,9 +418,12 @@ export default function networkManagerSocketTest() {
       }
     });
     /**
+     * @tc.name   Telephony_TLSSocket_off_message_0100
      * @tc.number Telephony_TLSSocket_off_message_0100
-     * @tc.name Test off_message interface
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_TLSSocket_off_message_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -386,9 +443,12 @@ export default function networkManagerSocketTest() {
       }
     });
     /**
+     * @tc.name   Telephony_TLSSocket_on_connect_on_close_0100
      * @tc.number Telephony_TLSSocket_on_connect_on_close_0100
-     * @tc.name Test on_connect on_close interface
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_TLSSocket_on_connect_on_close_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -406,9 +466,12 @@ export default function networkManagerSocketTest() {
       }
     });
     /**
+     * @tc.name   Telephony_TLSSocket_off_connect_off_close_0100
      * @tc.number Telephony_TLSSocket_off_connect_off_close_0100
-     * @tc.name Test off_connect off_close interface
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_TLSSocket_off_connect_off_close_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -431,9 +494,12 @@ export default function networkManagerSocketTest() {
       }
     });
     /**
+     * @tc.name   Telephony_TLSSocket_on_error_0100
      * @tc.number Telephony_TLSSocket_on_error_0100
-     * @tc.name Test on_error interface
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_TLSSocket_on_error_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -448,9 +514,12 @@ export default function networkManagerSocketTest() {
       }
     });
     /**
+     * @tc.name   Telephony_TLSSocket_off_error_0100
      * @tc.number Telephony_TLSSocket_off_error_0100
-     * @tc.name Test off_error interface
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_TLSSocket_off_error_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {

@@ -57,7 +57,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_0100
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_0100
      * @tc.desc   get the getTimeZone value
@@ -74,7 +73,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_0200
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_0200
      * @tc.desc   get the getDisplayName value
@@ -91,7 +89,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_0300
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_0300
      * @tc.desc   get the getDisplayName value
@@ -108,7 +105,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_0400
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_0400
      * @tc.desc   get the getDisplayName value
@@ -125,7 +121,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_0500
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_0500
      * @tc.desc   get the getDisplayName value
@@ -142,7 +137,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_0600
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_0600
      * @tc.desc   get the getRawOffset value
@@ -159,7 +153,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_0700
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_0700
      * @tc.desc   get the getOffset value
@@ -176,7 +169,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_0800
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_0800
      * @tc.desc   get the getOffset value
@@ -193,7 +185,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_0900
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_0900
      * @tc.desc   get the getID value
@@ -210,7 +201,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_1000
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1000
      * @tc.desc   get the getID value
@@ -227,7 +217,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_1100
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1100
      * @tc.desc   get the getID value
@@ -244,7 +233,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_1200
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1200
      * @tc.desc   get the getID value
@@ -261,7 +249,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_1300
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1300
      * @tc.desc   get the getID value
@@ -278,7 +265,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_1400
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1400
      * @tc.desc   get the getID value
@@ -295,7 +281,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_1500
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1500
      * @tc.desc   get the getRawOffset value
@@ -312,7 +297,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_1600
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1600
      * @tc.desc   get the getOffset value
@@ -329,7 +313,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_1700
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1700
      * @tc.desc   get the getOffset value
@@ -346,7 +329,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_1800
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1800
      * @tc.desc   get the getAvailableIDs value
@@ -362,7 +344,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_1900
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1900
      * @tc.desc   get the getAvailableZoneCityIDs value
@@ -378,7 +359,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_2000
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2000
      * @tc.desc   get the getCityDisplayName value
@@ -394,7 +374,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_2020
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2020
      * @tc.desc   get the getCityDisplayName value
@@ -410,7 +389,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_2040
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2040
      * @tc.desc   get the getCityDisplayName value
@@ -426,7 +404,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_2060
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2060
      * @tc.desc   get the getCityDisplayName value
@@ -442,7 +419,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_2100
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2100
      * @tc.desc   get the getTimezoneFromCity value
@@ -458,7 +434,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_2120
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2120
      * @tc.desc   get the getTimezoneFromCity value
@@ -474,7 +449,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_2200
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2200
      * @tc.desc   get the getTimezonesByLocation value
@@ -497,7 +471,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_2300
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2300
      * @tc.desc   get the getTimezonesByLocation value
@@ -522,7 +495,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_2400
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2400
      * @tc.desc   get the getTimezonesByLocation value
@@ -545,7 +517,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_2500
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2500
      * @tc.desc   get the getTimezonesByLocation value
@@ -568,7 +539,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_2600
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2600
      * @tc.desc   get the getTimezonesByLocation value
@@ -591,7 +561,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_2700
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2700
      * @tc.desc   get the getTimezonesByLocation value
@@ -614,7 +583,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_2800
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2800
      * @tc.desc   get the getTimezonesByLocation value
@@ -637,7 +605,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_2900
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2900
      * @tc.desc   get the getTimezonesByLocation value
@@ -660,7 +627,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_3000
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_3000
      * @tc.desc   get the getTimezonesByLocation value
@@ -683,7 +649,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_3100
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_3100
      * @tc.desc   get the getTimezonesByLocation value
@@ -706,7 +671,6 @@ describe('TimezoneInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_3200
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_3200
      * @tc.desc   get the getTimezonesByLocation value

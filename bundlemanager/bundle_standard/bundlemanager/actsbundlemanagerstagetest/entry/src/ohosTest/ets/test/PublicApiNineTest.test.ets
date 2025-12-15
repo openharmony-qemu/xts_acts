@@ -32,10 +32,13 @@ const PROFILE_JSON_STRING1 = "{\"forms\":[{\"colorMode\":\"auto\",\"defaultDimen
 export default function PublicApiNineTest() {
   describe('PublicApiNineTest',() => {
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_7960
-     * @tc.name: getBundleInfoForSelfProTest
-     * @tc.desc: Test getBundleInfoForSelf of API9 in version9 normal project
+    /**
+     * @tc.name   getBundleInfoForSelfProTest
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_7960
+     * @tc.desc   Test getBundleInfoForSelf of API9 in version9 normal project
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getBundleInfoForSelfProTest', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) =>  {
       await bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).then(data => {
@@ -52,10 +55,13 @@ export default function PublicApiNineTest() {
       })
     });
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_Profile_7900
-     * @tc.name: getProfileByAbilityTest
-     * @tc.desc: Test getProfileByAbility of API9 in version9 normal project
+    /**
+     * @tc.name   getProfileByAbilityTest
+     * @tc.number Sub_Bms_Framework_Query_Profile_7900
+     * @tc.desc   Test getProfileByAbility of API9 in version9 normal project
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getProfileByAbilityTest', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) =>  {
       await bundle.getProfileByAbility(MODULE_NAME, ABILITY_NAME, METADATA_NAME).then(data => {
@@ -75,11 +81,14 @@ export default function PublicApiNineTest() {
       })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_Profile_8000
-    * @tc.name: getProfileByExtensionAbilityTest
-    * @tc.desc: Test getProfileByExtensionAbility of API9 in version9 normal project
-    */
+    /**
+     * @tc.name   getProfileByExtensionAbilityPromise
+     * @tc.number Sub_Bms_Framework_Query_Profile_8000
+     * @tc.desc   Test getProfileByExtensionAbility of API9 in version9 normal project
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('getProfileByExtensionAbilityPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) =>  {
       await bundle.getProfileByExtensionAbility(MODULE_NAME, ABILITY_NAME1, METADATA_NAME1).then(data => {
         console.info('getProfileByExtensionAbility promise data is: ' + JSON.stringify(data));
@@ -96,10 +105,13 @@ export default function PublicApiNineTest() {
     });
 
     /**
-    * @tc.number: Sub_Bms_Framework_Status_DefaultApp_8250
-    * @tc.name: isDefaultApplicationTest
-    * @tc.desc: Test isDefaultApplication of API9 in version9 normal project
-    */
+     * @tc.name   isDefaultApplication_0100
+     * @tc.number Sub_Bms_Framework_Status_DefaultApp_8250
+     * @tc.desc   Test isDefaultApplication of API9 in version9 normal project
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('isDefaultApplication_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) =>  {
       await defaultAppMgr.isDefaultApplication(defaultAppMgr.ApplicationType.IMAGE).then(data => {
         expect(data).assertFalse()

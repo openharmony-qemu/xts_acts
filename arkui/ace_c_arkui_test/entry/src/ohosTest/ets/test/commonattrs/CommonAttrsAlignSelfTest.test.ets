@@ -26,78 +26,78 @@ export default function commonAttrsAlignSelfTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_ALIGNSELF_0100
-     * @tc.name: testCommonAttrsAlignSelf001
-     * @tc.desc: testing alignSelf for row with auto value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsAlignSelf001
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ALIGNSELF_0100
+     * @tc.desc   testing alignSelf for row with auto value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAlignSelf001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAlignSelf001()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_ALIGNSELF_0200
-     * @tc.name: testCommonAttrsAlignSelf002
-     * @tc.desc: testing alignSelf for row with start value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsAlignSelf002
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ALIGNSELF_0200
+     * @tc.desc   testing alignSelf for row with start value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAlignSelf002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAlignSelf002()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_ALIGNSELF_0300
-     * @tc.name: testCommonAttrsAlignSelf003
-     * @tc.desc: testing alignSelf for row with center value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsAlignSelf003
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ALIGNSELF_0300
+     * @tc.desc   testing alignSelf for row with center value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAlignSelf003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAlignSelf003()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_ALIGNSELF_0400
-     * @tc.name: testCommonAttrsAlignSelf004
-     * @tc.desc: testing alignSelf for row with end value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsAlignSelf004
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ALIGNSELF_0400
+     * @tc.desc   testing alignSelf for row with end value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAlignSelf004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAlignSelf004()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_ALIGNSELF_0500
-     * @tc.name: testCommonAttrsAlignSelf005
-     * @tc.desc: testing alignSelf for row with end value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsAlignSelf005
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ALIGNSELF_0500
+     * @tc.desc   testing alignSelf for row with end value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAlignSelf005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAlignSelf005()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_ALIGNSELF_0600
-     * @tc.name: testCommonAttrsAlignSelf006
-     * @tc.desc: testing alignSelf for row with baseline value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsAlignSelf006
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ALIGNSELF_0600
+     * @tc.desc   testing alignSelf for row with baseline value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAlignSelf006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAlignSelf006()).assertEqual(0)

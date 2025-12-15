@@ -24,12 +24,12 @@ export default function atomicsSubTest() {
       await sleep(10)
     })
     /**
+     * @tc.name   atomicsSubTest001
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_001
-     * @tc.name atomicsSubTest001
-     * @tc.desc Basic Int32Array subtraction, return old value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Basic Int32Array subtraction, return old value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsSubTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -41,12 +41,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest002
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_002
-     * @tc.name atomicsSubTest002
-     * @tc.desc BigInt64Array subtraction with negative value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   BigInt64Array subtraction with negative value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsSubTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(8);
@@ -58,12 +58,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest003
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_003
-     * @tc.name atomicsSubTest003
-     * @tc.desc Subtract 0, keep original value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Subtract 0, keep original value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsSubTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -75,12 +75,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest004
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_004
-     * @tc.name atomicsSubTest004
-     * @tc.desc Subtract from Int32Array index 1 (multi-element buffer)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Subtract from Int32Array index 1 (multi-element buffer)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsSubTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(8);
@@ -94,12 +94,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest005
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_005
-     * @tc.name atomicsSubTest005
-     * @tc.desc Subtract to get negative result in Int32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Subtract to get negative result in Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsSubTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -111,12 +111,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest006
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_006
-     * @tc.name atomicsSubTest006
-     * @tc.desc Throw TypeError for non-shared ArrayBuffer (Int32Array)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Throw TypeError for non-shared ArrayBuffer (Int32Array)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const ab = new ArrayBuffer(4);
@@ -129,12 +129,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest007
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_007
-     * @tc.name atomicsSubTest007
-     * @tc.desc Throw TypeError for non-shared ArrayBuffer (BigInt64Array)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Throw TypeError for non-shared ArrayBuffer (BigInt64Array)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -154,12 +154,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest008
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_008
-     * @tc.name atomicsSubTest008
-     * @tc.desc Throw TypeError for Float32Array (not allowed type)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Throw TypeError for Float32Array (not allowed type)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -182,12 +182,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest009
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_009
-     * @tc.name atomicsSubTest009
-     * @tc.desc Throw TypeError for Uint8ClampedArray (not allowed type)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Throw TypeError for Uint8ClampedArray (not allowed type)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(12);
@@ -212,12 +212,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest010
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_010
-     * @tc.name atomicsSubTest010
-     * @tc.desc Throw RangeError for index >= array length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Throw RangeError for index >= array length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -230,12 +230,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest011
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_011
-     * @tc.name atomicsSubTest011
-     * @tc.desc Throw RangeError for negative index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Throw RangeError for negative index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -248,12 +248,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest012
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_012
-     * @tc.name atomicsSubTest012
-     * @tc.desc Subtract large value in BigInt64Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Subtract large value in BigInt64Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsSubTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(8);
@@ -265,12 +265,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest013
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_013
-     * @tc.name atomicsSubTest013
-     * @tc.desc Subtract twice on same Int32Array index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Subtract twice on same Int32Array index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsSubTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -287,12 +287,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest014
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_014
-     * @tc.name atomicsSubTest014
-     * @tc.desc Subtract from Int32Array with value=0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Subtract from Int32Array with value=0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsSubTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -304,12 +304,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest015
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_015
-     * @tc.name atomicsSubTest015
-     * @tc.desc Subtract from BigInt64Array with value=0n
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Subtract from BigInt64Array with value=0n
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsSubTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(8);
@@ -321,12 +321,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest016
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_016
-     * @tc.name atomicsSubTest016
-     * @tc.desc Subtract non-integer value (coerced to integer) in Int32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Subtract non-integer value (coerced to integer) in Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -338,12 +338,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest017
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_017
-     * @tc.name atomicsSubTest017
-     * @tc.desc Subtract non-BigInt value (coerced to BigInt) in BigInt64Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Subtract non-BigInt value (coerced to BigInt) in BigInt64Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(12);
@@ -367,12 +367,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest018
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_018
-     * @tc.name atomicsSubTest018
-     * @tc.desc Subtract from Int32Array maximum value (0x7FFFFFFF)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Subtract from Int32Array maximum value (0x7FFFFFFF)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsSubTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -384,12 +384,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest019
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_019
-     * @tc.name atomicsSubTest019
-     * @tc.desc Subtract from BigInt64Array maximum value (9223372036854775807n)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Subtract from BigInt64Array maximum value (9223372036854775807n)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsSubTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(8);
@@ -401,12 +401,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest020
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_020
-     * @tc.name atomicsSubTest020
-     * @tc.desc Subtract with arrow function wrapper, return old value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Subtract with arrow function wrapper, return old value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -419,12 +419,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest021
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_021
-     * @tc.name atomicsSubTest021
-     * @tc.desc Nested arrow functions: subtract inside inner function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Nested arrow functions: subtract inside inner function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -442,12 +442,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest022
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_022
-     * @tc.name atomicsSubTest022
-     * @tc.desc Throw TypeError for non-typed array object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Throw TypeError for non-typed array object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -468,12 +468,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest023
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_023
-     * @tc.name atomicsSubTest023
-     * @tc.desc Subtract from Uint32Array (allowed type), check unsigned result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Subtract from Uint32Array (allowed type), check unsigned result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -485,12 +485,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest024
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_024
-     * @tc.name atomicsSubTest024
-     * @tc.desc Subtract from BigUint64Array (allowed type), check unsigned result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Subtract from BigUint64Array (allowed type), check unsigned result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -502,12 +502,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest025
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_025
-     * @tc.name atomicsSubTest025
-     * @tc.desc Arrow function to batch subtract on multiple indexes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Arrow function to batch subtract on multiple indexes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -526,12 +526,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest026
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_026
-     * @tc.name atomicsSubTest026
-     * @tc.desc Subtract with Int8Array (allowed type), check byte range
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Subtract with Int8Array (allowed type), check byte range
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(1);
@@ -543,12 +543,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest027
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_027
-     * @tc.name atomicsSubTest027
-     * @tc.desc Subtract with Uint16Array (allowed type), check 16-bit range
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Subtract with Uint16Array (allowed type), check 16-bit range
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(2);
@@ -560,12 +560,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest028
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_028
-     * @tc.name atomicsSubTest028
-     * @tc.desc Nested arrow functions: subtract with dynamic value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Nested arrow functions: subtract with dynamic value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -584,12 +584,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest029
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_029
-     * @tc.name atomicsSubTest029
-     * @tc.desc Throw RangeError for non-integer index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Throw RangeError for non-integer index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -602,12 +602,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest030
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_030
-     * @tc.name atomicsSubTest030
-     * @tc.desc Subtract value exceeding 32 bits (truncated) in Int32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Subtract value exceeding 32 bits (truncated) in Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -619,12 +619,12 @@ export default function atomicsSubTest() {
       expect(ia[0]).assertEqual(95); // 100 - 5 = 95
     });
     /**
+     * @tc.name   atomicsSubTest031
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_031
-     * @tc.name atomicsSubTest031
-     * @tc.desc Subtract value exceeding 64 bits (truncated) in BigInt64Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Subtract value exceeding 64 bits (truncated) in BigInt64Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -637,12 +637,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest032
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_032
-     * @tc.name atomicsSubTest032
-     * @tc.desc Arrow function wrapper for BigInt64Array subtract with dynamic value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Arrow function wrapper for BigInt64Array subtract with dynamic value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -661,12 +661,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest033
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_033
-     * @tc.name atomicsSubTest033
-     * @tc.desc Subtract from Int32Array with value=0x80000000 (min Int32)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Subtract from Int32Array with value=0x80000000 (min Int32)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -678,12 +678,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest034
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_034
-     * @tc.name atomicsSubTest034
-     * @tc.desc Subtract from BigInt64Array with value=0x8000000000000000n (min BigInt64)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Subtract from BigInt64Array with value=0x8000000000000000n (min BigInt64)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -695,12 +695,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest035
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_035
-     * @tc.name atomicsSubTest035
-     * @tc.desc Nested arrow functions: subtract with value from outer variable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Nested arrow functions: subtract with value from outer variable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -719,12 +719,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest036
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_036
-     * @tc.name atomicsSubTest036
-     * @tc.desc Arrow function to chain subtract operations on same index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Arrow function to chain subtract operations on same index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -741,12 +741,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest037
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_037
-     * @tc.name atomicsSubTest037
-     * @tc.desc Arrow function to chain subtract operations on BigInt64Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Arrow function to chain subtract operations on BigInt64Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -765,12 +765,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest038
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_038
-     * @tc.name atomicsSubTest038
-     * @tc.desc Subtract NaN (coerced to 0) in Int32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Subtract NaN (coerced to 0) in Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -782,12 +782,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest039
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_039
-     * @tc.name atomicsSubTest039
-     * @tc.desc Subtract NaN (coerced to 0n) in BigInt64Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Subtract NaN (coerced to 0n) in BigInt64Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -812,12 +812,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest040
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_040
-     * @tc.name atomicsSubTest040
-     * @tc.desc Nested arrow functions: subtract with conditional value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Nested arrow functions: subtract with conditional value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -835,12 +835,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest041
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_041
-     * @tc.name atomicsSubTest041
-     * @tc.desc Subtract Infinity (coerced to 0) in Int32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Subtract Infinity (coerced to 0) in Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -852,12 +852,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest042
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_042
-     * @tc.name atomicsSubTest042
-     * @tc.desc Subtract Infinity (coerced to 0n) in BigInt64Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Subtract Infinity (coerced to 0n) in BigInt64Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -875,12 +875,12 @@ export default function atomicsSubTest() {
 
 
     /**
+     * @tc.name   atomicsSubTest043
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_043
-     * @tc.name atomicsSubTest043
-     * @tc.desc Subtract from Int16Array (allowed type), check 16-bit range
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Subtract from Int16Array (allowed type), check 16-bit range
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(2);
@@ -892,12 +892,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest044
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_044
-     * @tc.name atomicsSubTest044
-     * @tc.desc Subtract from Uint8Array (allowed type), check 8-bit unsigned range
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Subtract from Uint8Array (allowed type), check 8-bit unsigned range
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(1);
@@ -909,12 +909,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest045
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_045
-     * @tc.name atomicsSubTest045
-     * @tc.desc Arrow function to subtract and return new value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Arrow function to subtract and return new value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -931,12 +931,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest046
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_046
-     * @tc.name atomicsSubTest046
-     * @tc.desc Arrow function to subtract and return old+new value object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Arrow function to subtract and return old+new value object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsSubTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -955,12 +955,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest047
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_047
-     * @tc.name atomicsSubTest047
-     * @tc.desc Async subtract with Promise wrapper, resolve old value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async subtract with Promise wrapper, resolve old value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -982,12 +982,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest048
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_048
-     * @tc.name atomicsSubTest048
-     * @tc.desc Nested async: subtract inside inner Promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: subtract inside inner Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1015,12 +1015,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest049
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_049
-     * @tc.name atomicsSubTest049
-     * @tc.desc Promise.all with multiple subtract operations on different indexes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.all with multiple subtract operations on different indexes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1049,12 +1049,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest050
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_050
-     * @tc.name atomicsSubTest050
-     * @tc.desc Async subtract with arrow function closure, capture index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async subtract with arrow function closure, capture index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1082,12 +1082,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest051
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_051
-     * @tc.name atomicsSubTest051
-     * @tc.desc Nested async: subtract with retry on invalid value (coerce and retry)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: subtract with retry on invalid value (coerce and retry)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1115,12 +1115,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest052
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_052
-     * @tc.name atomicsSubTest052
-     * @tc.desc Promise.race between two subtract operations on same index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.race between two subtract operations on same index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1149,12 +1149,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest053
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_053
-     * @tc.name atomicsSubTest053
-     * @tc.desc Async subtract with finally block to log result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async subtract with finally block to log result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1183,12 +1183,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest054
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_054
-     * @tc.name atomicsSubTest054
-     * @tc.desc Nested arrow functions: async subtract with dynamic value from mock API
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested arrow functions: async subtract with dynamic value from mock API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1216,12 +1216,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest055
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_055
-     * @tc.name atomicsSubTest055
-     * @tc.desc Promise.allSettled with valid and invalid subtract tasks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.allSettled with valid and invalid subtract tasks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1252,12 +1252,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest056
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_056
-     * @tc.name atomicsSubTest056
-     * @tc.desc Async subtract with closure that tracks operation history
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async subtract with closure that tracks operation history
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1293,12 +1293,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest057
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_057
-     * @tc.name atomicsSubTest057
-     * @tc.desc Nested async: subtract with pre-validation in outer Promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: subtract with pre-validation in outer Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1332,12 +1332,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest058
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_058
-     * @tc.name atomicsSubTest058
-     * @tc.desc Async subtract with Promise chain: validate → subtract → log
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async subtract with Promise chain: validate → subtract → log
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1385,12 +1385,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest059
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_059
-     * @tc.name atomicsSubTest059
-     * @tc.desc Nested arrow functions: async subtract with dynamic index from closure
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested arrow functions: async subtract with dynamic index from closure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(12);
@@ -1420,12 +1420,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest060
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_060
-     * @tc.name atomicsSubTest060
-     * @tc.desc Promise.race between subtract and timeout (subtract wins)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.race between subtract and timeout (subtract wins)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1449,12 +1449,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest061
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_061
-     * @tc.name atomicsSubTest061
-     * @tc.desc Async subtract with error handling for invalid index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async subtract with error handling for invalid index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1482,12 +1482,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest062
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_062
-     * @tc.name atomicsSubTest062
-     * @tc.desc Nested async: subtract with batch value application via Promise.all
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: subtract with batch value application via Promise.all
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(12);
@@ -1518,12 +1518,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest063
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_063
-     * @tc.name atomicsSubTest063
-     * @tc.desc Async subtract with closure that enforces value limit
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async subtract with closure that enforces value limit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1562,12 +1562,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest064
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_064
-     * @tc.name atomicsSubTest064
-     * @tc.desc Nested arrow functions: async subtract with value from outer Promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested arrow functions: async subtract with value from outer Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1597,12 +1597,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest065
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_065
-     * @tc.name atomicsSubTest065
-     * @tc.desc Promise.all with subtract and state check tasks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.all with subtract and state check tasks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1631,12 +1631,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest066
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_066
-     * @tc.name atomicsSubTest066
-     * @tc.desc Async subtract with retry on detached buffer (fallback)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async subtract with retry on detached buffer (fallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1655,12 +1655,12 @@ export default function atomicsSubTest() {
       expect(ia[0]).assertEqual(Math.max(current - 2 - 1, floor));
     });
     /**
+     * @tc.name   atomicsSubTest067
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_067
-     * @tc.name atomicsSubTest067
-     * @tc.desc Nested async: subtract with pre-subtract and post-subtract checks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: subtract with pre-subtract and post-subtract checks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1699,12 +1699,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest068
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_068
-     * @tc.name atomicsSubTest068
-     * @tc.desc Async subtract with closure that logs subtract value usage
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async subtract with closure that logs subtract value usage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1734,12 +1734,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest069
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_069
-     * @tc.name atomicsSubTest069
-     * @tc.desc Nested arrow functions: async subtract with conditional value selection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested arrow functions: async subtract with conditional value selection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1774,12 +1774,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest070
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_070
-     * @tc.name atomicsSubTest070
-     * @tc.desc Promise.allSettled with subtract tasks on different typed arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.allSettled with subtract tasks on different typed arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1810,12 +1810,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest071
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_071
-     * @tc.name atomicsSubTest071
-     * @tc.desc Async subtract with closure that enforces result range
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async subtract with closure that enforces result range
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1855,12 +1855,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest072
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_072
-     * @tc.name atomicsSubTest072
-     * @tc.desc Nested async: subtract with value derived from previous subtract result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: subtract with value derived from previous subtract result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1893,12 +1893,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest073
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_073
-     * @tc.name atomicsSubTest073
-     * @tc.desc Promise.race between two subtract tasks with different values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.race between two subtract tasks with different values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1927,12 +1927,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest074
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_074
-     * @tc.name atomicsSubTest074
-     * @tc.desc Async subtract with error handling for non-shared buffer
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async subtract with error handling for non-shared buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const ab = new ArrayBuffer(4); // Non-shared buffer
@@ -1959,12 +1959,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest075
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_075
-     * @tc.name atomicsSubTest075
-     * @tc.desc Nested arrow functions: async subtract with batch value validation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested arrow functions: async subtract with batch value validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -2009,12 +2009,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest076
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_076
-     * @tc.name atomicsSubTest076
-     * @tc.desc Async subtract with closure that tracks operation success rate
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async subtract with closure that tracks operation success rate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -2033,12 +2033,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest077
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_077
-     * @tc.name atomicsSubTest077
-     * @tc.desc Nested async: subtract with value from external async API
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: subtract with value from external async API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -2067,12 +2067,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest078
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_078
-     * @tc.name atomicsSubTest078
-     * @tc.desc Promise.all with subtract and cleanup tasks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.all with subtract and cleanup tasks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2102,12 +2102,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest079
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_079
-     * @tc.name atomicsSubTest079
-     * @tc.desc Async subtract with closure that skips duplicate subtract values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async subtract with closure that skips duplicate subtract values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2142,12 +2142,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest080
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_080
-     * @tc.name atomicsSubTest080
-     * @tc.desc Nested arrow functions: async subtract with value validation in inner function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested arrow functions: async subtract with value validation in inner function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -2179,12 +2179,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest081
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_081
-     * @tc.name atomicsSubTest081
-     * @tc.desc Promise.race between subtract and value change task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.race between subtract and value change task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2216,12 +2216,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest082
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_082
-     * @tc.name atomicsSubTest082
-     * @tc.desc Async subtract with error handling for invalid value type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async subtract with error handling for invalid value type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -2239,12 +2239,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest083
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_083
-     * @tc.name atomicsSubTest083
-     * @tc.desc Nested async: subtract with batch value application and result aggregation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: subtract with batch value application and result aggregation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(12);
@@ -2275,12 +2275,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest084
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_084
-     * @tc.name atomicsSubTest084
-     * @tc.desc Async subtract with closure that tracks cumulative subtract value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async subtract with closure that tracks cumulative subtract value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2310,12 +2310,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest085
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_085
-     * @tc.name atomicsSubTest085
-     * @tc.desc Nested arrow functions: async subtract with value from closure state
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested arrow functions: async subtract with value from closure state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -2346,12 +2346,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest086
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_086
-     * @tc.name atomicsSubTest086
-     * @tc.desc Promise.allSettled with subtract tasks on same index (different values)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.allSettled with subtract tasks on same index (different values)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2373,12 +2373,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest087
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_087
-     * @tc.name atomicsSubTest087
-     * @tc.desc Async subtract with retry on value overflow (coerce and retry)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async subtract with retry on value overflow (coerce and retry)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2407,12 +2407,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest088
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_088
-     * @tc.name atomicsSubTest088
-     * @tc.desc Nested async: subtract with value validation and fallback value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: subtract with value validation and fallback value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -2445,12 +2445,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest089
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_089
-     * @tc.name atomicsSubTest089
-     * @tc.desc Promise.race between subtract and timeout (timeout wins)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.race between subtract and timeout (timeout wins)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2477,12 +2477,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest090
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_090
-     * @tc.name atomicsSubTest090
-     * @tc.desc Async subtract with closure that enforces unique subtract values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async subtract with closure that enforces unique subtract values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2521,12 +2521,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest091
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_091
-     * @tc.name atomicsSubTest091
-     * @tc.desc Nested arrow functions: async subtract with value from promise chain
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested arrow functions: async subtract with value from promise chain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2557,12 +2557,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest092
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_092
-     * @tc.name atomicsSubTest092
-     * @tc.desc Promise.all with subtract and state validation tasks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.all with subtract and state validation tasks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -2591,12 +2591,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest093
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_093
-     * @tc.name atomicsSubTest093
-     * @tc.desc Async subtract with closure that logs operation timestamps
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async subtract with closure that logs operation timestamps
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2629,12 +2629,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest094
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_094
-     * @tc.name atomicsSubTest094
-     * @tc.desc Nested async: subtract with value derived from array value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: subtract with value derived from array value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2666,12 +2666,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest095
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_095
-     * @tc.name atomicsSubTest095
-     * @tc.desc Promise.allSettled with subtract tasks on detached and valid buffers
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.allSettled with subtract tasks on detached and valid buffers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(12);
@@ -2693,12 +2693,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest096
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_096
-     * @tc.name atomicsSubTest096
-     * @tc.desc Async subtract with closure that skips zero subtract values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async subtract with closure that skips zero subtract values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2734,12 +2734,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest097
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_097
-     * @tc.name atomicsSubTest097
-     * @tc.desc Nested async: subtract with batch validation and error recovery
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: subtract with batch validation and error recovery
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -2774,12 +2774,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest098
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_098
-     * @tc.name atomicsSubTest098
-     * @tc.desc Async subtract with closure that tracks value change history
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async subtract with closure that tracks value change history
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2812,12 +2812,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest099
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_099
-     * @tc.name atomicsSubTest099
-     * @tc.desc Nested arrow functions: async subtract with dynamic value from closure state
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested arrow functions: async subtract with dynamic value from closure state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -2849,12 +2849,12 @@ export default function atomicsSubTest() {
     });
 
     /**
+     * @tc.name   atomicsSubTest100
      * @tc.number SUB_BUILTINS_Atomics_sub_TEST_100
-     * @tc.name atomicsSubTest100
-     * @tc.desc Comprehensive async workflow: validate → batch subtract → log → cleanup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Comprehensive async workflow: validate → batch subtract → log → cleanup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsSubTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(12);

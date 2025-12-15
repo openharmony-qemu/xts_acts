@@ -54,13 +54,13 @@ export default function DialogOptions() {
     });
 
     /**
+     * @tc.name   DialogOptions_0100
      * @tc.number SUB_ACE_DialogOptions_0100
-     * @tc.name DialogOptions_0100
-     * @tc.desc To test default  DialogOptions
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test default  DialogOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('DialogOptions_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('DialogOptions_0100 START');
       let driver = await Driver.create()
@@ -99,13 +99,13 @@ export default function DialogOptions() {
     });
 
     /**
+     * @tc.name   DialogOptions_0200
      * @tc.number SUB_ACE_DialogOptions_0200
-     * @tc.name DialogOptions_0200
-     * @tc.desc To test  DialogOptions
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  DialogOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('DialogOptions_0200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('DialogOptions_0200 START');
       let driver = await Driver.create()
@@ -168,13 +168,13 @@ export default function DialogOptions() {
     });
     
     /**
+     * @tc.name   DialogOptions_0300
      * @tc.number SUB_ACE_DialogOptions_0300
-     * @tc.name DialogOptions_0300
-     * @tc.desc To test  DialogOptions undefined
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  DialogOptions undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('DialogOptions_0300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('DialogOptions_0300 START');
       let driver = await Driver.create()
@@ -217,13 +217,13 @@ export default function DialogOptions() {
     });
 
     /**
+     * @tc.name   DialogOptions_0400
      * @tc.number SUB_ACE_DialogOptions_0400
-     * @tc.name DialogOptions_0400
-     * @tc.desc To test  DialogOptions null
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  DialogOptions null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('DialogOptions_0400', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('DialogOptions_0400 START');
       let driver = await Driver.create()
@@ -267,13 +267,13 @@ export default function DialogOptions() {
 
     
     /**
+     * @tc.name   DialogOptions_0500
      * @tc.number SUB_ACE_DialogOptions_0500
-     * @tc.name DialogOptions_0500
-     * @tc.desc To test  DialogOptions shadow backgroundBlurStyle
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  DialogOptions shadow backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('DialogOptions_0500', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('DialogOptions_0500 START');
       let driver = await Driver.create()
@@ -323,13 +323,13 @@ export default function DialogOptions() {
     });
 
     /**
+     * @tc.name   DialogOptions_0600
      * @tc.number SUB_ACE_DialogOptions_0600
-     * @tc.name DialogOptions_0600
-     * @tc.desc To test  DialogOptions backgroundBlurStyle
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  DialogOptions backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('DialogOptions_0600', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('DialogOptions_0600 START');
       let driver = await Driver.create()
@@ -358,14 +358,14 @@ export default function DialogOptions() {
     });
 
 
-     /**
+    /**
+     * @tc.name   DialogOptions_0700
      * @tc.number SUB_ACE_DialogOptions_0700
-     * @tc.name DialogOptions_0700
-     * @tc.desc To test  DialogOptions backgroundBlurStyle
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  DialogOptions backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('DialogOptions_0700', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('DialogOptions_0700 START');
       let driver = await Driver.create()
@@ -394,13 +394,13 @@ export default function DialogOptions() {
       done();
     });
     /**
+     * @tc.name   DialogOptions_0800
      * @tc.number SUB_ACE_DialogOptions_0800
-     * @tc.name DialogOptions_0800
-     * @tc.desc To test  DialogOptions backgroundBlurStyle
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  DialogOptions backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('DialogOptions_0800', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('DialogOptions_0800 START');
       let driver = await Driver.create()
@@ -431,13 +431,13 @@ export default function DialogOptions() {
     });
 
     /**
+     * @tc.name   DialogOptions_0900
      * @tc.number SUB_ACE_DialogOptions_0900
-     * @tc.name DialogOptions_0900
-     * @tc.desc To test  DialogOptions backgroundBlurStyle 
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  DialogOptions backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('DialogOptions_0900', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('DialogOptions_0900 START');
       let driver = await Driver.create()
@@ -467,13 +467,13 @@ export default function DialogOptions() {
     });
 
     /**
+     * @tc.name   DialogOptions_1000
      * @tc.number SUB_ACE_DialogOptions_1000
-     * @tc.name DialogOptions_1000
-     * @tc.desc To test  DialogOptions backgroundBlurStyle 
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  DialogOptions backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('DialogOptions_1000', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('DialogOptions_1000 START');
       let driver = await Driver.create()
@@ -503,13 +503,13 @@ export default function DialogOptions() {
       done();
     });
     /**
+     * @tc.name   DialogOptions_1100
      * @tc.number SUB_ACE_DialogOptions_1100
-     * @tc.name DialogOptions_1100
-     * @tc.desc To test  DialogOptions backgroundBlurStyle 
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  DialogOptions backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('DialogOptions_1100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('DialogOptions_1100 START');
       let driver = await Driver.create()
@@ -540,13 +540,13 @@ export default function DialogOptions() {
     });
 
     /**
+     * @tc.name   DialogOptions_1200
      * @tc.number SUB_ACE_DialogOptions_1200
-     * @tc.name DialogOptions_1200
-     * @tc.desc To test  DialogOptions backgroundBlurStyle 
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  DialogOptions backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('DialogOptions_1200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('DialogOptions_1200 START');
       let driver = await Driver.create()
@@ -575,13 +575,13 @@ export default function DialogOptions() {
     });
 
     /**
+     * @tc.name   DialogOptions_1300
      * @tc.number SUB_ACE_DialogOptions_1300
-     * @tc.name DialogOptions_1300
-     * @tc.desc To test  DialogOptions backgroundBlurStyle 
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  DialogOptions backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('DialogOptions_1300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('DialogOptions_1300 START');
       let driver = await Driver.create()

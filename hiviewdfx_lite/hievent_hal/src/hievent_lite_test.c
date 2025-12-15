@@ -20,12 +20,6 @@
 
 #define HIEVENT_TEST_ID 0x1234
 
-/**
- * @tc.desc      : register a test suite, this suite is used to test basic flow and interface dependency
- * @param        : subsystem name is hiviewdfx
- * @param        : module name is hievet_lite
- * @param        : test suit name is HieventLiteTest
- */
 LITE_TEST_SUIT(hiviewdfx, hievent_lite, HieventLiteTestSuite);
 
 /**
@@ -47,12 +41,6 @@ static BOOL HieventLiteTestSuiteTearDown(void)
     return TRUE;
 }
 
-/**
- * @tc.desc      : register a test suite, this suite is used to test basic flow and interface dependency
- * @param        : subsystem name is hiviewdfx
- * @param        : module name is hievet_lite
- * @param        : test suit name is HieventLiteTest
- */
 static int HieventLiteTestOutputFunc(uint8 *data)
 {
     HiEvent *e = (HiEvent *)data;
@@ -62,9 +50,12 @@ static int HieventLiteTestOutputFunc(uint8 *data)
 }
 
 /**
- * @tc.name      : HieventLiteFuncTest001
- * @tc.desc      : Test HiEventCreate
- * @tc.level     : Level 1
+ * @tc.name   HieventLiteFuncTest001
+ * @tc.number HieventLiteFuncTest001
+ * @tc.desc   Test HiEventCreate
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(HieventLiteTestSuite, HieventLiteFuncTest001, Level1)
 {
@@ -76,9 +67,12 @@ LITE_TEST_CASE(HieventLiteTestSuite, HieventLiteFuncTest001, Level1)
 };
 
 /**
- * @tc.name      : HieventLiteFuncTest002
- * @tc.desc      : Test HiEventPutInteger 3 items whth async flush
- * @tc.level     : Level 1
+ * @tc.name   HieventLiteFuncTest002
+ * @tc.number HieventLiteFuncTest002
+ * @tc.desc   Test HiEventPutInteger 3 items whth async flush
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(HieventLiteTestSuite, HieventLiteFuncTest002, Level1)
 {
@@ -94,9 +88,12 @@ LITE_TEST_CASE(HieventLiteTestSuite, HieventLiteFuncTest002, Level1)
 };
 
 /**
- * @tc.name      : HieventLiteFuncTest003
- * @tc.desc      : Test HiEventCreate
- * @tc.level     : Level 1
+ * @tc.name   HieventLiteFuncTest003
+ * @tc.number HieventLiteFuncTest003
+ * @tc.desc   Test HiEventCreate
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(HieventLiteTestSuite, HieventLiteFuncTest003, Level1)
 {
@@ -116,9 +113,12 @@ LITE_TEST_CASE(HieventLiteTestSuite, HieventLiteFuncTest003, Level1)
 };
 
 /**
- * @tc.name      : HieventLiteFuncTest004
- * @tc.desc      : Test HiEventCreate
- * @tc.level     : Level 1
+ * @tc.name   HieventLiteFuncTest004
+ * @tc.number HieventLiteFuncTest004
+ * @tc.desc   Test HiEventCreate
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(HieventLiteTestSuite, HieventLiteFuncTest004, Level1)
 {

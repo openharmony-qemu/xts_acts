@@ -45,9 +45,12 @@ export default function flex_AlignContent_SpaceBetween_FlexMarTest() {
       console.info("Flex_AlignContent_SpaceBetween_FlexMarTest after each called");
     });
     /**
+     * @tc.name   testFlexAlignContentSpaceAroundFlexMargin
      * @tc.number SUB_ACE_FLEXALIGNCONTENT_SPACEBETWEEN_0100
-     * @tc.name testFlexAlignContentSpaceAroundFlexMargin
-     * @tc.desc the margin of parent component set to 10
+     * @tc.desc   the margin of parent component set to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignContentSpaceAroundFlexMargin',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignContentSpaceAroundFlexMargin] START');

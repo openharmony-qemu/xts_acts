@@ -55,14 +55,14 @@ export default function webViewControllerPart3Test() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_ONMESSAGEEVENT_0100
-    * @tc.name       : testOnMessageEvent001
-    * @tc.desc       : test onMessageEvent
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOnMessageEvent001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_ONMESSAGEEVENT_0100
+     * @tc.desc   test onMessageEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnMessageEvent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testOnMessageEvent001", 170380)
       Utils.registerEvent("testOnMessageEvent001", 1, 170390, done);

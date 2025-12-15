@@ -32,13 +32,12 @@ export default function SendablesTestWithAlloc() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_001
-     * @tc.name: testSendableSimpleDate
-     * @tc.desc: checks sendable Date
-     * @tc.author: maxim-khramov
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testSendableSimpleDate
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_001
+     * @tc.desc   checks sendable Date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSendableSimpleDate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: Object = await testSendableSimpleDate();
@@ -47,13 +46,12 @@ export default function SendablesTestWithAlloc() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_002
-     * @tc.name: testSendableSimpleString
-     * @tc.desc: checks sendable String
-     * @tc.author: maxim-khramov
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testSendableSimpleString
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_002
+     * @tc.desc   checks sendable String
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSendableSimpleString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: Object = await testSendableSimpleString();
@@ -62,13 +60,12 @@ export default function SendablesTestWithAlloc() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_003
-     * @tc.name: testSendableSimpleNumber
-     * @tc.desc: checks sendable number
-     * @tc.author: maxim-khramov
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testSendableSimpleNumber
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_003
+     * @tc.desc   checks sendable number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSendableSimpleNumber', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: Object = await testSendableSimpleNumber();
@@ -77,13 +74,12 @@ export default function SendablesTestWithAlloc() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_004
-     * @tc.name: testSendableSimpleBoolean
-     * @tc.desc: checks sendable boolean
-     * @tc.author: maxim-khramov
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testSendableSimpleBoolean
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_004
+     * @tc.desc   checks sendable boolean
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSendableSimpleBoolean', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: Object = await testSendableSimpleBoolean();
@@ -92,13 +88,12 @@ export default function SendablesTestWithAlloc() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_005
-     * @tc.name: testSendableSimpleSharedArrayBuffer
-     * @tc.desc: checks sendable SharedArrayBuffer
-     * @tc.author: maxim-khramov
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testSendableSimpleSharedArrayBuffer
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_005
+     * @tc.desc   checks sendable SharedArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSendableSimpleSharedArrayBuffer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: Object = await testSendableSimpleSharedArrayBuffer();
@@ -107,13 +102,12 @@ export default function SendablesTestWithAlloc() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_006
-     * @tc.name: testSendableSimpleSharedArrayBufferAndUndefined
-     * @tc.desc: checks sendable SharedArrayBuffer|undefined
-     * @tc.author: maxim-khramov
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testSendableSimpleSharedArrayBufferAndUndefined
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_006
+     * @tc.desc   checks sendable SharedArrayBuffer|undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSendableSimpleSharedArrayBufferAndUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: Object = await testSendableSimpleSharedArrayBufferAndUndefined();
@@ -122,13 +116,12 @@ export default function SendablesTestWithAlloc() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_007
-     * @tc.name: testSendableSimpleSharedArrayBufferAndNull
-     * @tc.desc: checks sendable SharedArrayBuffer|null
-     * @tc.author: maxim-khramov
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSendableSimpleSharedArrayBufferAndNull
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_007
+     * @tc.desc   checks sendable SharedArrayBuffer|null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableSimpleSharedArrayBufferAndNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: Object = await testSendableSimpleSharedArrayBufferAndNull();
@@ -137,13 +130,12 @@ export default function SendablesTestWithAlloc() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_008
-     * @tc.name: testSendableSimpleCombined0
-     * @tc.desc: checks sendable SharedArrayBuffer|null|undefined
-     * @tc.author: maxim-khramov
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSendableSimpleCombined0
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_008
+     * @tc.desc   checks sendable SharedArrayBuffer|null|undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableSimpleCombined0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: Object = await testSendableSimpleCombined0();
@@ -152,13 +144,12 @@ export default function SendablesTestWithAlloc() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_009
-     * @tc.name: testSendableSimpleCombined1
-     * @tc.desc: checks sendable SharedArrayBuffer|String
-     * @tc.author: maxim-khramov
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSendableSimpleCombined1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_009
+     * @tc.desc   checks sendable SharedArrayBuffer|String
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableSimpleCombined1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: Object = await testSendableSimpleCombined1();
@@ -167,13 +158,12 @@ export default function SendablesTestWithAlloc() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_010
-     * @tc.name: testSendableSimpleCombined2
-     * @tc.desc: checks sendable String as SharedArrayBuffer|String
-     * @tc.author: maxim-khramov
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSendableSimpleCombined2
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_010
+     * @tc.desc   checks sendable String as SharedArrayBuffer|String
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableSimpleCombined2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: Object = await testSendableSimpleCombined2();
@@ -182,13 +172,12 @@ export default function SendablesTestWithAlloc() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_011
-     * @tc.name: testSendableSimpleCombinedAsType1
-     * @tc.desc: checks sendable String as type CombinedType = SharedArrayBuffer|String
-     * @tc.author: maxim-khramov
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSendableSimpleCombinedAsType1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_011
+     * @tc.desc   checks sendable String as type CombinedType = SharedArrayBuffer|String
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableSimpleCombinedAsType1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: Object = await testSendableSimpleCombinedAsType1();
@@ -197,13 +186,12 @@ export default function SendablesTestWithAlloc() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_012
-     * @tc.name: testSendableSimpleCombinedAsType2
-     * @tc.desc: checks sendable SharedArrayBuffer as type CombinedType = SharedArrayBuffer|String
-     * @tc.author: maxim-khramov
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSendableSimpleCombinedAsType2
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_012
+     * @tc.desc   checks sendable SharedArrayBuffer as type CombinedType = SharedArrayBuffer|String
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableSimpleCombinedAsType2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: Object = await testSendableSimpleCombinedAsType2();
@@ -212,13 +200,12 @@ export default function SendablesTestWithAlloc() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_013
-     * @tc.name: testSendableContainerWithString
-     * @tc.desc: checks sendable class containing String field
-     * @tc.author: maxim-khramov
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSendableContainerWithString
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_013
+     * @tc.desc   checks sendable class containing String field
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableContainerWithString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: Object = await testSendableContainerWithString();
@@ -227,13 +214,12 @@ export default function SendablesTestWithAlloc() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_014
-     * @tc.name: testSendableContainerWithNumber
-     * @tc.desc: checks sendable class containing number field
-     * @tc.author: maxim-khramov
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSendableContainerWithNumber
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_014
+     * @tc.desc   checks sendable class containing number field
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableContainerWithNumber', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: Object = await testSendableContainerWithNumber();
@@ -242,13 +228,12 @@ export default function SendablesTestWithAlloc() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_015
-     * @tc.name: testSendableContainerWithNested
-     * @tc.desc: checks sendable class containing nested sendable class with number field
-     * @tc.author: maxim-khramov
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSendableContainerWithNested
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_015
+     * @tc.desc   checks sendable class containing nested sendable class with number field
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableContainerWithNested', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: Object = await testSendableContainerWithNested();
@@ -257,13 +242,12 @@ export default function SendablesTestWithAlloc() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_016
-     * @tc.name: testSendableContainerWithNullableString
-     * @tc.desc: checks sendable class containing string|null field
-     * @tc.author: maxim-khramov
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSendableContainerWithNullableString
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_016
+     * @tc.desc   checks sendable class containing string|null field
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableContainerWithNullableString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: Object = await testSendableContainerWithNullableString();
@@ -272,13 +256,12 @@ export default function SendablesTestWithAlloc() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_017
-     * @tc.name: testSendableContainerWithNullableNullField
-     * @tc.desc: checks sendable class containing null in string|null field
-     * @tc.author: maxim-khramov
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSendableContainerWithNullableNullField
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_017
+     * @tc.desc   checks sendable class containing null in string|null field
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableContainerWithNullableNullField', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: Object = await testSendableContainerWithNullableNullField();
@@ -287,13 +270,12 @@ export default function SendablesTestWithAlloc() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_018
-     * @tc.name: testSendableContainerWithUndefinedString
-     * @tc.desc: checks sendable class containing string|undefined field
-     * @tc.author: maxim-khramov
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSendableContainerWithUndefinedString
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_018
+     * @tc.desc   checks sendable class containing string|undefined field
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableContainerWithUndefinedString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: Object = await testSendableContainerWithUndefinedString();
@@ -302,13 +284,12 @@ export default function SendablesTestWithAlloc() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_019
-     * @tc.name: testSendableContainerWithUndefinedField
-     * @tc.desc: checks sendable class containing string|undefined field with undefined value
-     * @tc.author: maxim-khramov
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSendableContainerWithUndefinedField
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_019
+     * @tc.desc   checks sendable class containing string|undefined field with undefined value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableContainerWithUndefinedField', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: Object = await testSendableContainerWithUndefinedField();
@@ -317,13 +298,12 @@ export default function SendablesTestWithAlloc() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_020
-     * @tc.name: testSendableWithGenericSendableField
-     * @tc.desc: checks generic<T> sendable class containing T|undefined field
-     * @tc.author: maxim-khramov
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSendableWithGenericSendableField
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_020
+     * @tc.desc   checks generic<T> sendable class containing T|undefined field
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableWithGenericSendableField', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: Object = await testSendableWithGenericSendableField();
@@ -332,13 +312,12 @@ export default function SendablesTestWithAlloc() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_021
-     * @tc.name: testSendableContainerWithNullableNested
-     * @tc.desc: checks sendable class containing nested sendable class with string|null|undefined field
-     * @tc.author: maxim-khramov
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSendableContainerWithNullableNested
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_021
+     * @tc.desc   checks sendable class containing nested sendable class with string|null|undefined field
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableContainerWithNullableNested', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: Object = await testSendableContainerWithNullableNested();
@@ -347,13 +326,12 @@ export default function SendablesTestWithAlloc() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_022
-     * @tc.name: testSendableImportedInitializer
-     * @tc.desc: checks sendable class containing number field with outer initializer
-     * @tc.author: maxim-khramov
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSendableImportedInitializer
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_SENDABLE_022
+     * @tc.desc   checks sendable class containing number field with outer initializer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableImportedInitializer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: Object = await testSendableImportedInitializer();

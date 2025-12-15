@@ -42,12 +42,14 @@ export default function timePickerDateTimeOptionsTest() {
       }
       done();
     });
-    /* *
-    * @tc.number: timePickerDateTimeOptionsTest_0100
-    * @tc.name  : timePickerDateTimeOptionsTest_0100
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   timePickerDateTimeOptionsTest_0100
+     * @tc.number timePickerDateTimeOptionsTest_0100
+     * @tc.desc   To test that the Provide decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('timePickerDateTimeOptionsTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('timePickerDateTimeOptionsTest_0100 START');
       let driver = await Driver.create()

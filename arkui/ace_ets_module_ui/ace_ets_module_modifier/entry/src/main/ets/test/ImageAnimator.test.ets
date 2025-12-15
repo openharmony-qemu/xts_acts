@@ -40,12 +40,12 @@ export default function imageAnimatorJsunit() {
     });
 
     /**
+     * @tc.name   imageAnimatorTest_0001
      * @tc.number imageAnimatorTest_0001
-     * @tc.name Test the properties of components
-     * @tc.desc Set iterations values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set iterations values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageAnimatorTest_0001', Level.LEVEL0, async (done: Function) => {
       console.info('imageAnimatorTest_0001 START');
@@ -59,12 +59,12 @@ export default function imageAnimatorJsunit() {
     });
 
     /**
+     * @tc.name   imageAnimatorTest_0002
      * @tc.number imageAnimatorTest_0002
-     * @tc.name Test the properties of components
-     * @tc.desc Set fillMode values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set fillMode values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageAnimatorTest_0002', Level.LEVEL0, async (done: Function) => {
       console.info('imageAnimatorTest_0002 START');
@@ -78,12 +78,12 @@ export default function imageAnimatorJsunit() {
     });
 
     /**
+     * @tc.name   imageAnimatorTest_0003
      * @tc.number imageAnimatorTest_0003
-     * @tc.name Test the properties of components
-     * @tc.desc Set fixedSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set fixedSize values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageAnimatorTest_0003', Level.LEVEL0, async (done: Function) => {
       console.info('imageAnimatorTest_0003 START');
@@ -97,12 +97,12 @@ export default function imageAnimatorJsunit() {
     });
 
     /**
+     * @tc.name   imageAnimatorTest_0004
      * @tc.number imageAnimatorTest_0004
-     * @tc.name Test the properties of components
-     * @tc.desc Set reverse values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set reverse values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageAnimatorTest_0004', Level.LEVEL0, async (done: Function) => {
       console.info('imageAnimatorTest_0004 START');
@@ -116,12 +116,12 @@ export default function imageAnimatorJsunit() {
     });
 
     /**
+     * @tc.name   imageAnimatorTest_0005
      * @tc.number imageAnimatorTest_0005
-     * @tc.name Test the properties of components
-     * @tc.desc Set duration values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set duration values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageAnimatorTest_0005', Level.LEVEL0, async (done: Function) => {
       console.info('imageAnimatorTest_0005 START');
@@ -135,12 +135,12 @@ export default function imageAnimatorJsunit() {
     });
 
     /**
+     * @tc.name   imageAnimatorTest_0006
      * @tc.number imageAnimatorTest_0006
-     * @tc.name Test the properties of components
-     * @tc.desc Set state values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set state values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageAnimatorTest_0006', Level.LEVEL0, async (done: Function) => {
       console.info('imageAnimatorTest_0006 START');
@@ -154,12 +154,12 @@ export default function imageAnimatorJsunit() {
     });
 
     /**
+     * @tc.name   imageAnimatorTest_0007
      * @tc.number imageAnimatorTest_0007
-     * @tc.name Test the properties of components
-     * @tc.desc Set images values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set images values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageAnimatorTest_0007', Level.LEVEL0, async (done: Function) => {
       console.info('imageAnimatorTest_0007 START');
@@ -174,12 +174,12 @@ export default function imageAnimatorJsunit() {
     });
 
     /**
+     * @tc.name   imageAnimatorTest_0008
      * @tc.number imageAnimatorTest_0008
-     * @tc.name Test the properties of components
-     * @tc.desc Change iterations values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change iterations values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageAnimatorTest_0008', Level.LEVEL0, async (done: Function) => {
 

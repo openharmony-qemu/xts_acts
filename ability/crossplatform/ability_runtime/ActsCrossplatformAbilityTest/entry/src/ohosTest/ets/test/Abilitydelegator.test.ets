@@ -18,12 +18,12 @@ import AbilityDelegatorRegistry from "@ohos.app.ability.abilityDelegatorRegistry
 export default function AbilityDelegatorTest() {
   describe("AbilityDelegatorTest", () => {
     /**
+     * @tc.name   GET_ABILITY_DELEGATOR_0001
      * @tc.number GET_ABILITY_DELEGATOR_0001
-     * @tc.name getAbilityDelegator0001
-     * @tc.desc test getAbilityDelegator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test getAbilityDelegator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GET_ABILITY_DELEGATOR_0001", Level.LEVEL0, async (done: Function) => {
       const abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -33,12 +33,12 @@ export default function AbilityDelegatorTest() {
     });
 
     /**
+     * @tc.name   GET_ARGUMENTS_0001
      * @tc.number GET_ARGUMENTS_0001
-     * @tc.name getArguments0001
-     * @tc.desc test getArguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test getArguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GET_ARGUMENTS_0001", Level.LEVEL0, async (done: Function) => {
       const abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();

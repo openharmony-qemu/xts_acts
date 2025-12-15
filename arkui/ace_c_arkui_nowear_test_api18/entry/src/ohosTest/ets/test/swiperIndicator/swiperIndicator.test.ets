@@ -28,6 +28,14 @@ export default function SwiperIndicatorTest(){
       done()
     })
 
+    /**
+     * @tc.name   SwiperIndicatorTest_a
+     * @tc.number SwiperIndicatorTest_a
+     * @tc.desc   SwiperIndicatorTest_a
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SwiperIndicatorTest_a',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.SwiperIndicatorTest_a()).assertEqual(0)
       console.log('SwiperIndicatorTest_a will drag and check:: ')
@@ -36,6 +44,14 @@ export default function SwiperIndicatorTest(){
       done()
     })
 
+    /**
+     * @tc.name   SwiperIndicatorTest_b
+     * @tc.number SwiperIndicatorTest_b
+     * @tc.desc   SwiperIndicatorTest_b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SwiperIndicatorTest_b',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.SwiperIndicatorTest_b()).assertEqual(0)
       console.log('SwiperIndicatorTest_b will drag and check:: ')
@@ -44,6 +60,14 @@ export default function SwiperIndicatorTest(){
       done()
     })
 
+    /**
+     * @tc.name   SwiperIndicatorTest_a1
+     * @tc.number SwiperIndicatorTest_a1
+     * @tc.desc   SwiperIndicatorTest_a1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SwiperIndicatorTest_a1',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.SwiperIndicatorTest_a1()).assertEqual(0)
       console.log('SwiperIndicatorTest_a1 will drag and check:: ')
@@ -52,6 +76,14 @@ export default function SwiperIndicatorTest(){
       done()
     })
 
+    /**
+     * @tc.name   SwiperIndicatorTest_b1
+     * @tc.number SwiperIndicatorTest_b1
+     * @tc.desc   SwiperIndicatorTest_b1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SwiperIndicatorTest_b1',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.SwiperIndicatorTest_b1()).assertEqual(0)
       console.log('SwiperIndicatorTest_b1 will drag and check:: ')

@@ -77,12 +77,12 @@ export default function Object18Test() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   Object18Test001
      * @tc.number SUB_BUILTINS_Object18_TEST_0100
-     * @tc.name Object18Test001
-     * @tc.desc test object create (direct and inherited property)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create (direct and inherited property)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn01_testNormalObjectNotFrozen();
@@ -90,12 +90,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test002
      * @tc.number SUB_BUILTINS_Object18_TEST_0200
-     * @tc.name Object18Test002
-     * @tc.desc test object create (null prototype)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create (null prototype)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn02_testFrozenObject();
@@ -103,12 +103,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test003
      * @tc.number SUB_BUILTINS_Object18_TEST_0300
-     * @tc.name Object18Test003
-     * @tc.desc test non-object parameter handling
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test non-object parameter handling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn03_testNonObjectParameter();
@@ -116,12 +116,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test007
      * @tc.number SUB_BUILTINS_Object18_TEST_0700
-     * @tc.name Object18Test007
-     * @tc.desc test freezing empty objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test freezing empty objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn07_testFrozenEmptyObject();
@@ -129,12 +129,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test008
      * @tc.number SUB_BUILTINS_Object18_TEST_0800
-     * @tc.name Object18Test008
-     * @tc.desc test frozen object prototype handling
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test frozen object prototype handling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn08_testFrozenObjPrototype();
@@ -142,12 +142,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test009
      * @tc.number SUB_BUILTINS_Object18_TEST_0900
-     * @tc.name Object18Test009
-     * @tc.desc test frozen objects with accessor properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test frozen objects with accessor properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn09_testFrozenObjWithAccessor();
@@ -155,12 +155,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test010
      * @tc.number SUB_BUILTINS_Object18_TEST_1000
-     * @tc.name Object18Test010
-     * @tc.desc test freezing nested objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test freezing nested objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn10_testNestedObjFreeze();
@@ -168,12 +168,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test011
      * @tc.number SUB_BUILTINS_Object18_TEST_1100
-     * @tc.name Object18Test011
-     * @tc.desc test reconfiguring frozen properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reconfiguring frozen properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn11_testReconfigureFrozenProp();
@@ -181,12 +181,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test014
      * @tc.number SUB_BUILTINS_Object18_TEST_1400
-     * @tc.name Object18Test014
-     * @tc.desc test extensibility of frozen objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test extensibility of frozen objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn14_testFrozenObjIsExtensible();
@@ -194,12 +194,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test015
      * @tc.number SUB_BUILTINS_Object18_TEST_1500
-     * @tc.name Object18Test015
-     * @tc.desc test property descriptors of frozen objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test property descriptors of frozen objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn15_testFrozenPropDescriptors();
@@ -207,12 +207,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test016
      * @tc.number SUB_BUILTINS_Object18_TEST_1600
-     * @tc.name Object18Test016
-     * @tc.desc test handling null and undefined parameters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test handling null and undefined parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn16_testNullUndefinedParameter();
@@ -220,12 +220,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test017
      * @tc.number SUB_BUILTINS_Object18_TEST_1700
-     * @tc.name Object18Test017
-     * @tc.desc test enumerability of frozen properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test enumerability of frozen properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn17_testFrozenPropEnumerability();
@@ -233,12 +233,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test023
      * @tc.number SUB_BUILTINS_Object18_TEST_2300
-     * @tc.name Object18Test023
-     * @tc.desc test toString method on frozen objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test toString method on frozen objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn23_testFrozenObjToString();
@@ -246,12 +246,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test024
      * @tc.number SUB_BUILTINS_Object18_TEST_2400
-     * @tc.name Object18Test024
-     * @tc.desc test frozen objects containing Date objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test frozen objects containing Date objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn24_testFrozenObjWithDate();
@@ -259,12 +259,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test025
      * @tc.number SUB_BUILTINS_Object18_TEST_2500
-     * @tc.name Object18Test025
-     * @tc.desc test Object.keys on frozen objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Object.keys on frozen objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn25_testFrozenObjObjectKeys();
@@ -272,12 +272,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test026
      * @tc.number SUB_BUILTINS_Object18_TEST_2600
-     * @tc.name Object18Test026
-     * @tc.desc test frozen objects containing RegExp objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test frozen objects containing RegExp objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn26_testFrozenObjWithRegExp();
@@ -285,12 +285,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test027
      * @tc.number SUB_BUILTINS_Object18_TEST_2700
-     * @tc.name Object18Test027
-     * @tc.desc test hasOwnProperty on frozen objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test hasOwnProperty on frozen objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn27_testFrozenObjHasOwnProperty();
@@ -298,12 +298,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test029
      * @tc.number SUB_BUILTINS_Object18_TEST_2900
-     * @tc.name Object18Test029
-     * @tc.desc test getting prototype of frozen objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test getting prototype of frozen objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn29_testFrozenObjGetPrototype();
@@ -311,12 +311,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test030
      * @tc.number SUB_BUILTINS_Object18_TEST_3000
-     * @tc.name Object18Test030
-     * @tc.desc test frozen objects containing Map objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test frozen objects containing Map objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn30_testFrozenObjWithMap();
@@ -324,12 +324,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test032
      * @tc.number SUB_BUILTINS_Object18_TEST_3200
-     * @tc.name Object18Test032
-     * @tc.desc test frozen objects containing Set objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test frozen objects containing Set objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn32_testFrozenObjWithSet();
@@ -337,12 +337,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test035
      * @tc.number SUB_BUILTINS_Object18_TEST_3500
-     * @tc.name Object18Test035
-     * @tc.desc test value in property descriptors of frozen objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test value in property descriptors of frozen objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn35_testFrozenObjPropDescValue();
@@ -350,12 +350,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test037
      * @tc.number SUB_BUILTINS_Object18_TEST_3700
-     * @tc.name Object18Test037
-     * @tc.desc test prototype chain of frozen objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prototype chain of frozen objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn37_testFrozenObjPrototypeChain();
@@ -363,12 +363,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test040
      * @tc.number SUB_BUILTINS_Object18_TEST_4000
-     * @tc.name Object18Test040
-     * @tc.desc test frozen objects containing nested arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test frozen objects containing nested arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn40_testFrozenObjWithNestedArray();
@@ -376,12 +376,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test043
      * @tc.number SUB_BUILTINS_Object18_TEST_4300
-     * @tc.name Object18Test043
-     * @tc.desc test Object.getOwnPropertyNames on frozen objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Object.getOwnPropertyNames on frozen objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn43_testFrozenObjGetOwnNames();
@@ -390,12 +390,12 @@ export default function Object18Test() {
 
 
     /**
+     * @tc.name   Object18Test047
      * @tc.number SUB_BUILTINS_Object18_TEST_4700
-     * @tc.name Object18Test047
-     * @tc.desc test Object.isSealed on frozen objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Object.isSealed on frozen objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn47_testFrozenObjIsSealed();
@@ -403,12 +403,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test053
      * @tc.number SUB_BUILTINS_Object18_TEST_5300
-     * @tc.name Object18Test053
-     * @tc.desc test enumerable in property descriptors of frozen objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test enumerable in property descriptors of frozen objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn53_testFrozenObjPropDescEnumerable();
@@ -416,12 +416,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test054
      * @tc.number SUB_BUILTINS_Object18_TEST_5400
-     * @tc.name Object18Test054
-     * @tc.desc test modifying Date properties in frozen objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test modifying Date properties in frozen objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn54_testFrozenObjWithDateModify();
@@ -429,12 +429,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test057
      * @tc.number SUB_BUILTINS_Object18_TEST_5700
-     * @tc.name Object18Test057
-     * @tc.desc test preventExtensions on already frozen objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test preventExtensions on already frozen objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn57_testFrozenObjPreventExt();
@@ -442,12 +442,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test061
      * @tc.number SUB_BUILTINS_Object18_TEST_6100
-     * @tc.name Object18Test061
-     * @tc.desc test preservation of accessor descriptors in frozen objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test preservation of accessor descriptors in frozen objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn61_testFrozenObjAccessorDescPreserve();
@@ -455,12 +455,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test068
      * @tc.number SUB_BUILTINS_Object18_TEST_6800
-     * @tc.name Object18Test068
-     * @tc.desc test resetting Date properties in frozen objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test resetting Date properties in frozen objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn68_testFrozenObjWithDateReset();
@@ -468,12 +468,12 @@ export default function Object18Test() {
     });
 
     /**
+     * @tc.name   Object18Test075
      * @tc.number SUB_BUILTINS_Object18_TEST_7500
-     * @tc.name Object18Test075
-     * @tc.desc test frozen objects with symbol prototypes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test frozen objects with symbol prototypes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object18Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn75_testFrozenObjWithSymbolProto();

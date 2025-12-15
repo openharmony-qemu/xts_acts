@@ -36,12 +36,12 @@ export default function displaySyncTest() {
         })
 
         /**
-         * @tc.number     testSetExpectedFrameRateRange_static_0100
-         * @tc.name       testSetExpectedFrameRateRange_static_0100
-         * @tc.desc       Test the function of SetExpectedFrameRateRange Promise
-         * @tc.size       MediumTest
-         * @tc.type       Function
-         * @tc.level      Level1
+         * @tc.name   testSetExpectedFrameRateRange_static_0100
+         * @tc.number testSetExpectedFrameRateRange_static_0100
+         * @tc.desc   Test the function of SetExpectedFrameRateRange Promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testSetExpectedFrameRateRange_static_0100',  TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
             async (done: () => void): Promise<void> => {
@@ -65,12 +65,12 @@ export default function displaySyncTest() {
             })
 
         /**
-         * @tc.number     testOnFrame_static_0100
-         * @tc.name       testOnFrame_static_0100
-         * @tc.desc       Subscribe to changes per frame
-         * @tc.size       MediumTest
-         * @tc.type       Function
-         * @tc.level      Level1
+         * @tc.name   testOnFrame_static_0100
+         * @tc.number testOnFrame_static_0100
+         * @tc.desc   Subscribe to changes per frame
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testOnFrame_static_0100',  TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
             async (done: () => void): Promise<void> => {
@@ -82,7 +82,7 @@ export default function displaySyncTest() {
                         console.info("DisplaySync", 'TimeStamp:' + frameInfo.timestamp +
                             ' TargetTimeStamp: ' + frameInfo.targetTimestamp);
                     }
-                    backDisplaySync?.on("frame", callback)
+                    backDisplaySync?.onFrame(callback)
                     console.info(msg + 'Succeeded in on.');
                     done()
                 } catch (exception) {
@@ -93,12 +93,12 @@ export default function displaySyncTest() {
             })
 
         /**
-         * @tc.number     testOffFrame_static_0100
-         * @tc.name       testOffFrame_static_0100
-         * @tc.desc       Unsubscribe from changes per frame
-         * @tc.size       MediumTest
-         * @tc.type       Function
-         * @tc.level      Level1
+         * @tc.name   testOffFrame_static_0100
+         * @tc.number testOffFrame_static_0100
+         * @tc.desc   Unsubscribe from changes per frame
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testOffFrame_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
             async (done: () => void): Promise<void> => {
@@ -110,7 +110,7 @@ export default function displaySyncTest() {
                         console.info("DisplaySync", 'TimeStamp:' + frameInfo.timestamp +
                             ' TargetTimeStamp: ' + frameInfo.targetTimestamp);
                     }
-                    backDisplaySync?.off("frame", callback)
+                    backDisplaySync?.offFrame(callback)
                     console.info(msg + 'Succeeded in off.');
                     done()
                 } catch (exception) {
@@ -121,12 +121,12 @@ export default function displaySyncTest() {
             })
 
         /**
-         * @tc.number     testOnOffFrame_static_0100
-         * @tc.name       testOnOffFrame_static_0100
-         * @tc.desc       Unsubscribe from changes per frame after Subscribe to changes per frame
-         * @tc.size       MediumTest
-         * @tc.type       Function
-         * @tc.level      Level0
+         * @tc.name   testOnOffFrame_static_0100
+         * @tc.number testOnOffFrame_static_0100
+         * @tc.desc   Unsubscribe from changes per frame after Subscribe to changes per frame
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testOnOffFrame_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
             async (done: () => void): Promise<void> => {
@@ -138,8 +138,8 @@ export default function displaySyncTest() {
                         console.info("DisplaySync", 'TimeStamp:' + frameInfo.timestamp +
                             ' TargetTimeStamp: ' + frameInfo.targetTimestamp);
                     }
-                    backDisplaySync?.on("frame", callback)
-                    backDisplaySync?.off("frame", callback)
+                    backDisplaySync?.onFrame(callback)
+                    backDisplaySync?.offFrame(callback)
                     console.info(msg + 'Succeeded in onoff.');
                     done()
                 } catch (exception) {
@@ -150,12 +150,12 @@ export default function displaySyncTest() {
             })
 
         /**
-         * @tc.number     testStart_static_0100
-         * @tc.name       testStart_static_0100
-         * @tc.desc       Start callback per frame
-         * @tc.size       MediumTest
-         * @tc.type       Function
-         * @tc.level      Level0
+         * @tc.name   testStart_static_0100
+         * @tc.number testStart_static_0100
+         * @tc.desc   Start callback per frame
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testStart_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
             async (done: () => void): Promise<void> => {
@@ -173,7 +173,7 @@ export default function displaySyncTest() {
                         console.info("DisplaySync", 'TimeStamp:' + frameInfo.timestamp +
                             ' TargetTimeStamp: ' + frameInfo.targetTimestamp);
                     }
-                    backDisplaySync?.on("frame", callback)
+                    backDisplaySync?.onFrame(callback)
                     // 开始每帧回调
                     backDisplaySync?.start()
                     console.info(msg + 'Succeeded in onoff.');
@@ -186,12 +186,12 @@ export default function displaySyncTest() {
             })
 
         /**
-         * @tc.number     testStop_static_0100
-         * @tc.name       testStop_static_0100
-         * @tc.desc       Stop callback per frame
-         * @tc.size       MediumTest
-         * @tc.type       Function
-         * @tc.level      Level0
+         * @tc.name   testStop_static_0100
+         * @tc.number testStop_static_0100
+         * @tc.desc   Stop callback per frame
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testStop_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
             async (done: () => void): Promise<void> => {
@@ -209,7 +209,7 @@ export default function displaySyncTest() {
                         console.info("DisplaySync", 'TimeStamp:' + frameInfo.timestamp +
                             ' TargetTimeStamp: ' + frameInfo.targetTimestamp);
                     }
-                    backDisplaySync?.on("frame", callback)
+                    backDisplaySync?.onFrame(callback)
                     // 停止每帧回调
                     backDisplaySync?.stop()
                     console.info(msg + 'Succeeded in onoff.');
@@ -222,12 +222,12 @@ export default function displaySyncTest() {
             })
 
         /**
-         * @tc.number     testStartStop_static_0100
-         * @tc.name       testStartStop_static_0100
-         * @tc.desc       Start and Stop
-         * @tc.size       MediumTest
-         * @tc.type       Function
-         * @tc.level      Level0
+         * @tc.name   testStartStop_static_0100
+         * @tc.number testStartStop_static_0100
+         * @tc.desc   Start and Stop
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testStartStop_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
             async (done: () => void): Promise<void> => {
@@ -245,7 +245,7 @@ export default function displaySyncTest() {
                         console.info("DisplaySync", 'TimeStamp:' + frameInfo.timestamp +
                             ' TargetTimeStamp: ' + frameInfo.targetTimestamp);
                     }
-                    backDisplaySync?.on("frame", callback)
+                    backDisplaySync?.onFrame(callback)
                     backDisplaySync?.start()
                     // 停止每帧回调
                     backDisplaySync?.stop()
@@ -259,12 +259,12 @@ export default function displaySyncTest() {
             })
 
         /**
-         * @tc.number     testDisplaySyncErrorCode_0100
-         * @tc.name       testDisplaySyncErrorCode_0100
-         * @tc.desc       setExpectedFrameRateRange error code
-         * @tc.size       MediumTest
-         * @tc.type       Function
-         * @tc.level      Level0
+         * @tc.name   testDisplaySyncErrorCode_0100
+         * @tc.number testDisplaySyncErrorCode_0100
+         * @tc.desc   setExpectedFrameRateRange error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testDisplaySyncErrorCode_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
             async (done: () => void): Promise<void> => {

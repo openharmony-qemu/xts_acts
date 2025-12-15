@@ -79,12 +79,12 @@ export default function ImageGetImagePropertySyncEnumStripOffset() {
     });
 
     /**
-     * @tc.number     ImageGetImagePropertySyncEnumStripOffset_001
-     * @tc.name       ImageGetImagePropertySyncEnumStripOffset_001
-     * @tc.desc       PhotoAccessHelper_Photo:STRIP_OFFSETS
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   ImageGetImagePropertySyncEnumStripOffset_001
+     * @tc.number ImageGetImagePropertySyncEnumStripOffset_001
+     * @tc.desc   PhotoAccessHelper_Photo:STRIP_OFFSETS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageGetImagePropertySyncEnumStripOffset_001', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -100,12 +100,12 @@ export default function ImageGetImagePropertySyncEnumStripOffset() {
         })
     })
     /**
-     * @tc.number   ImageGetImagePropertySyncEnumStripOffset_002
-     * @tc.name     ImageGetImagePropertySyncEnumStripOffset_002
-     * @tc.desc     PhotoAccessHelper_Photo:GPS_LONGITUDE
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   ImageGetImagePropertySyncEnumStripOffset_002
+     * @tc.number ImageGetImagePropertySyncEnumStripOffset_002
+     * @tc.desc   PhotoAccessHelper_Photo:GPS_LONGITUDE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageGetImagePropertySyncEnumStripOffset_002', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -122,12 +122,12 @@ export default function ImageGetImagePropertySyncEnumStripOffset() {
 
     })
     /**
-     * @tc.number    ImageGetImagePropertySyncEnumStripOffset_003
-     * @tc.name      ImageGetImagePropertySyncEnumStripOffset_003
-     * @tc.desc      PhotoAccessHelper_Photo:GPS_MEASURE_MODE
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   ImageGetImagePropertySyncEnumStripOffset_003
+     * @tc.number ImageGetImagePropertySyncEnumStripOffset_003
+     * @tc.desc   PhotoAccessHelper_Photo:GPS_MEASURE_MODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageGetImagePropertySyncEnumStripOffset_003', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -143,12 +143,12 @@ export default function ImageGetImagePropertySyncEnumStripOffset() {
         })
     })
     /**
-     * @tc.number    ImageGetImagePropertySyncEnumStripOffset_004
-     * @tc.name      ImageGetImagePropertySyncEnumStripOffset_004
-     * @tc.desc      PhotoAccessHelper_Photo:ROLL_ANGLE
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   ImageGetImagePropertySyncEnumStripOffset_004
+     * @tc.number ImageGetImagePropertySyncEnumStripOffset_004
+     * @tc.desc   PhotoAccessHelper_Photo:ROLL_ANGLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageGetImagePropertySyncEnumStripOffset_004', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -164,12 +164,12 @@ export default function ImageGetImagePropertySyncEnumStripOffset() {
         })
     })
     /**
-     * @tc.number    ImageGetImagePropertySyncEnumStripOffset_005
-     * @tc.name      ImageGetImagePropertySyncEnumStripOffset_005
-     * @tc.desc      PhotoAccessHelper_Photo:GPS_DEST_LATITUDE_REF
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   ImageGetImagePropertySyncEnumStripOffset_005
+     * @tc.number ImageGetImagePropertySyncEnumStripOffset_005
+     * @tc.desc   PhotoAccessHelper_Photo:GPS_DEST_LATITUDE_REF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageGetImagePropertySyncEnumStripOffset_005', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -185,12 +185,12 @@ export default function ImageGetImagePropertySyncEnumStripOffset() {
         })
     })
     /**
-     * @tc.number    ImageGetImagePropertySyncEnumStripOffset_006
-     * @tc.name      ImageGetImagePropertySyncEnumStripOffset_006
-     * @tc.desc      PhotoAccessHelper_Photo:GPS_SPEED_REF
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   ImageGetImagePropertySyncEnumStripOffset_006
+     * @tc.number ImageGetImagePropertySyncEnumStripOffset_006
+     * @tc.desc   PhotoAccessHelper_Photo:GPS_SPEED_REF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageGetImagePropertySyncEnumStripOffset_006', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -206,12 +206,12 @@ export default function ImageGetImagePropertySyncEnumStripOffset() {
         })
     })
     /**
-     * @tc.number    ImageGetImagePropertySyncEnumStripOffset_007
-     * @tc.name      ImageGetImagePropertySyncEnumStripOffset_007
-     * @tc.desc      PhotoAccessHelper_Photo:PRIMARY_CHROMATICITIES
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   ImageGetImagePropertySyncEnumStripOffset_007
+     * @tc.number ImageGetImagePropertySyncEnumStripOffset_007
+     * @tc.desc   PhotoAccessHelper_Photo:PRIMARY_CHROMATICITIES
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageGetImagePropertySyncEnumStripOffset_007', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -227,12 +227,12 @@ export default function ImageGetImagePropertySyncEnumStripOffset() {
         })
     })
     /**
-     * @tc.number    ImageGetImagePropertySyncEnumStripOffset_008
-     * @tc.name      ImageGetImagePropertySyncEnumStripOffset_008
-     * @tc.desc      PhotoAccessHelper_Photo:PLANAR_CONFIGURATION
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   ImageGetImagePropertySyncEnumStripOffset_008
+     * @tc.number ImageGetImagePropertySyncEnumStripOffset_008
+     * @tc.desc   PhotoAccessHelper_Photo:PLANAR_CONFIGURATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageGetImagePropertySyncEnumStripOffset_008', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -248,12 +248,12 @@ export default function ImageGetImagePropertySyncEnumStripOffset() {
         })
     })
     /**
-     * @tc.number    ImageGetImagePropertySyncEnumStripOffset_009
-     * @tc.name      ImageGetImagePropertySyncEnumStripOffset_009
-     * @tc.desc      PhotoAccessHelper_Photo:SPECTRAL_SENSITIVITY
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   ImageGetImagePropertySyncEnumStripOffset_009
+     * @tc.number ImageGetImagePropertySyncEnumStripOffset_009
+     * @tc.desc   PhotoAccessHelper_Photo:SPECTRAL_SENSITIVITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageGetImagePropertySyncEnumStripOffset_009', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -269,12 +269,12 @@ export default function ImageGetImagePropertySyncEnumStripOffset() {
         })
     })
     /**
-     * @tc.number    ImageGetImagePropertySyncEnumStripOffset_010
-     * @tc.name      ImageGetImagePropertySyncEnumStripOffset_010
-     * @tc.desc      PhotoAccessHelper_Photo:SCENE_FLOWERS_CONF
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   ImageGetImagePropertySyncEnumStripOffset_010
+     * @tc.number ImageGetImagePropertySyncEnumStripOffset_010
+     * @tc.desc   PhotoAccessHelper_Photo:SCENE_FLOWERS_CONF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageGetImagePropertySyncEnumStripOffset_010', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -290,12 +290,12 @@ export default function ImageGetImagePropertySyncEnumStripOffset() {
         })
     })
     /**
-     * @tc.number     ImageGetImagePropertySyncEnumStripOffset_011
-     * @tc.name       ImageGetImagePropertySyncEnumStripOffset_011
-     * @tc.desc       PhotoAccessHelper_Photo:Y_RESOLUTION
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   ImageGetImagePropertySyncEnumStripOffset_011
+     * @tc.number ImageGetImagePropertySyncEnumStripOffset_011
+     * @tc.desc   PhotoAccessHelper_Photo:Y_RESOLUTION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageGetImagePropertySyncEnumStripOffset_011', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -312,12 +312,12 @@ export default function ImageGetImagePropertySyncEnumStripOffset() {
     })
 
     /**
-     * @tc.number     ImageGetImagePropertySyncEnumStripOffset_012
-     * @tc.name       ImageGetImagePropertySyncEnumStripOffset_012
-     * @tc.desc       PhotoAccessHelper_Photo:PHOTOGRAPHIC_SENSITIVITY
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   ImageGetImagePropertySyncEnumStripOffset_012
+     * @tc.number ImageGetImagePropertySyncEnumStripOffset_012
+     * @tc.desc   PhotoAccessHelper_Photo:PHOTOGRAPHIC_SENSITIVITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageGetImagePropertySyncEnumStripOffset_012', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -334,12 +334,12 @@ export default function ImageGetImagePropertySyncEnumStripOffset() {
     })
 
     /**
-     * @tc.number     ImageGetImagePropertySyncEnumStripOffset_013
-     * @tc.name       ImageGetImagePropertySyncEnumStripOffset_013
-     * @tc.desc       PhotoAccessHelper_Photo:GPS_IMG_DIRECTION_REF
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   ImageGetImagePropertySyncEnumStripOffset_013
+     * @tc.number ImageGetImagePropertySyncEnumStripOffset_013
+     * @tc.desc   PhotoAccessHelper_Photo:GPS_IMG_DIRECTION_REF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageGetImagePropertySyncEnumStripOffset_013', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -356,12 +356,12 @@ export default function ImageGetImagePropertySyncEnumStripOffset() {
     })
 
     /**
-     * @tc.number     ImageGetImagePropertySyncEnumStripOffset_014
-     * @tc.name       ImageGetImagePropertySyncEnumStripOffset_014
-     * @tc.desc       PhotoAccessHelper_Photo:PIXEL_X_DIMENSION
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   ImageGetImagePropertySyncEnumStripOffset_014
+     * @tc.number ImageGetImagePropertySyncEnumStripOffset_014
+     * @tc.desc   PhotoAccessHelper_Photo:PIXEL_X_DIMENSION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageGetImagePropertySyncEnumStripOffset_014', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -378,12 +378,12 @@ export default function ImageGetImagePropertySyncEnumStripOffset() {
     })
 
     /**
-     * @tc.number     ImageGetImagePropertySyncEnumStripOffset_015
-     * @tc.name       ImageGetImagePropertySyncEnumStripOffset_015
-     * @tc.desc       PhotoAccessHelper_Photo:FACE_MOUTH_CENTER
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   ImageGetImagePropertySyncEnumStripOffset_015
+     * @tc.number ImageGetImagePropertySyncEnumStripOffset_015
+     * @tc.desc   PhotoAccessHelper_Photo:FACE_MOUTH_CENTER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageGetImagePropertySyncEnumStripOffset_015', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -399,12 +399,12 @@ export default function ImageGetImagePropertySyncEnumStripOffset() {
         })
     })
     /**
-     * @tc.number     ImageGetImagePropertySyncEnumStripOffset_016
-     * @tc.name       ImageGetImagePropertySyncEnumStripOffset_016
-     * @tc.desc       PhotoAccessHelper_Photo:GAIN_CONTROL
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   ImageGetImagePropertySyncEnumStripOffset_016
+     * @tc.number ImageGetImagePropertySyncEnumStripOffset_016
+     * @tc.desc   PhotoAccessHelper_Photo:GAIN_CONTROL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageGetImagePropertySyncEnumStripOffset_016', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -420,12 +420,12 @@ export default function ImageGetImagePropertySyncEnumStripOffset() {
         })
     })
     /**
-     * @tc.number     ImageGetImagePropertySyncEnumStripOffset_017
-     * @tc.name       ImageGetImagePropertySyncEnumStripOffset_017
-     * @tc.desc       PhotoAccessHelper_Photo:PHYSICAL_APERTURE
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   ImageGetImagePropertySyncEnumStripOffset_017
+     * @tc.number ImageGetImagePropertySyncEnumStripOffset_017
+     * @tc.desc   PhotoAccessHelper_Photo:PHYSICAL_APERTURE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageGetImagePropertySyncEnumStripOffset_017', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -441,12 +441,12 @@ export default function ImageGetImagePropertySyncEnumStripOffset() {
         })
     })
     /**
-     * @tc.number     ImageGetImagePropertySyncEnumStripOffset_018
-     * @tc.name       ImageGetImagePropertySyncEnumStripOffset_018
-     * @tc.desc       PhotoAccessHelper_Photo:GPS_LATITUDE
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   ImageGetImagePropertySyncEnumStripOffset_018
+     * @tc.number ImageGetImagePropertySyncEnumStripOffset_018
+     * @tc.desc   PhotoAccessHelper_Photo:GPS_LATITUDE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageGetImagePropertySyncEnumStripOffset_018', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -462,12 +462,12 @@ export default function ImageGetImagePropertySyncEnumStripOffset() {
         })
     })
     /**
-     * @tc.number     ImageGetImagePropertySyncEnumStripOffset_019
-     * @tc.name       ImageGetImagePropertySyncEnumStripOffset_019
-     * @tc.desc       PhotoAccessHelper_Photo:ISO_SPEED_RATINGS
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   ImageGetImagePropertySyncEnumStripOffset_019
+     * @tc.number ImageGetImagePropertySyncEnumStripOffset_019
+     * @tc.desc   PhotoAccessHelper_Photo:ISO_SPEED_RATINGS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageGetImagePropertySyncEnumStripOffset_019', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -483,12 +483,12 @@ export default function ImageGetImagePropertySyncEnumStripOffset() {
         })
     })
     /**
-     * @tc.number     ImageGetImagePropertySyncEnumStripOffset_020
-     * @tc.name       ImageGetImagePropertySyncEnumStripOffset_020
-     * @tc.desc       PhotoAccessHelper_Photo:X_RESOLUTION
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   ImageGetImagePropertySyncEnumStripOffset_020
+     * @tc.number ImageGetImagePropertySyncEnumStripOffset_020
+     * @tc.desc   PhotoAccessHelper_Photo:X_RESOLUTION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageGetImagePropertySyncEnumStripOffset_020', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;

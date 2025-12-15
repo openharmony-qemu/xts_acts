@@ -61,13 +61,13 @@ export default function webviewCustomizeSchemesTrueTest() {
 
 
     /**
-    * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CUSTOMIZESCHEMES_LAZYINITWEBENGINE_TRUE_0100
-    * @tc.name   testCustomizeSchemesLazyInitWebEngineTrue01
-    * @tc.desc   test lazyInitWebEngine true fetch request in customizeSchemes
-    * @tc.size   MediumTest
-    * @tc.type   Function
-    * @tc.level  Level 0
-    */
+     * @tc.name   testCustomizeSchemesLazyInitWebEngineTrue01
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CUSTOMIZESCHEMES_LAZYINITWEBENGINE_TRUE_0100
+     * @tc.desc   test lazyInitWebEngine true fetch request in customizeSchemes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testCustomizeSchemesLazyInitWebEngineTrue01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitCustomizeSchemesLazyInitWebEngineTrue01', 123)
       Utils.registerBaseEvent('testCustomizeSchemesLazyInitWebEngineTrue01', true, 2025102801,
@@ -77,12 +77,12 @@ export default function webviewCustomizeSchemesTrueTest() {
       sendEventByKey('CustomizeSchemesTrueButton', 10, '');
     })
     /**
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CUSTOMIZESCHEMES_LAZYINITWEBENGINE_TRUE_0200
      * @tc.name   testCustomizeSchemesLazyInitWebEngineTrue02
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CUSTOMIZESCHEMES_LAZYINITWEBENGINE_TRUE_0200
      * @tc.desc   test lazyInitWebEngine true fetch request not in customizeSchemes
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCustomizeSchemesLazyInitWebEngineTrue02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitCustomizeSchemesLazyInitWebEngineTrue02', 123)
@@ -93,12 +93,12 @@ export default function webviewCustomizeSchemesTrueTest() {
       sendEventByKey('CustomizeSchemesTrueButton', 10, '');
     })
     /**
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CUSTOMIZESCHEMES_LAZYINITWEBENGINE_TRUE_0300
      * @tc.name   testCustomizeSchemesLazyInitWebEngineTrue03
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CUSTOMIZESCHEMES_LAZYINITWEBENGINE_TRUE_0300
      * @tc.desc   test lazyInitWebEngine true isSupportCORS true isSupportFetch false
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCustomizeSchemesLazyInitWebEngineTrue03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitCustomizeSchemesLazyInitWebEngineTrue03', 123)
@@ -109,12 +109,12 @@ export default function webviewCustomizeSchemesTrueTest() {
       sendEventByKey('CustomizeSchemesTrueButton', 10, '');
     })
     /**
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CUSTOMIZESCHEMES_LAZYINITWEBENGINE_TRUE_0400
      * @tc.name   testCustomizeSchemesLazyInitWebEngineTrue04
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CUSTOMIZESCHEMES_LAZYINITWEBENGINE_TRUE_0400
      * @tc.desc   test lazyInitWebEngine true isSupportCORS false isSupportFetch false
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCustomizeSchemesLazyInitWebEngineTrue04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitCustomizeSchemesLazyInitWebEngineTrue04', 123)
@@ -125,12 +125,12 @@ export default function webviewCustomizeSchemesTrueTest() {
       sendEventByKey('CustomizeSchemesTrueButton', 10, '');
     })
     /**
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CUSTOMIZESCHEMES_LAZYINITWEBENGINE_ERROR_0100
      * @tc.name   testCustomizeSchemesLazyInitWebEngineError01
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CUSTOMIZESCHEMES_LAZYINITWEBENGINE_ERROR_0100
      * @tc.desc   test lazyInitWebEngine true schemeName length exceeds 32
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCustomizeSchemesLazyInitWebEngineError01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitCustomizeSchemesLazyInitWebEngineError01', 123)
@@ -141,12 +141,12 @@ export default function webviewCustomizeSchemesTrueTest() {
       sendEventByKey('CustomizeSchemesTrueButton', 10, '');
     })
     /**
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CUSTOMIZESCHEMES_LAZYINITWEBENGINE_ERROR_0200
      * @tc.name   testCustomizeSchemesLazyInitWebEngineError02
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CUSTOMIZESCHEMES_LAZYINITWEBENGINE_ERROR_0200
      * @tc.desc   test lazyInitWebEngine true customizeSchemes length exceeds 10
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCustomizeSchemesLazyInitWebEngineError02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitCustomizeSchemesLazyInitWebEngineError02', 123)
@@ -157,12 +157,12 @@ export default function webviewCustomizeSchemesTrueTest() {
       sendEventByKey('CustomizeSchemesTrueButton', 10, '');
     })
     /**
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CUSTOMIZESCHEMES_LAZYINITWEBENGINE_ERROR_0300
      * @tc.name   testCustomizeSchemesLazyInitWebEngineError03
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CUSTOMIZESCHEMES_LAZYINITWEBENGINE_ERROR_0300
      * @tc.desc   test lazyInitWebEngine true customizeSchemes 17100020
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCustomizeSchemesLazyInitWebEngineError03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitCustomizeSchemesLazyInitWebEngineError03', 123)

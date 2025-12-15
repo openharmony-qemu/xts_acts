@@ -52,12 +52,12 @@ export default function webViewNativeMediaPlayerHandlerEnhanced2() {
         done();
     })
     /**
-     *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_0400
-     *@tc.name testWebViewNativeMediaPlayerEnableTrueShouldOverlayTrue
-     *@tc.desc test NativeMediaPlayerEnableTrueShouldOverlayTrue
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+     * @tc.name   testWebViewNativeMediaPlayerEnableTrueShouldOverlayTrue
+     * @tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_0400
+     * @tc.desc   test NativeMediaPlayerEnableTrueShouldOverlayTrue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerEnableTrueShouldOverlayTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaPlayerEnableTrueShouldOverlayTrue"
@@ -66,12 +66,12 @@ export default function webViewNativeMediaPlayerHandlerEnhanced2() {
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
     /**
-     *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_0600
-     *@tc.name testWebViewNativeMediaPlayerAudio
-     *@tc.desc test NativeMediaPlayerAudio
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+     * @tc.name   testWebViewNativeMediaPlayerAudio
+     * @tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_0600
+     * @tc.desc   test NativeMediaPlayerAudio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerAudio', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaPlayerAudio"
@@ -80,12 +80,12 @@ export default function webViewNativeMediaPlayerHandlerEnhanced2() {
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
     /**
-     *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_0700
-     *@tc.name testWebViewNativeMediaPlayerMediaSrcUrl
-     *@tc.desc test NativeMediaPlayerMediaSrcUrl
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+     * @tc.name   testWebViewNativeMediaPlayerMediaSrcUrl
+     * @tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_0700
+     * @tc.desc   test NativeMediaPlayerMediaSrcUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerMediaSrcUrl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaPlayerMediaSrcUrl"
@@ -94,12 +94,12 @@ export default function webViewNativeMediaPlayerHandlerEnhanced2() {
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
     /**
-     *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_2600
-     *@tc.name testWebViewNativeMediaPlayerHandleStatusChangedPause
-     *@tc.desc test NativeMediaPlayerMediaSrcUrl
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+     * @tc.name   testWebViewNativeMediaPlayerHandleStatusChangedPause
+     * @tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_2600
+     * @tc.desc   test NativeMediaPlayerMediaSrcUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerHandleStatusChangedPause', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaPlayerHandleStatusChangedPause"
@@ -108,12 +108,12 @@ export default function webViewNativeMediaPlayerHandlerEnhanced2() {
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
     /**
-     *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_2700
-     *@tc.name testWebViewNativeMediaPlayerHandleStatusChangedPlaying
-     *@tc.desc test NativeMediaPlayerMediaSrcUrl
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+     * @tc.name   testWebViewNativeMediaPlayerHandleStatusChangedPlaying
+     * @tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_2700
+     * @tc.desc   test NativeMediaPlayerMediaSrcUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerHandleStatusChangedPlaying', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaPlayerHandleStatusChangedPlaying"

@@ -50,12 +50,12 @@ export default function createImagePackerTest() {
       console.info(TAG, 'afterAll case.');
     });
     /**
-     * @tc.number    : IMAGE_CREATE_IMAGE_PACKER_001
-     * @tc.name      : createImagePacker_promise_001
-     * @tc.desc      : createImagePacker
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createImagePacker_promise_001
+     * @tc.number IMAGE_CREATE_IMAGE_PACKER_001
+     * @tc.desc   createImagePacker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImagePacker_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createImagePacker_promise_001';

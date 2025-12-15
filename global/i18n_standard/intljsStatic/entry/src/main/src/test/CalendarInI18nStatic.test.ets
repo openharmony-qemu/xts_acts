@@ -54,7 +54,6 @@ export default function CalendarIni18nTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_calendar_test_static_0100
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_0100
      * @tc.desc   test isWeekend interface
@@ -71,7 +70,6 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_calendar_test_static_0200
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_0200
      * @tc.desc   test getCalendar interface
@@ -100,7 +98,6 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_calendar_test_static_0300
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_0300
      * @tc.desc   test getCalendar interface with zh param
@@ -117,7 +114,6 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_calendar_test_static_0400
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_0400
      * @tc.desc   test getCalendar interface with zh param
@@ -134,7 +130,6 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_calendar_test_static_0500
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_0500
      * @tc.desc   get the getDisplayName value, test getDisplayName interface
@@ -151,7 +146,6 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_calendar_test_static_0600
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_0600
      * @tc.desc   get the getDisplayName value, test getDisplayName interface with en param
@@ -168,7 +162,6 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_calendar_test_static_0700
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_0700
      * @tc.desc   test get interface, get the get value
@@ -185,7 +178,6 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_calendar_test_static_0800
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_0800
      * @tc.desc   test get interface with month param
@@ -204,7 +196,6 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_calendar_test_static_0900
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_0900
      * @tc.desc   get the get value, test get interface with day_of_year param
@@ -221,7 +212,6 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_calendar_test_static_1000
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_1000
      * @tc.desc   gtest setMinimalDaysInFirstWeek and getMinimalDaysInFirstWeek interface
@@ -239,7 +229,6 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_calendar_test_static_1100
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_1100
      * @tc.desc   test setMinimalDaysInFirstWeek with 0 param and getMinimalDaysInFirstWeek interface
@@ -257,7 +246,6 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_calendar_test_static_1200
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_1200
      * @tc.desc   test setMinimalDaysInFirstWeek with 8 param and getMinimalDaysInFirstWeek interface
@@ -275,7 +263,6 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_calendar_test_static_1300
      * @tc.number i18n_calendar_test_static_1300
      * @tc.desc   setMinimalDaysInFirstWeek with 7 param and getMinimalDaysInFirstWeek interface
@@ -293,7 +280,6 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_calendar_test_static_1400
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_1400
      * @tc.desc   setFirstDayOfWeek and getFirstDayOfWeek interface
@@ -311,7 +297,6 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_calendar_test_static_1500
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_1500
      * @tc.desc   test setFirstDayOfWeek with 0 param and getFirstDayOfWeek interface
@@ -329,7 +314,6 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_calendar_test_static_1600
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_1600
      * @tc.desc   test setFirstDayOfWeek with 7 param and getFirstDayOfWeek interface
@@ -347,7 +331,6 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_calendar_test_static_1700
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_1700
      * @tc.desc   test setFirstDayOfWeek with 8 param and getFirstDayOfWeek interface
@@ -365,7 +348,6 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_calendar_test_static_1800
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_1800
      * @tc.desc   test setTimeZone and getTimeZone interface
@@ -383,7 +365,6 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_calendar_test_static_1900
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_1900
      * @tc.desc   test setTimeZone with AAA param and getTimeZone interface
@@ -401,7 +382,6 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_calendar_test_static_2000
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_2000
      * @tc.desc   0test set interface
@@ -419,7 +399,6 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_calendar_test_static_2100
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_2100
      * @tc.desc   test set interface with hour,minute,second param
@@ -437,7 +416,6 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_calendar_test_static_2200
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_2200
      * @tc.desc   test set interface with hour,minute param
@@ -455,7 +433,6 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_calendar_test_static_2300
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_2300
      * @tc.desc   test setTime interface with date param
@@ -474,7 +451,6 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_calendar_test_static_2400
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_2400
      * @tc.desc   test setTime interface with wrong month param
@@ -493,7 +469,6 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_calendar_test_static_2500
      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_static_2500
      * @tc.desc   test setTime interface
@@ -511,7 +486,6 @@ export default function CalendarIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_SR000IFGNH_static_0010
      * @tc.number SUB_GLOBAL_I18N_SR000IFGNH_static_0010
      * @tc.desc   HolidayManager-input.ics file

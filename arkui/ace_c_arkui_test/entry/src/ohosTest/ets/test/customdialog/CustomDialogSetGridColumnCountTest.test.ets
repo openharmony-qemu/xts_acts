@@ -26,52 +26,52 @@ export default function customDialogSetGridColumnCountTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETGRIDCOLUMNCOUNT_0100
-     * @tc.name       : testCustomDialogSetGridColumnCount001
-     * @tc.desc       : testing setGridColumnCount for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetGridColumnCount001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETGRIDCOLUMNCOUNT_0100
+     * @tc.desc   testing setGridColumnCount for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetGridColumnCount001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetGridColumnCount001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETGRIDCOLUMNCOUNT_0200
-     * @tc.name       : testCustomDialogSetGridColumnCount002
-     * @tc.desc       : testing setGridColumnCount for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetGridColumnCount002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETGRIDCOLUMNCOUNT_0200
+     * @tc.desc   testing setGridColumnCount for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetGridColumnCount002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetGridColumnCount002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETGRIDCOLUMNCOUNT_0300
-     * @tc.name       : testCustomDialogSetGridColumnCount003
-     * @tc.desc       : testing setGridColumnCount for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetGridColumnCount003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETGRIDCOLUMNCOUNT_0300
+     * @tc.desc   testing setGridColumnCount for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetGridColumnCount003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetGridColumnCount003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETGRIDCOLUMNCOUNT_0400
-     * @tc.name       : testCustomDialogSetGridColumnCount004
-     * @tc.desc       : testing setGridColumnCount for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetGridColumnCount004
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETGRIDCOLUMNCOUNT_0400
+     * @tc.desc   testing setGridColumnCount for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetGridColumnCount004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetGridColumnCount004()).assertEqual(0)

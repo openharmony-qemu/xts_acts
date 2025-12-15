@@ -63,12 +63,12 @@ export default function storageTrackTest() {
       await CommonFunc.sleep(2000);
     });
     /**
+     * @tc.name   storageTrackTest_0100
      * @tc.number SUB_ACE_storageTrackTest_0100
-     * @tc.name storageTrackTest_0100
-     * @tc.desc storageTrack
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   storageTrack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('storageTrackTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('storageTrackTest_0100 START');
@@ -89,12 +89,12 @@ export default function storageTrackTest() {
       done();
     });
     /**
+     * @tc.name   storageTrackTest_0200
      * @tc.number SUB_ACE_storageTrackTest_0200
-     * @tc.name storageTrackTest_0200
-     * @tc.desc storageTrack
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   storageTrack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('storageTrackTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('storageTrackTest_0200 START');

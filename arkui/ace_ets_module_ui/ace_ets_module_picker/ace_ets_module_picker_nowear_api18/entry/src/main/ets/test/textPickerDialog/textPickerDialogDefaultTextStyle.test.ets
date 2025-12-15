@@ -40,12 +40,14 @@ export default function textPickerDialogDefaultTextStyleTest() {
       console.info('textPickerDialogDefaultTextStyleTest beforeEach end');
       done();
     });
-    /* *
-    * @tc.number: textPickerDialogDefaultTextStyleTest_001
-    * @tc.name  : textPickerDialogDefaultTextStyleTest_001
-    * @tc.desc  : To test the defaultTextStyle minFontSize:18 maxFontSize:28 TextOverflow.Ellipsis
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   textPickerDialogDefaultTextStyleTest_001
+     * @tc.number textPickerDialogDefaultTextStyleTest_001
+     * @tc.desc   To test the defaultTextStyle minFontSize:18 maxFontSize:28 TextOverflow.Ellipsis
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textPickerDialogDefaultTextStyleTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('textPickerDialogDefaultTextStyleTest_001 START');
       let driver = Driver.create();
@@ -70,12 +72,14 @@ export default function textPickerDialogDefaultTextStyleTest() {
       done();
     });
 
-    /* *
-    * @tc.number: textPickerDialogDefaultTextStyleTest_002
-    * @tc.name  : textPickerDialogDefaultTextStyleTest_002
-    * @tc.desc  : To test the defaultTextStyle minFontSize:28 maxFontSize:18 TextOverflow.Ellipsis
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   textPickerDialogDefaultTextStyleTest_002
+     * @tc.number textPickerDialogDefaultTextStyleTest_002
+     * @tc.desc   To test the defaultTextStyle minFontSize:28 maxFontSize:18 TextOverflow.Ellipsis
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textPickerDialogDefaultTextStyleTest_002', Level.LEVEL0, async (done: Function) => {
       console.info('textPickerDialogDefaultTextStyleTest_001 START');
       let driver = Driver.create();
@@ -100,12 +104,14 @@ export default function textPickerDialogDefaultTextStyleTest() {
       done();
     });
 
-    /* *
-    * @tc.number: textPickerDialogDefaultTextStyleTest_003
-    * @tc.name  : textPickerDialogDefaultTextStyleTest_003
-    * @tc.desc  : To test the defaultTextStyle undefined
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   textPickerDialogDefaultTextStyleTest_003
+     * @tc.number textPickerDialogDefaultTextStyleTest_003
+     * @tc.desc   To test the defaultTextStyle undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textPickerDialogDefaultTextStyleTest_003', Level.LEVEL0, async (done: Function) => {
       console.info('textPickerDialogDefaultTextStyleTest_003 START');
       let driver = Driver.create();
@@ -130,12 +136,14 @@ export default function textPickerDialogDefaultTextStyleTest() {
       done();
     });
 
-    /* *
-    * @tc.number: textPickerDialogDefaultTextStyleTest_004
-    * @tc.name  : textPickerDialogDefaultTextStyleTest_004
-    * @tc.desc  : To test the defaultTextStyle null
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   textPickerDialogDefaultTextStyleTest_004
+     * @tc.number textPickerDialogDefaultTextStyleTest_004
+     * @tc.desc   To test the defaultTextStyle null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textPickerDialogDefaultTextStyleTest_004', Level.LEVEL0, async (done: Function) => {
       console.info('textPickerDialogDefaultTextStyleTest_004 START');
       let driver = Driver.create();

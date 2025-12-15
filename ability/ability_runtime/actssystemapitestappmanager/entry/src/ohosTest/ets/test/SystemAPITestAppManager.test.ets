@@ -25,13 +25,13 @@ export default function systemAPITestAppManagerTest() {
       context = globalThis.context
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0500
-     * @tc.name   : SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0500
-     * @tc.desc   : appManager.getProcessMemoryByPid callback
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0500
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0500
+     * @tc.desc   appManager.getProcessMemoryByPid callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0500', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0500`;
@@ -55,13 +55,13 @@ export default function systemAPITestAppManagerTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0600
-     * @tc.name   : SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0600
-     * @tc.desc   : appManager.getProcessMemoryByPid promise
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0600
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0600
+     * @tc.desc   appManager.getProcessMemoryByPid promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0600', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0600`;
@@ -82,13 +82,13 @@ export default function systemAPITestAppManagerTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0700
-     * @tc.name   : SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0700
-     * @tc.desc   : appManager.getRunningProcessInfoByBundleName callback
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0700
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0700
+     * @tc.desc   appManager.getRunningProcessInfoByBundleName callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0700', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0700`;
@@ -113,13 +113,13 @@ export default function systemAPITestAppManagerTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0800
-     * @tc.name   : SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0800
-     * @tc.desc   : appManager.getRunningProcessInfoByBundleName promise
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0800
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0800
+     * @tc.desc   appManager.getRunningProcessInfoByBundleName promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0800', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0800`;
@@ -141,13 +141,13 @@ export default function systemAPITestAppManagerTest() {
     });
 
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0900
-     * @tc.name   : SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0900
-     * @tc.desc   : appManager.getRunningProcessInfoByBundleName callback with userId
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0900
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0900
+     * @tc.desc   appManager.getRunningProcessInfoByBundleName callback with userId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0900', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0900`;
@@ -173,13 +173,13 @@ export default function systemAPITestAppManagerTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_1000
-     * @tc.name   : SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_1000
-     * @tc.desc   : appManager.getRunningProcessInfoByBundleName promise with userId
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_1000
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_1000
+     * @tc.desc   appManager.getRunningProcessInfoByBundleName promise with userId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_1000', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_1000`;

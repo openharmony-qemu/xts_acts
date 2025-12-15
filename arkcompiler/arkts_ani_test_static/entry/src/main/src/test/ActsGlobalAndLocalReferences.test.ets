@@ -30,13 +30,13 @@ export default function globalAndLocalReferencesTest() {
       console.log('loadFailed', e.message);
     }
 
-    /*
-     * @tc.number    : GlobalReference_Create_0100
-     * @tc.name      : GlobalReference_Create_0100
-     * @tc.desc      : MediumTest
-     * @tc.size      : Function
-     * @tc.type      : Function test
-     * @tc.level     : Level 0
+    /**
+     * @tc.name   GlobalReference_Create_0100
+     * @tc.number GlobalReference_Create_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GlobalReference_Create_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -49,13 +49,13 @@ export default function globalAndLocalReferencesTest() {
         console.log('GlobalReference_Create_0100 end');
       })
 
-    /*
-     * @tc.number    : Reference_StrictEquals_0100
-     * @tc.name      : Reference_StrictEquals_0100
-     * @tc.desc      : MediumTest
-     * @tc.size      : Function
-     * @tc.type      : Function test
-     * @tc.level     : Level 0
+    /**
+     * @tc.name   Reference_StrictEquals_0100
+     * @tc.number Reference_StrictEquals_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Reference_StrictEquals_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -68,13 +68,13 @@ export default function globalAndLocalReferencesTest() {
         console.log('Reference_StrictEquals_0100 end');
       })
 
-    /*
-     * @tc.number    : GlobalReference_Delete_0100
-     * @tc.name      : GlobalReference_Delete_0100
-     * @tc.desc      : MediumTest
-     * @tc.size      : Function
-     * @tc.type      : Function test
-     * @tc.level     : Level 0
+    /**
+     * @tc.name   GlobalReference_Delete_0100
+     * @tc.number GlobalReference_Delete_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GlobalReference_Delete_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -87,13 +87,13 @@ export default function globalAndLocalReferencesTest() {
         console.log('GlobalReference_Delete_0100 end');
       })
 
-    /*
-     * @tc.number    : Reference_Delete_0100
-     * @tc.name      : Reference_Delete_0100
-     * @tc.desc      : MediumTest
-     * @tc.size      : Function
-     * @tc.type      : Function test
-     * @tc.level     : Level 0
+    /**
+     * @tc.name   Reference_Delete_0100
+     * @tc.number Reference_Delete_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Reference_Delete_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -106,13 +106,13 @@ export default function globalAndLocalReferencesTest() {
         console.log('Reference_Delete_0100 end');
       })
 
-    /*
-     * @tc.number    : EnsureEnoughReferences_0100
-     * @tc.name      : EnsureEnoughReferences_0100
-     * @tc.desc      : MediumTest
-     * @tc.size      : Function
-     * @tc.type      : Function test
-     * @tc.level     : Level 0
+    /**
+     * @tc.name   EnsureEnoughReferences_0100
+     * @tc.number EnsureEnoughReferences_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("EnsureEnoughReferences_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

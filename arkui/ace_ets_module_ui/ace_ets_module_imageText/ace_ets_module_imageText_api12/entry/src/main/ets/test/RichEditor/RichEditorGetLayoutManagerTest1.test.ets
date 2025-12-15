@@ -49,10 +49,12 @@ export default function RichEditorGetLayoutManagerTest1() {
 
 
     /**
-     * @tc.number    RichEditorGetLayoutManagerTest1_0100
-     * @tc.name      RichEditorGetLayoutManagerTest1_0100
-     * @tc.desc      Test RichEditor getLayoutManager
-     * @tc.level     Level 2
+     * @tc.name   RichEditorGetLayoutManagerTest1_0100
+     * @tc.number RichEditorGetLayoutManagerTest1_0100
+     * @tc.desc   Test RichEditor getLayoutManager
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RichEditorGetLayoutManagerTest1_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('RichEditorGetLayoutManagerTest1_0100 START');

@@ -20,13 +20,13 @@ export default function ActsGetMultiple() {
   describe('ActsGetMultiple', function () {
 
     /**
-    * @tc.number   ActsGetAllAccessibleAccounts_0101
-    * @tc.name     ActsGetAllAccessibleAccounts_0101
-    * @tc.desc     add null user in current app, then getAllAccessibleAccounts
-    * @tc.level    Level3
-    * @tc.size     MediumTest
-    * @tc.type     Function
-    */
+     * @tc.name   ActsGetAllAccessibleAccounts_0101
+     * @tc.number ActsGetAllAccessibleAccounts_0101
+     * @tc.desc   add null user in current app, then getAllAccessibleAccounts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsGetAllAccessibleAccounts_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsGetAllAccessibleAccounts_0101 start====");
       var appAccountManager = account.createAppAccountManager();
@@ -53,13 +53,13 @@ export default function ActsGetMultiple() {
     });
 
     /**
-    * @tc.number   ActsGetAllAccessibleAccounts_0201
-    * @tc.name     ActsGetAllAccessibleAccounts_0201
-    * @tc.desc     add null user in current app, then getAllAccessibleAccounts
-    * @tc.level    Level3
-    * @tc.size     MediumTest
-    * @tc.type     Function
-    */
+     * @tc.name   ActsGetAllAccessibleAccounts_0201
+     * @tc.number ActsGetAllAccessibleAccounts_0201
+     * @tc.desc   add null user in current app, then getAllAccessibleAccounts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsGetAllAccessibleAccounts_0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsGetAllAccessibleAccounts_0201 start====");
       var appAccountManager = account.createAppAccountManager();

@@ -26,143 +26,143 @@ export default function customComponentAlignTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGN_0100
-     * @tc.name       : testCustomComponentAlign001
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentAlign001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGN_0100
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentAlign001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentAlign001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGN_0200
-     * @tc.name       : testCustomComponentAlign002
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentAlign002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGN_0200
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentAlign002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentAlign002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGN_0300
-     * @tc.name       : testCustomComponentAlign003
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentAlign003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGN_0300
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentAlign003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentAlign003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGN_0400
-     * @tc.name       : testCustomComponentAlign004
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentAlign004
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGN_0400
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentAlign004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentAlign004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGN_0500
-     * @tc.name       : testCustomComponentAlign005
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentAlign005
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGN_0500
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentAlign005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentAlign005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGN_0600
-     * @tc.name       : testCustomComponentAlign006
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentAlign006
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGN_0600
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentAlign006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentAlign006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGN_0700
-     * @tc.name       : testCustomComponentAlign007
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentAlign007
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGN_0700
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentAlign007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentAlign007()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGN_0800
-     * @tc.name       : testCustomComponentAlign008
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentAlign008
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGN_0800
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentAlign008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentAlign008()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGN_0900
-     * @tc.name       : testCustomComponentAlign009
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentAlign009
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGN_0900
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentAlign009', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentAlign009()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGN_1000
-     * @tc.name       : testCustomComponentAlign010
-     * @tc.desc       : testing align for button with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentAlign010
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGN_1000
+     * @tc.desc   testing align for button with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentAlign010', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentAlign010()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGN_1100
-     * @tc.name       : testCustomComponentAlign011
-     * @tc.desc       : testing align for button with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCustomComponentAlign011
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGN_1100
+     * @tc.desc   testing align for button with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentAlign011', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentAlign011()).assertEqual(0)

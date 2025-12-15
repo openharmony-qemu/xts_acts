@@ -40,12 +40,12 @@ export default function getPosition() {
       done();
     });
     /**
-     * @tc.number    getPosition_0100
-     * @tc.name      getPosition_0100
-     * @tc.desc      frameNode: getPositionToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getPosition_0100
+     * @tc.number getPosition_0100
+     * @tc.desc   frameNode: getPositionToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getPosition_0100', Level.LEVEL0, async (done: Function) => {
       console.info('getPosition_0100 START');
@@ -68,12 +68,12 @@ export default function getPosition() {
       done();
     });
     /**
-     * @tc.number    getPosition_0200
-     * @tc.name      getPosition_0200
-     * @tc.desc      frameNode: getPositionToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getPosition_0200
+     * @tc.number getPosition_0200
+     * @tc.desc   frameNode: getPositionToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getPosition_0200', Level.LEVEL0, async (done: Function) => {
       console.info('getPosition_0200 START');
@@ -90,12 +90,12 @@ export default function getPosition() {
       done();
     });
     /**
-     * @tc.number    getPosition_0300
-     * @tc.name      getPosition_0300
-     * @tc.desc      frameNode: getPositionToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getPosition_0300
+     * @tc.number getPosition_0300
+     * @tc.desc   frameNode: getPositionToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getPosition_0300', Level.LEVEL0, async (done: Function) => {
       console.info('getPosition_0300 START');
@@ -112,12 +112,12 @@ export default function getPosition() {
       done();
     });
     /**
-     * @tc.number    getPosition_0400
-     * @tc.name      getPosition_0400
-     * @tc.desc      frameNode: getPositionToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getPosition_0400
+     * @tc.number getPosition_0400
+     * @tc.desc   frameNode: getPositionToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getPosition_0400', Level.LEVEL0, async (done: Function) => {
       console.info('getPosition_0400 START');

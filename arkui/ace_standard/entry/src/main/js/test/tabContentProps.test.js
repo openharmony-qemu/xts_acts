@@ -79,9 +79,12 @@ export default function undo() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentIdProp
-         * @tc.desc      ACE
+         * @tc.name   testTabContentIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentIdProp', Level.LEVEL0, async function(done) {
             console.info('testTabContentIdProp START');
@@ -97,9 +100,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentClassProp
-         * @tc.desc      ACE
+         * @tc.name   testTabContentClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentClassProp', Level.LEVEL0, async function(done) {
             console.info('testTabContentClassProp START');
@@ -116,9 +122,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testTabContentClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testTabContentClassPropNone START');
@@ -136,9 +145,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentRefProp
-         * @tc.desc      ACE
+         * @tc.name   testTabContentRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentRefProp', Level.LEVEL0, async function(done) {
             console.info('testTabContentRefProp START');
@@ -155,9 +167,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testTabContentRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testTabContentRefPropNone START');
@@ -175,9 +190,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testTabContentDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testTabContentDisabledPropTrue START');
@@ -194,9 +212,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testTabContentDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testTabContentDisabledPropFalse START');
@@ -213,9 +234,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testTabContentDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testTabContentDisabledPropNone START');
@@ -232,9 +256,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testTabContentFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testTabContentFocusablePropTrue START');
@@ -251,9 +278,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testTabContentFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testTabContentFocusablePropFalse START');
@@ -270,9 +300,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testTabContentFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testTabContentFocusablePropNone START');
@@ -289,9 +322,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentDataProp
-         * @tc.desc      ACE
+         * @tc.name   testTabContentDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentDataProp', Level.LEVEL0, async function(done) {
             console.info('testTabContentDataProp START');
@@ -309,9 +345,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testTabContentDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testTabContentDataPropNone START');
@@ -329,9 +368,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testTabContentClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testTabContentClickEffectPropSmall START');
@@ -348,9 +390,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testTabContentClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testTabContentClickEffectPropMedium START');
@@ -367,9 +412,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testTabContentClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testTabContentClickEffectPropLarge START');
@@ -386,9 +434,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testTabContentClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testTabContentClickEffectPropNone START');
@@ -406,9 +457,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testTabContentDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testTabContentDirPropRtl START');
@@ -425,9 +479,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testTabContentDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testTabContentDirPropLtr START');
@@ -444,9 +501,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testTabContentDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testTabContentDirPropAuto START');
@@ -463,9 +523,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testTabContentDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testTabContentDirPropNone START');
@@ -482,9 +545,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testTabContentForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentForPropNull', Level.LEVEL0, async function(done) {
             console.info('testTabContentForPropNull START');
@@ -502,9 +568,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testTabContentForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentForPropOne', Level.LEVEL0, async function(done) {
             console.info('testTabContentForPropOne START');
@@ -522,9 +591,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testTabContentForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentForPropThree', Level.LEVEL0, async function(done) {
             console.info('testTabContentForPropThree START');
@@ -542,9 +614,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testTabContentIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testTabContentIfPropTrue START');
@@ -562,9 +637,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testTabContentShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testTabContentShowPropTrue START');
@@ -582,9 +660,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testTabContentShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testTabContentShowPropFalse START');
@@ -602,9 +683,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testTabContentShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testTabContentShowPropNone START');
@@ -624,9 +708,12 @@ export default function undo() {
         //   特有属性
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentScrollableTrue
-         * @tc.desc      ACE
+         * @tc.name   testTabContentScrollableTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentScrollableTrue', Level.LEVEL0, async function(done) {
             console.info('testTabContentScrollableTrue START');
@@ -644,9 +731,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentScrollableFalse
-         * @tc.desc      ACE
+         * @tc.name   testTabContentScrollableFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentScrollableFalse', Level.LEVEL0, async function(done) {
             console.info('testTabContentScrollableFalse START');
@@ -664,9 +754,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentScrollableNone
-         * @tc.desc      ACE
+         * @tc.name   testTabContentScrollableNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentScrollableNone', Level.LEVEL0, async function(done) {
             console.info('testTabContentScrollableNone START');

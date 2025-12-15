@@ -75,12 +75,12 @@ export default function OhAVMetadataExtractorNDKTest() {
     }
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_avmetadataextractor_OHAVMETADATAEXTRACTORCREATE_0100
-     * @tc.name       : testohAvMetadataExtractorCreate0100
-     * @tc.desc       : Create an instance of the metadata extractor for media files.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testohAvMetadataExtractorCreate0100
+     * @tc.number SUB_MULTIMEDIA_avmetadataextractor_OHAVMETADATAEXTRACTORCREATE_0100
+     * @tc.desc   Create an instance of the metadata extractor for media files.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testohAvMetadataExtractorCreate0100', Level.LEVEL0,(done: Function) => {
       console.info(`testohAvMetadataExtractorCreate0100 test start`);
@@ -97,12 +97,12 @@ export default function OhAVMetadataExtractorNDKTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVMETADATAEXTRACTOR_SETFDSOURCE_0100
-     * @tc.name       : testohAvMetadataExtractorSetFDSource0100
-     * @tc.desc       : Set an MP3 file as the file source.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testohAvMetadataExtractorSetFDSource0100
+     * @tc.number SUB_MULTIMEIDA_AVMETADATAEXTRACTOR_SETFDSOURCE_0100
+     * @tc.desc   Set an MP3 file as the file source.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testohAvMetadataExtractorSetFDSource0100', Level.LEVEL0,async (done: Function) => {
       console.info(`testohAvMetadataExtractorSetFDSource0100 test start`);
@@ -123,12 +123,12 @@ export default function OhAVMetadataExtractorNDKTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVMETADATAEXTRACTOR_SETFDSOURCE_0200
-     * @tc.name       : testohAvMetadataExtractorSetFDSource0200
-     * @tc.desc       : Set an MP4 file as the file source.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testohAvMetadataExtractorSetFDSource0200
+     * @tc.number SUB_MULTIMEIDA_AVMETADATAEXTRACTOR_SETFDSOURCE_0200
+     * @tc.desc   Set an MP4 file as the file source.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testohAvMetadataExtractorSetFDSource0200', Level.LEVEL0,async (done: Function) => {
       console.info(`testohAvMetadataExtractorSetFDSource0200 test start`);
@@ -149,12 +149,12 @@ export default function OhAVMetadataExtractorNDKTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVMETADATAEXTRACTOR_SETFDSOURCE_0300
-     * @tc.name       : testohAvMetadataExtractorSetFDSource0300
-     * @tc.desc       : Set invalid fd Source.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testohAvMetadataExtractorSetFDSource0300
+     * @tc.number SUB_MULTIMEIDA_AVMETADATAEXTRACTOR_SETFDSOURCE_0300
+     * @tc.desc   Set invalid fd Source.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testohAvMetadataExtractorSetFDSource0300', Level.LEVEL0,(done: Function) => {
       console.info(`testohAvMetadataExtractorSetFDSource0300 test start`);
@@ -172,12 +172,12 @@ export default function OhAVMetadataExtractorNDKTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_avmetadataextractor_OHAVMETADATAEXTRACTORFETCHMETADATA_0100
-     * @tc.name       : testohAvMetadataExtractorFetchMetadata0100
-     * @tc.desc       : Fetch metadata from the MP3 file using the metadata extractor.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testohAvMetadataExtractorFetchMetadata0100
+     * @tc.number SUB_MULTIMEDIA_avmetadataextractor_OHAVMETADATAEXTRACTORFETCHMETADATA_0100
+     * @tc.desc   Fetch metadata from the MP3 file using the metadata extractor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testohAvMetadataExtractorFetchMetadata0100', Level.LEVEL0,async (done: Function) => {
       console.info(`testohAvMetadataExtractorFetchMetadata0100 test start`);
@@ -199,12 +199,12 @@ export default function OhAVMetadataExtractorNDKTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEDIA_avmetadataextractor_OHAVMETADATAEXTRACTORFETCHMETADATA_0200
-     * @tc.name       : testohAvMetadataExtractorFetchMetadata0200
-     * @tc.desc       : Fetch metadata from the MP4 file using the metadata extractor.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testohAvMetadataExtractorFetchMetadata0200
+     * @tc.number SUB_MULTIMEDIA_avmetadataextractor_OHAVMETADATAEXTRACTORFETCHMETADATA_0200
+     * @tc.desc   Fetch metadata from the MP4 file using the metadata extractor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testohAvMetadataExtractorFetchMetadata0200', Level.LEVEL0,async (done: Function) => {
       console.info(`testohAvMetadataExtractorFetchMetadata0200 test start`);
@@ -226,12 +226,12 @@ export default function OhAVMetadataExtractorNDKTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVMETADATAEXTRACTOR_FETCHALBUMCOVER_0100
-     * @tc.name       : testohAvMetadataExtractorFetchAlbumCover0100
-     * @tc.desc       : Get album cover from MP3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testohAvMetadataExtractorFetchAlbumCover0100
+     * @tc.number SUB_MULTIMEIDA_AVMETADATAEXTRACTOR_FETCHALBUMCOVER_0100
+     * @tc.desc   Get album cover from MP3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testohAvMetadataExtractorFetchAlbumCover0100', Level.LEVEL0,async (done: Function) => {
       console.info(`testohAvMetadataExtractorFetchAlbumCover0100 test start`);
@@ -253,12 +253,12 @@ export default function OhAVMetadataExtractorNDKTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVMETADATAEXTRACTOR_FETCHALBUMCOVER_0200
-     * @tc.name       : testohAvMetadataExtractorFetchAlbumCover0200
-     * @tc.desc       : Get album cover from MP4 and this is error.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testohAvMetadataExtractorFetchAlbumCover0200
+     * @tc.number SUB_MULTIMEIDA_AVMETADATAEXTRACTOR_FETCHALBUMCOVER_0200
+     * @tc.desc   Get album cover from MP4 and this is error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testohAvMetadataExtractorFetchAlbumCover0200', Level.LEVEL0,async (done: Function) => {
       console.info(`testohAvMetadataExtractorFetchAlbumCover0200 test start`);
@@ -280,12 +280,12 @@ export default function OhAVMetadataExtractorNDKTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVMETADATAEXTRACTOR_METADATAEXTRACTORRELEASE_0100
-     * @tc.name       : testohAvMetadataExtractorRelease100
-     * @tc.desc       : Release the metadata extractor object.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testohAvMetadataExtractorRelease0100
+     * @tc.number SUB_MULTIMEIDA_AVMETADATAEXTRACTOR_METADATAEXTRACTORRELEASE_0100
+     * @tc.desc   Release the metadata extractor object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testohAvMetadataExtractorRelease0100', Level.LEVEL0,(done: Function) => {
       console.info(`testohAvMetadataExtractorRelease0100 test start`);
@@ -302,12 +302,12 @@ export default function OhAVMetadataExtractorNDKTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVMETADATAEXTRACTOR_METADATAEXTRACTORRELEASE_0200
-     * @tc.name       : testohAvMetadataExtractorReleaseTwo0200
-     * @tc.desc       : Release the metadata extractor object with the object is nullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testohAvMetadataExtractorRelease0200
+     * @tc.number SUB_MULTIMEIDA_AVMETADATAEXTRACTOR_METADATAEXTRACTORRELEASE_0200
+     * @tc.desc   Release the metadata extractor object with the object is nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testohAvMetadataExtractorRelease0200', Level.LEVEL0,(done: Function) => {
       console.info(`testohAvMetadataExtractorReleaseTwo0200 test start`);
@@ -324,12 +324,12 @@ export default function OhAVMetadataExtractorNDKTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVMETADATAEXTRACTOR_ALL_0100
-     * @tc.name       : testohAvMetadataExtractorAll0100
-     * @tc.desc       : Verify extraction of all metadata properties from the media source.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testohAvMetadataExtractorAll0100
+     * @tc.number SUB_MULTIMEIDA_AVMETADATAEXTRACTOR_ALL_0100
+     * @tc.desc   Verify extraction of all metadata properties from the media source.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testohAvMetadataExtractorAll0100', Level.LEVEL0,async (done: Function) => {
       console.info(`testohAvMetadataExtractorAll0100 test start`);

@@ -80,9 +80,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircletFillProp
-         * @tc.desc      ACE
+         * @tc.name   testCircleFillProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleFillProp', Level.LEVEL0, async function(done) {
             console.info('testCircleFillProp START');
@@ -108,9 +111,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleFillOpacityPropOne
-         * @tc.desc      ACE
+         * @tc.name   testCircleFillOpacityPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleFillOpacityPropOne', Level.LEVEL0, async function(done) {
             console.info('testCircleFillOpacityPropOne START');
@@ -138,9 +144,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleFillOpacityPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testCircleFillOpacityPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleFillOpacityPropTwo', Level.LEVEL0, async function(done) {
             console.info('testCircleFillOpacityPropTwo START');
@@ -168,9 +177,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleFillOpacityPropThree
-         * @tc.desc      ACE
+         * @tc.name   testCircleFillOpacityPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleFillOpacityPropThree', Level.LEVEL0, async function(done) {
             console.info('testCircleFillOpacityPropThree START');
@@ -198,9 +210,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleFillRulePropOne
-         * @tc.desc      ACE
+         * @tc.name   testCircleFillRulePropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleFillRulePropOne', Level.LEVEL0, async function(done) {
             console.info('testCircleFillRulePropOne START');
@@ -228,9 +243,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleFillRulePropTwo
-         * @tc.desc      ACE
+         * @tc.name   testCircleFillRulePropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleFillRulePropTwo', Level.LEVEL0, async function(done) {
             console.info('testCircleFillRulePropTwo START');
@@ -258,9 +276,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleOpacityPropOne
-         * @tc.desc      ACE
+         * @tc.name   testCircleOpacityPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleOpacityPropOne', Level.LEVEL0, async function(done) {
             console.info('testCircleOpacityPropOne START');
@@ -288,9 +309,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleOpacityPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testCircleOpacityPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleOpacityPropTwo', Level.LEVEL0, async function(done) {
             console.info('testCircleOpacityPropTwo START');
@@ -318,9 +342,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleOpacityPropThree
-         * @tc.desc      ACE
+         * @tc.name   testCircleOpacityPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleOpacityPropThree', Level.LEVEL0, async function(done) {
             console.info('testCircleOpacityPropThree START');
@@ -348,9 +375,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleStrokeProp
-         * @tc.desc      ACE
+         * @tc.name   testCircleStrokeProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleStrokeProp', Level.LEVEL0, async function(done) {
             console.info('testCircleStrokeProp START');
@@ -376,9 +406,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleStrokeDashArrayProp
-         * @tc.desc      ACE
+         * @tc.name   testCircleStrokeDashArrayProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleStrokeDashArrayProp', Level.LEVEL0, async function(done) {
             console.info('testCircleStrokeDashArrayProp START');
@@ -406,9 +439,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleStrokeDashOffsetProp
-         * @tc.desc      ACE
+         * @tc.name   testCircleStrokeDashOffsetProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleStrokeDashOffsetProp', Level.LEVEL0, async function(done) {
             console.info('testCircleStrokeDashOffsetProp START');
@@ -437,9 +473,12 @@ export default function undo() {
 
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleStrokeLineJoinPropOne
-         * @tc.desc      ACE
+         * @tc.name   testCircleStrokeLineJoinPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleStrokeLineJoinPropOne', Level.LEVEL0, async function(done) {
             console.info('testCircleStrokeLineJoinPropOne START');
@@ -467,9 +506,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleStrokeLineJoinPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testCircleStrokeLineJoinPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleStrokeLineJoinPropTwo', Level.LEVEL0, async function(done) {
             console.info('testCircleStrokeLineJoinPropTwo START');
@@ -497,9 +539,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleStrokeLineJoinPropThree
-         * @tc.desc      ACE
+         * @tc.name   testCircleStrokeLineJoinPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleStrokeLineJoinPropThree', Level.LEVEL0, async function(done) {
             console.info('testCircleStrokeLineJoinPropThree START');
@@ -527,9 +572,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleStrokeLineJoinPropOne
-         * @tc.desc      ACE
+         * @tc.name   testCircleStrokeLineCapPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleStrokeLineCapPropOne', Level.LEVEL0, async function(done) {
             console.info('testCircleStrokeLineCapPropOne START');
@@ -557,9 +605,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleStrokeLineCapPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testCircleStrokeLineCapPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleStrokeLineCapPropTwo', Level.LEVEL0, async function(done) {
             console.info('testCircleStrokeLineCapPropTwo START');
@@ -587,9 +638,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleStrokeLineCapPropThree
-         * @tc.desc      ACE
+         * @tc.name   testCircleStrokeLineCapPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleStrokeLineCapPropThree', Level.LEVEL0, async function(done) {
             console.info('testCircleStrokeLineCapPropThree START');
@@ -617,9 +671,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleStrokeMiterLimitProp
-         * @tc.desc      ACE
+         * @tc.name   testCircleStrokeMiterLimitProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleStrokeMiterLimitProp', Level.LEVEL0, async function(done) {
             console.info('testCircleStrokeMiterLimitProp START');
@@ -647,9 +704,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleStrokeOpacityPropOne
-         * @tc.desc      ACE
+         * @tc.name   testCircleStrokeOpacityPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleStrokeOpacityPropOne', Level.LEVEL0, async function(done) {
             console.info('testCircleStrokeOpacityPropOne START');
@@ -677,9 +737,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleStrokeOpacityPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testCircleStrokeOpacityPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleStrokeOpacityPropTwo', Level.LEVEL0, async function(done) {
             console.info('testCircleStrokeOpacityPropTwo START');
@@ -707,9 +770,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleStrokeOpacityPropThree
-         * @tc.desc      ACE
+         * @tc.name   testCircleStrokeOpacityPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleStrokeOpacityPropThree', Level.LEVEL0, async function(done) {
             console.info('testCircleStrokeOpacityPropThree START');
@@ -737,9 +803,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleStrokeWidthProp
-         * @tc.desc      ACE
+         * @tc.name   testCircleStrokeWidthProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleStrokeWidthProp', Level.LEVEL0, async function(done) {
             console.info('testCircleStrokeWidthProp START');
@@ -767,9 +836,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleTransformProp
-         * @tc.desc      ACE
+         * @tc.name   testCircleTransformProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleTransformProp', Level.LEVEL0, async function(done) {
             console.info('testCircleTransformProp START');
@@ -795,9 +867,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleIdProp
-         * @tc.desc      ACE
+         * @tc.name   testCircleIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleIdProp', Level.LEVEL0, async function(done) {
             console.info('testCircleIdProp START');
@@ -823,9 +898,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleCxPropOne
-         * @tc.desc      ACE
+         * @tc.name   testCircleCxPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleCxPropOne', Level.LEVEL0, async function(done) {
             console.info('testCircleCxPropOne START');
@@ -851,9 +929,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleCxPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testCircleCxPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleCxPropTwo', Level.LEVEL0, async function(done) {
             console.info('testCircleCxPropTwo START');
@@ -879,9 +960,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleCyPropOne
-         * @tc.desc      ACE
+         * @tc.name   testCircleCyPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleCyPropOne', Level.LEVEL0, async function(done) {
             console.info('testCircleCyPropOne START');
@@ -907,9 +991,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleCyPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testCircleCyPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleCyPropTwo', Level.LEVEL0, async function(done) {
             console.info('testCircleCyPropTwo START');
@@ -935,9 +1022,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleRPropOne
-         * @tc.desc      ACE
+         * @tc.name   testCircleRPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleRPropOne', Level.LEVEL0, async function(done) {
             console.info('testCircleRPropOne START');
@@ -963,9 +1053,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCircleRPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testCircleRPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCircleRPropTwo', Level.LEVEL0, async function(done) {
             console.info('testCircleRPropTwo START');

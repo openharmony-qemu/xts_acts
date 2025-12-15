@@ -20,7 +20,6 @@ const Success = 0;
 export default function ActsPasteboardErrorTest() {
   describe('ActsPasteboardErrorTest', () => {
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   Sub_PasteboardSubscriber_PasteboardRemoteDC_0100
      * @tc.number Sub_PasteboardSubscriber_PasteboardRemoteDC_0100
      * @tc.desc   Test PasteboardRemoteDC
@@ -42,7 +41,6 @@ export default function ActsPasteboardErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   Sub_PasteboardSubscriber_PasteboardDestroySuccess_0200
      * @tc.number Sub_PasteboardSubscriber_PasteboardDestroySuccess_0200
      * @tc.desc   Test PasteboardDestroySuccess
@@ -64,7 +62,6 @@ export default function ActsPasteboardErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   Sub_PasteboardSubscriber_PasteboardDestroyError_0300
      * @tc.number Sub_PasteboardSubscriber_PasteboardDestroyError_0300
      * @tc.desc   Test PasteboardDestroyError
@@ -86,7 +83,6 @@ export default function ActsPasteboardErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   Sub_PasteboardSubscriber_PasteboardGetDataSourceInvalidParameter_0400
      * @tc.number Sub_PasteboardSubscriber_PasteboardGetDataSourceInvalidParameter_0400
      * @tc.desc   Test PasteboardGetDataSourceInvalidParameter
@@ -108,7 +104,6 @@ export default function ActsPasteboardErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   Sub_PasteboardSubscriber_PasteboardSetDataInvalidParameter_0500
      * @tc.number Sub_PasteboardSubscriber_PasteboardSetDataInvalidParameter_0500
      * @tc.desc   Test PasteboardSetDataInvalidParameter
@@ -130,7 +125,6 @@ export default function ActsPasteboardErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   Sub_PasteboardSubscriber_PasteboardClearDataInvalidParameter_0600
      * @tc.number Sub_PasteboardSubscriber_PasteboardClearDataInvalidParameter_0600
      * @tc.desc   Test PasteboardClearDataInvalidParameter

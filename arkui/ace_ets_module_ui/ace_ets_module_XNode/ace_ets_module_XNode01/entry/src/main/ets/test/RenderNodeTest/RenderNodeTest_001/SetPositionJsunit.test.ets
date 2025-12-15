@@ -46,12 +46,12 @@ export default function SetPositionJsunit() {
     });
     
     /**
-     * @tc.number    SUB_ACE_RICHEDITOR_SetPositionJsunit_001
-     * @tc.name      SetPositionJsunit
-     * @tc.desc      set api
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   SetPositionJsunit_001
+     * @tc.number SUB_ACE_RICHEDITOR_SetPositionJsunit_001
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SetPositionJsunit_001', Level.LEVEL2, async (done: Function) => {
       console.info('[SetPositionJsunit_001] START');

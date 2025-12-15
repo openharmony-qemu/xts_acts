@@ -36,10 +36,13 @@ export default function webJsunit() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_001
-     *tc.name userAgent
-     *tc.desic Sets the Web's user agent
+    /**
+     * @tc.name   userAgent
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_001
+     * @tc.desc   userAgent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('userAgent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitUserAgent";
@@ -48,9 +51,13 @@ export default function webJsunit() {
       Utils.registerEvent("", userAgent, 200220, done);
       await Utils.waitAndClickComponent(driver, "webcomponent");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_003
-     *tc.name onUrlLoadIntercept                                                                                                                                                                                                                  *tc.desic Triggered when the URL loading is intercepted
+    /**
+     * @tc.name   onUrlLoadIntercept
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_003
+     * @tc.desc   onUrlLoadIntercept
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onUrlLoadIntercept', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitOnUrlLoadIntercept";
@@ -59,10 +66,13 @@ export default function webJsunit() {
       await Utils.waitAndClickComponent(driver, "webcomponent");
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_006
-     *tc.name loadUrl
-     *tc.desic Loads the given URL
+    /**
+     * @tc.name   loadUrl
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_006
+     * @tc.desc   loadUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('loadUrl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitLoadUrl";
@@ -70,9 +80,13 @@ export default function webJsunit() {
       Utils.registerContainEvent("loadUrl", "index", 200240, done);
       await Utils.waitAndClickComponent(driver, "webcomponent");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_009
-     *tc.name onRefreshAccessedHistory                                                                                                                                                                                                            *tc.desic Triggered when the Web page refreshes accessed history
+    /**
+     * @tc.name   onRefreshAccessedHistory
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_009
+     * @tc.desc   onRefreshAccessedHistory
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onRefreshAccessedHistory', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitOnRefreshAccessedHistory";

@@ -48,12 +48,12 @@ export default function CalcJsunit02() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_CalcJsunit02_0100
-     * @tc.name: CalcJsunit02_0100
-     * @tc.desc: CommonCustomAPI 
-     * @tc.level: Level 0
-     * @tc.type : CommonCustom
-     * @tc.size : CommonCustomTest
+     * @tc.name   CalcJsunit02_0100
+     * @tc.number SUB_ARKUI_API_CalcJsunit02_0100
+     * @tc.desc   CommonCustomAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CalcJsunit02_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[CalcJsunit02_0100] START');

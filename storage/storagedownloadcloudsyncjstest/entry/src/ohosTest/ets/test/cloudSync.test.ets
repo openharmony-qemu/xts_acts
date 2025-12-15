@@ -25,14 +25,13 @@ export default function cloudCloudSyncTest(){
 describe('cloud_sync_test', () => {
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_0100
-   * @tc.name test_cloudSync_State_001
-   * @tc.desc function of API, Test FileSync.start, Promise
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_001
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_0100
+    * @tc.desc   function of API, Test FileSync.start, Promise
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_001', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -55,14 +54,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_0200
-   * @tc.name test_cloudSync_State_002
-   * @tc.desc function of API, Test FileSync.start, callback
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_002
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_0200
+    * @tc.desc   function of API, Test FileSync.start, callback
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_002', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -87,14 +85,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_0300
-   * @tc.name test_cloudSync_State_003
-   * @tc.desc function of API, on_progress, SyncState.UPLOADING
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_003
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_0300
+    * @tc.desc   function of API, on_progress, SyncState.UPLOADING
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_003', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -112,14 +109,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_0400
-   * @tc.name test_cloudSync_State_004
-   * @tc.desc function of API, on_progress, SyncState.UPLOAD_FAILED
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_004
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_0400
+    * @tc.desc   function of API, on_progress, SyncState.UPLOAD_FAILED
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_004', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -137,14 +133,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_0500
-   * @tc.name test_cloudSync_State_005
-   * @tc.desc function of API, on_progress, SyncState.DOWNLOADING
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_005
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_0500
+    * @tc.desc   function of API, on_progress, SyncState.DOWNLOADING
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_005', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -162,14 +157,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_0600
-   * @tc.name test_cloudSync_State_006
-   * @tc.desc function of API, on_progress, SyncState.DOWNLOAD_FAILED
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_006
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_0600
+    * @tc.desc   function of API, on_progress, SyncState.DOWNLOAD_FAILED
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_006', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -189,14 +183,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_0700
-   * @tc.name test_cloudSync_State_007
-   * @tc.desc function of API, on_progress, SyncState.COMPLETED
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_007
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_0700
+    * @tc.desc   function of API, on_progress, SyncState.COMPLETED
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_007', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -216,14 +209,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_0800
-   * @tc.name test_cloudSync_State_008
-   * @tc.desc function of API, on_progress, SyncState.STOPPED
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_008
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_0800
+    * @tc.desc   function of API, on_progress, SyncState.STOPPED
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_008', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -243,14 +235,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_0900
-   * @tc.name test_cloudSync_State_009
-   * @tc.desc function of API, on_progress, ErrorType.NO_ERROR
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_009
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_0900
+    * @tc.desc   function of API, on_progress, ErrorType.NO_ERROR
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_009', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -270,14 +261,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_1000
-   * @tc.name test_cloudSync_State_010
-   * @tc.desc function of API, on_progress, ErrorType.NETWORK_UNAVAILABLE
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_010
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_1000
+    * @tc.desc   function of API, on_progress, ErrorType.NETWORK_UNAVAILABLE
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_010', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -297,14 +287,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_1100
-   * @tc.name test_cloudSync_State_011
-   * @tc.desc function of API, on_progress, ErrorType.WIFI_UNAVAILABLE
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_011
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_1100
+    * @tc.desc   function of API, on_progress, ErrorType.WIFI_UNAVAILABLE
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_011', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -324,14 +313,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_1200
-   * @tc.name test_cloudSync_State_012
-   * @tc.desc function of API, on_progress, ErrorType.BATTERY_LEVEL_LOW
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_012
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_1200
+    * @tc.desc   function of API, on_progress, ErrorType.BATTERY_LEVEL_LOW
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_012', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -351,14 +339,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_1300
-   * @tc.name test_cloudSync_State_013
-   * @tc.desc function of API, on_progress, ErrorType.BATTERY_LEVEL_WARNING
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_013
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_1300
+    * @tc.desc   function of API, on_progress, ErrorType.BATTERY_LEVEL_WARNING
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_013', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -378,14 +365,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_1400
-   * @tc.name test_cloudSync_State_014
-   * @tc.desc function of API, on_progress, ErrorType.CLOUD_STORAGE_FULL
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_014
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_1400
+    * @tc.desc   function of API, on_progress, ErrorType.CLOUD_STORAGE_FULL
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_014', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -405,14 +391,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_1500
-   * @tc.name test_cloudSync_State_015
-   * @tc.desc function of API, on_progress, ErrorType.LOCAL_STORAGE_FULL
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_015
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_1500
+    * @tc.desc   function of API, on_progress, ErrorType.LOCAL_STORAGE_FULL
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_015', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -432,14 +417,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_1600
-   * @tc.name test_cloudSync_State_016
-   * @tc.desc function of API, on_progress, ErrorType.DEVICE_TEMPERATURE_TOO_HIGH
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_016
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_1600
+    * @tc.desc   function of API, on_progress, ErrorType.DEVICE_TEMPERATURE_TOO_HIGH
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_016', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -459,14 +443,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_1700
-   * @tc.name test_cloudSync_State_017
-   * @tc.desc function of API, fileSync.stop, Promise
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_017
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_1700
+    * @tc.desc   function of API, fileSync.stop, Promise
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_017', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -485,14 +468,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_1800
-   * @tc.name test_cloudSync_State_018
-   * @tc.desc function of API, fileSync.stop, callback
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_018
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_1800
+    * @tc.desc   function of API, fileSync.stop, callback
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_018', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -513,14 +495,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_1900
-   * @tc.name test_cloudSync_State_019
-   * @tc.desc function of API, getLastSyncTime, Promise
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_019
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_1900
+    * @tc.desc   function of API, getLastSyncTime, Promise
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_019', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -540,14 +521,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_2000
-   * @tc.name test_cloudSync_State_020
-   * @tc.desc function of API, getLastSyncTime, callback
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_020
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_2000
+    * @tc.desc   function of API, getLastSyncTime, callback
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_020', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -569,14 +549,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_2100
-   * @tc.name test_cloudSync_State_021
-   * @tc.desc function of API, CloudFileCache.on
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_021
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_2100
+    * @tc.desc   function of API, CloudFileCache.on
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_021', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -594,14 +573,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_2200
-   * @tc.name test_cloudSync_State_022
-   * @tc.desc function of API, CloudFileCache.off
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_022
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_2200
+    * @tc.desc   function of API, CloudFileCache.off
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_022', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -620,14 +598,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_2300
-   * @tc.name test_cloudSync_State_023
-   * @tc.desc function of API, CloudFileCache.start, Promise
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_023
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_2300
+    * @tc.desc   function of API, CloudFileCache.start, Promise
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_023', Level.LEVEL3, async (done: Function) => {
     let path = "/data/storage/el2/cloud/1.txt";
     let uri = fileUri.getUriFromPath(path);
@@ -652,14 +629,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_2400
-   * @tc.name test_cloudSync_State_024
-   * @tc.desc function of API, CloudFileCache.start, callback
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_024
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_2400
+    * @tc.desc   function of API, CloudFileCache.start, callback
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_024', Level.LEVEL3, async (done: Function) => {
     let path = "/data/storage/el2/cloud/1.txt";
     let uri = fileUri.getUriFromPath(path);
@@ -686,14 +662,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_2500
-   * @tc.name test_cloudSync_State_025
-   * @tc.desc function of API, CloudFileCache.stop, Promise
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_025
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_2500
+    * @tc.desc   function of API, CloudFileCache.stop, Promise
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_025', Level.LEVEL3, async (done: Function) => {
     let path = "/data/storage/el2/cloud/1.txt";
     let uri = fileUri.getUriFromPath(path);
@@ -714,14 +689,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_2600
-   * @tc.name test_cloudSync_State_026
-   * @tc.desc function of API, CloudFileCache.stop, callback
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_026
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_2600
+    * @tc.desc   function of API, CloudFileCache.stop, callback
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_026', Level.LEVEL3, async (done: Function) => {
     let path = "/data/storage/el2/cloud/1.txt";
     let uri = fileUri.getUriFromPath(path);
@@ -744,14 +718,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_2700
-   * @tc.name test_cloudSync_State_027
-   * @tc.desc function of API, CloudFileCache.on, State.RUNNING
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_027
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_2700
+    * @tc.desc   function of API, CloudFileCache.on, State.RUNNING
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_027', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -772,14 +745,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_2800
-   * @tc.name test_cloudSync_State_028
-   * @tc.desc function of API, CloudFileCache.on, State.COMPLETED
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_028
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_2800
+    * @tc.desc   function of API, CloudFileCache.on, State.COMPLETED
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_028', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -798,14 +770,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_2900
-   * @tc.name test_cloudSync_State_029
-   * @tc.desc function of API, CloudFileCache.on, State.FAILED
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_029
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_2900
+    * @tc.desc   function of API, CloudFileCache.on, State.FAILED
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_029', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -824,14 +795,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_3000
-   * @tc.name test_cloudSync_State_030
-   * @tc.desc function of API, CloudFileCache.on, State.STOPPED
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_030
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_3000
+    * @tc.desc   function of API, CloudFileCache.on, State.STOPPED
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_030', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -850,14 +820,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_3100
-   * @tc.name test_cloudSync_State_031
-   * @tc.desc function of API, CloudFileCache.on, DownloadErrorType.NO_ERROR
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_031
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_3100
+    * @tc.desc   function of API, CloudFileCache.on, DownloadErrorType.NO_ERROR
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_031', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -876,14 +845,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_3200
-   * @tc.name test_cloudSync_State_032
-   * @tc.desc function of API, CloudFileCache.on, DownloadErrorType.UNKNOWN_ERROR
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_032
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_3200
+    * @tc.desc   function of API, CloudFileCache.on, DownloadErrorType.UNKNOWN_ERROR
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_032', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -902,14 +870,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_3300
-   * @tc.name test_cloudSync_State_033
-   * @tc.desc function of API, CloudFileCache.on, DownloadErrorType.NETWORK_UNAVAILABLE
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_033
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_3300
+    * @tc.desc   function of API, CloudFileCache.on, DownloadErrorType.NETWORK_UNAVAILABLE
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_033', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -928,14 +895,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_3400
-   * @tc.name test_cloudSync_State_034
-   * @tc.desc function of API, CloudFileCache.on, DownloadErrorType.LOCAL_STORAGE_FULL
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_034
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_3400
+    * @tc.desc   function of API, CloudFileCache.on, DownloadErrorType.LOCAL_STORAGE_FULL
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_034', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -954,14 +920,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_3500
-   * @tc.name test_cloudSync_State_035
-   * @tc.desc function of API, CloudFileCache.on, DownloadErrorType.CONTENT_NOT_FOUND
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_035
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_3500
+    * @tc.desc   function of API, CloudFileCache.on, DownloadErrorType.CONTENT_NOT_FOUND
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_035', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -980,14 +945,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_3600
-   * @tc.name test_cloudSync_State_036
-   * @tc.desc function of API, CloudFileCache.on, DownloadErrorType.FREQUENT_USER_REQUESTS
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_036
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_3600
+    * @tc.desc   function of API, CloudFileCache.on, DownloadErrorType.FREQUENT_USER_REQUESTS
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_036', Level.LEVEL3, async (done: Function) => {
      
      try {
@@ -1006,14 +970,13 @@ describe('cloud_sync_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_3700
-   * @tc.name test_cloudSync_State_037
-   * @tc.desc function of API, on_progress, ErrorType.REMOTE_SERVER_ABNORMAL
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_cloudSync_State_037
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_3700
+    * @tc.desc   function of API, on_progress, ErrorType.REMOTE_SERVER_ABNORMAL
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_cloudSync_State_037', Level.LEVEL3, async (done: Function) => {
      
      try {

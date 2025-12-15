@@ -59,9 +59,12 @@ export default function LazyForEachAdd() {
     });
 
     /**
+     * @tc.name   LazyForEachAdd_001
      * @tc.number LazyForEachAdd_001
-     * @tc.name LazyForEachAdd_001
-     * @tc.desc Test LazyForEach add function
+     * @tc.desc   Test LazyForEach add function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LazyForEachAdd_001', Level.LEVEL0, async (done: Function) => {
       console.info('[LazyForEachAdd_001] START');

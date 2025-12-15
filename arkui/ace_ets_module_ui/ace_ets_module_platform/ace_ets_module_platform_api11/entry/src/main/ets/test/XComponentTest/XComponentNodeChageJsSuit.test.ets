@@ -54,15 +54,15 @@ export default function XComponentNodeChageJsSuit() {
       done()
     });
 
-    /**
-     * @tc.number: SUB_ACE_COMPONENT_XComponentNodeChageJsSuit_0100
-     * @tc.name : XComponentNodeChageJsSuit_0100
-     * @tc.desc  : api
-     * @tc.level : Level 2
-     * @tc.type :
-     * @tc.size :
-     */
 
+    /**
+     * @tc.name   XComponentNodeChageJsSuit_0100
+     * @tc.number XComponentNodeChageJsSuit_0100
+     * @tc.desc   XComponentNodeChageJsSuit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('XComponentNodeChageJsSuit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[XComponentNodeChageJsSuit_0100] START');
       let driver = await Driver.create()

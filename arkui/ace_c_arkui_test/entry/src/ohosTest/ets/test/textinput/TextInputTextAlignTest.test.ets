@@ -26,65 +26,65 @@ export default function  () {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_TEXTALIGN_0100
-     * @tc.name       : testTextInputTextAlign001
-     * @tc.desc       : testing textAlign for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputTextAlign001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_TEXTALIGN_0100
+     * @tc.desc   testing textAlign for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputTextAlign001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputTextAlign001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_TEXTALIGN_0200
-     * @tc.name       : testTextInputTextAlign002
-     * @tc.desc       : testing textAlign for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputTextAlign002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_TEXTALIGN_0200
+     * @tc.desc   testing textAlign for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputTextAlign002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputTextAlign002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_TEXTALIGN_0300
-     * @tc.name       : testTextInputTextAlign003
-     * @tc.desc       : testing textAlign for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputTextAlign003
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_TEXTALIGN_0300
+     * @tc.desc   testing textAlign for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputTextAlign003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputTextAlign003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_TEXTALIGN_0400
-     * @tc.name       : testTextInputTextAlign004
-     * @tc.desc       : testing textAlign for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputTextAlign004
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_TEXTALIGN_0400
+     * @tc.desc   testing textAlign for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputTextAlign004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputTextAlign004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_TEXTALIGN_0500
-     * @tc.name       : testTextInputTextAlign005
-     * @tc.desc       : testing textAlign for textInput with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextInputTextAlign005
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_TEXTALIGN_0500
+     * @tc.desc   testing textAlign for textInput with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputTextAlign005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputTextAlign005()).assertEqual(0)

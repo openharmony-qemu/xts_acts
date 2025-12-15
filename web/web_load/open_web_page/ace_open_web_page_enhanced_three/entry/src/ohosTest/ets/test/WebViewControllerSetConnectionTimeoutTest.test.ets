@@ -59,14 +59,14 @@ export default function webViewControllerSetConnectionTimeoutTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SETCONNECTIONTIMEOUT_0100
-    * @tc.name       : testWebViewControllerSetConnectionTimeout001
-    * @tc.desc       : test setConnectionTimeout
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewControllerSetConnectionTimeout001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETCONNECTIONTIMEOUT_0100
+     * @tc.desc   test setConnectionTimeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewControllerSetConnectionTimeout001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebViewControllerSetConnectionTimeout001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -77,14 +77,14 @@ export default function webViewControllerSetConnectionTimeoutTest() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SETCONNECTIONTIMEOUT_0200
-    * @tc.name       : testWebViewControllerSetConnectionTimeout002
-    * @tc.desc       : test setConnectionTimeout
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewControllerSetConnectionTimeout002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETCONNECTIONTIMEOUT_0200
+     * @tc.desc   test setConnectionTimeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewControllerSetConnectionTimeout002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebViewControllerSetConnectionTimeout002", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -95,14 +95,14 @@ export default function webViewControllerSetConnectionTimeoutTest() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SETCONNECTIONTIMEOUT_0300
-    * @tc.name       : testWebViewControllerSetConnectionTimeout003
-    * @tc.desc       : test setConnectionTimeout
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewControllerSetConnectionTimeout003
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETCONNECTIONTIMEOUT_0300
+     * @tc.desc   test setConnectionTimeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewControllerSetConnectionTimeout003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebViewControllerSetConnectionTimeout003", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;

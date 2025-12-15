@@ -80,12 +80,12 @@ export default function MapHasTest() {
     })
 
     /**
+     * @tc.name   MapHasTest001
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_001
-     * @tc.name MapHasTest001
-     * @tc.desc Verify that has() returns true for an existing string key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that has() returns true for an existing string key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapHasTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map = new Map([['username', 'zhangsan']]);
@@ -95,12 +95,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest002
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_002
-     * @tc.name MapHasTest002
-     * @tc.desc Verify that has() returns false for a non-existent key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that has() returns false for a non-existent key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapHasTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map = new Map([['age', 25]]);
@@ -110,12 +110,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest003
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_003
-     * @tc.name MapHasTest003
-     * @tc.desc Verify the distinction between primitive values and wrapper objects as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify the distinction between primitive values and wrapper objects as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const HasTest003 = MapHasTest003()
@@ -124,12 +124,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest004
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_004
-     * @tc.name MapHasTest004
-     * @tc.desc Verify the distinction between different reference objects as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify the distinction between different reference objects as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let hasTest004 = MapHasTest004()
@@ -138,12 +138,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest005
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_005
-     * @tc.name MapHasTest005
-     * @tc.desc Verify the matchability when NaN is used as a key (SameValueZero algorithm)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify the matchability when NaN is used as a key (SameValueZero algorithm)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map = new Map([[NaN, 'not a number']]);
@@ -154,12 +154,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest006
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_006
-     * @tc.name MapHasTest006
-     * @tc.desc Verify the distinction between undefined and null as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify the distinction between undefined and null as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map = new Map([[undefined, 'u'], [null, 'n']]);
@@ -171,12 +171,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest007
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_007
-     * @tc.name MapHasTest007
-     * @tc.desc Verify the uniqueness of Symbol type keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify the uniqueness of Symbol type keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let hasTest007 = MapHasTest007()
@@ -185,12 +185,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest008
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_008
-     * @tc.name MapHasTest008
-     * @tc.desc Verify that has() returns false when called on an empty Map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that has() returns false when called on an empty Map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapHasTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const emptyMap: Map<string, string> = new Map();
@@ -198,12 +198,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest009
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_009
-     * @tc.name MapHasTest009
-     * @tc.desc Verify that modifying properties of an object key does not affect has() judgment
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that modifying properties of an object key does not affect has() judgment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let hasTest009 = MapHasTest009()
@@ -211,12 +211,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest010
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_010
-     * @tc.name MapHasTest010
-     * @tc.desc Verify that has() returns false after the key is deleted
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that has() returns false after the key is deleted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map = new Map([['score', 90]]);
@@ -226,12 +226,12 @@ export default function MapHasTest() {
       expect(map.size).assertEqual(0);
     });
     /**
+     * @tc.name   MapHasTest011
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_011
-     * @tc.name MapHasTest011
-     * @tc.desc Verify has() returns true for existing number key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify has() returns true for existing number key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapHasTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map = new Map([[42, 'answer']]);
@@ -239,12 +239,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest012
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_012
-     * @tc.name MapHasTest012
-     * @tc.desc Verify has() returns false for non-existent number key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify has() returns false for non-existent number key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapHasTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map = new Map([[42, 'answer']]);
@@ -252,12 +252,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest013
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_013
-     * @tc.name MapHasTest013
-     * @tc.desc Verify has() with boolean true as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify has() with boolean true as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapHasTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map = new Map([[true, 'flag']]);
@@ -266,12 +266,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest014
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_014
-     * @tc.name MapHasTest014
-     * @tc.desc Verify has() with boolean false as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify has() with boolean false as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapHasTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map = new Map([[false, 'flag']]);
@@ -280,12 +280,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest015
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_015
-     * @tc.name MapHasTest015
-     * @tc.desc Verify distinction between true and 1 as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify distinction between true and 1 as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let hasTest015 = MapHasTest015()
@@ -293,12 +293,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest016
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_016
-     * @tc.name MapHasTest016
-     * @tc.desc Verify distinction between false and 0 as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify distinction between false and 0 as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let hasTest016 = MapHasTest015()
@@ -306,12 +306,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest017
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_017
-     * @tc.name MapHasTest017
-     * @tc.desc Verify has() with empty string key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify has() with empty string key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapHasTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map = new Map([['', 'empty']]);
@@ -320,12 +320,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest018
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_018
-     * @tc.name MapHasTest018
-     * @tc.desc Verify has() with string and number keys that look similar
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with string and number keys that look similar
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let hasTest018 = MapHasTest018()
@@ -333,12 +333,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest019
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_019
-     * @tc.name MapHasTest019
-     * @tc.desc Verify has() with negative number key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify has() with negative number key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapHasTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map = new Map([[-42, 'negative']]);
@@ -347,12 +347,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest020
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_020
-     * @tc.name MapHasTest020
-     * @tc.desc Verify has() with zero as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify has() with zero as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapHasTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map = new Map([[0, 'zero']]);
@@ -361,12 +361,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest021
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_021
-     * @tc.name MapHasTest021
-     * @tc.desc Verify has() with bigint key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with bigint key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let hasTest018 = MapHasTest021()
@@ -375,12 +375,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest022
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_022
-     * @tc.name MapHasTest022
-     * @tc.desc Verify has() with date object as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with date object as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const date = new Date();
@@ -390,12 +390,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest023
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_023
-     * @tc.name MapHasTest023
-     * @tc.desc Verify has() with regexp as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with regexp as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const regex = /test/;
@@ -405,12 +405,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest024
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_024
-     * @tc.name MapHasTest024
-     * @tc.desc Verify has() after adding key with set()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify has() after adding key with set()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapHasTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map: Map<string, string> = new Map();
@@ -419,12 +419,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest025
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_025
-     * @tc.name MapHasTest025
-     * @tc.desc Verify has() returns false after clear()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify has() returns false after clear()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapHasTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map = new Map([['key', 'value']]);
@@ -433,12 +433,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest026
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_026
-     * @tc.name MapHasTest026
-     * @tc.desc Verify has() with multiple keys of different types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with multiple keys of different types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let hasTest026 = MapHasTest026()
@@ -449,12 +449,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest027
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_027
-     * @tc.name MapHasTest027
-     * @tc.desc Verify has() with array as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with array as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const arr = [1, 2, 3];
@@ -464,12 +464,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest028
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_028
-     * @tc.name MapHasTest028
-     * @tc.desc Verify has() with modified array as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with modified array as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const arr = [1, 2, 3];
@@ -479,12 +479,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest029
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_029
-     * @tc.name MapHasTest029
-     * @tc.desc Verify has() with null prototype object as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify has() with null prototype object as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     // it('MapHasTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
     //   const obj = Object.create(null);
@@ -494,12 +494,12 @@ export default function MapHasTest() {
     // });
 
     /**
+     * @tc.name   MapHasTest030
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_030
-     * @tc.name MapHasTest030
-     * @tc.desc Verify has() with symbol from Symbol.for()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with symbol from Symbol.for()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const hasTest030 = MapHasTest030()
@@ -507,12 +507,12 @@ export default function MapHasTest() {
       expect(hasTest030.map2).assertEqual(false);
     });
     /**
+     * @tc.name   MapHasTest031
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_031
-     * @tc.name MapHasTest031
-     * @tc.desc Verify has() with Infinity as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with Infinity as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map = new Map([[Infinity, 'infinite']]);
@@ -521,12 +521,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest032
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_032
-     * @tc.name MapHasTest032
-     * @tc.desc Verify has() with -Infinity as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with -Infinity as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map = new Map([[-Infinity, 'negative infinite']]);
@@ -535,12 +535,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest033
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_033
-     * @tc.name MapHasTest033
-     * @tc.desc Verify has() with number precision edge cases
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify has() with number precision edge cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapHasTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const map = new Map([[0.1 + 0.2, 'precision']]);
@@ -549,12 +549,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest034
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_034
-     * @tc.name MapHasTest034
-     * @tc.desc Verify has() with very large number keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with very large number keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const largeNum = Number.MAX_SAFE_INTEGER;
@@ -564,12 +564,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest035
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_035
-     * @tc.name MapHasTest035
-     * @tc.desc Verify has() with very small number keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with very small number keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const smallNum = Number.MIN_SAFE_INTEGER;
@@ -579,12 +579,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest036
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_036
-     * @tc.name MapHasTest036
-     * @tc.desc Verify has() with function as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with function as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const func = () => 'test';
@@ -594,12 +594,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest037
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_037
-     * @tc.name MapHasTest037
-     * @tc.desc Verify has() with modified function as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with modified function as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const func = () => 'test';
@@ -609,12 +609,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest038
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_038
-     * @tc.name MapHasTest038
-     * @tc.desc Verify has() with null as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify has() with null as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapHasTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let hasTest038 = MapHasTest038()
@@ -623,12 +623,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest039
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_039
-     * @tc.name MapHasTest039
-     * @tc.desc Verify has() with undefined as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify has() with undefined as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapHasTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let hasTest039 = MapHasTest039()
@@ -637,12 +637,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest040
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_040
-     * @tc.name MapHasTest040
-     * @tc.desc Verify has() with multi-line string key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with multi-line string key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const key = 'line1\nline2';
@@ -652,12 +652,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest041
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_041
-     * @tc.name MapHasTest041
-     * @tc.desc Verify has() with string containing special characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with string containing special characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const key = '!@#$%^&*()_+{}:"<>?`~';
@@ -667,12 +667,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest042
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_042
-     * @tc.name MapHasTest042
-     * @tc.desc Verify has() with empty object as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with empty object as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let hasTest042 = MapHasTest042()
@@ -681,12 +681,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest043
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_043
-     * @tc.name MapHasTest043
-     * @tc.desc Verify has() with nested object as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with nested object as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let hasTest043 = MapHasTest043()
@@ -695,12 +695,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest044
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_044
-     * @tc.name MapHasTest044
-     * @tc.desc Verify has() after modifying nested object properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() after modifying nested object properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let hasTest044 = MapHasTest044()
@@ -708,12 +708,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest045
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_045
-     * @tc.name MapHasTest045
-     * @tc.desc Verify has() with typed array as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with typed array as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const arr = new Uint8Array([1, 2, 3]);
@@ -723,12 +723,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest046
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_046
-     * @tc.name MapHasTest046
-     * @tc.desc Verify has() with frozen object as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with frozen object as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let hasTest046 = MapHasTest046()
@@ -736,12 +736,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest047
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_047
-     * @tc.name MapHasTest047
-     * @tc.desc Verify has() with sealed object as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with sealed object as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let hasTest047 = MapHasTest047()
@@ -749,12 +749,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest048
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_048
-     * @tc.name MapHasTest048
-     * @tc.desc Verify has() with symbol as key in multiple Maps
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with symbol as key in multiple Maps
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let hasTest048 = MapHasTest048()
@@ -764,12 +764,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest049
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_049
-     * @tc.name MapHasTest049
-     * @tc.desc Verify has() with same string key added multiple times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify has() with same string key added multiple times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapHasTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map: Map<string, string> = new Map();
@@ -780,12 +780,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest050
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_050
-     * @tc.name MapHasTest050
-     * @tc.desc Verify has() with key after reassigning variable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key after reassigning variable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let key = 'original';
@@ -796,12 +796,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest051
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_051
-     * @tc.name MapHasTest051
-     * @tc.desc Verify has() with key that is a Map instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a Map instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const keyMap: Map<string, string> = new Map();
@@ -811,12 +811,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest052
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_052
-     * @tc.name MapHasTest052
-     * @tc.desc Verify has() with key that is a Set instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a Set instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const keySet: Set<string> = new Set();
@@ -826,12 +826,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest053
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_053
-     * @tc.name MapHasTest053
-     * @tc.desc Verify has() with key that is a WeakMap instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a WeakMap instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const keyWeakMap: WeakMap<object, string> = new WeakMap();
@@ -841,12 +841,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest054
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_054
-     * @tc.name MapHasTest054
-     * @tc.desc Verify has() with key that is a WeakSet instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a WeakSet instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const keyWeakSet = new WeakSet();
@@ -856,12 +856,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest055
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_055
-     * @tc.name MapHasTest055
-     * @tc.desc Verify has() with key after many operations
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify has() with key after many operations
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('MapHasTest055', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const map: Map<string | number, String | number> = new Map();
@@ -879,12 +879,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest056
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_056
-     * @tc.name MapHasTest056
-     * @tc.desc Verify has() with key that is a Promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const keyPromise = Promise.resolve('test');
@@ -894,12 +894,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest057
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_057
-     * @tc.name MapHasTest057
-     * @tc.desc Verify has() with key that is a generator function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a generator function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let hasTest057 = MapHasTest057()
@@ -908,12 +908,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest058
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_058
-     * @tc.name MapHasTest058
-     * @tc.desc Verify has() with key that is a class
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a class
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let hasTest058: boolean = MapHasTest058()
@@ -927,12 +927,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest059
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_059
-     * @tc.name MapHasTest059
-     * @tc.desc Verify has() with key that is an instance of a class
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is an instance of a class
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       class TestClass {
@@ -945,12 +945,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest060
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_060
-     * @tc.name MapHasTest060
-     * @tc.desc Verify has() with key after being deleted and re-added
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key after being deleted and re-added
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map = new Map([['key', 'value']]);
@@ -963,12 +963,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest061
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_061
-     * @tc.name MapHasTest061
-     * @tc.desc Verify has() with key that is a RegExp with same pattern but different flags
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a RegExp with same pattern but different flags
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const regex = /test*/;
@@ -979,12 +979,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest062
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_062
-     * @tc.name MapHasTest062
-     * @tc.desc Verify has() with key that is a Date with same timestamp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a Date with same timestamp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const date = new Date(2023, 0, 1);
@@ -995,12 +995,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest063
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_063
-     * @tc.name MapHasTest063
-     * @tc.desc Verify has() with key that is a Symbol with same description
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a Symbol with same description
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let hasTest063 = MapHasTest063()
@@ -1009,12 +1009,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest064
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_064
-     * @tc.name MapHasTest064
-     * @tc.desc Verify has() with key that is a BigInt with same numeric value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a BigInt with same numeric value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const bigint1 = 42n;
@@ -1025,12 +1025,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest065
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_065
-     * @tc.name MapHasTest065
-     * @tc.desc Verify has() with key that is a string with same value but different case
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify has() with key that is a string with same value but different case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapHasTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map = new Map([['Key', 'value']]);
@@ -1039,12 +1039,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest066
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_066
-     * @tc.name MapHasTest066
-     * @tc.desc Verify has() with key that is a number converted from string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a number converted from string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let hasTest066 = MapHasTest066()
@@ -1053,12 +1053,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest067
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_067
-     * @tc.name MapHasTest067
-     * @tc.desc Verify has() with key that is a string converted from number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a string converted from number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let hasTest067 = MapHasTest067()
@@ -1067,12 +1067,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest068
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_068
-     * @tc.name MapHasTest068
-     * @tc.desc Verify has() with key that is a boolean converted from number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a boolean converted from number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let hasTest068 = MapHasTest068()
@@ -1081,12 +1081,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest069
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_069
-     * @tc.name MapHasTest069
-     * @tc.desc Verify has() with key that is a boolean converted from number zero
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a boolean converted from number zero
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let hasTest069 = MapHasTest069()
@@ -1095,12 +1095,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest070
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_070
-     * @tc.name MapHasTest070
-     * @tc.desc Verify has() with key that is a number after type coercion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a number after type coercion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const hasTest070 = MapHasTest070()
@@ -1109,12 +1109,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest071
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_071
-     * @tc.name MapHasTest071
-     * @tc.desc Verify has() with key that is a string with leading/trailing whitespace
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a string with leading/trailing whitespace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map = new Map([[' key ', 'with spaces']]);
@@ -1123,12 +1123,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest072
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_072
-     * @tc.name MapHasTest072
-     * @tc.desc Verify has() with key that is a Unicode character
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a Unicode character
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const key = '�?'; // Unicode character
@@ -1139,12 +1139,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest073
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_073
-     * @tc.name MapHasTest073
-     * @tc.desc Verify has() with key that is a Unicode escape sequence
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a Unicode escape sequence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const key = '\u00A9'; // Copyright symbol
@@ -1155,12 +1155,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest074
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_074
-     * @tc.name MapHasTest074
-     * @tc.desc Verify has() with key that is a surrogate pair
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a surrogate pair
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const key = '😀'; // Emoji as surrogate pair
@@ -1171,12 +1171,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest075
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_075
-     * @tc.name MapHasTest075
-     * @tc.desc Verify has() with key that is a null prototype object after modification
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify has() with key that is a null prototype object after modification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapHasTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let hasTest075 = MapHasTest075()
@@ -1184,12 +1184,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest076
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_076
-     * @tc.name MapHasTest076
-     * @tc.desc Verify has() with key that is a prototype object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a prototype object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let hasTest076 = MapHasTest076()
@@ -1198,12 +1198,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest077
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_077
-     * @tc.name MapHasTest077
-     * @tc.desc Verify has() with key that is a DOM element (if available)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify has() with key that is a DOM element (if available)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     // it('MapHasTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
     //
@@ -1214,12 +1214,12 @@ export default function MapHasTest() {
     // });
 
     /**
+     * @tc.name   MapHasTest078
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_078
-     * @tc.name MapHasTest078
-     * @tc.desc Verify has() with key that is a Error object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a Error object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const error = new Error('test');
@@ -1230,12 +1230,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest079
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_079
-     * @tc.name MapHasTest079
-     * @tc.desc Verify has() with key that is a TypeError object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a TypeError object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const error = new TypeError('test');
@@ -1246,12 +1246,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest080
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_080
-     * @tc.name MapHasTest080
-     * @tc.desc Verify has() with key that is a RegExp with same source and flags
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a RegExp with same source and flags
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const regex1 = /test/g;
@@ -1263,12 +1263,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest081
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_081
-     * @tc.name MapHasTest081
-     * @tc.desc Verify has() with key that is a ArrayBuffer
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a ArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const buffer = new ArrayBuffer(8);
@@ -1279,12 +1279,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest082
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_082
-     * @tc.name MapHasTest082
-     * @tc.desc Verify has() with key that is a DataView
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a DataView
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const buffer = new ArrayBuffer(8);
@@ -1296,12 +1296,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest083
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_083
-     * @tc.name MapHasTest083
-     * @tc.desc Verify has() with key that is a Map after being modified
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a Map after being modified
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const keyMap: Map<string, string> = new Map();
@@ -1312,12 +1312,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest084
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_084
-     * @tc.name MapHasTest084
-     * @tc.desc Verify has() with key that is a Set after being modified
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a Set after being modified
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const keySet: Set<string> = new Set();
@@ -1328,12 +1328,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest085
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_085
-     * @tc.name MapHasTest085
-     * @tc.desc Verify has() with key that is a WeakMap after being modified
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a WeakMap after being modified
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const hasTest085 = MapHasTest085()
@@ -1341,12 +1341,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest086
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_086
-     * @tc.name MapHasTest086
-     * @tc.desc Verify has() with key that is a WeakSet after being modified
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a WeakSet after being modified
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const hasTest086 = MapHasTest086()
@@ -1354,12 +1354,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest087
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_087
-     * @tc.name MapHasTest087
-     * @tc.desc Verify has() with key that is a Proxy object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify has() with key that is a Proxy object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapHasTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let hasTest087 = MapHasTest087()
@@ -1368,12 +1368,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest088
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_088
-     * @tc.name MapHasTest088
-     * @tc.desc Verify has() with key that is a Reflect object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a Reflect object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let hasTest088 = MapHasTest088()
@@ -1381,12 +1381,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest089
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_089
-     * @tc.name MapHasTest089
-     * @tc.desc Verify has() with key that is a Math object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a Math object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map = new Map([[Math, 'math']]);
@@ -1394,12 +1394,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest090
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_090
-     * @tc.name MapHasTest090
-     * @tc.desc Verify has() with key that is a JSON object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a JSON object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map = new Map([[JSON, 'json']]);
@@ -1408,12 +1408,12 @@ export default function MapHasTest() {
 
 
     /**
+     * @tc.name   MapHasTest093
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_093
-     * @tc.name MapHasTest093
-     * @tc.desc Verify has() with key that is a function after binding
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a function after binding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let hasTest093 = MapHasTest093()
@@ -1422,12 +1422,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest094
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_094
-     * @tc.name MapHasTest094
-     * @tc.desc Verify has() with key that is a generator object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is a generator object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let hasTest094 = MapHasTest094()
@@ -1436,12 +1436,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest095
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_095
-     * @tc.name MapHasTest095
-     * @tc.desc Verify has() with key that is an async function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is an async function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const asyncFunc = async () => {
@@ -1454,12 +1454,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest096
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_096
-     * @tc.name MapHasTest096
-     * @tc.desc Verify has() with key that is an async generator function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify has() with key that is an async generator function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapHasTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let hasTest096 = MapHasTest096()
@@ -1468,12 +1468,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest097
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_097
-     * @tc.name MapHasTest097
-     * @tc.desc Verify has() with key that is a revoked proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify has() with key that is a revoked proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapHasTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let hasTest097 = MapHasTest097()
@@ -1483,12 +1483,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest098
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_098
-     * @tc.name MapHasTest098
-     * @tc.desc Verify has() performance with large number of keys
-     * @tc.size LargeTest
-     * @tc.type Performance
-     * @tc.level Level 3
+     * @tc.desc   Verify has() performance with large number of keys
+     * @tc.type   PERFORMANCE
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('MapHasTest098', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, async () => {
       const map: Map<string, string | number> = new Map();
@@ -1507,12 +1507,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest099
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_099
-     * @tc.name MapHasTest099
-     * @tc.desc Verify has() with key that is a Symbol.toStringTag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify has() with key that is a Symbol.toStringTag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapHasTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let hasTest099 = MapHasTest099()
@@ -1521,12 +1521,12 @@ export default function MapHasTest() {
     });
 
     /**
+     * @tc.name   MapHasTest100
      * @tc.number SUB_BUILTINS_MAP_HAS_TEST_100
-     * @tc.name MapHasTest100
-     * @tc.desc Verify has() with key that is a Symbol.iterator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify has() with key that is a Symbol.iterator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapHasTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const key = Symbol.iterator;

@@ -47,9 +47,12 @@ export default function flexPadding_EndJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignEndParentSetPadding
      * @tc.number SUB_ACE_FLEXALIGNITEMS_END_0300
-     * @tc.name testFlexItemAlignEndParentSetPadding
-     * @tc.desc Parent component set paddding,subcomponent does not exceed the parent component.
+     * @tc.desc   Parent component set paddding,subcomponent does not exceed the parent component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignEndParentSetPadding',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignEndParentSetPadding START');

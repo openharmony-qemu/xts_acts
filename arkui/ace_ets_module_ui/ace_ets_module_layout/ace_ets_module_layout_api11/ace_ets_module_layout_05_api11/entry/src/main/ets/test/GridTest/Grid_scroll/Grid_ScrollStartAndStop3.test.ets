@@ -56,9 +56,12 @@ export default function Grid_ScrollStartandStop3() {
     });
 
     /**
+     * @tc.name   Grid_ScrollStartandStop3_0400
      * @tc.number SUB_ACE_Grid_ScrollStartandStop3_0400
-     * @tc.name testGrid
-     * @tc.desc When scrollBar starts sliding, onScrollStart is triggered, and when sliding stops, onScrollStop is triggered
+     * @tc.desc   When scrollBar starts sliding, onScrollStart is triggered, and when sliding stops, onScrollStop is triggered
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Grid_ScrollStartandStop3_0400',  Level.LEVEL0, async (done: Function) => {
 

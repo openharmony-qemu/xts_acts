@@ -19,10 +19,13 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 export default function getBundleInfoForSelf() {
   describe('getBundleInfoForSelf', () => {
 
-    /*
-     * @tc.number: SUB_BMS_SERVICE_SPLIT_0031
-     * @tc.name: getBundleInfoForSelfAtomicService
-     * @tc.desc: Test getBundleInfoForSelf with AtomicService
+    /**
+     * @tc.name   getBundleInfoForSelfAtomicService
+     * @tc.number SUB_BMS_SERVICE_SPLIT_0031
+     * @tc.desc   Test getBundleInfoForSelf with AtomicService
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getBundleInfoForSelfAtomicService', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       await bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION |
@@ -66,10 +69,13 @@ export default function getBundleInfoForSelf() {
       })
     })
 
-    /*
-     * @tc.number: SUB_BMS_APPINFO_SYNC_SELF_0012
-     * @tc.name: getBundleInfoForSelfSyncAtomicService
-     * @tc.desc: Test getBundleInfoForSelfSync with AtomicService
+    /**
+     * @tc.name   getBundleInfoForSelfSyncAtomicService
+     * @tc.number SUB_BMS_APPINFO_SYNC_SELF_0012
+     * @tc.desc   Test getBundleInfoForSelfSync with AtomicService
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoForSelfSyncAtomicService', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
       let data = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION |

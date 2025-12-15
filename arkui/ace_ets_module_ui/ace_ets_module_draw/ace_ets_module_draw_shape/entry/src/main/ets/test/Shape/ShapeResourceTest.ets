@@ -42,12 +42,12 @@ export default function ShapeResourceTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ShapeResourceTest_0100
-     * @tc.name: ShapeResourceTest_0100
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   ShapeResourceTest_0100
+     * @tc.number SUB_ARKUI_API_ShapeResourceTest_0100
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ShapeResourceTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[ShapeResourceTest_0100] START');

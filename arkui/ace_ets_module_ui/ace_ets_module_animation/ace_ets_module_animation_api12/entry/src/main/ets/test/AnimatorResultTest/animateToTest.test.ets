@@ -41,13 +41,13 @@ export default function animateToTest() {
       await CommonFunc.sleep(1000);
       console.info("animateToTest after each called");
     });
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_animateToImmediately_0010
-     * @tc.name       : animateToTest_001
-     * @tc.desc       : animateToImmediately Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   animateToTest_001
+     * @tc.number SUB_ACE_UI_COMPONENT_animateToImmediately_0010
+     * @tc.desc   animateToImmediately Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('animateToTest_001', Level.LEVEL3, async (done: Function) => {
       console.info('[animateToTest_001] START');

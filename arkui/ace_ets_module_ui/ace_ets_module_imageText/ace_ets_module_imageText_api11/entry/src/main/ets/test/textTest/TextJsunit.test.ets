@@ -54,9 +54,12 @@ export default function textJsunit() {
       console.info("Text after each called");
     });
     /**
+     * @tc.name   textGetInspectorByKey010
      * @tc.number SUB_ACE_BASIC_ETS_API_1200
-     * @tc.name textGetInspectorByKey010
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textGetInspectorByKey010', Level.LEVEL1, async (done: Function) => {
       console.info('testGetInspectorByKey START');
@@ -109,9 +112,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textGetInspectorByKey020
      * @tc.number SUB_ACE_BASIC_ETS_API_1210
-     * @tc.name textGetInspectorByKey020
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textGetInspectorByKey020', Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('Text1');
@@ -135,9 +141,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textGetInspectorByKey030
      * @tc.number SUB_ACE_BASIC_ETS_API_1220
-     * @tc.name textGetInspectorByKey030
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textGetInspectorByKey030', Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('Text2');
@@ -160,9 +169,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textGetInspectorByKey040
      * @tc.number SUB_ACE_BASIC_ETS_API_1230
-     * @tc.name textGetInspectorByKey040
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textGetInspectorByKey040', Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('Text3');
@@ -185,9 +197,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textGetInspectorByKey050
      * @tc.number SUB_ACE_BASIC_ETS_API_1240
-     * @tc.name textGetInspectorByKey050
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textGetInspectorByKey050', Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('Text4');
@@ -206,9 +221,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textGetInspectorByKey060
      * @tc.number SUB_ACE_BASIC_ETS_API_1250
-     * @tc.name textGetInspectorByKey060
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textGetInspectorByKey060', Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('Text5');
@@ -227,9 +245,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textGetInspectorByKey070
      * @tc.number SUB_ACE_BASIC_ETS_API_1260
-     * @tc.name textGetInspectorByKey070
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textGetInspectorByKey070', Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('Text6');
@@ -244,9 +265,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textGetInspectorByKey080
      * @tc.number SUB_ACE_BASIC_ETS_API_1270
-     * @tc.name textGetInspectorByKey080
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textGetInspectorByKey080', Level.LEVEL1, async (done: ESObject) => {
       let strJson = getInspectorByKey('Text7');
@@ -261,9 +285,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textGetInspectorByKey090
      * @tc.number SUB_ACE_BASIC_ETS_API_1280
-     * @tc.name textGetInspectorByKey090
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textGetInspectorByKey090', Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('Text8');

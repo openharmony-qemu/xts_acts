@@ -61,7 +61,6 @@ export default function imeAbilityTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_IMEAbility_0001
      * @tc.number SUB_InputMethod_IMEAbility_0001
      * @tc.desc   Function test
@@ -94,7 +93,6 @@ export default function imeAbilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_IMEAbility_0002
      * @tc.number SUB_InputMethod_IMEAbility_0002
      * @tc.desc   Function test

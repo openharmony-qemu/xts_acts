@@ -46,14 +46,14 @@ export default function RichEditorFromStyledStringTest() {
       console.info("RichEditorFromStyledStringTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_RichEditor_FromStyledString_0010
-    * @tc.name         RichEditorFromStyledStringTest_0010
-    * @tc.desc        test return value of fromStyledString: Not empty array
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   RichEditorFromStyledStringTest_0010
+     * @tc.number SUB_ACE_BASIC_ETS_API_RichEditor_FromStyledString_0010
+     * @tc.desc   test return value of fromStyledString: Not empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RichEditorFromStyledStringTest_0010', Level.LEVEL1, async (done: Function) => {
       console.info('RichEditorFromStyledStringTest_0010 START');
       let driver = Driver.create();

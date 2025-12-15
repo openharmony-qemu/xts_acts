@@ -196,9 +196,12 @@ export default function progressSecTest() {
     })
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_BackgroundColor_0100
      * @tc.number ArkUI_Stage_Progress_Capsule_BackgroundColor_0100
-     * @tc.name Tests the backgroundColor property of the progress capsule component
-     * @tc.desc Get the default value of backgroundColor
+     * @tc.desc   Get the default value of backgroundColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_BackgroundColor_0100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_BackgroundColor_0100] start");
@@ -235,9 +238,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Color_0100
      * @tc.number ArkUI_Stage_Progress_Capsule_Color_0100
-     * @tc.name Tests the color property of the progress capsule component
-     * @tc.desc Get the default value of color
+     * @tc.desc   Get the default value of color
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Color_0100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Color_0100] start");
@@ -273,9 +279,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_BorderWidth_0100
      * @tc.number ArkUI_Stage_Progress_Capsule_BorderWidth_0100
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Get the default value of capsuleStyle.borderWidth
+     * @tc.desc   Get the default value of capsuleStyle.borderWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_BorderWidth_0100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_BorderWidth_0100] start");
@@ -294,9 +303,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_BorderWidth_0200
      * @tc.number ArkUI_Stage_Progress_Capsule_BorderWidth_0200
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.borderWidth as 3
+     * @tc.desc   Set the value of capsuleStyle.borderWidth as 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_BorderWidth_0200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_BorderWidth_0200] start");
@@ -334,9 +346,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_BorderWidth_0300
      * @tc.number ArkUI_Stage_Progress_Capsule_BorderWidth_0300
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.borderWidth as 3vp
+     * @tc.desc   Set the value of capsuleStyle.borderWidth as 3vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_BorderWidth_0300', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_BorderWidth_0300] start");
@@ -374,9 +389,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_BorderWidth_0400
      * @tc.number ArkUI_Stage_Progress_Capsule_BorderWidth_0400
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.borderWidth as ohos_id_text_margin_vertical
+     * @tc.desc   Set the value of capsuleStyle.borderWidth as ohos_id_text_margin_vertical
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_BorderWidth_0400', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_BorderWidth_0400] start");
@@ -401,9 +419,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_BorderWidth_0500
      * @tc.number ArkUI_Stage_Progress_Capsule_BorderWidth_0500
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.borderWidth as 9px
+     * @tc.desc   Set the value of capsuleStyle.borderWidth as 9px
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_BorderWidth_0500', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_BorderWidth_0500] start");
@@ -441,9 +462,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_BorderWidth_0600
      * @tc.number ArkUI_Stage_Progress_Capsule_BorderWidth_0600
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.borderWidth as 9vp
+     * @tc.desc   Set the value of capsuleStyle.borderWidth as 9vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_BorderWidth_0600', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_BorderWidth_0600] start");
@@ -481,9 +505,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_BorderWidth_0700
      * @tc.number ArkUI_Stage_Progress_Capsule_BorderWidth_0700
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.borderWidth as 9fp
+     * @tc.desc   Set the value of capsuleStyle.borderWidth as 9fp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_BorderWidth_0700', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_BorderWidth_0700] start");
@@ -521,9 +548,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_BorderWidth_0800
      * @tc.number ArkUI_Stage_Progress_Capsule_BorderWidth_0800
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.borderWidth as 9lpx
+     * @tc.desc   Set the value of capsuleStyle.borderWidth as 9lpx
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_BorderWidth_0800', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_BorderWidth_0800] start");
@@ -561,9 +591,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_BorderWidth_0900
      * @tc.number ArkUI_Stage_Progress_Capsule_BorderWidth_0900
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.borderWidth as 0
+     * @tc.desc   Set the value of capsuleStyle.borderWidth as 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_BorderWidth_0900', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_BorderWidth_0900] start");
@@ -601,9 +634,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_BorderWidth_1000
      * @tc.number ArkUI_Stage_Progress_Capsule_BorderWidth_1000
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.borderWidth as -10
+     * @tc.desc   Set the value of capsuleStyle.borderWidth as -10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_BorderWidth_1000', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_BorderWidth_1000] start");
@@ -643,9 +679,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_BorderWidth_1100
      * @tc.number ArkUI_Stage_Progress_Capsule_BorderWidth_1100
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.borderWidth as 10000
+     * @tc.desc   Set the value of capsuleStyle.borderWidth as 10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_BorderWidth_1100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_BorderWidth_1100] start");
@@ -683,9 +722,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_BorderWidth_1200
      * @tc.number ArkUI_Stage_Progress_Capsule_BorderWidth_1200
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.borderWidth as null
+     * @tc.desc   Set the value of capsuleStyle.borderWidth as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_BorderWidth_1200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_BorderWidth_1200] start");
@@ -725,9 +767,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_BorderWidth_1300
      * @tc.number ArkUI_Stage_Progress_Capsule_BorderWidth_1300
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.borderWidth as undefined
+     * @tc.desc   Set the value of capsuleStyle.borderWidth as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_BorderWidth_1300', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_BorderWidth_1300] start");
@@ -767,9 +812,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_BorderColor_0100
      * @tc.number ArkUI_Stage_Progress_Capsule_BorderColor_0100
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Get the default value of capsuleStyle.borderColor
+     * @tc.desc   Get the default value of capsuleStyle.borderColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_BorderColor_0100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_BorderColor_0100] start");
@@ -807,9 +855,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_BorderColor_0200
      * @tc.number ArkUI_Stage_Progress_Capsule_BorderColor_0200
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.borderColor as 0xFFFF0000
+     * @tc.desc   Set the value of capsuleStyle.borderColor as 0xFFFF0000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_BorderColor_0200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_BorderColor_0200] start");
@@ -847,9 +898,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_BorderColor_0300
      * @tc.number ArkUI_Stage_Progress_Capsule_BorderColor_0300
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.borderColor as '#FFFF9535'
+     * @tc.desc   Set the value of capsuleStyle.borderColor as '#FFFF9535'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_BorderColor_0300', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_BorderColor_0300] start");
@@ -887,9 +941,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_BorderColor_0400
      * @tc.number ArkUI_Stage_Progress_Capsule_BorderColor_0400
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.borderColor as Color.Red
+     * @tc.desc   Set the value of capsuleStyle.borderColor as Color.Red
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_BorderColor_0400', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_BorderColor_0400] start");
@@ -927,9 +984,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_BorderColor_0500
      * @tc.number ArkUI_Stage_Progress_Capsule_BorderColor_0500
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.borderColor as ohos_id_color_connected
+     * @tc.desc   Set the value of capsuleStyle.borderColor as ohos_id_color_connected
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_BorderColor_0500', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_BorderColor_0500] start");
@@ -956,9 +1016,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_BorderColor_0600
      * @tc.number ArkUI_Stage_Progress_Capsule_BorderColor_0600
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.borderColor as 'abcdefghijk'
+     * @tc.desc   Set the value of capsuleStyle.borderColor as 'abcdefghijk'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_BorderColor_0600', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_BorderColor_0600] start");
@@ -1018,9 +1081,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_BorderColor_0700
      * @tc.number ArkUI_Stage_Progress_Capsule_BorderColor_0700
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.borderColor as null
+     * @tc.desc   Set the value of capsuleStyle.borderColor as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_BorderColor_0700', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_BorderColor_0700] start");
@@ -1080,9 +1146,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_BorderColor_0800
      * @tc.number ArkUI_Stage_Progress_Capsule_BorderColor_0800
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.borderColor as undefined
+     * @tc.desc   Set the value of capsuleStyle.borderColor as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_BorderColor_0800', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_BorderColor_0800] start");
@@ -1142,9 +1211,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Size_0100
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Size_0100
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Get the default value of capsuleStyle.font.size
+     * @tc.desc   Get the default value of capsuleStyle.font.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Size_0100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Size_0100] start");
@@ -1164,9 +1236,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Size_0200
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Size_0200
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.size as 16
+     * @tc.desc   Set the value of capsuleStyle.font.size as 16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Size_0200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Size_0200] start");
@@ -1205,9 +1280,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Size_0300
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Size_0300
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.size as '16vp'
+     * @tc.desc   Set the value of capsuleStyle.font.size as '16vp'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Size_0300', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Size_0300] start");
@@ -1246,9 +1324,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Size_0400
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Size_0400
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.size as ohos_id_text_margin_vertical
+     * @tc.desc   Set the value of capsuleStyle.font.size as ohos_id_text_margin_vertical
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Size_0400', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Size_0400] start");
@@ -1276,9 +1357,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Size_0500
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Size_0500
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.size as '18px'
+     * @tc.desc   Set the value of capsuleStyle.font.size as '18px'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Size_0500', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Size_0500] start");
@@ -1317,9 +1401,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Size_0600
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Size_0600
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.size as '18vp'
+     * @tc.desc   Set the value of capsuleStyle.font.size as '18vp'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Size_0600', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Size_0600] start");
@@ -1358,9 +1445,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Size_0700
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Size_0700
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.size as '18fp'
+     * @tc.desc   Set the value of capsuleStyle.font.size as '18fp'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Size_0700', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Size_0700] start");
@@ -1399,9 +1489,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Size_0800
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Size_0800
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.size as '18lpx'
+     * @tc.desc   Set the value of capsuleStyle.font.size as '18lpx'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Size_0800', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Size_0800] start");
@@ -1440,9 +1533,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Size_0900
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Size_0900
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.size as 0
+     * @tc.desc   Set the value of capsuleStyle.font.size as 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Size_0900', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Size_0900] start");
@@ -1481,9 +1577,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Size_1000
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Size_1000
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.size as -10
+     * @tc.desc   Set the value of capsuleStyle.font.size as -10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Size_1000', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Size_1000] start");
@@ -1524,9 +1623,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Size_1100
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Size_1100
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.size as 10000
+     * @tc.desc   Set the value of capsuleStyle.font.size as 10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Size_1100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Size_1100] start");
@@ -1565,9 +1667,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Size_1200
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Size_1200
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.size as null
+     * @tc.desc   Set the value of capsuleStyle.font.size as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Size_1200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Size_1200] start");
@@ -1608,9 +1713,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Size_1300
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Size_1300
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.size as undefined
+     * @tc.desc   Set the value of capsuleStyle.font.size as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Size_1300', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Size_1300] start");
@@ -1651,9 +1759,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Weight_0100
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Weight_0100
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Get the default value of capsuleStyle.font.weight
+     * @tc.desc   Get the default value of capsuleStyle.font.weight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Weight_0100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Weight_0100] start");
@@ -1671,9 +1782,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Weight_0200
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Weight_0200
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.weight as 700
+     * @tc.desc   Set the value of capsuleStyle.font.weight as 700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Weight_0200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Weight_0200] start");
@@ -1712,9 +1826,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Weight_0300
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Weight_0300
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.weight as '700'
+     * @tc.desc   Set the value of capsuleStyle.font.weight as '700'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Weight_0300', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Weight_0300] start");
@@ -1753,9 +1870,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Weight_0400
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Weight_0400
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.weight as FontWeight.Lighter
+     * @tc.desc   Set the value of capsuleStyle.font.weight as FontWeight.Lighter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Weight_0400', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Weight_0400] start");
@@ -1794,9 +1914,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Weight_0500
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Weight_0500
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.weight as FontWeight.Normal
+     * @tc.desc   Set the value of capsuleStyle.font.weight as FontWeight.Normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Weight_0500', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Weight_0500] start");
@@ -1835,9 +1958,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Weight_0600
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Weight_0600
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.weight as FontWeight.Regular
+     * @tc.desc   Set the value of capsuleStyle.font.weight as FontWeight.Regular
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Weight_0600', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Weight_0600] start");
@@ -1876,9 +2002,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Weight_0700
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Weight_0700
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.weight as FontWeight.Medium
+     * @tc.desc   Set the value of capsuleStyle.font.weight as FontWeight.Medium
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Weight_0700', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Weight_0700] start");
@@ -1917,9 +2046,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Weight_0800
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Weight_0800
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.weight as FontWeight.Bold
+     * @tc.desc   Set the value of capsuleStyle.font.weight as FontWeight.Bold
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Weight_0800', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Weight_0800] start");
@@ -1958,9 +2090,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Weight_0900
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Weight_0900
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.weight as FontWeight.Bolder
+     * @tc.desc   Set the value of capsuleStyle.font.weight as FontWeight.Bolder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Weight_0900', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Weight_0900] start");
@@ -1999,9 +2134,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Weight_1000
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Weight_1000
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.weight as 0
+     * @tc.desc   Set the value of capsuleStyle.font.weight as 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Weight_1000', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Weight_1000] start");
@@ -2040,9 +2178,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Weight_1100
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Weight_1100
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.weight as -10
+     * @tc.desc   Set the value of capsuleStyle.font.weight as -10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Weight_1100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Weight_1100] start");
@@ -2081,9 +2222,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Weight_1200
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Weight_1200
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.weight as 10000
+     * @tc.desc   Set the value of capsuleStyle.font.weight as 10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Weight_1200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Weight_1200] start");
@@ -2122,9 +2266,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Weight_1300
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Weight_1300
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.weight as null
+     * @tc.desc   Set the value of capsuleStyle.font.weight as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Weight_1300', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Weight_1300] start");
@@ -2163,9 +2310,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Weight_1400
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Weight_1400
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.weight as undefined
+     * @tc.desc   Set the value of capsuleStyle.font.weight as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Weight_1400', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Weight_1400] start");
@@ -2204,9 +2354,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Style_0100
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Style_0100
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Get the default value of capsuleStyle.font.style
+     * @tc.desc   Get the default value of capsuleStyle.font.style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Style_0100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Style_0100] start");
@@ -2224,9 +2377,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Style_0200
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Style_0200
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.style as FontStyle.Italic
+     * @tc.desc   Set the value of capsuleStyle.font.style as FontStyle.Italic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Style_0200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Style_0200] start");
@@ -2265,9 +2421,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Style_0300
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Style_0300
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.style as FontStyle.Normal
+     * @tc.desc   Set the value of capsuleStyle.font.style as FontStyle.Normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Style_0300', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Style_0300] start");
@@ -2306,9 +2465,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Style_0400
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Style_0400
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.style as null
+     * @tc.desc   Set the value of capsuleStyle.font.style as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Style_0400', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Style_0400] start");
@@ -2347,9 +2509,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Font_Style_0500
      * @tc.number ArkUI_Stage_Progress_Capsule_Font_Style_0500
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.font.style as undefined
+     * @tc.desc   Set the value of capsuleStyle.font.style as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Font_Style_0500', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Style_0500] start");
@@ -2388,9 +2553,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_FontColor_0100
      * @tc.number ArkUI_Stage_Progress_Capsule_FontColor_0100
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Get the default value of capsuleStyle.fontColor
+     * @tc.desc   Get the default value of capsuleStyle.fontColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_FontColor_0100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_FontColor_0100] start");
@@ -2409,9 +2577,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_FontColor_0200
      * @tc.number ArkUI_Stage_Progress_Capsule_FontColor_0200
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.fontColor as 0xFFFF0000
+     * @tc.desc   Set the value of capsuleStyle.fontColor as 0xFFFF0000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_FontColor_0200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_FontColor_0200] start");
@@ -2449,9 +2620,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_FontColor_0300
      * @tc.number ArkUI_Stage_Progress_Capsule_FontColor_0300
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.fontColor as '#FFFF9535'
+     * @tc.desc   Set the value of capsuleStyle.fontColor as '#FFFF9535'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_FontColor_0300', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_FontColor_0300] start");
@@ -2489,9 +2663,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_FontColor_0400
      * @tc.number ArkUI_Stage_Progress_Capsule_FontColor_0400
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.fontColor as Color.Red
+     * @tc.desc   Set the value of capsuleStyle.fontColor as Color.Red
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_FontColor_0400', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_FontColor_0400] start");
@@ -2529,9 +2706,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_FontColor_0500
      * @tc.number ArkUI_Stage_Progress_Capsule_FontColor_0500
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.fontColor as ohos_id_color_connected
+     * @tc.desc   Set the value of capsuleStyle.fontColor as ohos_id_color_connected
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_FontColor_0500', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_FontColor_0500] start");
@@ -2559,9 +2739,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_FontColor_0600
      * @tc.number ArkUI_Stage_Progress_Capsule_FontColor_0600
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.fontColor as 'abcdefghijk'
+     * @tc.desc   Set the value of capsuleStyle.fontColor as 'abcdefghijk'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_FontColor_0600', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_FontColor_0600] start");
@@ -2601,9 +2784,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_FontColor_0700
      * @tc.number ArkUI_Stage_Progress_Capsule_FontColor_0700
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.fontColor as null
+     * @tc.desc   Set the value of capsuleStyle.fontColor as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_FontColor_0700', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_FontColor_0700] start");
@@ -2643,9 +2829,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_FontColor_0800
      * @tc.number ArkUI_Stage_Progress_Capsule_FontColor_0800
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.fontColor as undefined
+     * @tc.desc   Set the value of capsuleStyle.fontColor as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_FontColor_0800', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_FontColor_0800] start");
@@ -2685,9 +2874,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Content_0100
      * @tc.number ArkUI_Stage_Progress_Capsule_Content_0100
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Get the default value of capsuleStyle.content
+     * @tc.desc   Get the default value of capsuleStyle.content
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Content_0100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Content_0100] start");
@@ -2703,9 +2895,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Content_0200
      * @tc.number ArkUI_Stage_Progress_Capsule_Content_0200
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.fontColor as '下载'
+     * @tc.desc   Set the value of capsuleStyle.fontColor as '下载'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Content_0200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Content_0200] start");
@@ -2742,9 +2937,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Content_0300
      * @tc.number ArkUI_Stage_Progress_Capsule_Content_0300
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.fontColor as '继续'
+     * @tc.desc   Set the value of capsuleStyle.fontColor as '继续'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Content_0300', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Content_0300] start");
@@ -2781,9 +2979,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Content_0400
      * @tc.number ArkUI_Stage_Progress_Capsule_Content_0400
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.fontColor as '安装中'
+     * @tc.desc   Set the value of capsuleStyle.fontColor as '安装中'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Content_0400', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Content_0400] start");
@@ -2820,9 +3021,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Content_0500
      * @tc.number ArkUI_Stage_Progress_Capsule_Content_0500
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.fontColor as '打开'
+     * @tc.desc   Set the value of capsuleStyle.fontColor as '打开'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Content_0500', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Content_0500] start");
@@ -2859,9 +3063,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Content_0600
      * @tc.number ArkUI_Stage_Progress_Capsule_Content_0600
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.fontColor as ''
+     * @tc.desc   Set the value of capsuleStyle.fontColor as ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Content_0600', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Content_0600] start");
@@ -2898,9 +3105,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Content_0700
      * @tc.number ArkUI_Stage_Progress_Capsule_Content_0700
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.fontColor as null
+     * @tc.desc   Set the value of capsuleStyle.fontColor as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Content_0700', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Content_0700] start");
@@ -2939,9 +3149,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_Content_0800
      * @tc.number ArkUI_Stage_Progress_Capsule_Content_0800
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.fontColor as undefined
+     * @tc.desc   Set the value of capsuleStyle.fontColor as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_Content_0800', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_Content_0800] start");
@@ -2980,9 +3193,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_EnableScanEffect_0100
      * @tc.number ArkUI_Stage_Progress_Capsule_EnableScanEffect_0100
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Get the default value of capsuleStyle.enableScanEffect
+     * @tc.desc   Get the default value of capsuleStyle.enableScanEffect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_EnableScanEffect_0100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_EnableScanEffect_0100] start");
@@ -2999,9 +3215,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_EnableScanEffect_0200
      * @tc.number ArkUI_Stage_Progress_Capsule_EnableScanEffect_0200
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.enableScanEffect as true
+     * @tc.desc   Set the value of capsuleStyle.enableScanEffect as true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_EnableScanEffect_0200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_EnableScanEffect_0200] start");
@@ -3039,9 +3258,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_EnableScanEffect_0300
      * @tc.number ArkUI_Stage_Progress_Capsule_EnableScanEffect_0300
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.enableScanEffect as false
+     * @tc.desc   Set the value of capsuleStyle.enableScanEffect as false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_EnableScanEffect_0300', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_EnableScanEffect_0300] start");
@@ -3079,9 +3301,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_EnableScanEffect_0400
      * @tc.number ArkUI_Stage_Progress_Capsule_EnableScanEffect_0400
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.enableScanEffect as null
+     * @tc.desc   Set the value of capsuleStyle.enableScanEffect as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_EnableScanEffect_0400', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_EnableScanEffect_0400] start");
@@ -3119,9 +3344,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_EnableScanEffect_0500
      * @tc.number ArkUI_Stage_Progress_Capsule_EnableScanEffect_0500
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.enableScanEffect as undefined
+     * @tc.desc   Set the value of capsuleStyle.enableScanEffect as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_EnableScanEffect_0500', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_EnableScanEffect_0500] start");
@@ -3159,9 +3387,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_ShowDefaultPercentage_0100
      * @tc.number ArkUI_Stage_Progress_Capsule_ShowDefaultPercentage_0100
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Get the default value of capsuleStyle.showDefaultPercentage
+     * @tc.desc   Get the default value of capsuleStyle.showDefaultPercentage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_ShowDefaultPercentage_0100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_ShowDefaultPercentage_0100] start");
@@ -3179,9 +3410,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_ShowDefaultPercentage_0200
      * @tc.number ArkUI_Stage_Progress_Capsule_ShowDefaultPercentage_0200
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.showDefaultPercentage as true
+     * @tc.desc   Set the value of capsuleStyle.showDefaultPercentage as true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_ShowDefaultPercentage_0200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_ShowDefaultPercentage_0200] start");
@@ -3220,9 +3454,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_ShowDefaultPercentage_0300
      * @tc.number ArkUI_Stage_Progress_Capsule_ShowDefaultPercentage_0300
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.showDefaultPercentage as false
+     * @tc.desc   Set the value of capsuleStyle.showDefaultPercentage as false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_ShowDefaultPercentage_0300', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_ShowDefaultPercentage_0300] start");
@@ -3261,9 +3498,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_ShowDefaultPercentage_0400
      * @tc.number ArkUI_Stage_Progress_Capsule_ShowDefaultPercentage_0400
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.showDefaultPercentage as null
+     * @tc.desc   Set the value of capsuleStyle.showDefaultPercentage as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_ShowDefaultPercentage_0400', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_ShowDefaultPercentage_0400] start");
@@ -3302,9 +3542,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_ShowDefaultPercentage_0500
      * @tc.number ArkUI_Stage_Progress_Capsule_ShowDefaultPercentage_0500
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of capsuleStyle.showDefaultPercentage as undefined
+     * @tc.desc   Set the value of capsuleStyle.showDefaultPercentage as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_ShowDefaultPercentage_0500', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_ShowDefaultPercentage_0500] start");
@@ -3344,9 +3587,12 @@ export default function progressSecTest() {
 
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_BackgroundColor_0100
      * @tc.number ArkUI_Stage_Progress_Ring_BackgroundColor_0100
-     * @tc.name Tests the backgroundColor property of the progress ring component
-     * @tc.desc Get the default value of backgroundColor
+     * @tc.desc   Get the default value of backgroundColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_BackgroundColor_0100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_BackgroundColor_0100] start");
@@ -3367,9 +3613,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_StrokeWidth_0100
      * @tc.number ArkUI_Stage_Progress_Ring_StrokeWidth_0100
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Get the default value of ringStyle.strokeWidth
+     * @tc.desc   Get the default value of ringStyle.strokeWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_StrokeWidth_0100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_StrokeWidth_0100] start");
@@ -3385,9 +3634,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_StrokeWidth_0200
      * @tc.number ArkUI_Stage_Progress_Ring_StrokeWidth_0200
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Set the value of ringStyle.strokeWidth as 10
+     * @tc.desc   Set the value of ringStyle.strokeWidth as 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_StrokeWidth_0200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_StrokeWidth_0200] start");
@@ -3424,9 +3676,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_StrokeWidth_0300
      * @tc.number ArkUI_Stage_Progress_Ring_StrokeWidth_0300
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Set the value of ringStyle.strokeWidth as 10vp
+     * @tc.desc   Set the value of ringStyle.strokeWidth as 10vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_StrokeWidth_0300', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_StrokeWidth_0300] start");
@@ -3463,9 +3718,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_StrokeWidth_0400
      * @tc.number ArkUI_Stage_Progress_Ring_StrokeWidth_0400
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Set the value of ringStyle.strokeWidth as ohos_id_text_margin_vertical
+     * @tc.desc   Set the value of ringStyle.strokeWidth as ohos_id_text_margin_vertical
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_StrokeWidth_0400', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_StrokeWidth_0400] start");
@@ -3492,9 +3750,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_StrokeWidth_0500
      * @tc.number ArkUI_Stage_Progress_Ring_StrokeWidth_0500
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Set the value of ringStyle.strokeWidth as 20px
+     * @tc.desc   Set the value of ringStyle.strokeWidth as 20px
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_StrokeWidth_0500', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_StrokeWidth_0500] start");
@@ -3531,9 +3792,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_StrokeWidth_0600
      * @tc.number ArkUI_Stage_Progress_Ring_StrokeWidth_0600
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Set the value of ringStyle.strokeWidth as 20vp
+     * @tc.desc   Set the value of ringStyle.strokeWidth as 20vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_StrokeWidth_0600', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_StrokeWidth_0600] start");
@@ -3570,9 +3834,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_StrokeWidth_0700
      * @tc.number ArkUI_Stage_Progress_Ring_StrokeWidth_0700
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Set the value of ringStyle.strokeWidth as 20fp
+     * @tc.desc   Set the value of ringStyle.strokeWidth as 20fp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_StrokeWidth_0700', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_StrokeWidth_0700] start");
@@ -3609,9 +3876,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_StrokeWidth_0800
      * @tc.number ArkUI_Stage_Progress_Ring_StrokeWidth_0800
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Set the value of ringStyle.strokeWidth as 20lpx
+     * @tc.desc   Set the value of ringStyle.strokeWidth as 20lpx
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_StrokeWidth_0800', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_StrokeWidth_0800] start");
@@ -3648,9 +3918,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_StrokeWidth_0900
      * @tc.number ArkUI_Stage_Progress_Ring_StrokeWidth_0900
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Set the value of ringStyle.strokeWidth as 0
+     * @tc.desc   Set the value of ringStyle.strokeWidth as 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_StrokeWidth_0900', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_StrokeWidth_0900] start");
@@ -3687,9 +3960,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_StrokeWidth_1000
      * @tc.number ArkUI_Stage_Progress_Ring_StrokeWidth_1000
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Set the value of ringStyle.strokeWidth as -10
+     * @tc.desc   Set the value of ringStyle.strokeWidth as -10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_StrokeWidth_1000', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_StrokeWidth_1000] start");
@@ -3726,9 +4002,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_StrokeWidth_1100
      * @tc.number ArkUI_Stage_Progress_Ring_StrokeWidth_1100
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Set the value of ringStyle.strokeWidth as 10000
+     * @tc.desc   Set the value of ringStyle.strokeWidth as 10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_StrokeWidth_1100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_StrokeWidth_1100] start");
@@ -3765,9 +4044,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_StrokeWidth_1200
      * @tc.number ArkUI_Stage_Progress_Ring_StrokeWidth_1200
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Set the value of ringStyle.strokeWidth as null
+     * @tc.desc   Set the value of ringStyle.strokeWidth as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_StrokeWidth_1200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_StrokeWidth_1200] start");
@@ -3804,9 +4086,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_StrokeWidth_1300
      * @tc.number ArkUI_Stage_Progress_Ring_StrokeWidth_1300
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Set the value of ringStyle.strokeWidth as undefined
+     * @tc.desc   Set the value of ringStyle.strokeWidth as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_StrokeWidth_1300', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_StrokeWidth_1300] start");
@@ -3843,9 +4128,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Shadow_0100
      * @tc.number ArkUI_Stage_Progress_Ring_Shadow_0100
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Get the default value of ringStyle.shadow
+     * @tc.desc   Get the default value of ringStyle.shadow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Shadow_0100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Shadow_0100] start");
@@ -3861,9 +4149,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Shadow_0200
      * @tc.number ArkUI_Stage_Progress_Ring_Shadow_0200
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Set the value of ringStyle.shadow as true
+     * @tc.desc   Set the value of ringStyle.shadow as true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Shadow_0200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Shadow_0200] start");
@@ -3900,9 +4191,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Shadow_0300
      * @tc.number ArkUI_Stage_Progress_Ring_Shadow_0300
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Set the value of ringStyle.shadow as false
+     * @tc.desc   Set the value of ringStyle.shadow as false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Shadow_0300', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Shadow_0300] start");
@@ -3939,9 +4233,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Shadow_0400
      * @tc.number ArkUI_Stage_Progress_Ring_Shadow_0400
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Set the value of ringStyle.shadow as null
+     * @tc.desc   Set the value of ringStyle.shadow as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Shadow_0400', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Shadow_0400] start");
@@ -3978,9 +4275,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Shadow_0500
      * @tc.number ArkUI_Stage_Progress_Ring_Shadow_0500
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Set the value of ringStyle.shadow as undefined
+     * @tc.desc   Set the value of ringStyle.shadow as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Shadow_0500', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Shadow_0500] start");
@@ -4017,9 +4317,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Status_0100
      * @tc.number ArkUI_Stage_Progress_Ring_Status_0100
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Get the default value of ringStyle.status
+     * @tc.desc   Get the default value of ringStyle.status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Status_0100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Status_0100] start");
@@ -4035,9 +4338,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Status_0200
      * @tc.number ArkUI_Stage_Progress_Ring_Status_0200
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Set the value of ringStyle.status as ProgressStatus.LOADING
+     * @tc.desc   Set the value of ringStyle.status as ProgressStatus.LOADING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Status_0200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Status_0200] start");
@@ -4074,9 +4380,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Status_0300
      * @tc.number ArkUI_Stage_Progress_Ring_Status_0300
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Set the value of ringStyle.status as ProgressStatus.PROGRESSING
+     * @tc.desc   Set the value of ringStyle.status as ProgressStatus.PROGRESSING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Status_0300', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Status_0300] start");
@@ -4113,9 +4422,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Status_0400
      * @tc.number ArkUI_Stage_Progress_Ring_Status_0400
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Set the value of ringStyle.status as null
+     * @tc.desc   Set the value of ringStyle.status as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Status_0400', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Status_0400] start");
@@ -4152,9 +4464,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Status_0500
      * @tc.number ArkUI_Stage_Progress_Ring_Status_0500
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Set the value of ringStyle.status as undefined
+     * @tc.desc   Set the value of ringStyle.status as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Status_0500', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Status_0500] start");
@@ -4191,9 +4506,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_0100
      * @tc.number ArkUI_Stage_Progress_Ring_Color_0100
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Get the default value of color
+     * @tc.desc   Get the default value of color
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_0100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_0100] start");
@@ -4216,9 +4534,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_0200
      * @tc.number ArkUI_Stage_Progress_Ring_Color_0200
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as 0xFFFF0000
+     * @tc.desc   Set the value of color as 0xFFFF0000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_0200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_0200] start");
@@ -4254,9 +4575,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_0300
      * @tc.number ArkUI_Stage_Progress_Ring_Color_0300
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as [{color: 0xFFFF0000, offset: 0}, {color: 0xFFFFFFFF, offset: 1}]
+     * @tc.desc   Set the value of color as [{color: 0xFFFF0000, offset: 0}, {color: 0xFFFFFFFF, offset: 1}]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_0300', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_0300] start");
@@ -4284,9 +4608,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_0400
      * @tc.number ArkUI_Stage_Progress_Ring_Color_0400
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as [{color: '#FFFF9A35', offset: 0}, {color: '#FFFFFFFF', offset: 1}]
+     * @tc.desc   Set the value of color as [{color: '#FFFF9A35', offset: 0}, {color: '#FFFFFFFF', offset: 1}]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_0400', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_0400] start");
@@ -4315,9 +4642,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_0500
      * @tc.number ArkUI_Stage_Progress_Ring_Color_0500
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as [{color: Color.Red, offset: 0}, {color: Color.White, offset: 1}]
+     * @tc.desc   Set the value of color as [{color: Color.Red, offset: 0}, {color: Color.White, offset: 1}]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_0500', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_0500] start");
@@ -4345,9 +4675,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_0600
      * @tc.number ArkUI_Stage_Progress_Ring_Color_0600
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as [{color: $r('sys.color.ohos_id_color_connected'), offset: 0}, {color: $r('sys.color.ohos_id_color_background'), offset: 1}]
+     * @tc.desc   Set the value of color as [{color: $r('sys.color.ohos_id_color_connected'), offset: 0}, {color: $r('sys.color.ohos_id_color_background'), offset: 1}]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_0600', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_0600] start");
@@ -4381,9 +4714,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_0700
      * @tc.number ArkUI_Stage_Progress_Ring_Color_0700
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as null
+     * @tc.desc   Set the value of color as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_0700', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_0700] start");
@@ -4428,9 +4764,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_0800
      * @tc.number ArkUI_Stage_Progress_Ring_Color_0800
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as undefined
+     * @tc.desc   Set the value of color as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_0800', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_0800] start");
@@ -4475,9 +4814,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_1100
      * @tc.number ArkUI_Stage_Progress_Ring_Color_1100
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Get the default value of color
+     * @tc.desc   Get the default value of color
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_1100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_1100] start");
@@ -4500,9 +4842,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_1200
      * @tc.number ArkUI_Stage_Progress_Ring_Color_1200
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as 0xFFFF0000
+     * @tc.desc   Set the value of color as 0xFFFF0000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_1200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_1200] start");
@@ -4538,9 +4883,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_1300
      * @tc.number ArkUI_Stage_Progress_Ring_Color_1300
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as [{color: 0xFFFF0000, offset: 0}, {color: 0xFFFFFFFF, offset: 1}]
+     * @tc.desc   Set the value of color as [{color: 0xFFFF0000, offset: 0}, {color: 0xFFFFFFFF, offset: 1}]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_1300', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_1300] start");
@@ -4569,9 +4917,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_1400
      * @tc.number ArkUI_Stage_Progress_Ring_Color_1400
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as [{color: '#FFFF9A35', offset: 0}, {color: '#FFFFFFFF', offset: 1}]
+     * @tc.desc   Set the value of color as [{color: '#FFFF9A35', offset: 0}, {color: '#FFFFFFFF', offset: 1}]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_1400', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_1400] start");
@@ -4599,9 +4950,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_1500
      * @tc.number ArkUI_Stage_Progress_Ring_Color_1500
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as [{color: Color.Red, offset: 0}, {color: Color.White, offset: 1}]
+     * @tc.desc   Set the value of color as [{color: Color.Red, offset: 0}, {color: Color.White, offset: 1}]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_1500', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_1500] start");
@@ -4629,9 +4983,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_1600
      * @tc.number ArkUI_Stage_Progress_Ring_Color_1600
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as [{color: $r('sys.color.ohos_id_color_connected'), offset: 0}, {color: $r('sys.color.ohos_id_color_background'), offset: 1}]
+     * @tc.desc   Set the value of color as [{color: $r('sys.color.ohos_id_color_connected'), offset: 0}, {color: $r('sys.color.ohos_id_color_background'), offset: 1}]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_1600', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_1600] start");
@@ -4666,9 +5023,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_1700
      * @tc.number ArkUI_Stage_Progress_Ring_Color_1700
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as null
+     * @tc.desc   Set the value of color as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_1700', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_1700] start");
@@ -4713,9 +5073,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_1800
      * @tc.number ArkUI_Stage_Progress_Ring_Color_1800
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as undefined
+     * @tc.desc   Set the value of color as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_1800', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_1800] start");
@@ -4760,9 +5123,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_2100
      * @tc.number ArkUI_Stage_Progress_Ring_Color_2100
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Get the default value of color
+     * @tc.desc   Get the default value of color
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_2100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_2100] start");
@@ -4785,9 +5151,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_2200
      * @tc.number ArkUI_Stage_Progress_Ring_Color_2200
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as 0xFFFF0000
+     * @tc.desc   Set the value of color as 0xFFFF0000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_2200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_2200] start");
@@ -4823,9 +5192,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_2300
      * @tc.number ArkUI_Stage_Progress_Ring_Color_2300
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as [{color: 0xFFFF0000, offset: 0}, {color: 0xFFFFFFFF, offset: 1}]
+     * @tc.desc   Set the value of color as [{color: 0xFFFF0000, offset: 0}, {color: 0xFFFFFFFF, offset: 1}]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_2300', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_2300] start");
@@ -4854,9 +5226,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_2400
      * @tc.number ArkUI_Stage_Progress_Ring_Color_2400
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as [{color: '#FFFF9A35', offset: 0}, {color: '#FFFFFFFF', offset: 1}]
+     * @tc.desc   Set the value of color as [{color: '#FFFF9A35', offset: 0}, {color: '#FFFFFFFF', offset: 1}]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_2400', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_2400] start");
@@ -4885,9 +5260,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_2500
      * @tc.number ArkUI_Stage_Progress_Ring_Color_2500
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as [{color: Color.Red, offset: 0}, {color: Color.White, offset: 1}]
+     * @tc.desc   Set the value of color as [{color: Color.Red, offset: 0}, {color: Color.White, offset: 1}]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_2500', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_2500] start");
@@ -4916,9 +5294,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_2600
      * @tc.number ArkUI_Stage_Progress_Ring_Color_2600
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as [{color: $r('sys.color.ohos_id_color_connected'), offset: 0}, {color: $r('sys.color.ohos_id_color_background'), offset: 1}]
+     * @tc.desc   Set the value of color as [{color: $r('sys.color.ohos_id_color_connected'), offset: 0}, {color: $r('sys.color.ohos_id_color_background'), offset: 1}]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_2600', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_2600] start");
@@ -4955,9 +5336,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_2700
      * @tc.number ArkUI_Stage_Progress_Ring_Color_2700
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as null
+     * @tc.desc   Set the value of color as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_2700', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_2700] start");
@@ -5002,9 +5386,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_2800
      * @tc.number ArkUI_Stage_Progress_Ring_Color_2800
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as undefined
+     * @tc.desc   Set the value of color as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_2800', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_2800] start");
@@ -5049,9 +5436,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_3100
      * @tc.number ArkUI_Stage_Progress_Ring_Color_3100
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Get the default value of color
+     * @tc.desc   Get the default value of color
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_3100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_3100] start");
@@ -5074,9 +5464,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_3200
      * @tc.number ArkUI_Stage_Progress_Ring_Color_3200
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as 0xFFFF0000
+     * @tc.desc   Set the value of color as 0xFFFF0000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_3200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_3200] start");
@@ -5112,9 +5505,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_3300
      * @tc.number ArkUI_Stage_Progress_Ring_Color_3300
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as [{color: 0xFFFF0000, offset: 0}, {color: 0xFFFFFFFF, offset: 1}]
+     * @tc.desc   Set the value of color as [{color: 0xFFFF0000, offset: 0}, {color: 0xFFFFFFFF, offset: 1}]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_3300', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_3300] start");
@@ -5144,9 +5540,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_3400
      * @tc.number ArkUI_Stage_Progress_Ring_Color_3400
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as [{color: '#FFFF9A35', offset: 0}, {color: '#FFFFFFFF', offset: 1}]
+     * @tc.desc   Set the value of color as [{color: '#FFFF9A35', offset: 0}, {color: '#FFFFFFFF', offset: 1}]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_3400', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_3400] start");
@@ -5176,9 +5575,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_3500
      * @tc.number ArkUI_Stage_Progress_Ring_Color_3500
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as [{color: Color.Red, offset: 0}, {color: Color.White, offset: 1}]
+     * @tc.desc   Set the value of color as [{color: Color.Red, offset: 0}, {color: Color.White, offset: 1}]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_3500', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_3500] start");
@@ -5207,9 +5609,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_3600
      * @tc.number ArkUI_Stage_Progress_Ring_Color_3600
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as [{color: $r('sys.color.ohos_id_color_connected'), offset: 0}, {color: $r('sys.color.ohos_id_color_background'), offset: 1}]
+     * @tc.desc   Set the value of color as [{color: $r('sys.color.ohos_id_color_connected'), offset: 0}, {color: $r('sys.color.ohos_id_color_background'), offset: 1}]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_3600', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_3600] start");
@@ -5246,9 +5651,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_3700
      * @tc.number ArkUI_Stage_Progress_Ring_Color_3700
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as null
+     * @tc.desc   Set the value of color as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_3700', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_3700] start");
@@ -5293,9 +5701,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_3800
      * @tc.number ArkUI_Stage_Progress_Ring_Color_3800
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as undefined
+     * @tc.desc   Set the value of color as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_3800', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_3800] start");
@@ -5340,9 +5751,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_4100
      * @tc.number ArkUI_Stage_Progress_Ring_Color_4100
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Get the default value of color
+     * @tc.desc   Get the default value of color
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_4100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_4100] start");
@@ -5365,9 +5779,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_4200
      * @tc.number ArkUI_Stage_Progress_Ring_Color_4200
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as 0xFFFF0000
+     * @tc.desc   Set the value of color as 0xFFFF0000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_4200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_4200] start");
@@ -5403,9 +5820,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_4300
      * @tc.number ArkUI_Stage_Progress_Ring_Color_4300
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as [{color: 0xFFFF0000, offset: 0}, {color: 0xFFFFFFFF, offset: 1}]
+     * @tc.desc   Set the value of color as [{color: 0xFFFF0000, offset: 0}, {color: 0xFFFFFFFF, offset: 1}]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_4300', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_4300] start");
@@ -5434,9 +5854,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_4400
      * @tc.number ArkUI_Stage_Progress_Ring_Color_4400
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as [{color: '#FFFF9A35', offset: 0}, {color: '#FFFFFFFF', offset: 1}]
+     * @tc.desc   Set the value of color as [{color: '#FFFF9A35', offset: 0}, {color: '#FFFFFFFF', offset: 1}]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_4400', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_4400] start");
@@ -5464,9 +5887,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_4500
      * @tc.number ArkUI_Stage_Progress_Ring_Color_4500
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as [{color: Color.Red, offset: 0}, {color: Color.White, offset: 1}]
+     * @tc.desc   Set the value of color as [{color: Color.Red, offset: 0}, {color: Color.White, offset: 1}]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_4500', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_4500] start");
@@ -5495,9 +5921,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_4600
      * @tc.number ArkUI_Stage_Progress_Ring_Color_4600
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as [{color: $r('sys.color.ohos_id_color_connected'), offset: 0}, {color: $r('sys.color.ohos_id_color_background'), offset: 1}]
+     * @tc.desc   Set the value of color as [{color: $r('sys.color.ohos_id_color_connected'), offset: 0}, {color: $r('sys.color.ohos_id_color_background'), offset: 1}]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_4600', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_4600] start");
@@ -5532,9 +5961,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_4700
      * @tc.number ArkUI_Stage_Progress_Ring_Color_4700
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as null
+     * @tc.desc   Set the value of color as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_4700', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_4700] start");
@@ -5579,9 +6011,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_Color_4800
      * @tc.number ArkUI_Stage_Progress_Ring_Color_4800
-     * @tc.name Tests the color property of the progress ring component
-     * @tc.desc Set the value of color as undefined
+     * @tc.desc   Set the value of color as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_Color_4800', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_Color_4800] start");
@@ -5626,9 +6061,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_EnableScanEffect_0100
      * @tc.number ArkUI_Stage_Progress_Ring_EnableScanEffect_0100
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Get the default value of ringStyle.enableScanEffect
+     * @tc.desc   Get the default value of ringStyle.enableScanEffect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_EnableScanEffect_0100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_EnableScanEffect_0100] start");
@@ -5645,9 +6083,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_EnableScanEffect_0200
      * @tc.number ArkUI_Stage_Progress_Ring_EnableScanEffect_0200
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Set the value of ringStyle.enableScanEffect as true
+     * @tc.desc   Set the value of ringStyle.enableScanEffect as true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_EnableScanEffect_0200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_EnableScanEffect_0200] start");
@@ -5685,9 +6126,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_EnableScanEffect_0300
      * @tc.number ArkUI_Stage_Progress_Ring_EnableScanEffect_0300
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Set the value of ringStyle.enableScanEffect as false
+     * @tc.desc   Set the value of ringStyle.enableScanEffect as false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_EnableScanEffect_0300', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_EnableScanEffect_0300] start");
@@ -5725,9 +6169,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_EnableScanEffect_0400
      * @tc.number ArkUI_Stage_Progress_Ring_EnableScanEffect_0400
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Set the value of ringStyle.enableScanEffect as null
+     * @tc.desc   Set the value of ringStyle.enableScanEffect as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_EnableScanEffect_0400', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_EnableScanEffect_0400] start");
@@ -5765,9 +6212,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_EnableScanEffect_0500
      * @tc.number ArkUI_Stage_Progress_Ring_EnableScanEffect_0500
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Set the value of ringStyle.enableScanEffect as undefined
+     * @tc.desc   Set the value of ringStyle.enableScanEffect as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_EnableScanEffect_0500', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_EnableScanEffect_0500] start");
@@ -5805,9 +6255,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Linear_EnableScanEffect_0100
      * @tc.number ArkUI_Stage_Progress_Linear_EnableScanEffect_0100
-     * @tc.name Tests the linearStyle property of the progress linear component
-     * @tc.desc Get the default value of linearStyle.enableScanEffect
+     * @tc.desc   Get the default value of linearStyle.enableScanEffect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Linear_EnableScanEffect_0100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Linear_EnableScanEffect_0100] start");
@@ -5824,9 +6277,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Linear_EnableScanEffect_0200
      * @tc.number ArkUI_Stage_Progress_Linear_EnableScanEffect_0200
-     * @tc.name Tests the linearStyle property of the progress linear component
-     * @tc.desc Set the value of linearStyle.enableScanEffect as true
+     * @tc.desc   Set the value of linearStyle.enableScanEffect as true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Linear_EnableScanEffect_0200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Linear_EnableScanEffect_0200] start");
@@ -5864,9 +6320,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Linear_EnableScanEffect_0300
      * @tc.number ArkUI_Stage_Progress_Linear_EnableScanEffect_0300
-     * @tc.name Tests the linearStyle property of the progress linear component
-     * @tc.desc Set the value of linearStyle.enableScanEffect as false
+     * @tc.desc   Set the value of linearStyle.enableScanEffect as false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Linear_EnableScanEffect_0300', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Linear_EnableScanEffect_0300] start");
@@ -5904,9 +6363,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Linear_EnableScanEffect_0400
      * @tc.number ArkUI_Stage_Progress_Linear_EnableScanEffect_0400
-     * @tc.name Tests the linearStyle property of the progress linear component
-     * @tc.desc Set the value of linearStyle.enableScanEffect as null
+     * @tc.desc   Set the value of linearStyle.enableScanEffect as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Linear_EnableScanEffect_0400', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Linear_EnableScanEffect_0400] start");
@@ -5944,9 +6406,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Linear_EnableScanEffect_0500
      * @tc.number ArkUI_Stage_Progress_Linear_EnableScanEffect_0500
-     * @tc.name Tests the linearStyle property of the progress linear component
-     * @tc.desc Set the value of linearStyle.enableScanEffect as undefined
+     * @tc.desc   Set the value of linearStyle.enableScanEffect as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Linear_EnableScanEffect_0500', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Linear_EnableScanEffect_0500] start");
@@ -5984,9 +6449,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_EnableSmoothEffect_0100
      * @tc.number ArkUI_Stage_Progress_Ring_EnableSmoothEffect_0100
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Get the default value of enableSmoothEffect
+     * @tc.desc   Get the default value of enableSmoothEffect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_EnableSmoothEffect_0100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_EnableSmoothEffect_0100] start");
@@ -6002,9 +6470,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_EnableSmoothEffect_0200
      * @tc.number ArkUI_Stage_Progress_Ring_EnableSmoothEffect_0200
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Set the value of enableSmoothEffect as true
+     * @tc.desc   Set the value of enableSmoothEffect as true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_EnableSmoothEffect_0200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_EnableSmoothEffect_0200] start");
@@ -6041,9 +6512,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_EnableSmoothEffect_0300
      * @tc.number ArkUI_Stage_Progress_Ring_EnableSmoothEffect_0300
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Set the value of enableSmoothEffect as false
+     * @tc.desc   Set the value of enableSmoothEffect as false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_EnableSmoothEffect_0300', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_EnableSmoothEffect_0300] start");
@@ -6080,9 +6554,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_EnableSmoothEffect_0400
      * @tc.number ArkUI_Stage_Progress_Ring_EnableSmoothEffect_0400
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Set the value of enableSmoothEffect as null
+     * @tc.desc   Set the value of enableSmoothEffect as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_EnableSmoothEffect_0400', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_EnableSmoothEffect_0400] start");
@@ -6119,9 +6596,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Ring_EnableSmoothEffect_0500
      * @tc.number ArkUI_Stage_Progress_Ring_EnableSmoothEffect_0500
-     * @tc.name Tests the ringStyle property of the progress ring component
-     * @tc.desc Set the value of enableSmoothEffect as undefined
+     * @tc.desc   Set the value of enableSmoothEffect as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Ring_EnableSmoothEffect_0500', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Ring_EnableSmoothEffect_0500] start");
@@ -6158,9 +6638,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Linear_EnableSmoothEffect_0100
      * @tc.number ArkUI_Stage_Progress_Linear_EnableSmoothEffect_0100
-     * @tc.name Tests the linearStyle property of the progress linear component
-     * @tc.desc Get the default value of enableSmoothEffect
+     * @tc.desc   Get the default value of enableSmoothEffect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Linear_EnableSmoothEffect_0100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Linear_EnableSmoothEffect_0100] start");
@@ -6176,9 +6659,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Linear_EnableSmoothEffect_0200
      * @tc.number ArkUI_Stage_Progress_Linear_EnableSmoothEffect_0200
-     * @tc.name Tests the linearStyle property of the progress linear component
-     * @tc.desc Set the value of enableSmoothEffect as true
+     * @tc.desc   Set the value of enableSmoothEffect as true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Linear_EnableSmoothEffect_0200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Linear_EnableSmoothEffect_0200] start");
@@ -6215,9 +6701,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Linear_EnableSmoothEffect_0300
      * @tc.number ArkUI_Stage_Progress_Linear_EnableSmoothEffect_0300
-     * @tc.name Tests the linearStyle property of the progress linear component
-     * @tc.desc Set the value of enableSmoothEffect as false
+     * @tc.desc   Set the value of enableSmoothEffect as false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Linear_EnableSmoothEffect_0300', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Linear_EnableSmoothEffect_0300] start");
@@ -6254,9 +6743,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Linear_EnableSmoothEffect_0400
      * @tc.number ArkUI_Stage_Progress_Linear_EnableSmoothEffect_0400
-     * @tc.name Tests the linearStyle property of the progress linear component
-     * @tc.desc Set the value of enableSmoothEffect as null
+     * @tc.desc   Set the value of enableSmoothEffect as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Linear_EnableSmoothEffect_0400', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Linear_EnableSmoothEffect_0400] start");
@@ -6293,9 +6785,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Linear_EnableSmoothEffect_0500
      * @tc.number ArkUI_Stage_Progress_Linear_EnableSmoothEffect_0500
-     * @tc.name Tests the linearStyle property of the progress linear component
-     * @tc.desc Set the value of enableSmoothEffect as undefined
+     * @tc.desc   Set the value of enableSmoothEffect as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Linear_EnableSmoothEffect_0500', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Linear_EnableSmoothEffect_0500] start");
@@ -6332,9 +6827,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0100
      * @tc.number ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0100
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Get the default value of enableSmoothEffect
+     * @tc.desc   Get the default value of enableSmoothEffect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0100] start");
@@ -6350,9 +6848,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0200
      * @tc.number ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0200
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of enableSmoothEffect as true
+     * @tc.desc   Set the value of enableSmoothEffect as true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0200] start");
@@ -6389,9 +6890,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0300
      * @tc.number ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0300
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of enableSmoothEffect as false
+     * @tc.desc   Set the value of enableSmoothEffect as false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0300', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0300] start");
@@ -6428,9 +6932,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0400
      * @tc.number ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0400
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of enableSmoothEffect as null
+     * @tc.desc   Set the value of enableSmoothEffect as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0400', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0400] start");
@@ -6467,9 +6974,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0500
      * @tc.number ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0500
-     * @tc.name Tests the capsuleStyle property of the progress capsule component
-     * @tc.desc Set the value of enableSmoothEffect as undefined
+     * @tc.desc   Set the value of enableSmoothEffect as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0500', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0500] start");
@@ -6506,9 +7016,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0100
      * @tc.number ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0100
-     * @tc.name Tests the scaleRingStyle property of the progress scaleRing component
-     * @tc.desc Get the default value of enableSmoothEffect
+     * @tc.desc   Get the default value of enableSmoothEffect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0100] start");
@@ -6524,9 +7037,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0200
      * @tc.number ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0200
-     * @tc.name Tests the scaleRingStyle property of the progress scaleRing component
-     * @tc.desc Set the value of enableSmoothEffect as true
+     * @tc.desc   Set the value of enableSmoothEffect as true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0200] start");
@@ -6563,9 +7079,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0300
      * @tc.number ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0300
-     * @tc.name Tests the scaleRingStyle property of the progress scaleRing component
-     * @tc.desc Set the value of enableSmoothEffect as false
+     * @tc.desc   Set the value of enableSmoothEffect as false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0300', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0300] start");
@@ -6602,9 +7121,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0400
      * @tc.number ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0400
-     * @tc.name Tests the scaleRingStyle property of the progress scaleRing component
-     * @tc.desc Set the value of enableSmoothEffect as null
+     * @tc.desc   Set the value of enableSmoothEffect as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0400', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0400] start");
@@ -6641,9 +7163,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0500
      * @tc.number ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0500
-     * @tc.name Tests the scaleRingStyle property of the progress scaleRing component
-     * @tc.desc Set the value of enableSmoothEffect as undefined
+     * @tc.desc   Set the value of enableSmoothEffect as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0500', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0500] start");
@@ -6680,9 +7205,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0100
      * @tc.number ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0100
-     * @tc.name Tests the eclipseStyle property of the progress eclipse component
-     * @tc.desc Get the default value of enableSmoothEffect
+     * @tc.desc   Get the default value of enableSmoothEffect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0100', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0100] start");
@@ -6698,9 +7226,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0200
      * @tc.number ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0200
-     * @tc.name Tests the eclipseStyle property of the progress eclipse component
-     * @tc.desc Set the value of enableSmoothEffect as true
+     * @tc.desc   Set the value of enableSmoothEffect as true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0200] start");
@@ -6737,9 +7268,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0300
      * @tc.number ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0300
-     * @tc.name Tests the eclipseStyle property of the progress eclipse component
-     * @tc.desc Set the value of enableSmoothEffect as false
+     * @tc.desc   Set the value of enableSmoothEffect as false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0300', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0300] start");
@@ -6776,9 +7310,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0400
      * @tc.number ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0400
-     * @tc.name Tests the eclipseStyle property of the progress eclipse component
-     * @tc.desc Set the value of enableSmoothEffect as null
+     * @tc.desc   Set the value of enableSmoothEffect as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0400', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0400] start");
@@ -6815,9 +7352,12 @@ export default function progressSecTest() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0500
      * @tc.number ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0500
-     * @tc.name Tests the eclipseStyle property of the progress eclipse component
-     * @tc.desc Set the value of enableSmoothEffect as undefined
+     * @tc.desc   Set the value of enableSmoothEffect as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0500', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0500] start");

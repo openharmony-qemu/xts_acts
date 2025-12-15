@@ -43,12 +43,12 @@ export default function MulticastconnectionCallbackTest() {
   describe("MulticastconnectionCallbackTest", () => {
 
     /**
+     * @tc.name   testNetworkManagerDNSAddCustomDNSRuleAsync0100
      * @tc.number SUB_NetworkManager_DNS_addCustomDNSRule_Async_0100
-     * @tc.name testNetworkManagerDNSAddCustomDNSRuleAsync0100
-     * @tc.desc Test addCustomDNSRule property
-     * @tc.level Level1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test addCustomDNSRule property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkManagerDNSAddCustomDNSRuleAsync0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       const caseName: string = 'testNetworkManagerDNSAddCustomDNSRuleAsync0100';
@@ -74,12 +74,12 @@ export default function MulticastconnectionCallbackTest() {
     });
 
     /**
+     * @tc.name   testNetworkManagerDNSAddCustomDNSRuleAsync0200
      * @tc.number SUB_NetworkManager_DNS_addCustomDNSRule_Async_0200
-     * @tc.name testNetworkManagerDNSAddCustomDNSRuleAsync0200
-     * @tc.desc Test addCustomDNSRule property
-     * @tc.level Level1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test addCustomDNSRule property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkManagerDNSAddCustomDNSRuleAsync0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       const caseName: string = 'testNetworkManagerDNSAddCustomDNSRuleAsync0200';
@@ -105,12 +105,12 @@ export default function MulticastconnectionCallbackTest() {
     });
 
     /**
+     * @tc.name   testNetworkManagerDNSRemoveCustomDNSRuleAsync0100
      * @tc.number SUB_NetworkManager_DNS_removeCustomDNSRule_Async_0100
-     * @tc.name testNetworkManagerDNSRemoveCustomDNSRuleAsync0100
-     * @tc.desc Test removeCustomDNSRule property
-     * @tc.level Level1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test removeCustomDNSRule property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkManagerDNSRemoveCustomDNSRuleAsync0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       const caseName: string = 'testNetworkManagerDNSRemoveCustomDNSRuleAsync0100';
@@ -137,12 +137,12 @@ export default function MulticastconnectionCallbackTest() {
     });
 
     /**
+     * @tc.name   testNetworkManagerDNSRemoveCustomDNSRuleAsync0200
      * @tc.number SUB_NetworkManager_DNS_removeCustomDNSRule_Async_0200
-     * @tc.name testNetworkManagerDNSRemoveCustomDNSRuleAsync0200
-     * @tc.desc Test removeCustomDNSRule property
-     * @tc.level Level1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test removeCustomDNSRule property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkManagerDNSRemoveCustomDNSRuleAsync0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       const caseName: string = 'testNetworkManagerDNSRemoveCustomDNSRuleAsync0200';
@@ -168,12 +168,12 @@ export default function MulticastconnectionCallbackTest() {
     });
 
     /**
+     * @tc.name   testNetworkManagerDNSClearCustomDNSRuleAsync0100
      * @tc.number SUB_NetworkManager_DNS_clearCustomDNSRule_Async_0100
-     * @tc.name testNetworkManagerDNSClearCustomDNSRuleAsync0100
-     * @tc.desc Test removeCustomDNSRule property
-     * @tc.level Level1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test removeCustomDNSRule property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkManagerDNSClearCustomDNSRuleAsync0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       const caseName: string = 'testNetworkManagerDNSClearCustomDNSRuleAsync0100';

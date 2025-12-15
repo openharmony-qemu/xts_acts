@@ -26,61 +26,61 @@ export default function unitHeightPercentTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_UNIT_HEIGHT_PERCENT_0001
-     * @tc.name: testUnitHeightPercent001
-     * @tc.desc: testing text for unitHeightPercent with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testUnitHeightPercent001
+     * @tc.number SUB_ARKUI_CAPI_UNIT_HEIGHT_PERCENT_0001
+     * @tc.desc   testing text for unitHeightPercent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnitHeightPercent001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testUnitHeightPercent001()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_UNIT_HEIGHT_PERCENT_0002
-     * @tc.name: testUnitHeightPercent002
-     * @tc.desc: testing text for unitHeightPercent with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testUnitHeightPercent002
+     * @tc.number SUB_ARKUI_CAPI_UNIT_HEIGHT_PERCENT_0002
+     * @tc.desc   testing text for unitHeightPercent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnitHeightPercent002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testUnitHeightPercent002()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_UNIT_HEIGHT_PERCENT_0003
-     * @tc.name: testUnitHeightPercent003
-     * @tc.desc: testing text for unitHeightPercent with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testUnitHeightPercent003
+     * @tc.number SUB_ARKUI_CAPI_UNIT_HEIGHT_PERCENT_0003
+     * @tc.desc   testing text for unitHeightPercent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnitHeightPercent003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testUnitHeightPercent003()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_UNIT_HEIGHT_PERCENT_0004
-     * @tc.name: testUnitHeightPercent004
-     * @tc.desc: testing text for unitHeightPercent with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testUnitHeightPercent004
+     * @tc.number SUB_ARKUI_CAPI_UNIT_HEIGHT_PERCENT_0004
+     * @tc.desc   testing text for unitHeightPercent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnitHeightPercent004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testUnitHeightPercent004()).assertEqual(0)
       done();
     }); 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_UNIT_HEIGHT_PERCENT_0005
-     * @tc.name: testUnitHeightPercent005
-     * @tc.desc: testing text for unitHeightPercent with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testUnitHeightPercent005
+     * @tc.number SUB_ARKUI_CAPI_UNIT_HEIGHT_PERCENT_0005
+     * @tc.desc   testing text for unitHeightPercent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnitHeightPercent005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testUnitHeightPercent005()).assertEqual(0)

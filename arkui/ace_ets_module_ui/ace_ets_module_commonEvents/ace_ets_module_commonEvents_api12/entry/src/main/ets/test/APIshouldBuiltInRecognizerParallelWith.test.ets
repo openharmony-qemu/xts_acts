@@ -60,12 +60,12 @@ export default function APIshouldBuiltInRecognizerParallelWith() {
     });
 
     /**
-     * @tc.number    APIshouldBuiltInRecognizerParallelWith_0100
-     * @tc.name      APIshouldBuiltInRecognizerParallelWith_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   APIshouldBuiltInRecognizerParallelWith_0100
+     * @tc.number APIshouldBuiltInRecognizerParallelWith_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIshouldBuiltInRecognizerParallelWith_0100', Level.LEVEL0, async (done: Function) => {
       console.info('APIshouldBuiltInRecognizerParallelWith_0100 START');
@@ -79,12 +79,12 @@ export default function APIshouldBuiltInRecognizerParallelWith() {
       done();
     });
     /**
-     * @tc.number    APIshouldBuiltInRecognizerParallelWith_0200
-     * @tc.name      APIshouldBuiltInRecognizerParallelWith_0200
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   APIshouldBuiltInRecognizerParallelWith_0200
+     * @tc.number APIshouldBuiltInRecognizerParallelWith_0200
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIshouldBuiltInRecognizerParallelWith_0200', Level.LEVEL0, async (done: Function) => {
       console.info('APIshouldBuiltInRecognizerParallelWith_0200 START');
@@ -98,12 +98,12 @@ export default function APIshouldBuiltInRecognizerParallelWith() {
       done();
     });
     /**
-     * @tc.number    APIshouldBuiltInRecognizerParallelWith_0300
-     * @tc.name      APIshouldBuiltInRecognizerParallelWith_0300
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   APIshouldBuiltInRecognizerParallelWith_0300
+     * @tc.number APIshouldBuiltInRecognizerParallelWith_0300
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIshouldBuiltInRecognizerParallelWith_0300', Level.LEVEL0, async (done: Function) => {
       console.info('APIshouldBuiltInRecognizerParallelWith_0300 START');
@@ -117,12 +117,12 @@ export default function APIshouldBuiltInRecognizerParallelWith() {
       done();
     });
     /**
-     * @tc.number    APIshouldBuiltInRecognizerParallelWith_0400
-     * @tc.name      APIshouldBuiltInRecognizerParallelWith_0400
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   APIshouldBuiltInRecognizerParallelWith_0400
+     * @tc.number APIshouldBuiltInRecognizerParallelWith_0400
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIshouldBuiltInRecognizerParallelWith_0400', Level.LEVEL0, async (done: Function) => {
       console.info('APIshouldBuiltInRecognizerParallelWith_0400 START');
@@ -137,25 +137,38 @@ export default function APIshouldBuiltInRecognizerParallelWith() {
     });
 
     /**
-     * @tc.number    APIshouldBuiltInRecognizerParallelWith_0500
-     * @tc.name      APIshouldBuiltInRecognizerParallelWith_0500
-     * @tc.desc      api for test isBegin and isEnd
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   APIshouldBuiltInRecognizerParallelWith_0500
+     * @tc.number APIshouldBuiltInRecognizerParallelWith_0500
+     * @tc.desc   api for test isBegin and isEnd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIshouldBuiltInRecognizerParallelWith_0500', Level.LEVEL0, async (done: Function) => {
       console.info('APIshouldBuiltInRecognizerParallelWith_0500 START');
       let driver = await Driver.create();
-      let scrollBar: Component = await driver.findComponent(ON.id('inner'));
-      await scrollBar.scrollToTop();
-      await CommonFunc.sleep(500);
-      expect(AppStorage.get('isBegin')).assertEqual(true);
-      expect(AppStorage.get('isEnd')).assertEqual(false);
-      await scrollBar.scrollToBottom(20000);
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
+
+      let swiperTabs = CommonFunc.getComponentRectOnScreen('inner');
+      let top = swiperTabs.top;
+      let right = swiperTabs.right;
+      let left = swiperTabs.left;
+      let bottom = swiperTabs.bottom;
+      console.info("inner value is" + left + " --" + right + "--" + top + "--" + bottom);
+      let height = bottom -top;
+      let width = right - left;
+      await CommonFunc.sleep(1000);
+      // 滑动到顶
+      await driver.swipe(Math.round(left + width*0.5),Math.round(bottom),Math.round(left + width*0.5),Math.round(top + height*0.08));
+      await CommonFunc.sleep(1000);
       expect(AppStorage.get('isBegin')).assertEqual(false);
       expect(AppStorage.get('isEnd')).assertEqual(true);
+      // 滑动到底
+      await driver.swipe(Math.round(left + width*0.5),Math.round(top),Math.round(left + width*0.5),Math.round(bottom + height*0.5));
+      await CommonFunc.sleep(1000);
+      expect(AppStorage.get('isBegin')).assertEqual(true);
+      expect(AppStorage.get('isEnd')).assertEqual(false);
+
       await CommonFunc.sleep(200);
       console.info('[APIshouldBuiltInRecognizerParallelWith_0500] END');
       done();

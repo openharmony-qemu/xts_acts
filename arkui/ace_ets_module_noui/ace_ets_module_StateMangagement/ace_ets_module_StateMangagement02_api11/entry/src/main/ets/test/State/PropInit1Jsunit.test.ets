@@ -62,6 +62,14 @@ export default function PropInit1Jsunit() {
       });
     });
 
+    /**
+     * @tc.name   PropInit1Jsunit_0200
+     * @tc.number PropInit1Jsunit_0200
+     * @tc.desc   PropInit1Jsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropInit1Jsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropInit1Jsunit_0200 START');
@@ -84,6 +92,14 @@ export default function PropInit1Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropInit1Jsunit_0400
+     * @tc.number PropInit1Jsunit_0400
+     * @tc.desc   PropInit1Jsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropInit1Jsunit_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropInit1Jsunit_0400 START');

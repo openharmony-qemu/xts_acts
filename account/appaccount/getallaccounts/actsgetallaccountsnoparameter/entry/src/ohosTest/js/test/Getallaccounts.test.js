@@ -20,12 +20,14 @@ const SELFBUNDLE = 'com.example.getallaccountsnoparameter'
 export default function ActsGetAllAccountsNoParameter() {
     describe('ActsGetAllAccountsNoParameter', function () {
 
-        /*
-        * @tc.number    : ActsGetAllAccountsNoParameter_0100
-        * @tc.name      : getAllAccounts callback
-        * @tc.desc      : This application has not added an account and has not been authorized by other applications to
-        *                 obtain authorization
-        */
+        /**
+         * @tc.name   ActsGetAllAccountsNoParameter_0100
+         * @tc.number ActsGetAllAccountsNoParameter_0100
+         * @tc.desc   This application has not added an account and has not been authorized by other applications to
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('ActsGetAllAccountsNoParameter_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             console.info("====>ActsGetAllAccountsNoParameter_0100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -42,14 +44,13 @@ export default function ActsGetAllAccountsNoParameter() {
         });
 
         /**
-        * @tc.number   ActsGetAllAccountsNoParameter_0200
-        * @tc.name     ActsGetAllAccountsNoParameter_0200
-        * @tc.desc     This application has not added an account and has not been authorized by other applications to
-        *                 obtain authorization, getAllAccounts promise
-        * @tc.level    Level3
-        * @tc.size     MediumTest
-        * @tc.type     Function
-        */
+         * @tc.name   ActsGetAllAccountsNoParameter_0200
+         * @tc.number ActsGetAllAccountsNoParameter_0200
+         * @tc.desc   This application has not added an account and has not been authorized by other applications to
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('ActsGetAllAccountsNoParameter_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             console.info("====>ActsGetAllAccountsNoParameter_0200 start====");
             let appAccountManager = account.createAppAccountManager();
@@ -69,11 +70,14 @@ export default function ActsGetAllAccountsNoParameter() {
             }
         });
 
-        /*
-        * @tc.number    : ActsGetAllAccountsNoParameter_0300
-        * @tc.name      : getAllAccounts callback
-        * @tc.desc      : This application gets authorization after adding a single account
-        */
+        /**
+         * @tc.name   ActsGetAllAccountsNoParameter_0300
+         * @tc.number ActsGetAllAccountsNoParameter_0300
+         * @tc.desc   This application gets authorization after adding a single account
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ActsGetAllAccountsNoParameter_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("====>ActsGetAllAccountsNoParameter_0300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -106,11 +110,14 @@ export default function ActsGetAllAccountsNoParameter() {
             });
         });
 
-        /*
-        * @tc.number    : ActsGetAllAccountsNoParameter_0400
-        * @tc.name      : getAllAccounts promise
-        * @tc.desc      : This application gets authorization after adding a single account
-        */
+    /**
+     * @tc.name   ActsGetAllAccountsNoParameter_0400
+     * @tc.number ActsGetAllAccountsNoParameter_0400
+     * @tc.desc   This application gets authorization after adding a single account
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ActsGetAllAccountsNoParameter_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("====>ActsGetAllAccountsNoParameter_0400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -157,11 +164,14 @@ export default function ActsGetAllAccountsNoParameter() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsGetAllAccountsNoParameter_0500
-        * @tc.name      : getAllAccounts callback
-        * @tc.desc      : This application is added to obtain authorization after adding multiple application accounts
-        */
+        /**
+         * @tc.name   ActsGetAllAccountsNoParameter_0500
+         * @tc.number ActsGetAllAccountsNoParameter_0500
+         * @tc.desc   This application is added to obtain authorization after adding multiple application accounts
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsGetAllAccountsNoParameter_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsGetAllAccountsNoParameter_0500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -214,11 +224,14 @@ export default function ActsGetAllAccountsNoParameter() {
             });
         });
 
-        /*
-        * @tc.number    : ActsGetAllAccountsNoParameter_0600
-        * @tc.name      : getAllAccounts promise
-        * @tc.desc      : This application is added to obtain authorization after adding multiple application accounts
-        */
+        /**
+         * @tc.name   ActsGetAllAccountsNoParameter_0600
+         * @tc.number ActsGetAllAccountsNoParameter_0600
+         * @tc.desc   This application is added to obtain authorization after adding multiple application accounts
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsGetAllAccountsNoParameter_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsGetAllAccountsNoParameter_0600 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -277,12 +290,14 @@ export default function ActsGetAllAccountsNoParameter() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsGetAllAccountsNoParameter_0700
-        * @tc.name      : getAllAccounts callback
-        * @tc.desc      : This application adds different application accounts three times in a row, and obtains
-        *                 authorization after deleting the account added for the second time
-        */
+        /**
+         * @tc.name   ActsGetAllAccountsNoParameter_0700
+         * @tc.number ActsGetAllAccountsNoParameter_0700
+         * @tc.desc   This application adds different application accounts three times in a row, and obtains
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsGetAllAccountsNoParameter_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsGetAllAccountsNoParameter_0700 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -333,12 +348,14 @@ export default function ActsGetAllAccountsNoParameter() {
             });
         });
 
-        /*
-        * @tc.number    : ActsGetAllAccountsNoParameter_0800
-        * @tc.name      : getAllAccounts promise
-        * @tc.desc      : This application adds different application accounts three times in a row, and obtains
-        *                 authorization after deleting the account added for the second time
-        */
+        /**
+         * @tc.name   ActsGetAllAccountsNoParameter_0800
+         * @tc.number ActsGetAllAccountsNoParameter_0800
+         * @tc.desc   This application adds different application accounts three times in a row, and obtains
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsGetAllAccountsNoParameter_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsGetAllAccountsNoParameter_0800 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -395,12 +412,14 @@ export default function ActsGetAllAccountsNoParameter() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsGetAllAccountsNoParameter_0900
-        * @tc.name      : getAllAccounts callback
-        * @tc.desc      : This application adds different application accounts three times in a row, and then obtains
-        *                 authorization multiple times
-        */
+        /**
+         * @tc.name   ActsGetAllAccountsNoParameter_0900
+         * @tc.number ActsGetAllAccountsNoParameter_0900
+         * @tc.desc   This application adds different application accounts three times in a row, and then obtains
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsGetAllAccountsNoParameter_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsGetAllAccountsNoParameter_0900 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -461,12 +480,14 @@ export default function ActsGetAllAccountsNoParameter() {
             });
         });
 
-        /*
-        * @tc.number    : ActsGetAllAccountsNoParameter_1000
-        * @tc.name      : getAllAccounts promise
-        * @tc.desc      : This application adds different application accounts three times in a row, and then obtains
-        *                 authorization multiple times
-        */
+        /**
+         * @tc.name   ActsGetAllAccountsNoParameter_1000
+         * @tc.number ActsGetAllAccountsNoParameter_1000
+         * @tc.desc   This application adds different application accounts three times in a row, and then obtains
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsGetAllAccountsNoParameter_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsGetAllAccountsNoParameter_1000 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -542,12 +563,14 @@ export default function ActsGetAllAccountsNoParameter() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsGetAllAccountsNoParameter_1100
-        * @tc.name      : getAllAccounts
-        * @tc.desc      : This application adds an account, other application authorizes an account to this application
-        *                 and this application obtains authorization
-        */
+        /**
+         * @tc.name   ActsGetAllAccountsNoParameter_1100
+         * @tc.number ActsGetAllAccountsNoParameter_1100
+         * @tc.desc   This application adds an account, other application authorizes an account to this application
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsGetAllAccountsNoParameter_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsGetAllAccountsNoParameter_1100 start====");
             let appAccountManager = account.createAppAccountManager();

@@ -60,12 +60,14 @@ export default function onGetIrregular4Jsunit() {
     });
 
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0001
-    * @tc.name  : onGetIrregular4Jsunit_0001
-    * @tc.desc  : Set onGetIrregularSizeByIndex[2,1], columns Template layout only supports rows1, according to the row and column layout
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   onGetIrregular4Jsunit_0001
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000IFDKV_0001
+     * @tc.desc   Set onGetIrregularSizeByIndex[2,1], columns Template layout only supports rows1, according to the row and column layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('onGetIrregular4Jsunit_0001',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[onGetIrregular4Jsunit_0000] START');

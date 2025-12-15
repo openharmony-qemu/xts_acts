@@ -59,14 +59,14 @@ export default function webAttribute() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONRESOURCELOAD_0100
-    * @tc.name       : testOnResourceLoad001
-    * @tc.desc       : test onResourceLoad
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOnResourceLoad001
+     * @tc.number SUB_WEB_ONRESOURCELOAD_0100
+     * @tc.desc   test onResourceLoad
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnResourceLoad001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testOnResourceLoad001", EVENT_ID_SET_EMIT_KEY)
       Utils.registerEvent("testOnResourceLoad001", "resource://rawfile/geolocation.html", 200560, done);

@@ -47,14 +47,14 @@ export default function listVisibleJsunit() {
       console.info(" listVisibleJsunit after each called");
     });
 
-    /* *
-    * @tc.number: SUB_ACE_SWIPER_ListItemGroupArea_0100
-    * @tc.name  : listVisibleJsunit_0100
-    * @tc.desc  : Trigger onScrollVisibleContentChange callback.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   listVisibleJsunit_0100
+     * @tc.number SUB_ACE_SWIPER_ListItemGroupArea_0100
+     * @tc.desc   Trigger onScrollVisibleContentChange callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('listVisibleJsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('listVisibleJsunit_0100 START');
       await CommonFunc.sleep(1000);

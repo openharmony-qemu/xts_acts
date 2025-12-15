@@ -47,12 +47,12 @@ export default function UIObserverDidLayoutTest() {
     });
 
     /**
-     * @tc.number    UIObserverDidLayoutTest_0100
-     * @tc.name      UIObserverDidLayoutTest_0100
-     * @tc.desc      UIObserver CallBack Test
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UIObserverDidLayoutTest_0100
+     * @tc.number UIObserverDidLayoutTest_0100
+     * @tc.desc   UIObserver CallBack Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('UIObserverDidLayoutTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('UIObserverDidLayoutTest_0100 START');

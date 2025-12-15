@@ -35,12 +35,12 @@ export default function DecimalTest008() {
     });
         console.info("start################################start");
     /**
-     * @tc.number    : DECIMAL_TEST_001
-     * @tc.name      : Decimal_hypot_Func_001
-     * @tc.desc      : Test hypot
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_hypot_Func_001
+     * @tc.number DECIMAL_TEST_001
+     * @tc.desc   Test hypot
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_hypot_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
@@ -90,12 +90,12 @@ export default function DecimalTest008() {
         expect(true).assertEqual(true);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_002
-     * @tc.name      : Decimal_hypot_Func_002
-     * @tc.desc      : Test hypot
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_hypot_Func_002
+     * @tc.number DECIMAL_TEST_002
+     * @tc.desc   Test hypot
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_hypot_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
@@ -144,12 +144,12 @@ export default function DecimalTest008() {
         expect(true).assertEqual(true);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_003
-     * @tc.name      : Decimal_hypot_Func_003
-     * @tc.desc      : Test hypot
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_hypot_Func_003
+     * @tc.number DECIMAL_TEST_003
+     * @tc.desc   Test hypot
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_hypot_Func_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
@@ -192,12 +192,12 @@ export default function DecimalTest008() {
         expect(true).assertEqual(true);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_004
-     * @tc.name      : Decimal_hypot_Func_004
-     * @tc.desc      : Test hypot
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_hypot_Func_004
+     * @tc.number DECIMAL_TEST_004
+     * @tc.desc   Test hypot
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_hypot_Func_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({

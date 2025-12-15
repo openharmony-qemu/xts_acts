@@ -26,105 +26,105 @@ export default function ListSwipeActionItemTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SwipeAction_0100
-     * @tc.name       : testListSwipeAction001
-     * @tc.desc       : testing swipeAction create
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListSwipeAction001
+     * @tc.number SUB_ARKUI_CAPI_LIST_SwipeAction_0100
+     * @tc.desc   testing swipeAction create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListSwipeAction001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListSwipeActionCreate()).assertEqual(1)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SwipeAction_0200
-     * @tc.name       : testListSwipeAction002
-     * @tc.desc       : testing swipeAction create
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListSwipeAction002
+     * @tc.number SUB_ARKUI_CAPI_LIST_SwipeAction_0200
+     * @tc.desc   testing swipeAction create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListSwipeAction002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListSwipeActionSetActionAreaDistance001()).assertEqual(0);
       done()
     })
 
-     /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SwipeAction_003
-     * @tc.name       : testListSwipeAction003
-     * @tc.desc       : testing swipeAction setEdgeEffect
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListSwipeAction003
+     * @tc.number SUB_ARKUI_CAPI_LIST_SwipeAction_003
+     * @tc.desc   testing swipeAction setEdgeEffect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListSwipeAction003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListSwipeActionOptionEdgeEffect()).assertEqual(0)
       done()
     })
 
-     /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SwipeAction_0007
-     * @tc.name       : testListSwipeAction004
-     * @tc.desc       : testing swipeAction setOnAction
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListSwipeAction004
+     * @tc.number SUB_ARKUI_CAPI_LIST_SwipeAction_0007
+     * @tc.desc   testing swipeAction setOnAction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListSwipeAction004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListSwipeActionItem007()).assertEqual(1)
       done()
     })
 
-     /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SwipeAction_0006
-     * @tc.name       : testListSwipeAction005
-     * @tc.desc       : testing swipeAction setcontent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListSwipeAction005
+     * @tc.number SUB_ARKUI_CAPI_LIST_SwipeAction_0006
+     * @tc.desc   testing swipeAction setcontent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListSwipeAction005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListSwipeActionItem006()).assertEqual(1)
       done()
     })
     
-     /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SwipeAction_OptionCreate
-     * @tc.name       : testListSwipeAction006
-     * @tc.desc       : testing swipeActionOption create
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListSwipeAction006
+     * @tc.number SUB_ARKUI_CAPI_LIST_SwipeAction_OptionCreate
+     * @tc.desc   testing swipeActionOption create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListSwipeAction006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListSwipeActionOptionCreate()).assertEqual(1);
       done()
     })
     
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SwipeAction_OptionCreate
-     * @tc.name       : testListSwipeAction007
-     * @tc.desc       : testing swipeActionOption create
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListSwipeAction007
+     * @tc.number SUB_ARKUI_CAPI_LIST_SwipeAction_OptionCreate
+     * @tc.desc   testing swipeActionOption create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListSwipeAction007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListSwipeActionItem008()).assertEqual(1);
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SwipeAction_OptionCreate
-     * @tc.name       : testListSwipeAction008
-     * @tc.desc       : testing swipeActionOption create
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListSwipeAction008
+     * @tc.number SUB_ARKUI_CAPI_LIST_SwipeAction_OptionCreate
+     * @tc.desc   testing swipeActionOption create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListSwipeAction008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListSwipeActionItem009()).assertEqual(1);
       done()

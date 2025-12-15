@@ -46,12 +46,12 @@ export default function curvesStepsJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testcurvesSteps0001
-     * @tc.name: testcurvesSteps0001
-     * @tc.desc: CanvasAPI 
-     * @tc.level: Level 0
-     * @tc.type : Canvas
-     * @tc.size : CanvasTest
+     * @tc.name   testcurvesSteps0001
+     * @tc.number SUB_ARKUI_API_testcurvesSteps0001
+     * @tc.desc   CanvasAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testcurvesSteps0001', Level.LEVEL0, async () => {
       console.info('curvesSteps testcurvesSteps0001 START');

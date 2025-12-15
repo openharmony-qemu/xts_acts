@@ -276,12 +276,12 @@ export default function api16CertFuncTestTwoUnit() {
     })
 
     /**
+     * @tc.name   SUB_Security_CertManager_InstallUserTrustedCertificates_Static_0015
      * @tc.number SUB_Security_CertManager_InstallUserTrustedCertificates_Static_0015
-     * @tc.name SUB_Security_CertManager_InstallUserTrustedCertificates_Static_0015
-     * @tc.desc normal test
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Security_CertManager_InstallUserTrustedCertificates_Static_0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_InstallUserTrustedCertificates_Static_0015 start');
@@ -329,12 +329,12 @@ export default function api16CertFuncTestTwoUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_InstallUserTrustedCertificates_Static_0016
      * @tc.number SUB_Security_CertManager_InstallUserTrustedCertificates_Static_0016
-     * @tc.name SUB_Security_CertManager_InstallUserTrustedCertificates_Static_0016
-     * @tc.desc normal test
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Security_CertManager_InstallUserTrustedCertificates_Static_0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_InstallUserTrustedCertificates_Static_0016 start');
@@ -380,12 +380,12 @@ export default function api16CertFuncTestTwoUnit() {
       done();
     });
     /**
+     * @tc.name   SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0012
      * @tc.number SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0012
-     * @tc.name SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0012
-     * @tc.desc abnormal test
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0012 start`);
@@ -417,12 +417,12 @@ export default function api16CertFuncTestTwoUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0013
      * @tc.number SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0013
-     * @tc.name SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0013
-     * @tc.desc abnormal test
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0013 start`);
@@ -457,12 +457,12 @@ export default function api16CertFuncTestTwoUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0014
      * @tc.number SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0014
-     * @tc.name SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0014
-     * @tc.desc normal test
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0014 start`);
@@ -492,12 +492,12 @@ export default function api16CertFuncTestTwoUnit() {
       done();
     });
     /**
+     * @tc.name   SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0015
      * @tc.number SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0015
-     * @tc.name SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0015
-     * @tc.desc normal test
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0015 start`);
@@ -528,12 +528,12 @@ export default function api16CertFuncTestTwoUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_OpenUninstallCertificateDialog_Static_0012
      * @tc.number SUB_Security_CertManager_OpenUninstallCertificateDialog_Static_0012
-     * @tc.name SUB_Security_CertManager_OpenUninstallCertificateDialog_Static_0012
-     * @tc.desc abnormal test
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_OpenUninstallCertificateDialog_Static_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenUninstallCertificateDialog_Static_0012 start`);
@@ -554,12 +554,12 @@ export default function api16CertFuncTestTwoUnit() {
 
 
     /**
+     * @tc.name   SUB_Security_CertManager_OpenUninstallCertificateDialog_Static_0014
      * @tc.number SUB_Security_CertManager_OpenUninstallCertificateDialog_Static_0014
-     * @tc.name SUB_Security_CertManager_OpenUninstallCertificateDialog_Static_0014
-     * @tc.desc abnormal test
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_OpenUninstallCertificateDialog_Static_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenUninstallCertificateDialog_Static_0014 start`);
@@ -598,12 +598,12 @@ export default function api16CertFuncTestTwoUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_OpenUninstallCertificateDialog_Static_0015
      * @tc.number SUB_Security_CertManager_OpenUninstallCertificateDialog_Static_0015
-     * @tc.name SUB_Security_CertManager_OpenUninstallCertificateDialog_Static_0015
-     * @tc.desc abnormal test
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_OpenUninstallCertificateDialog_Static_0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenUninstallCertificateDialog_Static_0015 start`);
@@ -623,12 +623,12 @@ export default function api16CertFuncTestTwoUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_OpenCertificateDialog_Static_0030
      * @tc.number SUB_Security_CertManager_OpenCertificateDialog_Static_0030
-     * @tc.name SUB_Security_CertManager_OpenCertificateDialog_Static_0030
-     * @tc.desc abnormal test
-     * @tc.size MediumTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_OpenCertificateDialog_Static_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenCertificateDialog_Static_0030 start`);
@@ -652,12 +652,12 @@ export default function api16CertFuncTestTwoUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_OpenCertificateDialog_Static_0010
      * @tc.number SUB_Security_CertManager_OpenCertificateDialog_Static_0010
-     * @tc.name SUB_Security_CertManager_OpenCertificateDialog_Static_0010
-     * @tc.desc abnormal test
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_OpenCertificateDialog_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenCertificateDialog_Static_0010 start`);
@@ -678,12 +678,12 @@ export default function api16CertFuncTestTwoUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_Static_0100
      * @tc.number SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_Static_0100
-     * @tc.name SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_Static_0100
-     * @tc.desc abnormal test
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_Static_0100 start`);
@@ -706,12 +706,12 @@ export default function api16CertFuncTestTwoUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_InstallCaCert_Static_0107
      * @tc.number SUB_Security_CertManager_InstallCaCert_Static_0107
-     * @tc.name SUB_Security_CertManager_InstallCaCert_Static_0107
-     * @tc.desc normal test
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Security_CertManager_InstallCaCert_Static_0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_InstallCaCert_Static_0107 start`);
@@ -726,12 +726,12 @@ export default function api16CertFuncTestTwoUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_InstallCaCert_Static_0108
      * @tc.number SUB_Security_CertManager_InstallCaCert_Static_0108
-     * @tc.name SUB_Security_CertManager_InstallCaCert_Static_0108
-     * @tc.desc abnormal test
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Security_CertManager_InstallCaCert_Static_0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_InstallCaCert_Static_0108 start`);
@@ -755,5 +755,81 @@ export default function api16CertFuncTestTwoUnit() {
       }
       done();
     });
+    
+    /**
+     * @tc.number SUB_Security_CertManager_Ukey_Static_0800
+     * @tc.name SUB_Security_CertManager_Ukey_Static_0800
+     * @tc.desc abnormal test
+     * @tc.size MediumTest
+     * @tc.level Level3
+     * @tc.type Function
+     */
+    it('SUB_Security_CertManager_Ukey_Static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_0800 start`);
+      let keyUri: string = 'test';
+      let ukeyInfo: certManager.UkeyInfo = {
+        certPurpose: certManager.CertificatePurpose.PURPOSE_DEFAULT,
+      }
+      try {
+        await certManager.getUkeyCertificate(keyUri, ukeyInfo);
+        expect(null).assertFail();
+      } catch (err:BusinessError) {
+        hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_0800 error.code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(17500001);
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Security_CertManager_Ukey_Static_0400
+     * @tc.name SUB_Security_CertManager_Ukey_Static_0400
+     * @tc.desc abnormal test
+     * @tc.size MediumTest
+     * @tc.level Level3
+     * @tc.type Function
+     */
+    it('SUB_Security_CertManager_Ukey_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_0400 start`);
+      const context :common.Context = await GlobalContext.getContext();
+      let certTypes: Array<certManagerDialog.CertificateType> = [
+        certManagerDialog.CertificateType.CREDENTIAL_UKEY
+      ];
+      let certPurpose: certManager.CertificatePurpose = certManager.CertificatePurpose.PURPOSE_DEFAULT;
+      let authorizeRequest: certManagerDialog.AuthorizeRequest = { certTypes: certTypes, certPurpose: certPurpose };
+
+      try {
+        await certManagerDialog.openAuthorizeDialog(context, authorizeRequest);
+        expect(null).assertFail();
+      } catch (error:BusinessError) {
+        hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_0400 error.code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(29700001);
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Security_CertManager_Ukey_Static_1200
+     * @tc.name SUB_Security_CertManager_Ukey_Static_1200
+     * @tc.desc abnormal test
+     * @tc.size MediumTest
+     * @tc.level Level3
+     * @tc.type Function
+     */
+    it('SUB_Security_CertManager_Ukey_Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_1200 start`);
+      const context :common.Context = await GlobalContext.getContext();
+      let keyUri: string = "test"
+      let ukeyAuthRequest: certManagerDialog.UkeyAuthRequest = { keyUri: keyUri }
+
+      try {
+        await certManagerDialog.openUkeyAuthDialog(context, ukeyAuthRequest);
+        expect(null).assertFail();
+      } catch (err:BusinessError) {
+        hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_1200 error.code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(29700003);
+      }
+      done();
+    });
+
   })
 }

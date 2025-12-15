@@ -55,14 +55,14 @@ export default function WebViewJavaScriptProxyAndOnPageVisible() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ZOOMCOUNT_0100
-    * @tc.name       : testZoomCount001
-    * @tc.desc       : test ZoomCount
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testZoomCount001
+     * @tc.number SUB_WEB_ZOOMCOUNT_0100
+     * @tc.desc   test ZoomCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testZoomCount001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitZoomCount", 150400)
       Utils.registerEvent("testZoomCount001", true, 150410, done);

@@ -60,12 +60,14 @@ export default function onGetIrregular1Jsunit() {
     });
 
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0001
-    * @tc.name  : onGetIrregular1Jsunit_0001
-    * @tc.desc  : Set onGetIrregularSizeByIndex[0,1], columns Template layout only supports rows as 1, row by row layout
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   onGetIrregular1Jsunit_0001
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000IFDKV_0001
+     * @tc.desc   Set onGetIrregularSizeByIndex[0,1], columns Template layout only supports rows as 1, row by row layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('onGetIrregular1Jsunit_0001',  Level.LEVEL0, async (done: Function) => {
       console.info('[onGetIrregular1Jsunit_0000] START');
       let Grid: RectValue = CommonFunc.getComponentRect('Irregular1');

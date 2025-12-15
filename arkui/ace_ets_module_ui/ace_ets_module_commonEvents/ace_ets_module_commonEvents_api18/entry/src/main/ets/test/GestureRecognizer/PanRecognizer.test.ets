@@ -46,11 +46,13 @@ export default function PanRecognizerTest() {
     });
 
     /**
-    * @tc.number
-    * @tc.name  : PanRecognizer_0100
-    * @tc.desc  : To test whether PanRecognizer is effective.
-    * @tc.level : Level 0
-    */
+     * @tc.name   PanRecognizer_0100
+     * @tc.number PanRecognizer_0100
+     * @tc.desc   To test whether PanRecognizer is effective.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PanRecognizer_0100', Level.LEVEL0, async (done: Function) => {
       console.info('PanRecognizer_0100 START');
       await CommonFunc.sleep(1000);

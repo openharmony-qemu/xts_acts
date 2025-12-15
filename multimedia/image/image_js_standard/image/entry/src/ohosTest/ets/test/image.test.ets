@@ -286,15 +286,12 @@ export default function imageJsTest() {
             console.info('afterAll case');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0500
-         * @tc.name      : create pixelmap-promise (editable: true, pixelFormat: RGBA_8888, size: { height: 4, width: 6 }, bytes = buffer)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0500
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0500', Level.LEVEL0, async (done: Function) => {
             const Color = new ArrayBuffer(96);
@@ -317,15 +314,12 @@ export default function imageJsTest() {
                 });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0500
-         * @tc.name      : create pixelmap-callback (editable: false, pixelFormat: RGBA_8888, size: { height: 4, width: 6 },bytes = buffer)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixelFormat,size
-         *                 3.using colorand opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0500
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0500', Level.LEVEL0, async (done: Function) => {
             const Color = new ArrayBuffer(96);
@@ -348,15 +342,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0600
-         * @tc.name      : createpixelmap-promise (editable: true, pixelFormat: RGB_565, size: { height: 6, width: 8 },bytes = buffer)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixelFormat,size
-         *                 3.using colorand opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0600
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0600', Level.LEVEL0, async (done: Function) => {
             const Color = new ArrayBuffer(96);
@@ -379,15 +370,12 @@ export default function imageJsTest() {
                 });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0600
-         * @tc.name      : createpixelmap-callback (editable: false, pixelFormat: RGB_565, size: { height: 6, width: 8 },bytes = buffer)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixelFormat,size
-         *                 3.using colorand opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0600
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0600', Level.LEVEL0, async (done: Function) => {
             const Color = new ArrayBuffer(96);
@@ -410,15 +398,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0700
-         * @tc.name      : createpixelmap-promise(editable: true, pixelFormat: unkonwn, size: { height: 6, width: 8 })
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixelFormat,size
-         *                 3.using colorand opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0700
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0700', Level.LEVEL0, async (done: Function) => {
             const Color = new ArrayBuffer(96);
@@ -441,15 +426,12 @@ export default function imageJsTest() {
                 });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0700
-         * @tc.name      : create pixelmap-callback(editable: false, pixelFormat: unkonwn, size: { height: 6, width: 8 })
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixelFormat,size
-         *                 3.using colorand opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0700
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0700', Level.LEVEL0, async (done: Function) => {
             const Color = new ArrayBuffer(96);
@@ -472,15 +454,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0800
-         * @tc.name      : create pixelmap-callback(editable: true, pixelFormat: RGBA_8888, size: { height: 6, width: 8 } bytes > buffer )
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0800
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0800', Level.LEVEL0, async (done: Function) => {
             const Color = new ArrayBuffer(96);
@@ -503,15 +482,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0900
-         * @tc.name      : create pixelmap-callback(editable: true, pixelFormat: RGB_565, size: { height: 2, width: 3 }, bytes < buffer)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0900
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0900
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_0900', Level.LEVEL0, async (done: Function) => {
             const Color = new ArrayBuffer(96);
@@ -534,15 +510,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_1000
-         * @tc.name      : create pixelmap-callback(editable: true, pixelFormat: unkonwn, size: { height: -1, width: -1 })
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_1000
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_1000
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_1000', Level.LEVEL0, async (done: Function) => {
             const Color = new ArrayBuffer(96);
@@ -564,15 +537,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_1100
-         * @tc.name      : create pixelmap-callback(editable: true, pixelFormat: unsupported format, size: { height: 6, width: 8 })
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size(Unsupported formats are converted to RGBA_8888)
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_1100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_1100
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_1100', Level.LEVEL0, async (done: Function) => {
             const Color = new ArrayBuffer(96);
@@ -595,15 +565,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_READPIXELSTOBUFFER_PROMISE_0100
-         * @tc.name      : readPixelsToBuffer-promise
-         * @tc.desc      : read all pixels to an buffer
-         *                 1.create PixelMap,buffer
-         *                 2.call readPixelsToBuffer
-         *                 3.return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_READPIXELSTOBUFFER_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_READPIXELSTOBUFFER_PROMISE_0100
+         * @tc.desc   read all pixels to an buffer
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_READPIXELSTOBUFFER_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
             console.info('SUB_MULTIMEDIA_IMAGE_READPIXELSTOBUFFER_PROMISE_0100 in');
@@ -655,15 +622,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_READPIXELSTOBUFFER_SYNC_0100
-         * @tc.name      : readPixelsToBufferSync
-         * @tc.desc      : read all pixels to buffer
-         *                 1.create PixelMap, buffer
-         *                 2.call readPixelsToBufferSync
-         *                 3.return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_READPIXELSTOBUFFER_SYNC_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_READPIXELSTOBUFFER_SYNC_0100
+         * @tc.desc   read all pixels to buffer
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_READPIXELSTOBUFFER_SYNC_0100', Level.LEVEL0, async (done: Function) => {
             console.info('SUB_MULTIMEDIA_IMAGE_READPIXELSTOBUFFER_SYNC_0100 in');
@@ -702,15 +666,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_READPIXELSTOBUFFER_CALLBACK_0100
-         * @tc.name      : readPixelsToBuffer-callback
-         * @tc.desc      : read all pixels to an buffer
-         *                 1.create PixelMap,buffer
-         *                 2.call readPixelsToBuffer
-         *                 3.return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_READPIXELSTOBUFFER_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_READPIXELSTOBUFFER_CALLBACK_0100
+         * @tc.desc   read all pixels to an buffer
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_READPIXELSTOBUFFER_CALLBACK_0100', Level.LEVEL0, async (done: Function) => {
             console.info('SUB_MULTIMEDIA_IMAGE_READPIXELSTOBUFFER_CALLBACK_0100 in');
@@ -753,15 +714,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_READPIXELSTOBUFFER_CALLBACK_0200
-         * @tc.name      : readPixelsToBuffer-callback(buffer:0)
-         * @tc.desc      : read all pixels to an buffer
-         *                 1.create PixelMap,buffer
-         *                 2.call readPixelsToBuffer
-         *                 3.return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_READPIXELSTOBUFFER_CALLBACK_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_READPIXELSTOBUFFER_CALLBACK_0200
+         * @tc.desc   read all pixels to an buffer
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_READPIXELSTOBUFFER_CALLBACK_0200', Level.LEVEL0, async (done: Function) => {
             console.info('SUB_MULTIMEDIA_IMAGE_READPIXELSTOBUFFER_CALLBACK_0200 in');
@@ -804,15 +762,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_READPIXELS_PROMISE_0100
-         * @tc.name      : readPixels-promise
-         * @tc.desc      : 1.create PixelMap
-         *                 2.call readPixels
-         *                 3.promise return array
-         *                 4.callbackcall return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_READPIXELS_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_READPIXELS_PROMISE_0100
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_READPIXELS_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -868,15 +823,12 @@ export default function imageJsTest() {
                 });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_READPIXELS_CALLBACK_0100
-         * @tc.name      : readPixels-callback
-         * @tc.desc      : 1.create PixelMap
-         *                 2.call readPixels
-         *                 3.promise return array
-         *                 4.callbackcall return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_READPIXELS_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_READPIXELS_CALLBACK_0100
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_READPIXELS_CALLBACK_0100', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -928,15 +880,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_READPIXELS_CALLBACK_0200
-         * @tc.name      : readPixels-callback( region: { size: { height: 1, width: 2 }, x: -1, y: -1 })
-         * @tc.desc      : 1.create PixelMap
-         *                 2.call readPixels
-         *                 3.promise return array
-         *                 4.callbackcall return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_READPIXELS_CALLBACK_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_READPIXELS_CALLBACK_0200
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_READPIXELS_CALLBACK_0200', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -978,15 +927,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_READPIXELS_PROMISE_0200
-         * @tc.name      : readPixels-promise(buffer:0)
-         * @tc.desc      : 1.create PixelMap
-         *                 2.call readPixels
-         *                 3.promise return array
-         *                 4.callbackcall return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_READPIXELS_PROMISE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_READPIXELS_PROMISE_0200
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_READPIXELS_PROMISE_0200', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -1028,15 +974,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_READPIXELS_PROMISE_0300
-         * @tc.name      : readPixels-promise(offset > buffer)
-         * @tc.desc      : 1.create PixelMap
-         *                 2.call readPixels
-         *                 3.promise return array
-         *                 4.callbackcall return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_READPIXELS_PROMISE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_READPIXELS_PROMISE_0300
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_READPIXELS_PROMISE_0300', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -1077,15 +1020,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_READPIXELS_PROMISE_0400
-         * @tc.name      : readPixels-promise(region: { size: { height: -1, width:-1}, x: 0, y: 0 })
-         * @tc.desc      : 1.create PixelMap
-         *                 2.call readPixels
-         *                 3.promise return array
-         *                 4.callbackcall return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_READPIXELS_PROMISE_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_READPIXELS_PROMISE_0400
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_READPIXELS_PROMISE_0400', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -1126,15 +1066,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_READPIXELS_SYNC_0100
-         * @tc.name      : readPixels-sync
-         * @tc.desc      : 1.create PixelMap
-         *                 2.call readPixels
-         *                 3.sync return array
-         *                 4.callbackcall return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_READPIXELS_SYNC_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_READPIXELS_SYNC_0100
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_READPIXELS_SYNC_0100', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -1181,15 +1118,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_READPIXELS_SYNC_0200
-         * @tc.name      : readPixels-sync(buffer:0)
-         * @tc.desc      : 1.create PixelMap
-         *                 2.call readPixels
-         *                 3.sync return array
-         *                 4.callbackcall return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_READPIXELS_SYNC_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_READPIXELS_SYNC_0200
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_READPIXELS_SYNC_0200', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -1232,15 +1166,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_READPIXELS_SYNC_0300
-         * @tc.name      : readPixels-sync(offset > buffer)
-         * @tc.desc      : 1.create PixelMap
-         *                 2.call readPixels
-         *                 3.sync return array
-         *                 4.callbackcall return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_READPIXELS_SYNC_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_READPIXELS_SYNC_0300
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_READPIXELS_SYNC_0300', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -1282,15 +1213,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_READPIXELS_SYNC_0400
-         * @tc.name      : readPixels-sync(region: { size: { height: -1, width:-1}, x: 0, y: 0 })
-         * @tc.desc      : 1.create PixelMap
-         *                 2.call readPixels
-         *                 3.sync return array
-         *                 4.callbackcall return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_READPIXELS_SYNC_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_READPIXELS_SYNC_0400
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_READPIXELS_SYNC_0400', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -1332,15 +1260,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_WRITEPIXELS_PROMISE_0100
-         * @tc.name      : writePixels-promise
-         * @tc.desc      : 1.create PixelMap
-         *                 2.call writePixels
-         *                 3.call return undefined
-         *                 4.callbackcall return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_WRITEPIXELS_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_WRITEPIXELS_PROMISE_0100
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_WRITEPIXELS_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -1410,15 +1335,12 @@ export default function imageJsTest() {
                 });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_WRITEPIXELS_SYNC_0100
-         * @tc.name      : writePixels-sync
-         * @tc.desc      : 1.create PixelMap
-         *                 2.call writePixels
-         *                 3.call return undefined
-         *                 4.callbackcall return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_WRITEPIXELS_SYNC_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_WRITEPIXELS_SYNC_0100
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_WRITEPIXELS_SYNC_0100', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -1478,15 +1400,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_WRITEPIXELS_CALLBACK_0100
-         * @tc.name      : writePixels-callback
-         * @tc.desc      : 1.create PixelMap
-         *                 2.call writePixels
-         *                 3.call return undefined
-         *                 4.callbackcall return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_WRITEPIXELS_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_WRITEPIXELS_CALLBACK_0100
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_WRITEPIXELS_CALLBACK_0100', Level.LEVEL0, async (done: Function) => {
             try {
@@ -1554,15 +1473,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_WRITEBUFFERTOPIXELS_PROMISE_0100
-         * @tc.name      : writeBufferToPixels-promise
-         * @tc.desc      : 1.create PixelMap,buffer
-         *                 2.call writeBufferToPixels
-         *                 3.call return undefined
-         *                 4.callbackcall return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_WRITEBUFFERTOPIXELS_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_WRITEBUFFERTOPIXELS_PROMISE_0100
+         * @tc.desc   1.create PixelMap,buffer
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_WRITEBUFFERTOPIXELS_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -1612,15 +1528,12 @@ export default function imageJsTest() {
                 });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_WRITEBUFFERTOPIXELS_CALLBACK_0100
-         * @tc.name      : writeBufferToPixels-callback
-         * @tc.desc      : 1.create PixelMap,buffer
-         *                 2.call writeBufferToPixels
-         *                 3.call return undefined
-         *                 4.callbackcall return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_WRITEBUFFERTOPIXELS_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_WRITEBUFFERTOPIXELS_CALLBACK_0100
+         * @tc.desc   1.create PixelMap,buffer
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_WRITEBUFFERTOPIXELS_CALLBACK_0100', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -1666,14 +1579,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_WRITEBUFFERTOPIXELS_SYNC_0100
-         * @tc.name      : writeBufferToPixels-sync
-         * @tc.desc      : 1.create PixelMap,buffer
-         *                 2.call writeBufferToPixels
-         *                 3.call return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_WRITEBUFFERTOPIXELS_SYNC_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_WRITEBUFFERTOPIXELS_SYNC_0100
+         * @tc.desc   1.create PixelMap,buffer
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_WRITEBUFFERTOPIXELS_SYNC_0100', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -1713,15 +1624,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PIXELMAP_PROMISE_0100
-         * @tc.name      : getImageInfo-pixelmap-promise
-         * @tc.desc      : 1.create PixelMap,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PIXELMAP_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PIXELMAP_PROMISE_0100
+         * @tc.desc   1.create PixelMap,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PIXELMAP_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -1764,14 +1672,12 @@ export default function imageJsTest() {
                 });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PIXELMAP_SYNC_0100
-         * @tc.name      : getImageInfo-pixelmap-sync
-         * @tc.desc      : 1.create PixelMap,ImageInfo
-         *                 2.getImageInfo
-         *                 3.return imageinfo
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PIXELMAP_SYNC_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PIXELMAP_SYNC_0100
+         * @tc.desc   1.create PixelMap,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PIXELMAP_SYNC_0100', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -1798,15 +1704,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PIXELMAP_CALLBACK_0100
-         * @tc.name      : getImageInfo-pixelmap-callback
-         * @tc.desc      : 1.create PixelMap,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PIXELMAP_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PIXELMAP_CALLBACK_0100
+         * @tc.desc   1.create PixelMap,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PIXELMAP_CALLBACK_0100', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -1837,16 +1740,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETBYTESNUMBERPERROW_0100
-         * @tc.name      : getBytesNumberPerRow
-         * @tc.desc      : 1.create PixelMap
-         *                 2.set PixelMap
-         *                 3.call getBytesNumberPerRow
-         *                 4. call return number
-         *                 5.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETBYTESNUMBERPERROW_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETBYTESNUMBERPERROW_0100
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETBYTESNUMBERPERROW_0100', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -1876,16 +1775,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETBYTESNUMBERPERROW_0200
-         * @tc.name      : getPixelBytesNumber
-         * @tc.desc      : 1.create PixelMap
-         *                 2.set Pixel
-         *                 3.call getPixelBytesNumber
-         *                 4. call return number
-         *                 5.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETBYTESNUMBERPERROW_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETBYTESNUMBERPERROW_0200
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETBYTESNUMBERPERROW_0200', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -1915,15 +1810,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RELEASE_PIXELMAP_PROMISE_0100
-         * @tc.name      : release-pixelmap-promise
-         * @tc.desc      : 1.create PixelMap
-         *                 2.set Pixel
-         *                 3.call release
-         *                 4.return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RELEASE_PIXELMAP_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RELEASE_PIXELMAP_PROMISE_0100
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RELEASE_PIXELMAP_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -1954,15 +1846,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RELEASE_PIXELMAP_CALLBACK_0100
-         * @tc.name      : release-pixelmap-callback
-         * @tc.desc      : 1.create PixelMap
-         *                 2.set Pixel
-         *                 3.call release
-         *                 4.return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RELEASE_PIXELMAP_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RELEASE_PIXELMAP_CALLBACK_0100
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RELEASE_PIXELMAP_CALLBACK_0100', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -1985,14 +1874,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_0100
-         * @tc.name      : createImageSource(uri)-jpg
-         * @tc.desc      : 1.set uri
-         *                 2.call createImageSource(uri)
-         *                 3.return imagesource
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_0100
+         * @tc.desc   1.set uri
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_0100', Level.LEVEL0, async (done: Function) => {
             try {
@@ -2009,14 +1896,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_0200
-         * @tc.name      : createImageSource(uri)-bmp
-         * @tc.desc      : 1.seturi
-         *                 2.call createImageSource(uri)
-         *                 3.return imagesource
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_0200
+         * @tc.desc   1.seturi
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_0200', Level.LEVEL0, async (done: Function) => {
             try {
@@ -2033,14 +1918,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_0300
-         * @tc.name      : createImageSource(uri)-gif
-         * @tc.desc      : 1.seturi
-         *                 2.call createImageSource(uri)
-         *                 3.return imagesource
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_0300
+         * @tc.desc   1.seturi
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_0300', Level.LEVEL0, async (done: Function) => {
             try {
@@ -2057,14 +1940,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_0400
-         * @tc.name      : createImageSource(uri)-png
-         * @tc.desc      : 1.seturi
-         *                 2.call createImageSource(uri)
-         *                 3.return imagesource
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_0400
+         * @tc.desc   1.seturi
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_0400', Level.LEVEL0, async (done: Function) => {
             try {
@@ -2081,14 +1962,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_ERROR_SUFFIXFILE_0100
-         * @tc.name      : createImageSource(uri)-image with wrong suffix file
-         * @tc.desc      : 1.call createImageSource(uri)
-         *                 2.Incoming wrong suffix file
-         *                 3.imagesource null
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_ERROR_SUFFIXFILE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_ERROR_SUFFIXFILE_0100
+         * @tc.desc   1.call createImageSource(uri)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_ERROR_SUFFIXFILE_0100', Level.LEVEL0, async (done: Function) => {
             try {
@@ -2121,14 +2000,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_ERROR_URI_0100
-         * @tc.name      : createImageSource(uri)-wrong uri
-         * @tc.desc      : 1.call createImageSource(uri)
-         *                 2.set wrong uri
-         *                 3.return null
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_ERROR_URI_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_ERROR_URI_0100
+         * @tc.desc   1.call createImageSource(uri)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_ERROR_URI_0100', Level.LEVEL0, async (done: Function) => {
             try {
@@ -2144,14 +2021,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_0100
-         * @tc.name      : createImageSource(fd)
-         * @tc.desc      : 1.call createImageSource
-         *                 2.set fd
-         *                 3.return imagesource
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_0100
+         * @tc.desc   1.call createImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_0100', Level.LEVEL0, async (done: Function) => {
             try {
@@ -2188,14 +2063,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_0200
-         * @tc.name      : createImageSource(fd) fd<0
-         * @tc.desc      : 1.call createImageSource
-         *                 2.set wrong fd
-         *                 3.return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_0200
+         * @tc.desc   1.call createImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_0200', Level.LEVEL0, async (done: Function) => {
             const imageSourceApi = image.createImageSource(-2);
@@ -2205,14 +2078,12 @@ export default function imageJsTest() {
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_0300
-         * @tc.name      : createImageSource(data)
-         * @tc.desc      : 1.setdata
-         *                 2.createImageSource
-         *                 3.return imagesource
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_0300
+         * @tc.desc   1.setdata
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_0300', Level.LEVEL0, async (done: Function) => {
             const data = testJpg.buffer;
@@ -2231,14 +2102,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_0400
-         * @tc.name      : createImageSource(data) buffer:0
-         * @tc.desc      : 1.setdata
-         *                 2.createImageSource
-         *                 3.return imagesource
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_0400
+         * @tc.desc   1.setdata
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_0400', Level.LEVEL0, async (done: Function) => {
             const data = new ArrayBuffer(0);
@@ -2249,14 +2118,12 @@ export default function imageJsTest() {
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_JPG_0100
-         * @tc.name      : release-imagesource-promise-jpg
-         * @tc.desc      : 1.create ImageSource
-         *                 2.call release()
-         *                 3.return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_JPG_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_JPG_0100
+         * @tc.desc   1.create ImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_JPG_0100', Level.LEVEL0, async (done: Function) => {
             try {
@@ -2284,14 +2151,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_CALLBACK_JPG_0100
-         * @tc.name      : release-imagesource-callback-jpg
-         * @tc.desc      : 1.create ImageSource
-         *                 2.call release()
-         *                 3.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_CALLBACK_JPG_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_CALLBACK_JPG_0100
+         * @tc.desc   1.create ImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_CALLBACK_JPG_0100', Level.LEVEL0, async (done: Function) => {
             try {
@@ -2315,14 +2180,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0100
-         * @tc.name      : getImageInfo(callback: AsyncCallback<ImageInfo>)-jpg
-         * @tc.desc      : 1.create imageSource
-         *                 2.imageSourcecall getImageInfo(ImageInfo)
-         *                 3.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0100
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0100', Level.LEVEL0, async (done: Function) => {
             try {
@@ -2362,14 +2225,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0200
-         * @tc.name      : getImageInfo(callback: AsyncCallback<ImageInfo>)-bmp
-         * @tc.desc      : 1.create imageSource
-         *                 2.imageSourcecall getImageInfo(ImageInfo)
-         *                 3.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0200
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0200', Level.LEVEL0, async (done: Function) => {
             try {
@@ -2397,14 +2258,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0300
-         * @tc.name      : getImageInfo(callback: AsyncCallback<ImageInfo>)-png
-         * @tc.desc      : 1.create imageSource
-         *                 2.imageSourcecall getImageInfo(ImageInfo)
-         *                 3.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0300
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0300', Level.LEVEL0, async (done: Function) => {
             try {
@@ -2432,14 +2291,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0400
-         * @tc.name      : getImageInfo(callback: AsyncCallback<ImageInfo>)-gif
-         * @tc.desc      : 1.create ImageInfo
-         *                 2.call getImageInfo(index, ImageInfo)
-         *                 3.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0400
+         * @tc.desc   1.create ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0400', Level.LEVEL0, async (done: Function) => {
             try {
@@ -2479,14 +2336,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0500
-         * @tc.name      : getImageInfo(index: number, callback: AsyncCallback<ImageInfo>)-jpg
-         * @tc.desc      : 1.create ImageInfo
-         *                 2.call getImageInfo(index, ImageInfo)
-         *                 3.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0500
+         * @tc.desc   1.create ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0500', Level.LEVEL0, async (done: Function) => {
             try {
@@ -2514,14 +2369,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0600
-         * @tc.name      : getImageInfo(index: number, callback: AsyncCallback<ImageInfo>)-bmp
-         * @tc.desc      : 1.create ImageInfo
-         *                 2.call getImageInfo(index, ImageInfo)
-         *                 3.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0600
+         * @tc.desc   1.create ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0600', Level.LEVEL0, async (done: Function) => {
             try {
@@ -2549,14 +2402,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number: SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0700
-         * @tc.name  : getImageInfo(index: number, callback: AsyncCallback<ImageInfo>)-png
-         * @tc.desc  : 1.create ImageInfo
-         *             2.call getImageInfo(index, ImageInfo)
-         *             3.callback return undefined
-         * @tc.size  : MEDIUM MEDIUM
-         * @tc.type  : Functional
-         * @tc.level : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0700
+         * @tc.desc   1.create ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0700', Level.LEVEL0, async (done: Function) => {
             try {
@@ -2584,14 +2435,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number: SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0800
-         * @tc.name  : getImageInfo(index: number, callback: AsyncCallback<ImageInfo>)-gif
-         * @tc.desc  : 1.create ImageInfo
-         *             2.call getImageInfo(index, ImageInfo)
-         *             3.callback return undefined
-         * @tc.size  : MEDIUM MEDIUM
-         * @tc.type  : Functional
-         * @tc.level : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0800
+         * @tc.desc   1.create ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_0800', Level.LEVEL0, async (done: Function) => {
             try {
@@ -2631,14 +2480,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number: SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_INDEX_CALLBACK_GIF_0100
-         * @tc.name  : getImageInfo(index: number, callback: AsyncCallback<ImageInfo>)-gif(frame:1)-index:1
-         * @tc.desc  : 1.create ImageInfo
-         *             2.call getImageInfo(index, ImageInfo)
-         *             3.callback return undefined
-         * @tc.size  : MEDIUM
-         * @tc.type  : Functional
-         * @tc.level : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_INDEX_CALLBACK_GIF_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_INDEX_CALLBACK_GIF_0100
+         * @tc.desc   1.create ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_INDEX_CALLBACK_GIF_0100', Level.LEVEL0, async (done: Function) => {
             try {
@@ -2666,14 +2513,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number: SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_INDEX_CALLBACK_GIF_0200
-         * @tc.name  : getImageInfo(index: number, callback: AsyncCallback<ImageInfo>)-gif-index:-1
-         * @tc.desc  : 1.create ImageInfo
-         *             2.call getImageInfo(index, ImageInfo)
-         *             3.callback return undefined
-         * @tc.size  : MEDIUM
-         * @tc.type  : Functional
-         * @tc.level : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_INDEX_CALLBACK_GIF_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_INDEX_CALLBACK_GIF_0200
+         * @tc.desc   1.create ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_INDEX_CALLBACK_GIF_0200', Level.LEVEL0, async (done: Function) => {
             try {
@@ -2697,14 +2542,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_0100
-         * @tc.name      : getImageInfo(index?: number): Promise<ImageInfo>-jpg
-         * @tc.desc      : 1.create imagesource
-         *                 2.call getImageInfo(index)
-         *                 3.callbackcall ,return imageinfo
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
             try {
@@ -2736,14 +2579,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_0200
-         * @tc.name      : getImageInfo(index?: number): Promise<ImageInfo>-bmp
-         * @tc.desc      : 1.create imagesource
-         *                 2.call getImageInfo(index)
-         *                 3.callbackcall ,return imageinfo
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_0200
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_0200', Level.LEVEL0, async (done: Function) => {
             try {
@@ -2775,14 +2616,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_0300
-         * @tc.name      : getImageInfo(index?: number): Promise<ImageInfo>-png
-         * @tc.desc      : 1.create imagesource
-         *                 2.call getImageInfo(index)
-         *                 3.callbackcall ,return imageinfo
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_0300
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_0300', Level.LEVEL0, async (done: Function) => {
             try {
@@ -2814,14 +2653,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_0400
-         * @tc.name      : getImageInfo(index?: number): Promise<ImageInfo>-gif
-         * @tc.desc      : 1.create imagesource
-         *                 2.call getImageInfo(index)
-         *                 3.callbackcall ,return imageinfo
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_0400
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_0400', Level.LEVEL0, async (done: Function) => {
             try {
@@ -2859,14 +2696,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number: SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_INDEX_PROMISE_GIF_0100
-         * @tc.name  : getImageInfo(index?: number): Promise<ImageInfo>-gif(frame:1)-index:1
-         * @tc.desc  : 1.create imagesource
-         *             2.call getImageInfo(index=1)
-         *             3.callback return imageinfo undefined
-         * @tc.size  : MEDIUM
-         * @tc.type  : Functional
-         * @tc.level : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_INDEX_PROMISE_GIF_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_INDEX_PROMISE_GIF_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_INDEX_PROMISE_GIF_0100', Level.LEVEL0, async (done: Function) => {
             try {
@@ -2895,14 +2730,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_INDEX_PROMISE_GIF_0200
-         * @tc.name      : getImageInfo(index?: number): Promise<ImageInfo>-gif-index:-1
-         * @tc.desc      : 1.create imagesource
-         *                 2.call getImageInfo(index=-1)
-         *                 3.callback return imageinfo undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_INDEX_PROMISE_GIF_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_INDEX_PROMISE_GIF_0200
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_INDEX_PROMISE_GIF_0200', Level.LEVEL0, async (done: Function) => {
             try {
@@ -2931,15 +2764,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_JPG_0100
-         * @tc.name      : createPixelMap-promise-jpg
-         * @tc.desc      : 1.create imagesource
-         *                 2.set index and DecodeOptions
-         *                 3.create PixelMap
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_JPG_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_JPG_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_JPG_0100', Level.LEVEL0, async (done: Function) => {
             try {
@@ -2969,15 +2799,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_JPG_0100
-         * @tc.name      : createPixelMap-callback-jpg
-         * @tc.desc      : 1.create imagesource
-         *                 2.set index and DecodeOptions
-         *                 3.create PixelMap
-         *                 4.callback return null
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_JPG_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_JPG_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_JPG_0100', Level.LEVEL0, async (done: Function) => {
             try {
@@ -3010,13 +2837,12 @@ export default function imageJsTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_0100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_0100
-         * @tc.desc      : 1.create imagesource
-         *                 2.return not null
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_0100', Level.LEVEL0, async (done: Function) => {
             try {
@@ -3030,13 +2856,12 @@ export default function imageJsTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_ArrayBuffer_NULL_0100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_ArrayBuffer_NULL_0100
-         * @tc.desc      : 1.create imagesource
-         *                 2.return not null
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_ArrayBuffer_NULL_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_ArrayBuffer_NULL_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_ArrayBuffer_NULL_0100', Level.LEVEL0, async (done: Function) => {
             try {
@@ -3050,13 +2875,12 @@ export default function imageJsTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_IMAGESOURCE_GET_IMAGEINFO_0100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_IMAGESOURCE_GET_IMAGEINFO_0100
-         * @tc.desc      : 1.call createImageSource(uri)
-         *                 2.call getImageInfo(callback)
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_IMAGESOURCE_GET_IMAGEINFO_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_IMAGESOURCE_GET_IMAGEINFO_0100
+         * @tc.desc   1.call createImageSource(uri)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_IMAGESOURCE_GET_IMAGEINFO_0100', Level.LEVEL0, async (done: Function) => {
             await getFd('test.jpg');
@@ -3074,14 +2898,12 @@ export default function imageJsTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_NOTEXIST_0100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_NOTEXIST_0100
-         * @tc.desc      : 1.call createImageSource(uri)
-         *                 2.set not exist uri
-         *                 3.return null
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_NOTEXIST_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_NOTEXIST_0100
+         * @tc.desc   1.call createImageSource(uri)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_NOTEXIST_0100', Level.LEVEL0, async (done: Function) => {
             try {
@@ -3098,12 +2920,12 @@ export default function imageJsTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RECEIVER_0100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RECEIVER_0100
-         * @tc.desc      : 1.test image createImageReceiver(size, ImageFormat, capability)
-         * @tc.size      : MediumTest
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RECEIVER_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RECEIVER_0100
+         * @tc.desc   1.test image createImageReceiver(size, ImageFormat, capability)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RECEIVER_0100', Level.LEVEL0, async (done: Function) => {
             let logger = "SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RECEIVER_0100";
@@ -3118,13 +2940,12 @@ export default function imageJsTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RECEIVER_0200
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RECEIVER_0200
-         * @tc.desc      : 1.test image createImageReceiver(size, ImageFormat, capability)
-         *                 2. use const format
-         * @tc.size      : MediumTest
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RECEIVER_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RECEIVER_0200
+         * @tc.desc   1.test image createImageReceiver(size, ImageFormat, capability)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RECEIVER_0200', Level.LEVEL0, async (done: Function) => {
             let logger = "SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RECEIVER_0200";
@@ -3139,14 +2960,13 @@ export default function imageJsTest() {
         });
 
         /**
-        * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_0100
-        * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATOR_0100
-        * @tc.desc      : 1.test image createImageCreator(size, ImageFormat, capability)
-        *                 2. use const format
-        * @tc.size      : MediumTest
-        * @tc.type      : Functional
-        * @tc.level     : Level 0
-        */
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_0100
+         * @tc.desc   1.test image createImageCreator(size, ImageFormat, capability)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_0100', Level.LEVEL0, async (done: Function) => {
             let logger = "SUB_MULTIMEDIA_IMAGE_CREATOR_0100";
             const creator = image.createImageCreator({width: 640, height: 480 }, image.ImageFormat.JPEG, 8);
@@ -3160,14 +2980,13 @@ export default function imageJsTest() {
         });
 
         /**
-        * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PICTURE_0100
-        * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PICTURE_0100
-        * @tc.desc      : 1.test image createImageCreator(size, ImageFormat, capability)
-        *                 2. use const format
-        * @tc.size      : MediumTest
-        * @tc.type      : Functional
-        * @tc.level     : Level 0
-        */
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PICTURE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PICTURE_0100
+         * @tc.desc   1.test image createImageCreator(size, ImageFormat, capability)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_IMAGE_CREATE_PICTURE_0100', Level.LEVEL0, async (done: Function) => {
         let logger = "SUB_MULTIMEDIA_IMAGE_CREATE_PICTURE_0100";
         await getFd('test.jpg');
@@ -3185,14 +3004,12 @@ export default function imageJsTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_0100
-         * @tc.name      : createIncrementalSource-updateData-png
-         * @tc.desc      : 1.create imagesource
-         *                 2.update data
-         *                 3.create pixelmap
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_0100', Level.LEVEL0, async (done: Function) => {
             try {
@@ -3240,14 +3057,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_0200
-         * @tc.name      : createIncrementalSource-updateData-jpg
-         * @tc.desc      : 1.create imagesource
-         *                 2.update data
-         *                 3.create pixelmap
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_0200
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_0200', Level.LEVEL0, async (done: Function) => {
             try {
@@ -3294,14 +3109,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_0100
-         * @tc.name      : release ImageSource - promise - png
-         * @tc.desc      : 1.create ImageSource
-         *                 2.call release()
-         *                 3.return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_0100
+         * @tc.desc   1.create ImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
             try {
@@ -3329,14 +3142,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_CALLBACK_0100
-         * @tc.name      : release ImageSource - callback - png
-         * @tc.desc      : 1.create ImageSource
-         *                 2.call release()
-         *                 3.return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_CALLBACK_0100
+         * @tc.desc   1.create ImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_CALLBACK_0100', Level.LEVEL0, async (done: Function) => {
             try {
@@ -3366,14 +3177,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_0200
-         * @tc.name      : release ImageSource - promise - bmp
-         * @tc.desc      : 1.create ImageSource
-         *                 2.call release()
-         *                 3.return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_0200
+         * @tc.desc   1.create ImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_0200', Level.LEVEL0, async (done: Function) => {
             try {
@@ -3401,14 +3210,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_CALLBACK_0200
-         * @tc.name      : release ImageSource - callback - bmp
-         * @tc.desc      : 1.create ImageSource
-         *                 2.create SourceStream
-         *                 3.return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_CALLBACK_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_CALLBACK_0200
+         * @tc.desc   1.create ImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_CALLBACK_0200', Level.LEVEL0, async (done: Function) => {
             try {
@@ -3432,14 +3239,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_0300
-         * @tc.name      : release ImageSource - promise - gif
-         * @tc.desc      : 1.create ImageSource
-         *                 2.call release()
-         *                 3.return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_0300
+         * @tc.desc   1.create ImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_0300', Level.LEVEL0, async (done: Function) => {
             try {
@@ -3467,14 +3272,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_CALLBACK_0300
-         * @tc.name      : release ImageSource - callback - gif
-         * @tc.desc      : 1.create ImageSource
-         *                 2.call release()
-         *                 3.return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_CALLBACK_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_CALLBACK_0300
+         * @tc.desc   1.create ImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_CALLBACK_0300', Level.LEVEL0, async (done: Function) => {
             try {
@@ -3498,15 +3301,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0800
-         * @tc.name      : createPixelMap-promise-gif
-         * @tc.desc      : 1.create imagesource
-         *                 2.set index and DecodeOptions
-         *                 3.create PixelMap
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0800
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0800', Level.LEVEL0, async (done: Function) => {
             try {
@@ -3536,15 +3336,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_1200
-         * @tc.name      : createPixelMap-callback-gif
-         * @tc.desc      : 1.create imagesource
-         *                 2.set index and DecodeOptions
-         *                 3.create PixelMap
-         *                 4.callback return null
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_1200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_1200
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_1200', Level.LEVEL0, async (done: Function) => {
             try {
@@ -3570,15 +3367,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0900
-         * @tc.name      : createPixelMap-promise-bmp
-         * @tc.desc      : 1.create imagesource
-         *                 2.set index and DecodeOptions
-         *                 3.create PixelMap
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0900
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0900
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_0900', Level.LEVEL0, async (done: Function) => {
             try {
@@ -3608,15 +3402,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_1300
-         * @tc.name      : createPixelMap-callback-bmp
-         * @tc.desc      : 1.create imagesource
-         *                 2.set index and DecodeOptions
-         *                 3.create PixelMap
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_1300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_1300
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_1300', Level.LEVEL0, async (done: Function) => {
             try {
@@ -3642,15 +3433,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_1000
-         * @tc.name      : createPixelMap-promise-png
-         * @tc.desc      : 1.create imagesource
-         *                 2.set index and DecodeOptions
-         *                 3.create PixelMap
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_1000
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_1000
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_1000', Level.LEVEL0, async (done: Function) => {
             try {
@@ -3680,15 +3468,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_1400
-         * @tc.name      : createPixelMap-callback-png
-         * @tc.desc      : 1.create imagesource
-         *                 2.set index and DecodeOptions
-         *                 3.create PixelMap
-         *                 4.callback return null
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_1400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_1400
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_1400', Level.LEVEL0, async (done: Function) => {
             try {
@@ -3714,13 +3499,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_IMAGESOURCE_SUPPORTEDFORMATS_0100
-         * @tc.name      : imagesource supportedFormats
-         * @tc.desc      : 1.create imagesource
-         *                 2.call supportedFormats
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_IMAGESOURCE_SUPPORTEDFORMATS_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_IMAGESOURCE_SUPPORTEDFORMATS_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_IMAGESOURCE_SUPPORTEDFORMATS_0100', Level.LEVEL0, async (done: Function) => {
             try {
@@ -3744,13 +3528,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_IMAGEPACKER_SUPPORTEDFORMATS_0100
-         * @tc.name      : imagepacker supportedFormats
-         * @tc.desc      : 1.create imagepacker
-         *                 2.call supportedFormats
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_IMAGEPACKER_SUPPORTEDFORMATS_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_IMAGEPACKER_SUPPORTEDFORMATS_0100
+         * @tc.desc   1.create imagepacker
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_IMAGEPACKER_SUPPORTEDFORMATS_0100', Level.LEVEL0, async (done: Function) => {
             const imagePackerApi = image.createImagePacker();
@@ -3767,14 +3550,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_ISEDITABLE_0100
-         * @tc.name      : isEditable
-         * @tc.desc      : 1.create pixelmap
-         *                 2.call isEditable
-         *                 3.return true
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_ISEDITABLE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_ISEDITABLE_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_ISEDITABLE_0100', Level.LEVEL0, async (done: Function) => {
             const Color = new ArrayBuffer(96);
@@ -3797,16 +3578,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_EDITABLE_0100
-         * @tc.name      : create pixelmap-callback (editable: true, pixelFormat: ARGB_8888,
-         *                 size: { height: 4, width: 6 },bytes = buffer)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixelFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_EDITABLE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_EDITABLE_0100
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_EDITABLE_0100', Level.LEVEL0, async (done: Function) => {
             const Color = new ArrayBuffer(96);
@@ -3828,16 +3605,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_EDITABLE_0200
-         * @tc.name      : create pixelmap-callback (editable: false, pixelFormat: ARGB_8888,
-         *                 size: { height: 4, width: 6 },bytes = buffer)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixelFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_EDITABLE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_EDITABLE_0200
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_EDITABLE_0200', Level.LEVEL0, async (done: Function) => {
             const Color = new ArrayBuffer(96);
@@ -3859,16 +3632,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_EDITABLE_0100
-         * @tc.name      : create pixelmap-promise (editable: true, pixelFormat: RGB_565,
-         *                 size: { height: 4, width: 6 }, bytes = buffer)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_EDITABLE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_EDITABLE_0100
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_EDITABLE_0100', Level.LEVEL0, async (done: Function) => {
             const Color = new ArrayBuffer(96);
@@ -3895,16 +3664,12 @@ export default function imageJsTest() {
                 });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_EDITABLE_0200
-         * @tc.name      : create pixelmap-promise (editable: false, pixelFormat: RGB_565,
-         *                 size: { height: 4, width: 6 }, bytes = buffer)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_EDITABLE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_EDITABLE_0200
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_EDITABLE_0200', Level.LEVEL0, async (done: Function) => {
             const Color = new ArrayBuffer(96);
@@ -3931,18 +3696,12 @@ export default function imageJsTest() {
                 });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_MARSHALLING_AND_UNMARSHALLIGN_PROMISE_EDITABLE_0100
-         * @tc.name      : marshalling and unmarshalling pixelmap-promise (editable: false,
-         *                 pixelFormat: RGB_565, size: { height: 4, width: 6 }, bytes = buffer)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.marshalling pixelmap into the messageSequence
-         *                 5.unmarshalling pixelmap from the messageSequence
-         *                 6.return pixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_MARSHALLING_AND_UNMARSHALLIGN_PROMISE_EDITABLE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_MARSHALLING_AND_UNMARSHALLIGN_PROMISE_EDITABLE_0100
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_MARSHALLING_AND_UNMARSHALLIGN_PROMISE_EDITABLE_0100', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -3983,18 +3742,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_GRAPHIC_IMAGE_MARSHALLING_AND_UNMARSHALLIGN_PROMISE_EDITABLE_0200
-         * @tc.name      : marshalling and unmarshalling pixelmap-promise (editable: false,
-         *                 pixelFormat: BGRA_8888, size: { height: 4, width: 6 }, bytes = buffer)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.marshalling pixelmap into the messageSequence
-         *                 5.unmarshalling pixelmap from the messageSequence
-         *                 6.return pixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_GRAPHIC_IMAGE_MARSHALLING_AND_UNMARSHALLIGN_PROMISE_EDITABLE_0200
+         * @tc.number SUB_GRAPHIC_IMAGE_MARSHALLING_AND_UNMARSHALLIGN_PROMISE_EDITABLE_0200
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_GRAPHIC_IMAGE_MARSHALLING_AND_UNMARSHALLIGN_PROMISE_EDITABLE_0200', Level.LEVEL0, async (done: Function) => {
             const color = new ArrayBuffer(96);
@@ -4034,360 +3787,288 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0100
-         * @tc.name      : imageSource-getImageInfo-promise-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0100
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
             await testImageSourceImageInfoMimetype(done, 'SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0100',
                 'test.jpg', 'image/jpeg', 'Promise');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0200
-         * @tc.name      : imageSource-getImageInfo-promise-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0200
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0200', Level.LEVEL0, async (done: Function) => {
             await testImageSourceImageInfoMimetype(done, 'SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0200',
                 'test.jpeg', 'image/jpeg', 'Promise');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0300
-         * @tc.name      : imageSource-getImageInfo-promise-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0300
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0300', Level.LEVEL0, async (done: Function) => {
             await testImageSourceImageInfoMimetype(done, 'SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0300',
                 'test.png', 'image/png', 'PromiseNumber');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0400
-         * @tc.name      : imageSource-getImageInfo-promise-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0400
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0400', Level.LEVEL0, async (done: Function) => {
             await testImageSourceImageInfoMimetype(done, 'SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0400',
                 'test.gif', 'image/gif', 'PromiseNumber');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0500
-         * @tc.name      : imageSource-getImageInfo-callback-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0500
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0500', Level.LEVEL0, async (done: Function) => {
             await testImageSourceImageInfoMimetype(done, 'SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0500',
                 'moving_test.webp', 'image/webp', 'Callback');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0600
-         * @tc.name      : imageSource-getImageInfo-callback-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0600
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0600', Level.LEVEL0, async (done: Function) => {
             await testImageSourceImageInfoMimetype(done, 'SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0600',
                 'test.ico', 'image/x-icon', 'Callback');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0700
-         * @tc.name      : imageSource-getImageInfo-callback-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0700
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0700', Level.LEVEL0, async (done: Function) => {
             await testImageSourceImageInfoMimetype(done, 'SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0700',
                 'test.svg', 'image/svg+xml', 'Callback');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0800
-         * @tc.name      : imageSource-getImageInfo-callback-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0800
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0800', Level.LEVEL0, async (done: Function) => {
             await testImageSourceImageInfoMimetype(done, 'SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0800',
                 'test.bmp', 'image/bmp', 'CallbackNumber');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0900
-         * @tc.name      : imageSource-getImageInfo-callback-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0900
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0900
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0900', Level.LEVEL0, async (done: Function) => {
             await testImageSourceImageInfoMimetype(done, 'SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0900',
                 'test.dng', 'image/x-adobe-dng', 'CallbackNumber');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0100
-         * @tc.name      : imageSource-pixelmap-getImageInfo-promise-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0100
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
             await testPixelMapImageInfoMimetype(done, 'SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0100',
                 'test.jpeg', 'image/jpeg', 'Promise');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0200
-         * @tc.name      : imageSource-pixelmap-getImageInfo-promise-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0200
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0200', Level.LEVEL0, async (done: Function) => {
             await testPixelMapImageInfoMimetype(done, 'SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0200',
                 'test.png', 'image/png', 'Promise');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0300
-         * @tc.name      : imageSource-pixelmap-getImageInfo-promise-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0300
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0300', Level.LEVEL0, async (done: Function) => {
             await testPixelMapImageInfoMimetype(done, 'SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0300',
                 'test.gif', 'image/gif', 'PromiseNumber');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0400
-         * @tc.name      : imageSource-pixelmap-getImageInfo-promise-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0400
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0400', Level.LEVEL0, async (done: Function) => {
             await testPixelMapImageInfoMimetype(done, 'SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0400',
                 'test.bmp', 'image/bmp', 'PromiseNumber');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0500
-         * @tc.name      : imageSource-pixelmap-getImageInfo-callback-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0500
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0500', Level.LEVEL0, async (done: Function) => {
             await testPixelMapImageInfoMimetype(done, 'SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0500',
                 'moving_test.webp', 'image/webp', 'Callback');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0600
-         * @tc.name      : imageSource-pixelmap-getImageInfo-callback-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0600
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0600', Level.LEVEL0, async (done: Function) => {
             await testPixelMapImageInfoMimetype(done, 'SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0600',
                 'test.ico', 'image/x-icon', 'Callback');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0700
-         * @tc.name      : imageSource-pixelmap-getImageInfo-callback-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0700
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0700', Level.LEVEL0, async (done: Function) => {
             await testPixelMapImageInfoMimetype(done, 'SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0700',
                 'test.svg', 'image/svg+xml', 'Callback');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0800
-         * @tc.name      : imageSource-pixelmap-getImageInfo-callback-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0800
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0800', Level.LEVEL0, async (done: Function) => {
             await testPixelMapImageInfoMimetype(done, 'SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0800',
                 'test.jpg', 'image/jpeg', 'Callback');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0900
-         * @tc.name      : imageSource-pixelmap-getImageInfo-callback-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0900
+         * @tc.number SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0900
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0900', Level.LEVEL0, async (done: Function) => {
             await testPixelMapImageInfoMimetype(done, 'SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0900',
                 'test.dng', 'image/x-adobe-dng', 'Callback');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_WBMP_0100
-         * @tc.name      : imageSource-pixelmap-getImageInfo-promise-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_WBMP_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_WBMP_0100
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_WBMP_0100', Level.LEVEL0, async (done: Function) => {
             await testPixelMapImageInfoMimetype(done, 'SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_WBMP_0100',
                 'test.wbmp', 'image/wbmp', 'PromiseNumber');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0100
-         * @tc.name      : wrongSuffixImage-imageSource-getImageInfo-promise-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0100
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
             await testImageSourceImageInfoMimetype(done, 'SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0100',
                 'wrong_suffix_jpg.jpeg', 'image/jpeg', 'Promise');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0200
-         * @tc.name      : wrongSuffixImage-imageSource-getImageInfo-promise-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0200
+         * @tc.number SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0200
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0200', Level.LEVEL0, async (done: Function) => {
             await testImageSourceImageInfoMimetype(done, 'SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0200',
                 'wrong_suffix_jpeg.png', 'image/jpeg', 'Promise');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0300
-         * @tc.name      : wrongSuffixImage-imageSource-getImageInfo-promise-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0300
+         * @tc.number SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0300
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0300', Level.LEVEL0, async (done: Function) => {
             await testImageSourceImageInfoMimetype(done, 'SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0300',
                 'wrong_suffix_png.gif', 'image/png', 'PromiseNumber');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0400
-         * @tc.name      : wrongSuffixImage-imageSource-getImageInfo-promise-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0400
+         * @tc.number SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0400
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0400', Level.LEVEL0, async (done: Function) => {
             await testImageSourceImageInfoMimetype(done, 'SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0400',
                 'wrong_suffix_gif.tiff', 'image/gif', 'PromiseNumber');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0500
-         * @tc.name      : wrongSuffixImage-imageSource-getImageInfo-callback-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0500
+         * @tc.number SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0500
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0500', Level.LEVEL0, async (done: Function) => {
             await testImageSourceImageInfoMimetype(done,
@@ -4395,15 +4076,12 @@ export default function imageJsTest() {
                 'image/webp', 'Callback');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0600
-         * @tc.name      : wrongSuffixImage-imageSource-getImageInfo-callback-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0600
+         * @tc.number SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0600
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0600', Level.LEVEL0, async (done: Function) => {
             await testImageSourceImageInfoMimetype(done,
@@ -4411,15 +4089,12 @@ export default function imageJsTest() {
                 'image/x-icon', 'Callback');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0700
-         * @tc.name      : wrongSuffixImage-imageSource-getImageInfo-callback-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0700
+         * @tc.number SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0700
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0700', Level.LEVEL0, async (done: Function) => {
             await testImageSourceImageInfoMimetype(done,
@@ -4427,15 +4102,12 @@ export default function imageJsTest() {
                 'image/svg+xml', 'Callback');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0800
-         * @tc.name      : wrongSuffixImage-imageSource-getImageInfo-callback-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0800
+         * @tc.number SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0800
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0800', Level.LEVEL0, async (done: Function) => {
             await testImageSourceImageInfoMimetype(done,
@@ -4443,15 +4115,12 @@ export default function imageJsTest() {
                 'image/bmp', 'CallbackNumber');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0900
-         * @tc.name      : wrongSuffixImage-imageSource-getImageInfo-callback-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0900
+         * @tc.number SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0900
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_CALLBACK_0900', Level.LEVEL0, async (done: Function) => {
             await testImageSourceImageInfoMimetype(done,
@@ -4459,15 +4128,12 @@ export default function imageJsTest() {
                 'image/x-adobe-dng', 'CallbackNumber');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0100
-         * @tc.name      : wrongSuffixImage-imageSource-pixelmap-getImageInfo-promise-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0100
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
             await testPixelMapImageInfoMimetype(done,
@@ -4475,15 +4141,12 @@ export default function imageJsTest() {
                 'wrong_suffix_jpeg.png', 'image/jpeg', 'Promise');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0200
-         * @tc.name      : wrongSuffixImage-imageSource-pixelmap-getImageInfo-promise-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0200
+         * @tc.number SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0200
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0200', Level.LEVEL0, async (done: Function) => {
             await testPixelMapImageInfoMimetype(done,
@@ -4491,15 +4154,12 @@ export default function imageJsTest() {
                 'image/png', 'Promise');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0300
-         * @tc.name      : wrongSuffixImage-imageSource-pixelmap-getImageInfo-promise-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0300
+         * @tc.number SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0300
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0300', Level.LEVEL0, async (done: Function) => {
             await testPixelMapImageInfoMimetype(done,
@@ -4507,15 +4167,12 @@ export default function imageJsTest() {
                 'wrong_suffix_gif.tiff', 'image/gif', 'PromiseNumber');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0400
-         * @tc.name      : wrongSuffixImage-imageSource-pixelmap-getImageInfo-promise-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0400
+         * @tc.number SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0400
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_0400', Level.LEVEL0, async (done: Function) => {
             await testPixelMapImageInfoMimetype(done,
@@ -4523,15 +4180,12 @@ export default function imageJsTest() {
                 'image/bmp', 'PromiseNumber');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0500
-         * @tc.name      : wrongSuffixImage-imageSource-pixelmap-getImageInfo-callback-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0500
+         * @tc.number SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0500
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0500', Level.LEVEL0, async (done: Function) => {
             await testPixelMapImageInfoMimetype(done,
@@ -4539,15 +4193,12 @@ export default function imageJsTest() {
                 'wrong_suffix_webp.ico', 'image/webp', 'Callback');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0600
-         * @tc.name      : wrongSuffixImage-imageSource-pixelmap-getImageInfo-callback-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0600
+         * @tc.number SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0600
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0600', Level.LEVEL0, async (done: Function) => {
             await testPixelMapImageInfoMimetype(done,
@@ -4555,15 +4206,12 @@ export default function imageJsTest() {
                 'wrong_suffix_ico.svg', 'image/x-icon', 'Callback');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0700
-         * @tc.name      : wrongSuffixImage-imageSource-pixelmap-getImageInfo-callback-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0700
+         * @tc.number SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0700
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0700', Level.LEVEL0, async (done: Function) => {
             await testPixelMapImageInfoMimetype(done,
@@ -4571,15 +4219,12 @@ export default function imageJsTest() {
                 'wrong_suffix_svg.bmp', 'image/svg+xml', 'Callback');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0800
-         * @tc.name      : wrongSuffixImage-imageSource-pixelmap-getImageInfo-callback-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0800
+         * @tc.number SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0800
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0800', Level.LEVEL0, async (done: Function) => {
             await testPixelMapImageInfoMimetype(done,
@@ -4587,15 +4232,12 @@ export default function imageJsTest() {
                 'wrong_suffix_jpg.jpeg', 'image/jpeg', 'Callback');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0900
-         * @tc.name      : wrongSuffixImage-imageSource-pixelmap-getImageInfo-callback-mimetype
-         * @tc.desc      : 1.create ImageSource,ImageInfo
-         *                 2.call getImageInfo
-         *                 3.call return imageinfo
-         *                 4.callback return undefined
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0900
+         * @tc.number SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0900
+         * @tc.desc   1.create ImageSource,ImageInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_CALLBACK_0900', Level.LEVEL0, async (done: Function) => {
             await testPixelMapImageInfoMimetype(done,
@@ -4603,12 +4245,12 @@ export default function imageJsTest() {
                 'wrong_suffix_dng.jpg', 'image/x-adobe-dng', 'Callback');
         });
         /**
-         * @tc.number    : SUB_GRAPHIC_IMAGE_SUB_GRAPHIC_IMAGE_SCALESYNC_0100
-         * @tc.name      : Test_ImageScaleSync
-         * @tc.desc      : Synchronous scaling of images based on input width and height
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   Test_ImageScaleSync
+         * @tc.number SUB_GRAPHIC_IMAGE_SUB_GRAPHIC_IMAGE_SCALESYNC_0100
+         * @tc.desc   Synchronous scaling of images based on input width and height
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Test_ImageScaleSync', Level.LEVEL0, async (done: Function) => {
             let color = new ArrayBuffer(96);
@@ -4638,12 +4280,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_GRAPHIC_IMAGE_SUB_GRAPHIC_IMAGE_GETIMAGEINFOSYNC_0100
-         * @tc.name      : Test_getImageInfoSync
-         * @tc.desc      : Obtaining Image Pixel Information by Synchronous Method
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   Test_getImageInfoSync
+         * @tc.number SUB_GRAPHIC_IMAGE_SUB_GRAPHIC_IMAGE_GETIMAGEINFOSYNC_0100
+         * @tc.desc   Obtaining Image Pixel Information by Synchronous Method
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Test_getImageInfoSync', Level.LEVEL0, async (done: Function) => {
             let color = new ArrayBuffer(96);
@@ -4671,12 +4313,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_GRAPHIC_IMAGE_SUB_GRAPHIC_IMAGE_CREATEPIXELMAPSYNC_PIXELFORMAT_ALPHATYPE_0100
-         * @tc.name      : Test_CreatePixelMapSyncProperty_PixelFormat_AlphaType
-         * @tc.desc      : This new interface createPixelMapSync adds properties pixelFormat and alphaType
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   Test_CreatePixelMapSyncProperty_PixelFormat_AlphaType
+         * @tc.number SUB_GRAPHIC_IMAGE_SUB_GRAPHIC_IMAGE_CREATEPIXELMAPSYNC_PIXELFORMAT_ALPHATYPE_0100
+         * @tc.desc   This new interface createPixelMapSync adds properties pixelFormat and alphaType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Test_CreatePixelMapSyncProperty_PixelFormat_AlphaType', Level.LEVEL0, async (done: Function) => {
             let color = new ArrayBuffer(96);
@@ -4700,12 +4342,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_GRAPHIC_IMAGE_SUB_GRAPHIC_IMAGE_CREATEPIXELMAPSYNC_PARAMETER_0200
-         * @tc.name      : Test_CreatePixelMapSyncPropertyParameter
-         * @tc.desc      : This new interface createPixelMapSync adds parameter
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   Test_CreatePixelMapSyncPropertyParameter
+         * @tc.number SUB_GRAPHIC_IMAGE_SUB_GRAPHIC_IMAGE_CREATEPIXELMAPSYNC_PARAMETER_0200
+         * @tc.desc   This new interface createPixelMapSync adds parameter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Test_CreatePixelMapSyncPropertyParameter', Level.LEVEL0, async (done: Function) => {
             let color = new ArrayBuffer(96);
@@ -4729,12 +4371,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_GRAPHIC_IMAGE_SUB_GRAPHIC_IMAGE_READPIXELSTOBUFFERSYNC_0100
-         * @tc.name      : Test_ReadPixelsToBufferSync
-         * @tc.desc      : Read PixelMap to the Buffer in a synchronous way
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   Test_ReadPixelsToBufferSync
+         * @tc.number SUB_GRAPHIC_IMAGE_SUB_GRAPHIC_IMAGE_READPIXELSTOBUFFERSYNC_0100
+         * @tc.desc   Read PixelMap to the Buffer in a synchronous way
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Test_ReadPixelsToBufferSync', Level.LEVEL0, async (done: Function) => {
             let color = new ArrayBuffer(96);
@@ -4765,12 +4407,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_GRAPHIC_IMAGE_SUB_GRAPHIC_IMAGE_WRITEPIXELSSYNC_0100
-         * @tc.name      : Test_WritePixelsSync
-         * @tc.desc      : Read PixelMap to the Buffer in a synchronous way
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   Test_WritePixelsSync
+         * @tc.number SUB_GRAPHIC_IMAGE_SUB_GRAPHIC_IMAGE_WRITEPIXELSSYNC_0100
+         * @tc.desc   Read PixelMap to the Buffer in a synchronous way
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Test_WritePixelsSync', Level.LEVEL0, async (done: Function) => {
             let msg = 'Test_WritePixelsSync';
@@ -4813,16 +4455,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0001
-         * @tc.name      : create pixelmap-sync (pixelFormat: 0, size: { width: 2, height: 2 },
-         alphaType:image.AlphaType.UNPREMUL)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0001
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0001
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0001", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -4833,16 +4471,12 @@ export default function imageJsTest() {
             createPixeMapSync(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0001", opts);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0002
-         * @tc.name      : create pixelmap-sync (pixelFormat: 0, size: { width: 2, height: 2 },
-         alphaType:image.AlphaType.UNPREMUL)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0002
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0002
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0002", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -4853,16 +4487,12 @@ export default function imageJsTest() {
             createPixeMapSync(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0002", opts);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0003
-         * @tc.name      : create pixelmap-sync (pixelFormat: 0, size: { width: 2, height: 2 },
-         alphaType:image.AlphaType.UNPREMUL)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0003
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0003
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0003", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -4873,16 +4503,12 @@ export default function imageJsTest() {
             createPixeMapSync(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0003", opts);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0004
-         * @tc.name      : create pixelmap-sync (pixelFormat: 0, size: { width: 2, height: 2 },
-         alphaType:image.AlphaType.UNPREMUL)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0004
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0004
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0004", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -4893,16 +4519,12 @@ export default function imageJsTest() {
             createPixeMapSync(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0004", opts);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0005
-         * @tc.name      : create pixelmap-sync (pixelFormat: 0, size: { width: 2, height: 2 },
-         alphaType:image.AlphaType.UNPREMUL)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0005
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0005
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0005", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -4913,16 +4535,12 @@ export default function imageJsTest() {
             createPixeMapSync(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0005", opts);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0006
-         * @tc.name      : create pixelmap-sync (pixelFormat: 0, size: { width: 2, height: 2 },
-         alphaType:image.AlphaType.UNPREMUL)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0006
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0006
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0006", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -4933,16 +4551,12 @@ export default function imageJsTest() {
             createPixeMapSync(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0006", opts);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0007
-         * @tc.name      : create pixelmap-sync (pixelFormat: 0, size: { width: 2, height: 2 },
-         alphaType:image.AlphaType.UNPREMUL)
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0007
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0007
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0007", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -4953,16 +4567,12 @@ export default function imageJsTest() {
             createPixeMapSync(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_SYNC_0007", opts);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_PROMISE_0100
-         * @tc.name      : create PremultiplyPixelMap-promise
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size,color
-         *                 3.using color and opts create newPixelMap
-         *                 4.PremultiplyPixelMap
-         *                 5.return color
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_PROMISE_0100
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_PROMISE_0100", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -5033,16 +4643,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_PROMISE_0200
-         * @tc.name      : create PremultiplyPixelMap-promise
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size,color
-         *                 3.using color and opts create newPixelMap
-         *                 4.PremultiplyPixelMap
-         *                 5.return color
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_PROMISE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_PROMISE_0200
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_PROMISE_0200", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -5111,16 +4717,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_PROMISE_0300
-         * @tc.name      : create PremultiplyPixelMap-promise
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size,color
-         *                 3.using color and opts create newPixelMap
-         *                 4.PremultiplyPixelMap
-         *                 5.return color
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_PROMISE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_PROMISE_0300
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_PROMISE_0300", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -5191,16 +4793,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_PROMISE_0400
-         * @tc.name      : create PremultiplyPixelMap-promise
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size,color
-         *                 3.using color and opts create newPixelMap
-         *                 4.PremultiplyPixelMap
-         *                 5.return color
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_PROMISE_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_PROMISE_0400
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_PROMISE_0400", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -5271,16 +4869,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_PROMISE_0500
-         * @tc.name      : create PremultiplyPixelMap-promise
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size,color
-         *                 3.using color and opts create newPixelMap
-         *                 4.PremultiplyPixelMap
-         *                 5.return color
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_PROMISE_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_PROMISE_0500
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_PROMISE_0500", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -5349,16 +4943,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_PROMISE_0600
-         * @tc.name      : create PremultiplyPixelMap-promise
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size,color
-         *                 3.using color and opts create newPixelMap
-         *                 4.PremultiplyPixelMap
-         *                 5.return color
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_PROMISE_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_PROMISE_0600
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_PROMISE_0600", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -5427,16 +5017,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_PROMISE_0700
-         * @tc.name      : create PremultiplyPixelMap-promise
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size,color
-         *                 3.using color and opts create newPixelMap
-         *                 4.PremultiplyPixelMap
-         *                 5.return color
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_PROMISE_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_PROMISE_0700
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_PROMISE_0700", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -5505,16 +5091,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_CALLBACK_0100
-         * @tc.name      : create PremultiplyPixelMap-callback
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size,color
-         *                 3.using color and opts create newPixelMap
-         *                 4.PremultiplyPixelMap
-         *                 5.callback result
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_CALLBACK_0100
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_CALLBACK_0100', Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -5578,16 +5160,12 @@ export default function imageJsTest() {
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_CALLBACK_0200
-         * @tc.name      : create PremultiplyPixelMap-callback
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size,color
-         *                 3.using color and opts create newPixelMap
-         *                 4.PremultiplyPixelMap
-         *                 5.callback result
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_CALLBACK_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_CALLBACK_0200
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_CALLBACK_0200', Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -5635,16 +5213,12 @@ export default function imageJsTest() {
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_CALLBACK_0300
-         * @tc.name      : create PremultiplyPixelMap-callback
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size,color
-         *                 3.using color and opts create newPixelMap
-         *                 4.PremultiplyPixelMap
-         *                 5.callback result
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_CALLBACK_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_CALLBACK_0300
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_CALLBACK_0300', Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -5708,16 +5282,12 @@ export default function imageJsTest() {
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_CALLBACK_0400
-         * @tc.name      : create PremultiplyPixelMap-callback
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size,color
-         *                 3.using color and opts create newPixelMap
-         *                 4.PremultiplyPixelMap
-         *                 5.callback result
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_CALLBACK_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_CALLBACK_0400
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_CALLBACK_0400', Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -5781,16 +5351,12 @@ export default function imageJsTest() {
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_CALLBACK_0500
-         * @tc.name      : create PremultiplyPixelMap-callback
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size,color
-         *                 3.using color and opts create newPixelMap
-         *                 4.PremultiplyPixelMap
-         *                 5.callback result
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_CALLBACK_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_CALLBACK_0500
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_CALLBACK_0500', Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -5838,16 +5404,12 @@ export default function imageJsTest() {
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_CALLBACK_0600
-         * @tc.name      : create PremultiplyPixelMap-callback
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size,color
-         *                 3.using color and opts create newPixelMap
-         *                 4.PremultiplyPixelMap
-         *                 5.callback result
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_CALLBACK_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_CALLBACK_0600
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_CALLBACK_0600', Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -5911,16 +5473,12 @@ export default function imageJsTest() {
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_CALLBACK_0700
-         * @tc.name      : create PremultiplyPixelMap-callback
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size,color
-         *                 3.using color and opts create newPixelMap
-         *                 4.PremultiplyPixelMap
-         *                 5.callback result
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_CALLBACK_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_CALLBACK_0700
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEPREMULTIPLIEDPIXELMAP_CALLBACK_0700', Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -5968,16 +5526,12 @@ export default function imageJsTest() {
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_PROMISE_0100
-         * @tc.name      : create UnPremultiplyPixelMap-promise
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size,color
-         *                 3.using color and opts create newPixelMap
-         *                 4.UnPremultiplyPixelMap
-         *                 5.return color
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_PROMISE_0100
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_PROMISE_0100", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -6048,16 +5602,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_PROMISE_0200
-         * @tc.name      : create UnPremultiplyPixelMap-promise
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size,color
-         *                 3.using color and opts create newPixelMap
-         *                 4.UnPremultiplyPixelMap
-         *                 5.return color
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_PROMISE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_PROMISE_0200
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_PROMISE_0200", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -6126,16 +5676,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_PROMISE_0300
-         * @tc.name      : create UnPremultiplyPixelMap-promise
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size,color
-         *                 3.using color and opts create newPixelMap
-         *                 4.UnPremultiplyPixelMap
-         *                 5.return color
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_PROMISE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_PROMISE_0300
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_PROMISE_0300", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -6206,16 +5752,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_PROMISE_0400
-         * @tc.name      : create UnPremultiplyPixelMap-promise
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size,color
-         *                 3.using color and opts create newPixelMap
-         *                 4.UnPremultiplyPixelMap
-         *                 5.return color
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_PROMISE_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_PROMISE_0400
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_PROMISE_0400", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -6286,16 +5828,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_PROMISE_0500
-         * @tc.name      : create UnPremultiplyPixelMap-promise
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size,color
-         *                 3.using color and opts create newPixelMap
-         *                 4.UnPremultiplyPixelMap
-         *                 5.return color
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_PROMISE_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_PROMISE_0500
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_PROMISE_0500", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -6364,16 +5902,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_PROMISE_0600
-         * @tc.name      : create UnPremultiplyPixelMap-promise
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size,color
-         *                 3.using color and opts create newPixelMap
-         *                 4.UnPremultiplyPixelMap
-         *                 5.return color
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_PROMISE_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_PROMISE_0600
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_PROMISE_0600", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -6444,16 +5978,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_PROMISE_0700
-         * @tc.name      : create UnPremultiplyPixelMap-promise
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size,color
-         *                 3.using color and opts create newPixelMap
-         *                 4.UnPremultiplyPixelMap
-         *                 5.return color
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_PROMISE_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_PROMISE_0700
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_PROMISE_0700", Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -6522,16 +6052,12 @@ export default function imageJsTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_CALLBACK_0100
-         * @tc.name      : create PremultiplyPixelMap-callback
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size,color
-         *                 3.using color and opts create newPixelMap
-         *                 4.UnPremultiplyPixelMap
-         *                 5.callback result
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_CALLBACK_0100
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_CALLBACK_0100', Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -6596,16 +6122,12 @@ export default function imageJsTest() {
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_CALLBACK_0200
-         * @tc.name      : create PremultiplyPixelMap-callback
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size,color
-         *                 3.using color and opts create newPixelMap
-         *                 4.UnPremultiplyPixelMap
-         *                 5.callback result
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_CALLBACK_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_CALLBACK_0200
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_CALLBACK_0200', Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -6653,16 +6175,12 @@ export default function imageJsTest() {
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_CALLBACK_0300
-         * @tc.name      : create PremultiplyPixelMap-callback
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size,color
-         *                 3.using color and opts create newPixelMap
-         *                 4.UnPremultiplyPixelMap
-         *                 5.callback result
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_CALLBACK_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_CALLBACK_0300
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_CALLBACK_0300', Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -6726,16 +6244,12 @@ export default function imageJsTest() {
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_CALLBACK_0400
-         * @tc.name      : create PremultiplyPixelMap-callback
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size,color
-         *                 3.using color and opts create newPixelMap
-         *                 4.UnPremultiplyPixelMap
-         *                 5.callback result
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_CALLBACK_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_CALLBACK_0400
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_CALLBACK_0400', Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -6800,16 +6314,12 @@ export default function imageJsTest() {
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_CALLBACK_0500
-         * @tc.name      : create PremultiplyPixelMap-callback
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size,color
-         *                 3.using color and opts create newPixelMap
-         *                 4.UnPremultiplyPixelMap
-         *                 5.callback result
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_CALLBACK_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_CALLBACK_0500
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_CALLBACK_0500', Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -6857,16 +6367,12 @@ export default function imageJsTest() {
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_CALLBACK_0600
-         * @tc.name      : create PremultiplyPixelMap-callback
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size,color
-         *                 3.using color and opts create newPixelMap
-         *                 4.UnPremultiplyPixelMap
-         *                 5.callback result
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_CALLBACK_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_CALLBACK_0600
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_CALLBACK_0600', Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -6930,16 +6436,12 @@ export default function imageJsTest() {
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_CALLBACK_0700
-         * @tc.name      : create PremultiplyPixelMap-callback
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size,color
-         *                 3.using color and opts create newPixelMap
-         *                 4.UnPremultiplyPixelMap
-         *                 5.callback result
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_CALLBACK_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_CALLBACK_0700
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATEUNPREMULTIPLIEDPIXELMAP_CALLBACK_0700', Level.LEVEL0, async (done: Function) => {
             let opts: image.InitializationOptions = {
@@ -6987,15 +6489,12 @@ export default function imageJsTest() {
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0100
-         * @tc.name      : create pixlelmap of RGB_565
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0100
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0100', Level.LEVEL0, async (done: Function) => {
             const RGB_565 = image.PixelMapFormat.RGB_565;
@@ -7050,15 +6549,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0200
-         * @tc.name      : create pixlelmap of RGBA_8888
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0200
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0200', Level.LEVEL0, async (done: Function) => {
             const RGB_565 = image.PixelMapFormat.RGB_565;
@@ -7111,15 +6607,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0300
-         * @tc.name      : create pixlelmap of BGRA_8888
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0300
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0300', Level.LEVEL0, async (done: Function) => {
             const RGB_565 = image.PixelMapFormat.RGB_565;
@@ -7172,15 +6665,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0400
-         * @tc.name      : create pixlelmap of RGB_888
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0400
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0400', Level.LEVEL0, async (done: Function) => {
             const RGB_565 = image.PixelMapFormat.RGB_565;
@@ -7232,15 +6722,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0500
-         * @tc.name      : create pixlelmap of ALPHA_8
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0500
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0500', Level.LEVEL0, async (done: Function) => {
             const RGB_565 = image.PixelMapFormat.RGB_565;
@@ -7290,15 +6777,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0600
-         * @tc.name      : create pixlelmap of RGBA_F16
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0600
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0600', Level.LEVEL0, async (done: Function) => {
             const RGB_565 = image.PixelMapFormat.RGB_565;
@@ -7355,15 +6839,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0700
-         * @tc.name      : create pixlelmap of NV21
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0700
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0700', Level.LEVEL0, async (done: Function) => {
             const RGB_565 = image.PixelMapFormat.RGB_565;
@@ -7422,15 +6903,12 @@ export default function imageJsTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0800
-         * @tc.name      : create pixlelmap of NV12
-         * @tc.desc      : 1.create InitializationOptions object
-         *                 2.set editable,pixeFormat,size
-         *                 3.using color and opts create newPixelMap
-         *                 4.return newpixelmap not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0800
+         * @tc.desc   1.create InitializationOptions object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELFORMATTOAVPIXELFORMAT_0800', Level.LEVEL0, async (done: Function) => {
             const RGB_565 = image.PixelMapFormat.RGB_565;
@@ -7490,12 +6968,12 @@ export default function imageJsTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_DECODE_SUPPORTEDFORMATS_0100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_GET_DECODE_SUPPORTEDFORMATS_0100
-         * @tc.desc      : 1.test Image getDecodeSupportedFormats
-         * @tc.size      : MediumTest
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GET_DECODE_SUPPORTEDFORMATS_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GET_DECODE_SUPPORTEDFORMATS_0100
+         * @tc.desc   1.test Image getDecodeSupportedFormats
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GET_DECODE_SUPPORTEDFORMATS_0100', Level.LEVEL0, async (done: Function) => {
             let logger = "SUB_MULTIMEDIA_IMAGE_GET_DECODE_SUPPORTEDFORMATS_0100";
@@ -7512,12 +6990,12 @@ export default function imageJsTest() {
         })
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_ENCODE_SUPPORTEDFORMATS_0100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_GET_ENCODE_SUPPORTEDFORMATS_0100
-         * @tc.desc      : 1.test image getEncodeSupportedFormats
-         * @tc.size      : MediumTest
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GET_ENCODE_SUPPORTEDFORMATS_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GET_ENCODE_SUPPORTEDFORMATS_0100
+         * @tc.desc   1.test image getEncodeSupportedFormats
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_GET_ENCODE_SUPPORTEDFORMATS_0100', Level.LEVEL0, async (done: Function) => {
             let logger = "SUB_MULTIMEDIA_IMAGE_GET_ENCODE_SUPPORTEDFORMATS_0100";

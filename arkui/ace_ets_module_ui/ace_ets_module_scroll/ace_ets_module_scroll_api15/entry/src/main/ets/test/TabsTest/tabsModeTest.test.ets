@@ -46,12 +46,12 @@ export default function tabsModeTest() {
     });
 
     /**
-     * @tc.number    tabsModeTest_001
-     * @tc.name      tabsModeTest_0100
-     * @tc.desc      Set the AnimationMode to 'SwiperAnimationMode.NO_ANIMATION'.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   tabsModeTest_0100
+     * @tc.number tabsModeTest_001
+     * @tc.desc   Set the AnimationMode to 'SwiperAnimationMode.NO_ANIMATION'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('tabsModeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[tabsModeTest_0100] START');
@@ -69,12 +69,12 @@ export default function tabsModeTest() {
     });
 
     /**
-     * @tc.number    tabsModeTest_002
-     * @tc.name      tabsModeTest_0200
-     * @tc.desc      Set the AnimationMode to 'AnimationMode.ACTION_FIRST_WITH_JUMP'.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   tabsModeTest_0200
+     * @tc.number tabsModeTest_002
+     * @tc.desc   Set the AnimationMode to 'AnimationMode.ACTION_FIRST_WITH_JUMP'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('tabsModeTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[tabsModeTest_0200] START');

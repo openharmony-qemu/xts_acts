@@ -205,12 +205,12 @@ export default function CameraVideoSuperStabilizationTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_VIDEO_SUPER_STABILIZATION_MODE_SUPPORT_PROMISE_0100
-     * @tc.name      : Check capture session support video stabilization high mode with promise or not
-     * @tc.desc      : Check capture session support video stabilization high mode with promise or not
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_SUPER_STABILIZATION_MODE_SUPPORT_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_SUPER_STABILIZATION_MODE_SUPPORT_PROMISE_0100
+     * @tc.desc   Check capture session support video stabilization high mode with promise or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_VIDEO_SUPER_STABILIZATION_MODE_SUPPORT_PROMISE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_VIDEO_SUPER_STABILIZATION_MODE_SUPPORT_PROMISE_0100--------------");

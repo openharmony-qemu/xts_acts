@@ -16,6 +16,7 @@
 #include "napi/native_api.h"
 #include "NotificationKit/notification.h"
 #include "hilog/log.h"
+#include "common.h"
 
 static napi_value IsNotificationEnabled(napi_env env, napi_callback_info info)
 {
@@ -24,8 +25,10 @@ static napi_value IsNotificationEnabled(napi_env env, napi_callback_info info)
     OH_LOG_Print(LOG_APP, LOG_INFO, 1, "ANS_TEST", "OH_Notification_IsNotificationEnabled: %{public}d", ret);
     if (ret) {
         napi_get_boolean(env, true, &res);
+        ASSERT_EQ(ret, true);
     } else {
         napi_get_boolean(env, false, &res);
+        ASSERT_EQ(ret, false);
     }
     return res;
 }

@@ -58,10 +58,13 @@ export default function webViewContGetUrlAndOthersError() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_5700
-     *tc.name testGetUrlInitErr
-     *tc.desc test interface of getUrl with not been associated with specific Web Components
+    /**
+     * @tc.name   testGetUrlInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_5700
+     * @tc.desc   test interface of getUrl with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetUrlInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetUrlInitErr";
@@ -70,10 +73,13 @@ export default function webViewContGetUrlAndOthersError() {
       Utils.registerEvent("testGetUrlInitErr", "Init error. The WebviewController must be associated with a Web component", 111140, done);
       await Utils.waitAndClickComponent(driver, "webViewContGetUrlAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_5800
-     *tc.name testStopInitErr
-     *tc.desc test interface of stop with not been associated with specific Web Components
+    /**
+     * @tc.name   testStopInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_5800
+     * @tc.desc   test interface of stop with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStopInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitStopInitErr";
@@ -82,10 +88,13 @@ export default function webViewContGetUrlAndOthersError() {
       Utils.registerEvent("testStopInitErr", "Init error. The WebviewController must be associated with a Web component", 111160, done);
       await Utils.waitAndClickComponent(driver, "webViewContGetUrlAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_5900
-     *tc.name testBackOrForwardInitErr
-     *tc.desc test interface of backOrForward with not been associated with specific Web Components
+    /**
+     * @tc.name   testBackOrForwardInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_5900
+     * @tc.desc   test interface of backOrForward with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBackOrForwardInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitBackOrForwardInitErr";
@@ -94,10 +103,13 @@ export default function webViewContGetUrlAndOthersError() {
       Utils.registerEvent("testBackOrForwardInitErr", "Init error. The WebviewController must be associated with a Web component", 111180, done);
       await Utils.waitAndClickComponent(driver, "webViewContGetUrlAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_6000
-     *tc.name testScrollToInitErr
-     *tc.desc test interface of scrollTo with not been associated with specific Web Components
+    /**
+     * @tc.name   testScrollToInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_6000
+     * @tc.desc   test interface of scrollTo with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScrollToInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitScrollToInitErr";
@@ -106,10 +118,13 @@ export default function webViewContGetUrlAndOthersError() {
       Utils.registerEvent("testScrollToInitErr", "Init error. The WebviewController must be associated with a Web component", 111200, done);
       await Utils.waitAndClickComponent(driver, "webViewContGetUrlAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_6100
-     *tc.name testScrollByInitErr
-     *tc.desc test interface of scrollBy with not been associated with specific Web Components
+    /**
+     * @tc.name   testScrollByInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_6100
+     * @tc.desc   test interface of scrollBy with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScrollByInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitScrollByInitErr";
@@ -118,10 +133,13 @@ export default function webViewContGetUrlAndOthersError() {
       Utils.registerEvent("testScrollByInitErr", "Init error. The WebviewController must be associated with a Web component", 111220, done);
       await Utils.waitAndClickComponent(driver, "webViewContGetUrlAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_6200
-     *tc.name testSlideScrollInitErr
-     *tc.desc test interface of slideScroll with not been associated with specific Web Components
+    /**
+     * @tc.name   testSlideScrollInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_6200
+     * @tc.desc   test interface of slideScroll with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSlideScrollInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitSlideScrollInitErr";
@@ -130,10 +148,13 @@ export default function webViewContGetUrlAndOthersError() {
       Utils.registerEvent("testSlideScrollInitErr", "Init error. The WebviewController must be associated with a Web component", 111240, done);
       await Utils.waitAndClickComponent(driver, "webViewContGetUrlAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_6300
-     *tc.name testGetOriginalUrlInitErr
-     *tc.desc test interface of getOriginalUrl with not been associated with specific Web Components
+    /**
+     * @tc.name   testGetOriginalUrlInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_6300
+     * @tc.desc   test interface of getOriginalUrl with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetOriginalUrlInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetOriginalUrlInitErr";
@@ -142,10 +163,13 @@ export default function webViewContGetUrlAndOthersError() {
       Utils.registerEvent("testGetOriginalUrlInitErr", "Init error. The WebviewController must be associated with a Web component", 111260, done);
       await Utils.waitAndClickComponent(driver, "webViewContGetUrlAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_6400
-     *tc.name testGetFaviconInitErr
-     *tc.desc test interface of getFavicon with not been associated with specific Web Components
+    /**
+     * @tc.name   testGetFaviconInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_6400
+     * @tc.desc   test interface of getFavicon with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetFaviconInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetFaviconInitErr";
@@ -154,10 +178,13 @@ export default function webViewContGetUrlAndOthersError() {
       Utils.registerEvent("testGetFaviconInitErr", "Init error. The WebviewController must be associated with a Web component", 111280, done);
       await Utils.waitAndClickComponent(driver, "webViewContGetUrlAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_6500
-     *tc.name testSetNetworkAvailableInitErr
-     *tc.desc test interface of setNetworkAvailable with not been associated with specific Web Components
+    /**
+     * @tc.name   testSetNetworkAvailableInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_6500
+     * @tc.desc   test interface of setNetworkAvailable with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetNetworkAvailableInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitSetNetworkAvailableInitErr";
@@ -166,10 +193,13 @@ export default function webViewContGetUrlAndOthersError() {
       Utils.registerEvent("testSetNetworkAvailableInitErr", "Init error. The WebviewController must be associated with a Web component", 111300, done);
       await Utils.waitAndClickComponent(driver, "webViewContGetUrlAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_6600
-     *tc.name testHasImageCallBackInitErr
-     *tc.desc test interface of hasImage (callback) with not been associated with specific Web Components
+    /**
+     * @tc.name   testHasImageCallBackInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_6600
+     * @tc.desc   test interface of hasImage (callback) with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHasImageCallBackInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitHasImageCallBackInitErr";
@@ -178,10 +208,13 @@ export default function webViewContGetUrlAndOthersError() {
       Utils.registerEvent("testHasImageCallBackInitErr", "Init error. The WebviewController must be associated with a Web component", 111320, done);
       await Utils.waitAndClickComponent(driver, "webViewContGetUrlAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_6700
-     *tc.name testHasImagePromiseInitErr
-     *tc.desc test interface of hasImage (promise) with not been associated with specific Web Components
+    /**
+     * @tc.name   testHasImagePromiseInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_6700
+     * @tc.desc   test interface of hasImage (promise) with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHasImagePromiseInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitHasImagePromiseInitErr";
@@ -190,10 +223,13 @@ export default function webViewContGetUrlAndOthersError() {
       Utils.registerEvent("testHasImagePromiseInitErr", "Init error. The WebviewController must be associated with a Web component", 111340, done);
       await Utils.waitAndClickComponent(driver, "webViewContGetUrlAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_6800
-     *tc.name testRemoveCacheInitErr
-     *tc.desc test interface of removeCache with not been associated with specific Web Components
+    /**
+     * @tc.name   testRemoveCacheInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_6800
+     * @tc.desc   test interface of removeCache with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRemoveCacheInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitRemoveCacheInitErr";
@@ -202,10 +238,13 @@ export default function webViewContGetUrlAndOthersError() {
       Utils.registerEvent("testRemoveCacheInitErr", "Init error. The WebviewController must be associated with a Web component", 111360, done);
       await Utils.waitAndClickComponent(driver, "webViewContGetUrlAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_6900
-     *tc.name testPageUpInitErr
-     *tc.desc test interface of pageUp with not been associated with specific Web Components
+    /**
+     * @tc.name   testPageUpInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_6900
+     * @tc.desc   test interface of pageUp with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPageUpInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitPageUpInitErr";
@@ -214,10 +253,13 @@ export default function webViewContGetUrlAndOthersError() {
       Utils.registerEvent("testPageUpInitErr", "Init error. The WebviewController must be associated with a Web component", 111380, done);
       await Utils.waitAndClickComponent(driver, "webViewContGetUrlAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_7000
-     *tc.name testPageDownInitErr
-     *tc.desc test interface of pageDown with not been associated with specific Web Components
+    /**
+     * @tc.name   testPageDownInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_7000
+     * @tc.desc   test interface of pageDown with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPageDownInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitPageDownInitErr";
@@ -226,10 +268,13 @@ export default function webViewContGetUrlAndOthersError() {
       Utils.registerEvent("testPageDownInitErr", "Init error. The WebviewController must be associated with a Web component", 111400, done);
       await Utils.waitAndClickComponent(driver, "webViewContGetUrlAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_7100
-     *tc.name testGetBackForwardEntriesInitErr
-     *tc.desc test interface of getBackForwardEntries with not been associated with specific Web Components
+    /**
+     * @tc.name   testGetBackForwardEntriesInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_7100
+     * @tc.desc   test interface of getBackForwardEntries with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetBackForwardEntriesInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetBackForwardEntriesInitErr";
@@ -238,10 +283,13 @@ export default function webViewContGetUrlAndOthersError() {
       Utils.registerEvent("testGetBackForwardEntriesInitErr", "Init error. The WebviewController must be associated with a Web component", 111420, done);
       await Utils.waitAndClickComponent(driver, "webViewContGetUrlAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_7200
-     *tc.name testSerializeWebStateInitErr
-     *tc.desc test interface of serializeWebState with not been associated with specific Web Components
+    /**
+     * @tc.name   testSerializeWebStateInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_7200
+     * @tc.desc   test interface of serializeWebState with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSerializeWebStateInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitSerializeWebStateInitErr";
@@ -250,10 +298,13 @@ export default function webViewContGetUrlAndOthersError() {
       Utils.registerEvent("testSerializeWebStateInitErr", "Init error. The WebviewController must be associated with a Web component", 111440, done);
       await Utils.waitAndClickComponent(driver, "webViewContGetUrlAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_7300
-     *tc.name testRestoreWebStateInitErr
-     *tc.desc test interface of restoreWebState with not been associated with specific Web Components
+    /**
+     * @tc.name   testRestoreWebStateInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_7300
+     * @tc.desc   test interface of restoreWebState with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRestoreWebStateInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitRestoreWebStateInitErr";
@@ -262,10 +313,13 @@ export default function webViewContGetUrlAndOthersError() {
       Utils.registerEvent("testRestoreWebStateInitErr", "Init error. The WebviewController must be associated with a Web component", 111460, done);
       await Utils.waitAndClickComponent(driver, "webViewContGetUrlAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_7400
-     *tc.name testGetCertificatePromiseInitErr
-     *tc.desc test interface of getCertificate (promise) with not been associated with specific Web Components
+    /**
+     * @tc.name   testGetCertificatePromiseInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_7400
+     * @tc.desc   test interface of getCertificate (promise) with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetCertificatePromiseInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetCertificatePromiseInitErr";
@@ -274,10 +328,13 @@ export default function webViewContGetUrlAndOthersError() {
       Utils.registerEvent("testGetCertificatePromiseInitErr", "Init error. The WebviewController must be associated with a Web component", 111480, done);
       await Utils.waitAndClickComponent(driver, "webViewContGetUrlAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_7500
-     *tc.name testGetCertificateCallbackInitErr
-     *tc.desc test interface of getCertificate (callback) with not been associated with specific Web Components
+    /**
+     * @tc.name   testGetCertificateCallbackInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_7500
+     * @tc.desc   test interface of getCertificate (callback) with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetCertificateCallbackInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetCertificateCallbackInitErr";
@@ -286,10 +343,13 @@ export default function webViewContGetUrlAndOthersError() {
       Utils.registerEvent("testGetCertificateCallbackInitErr", "Init error. The WebviewController must be associated with a Web component", 111500, done);
       await Utils.waitAndClickComponent(driver, "webViewContGetUrlAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_7600
-     *tc.name testSetAudioMutedInitErr
-     *tc.desc test interface of setAudioMuted with not been associated with specific Web Components
+    /**
+     * @tc.name   testSetAudioMutedInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_7600
+     * @tc.desc   test interface of setAudioMuted with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetAudioMutedInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitSetAudioMutedInitErr";
@@ -298,10 +358,13 @@ export default function webViewContGetUrlAndOthersError() {
       Utils.registerEvent("testSetAudioMutedInitErr", "Init error. The WebviewController must be associated with a Web component", 111520, done);
       await Utils.waitAndClickComponent(driver, "webViewContGetUrlAndOthersError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_7700
-     *tc.name testSetAudioMutedInitErr
-     *tc.desc test interface of setAudioMuted with not been associated with specific Web Components
+    /**
+     * @tc.name   emitAvoidVisibleViewportBottomErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_7700
+     * @tc.desc   test interface of setAudioMuted with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitAvoidVisibleViewportBottomErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitAvoidVisibleViewportBottomErr";

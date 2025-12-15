@@ -26,26 +26,26 @@ export default function customComponentFlexShrinkTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_CUSTOMCOMPONENT_FLEXSHRINK_0100
-     * @tc.name: testCustomComponentFlexShrink001
-     * @tc.desc: testing flexShrink for button with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCustomComponentFlexShrink001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_FLEXSHRINK_0100
+     * @tc.desc   testing flexShrink for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentFlexShrink001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentFlexShrink001()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_CUSTOMCOMPONENT_FLEXSHRINK_0200
-     * @tc.name: testCustomComponentFlexShrink002
-     * @tc.desc: testing flexShrink for button with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testCustomComponentFlexShrink002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_FLEXSHRINK_0200
+     * @tc.desc   testing flexShrink for button with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentFlexShrink002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentFlexShrink002()).assertEqual(0)

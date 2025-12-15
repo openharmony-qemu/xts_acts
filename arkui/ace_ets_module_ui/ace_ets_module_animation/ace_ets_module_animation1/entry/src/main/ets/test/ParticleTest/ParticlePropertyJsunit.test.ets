@@ -43,9 +43,12 @@ export default function ParticleJsunit() {
     });
 
     /**
+     * @tc.name   ParticleJsunit_0100
      * @tc.number ParticleJsunit_0100
-     * @tc.desc ParticleJsunit_0100
-     * @tc.level Level 0
+     * @tc.desc   ParticleJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParticleJsunit_0100', Level.LEVEL0, async (done: Function) => {
       // Get the information of the Particle component
@@ -61,9 +64,12 @@ export default function ParticleJsunit() {
     });
 
     /**
+     * @tc.name   ParticleJsunit_0200
      * @tc.number ParticleJsunit_0200
-     * @tc.desc ParticleJsunit_0200
-     * @tc.level Level 0
+     * @tc.desc   ParticleJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParticleJsunit_0200', Level.LEVEL0, async (done: Function) => {
       // Get the information of the Particle component
@@ -79,9 +85,12 @@ export default function ParticleJsunit() {
     });
 
     /**
+     * @tc.name   ParticleJsunit_0300
      * @tc.number ParticleJsunit_0300
-     * @tc.desc ParticleJsunit_0300
-     * @tc.level Level 0
+     * @tc.desc   ParticleJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParticleJsunit_0300', Level.LEVEL0, async (done: Function) => {
       // Get the information of the Particle component
@@ -97,9 +106,12 @@ export default function ParticleJsunit() {
     });
 
     /**
+     * @tc.name   ParticleJsunit_0400
      * @tc.number ParticleJsunit_0400
-     * @tc.desc ParticleJsunit_0400
-     * @tc.level Level 0
+     * @tc.desc   ParticleJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParticleJsunit_0400', Level.LEVEL0, async (done: Function) => {
       // Get the information of the Particle component
@@ -115,9 +127,12 @@ export default function ParticleJsunit() {
     });
 
     /**
+     * @tc.name   ParticleJsunit_0500
      * @tc.number ParticleJsunit_0500
-     * @tc.desc ParticleJsunit_0500
-     * @tc.level Level 0
+     * @tc.desc   ParticleJsunit_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParticleJsunit_0500', Level.LEVEL0, async (done: Function) => {
       // Get the information of the Particle component
@@ -133,9 +148,12 @@ export default function ParticleJsunit() {
     });
 
     /**
+     * @tc.name   ParticleJsunit_0600
      * @tc.number ParticleJsunit_0600
-     * @tc.desc ParticleJsunit_0600
-     * @tc.level Level 0
+     * @tc.desc   ParticleJsunit_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParticleJsunit_0600', Level.LEVEL0, async (done: Function) => {
       // Get the information of the Particle component
@@ -151,9 +169,12 @@ export default function ParticleJsunit() {
     });
 
     /**
+     * @tc.name   ParticleJsunit_0700
      * @tc.number ParticleJsunit_0700
-     * @tc.desc ParticleJsunit_0700
-     * @tc.level Level 0
+     * @tc.desc   ParticleJsunit_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParticleJsunit_0700', Level.LEVEL0, async (done: Function) => {
       // Get the information of the Particle component
@@ -169,9 +190,12 @@ export default function ParticleJsunit() {
     });
 
     /**
+     * @tc.name   ParticleJsunit_0800
      * @tc.number ParticleJsunit_0800
-     * @tc.desc ParticleJsunit_0800
-     * @tc.level Level 0
+     * @tc.desc   ParticleJsunit_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParticleJsunit_0800', Level.LEVEL0, async (done: Function) => {
       // Get the information of the Particle component
@@ -187,9 +211,12 @@ export default function ParticleJsunit() {
     });
 
     /**
+     * @tc.name   ParticleJsunit_0900
      * @tc.number ParticleJsunit_0900
-     * @tc.desc ParticleJsunit_0900
-     * @tc.level Level 0
+     * @tc.desc   ParticleJsunit_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParticleJsunit_0900', Level.LEVEL0, async (done: Function) => {
       // Get the information of the Particle component
@@ -205,9 +232,12 @@ export default function ParticleJsunit() {
     });
 
     /**
+     * @tc.name   ParticleJsunit_1000
      * @tc.number ParticleJsunit_1000
-     * @tc.desc ParticleJsunit_1000
-     * @tc.level Level 0
+     * @tc.desc   ParticleJsunit_1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParticleJsunit_1000', Level.LEVEL0, async (done: Function) => {
       // Get the information of the Particle component
@@ -223,9 +253,12 @@ export default function ParticleJsunit() {
     });
 
     /**
+     * @tc.name   ParticleJsunit_1100
      * @tc.number ParticleJsunit_1100
-     * @tc.desc ParticleJsunit_1100
-     * @tc.level Level 0
+     * @tc.desc   ParticleJsunit_1100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParticleJsunit_1100', Level.LEVEL0, async (done: Function) => {
       // Get the information of the Particle component
@@ -241,9 +274,12 @@ export default function ParticleJsunit() {
     });
 
     /**
+     * @tc.name   ParticleJsunit_1200
      * @tc.number ParticleJsunit_1200
-     * @tc.desc ParticleJsunit_1200
-     * @tc.level Level 0
+     * @tc.desc   ParticleJsunit_1200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParticleJsunit_1200', Level.LEVEL0, async (done: Function) => {
       // Get the information of the Particle component
@@ -259,9 +295,12 @@ export default function ParticleJsunit() {
     });
 
     /**
+     * @tc.name   ParticleJsunit_1300
      * @tc.number ParticleJsunit_1300
-     * @tc.desc ParticleJsunit_1300
-     * @tc.level Level 0
+     * @tc.desc   ParticleJsunit_1300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParticleJsunit_1300', Level.LEVEL0, async (done: Function) => {
       // Get the information of the Particle component
@@ -277,9 +316,12 @@ export default function ParticleJsunit() {
     });
 
     /**
+     * @tc.name   ParticleJsunit_1400
      * @tc.number ParticleJsunit_1400
-     * @tc.desc ParticleJsunit_1400
-     * @tc.level Level 0
+     * @tc.desc   ParticleJsunit_1400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParticleJsunit_1400', Level.LEVEL0, async (done: Function) => {
       // Get the information of the Particle component
@@ -295,9 +337,12 @@ export default function ParticleJsunit() {
     });
 
     /**
+     * @tc.name   ParticleJsunit_1500
      * @tc.number ParticleJsunit_1500
-     * @tc.desc ParticleJsunit_1500
-     * @tc.level Level 0
+     * @tc.desc   ParticleJsunit_1500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParticleJsunit_1500', Level.LEVEL0, async (done: Function) => {
       // Get the information of the Particle component
@@ -313,9 +358,12 @@ export default function ParticleJsunit() {
     });
 
     /**
+     * @tc.name   ParticleJsunit_1600
      * @tc.number ParticleJsunit_1600
-     * @tc.desc ParticleJsunit_1600
-     * @tc.level Level 0
+     * @tc.desc   ParticleJsunit_1600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParticleJsunit_1600', Level.LEVEL0, async (done: Function) => {
       // Get the information of the Particle component
@@ -331,9 +379,12 @@ export default function ParticleJsunit() {
     });
 
     /**
+     * @tc.name   ParticleJsunit_1700
      * @tc.number ParticleJsunit_1700
-     * @tc.desc ParticleJsunit_1700
-     * @tc.level Level 0
+     * @tc.desc   ParticleJsunit_1700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParticleJsunit_1700', Level.LEVEL0, async (done: Function) => {
       // Get the information of the Particle component
@@ -349,9 +400,12 @@ export default function ParticleJsunit() {
     });
 
     /**
+     * @tc.name   ParticleJsunit_1800
      * @tc.number ParticleJsunit_1800
-     * @tc.desc ParticleJsunit_1800
-     * @tc.level Level 0
+     * @tc.desc   ParticleJsunit_1800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParticleJsunit_1800', Level.LEVEL0, async (done: Function) => {
       // Get the information of the Particle component

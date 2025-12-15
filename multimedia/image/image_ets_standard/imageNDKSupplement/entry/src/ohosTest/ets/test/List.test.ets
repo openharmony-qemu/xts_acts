@@ -14,9 +14,18 @@
  */
 import ImageEffectFilterSuppTest from './ImageEffectFilterSupp.test';
 import ImageEffectSuppTest from './ImageEffectSupp.test';
+import ImageErrorSuppTest from './ImageErrorSupp.test';
+import ImageEffectInfoSupplementTest from './OHEffectFilterInfoSupplement.test';
+import OHImagePixelMapCreateTest from './ImagePixelMapCreateTest.test';
+import OHImagePackerCreateTest from './OHImagePackerCreateTest.test';
+import PixelMapInitNativePixelMap from './PixelMapInitNativePixelMap.test';
 
 export default function testsuite() {
   ImageEffectSuppTest();
   ImageEffectFilterSuppTest();
-
+  ImageErrorSuppTest();
+  ImageEffectInfoSupplementTest();
+  PixelMapInitNativePixelMap();
+  OHImagePackerCreateTest()
+  OHImagePixelMapCreateTest();
 }

@@ -46,12 +46,12 @@ export default function TextStyle2() {
 
 
     /**
+     * @tc.name   TextStyle_0001
      * @tc.number TextStyle_0001
-     * @tc.name TextStyle_0001
-     * @tc.desc set api
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextStyle_0001', Level.LEVEL1, async (done: Function) => {
 

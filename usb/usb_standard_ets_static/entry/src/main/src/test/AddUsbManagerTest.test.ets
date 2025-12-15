@@ -151,7 +151,6 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testHasAccessoryRight001
      * @tc.number SUB_USB_HostManager_Func_0100
      * @tc.desc   verify function hasAccessoryRight
@@ -179,7 +178,6 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransfer001
      * @tc.number SUB_USB_HostManager_Func_0400
      * @tc.desc   verify function usbControlTransfer
@@ -228,7 +226,6 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDevice009
      * @tc.number SUB_USB_HostManager_Func_0700
      * @tc.desc   verify function hasRight
@@ -267,7 +264,6 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDevice010
      * @tc.number SUB_USB_HostManager_Func_0800
      * @tc.desc   verify function hasRight
@@ -306,7 +302,6 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testHasAccessoryRight031
      * @tc.number SUB_USB_HostManager_Func_2900
      * @tc.desc   verify function hasAccessoryRight
@@ -333,7 +328,6 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testHasAccessoryRight032
      * @tc.number SUB_USB_HostManager_Func_3000
      * @tc.desc   verify function hasAccessoryRight
@@ -360,7 +354,6 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testHasAccessoryRight033
      * @tc.number SUB_USB_HostManager_Func_3100
      * @tc.desc   verify function hasAccessoryRight
@@ -387,7 +380,6 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRequestAccessoryRight034
      * @tc.number SUB_USB_HostManager_Func_3200
      * @tc.desc   verify function hasAccessoryRight
@@ -412,7 +404,6 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRequestAccessoryRight035
      * @tc.number SUB_USB_HostManager_Func_3300
      * @tc.desc   verify function requestAccessoryRight
@@ -438,7 +429,6 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRequestAccessoryRight036
      * @tc.number SUB_USB_HostManager_Func_3400
      * @tc.desc   verify function requestAccessoryRight
@@ -464,7 +454,6 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRequestAccessoryRight037
      * @tc.number SUB_USB_HostManager_Func_3500
      * @tc.desc   verify function requestAccessoryRight
@@ -490,7 +479,6 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRequestAccessoryRight038
      * @tc.number SUB_USB_HostManager_Func_3600
      * @tc.desc   verify function requestAccessoryRight
@@ -516,7 +504,6 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testOpenAccessory039
      * @tc.number SUB_USB_HostManager_Func_3900
      * @tc.desc   verify function openAccessory
@@ -545,7 +532,6 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testOpenAccessory040
      * @tc.number SUB_USB_HostManager_Func_4000
      * @tc.desc   verify function openAccessory
@@ -574,7 +560,6 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testOpenAccessory041
      * @tc.number SUB_USB_HostManager_Func_4100
      * @tc.desc   verify function openAccessory
@@ -603,7 +588,6 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testOpenAccessory042
      * @tc.number SUB_USB_HostManager_Func_4200
      * @tc.desc   verify function openAccessory
@@ -632,7 +616,6 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testOpenAccessory043
      * @tc.number SUB_USB_HostManager_Func_4300
      * @tc.desc   verify function openAccessory
@@ -661,7 +644,6 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testOpenAccessory044
      * @tc.number SUB_USB_HostManager_Func_4400
      * @tc.desc   verify function openAccessory
@@ -690,7 +672,6 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testOpenAccessory045
      * @tc.number SUB_USB_HostManager_Func_4500
      * @tc.desc   verify function openAccessory
@@ -719,7 +700,6 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testOpenAccessory048
      * @tc.number SUB_USB_HostManager_Func_4600
      * @tc.desc   verify function openAccessory
@@ -748,7 +728,6 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testOpenAccessory049
      * @tc.number SUB_USB_HostManager_Func_4700
      * @tc.desc   verify function openAccessory
@@ -777,7 +756,6 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testCloseAccessory050
      * @tc.number SUB_USB_HostManager_Func_4800
      * @tc.desc   verify function closeAccessory
@@ -804,7 +782,6 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testCloseAccessory051
      * @tc.number SUB_USB_HostManager_Func_4900
      * @tc.desc   verify function closeAccessory
@@ -831,7 +808,6 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testCloseAccessory052
      * @tc.number SUB_USB_HostManager_Func_5000
      * @tc.desc   verify function closeAccessory
@@ -858,7 +834,6 @@ export default function AddUsbManagerTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDevice055
      * @tc.number SUB_USB_HostManager_Func_5300
      * @tc.desc   verify function connectDevice
@@ -896,7 +871,6 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbSubmitTransfer058
      * @tc.number SUB_USB_HostManager_Func_5600
      * @tc.desc   verify function usbSubmitTransfer
@@ -947,7 +921,6 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbSubmitTransfer059
      * @tc.number SUB_USB_HostManager_Func_5700
      * @tc.desc   verify function usbSubmitTransfer
@@ -998,7 +971,6 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbSubmitTransfer060
      * @tc.number SUB_USB_HostManager_Func_5800
      * @tc.desc   verify function usbSubmitTransfer
@@ -1049,7 +1021,6 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbSubmitTransfer061
      * @tc.number SUB_USB_HostManager_Func_5900
      * @tc.desc   verify function usbSubmitTransfer
@@ -1100,7 +1071,6 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbSubmitTransfer062
      * @tc.number SUB_USB_HostManager_Func_6000
      * @tc.desc   verify function usbSubmitTransfer
@@ -1151,7 +1121,6 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbCancelTransfer063
      * @tc.number SUB_USB_HostManager_Func_6100
      * @tc.desc   verify function usbCancelTransfer
@@ -1192,7 +1161,6 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbCancelTransfer064
      * @tc.number SUB_USB_HostManager_Func_6200
      * @tc.desc   verify function usbCancelTransfer
@@ -1233,7 +1201,6 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbCancelTransfer065
      * @tc.number SUB_USB_HostManager_Func_6300
      * @tc.desc   verify function usbCancelTransfer
@@ -1274,7 +1241,6 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbSubmitTransfer066
      * @tc.number SUB_USB_HostManager_Func_6400
      * @tc.desc   verify function usbSubmitTransfer
@@ -1325,7 +1291,6 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransfer68
      * @tc.number SUB_USB_HostManager_Func_6600
      * @tc.desc   verify function usbControlTransfer
@@ -1375,7 +1340,6 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransfer69
      * @tc.number SUB_USB_HostManager_Func_6700
      * @tc.desc   verify function usbControlTransfer
@@ -1425,7 +1389,6 @@ export default function AddUsbManagerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransfer70
      * @tc.number SUB_USB_HostManager_Func_6800
      * @tc.desc   verify function usbControlTransfer

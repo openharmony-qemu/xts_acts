@@ -47,12 +47,12 @@ export default function PreDrag() {
     });
 
     /**
-     * @tc.number    PreDrag_0010
-     * @tc.name      PreDrag
-     * @tc.desc      api PreDrag
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   PreDragTest_0010
+     * @tc.number PreDrag_0010
+     * @tc.desc   api PreDrag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PreDragTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('PreDragTest_0010 START');

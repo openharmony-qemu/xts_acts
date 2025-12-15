@@ -44,9 +44,12 @@ void ParamCheckTest::TearDown() {}
 } // namespace
 
 /**
- * @tc.number    : PARAM_CHECK_001
- * @tc.name      : CreateByMime - mime param check
- * @tc.desc      : param check test
+ * @tc.name   PARAM_CHECK_001
+ * @tc.number PARAM_CHECK_001
+ * @tc.desc   param check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParamCheckTest, PARAM_CHECK_001, TestSize.Level2)
 {
@@ -102,9 +105,12 @@ HWTEST_F(ParamCheckTest, PARAM_CHECK_001, TestSize.Level2)
 }
 
 /**
- * @tc.number    : PARAM_CHECK_002
- * @tc.name      : CreateByName - mime param check
- * @tc.desc      : param check test
+ * @tc.name   PARAM_CHECK_002
+ * @tc.number PARAM_CHECK_002
+ * @tc.desc   param check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParamCheckTest, PARAM_CHECK_002, TestSize.Level2)
 {
@@ -160,9 +166,12 @@ HWTEST_F(ParamCheckTest, PARAM_CHECK_002, TestSize.Level2)
 }
 
 /**
- * @tc.number    : PARAM_CHECK_003
- * @tc.name      : Configure - channel(OH_AVCODEC_MIMETYPE_AUDIO_AAC) param check
- * @tc.desc      : param check test
+ * @tc.name   PARAM_CHECK_003
+ * @tc.number PARAM_CHECK_003
+ * @tc.desc   param check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParamCheckTest, PARAM_CHECK_003, TestSize.Level2)
 {
@@ -207,9 +216,12 @@ HWTEST_F(ParamCheckTest, PARAM_CHECK_003, TestSize.Level2)
 }
 
 /**
- * @tc.number    : PARAM_CHECK_004
- * @tc.name      : Configure - sampleRate(OH_AVCODEC_MIMETYPE_AUDIO_AAC) param check
- * @tc.desc      : param check test
+ * @tc.name   PARAM_CHECK_004
+ * @tc.number PARAM_CHECK_004
+ * @tc.desc   param check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParamCheckTest, PARAM_CHECK_004, TestSize.Level2)
 {
@@ -334,9 +346,12 @@ HWTEST_F(ParamCheckTest, PARAM_CHECK_004, TestSize.Level2)
 }
 
 /**
- * @tc.number    : PARAM_CHECK_005
- * @tc.name      : Configure - channel(OH_AVCODEC_MIMETYPE_AUDIO_FLAC) param check
- * @tc.desc      : param check test
+ * @tc.name   PARAM_CHECK_005
+ * @tc.number PARAM_CHECK_005
+ * @tc.desc   param check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParamCheckTest, PARAM_CHECK_005, TestSize.Level2)
 {
@@ -381,9 +396,12 @@ HWTEST_F(ParamCheckTest, PARAM_CHECK_005, TestSize.Level2)
 }
 
 /**
- * @tc.number    : PARAM_CHECK_006
- * @tc.name      : Configure - sampleRate(OH_AVCODEC_MIMETYPE_AUDIO_FLAC) param check
- * @tc.desc      : param check test
+ * @tc.name   PARAM_CHECK_006
+ * @tc.number PARAM_CHECK_006
+ * @tc.desc   param check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParamCheckTest, PARAM_CHECK_006, TestSize.Level2)
 {
@@ -492,9 +510,12 @@ HWTEST_F(ParamCheckTest, PARAM_CHECK_006, TestSize.Level2)
 }
 
 /**
- * @tc.number    : PARAM_CHECK_007
- * @tc.name      : Configure - channel(OH_AVCODEC_MIMETYPE_AUDIO_MPEG) param check
- * @tc.desc      : param check test
+ * @tc.name   PARAM_CHECK_007
+ * @tc.number PARAM_CHECK_007
+ * @tc.desc   param check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParamCheckTest, PARAM_CHECK_007, TestSize.Level2)
 {
@@ -539,9 +560,12 @@ HWTEST_F(ParamCheckTest, PARAM_CHECK_007, TestSize.Level2)
 }
 
 /**
- * @tc.number    : PARAM_CHECK_008
- * @tc.name      : Configure - sampleRate(OH_AVCODEC_MIMETYPE_AUDIO_MPEG) param check
- * @tc.desc      : param check test
+ * @tc.name   PARAM_CHECK_008
+ * @tc.number PARAM_CHECK_008
+ * @tc.desc   param check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParamCheckTest, PARAM_CHECK_008, TestSize.Level2)
 {
@@ -642,9 +666,12 @@ HWTEST_F(ParamCheckTest, PARAM_CHECK_008, TestSize.Level2)
 }
 
 /**
- * @tc.number    : PARAM_CHECK_011
- * @tc.name      : Configure - channel(OH_AVCODEC_MIMETYPE_AUDIO_AMR_NB) param check
- * @tc.desc      : param check test
+ * @tc.name   PARAM_CHECK_011
+ * @tc.number PARAM_CHECK_011
+ * @tc.desc   param check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParamCheckTest, PARAM_CHECK_011, TestSize.Level2)
 {
@@ -681,9 +708,12 @@ HWTEST_F(ParamCheckTest, PARAM_CHECK_011, TestSize.Level2)
 }
 
 /**
- * @tc.number    : PARAM_CHECK_012
- * @tc.name      : Configure - sampleRate(OH_AVCODEC_MIMETYPE_AUDIO_AMR_NB) param check
- * @tc.desc      : param check test
+ * @tc.name   PARAM_CHECK_012
+ * @tc.number PARAM_CHECK_012
+ * @tc.desc   param check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParamCheckTest, PARAM_CHECK_012, TestSize.Level2)
 {
@@ -720,9 +750,12 @@ HWTEST_F(ParamCheckTest, PARAM_CHECK_012, TestSize.Level2)
 }
 
 /**
- * @tc.number    : PARAM_CHECK_013
- * @tc.name      : Configure - channel(OH_AVCODEC_MIMETYPE_AUDIO_AMR_WB) param check
- * @tc.desc      : param check test
+ * @tc.name   PARAM_CHECK_013
+ * @tc.number PARAM_CHECK_013
+ * @tc.desc   param check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParamCheckTest, PARAM_CHECK_013, TestSize.Level2)
 {
@@ -759,9 +792,12 @@ HWTEST_F(ParamCheckTest, PARAM_CHECK_013, TestSize.Level2)
 }
 
 /**
- * @tc.number    : PARAM_CHECK_014
- * @tc.name      : Configure - sampleRate(OH_AVCODEC_MIMETYPE_AUDIO_AMR_WB) param check
- * @tc.desc      : param check test
+ * @tc.name   PARAM_CHECK_014
+ * @tc.number PARAM_CHECK_014
+ * @tc.desc   param check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParamCheckTest, PARAM_CHECK_014, TestSize.Level2)
 {
@@ -798,9 +834,12 @@ HWTEST_F(ParamCheckTest, PARAM_CHECK_014, TestSize.Level2)
 }
 
 /**
- * @tc.number    : PARAM_CHECK_016
- * @tc.name      : Configure - channel(OH_AVCODEC_MIMETYPE_AUDIO_G711MU) param check
- * @tc.desc      : param check test
+ * @tc.name   PARAM_CHECK_016
+ * @tc.number PARAM_CHECK_016
+ * @tc.desc   param check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParamCheckTest, PARAM_CHECK_016, TestSize.Level2)
 {
@@ -837,9 +876,12 @@ HWTEST_F(ParamCheckTest, PARAM_CHECK_016, TestSize.Level2)
 }
 
 /**
- * @tc.number    : PARAM_CHECK_017
- * @tc.name      : Configure - sampleRate(OH_AVCODEC_MIMETYPE_AUDIO_G711MU) param check
- * @tc.desc      : param check test
+ * @tc.name   PARAM_CHECK_017
+ * @tc.number PARAM_CHECK_017
+ * @tc.desc   param check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParamCheckTest, PARAM_CHECK_017, TestSize.Level2)
 {
@@ -876,9 +918,12 @@ HWTEST_F(ParamCheckTest, PARAM_CHECK_017, TestSize.Level2)
 }
 
 /**
- * @tc.number    : PARAM_CHECK_021
- * @tc.name      : FreeOutputData - index param check
- * @tc.desc      : param check test
+ * @tc.name   PARAM_CHECK_021
+ * @tc.number PARAM_CHECK_021
+ * @tc.desc   param check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParamCheckTest, PARAM_CHECK_021, TestSize.Level2)
 {
@@ -911,9 +956,12 @@ HWTEST_F(ParamCheckTest, PARAM_CHECK_021, TestSize.Level2)
 }
 
 /**
- * @tc.number    : PARAM_CHECK_022
- * @tc.name      : PushInputDataEOS - index param check
- * @tc.desc      : param check test
+ * @tc.name   PARAM_CHECK_022
+ * @tc.number PARAM_CHECK_022
+ * @tc.desc   param check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParamCheckTest, PARAM_CHECK_022, TestSize.Level2)
 {
@@ -957,9 +1005,12 @@ HWTEST_F(ParamCheckTest, PARAM_CHECK_022, TestSize.Level2)
 }
 
 /**
- * @tc.number    : PARAM_CHECK_023
- * @tc.name      : PARAM_CHECK_023
- * @tc.desc      : Configure - channel(OH_AVCODEC_MIMETYPE_AUDIO_G711A) param check test
+ * @tc.name   PARAM_CHECK_023
+ * @tc.number PARAM_CHECK_023
+ * @tc.desc   Configure - channel(OH_AVCODEC_MIMETYPE_AUDIO_G711A) param check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParamCheckTest, PARAM_CHECK_023, TestSize.Level2)
 {
@@ -1000,9 +1051,12 @@ HWTEST_F(ParamCheckTest, PARAM_CHECK_023, TestSize.Level2)
 }
 
 /**
- * @tc.number    : PARAM_CHECK_024
- * @tc.name      : PARAM_CHECK_024
- * @tc.desc      : Configure - sampleRate(OH_AVCODEC_MIMETYPE_AUDIO_G711A) param check test
+ * @tc.name   PARAM_CHECK_024
+ * @tc.number PARAM_CHECK_024
+ * @tc.desc   Configure - sampleRate(OH_AVCODEC_MIMETYPE_AUDIO_G711A) param check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParamCheckTest, PARAM_CHECK_024, TestSize.Level2)
 {

@@ -43,12 +43,12 @@ export default function PhotoAccessHelperNativeTest() {
     });
 
     /**
-     * @tc.number     : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_URI_NATIVE_0100
-     * @tc.name       : TestMediaAssetGetUri0100
-     * @tc.desc       : Get the uri of the media asset when mediaAsset is invalid
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   TestMediaAssetGetUri0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_URI_NATIVE_0100
+     * @tc.desc   Get the uri of the media asset when mediaAsset is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetUri0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetUri0100';
@@ -65,12 +65,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
 
     /**
-     * @tc.number     : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_URI_NATIVE_0200
-     * @tc.name       : TestMediaAssetGetUri0200
-     * @tc.desc       : Get the uri of the media asset when uri is invalid
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   TestMediaAssetGetUri0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_URI_NATIVE_0200
+     * @tc.desc   Get the uri of the media asset when uri is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetUri0200', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetUri0200';
@@ -87,12 +87,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_DISPLAY_NAME_NATIVE_0100
-     * @tc.name      : TestMediaAssetGetDisplayName0100
-     * @tc.desc      : Get the displayName of the media asset when mediaAsset is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetGetDisplayName0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_DISPLAY_NAME_NATIVE_0100
+     * @tc.desc   Get the displayName of the media asset when mediaAsset is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetDisplayName0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetDisplayName0100';
@@ -109,12 +109,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_DISPLAY_NAME_NATIVE_0200
-     * @tc.name      : TestMediaAssetGetDisplayName0200
-     * @tc.desc      : Get the displayName of the media asset when displayName is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetGetDisplayName0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_DISPLAY_NAME_NATIVE_0200
+     * @tc.desc   Get the displayName of the media asset when displayName is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetDisplayName0200', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetDisplayName0200';
@@ -131,12 +131,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_SIZE_NATIVE_0100
-     * @tc.name      : TestMediaAssetGetSize0100
-     * @tc.desc      : Get the size of the media asset when mediaAsset is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetGetSize0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_SIZE_NATIVE_0100
+     * @tc.desc   Get the size of the media asset when mediaAsset is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetSize0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetSize0100';
@@ -153,12 +153,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_SIZE_NATIVE_0200
-     * @tc.name      : TestMediaAssetGetSize0200
-     * @tc.desc      : Get the size of the media asset when size is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetGetSize0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_SIZE_NATIVE_0200
+     * @tc.desc   Get the size of the media asset when size is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetSize0200', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetSize0200';
@@ -175,12 +175,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_DATE_MODIFIED_MS_NATIVE_0100
-     * @tc.name      : TestMediaAssetGetDateModifiedMs0100
-     * @tc.desc      : Get the dateModifiedMs of the media asset when mediaAsset is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetGetDateModifiedMs0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_DATE_MODIFIED_MS_NATIVE_0100
+     * @tc.desc   Get the dateModifiedMs of the media asset when mediaAsset is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetDateModifiedMs0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetDateModifiedMs0100';
@@ -197,12 +197,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_DATE_MODIFIED_MS_NATIVE_0200
-     * @tc.name      : TestMediaAssetGetDateModifiedMs0200
-     * @tc.desc      : Get the dateModifiedMs of the media asset when dateModifiedMs is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetGetDateModifiedMs0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_DATE_MODIFIED_MS_NATIVE_0200
+     * @tc.desc   Get the dateModifiedMs of the media asset when dateModifiedMs is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetDateModifiedMs0200', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetDateModifiedMs0200';
@@ -219,12 +219,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_WIDTH_NATIVE_0100
-     * @tc.name      : TestMediaAssetGetWidth0100
-     * @tc.desc      : Get the width of the media asset when mediaAsset is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetGetWidth0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_WIDTH_NATIVE_0100
+     * @tc.desc   Get the width of the media asset when mediaAsset is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetWidth0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetWidth0100';
@@ -241,12 +241,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_WIDTH_NATIVE_0200
-     * @tc.name      : TestMediaAssetGetWidth0200
-     * @tc.desc      : Get the width of the media asset when width is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetGetWidth0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_WIDTH_NATIVE_0200
+     * @tc.desc   Get the width of the media asset when width is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetWidth0200', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetWidth0200';
@@ -263,12 +263,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_HEIGHT_NATIVE_0100
-     * @tc.name      : TestMediaAssetGetHeight0100
-     * @tc.desc      : Get the height of the media asset when mediaAsset is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetGetHeight0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_HEIGHT_NATIVE_0100
+     * @tc.desc   Get the height of the media asset when mediaAsset is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetHeight0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetHeight0100';
@@ -285,12 +285,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_HEIGHT_NATIVE_0200
-     * @tc.name      : TestMediaAssetGetHeight0200
-     * @tc.desc      : Get the height of the media asset when height is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetGetHeight0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_HEIGHT_NATIVE_0200
+     * @tc.desc   Get the height of the media asset when height is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetHeight0200', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetHeight0200';
@@ -307,12 +307,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_ORIENTATION_NATIVE_0100
-     * @tc.name      : TestMediaAssetGetOrientation0100
-     * @tc.desc      : Get the orientation of the media asset when mediaAsset is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetGetOrientation0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_ORIENTATION_NATIVE_0100
+     * @tc.desc   Get the orientation of the media asset when mediaAsset is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetOrientation0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetOrientation0100';
@@ -329,12 +329,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_ORIENTATION_NATIVE_0200
-     * @tc.name      : TestMediaAssetGetOrientation0200
-     * @tc.desc      : Get the orientation of the media asset when orientation is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetGetOrientation0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_ORIENTATION_NATIVE_0200
+     * @tc.desc   Get the orientation of the media asset when orientation is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetOrientation0200', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetOrientation0200';
@@ -351,12 +351,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_RELEASE_NATIVE_0100
-     * @tc.name      : TestMediaAssetRelease0100
-     * @tc.desc      : Release media asset object when mediaAsset is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetRelease0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_RELEASE_NATIVE_0100
+     * @tc.desc   Release media asset object when mediaAsset is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetRelease0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetRelease0100';
@@ -373,12 +373,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_ADD_RESOURCE_WITH_BUFFER_NATIVE_0100
-     * @tc.name      : TestChangeRequestAddResourceWithBuffer0100
-     * @tc.desc      : Add resource by arrayBuffer when changeRequest is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestChangeRequestAddResourceWithBuffer0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_ADD_RESOURCE_WITH_BUFFER_NATIVE_0100
+     * @tc.desc   Add resource by arrayBuffer when changeRequest is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestChangeRequestAddResourceWithBuffer0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestChangeRequestAddResourceWithBuffer0100';
@@ -395,12 +395,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_ADD_RESOURCE_WITH_BUFFER_NATIVE_0200
-     * @tc.name      : TestChangeRequestAddResourceWithBuffer0200
-     * @tc.desc      : Add resource by arrayBuffer when resourceType is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestChangeRequestAddResourceWithBuffer0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_ADD_RESOURCE_WITH_BUFFER_NATIVE_0200
+     * @tc.desc   Add resource by arrayBuffer when resourceType is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestChangeRequestAddResourceWithBuffer0200', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestChangeRequestAddResourceWithBuffer0200';
@@ -417,12 +417,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_ADD_RESOURCE_WITH_BUFFER_NATIVE_0300
-     * @tc.name      : TestChangeRequestAddResourceWithBuffer0300
-     * @tc.desc      : Add resource by arrayBuffer when buffer is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestChangeRequestAddResourceWithBuffer0300
+     * @tc.number SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_ADD_RESOURCE_WITH_BUFFER_NATIVE_0300
+     * @tc.desc   Add resource by arrayBuffer when buffer is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestChangeRequestAddResourceWithBuffer0300', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestChangeRequestAddResourceWithBuffer0300';
@@ -439,12 +439,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_ADD_RESOURCE_WITH_BUFFER_NATIVE_0400
-     * @tc.name      : TestChangeRequestAddResourceWithBuffer0400
-     * @tc.desc      : Add resource by arrayBuffer when length is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestChangeRequestAddResourceWithBuffer0400
+     * @tc.number SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_ADD_RESOURCE_WITH_BUFFER_NATIVE_0400
+     * @tc.desc   Add resource by arrayBuffer when length is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestChangeRequestAddResourceWithBuffer0400', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestChangeRequestAddResourceWithBuffer0400';
@@ -461,12 +461,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_ADD_RESOURCE_WITH_BUFFER_NATIVE_0500
-     * @tc.name      : TestChangeRequestAddResourceWithBuffer0500
-     * @tc.desc      : Add resource by arrayBuffer when resourceType is image resource
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestChangeRequestAddResourceWithBuffer0500
+     * @tc.number SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_ADD_RESOURCE_WITH_BUFFER_NATIVE_0500
+     * @tc.desc   Add resource by arrayBuffer when resourceType is image resource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestChangeRequestAddResourceWithBuffer0500', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestChangeRequestAddResourceWithBuffer0500';
@@ -483,12 +483,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_ADD_RESOURCE_WITH_BUFFER_NATIVE_0600
-     * @tc.name      : TestChangeRequestAddResourceWithBuffer0600
-     * @tc.desc      : Add resource by arrayBuffer when resourceType is video resource
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestChangeRequestAddResourceWithBuffer0600
+     * @tc.number SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_ADD_RESOURCE_WITH_BUFFER_NATIVE_0600
+     * @tc.desc   Add resource by arrayBuffer when resourceType is video resource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestChangeRequestAddResourceWithBuffer0600', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestChangeRequestAddResourceWithBuffer0600';
@@ -505,12 +505,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_NATIVE_0100
-     * @tc.name      : TestChangeRequestSaveCameraPhoto0100
-     * @tc.desc      : Save camera photo when changeRequest is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestChangeRequestSaveCameraPhoto0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_NATIVE_0100
+     * @tc.desc   Save camera photo when changeRequest is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestChangeRequestSaveCameraPhoto0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestChangeRequestSaveCameraPhoto0100';
@@ -527,12 +527,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_NATIVE_0200
-     * @tc.name      : TestChangeRequestSaveCameraPhoto0200
-     * @tc.desc      : Save camera photo when imageFileType is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestChangeRequestSaveCameraPhoto0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_NATIVE_0200
+     * @tc.desc   Save camera photo when imageFileType is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestChangeRequestSaveCameraPhoto0200', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestChangeRequestSaveCameraPhoto0200';
@@ -549,12 +549,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_SAVE_CAMERA_VIDEO_NATIVE_0100
-     * @tc.name      : TestChangeRequestSaveCameraVideo0100
-     * @tc.desc      : Save camera video when changeRequest is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestChangeRequestSaveCameraVideo0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_SAVE_CAMERA_VIDEO_NATIVE_0100
+     * @tc.desc   Save camera video when changeRequest is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestChangeRequestSaveCameraVideo0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestChangeRequestSaveCameraVideo0100';
@@ -571,12 +571,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_SAVE_CAMERA_VIDEO_NATIVE_0200
-     * @tc.name      : TestChangeRequestSaveCameraVideo0200
-     * @tc.desc      : Save camera video when imageFileType is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestChangeRequestSaveCameraVideo0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_SAVE_CAMERA_VIDEO_NATIVE_0200
+     * @tc.desc   Save camera video when imageFileType is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestChangeRequestSaveCameraVideo0200', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestChangeRequestSaveCameraVideo0200';
@@ -593,12 +593,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_DISCARD_CAMERA_PHOTO_NATIVE_0100
-     * @tc.name      : TestChangeRequestDiscardCameraPhoto0100
-     * @tc.desc      : Discard camera photo when changeRequest is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestChangeRequestDiscardCameraPhoto0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_DISCARD_CAMERA_PHOTO_NATIVE_0100
+     * @tc.desc   Discard camera photo when changeRequest is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestChangeRequestDiscardCameraPhoto0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestChangeRequestDiscardCameraPhoto0100';
@@ -615,12 +615,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_RELEASE_NATIVE_0100
-     * @tc.name      : TestChangeRequestRelease0100
-     * @tc.desc      : Release media asset change request object when changeRequest is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestChangeRequestRelease0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_RELEASE_NATIVE_0100
+     * @tc.desc   Release media asset change request object when changeRequest is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestChangeRequestRelease0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestChangeRequestRelease0100';
@@ -637,12 +637,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MANAGER_REQUEST_IMAGE_NATIVE_0100
-     * @tc.name      : TestManagerRequestImage0100
-     * @tc.desc      : Request image resource when mediaAsset is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestManagerRequestImage0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_MANAGER_REQUEST_IMAGE_NATIVE_0100
+     * @tc.desc   Request image resource when mediaAsset is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestManagerRequestImage0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestManagerRequestImage0100';
@@ -659,12 +659,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MANAGER_REQUEST_IMAGE_NATIVE_0200
-     * @tc.name      : TestManagerRequestImage0200
-     * @tc.desc      : Request image resource when manager is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestManagerRequestImage0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_MANAGER_REQUEST_IMAGE_NATIVE_0200
+     * @tc.desc   Request image resource when manager is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestManagerRequestImage0200', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestManagerRequestImage0200';
@@ -681,12 +681,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MANAGER_REQUEST_IMAGE_NATIVE_0300
-     * @tc.name      : TestManagerRequestImage0300
-     * @tc.desc      : Request image resource when deliveryMode is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestManagerRequestImage0300
+     * @tc.number SUB_PHOTOACCESS_HELPER_MANAGER_REQUEST_IMAGE_NATIVE_0300
+     * @tc.desc   Request image resource when deliveryMode is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestManagerRequestImage0300', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestManagerRequestImage0300';
@@ -703,12 +703,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MANAGER_REQUEST_IMAGE_NATIVE_0400
-     * @tc.name      : TestManagerRequestImage0400
-     * @tc.desc      : Request image resource when requestId is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestManagerRequestImage0400
+     * @tc.number SUB_PHOTOACCESS_HELPER_MANAGER_REQUEST_IMAGE_NATIVE_0400
+     * @tc.desc   Request image resource when requestId is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestManagerRequestImage0400', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestManagerRequestImage0400';
@@ -725,12 +725,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MANAGER_REQUEST_IMAGE_NATIVE_0500
-     * @tc.name      : TestManagerRequestImage0500
-     * @tc.desc      : Request image resource when callback is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestManagerRequestImage0500
+     * @tc.number SUB_PHOTOACCESS_HELPER_MANAGER_REQUEST_IMAGE_NATIVE_0500
+     * @tc.desc   Request image resource when callback is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestManagerRequestImage0500', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestManagerRequestImage0500';
@@ -747,12 +747,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_APPLY_CHANGES_NATIVE_0100
-     * @tc.name      : TestMediaAccessHelperApplyChanges0100
-     * @tc.desc      : Apply changes when changeRequest is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAccessHelperApplyChanges0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_APPLY_CHANGES_NATIVE_0100
+     * @tc.desc   Apply changes when changeRequest is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAccessHelperApplyChanges0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAccessHelperApplyChanges0100';
@@ -769,12 +769,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_MEDIA_TYPE_NATIVE_0100
-     * @tc.name      : TestMediaAssetGetMediaType0100
-     * @tc.desc      : Get the mediaType of the media asset when mediaAsset is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetGetMediaType0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_MEDIA_TYPE_NATIVE_0100
+     * @tc.desc   Get the mediaType of the media asset when mediaAsset is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetMediaType0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetMediaType0100';
@@ -791,12 +791,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_MEDIA_TYPE_NATIVE_0200
-     * @tc.name      : TestMediaAssetGetMediaType0200
-     * @tc.desc      : Get the mediaType of the media asset when mediaType is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetGetMediaType0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_MEDIA_TYPE_NATIVE_0200
+     * @tc.desc   Get the mediaType of the media asset when mediaType is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetMediaType0200', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetMediaType0200';
@@ -813,12 +813,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_MEDIA_SUB_TYPE_NATIVE_0100
-     * @tc.name      : TestMediaAssetGetMediaSubType0100
-     * @tc.desc      : Get the mediaSubType of the media asset when mediaAsset is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetGetMediaSubType0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_MEDIA_SUB_TYPE_NATIVE_0100
+     * @tc.desc   Get the mediaSubType of the media asset when mediaAsset is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetMediaSubType0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetMediaSubType0100';
@@ -835,12 +835,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_MEDIA_SUB_TYPE_NATIVE_0200
-     * @tc.name      : TestMediaAssetGetMediaSubType0200
-     * @tc.desc      : Get the mediaSubType of the media asset when mediaSubType is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetGetMediaSubType0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_MEDIA_SUB_TYPE_NATIVE_0200
+     * @tc.desc   Get the mediaSubType of the media asset when mediaSubType is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetMediaSubType0200', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetMediaSubType0200';
@@ -857,12 +857,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_DATE_ADDED_NATIVE_0100
-     * @tc.name      : TestMediaAssetGetDateAdded0100
-     * @tc.desc      : Get the dateAdded of the media asset when mediaAsset is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetGetDateAdded0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_DATE_ADDED_NATIVE_0100
+     * @tc.desc   Get the dateAdded of the media asset when mediaAsset is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetDateAdded0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetDateAdded0100';
@@ -879,12 +879,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_DATE_ADDED_NATIVE_0200
-     * @tc.name      : TestMediaAssetGetDateAdded0200
-     * @tc.desc      : Get the dateAdded of the media asset when dateAdded is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetGetDateAdded0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_DATE_ADDED_NATIVE_0200
+     * @tc.desc   Get the dateAdded of the media asset when dateAdded is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetDateAdded0200', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetDateAdded0200';
@@ -901,12 +901,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_DATE_MODIFIED_NATIVE_0100
-     * @tc.name      : TestMediaAssetGetDateModified0100
-     * @tc.desc      : Get the dateModified of the media asset when mediaAsset is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetGetDateModified0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_DATE_MODIFIED_NATIVE_0100
+     * @tc.desc   Get the dateModified of the media asset when mediaAsset is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetDateModified0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetDateModified0100';
@@ -923,12 +923,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_DATE_MODIFIED_NATIVE_0200
-     * @tc.name      : TestMediaAssetGetDateModified0200
-     * @tc.desc      : Get the dateModified of the media asset when dateModified is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetGetDateModified0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_DATE_MODIFIED_NATIVE_0200
+     * @tc.desc   Get the dateModified of the media asset when dateModified is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetDateModified0200', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetDateModified0200';
@@ -945,12 +945,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_DATE_TAKEN_NATIVE_0100
-     * @tc.name      : TestMediaAssetGetDateTaken0100
-     * @tc.desc      : Get the dateTaken of the media asset when mediaAsset is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetGetDateTaken0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_DATE_TAKEN_NATIVE_0100
+     * @tc.desc   Get the dateTaken of the media asset when mediaAsset is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetDateTaken0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetDateTaken0100';
@@ -967,12 +967,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_DATE_TAKEN_NATIVE_0200
-     * @tc.name      : TestMediaAssetGetDateTaken0200
-     * @tc.desc      : Get the dateTaken of the media asset when dateTaken is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetGetDateTaken0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_DATE_TAKEN_NATIVE_0200
+     * @tc.desc   Get the dateTaken of the media asset when dateTaken is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetDateTaken0200', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetDateTaken0200';
@@ -989,12 +989,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_DATE_ADDED_MS_NATIVE_0100
-     * @tc.name      : TestMediaAssetGetDateAddedMs0100
-     * @tc.desc      : Get the dateAddedMs of the media asset when mediaAsset is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetGetDateAddedMs0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_DATE_ADDED_MS_NATIVE_0100
+     * @tc.desc   Get the dateAddedMs of the media asset when mediaAsset is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetDateAddedMs0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetDateAddedMs0100';
@@ -1011,12 +1011,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_DATE_ADDED_MS_NATIVE_0200
-     * @tc.name      : TestMediaAssetGetDateAddedMs0200
-     * @tc.desc      : Get the dateAddedMs of the media asset when dateAddedMs is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetGetDateAddedMs0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_DATE_ADDED_MS_NATIVE_0200
+     * @tc.desc   Get the dateAddedMs of the media asset when dateAddedMs is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetDateAddedMs0200', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetDateAddedMs0200';
@@ -1033,12 +1033,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_DURATION_NATIVE_0100
-     * @tc.name      : TestMediaAssetGetDuration0100
-     * @tc.desc      : Get the duration of the media asset when mediaAsset is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetGetDuration0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_DURATION_NATIVE_0100
+     * @tc.desc   Get the duration of the media asset when mediaAsset is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetDuration0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetDuration0100';
@@ -1055,12 +1055,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_DURATION_NATIVE_0200
-     * @tc.name      : TestMediaAssetGetDuration0200
-     * @tc.desc      : Get the duration of the media asset when duration is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetGetDuration0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_DURATION_NATIVE_0200
+     * @tc.desc   Get the duration of the media asset when duration is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetDuration0200', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetDuration0200';
@@ -1077,12 +1077,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_IS_FAVORITE_NATIVE_0100
-     * @tc.name      : TestMediaAssetIsFavorite0100
-     * @tc.desc      : Get the favorite of the media asset when mediaAsset is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetIsFavorite0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_IS_FAVORITE_NATIVE_0100
+     * @tc.desc   Get the favorite of the media asset when mediaAsset is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetIsFavorite0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetIsFavorite0100';
@@ -1099,12 +1099,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_IS_FAVORITE_NATIVE_0200
-     * @tc.name      : TestMediaAssetIsFavorite0200
-     * @tc.desc      : Get the favorite of the media asset when favorite is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetIsFavorite0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_IS_FAVORITE_NATIVE_0200
+     * @tc.desc   Get the favorite of the media asset when favorite is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetIsFavorite0200', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetIsFavorite0200';
@@ -1121,12 +1121,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_TITLE_NATIVE_0100
-     * @tc.name      : TestMediaAssetGetTitle0100
-     * @tc.desc      : Get the title of the media asset when mediaAsset is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetGetTitle0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_TITLE_NATIVE_0100
+     * @tc.desc   Get the title of the media asset when mediaAsset is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetTitle0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetTitle0100';
@@ -1143,12 +1143,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_TITLE_NATIVE_0200
-     * @tc.name      : TestMediaAssetGetTitle0200
-     * @tc.desc      : Get the title of the media asset when title is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMediaAssetGetTitle0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_MEDIA_ASSET_GET_TITLE_NATIVE_0200
+     * @tc.desc   Get the title of the media asset when title is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMediaAssetGetTitle0200', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMediaAssetGetTitle0200';
@@ -1165,12 +1165,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_ADD_RESOURCE_WITH_URI_NATIVE_0100
-     * @tc.name      : TestChangeRequestAddResourceWithUri0100
-     * @tc.desc      : Add resource by fileUri when changeRequest is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestChangeRequestAddResourceWithUri0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_ADD_RESOURCE_WITH_URI_NATIVE_0100
+     * @tc.desc   Add resource by fileUri when changeRequest is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestChangeRequestAddResourceWithUri0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestChangeRequestAddResourceWithUri0100';
@@ -1187,12 +1187,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_ADD_RESOURCE_WITH_URI_NATIVE_0200
-     * @tc.name      : TestChangeRequestAddResourceWithUri0200
-     * @tc.desc      : Add resource by fileUri when resourceType is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestChangeRequestAddResourceWithUri0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_ADD_RESOURCE_WITH_URI_NATIVE_0200
+     * @tc.desc   Add resource by fileUri when resourceType is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestChangeRequestAddResourceWithUri0200', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestChangeRequestAddResourceWithUri0200';
@@ -1209,12 +1209,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_ADD_RESOURCE_WITH_URI_NATIVE_0300
-     * @tc.name      : TestChangeRequestAddResourceWithUri0300
-     * @tc.desc      : Add resource by fileUri when requestUri is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestChangeRequestAddResourceWithUri0300
+     * @tc.number SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_ADD_RESOURCE_WITH_URI_NATIVE_0300
+     * @tc.desc   Add resource by fileUri when requestUri is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestChangeRequestAddResourceWithUri0300', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestChangeRequestAddResourceWithUri0300';
@@ -1231,12 +1231,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_ADD_RESOURCE_WITH_URI_NATIVE_0400
-     * @tc.name      : TestChangeRequestAddResourceWithUri0400
-     * @tc.desc      : Add resource by fileUri when resourceType is image type
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestChangeRequestAddResourceWithUri0400
+     * @tc.number SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_ADD_RESOURCE_WITH_URI_NATIVE_0400
+     * @tc.desc   Add resource by fileUri when resourceType is image type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestChangeRequestAddResourceWithUri0400', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestChangeRequestAddResourceWithUri0400';
@@ -1253,12 +1253,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_ADD_RESOURCE_WITH_URI_NATIVE_0500
-     * @tc.name      : TestChangeRequestAddResourceWithUri0500
-     * @tc.desc      : Add resource by fileUri when resourceType is video type
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestChangeRequestAddResourceWithUri0500
+     * @tc.number SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_ADD_RESOURCE_WITH_URI_NATIVE_0500
+     * @tc.desc   Add resource by fileUri when resourceType is video type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestChangeRequestAddResourceWithUri0500', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestChangeRequestAddResourceWithUri0500';
@@ -1275,12 +1275,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_NATIVE_0100
-     * @tc.name      : TestChangeRequestGetWriteCacheHandler0100
-     * @tc.desc      : Get write cache handler of image when changeRequest is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestChangeRequestGetWriteCacheHandler0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_NATIVE_0100
+     * @tc.desc   Get write cache handler of image when changeRequest is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestChangeRequestGetWriteCacheHandler0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestChangeRequestGetWriteCacheHandler0100';
@@ -1297,12 +1297,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_NATIVE_0200
-     * @tc.name      : TestChangeRequestGetWriteCacheHandler0200
-     * @tc.desc      : Get write cache handler of image when fd is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestChangeRequestGetWriteCacheHandler0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_NATIVE_0200
+     * @tc.desc   Get write cache handler of image when fd is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestChangeRequestGetWriteCacheHandler0200', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestChangeRequestGetWriteCacheHandler0200';
@@ -1319,12 +1319,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MANAGER_REQUEST_MOVING_PHOTO_NATIVE_0100
-     * @tc.name      : TestManagerRequestMovingPhoto0100
-     * @tc.desc      : Request moving photo object when manager is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestManagerRequestMovingPhoto0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_MANAGER_REQUEST_MOVING_PHOTO_NATIVE_0100
+     * @tc.desc   Request moving photo object when manager is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestManagerRequestMovingPhoto0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestManagerRequestMovingPhoto0100';
@@ -1341,12 +1341,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MANAGER_REQUEST_MOVING_PHOTO_NATIVE_0200
-     * @tc.name      : TestManagerRequestMovingPhoto0200
-     * @tc.desc      : Request moving photo object when mediaAsset is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestManagerRequestMovingPhoto0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_MANAGER_REQUEST_MOVING_PHOTO_NATIVE_0200
+     * @tc.desc   Request moving photo object when mediaAsset is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestManagerRequestMovingPhoto0200', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestManagerRequestMovingPhoto0200';
@@ -1363,12 +1363,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MANAGER_REQUEST_MOVING_PHOTO_NATIVE_0300
-     * @tc.name      : TestManagerRequestMovingPhoto0300
-     * @tc.desc      : Request moving photo object when deliveryMode is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestManagerRequestMovingPhoto0002
+     * @tc.number SUB_PHOTOACCESS_HELPER_MANAGER_REQUEST_MOVING_PHOTO_NATIVE_0300
+     * @tc.desc   Request moving photo object when deliveryMode is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestManagerRequestMovingPhoto0002', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestManagerRequestMovingPhoto0002';
@@ -1385,12 +1385,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MANAGER_REQUEST_MOVING_PHOTO_NATIVE_0400
-     * @tc.name      : TestManagerRequestMovingPhoto0400
-     * @tc.desc      : Request moving photo object when requestId is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestManagerRequestMovingPhoto0400
+     * @tc.number SUB_PHOTOACCESS_HELPER_MANAGER_REQUEST_MOVING_PHOTO_NATIVE_0400
+     * @tc.desc   Request moving photo object when requestId is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestManagerRequestMovingPhoto0400', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestManagerRequestMovingPhoto0400';
@@ -1407,12 +1407,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MANAGER_REQUEST_MOVING_PHOTO_NATIVE_0500
-     * @tc.name      : TestManagerRequestMovingPhoto0500
-     * @tc.desc      : Request moving photo object when callback is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestManagerRequestMovingPhoto0500
+     * @tc.number SUB_PHOTOACCESS_HELPER_MANAGER_REQUEST_MOVING_PHOTO_NATIVE_0500
+     * @tc.desc   Request moving photo object when callback is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestManagerRequestMovingPhoto0500', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestManagerRequestMovingPhoto0500';
@@ -1429,12 +1429,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MANAGER_RELEASE_NATIVE_0100
-     * @tc.name      : TestManagerRelease0100
-     * @tc.desc      : Release media asset manager
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestManagerRelease0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_MANAGER_RELEASE_NATIVE_0100
+     * @tc.desc   Release media asset manager
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestManagerRelease0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestManagerRelease0100';
@@ -1451,12 +1451,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MANAGER_RELEASE_NATIVE_0200
-     * @tc.name      : TestManagerRelease0200
-     * @tc.desc      : Release media asset manager when manager is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestManagerRelease0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_MANAGER_RELEASE_NATIVE_0200
+     * @tc.desc   Release media asset manager when manager is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestManagerRelease0200', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestManagerRelease0200';
@@ -1473,12 +1473,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_GET_URI_NATIVE_0100
-     * @tc.name      : TestMovingPhotoGetUri0100
-     * @tc.desc      : Get uri of moving photo when movingPhoto is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMovingPhotoGetUri0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_GET_URI_NATIVE_0100
+     * @tc.desc   Get uri of moving photo when movingPhoto is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMovingPhotoGetUri0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMovingPhotoGetUri0100';
@@ -1495,12 +1495,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_GET_URI_NATIVE_0200
-     * @tc.name      : TestMovingPhotoGetUri0200
-     * @tc.desc      : Get uri of moving photo when uri is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMovingPhotoGetUri0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_GET_URI_NATIVE_0200
+     * @tc.desc   Get uri of moving photo when uri is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMovingPhotoGetUri0200', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMovingPhotoGetUri0200';
@@ -1517,12 +1517,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_CONTENT_WITH_URIS_NATIVE_0100
-     * @tc.name      : TestMovingPhotoRequestContentWithUris0100
-     * @tc.desc      : Request the image content and video content of the moving photo when movingPhoto is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMovingPhotoRequestContentWithUris0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_CONTENT_WITH_URIS_NATIVE_0100
+     * @tc.desc   Request the image content and video content of the moving photo when movingPhoto is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMovingPhotoRequestContentWithUris0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMovingPhotoRequestContentWithUris0100';
@@ -1539,12 +1539,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_CONTENT_WITH_URIS_NATIVE_0200
-     * @tc.name      : TestMovingPhotoRequestContentWithUris0200
-     * @tc.desc      : Request the image content and video content of the moving photo when imageUri is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMovingPhotoRequestContentWithUris0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_CONTENT_WITH_URIS_NATIVE_0200
+     * @tc.desc   Request the image content and video content of the moving photo when imageUri is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMovingPhotoRequestContentWithUris0200', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMovingPhotoRequestContentWithUris0200';
@@ -1561,12 +1561,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_CONTENT_WITH_URIS_NATIVE_0300
-     * @tc.name      : TestMovingPhotoRequestContentWithUris0300
-     * @tc.desc      : Request the image content and video content of the moving photo when videoUri is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMovingPhotoRequestContentWithUris0300
+     * @tc.number SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_CONTENT_WITH_URIS_NATIVE_0300
+     * @tc.desc   Request the image content and video content of the moving photo when videoUri is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMovingPhotoRequestContentWithUris0300', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMovingPhotoRequestContentWithUris0300';
@@ -1583,12 +1583,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_CONTENT_WITH_URI_NATIVE_0100
-     * @tc.name      : TestMovingPhotoRequestContentWithUri0100
-     * @tc.desc      : Request the image content or video content of the moving photo when movingPhoto is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMovingPhotoRequestContentWithUri0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_CONTENT_WITH_URI_NATIVE_0100
+     * @tc.desc   Request the image content or video content of the moving photo when movingPhoto is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMovingPhotoRequestContentWithUri0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMovingPhotoRequestContentWithUri0100';
@@ -1605,12 +1605,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_CONTENT_WITH_URI_NATIVE_0200
-     * @tc.name      : TestMovingPhotoRequestContentWithUri0200
-     * @tc.desc      : Request the image content or video content of the moving photo when resourceType is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMovingPhotoRequestContentWithUri0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_CONTENT_WITH_URI_NATIVE_0200
+     * @tc.desc   Request the image content or video content of the moving photo when resourceType is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMovingPhotoRequestContentWithUri0200', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMovingPhotoRequestContentWithUri0200';
@@ -1627,12 +1627,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_CONTENT_WITH_URI_NATIVE_0300
-     * @tc.name      : TestMovingPhotoRequestContentWithUri0300
-     * @tc.desc      : Request the image content or video content of the moving photo when imageUri is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMovingPhotoRequestContentWithUri0300
+     * @tc.number SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_CONTENT_WITH_URI_NATIVE_0300
+     * @tc.desc   Request the image content or video content of the moving photo when imageUri is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMovingPhotoRequestContentWithUri0300', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMovingPhotoRequestContentWithUri0300';
@@ -1649,12 +1649,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_CONTENT_WITH_URI_NATIVE_0400
-     * @tc.name      : TestMovingPhotoRequestContentWithUri0400
-     * @tc.desc      : Request the image content or video content of the moving photo when resourceType is image type
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMovingPhotoRequestContentWithUri0400
+     * @tc.number SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_CONTENT_WITH_URI_NATIVE_0400
+     * @tc.desc   Request the image content or video content of the moving photo when resourceType is image type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMovingPhotoRequestContentWithUri0400', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMovingPhotoRequestContentWithUri0400';
@@ -1671,12 +1671,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_CONTENT_WITH_URI_NATIVE_0500
-     * @tc.name      : TestMovingPhotoRequestContentWithUri0500
-     * @tc.desc      : Request the image content or video content of the moving photo when resourceType is video type
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMovingPhotoRequestContentWithUri0500
+     * @tc.number SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_CONTENT_WITH_URI_NATIVE_0500
+     * @tc.desc   Request the image content or video content of the moving photo when resourceType is video type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMovingPhotoRequestContentWithUri0500', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMovingPhotoRequestContentWithUri0500';
@@ -1693,12 +1693,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_CONTENT_WITH_BUFFER_NATIVE_0100
-     * @tc.name      : TestMovingPhotoRequestContentWithBuffer0100
-     * @tc.desc      : Request the moving photo content with buffer when movingPhoto is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMovingPhotoRequestContentWithBuffer0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_CONTENT_WITH_BUFFER_NATIVE_0100
+     * @tc.desc   Request the moving photo content with buffer when movingPhoto is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMovingPhotoRequestContentWithBuffer0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMovingPhotoRequestContentWithBuffer0100';
@@ -1715,12 +1715,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_CONTENT_WITH_BUFFER_NATIVE_0200
-     * @tc.name      : TestMovingPhotoRequestContentWithBuffer0200
-     * @tc.desc      : Request the moving photo content with buffer when resourceType is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMovingPhotoRequestContentWithBuffer0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_CONTENT_WITH_BUFFER_NATIVE_0200
+     * @tc.desc   Request the moving photo content with buffer when resourceType is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMovingPhotoRequestContentWithBuffer0200', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMovingPhotoRequestContentWithBuffer0200';
@@ -1737,12 +1737,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_CONTENT_WITH_BUFFER_NATIVE_0300
-     * @tc.name      : TestMovingPhotoRequestContentWithBuffer0300
-     * @tc.desc      : Request the moving photo content with buffer when buffer is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMovingPhotoRequestContentWithBuffer0300
+     * @tc.number SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_CONTENT_WITH_BUFFER_NATIVE_0300
+     * @tc.desc   Request the moving photo content with buffer when buffer is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMovingPhotoRequestContentWithBuffer0300', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMovingPhotoRequestContentWithBuffer0300';
@@ -1759,12 +1759,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_CONTENT_WITH_BUFFER_NATIVE_0400
-     * @tc.name      : TestMovingPhotoRequestContentWithBuffer0400
-     * @tc.desc      : Request the moving photo content with buffer when size is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMovingPhotoRequestContentWithBuffer0400
+     * @tc.number SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_CONTENT_WITH_BUFFER_NATIVE_0400
+     * @tc.desc   Request the moving photo content with buffer when size is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMovingPhotoRequestContentWithBuffer0400', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMovingPhotoRequestContentWithBuffer0400';
@@ -1781,12 +1781,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_CONTENT_WITH_BUFFER_NATIVE_0500
-     * @tc.name      : TestMovingPhotoRequestContentWithBuffer0500
-     * @tc.desc      : Request the moving photo content with buffer when resourceType is image type
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMovingPhotoRequestContentWithBuffer0500
+     * @tc.number SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_CONTENT_WITH_BUFFER_NATIVE_0500
+     * @tc.desc   Request the moving photo content with buffer when resourceType is image type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMovingPhotoRequestContentWithBuffer0500', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMovingPhotoRequestContentWithBuffer0500';
@@ -1803,12 +1803,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_CONTENT_WITH_BUFFER_NATIVE_0600
-     * @tc.name      : TestMovingPhotoRequestContentWithBuffer0005
-     * @tc.desc      : Request the moving photo content with buffer when resourceType is video type
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMovingPhotoRequestContentWithBuffer0005
+     * @tc.number SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_CONTENT_WITH_BUFFER_NATIVE_0600
+     * @tc.desc   Request the moving photo content with buffer when resourceType is video type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMovingPhotoRequestContentWithBuffer0005', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMovingPhotoRequestContentWithBuffer0005';
@@ -1825,12 +1825,12 @@ export default function PhotoAccessHelperNativeTest() {
     })
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_RELEASE_NATIVE_0100
-     * @tc.name      : TestMovingPhotoRelease0100
-     * @tc.desc      : Release moving photo when movingPhoto is invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   TestMovingPhotoRelease0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_MOVING_PHOTO_REQUEST_RELEASE_NATIVE_0100
+     * @tc.desc   Release moving photo when movingPhoto is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TestMovingPhotoRelease0100', Level.LEVEL2, (done: Function) => {
       let testNum = 'TestMovingPhotoRelease0100';

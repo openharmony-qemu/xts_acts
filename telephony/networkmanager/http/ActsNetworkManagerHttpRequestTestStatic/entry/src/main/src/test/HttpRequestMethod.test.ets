@@ -44,13 +44,13 @@ export default function httpRequestMethodTest() {
 
     describe("HttpRequestMethodTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_GET_0100
-         * @tc.name  :  testHttpRequestMethodGET_static_0100
-         * @tc.desc  :  test RequestMethod.GET with http.HttpProtocol.HTTP1_1
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodGET_static_0100
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_GET_0100
+         * @tc.desc   test RequestMethod.GET with http.HttpProtocol.HTTP1_1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodGET_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodGET_static_0100";
@@ -90,13 +90,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_GET_0200
-         * @tc.name  :  testHttpRequestMethodGET_static_0200
-         * @tc.desc  :  test RequestMethod.GET with http.HttpProtocol.HTTP1_1
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodGET_static_0200
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_GET_0200
+         * @tc.desc   test RequestMethod.GET with http.HttpProtocol.HTTP1_1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodGET_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodGET_static_0200";
@@ -135,13 +135,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_GET_0300
-         * @tc.name  :  testHttpRequestMethodGET_static_0300
-         * @tc.desc  :  test RequestMethod.GET with http.HttpProtocol.HTTP2
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodGET_static_0300
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_GET_0300
+         * @tc.desc   test RequestMethod.GET with http.HttpProtocol.HTTP2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodGET_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodGET_static_0300";
@@ -181,13 +181,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_GET_0400
-         * @tc.name  :  testHttpRequestMethodGET_static_0400
-         * @tc.desc  :  test RequestMethod.GET with http.HttpProtocol.HTTP2
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodGET_static_0400
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_GET_0400
+         * @tc.desc   test RequestMethod.GET with http.HttpProtocol.HTTP2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodGET_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodGET_static_0400";
@@ -226,13 +226,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_GET_0500
-         * @tc.name  :  testHttpRequestMethodGET_static_0500
-         * @tc.desc  :  test RequestMethod.GET with http.HttpProtocol.HTTP3
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodGET_static_0500
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_GET_0500
+         * @tc.desc   test RequestMethod.GET with http.HttpProtocol.HTTP3
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodGET_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodGET_static_0500";
@@ -272,13 +272,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_GET_0600
-         * @tc.name  :  testHttpRequestMethodGET_static_0600
-         * @tc.desc  :  test RequestMethod.GET with http.HttpProtocol.HTTP3
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodGET_static_0600
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_GET_0600
+         * @tc.desc   test RequestMethod.GET with http.HttpProtocol.HTTP3
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodGET_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodGET_static_0600";
@@ -317,13 +317,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_HEAD_0700
-         * @tc.name  :  testHttpRequestMethodHEAD_static_0700
-         * @tc.desc  :  test RequestMethod.HEAD with http.HttpProtocol.HTTP1_1
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodHEAD_static_0700
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_HEAD_0700
+         * @tc.desc   test RequestMethod.HEAD with http.HttpProtocol.HTTP1_1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodHEAD_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodHEAD_static_0700";
@@ -363,13 +363,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_HEAD_0800
-         * @tc.name  :  testHttpRequestMethodHEAD_static_0800
-         * @tc.desc  :  test RequestMethod.HEAD with http.HttpProtocol.HTTP1_1
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodHEAD_static_0800
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_HEAD_0800
+         * @tc.desc   test RequestMethod.HEAD with http.HttpProtocol.HTTP1_1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodHEAD_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodHEAD_static_0800";
@@ -408,13 +408,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_HEAD_0900
-         * @tc.name  :  testHttpRequestMethodHEAD_static_0900
-         * @tc.desc  :  test RequestMethod.HEAD with http.HttpProtocol.HTTP2
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodHEAD_static_0900
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_HEAD_0900
+         * @tc.desc   test RequestMethod.HEAD with http.HttpProtocol.HTTP2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodHEAD_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodHEAD_static_0900";
@@ -454,13 +454,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_HEAD_1000
-         * @tc.name  :  testHttpRequestMethodHEAD_static_1000
-         * @tc.desc  :  test RequestMethod.HEAD with http.HttpProtocol.HTTP2
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodHEAD_static_1000
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_HEAD_1000
+         * @tc.desc   test RequestMethod.HEAD with http.HttpProtocol.HTTP2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodHEAD_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodHEAD_static_1000";
@@ -499,13 +499,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_HEAD_1100
-         * @tc.name  :  testHttpRequestMethodHEAD_static_1100
-         * @tc.desc  :  test RequestMethod.HEAD with http.HttpProtocol.HTTP3
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodHEAD_static_1100
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_HEAD_1100
+         * @tc.desc   test RequestMethod.HEAD with http.HttpProtocol.HTTP3
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodHEAD_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodHEAD_static_1100";
@@ -545,13 +545,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_HEAD_1200
-         * @tc.name  :  testHttpRequestMethodHEAD_static_1200
-         * @tc.desc  :  test RequestMethod.HEAD with http.HttpProtocol.HTTP3
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodHEAD_static_1200
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_HEAD_1200
+         * @tc.desc   test RequestMethod.HEAD with http.HttpProtocol.HTTP3
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodHEAD_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodHEAD_static_1200";
@@ -590,13 +590,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_OPTIONS_1300
-         * @tc.name  :  testHttpRequestMethodOPTIONS_static_1300
-         * @tc.desc  :  test RequestMethod.OPTIONS with http.HttpProtocol.HTTP1_1
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodOPTIONS_static_1300
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_OPTIONS_1300
+         * @tc.desc   test RequestMethod.OPTIONS with http.HttpProtocol.HTTP1_1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodOPTIONS_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodOPTIONS_static_1300";
@@ -636,13 +636,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_OPTIONS_1400
-         * @tc.name  :  testHttpRequestMethodOPTIONS_static_1400
-         * @tc.desc  :  test RequestMethod.OPTIONS with http.HttpProtocol.HTTP1_1
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodOPTIONS_static_1400
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_OPTIONS_1400
+         * @tc.desc   test RequestMethod.OPTIONS with http.HttpProtocol.HTTP1_1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodOPTIONS_static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodOPTIONS_static_1400";
@@ -681,13 +681,13 @@ export default function httpRequestMethodTest() {
 
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_OPTIONS_1500
-         * @tc.name  :  testHttpRequestMethodOPTIONS_static_1500
-         * @tc.desc  :  test RequestMethod.OPTIONS with http.HttpProtocol.HTTP2
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodOPTIONS_static_1500
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_OPTIONS_1500
+         * @tc.desc   test RequestMethod.OPTIONS with http.HttpProtocol.HTTP2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodOPTIONS_static_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodOPTIONS_static_1500";
@@ -727,13 +727,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_OPTIONS_1600
-         * @tc.name  :  testHttpRequestMethodOPTIONS_static_1600
-         * @tc.desc  :  test RequestMethod.OPTIONS with http.HttpProtocol.HTTP2
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodOPTIONS_static_1600
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_OPTIONS_1600
+         * @tc.desc   test RequestMethod.OPTIONS with http.HttpProtocol.HTTP2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodOPTIONS_static_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodOPTIONS_static_1600";
@@ -772,13 +772,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_OPTIONS_1700
-         * @tc.name  :  testHttpRequestMethodOPTIONS_static_1700
-         * @tc.desc  :  test RequestMethod.OPTIONS with http.HttpProtocol.HTTP3
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodOPTIONS_static_1700
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_OPTIONS_1700
+         * @tc.desc   test RequestMethod.OPTIONS with http.HttpProtocol.HTTP3
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodOPTIONS_static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodOPTIONS_static_1700";
@@ -819,13 +819,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_OPTIONS_1800
-         * @tc.name  :  testHttpRequestMethodOPTIONS_static_1800
-         * @tc.desc  :  test RequestMethod.OPTIONS with http.HttpProtocol.HTTP3
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodOPTIONS_static_1800
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_OPTIONS_1800
+         * @tc.desc   test RequestMethod.OPTIONS with http.HttpProtocol.HTTP3
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodOPTIONS_static_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodOPTIONS_static_1800";
@@ -864,14 +864,14 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-          * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_POST_1900
-          * @tc.name  :  testHttpRequestMethodPOST_static_1900
-          * @tc.desc  :  test RequestMethod.POST with http.HttpProtocol.HTTP1_1
-          * @tc.size  :  smallTest
-          * @tc.type  :  Function
-          * @tc.level :  level 2
-          */
+        /**
+         * @tc.name   testHttpRequestMethodPOST_static_1900
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_POST_1900
+         * @tc.desc   test RequestMethod.POST with http.HttpProtocol.HTTP1_1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testHttpRequestMethodPOST_static_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodPOST_static_1900";
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -910,13 +910,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_POST_2000
-         * @tc.name  :  testHttpRequestMethodPOST_static_2000
-         * @tc.desc  :  test RequestMethod.POST with http.HttpProtocol.HTTP1_1
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodPOST_static_2000
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_POST_2000
+         * @tc.desc   test RequestMethod.POST with http.HttpProtocol.HTTP1_1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodPOST_static_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodPOST_static_2000";
@@ -954,13 +954,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_POST_2100
-         * @tc.name  :  testHttpRequestMethodPOST_static_2100
-         * @tc.desc  :  test RequestMethod.POST with http.HttpProtocol.HTTP2
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodPOST_static_2100
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_POST_2100
+         * @tc.desc   test RequestMethod.POST with http.HttpProtocol.HTTP2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodPOST_static_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodPOST_static_2100";
@@ -1000,13 +1000,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_POST_2200
-         * @tc.name  :  testHttpRequestMethodPOST_static_2200
-         * @tc.desc  :  test RequestMethod.POST with http.HttpProtocol.HTTP2
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodPOST_static_2200
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_POST_2200
+         * @tc.desc   test RequestMethod.POST with http.HttpProtocol.HTTP2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodPOST_static_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodPOST_static_2200";
@@ -1045,13 +1045,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_POST_2300
-         * @tc.name  :  testHttpRequestMethodPOST_static_2300
-         * @tc.desc  :  test RequestMethod.POST with http.HttpProtocol.HTTP3
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodPOST_static_2300
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_POST_2300
+         * @tc.desc   test RequestMethod.POST with http.HttpProtocol.HTTP3
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodPOST_static_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodPOST_static_2300";
@@ -1091,13 +1091,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_POST_2400
-         * @tc.name  :  testHttpRequestMethodPOST_static_2400
-         * @tc.desc  :  test RequestMethod.POST with http.HttpProtocol.HTTP3
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodPOST_static_2400
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_POST_2400
+         * @tc.desc   test RequestMethod.POST with http.HttpProtocol.HTTP3
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodPOST_static_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodPOST_static_2400";
@@ -1136,13 +1136,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_PUT_2500
-         * @tc.name  :  testHttpRequestMethodPUT_static_2500
-         * @tc.desc  :  test RequestMethod.PUT with http.HttpProtocol.HTTP1_1
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodPUT_static_2500
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_PUT_2500
+         * @tc.desc   test RequestMethod.PUT with http.HttpProtocol.HTTP1_1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodPUT_static_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodPUT_static_2500";
@@ -1182,13 +1182,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_PUT_2600
-         * @tc.name  :  testHttpRequestMethodPUT_static_2600
-         * @tc.desc  :  test RequestMethod.PUT with http.HttpProtocol.HTTP1_1
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodPUT_static_2600
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_PUT_2600
+         * @tc.desc   test RequestMethod.PUT with http.HttpProtocol.HTTP1_1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodPUT_static_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodPUT_static_2600";
@@ -1226,13 +1226,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_PUT_2700
-         * @tc.name  :  testHttpRequestMethodPUT_static_2700
-         * @tc.desc  :  test RequestMethod.PUT with http.HttpProtocol.HTTP2
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodPUT_static_2700
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_PUT_2700
+         * @tc.desc   test RequestMethod.PUT with http.HttpProtocol.HTTP2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodPUT_static_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodPUT_static_2700";
@@ -1272,13 +1272,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_PUT_2800
-         * @tc.name  :  testHttpRequestMethodPUT_static_2800
-         * @tc.desc  :  test RequestMethod.PUT with http.HttpProtocol.HTTP2
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodPUT_static_2800
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_PUT_2800
+         * @tc.desc   test RequestMethod.PUT with http.HttpProtocol.HTTP2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodPUT_static_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodPUT_static_2800";
@@ -1316,13 +1316,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_PUT_2900
-         * @tc.name  :  testHttpRequestMethodPUT_static_2900
-         * @tc.desc  :  test RequestMethod.PUT with http.HttpProtocol.HTTP3
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodPUT_static_2900
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_PUT_2900
+         * @tc.desc   test RequestMethod.PUT with http.HttpProtocol.HTTP3
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodPUT_static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodPUT_static_2900";
@@ -1362,13 +1362,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_PUT_3000
-         * @tc.name  :  testHttpRequestMethodPUT_static_3000
-         * @tc.desc  :  test RequestMethod.PUT with http.HttpProtocol.HTTP3
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodPUT_static_3000
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_PUT_3000
+         * @tc.desc   test RequestMethod.PUT with http.HttpProtocol.HTTP3
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodPUT_static_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodPUT_static_3000";
@@ -1407,13 +1407,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_DELETE_3100
-         * @tc.name  :  testHttpRequestMethodDELETE_static_3100
-         * @tc.desc  :  test RequestMethod.DELETE with http.HttpProtocol.HTTP1_1
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodDELETE_static_3100
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_DELETE_3100
+         * @tc.desc   test RequestMethod.DELETE with http.HttpProtocol.HTTP1_1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodDELETE_static_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodDELETE_static_3100";
@@ -1453,13 +1453,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_DELETE_3200
-         * @tc.name  :  testHttpRequestMethodDELETE_static_3200
-         * @tc.desc  :  test RequestMethod.DELETE with http.HttpProtocol.HTTP1_1
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodDELETE_static_3200
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_DELETE_3200
+         * @tc.desc   test RequestMethod.DELETE with http.HttpProtocol.HTTP1_1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodDELETE_static_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodDELETE_static_3200";
@@ -1498,13 +1498,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_DELETE_3300
-         * @tc.name  :  testHttpRequestMethodDELETE_static_3300
-         * @tc.desc  :  test RequestMethod.DELETE with http.HttpProtocol.HTTP2
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodDELETE_static_3300
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_DELETE_3300
+         * @tc.desc   test RequestMethod.DELETE with http.HttpProtocol.HTTP2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodDELETE_static_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodDELETE_static_3300";
@@ -1544,13 +1544,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_DELETE_3400
-         * @tc.name  :  testHttpRequestMethodDELETE_static_3400
-         * @tc.desc  :  test RequestMethod.DELETE with http.HttpProtocol.HTTP2
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodDELETE_static_3400
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_DELETE_3400
+         * @tc.desc   test RequestMethod.DELETE with http.HttpProtocol.HTTP2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodDELETE_static_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodDELETE_static_3400";
@@ -1589,13 +1589,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_DELETE_3500
-         * @tc.name  :  testHttpRequestMethodDELETE_static_3500
-         * @tc.desc  :  test RequestMethod.DELETE with http.HttpProtocol.HTTP3
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodDELETE_static_3500
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_DELETE_3500
+         * @tc.desc   test RequestMethod.DELETE with http.HttpProtocol.HTTP3
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodDELETE_static_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodDELETE_static_3500";
@@ -1635,13 +1635,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_DELETE_3600
-         * @tc.name  :  testHttpRequestMethodDELETE_static_3600
-         * @tc.desc  :  test RequestMethod.DELETE with http.HttpProtocol.HTTP3
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodDELETE_static_3600
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_DELETE_3600
+         * @tc.desc   test RequestMethod.DELETE with http.HttpProtocol.HTTP3
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodDELETE_static_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodDELETE_static_3600";
@@ -1680,14 +1680,14 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-           * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_TRACE_3700
-           * @tc.name  :  testHttpRequestMethodTRACE_static_3700
-           * @tc.desc  :  test RequestMethod.TRACE with http.HttpProtocol.HTTP1_1
-           * @tc.size  :  smallTest
-           * @tc.type  :  Function
-           * @tc.level :  level 2
-           */
+        /**
+         * @tc.name   testHttpRequestMethodTRACE_static_3700
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_TRACE_3700
+         * @tc.desc   test RequestMethod.TRACE with http.HttpProtocol.HTTP1_1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testHttpRequestMethodTRACE_static_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodTRACE_static_3700";
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -1726,13 +1726,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_TRACE_3800
-         * @tc.name  :  testHttpRequestMethodTRACE_static_3800
-         * @tc.desc  :  test RequestMethod.TRACE with http.HttpProtocol.HTTP1_1
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodTRACE_static_3800
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_TRACE_3800
+         * @tc.desc   test RequestMethod.TRACE with http.HttpProtocol.HTTP1_1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodTRACE_static_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodTRACE_static_3800";
@@ -1770,13 +1770,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         })
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_TRACE_3900
-         * @tc.name  :  testHttpRequestMethodTRACE_static_3900
-         * @tc.desc  :  test RequestMethod.TRACE with http.HttpProtocol.HTTP2
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodTRACE_static_3900
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_TRACE_3900
+         * @tc.desc   test RequestMethod.TRACE with http.HttpProtocol.HTTP2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodTRACE_static_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodTRACE_static_3900";
@@ -1816,13 +1816,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_TRACE_4000
-         * @tc.name  :  testHttpRequestMethodTRACE_static_4000
-         * @tc.desc  :  test RequestMethod.TRACE with http.HttpProtocol.HTTP2
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodTRACE_static_4000
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_TRACE_4000
+         * @tc.desc   test RequestMethod.TRACE with http.HttpProtocol.HTTP2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodTRACE_static_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodTRACE_static_4000";
@@ -1860,13 +1860,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_TRACE_4100
-         * @tc.name  :  testHttpRequestMethodTRACE_static_4100
-         * @tc.desc  :  test RequestMethod.TRACE with http.HttpProtocol.HTTP3
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodTRACE_static_4100
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_TRACE_4100
+         * @tc.desc   test RequestMethod.TRACE with http.HttpProtocol.HTTP3
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodTRACE_static_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodTRACE_static_4100";
@@ -1906,13 +1906,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_TRACE_4200
-         * @tc.name  :  testHttpRequestMethodTRACE_static_4200
-         * @tc.desc  :  test RequestMethod.TRACE with http.HttpProtocol.HTTP3
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodTRACE_static_4200
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_TRACE_4200
+         * @tc.desc   test RequestMethod.TRACE with http.HttpProtocol.HTTP3
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodTRACE_static_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodTRACE_static_4200";
@@ -1951,14 +1951,14 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-            * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_CONNECT_4300
-            * @tc.name  :  testHttpRequestMethodCONNECT_static_4300
-            * @tc.desc  :  test RequestMethod.CONNECT with http.HttpProtocol.HTTP1_1
-            * @tc.size  :  smallTest
-            * @tc.type  :  Function
-            * @tc.level :  level 2
-            */
+        /**
+         * @tc.name   testHttpRequestMethodCONNECT_static_4300
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_CONNECT_4300
+         * @tc.desc   test RequestMethod.CONNECT with http.HttpProtocol.HTTP1_1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testHttpRequestMethodCONNECT_static_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodCONNECT_static_4300";
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -1997,13 +1997,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_CONNECT_4400
-         * @tc.name  :  testHttpRequestMethodCONNECT_static_4400
-         * @tc.desc  :  test RequestMethod.CONNECT with http.HttpProtocol.HTTP1_1
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodCONNECT_static_4400
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_CONNECT_4400
+         * @tc.desc   test RequestMethod.CONNECT with http.HttpProtocol.HTTP1_1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodCONNECT_static_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodCONNECT_static_4400";
@@ -2042,13 +2042,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_CONNECT_4500
-         * @tc.name  :  testHttpRequestMethodCONNECT_static_4500
-         * @tc.desc  :  test RequestMethod.CONNECT with http.HttpProtocol.HTTP2
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodCONNECT_static_4500
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_CONNECT_4500
+         * @tc.desc   test RequestMethod.CONNECT with http.HttpProtocol.HTTP2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodCONNECT_static_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodCONNECT_static_4500";
@@ -2088,13 +2088,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_CONNECT_4600
-         * @tc.name  :  testHttpRequestMethodCONNECT_static_4600
-         * @tc.desc  :  test RequestMethod.CONNECT with http.HttpProtocol.HTTP2
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodCONNECT_static_4600
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_CONNECT_4600
+         * @tc.desc   test RequestMethod.CONNECT with http.HttpProtocol.HTTP2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodCONNECT_static_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodCONNECT_static_4600";
@@ -2133,13 +2133,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_CONNECT_4700
-         * @tc.name  :  testHttpRequestMethodCONNECT_static_4700
-         * @tc.desc  :  test RequestMethod.CONNECT with http.HttpProtocol.HTTP3
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodCONNECT_static_4700
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_CONNECT_4700
+         * @tc.desc   test RequestMethod.CONNECT with http.HttpProtocol.HTTP3
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodCONNECT_static_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodCONNECT_static_4700";
@@ -2179,13 +2179,13 @@ export default function httpRequestMethodTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_CONNECT_4800
-         * @tc.name  :  testHttpRequestMethodCONNECT_static_4800
-         * @tc.desc  :  test RequestMethod.CONNECT with http.HttpProtocol.HTTP3
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 2
+        /**
+         * @tc.name   testHttpRequestMethodCONNECT_static_4800
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_CONNECT_4800
+         * @tc.desc   test RequestMethod.CONNECT with http.HttpProtocol.HTTP3
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHttpRequestMethodCONNECT_static_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpRequestMethodCONNECT_static_4800";

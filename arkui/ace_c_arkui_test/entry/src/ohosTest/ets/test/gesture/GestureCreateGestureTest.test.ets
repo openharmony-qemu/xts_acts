@@ -73,13 +73,13 @@ export default function gestureCreateGestureTest() {
     let PAGE_TAG1 = 'GestureCreateGestureTest';
     let PAGE_TAG2 = 'GestureCreateGesture1Test';
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURE_CREATE_GESTURE_0100
-     * @tc.name       : testGestureCreateGesture001
-     * @tc.desc       : testing tapGesture
-     * @tc.size       : MediumTest
-     * @tc.type       : Render
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGestureCreateGesture001
+     * @tc.number SUB_ARKUI_CAPI_GESTURE_CREATE_GESTURE_0100
+     * @tc.desc   testing tapGesture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureCreateGesture001', Level.LEVEL1, async (done: Function) => {
       await Utils.replacePage(`gesture/${PAGE_TAG1}`);
@@ -95,13 +95,13 @@ export default function gestureCreateGestureTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURE_CREATE_GESTURE_0200
-     * @tc.name       : testGestureCreateGesture002
-     * @tc.desc       : testing longPressGesture
-     * @tc.size       : MediumTest
-     * @tc.type       : Render
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGestureCreateGesture002
+     * @tc.number SUB_ARKUI_CAPI_GESTURE_CREATE_GESTURE_0200
+     * @tc.desc   testing longPressGesture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureCreateGesture002', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`gesture/${PAGE_TAG1}`);
@@ -117,13 +117,13 @@ export default function gestureCreateGestureTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURE_CREATE_GESTURE_0300
-     * @tc.name       : testGestureCreateGesture003
-     * @tc.desc       : testing gestureGroup
-     * @tc.size       : MediumTest
-     * @tc.type       : Render
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGestureCreateGesture003
+     * @tc.number SUB_ARKUI_CAPI_GESTURE_CREATE_GESTURE_0300
+     * @tc.desc   testing gestureGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureCreateGesture003', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`gesture/${PAGE_TAG1}`);
@@ -131,13 +131,13 @@ export default function gestureCreateGestureTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURE_CREATE_GESTURE_0400
-     * @tc.name       : testGestureCreateGesture004
-     * @tc.desc       : testing panGesture
-     * @tc.size       : MediumTest
-     * @tc.type       : Render
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGestureCreateGesture004
+     * @tc.number SUB_ARKUI_CAPI_GESTURE_CREATE_GESTURE_0400
+     * @tc.desc   testing panGesture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureCreateGesture004', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`gesture/${PAGE_TAG2}`);
@@ -165,13 +165,13 @@ export default function gestureCreateGestureTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURE_CREATE_GESTURE_0500
-     * @tc.name       : testGestureCreateGesture005
-     * @tc.desc       : testing pinchGesture
-     * @tc.size       : MediumTest
-     * @tc.type       : Render
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGestureCreateGesture005
+     * @tc.number SUB_ARKUI_CAPI_GESTURE_CREATE_GESTURE_0500
+     * @tc.desc   testing pinchGesture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureCreateGesture005', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'GestureCreateGesture2Test';
@@ -186,13 +186,13 @@ export default function gestureCreateGestureTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURE_CREATE_GESTURE_0600
-     * @tc.name       : testGestureCreateGesture006
-     * @tc.desc       : testing rotationGesture
-     * @tc.size       : MediumTest
-     * @tc.type       : Render
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGestureCreateGesture006
+     * @tc.number SUB_ARKUI_CAPI_GESTURE_CREATE_GESTURE_0600
+     * @tc.desc   testing rotationGesture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureCreateGesture006', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'GestureCreateGesture2Test';
@@ -209,13 +209,13 @@ export default function gestureCreateGestureTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURE_CREATE_GESTURE_0700
-     * @tc.name       : testGestureCreateGesture007
-     * @tc.desc       : testing swipeGesture
-     * @tc.size       : MediumTest
-     * @tc.type       : Render
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGestureCreateGesture007
+     * @tc.number SUB_ARKUI_CAPI_GESTURE_CREATE_GESTURE_0700
+     * @tc.desc   testing swipeGesture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureCreateGesture007', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'GestureCreateGesture3Test';
@@ -246,13 +246,13 @@ export default function gestureCreateGestureTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURE_CREATE_GESTURE_0800
-     * @tc.name       : testGestureCreateGesture008
-     * @tc.desc       : testing specialGesture
-     * @tc.size       : MediumTest
-     * @tc.type       : Render
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGestureCreateGesture008
+     * @tc.number SUB_ARKUI_CAPI_GESTURE_CREATE_GESTURE_0800
+     * @tc.desc   testing specialGesture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureCreateGesture008', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'GestureCreateGesture4Test';

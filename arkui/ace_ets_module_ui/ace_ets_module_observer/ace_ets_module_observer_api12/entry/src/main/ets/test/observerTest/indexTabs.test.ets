@@ -43,12 +43,12 @@ export default function indexTabs() {
     });
 
     /**
-     * @tc.number    indexTabs_001
-     * @tc.name      indexTabs_0100
-     * @tc.desc      Listen for switchover events on the TabContent page.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   indexTabs_0100
+     * @tc.number indexTabs_001
+     * @tc.desc   Listen for switchover events on the TabContent page.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('indexTabs_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[indexTabs_0100] START');

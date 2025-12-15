@@ -54,12 +54,14 @@ export default function ProvideHight() {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0350
-    * @tc.name  : ProvideHight_0100
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   ProvideHight_0100
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0350
+     * @tc.desc   To test that the Provide decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProvideHight_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ProvideHight_0100 START');
       let driver = await Driver.create()
@@ -75,12 +77,14 @@ export default function ProvideHight() {
       console.info('[ProvideHight_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0360
-    * @tc.name  : ProvideHight_0200
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   ProvideHight_0200
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0360
+     * @tc.desc   To test that the Provide decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProvideHight_0200', Level.LEVEL0, async (done: Function) => {
       console.info('ProvideHight_0100 START');
       let driver = await Driver.create()
@@ -96,12 +100,14 @@ export default function ProvideHight() {
       console.info('[ProvideHight_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0370
-    * @tc.name  : ProvideHight_0300
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   ProvideHight_0300
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0370
+     * @tc.desc   To test that the Provide decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProvideHight_0300', Level.LEVEL0, async (done: Function) => {
       console.info('ProvideHight_0100 START');
       let driver = await Driver.create()

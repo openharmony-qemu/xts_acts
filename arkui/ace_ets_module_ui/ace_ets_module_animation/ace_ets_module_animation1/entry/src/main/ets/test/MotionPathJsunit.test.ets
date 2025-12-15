@@ -51,12 +51,12 @@ export default function MotionPathJsunit() {
     });
 
     /**
+     * @tc.name   motionPathTest_0100
      * @tc.number motionPathTest_0100
-     * @tc.name motionPathTest_0100
-     * @tc.desc test motionPathTest_0100
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test motionPathTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('motionPathTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('motionPathTest_0100 START');
@@ -68,12 +68,12 @@ export default function MotionPathJsunit() {
     });
 
     /**
+     * @tc.name   motionPathTest_0200
      * @tc.number motionPathTest_0200
-     * @tc.name motionPathTest_0200
-     * @tc.desc test motionPathTest_0200
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test motionPathTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('motionPathTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('motionPathTest_0200 START');
@@ -99,12 +99,12 @@ export default function MotionPathJsunit() {
     });
 
     /**
+     * @tc.name   motionPathTest_0300
      * @tc.number motionPathTest_0300
-     * @tc.name motionPathTest_0300
-     * @tc.desc test motionPathTest_0300
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test motionPathTest_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('motionPathTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('motionPathTest_0300 START');

@@ -40,7 +40,6 @@ export default function PasteboardGetMimeTypesTest() {
     afterAll(() => {})
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0100
      * @tc.desc   setData Verify the properties of the MIMETYPE_TEXT_PLAIN type
@@ -69,7 +68,6 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0200
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0200
      * @tc.desc   setData Verify the properties of the MIMETYPE_TEXT_HTML type
@@ -98,7 +96,6 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0300
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0300
      * @tc.desc   setData Verify the properties of the MIMETYPE_TEXT_URI type
@@ -127,7 +124,6 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0400
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0400
      * @tc.desc   setData Verify the properties of the MIMETYPE_PIXELMAP type
@@ -163,7 +159,6 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0500
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0500
      * @tc.desc   setData Verify the properties of the MIMETYPE_TEXT_WANT type
@@ -192,7 +187,6 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0600
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0600
      * @tc.desc   setData Verify the properties of the Customize type
@@ -221,7 +215,6 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0700
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0700
      * @tc.desc   setUnifiedData Verify the properties of the plainTextData type
@@ -258,7 +251,6 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0800
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0800
      * @tc.desc   setUnifiedData Verify the properties of the hyperLinkData type
@@ -291,7 +283,6 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0900
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0900
      * @tc.desc   setUnifiedData Verify the properties of the htmlData type
@@ -324,7 +315,6 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1000
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1000
      * @tc.desc   setUnifiedData Verify the properties of the fileData type
@@ -360,7 +350,6 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1100
      * @tc.desc   setUnifiedData Verify the properties of the pixelMapData type
@@ -395,7 +384,6 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1200
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1200
      * @tc.desc   setUnifiedData Verify the properties of the appItemData type
@@ -438,7 +426,6 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1300
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1300
      * @tc.desc   setUnifiedData Verify the properties of the imageData type
@@ -470,7 +457,6 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1400
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1400
      * @tc.desc   setUnifiedData Verify the properties of the videoData type
@@ -502,7 +488,6 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1500
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1500
      * @tc.desc   setUnifiedData Verify the properties of the audioData type
@@ -534,7 +519,6 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1600
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1600
      * @tc.desc   setUnifiedData Verify the properties of the folderData type
@@ -566,7 +550,6 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1700
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1700
      * @tc.desc   setUnifiedData Verify the properties of the sysFormData type
@@ -608,7 +591,6 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1800
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1800
      * @tc.desc   setUnifiedData Verify the properties of the appRecordData type
@@ -642,7 +624,6 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1900
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1900
      * @tc.desc   setUnifiedData Verify the properties of the wantData type
@@ -677,7 +658,6 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_2000
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_2000
      * @tc.desc   setUnifiedData Verify the properties of the textData type
@@ -712,7 +692,6 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_2100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_2100
      * @tc.desc   setUnifiedData Verify the properties of the arrayBufferData type
@@ -745,7 +724,6 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_2200
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_2200
      * @tc.desc   setUnifiedData Verify the properties of the appRecordData type
@@ -767,7 +745,6 @@ export default function PasteboardGetMimeTypesTest() {
     })
 	
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_setAppShareOptions_0100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_setAppShareOptions_0100
      * @tc.desc   setAppShareOptions Verify
@@ -789,7 +766,6 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_removeAppShareOptions_0100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_removeAppShareOptions_0100
      * @tc.desc   removeAppShareOptions Verify

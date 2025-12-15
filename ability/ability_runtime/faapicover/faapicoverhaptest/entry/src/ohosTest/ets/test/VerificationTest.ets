@@ -45,12 +45,14 @@ export default function verificationTest(){
       }, sleepTimeOne);
     })
 
-    /*
-         * @tc.number  SUB_AA_OpenHarmony_Test_HasWindowFocus_0100
-         * @tc.name    Start ability to judge whether there is window focus.
-         * @tc.desc    Function test
-         * @tc.level   3
-         */
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_Test_HasWindowFocus_0100
+     * @tc.number SUB_AA_OpenHarmony_Test_HasWindowFocus_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_OpenHarmony_Test_HasWindowFocus_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_Test_HasWindowFocus_0100 ==>';
 
@@ -99,11 +101,13 @@ export default function verificationTest(){
       }
     })
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_Test_AppManagerTest_0100
-     * @tc.name    Whether the user is conducting stability test verification.
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_Test_AppManagerTest_0100
+     * @tc.number SUB_AA_OpenHarmony_Test_AppManagerTest_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_Test_AppManagerTest_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_Test_AppManagerTest_0100 ==>';
@@ -122,12 +126,14 @@ export default function verificationTest(){
       }
     })
 
-    /*
-    * @tc.number  SUB_AA_OpenHarmony_Test_StartAbilityFlags_0100
-    * @tc.name    Validate the input parameter flags of startAbility.
-    * @tc.desc    Function test
-    * @tc.level   3
-    */
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_Test_StartAbilityFlags_0100
+     * @tc.number SUB_AA_OpenHarmony_Test_StartAbilityFlags_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_OpenHarmony_Test_StartAbilityFlags_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_Test_StartAbilityFlags_0100 ==>';
 
@@ -199,11 +205,13 @@ export default function verificationTest(){
       }
     })
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_Test_GetWindow_0100
-     * @tc.name    Call GetWindow interface.
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_Test_GetWindow_0100
+     * @tc.number SUB_AA_OpenHarmony_Test_GetWindow_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_Test_GetWindow_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_Test_GetWindow_0100 ==>';
@@ -219,11 +227,13 @@ export default function verificationTest(){
       }
     })
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_Test_GetWindow_0200
-     * @tc.name    Call GetWindow interface.
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_Test_GetWindow_0200
+     * @tc.number SUB_AA_OpenHarmony_Test_GetWindow_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_Test_GetWindow_0200', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_Test_GetWindow_0200 ==>';
@@ -243,11 +253,13 @@ export default function verificationTest(){
       }
     })
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_Test_TerminateSelfWithResult_0100
-     * @tc.name    CTerminate ability through TerminateSelfWithResult.
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_Test_TerminateSelfWithResult_0100
+     * @tc.number SUB_AA_OpenHarmony_Test_TerminateSelfWithResult_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_Test_TerminateSelfWithResult_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_Test_TerminateSelfWithResult_0100 ==>';
@@ -295,12 +307,14 @@ export default function verificationTest(){
       }
     })
 
-    /*
-   * @tc.number  SUB_AA_OpenHarmony_Test_ServiceAbility_0100
-   * @tc.name    Start and stop serviceability.
-   * @tc.desc    Function test
-   * @tc.level   3
-   */
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_Test_ServiceAbility_0100
+     * @tc.number SUB_AA_OpenHarmony_Test_ServiceAbility_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_OpenHarmony_Test_ServiceAbility_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_Test_ServiceAbility_0100 ==>';
 
@@ -344,12 +358,14 @@ export default function verificationTest(){
       }
     })
 
-    /*
-   * @tc.number  SUB_AA_OpenHarmony_Test_ServiceAbility_0200
-   * @tc.name    Bind and unbind serviceability.
-   * @tc.desc    Function test
-   * @tc.level   3
-   */
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_Test_ServiceAbility_0200
+     * @tc.number SUB_AA_OpenHarmony_Test_ServiceAbility_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_OpenHarmony_Test_ServiceAbility_0200', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_Test_ServiceAbility_0200 ==>';
 

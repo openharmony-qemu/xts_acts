@@ -43,12 +43,12 @@ export default function axisVertical() {
     });
 
     /**
-     * @tc.number    axisVertical_001
-     * @tc.name      axisVertical_0100
-     * @tc.desc      ScrollEvent info axis.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   axisVertical_0100
+     * @tc.number axisVertical_001
+     * @tc.desc   ScrollEvent info axis.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('axisVertical_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[axisVertical_0100] START');

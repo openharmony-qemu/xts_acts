@@ -44,12 +44,12 @@ export default function Span3JsunitTest() {
       console.info("Span3Jsunit after each called");
     });
     /**
-     * @tc.number    SUB_ACE_testSpan001
-     * @tc.name      testSpan001
-     * @tc.desc      set api
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testSpan001
+     * @tc.number SUB_ACE_testSpan001
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpan001', Level.LEVEL1, async (done: Function) => {
       console.info('[testSpan001] START');
@@ -62,12 +62,12 @@ export default function Span3JsunitTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_testSpan002
-     * @tc.name      testSpan002
-     * @tc.desc      set api
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testSpan002
+     * @tc.number SUB_ACE_testSpan002
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpan002', Level.LEVEL1, async (done: Function) => {
       console.info('[testSpan002] START');
@@ -80,12 +80,12 @@ export default function Span3JsunitTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_testSpan003
-     * @tc.name      testSpan003
-     * @tc.desc      set api
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testSpan003
+     * @tc.number SUB_ACE_testSpan003
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpan003', Level.LEVEL1, async (done: Function) => {
       console.info('[testSpan003] START');
@@ -113,12 +113,12 @@ export default function Span3JsunitTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_testSpan004
-     * @tc.name      testSpan004
-     * @tc.desc      set api
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testSpan004
+     * @tc.number SUB_ACE_testSpan004
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpan004', Level.LEVEL1, async (done: Function) => {
       console.info('[testSpan004] START');
@@ -131,12 +131,12 @@ export default function Span3JsunitTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_testSpan005
-     * @tc.name      testSpan005
-     * @tc.desc      set api
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testSpan005
+     * @tc.number SUB_ACE_testSpan005
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpan005', Level.LEVEL1, async (done: Function) => {
       console.info('[testSpan005] START');
@@ -164,12 +164,12 @@ export default function Span3JsunitTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_testSpan006
-     * @tc.name      testSpan006
-     * @tc.desc      set api
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testSpan006
+     * @tc.number SUB_ACE_testSpan006
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpan006', Level.LEVEL1, async (done: Function) => {
       console.info('[testSpan006] START');
@@ -197,12 +197,12 @@ export default function Span3JsunitTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_testSpan007
-     * @tc.name      testSpan007
-     * @tc.desc      set api
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testSpan007
+     * @tc.number SUB_ACE_testSpan007
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpan007', Level.LEVEL1, async (done: Function) => {
       console.info('[testSpan007] START');

@@ -30,13 +30,13 @@ export default function EnvOperationsTest() {
       console.log('loadFailed', e.message);
     }
 
-    /*
-     * @tc.number    : test_getEnv_0100
-     * @tc.name      : test_getEnv_0100
-     * @tc.desc      : MediumTest
-     * @tc.size      : Function
-     * @tc.type      : Function test
-     * @tc.level     : Level 0
+    /**
+     * @tc.name   test_getEnv_0100
+     * @tc.number test_getEnv_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_getEnv_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

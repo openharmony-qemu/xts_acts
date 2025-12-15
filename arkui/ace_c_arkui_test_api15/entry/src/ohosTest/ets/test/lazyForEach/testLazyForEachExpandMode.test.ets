@@ -25,13 +25,13 @@ export default function TestLazyForEachExpandMode(){
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_EXPANDMODE_0100
-     * @tc.name       : testLazyForEachExpandMode001
-     * @tc.desc       : testing lazy for each expand error code
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachExpandMode001
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_EXPANDMODE_0100
+     * @tc.desc   testing lazy for each expand error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachExpandMode001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestLazyForEachExpandMode001';
@@ -50,13 +50,13 @@ export default function TestLazyForEachExpandMode(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_EXPANDMODE_0200
-     * @tc.name       : testLazyForEachExpandMode002
-     * @tc.desc       : testing lazy for each expand
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachExpandMode002
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_EXPANDMODE_0200
+     * @tc.desc   testing lazy for each expand
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachExpandMode002', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestLazyForEachExpandMode002';
@@ -71,13 +71,13 @@ export default function TestLazyForEachExpandMode(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_EXPANDMODE_0300
-     * @tc.name       : testLazyForEachExpandMode003
-     * @tc.desc       : testing lazy for each expand value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachExpandMode003
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_EXPANDMODE_0300
+     * @tc.desc   testing lazy for each expand value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachExpandMode003', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestLazyForEachExpandMode003';
@@ -92,13 +92,13 @@ export default function TestLazyForEachExpandMode(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_EXPANDMODE_0400
-     * @tc.name       : testLazyForEachExpandMode004
-     * @tc.desc       : testing lazy for each expand value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachExpandMode004
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_EXPANDMODE_0400
+     * @tc.desc   testing lazy for each expand value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachExpandMode004', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestLazyForEachExpandMode004';
@@ -113,13 +113,13 @@ export default function TestLazyForEachExpandMode(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_EXPANDMODE_0500
-     * @tc.name       : testLazyForEachExpandMode005
-     * @tc.desc       : testing lazy for each expand value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachExpandMode005
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_EXPANDMODE_0500
+     * @tc.desc   testing lazy for each expand value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachExpandMode005', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestLazyForEachExpandMode005';
@@ -134,13 +134,13 @@ export default function TestLazyForEachExpandMode(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_EXPANDMODE_0600
-     * @tc.name       : testLazyForEachExpandMode006
-     * @tc.desc       : testing lazy for each expand value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachExpandMode006
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_EXPANDMODE_0600
+     * @tc.desc   testing lazy for each expand value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachExpandMode006', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestLazyForEachExpandMode006';
@@ -155,13 +155,13 @@ export default function TestLazyForEachExpandMode(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_EXPANDMODE_0700
-     * @tc.name       : testLazyForEachExpandMode007
-     * @tc.desc       : testing lazy for each expand value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachExpandMode007
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_EXPANDMODE_0700
+     * @tc.desc   testing lazy for each expand value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachExpandMode007', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestLazyForEachExpandMode007';
@@ -176,13 +176,13 @@ export default function TestLazyForEachExpandMode(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_EXPANDMODE_0600
-     * @tc.name       : testLazyForEachExpandMode006
-     * @tc.desc       : testing lazy for each expand value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachExpandMode008
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_EXPANDMODE_0600
+     * @tc.desc   testing lazy for each expand value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachExpandMode008', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestLazyForEachExpandMode008';
@@ -197,13 +197,13 @@ export default function TestLazyForEachExpandMode(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_EXPANDMODE_0900
-     * @tc.name       : testLazyForEachExpandMode009
-     * @tc.desc       : testing lazy for each expand value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachExpandMode009
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_EXPANDMODE_0900
+     * @tc.desc   testing lazy for each expand value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachExpandMode009', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestLazyForEachExpandMode009';

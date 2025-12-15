@@ -47,12 +47,12 @@ export default function SpanPageTest() {
 
    
     /**
+     * @tc.name   testSpanFontSize01
      * @tc.number testSpanFontSize01
-     * @tc.name   Test the fontSize property of the span component
      * @tc.desc   set the fontSize property value is 68/resources50
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSpanFontSize01',  Level.LEVEL0, async (done: Function) => {
       let tagName = 'testSpanFontSize01';
@@ -113,12 +113,12 @@ export default function SpanPageTest() {
     });
     
     /**
+     * @tc.name   testSpanfontFamily02
      * @tc.number testSpanfontFamily02
-     * @tc.name   Test the fontFamily property of the span component
-     * @tc.desc   set the fontFamily property value is Arial 
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.desc   set the fontFamily property value is Arial
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSpanfontFamily02',  Level.LEVEL0, async (done: Function) => {
       let tagName = 'testSpanfontFamily02';
@@ -157,13 +157,13 @@ export default function SpanPageTest() {
       done();
     });
     
-     /**
+    /**
+     * @tc.name   testSpanlineHeight03
      * @tc.number testSpanlineHeight03
-     * @tc.name   Test the lineHeight property of the span component
-     * @tc.desc   set the lineHeight property value is 80fp/50 
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.desc   set the lineHeight property value is 80fp/50
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSpanlineHeight03',  Level.LEVEL0, async (done: Function) => {
       let tagName = 'testSpanlineHeight03';
@@ -224,12 +224,12 @@ export default function SpanPageTest() {
     });
     
     /**
+     * @tc.name   testSpanfontStyle04
      * @tc.number testSpanfontStyle04
-     * @tc.name   Test the fontStyle property of the span component
      * @tc.desc   set the fontStyle property value is FontStyle.Normal/FontStyle.Italic
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSpanfontStyle04',  Level.LEVEL0, async (done: Function) => {
       let tagName = 'testSpanfontStyle04';
@@ -269,12 +269,12 @@ export default function SpanPageTest() {
     });
 
     /**
+     * @tc.name   testSpanfontWeight05
      * @tc.number testSpanfontWeight05
-     * @tc.name   Test the fontWeight property of the span component
      * @tc.desc   set the fontWeight property value is 400/FontWeight.Bold
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSpanfontWeight05',  Level.LEVEL0, async (done: Function) => {
       let tagName = 'testSpanfontWeight05';
@@ -314,12 +314,12 @@ export default function SpanPageTest() {
     });
     
     /**
+     * @tc.name   testSpantextCase06
      * @tc.number testSpantextCase06
-     * @tc.name   Test the textCase property of the span component
      * @tc.desc   set the textCase property value is TextCase.Normal/TextCase.UpperCase
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSpantextCase06',  Level.LEVEL0, async (done: Function) => {
       let tagName = 'testSpantextCase06';
@@ -359,12 +359,12 @@ export default function SpanPageTest() {
     });
 
     /**
+     * @tc.name   testSpandecoration07
      * @tc.number testSpandecoration07
-     * @tc.name   Test the decoration property of the span component
      * @tc.desc   set the decoration property value is TextDecorationType.Underline Color.Red
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSpandecoration07',  Level.LEVEL0, async (done: Function) => {
       let tagName = 'testSpandecoration07';
@@ -405,12 +405,12 @@ export default function SpanPageTest() {
     });
 
     /**
+     * @tc.name   testSpanfontColor08
      * @tc.number testSpanfontColor08
-     * @tc.name   Test the fontColor property of the span component
      * @tc.desc   set the fontColor property value is #FF000000/0xFF00FF
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSpanfontColor08',  Level.LEVEL0, async (done: Function) => {
       let tagName = 'testSpanfontColor08';
@@ -450,12 +450,12 @@ export default function SpanPageTest() {
     });
 
     /**
+     * @tc.name   testSpanletterSpacing09
      * @tc.number testSpanletterSpacing09
-     * @tc.name   Test the letterSpacing property of the span component
      * @tc.desc   set the letterSpacing property value is 0.00fp/5
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSpanletterSpacing09',  Level.LEVEL0, async (done: Function) => {
       let tagName = 'testSpanletterSpacing09';
@@ -495,12 +495,12 @@ export default function SpanPageTest() {
     });
     
     /**
+     * @tc.name   testSpanFont10
      * @tc.number testSpanFont10
-     * @tc.name   Test the font property of the span component
      * @tc.desc   set the font property value is obj
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSpanFont10',  Level.LEVEL0, async (done: Function) => {
       let tagName = 'testSpanFont10';

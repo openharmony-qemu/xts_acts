@@ -46,12 +46,12 @@ export default function StateTest0040() {
     });
 
     /**
-     * @tc.number    SUB_ACE_STATUSMANAGER_PAGE_STATE_INTERFACE_0040
-     * @tc.name      StateTest0040_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   StateTest0040_001
+     * @tc.number SUB_ACE_STATUSMANAGER_PAGE_STATE_INTERFACE_0040
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('StateTest0040_001', Level.LEVEL0, async (done: Function) => {
       console.info('[StateTest0040_001] START');

@@ -108,7 +108,6 @@ export default function relationalStoreAssetResultSetTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testAssetResultSetGetAsset0001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0570
      * @tc.desc   AssetResultSet getAsset test
@@ -143,7 +142,6 @@ export default function relationalStoreAssetResultSetTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testAssetResultSetGetAsset0002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0560
      * @tc.desc   AssetResultSet getAsset test
@@ -170,7 +168,6 @@ export default function relationalStoreAssetResultSetTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testAssetResultSetGetAssets0001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0580
      * @tc.desc   AssetResultSet getAssets test
@@ -208,7 +205,6 @@ export default function relationalStoreAssetResultSetTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testAssetResultSetGetAssets0002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0590
      * @tc.desc   AssetResultSet getAssets test: wrong colname

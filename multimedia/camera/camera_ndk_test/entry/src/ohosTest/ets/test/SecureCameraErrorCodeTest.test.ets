@@ -329,12 +329,12 @@ export default function SecureCameraErrorCodeTest() {
     })
     
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionAddSecureOutput0200
-     * @tc.name       : testOHCaptureSessionAddSecureOutput0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_AddSecureOutput in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionAddSecureOutput0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionAddSecureOutput0200
+     * @tc.desc   Test OH_CaptureSession_AddSecureOutput in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionAddSecureOutput0200', Level.LEVEL0, () => {
       let supportedSceneModes = getSupportedSceneModes(Parameter_Setting.SET_CAMERA_FRONT_FOR_SECURE_PHOTO);
@@ -359,12 +359,12 @@ export default function SecureCameraErrorCodeTest() {
       console.info(TAG+"testOHCaptureSessionAddSecureOutput0200 end");
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionAddSecureOutput0300
-     * @tc.name       : testOHCaptureSessionAddSecureOutput0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_AddSecureOutput in abnormal condition, the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionAddSecureOutput0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionAddSecureOutput0300
+     * @tc.desc   Test OH_CaptureSession_AddSecureOutput in abnormal condition, the second parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionAddSecureOutput0300', Level.LEVEL0, () => {
       let supportedSceneModes = getSupportedSceneModes(Parameter_Setting.SET_CAMERA_FRONT_FOR_SECURE_PHOTO);
@@ -389,12 +389,12 @@ export default function SecureCameraErrorCodeTest() {
       console.info(TAG+"testOHCaptureSessionAddSecureOutput0300 end");
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionAddSecureOutput0500
-     * @tc.name       : testOHCaptureSessionAddSecureOutput0500
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_AddSecureOutput in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionAddSecureOutput0500
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionAddSecureOutput0500
+     * @tc.desc   Test OH_CaptureSession_AddSecureOutput in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionAddSecureOutput0500', Level.LEVEL0, () => {
       let supportedSceneModes = getSupportedSceneModes(Parameter_Setting.SET_CAMERA_FRONT_FOR_SECURE_PHOTO);
@@ -419,12 +419,12 @@ export default function SecureCameraErrorCodeTest() {
       console.info(TAG+"testOHCaptureSessionAddSecureOutput0500 end");
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionAddSecureOutput0600
-     * @tc.name       : testOHCaptureSessionAddSecureOutput0600
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_AddSecureOutput in abnormal condition, the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionAddSecureOutput0600
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionAddSecureOutput0600
+     * @tc.desc   Test OH_CaptureSession_AddSecureOutput in abnormal condition, the second parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionAddSecureOutput0600', Level.LEVEL0, () => {
       let supportedSceneModes = getSupportedSceneModes(Parameter_Setting.SET_CAMERA_FRONT_FOR_SECURE_PHOTO);
@@ -449,12 +449,12 @@ export default function SecureCameraErrorCodeTest() {
       console.info(TAG+"testOHCaptureSessionAddSecureOutput0600 end");
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionAddSecureOutput0700
-     * @tc.name       : testOHCaptureSessionAddSecureOutput0700
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_AddSecureOutput in abnormal condition, scene mode is NORMAL_PHOTO.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionAddSecureOutput0700
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionAddSecureOutput0700
+     * @tc.desc   Test OH_CaptureSession_AddSecureOutput in abnormal condition, scene mode is NORMAL_PHOTO.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionAddSecureOutput0700', Level.LEVEL0, () => {
       getSupportedCameraOutputCapability();
@@ -476,12 +476,12 @@ export default function SecureCameraErrorCodeTest() {
       console.log(TAG+"testOHCaptureSessionAddSecureOutput0700 end");
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionAddSecureOutput0800
-     * @tc.name       : testOHCaptureSessionAddSecureOutput0800
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_AddSecureOutput in abnormal condition, scene mode is NORMAL_VIDEO.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionAddSecureOutput0800
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionAddSecureOutput0800
+     * @tc.desc   Test OH_CaptureSession_AddSecureOutput in abnormal condition, scene mode is NORMAL_VIDEO.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionAddSecureOutput0800', Level.LEVEL0, () => {
       getSupportedCameraOutputCapability();
@@ -503,12 +503,12 @@ export default function SecureCameraErrorCodeTest() {
       console.log(TAG+"testOHCaptureSessionAddSecureOutput0800 end");
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputOpenSecureCamera0200
-     * @tc.name       : testOHCameraInputOpenSecureCamera0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraInput_OpenSecureCamera in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraInputOpenSecureCamera0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputOpenSecureCamera0200
+     * @tc.desc   Test OH_CameraInput_OpenSecureCamera in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraInputOpenSecureCamera0200', Level.LEVEL0, () => {
       let supportedSceneModes = getSupportedSceneModes(Parameter_Setting.SET_CAMERA_FRONT_FOR_SECURE_PHOTO);
@@ -529,12 +529,12 @@ export default function SecureCameraErrorCodeTest() {
       console.info(TAG+"testOHCameraInputOpenSecureCamera0200 end");
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputOpenSecureCamera0300
-     * @tc.name       : testOHCameraInputOpenSecureCamera0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraInput_OpenSecureCamera in abnormal condition, the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraInputOpenSecureCamera0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputOpenSecureCamera0300
+     * @tc.desc   Test OH_CameraInput_OpenSecureCamera in abnormal condition, the second parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraInputOpenSecureCamera0300', Level.LEVEL0, () => {
       let supportedSceneModes = getSupportedSceneModes(Parameter_Setting.SET_CAMERA_FRONT_FOR_SECURE_PHOTO);

@@ -36,14 +36,14 @@ export default function webInitTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_CUSTOMIZESCHEMES_FETCH_0100
-    * @tc.name        : testCustomizeSchemesFetch001
-    * @tc.desc        : test fetch request not in customizeSchemes
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name   testCustomizeSchemesFetch001
+     * @tc.number SUB_WEB_CUSTOMIZESCHEMES_FETCH_0100
+     * @tc.desc   test fetch request not in customizeSchemes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testCustomizeSchemesFetch001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testCustomizeSchemesFetch001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -53,14 +53,14 @@ export default function webInitTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_CUSTOMIZESCHEMES_FETCH_0200
-    * @tc.name        : testCustomizeSchemesFetch002
-    * @tc.desc        : test fetch request in customizeSchemes
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testCustomizeSchemesFetch002
+     * @tc.number SUB_WEB_CUSTOMIZESCHEMES_FETCH_0200
+     * @tc.desc   test fetch request in customizeSchemes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCustomizeSchemesFetch002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testCustomizeSchemesFetch002", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -70,14 +70,14 @@ export default function webInitTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_CUSTOMIZESCHEMES_FETCH_0300
-    * @tc.name        : testCustomizeSchemesFetch003
-    * @tc.desc        : test fetch request when isSupportCORS is false and isSupportFetch is true
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testCustomizeSchemesFetch003
+     * @tc.number SUB_WEB_CUSTOMIZESCHEMES_FETCH_0300
+     * @tc.desc   test fetch request when isSupportCORS is false and isSupportFetch is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCustomizeSchemesFetch003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testCustomizeSchemesFetch003", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -87,14 +87,14 @@ export default function webInitTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_CUSTOMIZESCHEMES_FETCH_0400
-    * @tc.name        : testCustomizeSchemesFetch004
-    * @tc.desc        : test fetch request allow cors when isSupportCORS is false and isSupportFetch is true
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testCustomizeSchemesFetch004
+     * @tc.number SUB_WEB_CUSTOMIZESCHEMES_FETCH_0400
+     * @tc.desc   test fetch request allow cors when isSupportCORS is false and isSupportFetch is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCustomizeSchemesFetch004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testCustomizeSchemesFetch004", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -104,14 +104,14 @@ export default function webInitTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_CUSTOMIZESCHEMES_FETCH_0500
-    * @tc.name        : testCustomizeSchemesFetch005
-    * @tc.desc        : test fetch request allow cors when isSupportCORS is true and isSupportFetch is false
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testCustomizeSchemesFetch005
+     * @tc.number SUB_WEB_CUSTOMIZESCHEMES_FETCH_0500
+     * @tc.desc   test fetch request allow cors when isSupportCORS is true and isSupportFetch is false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCustomizeSchemesFetch005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testCustomizeSchemesFetch005", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -121,14 +121,14 @@ export default function webInitTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_CUSTOMIZESCHEMES_FETCH_0600
-    * @tc.name        : testCustomizeSchemesFetch006
-    * @tc.desc        : test fetch request allow cors when isSupportCORS is false and isSupportFetch is false
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testCustomizeSchemesFetch006
+     * @tc.number SUB_WEB_CUSTOMIZESCHEMES_FETCH_0600
+     * @tc.desc   test fetch request allow cors when isSupportCORS is false and isSupportFetch is false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCustomizeSchemesFetch006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testCustomizeSchemesFetch006", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;

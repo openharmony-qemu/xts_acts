@@ -43,12 +43,12 @@ export default function textPickerDialogDisappearTextStyleTest() {
     });
 
     /**
-     * @tc.number: textPickerDialogDisappearTextStyleTest_0100
-     * @tc.name  : textPickerDialogDisappearTextStyleTest_0100
-     * @tc.desc  : To test the disappearTextStyle minFontSize:18 maxFontSize:28 TextOverflow.Ellipsis
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   textPickerDialogDisappearTextStyleTest_0100
+     * @tc.number textPickerDialogDisappearTextStyleTest_0100
+     * @tc.desc   To test the disappearTextStyle minFontSize:18 maxFontSize:28 TextOverflow.Ellipsis
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textPickerDialogDisappearTextStyleTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('textPickerDialogDisappearTextStyleTest_0100 START');
@@ -74,12 +74,12 @@ export default function textPickerDialogDisappearTextStyleTest() {
     });
 
     /**
-     * @tc.number: textPickerDialogDisappearTextStyleTest_0200
-     * @tc.name  : textPickerDialogDisappearTextStyleTest_0200
-     * @tc.desc  : To test the disappearTextStyle minFontSize:28 maxFontSize:18 TextOverflow.Ellipsis
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   textPickerDialogDisappearTextStyleTest_0200
+     * @tc.number textPickerDialogDisappearTextStyleTest_0200
+     * @tc.desc   To test the disappearTextStyle minFontSize:28 maxFontSize:18 TextOverflow.Ellipsis
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textPickerDialogDisappearTextStyleTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('textPickerDialogDisappearTextStyleTest_0200 START');
@@ -105,12 +105,12 @@ export default function textPickerDialogDisappearTextStyleTest() {
     });
 
     /**
-     * @tc.number: textPickerDialogDisappearTextStyleTest_0300
-     * @tc.name  : textPickerDialogDisappearTextStyleTest_0300
-     * @tc.desc  : To test the disappearTextStyle minFontSize:28 maxFontSize:28 TextOverflow.Ellipsis
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   textPickerDialogDisappearTextStyleTest_0300
+     * @tc.number textPickerDialogDisappearTextStyleTest_0300
+     * @tc.desc   To test the disappearTextStyle minFontSize:28 maxFontSize:28 TextOverflow.Ellipsis
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textPickerDialogDisappearTextStyleTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('textPickerDialogDisappearTextStyleTest_0300 START');
@@ -136,12 +136,12 @@ export default function textPickerDialogDisappearTextStyleTest() {
     });
 
     /**
-     * @tc.number: textPickerDialogDisappearTextStyleTest_0400
-     * @tc.name  : textPickerDialogDisappearTextStyleTest_0400
-     * @tc.desc  : To test the disappearTextStyle minFontSize:undefined maxFontSize:undefined TextOverflow.Ellipsis
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   textPickerDialogDisappearTextStyleTest_0400
+     * @tc.number textPickerDialogDisappearTextStyleTest_0400
+     * @tc.desc   To test the disappearTextStyle minFontSize:undefined maxFontSize:undefined TextOverflow.Ellipsis
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textPickerDialogDisappearTextStyleTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('textPickerDialogDisappearTextStyleTest_0400 START');
@@ -167,12 +167,12 @@ export default function textPickerDialogDisappearTextStyleTest() {
     });
 
     /**
-     * @tc.number: textPickerDialogDisappearTextStyleTest_0500
-     * @tc.name  : textPickerDialogDisappearTextStyleTest_0500
-     * @tc.desc  : To test the disappearTextStyle minFontSize:null maxFontSize:null TextOverflow.Ellipsis
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   textPickerDialogDisappearTextStyleTest_0500
+     * @tc.number textPickerDialogDisappearTextStyleTest_0500
+     * @tc.desc   To test the disappearTextStyle minFontSize:null maxFontSize:null TextOverflow.Ellipsis
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textPickerDialogDisappearTextStyleTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('textPickerDialogDisappearTextStyleTest_0500 START');

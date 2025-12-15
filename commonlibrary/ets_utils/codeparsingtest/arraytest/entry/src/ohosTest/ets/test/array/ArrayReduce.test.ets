@@ -85,12 +85,12 @@ export default function ArrayReduceTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   ArrayReduceTest001
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_0100
-     * @tc.name ArrayReduceTest001
-     * @tc.desc Sum numbers without initialValue
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Sum numbers without initialValue
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayReduceTest001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [1, 2, 3, 4];
@@ -102,12 +102,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest002
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_0200
-     * @tc.name ArrayReduceTest002
-     * @tc.desc Sum numbers with initialValue
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Sum numbers with initialValue
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayReduceTest002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [1, 2, 3, 4];
@@ -119,12 +119,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest003
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_0300
-     * @tc.name ArrayReduceTest003
-     * @tc.desc Concatenate strings without initialValue
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Concatenate strings without initialValue
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayReduceTest003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = ['a', 'b', 'c'];
@@ -135,12 +135,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest004
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_0400
-     * @tc.name ArrayReduceTest004
-     * @tc.desc Concatenate strings with initialValue
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Concatenate strings with initialValue
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayReduceTest004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = ['b', 'c'];
@@ -152,12 +152,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest005
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_0500
-     * @tc.name ArrayReduceTest005
-     * @tc.desc Sum object properties with initialValue
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Sum object properties with initialValue
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayReduceTest005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       interface BaseI{
@@ -175,24 +175,24 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest006
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_0600
-     * @tc.name ArrayReduceTest006
-     * @tc.desc Count occurrences of values with initialValue (object accumulator)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Count occurrences of values with initialValue (object accumulator)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayReduceTest006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       expect(ArrayReduceTest006()).assertDeepEquals({ a: 3, b: 1, c: 1 });
     });
 
     /**
+     * @tc.name   ArrayReduceTest007
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_0700
-     * @tc.name ArrayReduceTest007
-     * @tc.desc Find maximum number without initialValue
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Find maximum number without initialValue
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayReduceTest007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [5, 2, 9, 1];
@@ -203,12 +203,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest008
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_0800
-     * @tc.name ArrayReduceTest008
-     * @tc.desc Find minimum number with initialValue
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Find minimum number with initialValue
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayReduceTest008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [5, 2, 9, 1];
@@ -220,12 +220,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest009
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_0900
-     * @tc.name ArrayReduceTest009
-     * @tc.desc Single-element array without initialValue (no callback call)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Single-element array without initialValue (no callback call)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayReduceTest009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = ['only-element'];
@@ -241,12 +241,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest010
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_1000
-     * @tc.name ArrayReduceTest010
-     * @tc.desc Single-element array with initialValue (callback called once)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Single-element array with initialValue (callback called once)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayReduceTest010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [5];
@@ -263,12 +263,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest011
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_1100
-     * @tc.name ArrayReduceTest011
-     * @tc.desc Verify callback parameters (index and array) without initialValue
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify callback parameters (index and array) without initialValue
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayReduceTest011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       interface BaseI{
@@ -292,12 +292,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest012
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_1200
-     * @tc.name ArrayReduceTest012
-     * @tc.desc Verify callback parameters (index and array) with initialValue
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify callback parameters (index and array) with initialValue
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayReduceTest012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       interface BaseI{
@@ -323,12 +323,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest013
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_1300
-     * @tc.name ArrayReduceTest013
-     * @tc.desc Reduce sparse array (empty slots are skipped)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Reduce sparse array (empty slots are skipped)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayReduceTest013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [1, , 3, , 5];
@@ -350,24 +350,24 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest014
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_1400
-     * @tc.name ArrayReduceTest014
-     * @tc.desc Reduce non-array object (class array) via call()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Reduce non-array object (class array) via call()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayReduceTest014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       expect(ArrayReduceTest014()).assertEqual(0 + 1 + 2 + 3);
     });
 
     /**
+     * @tc.name   ArrayReduceTest016
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_1600
-     * @tc.name ArrayReduceTest016
-     * @tc.desc Reduce array with undefined values (not skipped)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Reduce array with undefined values (not skipped)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayReduceTest016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [1, undefined, 3, undefined, 5];
@@ -389,12 +389,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest017
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_1700
-     * @tc.name ArrayReduceTest017
-     * @tc.desc Reduce array with BigInt elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Reduce array with BigInt elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayReduceTest017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [1n, 2n, 3n];
@@ -406,12 +406,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest018
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_1800
-     * @tc.name ArrayReduceTest018
-     * @tc.desc Reduce array with Symbol elements (count occurrences)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Reduce array with Symbol elements (count occurrences)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayReduceTest018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const result = ArrayReduceTest018() as number[];
@@ -421,12 +421,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest019
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_1900
-     * @tc.name ArrayReduceTest019
-     * @tc.desc Empty array with initialValue (no callback call)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Empty array with initialValue (no callback call)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayReduceTest019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [];
@@ -443,12 +443,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest020
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_2000
-     * @tc.name ArrayReduceTest020
-     * @tc.desc Empty array without initialValue (throws TypeError)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Empty array without initialValue (throws TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayReduceTest020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [];
@@ -465,12 +465,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest021
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_2100
-     * @tc.name ArrayReduceTest021
-     * @tc.desc Callback throws error during iteration (traversal interrupts)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback throws error during iteration (traversal interrupts)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 2, 3, 4];
@@ -497,12 +497,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest022
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_2200
-     * @tc.name ArrayReduceTest022
-     * @tc.desc Reduce array and modify original array during iteration
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce array and modify original array during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 2, 3];
@@ -519,12 +519,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest023
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_2300
-     * @tc.name ArrayReduceTest023
-     * @tc.desc Reduce large array (1000 elements), verify completeness
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce large array (1000 elements), verify completeness
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest023', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const arr: number[] = [];
@@ -540,12 +540,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest024
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_2400
-     * @tc.name ArrayReduceTest024
-     * @tc.desc Callback has no return value (accumulator becomes undefined)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback has no return value (accumulator becomes undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 2, 3];
@@ -562,12 +562,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest025
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_2500
-     * @tc.name ArrayReduceTest025
-     * @tc.desc Reduce array with function elements (execute and sum results)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce array with function elements (execute and sum results)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const func1 = () => 10;
@@ -583,12 +583,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest026
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_2600
-     * @tc.name ArrayReduceTest026
-     * @tc.desc Reduce array with nested objects (immutable accumulator)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce array with nested objects (immutable accumulator)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = ArrayReduceTest026();
@@ -598,12 +598,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest027
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_2700
-     * @tc.name ArrayReduceTest027
-     * @tc.desc Callback is non-function (throws TypeError)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback is non-function (throws TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 2];
@@ -619,24 +619,24 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest028
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_2800
-     * @tc.name ArrayReduceTest028
-     * @tc.desc Reduce non-array object without length (returns initialValue)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce non-array object without length (returns initialValue)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayReduceTest028()).assertEqual('initial');
     });
 
     /**
+     * @tc.name   ArrayReduceTest029
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_2900
-     * @tc.name ArrayReduceTest029
-     * @tc.desc Reduce array with circular reference object (accumulator)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce array with circular reference object (accumulator)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -658,12 +658,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest030
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_3000
-     * @tc.name ArrayReduceTest030
-     * @tc.desc Comprehensive test: mixed types + async tasks + initialValue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Comprehensive test: mixed types + async tasks + initialValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -677,12 +677,12 @@ export default function ArrayReduceTest() {
       expect(result[2]).assertDeepEquals([1, 'a', true, { value: 5 }]);
     });
     /**
+     * @tc.name   ArrayReduceTest031
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_3100
-     * @tc.name ArrayReduceTest031
-     * @tc.desc Reduce with NaN values in array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce with NaN values in array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, NaN, 3, NaN, 5];
@@ -693,12 +693,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest032
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_3200
-     * @tc.name ArrayReduceTest032
-     * @tc.desc Reduce with Infinity values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce with Infinity values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [Infinity, 10, -Infinity];
@@ -709,12 +709,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest033
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_3300
-     * @tc.name ArrayReduceTest033
-     * @tc.desc Reduce with zero and negative zero
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce with zero and negative zero
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [0, -0, 5];
@@ -726,12 +726,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest034
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_3400
-     * @tc.name ArrayReduceTest034
-     * @tc.desc Reduce with Date objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce with Date objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [
@@ -746,12 +746,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest035
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_3500
-     * @tc.name ArrayReduceTest035
-     * @tc.desc Reduce to create a function pipeline
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce to create a function pipeline
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const add2 = (x: number) => x + 2;
@@ -766,12 +766,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest036
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_3600
-     * @tc.name ArrayReduceTest036
-     * @tc.desc Reduce with non-integer array indices
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce with non-integer array indices
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr: number[] = [];
@@ -787,36 +787,36 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest037
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_3700
-     * @tc.name ArrayReduceTest037
-     * @tc.desc Reduce with array-like object that has non-number length
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce with array-like object that has non-number length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(await ArrayReduceTest037()).assertEqual('ab');
     });
 
     /**
+     * @tc.name   ArrayReduceTest038
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_3800
-     * @tc.name ArrayReduceTest038
-     * @tc.desc Reduce with getter properties in array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce with getter properties in array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayReduceTest038()).assertEqual(6);
     });
 
     /**
+     * @tc.name   ArrayReduceTest040
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_4000
-     * @tc.name ArrayReduceTest040
-     * @tc.desc Reduce with array that has modified length during iteration
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce with array that has modified length during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 2, 3, 4];
@@ -832,12 +832,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest041
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_4100
-     * @tc.name ArrayReduceTest041
-     * @tc.desc Reduce with promise-based accumulator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce with promise-based accumulator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 2, 3];
@@ -851,12 +851,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest042
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_4200
-     * @tc.name ArrayReduceTest042
-     * @tc.desc Reduce to flatten nested arrays
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce to flatten nested arrays
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       type numOrArr = (number | numOrArr)[];
@@ -875,12 +875,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest043
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_4300
-     * @tc.name ArrayReduceTest043
-     * @tc.desc Reduce with regexp elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce with regexp elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [/a/, /b/, /c/];
@@ -894,72 +894,72 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest044
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_4400
-     * @tc.name ArrayReduceTest044
-     * @tc.desc Reduce with generator function
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce with generator function
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayReduceTest044()).assertEqual(6);
     });
 
     /**
+     * @tc.name   ArrayReduceTest045
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_4500
-     * @tc.name ArrayReduceTest045
-     * @tc.desc Reduce with Proxy object
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce with Proxy object
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayReduceTest045()).assertEqual(12);
     });
 
     /**
+     * @tc.name   ArrayReduceTest046
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_4600
-     * @tc.name ArrayReduceTest046
-     * @tc.desc Reduce with non-writable array elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce with non-writable array elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest046', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayReduceTest046()).assertEqual(6);
     });
 
     /**
+     * @tc.name   ArrayReduceTest047
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_4700
-     * @tc.name ArrayReduceTest047
-     * @tc.desc Reduce with frozen array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce with frozen array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest047', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayReduceTest047()).assertEqual(6);
     });
 
     /**
+     * @tc.name   ArrayReduceTest048
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_4800
-     * @tc.name ArrayReduceTest048
-     * @tc.desc Reduce with array where elements are deleted during iteration
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce with array where elements are deleted during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest048', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayReduceTest048()).assertEqual(6);
     });
 
     /**
+     * @tc.name   ArrayReduceTest049
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_4900
-     * @tc.name ArrayReduceTest049
-     * @tc.desc Reduce with very large numbers
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce with very large numbers
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [Number.MAX_SAFE_INTEGER, 1, 2];
@@ -970,12 +970,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest050
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_5000
-     * @tc.name ArrayReduceTest050
-     * @tc.desc Reduce with empty string elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce with empty string elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest050', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = ['a', '', 'b', '', 'c'];
@@ -986,12 +986,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest051
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_5100
-     * @tc.name ArrayReduceTest051
-     * @tc.desc Reduce with array containing itself
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce with array containing itself
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest051', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       type numOrArr = (number | numOrArr)[];
@@ -1008,12 +1008,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest052
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_5200
-     * @tc.name ArrayReduceTest052
-     * @tc.desc Reduce with typed array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce with typed array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest052', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const typedArray = new Uint8Array([10, 20, 30]);
@@ -1023,12 +1023,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest053
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_5300
-     * @tc.name ArrayReduceTest053
-     * @tc.desc Reduce with accumulator as a Map
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce with accumulator as a Map
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest053', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [['a', 1], ['b', 2], ['a', 3]];
@@ -1043,12 +1043,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest054
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_5400
-     * @tc.name ArrayReduceTest054
-     * @tc.desc Reduce with accumulator as a Set
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce with accumulator as a Set
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest054', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 2, 2, 3, 3, 3];
@@ -1062,12 +1062,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest055
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_5500
-     * @tc.name ArrayReduceTest055
-     * @tc.desc Reduce with async/await in callback
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce with async/await in callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest055', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [100, 200, 300];
@@ -1084,12 +1084,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest056
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_5600
-     * @tc.name ArrayReduceTest056
-     * @tc.desc Reduce with callback that returns different types
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce with callback that returns different types
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest056', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, '2', 3, '4'];
@@ -1109,12 +1109,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest057
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_5700
-     * @tc.name ArrayReduceTest057
-     * @tc.desc Reduce with array of arrays, summing inner arrays
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce with array of arrays, summing inner arrays
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest057', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [[1, 2], [3, 4], [5, 6]];
@@ -1125,24 +1125,24 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest058
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_5800
-     * @tc.name ArrayReduceTest058
-     * @tc.desc Reduce with null prototype objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce with null prototype objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest058', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayReduceTest058()).assertEqual(30);
     });
 
     /**
+     * @tc.name   ArrayReduceTest059
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_5900
-     * @tc.name ArrayReduceTest059
-     * @tc.desc Reduce with array where elements change type during iteration
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce with array where elements change type during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest059', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 2, 3];
@@ -1158,24 +1158,24 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest060
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_6000
-     * @tc.name ArrayReduceTest060
-     * @tc.desc Reduce with array-like object that has negative length
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Reduce with array-like object that has negative length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayReduceTest060', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayReduceTest060()).assertEqual('');
     });
 
     /**
+     * @tc.name   ArrayReduceTest061
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_6100
-     * @tc.name ArrayReduceTest061
-     * @tc.desc Reduce with BigInt accumulator and number elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with BigInt accumulator and number elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest061', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const arr = [1, 2, 3];
@@ -1186,12 +1186,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest062
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_6200
-     * @tc.name ArrayReduceTest062
-     * @tc.desc Reduce to count character occurrences in array of strings
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce to count character occurrences in array of strings
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest062', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI{
@@ -1207,12 +1207,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest064
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_6400
-     * @tc.name ArrayReduceTest064
-     * @tc.desc Reduce with error objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with error objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest064', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const arr = [
@@ -1230,12 +1230,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest065
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_6500
-     * @tc.name ArrayReduceTest065
-     * @tc.desc Reduce with WeakMap accumulator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with WeakMap accumulator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest065', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI{}
@@ -1254,24 +1254,24 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest066
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_6600
-     * @tc.name ArrayReduceTest066
-     * @tc.desc Reduce with array containing Symbol.iterator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing Symbol.iterator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest066', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(ArrayReduceTest066()).assertEqual(12);
     });
 
     /**
+     * @tc.name   ArrayReduceTest067
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_6700
-     * @tc.name ArrayReduceTest067
-     * @tc.desc Reduce with dynamic import in callback (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with dynamic import in callback (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest067', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI{
@@ -1294,24 +1294,24 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest068
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_6800
-     * @tc.name ArrayReduceTest068
-     * @tc.desc Reduce with array-like object that has accessor properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array-like object that has accessor properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest068', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(ArrayReduceTest068()).assertEqual(3);
     });
 
     /**
+     * @tc.name   ArrayReduceTest069
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_6900
-     * @tc.name ArrayReduceTest069
-     * @tc.desc Reduce with array of functions that return promises
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array of functions that return promises
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest069', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const asyncFunctions = [
@@ -1331,36 +1331,36 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest070
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_7000
-     * @tc.name ArrayReduceTest070
-     * @tc.desc Reduce with array where elements are defined with Object.defineProperty
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array where elements are defined with Object.defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest070', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(ArrayReduceTest070()).assertEqual(30);
     });
 
     /**
+     * @tc.name   ArrayReduceTest071
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_7100
-     * @tc.name ArrayReduceTest071
-     * @tc.desc Reduce with non-enumerable properties in array-like object
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with non-enumerable properties in array-like object
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest071', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(ArrayReduceTest071()).assertEqual(6);
     });
 
     /**
+     * @tc.name   ArrayReduceTest072
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_7200
-     * @tc.name ArrayReduceTest072
-     * @tc.desc Reduce with array containing both numbers and strings
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing both numbers and strings
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest072', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const arr = [1, '2', 3, '4', 5];
@@ -1371,12 +1371,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest073
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_7300
-     * @tc.name ArrayReduceTest073
-     * @tc.desc Reduce to create nested objects from flat data
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce to create nested objects from flat data
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest073', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI{
@@ -1396,12 +1396,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest074
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_7400
-     * @tc.name ArrayReduceTest074
-     * @tc.desc Reduce with array of RegExp matches
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array of RegExp matches
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest074', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI{
@@ -1428,12 +1428,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest075
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_7500
-     * @tc.name ArrayReduceTest075
-     * @tc.desc Reduce with array where elements are promises
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array where elements are promises
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest075', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const promises = [
@@ -1453,24 +1453,24 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest076
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_7600
-     * @tc.name ArrayReduceTest076
-     * @tc.desc Reduce with array-like object that has Symbol properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array-like object that has Symbol properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest076', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(ArrayReduceTest076()).assertEqual(3);
     });
 
     /**
+     * @tc.name   ArrayReduceTest077
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_7700
-     * @tc.name ArrayReduceTest077
-     * @tc.desc Reduce with array containing non-serializable values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing non-serializable values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest077', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const arr = [() => 10, () => 20, () => 30];
@@ -1481,12 +1481,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest078
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_7800
-     * @tc.name ArrayReduceTest078
-     * @tc.desc Reduce with large initialValue (beyond safe integer)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with large initialValue (beyond safe integer)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest078', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const arr = [1, 2, 3];
@@ -1498,12 +1498,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest080
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_8000
-     * @tc.name ArrayReduceTest080
-     * @tc.desc Reduce with array containing both primitives and objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing both primitives and objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest080', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI{
@@ -1519,24 +1519,24 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest081
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_8100
-     * @tc.name ArrayReduceTest081
-     * @tc.desc Reduce with array-like object that has own and inherited properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array-like object that has own and inherited properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest081', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(ArrayReduceTest081()).assertEqual(6);
     });
 
     /**
+     * @tc.name   ArrayReduceTest082
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_8200
-     * @tc.name ArrayReduceTest082
-     * @tc.desc Reduce with callback that uses optional chaining
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with callback that uses optional chaining
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest082', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI{
@@ -1560,12 +1560,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest084
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_8400
-     * @tc.name ArrayReduceTest084
-     * @tc.desc Reduce with array containing Map objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing Map objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest084', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const map1 = new Map([['a', 10], ['b', 20]]);
@@ -1584,12 +1584,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest085
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_8500
-     * @tc.name ArrayReduceTest085
-     * @tc.desc Reduce with array of numbers where some are negative
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array of numbers where some are negative
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest085', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const arr = [10, -5, 20, -15, 30];
@@ -1600,12 +1600,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest086
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_8600
-     * @tc.name ArrayReduceTest086
-     * @tc.desc Reduce with callback that uses nullish coalescing
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with callback that uses nullish coalescing
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest086', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const arr = [0, 10, null, 20, undefined, 30];
@@ -1618,12 +1618,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest087
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_8700
-     * @tc.name ArrayReduceTest087
-     * @tc.desc Reduce with array containing both synchronous and asynchronous functions
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing both synchronous and asynchronous functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest087', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const functions = [
@@ -1644,12 +1644,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest088
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_8800
-     * @tc.name ArrayReduceTest088
-     * @tc.desc Reduce with array of objects with optional properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array of objects with optional properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest088', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI{
@@ -1671,24 +1671,24 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest089
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_8900
-     * @tc.name ArrayReduceTest089
-     * @tc.desc Reduce with array-like object that has length exceeding actual properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array-like object that has length exceeding actual properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest089', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(ArrayReduceTest089()).assertEqual(3);
     });
 
     /**
+     * @tc.name   ArrayReduceTest090
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_9000
-     * @tc.name ArrayReduceTest090
-     * @tc.desc Reduce with array containing Error objects and other values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing Error objects and other values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest090', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const arr = [
@@ -1710,12 +1710,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest091
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_9100
-     * @tc.name ArrayReduceTest091
-     * @tc.desc Reduce with array containing Intl objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing Intl objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest091', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const date = new Date(2023, 0, 1);
@@ -1735,12 +1735,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest092
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_9200
-     * @tc.name ArrayReduceTest092
-     * @tc.desc Reduce with array containing very large strings
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing very large strings
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest092', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const largeStr1 = 'a'.repeat(1000);
@@ -1755,24 +1755,24 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest094
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_9400
-     * @tc.name ArrayReduceTest094
-     * @tc.desc Reduce with array-like object that has getter throwing errors
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array-like object that has getter throwing errors
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest094', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(ArrayReduceTest094()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayReduceTest095
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_9500
-     * @tc.name ArrayReduceTest095
-     * @tc.desc Reduce with array containing both synchronous and asynchronous iterators
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing both synchronous and asynchronous iterators
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest095', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const result: Promise<number> = await ArrayReduceTest095();
@@ -1780,12 +1780,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest096
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_9600
-     * @tc.name ArrayReduceTest096
-     * @tc.desc Reduce with array containing DataView objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing DataView objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest096', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const buffer1 = new ArrayBuffer(4);
@@ -1803,24 +1803,24 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest097
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_9700
-     * @tc.name ArrayReduceTest097
-     * @tc.desc Reduce with array where elements are revoked proxies
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array where elements are revoked proxies
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest097', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(ArrayReduceTest097()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayReduceTest098
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_9800
-     * @tc.name ArrayReduceTest098
-     * @tc.desc Reduce with array containing SharedArrayBuffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing SharedArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest098', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       if (typeof SharedArrayBuffer === 'undefined') {
@@ -1842,12 +1842,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest099
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_9900
-     * @tc.name ArrayReduceTest099
-     * @tc.desc Reduce with array containing WebAssembly modules (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing WebAssembly modules (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest099', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI{
@@ -1879,12 +1879,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest100
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_10000
-     * @tc.name ArrayReduceTest100
-     * @tc.desc Reduce with array containing complex nested objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing complex nested objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async () => {
       interface BaseI{
@@ -1930,12 +1930,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest101
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_10100
-     * @tc.name ArrayReduceTest101
-     * @tc.desc Reduce with array containing RegExp with flags
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing RegExp with flags
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest101', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI{
@@ -1960,12 +1960,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest102
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_10200
-     * @tc.name ArrayReduceTest102
-     * @tc.desc Reduce with array of promises that resolve at different times
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array of promises that resolve at different times
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest102', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const delayedValue = (value: number, delay: number) =>
@@ -1988,12 +1988,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest103
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_10300
-     * @tc.name ArrayReduceTest103
-     * @tc.desc Reduce with array containing WeakSet objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing WeakSet objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest103', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI{}
@@ -2026,12 +2026,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest104
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_10400
-     * @tc.name ArrayReduceTest104
-     * @tc.desc Reduce with array-like object that has changing properties during iteration
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array-like object that has changing properties during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest104', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const result = ArrayReduceTest104() as number[];
@@ -2040,12 +2040,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest105
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_10500
-     * @tc.name ArrayReduceTest105
-     * @tc.desc Reduce with array containing both positive and negative BigInt values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing both positive and negative BigInt values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest105', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const arr = [10n, -5n, 20n, -15n, 30n];
@@ -2056,12 +2056,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest106
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_10600
-     * @tc.name ArrayReduceTest106
-     * @tc.desc Reduce with array of functions that modify the accumulator by reference
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array of functions that modify the accumulator by reference
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest106', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI{
@@ -2080,48 +2080,48 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest108
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_10800
-     * @tc.name ArrayReduceTest108
-     * @tc.desc Reduce with array containing Proxy objects that override get
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing Proxy objects that override get
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest108', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(ArrayReduceTest108()).assertEqual(120);
     });
 
     /**
+     * @tc.name   ArrayReduceTest110
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_11000
-     * @tc.name ArrayReduceTest110
-     * @tc.desc Reduce with array containing both real and symbolic values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing both real and symbolic values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest110', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(ArrayReduceTest110()).assertEqual(120);
     });
 
     /**
+     * @tc.name   ArrayReduceTest112
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_11200
-     * @tc.name ArrayReduceTest112
-     * @tc.desc Reduce with array of objects where properties are symbols
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array of objects where properties are symbols
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest112', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(ArrayReduceTest112()).assertEqual(60);
     });
 
     /**
+     * @tc.name   ArrayReduceTest113
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_11300
-     * @tc.name ArrayReduceTest113
-     * @tc.desc Reduce with array containing both resolved and rejected promises
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing both resolved and rejected promises
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest113', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const result = await ArrayReduceTest113() as number;
@@ -2129,12 +2129,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest114
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_11400
-     * @tc.name ArrayReduceTest114
-     * @tc.desc Reduce with array containing Intl.Collator objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing Intl.Collator objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest114', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const collators = [
@@ -2154,24 +2154,24 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest115
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_11500
-     * @tc.name ArrayReduceTest115
-     * @tc.desc Reduce with array containing objects with getter/setter pairs
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing objects with getter/setter pairs
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest115', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(ArrayReduceTest115()).assertEqual(120);
     });
 
     /**
+     * @tc.name   ArrayReduceTest117
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_11700
-     * @tc.name ArrayReduceTest117
-     * @tc.desc Reduce with array containing complex error objects with custom properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing complex error objects with custom properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest117', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       class CustomError extends Error {
@@ -2199,12 +2199,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest118
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_11800
-     * @tc.name ArrayReduceTest118
-     * @tc.desc Reduce with array containing ImageBitmap objects (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing ImageBitmap objects (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest118', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI{
@@ -2234,24 +2234,24 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest119
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_11900
-     * @tc.name ArrayReduceTest119
-     * @tc.desc Reduce with array containing objects with enumerable and non-enumerable properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing objects with enumerable and non-enumerable properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest119', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(ArrayReduceTest119()).assertEqual(40);
     });
 
     /**
+     * @tc.name   ArrayReduceTest120
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_12000
-     * @tc.name ArrayReduceTest120
-     * @tc.desc Reduce with array containing both primitives and their object wrappers
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing both primitives and their object wrappers
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest120', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const arr = [
@@ -2272,12 +2272,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest122
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_12200
-     * @tc.name ArrayReduceTest122
-     * @tc.desc Reduce with array containing Map objects with complex keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing Map objects with complex keys
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest122', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const result = ArrayReduceTest122() as number[];
@@ -2288,12 +2288,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest123
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_12300
-     * @tc.name ArrayReduceTest123
-     * @tc.desc Reduce with array containing objects with Symbol.toStringTag
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing objects with Symbol.toStringTag
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest123', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const result = ArrayReduceTest123() as (string| number)[];
@@ -2304,24 +2304,24 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest124
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_12400
-     * @tc.name ArrayReduceTest124
-     * @tc.desc Reduce with array containing objects with varying prototype chains
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing objects with varying prototype chains
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest124', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(ArrayReduceTest124()).assertEqual(100);
     });
 
     /**
+     * @tc.name   ArrayReduceTest125
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_12500
-     * @tc.name ArrayReduceTest125
-     * @tc.desc Reduce with array containing both sync and async generators
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing both sync and async generators
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest125', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const result = ArrayReduceTest125();
@@ -2329,24 +2329,24 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest126
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_12600
-     * @tc.name ArrayReduceTest126
-     * @tc.desc Reduce with array containing objects with configurable properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing objects with configurable properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest126', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(ArrayReduceTest126()).assertEqual(20);
     });
 
     /**
+     * @tc.name   ArrayReduceTest128
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_12800
-     * @tc.name ArrayReduceTest128
-     * @tc.desc Reduce with array containing objects with getters that modify other properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Reduce with array containing objects with getters that modify other properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest128', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       class Base{
@@ -2387,12 +2387,12 @@ export default function ArrayReduceTest() {
     });
 
     /**
+     * @tc.name   ArrayReduceTest130
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_13000
-     * @tc.name ArrayReduceTest130
-     * @tc.desc Ultimate comprehensive reduce test with mixed types and operations
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Ultimate comprehensive reduce test with mixed types and operations
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL4
      */
     it('ArrayReduceTest130', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL4, async () => {
       const result = await ArrayReduceTest130() as number[];

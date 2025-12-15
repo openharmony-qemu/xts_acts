@@ -42,12 +42,12 @@ export default function drawingTsMatrixPart2Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1200
-     * @tc.name      : testMatrixPostTranslateNormal
-     * @tc.desc      : testMatrixPostTranslateNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixPostTranslateNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1200
+     * @tc.desc   testMatrixPostTranslateNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixPostTranslateNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testMatrixPostTranslateNormal';
@@ -113,12 +113,12 @@ export default function drawingTsMatrixPart2Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1201
-     * @tc.name      : testMatrixPostTranslateNull
-     * @tc.desc      : testMatrixPostTranslateNull
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixPostTranslateNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1201
+     * @tc.desc   testMatrixPostTranslateNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixPostTranslateNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixPostTranslateNull';
@@ -160,12 +160,12 @@ export default function drawingTsMatrixPart2Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1203
-     * @tc.name      : testMatrixPostTranslateMultipleCalls
-     * @tc.desc      : testMatrixPostTranslateMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixPostTranslateMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1203
+     * @tc.desc   testMatrixPostTranslateMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixPostTranslateMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixPostTranslateMultipleCalls';
@@ -182,12 +182,12 @@ export default function drawingTsMatrixPart2Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1300
-     * @tc.name      : testMatrixPreRotateNormal
-     * @tc.desc      : testMatrixPreRotateNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixPreRotateNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1300
+     * @tc.desc   testMatrixPreRotateNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixPreRotateNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testMatrixPreRotateNormal';
@@ -265,12 +265,12 @@ export default function drawingTsMatrixPart2Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1301
-     * @tc.name      : testMatrixPreRotateNull
-     * @tc.desc      : testMatrixPreRotateNull
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixPreRotateNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1301
+     * @tc.desc   testMatrixPreRotateNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixPreRotateNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixPreRotateNull';
@@ -330,12 +330,12 @@ export default function drawingTsMatrixPart2Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1303
-     * @tc.name      : testMatrixPreRotateMultipleCalls
-     * @tc.desc      : testMatrixPreRotateMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixPreRotateMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1303
+     * @tc.desc   testMatrixPreRotateMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixPreRotateMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixPreRotateMultipleCalls';
@@ -352,12 +352,12 @@ export default function drawingTsMatrixPart2Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1400
-     * @tc.name      : testMatrixPreScaleNormal
-     * @tc.desc      : testMatrixPreScaleNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixPreScaleNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1400
+     * @tc.desc   testMatrixPreScaleNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixPreScaleNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testMatrixPreScaleNormal';
@@ -423,12 +423,12 @@ export default function drawingTsMatrixPart2Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1401
-     * @tc.name      : testMatrixPreScaleNull
-     * @tc.desc      : testMatrixPreScaleNull
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixPreScaleNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1401
+     * @tc.desc   testMatrixPreScaleNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixPreScaleNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixPreScaleNull';
@@ -515,12 +515,12 @@ export default function drawingTsMatrixPart2Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1403
-     * @tc.name      : testMatrixPreScaleMultipleCalls
-     * @tc.desc      : testMatrixPreScaleMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixPreScaleMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1403
+     * @tc.desc   testMatrixPreScaleMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixPreScaleMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixPreScaleMultipleCalls';
@@ -539,12 +539,12 @@ export default function drawingTsMatrixPart2Test() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1500
-     * @tc.name      : testMatrixPreTranslateNormal
-     * @tc.desc      : testMatrixPreTranslateNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixPreTranslateNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1500
+     * @tc.desc   testMatrixPreTranslateNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixPreTranslateNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testMatrixPreTranslateNormal';
@@ -611,12 +611,12 @@ export default function drawingTsMatrixPart2Test() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1501
-     * @tc.name      : testMatrixPreTranslateNull
-     * @tc.desc      : testMatrixPreTranslateNull
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixPreTranslateNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1501
+     * @tc.desc   testMatrixPreTranslateNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixPreTranslateNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixPreTranslateNull';
@@ -658,12 +658,12 @@ export default function drawingTsMatrixPart2Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1503
-     * @tc.name      : testMatrixPreTranslateMultipleCalls
-     * @tc.desc      : testMatrixPreTranslateMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixPreTranslateMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1503
+     * @tc.desc   testMatrixPreTranslateMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixPreTranslateMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixPreTranslateMultipleCalls';
@@ -680,12 +680,12 @@ export default function drawingTsMatrixPart2Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1600
-     * @tc.name      : testMatrixResetNormal
-     * @tc.desc      : testMatrixResetNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixResetNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1600
+     * @tc.desc   testMatrixResetNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixResetNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testMatrixResetNormal';
@@ -709,12 +709,12 @@ export default function drawingTsMatrixPart2Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1602
-     * @tc.name      : testMatrixResetMultipleCalls
-     * @tc.desc      : testMatrixResetMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixResetMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1602
+     * @tc.desc   testMatrixResetMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixResetMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixResetMultipleCalls';
@@ -734,12 +734,12 @@ export default function drawingTsMatrixPart2Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1700
-     * @tc.name      : testMatrixMapPointsNormal
-     * @tc.desc      : testMatrixMapPointsNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixMapPointsNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1700
+     * @tc.desc   testMatrixMapPointsNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixMapPointsNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testMatrixMapPointsNormal';
@@ -789,12 +789,12 @@ export default function drawingTsMatrixPart2Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1701
-     * @tc.name      : testMatrixMapPointsNull
-     * @tc.desc      : testMatrixMapPointsNull
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixMapPointsNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1701
+     * @tc.desc   testMatrixMapPointsNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixMapPointsNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixMapPointsNull';
@@ -818,12 +818,12 @@ export default function drawingTsMatrixPart2Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1703
-     * @tc.name      : testMatrixMapPointsMultipleCalls
-     * @tc.desc      : testMatrixMapPointsMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixMapPointsMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1703
+     * @tc.desc   testMatrixMapPointsMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixMapPointsMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixMapPointsMultipleCalls';
@@ -842,12 +842,12 @@ export default function drawingTsMatrixPart2Test() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1800
-     * @tc.name      : testMatrixMapRectNormal
-     * @tc.desc      : testMatrixMapRectNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixMapRectNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1800
+     * @tc.desc   testMatrixMapRectNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixMapRectNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testMatrixMapRectNormal';
@@ -884,15 +884,40 @@ export default function drawingTsMatrixPart2Test() {
         console.info(msg + ` mapRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
+      try {
+        let matrix2 = new drawing.Matrix();
+        let dst2: common2D.Rect = { left: 100, top: 20, right: 130, bottom: 60 };
+        let src2: common2D.Rect = { left: 100, top: 80, right: 130, bottom: 120 };
+        matrix2.setRotation(45, 100, 100);
+        let result8: boolean = matrix2.mapRect(dst2, src2);
+        console.info(msg + " mapRect -----result8:  "+ result8);
+        expect(result8).assertEqual(false);
+      } catch (e) {
+        console.info(msg + ` mapRect result8 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+      try {
+        let matrix3 = new drawing.Matrix();
+        let dst3: common2D.Rect = { left: 100, top: 20, right: 130, bottom: 60 };
+        let src3: common2D.Rect = { left: 100, top: 80, right: 130, bottom: 120 };
+        let value : Array<number> = [2, 2, 2, 2, 2, 2, 2, 2, 2];
+        matrix3.setMatrix(value);
+        let result9: boolean = matrix3.mapRect(dst3, src3);
+        console.info(msg + " mapRect -----result9:  "+ result9);
+        expect(result9).assertEqual(false);
+      } catch (e) {
+        console.info(msg + ` mapRect result9 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1801
-     * @tc.name      : testMatrixMapRectNull
-     * @tc.desc      : testMatrixMapRectNull
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixMapRectNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1801
+     * @tc.desc   testMatrixMapRectNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixMapRectNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixMapRectNull';
@@ -934,12 +959,12 @@ export default function drawingTsMatrixPart2Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1803
-     * @tc.name      : testMatrixMapRectMultipleCalls
-     * @tc.desc      : testMatrixMapRectMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixMapRectMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1803
+     * @tc.desc   testMatrixMapRectMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixMapRectMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixMapRectMultipleCalls';
@@ -960,12 +985,12 @@ export default function drawingTsMatrixPart2Test() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1900
-     * @tc.name      : testMatrixSetRectToRectNormal
-     * @tc.desc      : testMatrixSetRectToRectNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixSetRectToRectNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1900
+     * @tc.desc   testMatrixSetRectToRectNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixSetRectToRectNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testMatrixSetRectToRectNormal';
@@ -1028,12 +1053,12 @@ export default function drawingTsMatrixPart2Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1901
-     * @tc.name      : testMatrixSetRectToRectNull
-     * @tc.desc      : testMatrixSetRectToRectNull
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixSetRectToRectNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1901
+     * @tc.desc   testMatrixSetRectToRectNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixSetRectToRectNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixSetRectToRectNull';
@@ -1099,12 +1124,12 @@ export default function drawingTsMatrixPart2Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1903
-     * @tc.name      : testMatrixSetRectToRectMultipleCalls
-     * @tc.desc      : testMatrixSetRectToRectMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixSetRectToRectMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1903
+     * @tc.desc   testMatrixSetRectToRectMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixSetRectToRectMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixSetRectToRectMultipleCalls';
@@ -1126,12 +1151,12 @@ export default function drawingTsMatrixPart2Test() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1904
-     * @tc.name      : testMatrixSetRectToRectAbnormal
-     * @tc.desc      : testMatrixSetRectToRectAbnormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixSetRectToRectAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_1904
+     * @tc.desc   testMatrixSetRectToRectAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixSetRectToRectAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixSetRectToRectAbnormal';
@@ -1148,12 +1173,12 @@ export default function drawingTsMatrixPart2Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2000
-     * @tc.name      : testMatrixSetPolyToPolyNormal
-     * @tc.desc      : testMatrixSetPolyToPolyNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixSetPolyToPolyNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2000
+     * @tc.desc   testMatrixSetPolyToPolyNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixSetPolyToPolyNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testMatrixSetPolyToPolyNormal';
@@ -1220,12 +1245,12 @@ export default function drawingTsMatrixPart2Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2001
-     * @tc.name      : testMatrixSetPolyToPolyNull
-     * @tc.desc      : testMatrixSetPolyToPolyNull
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixSetPolyToPolyNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2001
+     * @tc.desc   testMatrixSetPolyToPolyNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixSetPolyToPolyNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixSetPolyToPolyNull';
@@ -1295,12 +1320,12 @@ export default function drawingTsMatrixPart2Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2003
-     * @tc.name      : testMatrixSetPolyToPolyMultipleCalls
-     * @tc.desc      : testMatrixSetPolyToPolyMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixSetPolyToPolyMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2003
+     * @tc.desc   testMatrixSetPolyToPolyMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixSetPolyToPolyMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixSetPolyToPolyMultipleCalls';
@@ -1320,12 +1345,12 @@ export default function drawingTsMatrixPart2Test() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2004
-     * @tc.name      : testMatrixSetPolyToPolyAbnormal
-     * @tc.desc      : testMatrixSetPolyToPolyAbnormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixSetPolyToPolyAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2004
+     * @tc.desc   testMatrixSetPolyToPolyAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixSetPolyToPolyAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixSetPolyToPolyAbnormal';
@@ -1351,12 +1376,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2100
-     * @tc.name      : testMatrixConstructor2Normal
-     * @tc.desc      : testMatrixConstructor2Normal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixConstructor2Normal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2100
+     * @tc.desc   testMatrixConstructor2Normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixConstructor2Normal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testMatrixConstructor2Normal';
@@ -1398,12 +1423,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2101
-     * @tc.name      : testMatrixConstructor2MultipleCalls
-     * @tc.desc      : testMatrixConstructor2MultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixConstructor2MultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2101
+     * @tc.desc   testMatrixConstructor2MultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixConstructor2MultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixConstructor2MultipleCalls';
@@ -1421,12 +1446,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2102
-     * @tc.name      : testMatrixConstructor2Null
-     * @tc.desc      : testMatrixConstructor2Null
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMatrixConstructor2Null
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2102
+     * @tc.desc   testMatrixConstructor2Null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixConstructor2Null', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixConstructor2Null';
@@ -1448,12 +1473,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2200
-     * @tc.name      : testMatrixIsAffineNormal
-     * @tc.desc      : testMatrixIsAffineNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixIsAffineNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2200
+     * @tc.desc   testMatrixIsAffineNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixIsAffineNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testMatrixIsAffineNormal';
@@ -1531,12 +1556,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2201
-     * @tc.name      : testMatrixIsAffineMultipleCalls
-     * @tc.desc      : testMatrixIsAffineMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixIsAffineMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2201
+     * @tc.desc   testMatrixIsAffineMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixIsAffineMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixIsAffineMultipleCalls';
@@ -1553,12 +1578,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2300
-     * @tc.name      : testMatrixSetSkewNormal
-     * @tc.desc      : testMatrixSetSkewNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixSetSkewNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2300
+     * @tc.desc   testMatrixSetSkewNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixSetSkewNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testMatrixSetSkewNormal';
@@ -1625,12 +1650,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2301
-     * @tc.name      : testMatrixSetSkewMultipleCalls
-     * @tc.desc      : testMatrixSetSkewMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixSetSkewMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2301
+     * @tc.desc   testMatrixSetSkewMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixSetSkewMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixSetSkewMultipleCalls';
@@ -1646,12 +1671,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2302
-     * @tc.name      : testMatrixSetSkewNull
-     * @tc.desc      : testMatrixSetSkewNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMatrixSetSkewNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2302
+     * @tc.desc   testMatrixSetSkewNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixSetSkewNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixSetSkewNull';
@@ -1722,12 +1747,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2400
-     * @tc.name      : testMatrixSetMatrixNormal
-     * @tc.desc      : testMatrixSetMatrixNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixSetMatrixNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2400
+     * @tc.desc   testMatrixSetMatrixNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixSetMatrixNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testMatrixSetMatrixNormal';
@@ -1818,12 +1843,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2401
-     * @tc.name      : testMatrixSetMatrixMultipleCalls
-     * @tc.desc      : testMatrixSetMatrixMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixSetMatrixMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2401
+     * @tc.desc   testMatrixSetMatrixMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixSetMatrixMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixSetMatrixMultipleCalls';
@@ -1842,12 +1867,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2402
-     * @tc.name      : testMatrixSetMatrixNull
-     * @tc.desc      : testMatrixSetMatrixNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMatrixSetMatrixNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2402
+     * @tc.desc   testMatrixSetMatrixNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixSetMatrixNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixSetMatrixNull';
@@ -1870,12 +1895,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2500
-     * @tc.name      : testMatrixSetConcatNormal
-     * @tc.desc      : testMatrixSetConcatNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixSetConcatNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2500
+     * @tc.desc   testMatrixSetConcatNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixSetConcatNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testMatrixSetConcatNormal';
@@ -1939,12 +1964,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2501
-     * @tc.name      : testMatrixSetConcatMultipleCalls
-     * @tc.desc      : testMatrixSetConcatMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixSetConcatMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2501
+     * @tc.desc   testMatrixSetConcatMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixSetConcatMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixSetConcatMultipleCalls';
@@ -1966,12 +1991,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2502
-     * @tc.name      : testMatrixSetConcatNull
-     * @tc.desc      : testMatrixSetConcatNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMatrixSetConcatNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2502
+     * @tc.desc   testMatrixSetConcatNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixSetConcatNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixSetConcatNull';
@@ -2011,12 +2036,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2600
-     * @tc.name      : testMatrixPostConcatNormal
-     * @tc.desc      : testMatrixPostConcatNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixPostConcatNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2600
+     * @tc.desc   testMatrixPostConcatNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixPostConcatNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testMatrixPostConcatNormal';
@@ -2080,12 +2105,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2601
-     * @tc.name      : testMatrixPostConcatMultipleCalls
-     * @tc.desc      : testMatrixPostConcatMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixPostConcatMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2601
+     * @tc.desc   testMatrixPostConcatMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixPostConcatMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixPostConcatMultipleCalls';
@@ -2107,12 +2132,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2602
-     * @tc.name      : testMatrixPostConcatNull
-     * @tc.desc      : testMatrixPostConcatNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMatrixPostConcatNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2602
+     * @tc.desc   testMatrixPostConcatNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixPostConcatNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixPostConcatNull';
@@ -2136,12 +2161,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2700
-     * @tc.name      : testMatrixPostSkewNormal
-     * @tc.desc      : testMatrixPostSkewNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixPostSkewNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2700
+     * @tc.desc   testMatrixPostSkewNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixPostSkewNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testMatrixPostSkewNormal';
@@ -2224,12 +2249,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2701
-     * @tc.name      : testMatrixPostSkewMultipleCalls
-     * @tc.desc      : testMatrixPostSkewMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixPostSkewMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2701
+     * @tc.desc   testMatrixPostSkewMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixPostSkewMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixPostSkewMultipleCalls';
@@ -2245,12 +2270,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2702
-     * @tc.name      : testMatrixPostSkewNull
-     * @tc.desc      : testMatrixPostSkewNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMatrixPostSkewNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2702
+     * @tc.desc   testMatrixPostSkewNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixPostSkewNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixPostSkewNull';
@@ -2321,12 +2346,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2800
-     * @tc.name      : testMatrixPreSkewNormal
-     * @tc.desc      : testMatrixPreSkewNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixPreSkewNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2800
+     * @tc.desc   testMatrixPreSkewNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixPreSkewNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testMatrixPreSkewNormal';
@@ -2409,12 +2434,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2801
-     * @tc.name      : testMatrixPreSkewMultipleCalls
-     * @tc.desc      : testMatrixPreSkewMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixPreSkewMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2801
+     * @tc.desc   testMatrixPreSkewMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixPreSkewMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixPreSkewMultipleCalls';
@@ -2430,12 +2455,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2802
-     * @tc.name      : testMatrixPreSkewNull
-     * @tc.desc      : testMatrixPreSkewNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMatrixPreSkewNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2802
+     * @tc.desc   testMatrixPreSkewNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixPreSkewNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixPreSkewNull';
@@ -2506,12 +2531,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2900
-     * @tc.name      : testMatrixMapRadiusNormal
-     * @tc.desc      : testMatrixMapRadiusNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixMapRadiusNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2900
+     * @tc.desc   testMatrixMapRadiusNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixMapRadiusNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testMatrixMapRadiusNormal';
@@ -2627,12 +2652,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2901
-     * @tc.name      : testMatrixMapRadiusMultipleCalls
-     * @tc.desc      : testMatrixMapRadiusMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixMapRadiusMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2901
+     * @tc.desc   testMatrixMapRadiusMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixMapRadiusMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixMapRadiusMultipleCalls';
@@ -2648,12 +2673,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2902
-     * @tc.name      : testMatrixMapRadiusNull
-     * @tc.desc      : testMatrixMapRadiusNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMatrixMapRadiusNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_2902
+     * @tc.desc   testMatrixMapRadiusNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixMapRadiusNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixMapRadiusNull';
@@ -2676,12 +2701,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_3000
-     * @tc.name      : testMatrixRectStaysRectNormal
-     * @tc.desc      : testMatrixRectStaysRectNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixRectStaysRectNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_3000
+     * @tc.desc   testMatrixRectStaysRectNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixRectStaysRectNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testMatrixRectStaysRectNormal';
@@ -2753,12 +2778,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_3001
-     * @tc.name      : testMatrixRectStaysRectMultipleCalls
-     * @tc.desc      : testMatrixRectStaysRectMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixRectStaysRectMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_3001
+     * @tc.desc   testMatrixRectStaysRectMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixRectStaysRectMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixRectStaysRectMultipleCalls';
@@ -2776,12 +2801,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_3100
-     * @tc.name      : testMatrixSetSinCosNormal
-     * @tc.desc      : testMatrixSetSinCosNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMatrixSetSinCosNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_3100
+     * @tc.desc   testMatrixSetSinCosNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMatrixSetSinCosNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testMatrixSetSinCosNormal';
@@ -2850,12 +2875,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_3101
-     * @tc.name      : testMatrixSetSinCosMultipleCalls
-     * @tc.desc      : testMatrixSetSinCosMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMatrixSetSinCosMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_3101
+     * @tc.desc   testMatrixSetSinCosMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixSetSinCosMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixSetSinCosMultipleCalls';
@@ -2871,12 +2896,12 @@ export default function drawingTsMatrixPart2Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_3102
-     * @tc.name      : testMatrixSetSinCosNull
-     * @tc.desc      : testMatrixSetSinCosNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMatrixSetSinCosNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_3102
+     * @tc.desc   testMatrixSetSinCosNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMatrixSetSinCosNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMatrixSetSinCosNull';

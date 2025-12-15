@@ -60,14 +60,14 @@ export default function ActsAceWebviewJavaScriptPermission() {
     })
 
 
-    /*
-    *@tc.number SUB_ACE_WEBVIEW_JAVASCRIPTPERMISSION_API_0001
-    *@tc.name testWebViewJavaScriptPermission
-    *@tc.desc test testWebViewJavaScriptPermission
-    *@tc.size MediumTest
-    *@tc.type Function
-    *@tc.level 1
-    */
+    /**
+     * @tc.name   testWebViewJavaScriptPermission
+     * @tc.number SUB_ACE_WEBVIEW_JAVASCRIPTPERMISSION_API_0001
+     * @tc.desc   test testWebViewJavaScriptPermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testWebViewJavaScriptPermission', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewJavaScriptPermission"
       Utils.emitEvent(emitKey, 172350);

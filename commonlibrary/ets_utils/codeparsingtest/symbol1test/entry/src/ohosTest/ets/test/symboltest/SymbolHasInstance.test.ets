@@ -44,12 +44,12 @@ export default function symbolHasInstanceTest() {
 
 
     /**
+     * @tc.name   CustomInstanceOfBehaviorTest001
      * @tc.number SUB_SYMBOL_HASINSTANCE_STANDALONE_TEST_001
-     * @tc.name CustomInstanceOfBehaviorTest001
-     * @tc.desc Verify custom instanceof behavior via Symbol.hasInstance override
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify custom instanceof behavior via Symbol.hasInstance override
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CustomInstanceOfBehaviorTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolHasInstanceStandaloneTestUtils.test001_CustomInstanceOfBehavior();
@@ -57,12 +57,12 @@ export default function symbolHasInstanceTest() {
     });
 
     /**
+     * @tc.name   DefaultInstanceOfBehaviorTest002
      * @tc.number SUB_SYMBOL_HASINSTANCE_STANDALONE_TEST_002
-     * @tc.name DefaultInstanceOfBehaviorTest002
-     * @tc.desc Verify default instanceof behavior without Symbol.hasInstance override
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify default instanceof behavior without Symbol.hasInstance override
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DefaultInstanceOfBehaviorTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolHasInstanceStandaloneTestUtils.test002_DefaultInstanceOfBehavior();
@@ -70,12 +70,12 @@ export default function symbolHasInstanceTest() {
     });
 
     /**
+     * @tc.name   SymbolHasInstanceNonWritableTest003
      * @tc.number SUB_SYMBOL_HASINSTANCE_STANDALONE_TEST_003
-     * @tc.name SymbolHasInstanceNonWritableTest003
-     * @tc.desc Verify Symbol.hasInstance is non-writable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Symbol.hasInstance is non-writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolHasInstanceNonWritableTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolHasInstanceStandaloneTestUtils.test003_SymbolHasInstanceNonWritable();
@@ -85,12 +85,12 @@ export default function symbolHasInstanceTest() {
 
 
     /**
+     * @tc.name   SymbolHasInstanceNonConfigurableTest005
      * @tc.number SUB_SYMBOL_HASINSTANCE_STANDALONE_TEST_005
-     * @tc.name SymbolHasInstanceNonConfigurableTest005
-     * @tc.desc Verify Symbol.hasInstance is non-configurable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Symbol.hasInstance is non-configurable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolHasInstanceNonConfigurableTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolHasInstanceStandaloneTestUtils.test005_SymbolHasInstanceNonConfigurable();
@@ -98,12 +98,12 @@ export default function symbolHasInstanceTest() {
     });
 
     /**
+     * @tc.name   SymbolHasInstanceNonObjectInputTest006
      * @tc.number SUB_SYMBOL_HASINSTANCE_STANDALONE_TEST_006
-     * @tc.name SymbolHasInstanceNonObjectInputTest006
-     * @tc.desc Verify Symbol.hasInstance handles non-object inputs gracefully
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Symbol.hasInstance handles non-object inputs gracefully
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolHasInstanceNonObjectInputTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolHasInstanceStandaloneTestUtils.test006_SymbolHasInstanceNonObjectInput();
@@ -111,12 +111,12 @@ export default function symbolHasInstanceTest() {
     });
 
     /**
+     * @tc.name   SubclassInheritsSymbolHasInstanceTest007
      * @tc.number SUB_SYMBOL_HASINSTANCE_STANDALONE_TEST_007
-     * @tc.name SubclassInheritsSymbolHasInstanceTest007
-     * @tc.desc Verify subclass inherits parent's Symbol.hasInstance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify subclass inherits parent's Symbol.hasInstance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SubclassInheritsSymbolHasInstanceTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolHasInstanceStandaloneTestUtils.test007_SubclassInheritsSymbolHasInstance();
@@ -124,12 +124,12 @@ export default function symbolHasInstanceTest() {
     });
 
     /**
+     * @tc.name   BuiltInConstructorSymbolHasInstanceTest008
      * @tc.number SUB_SYMBOL_HASINSTANCE_STANDALONE_TEST_008
-     * @tc.name BuiltInConstructorSymbolHasInstanceTest008
-     * @tc.desc Verify built-in constructors have non-writable Symbol.hasInstance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify built-in constructors have non-writable Symbol.hasInstance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('BuiltInConstructorSymbolHasInstanceTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolHasInstanceStandaloneTestUtils.test008_BuiltInConstructorSymbolHasInstance();
@@ -137,12 +137,12 @@ export default function symbolHasInstanceTest() {
     });
 
     /**
+     * @tc.name   SymbolHasInstanceComplexCheckTest009
      * @tc.number SUB_SYMBOL_HASINSTANCE_STANDALONE_TEST_009
-     * @tc.name SymbolHasInstanceComplexCheckTest009
-     * @tc.desc Verify Symbol.hasInstance implements complex type checks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Symbol.hasInstance implements complex type checks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolHasInstanceComplexCheckTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolHasInstanceStandaloneTestUtils.test009_SymbolHasInstanceComplexCheck();
@@ -150,12 +150,12 @@ export default function symbolHasInstanceTest() {
     });
 
     /**
+     * @tc.name   SymbolHasInstanceIgnoresPrototypeTest010
      * @tc.number SUB_SYMBOL_HASINSTANCE_STANDALONE_TEST_010
-     * @tc.name SymbolHasInstanceIgnoresPrototypeTest010
-     * @tc.desc Verify Symbol.hasInstance override ignores prototype chain
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Symbol.hasInstance override ignores prototype chain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolHasInstanceIgnoresPrototypeTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolHasInstanceStandaloneTestUtils.test010_SymbolHasInstanceIgnoresPrototype();
@@ -164,12 +164,12 @@ export default function symbolHasInstanceTest() {
 
 
     /**
+     * @tc.name   SymbolHasInstanceBooleanCoercionTest011
      * @tc.number SUB_SYMBOL_HASINSTANCE_STANDALONE_TEST_011
-     * @tc.name SymbolHasInstanceBooleanCoercionTest011
-     * @tc.desc Verify [Symbol.hasInstance] return value is coerced to boolean
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.hasInstance] return value is coerced to boolean
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolHasInstanceBooleanCoercionTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolHasInstanceStandaloneTestUtils.test011_SymbolHasInstanceBooleanCoercion();
@@ -178,12 +178,12 @@ export default function symbolHasInstanceTest() {
 
 
     /**
+     * @tc.name   SubclassOverrideSymbolHasInstanceTest013
      * @tc.number SUB_SYMBOL_HASINSTANCE_STANDALONE_TEST_013
-     * @tc.name SubclassOverrideSymbolHasInstanceTest013
-     * @tc.desc Verify subclass can override parent's [Symbol.hasInstance]
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify subclass can override parent's [Symbol.hasInstance]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SubclassOverrideSymbolHasInstanceTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolHasInstanceStandaloneTestUtils.test013_SubclassOverrideSymbolHasInstance();
@@ -191,12 +191,12 @@ export default function symbolHasInstanceTest() {
     });
 
     /**
+     * @tc.name   SymbolHasInstanceNullUndefinedTest014
      * @tc.number SUB_SYMBOL_HASINSTANCE_STANDALONE_TEST_014
-     * @tc.name SymbolHasInstanceNullUndefinedTest014
-     * @tc.desc Verify [Symbol.hasInstance] handles null/undefined gracefully
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.hasInstance] handles null/undefined gracefully
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolHasInstanceNullUndefinedTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolHasInstanceStandaloneTestUtils.test014_SymbolHasInstanceNullUndefined();
@@ -205,12 +205,12 @@ export default function symbolHasInstanceTest() {
 
 
     /**
+     * @tc.name   SymbolHasInstanceArrayLikeTest016
      * @tc.number SUB_SYMBOL_HASINSTANCE_STANDALONE_TEST_016
-     * @tc.name SymbolHasInstanceArrayLikeTest016
-     * @tc.desc Verify [Symbol.hasInstance] identifies array-like objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.hasInstance] identifies array-like objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolHasInstanceArrayLikeTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolHasInstanceStandaloneTestUtils.test016_SymbolHasInstanceArrayLike();
@@ -218,12 +218,12 @@ export default function symbolHasInstanceTest() {
     });
 
     /**
+     * @tc.name   SymbolHasInstanceInstancePropertyTest017
      * @tc.number SUB_SYMBOL_HASINSTANCE_STANDALONE_TEST_017
-     * @tc.name SymbolHasInstanceInstancePropertyTest017
-     * @tc.desc Verify instance [Symbol.hasInstance] is ignored
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify instance [Symbol.hasInstance] is ignored
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolHasInstanceInstancePropertyTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolHasInstanceStandaloneTestUtils.test017_SymbolHasInstanceInstanceProperty();
@@ -231,12 +231,12 @@ export default function symbolHasInstanceTest() {
     });
 
     /**
+     * @tc.name   SymbolHasInstanceMultiLevelInheritanceTest018
      * @tc.number SUB_SYMBOL_HASINSTANCE_STANDALONE_TEST_018
-     * @tc.name SymbolHasInstanceMultiLevelInheritanceTest018
-     * @tc.desc Verify [Symbol.hasInstance] works with multi-level inheritance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.hasInstance] works with multi-level inheritance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolHasInstanceMultiLevelInheritanceTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolHasInstanceStandaloneTestUtils.test018_SymbolHasInstanceMultiLevelInheritance();
@@ -244,12 +244,12 @@ export default function symbolHasInstanceTest() {
     });
 
     /**
+     * @tc.name   SymbolHasInstanceStrictModeTest019
      * @tc.number SUB_SYMBOL_HASINSTANCE_STANDALONE_TEST_019
-     * @tc.name SymbolHasInstanceStrictModeTest019
-     * @tc.desc Verify [Symbol.hasInstance] behavior is consistent in strict mode
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.hasInstance] behavior is consistent in strict mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolHasInstanceStrictModeTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolHasInstanceStandaloneTestUtils.test019_SymbolHasInstanceStrictMode();
@@ -257,12 +257,12 @@ export default function symbolHasInstanceTest() {
     });
 
     /**
+     * @tc.name   SymbolHasInstanceFrozenObjectTest020
      * @tc.number SUB_SYMBOL_HASINSTANCE_STANDALONE_TEST_020
-     * @tc.name SymbolHasInstanceFrozenObjectTest020
-     * @tc.desc Verify [Symbol.hasInstance] works with frozen objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.hasInstance] works with frozen objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolHasInstanceFrozenObjectTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolHasInstanceStandaloneTestUtils.test020_SymbolHasInstanceFrozenObject();
@@ -270,12 +270,12 @@ export default function symbolHasInstanceTest() {
     });
 
     /**
+     * @tc.name   SymbolHasInstanceDynamicConditionTest021
      * @tc.number SUB_SYMBOL_HASINSTANCE_STANDALONE_TEST_021
-     * @tc.name SymbolHasInstanceDynamicConditionTest021
-     * @tc.desc Verify [Symbol.hasInstance] supports dynamic conditions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.hasInstance] supports dynamic conditions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolHasInstanceDynamicConditionTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolHasInstanceStandaloneTestUtils.test021_SymbolHasInstanceDynamicCondition();
@@ -283,12 +283,12 @@ export default function symbolHasInstanceTest() {
     });
 
     /**
+     * @tc.name   SymbolHasInstanceWithToStringTest022
      * @tc.number SUB_SYMBOL_HASINSTANCE_STANDALONE_TEST_022
-     * @tc.name SymbolHasInstanceWithToStringTest022
-     * @tc.desc Verify [Symbol.hasInstance] integrates with Object.prototype.toString
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.hasInstance] integrates with Object.prototype.toString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolHasInstanceWithToStringTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolHasInstanceStandaloneTestUtils.test022_SymbolHasInstanceWithToString();
@@ -296,12 +296,12 @@ export default function symbolHasInstanceTest() {
     });
 
     /**
+     * @tc.name   SymbolHasInstanceNonDeletableTest023
      * @tc.number SUB_SYMBOL_HASINSTANCE_STANDALONE_TEST_023
-     * @tc.name SymbolHasInstanceNonDeletableTest023
-     * @tc.desc Verify [Symbol.hasInstance] is non-deletable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.hasInstance] is non-deletable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolHasInstanceNonDeletableTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolHasInstanceStandaloneTestUtils.test023_SymbolHasInstanceNonDeletable();
@@ -309,12 +309,12 @@ export default function symbolHasInstanceTest() {
     });
 
     /**
+     * @tc.name   SymbolHasInstanceCircularReferenceTest024
      * @tc.number SUB_SYMBOL_HASINSTANCE_STANDALONE_TEST_024
-     * @tc.name SymbolHasInstanceCircularReferenceTest024
-     * @tc.desc Verify [Symbol.hasInstance] handles circular reference objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.hasInstance] handles circular reference objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolHasInstanceCircularReferenceTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolHasInstanceStandaloneTestUtils.test024_SymbolHasInstanceCircularReference();
@@ -322,12 +322,12 @@ export default function symbolHasInstanceTest() {
     });
 
     /**
+     * @tc.name   SymbolHasInstanceBuiltInErrorTest025
      * @tc.number SUB_SYMBOL_HASINSTANCE_STANDALONE_TEST_025
-     * @tc.name SymbolHasInstanceBuiltInErrorTest025
-     * @tc.desc Verify [Symbol.hasInstance] checks specific built-in Error types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.hasInstance] checks specific built-in Error types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolHasInstanceBuiltInErrorTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolHasInstanceStandaloneTestUtils.test025_SymbolHasInstanceBuiltInError();
@@ -335,12 +335,12 @@ export default function symbolHasInstanceTest() {
     });
 
     /**
+     * @tc.name   SymbolHasInstanceNonClassObjectTest026
      * @tc.number SUB_SYMBOL_HASINSTANCE_STANDALONE_TEST_026
-     * @tc.name SymbolHasInstanceNonClassObjectTest026
-     * @tc.desc Verify non-class objects can have [Symbol.hasInstance]
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify non-class objects can have [Symbol.hasInstance]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolHasInstanceNonClassObjectTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolHasInstanceStandaloneTestUtils.test026_SymbolHasInstanceNonClassObject();
@@ -348,12 +348,12 @@ export default function symbolHasInstanceTest() {
     });
 
     /**
+     * @tc.name   SymbolHasInstanceBatchCheckTest027
      * @tc.number SUB_SYMBOL_HASINSTANCE_STANDALONE_TEST_027
-     * @tc.name SymbolHasInstanceBatchCheckTest027
-     * @tc.desc Verify [Symbol.hasInstance] supports batch instance validation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.hasInstance] supports batch instance validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolHasInstanceBatchCheckTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolHasInstanceStandaloneTestUtils.test027_SymbolHasInstanceBatchCheck();
@@ -362,12 +362,12 @@ export default function symbolHasInstanceTest() {
 
 
     /**
+     * @tc.name   SymbolHasInstanceSubclassPrototypeModifyTest029
      * @tc.number SUB_SYMBOL_HASINSTANCE_STANDALONE_TEST_029
-     * @tc.name SymbolHasInstanceSubclassPrototypeModifyTest029
-     * @tc.desc Verify subclass prototype modification doesn't affect [Symbol.hasInstance]
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify subclass prototype modification doesn't affect [Symbol.hasInstance]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolHasInstanceSubclassPrototypeModifyTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolHasInstanceStandaloneTestUtils.test029_SymbolHasInstanceSubclassPrototypeModify();
@@ -375,12 +375,12 @@ export default function symbolHasInstanceTest() {
     });
 
     /**
+     * @tc.name   SymbolHasInstanceOptionalChainingTest030
      * @tc.number SUB_SYMBOL_HASINSTANCE_STANDALONE_TEST_030
-     * @tc.name SymbolHasInstanceOptionalChainingTest030
-     * @tc.desc Verify [Symbol.hasInstance] uses optional chaining safely
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.hasInstance] uses optional chaining safely
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolHasInstanceOptionalChainingTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolHasInstanceStandaloneTestUtils.test030_SymbolHasInstanceOptionalChaining();

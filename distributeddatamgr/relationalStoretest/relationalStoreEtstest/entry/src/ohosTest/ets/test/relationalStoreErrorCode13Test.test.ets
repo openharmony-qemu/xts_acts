@@ -58,7 +58,6 @@ export default function relationalStoreErrorCode13Test() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_0300
      * @tc.desc   errcode is 14800013
@@ -86,7 +85,6 @@ export default function relationalStoreErrorCode13Test() {
       console.info(TAG + "************* errcode003 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode035
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_3500
      * @tc.desc   beginTrans errcode is 14800047

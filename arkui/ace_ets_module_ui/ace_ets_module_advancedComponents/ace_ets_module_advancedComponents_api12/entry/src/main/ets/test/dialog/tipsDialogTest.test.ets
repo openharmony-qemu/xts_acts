@@ -50,12 +50,12 @@ export default function tipsDialogTest() {
     })
 
     /**
+     * @tc.name   tipsDialogTest_0100
      * @tc.number tipsDialogTest
-     * @tc.name   tipsDialogTest
      * @tc.desc   Test tipsDialog
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('tipsDialogTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[tipsDialogTest_0100] START');
@@ -80,12 +80,12 @@ export default function tipsDialogTest() {
     });
 
     /**
+     * @tc.name   tipsDialogTest_0200
      * @tc.number tipsDialogTest
-     * @tc.name   tipsDialogTest
      * @tc.desc   Test tipsDialog
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('tipsDialogTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[tipsDialogTest_0200] START');
@@ -110,12 +110,12 @@ export default function tipsDialogTest() {
     });
 
     /**
+     * @tc.name   tipsDialogTest_0300
      * @tc.number tipsDialogTest
-     * @tc.name   tipsDialogTest
      * @tc.desc   Test tipsDialog
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('tipsDialogTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[tipsDialogTest_0300] START');

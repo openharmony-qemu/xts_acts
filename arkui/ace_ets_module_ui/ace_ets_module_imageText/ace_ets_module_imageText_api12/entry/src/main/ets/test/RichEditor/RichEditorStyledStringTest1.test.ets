@@ -49,10 +49,12 @@ export default function RichEditorStyledStringTest1() {
 
 
     /**
-     * @tc.number    RichEditorStyledStringTest1_0100
-     * @tc.name      RichEditorStyledStringTest1_0100
-     * @tc.desc      Test RichEditor getLayoutManager
-     * @tc.level     Level 2
+     * @tc.name   RichEditorStyledStringTest1_0100
+     * @tc.number RichEditorStyledStringTest1_0100
+     * @tc.desc   Test RichEditor getLayoutManager
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RichEditorStyledStringTest1_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('RichEditorStyledStringTest1_0100 START');

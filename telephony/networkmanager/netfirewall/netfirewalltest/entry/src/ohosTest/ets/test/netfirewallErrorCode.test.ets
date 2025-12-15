@@ -335,12 +335,12 @@ export default function NetfirewallErrorCode01() {
     })
     
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_0100
-     * @tc.name   : testTelephonyNetfirewallErrCo0100
-     * @tc.desc   : removeNetFirewallRule The specified rule does not exist.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo0100
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_0100
+     * @tc.desc   removeNetFirewallRule The specified rule does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo0100';
@@ -364,12 +364,12 @@ export default function NetfirewallErrorCode01() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_0200
-     * @tc.name   : testTelephonyNetfirewallErrCo0200
-     * @tc.desc   : updateNetFirewallRule The specified rule does not exist
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo0200
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_0200
+     * @tc.desc   updateNetFirewallRule The specified rule does not exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo0200';
@@ -408,12 +408,12 @@ export default function NetfirewallErrorCode01() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_0300
-     * @tc.name   : testTelephonyNetfirewallErrCo0300
-     * @tc.desc   : removeNetFirewallRule The specified user does not exist.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo0300
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_0300
+     * @tc.desc   removeNetFirewallRule The specified user does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo0300';
@@ -437,12 +437,12 @@ export default function NetfirewallErrorCode01() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_0400
-     * @tc.name   : testTelephonyNetfirewallErrCo0400
-     * @tc.desc   : getNetFirewallRule The specified rule does not exist.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo0400
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_0400
+     * @tc.desc   getNetFirewallRule The specified rule does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo0400';
@@ -467,12 +467,12 @@ export default function NetfirewallErrorCode01() {
 
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_0500
-     * @tc.name   : testTelephonyNetfirewallErrCo0500
-     * @tc.desc   : removeNetFirewallRule	Invalid parameter value.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo0500
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_0500
+     * @tc.desc   removeNetFirewallRule	Invalid parameter value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo0500';
@@ -497,12 +497,12 @@ export default function NetfirewallErrorCode01() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_0600
-     * @tc.name   : testTelephonyNetfirewallErrCo0600
-     * @tc.desc   : getNetFirewallRules Parameter error
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo0600
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_0600
+     * @tc.desc   getNetFirewallRules Parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo0600';
@@ -526,12 +526,12 @@ export default function NetfirewallErrorCode01() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_0700
-     * @tc.name   : testTelephonyNetfirewallErrCo0700
-     * @tc.desc   : getNetFirewallRules The specified user does not exist.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo0700
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_0700
+     * @tc.desc   getNetFirewallRules The specified user does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo0700';
@@ -561,12 +561,12 @@ export default function NetfirewallErrorCode01() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_0800
-     * @tc.name   : testTelephonyNetfirewallErrCo0800
-     * @tc.desc   : getNetFirewallRules Invalid parameter value.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo0800
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_0800
+     * @tc.desc   getNetFirewallRules Invalid parameter value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo0800';
@@ -597,12 +597,12 @@ export default function NetfirewallErrorCode01() {
 
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_0900
-     * @tc.name   : testTelephonyNetfirewallErrCo0900
-     * @tc.desc   : getNetFirewallRule The specified user does not exist.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo0900
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_0900
+     * @tc.desc   getNetFirewallRule The specified user does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo0900';
@@ -625,12 +625,12 @@ export default function NetfirewallErrorCode01() {
       }
     })
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_1000
-     * @tc.name   : testTelephonyNetfirewallErrCo1000
-     * @tc.desc   : getNetFirewallRule Invalid parameter value.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo1000
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_1000
+     * @tc.desc   getNetFirewallRule Invalid parameter value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo1000';
@@ -655,12 +655,12 @@ export default function NetfirewallErrorCode01() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_1100
-     * @tc.name   : testTelephonyNetfirewallErrCo1100
-     * @tc.desc   : addNetFirewallRule Parameter error
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo1100
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_1100
+     * @tc.desc   addNetFirewallRule Parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo1100';
@@ -684,12 +684,12 @@ export default function NetfirewallErrorCode01() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_1200
-     * @tc.name   : testTelephonyNetfirewallErrCo1200
-     * @tc.desc   : removeNetFirewallRule Parameter error
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo1200
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_1200
+     * @tc.desc   removeNetFirewallRule Parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo1200';
@@ -713,12 +713,12 @@ export default function NetfirewallErrorCode01() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_1300
-     * @tc.name   : testTelephonyNetfirewallErrCo1300
-     * @tc.desc   : getNetFirewallPolicy Invalid parameter value
-     * @tc.level  : Level 3
-     * @tc.type   : Function0
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo1300
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_1300
+     * @tc.desc   getNetFirewallPolicy Invalid parameter value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo1300';
@@ -742,12 +742,12 @@ export default function NetfirewallErrorCode01() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_1400
-     * @tc.name   : testTelephonyNetfirewallErrCo1400
-     * @tc.desc   : setNetFirewallPolicy Parameter error
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo1400
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_1400
+     * @tc.desc   setNetFirewallPolicy Parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo0100';
@@ -776,12 +776,12 @@ export default function NetfirewallErrorCode01() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_1500
-     * @tc.name   : testTelephonyNetfirewallErrCo1500
-     * @tc.desc   : addNetFirewallRule Invalid parameter value.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo1500
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_1500
+     * @tc.desc   addNetFirewallRule Invalid parameter value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo1500';
@@ -815,12 +815,12 @@ export default function NetfirewallErrorCode01() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_1600
-     * @tc.name   : testTelephonyNetfirewallErrCo1600
-     * @tc.desc   : getNetFirewallPolicy Parameter error
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo1600
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_1600
+     * @tc.desc   getNetFirewallPolicy Parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo1600';
@@ -844,12 +844,12 @@ export default function NetfirewallErrorCode01() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_1700
-     * @tc.name   : testTelephonyNetfirewallErrCo1700
-     * @tc.desc   : getNetFirewallRule Parameter error
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo1700
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_1700
+     * @tc.desc   getNetFirewallRule Parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo1700';
@@ -874,12 +874,12 @@ export default function NetfirewallErrorCode01() {
 
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_1800
-     * @tc.name   : testTelephonyNetfirewallErrCo1800
-     * @tc.desc   : setNetFirewallPolicy Invalid parameter value
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo1800
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_1800
+     * @tc.desc   setNetFirewallPolicy Invalid parameter value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo1800';
@@ -909,12 +909,12 @@ export default function NetfirewallErrorCode01() {
 
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_1900
-     * @tc.name   : testTelephonyNetfirewallErrCo1900
-     * @tc.desc   : setNetFirewallPolicy The specified user does not exist.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo1900
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_1900
+     * @tc.desc   setNetFirewallPolicy The specified user does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo1900';
@@ -943,12 +943,12 @@ export default function NetfirewallErrorCode01() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_2000
-     * @tc.name   : testTelephonyNetfirewallErrCo2000
-     * @tc.desc   : updateNetFirewallRule The specified user does not exist.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo2000
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_2000
+     * @tc.desc   updateNetFirewallRule The specified user does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo2000';
@@ -986,12 +986,12 @@ export default function NetfirewallErrorCode01() {
       }
     })
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_2100
-     * @tc.name   : testTelephonyNetfirewallErrCo2100
-     * @tc.desc   : updateNetFirewallRule Invalid parameter value.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo2100
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_2100
+     * @tc.desc   updateNetFirewallRule Invalid parameter value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo2100';
@@ -1026,12 +1026,12 @@ export default function NetfirewallErrorCode01() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_2200
-     * @tc.name   : testTelephonyNetfirewallErrCo2200
-     * @tc.desc   : updateNetFirewallRule Parameter error
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo2200
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_2200
+     * @tc.desc   updateNetFirewallRule Parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo2200';
@@ -1055,12 +1055,12 @@ export default function NetfirewallErrorCode01() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_2300
-     * @tc.name   : testTelephonyNetfirewallErrCo2300
-     * @tc.desc   : addNetFirewallRule The specified user does not exist.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo2300
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_2300
+     * @tc.desc   addNetFirewallRule The specified user does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo2300';
@@ -1094,12 +1094,12 @@ export default function NetfirewallErrorCode01() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_2400
-     * @tc.name   : testTelephonyNetfirewallErrCo2400
-     * @tc.desc   : getNetFirewallPolicy 	The specified user does not exist.
-     * @tc.level  : Level 3
-     * @tc.type   : Function0
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo2400
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_2400
+     * @tc.desc   getNetFirewallPolicy 	The specified user does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo2400';
@@ -1123,12 +1123,12 @@ export default function NetfirewallErrorCode01() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_2500
-     * @tc.name   : testTelephonyNetfirewallErrCo2500
-     * @tc.desc   : addNetFirewallRule The specified user does not exist.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo2500
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_2500
+     * @tc.desc   addNetFirewallRule The specified user does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo2500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo2500';
@@ -1154,12 +1154,12 @@ export default function NetfirewallErrorCode01() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_2600
-     * @tc.name   : testTelephonyNetfirewallErrCo2600
-     * @tc.desc   : addNetFirewallRule The number of IP address rules in the firewall rule exceeds the maximum
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo2600
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_2600
+     * @tc.desc   addNetFirewallRule The number of IP address rules in the firewall rule exceeds the maximum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo2600';
@@ -1184,12 +1184,12 @@ export default function NetfirewallErrorCode01() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_2700
-     * @tc.name   : testTelephonyNetfirewallErrCo2700
-     * @tc.desc   : addNetFirewallRule The number of domain rules in the firewall rule exceeds the maximum.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo2700
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_2700
+     * @tc.desc   addNetFirewallRule The number of domain rules in the firewall rule exceeds the maximum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo2700';
@@ -1217,12 +1217,12 @@ export default function NetfirewallErrorCode01() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo3300
-     * @tc.name   : testTelephonyNetfirewallErrCo3300
-     * @tc.desc   : updateNetFirewallRule The number of domain rules in the firewall rule exceeds the maximum
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo3300
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo3300
+     * @tc.desc   updateNetFirewallRule The number of domain rules in the firewall rule exceeds the maximum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo3300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo3300';
@@ -1248,12 +1248,12 @@ export default function NetfirewallErrorCode01() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_2800
-     * @tc.name   : testTelephonyNetfirewallErrCo2800
-     * @tc.desc   : updateNetFirewallRule The number of IP address rules in the firewall rule exceeds the maximum.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo2800
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_2800
+     * @tc.desc   updateNetFirewallRule The number of IP address rules in the firewall rule exceeds the maximum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo2800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo2800';
@@ -1278,12 +1278,12 @@ export default function NetfirewallErrorCode01() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_2900
-     * @tc.name   : testTelephonyNetfirewallErrCo2900
-     * @tc.desc   : updateNetFirewallRule The number of port rules in the firewall rule exceeds the maximum.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo2900
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_2900
+     * @tc.desc   updateNetFirewallRule The number of port rules in the firewall rule exceeds the maximum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo2900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo2900';
@@ -1308,12 +1308,12 @@ export default function NetfirewallErrorCode01() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_3000
-     * @tc.name   : testTelephonyNetfirewallErrCo3000
-     * @tc.desc   : addNetFirewallRule The dns rule is duplication.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo3000
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_3000
+     * @tc.desc   addNetFirewallRule The dns rule is duplication.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo3000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo3000';
@@ -1340,12 +1340,12 @@ export default function NetfirewallErrorCode01() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_3200
-     * @tc.name   : testTelephonyNetfirewallErrCo3200
-     * @tc.desc   : updateNetFirewallRule The dns rule is duplication
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo3200
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_3200
+     * @tc.desc   updateNetFirewallRule The dns rule is duplication
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo3200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo3200';
@@ -1371,12 +1371,12 @@ export default function NetfirewallErrorCode01() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_ErrCo_3100
-     * @tc.name   : testTelephonyNetfirewallErrCo3100
-     * @tc.desc   : addNetFirewallRule The number of firewall rules exceeds the maximum
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallErrCo3100
+     * @tc.number SUB_Telephony_Netfirewall_ErrCo_3100
+     * @tc.desc   addNetFirewallRule The number of firewall rules exceeds the maximum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyNetfirewallErrCo3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallErrCo3100';

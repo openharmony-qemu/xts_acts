@@ -44,12 +44,12 @@ export default function syncLoadGrid() {
     });
 
     /**
-     * @tc.number    syncLoadGrid_001
-     * @tc.name      syncLoadGrid_0100
-     * @tc.desc      Asynchronous loading of Grid sub components.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   syncLoadGrid_0100
+     * @tc.number syncLoadGrid_001
+     * @tc.desc   Asynchronous loading of Grid sub components.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('syncLoadGrid_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[syncLoadGrid_0100] START');
@@ -68,12 +68,12 @@ export default function syncLoadGrid() {
     });
 
     /**
-     * @tc.number    syncLoadGrid_002
-     * @tc.name      syncLoadGrid_0200
-     * @tc.desc      Synchronize loading of Grid sub components.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   syncLoadGrid_0200
+     * @tc.number syncLoadGrid_002
+     * @tc.desc   Synchronize loading of Grid sub components.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('syncLoadGrid_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[syncLoadGrid_0200] START');

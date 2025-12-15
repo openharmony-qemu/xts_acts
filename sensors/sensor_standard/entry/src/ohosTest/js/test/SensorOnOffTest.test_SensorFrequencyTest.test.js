@@ -66,14 +66,13 @@ describe("SensorJsTest_sensor_63", function () {
     const PERMISSION_DENIED_MSG = 'Permission denied.'
     const SENSOR_NO_SUPPORT_CODE = 14500102
 
-    /*
-     * @tc.name:SUB_SensorsSystem_NewFrequency_JSTest_0010
-     * @tc.desc:verify app info is not null
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
-     * @tc.require: Issue Number
-     * @tc.number:SUB_SensorsSystem_NewFrequency_JSTest_0010
+    /**
+     * @tc.name   SUB_SensorsSystem_NewFrequency_JSTest_0010
+     * @tc.number SUB_SensorsSystem_NewFrequency_JSTest_0010
+     * @tc.desc   verify app info is not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_SensorsSystem_NewFrequency_JSTest_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('----------------------SUB_SensorsSystem_NewFrequency_JSTest_0010---------------------------');
@@ -103,15 +102,14 @@ describe("SensorJsTest_sensor_63", function () {
         }
     })
 
-    /*
-    * @tc.name:SUB_SensorsSystem_NewFrequency_JSTest_0020
-    * @tc.desc:verify app info is not null
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 3
-    * @tc.require: Issue Number
-    * @tc.number:SUB_SensorsSystem_NewFrequency_JSTest_0020
-    */
+    /**
+     * @tc.name   SUB_SensorsSystem_NewFrequency_JSTest_0020
+     * @tc.number SUB_SensorsSystem_NewFrequency_JSTest_0020
+     * @tc.desc   verify app info is not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SUB_SensorsSystem_NewFrequency_JSTest_0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------SUB_SensorsSystem_NewFrequency_JSTest_0020---------------------------');
             try {
@@ -140,15 +138,14 @@ describe("SensorJsTest_sensor_63", function () {
             }
         })
 
-    /*
-    * @tc.name:SUB_SensorsSystem_NewFrequency_JSTest_0030
-    * @tc.desc:verify app info is not null
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 3
-    * @tc.require: Issue Number
-    * @tc.number:SUB_SensorsSystem_NewFrequency_JSTest_0030
-    */
+    /**
+     * @tc.name   SUB_SensorsSystem_NewFrequency_JSTest_0030
+     * @tc.number SUB_SensorsSystem_NewFrequency_JSTest_0030
+     * @tc.desc   verify app info is not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SUB_SensorsSystem_NewFrequency_JSTest_0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------SUB_SensorsSystem_NewFrequency_JSTest_0030---------------------------');
         try {
@@ -177,15 +174,14 @@ describe("SensorJsTest_sensor_63", function () {
         }
     })
 
-    /*
-    * @tc.name:SUB_SensorsSystem_NewFrequency_JSTest_0040
-    * @tc.desc:verify app info is not null
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 3
-    * @tc.require: Issue Number
-    * @tc.number:SUB_SensorsSystem_NewFrequency_JSTest_0040
-    */
+    /**
+     * @tc.name   SUB_SensorsSystem_NewFrequency_JSTest_0040
+     * @tc.number SUB_SensorsSystem_NewFrequency_JSTest_0040
+     * @tc.desc   verify app info is not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SUB_SensorsSystem_NewFrequency_JSTest_0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------SUB_SensorsSystem_NewFrequency_JSTest_0040---------------------------');
         try {
@@ -214,15 +210,14 @@ describe("SensorJsTest_sensor_63", function () {
         }
     })
 
-    /*
-    * @tc.name:SUB_SensorsSystem_NewFrequency_JSTest_0050
-    * @tc.desc:verify app info is not null
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 3
-    * @tc.require: Issue Number
-    * @tc.number:SUB_SensorsSystem_NewFrequency_JSTest_0050
-    */
+    /**
+     * @tc.name   SUB_SensorsSystem_NewFrequency_JSTest_0050
+     * @tc.number SUB_SensorsSystem_NewFrequency_JSTest_0050
+     * @tc.desc   verify app info is not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SUB_SensorsSystem_NewFrequency_JSTest_0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------SUB_SensorsSystem_NewFrequency_JSTest_0050---------------------------');
         try {
@@ -251,15 +246,14 @@ describe("SensorJsTest_sensor_63", function () {
         }
     })
 
-    /*
-    * @tc.name:SUB_SensorsSystem_NewFrequency_JSTest_0060
-    * @tc.desc:verify app info is not null
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 3
-    * @tc.require: Issue Number
-    * @tc.number:SUB_SensorsSystem_NewFrequency_JSTest_0060
-    */
+    /**
+     * @tc.name   SUB_SensorsSystem_NewFrequency_JSTest_0060
+     * @tc.number SUB_SensorsSystem_NewFrequency_JSTest_0060
+     * @tc.desc   verify app info is not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SUB_SensorsSystem_NewFrequency_JSTest_0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------SUB_SensorsSystem_NewFrequency_JSTest_0060---------------------------');
         try {
@@ -288,15 +282,14 @@ describe("SensorJsTest_sensor_63", function () {
         }
     })
 
-    /*
-    * @tc.name:SUB_SensorsSystem_NewFrequency_JSTest_0070
-    * @tc.desc:verify app info is not null
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 3
-    * @tc.require: Issue Number
-    * @tc.number:SUB_SensorsSystem_NewFrequency_JSTest_0070
-    */
+    /**
+     * @tc.name   SUB_SensorsSystem_NewFrequency_JSTest_0070
+     * @tc.number SUB_SensorsSystem_NewFrequency_JSTest_0070
+     * @tc.desc   verify app info is not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SUB_SensorsSystem_NewFrequency_JSTest_0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------SUB_SensorsSystem_NewFrequency_JSTest_0070---------------------------');
         try {
@@ -325,15 +318,14 @@ describe("SensorJsTest_sensor_63", function () {
         }
     })
 
-    /*
-    * @tc.name:SUB_SensorsSystem_NewFrequency_JSTest_0080
-    * @tc.desc:verify app info is not null
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 3
-    * @tc.require: Issue Number
-    * @tc.number:SUB_SensorsSystem_NewFrequency_JSTest_0080
-    */
+    /**
+     * @tc.name   SUB_SensorsSystem_NewFrequency_JSTest_0080
+     * @tc.number SUB_SensorsSystem_NewFrequency_JSTest_0080
+     * @tc.desc   verify app info is not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SUB_SensorsSystem_NewFrequency_JSTest_0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------SUB_SensorsSystem_NewFrequency_JSTest_0080---------------------------');
         try {
@@ -362,15 +354,14 @@ describe("SensorJsTest_sensor_63", function () {
         }
     })
 
-    /*
-    * @tc.name:SUB_SensorsSystem_NewFrequency_JSTest_0090
-    * @tc.desc:verify app info is not null
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 3
-    * @tc.require: Issue Number
-    * @tc.number:SUB_SensorsSystem_NewFrequency_JSTest_0090
-    */
+    /**
+     * @tc.name   SUB_SensorsSystem_NewFrequency_JSTest_0090
+     * @tc.number SUB_SensorsSystem_NewFrequency_JSTest_0090
+     * @tc.desc   verify app info is not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SUB_SensorsSystem_NewFrequency_JSTest_0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------SUB_SensorsSystem_NewFrequency_JSTest_0090---------------------------');
         try {

@@ -26,65 +26,65 @@ export default function commonAttrsSweepGradientTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_ALIGN_0100
-     * @tc.name       : testCommonAttrsSweepGradient001
-     * @tc.desc       : testing sweepGradient for button with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsSweepGradient001
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ALIGN_0100
+     * @tc.desc   testing sweepGradient for button with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsSweepGradient001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsSweepGradient001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_ALIGN_0200
-     * @tc.name       : testCommonAttrsSweepGradient002
-     * @tc.desc       : testing sweepGradient for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsSweepGradient002
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ALIGN_0200
+     * @tc.desc   testing sweepGradient for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsSweepGradient002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsSweepGradient002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_ALIGN_0300
-     * @tc.name       : testCommonAttrsSweepGradient003
-     * @tc.desc       : testing sweepGradient for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsSweepGradient003
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ALIGN_0300
+     * @tc.desc   testing sweepGradient for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsSweepGradient003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsSweepGradient003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_ALIGN_0400
-     * @tc.name       : testCommonAttrsSweepGradient004
-     * @tc.desc       : testing sweepGradient for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsSweepGradient004
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ALIGN_0400
+     * @tc.desc   testing sweepGradient for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsSweepGradient004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsSweepGradient004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_ALIGN_0500
-     * @tc.name       : testCommonAttrsSweepGradient005
-     * @tc.desc       : testing sweepGradient for button with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCommonAttrsSweepGradient005
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ALIGN_0500
+     * @tc.desc   testing sweepGradient for button with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsSweepGradient005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsSweepGradient005()).assertEqual(0)

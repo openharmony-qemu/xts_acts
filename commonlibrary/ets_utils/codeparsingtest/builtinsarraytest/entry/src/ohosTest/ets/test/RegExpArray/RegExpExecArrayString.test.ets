@@ -40,12 +40,12 @@ export default function builtinsRegExpExecArrayStringTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpExecArrayStringTest0100
      * @tc.number SUB_BUILTINS_REG_EXP_EXEC_ARRAY_STRING_TEST_0100
-     * @tc.name builtinsRegExpExecArrayStringTest0100
-     * @tc.desc Testing RegExpExecArray string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Testing RegExpExecArray string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsRegExpExecArrayStringTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -79,12 +79,12 @@ export default function builtinsRegExpExecArrayStringTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpExecArrayStringTest0200
      * @tc.number SUB_BUILTINS_REG_EXP_EXEC_ARRAY_STRING_TEST_0200
-     * @tc.name builtinsRegExpExecArrayStringTest0200
-     * @tc.desc Testing RegExpExecArray string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing RegExpExecArray string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpExecArrayStringTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -117,12 +117,12 @@ export default function builtinsRegExpExecArrayStringTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpExecArrayStringTest0300
      * @tc.number SUB_BUILTINS_REG_EXP_EXEC_ARRAY_STRING_TEST_0300
-     * @tc.name builtinsRegExpExecArrayStringTest0300
-     * @tc.desc Testing RegExpExecArray string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing RegExpExecArray string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpExecArrayStringTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -155,12 +155,12 @@ export default function builtinsRegExpExecArrayStringTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpExecArrayStringTest0400
      * @tc.number SUB_BUILTINS_REG_EXP_EXEC_ARRAY_STRING_TEST_0400
-     * @tc.name builtinsRegExpExecArrayStringTest0400
-     * @tc.desc Testing RegExpExecArray string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing RegExpExecArray string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpExecArrayStringTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -193,12 +193,12 @@ export default function builtinsRegExpExecArrayStringTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpExecArrayStringTest0500
      * @tc.number SUB_BUILTINS_REG_EXP_EXEC_ARRAY_STRING_TEST_0500
-     * @tc.name builtinsRegExpExecArrayStringTest0500
-     * @tc.desc Testing RegExpExecArray string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing RegExpExecArray string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpExecArrayStringTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -231,12 +231,12 @@ export default function builtinsRegExpExecArrayStringTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpExecArrayStringTest0600
      * @tc.number SUB_BUILTINS_REG_EXP_EXEC_ARRAY_STRING_TEST_0600
-     * @tc.name builtinsRegExpExecArrayStringTest0600
-     * @tc.desc Testing RegExpExecArray string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing RegExpExecArray string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpExecArrayStringTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -270,12 +270,12 @@ export default function builtinsRegExpExecArrayStringTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpExecArrayStringTest0700
      * @tc.number SUB_BUILTINS_REG_EXP_EXEC_ARRAY_STRING_TEST_0700
-     * @tc.name builtinsRegExpExecArrayStringTest0700
-     * @tc.desc Testing RegExpExecArray string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing RegExpExecArray string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpExecArrayStringTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -308,12 +308,12 @@ export default function builtinsRegExpExecArrayStringTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpExecArrayStringTest0800
      * @tc.number SUB_BUILTINS_REG_EXP_EXEC_ARRAY_STRING_TEST_0800
-     * @tc.name builtinsRegExpExecArrayStringTest0800
-     * @tc.desc Testing RegExpExecArray string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing RegExpExecArray string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpExecArrayStringTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -347,12 +347,12 @@ export default function builtinsRegExpExecArrayStringTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpExecArrayStringTest0900
      * @tc.number SUB_BUILTINS_REG_EXP_EXEC_ARRAY_STRING_TEST_0900
-     * @tc.name builtinsRegExpExecArrayStringTest0900
-     * @tc.desc Testing RegExpExecArray string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing RegExpExecArray string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpExecArrayStringTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -386,12 +386,12 @@ export default function builtinsRegExpExecArrayStringTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpExecArrayStringTest1000
      * @tc.number SUB_BUILTINS_REG_EXP_EXEC_ARRAY_STRING_TEST_1000
-     * @tc.name builtinsRegExpExecArrayStringTest1000
-     * @tc.desc Testing RegExpExecArray string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing RegExpExecArray string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpExecArrayStringTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -425,12 +425,12 @@ export default function builtinsRegExpExecArrayStringTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpExecArrayStringTest1100
      * @tc.number SUB_BUILTINS_REG_EXP_EXEC_ARRAY_STRING_TEST_1100
-     * @tc.name builtinsRegExpExecArrayStringTest1100
-     * @tc.desc Testing RegExpExecArray string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing RegExpExecArray string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpExecArrayStringTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -464,12 +464,12 @@ export default function builtinsRegExpExecArrayStringTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpExecArrayStringTest1200
      * @tc.number SUB_BUILTINS_REG_EXP_EXEC_ARRAY_STRING_TEST_1200
-     * @tc.name builtinsRegExpExecArrayStringTest1200
-     * @tc.desc Testing RegExpExecArray string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing RegExpExecArray string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpExecArrayStringTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.

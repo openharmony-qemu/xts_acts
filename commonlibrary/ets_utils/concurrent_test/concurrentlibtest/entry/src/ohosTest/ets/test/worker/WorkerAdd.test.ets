@@ -28,12 +28,12 @@ export default function workerAddTest() {
       await Sleep(50);
     })
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_Add_0100
-     * @tc.name       : testThreadWorkerAdd0001
-     * @tc.desc       : Enumeration of the priority of the Worker thread high priority
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testThreadWorkerAdd0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_Add_0100
+     * @tc.desc   Enumeration of the priority of the Worker thread high priority
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testThreadWorkerAdd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName = "testThreadWorkerAdd0001";
@@ -63,12 +63,12 @@ export default function workerAddTest() {
       }
     });
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_Add_0200
-     * @tc.name       : testThreadWorkerAdd0002
-     * @tc.desc       : Enumeration of the priority of the Worker thread medium priority
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testThreadWorkerAdd0002
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_Add_0200
+     * @tc.desc   Enumeration of the priority of the Worker thread medium priority
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testThreadWorkerAdd0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName = "testThreadWorkerAdd0002";
@@ -98,12 +98,12 @@ export default function workerAddTest() {
       }
     });
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_Add_0300
-     * @tc.name       : testThreadWorkerAdd0003
-     * @tc.desc       : Enumeration of the priority of the Worker thread low priority
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testThreadWorkerAdd0003
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_Add_0300
+     * @tc.desc   Enumeration of the priority of the Worker thread low priority
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testThreadWorkerAdd0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName = "testThreadWorkerAdd0003";
@@ -133,12 +133,12 @@ export default function workerAddTest() {
       }
     });
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_Add_0400
-     * @tc.name       : testThreadWorkerAdd0004
-     * @tc.desc       : Enumeration of the priority of the Worker thread background priority
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testThreadWorkerAdd0004
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_Add_0400
+     * @tc.desc   Enumeration of the priority of the Worker thread background priority
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testThreadWorkerAdd0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName = "testThreadWorkerAdd0004";
@@ -168,12 +168,12 @@ export default function workerAddTest() {
       }
     });
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_Add_0500
-     * @tc.name       : testThreadWorkerAdd0005
-     * @tc.desc       : Message class, which holds data passed between Worker threads
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testThreadWorkerAdd0005
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_Add_0500
+     * @tc.desc   Message class, which holds data passed between Worker threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testThreadWorkerAdd0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName = "testThreadWorkerAdd0005";
@@ -204,12 +204,12 @@ export default function workerAddTest() {
       }
     });
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_Add_0600
-     * @tc.name       : testThreadWorkerAdd0006
-     * @tc.desc       : The class that needs to transfer ownership objects during data transfer must be ArrayBuffer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testThreadWorkerAdd0006
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_Add_0600
+     * @tc.desc   The class that needs to transfer ownership objects during data transfer must be ArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testThreadWorkerAdd0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName = "testThreadWorkerAdd0006";

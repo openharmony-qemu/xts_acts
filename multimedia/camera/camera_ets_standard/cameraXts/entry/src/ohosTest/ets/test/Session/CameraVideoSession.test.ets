@@ -455,12 +455,12 @@ export default function CameraVideoSessionTest() {
     });
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_001
-     * @tc.name      : beginConfig_video_001
-     * @tc.desc      : No abnormal scenarios-beginConfig
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   beginConfig_video_001
+     * @tc.number CAMERA_VIDEO_SESSION_001
+     * @tc.desc   No abnormal scenarios-beginConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('beginConfig_video_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'beginConfig_video_001';
@@ -485,12 +485,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_002
-     * @tc.name      : addInput_removeInput_video_001
-     * @tc.desc      : No abnormal scenarios-addInput/removeInput
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   addInput_removeInput_video_001
+     * @tc.number CAMERA_VIDEO_SESSION_002
+     * @tc.desc   No abnormal scenarios-addInput/removeInput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('addInput_removeInput_video_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'addInput_removeInput_video_001';
@@ -519,12 +519,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_003
-     * @tc.name      : addInput_video_abnormal_001
-     * @tc.desc      : addInput() not between beginConfig and commitConfig -> error_code: 7400102
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   addInput_video_abnormal_001
+     * @tc.number CAMERA_VIDEO_SESSION_003
+     * @tc.desc   addInput() not between beginConfig and commitConfig -> error_code: 7400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('addInput_video_abnormal_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'addInput_video_abnormal_001';
@@ -548,12 +548,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_004
-     * @tc.name      : addInput_video_abnormal_002
-     * @tc.desc      : addInput the same twice -> error_code: 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   addInput_video_abnormal_002
+     * @tc.number CAMERA_VIDEO_SESSION_004
+     * @tc.desc   addInput the same twice -> error_code: 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('addInput_video_abnormal_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'addInput_video_abnormal_002';
@@ -584,12 +584,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_005
-     * @tc.name      : commitConfig_video_callback_001
-     * @tc.desc      : No abnormal scenarios-commitConfig-callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   commitConfig_video_callback_001
+     * @tc.number CAMERA_VIDEO_SESSION_005
+     * @tc.desc   No abnormal scenarios-commitConfig-callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('commitConfig_video_callback_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'commitConfig_video_callback_001';
@@ -633,12 +633,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_006
-     * @tc.name      : commitConfig_video_promise_001
-     * @tc.desc      : No abnormal scenarios-commitConfig-promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   commitConfig_video_promise_001
+     * @tc.number CAMERA_VIDEO_SESSION_006
+     * @tc.desc   No abnormal scenarios-commitConfig-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('commitConfig_video_promise_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'commitConfig_video_promise_001';
@@ -680,12 +680,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_007
-     * @tc.name      : addOutput_removeOutput_previewOutput_video_001
-     * @tc.desc      : No abnormal scenarios-addOutput/removeOutput->previewOutput
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   addOutput_removeOutput_previewOutput_video_001
+     * @tc.number CAMERA_VIDEO_SESSION_007
+     * @tc.desc   No abnormal scenarios-addOutput/removeOutput->previewOutput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('addOutput_removeOutput_previewOutput_video_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'addOutput_removeOutput_previewOutput_video_001';
@@ -723,12 +723,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_008
-     * @tc.name      : addOutput_removeOutput_previewOutput_video_abnormal_001
-     * @tc.desc      : Abnormal scenarios-addOutput/removeOutput->no addInput -> error_code: 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   addOutput_removeOutput_previewOutput_video_abnormal_001
+     * @tc.number CAMERA_VIDEO_SESSION_008
+     * @tc.desc   Abnormal scenarios-addOutput/removeOutput->no addInput -> error_code: 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('addOutput_removeOutput_previewOutput_video_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'addOutput_removeOutput_previewOutput_video_abnormal_001';
@@ -764,12 +764,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_009
-     * @tc.name      : addOutput_video_abnormal_001
-     * @tc.desc      : First commitConfig(), then addOutput() -> error_code: 7400102
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   addOutput_video_abnormal_001
+     * @tc.number CAMERA_VIDEO_SESSION_009
+     * @tc.desc   First commitConfig(), then addOutput() -> error_code: 7400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('addOutput_video_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'addOutput_video_abnormal_001';
@@ -808,12 +808,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_010
-     * @tc.name      : removeOutput_video_abnormal_001
-     * @tc.desc      : First commitConfig(), then removeOutput() -> error_code: 7400102
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   removeOutput_video_abnormal_001
+     * @tc.number CAMERA_VIDEO_SESSION_010
+     * @tc.desc   First commitConfig(), then removeOutput() -> error_code: 7400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('removeOutput_video_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'removeOutput_video_abnormal_001';
@@ -851,12 +851,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_011
-     * @tc.name      : start_video_callback_001
-     * @tc.desc      : No abnormal scenarios-start-callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   start_video_callback_001
+     * @tc.number CAMERA_VIDEO_SESSION_011
+     * @tc.desc   No abnormal scenarios-start-callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('start_video_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'start_video_callback_001';
@@ -899,12 +899,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_012
-     * @tc.name      : start_video_promise_001
-     * @tc.desc      : No abnormal scenarios-start-promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   start_video_promise_001
+     * @tc.number CAMERA_VIDEO_SESSION_012
+     * @tc.desc   No abnormal scenarios-start-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('start_video_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'start_video_promise_001';
@@ -945,12 +945,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_013
-     * @tc.name      : start_video_callback_abnormal_001
-     * @tc.desc      : First start(), then beginConfig()-callback -> error_code: 7400103
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   start_video_callback_abnormal_001
+     * @tc.number CAMERA_VIDEO_SESSION_013
+     * @tc.desc   First start(), then beginConfig()-callback -> error_code: 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('start_video_callback_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'start_video_callback_abnormal_001';
@@ -987,12 +987,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_014
-     * @tc.name      : start_video_promise_abnormal_001
-     * @tc.desc      : First start(), then beginConfig()-promise -> error_code: 7400103
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   start_video_promise_abnormal_001
+     * @tc.number CAMERA_VIDEO_SESSION_014
+     * @tc.desc   First start(), then beginConfig()-promise -> error_code: 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('start_video_promise_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'start_video_promise_abnormal_001';
@@ -1019,12 +1019,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_015
-     * @tc.name      : stop_video_callback_001
-     * @tc.desc      : No abnormal scenarios-stop-callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   stop_video_callback_001
+     * @tc.number CAMERA_VIDEO_SESSION_015
+     * @tc.desc   No abnormal scenarios-stop-callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stop_video_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'stop_video_callback_001';
@@ -1067,12 +1067,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_016
-     * @tc.name      : stop_video_promise_001
-     * @tc.desc      : No abnormal scenarios-stop-promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   stop_video_promise_001
+     * @tc.number CAMERA_VIDEO_SESSION_016
+     * @tc.desc   No abnormal scenarios-stop-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stop_video_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'stop_video_promise_001';
@@ -1111,12 +1111,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_017
-     * @tc.name      : stop_video_callback_abnormal_001
-     * @tc.desc      : First stop(), then beginConfig()-callback -> error_code: 7400103
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   stop_video_callback_abnormal_001
+     * @tc.number CAMERA_VIDEO_SESSION_017
+     * @tc.desc   First stop(), then beginConfig()-callback -> error_code: 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stop_video_callback_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'stop_video_callback_abnormal_001';
@@ -1155,12 +1155,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_018
-     * @tc.name      : stop_video_promise_abnormal_001
-     * @tc.desc      : First start(), then beginConfig()-promise -> error_code: 7400103
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   stop_video_promise_abnormal_001
+     * @tc.number CAMERA_VIDEO_SESSION_018
+     * @tc.desc   First start(), then beginConfig()-promise -> error_code: 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stop_video_promise_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'stop_video_promise_abnormal_001';
@@ -1195,12 +1195,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_019
-     * @tc.name      : release_video_session_callback_001
-     * @tc.desc      : No abnormal scenarios-release-callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   release_video_session_callback_001
+     * @tc.number CAMERA_VIDEO_SESSION_019
+     * @tc.desc   No abnormal scenarios-release-callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_video_session_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'release_video_session_callback_001';
@@ -1231,12 +1231,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_020
-     * @tc.name      : release_video_session_promise_001
-     * @tc.desc      : No abnormal scenarios-release-promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   release_video_session_promise_001
+     * @tc.number CAMERA_VIDEO_SESSION_020
+     * @tc.desc   No abnormal scenarios-release-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_video_session_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'release_video_session_promise_001';
@@ -1266,12 +1266,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_021
-     * @tc.name      : on_off_error_listen_video_001
-     * @tc.desc      : No abnormal scenarios-on/off('error')
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   on_off_error_listen_video_001
+     * @tc.number CAMERA_VIDEO_SESSION_021
+     * @tc.desc   No abnormal scenarios-on/off('error')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_error_listen_video_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'on_off_error_listen_video_001';
@@ -1296,12 +1296,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_022
-     * @tc.name      : on_off_error_listen_video_abnormal_001
-     * @tc.desc      : on/off('error')-start(), beginConfig()
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   on_off_error_listen_video_abnormal_001
+     * @tc.number CAMERA_VIDEO_SESSION_022
+     * @tc.desc   on/off('error')-start(), beginConfig()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_error_listen_video_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'on_off_error_listen_video_abnormal_001';
@@ -1329,12 +1329,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_023
-     * @tc.name      : beginConfig_video_abnormal_001
-     * @tc.desc      : beginConfig() twice -> error_code: 7400105
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   beginConfig_video_abnormal_001
+     * @tc.number CAMERA_VIDEO_SESSION_023
+     * @tc.desc   beginConfig() twice -> error_code: 7400105
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('beginConfig_video_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'beginConfig_video_abnormal_001';
@@ -1362,12 +1362,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_024
-     * @tc.name      : commitConfig_video_callback_abnormal_001
-     * @tc.desc      : only commitConfig(), callback -> error_code: 7400102
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   commitConfig_video_callback_abnormal_001
+     * @tc.number CAMERA_VIDEO_SESSION_024
+     * @tc.desc   only commitConfig(), callback -> error_code: 7400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('commitConfig_video_callback_abnormal_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'commitConfig_video_callback_abnormal_001';
@@ -1402,12 +1402,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_025
-     * @tc.name      : commitConfig_video_callback_abnormal_002
-     * @tc.desc      : commitConfig() twice, callback -> error_code: 7400102
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   commitConfig_video_callback_abnormal_002
+     * @tc.number CAMERA_VIDEO_SESSION_025
+     * @tc.desc   commitConfig() twice, callback -> error_code: 7400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('commitConfig_video_callback_abnormal_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'commitConfig_video_callback_abnormal_002';
@@ -1448,12 +1448,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_026
-     * @tc.name      : commitConfig_video_promise_abnormal_001
-     * @tc.desc      : only commitConfig(), promise -> error_code: 7400102
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   commitConfig_video_promise_abnormal_001
+     * @tc.number CAMERA_VIDEO_SESSION_026
+     * @tc.desc   only commitConfig(), promise -> error_code: 7400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('commitConfig_video_promise_abnormal_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'commitConfig_video_promise_abnormal_001';
@@ -1485,12 +1485,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_027
-     * @tc.name      : commitConfig_video_promise_abnormal_002
-     * @tc.desc      : commitConfig() twice, promise -> error_code: 7400102
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   commitConfig_video_promise_abnormal_002
+     * @tc.number CAMERA_VIDEO_SESSION_027
+     * @tc.desc   commitConfig() twice, promise -> error_code: 7400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('commitConfig_video_promise_abnormal_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'commitConfig_video_promise_abnormal_002';
@@ -1528,12 +1528,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_028
-     * @tc.name      : addOutput_removeOutput_previewOutput_video_preconfig_001
-     * @tc.desc      : preconfig, type->PRECONFIG_720P, ratio->PRECONFIG_RATIO_4_3
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   addOutput_removeOutput_previewOutput_video_preconfig_001
+     * @tc.number CAMERA_VIDEO_SESSION_028
+     * @tc.desc   preconfig, type->PRECONFIG_720P, ratio->PRECONFIG_RATIO_4_3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('addOutput_removeOutput_previewOutput_video_preconfig_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'addOutput_removeOutput_previewOutput_video_preconfig_001';
@@ -1542,12 +1542,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_029
-     * @tc.name      : addOutput_removeOutput_previewOutput_video_preconfig_002
-     * @tc.desc      : preconfig, type->PRECONFIG_1080P, ratio->PRECONFIG_RATIO_4_3
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   addOutput_removeOutput_previewOutput_video_preconfig_002
+     * @tc.number CAMERA_VIDEO_SESSION_029
+     * @tc.desc   preconfig, type->PRECONFIG_1080P, ratio->PRECONFIG_RATIO_4_3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('addOutput_removeOutput_previewOutput_video_preconfig_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'addOutput_removeOutput_previewOutput_video_preconfig_002';
@@ -1556,12 +1556,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_030
-     * @tc.name      : addOutput_removeOutput_previewOutput_video_preconfig_003
-     * @tc.desc      : preconfig, type->PRECONFIG_4K, ratio->PRECONFIG_RATIO_4_3
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   addOutput_removeOutput_previewOutput_video_preconfig_003
+     * @tc.number CAMERA_VIDEO_SESSION_030
+     * @tc.desc   preconfig, type->PRECONFIG_4K, ratio->PRECONFIG_RATIO_4_3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('addOutput_removeOutput_previewOutput_video_preconfig_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'addOutput_removeOutput_previewOutput_video_preconfig_003';
@@ -1570,12 +1570,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_031
-     * @tc.name      : addOutput_removeOutput_previewOutput_video_preconfig_004
-     * @tc.desc      : preconfig, type->PRECONFIG_HIGH_QUALITY, ratio->PRECONFIG_RATIO_4_3
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   addOutput_removeOutput_previewOutput_video_preconfig_004
+     * @tc.number CAMERA_VIDEO_SESSION_031
+     * @tc.desc   preconfig, type->PRECONFIG_HIGH_QUALITY, ratio->PRECONFIG_RATIO_4_3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('addOutput_removeOutput_previewOutput_video_preconfig_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'addOutput_removeOutput_previewOutput_video_preconfig_004';
@@ -1584,12 +1584,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_032
-     * @tc.name      : addOutput_removeOutput_previewOutput_video_preconfig_005
-     * @tc.desc      : preconfig, type->PRECONFIG_720P, ratio->PRECONFIG_RATIO_1_1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   addOutput_removeOutput_previewOutput_video_preconfig_005
+     * @tc.number CAMERA_VIDEO_SESSION_032
+     * @tc.desc   preconfig, type->PRECONFIG_720P, ratio->PRECONFIG_RATIO_1_1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('addOutput_removeOutput_previewOutput_video_preconfig_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'addOutput_removeOutput_previewOutput_video_preconfig_005';
@@ -1598,12 +1598,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_033
-     * @tc.name      : addOutput_removeOutput_previewOutput_video_preconfig_006
-     * @tc.desc      : preconfig, type->PRECONFIG_1080P, ratio->PRECONFIG_RATIO_1_1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   addOutput_removeOutput_previewOutput_video_preconfig_006
+     * @tc.number CAMERA_VIDEO_SESSION_033
+     * @tc.desc   preconfig, type->PRECONFIG_1080P, ratio->PRECONFIG_RATIO_1_1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('addOutput_removeOutput_previewOutput_video_preconfig_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'addOutput_removeOutput_previewOutput_video_preconfig_006';
@@ -1612,12 +1612,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_034
-     * @tc.name      : addOutput_removeOutput_previewOutput_video_preconfig_007
-     * @tc.desc      : preconfig, type->PRECONFIG_4K, ratio->PRECONFIG_RATIO_1_1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   addOutput_removeOutput_previewOutput_video_preconfig_007
+     * @tc.number CAMERA_VIDEO_SESSION_034
+     * @tc.desc   preconfig, type->PRECONFIG_4K, ratio->PRECONFIG_RATIO_1_1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('addOutput_removeOutput_previewOutput_video_preconfig_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'addOutput_removeOutput_previewOutput_video_preconfig_007';
@@ -1626,12 +1626,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_035
-     * @tc.name      : addOutput_removeOutput_previewOutput_video_preconfig_008
-     * @tc.desc      : preconfig, type->PRECONFIG_HIGH_QUALITY, ratio->PRECONFIG_RATIO_4_3
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   addOutput_removeOutput_previewOutput_video_preconfig_008
+     * @tc.number CAMERA_VIDEO_SESSION_035
+     * @tc.desc   preconfig, type->PRECONFIG_HIGH_QUALITY, ratio->PRECONFIG_RATIO_4_3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('addOutput_removeOutput_previewOutput_video_preconfig_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'addOutput_removeOutput_previewOutput_video_preconfig_008';
@@ -1640,12 +1640,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_036
-     * @tc.name      : addOutput_removeOutput_previewOutput_video_preconfig_009
-     * @tc.desc      : preconfig, type->PRECONFIG_720P, ratio->PRECONFIG_RATIO_16_9
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   addOutput_removeOutput_previewOutput_video_preconfig_009
+     * @tc.number CAMERA_VIDEO_SESSION_036
+     * @tc.desc   preconfig, type->PRECONFIG_720P, ratio->PRECONFIG_RATIO_16_9
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('addOutput_removeOutput_previewOutput_video_preconfig_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'addOutput_removeOutput_previewOutput_video_preconfig_009';
@@ -1654,12 +1654,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_037
-     * @tc.name      : addOutput_removeOutput_previewOutput_video_preconfig_010
-     * @tc.desc      : preconfig, type->PRECONFIG_1080P, ratio->PRECONFIG_RATIO_16_9
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   addOutput_removeOutput_previewOutput_video_preconfig_010
+     * @tc.number CAMERA_VIDEO_SESSION_037
+     * @tc.desc   preconfig, type->PRECONFIG_1080P, ratio->PRECONFIG_RATIO_16_9
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('addOutput_removeOutput_previewOutput_video_preconfig_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'addOutput_removeOutput_previewOutput_video_preconfig_010';
@@ -1668,12 +1668,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_038
-     * @tc.name      : addOutput_removeOutput_previewOutput_video_preconfig_011
-     * @tc.desc      : preconfig, type->PRECONFIG_4K, ratio->PRECONFIG_RATIO_16_9
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   addOutput_removeOutput_previewOutput_video_preconfig_011
+     * @tc.number CAMERA_VIDEO_SESSION_038
+     * @tc.desc   preconfig, type->PRECONFIG_4K, ratio->PRECONFIG_RATIO_16_9
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('addOutput_removeOutput_previewOutput_video_preconfig_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'addOutput_removeOutput_previewOutput_video_preconfig_011';
@@ -1682,12 +1682,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_039
-     * @tc.name      : addOutput_removeOutput_previewOutput_video_preconfig_012
-     * @tc.desc      : preconfig, type->PRECONFIG_HIGH_QUALITY, ratio->PRECONFIG_RATIO_16_9
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   addOutput_removeOutput_previewOutput_video_preconfig_012
+     * @tc.number CAMERA_VIDEO_SESSION_039
+     * @tc.desc   preconfig, type->PRECONFIG_HIGH_QUALITY, ratio->PRECONFIG_RATIO_16_9
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('addOutput_removeOutput_previewOutput_video_preconfig_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'addOutput_removeOutput_previewOutput_video_preconfig_012';
@@ -1696,12 +1696,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_040
-     * @tc.name      : addOutput_removeOutput_previewOutput_video_preconfig_abnormal_001
-     * @tc.desc      : preconfig, type->PRECONFIG_720P, ratio->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   addOutput_removeOutput_previewOutput_video_preconfig_abnormal_001
+     * @tc.number CAMERA_VIDEO_SESSION_040
+     * @tc.desc   preconfig, type->PRECONFIG_720P, ratio->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('addOutput_removeOutput_previewOutput_video_preconfig_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'addOutput_removeOutput_previewOutput_video_preconfig_abnormal_001';
@@ -1709,12 +1709,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_041
-     * @tc.name      : addOutput_removeOutput_previewOutput_video_preconfig_abnormal_002
-     * @tc.desc      : preconfig, type->undefined, ratio->PRECONFIG_RATIO_16_9
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   addOutput_removeOutput_previewOutput_video_preconfig_abnormal_002
+     * @tc.number CAMERA_VIDEO_SESSION_041
+     * @tc.desc   preconfig, type->undefined, ratio->PRECONFIG_RATIO_16_9
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('addOutput_removeOutput_previewOutput_video_preconfig_abnormal_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'addOutput_removeOutput_previewOutput_video_preconfig_abnormal_002';
@@ -1722,12 +1722,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_042
-     * @tc.name      : addOutput_removeOutput_previewOutput_video_preconfig_abnormal_003
-     * @tc.desc      : preconfig, type->null, ratio->PRECONFIG_RATIO_16_9
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   addOutput_removeOutput_previewOutput_video_preconfig_abnormal_003
+     * @tc.number CAMERA_VIDEO_SESSION_042
+     * @tc.desc   preconfig, type->null, ratio->PRECONFIG_RATIO_16_9
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('addOutput_removeOutput_previewOutput_video_preconfig_abnormal_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'addOutput_removeOutput_previewOutput_video_preconfig_abnormal_003';
@@ -1735,12 +1735,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_043
-     * @tc.name      : addOutput_removeOutput_previewOutput_video_preconfig_abnormal_004
-     * @tc.desc      : preconfig, type->abnormalIndex, ratio->PRECONFIG_RATIO_16_9
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   addOutput_removeOutput_previewOutput_video_preconfig_abnormal_004
+     * @tc.number CAMERA_VIDEO_SESSION_043
+     * @tc.desc   preconfig, type->abnormalIndex, ratio->PRECONFIG_RATIO_16_9
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('addOutput_removeOutput_previewOutput_video_preconfig_abnormal_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'addOutput_removeOutput_previewOutput_video_preconfig_abnormal_004';
@@ -1748,12 +1748,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_044
-     * @tc.name      : addOutput_removeOutput_previewOutput_video_preconfig_abnormal_005
-     * @tc.desc      : preconfig, type->PRECONFIG_720P, ratio->null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   addOutput_removeOutput_previewOutput_video_preconfig_abnormal_005
+     * @tc.number CAMERA_VIDEO_SESSION_044
+     * @tc.desc   preconfig, type->PRECONFIG_720P, ratio->null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('addOutput_removeOutput_previewOutput_video_preconfig_abnormal_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'addOutput_removeOutput_previewOutput_video_preconfig_abnormal_005';
@@ -1761,12 +1761,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_045
-     * @tc.name      : addOutput_removeOutput_previewOutput_video_preconfig_abnormal_006
-     * @tc.desc      : preconfig, type->PRECONFIG_720P, ratio->abnormalIndex
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   addOutput_removeOutput_previewOutput_video_preconfig_abnormal_006
+     * @tc.number CAMERA_VIDEO_SESSION_045
+     * @tc.desc   preconfig, type->PRECONFIG_720P, ratio->abnormalIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('addOutput_removeOutput_previewOutput_video_preconfig_abnormal_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'addOutput_removeOutput_previewOutput_video_preconfig_abnormal_006';
@@ -1774,12 +1774,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_046
-     * @tc.name      : commitConfig_video_preconfig_callback_001
-     * @tc.desc      : No abnormal scenarios-commitConfig-callback-preConfig
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   commitConfig_video_preconfig_callback_001
+     * @tc.number CAMERA_VIDEO_SESSION_046
+     * @tc.desc   No abnormal scenarios-commitConfig-callback-preConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('commitConfig_video_preconfig_callback_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'commitConfig_video_preconfig_callback_001';
@@ -1788,12 +1788,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_047
-     * @tc.name      : commitConfig_video_preconfig_callback_abnormal_001
-     * @tc.desc      : commitConfig-callback-preConfig, ratio->abnormalIndex
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   commitConfig_video_preconfig_callback_abnormal_001
+     * @tc.number CAMERA_VIDEO_SESSION_047
+     * @tc.desc   commitConfig-callback-preConfig, ratio->abnormalIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('commitConfig_video_preconfig_callback_abnormal_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'commitConfig_video_preconfig_callback_abnormal_001';
@@ -1801,12 +1801,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_048
-     * @tc.name      : commitConfig_video_preconfig_callback_abnormal_002
-     * @tc.desc      : commitConfig-callback-preConfig, type->abnormalIndex, ratio->PRECONFIG_RATIO_16_9
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   commitConfig_video_preconfig_callback_abnormal_002
+     * @tc.number CAMERA_VIDEO_SESSION_048
+     * @tc.desc   commitConfig-callback-preConfig, type->abnormalIndex, ratio->PRECONFIG_RATIO_16_9
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('commitConfig_video_preconfig_callback_abnormal_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'commitConfig_video_preconfig_callback_abnormal_002';
@@ -1814,12 +1814,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_049
-     * @tc.name      : commitConfig_video_preconfig_callback_abnormal_003
-     * @tc.desc      : commitConfig-callback-preConfig, ratio->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   commitConfig_video_preconfig_callback_abnormal_003
+     * @tc.number CAMERA_VIDEO_SESSION_049
+     * @tc.desc   commitConfig-callback-preConfig, ratio->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('commitConfig_video_preconfig_callback_abnormal_003', Level.LEVEL2, async (done: Function) => {
       const testName = 'commitConfig_video_preconfig_callback_abnormal_003';
@@ -1827,12 +1827,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_050
-     * @tc.name      : commitConfig_video_preconfig_promise_001
-     * @tc.desc      : No abnormal scenarios-commitConfig-promise-preConfig
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   commitConfig_video_preconfig_promise_001
+     * @tc.number CAMERA_VIDEO_SESSION_050
+     * @tc.desc   No abnormal scenarios-commitConfig-promise-preConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('commitConfig_video_preconfig_promise_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'commitConfig_video_preconfig_promise_001';
@@ -1841,12 +1841,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_051
-     * @tc.name      : commitConfig_video_preconfig_promise_abnormal_001
-     * @tc.desc      : commitConfig-promise-preConfig, ratio->-1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   commitConfig_video_preconfig_promise_abnormal_001
+     * @tc.number CAMERA_VIDEO_SESSION_051
+     * @tc.desc   commitConfig-promise-preConfig, ratio->-1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('commitConfig_video_preconfig_promise_abnormal_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'commitConfig_video_preconfig_promise_abnormal_001';
@@ -1854,12 +1854,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_052
-     * @tc.name      : commitConfig_video_preconfig_promise_abnormal_002
-     * @tc.desc      : commitConfig-promise-preConfig, type->-1, ratio->PRECONFIG_RATIO_16_9
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   commitConfig_video_preconfig_promise_abnormal_002
+     * @tc.number CAMERA_VIDEO_SESSION_052
+     * @tc.desc   commitConfig-promise-preConfig, type->-1, ratio->PRECONFIG_RATIO_16_9
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('commitConfig_video_preconfig_promise_abnormal_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'commitConfig_video_preconfig_promise_abnormal_002';
@@ -1867,12 +1867,12 @@ export default function CameraVideoSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_VIDEO_SESSION_053
-     * @tc.name      : commitConfig_video_preconfig_promise_abnormal_003
-     * @tc.desc      : commitConfig-promise-preConfig, ratio->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   commitConfig_video_preconfig_promise_abnormal_003
+     * @tc.number CAMERA_VIDEO_SESSION_053
+     * @tc.desc   commitConfig-promise-preConfig, ratio->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('commitConfig_video_preconfig_promise_abnormal_003', Level.LEVEL2, async (done: Function) => {
       const testName = 'commitConfig_video_preconfig_promise_abnormal_003';

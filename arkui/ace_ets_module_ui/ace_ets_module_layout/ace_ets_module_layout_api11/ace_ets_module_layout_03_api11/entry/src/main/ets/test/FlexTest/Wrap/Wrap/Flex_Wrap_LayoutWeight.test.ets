@@ -46,10 +46,12 @@ export default function flex_Wrap_LayoutWeightTest() {
       console.info("Flex_Wrap_LayoutWeight after each called");
     });
     /**
+     * @tc.name   testWrapWrapTextLayoutWeight
      * @tc.number SUB_ACE_FLEXWRAP_WRAP_1400
-     * @tc.name testWrapWrapTextLayoutWeight
-     * @tc.desc The size of the parent component in the main axis direction meets the layout of
-     *               the child components,and LayoutWeight of the child components set different values
+     * @tc.desc   The size of the parent component in the main axis direction meets the layout of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapWrapTextLayoutWeight',  Level.LEVEL0, async () => {
       console.info('[testWrapWrapTextLayoutWeight] START');

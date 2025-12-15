@@ -213,9 +213,12 @@ static BOOL TaskPoolNoTaskFuncTestSuiteTearDown(void)
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_Taskpool_NoTask_0010
- * @tc.name      : Service without task can handle direct calls
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testNoTask0010
+ * @tc.number DMSLite_SAMGR_Taskpool_NoTask_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(TaskPoolNoTaskFuncTestSuite, testNoTask0010, Function | MediumTest | Level2)
 {

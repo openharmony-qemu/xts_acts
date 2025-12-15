@@ -26,26 +26,26 @@ export default function commonAttrsFlexShrinkTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_FLEXSHRINK_0100
-     * @tc.name: testCommonAttrsFlexShrink001
-     * @tc.desc: testing flexShrink for button with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsFlexShrink001
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_FLEXSHRINK_0100
+     * @tc.desc   testing flexShrink for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsFlexShrink001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsFlexShrink001()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_FLEXSHRINK_0200
-     * @tc.name: testCommonAttrsFlexShrink002
-     * @tc.desc: testing flexShrink for button with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testCommonAttrsFlexShrink002
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_FLEXSHRINK_0200
+     * @tc.desc   testing flexShrink for button with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsFlexShrink002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsFlexShrink002()).assertEqual(0)

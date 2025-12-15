@@ -42,12 +42,12 @@ export default function ImageSpanVisibilityTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ImageSpanVisibilityTest_0010
-     * @tc.name      ImageSpanVisibilityTest_0010
-     * @tc.desc      test ImageSpan Visibility: Visibility.None
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageSpanVisibilityTest_0010
+     * @tc.number SUB_ACE_ImageSpanVisibilityTest_0010
+     * @tc.desc   test ImageSpan Visibility: Visibility.None
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageSpanVisibilityTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('ImageSpanVisibilityTest_0010 START');
@@ -61,12 +61,12 @@ export default function ImageSpanVisibilityTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ImageSpanVisibilityTest_0020
-     * @tc.name      ImageSpanVisibilityTest_0020
-     * @tc.desc      test ImageSpan Visibility: Visibility.Hidden
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageSpanVisibilityTest_0020
+     * @tc.number SUB_ACE_ImageSpanVisibilityTest_0020
+     * @tc.desc   test ImageSpan Visibility: Visibility.Hidden
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageSpanVisibilityTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('ImageSpanVisibilityTest_0020 START');
@@ -80,12 +80,12 @@ export default function ImageSpanVisibilityTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ImageSpanVisibilityTest_0030
-     * @tc.name      ImageSpanVisibilityTest_0030
-     * @tc.desc      test ImageSpan Visibility: Visibility.Visible
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageSpanVisibilityTest_0030
+     * @tc.number SUB_ACE_ImageSpanVisibilityTest_0030
+     * @tc.desc   test ImageSpan Visibility: Visibility.Visible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageSpanVisibilityTest_0030', Level.LEVEL0, async (done: Function) => {
       console.info('ImageSpanVisibilityTest_0030 START');
@@ -99,12 +99,12 @@ export default function ImageSpanVisibilityTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ImageSpanVisibilityTest_0040
-     * @tc.name      ImageSpanVisibilityTest_0040
-     * @tc.desc      test ImageSpan Visibility: default
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageSpanVisibilityTest_0040
+     * @tc.number SUB_ACE_ImageSpanVisibilityTest_0040
+     * @tc.desc   test ImageSpan Visibility: default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageSpanVisibilityTest_0040', Level.LEVEL0, async (done: Function) => {
       console.info('ImageSpanVisibilityTest_0040 START');
@@ -118,12 +118,12 @@ export default function ImageSpanVisibilityTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ImageSpanVisibilityTest_0050
-     * @tc.name      ImageSpanVisibilityTest_0050
-     * @tc.desc      test ImageSpan Visibility: undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageSpanVisibilityTest_0050
+     * @tc.number SUB_ACE_ImageSpanVisibilityTest_0050
+     * @tc.desc   test ImageSpan Visibility: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageSpanVisibilityTest_0050', Level.LEVEL0, async (done: Function) => {
       console.info('ImageSpanVisibilityTest_0050 START');

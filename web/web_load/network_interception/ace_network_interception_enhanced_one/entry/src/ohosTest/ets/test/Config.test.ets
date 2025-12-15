@@ -16,3 +16,4 @@ export let URL1: string = 'http://'
 export let URL2: string = 'httpbin.org/basic-auth/2222/3333'
 export let URL3: string = 'www.example.com'
 export let URL: string = URL1 + URL2
+export let URL4: string = 'https://postman-echo.com/basic-auth'

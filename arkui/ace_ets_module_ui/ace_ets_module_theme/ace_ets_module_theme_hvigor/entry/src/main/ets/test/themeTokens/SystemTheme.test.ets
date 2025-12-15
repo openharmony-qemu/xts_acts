@@ -52,12 +52,12 @@ export default function systemThemeTest() {
       }
     });
     /**
-     * @tc.number    : ActsSystemThemeColors_0100
-     * @tc.name      : ActsSystemThemeColors_0100
-     * @tc.desc      : Check system light / dark theme colors values
-     * @tc.level     ：Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsSystemThemeColors_0100
+     * @tc.number ActsSystemThemeColors_0100
+     * @tc.desc   Check system light / dark theme colors values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsSystemThemeColors_0100', Level.LEVEL2, () => {
       const CASE: string = 'ActsSystemThemeColors_0100';
@@ -73,12 +73,12 @@ export default function systemThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.number    ：ActsSystemThemeColors_0200
-     * @tc.name      ：ActsSystemThemeColors_0200
-     * @tc.desc      : Check system light / dark theme tokens values
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsSystemThemeColors_0200
+     * @tc.number ：ActsSystemThemeColors_0200
+     * @tc.desc   Check system light / dark theme tokens values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsSystemThemeColors_0200', Level.LEVEL2, () => {
       const CASE: string = 'ActsSystemThemeColors_0200';

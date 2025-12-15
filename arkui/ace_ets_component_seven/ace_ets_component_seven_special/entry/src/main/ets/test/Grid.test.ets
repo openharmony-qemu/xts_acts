@@ -42,12 +42,12 @@ export default function gridMaxCountJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0100
      * @tc.number GridJsunit_0100
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0100] START');
@@ -61,12 +61,12 @@ export default function gridMaxCountJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0101
      * @tc.number GridJsunit_0101
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0101', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0101] START');
@@ -80,12 +80,12 @@ export default function gridMaxCountJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0102
      * @tc.number GridJsunit_0102
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0102', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0102] START');
@@ -100,12 +100,12 @@ export default function gridMaxCountJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0103
      * @tc.number GridJsunit_0103
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0103', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0103] START');
@@ -119,12 +119,12 @@ export default function gridMaxCountJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0104
      * @tc.number GridJsunit_0104
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0104', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0104] START');
@@ -138,12 +138,12 @@ export default function gridMaxCountJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0105
      * @tc.number GridJsunit_0105
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0105', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0105] START');
@@ -157,12 +157,12 @@ export default function gridMaxCountJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0106
      * @tc.number GridJsunit_0106
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0106', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0106] START');
@@ -176,12 +176,12 @@ export default function gridMaxCountJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0107
      * @tc.number GridJsunit_0107
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0107', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0107] START');
@@ -195,12 +195,12 @@ export default function gridMaxCountJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0108
      * @tc.number GridJsunit_0108
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0108', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0108] START');
@@ -214,12 +214,12 @@ export default function gridMaxCountJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0109
      * @tc.number GridJsunit_0109
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0109', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0109] START');
@@ -233,12 +233,12 @@ export default function gridMaxCountJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0110
      * @tc.number GridJsunit_0110
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0110', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0110] START');
@@ -252,12 +252,12 @@ export default function gridMaxCountJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0111
      * @tc.number GridJsunit_0111
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0111', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0111] START');
@@ -271,12 +271,12 @@ export default function gridMaxCountJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0112
      * @tc.number GridJsunit_0112
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0112', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0112] START');
@@ -290,12 +290,12 @@ export default function gridMaxCountJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0113
      * @tc.number GridJsunit_0113
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0113', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0113] START');
@@ -309,12 +309,12 @@ export default function gridMaxCountJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0114
      * @tc.number GridJsunit_0114
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0114', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0114] START');
@@ -328,12 +328,12 @@ export default function gridMaxCountJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0115
      * @tc.number GridJsunit_0115
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0115', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0115] START');
@@ -347,12 +347,12 @@ export default function gridMaxCountJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0116
      * @tc.number GridJsunit_0116
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0116', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0116] START');
@@ -366,12 +366,12 @@ export default function gridMaxCountJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0117
      * @tc.number GridJsunit_0117
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0117', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0117] START');
@@ -385,12 +385,12 @@ export default function gridMaxCountJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0118
      * @tc.number GridJsunit_0118
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0118', Level.LEVEL0, async (done: Function) => {
       console.info('[GridJsunit_0118] START');

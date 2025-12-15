@@ -1578,14 +1578,14 @@ export default function AVPlayerLocalTest() {
       await mediaTestBase.closeFdNumber(subtitleFdSrc.fd);
       await mediaTestBase.clearRouter()
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_FDSRC_0100
-        * @tc.name      : 001.test fdsrc
-        * @tc.desc      : Local Video playback control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_FDSRC_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_FDSRC_0100
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_FDSRC_0100', Level.LEVEL0,async (done: Function) => {
       let avPlayTest: PlayTest = {
         width: 720, height: 480, duration: 10100
@@ -1594,14 +1594,14 @@ export default function AVPlayerLocalTest() {
         testAVPlayerFun(fileDescriptor, avPlayer, avPlayTest, PLAY_TIME, done);
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GETTRECKDESCRIPTION_0100
-        * @tc.name      : 001.test getTrackDescription
-        * @tc.desc      : Local Video playback control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GETTRECKDESCRIPTION_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GETTRECKDESCRIPTION_0100
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GETTRECKDESCRIPTION_0100', Level.LEVEL0,async (done: Function) => {
       let videoTrackKey =
         new Array('bitrate', 'codec_mime', 'frame_rate', 'height', 'track_index', 'track_type', 'width');
@@ -1615,14 +1615,14 @@ export default function AVPlayerLocalTest() {
         testCheckTrackDescription(fileDescriptor, avPlayer, descriptionKey, descriptionValue, done);
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GETTRECKDESCRIPTION_0200
-        * @tc.name      : 002.test getTrackDescription
-        * @tc.desc      : Local Video playback control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GETTRECKDESCRIPTION_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GETTRECKDESCRIPTION_0200
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GETTRECKDESCRIPTION_0200', Level.LEVEL0,async (done: Function) => {
       let audioTrackKey = new Array('channel_count', 'codec_mime', 'sample_rate', 'track_index', 'track_type');
       let audioTrackValue = new Array(1, 2, 48000, 0, 0);
@@ -1632,14 +1632,14 @@ export default function AVPlayerLocalTest() {
         testCheckTrackDescription(fileDescriptor2, avPlayer, descriptionKey, descriptionValue, done);
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GETTRECKDESCRIPTION_0300
-        * @tc.name      : 003.test getTrackDescription
-        * @tc.desc      : Local Video playback control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GETTRECKDESCRIPTION_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GETTRECKDESCRIPTION_0300
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GETTRECKDESCRIPTION_0300', Level.LEVEL0,async (done: Function) => {
       let videoTrackKey =
         new Array('bitrate', 'codec_mime', 'frame_rate', 'height', 'track_index', 'track_type', 'width');
@@ -1651,14 +1651,14 @@ export default function AVPlayerLocalTest() {
       }
 
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GETPLAYBACKINFO_0100
-        * @tc.name      : 003.test getPlaybackInfo
-        * @tc.desc      : Local Video playback control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GETPLAYBACKINFO_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GETPLAYBACKINFO_0100
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GETPLAYBACKINFO_0100', Level.LEVEL0,async (done: Function) => {
       let descriptionKey =
         new Array('server_ip_address', 'average_download_rate', 'download_rate', 'is_downloading', 'buffer_duration');
@@ -1667,40 +1667,40 @@ export default function AVPlayerLocalTest() {
         testCheckPlaybackInfo(fileDescriptor, avPlayer, descriptionKey, descriptionValue, done);
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_VIDEOSCALETYPE_0100
-        * @tc.name      : 001.test video player videoScaleTpe
-        * @tc.desc      : Local Video playback control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_VIDEOSCALETYPE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_VIDEOSCALETYPE_0100
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_VIDEOSCALETYPE_0100', Level.LEVEL0,async (done: Function) => {
       if (fileDescriptor) {
         testVideoScaleType(fileDescriptor, avPlayer, done);
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_OFF_CALLBACK_0100
-        * @tc.name      : 001.test off callback Function
-        * @tc.desc      : Local Video playback control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_OFF_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_OFF_CALLBACK_0100
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_OFF_CALLBACK_0100', Level.LEVEL0,async (done: Function) => {
       if (fileDescriptor) {
         testOffCallback(fileDescriptor, avPlayer, done);
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_0101
-        * @tc.name      : 001.test subtitle Function
-        * @tc.desc      : Local Video subtitle control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_0101
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_0101
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_0101', Level.LEVEL0,async (done: Function) => {
       try {
         if (fileDescriptor && subtitleFdSrc) {
@@ -1712,14 +1712,14 @@ export default function AVPlayerLocalTest() {
         done()
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_0102
-        * @tc.name      : 001.test subtitle Function
-        * @tc.desc      : Local Video subtitle control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_0102
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_0102
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_0102', Level.LEVEL0,async (done: Function) => {
       try {
         if (fileDescriptor && subtitleFdSrc) {
@@ -1731,14 +1731,14 @@ export default function AVPlayerLocalTest() {
         done()
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_0103
-        * @tc.name      : 001.test subtitle Function
-        * @tc.desc      : Local Video subtitle control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_0103
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_0103
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_0103', Level.LEVEL0,async (done: Function) => {
       try {
         if (fileDescriptor && subtitleFdSrc) {
@@ -1750,68 +1750,68 @@ export default function AVPlayerLocalTest() {
         done()
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_0100
-        * @tc.name      : 001.test subtitle Function
-        * @tc.desc      : Local Video subtitle control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_0100
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_0100', Level.LEVEL0,async (done: Function) => {
       if (fileDescriptor && subtitleFdSrc) {
         testSubtitle(fileDescriptor, subtitleFdSrc, avPlayer, done);
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_0200
-        * @tc.name      : 002.test subtitle Function
-        * @tc.desc      : Local Video subtitle control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_0200
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_0200', Level.LEVEL0,async (done: Function) => {
       if (fileDescriptor && subtitleFdSrc) {
         testSubtitle(fileDescriptor, `fd://${subtitleFdSrc.fd}`, avPlayer, done);
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_0100
-        * @tc.name      : 001.test setPlaybackStrategy Function
-        * @tc.desc      : Local Video subtitle control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_0100
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_0100', Level.LEVEL0,async (done: Function) => {
       if (fileDescriptor) {
         let playbackStrategy: media.PlaybackStrategy = { mutedMediaType: media.MediaType.MEDIA_TYPE_AUD }
         testSetPlaybackStrategy(fileDescriptor, avPlayer, done, playbackStrategy);
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_0200
-        * @tc.name      : 002.test setPlaybackStrategy Function
-        * @tc.desc      : Local Video subtitle control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_0200
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_0200', Level.LEVEL0,async (done: Function) => {
       if (fileDescriptor) {
         let playbackStrategy: media.PlaybackStrategy = { showFirstFrameOnPrepare: true }
         testSetPlaybackStrategy(fileDescriptor, avPlayer, done, playbackStrategy);
       }
     });
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_0300
-    * @tc.name      : SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_0300
-    * @tc.desc      : Local Video subtitle control test
-    * @tc.size      : MediumTest
-    * @tc.type      : Function test
-    * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_0300
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_0300', Level.LEVEL0,async (done: Function) => {
       if (fileDescriptor) {
         let playbackStrategy: media.PlaybackStrategy = { mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:true}
@@ -1831,14 +1831,14 @@ export default function AVPlayerLocalTest() {
         });
       }
     });
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_0400
-    * @tc.name      : SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_0400
-    * @tc.desc      : Local Video subtitle control test
-    * @tc.size      : MediumTest
-    * @tc.type      : Function test
-    * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_0400
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_0400', Level.LEVEL0,async (done: Function) => {
       if (fileDescriptor) {
         let playbackStrategy: media.PlaybackStrategy = { mutedMediaType: media.MediaType.MEDIA_TYPE_VID, keepDecodingOnMute:false}
@@ -1858,14 +1858,14 @@ export default function AVPlayerLocalTest() {
         });
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_RANGE_0100
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_RANGE_0100
-        * @tc.desc      : Local Video preferred set playback start position and end position control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_RANGE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_RANGE_0100
+     * @tc.desc   Local Video preferred set playback start position and end position control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_RANGE_0100', Level.LEVEL0, async (done: Function) => {
       if (fileDescriptor) {
         let startTimeMs : number = 1000;
@@ -1875,14 +1875,14 @@ export default function AVPlayerLocalTest() {
         testSetPlaybackRange(fileDescriptor, startTimeMs, endTimeMs, mode, avPlayer, done);
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_RANGE_0200
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_RANGE_0200
-        * @tc.desc      : Local Video preferred set playback start position and end position control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_RANGE_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_RANGE_0200
+     * @tc.desc   Local Video preferred set playback start position and end position control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_RANGE_0200', Level.LEVEL0, async (done: Function) => {
       if (fileDescriptor) {
         let startTimeMs : number = -1;
@@ -1892,14 +1892,14 @@ export default function AVPlayerLocalTest() {
         testSetPlaybackRange(fileDescriptor, startTimeMs, endTimeMs, mode, avPlayer, done);
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_RANGE_0101
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_RANGE_0101
-        * @tc.desc      : Local Video preferred set playback start position and end position control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_RANGE_0101
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_RANGE_0101
+     * @tc.desc   Local Video preferred set playback start position and end position control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_RANGE_0101', Level.LEVEL0, async (done: Function) => {
       if (fileDescriptor) {
         let startTimeMs : number = 1000;
@@ -1908,14 +1908,14 @@ export default function AVPlayerLocalTest() {
         testSetPlaybackRangeNoSeek(fileDescriptor, startTimeMs, endTimeMs, avPlayer, done);
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_RANGE_0201
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_RANGE_0201
-        * @tc.desc      : Local Video preferred set playback start position and end position control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_RANGE_0201
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_RANGE_0201
+     * @tc.desc   Local Video preferred set playback start position and end position control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_RANGE_0201', Level.LEVEL0, async (done: Function) => {
       if (fileDescriptor) {
         let startTimeMs : number = -1;
@@ -1925,14 +1925,14 @@ export default function AVPlayerLocalTest() {
       }
     });
     
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_0100
-    * @tc.name      : SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_0100
-    * @tc.desc      : Local Video subtitle control test
-    * @tc.size      : MediumTest
-    * @tc.type      : Function test
-    * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_0100
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_0100', Level.LEVEL0,async (done: Function) => {
       expect(fileDescriptor).not().assertUndefined()
       const params: MediaMutedParams = {
@@ -1942,14 +1942,14 @@ export default function AVPlayerLocalTest() {
       }
       testSetMediaMuted(fileDescriptor, params, done);
     });
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_0200
-    * @tc.name      : SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_0200
-    * @tc.desc      : Local Video subtitle control test
-    * @tc.size      : MediumTest
-    * @tc.type      : Function test
-    * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_0200
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_0200', Level.LEVEL0,async (done: Function) => {
       expect(fileDescriptor).not().assertUndefined()
       const params: MediaMutedParams = {
@@ -1959,14 +1959,14 @@ export default function AVPlayerLocalTest() {
       }
       testSetMediaMuted(fileDescriptor, params, done);
     });
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_0300
-    * @tc.name      : SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_0300
-    * @tc.desc      : Local Video subtitle control test
-    * @tc.size      : MediumTest
-    * @tc.type      : Function test
-    * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_0300
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_0300', Level.LEVEL0,async (done: Function) => {
       expect(fileDescriptor).not().assertUndefined()
       const params: MediaMutedParams = {
@@ -1976,14 +1976,14 @@ export default function AVPlayerLocalTest() {
       }
       testSetMediaMuted(fileDescriptor, params, done);
     });
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_0400
-    * @tc.name      : SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_0400
-    * @tc.desc      : Local Video subtitle control test
-    * @tc.size      : MediumTest
-    * @tc.type      : Function test
-    * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_0400
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_0400', Level.LEVEL0,async (done: Function) => {
       expect(fileDescriptor).not().assertUndefined()
       const params: MediaMutedParams = {
@@ -1993,14 +1993,14 @@ export default function AVPlayerLocalTest() {
       }
       testSetMediaMuted(fileDescriptor, params, done);
     });
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_ERROR_0100
-    * @tc.name      : SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_ERROR_0100
-    * @tc.desc      : Local Video subtitle control test
-    * @tc.size      : MediumTest
-    * @tc.type      : Function test
-    * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_ERROR_0100
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_ERROR_0100', Level.LEVEL0,async (done: Function) => {
       expect(fileDescriptor).not().assertUndefined()
       const params: MediaMutedParams = {
@@ -2011,14 +2011,14 @@ export default function AVPlayerLocalTest() {
       }
       testSetMediaMuted(fileDescriptor, params, done, setMediaMutedInErrorState);
     });
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_ERROR_0200
-    * @tc.name      : SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_ERROR_0200
-    * @tc.desc      : Local Video subtitle control test
-    * @tc.size      : MediumTest
-    * @tc.type      : Function test
-    * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_ERROR_0200
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_ERROR_0200', Level.LEVEL0,async (done: Function) => {
       expect(fileDescriptor).not().assertUndefined()
       const params: MediaMutedParams = {
@@ -2030,41 +2030,41 @@ export default function AVPlayerLocalTest() {
       testSetMediaMuted(fileDescriptor, params, done, setMediaMutedUseUnsupportMediaType);
     });
     
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_DASH_0100
-        * @tc.name      : 001.test setPlaybackStrategy Function
-        * @tc.desc      : Local Video preferred audio language control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_DASH_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_DASH_0100
+     * @tc.desc   Local Video preferred audio language control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_DASH_0100', Level.LEVEL0,async (done: Function) => {
       if (fileDescriptor) {
         testSetPlaybackStrategyDASH(fileDescriptor, avPlayer, done);
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_FLV_SET_PLAYBACK_STRATEGY_0100
-        * @tc.name      : 001.test setPlaybackStrategy Function
-        * @tc.desc      : flv live set thresholdForAutoQuickPlay to valid value
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_FLV_SET_PLAYBACK_STRATEGY_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_FLV_SET_PLAYBACK_STRATEGY_0100
+     * @tc.desc   flv live set thresholdForAutoQuickPlay to valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_FLV_SET_PLAYBACK_STRATEGY_0100', Level.LEVEL0,async (done: Function) => {
       if (fileDescriptor) {
         let playbackStrategy: media.PlaybackStrategy = { thresholdForAutoQuickPlay: 5 }
         testSetPlaybackStrategyFlv(fileDescriptor, avPlayer, done, playbackStrategy);
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_FLV_SET_PLAYBACK_STRATEGY_0200
-        * @tc.name      : 001.test setPlaybackStrategy Function
-        * @tc.desc      : flv live set thresholdForAutoQuickPlay to invalid value
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_FLV_SET_PLAYBACK_STRATEGY_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_FLV_SET_PLAYBACK_STRATEGY_0200
+     * @tc.desc   flv live set thresholdForAutoQuickPlay to invalid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_FLV_SET_PLAYBACK_STRATEGY_0200', Level.LEVEL0,async (done: Function) => {
       if (fileDescriptor) {
         let playbackStrategy: media.PlaybackStrategy = { thresholdForAutoQuickPlay: 1 }
@@ -2072,94 +2072,94 @@ export default function AVPlayerLocalTest() {
         testSetPlaybackStrategyFlv(fileDescriptor, avPlayer, done, playbackStrategy);
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_FLV_SET_PLAYBACK_STRATEGY_0300
-        * @tc.name      : 001.test setPlaybackStrategy Function
-        * @tc.desc      : flv live set thresholdForAutoQuickPlay to default value
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_FLV_SET_PLAYBACK_STRATEGY_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_FLV_SET_PLAYBACK_STRATEGY_0300
+     * @tc.desc   flv live set thresholdForAutoQuickPlay to default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_FLV_SET_PLAYBACK_STRATEGY_0300', Level.LEVEL0,async (done: Function) => {
       if (fileDescriptor) {
         let playbackStrategy: media.PlaybackStrategy = {}
         testSetPlaybackStrategyFlv(fileDescriptor, avPlayer, done, playbackStrategy);
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SEEK_CONTINUOUS_0100
-        * @tc.name      : 001.test seek continuous Function
-        * @tc.desc      : test local video seek continuous
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SEEK_CONTINUOUS_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SEEK_CONTINUOUS_0100
+     * @tc.desc   test local video seek continuous
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SEEK_CONTINUOUS_0100', Level.LEVEL0,async (done: Function) => {
       if (fileDescriptor) {
         testAVPlayerSeekContinuous(fileDescriptor, avPlayer, done);
       }
     });
 
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SEEK_CONTINUOUS_0200
-      * @tc.name      : 002.test seek continuous Function
-      * @tc.desc      : test local video mkv seek continuous
-      * @tc.size      : MediumTest
-      * @tc.type      : Function test
-      * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SEEK_CONTINUOUS_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SEEK_CONTINUOUS_0200
+     * @tc.desc   test local video mkv seek continuous
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SEEK_CONTINUOUS_0200', Level.LEVEL0,async (done: Function) => {
       if (fileDescriptor_mkv) {
         testAVPlayerSeekContinuous(fileDescriptor_mkv, avPlayer, done);
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_GET_PLAYBACK_POSITION_0100
-        * @tc.name      : 001.test getPlaybackPosition Function
-        * @tc.desc      : Local Video getPlaybackPosition control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_GET_PLAYBACK_POSITION_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_GET_PLAYBACK_POSITION_0100
+     * @tc.desc   Local Video getPlaybackPosition control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_GET_PLAYBACK_POSITION_0100', Level.LEVEL0,async (done: Function) => {
       if (fileDescriptor) {
         testGetPlaybackPosition(fileDescriptor, avPlayer, done);
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_ON_0000
-        * @tc.name      : 001.test subtitle Function
-        * @tc.desc      : Local Video subtitle control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_ON_0000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_ON_0000
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_ON_0000', Level.LEVEL0,async (done: Function) => {
       if (fileDescriptor && subtitleFdSrc) {
         testsubtitleUpdateListening(fileDescriptor, subtitleFdSrc, avPlayer, subtitleUpdateON, done);
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_ON_0100
-        * @tc.name      : 002.test subtitle Function
-        * @tc.desc      : Local Video subtitle control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_ON_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_ON_0100
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_ON_0100', Level.LEVEL0,async (done: Function) => {
       if (fileDescriptor && subtitleFdSrc) {
         testsubtitleUpdateListening(fileDescriptor, `fd://${subtitleFdSrc.fd}`, avPlayer, subtitleUpdateON, done);
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_ON_0101
-        * @tc.name      : 001.test subtitle Function
-        * @tc.desc      : Local Video subtitle control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_ON_0101
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_ON_0101
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_ON_0101', Level.LEVEL0,async (done: Function) => {
       try {
         if (fileDescriptor && subtitleFdSrc) {
@@ -2171,14 +2171,14 @@ export default function AVPlayerLocalTest() {
         done()
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_ON_0104
-        * @tc.name      : 001.test subtitle Function
-        * @tc.desc      : Local Video subtitle control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_ON_0104
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_ON_0104
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_ON_0104', Level.LEVEL0,async (done: Function) => {
       try {
         if (fileDescriptor && subtitleFdSrc) {
@@ -2191,14 +2191,14 @@ export default function AVPlayerLocalTest() {
         done()
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_ON_0105
-        * @tc.name      : 001.test subtitle Function
-        * @tc.desc      : Local Video subtitle control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_ON_0105
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_ON_0105
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_ON_0105', Level.LEVEL0,async (done: Function) => {
       try {
         if (fileDescriptor && subtitleFdSrc) {
@@ -2211,14 +2211,14 @@ export default function AVPlayerLocalTest() {
         done()
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0100
-        * @tc.name      : 001.test subtitle Function
-        * @tc.desc      : Local Video subtitle control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0100
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0100', Level.LEVEL0,async (done: Function) => {
       try {
         if (fileDescriptor) {
@@ -2230,14 +2230,14 @@ export default function AVPlayerLocalTest() {
         done();
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0200
-        * @tc.name      : 001.test subtitle Function
-        * @tc.desc      : Local Video subtitle control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0200
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0200', Level.LEVEL0,async (done: Function) => {
       try {
         if (fileDescriptor) {
@@ -2249,14 +2249,14 @@ export default function AVPlayerLocalTest() {
         done();
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0300
-        * @tc.name      : 001.test subtitle Function
-        * @tc.desc      : Local Video subtitle control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0300
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0300', Level.LEVEL0,async (done: Function) => {
       try {
         if (fileDescriptor) {
@@ -2268,14 +2268,14 @@ export default function AVPlayerLocalTest() {
         done();
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0400
-        * @tc.name      : 001.test subtitle Function
-        * @tc.desc      : Local Video subtitle control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0400
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0400', Level.LEVEL0,async (done: Function) => {
       try {
         if (fileDescriptor) {
@@ -2287,14 +2287,14 @@ export default function AVPlayerLocalTest() {
         done();
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0500
-        * @tc.name      : 001.test subtitle Function
-        * @tc.desc      : Local Video subtitle control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0500
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0500', Level.LEVEL0,async (done: Function) => {
       try {
         if (fileDescriptor) {
@@ -2306,14 +2306,14 @@ export default function AVPlayerLocalTest() {
         done();
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0600
-        * @tc.name      : 001.test subtitle Function
-        * @tc.desc      : Local Video subtitle control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0600
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0600', Level.LEVEL0,async (done: Function) => {
       try {
         if (fileDescriptor) {
@@ -2325,14 +2325,14 @@ export default function AVPlayerLocalTest() {
         done();
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0700
-        * @tc.name      : 001.test subtitle Function
-        * @tc.desc      : Local Video subtitle control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0700
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0700', Level.LEVEL0,async (done: Function) => {
       try {
         if (fileDescriptor) {
@@ -2344,14 +2344,14 @@ export default function AVPlayerLocalTest() {
         done();
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0800
-        * @tc.name      : 001.test subtitle Function
-        * @tc.desc      : Local Video subtitle control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0800
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0800', Level.LEVEL0,async (done: Function) => {
       try {
         if (fileDescriptor) {
@@ -2363,14 +2363,14 @@ export default function AVPlayerLocalTest() {
         done();
       }
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0900
-        * @tc.name      : 001.test subtitle Function
-        * @tc.desc      : Local Video subtitle control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0900
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0900', Level.LEVEL0,async (done: Function) => {
       try {
         if (fileDescriptor) {

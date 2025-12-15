@@ -21,73 +21,73 @@ export default function listItemSwipeActionTest() {
 
   describe('ListItemSwipeActionTest', () => {
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ITEM_SWIPE_ACTION_0001
-     * @tc.name       : testListItemSwipeAction001
-     * @tc.desc       : testing item swipe action for list with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemSwipeAction001
+     * @tc.number SUB_ARKUI_CAPI_LIST_ITEM_SWIPE_ACTION_0001
+     * @tc.desc   testing item swipe action for list with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemSwipeAction001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemSwipeAction001()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ITEM_SWIPE_ACTION_0002
-     * @tc.name       : testListItemSwipeAction002
-     * @tc.desc       : testing item swipe action for list with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemSwipeAction002
+     * @tc.number SUB_ARKUI_CAPI_LIST_ITEM_SWIPE_ACTION_0002
+     * @tc.desc   testing item swipe action for list with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemSwipeAction002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemSwipeAction002()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ITEM_SWIPE_ACTION_0003
-     * @tc.name       : testListItemSwipeAction003
-     * @tc.desc       : testing item swipe action for list with resetAttribute
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemSwipeAction003
+     * @tc.number SUB_ARKUI_CAPI_LIST_ITEM_SWIPE_ACTION_0003
+     * @tc.desc   testing item swipe action for list with resetAttribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemSwipeAction003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemSwipeAction003()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ITEM_SWIPE_ACTION_0004
-     * @tc.name       : testListItemSwipeAction004
-     * @tc.desc       : testing item swipe action for list with OH_ArkUI_ListItemSwipeActionOption_Dispose
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemSwipeAction004
+     * @tc.number SUB_ARKUI_CAPI_LIST_ITEM_SWIPE_ACTION_0004
+     * @tc.desc   testing item swipe action for list with OH_ArkUI_ListItemSwipeActionOption_Dispose
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemSwipeAction004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemSwipeAction004()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ITEM_SWIPE_ACTION_0005
-     * @tc.name       : testListItemSwipeAction005
-     * @tc.desc       : testing item swipe action for list with SetEdgeEffect GetEdgeEffect
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemSwipeAction005
+     * @tc.number SUB_ARKUI_CAPI_LIST_ITEM_SWIPE_ACTION_0005
+     * @tc.desc   testing item swipe action for list with SetEdgeEffect GetEdgeEffect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemSwipeAction005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemSwipeAction005()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ITEM_SWIPE_ACTION_0006
-     * @tc.name       : testListItemSwipeAction006
-     * @tc.desc       : testing item swipe action for list with SetEdgeEffect GetEdgeEffect
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemSwipeAction006
+     * @tc.number SUB_ARKUI_CAPI_LIST_ITEM_SWIPE_ACTION_0006
+     * @tc.desc   testing item swipe action for list with SetEdgeEffect GetEdgeEffect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemSwipeAction006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemSwipeAction006()).assertEqual(0)

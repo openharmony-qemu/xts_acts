@@ -46,12 +46,12 @@ export default function Consumer0170Test() {
     });
 
     /**
+     * @tc.name   Consumer0170Test_001
      * @tc.number Consumer0170Test_001
-     * @tc.name Consumer0170Test_001
-     * @tc.desc Persistently store UI related data
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Persistently store UI related data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Consumer0170Test_001', Level.LEVEL1, async (done: Function) => {
       console.info('[Consumer0170Test_001] START');
@@ -64,12 +64,12 @@ export default function Consumer0170Test() {
     });
 
     /**
+     * @tc.name   Consumer0170Test_002
      * @tc.number Consumer0170Test_002
-     * @tc.name Consumer0170Test_002
-     * @tc.desc Persistently store UI related data
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Persistently store UI related data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Consumer0170Test_002', Level.LEVEL1, async (done: Function) => {
       console.info('[Consumer0170Test_002] START');

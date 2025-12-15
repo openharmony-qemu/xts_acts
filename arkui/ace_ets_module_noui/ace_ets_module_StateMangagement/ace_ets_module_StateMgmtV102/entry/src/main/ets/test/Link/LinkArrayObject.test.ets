@@ -54,14 +54,14 @@ export default function LinkArrayObject() {
       }
       done();
     });
-    /* *
-    * @tc.number: LinkArrayObject_0100
-    * @tc.name  : LinkArrayObject_0100
-    * @tc.desc  : Test if the state decorator supports LinkArrayObject types.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   LinkArrayObject_0100
+     * @tc.number LinkArrayObject_0100
+     * @tc.desc   Test if the state decorator supports LinkArrayObject types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LinkArrayObject_0100', Level.LEVEL0, async (done: Function) => {
       console.info('LinkArrayObject_0100 START');
       let driver: Driver = Driver.create();
@@ -80,14 +80,14 @@ export default function LinkArrayObject() {
       console.info('[LinkArrayObject_0100] END');
       done();
     });
-    /* *
-    * @tc.number: LinkArrayObject_0200
-    * @tc.name  : LinkArrayObject_0200
-    * @tc.desc  : Test if the state decorator supports LinkArrayObject types.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   LinkArrayObject_0200
+     * @tc.number LinkArrayObject_0200
+     * @tc.desc   Test if the state decorator supports LinkArrayObject types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LinkArrayObject_0200', Level.LEVEL0, async (done: Function) => {
       console.info('LinkArrayObject_0200 START');
       let driver: Driver = await Driver.create()
@@ -105,14 +105,14 @@ export default function LinkArrayObject() {
       console.info('[LinkArrayObject_0200] END');
       done();
     });
-    /* *
-    * @tc.number: LinkArrayObject_0300
-    * @tc.name  : LinkArrayObject_0300
-    * @tc.desc  : Test if the state decorator supports LinkArrayObject types.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   LinkArrayObject_0300
+     * @tc.number LinkArrayObject_0300
+     * @tc.desc   Test if the state decorator supports LinkArrayObject types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LinkArrayObject_0300', Level.LEVEL0, async (done: Function) => {
       console.info('LinkArrayObject_0300 START');
       let driver: Driver = await Driver.create()
@@ -130,14 +130,14 @@ export default function LinkArrayObject() {
       console.info('[LinkArrayObject_0300] END');
       done();
     });
-    /* *
-    * @tc.number: LinkArrayObject_0400
-    * @tc.name  : LinkArrayObject_0400
-    * @tc.desc  : Test if the state decorator supports LinkArrayObject types.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   LinkArrayObject_0400
+     * @tc.number LinkArrayObject_0400
+     * @tc.desc   Test if the state decorator supports LinkArrayObject types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LinkArrayObject_0400', Level.LEVEL0, async (done: Function) => {
       console.info('LinkArrayObject_0400 START');
       let driver: Driver = await Driver.create()

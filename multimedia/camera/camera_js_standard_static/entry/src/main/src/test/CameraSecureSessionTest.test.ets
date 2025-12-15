@@ -34,7 +34,7 @@ let mPhotoSurface: string;
 let mCameraNum: number;
 let mCameraInput: cameraObj.CameraInput;
 let mPreviewOutput: cameraObj.PreviewOutput;
-let receiver: image.ImageReceiver;
+let receiver: image.ImageReceiver | undefined;
 let secureSeqId: bigint;
 let surfaceId: string = '';
 
@@ -110,7 +110,7 @@ export default function cameraSecureSessionTest() {
     console.log(TAG + 'before receiver check')
     if (receiver !== undefined) {
       console.log(TAG + 'Secure receiver is created successfully')
-      mPhotoSurface = await receiver.getReceivingSurfaceId()
+      mPhotoSurface = await receiver!.getReceivingSurfaceId()
       console.log(TAG + 'Secure received id: ' + JSON.stringify(mPhotoSurface))
     } else {
       console.log(TAG + 'Secure receiver is created failed')
@@ -351,12 +351,12 @@ export default function cameraSecureSessionTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_OPEN_SECURE_CAMERA_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_OPEN_SECURE_CAMERA_STATIC_0100
-      * @tc.desc   Check open secure cameraid
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_OPEN_SECURE_CAMERA_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_OPEN_SECURE_CAMERA_STATIC_0100
+     * @tc.desc   Check open secure cameraid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_OPEN_SECURE_CAMERA_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_OPEN_SECURE_CAMERA_STATIC_0100--------------");
@@ -398,12 +398,12 @@ export default function cameraSecureSessionTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_ADD_SECURE_CAMERA_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_ADD_SECURE_CAMERA_STATIC_0100
-      * @tc.desc   Check add secure output flag
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_ADD_SECURE_CAMERA_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_ADD_SECURE_CAMERA_STATIC_0100
+     * @tc.desc   Check add secure output flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_ADD_SECURE_CAMERA_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_ADD_SECURE_CAMERA_STATIC_0100--------------");
@@ -438,12 +438,12 @@ export default function cameraSecureSessionTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ADD_SECURE_OUTPUT_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ADD_SECURE_OUTPUT_STATIC_0100
-      * @tc.desc   Test secure session addSecureOutput
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ADD_SECURE_OUTPUT_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ADD_SECURE_OUTPUT_STATIC_0100
+     * @tc.desc   Test secure session addSecureOutput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ADD_SECURE_OUTPUT_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("--------------Enter SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ADD_SECURE_OUTPUT_STATIC_0100--------------");

@@ -27,16 +27,11 @@ import UIContextWithoutWindowTest from './ContextTest/UIContextWithoutWindow.tes
 import UIContextGetOpacityTest from './ContextTest/UIContextGetOpacity.test';
 import IsAvailableTest from './ContextTest/IsAvailableTest.test';
 import IsFollowingSystemFontScaleFalseTest from './ContextTest/IsFollowingSystemFontScaleFalseTest.test';
+import IdTest from './UIContext/IdTest.test';
 
 export default function testsuite() {
-  APIgetFrameNodeByUniqueId();
-  UIContextOnIdle();
-  GetWindowWidthAndHeight();
-  PixelUnitsConversion();
-  atomicServiceBarTest();
   UIContextApi1();
   UIContextTestCase();
-
   CacheMaxCountForHSPTest();
   GetNodeByIdNullTest();
   UIContextUndefinedTest();
@@ -44,4 +39,11 @@ export default function testsuite() {
   UIContextGetOpacityTest();
   IsAvailableTest();
   IsFollowingSystemFontScaleFalseTest();
+
+  APIgetFrameNodeByUniqueId();
+  UIContextOnIdle();
+  GetWindowWidthAndHeight();
+  PixelUnitsConversion();
+  atomicServiceBarTest();
+  IdTest();
 }

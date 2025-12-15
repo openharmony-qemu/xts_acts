@@ -27,14 +27,14 @@ export default function textAreaOnContentDidChangeTest() {
       await Utils.pushPage(`textarea/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXTAREA_ON_CONTENT_DID_CHANGE_0001
-    * @tc.name       : testTextAreaOnContentDidChange001
-    * @tc.desc       : test onContentDidChange event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testTextAreaOnContentDidChange001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_ON_CONTENT_DID_CHANGE_0001
+     * @tc.desc   test onContentDidChange event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextAreaOnContentDidChange001', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('TextAreaOnContentDidChange_buttonId1')
       await Utils.sleep(1000)

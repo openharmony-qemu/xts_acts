@@ -41,9 +41,12 @@ export default function badgeTest() {
     })
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_FontWeight_0100
-     * @tc.name      Tests the FontWeight property of the badge component
-     * @tc.desc      Badge component container for Bttton, set fontWeight property parameter to 0
+     * @tc.name   ArkUX_Stage_Badge_FontWeight_0100
+     * @tc.number ArkUX_Stage_Badge_FontWeight_0100
+     * @tc.desc   Badge component container for Bttton, set fontWeight property parameter to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_FontWeight_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_FontWeight_0100 START');
@@ -69,10 +72,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_FontWeight_0200
-     * @tc.name      Tests the FontWeight property of the badge component
-     * @tc.desc      Badge component container for the Text component,
-     *               set the fontWeight property parameter to the default value 400
+     * @tc.name   ArkUX_Stage_Badge_FontWeight_0200
+     * @tc.number ArkUX_Stage_Badge_FontWeight_0200
+     * @tc.desc   Badge component container for the Text component,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_FontWeight_0200', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_FontWeight_0200 START');
@@ -98,10 +103,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_FontWeight_0300
-     * @tc.name      Tests the FontWeight property of the badge component
-     * @tc.desc      Set the fontWeight attribute parameter to a minimum boundary value of 100
-     *               for the Badge component in its container
+     * @tc.name   ArkUX_Stage_Badge_FontWeight_0300
+     * @tc.number ArkUX_Stage_Badge_FontWeight_0300
+     * @tc.desc   Set the fontWeight attribute parameter to a minimum boundary value of 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_FontWeight_0300', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_FontWeight_0300 START');
@@ -127,9 +134,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_FontWeight_0400
-     * @tc.name      Tests the FontWeight property of the badge component
-     * @tc.desc      Set the fontWeight attribute parameter to a string of "800" greater than the default value.
+     * @tc.name   ArkUX_Stage_Badge_FontWeight_0400
+     * @tc.number ArkUX_Stage_Badge_FontWeight_0400
+     * @tc.desc   Set the fontWeight attribute parameter to a string of "800" greater than the default value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_FontWeight_0400', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_FontWeight_0400 START');
@@ -155,9 +165,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_FontWeight_0500
-     * @tc.name      Tests the FontWeight property of the badge component
-     * @tc.desc      Set the fontWeight property parameter to less than the default value of 200
+     * @tc.name   ArkUX_Stage_Badge_FontWeight_0500
+     * @tc.number ArkUX_Stage_Badge_FontWeight_0500
+     * @tc.desc   Set the fontWeight property parameter to less than the default value of 200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_FontWeight_0500', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_FontWeight_0500 START');
@@ -183,9 +196,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_FontWeight_0600
-     * @tc.name      Tests the FontWeight property of the badge component
-     * @tc.desc      Set the fontWeight property parameter to a maximum boundary value of 900
+     * @tc.name   ArkUX_Stage_Badge_FontWeight_0600
+     * @tc.number ArkUX_Stage_Badge_FontWeight_0600
+     * @tc.desc   Set the fontWeight property parameter to a maximum boundary value of 900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_FontWeight_0600', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_FontWeight_0600 START');
@@ -211,9 +227,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_FontWeight_0700
-     * @tc.name      Tests the FontWeight property of the badge component
-     * @tc.desc      Set the FontWeight attribute parameter to enum type "fontweight. Bolder".
+     * @tc.name   ArkUX_Stage_Badge_FontWeight_0700
+     * @tc.number ArkUX_Stage_Badge_FontWeight_0700
+     * @tc.desc   Set the FontWeight attribute parameter to enum type "fontweight. Bolder".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_FontWeight_0700', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_FontWeight_0700 START');
@@ -239,9 +258,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_FontWeight_0800
-     * @tc.name      Tests the FontWeight property of the badge component
-     * @tc.desc      Example Set the fontWeight attribute to outside the value range of 1000
+     * @tc.name   ArkUX_Stage_Badge_FontWeight_0800
+     * @tc.number ArkUX_Stage_Badge_FontWeight_0800
+     * @tc.desc   Example Set the fontWeight attribute to outside the value range of 1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_FontWeight_0800', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_FontWeight_0800 START');
@@ -267,9 +289,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_FontWeight_0900
-     * @tc.name      Tests the FontWeight property of the badge component
-     * @tc.desc      Set the fontWeight property parameter to the exception value null
+     * @tc.name   ArkUX_Stage_Badge_FontWeight_0900
+     * @tc.number ArkUX_Stage_Badge_FontWeight_0900
+     * @tc.desc   Set the fontWeight property parameter to the exception value null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_FontWeight_0900', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_FontWeight_0900 START');
@@ -295,9 +320,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_FontWeight_1000
-     * @tc.name      Tests the FontWeight property of the badge component
-     * @tc.desc      Set the fontWeight property parameter to the exception value undefined
+     * @tc.name   ArkUX_Stage_Badge_FontWeight_1000
+     * @tc.number ArkUX_Stage_Badge_FontWeight_1000
+     * @tc.desc   Set the fontWeight property parameter to the exception value undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_FontWeight_1000', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_FontWeight_1000 START');
@@ -323,9 +351,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_FontWeight_1100
-     * @tc.name      Tests the FontWeight property of the badge component
-     * @tc.desc      Set the fontWeight property parameter to the exception value -1
+     * @tc.name   ArkUX_Stage_Badge_FontWeight_1100
+     * @tc.number ArkUX_Stage_Badge_FontWeight_1100
+     * @tc.desc   Set the fontWeight property parameter to the exception value -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_FontWeight_1100', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_FontWeight_1100 START');
@@ -351,9 +382,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_FontWeight_1200
-     * @tc.name      Tests the FontWeight property of the badge component
-     * @tc.desc      Set the fontWeight property parameter to the exception value ""
+     * @tc.name   ArkUX_Stage_Badge_FontWeight_1200
+     * @tc.number ArkUX_Stage_Badge_FontWeight_1200
+     * @tc.desc   Set the fontWeight property parameter to the exception value ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_FontWeight_1200', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_FontWeight_1200 START');
@@ -379,9 +413,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_FontWeight_1300
-     * @tc.name      Tests the FontWeight property of the badge component
-     * @tc.desc      Set the fontWeight property parameter to the exception value "adf@$5"
+     * @tc.name   ArkUX_Stage_Badge_FontWeight_1300
+     * @tc.number ArkUX_Stage_Badge_FontWeight_1300
+     * @tc.desc   Set the fontWeight property parameter to the exception value "adf@$5"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_FontWeight_1300', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_FontWeight_1300 START');
@@ -407,9 +444,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_FontWeight_1400
-     * @tc.name      Tests the FontWeight property of the badge component
-     * @tc.desc      Set the fontWeight property parameter to 200 and again to 500
+     * @tc.name   ArkUX_Stage_Badge_FontWeight_1400
+     * @tc.number ArkUX_Stage_Badge_FontWeight_1400
+     * @tc.desc   Set the fontWeight property parameter to 200 and again to 500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_FontWeight_1400', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_FontWeight_1400 START');
@@ -435,9 +475,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_FontWeight_1500
-     * @tc.name      Tests the FontWeight property of the badge component
-     * @tc.desc      Set the fontWeight property parameter to 500, and again to the outlier null
+     * @tc.name   ArkUX_Stage_Badge_FontWeight_1500
+     * @tc.number ArkUX_Stage_Badge_FontWeight_1500
+     * @tc.desc   Set the fontWeight property parameter to 500, and again to the outlier null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_FontWeight_1500', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_FontWeight_1500 START');
@@ -463,10 +506,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_FontWeight_1600
-     * @tc.name      Tests the FontWeight property of the badge component
-     * @tc.desc      Set the fontWeight attribute parameter to 600 greater than the default value,
-     *               and set the generic layoutWeight attribute value to null
+     * @tc.name   ArkUX_Stage_Badge_FontWeight_1600
+     * @tc.number ArkUX_Stage_Badge_FontWeight_1600
+     * @tc.desc   Set the fontWeight attribute parameter to 600 greater than the default value,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_FontWeight_1600', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_FontWeight_1600 START');
@@ -492,9 +537,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_BorderColor_0100
-     * @tc.name      Tests the BorderColor property of the badge component
-     * @tc.desc      Sets the BorderColor property parameter to 0x00ff00
+     * @tc.name   ArkUX_Stage_Badge_BorderColor_0100
+     * @tc.number ArkUX_Stage_Badge_BorderColor_0100
+     * @tc.desc   Sets the BorderColor property parameter to 0x00ff00
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_BorderColor_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_BorderColor_0100 START');
@@ -520,9 +568,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_BorderColor_0200
-     * @tc.name      Tests the BorderColor property of the badge component
-     * @tc.desc      Sets the BorderColor property parameter to '#fffd0000'
+     * @tc.name   ArkUX_Stage_Badge_BorderColor_0200
+     * @tc.number ArkUX_Stage_Badge_BorderColor_0200
+     * @tc.desc   Sets the BorderColor property parameter to '#fffd0000'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_BorderColor_0200', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_BorderColor_0200 START');
@@ -548,9 +599,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_BorderColor_0300
-     * @tc.name      Tests the BorderColor property of the badge component
-     * @tc.desc      Sets the BorderColor property parameter to 'rgb(138,43,226)'
+     * @tc.name   ArkUX_Stage_Badge_BorderColor_0300
+     * @tc.number ArkUX_Stage_Badge_BorderColor_0300
+     * @tc.desc   Sets the BorderColor property parameter to 'rgb(138,43,226)'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_BorderColor_0300', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_BorderColor_0300 START');
@@ -576,9 +630,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_BorderColor_0400
-     * @tc.name      Tests the BorderColor property of the badge component
-     * @tc.desc      Sets the BorderColor property parameter to Color.Pink
+     * @tc.name   ArkUX_Stage_Badge_BorderColor_0400
+     * @tc.number ArkUX_Stage_Badge_BorderColor_0400
+     * @tc.desc   Sets the BorderColor property parameter to Color.Pink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_BorderColor_0400', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_BorderColor_0400 START');
@@ -604,9 +661,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_BorderColor_0500
-     * @tc.name      Tests the BorderColor property of the badge component
-     * @tc.desc      Sets the BorderColor property parameter to $r("app.color.badge_BorderColor")
+     * @tc.name   ArkUX_Stage_Badge_BorderColor_0500
+     * @tc.number ArkUX_Stage_Badge_BorderColor_0500
+     * @tc.desc   Sets the BorderColor property parameter to $r("app.color.badge_BorderColor")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_BorderColor_0500', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_BorderColor_0500 START');
@@ -632,9 +692,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_BorderColor_0600
-     * @tc.name      Tests the BorderColor property of the badge component
-     * @tc.desc      Sets the BorderColor property parameter to the exception value ""
+     * @tc.name   ArkUX_Stage_Badge_BorderColor_0600
+     * @tc.number ArkUX_Stage_Badge_BorderColor_0600
+     * @tc.desc   Sets the BorderColor property parameter to the exception value ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_BorderColor_0600', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_BorderColor_0600 START');
@@ -660,9 +723,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_BorderColor_0700
-     * @tc.name      Tests the BorderColor property of the badge component
-     * @tc.desc      Sets the BorderColor property parameter to the exception value null
+     * @tc.name   ArkUX_Stage_Badge_BorderColor_0700
+     * @tc.number ArkUX_Stage_Badge_BorderColor_0700
+     * @tc.desc   Sets the BorderColor property parameter to the exception value null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_BorderColor_0700', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_BorderColor_0700 START');
@@ -688,9 +754,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_BorderColor_0800
-     * @tc.name      Tests the BorderColor property of the badge component
-     * @tc.desc      Sets the BorderColor property parameter to the exception value undefined
+     * @tc.name   ArkUX_Stage_Badge_BorderColor_0800
+     * @tc.number ArkUX_Stage_Badge_BorderColor_0800
+     * @tc.desc   Sets the BorderColor property parameter to the exception value undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_BorderColor_0800', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_BorderColor_0800 START');
@@ -716,10 +785,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_BorderColor_0900
-     * @tc.name      Tests the BorderColor property of the badge component
-     * @tc.desc      Set the BorderColor property parameter to "rgb(138,43,226)"
-     *               and again to the normal value Color.Pink
+     * @tc.name   ArkUX_Stage_Badge_BorderColor_0900
+     * @tc.number ArkUX_Stage_Badge_BorderColor_0900
+     * @tc.desc   Set the BorderColor property parameter to "rgb(138,43,226)"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_BorderColor_0900', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_BorderColor_0900 START');
@@ -745,10 +816,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_BorderColor_1000
-     * @tc.name      Tests the BorderColor property of the badge component
-     * @tc.desc      Set the BorderColor property parameter to "rgb(138,43,226)"
-     *               and again set the BorderColor property parameter to the outlier value undefined
+     * @tc.name   ArkUX_Stage_Badge_BorderColor_1000
+     * @tc.number ArkUX_Stage_Badge_BorderColor_1000
+     * @tc.desc   Set the BorderColor property parameter to "rgb(138,43,226)"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_BorderColor_1000', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_BorderColor_1000 START');
@@ -774,9 +847,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_BorderColor_1100
-     * @tc.name      Tests the BorderColor property of the badge component
-     * @tc.desc      Sets the BorderColor property parameter to the exception value 'bgr(138,43,226)'
+     * @tc.name   ArkUX_Stage_Badge_BorderColor_1100
+     * @tc.number ArkUX_Stage_Badge_BorderColor_1100
+     * @tc.desc   Sets the BorderColor property parameter to the exception value 'bgr(138,43,226)'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_BorderColor_1100', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_BorderColor_1100 START');
@@ -802,10 +878,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_BorderColor_1200
-     * @tc.name      Tests the BorderColor property of the badge component
-     * @tc.desc      Sets the BorderColor property parameter to 0x00ff00.
-     *               Sets the universal property backgroundColor property value to Color.Pink
+     * @tc.name   ArkUX_Stage_Badge_BorderColor_1200
+     * @tc.number ArkUX_Stage_Badge_BorderColor_1200
+     * @tc.desc   Sets the BorderColor property parameter to 0x00ff00.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_BorderColor_1200', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_BorderColor_1200 START');
@@ -831,9 +909,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_BorderWidth_0100
-     * @tc.name      Tests the BorderWidth property of the badge component
-     * @tc.desc      Set the BorderWidth property argument to 5
+     * @tc.name   ArkUX_Stage_Badge_BorderWidth_0100
+     * @tc.number ArkUX_Stage_Badge_BorderWidth_0100
+     * @tc.desc   Set the BorderWidth property argument to 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_BorderWidth_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_BorderWidth_0100 START');
@@ -859,9 +940,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_BorderWidth_0200
-     * @tc.name      Tests the BorderWidth property of the badge component
-     * @tc.desc      Set the BorderWidth property argument to "5"
+     * @tc.name   ArkUX_Stage_Badge_BorderWidth_0200
+     * @tc.number ArkUX_Stage_Badge_BorderWidth_0200
+     * @tc.desc   Set the BorderWidth property argument to "5"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_BorderWidth_0200', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_BorderWidth_0200 START');
@@ -887,9 +971,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_BorderWidth_0300
-     * @tc.name      Tests the BorderWidth property of the badge component
-     * @tc.desc      Set the BorderWidth property argument to $r("app.string.badge_Size_test")
+     * @tc.name   ArkUX_Stage_Badge_BorderWidth_0300
+     * @tc.number ArkUX_Stage_Badge_BorderWidth_0300
+     * @tc.desc   Set the BorderWidth property argument to $r("app.string.badge_Size_test")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_BorderWidth_0300', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_BorderWidth_0300 START');
@@ -915,9 +1002,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_BorderWidth_0400
-     * @tc.name      Tests the BorderWidth property of the badge component
-     * @tc.desc      Sets the BorderWidth property parameter to the exception value ""
+     * @tc.name   ArkUX_Stage_Badge_BorderWidth_0400
+     * @tc.number ArkUX_Stage_Badge_BorderWidth_0400
+     * @tc.desc   Sets the BorderWidth property parameter to the exception value ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_BorderWidth_0400', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_BorderWidth_0400 START');
@@ -943,9 +1033,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_BorderWidth_0500
-     * @tc.name      Tests the BorderWidth property of the badge component
-     * @tc.desc      Sets the BorderWidth property parameter to the exception value null
+     * @tc.name   ArkUX_Stage_Badge_BorderWidth_0500
+     * @tc.number ArkUX_Stage_Badge_BorderWidth_0500
+     * @tc.desc   Sets the BorderWidth property parameter to the exception value null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_BorderWidth_0500', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_BorderWidth_0500 START');
@@ -971,9 +1064,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_BorderWidth_0600
-     * @tc.name      Tests the BorderWidth property of the badge component
-     * @tc.desc      Sets the BorderWidth property parameter to the exception value undefined
+     * @tc.name   ArkUX_Stage_Badge_BorderWidth_0600
+     * @tc.number ArkUX_Stage_Badge_BorderWidth_0600
+     * @tc.desc   Sets the BorderWidth property parameter to the exception value undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_BorderWidth_0600', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_BorderWidth_0600 START');
@@ -999,10 +1095,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_BorderWidth_0700
-     * @tc.name      Tests the BorderWidth property of the badge component
-     * @tc.desc      Set the BorderWidth property parameter to 5,
-     *               and set the BorderWidth property parameter to "7fp" again
+     * @tc.name   ArkUX_Stage_Badge_BorderWidth_0700
+     * @tc.number ArkUX_Stage_Badge_BorderWidth_0700
+     * @tc.desc   Set the BorderWidth property parameter to 5,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_BorderWidth_0700', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_BorderWidth_0700 START');
@@ -1028,10 +1126,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_BorderWidth_0800
-     * @tc.name      Tests the BorderWidth property of the badge component
-     * @tc.desc      Set the BorderWidth property parameter to 5
-     *               and set the BorderWidth property parameter to undefined again
+     * @tc.name   ArkUX_Stage_Badge_BorderWidth_0800
+     * @tc.number ArkUX_Stage_Badge_BorderWidth_0800
+     * @tc.desc   Set the BorderWidth property parameter to 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_BorderWidth_0800', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_BorderWidth_0800 START');
@@ -1057,9 +1157,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_BorderWidth_0900
-     * @tc.name      Tests the BorderWidth property of the badge component
-     * @tc.desc      Sets the BorderWidth property parameter to the exception value "asdf%^7"
+     * @tc.name   ArkUX_Stage_Badge_BorderWidth_0900
+     * @tc.number ArkUX_Stage_Badge_BorderWidth_0900
+     * @tc.desc   Sets the BorderWidth property parameter to the exception value "asdf%^7"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_BorderWidth_0900', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_BorderWidth_0900 START');
@@ -1085,10 +1188,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_BorderWidth_1000
-     * @tc.name      Tests the BorderWidth property of the badge component
-     * @tc.desc      Set the BorderWidth property parameter to "5lpx"
-     *               and the common property width property value to the outlier value 7
+     * @tc.name   ArkUX_Stage_Badge_BorderWidth_1000
+     * @tc.number ArkUX_Stage_Badge_BorderWidth_1000
+     * @tc.desc   Set the BorderWidth property parameter to "5lpx"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_BorderWidth_1000', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_BorderWidth_1000 START');
@@ -1114,9 +1219,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_BorderWidth_1100
-     * @tc.name      Combined test all new attributes of the Badge component
-     * @tc.desc      Set the BorderWidth property argument to 0
+     * @tc.name   ArkUX_Stage_Badge_BorderWidth_1100
+     * @tc.number ArkUX_Stage_Badge_BorderWidth_1100
+     * @tc.desc   Set the BorderWidth property argument to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_BorderWidth_1100', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_BorderWidth_1000 START');
@@ -1142,9 +1250,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_BorderWidth_1200
-     * @tc.name      Combined test all new attributes of the Badge component
-     * @tc.desc      Simultaneous setting BorderWidth(5) fontWeight(600) BorderColor(#FFFD0000)
+     * @tc.name   ArkUX_Stage_Badge_BorderWidth_1200
+     * @tc.number ArkUX_Stage_Badge_BorderWidth_1200
+     * @tc.desc   Simultaneous setting BorderWidth(5) fontWeight(600) BorderColor(#FFFD0000)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_BorderWidth_1200', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_BorderWidth_1200 START');
@@ -1172,9 +1283,12 @@ export default function badgeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Badge_BorderWidth_1300
-     * @tc.name      Combined test all new attributes of the Badge component
-     * @tc.desc      Do not set new attributes
+     * @tc.name   ArkUX_Stage_Badge_BorderWidth_1300
+     * @tc.number ArkUX_Stage_Badge_BorderWidth_1300
+     * @tc.desc   Do not set new attributes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Badge_BorderWidth_1300', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_BorderWidth_1300 START');

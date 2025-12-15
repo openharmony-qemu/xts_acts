@@ -78,12 +78,12 @@ export default function windowEventTest(context: common.UIAbilityContext, window
       console.log(msg + ' beforeEach end!!!')
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0010
-     * @tc.name      : testTouchOutside_OnDialogWindow_ClickMainWindow
-     * @tc.desc      : Enable listening for click events outside this window area.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testTouchOutside_OnDialogWindow_ClickMainWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0010
+     * @tc.desc   Enable listening for click events outside this window area.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTouchOutside_OnDialogWindow_ClickMainWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let caseName = 'testTouchOutside_OnDialogWindow_ClickMainWindow';
@@ -133,12 +133,12 @@ export default function windowEventTest(context: common.UIAbilityContext, window
       done();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0020
-     * @tc.name      : testTouchOutside_OnMainWindow_ClickDialog
-     * @tc.desc      : Enable listening for click events outside this window area.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testTouchOutside_OnMainWindow_ClickDialog
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0020
+     * @tc.desc   Enable listening for click events outside this window area.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTouchOutside_OnMainWindow_ClickDialog', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let caseName = 'testTouchOutside_OnMainWindow_ClickDialog';
@@ -183,12 +183,12 @@ export default function windowEventTest(context: common.UIAbilityContext, window
       })
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0030
-     * @tc.name      : testTouchOutside_OnSubWindow_ClickMainWindow
-     * @tc.desc      : Enable listening for click events outside this window area.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testTouchOutside_OnSubWindow_ClickMainWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0030
+     * @tc.desc   Enable listening for click events outside this window area.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTouchOutside_OnSubWindow_ClickMainWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let caseName = 'testTouchOutside_OnSubWindow_ClickMainWindow';
@@ -227,12 +227,12 @@ export default function windowEventTest(context: common.UIAbilityContext, window
       })
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0040
-     * @tc.name      : testTouchOutside_OnMainWindow_ClickSubWindow
-     * @tc.desc      : Enable listening for click events outside this window area.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testTouchOutside_OnMainWindow_ClickSubWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0040
+     * @tc.desc   Enable listening for click events outside this window area.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTouchOutside_OnMainWindow_ClickSubWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let caseName = 'testTouchOutside_OnMainWindow_ClickSubWindow';
@@ -273,12 +273,12 @@ export default function windowEventTest(context: common.UIAbilityContext, window
 
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0050
-     * @tc.name      : testDialogTargetTouch_OnMainWindow_ClickMainWindow
-     * @tc.desc      : Enables listening for click or touch events for Windows covered by modal Windows
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testDialogTargetTouch_OnMainWindow_ClickMainWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0050
+     * @tc.desc   Enables listening for click or touch events for Windows covered by modal Windows
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDialogTargetTouch_OnMainWindow_ClickMainWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let caseName = 'testDialogTargetTouch_OnMainWindow_ClickMainWindow';
@@ -327,12 +327,12 @@ export default function windowEventTest(context: common.UIAbilityContext, window
       done();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0060
-     * @tc.name      : testDialogTargetTouch_OnDialogWindow_ClickMainWindow
-     * @tc.desc      : Enables listening for click or touch events for Windows covered by modal Windows
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testDialogTargetTouch_OnDialogWindow_ClickMainWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0060
+     * @tc.desc   Enables listening for click or touch events for Windows covered by modal Windows
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDialogTargetTouch_OnDialogWindow_ClickMainWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let caseName = 'testDialogTargetTouch_OnDialogWindow_ClickMainWindow';
@@ -375,12 +375,12 @@ export default function windowEventTest(context: common.UIAbilityContext, window
       })
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0070
-     * @tc.name      : testDialogTargetTouch_OnSubWindow_ClickSubWindow
-     * @tc.desc      : Enables listening for click or touch events for Windows covered by modal Windows
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testDialogTargetTouch_OnSubWindow_ClickSubWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0070
+     * @tc.desc   Enables listening for click or touch events for Windows covered by modal Windows
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDialogTargetTouch_OnSubWindow_ClickSubWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let caseName = 'testDialogTargetTouch_OnSubWindow_ClickSubWindow';
@@ -441,12 +441,12 @@ export default function windowEventTest(context: common.UIAbilityContext, window
       done();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0080
-     * @tc.name      : testDialogTargetTouch_OnDialogWindow_ClickSubWindow
-     * @tc.desc      : Enables listening for click or touch events for Windows covered by modal Windows
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testDialogTargetTouch_OnDialogWindow_ClickSubWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0080
+     * @tc.desc   Enables listening for click or touch events for Windows covered by modal Windows
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDialogTargetTouch_OnDialogWindow_ClickSubWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let caseName = 'testDialogTargetTouch_OnDialogWindow_ClickSubWindow';
@@ -502,12 +502,12 @@ export default function windowEventTest(context: common.UIAbilityContext, window
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0090
-     * @tc.name      : testNoInteractionDetected_OnMainWindow
-     * @tc.desc      : Enables this window to not listen for interactive events within a specified timeout period
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testNoInteractionDetected_OnMainWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0090
+     * @tc.desc   Enables this window to not listen for interactive events within a specified timeout period
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNoInteractionDetected_OnMainWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let caseName = 'testNoInteractionDetected_OnMainWindow';
@@ -538,12 +538,12 @@ export default function windowEventTest(context: common.UIAbilityContext, window
       await sleep(800)
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0100
-     * @tc.name      : testNoInteractionDetected_OnSubWindow
-     * @tc.desc      : Enables this window to not listen for interactive events within a specified timeout period
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testNoInteractionDetected_OnSubWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0100
+     * @tc.desc   Enables this window to not listen for interactive events within a specified timeout period
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNoInteractionDetected_OnSubWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let caseName = 'testNoInteractionDetected_OnSubWindow';
@@ -586,12 +586,12 @@ export default function windowEventTest(context: common.UIAbilityContext, window
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0110
-     * @tc.name      : testSetWindowTouchable_MainWindow_Promise
-     * @tc.desc      : Sets whether the window is touchable
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testSetWindowTouchable_MainWindow_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0110
+     * @tc.desc   Sets whether the window is touchable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetWindowTouchable_MainWindow_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let caseName = 'testSetWindowTouchable_MainWindow_Promise';
@@ -619,12 +619,12 @@ export default function windowEventTest(context: common.UIAbilityContext, window
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0120
-     * @tc.name      : testSetWindowTouchable_MainWindow_Callback
-     * @tc.desc      : Sets whether the window is touchable
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testSetWindowTouchable_MainWindow_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0120
+     * @tc.desc   Sets whether the window is touchable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetWindowTouchable_MainWindow_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let caseName = 'testSetWindowTouchable_MainWindow_Callback';
@@ -655,12 +655,12 @@ export default function windowEventTest(context: common.UIAbilityContext, window
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0130
-     * @tc.name      : testSetWindowTouchable_SubWindow_Promise
-     * @tc.desc      : Sets whether the window is touchable
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testSetWindowTouchable_SubWindow_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0130
+     * @tc.desc   Sets whether the window is touchable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetWindowTouchable_SubWindow_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let caseName = 'testSetWindowTouchable_SubWindow_Promise';
@@ -696,12 +696,12 @@ export default function windowEventTest(context: common.UIAbilityContext, window
       done();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0140
-     * @tc.name      : testSetWindowTouchable_SubWindow_Callback
-     * @tc.desc      : Sets whether the window is touchable
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testSetWindowTouchable_SubWindow_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0140
+     * @tc.desc   Sets whether the window is touchable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetWindowTouchable_SubWindow_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let caseName = 'testSetWindowTouchable_SubWindow_Callback';
@@ -744,12 +744,12 @@ export default function windowEventTest(context: common.UIAbilityContext, window
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0150
-     * @tc.name      : testTouchOutside_OnSubWindowWithOps_ClickMainWindow
-     * @tc.desc      : Enable listening for click events outside this window area.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testTouchOutside_OnSubWindowWithOps_ClickMainWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0150
+     * @tc.desc   Enable listening for click events outside this window area.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTouchOutside_OnSubWindowWithOps_ClickMainWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let caseName = 'testTouchOutside_OnSubWindowWithOps_ClickMainWindow';
@@ -804,12 +804,12 @@ export default function windowEventTest(context: common.UIAbilityContext, window
         });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0160
-     * @tc.name      : testTouchOutside_OnMainWindow_ClickSubWindowWithOps
-     * @tc.desc      : Enable listening for click events outside this window area.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testTouchOutside_OnMainWindow_ClickSubWindowWithOps
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0160
+     * @tc.desc   Enable listening for click events outside this window area.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTouchOutside_OnMainWindow_ClickSubWindowWithOps', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let caseName = 'testTouchOutside_OnMainWindow_ClickSubWindowWithOps';
@@ -865,12 +865,12 @@ export default function windowEventTest(context: common.UIAbilityContext, window
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0170
-     * @tc.name      : testDialogTargetTouch_OnSubWindowWithOps_ClickSubWinOps
-     * @tc.desc      : Enables listening for click or touch events for Windows covered by modal Windows
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testDialogTargetTouch_OnSubWindowWithOps_ClickSubWinOps
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0170
+     * @tc.desc   Enables listening for click or touch events for Windows covered by modal Windows
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDialogTargetTouch_OnSubWindowWithOps_ClickSubWinOps', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let caseName = 'testDialogTargetTouch_OnSubWindowWithOps_ClickSubWinOps';
@@ -947,12 +947,12 @@ export default function windowEventTest(context: common.UIAbilityContext, window
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0180
-     * @tc.name      : testDialogTargetTouch_OnDialogWindow_ClickSubWinOps
-     * @tc.desc      : Enables listening for click or touch events for Windows covered by modal Windows
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testDialogTargetTouch_OnDialogWindow_ClickSubWinOps
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0180
+     * @tc.desc   Enables listening for click or touch events for Windows covered by modal Windows
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDialogTargetTouch_OnDialogWindow_ClickSubWinOps', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let caseName = 'testDialogTargetTouch_OnDialogWindow_ClickSubWinOps';
@@ -1023,12 +1023,12 @@ export default function windowEventTest(context: common.UIAbilityContext, window
         });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0190
-     * @tc.name      : testNoInteractionDetected_OnSubWindowWithOps
-     * @tc.desc      : Enables this window to not listen for interactive events within a specified timeout period
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testNoInteractionDetected_OnSubWindowWithOps
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0190
+     * @tc.desc   Enables this window to not listen for interactive events within a specified timeout period
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNoInteractionDetected_OnSubWindowWithOps', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let caseName = 'testNoInteractionDetected_OnSubWindowWithOps';
@@ -1084,12 +1084,12 @@ export default function windowEventTest(context: common.UIAbilityContext, window
         });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0200
-     * @tc.name      : testSetWindowTouchable_SubWindowWithOps_Promise
-     * @tc.desc      : Sets whether the window is touchable
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testSetWindowTouchable_SubWindowWithOps_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0200
+     * @tc.desc   Sets whether the window is touchable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetWindowTouchable_SubWindowWithOps_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let caseName = 'testSetWindowTouchable_SubWindowWithOps_Promise';
@@ -1140,12 +1140,12 @@ export default function windowEventTest(context: common.UIAbilityContext, window
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0210
-     * @tc.name      : testSetWindowTouchable_SubWindowWithOps_Callback
-     * @tc.desc      : Sets whether the window is touchable
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testSetWindowTouchable_SubWindowWithOps_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0210
+     * @tc.desc   Sets whether the window is touchable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetWindowTouchable_SubWindowWithOps_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let caseName = 'testSetWindowTouchable_SubWindowWithOps_Callback';

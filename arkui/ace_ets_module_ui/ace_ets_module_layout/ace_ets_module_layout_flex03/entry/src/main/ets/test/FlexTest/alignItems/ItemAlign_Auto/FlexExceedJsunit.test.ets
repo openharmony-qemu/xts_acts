@@ -46,9 +46,12 @@ export default function flexExceed_AutoJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignAutoFlexPadMarMeet
      * @tc.number SUB_ACE_FLEXALIGNITEMS_AUTO_0600
-     * @tc.name testFlexItemAlignAutoFlexPadMarMeet
-     * @tc.desc Subcomponent inside when parent component set margin and padding.
+     * @tc.desc   Subcomponent inside when parent component set margin and padding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignAutoFlexPadMarMeet',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignAutoFlexPadMarMeet START');
@@ -86,9 +89,12 @@ export default function flexExceed_AutoJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignAutoFlexPadMarOverflow
      * @tc.number SUB_ACE_FLEXALIGNITEMS_AUTO_0700
-     * @tc.name testFlexItemAlignAutoFlexPadMarOverflow
-     * @tc.desc Subcomponent outside when parent component set margin and padding.
+     * @tc.desc   Subcomponent outside when parent component set margin and padding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignAutoFlexPadMarOverflow',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignAutoFlexPadMarOverflow START');

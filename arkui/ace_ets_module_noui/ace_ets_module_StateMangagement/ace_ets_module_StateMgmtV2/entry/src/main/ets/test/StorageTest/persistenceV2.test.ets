@@ -46,12 +46,12 @@ export default function persistenceV2() {
     });
 
     /**
-     * @tc.number    persistenceV2_0100
-     * @tc.name      persistenceV2_0100
-     * @tc.desc      all keys in PersistenceV2.
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   persistenceV2_0100
+     * @tc.number persistenceV2_0100
+     * @tc.desc   all keys in PersistenceV2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('persistenceV2_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[persistenceV2_0100] START');
@@ -65,12 +65,12 @@ export default function persistenceV2() {
     });
 
     /**
-     * @tc.number    persistenceV2_0200
-     * @tc.name      persistenceV2_0200
-     * @tc.desc      Persistently store UI related data
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   persistenceV2_0200
+     * @tc.number persistenceV2_0200
+     * @tc.desc   Persistently store UI related data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('persistenceV2_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[persistenceV2_0200] START');
@@ -102,12 +102,12 @@ export default function persistenceV2() {
     });
 
     /**
-     * @tc.number    persistenceV2_0300
-     * @tc.name      persistenceV2_0300
-     * @tc.desc      When the tested value is not the observed object
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   persistenceV2_0300
+     * @tc.number persistenceV2_0300
+     * @tc.desc   When the tested value is not the observed object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('persistenceV2_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[persistenceV2_0300] START');

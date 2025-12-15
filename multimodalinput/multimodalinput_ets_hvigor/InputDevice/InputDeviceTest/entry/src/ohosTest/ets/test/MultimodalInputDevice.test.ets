@@ -35,7 +35,6 @@ export default function MultimodalInputDeviceTest() {
     }
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_getDeviceList_0100
      * @tc.number SUB_MMI_Input_Api_IptDev_getDeviceList_0100
      * @tc.desc   Test callback getDeviceList interface to get the ID list of all input devices.
@@ -66,7 +65,6 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_getDeviceList_0200
      * @tc.number SUB_MMI_Input_Api_IptDev_getDeviceList_0200
      * @tc.desc   Test promise getDeviceList interface to get the ID list of all input devices.
@@ -91,7 +89,6 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_getDeviceInfo_0100
      * @tc.number SUB_MMI_Input_Api_IptDev_getDeviceInfo_0100
      * @tc.desc   Test callback getDeviceInfo interface to get information about a specified input device.
@@ -121,7 +118,6 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_getDeviceInfo_0200
      * @tc.number SUB_MMI_Input_Api_IptDev_getDeviceInfo_0200
      * @tc.desc   Test promise getDeviceInfo interface to get information about a specified input device.
@@ -145,7 +141,6 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_getDeviceInfoSync_0100
      * @tc.number SUB_MMI_Input_Api_IptDev_getDeviceInfoSync_0100
      * @tc.desc   Test getDeviceInfoSync interface to get information about a specified input device.
@@ -168,7 +163,6 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_getDeviceInfoSync_0200
      * @tc.number SUB_MMI_Input_Api_IptDev_getDeviceInfoSync_0200
      * @tc.desc   Test getDeviceInfoSync interface invalid input parameter
@@ -190,7 +184,6 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_off_0100
      * @tc.number SUB_MMI_Input_Api_IptDev_off_0100
      * @tc.desc   Test callback on and off interfaces to cancel the hot swap event for the specified input device.
@@ -234,7 +227,6 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_off_0200
      * @tc.number SUB_MMI_Input_Api_IptDev_off_0200
      * @tc.desc   Test callback off interface to cancel the hot swap event for all input devices.
@@ -261,7 +253,6 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_getDeviceIds_0100
      * @tc.number SUB_MMI_Input_Api_IptDev_getDeviceIds_0100
      * @tc.desc   Test callback getDeviceIds interface to get the ID list of all input devices.
@@ -292,7 +283,6 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_getDeviceIds_0200
      * @tc.number SUB_MMI_Input_Api_IptDev_getDeviceIds_0200
      * @tc.desc   Test promise getDeviceIds interface to get the ID list of all input devices.
@@ -317,7 +307,6 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_getDevice_0100
      * @tc.number SUB_MMI_Input_Api_IptDev_getDevice_0100
      * @tc.desc   Test callback getDevice interface to get information about a specified input device.
@@ -347,7 +336,6 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_getDevice_0200
      * @tc.number SUB_MMI_Input_Api_IptDev_getDevice_0200
      * @tc.desc   Test promise getDevice interface to get information about a specified input device.
@@ -371,7 +359,6 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_supportKeys_0100
      * @tc.number SUB_MMI_Input_Api_IptDev_supportKeys_0100
      * @tc.desc   Test callback supportKeys interface to get whether the input device supports the specified key code value.
@@ -395,7 +382,6 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_supportKeys_0200
      * @tc.number SUB_MMI_Input_Api_IptDev_supportKeys_0200
      * @tc.desc   Test promise supportKeys interface to get whether the input device supports the specified key code value.
@@ -419,7 +405,6 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_supportKeys_0300
      * @tc.number SUB_MMI_Input_Api_IptDev_supportKeys_0300
      * @tc.desc   Test promise supportKeys interface to set null value.
@@ -443,7 +428,6 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_supportKeysSync_0100
      * @tc.number SUB_MMI_Input_Api_IptDev_supportKeysSync_0100
      * @tc.desc   Test supportKeysSync interface to get whether the input device supports the specified key code value.
@@ -466,7 +450,6 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_getKeyboardType_0100
      * @tc.number SUB_MMI_Input_Api_IptDev_getKeyboardType_0100
      * @tc.desc   Test callback getKeyboardType interface to get the keyboard type of an input device.
@@ -502,7 +485,6 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_getKeyboardType_0200
      * @tc.number SUB_MMI_Input_Api_IptDev_getKeyboardType_0200
      * @tc.desc   Test promise getKeyboardType interface to get the keyboard type of an input device.
@@ -532,7 +514,6 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_getKeyboardTypeSync_0100
      * @tc.number SUB_MMI_Input_Api_IptDev_getKeyboardTypeSync_0100
      * @tc.desc   Test getKeyboardTypeSync interface to get the keyboard type of an input device.
@@ -561,7 +542,6 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_getKeyboardTypeSync_0200
      * @tc.number SUB_MMI_Input_Api_IptDev_getKeyboardTypeSync_0200
      * @tc.desc   Test getKeyboardTypeSync interface invalid input parameter
@@ -583,7 +563,6 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_getAllSystemHotkeys_0100
      * @tc.number SUB_MMI_Input_Api_IptDev_getAllSystemHotkeys_0100
      * @tc.desc   Test promise getAllSystemHotkeys interface to get all the system hotkeys.
@@ -607,7 +586,6 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_getIntervalSinceLastInput_0100
      * @tc.number SUB_MMI_Input_Api_IptDev_getIntervalSinceLastInput_0100
      * @tc.desc   Test promise getIntervalSinceLastInput interface to get the time interval since the last system input event.
@@ -631,7 +609,6 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_isFunctionKeyEnabled_0100
      * @tc.number SUB_MMI_Input_Api_IptDev_isFunctionKeyEnabled_0100
      * @tc.desc   Test promise isFunctionKeyEnabled interface to set error FunctionKey(10000).
@@ -655,7 +632,6 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_isFunctionKeyEnabled_0200
      * @tc.number SUB_MMI_Input_Api_IptDev_isFunctionKeyEnabled_0200
      * @tc.desc   Test promise isFunctionKeyEnabled interface to set error FunctionKey(-1).
@@ -679,7 +655,6 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_isFunctionKeyEnabled_0300
      * @tc.number SUB_MMI_Input_Api_IptDev_isFunctionKeyEnabled_0300
      * @tc.desc   Test promise isFunctionKeyEnabled interface to unconnect keyboard device.
@@ -706,7 +681,6 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_on_0100
      * @tc.number SUB_MMI_Input_Api_IptDev_on_0100
      * @tc.desc   Test callback on and off interfaces to cancel the hot swap event for the specified input device.
@@ -729,7 +703,6 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_IptDev_off_0300
      * @tc.number SUB_MMI_Input_Api_IptDev_off_0300
      * @tc.desc   Test callback on and off interfaces to cancel the hot swap event for the specified input device.

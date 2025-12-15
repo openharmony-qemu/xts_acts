@@ -41,12 +41,14 @@ export default function openMenuAnchorPositionTest() {
         done();
       });
 
-    /**
-     * @tc.number openMenuAnchorPositionTest_0100
-     * @tc.name openMenuAnchorPositionTest_0100
-     * @tc.desc api
-     * @tc.level: Level 2
-     */
+      /**
+       * @tc.name   openMenuAnchorPositionTest_0100
+       * @tc.number openMenuAnchorPositionTest_0100
+       * @tc.desc   api
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('openMenuAnchorPositionTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         let tagName = 'openMenuAnchorPositionTest_0100';
         console.info('[' + tagName + '] START============================');
@@ -79,12 +81,14 @@ export default function openMenuAnchorPositionTest() {
         done();
       });
 
-    /**
-     * @tc.number openMenuAnchorPositionTest_0200
-     * @tc.name openMenuAnchorPositionTest_0200
-     * @tc.desc api
-     * @tc.level: Level 2
-     */
+      /**
+       * @tc.name   openMenuAnchorPositionTest_0200
+       * @tc.number openMenuAnchorPositionTest_0200
+       * @tc.desc   api
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('openMenuAnchorPositionTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         let tagName = 'openMenuAnchorPositionTest_0200';
         console.info('[' + tagName + '] START============================');
@@ -117,12 +121,14 @@ export default function openMenuAnchorPositionTest() {
         done();
       });
 
-    /**
-     * @tc.number openMenuAnchorPositionTest_0300
-     * @tc.name openMenuAnchorPositionTest_0300
-     * @tc.desc api
-     * @tc.level: Level 2
-     */
+      /**
+       * @tc.name   openMenuAnchorPositionTest_0300
+       * @tc.number openMenuAnchorPositionTest_0300
+       * @tc.desc   api
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('openMenuAnchorPositionTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         let tagName = 'openMenuAnchorPositionTest_0300';
         console.info('[' + tagName + '] START============================');

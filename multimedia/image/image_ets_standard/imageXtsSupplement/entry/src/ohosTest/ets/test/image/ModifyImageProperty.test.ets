@@ -57,12 +57,12 @@ export default function modifyImagePropertyTest() {
     });
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0001
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0001
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0001
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0001
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0001';
@@ -75,12 +75,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0002
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0002
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0002
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0002
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0002';
@@ -93,12 +93,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0003
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0003
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0003
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0003
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0003';
@@ -111,12 +111,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0004
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0004
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0004
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0004
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0004', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0004';
@@ -129,12 +129,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0005
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0005
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0005
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0005
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0005', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0005';
@@ -147,12 +147,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0006
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0006
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0006
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0006
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0006', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0006';
@@ -165,12 +165,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0007
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0007
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0007
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0007
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0007', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0007';
@@ -183,12 +183,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0008
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0008
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0008
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0008
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0008', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0008';
@@ -201,12 +201,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0009
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0009
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0009
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0009
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0009', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0009';
@@ -219,12 +219,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0010
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0010
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0010
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0010
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0010', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0010';
@@ -237,12 +237,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0011
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0011
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0011
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0011
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0011', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0011';
@@ -255,12 +255,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0012
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0012
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0012
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0012
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0012', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0012';
@@ -273,12 +273,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0013
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0013
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0013
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0013
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0013', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0013';
@@ -291,12 +291,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0014
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0014
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0014
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0014
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0014', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0014';
@@ -309,12 +309,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0015
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0015
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0015
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0015
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0015', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0015';
@@ -327,12 +327,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0016
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0016
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0016
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0016
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0016', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0016';
@@ -345,12 +345,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0017
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0017
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0017
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0017
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0017', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0017';
@@ -363,12 +363,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0018
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0018
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0018
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0018
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0018', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0018';
@@ -381,12 +381,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0019
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0019
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0019
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0019
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0019', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0019';
@@ -399,12 +399,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0020
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0020
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0020
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0020
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0020', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0020';
@@ -417,12 +417,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0021
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0021
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0021
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0021
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0021', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0021';
@@ -435,12 +435,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0022
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0022
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0022
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0022
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0022', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0022';
@@ -453,12 +453,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0023
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0023
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0023
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0023
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0023', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0023';
@@ -471,12 +471,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0024
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0024
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0024
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0024
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0024', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0024';
@@ -489,12 +489,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0025
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0025
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0025
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0025
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0025', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0025';
@@ -507,12 +507,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0026
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0026
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0026
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0026
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0026', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0026';
@@ -525,12 +525,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0027
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0027
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0027
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0027
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0027', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0027';
@@ -543,12 +543,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0028
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0028
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0028
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0028
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0028', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0028';
@@ -561,12 +561,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0029
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0029
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0029
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0029
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0029', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0029';
@@ -579,12 +579,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0030
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0030
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0030
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0030
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0030', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0030';
@@ -597,12 +597,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0031
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0031
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0031
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0031
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0031', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0031';
@@ -615,12 +615,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0032
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0032
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0032
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0032
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0032', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0032';
@@ -633,12 +633,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0033
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0033
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0033
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0033
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0033', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0033';
@@ -651,12 +651,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0034
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0034
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0034
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0034
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0034', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0034';
@@ -669,12 +669,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0035
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0035
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0035
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0035
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0035', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0035';
@@ -687,12 +687,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0036
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0036
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0036
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0036
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0036', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0036';
@@ -705,12 +705,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0037
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0037
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0037
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0037
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0037', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0037';
@@ -723,12 +723,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0038
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0038
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0038
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0038
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0038', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0038';
@@ -741,12 +741,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0039
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0039
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0039
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0039
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0039', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0039';
@@ -759,12 +759,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0040
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0040
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0040
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0040
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0040', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0040';
@@ -777,12 +777,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0041
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0041
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0041
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0041
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0041', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0041';
@@ -795,12 +795,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0042
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0042
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0042
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0042
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0042', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0042';
@@ -813,12 +813,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0043
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0043
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0043
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0043
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0043', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0043';
@@ -831,12 +831,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0044
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0044
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0044
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0044
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0044', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0044';
@@ -849,12 +849,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0045
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0045
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0045
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0045
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0045', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0045';
@@ -867,12 +867,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0046
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0046
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0046
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0046
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0046', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0046';
@@ -885,12 +885,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0047
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0047
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0047
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0047
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0047', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0047';
@@ -903,12 +903,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0048
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0048
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0048
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0048
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0048', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0048';
@@ -921,12 +921,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0049
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0049
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0049
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0049
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0049', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0049';
@@ -939,12 +939,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0050
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0050
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0050
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0050
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0050', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0050';
@@ -957,12 +957,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0051
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0051
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0051
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0051
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0051', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0051';
@@ -975,12 +975,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0052
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0052
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0052
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0052
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0052', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0052';
@@ -993,12 +993,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0053
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0053
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0053
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0053
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0053', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0053';
@@ -1011,12 +1011,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0054
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0054
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0054
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0054
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0054', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0054';
@@ -1029,12 +1029,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0055
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0055
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0055
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0055
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0055', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0055';
@@ -1047,12 +1047,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0056
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0056
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0056
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0056
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0056', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0056';
@@ -1065,12 +1065,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0057
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0057
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0057
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0057
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0057', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0057';
@@ -1083,12 +1083,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0058
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0058
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0058
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0058
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0058', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0058';
@@ -1101,12 +1101,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0059
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0059
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0059
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0059
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0059', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0059';
@@ -1119,12 +1119,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0060
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0060
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0060
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0060
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0060', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0060';
@@ -1137,12 +1137,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0061
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0061
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0061
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0061
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0061', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0061';
@@ -1155,12 +1155,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0062
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0062
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0062
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0062
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0062', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0062';
@@ -1173,12 +1173,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0063
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0063
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0063
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0063
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0063', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0063';
@@ -1191,12 +1191,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0064
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0064
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0064
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0064
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0064', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0064';
@@ -1209,12 +1209,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0065
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0065
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0065
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0065
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0065', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0065';
@@ -1227,12 +1227,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0066
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0066
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0066
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0066
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0066', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0066';
@@ -1245,12 +1245,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0067
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0067
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0067
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0067
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0067', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0067';
@@ -1263,12 +1263,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0068
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0068
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0068
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0068
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0068', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0068';
@@ -1281,12 +1281,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0069
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0069
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0069
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0069
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0069', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0069';
@@ -1299,12 +1299,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0070
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0070
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0070
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0070
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0070', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0070';
@@ -1317,12 +1317,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0071
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0071
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0071
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0071
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0071', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0071';
@@ -1335,12 +1335,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0072
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0072
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0072
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0072
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0072', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0072';
@@ -1353,12 +1353,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0073
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0073
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0073
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0073
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0073', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0073';
@@ -1371,12 +1371,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0074
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0074
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0074
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0074
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0074', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0074';
@@ -1389,12 +1389,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0075
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0075
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0075
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0075
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0075', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0075';
@@ -1407,12 +1407,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0076
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0076
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0076
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0076
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0076', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0076';
@@ -1425,12 +1425,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0077
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0077
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0077
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0077
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0077', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0077';
@@ -1443,12 +1443,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0078
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0078
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0078
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0078
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0078', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0078';
@@ -1461,12 +1461,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0079
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0079
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0079
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0079
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0079', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0079';
@@ -1479,12 +1479,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0080
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0080
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0080
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0080
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0080', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0080';
@@ -1497,12 +1497,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0081
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0081
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0081
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0081
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0081', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0081';
@@ -1515,12 +1515,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0082
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0082
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0082
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0082
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0082', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0082';
@@ -1533,12 +1533,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0083
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0083
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0083
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0083
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0083', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0083';
@@ -1551,12 +1551,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0084
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0084
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0084
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0084
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0084', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0084';
@@ -1569,12 +1569,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0085
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0085
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0085
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0085
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0085', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0085';
@@ -1587,12 +1587,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0086
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0086
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0086
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0086
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0086', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0086';
@@ -1605,12 +1605,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0087
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0087
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0087
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0087
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0087', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0087';
@@ -1623,12 +1623,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0088
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0088
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0088
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0088
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0088', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0088';
@@ -1641,12 +1641,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0089
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0089
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0089
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0089
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0089', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0089';
@@ -1659,12 +1659,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0090
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0090
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0090
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0090
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0090', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0090';
@@ -1677,12 +1677,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0091
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0091
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0091
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0091
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0091', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0091';
@@ -1695,12 +1695,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0092
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0092
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0092
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0092
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0092', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0092';
@@ -1713,12 +1713,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0093
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0093
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0093
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0093
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0093', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0093';
@@ -1730,12 +1730,12 @@ export default function modifyImagePropertyTest() {
       });
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0094
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0094
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0094
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0094
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0094', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0094';
@@ -1748,12 +1748,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0095
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0095
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0095
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0095
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0095', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0095';
@@ -1766,12 +1766,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0096
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0096
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0096
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0096
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0096', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0096';
@@ -1784,12 +1784,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0097
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0097
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0097
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0097
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0097', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0097';
@@ -1802,12 +1802,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0098
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0098
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0098
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0098
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0098', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0098';
@@ -1820,12 +1820,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0099
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0099
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0099
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0099
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0099', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0099';
@@ -1838,12 +1838,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0100
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0100
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0100
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0100
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0100';
@@ -1856,12 +1856,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0101
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0101
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0101
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0101
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0101', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0101';
@@ -1874,12 +1874,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0102
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0102
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0102
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0102
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0102', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0102';
@@ -1892,12 +1892,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0103
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0103
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0103
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0103
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0103', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0103';
@@ -1910,12 +1910,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0104
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0104
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0104
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0104
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0104', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0104';
@@ -1928,12 +1928,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0105
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0105
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0105
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0105
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0105', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0105';
@@ -1946,12 +1946,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0106
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0106
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0106
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0106
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0106', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0106';
@@ -1964,12 +1964,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0107
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0107
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0107
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0107
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0107', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0107';
@@ -1982,12 +1982,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0108
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0108
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0108
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0108
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0108', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0108';
@@ -2000,12 +2000,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0109
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0109
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0109
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0109
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0109', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0109';
@@ -2018,12 +2018,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0110
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0110
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0110
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0110
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0110', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0110';
@@ -2036,12 +2036,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0111
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0111
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0111
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0111
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0111', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0111';
@@ -2054,12 +2054,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0112
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0112
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0112
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0112
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0112', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0112';
@@ -2072,12 +2072,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0113
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0113
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0113
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0113
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0113', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0113';
@@ -2090,12 +2090,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0114
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0114
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0114
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0114
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0114', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0114';
@@ -2108,12 +2108,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0115
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0115
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0115
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0115
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0115', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0115';
@@ -2126,12 +2126,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0116
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0116
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0116
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0116
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0116', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0116';
@@ -2144,12 +2144,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0117
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0117
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0117
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0117
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0117', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0117';
@@ -2162,12 +2162,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0118
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0118
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0118
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0118
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0118', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0118';
@@ -2180,12 +2180,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0119
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0119
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0119
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0119
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0119', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0119';
@@ -2198,12 +2198,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0120
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0120
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0120
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0120
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0120', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0120';
@@ -2216,12 +2216,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0121
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0121
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0121
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0121
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0121', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0121';
@@ -2234,12 +2234,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0122
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0122
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0122
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0122
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0122', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0122';
@@ -2252,12 +2252,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0123
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0123
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0123
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0123
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0123', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0123';
@@ -2270,12 +2270,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0124
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0124
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0124
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0124
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0124', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0124';
@@ -2288,12 +2288,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0125
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0125
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0125
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0125
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0125', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0125';
@@ -2306,12 +2306,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0126
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0126
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0126
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0126
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0126', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0126';
@@ -2324,12 +2324,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0127
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0127
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0127
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0127
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0127', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0127';
@@ -2342,12 +2342,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0128
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0128
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0128
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0128
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0128', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0128';
@@ -2360,12 +2360,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0129
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0129
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0129
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0129
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0129', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0129';
@@ -2378,12 +2378,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0130
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0130
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0130
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0130
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0130', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0130';
@@ -2396,12 +2396,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0131
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0131
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0131
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0131
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0131', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0131';
@@ -2414,12 +2414,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0132
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0132
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0132
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0132
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0132', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0132';
@@ -2432,12 +2432,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0133
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0133
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0133
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0133
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0133', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0133';
@@ -2450,12 +2450,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0134
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0134
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0134
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0134
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0134', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0134';
@@ -2468,12 +2468,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0135
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0135
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0135
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0135
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0135', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0135';
@@ -2486,12 +2486,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0136
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0136
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0136
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0136
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0136', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0136';
@@ -2504,12 +2504,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0137
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0137
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0137
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0137
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0137', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0137';
@@ -2522,12 +2522,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0138
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0138
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0138
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0138
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0138', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0138';
@@ -2540,12 +2540,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0139
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0139
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0139
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0139
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0139', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0139';
@@ -2558,12 +2558,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0140
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0140
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0140
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0140
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0140', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0140';
@@ -2576,12 +2576,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0141
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0141
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0141
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0141
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0141', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0141';
@@ -2594,12 +2594,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0142
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0142
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0142
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0142
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0142', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0142';
@@ -2612,12 +2612,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0143
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0143
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0143
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0143
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0143', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0143';
@@ -2630,12 +2630,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0144
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0144
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0144
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0144
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0144', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0144';
@@ -2648,12 +2648,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0145
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0145
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0145
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0145
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0145', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0145';
@@ -2666,12 +2666,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0146
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0146
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0146
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0146
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0146', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0146';
@@ -2684,12 +2684,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0147
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0147
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0147
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0147
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0147', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0147';
@@ -2702,12 +2702,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0148
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0148
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0148
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0148
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0148', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0148';
@@ -2720,12 +2720,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0149
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0149
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0149
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0149
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0149', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0149';
@@ -2738,12 +2738,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0150
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0150
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0150
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0150
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0150', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0150';
@@ -2756,12 +2756,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0151
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0151
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0151
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0151
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0151', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0151';
@@ -2774,12 +2774,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0152
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0152
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0152
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0152
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0152', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0152';
@@ -2792,12 +2792,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0153
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0153
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0153
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0153
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0153', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0153';
@@ -2810,12 +2810,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0154
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0154
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0154
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0154
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0154', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0154';
@@ -2828,12 +2828,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0155
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0155
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0155
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0155
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0155', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0155';
@@ -2846,12 +2846,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0156
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0156
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0156
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0156
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0156', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0156';
@@ -2864,12 +2864,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0157
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0157
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0157
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0157
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0157', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0157';
@@ -2882,12 +2882,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0158
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0158
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0158
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0158
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0158', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0158';
@@ -2900,12 +2900,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0159
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0159
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0159
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0159
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0159', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0159';
@@ -2918,12 +2918,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0160
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0160
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0160
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0160
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0160', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0160';
@@ -2936,12 +2936,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0161
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0161
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0161
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0161
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0161', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0161';
@@ -2954,12 +2954,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0162
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0162
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0162
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0162
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0162', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0162';
@@ -2972,12 +2972,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0163
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0163
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0163
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0163
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0163', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0163';
@@ -2990,12 +2990,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0164
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0164
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0164
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0164
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0164', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0164';
@@ -3008,12 +3008,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0165
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0165
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0165
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0165
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0165', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0165';
@@ -3026,12 +3026,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0166
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0166
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0166
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0166
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0166', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0166';
@@ -3044,12 +3044,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0167
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0167
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0167
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0167
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0167', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0167';
@@ -3062,12 +3062,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0168
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0168
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0168
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0168
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0168', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0168';
@@ -3080,12 +3080,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0169
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0169
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0169
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0169
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0169', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0169';
@@ -3098,12 +3098,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0170
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0170
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0170
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0170
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0170', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0170';
@@ -3116,12 +3116,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0171
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0171
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0171
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0171
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0171', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0171';
@@ -3134,12 +3134,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0172
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0172
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0172
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0172
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0172', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0172';
@@ -3152,12 +3152,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0173
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0173
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0173
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0173
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0173', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0173';
@@ -3170,12 +3170,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0174
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0174
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0174
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0174
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0174', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0174';
@@ -3188,12 +3188,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0175
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0175
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0175
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0175
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0175', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0175';
@@ -3206,12 +3206,12 @@ export default function modifyImagePropertyTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0176
-     * @tc.name      SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0176
-     * @tc.desc      test image with modifyImageProperty
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0176
+     * @tc.number SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0176
+     * @tc.desc   test image with modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0176', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MODIFY_IMAGE_PROPERTY_0176';

@@ -123,6 +123,10 @@
     {
       "name": "bottomRight",
       "value": "24vp"
+    },
+    {
+      "name": "apple",
+      "value": "apple"
     }
   ]
 }

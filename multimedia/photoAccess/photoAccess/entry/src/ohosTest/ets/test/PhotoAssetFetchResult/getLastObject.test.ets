@@ -78,12 +78,12 @@ export default function assetGetLastObjectTest() {
     //image
     //callback
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_LAST_OBJECT_0000
-     * @tc.name      : getLastObject_callback_000
-     * @tc.desc      : getLastObject image
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getLastObject_callback_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_LAST_OBJECT_0000
+     * @tc.desc   getLastObject image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getLastObject_callback_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getLastObject_callback_000';
@@ -93,12 +93,12 @@ export default function assetGetLastObjectTest() {
 
     //promise
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_GET_LAST_OBJECT_0000
-     * @tc.name      : getLastObject_promise_000
-     * @tc.desc      : getLastObject image
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getLastObject_promise_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_LAST_OBJECT_0000
+     * @tc.desc   getLastObject image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getLastObject_promise_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getLastObject_promise_000';
@@ -109,12 +109,12 @@ export default function assetGetLastObjectTest() {
     //video
     //callback
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_LAST_OBJECT_0100
-     * @tc.name      : getLastObject_callback_001
-     * @tc.desc      : getLastObject video
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getLastObject_callback_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_LAST_OBJECT_0100
+     * @tc.desc   getLastObject video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getLastObject_callback_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getLastObject_callback_001';
@@ -124,12 +124,12 @@ export default function assetGetLastObjectTest() {
 
     //promise
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_GET_LAST_OBJECT_0100
-     * @tc.name      : getLastObject_promise_001
-     * @tc.desc      : getLastObject video
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getLastObject_promise_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_LAST_OBJECT_0100
+     * @tc.desc   getLastObject video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getLastObject_promise_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getLastObject_promise_001';

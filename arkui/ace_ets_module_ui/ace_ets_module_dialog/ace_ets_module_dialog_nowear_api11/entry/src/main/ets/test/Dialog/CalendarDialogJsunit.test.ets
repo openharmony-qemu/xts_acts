@@ -43,6 +43,14 @@ export default function CalendarDialogAJsunit() {
     });
 
 
+    /**
+     * @tc.name   CalendarDialogAJsunit_0100
+     * @tc.number CalendarDialogAJsunit_0100
+     * @tc.desc   CalendarDialogAJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('CalendarDialogAJsunit_0100', Level.LEVEL2, async (done: Function) => {
 
       console.info('CalendarDialogAJsunit_0100 START');

@@ -58,12 +58,12 @@ export default function videoCallbackJsunit() {
     });
 
     /**
-     * @tc.number    : SUB_ACE_ARKUI_VIDEO_OnStop_CALLBACK_0500
-     * @tc.name      : VideoOnStopCallback_0500
-     * @tc.desc      : Video onStop Callback
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : level 0
+     * @tc.name   videoCallbackJsunit_0500
+     * @tc.number SUB_ACE_ARKUI_VIDEO_OnStop_CALLBACK_0500
+     * @tc.desc   Video onStop Callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('videoCallbackJsunit_0500', Level.LEVEL0, async (done: Function) => {
       let driver = Driver.create();
@@ -97,12 +97,12 @@ export default function videoCallbackJsunit() {
     });
 
     /**
-     * @tc.number    : SUB_ACE_ARKUI_VIDEO_OnStop_CALLBACK_0501
-     * @tc.name      : VideoOnStopCallback_0501
-     * @tc.desc      : Video onStop Callback
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : level 0
+     * @tc.name   videoCallbackJsunit_0501
+     * @tc.number SUB_ACE_ARKUI_VIDEO_OnStop_CALLBACK_0501
+     * @tc.desc   Video onStop Callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('videoCallbackJsunit_0501', Level.LEVEL0, async (done: Function) => {
       let driver = Driver.create();

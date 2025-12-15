@@ -102,7 +102,6 @@ export default function UsbBaseTest() {
       hilog.info(domain, tag, 'devices empty');
     })
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetDevices001
      * @tc.number SUB_USB_HostManager_JS_Func_0100
      * @tc.desc   【C-ALL-HARDWARE-0502】必须支持连接标准 USB 外围设备
@@ -126,7 +125,6 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetRawDescriptorRight001
      * @tc.number SUB_USB_HostManager_JS_Func_0200
      * @tc.desc   Positive test: getRawDescriptor
@@ -169,7 +167,6 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterface001
      * @tc.number SUB_USB_HostManager_JS_Func_0300
      * @tc.desc   Positive test: claimInterface
@@ -208,7 +205,6 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterface001
      * @tc.number SUB_USB_HostManager_JS_Func_0400
      * @tc.desc   Positive test: releaseInterface
@@ -248,7 +244,6 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterface001
      * @tc.number SUB_USB_HostManager_JS_Func_0500
      * @tc.desc   Positive test: setInterface
@@ -287,7 +282,6 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfiguration001
      * @tc.number SUB_USB_HostManager_JS_Func_0600
      * @tc.desc   Positive test: setConfiguration
@@ -324,7 +318,6 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetFileDescriptor001
      * @tc.number SUB_USB_HostManager_JS_Func_0700
      * @tc.desc   Positive test: getFileDescriptor
@@ -357,7 +350,6 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRequestRight001
      * @tc.number SUB_USB_HostManager_JS_Func_0800
      * @tc.desc   Positive test: requestRight.
@@ -388,7 +380,6 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testHasRight002
      * @tc.number SUB_USB_HostManager_JS_Func_0900
      * @tc.desc   Positive test: hasRight.
@@ -422,7 +413,6 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testHasRight003
      * @tc.number SUB_USB_HostManager_JS_Func_1000
      * @tc.desc   Positive test: hasRight.
@@ -455,7 +445,6 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDevice001
      * @tc.number SUB_USB_HostManager_JS_Func_1100
      * @tc.desc   Positive test: connectDevice.
@@ -497,7 +486,6 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRemoveRight001
      * @tc.number SUB_USB_HostManager_JS_Func_1300
      * @tc.desc   Positive test: removeRight.
@@ -528,7 +516,6 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetRawDescriptor001
      * @tc.number SUB_USB_HostManager_JS_Func_1200
      * @tc.desc   Positive test: Get the original USB descriptor
@@ -558,7 +545,6 @@ export default function UsbBaseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   USBRequestTargetType001
      * @tc.number SUB_USB_HostManager_JS_Func_1400
      * @tc.desc   Positive test: enum USBRequestTargetType
@@ -582,7 +568,6 @@ export default function UsbBaseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testResetUsbDevice
      * @tc.number SUB_USB_HostManager_JS_Reset_0100
      * @tc.desc   Negative test: Reset device
@@ -617,7 +602,6 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testResetUsbDeviceErrorCode
      * @tc.number SUB_USB_HostManager_JS_Reset_0200
      * @tc.desc   Negative test: resetUsbDevice error code 14400008 overwrite
@@ -657,7 +641,6 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testResetUsbDeviceErrorCode002
      * @tc.number SUB_USB_HostManager_JS_Reset_0400
      * @tc.desc   Negative test: resetUsbDevice error code 14400001 overwrite
@@ -695,7 +678,6 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testResetUsbDeviceErrorCode001
      * @tc.number SUB_USB_HostManager_JS_Reset_0300
      * @tc.desc   Negative test: resetUsbDevice error code 14400013 overwrite
@@ -733,7 +715,6 @@ export default function UsbBaseTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetRawDescriptor002
      * @tc.number SUB_USB_HostManager_JS_FuncErrcode_1500
      * @tc.desc   Positive test: getRawDescriptor errcode 14400001

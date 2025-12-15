@@ -42,15 +42,15 @@ export default function searchTest() {
       console.info("searchTest after each called");
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SEARCH_0010
-     * @tc.name       : searchTest_001
-     * @tc.desc       : onEditChange Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   searchTest_001
+     * @tc.number searchTest_001
+     * @tc.desc   searchTest_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('searchTest_001', Level.LEVEL3, async (done: Function) => {
       console.info('[searchTest_001] START');
 
@@ -74,15 +74,15 @@ export default function searchTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SEARCH_0020
-     * @tc.name       : searchTest_002
-     * @tc.desc       : onEditChange Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   searchTest_002
+     * @tc.number searchTest_002
+     * @tc.desc   searchTest_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('searchTest_002', Level.LEVEL3, async (done: Function) => {
       console.info('[searchTest_002] START');
 
@@ -108,15 +108,15 @@ export default function searchTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SEARCH_0030
-     * @tc.name       : searchTest_003
-     * @tc.desc       : onEditChange Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   searchTest_003
+     * @tc.number searchTest_003
+     * @tc.desc   searchTest_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('searchTest_003', Level.LEVEL3, async (done: Function) => {
       console.info('[searchTest_003] START');
 

@@ -16,13 +16,6 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 export default function listUxTest() {
-  /**
-   * @tc.number ArkUX_Stage_List_Style_0100
-   * @tc.name Test the style attribute of the ListItem component and the style attribute of the
-   *            ListItemGroup component
-   * @tc.desc Test setting the style parameter in ListItemGroup to ListItemGroupStyle.CARD,
-   *            Does the style take effect after setting the style parameter in ListItem to ListItemStyle.CARD
-   */
   const SUITE: string = 'listUxTest'
 
   describe('listUxTest', () => {
@@ -46,6 +39,14 @@ export default function listUxTest() {
       done()
     });
 
+    /**
+     * @tc.name   ArkUX_Stage_List_Style_0100
+     * @tc.number ArkUX_Stage_List_Style_0100
+     * @tc.desc   ArkUX_Stage_List_Style_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_List_Style_0100', Level.LEVEL0, (done: Function) => {
       setTimeout(() => {
         try {
@@ -75,14 +76,15 @@ export default function listUxTest() {
       }, 500);
     })
 
-    /**
-     * @tc.number ArkUX_Stage_List_Style_0200
-     * @tc.name Test the style attribute of the ListItem component and the style attribute of the
-     *            ListItemGroup component
-     * @tc.desc Test setting the style parameter in ListItemGroup to ListItemGroupStyle.CARD,
-     *            Does the style take effect after setting the style parameter in ListItem to ListItemStyle.CARD
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_List_Style_0200
+     * @tc.number ArkUX_Stage_List_Style_0200
+     * @tc.desc   ArkUX_Stage_List_Style_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_List_Style_0200', Level.LEVEL0,(done: Function) => {
       setTimeout(() => {
         try {
@@ -110,14 +112,15 @@ export default function listUxTest() {
       }, 500);
     })
 
-    /**
-     * @tc.number ArkUX_Stage_List_Style_0300
-     * @tc.name Test the style attribute of the ListItem component and the style attribute of the
-     *            ListItemGroup component
-     * @tc.desc Test setting the style parameter in ListItemGroup to ListItemGroupStyle.CARD,
-     *            Does the style take effect after setting the style parameter in ListItem to ListItemStyle.NONE
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_List_Style_0300
+     * @tc.number ArkUX_Stage_List_Style_0300
+     * @tc.desc   ArkUX_Stage_List_Style_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_List_Style_0300', Level.LEVEL0,(done: Function) => {
       try {
         let left = JSON.stringify(JSON.parse(JSON.parse(getInspectorByKey("nurmal")).$attrs.margin).left)
@@ -142,14 +145,15 @@ export default function listUxTest() {
       done()
     })
 
-    /**
-     * @tc.number ArkUX_Stage_List_Style_0400
-     * @tc.name Test the style attribute of the ListItem component and the style attribute of the
-     *            ListItemGroup component
-     * @tc.desc Test setting the style parameter in ListItemGroup to ListItemGroupStyle.CARD,
-     *            Does the style take effect after setting the style parameter in ListItem to null
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_List_Style_0400
+     * @tc.number ArkUX_Stage_List_Style_0400
+     * @tc.desc   ArkUX_Stage_List_Style_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_List_Style_0400', Level.LEVEL0,(done: Function) => {
       try {
         let left = JSON.stringify(JSON.parse(JSON.parse(getInspectorByKey("nurmal")).$attrs.margin).left)
@@ -174,14 +178,15 @@ export default function listUxTest() {
       done()
     })
 
-    /**
-     * @tc.number ArkUX_Stage_List_Style_0500
-     * @tc.name Test the style attribute of the ListItem component and the style attribute of the
-     *            ListItemGroup component
-     * @tc.desc Test setting the style parameter in ListItemGroup to ListItemGroupStyle.CARD,
-     *            Does the style take effect after setting the style parameter in ListItem to undefined
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_List_Style_0500
+     * @tc.number ArkUX_Stage_List_Style_0500
+     * @tc.desc   ArkUX_Stage_List_Style_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_List_Style_0500', Level.LEVEL0,(done: Function) => {
       try {
         let left = JSON.stringify(JSON.parse(JSON.parse(getInspectorByKey("nurmal")).$attrs.margin).left)
@@ -206,14 +211,15 @@ export default function listUxTest() {
       done()
     })
 
-    /**
-     * @tc.number ArkUX_Stage_List_Style_0600
-     * @tc.name Test the style attribute of the ListItem component and the style attribute of the
-     *            ListItemGroup component
-     * @tc.desc Test setting the style parameter in ListItemGroup to ListItemGroupStyle.CARD,
-     *            Does the style take effect after setting the style parameter in ListItem to ""
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_List_Style_0600
+     * @tc.number ArkUX_Stage_List_Style_0600
+     * @tc.desc   ArkUX_Stage_List_Style_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_List_Style_0600', Level.LEVEL0,(done: Function) => {
       try {
         let left = JSON.stringify(JSON.parse(JSON.parse(getInspectorByKey("nurmal")).$attrs.margin).left)
@@ -238,14 +244,15 @@ export default function listUxTest() {
       done()
     })
 
-    /**
-     * @tc.number ArkUX_Stage_List_Style_0700
-     * @tc.name Test the style attribute of the ListItem component and the style attribute of the
-     *            ListItemGroup component
-     * @tc.desc Test setting the style parameter in ListItemGroup to ListItemGroupStyle.CARD,
-     *            Does the style take effect after setting the style parameter  is not set
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_List_Style_0700
+     * @tc.number ArkUX_Stage_List_Style_0700
+     * @tc.desc   ArkUX_Stage_List_Style_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_List_Style_0700', Level.LEVEL0,(done: Function) => {
       try {
         let left = JSON.stringify(JSON.parse(JSON.parse(getInspectorByKey("nurmal")).$attrs.margin).left)
@@ -270,14 +277,15 @@ export default function listUxTest() {
       done()
     })
 
-    /**
-     * @tc.number ArkUX_Stage_List_Style_0800
-     * @tc.name Test the style attribute of the ListItem component and the style attribute of the
-     *            ListItemGroup component
-     * @tc.desc Test setting the style parameter in ListItemGroup to ListItemGroupStyle.NONE,
-     *            Does the style take effect after setting the style parameter in ListItem to ListItemStyle.CARD
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_List_Style_0800
+     * @tc.number ArkUX_Stage_List_Style_0800
+     * @tc.desc   ArkUX_Stage_List_Style_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_List_Style_0800', Level.LEVEL0,(done: Function) => {
       try {
         let margin = JSON.stringify(JSON.parse(getInspectorByKey("nurmal")).$attrs.margin)
@@ -293,14 +301,15 @@ export default function listUxTest() {
       done()
     })
 
-    /**
-     * @tc.number ArkUX_Stage_List_Style_0900
-     * @tc.name Test the style attribute of the ListItem component and the style attribute of the
-     *            ListItemGroup component
-     * @tc.desc Test setting the style parameter in ListItemGroup to null,
-     *            Does the style take effect after setting the style parameter in ListItem to ListItemStyle.CARD
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_List_Style_0900
+     * @tc.number ArkUX_Stage_List_Style_0900
+     * @tc.desc   ArkUX_Stage_List_Style_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_List_Style_0900', Level.LEVEL0,(done: Function) => {
       try {
         let margin = JSON.stringify(JSON.parse(getInspectorByKey("nurmal")).$attrs.margin)
@@ -316,14 +325,15 @@ export default function listUxTest() {
       done()
     })
 
-    /**
-     * @tc.number ArkUX_Stage_List_Style_1000
-     * @tc.name Test the style attribute of the ListItem component and the style attribute of the
-     *            ListItemGroup component
-     * @tc.desc Test setting the style parameter in ListItemGroup to  undefined,
-     *            Does the style take effect after setting the style parameter in ListItem to ListItemStyle.CARD
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_List_Style_1000
+     * @tc.number ArkUX_Stage_List_Style_1000
+     * @tc.desc   ArkUX_Stage_List_Style_1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_List_Style_1000', Level.LEVEL0,(done: Function) => {
       try {
         let margin = JSON.stringify(JSON.parse(getInspectorByKey("nurmal")).$attrs.margin)
@@ -339,14 +349,15 @@ export default function listUxTest() {
       done()
     })
 
-    /**
-     * @tc.number ArkUX_Stage_List_Style_1100
-     * @tc.name Test the style attribute of the ListItem component and the style attribute of the
-     *            ListItemGroup component
-     * @tc.desc Test setting the style parameter in ListItemGroup to in "",
-     *            Does the style take effect after setting the style parameter in ListItem to ListItemStyle.CARD
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_List_Style_1100
+     * @tc.number ArkUX_Stage_List_Style_1100
+     * @tc.desc   ArkUX_Stage_List_Style_1100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_List_Style_1100', Level.LEVEL0,(done: Function) => {
       try {
         let margin = JSON.stringify(JSON.parse(getInspectorByKey("nurmal")).$attrs.margin)
@@ -362,14 +373,15 @@ export default function listUxTest() {
       done()
     })
 
-    /**
-     * @tc.number ArkUX_Stage_List_Style_1200
-     * @tc.name Test the style attribute of the ListItem component and the style attribute of the
-     *            ListItemGroup component
-     * @tc.desc Test setting the style parameter in ListItemGroup to ListItem is not set,
-     *            Does the style take effect after setting the style parameter in ListItem to ListItemStyle.CARD
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_List_Style_1200
+     * @tc.number ArkUX_Stage_List_Style_1200
+     * @tc.desc   ArkUX_Stage_List_Style_1200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_List_Style_1200', Level.LEVEL0,(done: Function) => {
       try {
         let margin = JSON.stringify(JSON.parse(getInspectorByKey("nurmal")).$attrs.margin)
@@ -386,12 +398,15 @@ export default function listUxTest() {
     })
 
 
-    /**
-     * @tc.number ArkUX_Stage_List_RollBack_0100
-     * @tc.name Testing the rolling back effect of the list and adding new parameters
-     * @tc.desc ScrollerForList calls the interface scrollTo(), and the animation parameter is passed in as true
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_List_RollBack_0100
+     * @tc.number ArkUX_Stage_List_RollBack_0100
+     * @tc.desc   ArkUX_Stage_List_RollBack_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_List_RollBack_0100', Level.LEVEL0,(done: Function) => {
       try {
         sendEventByKey("scrollerForList", 10, "")
@@ -405,10 +420,12 @@ export default function listUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_List_LimitAnimation_0100
      * @tc.number ArkUX_Stage_List_LimitAnimation_0100
-     * @tc.name The List/Grid component has basic sliding operation animations,
-     *             including stepless style animations and limit style animations
-     * @tc.desc Test List's scrollSnapAlign interface incoming to ScrollSnapAlign.NONE
+     * @tc.desc   Test List's scrollSnapAlign interface incoming to ScrollSnapAlign.NONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_List_LimitAnimation_0100', Level.LEVEL0,(done: Function) => {
       setTimeout(() => {
@@ -426,10 +443,12 @@ export default function listUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_List_LimitAnimation_0200
      * @tc.number ArkUX_Stage_List_LimitAnimation_0200
-     * @tc.name The List/Grid component has basic sliding operation animations,
-     *             including stepless style animations and limit style animations
-     * @tc.desc Test List's scrollSnapAlign interface incoming to ScrollSnapAlign.START
+     * @tc.desc   Test List's scrollSnapAlign interface incoming to ScrollSnapAlign.START
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_List_LimitAnimation_0200', Level.LEVEL0,(done: Function) => {
       setTimeout(() => {
@@ -446,13 +465,15 @@ export default function listUxTest() {
       }, 500);
     })
 
-    /**
-     * @tc.number ArkUX_Stage_List_LimitAnimation_0300
-     * @tc.name The List/Grid component has basic sliding operation animations,
-     *             including stepless style animations and limit style animations
-     * @tc.desc Test List's scrollSnapAlign interface incoming to ScrollSnapAlign.CENTER
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_List_LimitAnimation_0300
+     * @tc.number ArkUX_Stage_List_LimitAnimation_0300
+     * @tc.desc   ArkUX_Stage_List_LimitAnimation_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_List_LimitAnimation_0300', Level.LEVEL0,(done: Function) => {
       setTimeout(() => {
         try {
@@ -468,13 +489,15 @@ export default function listUxTest() {
       }, 500);
     })
 
-    /**
-     * @tc.number ArkUX_Stage_List_LimitAnimation_0400
-     * @tc.name The List/Grid component has basic sliding operation animations,
-     *             including stepless style animations and limit style animations
-     * @tc.desc Test List's scrollSnapAlign interface incoming to ScrollSnapAlign.END
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_List_LimitAnimation_0400
+     * @tc.number ArkUX_Stage_List_LimitAnimation_0400
+     * @tc.desc   ArkUX_Stage_List_LimitAnimation_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_List_LimitAnimation_0400', Level.LEVEL0,(done: Function) => {
       setTimeout(() => {
         try {
@@ -490,13 +513,15 @@ export default function listUxTest() {
       }, 500);
     })
 
-    /**
-     * @tc.number ArkUX_Stage_List_LimitAnimation_0500
-     * @tc.name The List/Grid component has basic sliding operation animations,
-     *             including stepless style animations and limit style animations
-     * @tc.desc Test List's scrollSnapAlign interface incoming to null
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_List_LimitAnimation_0500
+     * @tc.number ArkUX_Stage_List_LimitAnimation_0500
+     * @tc.desc   ArkUX_Stage_List_LimitAnimation_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_List_LimitAnimation_0500', Level.LEVEL0,(done: Function) => {
       setTimeout(() => {
         try {
@@ -512,13 +537,15 @@ export default function listUxTest() {
       }, 500);
     })
 
-    /**
-     * @tc.number ArkUX_Stage_List_LimitAnimation_0600
-     * @tc.name The List/Grid component has basic sliding operation animations,
-     *             including stepless style animations and limit style animations
-     * @tc.desc Test List's scrollSnapAlign interface incoming to ""
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_List_LimitAnimation_0600
+     * @tc.number ArkUX_Stage_List_LimitAnimation_0600
+     * @tc.desc   ArkUX_Stage_List_LimitAnimation_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_List_LimitAnimation_0600', Level.LEVEL0,(done: Function) => {
       setTimeout(() => {
         try {
@@ -534,13 +561,15 @@ export default function listUxTest() {
       }, 500);
     })
 
-    /**
-     * @tc.number ArkUX_Stage_List_LimitAnimation_0700
-     * @tc.name The List/Grid component has basic sliding operation animations,
-     *             including stepless style animations and limit style animations
-     * @tc.desc Test List's scrollSnapAlign interface incoming to undefined
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_List_LimitAnimation_0700
+     * @tc.number ArkUX_Stage_List_LimitAnimation_0700
+     * @tc.desc   ArkUX_Stage_List_LimitAnimation_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_List_LimitAnimation_0700', Level.LEVEL0,(done: Function) => {
       setTimeout(() => {
         try {
@@ -556,13 +585,15 @@ export default function listUxTest() {
       }, 500);
     })
 
-    /**
-     * @tc.number ArkUX_Stage_List_LimitAnimation_0800
-     * @tc.name The List/Grid component has basic sliding operation animations,
-     *             including stepless style animations and limit style animations
-     * @tc.desc Test List does not call scrollSnapAlign
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_List_LimitAnimation_0800
+     * @tc.number ArkUX_Stage_List_LimitAnimation_0800
+     * @tc.desc   ArkUX_Stage_List_LimitAnimation_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_List_LimitAnimation_0800', Level.LEVEL0,(done: Function) => {
       setTimeout(() => {
         try {
@@ -578,13 +609,15 @@ export default function listUxTest() {
       }, 500);
     })
 
-    /**
-     * @tc.number ArkUX_Stage_List_LimitAnimation_0900
-     * @tc.name The List/Grid component has basic sliding operation animations,
-     *             including stepless style animations and limit style animations
-     * @tc.desc Test List's scrollSnapAlign interface incoming to "ScrollSnapAlign.START"
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_List_LimitAnimation_0900
+     * @tc.number ArkUX_Stage_List_LimitAnimation_0900
+     * @tc.desc   ArkUX_Stage_List_LimitAnimation_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_List_LimitAnimation_0900', Level.LEVEL0,(done: Function) => {
       setTimeout(() => {
         try {
@@ -600,14 +633,15 @@ export default function listUxTest() {
       }, 500);
     })
 
-    /**
-     * @tc.number ArkUX_Stage_List_LimitAnimation_1000
-     * @tc.name The List/Grid component has basic sliding operation animations,
-     *             including stepless style animations and limit style animations
-     * @tc.desc Test the scrollSnapAlign interface of the list, pass in ScrollSnapAlign.Start,
-     *             and then pass in ScrollSnapAlign.NONE
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_List_LimitAnimation_1000
+     * @tc.number ArkUX_Stage_List_LimitAnimation_1000
+     * @tc.desc   ArkUX_Stage_List_LimitAnimation_1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_List_LimitAnimation_1000', Level.LEVEL0,(done: Function) => {
       setTimeout(() => {
         try {
@@ -623,14 +657,15 @@ export default function listUxTest() {
       }, 500);
     })
 
-    /**
-     * @tc.number ArkUX_Stage_List_LimitAnimation_1100
-     * @tc.name The List/Grid component has basic sliding operation animations,
-     *             including stepless style animations and limit style animations
-     * @tc.desc Test the scrollSnapAlign interface of the list, pass in ScrollSnapAlign.NONE,
-     *             and then pass in ScrollSnapAlign.Start
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_List_LimitAnimation_1100
+     * @tc.number ArkUX_Stage_List_LimitAnimation_1100
+     * @tc.desc   ArkUX_Stage_List_LimitAnimation_1100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_List_LimitAnimation_1100', Level.LEVEL0,(done: Function) => {
       setTimeout(() => {
         try {
@@ -646,14 +681,15 @@ export default function listUxTest() {
       }, 500);
     })
 
-    /**
-     * @tc.number ArkUX_Stage_List_LimitAnimation_1200
-     * @tc.name The List/Grid component has basic sliding operation animations,
-     *             including stepless style animations and limit style animations
-     * @tc.desc Test the scrollSnapAlign interface of the list, pass in ScrollSnapAlign.Start,
-     *             and then pass in ""
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_List_LimitAnimation_1200
+     * @tc.number ArkUX_Stage_List_LimitAnimation_1200
+     * @tc.desc   ArkUX_Stage_List_LimitAnimation_1200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_List_LimitAnimation_1200', Level.LEVEL0,(done: Function) => {
       setTimeout(() => {
         try {
@@ -669,14 +705,15 @@ export default function listUxTest() {
       }, 500);
     })
 
-    /**
-     * @tc.number ArkUX_Stage_List_LimitAnimation_1300
-     * @tc.name The List/Grid component has basic sliding operation animations,
-     *             including stepless style animations and limit style animations
-     * @tc.desc Test the scrollSnapAlign interface of the list, pass in "",
-     *             and then pass in ScrollSnapAlign.Start
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_List_LimitAnimation_1300
+     * @tc.number ArkUX_Stage_List_LimitAnimation_1300
+     * @tc.desc   ArkUX_Stage_List_LimitAnimation_1300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_List_LimitAnimation_1300', Level.LEVEL0,(done: Function) => {
       setTimeout(() => {
         try {
@@ -692,13 +729,15 @@ export default function listUxTest() {
       }, 500);
     })
 
-    /**
-     * @tc.number ArkUX_Stage_List_LimitAnimation_1400
-     * @tc.name The List/Grid component has basic sliding operation animations,
-     *             including stepless style animations and limit style animations
-     * @tc.desc Test List's scrollSnapAlign interface incoming to 0
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_List_LimitAnimation_1400
+     * @tc.number ArkUX_Stage_List_LimitAnimation_1400
+     * @tc.desc   ArkUX_Stage_List_LimitAnimation_1400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_List_LimitAnimation_1400', Level.LEVEL0,(done: Function) => {
       setTimeout(() => {
         try {
@@ -714,13 +753,15 @@ export default function listUxTest() {
       }, 500);
     })
 
-    /**
-     * @tc.number ArkUX_Stage_List_LimitAnimation_1500
-     * @tc.name The List/Grid component has basic sliding operation animations,
-     *             including stepless style animations and limit style animations
-     * @tc.desc Test List's scrollSnapAlign interface incoming to 1
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_List_LimitAnimation_1500
+     * @tc.number ArkUX_Stage_List_LimitAnimation_1500
+     * @tc.desc   ArkUX_Stage_List_LimitAnimation_1500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_List_LimitAnimation_1500', Level.LEVEL0,(done: Function) => {
       setTimeout(() => {
         try {
@@ -736,13 +777,15 @@ export default function listUxTest() {
       }, 500);
     })
 
-    /**
-     * @tc.number ArkUX_Stage_List_LimitAnimation_1600
-     * @tc.name The List/Grid component has basic sliding operation animations,
-     *             including stepless style animations and limit style animations
-     * @tc.desc Test List's scrollSnapAlign interface incoming to 6
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_List_LimitAnimation_1600
+     * @tc.number ArkUX_Stage_List_LimitAnimation_1600
+     * @tc.desc   ArkUX_Stage_List_LimitAnimation_1600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_List_LimitAnimation_1600', Level.LEVEL0,(done: Function) => {
       setTimeout(() => {
         try {

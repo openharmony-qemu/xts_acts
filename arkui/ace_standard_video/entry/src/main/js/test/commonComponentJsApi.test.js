@@ -59,9 +59,12 @@ describe('aceJsTest', function () {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-     * @tc.name      testVideoComponent
-     * @tc.desc      ACE
+     * @tc.name   testVideoComponent
+     * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+     * @tc.desc   ACE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testVideoComponent', Level.LEVEL0, async function (done) {
         let result;

@@ -149,12 +149,12 @@ export default function windowPCTest() {
     });
 
     /**
-     * @tc.number    : testSetWindowTitleMoveEnabled_0100
-     * @tc.name      : testSetWindowTitleMoveEnabled_0100
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowTitleMoveEnabled_0100
+     * @tc.number testSetWindowTitleMoveEnabled_0100
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetWindowTitleMoveEnabled_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let message = 'setWindowTitleMoveEnabledTest_0100';
@@ -199,12 +199,12 @@ export default function windowPCTest() {
     })
 
     /**
-     * @tc.number    : testSetWindowTitleMoveEnabled_0200
-     * @tc.name      : testSetWindowTitleMoveEnabled_0200
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowTitleMoveEnabled_0200
+     * @tc.number testSetWindowTitleMoveEnabled_0200
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowTitleMoveEnabled_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let message = 'setWindowTitleMoveEnabledTest_0200';
@@ -248,12 +248,12 @@ export default function windowPCTest() {
     })
 
     /**
-     * @tc.number    : testSetWindowTitleMoveEnabled_0300
-     * @tc.name      : testSetWindowTitleMoveEnabled_0300
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowTitleMoveEnabled_0300
+     * @tc.number testSetWindowTitleMoveEnabled_0300
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowTitleMoveEnabled_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let message = 'setWindowTitleMoveEnabledTest_0300';
@@ -312,12 +312,12 @@ export default function windowPCTest() {
     })
 
     /**
-     * @tc.number    : testSetWindowTitleMoveEnabled_0400
-     * @tc.name      : testSetWindowTitleMoveEnabled_0400
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowTitleMoveEnabled_0400
+     * @tc.number testSetWindowTitleMoveEnabled_0400
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowTitleMoveEnabled_0400',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let message = 'setWindowTitleMoveEnabledTest_0400';
@@ -385,12 +385,12 @@ export default function windowPCTest() {
     })
 
     /**
-     * @tc.number    : testSetWindowTitleMoveEnabled_0500
-     * @tc.name      : testSetWindowTitleMoveEnabled_0500
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowTitleMoveEnabled_0500
+     * @tc.number testSetWindowTitleMoveEnabled_0500
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowTitleMoveEnabled_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let message = 'setWindowTitleMoveEnabledTest_0500';
@@ -449,12 +449,12 @@ export default function windowPCTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_OPTION_ADD_PARAMETER_WINDOW_RECT_0100
-     * @tc.name      : test_createSubWindowWithOptions_windowRect_negativeLeftTop_minWidthHeight
-     * @tc.desc      : LeftTop为负整数，WidthHeight为最小值
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_createSubWindowWithOptions_windowRect_negativeLeftTop_minWidthHeight
+     * @tc.number SUB_BASIC_WMS_OPTION_ADD_PARAMETER_WINDOW_RECT_0100
+     * @tc.desc   LeftTop为负整数，WidthHeight为最小值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_createSubWindowWithOptions_windowRect_negativeLeftTop_minWidthHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -507,12 +507,12 @@ export default function windowPCTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_OPTION_ADD_PARAMETER_WINDOW_RECT_0200
-     * @tc.name      : test_createSubWindowWithOptions_windowRect_positiveLeftTop_maxWidthHeight
-     * @tc.desc      : LeftTop为正整数，WidthHeight为最大值
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_createSubWindowWithOptions_windowRect_positiveLeftTop_maxWidthHeight
+     * @tc.number SUB_BASIC_WMS_OPTION_ADD_PARAMETER_WINDOW_RECT_0200
+     * @tc.desc   LeftTop为正整数，WidthHeight为最大值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_createSubWindowWithOptions_windowRect_positiveLeftTop_maxWidthHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -567,12 +567,12 @@ export default function windowPCTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_OPTION_ADD_PARAMETER_WINDOW_RECT_0300
-     * @tc.name      : test_createSubWindowWithOptions_windowRect_801
-     * @tc.desc      : LeftTop为正整数，验证801
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_createSubWindowWithOptions_windowRect_801
+     * @tc.number SUB_BASIC_WMS_OPTION_ADD_PARAMETER_WINDOW_RECT_0300
+     * @tc.desc   LeftTop为正整数，验证801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_createSubWindowWithOptions_windowRect_801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -620,12 +620,12 @@ export default function windowPCTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_OPTION_ADD_PARAMETER_WINDOW_RECT_0400
-     * @tc.name      : test_createSubWindowWithOptions_windowRect_floatLeftTop_floatWidthHeight
-     * @tc.desc      : LeftTop为浮点数，WidthHeight为浮点数
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_createSubWindowWithOptions_windowRect_floatLeftTop_floatWidthHeight
+     * @tc.number SUB_BASIC_WMS_OPTION_ADD_PARAMETER_WINDOW_RECT_0400
+     * @tc.desc   LeftTop为浮点数，WidthHeight为浮点数
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_createSubWindowWithOptions_windowRect_floatLeftTop_floatWidthHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -678,12 +678,12 @@ export default function windowPCTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_OPTION_ADD_PARAMETER_WINDOW_RECT_0500
-     * @tc.name      : test_createSubWindowWithOptions_windowRect_0LeftTop_0WidthHeight
-     * @tc.desc      : LeftTop为0，WidthHeight为0
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_createSubWindowWithOptions_windowRect_0LeftTop_0WidthHeight
+     * @tc.number SUB_BASIC_WMS_OPTION_ADD_PARAMETER_WINDOW_RECT_0500
+     * @tc.desc   LeftTop为0，WidthHeight为0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_createSubWindowWithOptions_windowRect_0LeftTop_0WidthHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -731,12 +731,12 @@ export default function windowPCTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_OPTION_ADD_PARAMETER_WINDOW_RECT_0600
-     * @tc.name      : test_createSubWindowWithOptions_windowRect_maxAboveWidthHeight
-     * @tc.desc      : LeftTop为正整数，WidthHeight为最大值+1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_createSubWindowWithOptions_windowRect_maxAboveWidthHeight
+     * @tc.number SUB_BASIC_WMS_OPTION_ADD_PARAMETER_WINDOW_RECT_0600
+     * @tc.desc   LeftTop为正整数，WidthHeight为最大值+1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_createSubWindowWithOptions_windowRect_maxAboveWidthHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -790,13 +790,12 @@ export default function windowPCTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_OPTION_ADD_PARAMETER_WINDOW_RECT_0700
-     * @tc.name      : test_createSubWindowWithOptions_windowRect_followMinWidthHeight
-     * @tc.desc      : LeftTop为正整数，WidthHeight为最小值-1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     *
-     * @tc.level     : Level3
+     * @tc.name   test_createSubWindowWithOptions_windowRect_followMinWidthHeight
+     * @tc.number SUB_BASIC_WMS_OPTION_ADD_PARAMETER_WINDOW_RECT_0700
+     * @tc.desc   LeftTop为正整数，WidthHeight为最小值-1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_createSubWindowWithOptions_windowRect_followMinWidthHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -852,12 +851,12 @@ export default function windowPCTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_OPTION_ADD_PARAMETER_WINDOW_RECT_0800
-     * @tc.name      : test_createSubWindowWithOptions_windowRect_NaNLeftTopWidthHeight
-     * @tc.desc      : LeftTop为NaN，WidthHeight为NaN
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_createSubWindowWithOptions_windowRect_NaNLeftTopWidthHeight
+     * @tc.number SUB_BASIC_WMS_OPTION_ADD_PARAMETER_WINDOW_RECT_0800
+     * @tc.desc   LeftTop为NaN，WidthHeight为NaN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_createSubWindowWithOptions_windowRect_NaNLeftTopWidthHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -903,12 +902,12 @@ export default function windowPCTest() {
       ;
     });
     /**
-     * @tc.number    : testStartOptionsSupportWindowModes_0100
-     * @tc.name      : testStartOptionsSupportWindowModes_0100
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testStartOptionsSupportWindowModes_0100
+     * @tc.number testStartOptionsSupportWindowModes_0100
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartOptionsSupportWindowModes_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'startOptionsSupportWindowModesTest_0100';
@@ -939,12 +938,12 @@ export default function windowPCTest() {
     })
 
     /**
-     * @tc.number    : testStartOptionsSupportWindowModes_0200
-     * @tc.name      : testStartOptionsSupportWindowModes_0200
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testStartOptionsSupportWindowModes_0200
+     * @tc.number testStartOptionsSupportWindowModes_0200
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testStartOptionsSupportWindowModes_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'startOptionsSupportWindowModesTest_0200';
@@ -989,12 +988,12 @@ export default function windowPCTest() {
     })
 
     /**
-     * @tc.number    : testStartOptionsSupportWindowModes_0300
-     * @tc.name      : testStartOptionsSupportWindowModes_0300
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testStartOptionsSupportWindowModes_0300
+     * @tc.number testStartOptionsSupportWindowModes_0300
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testStartOptionsSupportWindowModes_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'startOptionsSupportWindowModesTest_0300';
@@ -1039,12 +1038,12 @@ export default function windowPCTest() {
     })
 
     /**
-     * @tc.number    : testStartOptionsSupportWindowModes_0400
-     * @tc.name      : testStartOptionsSupportWindowModes_0400
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testStartOptionsSupportWindowModes_0400
+     * @tc.number testStartOptionsSupportWindowModes_0400
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testStartOptionsSupportWindowModes_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'startOptionsSupportWindowModesTest_0400';
@@ -1091,12 +1090,12 @@ export default function windowPCTest() {
     })
 
     /**
-     * @tc.number    : testStartOptionsSupportWindowModes_0500
-     * @tc.name      : testStartOptionsSupportWindowModes_0500
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testStartOptionsSupportWindowModes_0500
+     * @tc.number testStartOptionsSupportWindowModes_0500
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testStartOptionsSupportWindowModes_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'startOptionsSupportWindowModesTest_0500';
@@ -1143,12 +1142,12 @@ export default function windowPCTest() {
     })
 
     /**
-     * @tc.number    : testStartOptionsSupportWindowModes_0600
-     * @tc.name      : testStartOptionsSupportWindowModes_0600
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testStartOptionsSupportWindowModes_0600
+     * @tc.number testStartOptionsSupportWindowModes_0600
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartOptionsSupportWindowModes_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'startOptionsSupportWindowModesTest_0600';
@@ -1184,12 +1183,12 @@ export default function windowPCTest() {
 
 
     /**
-     * @tc.number    : testStartOptionsSupportWindowModes_0700
-     * @tc.name      : testStartOptionsSupportWindowModes_0700
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testStartOptionsSupportWindowModes_0700
+     * @tc.number testStartOptionsSupportWindowModes_0700
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testStartOptionsSupportWindowModes_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'startOptionsSupportWindowModesTest_0700';
@@ -1252,12 +1251,12 @@ export default function windowPCTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_SUPPORTED_WINDOW_MODES_0100
-     * @tc.name      : test_setSupportedWindowModes_threeElement
-     * @tc.desc      : 传参三个元素
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setSupportedWindowModes_threeElement
+     * @tc.number SUB_BASIC_WMS_SET_SUPPORTED_WINDOW_MODES_0100
+     * @tc.desc   传参三个元素
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setSupportedWindowModes_threeElement', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -1289,12 +1288,12 @@ export default function windowPCTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_SUPPORTED_WINDOW_MODES_0200
-     * @tc.name      : test_setSupportedWindowModes_fourSameElement
-     * @tc.desc      : 传参4个fullscreen，验证成功设置和801
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_setSupportedWindowModes_fourSameElement
+     * @tc.number SUB_BASIC_WMS_SET_SUPPORTED_WINDOW_MODES_0200
+     * @tc.desc   传参4个fullscreen，验证成功设置和801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setSupportedWindowModes_fourSameElement', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -1327,12 +1326,12 @@ export default function windowPCTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_SUPPORTED_WINDOW_MODES_0300
-     * @tc.name      : test_setSupportedWindowModes_fiveElement
-     * @tc.desc      : 传参列表5个元素，验证401
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_setSupportedWindowModes_fiveElement
+     * @tc.number SUB_BASIC_WMS_SET_SUPPORTED_WINDOW_MODES_0300
+     * @tc.desc   传参列表5个元素，验证401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setSupportedWindowModes_fiveElement', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -1365,12 +1364,12 @@ export default function windowPCTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_SUPPORTED_WINDOW_MODES_0400
-     * @tc.name      : test_setSupportedWindowModes_nullElement
-     * @tc.desc      : 传参[]，验证401
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_setSupportedWindowModes_nullElement
+     * @tc.number SUB_BASIC_WMS_SET_SUPPORTED_WINDOW_MODES_0400
+     * @tc.desc   传参[]，验证401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setSupportedWindowModes_nullElement', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -1401,12 +1400,12 @@ export default function windowPCTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_SUPPORTED_WINDOW_MODES_0500
-     * @tc.name      : test_setSupportedWindowModes_onlySplit
-     * @tc.desc      : 传参[split]，验证401
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_setSupportedWindowModes_onlySplit
+     * @tc.number SUB_BASIC_WMS_SET_SUPPORTED_WINDOW_MODES_0500
+     * @tc.desc   传参[split]，验证401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setSupportedWindowModes_onlySplit', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -1437,12 +1436,12 @@ export default function windowPCTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_SUPPORTED_WINDOW_MODES_0600
-     * @tc.name      : test_setSupportedWindowModes_afterTerminateAbility
-     * @tc.desc      : 销毁ability, 验证1300002
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_setSupportedWindowModes_afterTerminateAbility
+     * @tc.number SUB_BASIC_WMS_SET_SUPPORTED_WINDOW_MODES_0600
+     * @tc.desc   销毁ability, 验证1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setSupportedWindowModes_afterTerminateAbility', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -1478,12 +1477,12 @@ export default function windowPCTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_SUPPORTED_WINDOW_MODES_0700
-     * @tc.name      : test_setSupportedWindowModes_modeChange_isImmersive
-     * @tc.desc      : [full_screen] ——> [float] ——> [full_screen],验证设置后mode和沉浸式改变
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_setSupportedWindowModes_modeChange_isImmersive
+     * @tc.number SUB_BASIC_WMS_SET_SUPPORTED_WINDOW_MODES_0700
+     * @tc.desc   [full_screen] ——> [float] ——> [full_screen],验证设置后mode和沉浸式改变
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setSupportedWindowModes_modeChange_isImmersive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -1496,7 +1495,12 @@ export default function windowPCTest() {
           console.info(`${message} status_primary:${status_primary}, window.WindowStatusType.FULL_SCREEN:${window.WindowStatusType.FULL_SCREEN}`);
           expect(status_primary).assertEqual(window.WindowStatusType.FULL_SCREEN)
           let isImmersive_primary = windowStageStart.getMainWindowSync().getImmersiveModeEnabledState();
-          expect(isImmersive_primary).assertTrue();
+          console.info(`${message} isImmersive_primary:${isImmersive_primary}`);
+          if(isFreeWindowMode){
+            expect(isImmersive_primary).assertTrue();
+          }else{
+            expect(isImmersive_primary).assertEqual(false);
+          }
         }).catch((err: BusinessError) => {
           console.error(`${message} primary Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
           if (err.code == 801) {
@@ -1513,7 +1517,11 @@ export default function windowPCTest() {
           console.info('Succeed in setting window support modes');
           let status_float = windowStageStart.getMainWindowSync().getWindowStatus();
           console.info(`${message} status_float:${status_float}, window.WindowStatusType.FLOATING:${window.WindowStatusType.FLOATING}`);
-          expect(status_float).assertEqual(window.WindowStatusType.FLOATING);
+          if(isFreeWindowMode){
+            expect(status_float).assertEqual(window.WindowStatusType.FLOATING);
+          }else{
+            expect(status_float).assertEqual(window.WindowStatusType.FULL_SCREEN);
+          }
         }).catch((err: BusinessError) => {
           console.error(`${message} float Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
           if (err.code == 801) {
@@ -1534,8 +1542,14 @@ export default function windowPCTest() {
           console.info(`${message} status_fullscreen:${status_fullscreen}, window.WindowStatusType.FULL_SCREEN:${window.WindowStatusType.FULL_SCREEN}`);
           expect(status_fullscreen).assertEqual(window.WindowStatusType.FULL_SCREEN);
           let isImmersive_fullscreen = windowStageStart.getMainWindowSync().getImmersiveModeEnabledState();
-          expect(isImmersive_fullscreen).assertTrue();
-          done()
+          console.info(`${message} isImmersive_fullscreen:${isImmersive_fullscreen}`);
+          if(isFreeWindowMode){
+            expect(isImmersive_fullscreen).assertTrue();
+            done()
+          }else{
+            expect(isImmersive_fullscreen).assertEqual(false);
+            done()
+          }
         }).catch((err: BusinessError) => {
           console.error(`${message} fullscreen Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
           if (err.code == 801) {
@@ -1557,12 +1571,12 @@ export default function windowPCTest() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ON_WINDOW_WILL_CLOSE_0100
-     * @tc.name      : test_on_windowWillClose_resolve_true
-     * @tc.desc      : resolve为true,验证窗口不销毁
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_on_windowWillClose_resolve_true
+     * @tc.number SUB_BASIC_WMS_ON_WINDOW_WILL_CLOSE_0100
+     * @tc.desc   resolve为true,验证窗口不销毁
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_on_windowWillClose_resolve_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_on_windowWillClose_resolve_true'
@@ -1610,12 +1624,12 @@ export default function windowPCTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ON_WINDOW_WILL_CLOSE_0200
-     * @tc.name      : test_on_windowWillClose_resolve_false
-     * @tc.desc      : resolve为false,验证窗口销毁
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_on_windowWillClose_resolve_false
+     * @tc.number SUB_BASIC_WMS_ON_WINDOW_WILL_CLOSE_0200
+     * @tc.desc   resolve为false,验证窗口销毁
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_on_windowWillClose_resolve_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_on_windowWillClose_resolve_false'
@@ -1674,12 +1688,12 @@ export default function windowPCTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ON_WINDOW_WILL_CLOSE_0300
-     * @tc.name      : test_on_windowWillClose_executeAfterOff
-     * @tc.desc      : 回调执行过程中执行off，验证1300002
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_on_windowWillClose_executeAfterOff
+     * @tc.number SUB_BASIC_WMS_ON_WINDOW_WILL_CLOSE_0300
+     * @tc.desc   回调执行过程中执行off，验证1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_on_windowWillClose_executeAfterOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_on_windowWillClose_executeAfterOff'
@@ -1722,12 +1736,12 @@ export default function windowPCTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ON_WINDOW_WILL_CLOSE_0400
-     * @tc.name      : test_on_windowWillClose_offWithoutOn
-     * @tc.desc      : 不注册，执行off
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_on_windowWillClose_offWithoutOn
+     * @tc.number SUB_BASIC_WMS_ON_WINDOW_WILL_CLOSE_0400
+     * @tc.desc   不注册，执行off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_on_windowWillClose_offWithoutOn', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_on_windowWillClose_offWithoutOn'
@@ -1773,12 +1787,12 @@ export default function windowPCTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ON_WINDOW_WILL_CLOSE_0500
-     * @tc.name      : test_on_windowWillClose_reject
-     * @tc.desc      : 执行reject
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_on_windowWillClose_reject
+     * @tc.number SUB_BASIC_WMS_ON_WINDOW_WILL_CLOSE_0500
+     * @tc.desc   执行reject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_on_windowWillClose_reject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_on_windowWillClose_reject';
@@ -1831,12 +1845,12 @@ export default function windowPCTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ON_WINDOW_WILL_CLOSE_0600
-     * @tc.name      : test_on_windowWillClose_multiOn_UniqueOff
-     * @tc.desc      : 注册多个，取消一个
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_on_windowWillClose_multiOn_UniqueOff
+     * @tc.number SUB_BASIC_WMS_ON_WINDOW_WILL_CLOSE_0600
+     * @tc.desc   注册多个，取消一个
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_on_windowWillClose_multiOn_UniqueOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_on_windowWillClose_multiOn_UniqueOff';
@@ -1903,12 +1917,12 @@ export default function windowPCTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ON_WINDOW_WILL_CLOSE_0700
-     * @tc.name      : test_on_windowWillClose_multiOn_AllOff
-     * @tc.desc      : 注册多个，off所有
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_on_windowWillClose_multiOn_AllOff
+     * @tc.number SUB_BASIC_WMS_ON_WINDOW_WILL_CLOSE_0700
+     * @tc.desc   注册多个，off所有
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_on_windowWillClose_multiOn_AllOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_on_windowWillClose_multiOn_AllOff';
@@ -1975,12 +1989,12 @@ export default function windowPCTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ON_WINDOW_WILL_CLOSE_0800
-     * @tc.name      : test_on_windowWillClose_subWindow_result_false
-     * @tc.desc      : 子窗result为false,验证窗口销毁
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_on_windowWillClose_subWindow_result_false
+     * @tc.number SUB_BASIC_WMS_ON_WINDOW_WILL_CLOSE_0800
+     * @tc.desc   子窗result为false,验证窗口销毁
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_on_windowWillClose_subWindow_result_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_on_windowWillClose_subWindow_result_false'
@@ -2049,12 +2063,12 @@ export default function windowPCTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ON_WINDOW_WILL_CLOSE_0900
-     * @tc.name      : test_on_windowWillClose_subWindow_result_true
-     * @tc.desc      : 子窗result为true,验证窗口不销毁
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_on_windowWillClose_subWindow_result_true
+     * @tc.number SUB_BASIC_WMS_ON_WINDOW_WILL_CLOSE_0900
+     * @tc.desc   子窗result为true,验证窗口不销毁
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_on_windowWillClose_subWindow_result_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_on_windowWillClose_subWindow_result_true'
@@ -2119,12 +2133,12 @@ export default function windowPCTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ON_WINDOW_WILL_CLOSE_1000
-     * @tc.name      : test_on_windowWillClose_subWindow_reject
-     * @tc.desc      : 子窗reject,验证窗口销毁
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_on_windowWillClose_subWindow_reject
+     * @tc.number SUB_BASIC_WMS_ON_WINDOW_WILL_CLOSE_1000
+     * @tc.desc   子窗reject,验证窗口销毁
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_on_windowWillClose_subWindow_reject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_on_windowWillClose_subWindow_reject'
@@ -2187,12 +2201,12 @@ export default function windowPCTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ON_WINDOW_WILL_CLOSE_1100
-     * @tc.name      : test_on_windowWillClose_minimize_maximize_recover_beforeOff
-     * @tc.desc      : 销毁前最大化、最小化、还原
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_on_windowWillClose_minimize_maximize_recover_beforeOff
+     * @tc.number SUB_BASIC_WMS_ON_WINDOW_WILL_CLOSE_1100
+     * @tc.desc   销毁前最大化、最小化、还原
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_on_windowWillClose_minimize_maximize_recover_beforeOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_on_windowWillClose_minimize_maximize_recover_beforeOff'
@@ -2281,12 +2295,12 @@ export default function windowPCTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_MOVE_CONFIGURATION_0100
-     * @tc.name       : test_MoveConfiguration
-     * @tc.desc       : 验证moveWindowToAsync参数MoveConfiguration
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : LEVEL0
+     * @tc.name   test_MoveConfiguration
+     * @tc.number SUB_BASIC_WMS_MOVE_CONFIGURATION_0100
+     * @tc.desc   验证moveWindowToAsync参数MoveConfiguration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_MoveConfiguration', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isFreeWindowMode == false) {
@@ -2325,12 +2339,12 @@ export default function windowPCTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_ON_SUB_WINDOW_CLOSE_0100
-     * @tc.name       : test_on_subWindowClose
-     * @tc.desc       : 验证test_on_subWindowClose，result为false
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_on_subWindowClose
+     * @tc.number SUB_BASIC_WMS_ON_SUB_WINDOW_CLOSE_0100
+     * @tc.desc   验证test_on_subWindowClose，result为false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_on_subWindowClose', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       if (isFreeWindowMode == false) {
@@ -2397,12 +2411,12 @@ export default function windowPCTest() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_ON_SUB_WINDOW_CLOSE_0200
-     * @tc.name       : test_off_subWindowClose
-     * @tc.desc       :  验证test_off_subWindowClose，result为true
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_off_subWindowClose
+     * @tc.number SUB_BASIC_WMS_ON_SUB_WINDOW_CLOSE_0200
+     * @tc.desc   验证test_off_subWindowClose，result为true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_off_subWindowClose', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       if (isFreeWindowMode == false) {
@@ -2470,12 +2484,12 @@ export default function windowPCTest() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_getParentWindow_0300
-     * @tc.name       : testgetParentWindow
-     * @tc.desc       : testgetParentWindow
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : LEVEL0
+     * @tc.name   testgetParentWindow
+     * @tc.number SUB_BASIC_WMS_getParentWindow_0300
+     * @tc.desc   testgetParentWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testgetParentWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let message = "testgetParentWindow";
@@ -2516,12 +2530,12 @@ export default function windowPCTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_OnWindowWillClose_401_0100
-     * @tc.name       : testOnWindowWillClose401
-     * @tc.desc       : testOnWindowWillClose401
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOnWindowWillClose401
+     * @tc.number SUB_BASIC_WMS_OnWindowWillClose_401_0100
+     * @tc.desc   testOnWindowWillClose401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnWindowWillClose401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testOnWindowWillClose401";
@@ -2548,12 +2562,12 @@ export default function windowPCTest() {
 
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_OnWindowWillClose_401_0200
-     * @tc.name       : testOffWindowWillClose401
-     * @tc.desc       : testOffWindowWillClose401
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOffWindowWillClose401
+     * @tc.number SUB_BASIC_WMS_OnWindowWillClose_401_0200
+     * @tc.desc   testOffWindowWillClose401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOffWindowWillClose401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testOffWindowWillClose401";
@@ -2580,12 +2594,12 @@ export default function windowPCTest() {
 
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_OnWindowWillClose_1300004_0300
-     * @tc.name       : testonWindowWillClose1300004
-     * @tc.desc       : testonWindowWillClose1300004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testonWindowWillClose1300004
+     * @tc.number SUB_BASIC_WMS_OnWindowWillClose_1300004_0300
+     * @tc.desc   testonWindowWillClose1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testonWindowWillClose1300004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testonWindowWillClose1300004";
@@ -2623,12 +2637,12 @@ export default function windowPCTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_WINDOW_STATUS_DID_CHANGE_0100
-     * @tc.name       : testOnwindowStatusDidChange_1300002
-     * @tc.desc       : testOnwindowStatusDidChange_1300002
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testOnwindowStatusDidChange_1300002
+     * @tc.number SUB_BASIC_WMS_WINDOW_STATUS_DID_CHANGE_0100
+     * @tc.desc   testOnwindowStatusDidChange_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOnwindowStatusDidChange_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "testOnwindowStatusDidChange_1300002";
@@ -2656,12 +2670,12 @@ export default function windowPCTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_WINDOW_STATUS_DID_CHANGE_0200
-     * @tc.name       : testOffwindowStatusDidChange_1300002
-     * @tc.desc       : testOffwindowStatusDidChange_1300002
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testOffwindowStatusDidChange_1300002
+     * @tc.number SUB_BASIC_WMS_WINDOW_STATUS_DID_CHANGE_0200
+     * @tc.desc   testOffwindowStatusDidChange_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOffwindowStatusDidChange_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "testOffwindowStatusDidChange_1300002";
@@ -2689,12 +2703,12 @@ export default function windowPCTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_WINDOW_STATUS_DID_CHANGE_0300
-     * @tc.name       : testOnwindowStatusDidChange_recover
-     * @tc.desc       : testOnwindowStatusDidChange_recover
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOnwindowStatusDidChange_recover
+     * @tc.number SUB_BASIC_WMS_WINDOW_STATUS_DID_CHANGE_0300
+     * @tc.desc   testOnwindowStatusDidChange_recover
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnwindowStatusDidChange_recover', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testOnwindowStatusDidChange_recover";
@@ -2745,12 +2759,12 @@ export default function windowPCTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_WINDOW_STATUS_DID_CHANGE_0400
-     * @tc.name       : testOnwindowStatusDidChange_maxmize
-     * @tc.desc       : testOnwindowStatusDidChange_maxmize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOnwindowStatusDidChange_maxmize
+     * @tc.number SUB_BASIC_WMS_WINDOW_STATUS_DID_CHANGE_0400
+     * @tc.desc   testOnwindowStatusDidChange_maxmize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnwindowStatusDidChange_maxmize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testOnwindowStatusDidChange_maxmize";
@@ -2799,12 +2813,12 @@ export default function windowPCTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_WINDOW_STATUS_DID_CHANGE_0500
-     * @tc.name       : testOnwindowStatusDidChange_maxmize_EXIT_IMMERSIVE
-     * @tc.desc       : testOnwindowStatusDidChange_maxmize_EXIT_IMMERSIVE
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOnwindowStatusDidChange_maxmize_EXIT_IMMERSIVE
+     * @tc.number SUB_BASIC_WMS_WINDOW_STATUS_DID_CHANGE_0500
+     * @tc.desc   testOnwindowStatusDidChange_maxmize_EXIT_IMMERSIVE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnwindowStatusDidChange_maxmize_EXIT_IMMERSIVE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testOnwindowStatusDidChange_maxmize_EXIT_IMMERSIVE";
@@ -2853,12 +2867,12 @@ export default function windowPCTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_WINDOW_STATUS_DID_CHANGE_0600
-     * @tc.name       : testOnwindowStatusDidChange_mimimize
-     * @tc.desc       : testOnwindowStatusDidChange_mimimize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOnwindowStatusDidChange_mimimize
+     * @tc.number SUB_BASIC_WMS_WINDOW_STATUS_DID_CHANGE_0600
+     * @tc.desc   testOnwindowStatusDidChange_mimimize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnwindowStatusDidChange_mimimize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testOnwindowStatusDidChange_mimimize";
@@ -2892,13 +2906,13 @@ export default function windowPCTest() {
         }
       // }
     })
-/**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_STATUS_DID_CHANGE_0700
-     * @tc.name      : testOnwindowStatusDidChange_SPLIT_SCREEN
-     * @tc.desc      : testOnwindowStatusDidChange_SPLIT_SCREEN
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+    /**
+     * @tc.name   testOnwindowStatusDidChange_SPLIT_SCREEN
+     * @tc.number SUB_BASIC_WMS_WINDOW_STATUS_DID_CHANGE_0700
+     * @tc.desc   testOnwindowStatusDidChange_SPLIT_SCREEN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnwindowStatusDidChange_SPLIT_SCREEN', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testOnwindowStatusDidChange_SPLIT_SCREEN';
@@ -2943,12 +2957,12 @@ export default function windowPCTest() {
     
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SHIFT_APP_WINDOW_TOUCH_EVENT_0100
-     * @tc.name       : testShiftAppWindowTouchEvent_null
-     * @tc.desc       : testShiftAppWindowTouchEvent_null
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testShiftAppWindowTouchEvent_null
+     * @tc.number SUB_BASIC_WMS_SHIFT_APP_WINDOW_TOUCH_EVENT_0100
+     * @tc.desc   testShiftAppWindowTouchEvent_null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testShiftAppWindowTouchEvent_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testShiftAppWindowTouchEvent_null";
@@ -2976,12 +2990,12 @@ export default function windowPCTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SHIFT_APP_WINDOW_TOUCH_EVENT_0200
-     * @tc.name       : testShiftAppWindowTouchEvent_undefined
-     * @tc.desc       : testShiftAppWindowTouchEvent_undefined
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testShiftAppWindowTouchEvent_undefined
+     * @tc.number SUB_BASIC_WMS_SHIFT_APP_WINDOW_TOUCH_EVENT_0200
+     * @tc.desc   testShiftAppWindowTouchEvent_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testShiftAppWindowTouchEvent_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testShiftAppWindowTouchEvent_undefined";
@@ -3009,12 +3023,12 @@ export default function windowPCTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SHIFT_APP_WINDOW_TOUCH_EVENT_0300
-     * @tc.name       : testShiftAppWindowTouchEvent_1300002
-     * @tc.desc       : testShiftAppWindowTouchEvent_1300002
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testShiftAppWindowTouchEvent_1300002
+     * @tc.number SUB_BASIC_WMS_SHIFT_APP_WINDOW_TOUCH_EVENT_0300
+     * @tc.desc   testShiftAppWindowTouchEvent_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testShiftAppWindowTouchEvent_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testShiftAppWindowTouchEvent_1300002";
@@ -3075,12 +3089,12 @@ export default function windowPCTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SHIFT_APP_WINDOW_TOUCH_EVENT_0400
-     * @tc.name       : testShiftAppWindowTouchEvent_1300016
-     * @tc.desc       : testShiftAppWindowTouchEvent_1300016
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testShiftAppWindowTouchEvent_1300016
+     * @tc.number SUB_BASIC_WMS_SHIFT_APP_WINDOW_TOUCH_EVENT_0400
+     * @tc.desc   testShiftAppWindowTouchEvent_1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testShiftAppWindowTouchEvent_1300016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testShiftAppWindowTouchEvent_1300016";
@@ -3143,12 +3157,12 @@ export default function windowPCTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SHIFT_APP_WINDOW_TOUCH_EVENT_0500
-     * @tc.name       : testShiftAppWindowTouchEvent_1300004
-     * @tc.desc       : testShiftAppWindowTouchEvent_1300004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testShiftAppWindowTouchEvent_1300004
+     * @tc.number SUB_BASIC_WMS_SHIFT_APP_WINDOW_TOUCH_EVENT_0500
+     * @tc.desc   testShiftAppWindowTouchEvent_1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testShiftAppWindowTouchEvent_1300004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "testShiftAppWindowTouchEvent_1300004";
@@ -3217,12 +3231,12 @@ export default function windowPCTest() {
     
 
     /**
-     * @tc.number    : testOutlineEnabled_0100
-     * @tc.name      : testOutlineEnabled_True
-     * @tc.desc      : Test the function value of outlineEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testOutlineEnabled_True
+     * @tc.number testOutlineEnabled_0100
+     * @tc.desc   Test the function value of outlineEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOutlineEnabled_True', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testOutlineEnabled_True';
@@ -3254,12 +3268,12 @@ export default function windowPCTest() {
       })
     })
     /**
-     * @tc.number    : testOutlineEnabled_0200
-     * @tc.name      : testOutlineEnabled_False
-     * @tc.desc      : Test the function value of outlineEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testOutlineEnabled_False
+     * @tc.number testOutlineEnabled_0200
+     * @tc.desc   Test the function value of outlineEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOutlineEnabled_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testOutlineEnabled_False';
@@ -3291,12 +3305,12 @@ export default function windowPCTest() {
       })
     })
     /**
-     * @tc.number    : testOutlineEnabled_0300
-     * @tc.name      : testOutlineEnabled_Undifined
-     * @tc.desc      : Test the function value of outlineEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testOutlineEnabled_Undifined
+     * @tc.number testOutlineEnabled_0300
+     * @tc.desc   Test the function value of outlineEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOutlineEnabled_Undifined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testOutlineEnabled_Undifined';
@@ -3328,12 +3342,12 @@ export default function windowPCTest() {
       })
     })
     /**
-     * @tc.number     : testSetDragKeyFramePolicy_0100
-     * @tc.name       : testSetDragKeyFramePolicy_EnableWithDefaultValue
-     * @tc.desc       : Test the function when enable with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level3
+     * @tc.name   testSetDragKeyFramePolicy_EnableWithDefaultValue
+     * @tc.number testSetDragKeyFramePolicy_0100
+     * @tc.desc   Test the function when enable with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetDragKeyFramePolicy_EnableWithDefaultValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_EnableWithDefaultValue';
@@ -3369,12 +3383,12 @@ export default function windowPCTest() {
       }
     })
     /**
-     * @tc.number     : testSetDragKeyFramePolicy_0200
-     * @tc.name       : testSetDragKeyFramePolicy_EnableWithNotDefaultValue
-     * @tc.desc       : Test the function when enable with not default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level3
+     * @tc.name   testSetDragKeyFramePolicy_EnableWithNotDefaultValue
+     * @tc.number testSetDragKeyFramePolicy_0200
+     * @tc.desc   Test the function when enable with not default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetDragKeyFramePolicy_EnableWithNotDefaultValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_EnableWithNotDefaultValue';
@@ -3418,12 +3432,12 @@ export default function windowPCTest() {
       }
     })
     /**
-     * @tc.number     : testSetDragKeyFramePolicy_0300
-     * @tc.name       : testSetDragKeyFramePolicy_EnableWithFloatValue
-     * @tc.desc       : Test the function when enable with not float value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level3
+     * @tc.name   testSetDragKeyFramePolicy_EnableWithFloatValue
+     * @tc.number testSetDragKeyFramePolicy_0300
+     * @tc.desc   Test the function when enable with not float value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetDragKeyFramePolicy_EnableWithFloatValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_EnableWithFloatValue';
@@ -3467,12 +3481,12 @@ export default function windowPCTest() {
       }
     })
     /**
-     * @tc.number     : testSetDragKeyFramePolicy_0400
-     * @tc.name       : testSetDragKeyFramePolicy_NegativeValueFail
-     * @tc.desc       : Test the function when failed with negative value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level3
+     * @tc.name   testSetDragKeyFramePolicy_NegativeValueFail
+     * @tc.number testSetDragKeyFramePolicy_0400
+     * @tc.desc   Test the function when failed with negative value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetDragKeyFramePolicy_NegativeValueFail', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_NegativeValueFail';
@@ -3512,12 +3526,12 @@ export default function windowPCTest() {
       }
     })
     /**
-     * @tc.number     : testSetDragKeyFramePolicy_0500
-     * @tc.name       : testSetDragKeyFramePolicy_ZeroValueFail
-     * @tc.desc       : Test the function when failed with zero value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level3
+     * @tc.name   testSetDragKeyFramePolicy_ZeroValueFail
+     * @tc.number testSetDragKeyFramePolicy_0500
+     * @tc.desc   Test the function when failed with zero value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetDragKeyFramePolicy_ZeroValueFail', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_ZeroValueFail';
@@ -3557,12 +3571,12 @@ export default function windowPCTest() {
       }
     })
     /**
-     * @tc.number     : testSetDragKeyFramePolicy_0600
-     * @tc.name       : testSetDragKeyFramePolicy_SubWindowFail
-     * @tc.desc       : Test the function when failed with subWindow
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level3
+     * @tc.name   testSetDragKeyFramePolicy_SubWindowFail
+     * @tc.number testSetDragKeyFramePolicy_0600
+     * @tc.desc   Test the function when failed with subWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetDragKeyFramePolicy_SubWindowFail', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_SubWindowFail';
@@ -3607,12 +3621,12 @@ export default function windowPCTest() {
       }
     })
     /**
-     * @tc.number     : testSetDragKeyFramePolicy_0700
-     * @tc.name       : testSetDragKeyFramePolicy_1300002
-     * @tc.desc       : Test the function when failed with 1300002
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level3
+     * @tc.name   testSetDragKeyFramePolicy_1300002
+     * @tc.number testSetDragKeyFramePolicy_0700
+     * @tc.desc   Test the function when failed with 1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetDragKeyFramePolicy_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_1300002';
@@ -3656,12 +3670,12 @@ export default function windowPCTest() {
       }
     })
     /**
-     * @tc.number     : testSetDragKeyFramePolicy_0800
-     * @tc.name       : testSetDragKeyFramePolicy_Disable
-     * @tc.desc       : Test the function when disable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : LEVEL0
+     * @tc.name   testSetDragKeyFramePolicy_Disable
+     * @tc.number testSetDragKeyFramePolicy_0800
+     * @tc.desc   Test the function when disable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetDragKeyFramePolicy_Disable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_Disable';
@@ -3698,12 +3712,12 @@ export default function windowPCTest() {
     })
 
     /**
-     * @tc.number    : testWindowStatusChange_0100
-     * @tc.name      : testWindowStatusChange_0100
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testWindowStatusChange_0100
+     * @tc.number testWindowStatusChange_0100
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowStatusChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testWindowStatusChange_0100';
@@ -3749,12 +3763,12 @@ export default function windowPCTest() {
     })
 
     /**
-     * @tc.number    : testWindowStatusChange_0200
-     * @tc.name      : testWindowStatusChange_0200
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testWindowStatusChange_0200
+     * @tc.number testWindowStatusChange_0200
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowStatusChange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testWindowStatusChange_0200';

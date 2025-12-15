@@ -42,12 +42,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : Security_DataSecurity_Asset_Remove_Func_0200
-     * @tc.name       : testDeleteNoRight0200
-     * @tc.desc       : 使用接口销毁数据后，数据被删除
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   Security_DataSecurity_Asset_Remove_Func_0200
+     * @tc.number Security_DataSecurity_Asset_Remove_Func_0200
+     * @tc.desc   使用接口销毁数据后，数据被删除
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_Remove_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -70,12 +70,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : Security_DataSecurity_Asset_Remove_Func_0900
-     * @tc.name       : testDeleteNoRight0900
-     * @tc.desc       : 数据删除后，相同数据能再次写入
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   Security_DataSecurity_Asset_Remove_Func_0900
+     * @tc.number Security_DataSecurity_Asset_Remove_Func_0900
+     * @tc.desc   数据删除后，相同数据能再次写入
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_Remove_Func_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -86,12 +86,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_Security_DataSecurity_Asset_Remove_Func_1200
-     * @tc.name       : testDeleteNoRight1200
-     * @tc.desc       : 未申请权限时，增删改查卸载后不删除的数据
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_Security_DataSecurity_Asset_Remove_Func_1200
+     * @tc.number SUB_Security_DataSecurity_Asset_Remove_Func_1200
+     * @tc.desc   未申请权限时，增删改查卸载后不删除的数据
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_Remove_Func_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -102,12 +102,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_Security_DataSecurity_Asset_AsUserId_Func_1000
-     * @tc.name       : testAsUseridNoRight1000
-     * @tc.desc       : 未申请权限的普通应用，指定前台用户，调用asset接口失败
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_Security_DataSecurity_Asset_AsUserId_Func_1000
+     * @tc.number SUB_Security_DataSecurity_Asset_AsUserId_Func_1000
+     * @tc.desc   未申请权限的普通应用，指定前台用户，调用asset接口失败
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_AsUserId_Func_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await aw.assetAddEasy(aw.aliasNameList[0], aw.secretList[0]);
@@ -129,12 +129,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_Security_DataSecurity_Asset_CE_Func_0100
-     * @tc.name       : testAssetCE0100
-     * @tc.desc       : 设置CE保护的数据增删改查成功
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_Security_DataSecurity_Asset_CE_Func_0100
+     * @tc.number SUB_Security_DataSecurity_Asset_CE_Func_0100
+     * @tc.desc   设置CE保护的数据增删改查成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_CE_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();

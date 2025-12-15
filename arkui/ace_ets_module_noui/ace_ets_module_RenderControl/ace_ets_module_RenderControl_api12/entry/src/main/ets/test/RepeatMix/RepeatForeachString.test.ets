@@ -59,12 +59,12 @@ export default function RepeatForeachString() {
     });
 
     /**
+     * @tc.name   RepeatForeachString_001
      * @tc.number RepeatForeachString_001
-     * @tc.name RepeatForeachString_001
-     * @tc.desc Test RepeatForeachString component
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Test RepeatForeachString component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RepeatForeachString_001', Level.LEVEL0, async (done: Function) => {
       console.info('[RepeatForeachString_001] START');

@@ -63,13 +63,13 @@ export default function runJavaScriptErrorCode() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_RUNJAVASCRIPT_PROMISE_ERRORCODE_0100
-     * @tc.name       : testRunJavaScriptPromiseErrorCode001
-     * @tc.desc       : test runJavaScript promise error code 401
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRunJavaScriptPromiseErrorCode001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_RUNJAVASCRIPT_PROMISE_ERRORCODE_0100
+     * @tc.desc   test runJavaScript promise error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRunJavaScriptPromiseErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('emitRunJavaScriptPromiseErrorCode001', 171220);
@@ -80,13 +80,13 @@ export default function runJavaScriptErrorCode() {
       sendEventByKey('runJavaScriptPromiseErrorCodeButton', 10, '');
     })
 
-    /*
-     * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_RUNJAVASCRIPT_CALLBACK_ERRORCODE_0100
-     * @tc.name       : testRunJavaScriptCallbackErrorCode001
-     * @tc.desc       : test runJavaScript callback error code 401
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRunJavaScriptCallbackErrorCode001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_RUNJAVASCRIPT_CALLBACK_ERRORCODE_0100
+     * @tc.desc   test runJavaScript callback error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRunJavaScriptCallbackErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('emitRunJavaScriptCallbackErrorCode001', 171220);

@@ -43,12 +43,12 @@ export default function NativeInterfaceTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_NAPI_LoadData_0100
-     * @tc.name    : testWebNapiLoadDataSuccess
-     * @tc.desc    : test OH_NativeArkWeb_LoadData() SUCCESS
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiLoadDataSuccess
+     * @tc.number SUB_WEB_NET_NAPI_LoadData_0100
+     * @tc.desc   test OH_NativeArkWeb_LoadData() SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiLoadDataSuccess', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -66,12 +66,12 @@ export default function NativeInterfaceTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_NAPI_LoadData_0200
-     * @tc.name    : testWebNapiLoadDataNotInit
-     * @tc.desc    : test OH_NativeArkWeb_LoadData() not init
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiLoadDataNotInit
+     * @tc.number SUB_WEB_NET_NAPI_LoadData_0200
+     * @tc.desc   test OH_NativeArkWeb_LoadData() not init
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiLoadDataNotInit', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -88,12 +88,12 @@ export default function NativeInterfaceTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_NAPI_LoadData_0300
-     * @tc.name    : testWebNapiLoadDataNoData
-     * @tc.desc    : test OH_NativeArkWeb_LoadData()
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiLoadDataNoData
+     * @tc.number SUB_WEB_NET_NAPI_LoadData_0300
+     * @tc.desc   test OH_NativeArkWeb_LoadData()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiLoadDataNoData', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -112,12 +112,12 @@ export default function NativeInterfaceTest() {
     })
 
     /**
-     * @tc.number  : SUB_WEB_NET_NAPI_LoadData_0400
-     * @tc.name    : testWebNapiLoadDataNoType
-     * @tc.desc    : test OH_NativeArkWeb_LoadData()
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiLoadDataNoType
+     * @tc.number SUB_WEB_NET_NAPI_LoadData_0400
+     * @tc.desc   test OH_NativeArkWeb_LoadData()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiLoadDataNoType', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -136,12 +136,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_WEB_NET_NAPI_LoadData_0500
-     * @tc.name    : testWebNapiLoadDataNoEncode
-     * @tc.desc    : test OH_NativeArkWeb_LoadData()
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiLoadDataNoEncode
+     * @tc.number SUB_WEB_NET_NAPI_LoadData_0500
+     * @tc.desc   test OH_NativeArkWeb_LoadData()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiLoadDataNoEncode', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -160,12 +160,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_WEB_NET_NAPI_BlankInfo_0100
-     * @tc.name    : testWebNapiGetBlanklessInfoSuccess
-     * @tc.desc    : test OH_NativeArkWeb_SetBlanklessLoadingWithKey()
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiGetBlanklessInfoSuccess
+     * @tc.number SUB_WEB_NET_NAPI_BlankInfo_0100
+     * @tc.desc   test OH_NativeArkWeb_SetBlanklessLoadingWithKey()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiGetBlanklessInfoSuccess', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -182,12 +182,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_WEB_NET_NAPI_BlankInfo_0200
-     * @tc.name    : testWebNapiGetBlanklessInfoNewkey
-     * @tc.desc    : test OH_NativeArkWeb_GetBlanklessInfoWithKey()
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiGetBlanklessInfoNewkey
+     * @tc.number SUB_WEB_NET_NAPI_BlankInfo_0200
+     * @tc.desc   test OH_NativeArkWeb_GetBlanklessInfoWithKey()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiGetBlanklessInfoNewkey', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -204,12 +204,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_WEB_NET_NAPI_BlankInfo_0300
-     * @tc.name    : testWebNapiGetBlanklessInfoNullkey
-     * @tc.desc    : test OH_NativeArkWeb_GetBlanklessInfoWithKey()
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiGetBlanklessInfoNullkey
+     * @tc.number SUB_WEB_NET_NAPI_BlankInfo_0300
+     * @tc.desc   test OH_NativeArkWeb_GetBlanklessInfoWithKey()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiGetBlanklessInfoNullkey', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -226,12 +226,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_WEB_NET_NAPI_BlankInfo_0400
-     * @tc.name    : testWebNapiGetBlanklessInfoNullWeb
-     * @tc.desc    : test OH_NativeArkWeb_GetBlanklessInfoWithKey()
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiGetBlanklessInfoNullWeb
+     * @tc.number SUB_WEB_NET_NAPI_BlankInfo_0400
+     * @tc.desc   test OH_NativeArkWeb_GetBlanklessInfoWithKey()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiGetBlanklessInfoNullWeb', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -249,12 +249,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_WEB_NET_NAPI_BlankInfo_0500
-     * @tc.name    : testWebNapiSetBlanklessInfoNotInit
-     * @tc.desc    : test OH_NativeArkWeb_SetBlanklessLoadingWithKey()
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiSetBlanklessInfoNotInit
+     * @tc.number SUB_WEB_NET_NAPI_BlankInfo_0500
+     * @tc.desc   test OH_NativeArkWeb_SetBlanklessLoadingWithKey()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiSetBlanklessInfoNotInit', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -272,12 +272,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_WEB_NET_NAPI_BlankInfo_0600
-     * @tc.name    : testWebNapiSetBlanklessInfoSuccess
-     * @tc.desc    : test OH_NativeArkWeb_SetBlanklessLoadingWithKey()
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiSetBlanklessInfoSuccess
+     * @tc.number SUB_WEB_NET_NAPI_BlankInfo_0600
+     * @tc.desc   test OH_NativeArkWeb_SetBlanklessLoadingWithKey()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiSetBlanklessInfoSuccess', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -296,12 +296,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_WEB_NET_NAPI_BlankInfo_0700
-     * @tc.name    : testWebNapiSetBlanklessInfoNokey
-     * @tc.desc    : test OH_NativeArkWeb_SetBlanklessLoadingWithKey()
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiSetBlanklessInfoNokey
+     * @tc.number SUB_WEB_NET_NAPI_BlankInfo_0700
+     * @tc.desc   test OH_NativeArkWeb_SetBlanklessLoadingWithKey()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiSetBlanklessInfoNokey', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -318,12 +318,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_WEB_NET_NAPI_BlankInfo_0800
-     * @tc.name    : testWebNapiSetBlanklessInfoTrue
-     * @tc.desc    : test OH_NativeArkWeb_SetBlanklessLoadingWithKey()
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiSetBlanklessInfoTrue
+     * @tc.number SUB_WEB_NET_NAPI_BlankInfo_0800
+     * @tc.desc   test OH_NativeArkWeb_SetBlanklessLoadingWithKey()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiSetBlanklessInfoTrue', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -341,12 +341,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_WEB_NET_NAPI_BlankInfo_0900
-     * @tc.name    : testWebNapiSetBlanklessInfoNullWeb
-     * @tc.desc    : test OH_NativeArkWeb_SetBlanklessLoadingWithKey()
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiSetBlanklessInfoNullWeb
+     * @tc.number SUB_WEB_NET_NAPI_BlankInfo_0900
+     * @tc.desc   test OH_NativeArkWeb_SetBlanklessLoadingWithKey()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiSetBlanklessInfoNullWeb', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -363,12 +363,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_WEB_NET_NAPI_BlankInfo_1000
-     * @tc.name    : testWebNapiSetBlanklessInfoNullKey
-     * @tc.desc    : test OH_NativeArkWeb_SetBlanklessLoadingWithKey()
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiSetBlanklessInfoNullKey
+     * @tc.number SUB_WEB_NET_NAPI_BlankInfo_1000
+     * @tc.desc   test OH_NativeArkWeb_SetBlanklessLoadingWithKey()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiSetBlanklessInfoNullKey', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -386,12 +386,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_WEB_NET_NAPI_JSBridgeData_0100
-     * @tc.name    : testWebNapiJSBridgeDataCallback
-     * @tc.desc    : test ArkWeb_JavaScriptBridgeData and ArkWeb_OnJavaScriptCallback
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiJSBridgeDataCallback
+     * @tc.number SUB_WEB_NET_NAPI_JSBridgeData_0100
+     * @tc.desc   test ArkWeb_JavaScriptBridgeData and ArkWeb_OnJavaScriptCallback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiJSBridgeDataCallback', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -409,12 +409,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_WEB_NET_NAPI_JSBridgeData_0200
-     * @tc.name    : testWebNapiJSBridgeCallbackNullUser
-     * @tc.desc    : test ArkWeb_JavaScriptBridgeData and ArkWeb_OnJavaScriptCallback
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiJSBridgeCallbackNullUser
+     * @tc.number SUB_WEB_NET_NAPI_JSBridgeData_0200
+     * @tc.desc   test ArkWeb_JavaScriptBridgeData and ArkWeb_OnJavaScriptCallback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiJSBridgeCallbackNullUser', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -432,12 +432,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_WEB_NET_NAPI_JSBridgeData_0300
-     * @tc.name    : testWebNapiJSBridgeCallbackNullData
-     * @tc.desc    : test ArkWeb_JavaScriptBridgeData and ArkWeb_OnJavaScriptCallback
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiJSBridgeCallbackNullData
+     * @tc.number SUB_WEB_NET_NAPI_JSBridgeData_0300
+     * @tc.desc   test ArkWeb_JavaScriptBridgeData and ArkWeb_OnJavaScriptCallback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiJSBridgeCallbackNullData', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -455,12 +455,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_WEB_NET_NAPI_JSBridgeData_0400
-     * @tc.name    : testWebNapiJSBridgeCallbackNullWeb
-     * @tc.desc    : test ArkWeb_JavaScriptBridgeData and ArkWeb_OnJavaScriptCallback
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiJSBridgeCallbackNullWeb
+     * @tc.number SUB_WEB_NET_NAPI_JSBridgeData_0400
+     * @tc.desc   test ArkWeb_JavaScriptBridgeData and ArkWeb_OnJavaScriptCallback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiJSBridgeCallbackNullWeb', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -478,12 +478,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_WEB_NET_NAPI_JSBridgeProxy_0100
-     * @tc.name    : testWebNapiJSBridgeProxyData
-     * @tc.desc    : test ArkWeb_JavaScriptBridgeData and ArkWeb_OnJavaScriptProxyCallback
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiJSBridgeProxyData
+     * @tc.number SUB_WEB_NET_NAPI_JSBridgeProxy_0100
+     * @tc.desc   test ArkWeb_JavaScriptBridgeData and ArkWeb_OnJavaScriptProxyCallback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiJSBridgeProxyData', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -501,12 +501,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_WEB_NET_NAPI_JSBridgeProxy_0200
-     * @tc.name    : testWebNapiJSBridgeProxyDataLen
-     * @tc.desc    : test ArkWeb_JavaScriptBridgeData and ArkWeb_OnJavaScriptProxyCallback
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiJSBridgeProxyDataLen
+     * @tc.number SUB_WEB_NET_NAPI_JSBridgeProxy_0200
+     * @tc.desc   test ArkWeb_JavaScriptBridgeData and ArkWeb_OnJavaScriptProxyCallback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiJSBridgeProxyDataLen', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -524,12 +524,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_WEB_NET_NAPI_JSBridgeProxy_0300
-     * @tc.name    : testWebNapiJSBridgeProxyNullData
-     * @tc.desc    : test ArkWeb_JavaScriptBridgeData and ArkWeb_OnJavaScriptProxyCallback
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiJSBridgeProxyNullData
+     * @tc.number SUB_WEB_NET_NAPI_JSBridgeProxy_0300
+     * @tc.desc   test ArkWeb_JavaScriptBridgeData and ArkWeb_OnJavaScriptProxyCallback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiJSBridgeProxyNullData', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -547,12 +547,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_WEB_NET_NAPI_JSBridgeProxy_0400
-     * @tc.name    : testWebNapiJSBridgeProxyNullUser
-     * @tc.desc    : test ArkWeb_JavaScriptBridgeData and ArkWeb_OnJavaScriptProxyCallback
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiJSBridgeProxyNullUser
+     * @tc.number SUB_WEB_NET_NAPI_JSBridgeProxy_0400
+     * @tc.desc   test ArkWeb_JavaScriptBridgeData and ArkWeb_OnJavaScriptProxyCallback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiJSBridgeProxyNullUser', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -570,12 +570,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_WEB_NET_NAPI_JSBridgeProxy_0500
-     * @tc.name    : testWebNapiJSBridgeProxyNullWeb
-     * @tc.desc    : test ArkWeb_JavaScriptBridgeData and ArkWeb_OnJavaScriptProxyCallback
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiJSBridgeProxyNullWeb
+     * @tc.number SUB_WEB_NET_NAPI_JSBridgeProxy_0500
+     * @tc.desc   test ArkWeb_JavaScriptBridgeData and ArkWeb_OnJavaScriptProxyCallback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiJSBridgeProxyNullWeb', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -593,12 +593,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_Web_Napi_WebMsgTypeTest_0100
-     * @tc.name    : testWebNapiWebMsgTypeEnumNone
-     * @tc.desc    : test ArkWeb_WebMessageType ARKWEB_NONE
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiWebMsgTypeEnumNone
+     * @tc.number SUB_Web_Napi_WebMsgTypeTest_0100
+     * @tc.desc   test ArkWeb_WebMessageType ARKWEB_NONE
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiWebMsgTypeEnumNone', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -616,12 +616,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_Web_Napi_WebMsgTypeTest_0200
-     * @tc.name    : testWebNapiWebMsgTypeEnumString
-     * @tc.desc    : test ArkWeb_WebMessageType ARKWEB_STRING
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiWebMsgTypeEnumString
+     * @tc.number SUB_Web_Napi_WebMsgTypeTest_0200
+     * @tc.desc   test ArkWeb_WebMessageType ARKWEB_STRING
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiWebMsgTypeEnumString', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -639,12 +639,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_Web_Napi_WebMsgTypeTest_0300
-     * @tc.name    : testWebNapiWebMsgTypeEnumBuffer
-     * @tc.desc    : test ArkWeb_WebMessageType ARKWEB_BUFFER
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiWebMsgTypeEnumBuffer
+     * @tc.number SUB_Web_Napi_WebMsgTypeTest_0300
+     * @tc.desc   test ArkWeb_WebMessageType ARKWEB_BUFFER
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiWebMsgTypeEnumBuffer', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -662,12 +662,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_Web_Napi_WebMsgApiTest_0100
-     * @tc.name    : testWebNapiWebMsgApiSize
-     * @tc.desc    : test ArkWeb_WebMessageAPI interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiWebMsgApiSize
+     * @tc.number SUB_Web_Napi_WebMsgApiTest_0100
+     * @tc.desc   test ArkWeb_WebMessageAPI interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiWebMsgApiSize', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -685,12 +685,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_Web_Napi_WebMsgApiTest_0200
-     * @tc.name    : testWebNapiWebMsgApiCreate
-     * @tc.desc    : test ArkWeb_WebMessageAPI interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiWebMsgApiCreate
+     * @tc.number SUB_Web_Napi_WebMsgApiTest_0200
+     * @tc.desc   test ArkWeb_WebMessageAPI interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiWebMsgApiCreate', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -708,12 +708,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_Web_Napi_WebMsgApiTest_0300
-     * @tc.name    : testWebNapiWebMsgApiDestroy
-     * @tc.desc    : test ArkWeb_WebMessageAPI interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiWebMsgApiDestroy
+     * @tc.number SUB_Web_Napi_WebMsgApiTest_0300
+     * @tc.desc   test ArkWeb_WebMessageAPI interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiWebMsgApiDestroy', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -731,12 +731,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_Web_Napi_WebMsgApiTest_0400
-     * @tc.name    : testWebNapiWebMsgApiSetType
-     * @tc.desc    : test ArkWeb_WebMessageAPI interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiWebMsgApiSetType
+     * @tc.number SUB_Web_Napi_WebMsgApiTest_0400
+     * @tc.desc   test ArkWeb_WebMessageAPI interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiWebMsgApiSetType', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -754,12 +754,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_Web_Napi_WebMsgApiTest_0500
-     * @tc.name    : testWebNapiWebMsgApiGetType
-     * @tc.desc    : test ArkWeb_WebMessageAPI interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiWebMsgApiGetType
+     * @tc.number SUB_Web_Napi_WebMsgApiTest_0500
+     * @tc.desc   test ArkWeb_WebMessageAPI interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiWebMsgApiGetType', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -777,12 +777,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_Web_Napi_WebMsgApiTest_0600
-     * @tc.name    : testWebNapiWebMsgApiSetData
-     * @tc.desc    : test ArkWeb_WebMessageAPI interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiWebMsgApiSetData
+     * @tc.number SUB_Web_Napi_WebMsgApiTest_0600
+     * @tc.desc   test ArkWeb_WebMessageAPI interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiWebMsgApiSetData', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -800,12 +800,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_Web_Napi_WebMsgApiTest_0700
-     * @tc.name    : testWebNapiWebMsgApiGetData
-     * @tc.desc    : test ArkWeb_WebMessageAPI interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiWebMsgApiGetData
+     * @tc.number SUB_Web_Napi_WebMsgApiTest_0700
+     * @tc.desc   test ArkWeb_WebMessageAPI interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiWebMsgApiGetData', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -823,12 +823,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_Web_Napi_WebJSValueApiTest_0100
-     * @tc.name    : testWebNapiWebJSValueApiSize
-     * @tc.desc    : test ArkWeb_JavaScriptValueAPI interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiWebJSValueApiSize
+     * @tc.number SUB_Web_Napi_WebJSValueApiTest_0100
+     * @tc.desc   test ArkWeb_JavaScriptValueAPI interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiWebJSValueApiSize', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -846,12 +846,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_Web_Napi_WebJSValueApiTest_0200
-     * @tc.name    : testWebNapiWebJSValueApiCreate
-     * @tc.desc    : test ArkWeb_JavaScriptValueAPI interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiWebJSValueApiCreate
+     * @tc.number SUB_Web_Napi_WebJSValueApiTest_0200
+     * @tc.desc   test ArkWeb_JavaScriptValueAPI interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiWebJSValueApiCreate', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -869,12 +869,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_Web_Napi_WebJSValue_0100
-     * @tc.name    : testWebNapiWebJSValueEnumNone
-     * @tc.desc    : test ArkWeb_JavaScriptValueType ARKWEB_JAVASCRIPT_NONE
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiWebJSValueEnumNone
+     * @tc.number SUB_Web_Napi_WebJSValue_0100
+     * @tc.desc   test ArkWeb_JavaScriptValueType ARKWEB_JAVASCRIPT_NONE
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiWebJSValueEnumNone', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -891,12 +891,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_WebJSValue_0200
-     * @tc.name    : testWebNapiWebJSValueEnumString
-     * @tc.desc    : test ArkWeb_JavaScriptValueType ARKWEB_JAVASCRIPT_STRING
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiWebJSValueEnumString
+     * @tc.number SUB_Web_Napi_WebJSValue_0200
+     * @tc.desc   test ArkWeb_JavaScriptValueType ARKWEB_JAVASCRIPT_STRING
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiWebJSValueEnumString', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -913,12 +913,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_WebJSValue_0300
-     * @tc.name    : testWebNapiWebJSValueEnumBool
-     * @tc.desc    : test ArkWeb_JavaScriptValueType ARKWEB_JAVASCRIPT_BOOL
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiWebJSValueEnumBool
+     * @tc.number SUB_Web_Napi_WebJSValue_0300
+     * @tc.desc   test ArkWeb_JavaScriptValueType ARKWEB_JAVASCRIPT_BOOL
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiWebJSValueEnumBool', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -935,12 +935,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_WebCtrlAPI_0100
-     * @tc.name    : testWebNapiControllerAPISize
-     * @tc.desc    : test ArkWeb_ControllerAPI interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiControllerAPISize
+     * @tc.number SUB_Web_Napi_WebCtrlAPI_0100
+     * @tc.desc   test ArkWeb_ControllerAPI interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiControllerAPISize', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -958,12 +958,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_Web_Napi_WebCtrlAPI_0200
-     * @tc.name    : testWebNapiControllerAPIRunJS
-     * @tc.desc    : test ArkWeb_ControllerAPI interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiControllerAPIRunJS
+     * @tc.number SUB_Web_Napi_WebCtrlAPI_0200
+     * @tc.desc   test ArkWeb_ControllerAPI interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiControllerAPIRunJS', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -980,12 +980,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_WebCtrlAPI_0300
-     * @tc.name    : testWebNapiControllerRegJSProxy
-     * @tc.desc    : test ArkWeb_ControllerAPI interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiControllerRegJSProxy
+     * @tc.number SUB_Web_Napi_WebCtrlAPI_0300
+     * @tc.desc   test ArkWeb_ControllerAPI interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiControllerRegJSProxy', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1003,12 +1003,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_Web_Napi_WebCtrlAPI_0400
-     * @tc.name    : testWebNapiControllerDelJSProxy
-     * @tc.desc    : test ArkWeb_ControllerAPI interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiControllerDelJSProxy
+     * @tc.number SUB_Web_Napi_WebCtrlAPI_0400
+     * @tc.desc   test ArkWeb_ControllerAPI interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiControllerDelJSProxy', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1025,12 +1025,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_WebCtrlAPI_0500
-     * @tc.name    : testWebNapiControllerRefresh
-     * @tc.desc    : test ArkWeb_ControllerAPI interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiControllerRefresh
+     * @tc.number SUB_Web_Napi_WebCtrlAPI_0500
+     * @tc.desc   test ArkWeb_ControllerAPI interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiControllerRefresh', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1047,12 +1047,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_WebCtrlAPI_0600
-     * @tc.name    : testWebNapiControllerRegAsyncJSProxy
-     * @tc.desc    : test ArkWeb_ControllerAPI interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiControllerRegAsyncJSProxy
+     * @tc.number SUB_Web_Napi_WebCtrlAPI_0600
+     * @tc.desc   test ArkWeb_ControllerAPI interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiControllerRegAsyncJSProxy', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1069,12 +1069,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_WebCtrlAPI_0700
-     * @tc.name    : testWebNapiControllerCreateWebMsgPort
-     * @tc.desc    : test ArkWeb_ControllerAPI interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiControllerCreateWebMsgPort
+     * @tc.number SUB_Web_Napi_WebCtrlAPI_0700
+     * @tc.desc   test ArkWeb_ControllerAPI interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiControllerCreateWebMsgPort', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1092,12 +1092,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_Web_Napi_WebCtrlAPI_0800
-     * @tc.name    : testWebNapiControllerDestroyWebMsgPort
-     * @tc.desc    : test ArkWeb_ControllerAPI interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiControllerDestroyWebMsgPort
+     * @tc.number SUB_Web_Napi_WebCtrlAPI_0800
+     * @tc.desc   test ArkWeb_ControllerAPI interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiControllerDestroyWebMsgPort', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1115,12 +1115,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_Web_Napi_WebCtrlAPI_0900
-     * @tc.name    : testWebNapiControllerPostWebMsg
-     * @tc.desc    : test ArkWeb_ControllerAPI interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiControllerPostWebMsg
+     * @tc.number SUB_Web_Napi_WebCtrlAPI_0900
+     * @tc.desc   test ArkWeb_ControllerAPI interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiControllerPostWebMsg', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1137,12 +1137,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_WebCtrlAPI_1000
-     * @tc.name    : testWebNapiControllerGetLast
-     * @tc.desc    : test ArkWeb_ControllerAPI interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiControllerGetLast
+     * @tc.number SUB_Web_Napi_WebCtrlAPI_1000
+     * @tc.desc   test ArkWeb_ControllerAPI interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiControllerGetLast', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1159,12 +1159,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_WebCtrlAPI_1100
-     * @tc.name    : testWebNapiControllerRegJSProxyEX
-     * @tc.desc    : test ArkWeb_ControllerAPI interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiControllerRegJSProxyEX
+     * @tc.number SUB_Web_Napi_WebCtrlAPI_1100
+     * @tc.desc   test ArkWeb_ControllerAPI interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiControllerRegJSProxyEX', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1181,12 +1181,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_WebCtrlAPI_1200
-     * @tc.name    : testWebNapiControllerRegAsyncJSProxyEX
-     * @tc.desc    : test ArkWeb_ControllerAPI interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiControllerRegAsyncJSProxyEX
+     * @tc.number SUB_Web_Napi_WebCtrlAPI_1200
+     * @tc.desc   test ArkWeb_ControllerAPI interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiControllerRegAsyncJSProxyEX', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1204,12 +1204,12 @@ export default function NativeInterfaceTest() {
       })
 
     /**
-     * @tc.number  : SUB_Web_Napi_JSObject_0100
-     * @tc.name    : testWebNapiJSObjectSize
-     * @tc.desc    : test ArkWeb_JavaScriptObject interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiJSObjectSize
+     * @tc.number SUB_Web_Napi_JSObject_0100
+     * @tc.desc   test ArkWeb_JavaScriptObject interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiJSObjectSize', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1226,12 +1226,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_JSObject_0200
-     * @tc.name    : testWebNapiJSObjectBuffer
-     * @tc.desc    : test ArkWeb_JavaScriptObject interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiJSObjectBuffer
+     * @tc.number SUB_Web_Napi_JSObject_0200
+     * @tc.desc   test ArkWeb_JavaScriptObject interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiJSObjectBuffer', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1248,12 +1248,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_JSObject_0300
-     * @tc.name    : testWebNapiJSObjectCallback
-     * @tc.desc    : test ArkWeb_JavaScriptObject interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiJSObjectCallback
+     * @tc.number SUB_Web_Napi_JSObject_0300
+     * @tc.desc   test ArkWeb_JavaScriptObject interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiJSObjectCallback', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1270,12 +1270,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_JSObject_0400
-     * @tc.name    : testWebNapiJSObjectUserData
-     * @tc.desc    : test ArkWeb_JavaScriptObject interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiJSObjectUserData
+     * @tc.number SUB_Web_Napi_JSObject_0400
+     * @tc.desc   test ArkWeb_JavaScriptObject interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiJSObjectUserData', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1292,12 +1292,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_ProxyMethod_0100
-     * @tc.name    : testWebNapiProxyMethodName
-     * @tc.desc    : test ArkWeb_ProxyMethod struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiProxyMethodName
+     * @tc.number SUB_Web_Napi_ProxyMethod_0100
+     * @tc.desc   test ArkWeb_ProxyMethod struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiProxyMethodName', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1314,12 +1314,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_ProxyMethod_0200
-     * @tc.name    : testWebNapiProxyMethodCallback
-     * @tc.desc    : test ArkWeb_ProxyMethod struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiProxyMethodCallback
+     * @tc.number SUB_Web_Napi_ProxyMethod_0200
+     * @tc.desc   test ArkWeb_ProxyMethod struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiProxyMethodCallback', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1336,12 +1336,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_ProxyMethod_0300
-     * @tc.name    : testWebNapiProxyMethodUserdata
-     * @tc.desc    : test ArkWeb_ProxyMethod struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiProxyMethodUserdata
+     * @tc.number SUB_Web_Napi_ProxyMethod_0300
+     * @tc.desc   test ArkWeb_ProxyMethod struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiProxyMethodUserdata', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1358,12 +1358,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_ProxyMethodWithResult_0100
-     * @tc.name    : testWebNapiProxyMethodWithResultName
-     * @tc.desc    : test ArkWeb_ProxyMethodWithResult struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiProxyMethodWithResultName
+     * @tc.number SUB_Web_Napi_ProxyMethodWithResult_0100
+     * @tc.desc   test ArkWeb_ProxyMethodWithResult struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiProxyMethodWithResultName', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1380,12 +1380,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_ProxyMethodWithResult_0200
-     * @tc.name    : testWebNapiProxyMethodWithResultCallback
-     * @tc.desc    : test ArkWeb_ProxyMethodWithResult struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiProxyMethodWithResultCallback
+     * @tc.number SUB_Web_Napi_ProxyMethodWithResult_0200
+     * @tc.desc   test ArkWeb_ProxyMethodWithResult struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiProxyMethodWithResultCallback', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1402,12 +1402,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_ProxyMethodWithResult_0300
-     * @tc.name    : testWebNapiProxyMethodWithResultUserdata
-     * @tc.desc    : test ArkWeb_ProxyMethodWithResult struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiProxyMethodWithResultUserdata
+     * @tc.number SUB_Web_Napi_ProxyMethodWithResult_0300
+     * @tc.desc   test ArkWeb_ProxyMethodWithResult struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiProxyMethodWithResultUserdata', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1424,12 +1424,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_ProxyObject_0100
-     * @tc.name    : testWebNapiProxyObjectName
-     * @tc.desc    : test ArkWeb_ProxyObject struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiProxyObjectName
+     * @tc.number SUB_Web_Napi_ProxyObject_0100
+     * @tc.desc   test ArkWeb_ProxyObject struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiProxyObjectName', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1446,12 +1446,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_ProxyObject_0200
-     * @tc.name    : testWebNapiProxyObjectMethodList
-     * @tc.desc    : test ArkWeb_ProxyObject struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiProxyObjectMethodList
+     * @tc.number SUB_Web_Napi_ProxyObject_0200
+     * @tc.desc   test ArkWeb_ProxyObject struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiProxyObjectMethodList', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1468,12 +1468,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_ProxyObject_0300
-     * @tc.name    : testWebNapiProxyObjectSize
-     * @tc.desc    : test ArkWeb_ProxyObject struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiProxyObjectSize
+     * @tc.number SUB_Web_Napi_ProxyObject_0300
+     * @tc.desc   test ArkWeb_ProxyObject struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiProxyObjectSize', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1490,12 +1490,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_ProxyObjectWithResult_0100
-     * @tc.name    : testWebNapiProxyObjectWithResultName
-     * @tc.desc    : test ArkWeb_ProxyObject struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiProxyObjectWithResultName
+     * @tc.number SUB_Web_Napi_ProxyObjectWithResult_0100
+     * @tc.desc   test ArkWeb_ProxyObject struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiProxyObjectWithResultName', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1512,12 +1512,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_ProxyObjectWithResult_0200
-     * @tc.name    : testWebNapiProxyObjectWithResultMethodList
-     * @tc.desc    : test ArkWeb_ProxyObject struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiProxyObjectWithResultMethodList
+     * @tc.number SUB_Web_Napi_ProxyObjectWithResult_0200
+     * @tc.desc   test ArkWeb_ProxyObject struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiProxyObjectWithResultMethodList', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1534,12 +1534,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_ProxyObjectWithResult_0300
-     * @tc.name    : testWebNapiProxyObjectWithResultSize
-     * @tc.desc    : test ArkWeb_ProxyObject struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiProxyObjectWithResultSize
+     * @tc.number SUB_Web_Napi_ProxyObjectWithResult_0300
+     * @tc.desc   test ArkWeb_ProxyObject struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiProxyObjectWithResultSize', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1556,12 +1556,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_ComponentAPI_0100
-     * @tc.name    : testWebNapiComponentAPISize
-     * @tc.desc    : test ArkWeb_ComponentAPI struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiComponentAPISize
+     * @tc.number SUB_Web_Napi_ComponentAPI_0100
+     * @tc.desc   test ArkWeb_ComponentAPI struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiComponentAPISize', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1578,12 +1578,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_ComponentAPI_0200
-     * @tc.name    : testWebNapiComponentAPIAttached
-     * @tc.desc    : test ArkWeb_ComponentAPI struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiComponentAPIAttached
+     * @tc.number SUB_Web_Napi_ComponentAPI_0200
+     * @tc.desc   test ArkWeb_ComponentAPI struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiComponentAPIAttached', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1600,12 +1600,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_ComponentAPI_0300
-     * @tc.name    : testWebNapiComponentAPIPageBegin
-     * @tc.desc    : test ArkWeb_ComponentAPI struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiComponentAPIPageBegin
+     * @tc.number SUB_Web_Napi_ComponentAPI_0300
+     * @tc.desc   test ArkWeb_ComponentAPI struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiComponentAPIPageBegin', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1622,12 +1622,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_ComponentAPI_0400
-     * @tc.name    : testWebNapiComponentAPIPageEnd
-     * @tc.desc    : test ArkWeb_ComponentAPI struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiComponentAPIPageEnd
+     * @tc.number SUB_Web_Napi_ComponentAPI_0400
+     * @tc.desc   test ArkWeb_ComponentAPI struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiComponentAPIPageEnd', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1644,12 +1644,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_ComponentAPI_0500
-     * @tc.name    : testWebNapiComponentAPIDestroy
-     * @tc.desc    : test ArkWeb_ComponentAPI struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiComponentAPIDestroy
+     * @tc.number SUB_Web_Napi_ComponentAPI_0500
+     * @tc.desc   test ArkWeb_ComponentAPI struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiComponentAPIDestroy', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1666,12 +1666,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_MessagePortAPI_0100
-     * @tc.name    : testWebNapiMessagePortAPISize
-     * @tc.desc    : test ArkWeb_WebMessagePortAPI struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiMessagePortAPISize
+     * @tc.number SUB_Web_Napi_MessagePortAPI_0100
+     * @tc.desc   test ArkWeb_WebMessagePortAPI struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiMessagePortAPISize', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1688,12 +1688,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_MessagePortAPI_0200
-     * @tc.name    : testWebNapiMessagePortAPIPost
-     * @tc.desc    : test ArkWeb_WebMessagePortAPI struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiMessagePortAPIPost
+     * @tc.number SUB_Web_Napi_MessagePortAPI_0200
+     * @tc.desc   test ArkWeb_WebMessagePortAPI struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiMessagePortAPIPost', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1710,12 +1710,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_MessagePortAPI_0300
-     * @tc.name    : testWebNapiMessagePortAPIClose
-     * @tc.desc    : test ArkWeb_WebMessagePortAPI struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiMessagePortAPIClose
+     * @tc.number SUB_Web_Napi_MessagePortAPI_0300
+     * @tc.desc   test ArkWeb_WebMessagePortAPI struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiMessagePortAPIClose', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1732,12 +1732,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_MessagePortAPI_0400
-     * @tc.name    : testWebNapiMessagePortAPISetHandler
-     * @tc.desc    : test ArkWeb_WebMessagePortAPI struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiMessagePortAPISetHandler
+     * @tc.number SUB_Web_Napi_MessagePortAPI_0400
+     * @tc.desc   test ArkWeb_WebMessagePortAPI struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiMessagePortAPISetHandler', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1754,12 +1754,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_CookieManagerAPI_0100
-     * @tc.name    : testWebNapiCookieManagerAPISize
-     * @tc.desc    : test ArkWeb_CookieManagerAPI struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiCookieManagerAPISize
+     * @tc.number SUB_Web_Napi_CookieManagerAPI_0100
+     * @tc.desc   test ArkWeb_CookieManagerAPI struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiCookieManagerAPISize', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1776,12 +1776,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_CookieManagerAPI_0200
-     * @tc.name    : testWebNapiCookieManagerAPIFetch
-     * @tc.desc    : test ArkWeb_CookieManagerAPI struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiCookieManagerAPIFetch
+     * @tc.number SUB_Web_Napi_CookieManagerAPI_0200
+     * @tc.desc   test ArkWeb_CookieManagerAPI struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiCookieManagerAPIFetch', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1798,12 +1798,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_CookieManagerAPI_0300
-     * @tc.name    : testWebNapiCookieManagerAPIConfig
-     * @tc.desc    : test ArkWeb_CookieManagerAPI struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiCookieManagerAPIConfig
+     * @tc.number SUB_Web_Napi_CookieManagerAPI_0300
+     * @tc.desc   test ArkWeb_CookieManagerAPI struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiCookieManagerAPIConfig', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1820,12 +1820,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_CookieManagerAPI_0400
-     * @tc.name    : testWebNapiCookieManagerAPIExist
-     * @tc.desc    : test ArkWeb_CookieManagerAPI struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiCookieManagerAPIExist
+     * @tc.number SUB_Web_Napi_CookieManagerAPI_0400
+     * @tc.desc   test ArkWeb_CookieManagerAPI struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiCookieManagerAPIExist', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1842,12 +1842,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_CookieManagerAPI_0500
-     * @tc.name    : testWebNapiCookieManagerAPIClearAll
-     * @tc.desc    : test ArkWeb_CookieManagerAPI struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiCookieManagerAPIClearAll
+     * @tc.number SUB_Web_Napi_CookieManagerAPI_0500
+     * @tc.desc   test ArkWeb_CookieManagerAPI struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiCookieManagerAPIClearAll', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1864,12 +1864,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_CookieManagerAPI_0600
-     * @tc.name    : testWebNapiCookieManagerAPIClearSession
-     * @tc.desc    : test ArkWeb_CookieManagerAPI struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiCookieManagerAPIClearSession
+     * @tc.number SUB_Web_Napi_CookieManagerAPI_0600
+     * @tc.desc   test ArkWeb_CookieManagerAPI struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiCookieManagerAPIClearSession', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1886,12 +1886,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_JavaScriptValueAPI_0100
-     * @tc.name    : testWebNapiJavaScriptValueAPISize
-     * @tc.desc    : test ArkWeb_JavaScriptValueAPI struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiJavaScriptValueAPISize
+     * @tc.number SUB_Web_Napi_JavaScriptValueAPI_0100
+     * @tc.desc   test ArkWeb_JavaScriptValueAPI struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiJavaScriptValueAPISize', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1908,12 +1908,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_JavaScriptValueAPI_0200
-     * @tc.name    : testWebNapiJavaScriptValueAPICreate
-     * @tc.desc    : test ArkWeb_JavaScriptValueAPI struct interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiJavaScriptValueAPICreate
+     * @tc.number SUB_Web_Napi_JavaScriptValueAPI_0200
+     * @tc.desc   test ArkWeb_JavaScriptValueAPI struct interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiJavaScriptValueAPICreate', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1930,12 +1930,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_RegisterJSProxy_0100
-     * @tc.name    : testWebNapiRegisterJSProxyNormal
-     * @tc.desc    : test OH_NativeArkWeb_RegisterAsyncThreadJavaScriptProxy interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiRegisterJSProxyNormal
+     * @tc.number SUB_Web_Napi_RegisterJSProxy_0100
+     * @tc.desc   test OH_NativeArkWeb_RegisterAsyncThreadJavaScriptProxy interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiRegisterJSProxyNormal', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1952,12 +1952,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_RegisterJSProxy_0200
-     * @tc.name    : testWebNapiRegisterJSProxyPermissionNull
-     * @tc.desc    : test OH_NativeArkWeb_RegisterAsyncThreadJavaScriptProxy interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiRegisterJSProxyPermissionNull
+     * @tc.number SUB_Web_Napi_RegisterJSProxy_0200
+     * @tc.desc   test OH_NativeArkWeb_RegisterAsyncThreadJavaScriptProxy interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiRegisterJSProxyPermissionNull', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1974,12 +1974,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_RegisterJSProxy_0300
-     * @tc.name    : testWebNapiRegisterJSProxyObjectNull
-     * @tc.desc    : test OH_NativeArkWeb_RegisterAsyncThreadJavaScriptProxy interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiRegisterJSProxyObjectNull
+     * @tc.number SUB_Web_Napi_RegisterJSProxy_0300
+     * @tc.desc   test OH_NativeArkWeb_RegisterAsyncThreadJavaScriptProxy interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiRegisterJSProxyObjectNull', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1996,12 +1996,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_RegisterJSProxy_0400
-     * @tc.name    : testWebNapiRegisterJSProxyWebNameNew
-     * @tc.desc    : test OH_NativeArkWeb_RegisterAsyncThreadJavaScriptProxy interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiRegisterJSProxyWebNameNew
+     * @tc.number SUB_Web_Napi_RegisterJSProxy_0400
+     * @tc.desc   test OH_NativeArkWeb_RegisterAsyncThreadJavaScriptProxy interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiRegisterJSProxyWebNameNew', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -2018,12 +2018,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_RegisterJSProxy_0500
-     * @tc.name    : testWebNapiRegisterJSProxyMethodSize0
-     * @tc.desc    : test OH_NativeArkWeb_RegisterAsyncThreadJavaScriptProxy interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiRegisterJSProxyMethodSize0
+     * @tc.number SUB_Web_Napi_RegisterJSProxy_0500
+     * @tc.desc   test OH_NativeArkWeb_RegisterAsyncThreadJavaScriptProxy interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiRegisterJSProxyMethodSize0', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -2040,12 +2040,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_ClearBlankLessCache_0100
-     * @tc.name    : testWebNapiClearBlankLessCache0
-     * @tc.desc    : test OH_NativeArkWeb_ClearBlanklessLoadingCache interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiClearBlankLessCache0
+     * @tc.number SUB_Web_Napi_ClearBlankLessCache_0100
+     * @tc.desc   test OH_NativeArkWeb_ClearBlanklessLoadingCache interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiClearBlankLessCache0', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -2062,12 +2062,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_ClearBlankLessCache_0200
-     * @tc.name    : testWebNapiClearBlankLessCacheNormal
-     * @tc.desc    : test OH_NativeArkWeb_ClearBlanklessLoadingCache interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiClearBlankLessCacheNormal
+     * @tc.number SUB_Web_Napi_ClearBlankLessCache_0200
+     * @tc.desc   test OH_NativeArkWeb_ClearBlanklessLoadingCache interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiClearBlankLessCacheNormal', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -2084,12 +2084,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_ClearBlankLessCache_0300
-     * @tc.name    : testWebNapiClearBlankLessCacheSize100
-     * @tc.desc    : test OH_NativeArkWeb_ClearBlanklessLoadingCache interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiClearBlankLessCacheSize100
+     * @tc.number SUB_Web_Napi_ClearBlankLessCache_0300
+     * @tc.desc   test OH_NativeArkWeb_ClearBlanklessLoadingCache interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiClearBlankLessCacheSize100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -2106,12 +2106,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_ClearBlankLessCache_0400
-     * @tc.name    : testWebNapiClearBlankLessCacheSize101
-     * @tc.desc    : test OH_NativeArkWeb_ClearBlanklessLoadingCache interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiClearBlankLessCacheSize101
+     * @tc.number SUB_Web_Napi_ClearBlankLessCache_0400
+     * @tc.desc   test OH_NativeArkWeb_ClearBlanklessLoadingCache interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiClearBlankLessCacheSize101', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -2128,12 +2128,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_ClearBlankLessCache_0500
-     * @tc.name    : testWebNapiClearBlankLessCacheNullKey
-     * @tc.desc    : test OH_NativeArkWeb_ClearBlanklessLoadingCache interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiClearBlankLessCacheNullKey
+     * @tc.number SUB_Web_Napi_ClearBlankLessCache_0500
+     * @tc.desc   test OH_NativeArkWeb_ClearBlanklessLoadingCache interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiClearBlankLessCacheNullKey', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -2150,12 +2150,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_SetBlankCacheCap_0100
-     * @tc.name    : testWebNapiSetBlankCacheCap0
-     * @tc.desc    : test OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiSetBlankCacheCap0
+     * @tc.number SUB_Web_Napi_SetBlankCacheCap_0100
+     * @tc.desc   test OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiSetBlankCacheCap0', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -2172,12 +2172,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_SetBlankCacheCap_0200
-     * @tc.name    : testWebNapiSetBlankCacheCap100
-     * @tc.desc    : test OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiSetBlankCacheCap100
+     * @tc.number SUB_Web_Napi_SetBlankCacheCap_0200
+     * @tc.desc   test OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiSetBlankCacheCap100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -2194,12 +2194,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_SetBlankCacheCap_0300
-     * @tc.name    : testWebNapiSetBlankCacheCapBigger
-     * @tc.desc    : test OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiSetBlankCacheCapBigger
+     * @tc.number SUB_Web_Napi_SetBlankCacheCap_0300
+     * @tc.desc   test OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiSetBlankCacheCapBigger', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -2216,12 +2216,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_SetBlankCacheCap_0400
-     * @tc.name    : testWebNapiSetBlankCacheCapSmaller
-     * @tc.desc    : test OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiSetBlankCacheCapSmaller
+     * @tc.number SUB_Web_Napi_SetBlankCacheCap_0400
+     * @tc.desc   test OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiSetBlankCacheCapSmaller', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -2238,12 +2238,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_SetBlankCacheCap_0500
-     * @tc.name    : testWebNapiSetBlankCacheCapDefault
-     * @tc.desc    : test OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiSetBlankCacheCapDefault
+     * @tc.number SUB_Web_Napi_SetBlankCacheCap_0500
+     * @tc.desc   test OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiSetBlankCacheCapDefault', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -2260,12 +2260,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_SaveCookieSync_0100
-     * @tc.name    : testWebNapiSaveCookieSyncSuccess
-     * @tc.desc    : test OH_ArkWebCookieManager_SaveCookieSync interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiSaveCookieSyncSuccess
+     * @tc.number SUB_Web_Napi_SaveCookieSync_0100
+     * @tc.desc   test OH_ArkWebCookieManager_SaveCookieSync interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiSaveCookieSyncSuccess', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -2282,12 +2282,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_SaveCookieSync_0200
-     * @tc.name    : testWebNapiSaveCookieSyncUninitCookieManager
-     * @tc.desc    : test OH_ArkWebCookieManager_SaveCookieSync interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiSaveCookieSyncUninitCookieManager
+     * @tc.number SUB_Web_Napi_SaveCookieSync_0200
+     * @tc.desc   test OH_ArkWebCookieManager_SaveCookieSync interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiSaveCookieSyncUninitCookieManager', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -2304,12 +2304,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_SaveCookieAsync_0100
-     * @tc.name    : testWebNapiSaveCookieAsyncSuccess
-     * @tc.desc    : test OH_ArkWebCookieManager_SaveCookieAsync interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiSaveCookieAsyncSuccess
+     * @tc.number SUB_Web_Napi_SaveCookieAsync_0100
+     * @tc.desc   test OH_ArkWebCookieManager_SaveCookieAsync interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiSaveCookieAsyncSuccess', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -2326,12 +2326,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_Web_Napi_SaveCookieAsync_0200
-     * @tc.name    : testWebNapiSaveCookieAsyncNullCallback
-     * @tc.desc    : test OH_ArkWebCookieManager_SaveCookieAsync interface
-     * @tc.level   : Level2
-     * @tc.size    : SMALLTEST
-     * @tc.type    : Function
+     * @tc.name   testWebNapiSaveCookieAsyncNullCallback
+     * @tc.number SUB_Web_Napi_SaveCookieAsync_0200
+     * @tc.desc   test OH_ArkWebCookieManager_SaveCookieAsync interface
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testWebNapiSaveCookieAsyncNullCallback', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -2348,12 +2348,12 @@ export default function NativeInterfaceTest() {
         }
       })
     /**
-     * @tc.number    SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_SYSTEM_DEFAULT
-     * @tc.name      testNativeArkWebSetActiveWebEngineVersion0100
-     * @tc.desc      test SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_SYSTEM_DEFAULT
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testNativeArkWebSetActiveWebEngineVersion0100
+     * @tc.number SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_SYSTEM_DEFAULT
+     * @tc.desc   test SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_SYSTEM_DEFAULT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNativeArkWebSetActiveWebEngineVersion0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2368,12 +2368,12 @@ export default function NativeInterfaceTest() {
       }
     })
     /**
-     * @tc.number    SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_ARKWEB_M114
-     * @tc.name      testNativeArkWebSetActiveWebEngineVersion0200
-     * @tc.desc      test SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_ARKWEB_M114
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testNativeArkWebSetActiveWebEngineVersion0200
+     * @tc.number SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_ARKWEB_M114
+     * @tc.desc   test SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_ARKWEB_M114
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNativeArkWebSetActiveWebEngineVersion0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2388,12 +2388,12 @@ export default function NativeInterfaceTest() {
       }
     })
     /**
-     * @tc.number    SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_ARKWEB_M132
-     * @tc.name      testNativeArkWebSetActiveWebEngineVersion0300
-     * @tc.desc      test SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_ARKWEB_M132
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testNativeArkWebSetActiveWebEngineVersion0300
+     * @tc.number SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_ARKWEB_M132
+     * @tc.desc   test SUB_OH_NativeArkWeb_SetActiveWebEngineVersion_ARKWEB_M132
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNativeArkWebSetActiveWebEngineVersion0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {

@@ -20,12 +20,12 @@ const OH_DRAWING_ERROR_INVALID_PARAMETER = 401;
 export default function BufferTextTest() {
   describe('BufferTextTest', () => {
     /**
-     * @tc.number  : SUB_OH_NativeBuffer_GetColorSpace_0100
-     * @tc.name    : SUB_OH_NativeBuffer_GetColorSpace_0100
-     * @tc.desc    : test SUB_OH_NativeBuffer_GetColorSpace success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBuffer_GetColorSpace_0100
+     * @tc.number SUB_OH_NativeBuffer_GetColorSpace_0100
+     * @tc.desc   test SUB_OH_NativeBuffer_GetColorSpace success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeBuffer_GetColorSpace_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -42,12 +42,12 @@ export default function BufferTextTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBuffer_GetColorSpace_0200
-     * @tc.name    : SUB_OH_NativeBuffer_GetColorSpace_0200
-     * @tc.desc    : test SUB_OH_NativeBuffer_GetColorSpace fail Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBuffer_GetColorSpace_0200
+     * @tc.number SUB_OH_NativeBuffer_GetColorSpace_0200
+     * @tc.desc   test SUB_OH_NativeBuffer_GetColorSpace fail Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeBuffer_GetColorSpace_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -64,12 +64,12 @@ export default function BufferTextTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBuffer_SetMetadataValue_0100
-     * @tc.name    : SUB_OH_NativeBuffer_SetMetadataValue_0100
-     * @tc.desc    : test SUB_OH_NativeBuffer_SetMetadataValue success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBuffer_SetMetadataValue_0100
+     * @tc.number SUB_OH_NativeBuffer_SetMetadataValue_0100
+     * @tc.desc   test SUB_OH_NativeBuffer_SetMetadataValue success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeBuffer_SetMetadataValue_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -86,12 +86,12 @@ export default function BufferTextTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBuffer_SetMetadataValue_0200
-     * @tc.name    : SUB_OH_NativeBuffer_SetMetadataValue_0200
-     * @tc.desc    : test SUB_OH_NativeBuffer_SetMetadataValue fail Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBuffer_SetMetadataValue_0200
+     * @tc.number SUB_OH_NativeBuffer_SetMetadataValue_0200
+     * @tc.desc   test SUB_OH_NativeBuffer_SetMetadataValue fail Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeBuffer_SetMetadataValue_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -108,12 +108,12 @@ export default function BufferTextTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBuffer_GetMetadataValue_0100
-     * @tc.name    : SUB_OH_NativeBuffer_GetMetadataValue_0100
-     * @tc.desc    : test SUB_OH_NativeBuffer_GetMetadataValue success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBuffer_GetMetadataValue_0100
+     * @tc.number SUB_OH_NativeBuffer_GetMetadataValue_0100
+     * @tc.desc   test SUB_OH_NativeBuffer_GetMetadataValue success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeBuffer_GetMetadataValue_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -130,12 +130,12 @@ export default function BufferTextTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBuffer_GetMetadataValueFail_0200
-     * @tc.name    : SUB_OH_NativeBuffer_GetMetadataValueFail_0200
-     * @tc.desc    : test SUB_OH_NativeBuffer_GetMetadataValue fail Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBuffer_GetMetadataValueFail_0200
+     * @tc.number SUB_OH_NativeBuffer_GetMetadataValueFail_0200
+     * @tc.desc   test SUB_OH_NativeBuffer_GetMetadataValue fail Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeBuffer_GetMetadataValueFail_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -152,12 +152,12 @@ export default function BufferTextTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_RunBufferGlyphs_0100
-     * @tc.name    : SUB_OH_Drawing_RunBufferGlyphs_0100
-     * @tc.desc    : test SUB_OH_Drawing_RunBufferGlyphs success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_RunBufferGlyphs_0100
+     * @tc.number SUB_OH_Drawing_RunBufferGlyphs_0100
+     * @tc.desc   test SUB_OH_Drawing_RunBufferGlyphs success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_RunBufferGlyphs_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -174,12 +174,12 @@ export default function BufferTextTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_RunBufferPos_0100
-     * @tc.name    : SUB_OH_Drawing_RunBufferPos_0100
-     * @tc.desc    : test SUB_OH_Drawing_RunBufferPos success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_RunBufferPos_0100
+     * @tc.number SUB_OH_Drawing_RunBufferPos_0100
+     * @tc.desc   test SUB_OH_Drawing_RunBufferPos success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_RunBufferPos_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -196,12 +196,12 @@ export default function BufferTextTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_RunBufferUtf8text_0100
-     * @tc.name    : SUB_OH_Drawing_RunBufferUtf8text_0100
-     * @tc.desc    : test SUB_OH_Drawing_RunBufferPos success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_RunBufferUtf8text_0100
+     * @tc.number SUB_OH_Drawing_RunBufferUtf8text_0100
+     * @tc.desc   test SUB_OH_Drawing_RunBufferPos success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_RunBufferUtf8text_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -218,12 +218,12 @@ export default function BufferTextTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_RunBufferClusters_0100
-     * @tc.name    : SUB_OH_Drawing_RunBufferClusters_0100
-     * @tc.desc    : test SUB_OH_Drawing_RunBufferClusters success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_RunBufferClusters_0100
+     * @tc.number SUB_OH_Drawing_RunBufferClusters_0100
+     * @tc.desc   test SUB_OH_Drawing_RunBufferClusters success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_RunBufferClusters_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -239,12 +239,12 @@ export default function BufferTextTest() {
         }
       })
     /**
-     * @tc.number  : SUB_OH_Drawing_SystemFontType_0100
-     * @tc.name    : SUB_OH_Drawing_SystemFontType_0100
-     * @tc.desc    : test SUB_OH_Drawing_SystemFontType success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_SystemFontType_0100
+     * @tc.number SUB_OH_Drawing_SystemFontType_0100
+     * @tc.desc   test SUB_OH_Drawing_SystemFontType success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_SystemFontType_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -261,12 +261,12 @@ export default function BufferTextTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_TextUndefinedGlyphDisplayDEFAULT_0100
-     * @tc.name    : SUB_OH_Drawing_TextUndefinedGlyphDisplayDEFAULT_0100
-     * @tc.desc    : test SUB_OH_Drawing_TextUndefinedGlyphDisplayDEFAULT success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_TextUndefinedGlyphDisplayDEFAULT_0100
+     * @tc.number SUB_OH_Drawing_TextUndefinedGlyphDisplayDEFAULT_0100
+     * @tc.desc   test SUB_OH_Drawing_TextUndefinedGlyphDisplayDEFAULT success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_TextUndefinedGlyphDisplayDEFAULT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -283,12 +283,12 @@ export default function BufferTextTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_TextUndefinedGlyphDisplayTOFU_0100
-     * @tc.name    : SUB_OH_Drawing_TextUndefinedGlyphDisplayTOFU_0100
-     * @tc.desc    : test SUB_OH_Drawing_TextUndefinedGlyphDisplayTOFU success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_TextUndefinedGlyphDisplayTOFU_0100
+     * @tc.number SUB_OH_Drawing_TextUndefinedGlyphDisplayTOFU_0100
+     * @tc.desc   test SUB_OH_Drawing_TextUndefinedGlyphDisplayTOFU success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_TextUndefinedGlyphDisplayTOFU_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -304,12 +304,12 @@ export default function BufferTextTest() {
         }
       })
     /**
-     * @tc.number  : SUB_OH_BufferHandle_0100
-     * @tc.name    : SUB_OH_BufferHandle_0100
-     * @tc.desc    : test SUB_OH_BufferHandle_0100 success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_BufferHandle_0100
+     * @tc.number SUB_OH_BufferHandle_0100
+     * @tc.desc   test SUB_OH_BufferHandle_0100 success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_BufferHandle_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -326,12 +326,12 @@ export default function BufferTextTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_BufferHandleWidth_0100
-     * @tc.name    : SUB_OH_BufferHandleWidth_0100
-     * @tc.desc    : test SUB_OH_BufferHandleWidth success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_BufferHandleWidth_0100
+     * @tc.number SUB_OH_BufferHandleWidth_0100
+     * @tc.desc   test SUB_OH_BufferHandleWidth success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_BufferHandleWidth_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -348,12 +348,12 @@ export default function BufferTextTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_BufferHandleStride_0100
-     * @tc.name    : SUB_OH_BufferHandleStride_0100
-     * @tc.desc    : test SUB_OH_BufferHandleStride success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_BufferHandleStride_0100
+     * @tc.number SUB_OH_BufferHandleStride_0100
+     * @tc.desc   test SUB_OH_BufferHandleStride success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_BufferHandleStride_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -370,12 +370,12 @@ export default function BufferTextTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_BufferHandleHeight_0100
-     * @tc.name    : SUB_OH_BufferHandleHeight_0100
-     * @tc.desc    : test SUB_OH_BufferHandleHeight success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_BufferHandleHeight_0100
+     * @tc.number SUB_OH_BufferHandleHeight_0100
+     * @tc.desc   test SUB_OH_BufferHandleHeight success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_BufferHandleHeight_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -392,12 +392,12 @@ export default function BufferTextTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_BufferHandleFormat_0100
-     * @tc.name    : SUB_OH_BufferHandleFormat_0100
-     * @tc.desc    : test SUB_OH_BufferHandleFormat success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_BufferHandleFormat_0100
+     * @tc.number SUB_OH_BufferHandleFormat_0100
+     * @tc.desc   test SUB_OH_BufferHandleFormat success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_BufferHandleFormat_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -414,12 +414,12 @@ export default function BufferTextTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_BufferHandleUsage_0100
-     * @tc.name    : SUB_OH_BufferHandleUsage_0100
-     * @tc.desc    : test SUB_OH_BufferHandleUsage success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_BufferHandleUsage_0100
+     * @tc.number SUB_OH_BufferHandleUsage_0100
+     * @tc.desc   test SUB_OH_BufferHandleUsage success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_BufferHandleUsage_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -436,12 +436,12 @@ export default function BufferTextTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_BufferHandleKey_0100
-     * @tc.name    : SUB_OH_BufferHandleKey_0100
-     * @tc.desc    : test SUB_OH_BufferHandleKey success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_BufferHandleKey_0100
+     * @tc.number SUB_OH_BufferHandleKey_0100
+     * @tc.desc   test SUB_OH_BufferHandleKey success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_BufferHandleKey_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -458,12 +458,12 @@ export default function BufferTextTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_BufferHandlePhyAddr_0100
-     * @tc.name    : SUB_OH_BufferHandlePhyAddr_0100
-     * @tc.desc    : test SUB_OH_BufferHandlePhyAddr success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_BufferHandlePhyAddr_0100
+     * @tc.number SUB_OH_BufferHandlePhyAddr_0100
+     * @tc.desc   test SUB_OH_BufferHandlePhyAddr success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_BufferHandlePhyAddr_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -480,12 +480,12 @@ export default function BufferTextTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_BufferHandleReserveFds_0100
-     * @tc.name    : SUB_OH_BufferHandleReserveFds_0100
-     * @tc.desc    : test SUB_OH_BufferHandleReserveFds success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_BufferHandleReserveFds_0100
+     * @tc.number SUB_OH_BufferHandleReserveFds_0100
+     * @tc.desc   test SUB_OH_BufferHandleReserveFds success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_BufferHandleReserveFds_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -502,12 +502,12 @@ export default function BufferTextTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_BufferHandleReserveInts_0100
-     * @tc.name    : SUB_OH_BufferHandleReserveInts_0100
-     * @tc.desc    : test SUB_OH_BufferHandleReserveInts success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_BufferHandleReserveInts_0100
+     * @tc.number SUB_OH_BufferHandleReserveInts_0100
+     * @tc.desc   test SUB_OH_BufferHandleReserveInts success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_BufferHandleReserveInts_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -524,12 +524,12 @@ export default function BufferTextTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_BufferHandleReserve_0100
-     * @tc.name    : SUB_OH_BufferHandleReserve_0100
-     * @tc.desc    : test SUB_OH_BufferHandleReserve success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_BufferHandleReserve_0100
+     * @tc.number SUB_OH_BufferHandleReserve_0100
+     * @tc.desc   test SUB_OH_BufferHandleReserve success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_BufferHandleReserve_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -546,12 +546,12 @@ export default function BufferTextTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBuffer_PlanesSuccess_0100
-     * @tc.name    : SUB_OH_NativeBuffer_PlanesSuccess_0100
-     * @tc.desc    : test SUB_OH_NativeBuffer_PlanesSuccess success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBuffer_PlanesSuccess_0100
+     * @tc.number SUB_OH_NativeBuffer_PlanesSuccess_0100
+     * @tc.desc   test SUB_OH_NativeBuffer_PlanesSuccess success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeBuffer_PlanesSuccess_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -568,12 +568,12 @@ export default function BufferTextTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBuffer_PlaneCount_0100
-     * @tc.name    : SUB_OH_NativeBuffer_PlaneCount_0100
-     * @tc.desc    : test SUB_OH_NativeBuffer_PlaneCount success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBuffer_PlaneCount_0100
+     * @tc.number SUB_OH_NativeBuffer_PlaneCount_0100
+     * @tc.desc   test SUB_OH_NativeBuffer_PlaneCount success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeBuffer_PlaneCount_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -590,12 +590,12 @@ export default function BufferTextTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBuffer_PlaneOffset_0100
-     * @tc.name    : SUB_OH_NativeBuffer_PlaneOffset_0100
-     * @tc.desc    : test SUB_OH_NativeBuffer_PlaneOffset success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBuffer_PlaneOffset_0100
+     * @tc.number SUB_OH_NativeBuffer_PlaneOffset_0100
+     * @tc.desc   test SUB_OH_NativeBuffer_PlaneOffset success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeBuffer_PlaneOffset_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -612,12 +612,12 @@ export default function BufferTextTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBuffer_PlaneColumnStride_0100
-     * @tc.name    : SUB_OH_NativeBuffer_PlaneColumnStride_0100
-     * @tc.desc    : test SUB_OH_NativeBuffer_PlaneColumnStride success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBuffer_PlaneColumnStride_0100
+     * @tc.number SUB_OH_NativeBuffer_PlaneColumnStride_0100
+     * @tc.desc   test SUB_OH_NativeBuffer_PlaneColumnStride success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeBuffer_PlaneColumnStride_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -634,12 +634,12 @@ export default function BufferTextTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBuffer_PlaneRowStride_0100
-     * @tc.name    : SUB_OH_NativeBuffer_PlaneRowStride_0100
-     * @tc.desc    : test SUB_OH_NativeBuffer_PlaneRowStride success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBuffer_PlaneRowStride_0100
+     * @tc.number SUB_OH_NativeBuffer_PlaneRowStride_0100
+     * @tc.desc   test SUB_OH_NativeBuffer_PlaneRowStride success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeBuffer_PlaneRowStride_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {

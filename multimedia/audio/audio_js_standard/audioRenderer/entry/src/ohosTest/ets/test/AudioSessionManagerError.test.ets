@@ -40,14 +40,14 @@ export default function audioSessionManagerErrorTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    /* *
-    * @tc.number    : SUB_AUDIO_AUDIOSESSIONMANAGER_ERROR_0100
-    * @tc.name      : SUB_AUDIO_AUDIOSESSIONMANAGER_ERROR_0100 6800101
-    * @tc.desc      : SUB_AUDIO_AUDIOSESSIONMANAGER_ERROR_0100 6800101
-    * @tc.size      : MEDIUMTEST
-    * @tc.type      : FUNCTION
-    * @tc.level     : LEVEL3
-    */
+    /**
+     * @tc.name   SUB_AUDIO_AUDIOSESSIONMANAGER_ERROR_0100
+     * @tc.number SUB_AUDIO_AUDIOSESSIONMANAGER_ERROR_0100
+     * @tc.desc   SUB_AUDIO_AUDIOSESSIONMANAGER_ERROR_0100 6800101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let audioSessionManager: audio.AudioSessionManager = audio.getAudioManager().getSessionManager();
 
@@ -65,14 +65,14 @@ export default function audioSessionManagerErrorTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_AUDIO_AUDIOSESSIONMANAGER_ERROR_0200
-    * @tc.name      : SUB_AUDIO_AUDIOSESSIONMANAGER_ERROR_0200 401
-    * @tc.desc      : SUB_AUDIO_AUDIOSESSIONMANAGER_ERROR_0200 401
-    * @tc.size      : MEDIUMTEST
-    * @tc.type      : FUNCTION
-    * @tc.level     : LEVEL3
-    */
+    /**
+     * @tc.name   SUB_AUDIO_AUDIOSESSIONMANAGER_ERROR_0200
+     * @tc.number SUB_AUDIO_AUDIOSESSIONMANAGER_ERROR_0200
+     * @tc.desc   SUB_AUDIO_AUDIOSESSIONMANAGER_ERROR_0200 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_ERROR_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let audioSessionManager: audio.AudioSessionManager = audio.getAudioManager().getSessionManager();
 
@@ -90,14 +90,14 @@ export default function audioSessionManagerErrorTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_AUDIO_AUDIOSESSIONMANAGER_ERROR_0300
-    * @tc.name      : SUB_AUDIO_AUDIOSESSIONMANAGER_ERROR_0300 6800101
-    * @tc.desc      : SUB_AUDIO_AUDIOSESSIONMANAGER_ERROR_0300 6800101
-    * @tc.size      : MEDIUMTEST
-    * @tc.type      : FUNCTION
-    * @tc.level     : LEVEL3
-    */
+    /**
+     * @tc.name   SUB_AUDIO_AUDIOSESSIONMANAGER_ERROR_0300
+     * @tc.number SUB_AUDIO_AUDIOSESSIONMANAGER_ERROR_0300
+     * @tc.desc   SUB_AUDIO_AUDIOSESSIONMANAGER_ERROR_0300 6800101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_ERROR_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let audioSessionManager: audio.AudioSessionManager = audio.getAudioManager().getSessionManager();
       audioSessionManager.on('audioSessionDeactivated', () => {});
@@ -116,14 +116,14 @@ export default function audioSessionManagerErrorTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_AUDIO_AUDIOSESSIONMANAGER_ERROR_0400
-    * @tc.name      : SUB_AUDIO_AUDIOSESSIONMANAGER_ERROR_0400 401
-    * @tc.desc      : SUB_AUDIO_AUDIOSESSIONMANAGER_ERROR_0400 401
-    * @tc.size      : MEDIUMTEST
-    * @tc.type      : FUNCTION
-    * @tc.level     : LEVEL3
-    */
+    /**
+     * @tc.name   SUB_AUDIO_AUDIOSESSIONMANAGER_ERROR_0400
+     * @tc.number SUB_AUDIO_AUDIOSESSIONMANAGER_ERROR_0400
+     * @tc.desc   SUB_AUDIO_AUDIOSESSIONMANAGER_ERROR_0400 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_ERROR_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let audioSessionManager: audio.AudioSessionManager = audio.getAudioManager().getSessionManager();
       audioSessionManager.on('audioSessionDeactivated', () => {});

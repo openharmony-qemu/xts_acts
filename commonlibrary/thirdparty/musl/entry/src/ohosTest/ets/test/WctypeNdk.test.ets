@@ -25,12 +25,12 @@ export default function wctypeNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWALNUM_0100
-     * @tc.name       : testMuslWctypeIswalnum001
-     * @tc.desc       : test iswalnum
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswalnum001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWALNUM_0100
+     * @tc.desc   test iswalnum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswalnum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = '1'
@@ -40,12 +40,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWALNUM_0200
-     * @tc.name       : testMuslWctypeIswalnum002
-     * @tc.desc       : test iswalnum
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswalnum002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWALNUM_0200
+     * @tc.desc   test iswalnum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswalnum002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'a'
@@ -54,12 +54,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWALNUM_0300
-     * @tc.name       : testMuslWctypeIswalnum003
-     * @tc.desc       : test iswalnum
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswalnum003
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWALNUM_0300
+     * @tc.desc   test iswalnum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswalnum003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = '?'
@@ -69,12 +69,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWALNUM_L_0100
-     * @tc.name       : testMuslWctypeIswalnumL001
-     * @tc.desc       : test iswalnumL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswalnumL001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWALNUM_L_0100
+     * @tc.desc   test iswalnumL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswalnumL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = '1'
@@ -84,12 +84,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWALNUM_L_0200
-     * @tc.name       : testMuslWctypeIswalnumL002
-     * @tc.desc       : test iswalnumL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswalnumL002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWALNUM_L_0200
+     * @tc.desc   test iswalnumL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswalnumL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'a'
@@ -98,12 +98,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWALNUM_L_0300
-     * @tc.name       : testMuslWctypeIswalnumL003
-     * @tc.desc       : test iswalnumL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswalnumL003
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWALNUM_L_0300
+     * @tc.desc   test iswalnumL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswalnumL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = '?'
@@ -114,12 +114,12 @@ export default function wctypeNdkTest() {
 
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWALPHA_0100
-     * @tc.name       : testMuslWctypeIswalpha001
-     * @tc.desc       : test iswalpha
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswalpha001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWALPHA_0100
+     * @tc.desc   test iswalpha
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswalpha001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = '1'
@@ -128,12 +128,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWALPHA_0200
-     * @tc.name       : testMuslWctypeIswalpha002
-     * @tc.desc       : test iswalpha
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswalpha002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWALPHA_0200
+     * @tc.desc   test iswalpha
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswalpha002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'a'
@@ -142,12 +142,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWALPHA_0300
-     * @tc.name       : testMuslWctypeIswalpha003
-     * @tc.desc       : test iswalpha
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswalpha003
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWALPHA_0300
+     * @tc.desc   test iswalpha
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswalpha003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = '?'
@@ -157,12 +157,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWALPHA_L_0100
-     * @tc.name       : testMuslWctypeIswalphaL001
-     * @tc.desc       : test iswalphal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswalphaL001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWALPHA_L_0100
+     * @tc.desc   test iswalphal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswalphaL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = '1'
@@ -171,12 +171,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWALPHA_L_0200
-     * @tc.name       : testMuslWctypeIswalphaL002
-     * @tc.desc       : test iswalphal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswalphaL002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWALPHA_L_0200
+     * @tc.desc   test iswalphal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswalphaL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'a'
@@ -185,12 +185,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWALPHA_L_0300
-     * @tc.name       : testMuslWctypeIswalphaL003
-     * @tc.desc       : test iswalphal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswalphaL003
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWALPHA_L_0300
+     * @tc.desc   test iswalphal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswalphaL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = '?'
@@ -201,12 +201,12 @@ export default function wctypeNdkTest() {
 
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWBLANK_0100
-     * @tc.name       : testMuslWctypeIswblank001
-     * @tc.desc       : test iswblank
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswblank001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWBLANK_0100
+     * @tc.desc   test iswblank
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswblank001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'a'
@@ -215,12 +215,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWBLANK_0200
-     * @tc.name       : testMuslWctypeIswblank002
-     * @tc.desc       : test iswblank
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswblank002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWBLANK_0200
+     * @tc.desc   test iswblank
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswblank002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = ' '
@@ -230,12 +230,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWBLANK_L_0100
-     * @tc.name       : testMuslWctypeIswblankL001
-     * @tc.desc       : test iswblankl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswblankL001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWBLANK_L_0100
+     * @tc.desc   test iswblankl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswblankL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'a'
@@ -244,12 +244,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWBLANK_L_0200
-     * @tc.name       : testMuslWctypeIswblankL002
-     * @tc.desc       : test iswblankl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswblankL002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWBLANK_L_0200
+     * @tc.desc   test iswblankl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswblankL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = ' '
@@ -259,12 +259,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWCNTRL_0100
-     * @tc.name       : testMuslWctypeIswcntrl001
-     * @tc.desc       : test iswcntrl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswcntrl001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWCNTRL_0100
+     * @tc.desc   test iswcntrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswcntrl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 0
@@ -273,12 +273,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWCNTRL_0200
-     * @tc.name       : testMuslWctypeIswcntrl002
-     * @tc.desc       : test iswcntrl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswcntrl002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWCNTRL_0200
+     * @tc.desc   test iswcntrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswcntrl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 31
@@ -287,12 +287,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWCNTRL_0300
-     * @tc.name       : testMuslWctypeIswcntrl003
-     * @tc.desc       : test iswcntrl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswcntrl003
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWCNTRL_0300
+     * @tc.desc   test iswcntrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswcntrl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 127
@@ -301,12 +301,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWCNTRL_0400
-     * @tc.name       : testMuslWctypeIswcntrl004
-     * @tc.desc       : test iswcntrl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswcntrl004
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWCNTRL_0400
+     * @tc.desc   test iswcntrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswcntrl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 32
@@ -317,12 +317,12 @@ export default function wctypeNdkTest() {
 
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWCNTRL_L_0100
-     * @tc.name       : testMuslWctypeIswcntrlL001
-     * @tc.desc       : test iswcntrll
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswcntrlL001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWCNTRL_L_0100
+     * @tc.desc   test iswcntrll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswcntrlL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 0
@@ -331,12 +331,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWCNTRL_L_0200
-     * @tc.name       : testMuslWctypeIswcntrlL002
-     * @tc.desc       : test iswcntrll
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswcntrlL002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWCNTRL_L_0200
+     * @tc.desc   test iswcntrll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswcntrlL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 31
@@ -345,12 +345,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWCNTRL_L_0300
-     * @tc.name       : testMuslWctypeIswcntrlL003
-     * @tc.desc       : test iswcntrll
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswcntrlL003
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWCNTRL_L_0300
+     * @tc.desc   test iswcntrll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswcntrlL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 127
@@ -359,12 +359,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWCNTRL_L_0400
-     * @tc.name       : testMuslWctypeIswcntrlL004
-     * @tc.desc       : test iswcntrll
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswcntrlL004
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWCNTRL_L_0400
+     * @tc.desc   test iswcntrll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswcntrlL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 32
@@ -375,12 +375,12 @@ export default function wctypeNdkTest() {
 
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWDIGIT_0100
-     * @tc.name       : testMuslWctypeIswdigit001
-     * @tc.desc       : test iswdigit
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswdigit001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWDIGIT_0100
+     * @tc.desc   test iswdigit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswdigit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = '1'
@@ -389,12 +389,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWDIGIT_0200
-     * @tc.name       : testMuslWctypeIswdigit002
-     * @tc.desc       : test iswdigit
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswdigit002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWDIGIT_0200
+     * @tc.desc   test iswdigit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswdigit002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'a'
@@ -404,12 +404,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWDIGIT_L_0100
-     * @tc.name       : testMuslWctypeIswdigitL001
-     * @tc.desc       : test iswdigitl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswdigitL001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWDIGIT_L_0100
+     * @tc.desc   test iswdigitl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswdigitL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = '1'
@@ -418,12 +418,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWDIGIT_L_0200
-     * @tc.name       : testMuslWctypeIswdigitL002
-     * @tc.desc       : test iswdigitl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswdigitL002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWDIGIT_L_0200
+     * @tc.desc   test iswdigitl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswdigitL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'a'
@@ -434,12 +434,12 @@ export default function wctypeNdkTest() {
 
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWGRAPH_L_0100
-     * @tc.name       : testMuslWctypeIswgraphL001
-     * @tc.desc       : test iswgraphl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswgraphL001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWGRAPH_L_0100
+     * @tc.desc   test iswgraphl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswgraphL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = '2'
@@ -448,12 +448,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWGRAPH_L_0200
-     * @tc.name       : testMuslWctypeIswgraphL002
-     * @tc.desc       : test iswgraphl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswgraphL002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWGRAPH_L_0200
+     * @tc.desc   test iswgraphl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswgraphL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'b'
@@ -462,12 +462,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWGRAPH_L_0300
-     * @tc.name       : testMuslWctypeIswgraphL003
-     * @tc.desc       : test iswgraphl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswgraphL003
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWGRAPH_L_0300
+     * @tc.desc   test iswgraphl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswgraphL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = ' '
@@ -476,12 +476,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWGRAPH_0100
-     * @tc.name       : testMuslWctypeIswgraph001
-     * @tc.desc       : test iswgraph
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswgraph001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWGRAPH_0100
+     * @tc.desc   test iswgraph
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswgraph001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = '2'
@@ -490,12 +490,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWGRAPH_0200
-     * @tc.name       : testMuslWctypeIswgraph002
-     * @tc.desc       : test iswgraph
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswgraph002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWGRAPH_0200
+     * @tc.desc   test iswgraph
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswgraph002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'b'
@@ -504,12 +504,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWGRAPH_0300
-     * @tc.name       : testMuslWctypeIswgraph003
-     * @tc.desc       : test iswgraph
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswgraph003
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWGRAPH_0300
+     * @tc.desc   test iswgraph
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswgraph003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = ' '
@@ -519,12 +519,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWLOWER_0100
-     * @tc.name       : testMuslWctypeIswlower001
-     * @tc.desc       : test iswlower
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswlower001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWLOWER_0100
+     * @tc.desc   test iswlower
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswlower001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'b'
@@ -533,12 +533,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWLOWER_0200
-     * @tc.name       : testMuslWctypeIswlower002
-     * @tc.desc       : test iswlower
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswlower002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWLOWER_0200
+     * @tc.desc   test iswlower
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswlower002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'B'
@@ -548,12 +548,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWLOWER_L_0100
-     * @tc.name       : testMuslWctypeIswlowerL001
-     * @tc.desc       : test iswlowerl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswlowerL001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWLOWER_L_0100
+     * @tc.desc   test iswlowerl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswlowerL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'b'
@@ -562,12 +562,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWLOWER_L_0200
-     * @tc.name       : testMuslWctypeIswlowerL002
-     * @tc.desc       : test iswlowerl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswlowerL002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWLOWER_L_0200
+     * @tc.desc   test iswlowerl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswlowerL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'B'
@@ -577,12 +577,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWPRINT_0100
-     * @tc.name       : testMuslWctypeIswprint001
-     * @tc.desc       : test iswprint
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswprint001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWPRINT_0100
+     * @tc.desc   test iswprint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswprint001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = '3'
@@ -591,12 +591,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWPRINT_0200
-     * @tc.name       : testMuslWctypeIswprint002
-     * @tc.desc       : test iswprint
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswprint002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWPRINT_0200
+     * @tc.desc   test iswprint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswprint002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'c'
@@ -605,12 +605,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWPRINT_0300
-     * @tc.name       : testMuslWctypeIswprint003
-     * @tc.desc       : test iswprint
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswprint003
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWPRINT_0300
+     * @tc.desc   test iswprint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswprint003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = ' '
@@ -619,12 +619,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWPRINT_0400
-     * @tc.name       : testMuslWctypeIswprint004
-     * @tc.desc       : test iswprint
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswprint004
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWPRINT_0400
+     * @tc.desc   test iswprint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswprint004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = '\t'
@@ -634,12 +634,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWPRINT_L_0100
-     * @tc.name       : testMuslWctypeIswprintL001
-     * @tc.desc       : test iswprintl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswprintL001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWPRINT_L_0100
+     * @tc.desc   test iswprintl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswprintL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = '3'
@@ -648,12 +648,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWPRINT_L_0200
-     * @tc.name       : testMuslWctypeIswprintL002
-     * @tc.desc       : test iswprintl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswprintL002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWPRINT_L_0200
+     * @tc.desc   test iswprintl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswprintL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'c'
@@ -662,12 +662,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWPRINT_L_0300
-     * @tc.name       : testMuslWctypeIswprintL003
-     * @tc.desc       : test iswprintl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswprintL003
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWPRINT_L_0300
+     * @tc.desc   test iswprintl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswprintL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = ' '
@@ -676,12 +676,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWPRINT_L_0400
-     * @tc.name       : testMuslWctypeIswprintL004
-     * @tc.desc       : test iswprintl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswprintL004
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWPRINT_L_0400
+     * @tc.desc   test iswprintl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswprintL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = '\t'
@@ -692,12 +692,12 @@ export default function wctypeNdkTest() {
 
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWPUNCT_0100
-     * @tc.name       : testMuslWctypeIswpunct001
-     * @tc.desc       : test iswpunct
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswpunct001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWPUNCT_0100
+     * @tc.desc   test iswpunct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswpunct001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = '/'
@@ -706,12 +706,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWPUNCT_0200
-     * @tc.name       : testMuslWctypeIswpunct002
-     * @tc.desc       : test iswpunct
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswpunct002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWPUNCT_0200
+     * @tc.desc   test iswpunct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswpunct002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'a'
@@ -720,12 +720,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWPUNCT_L_0100
-     * @tc.name       : testMuslWctypeIswpunctL001
-     * @tc.desc       : test iswpunctl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswpunctL001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWPUNCT_L_0100
+     * @tc.desc   test iswpunctl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswpunctL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = '/'
@@ -734,12 +734,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWPUNCT_L_0200
-     * @tc.name       : testMuslWctypeIswpunctL002
-     * @tc.desc       : test iswpunctl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswpunctL002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWPUNCT_L_0200
+     * @tc.desc   test iswpunctl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswpunctL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'a'
@@ -748,12 +748,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWSPACE_0100
-     * @tc.name       : testMuslWctypeIswspace001
-     * @tc.desc       : test iswspace
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswspace001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWSPACE_0100
+     * @tc.desc   test iswspace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswspace001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = '\v'
@@ -762,12 +762,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWSPACE_0200
-     * @tc.name       : testMuslWctypeIswspace002
-     * @tc.desc       : test iswspace
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswspace002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWSPACE_0200
+     * @tc.desc   test iswspace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswspace002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'v'
@@ -776,12 +776,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWSPACE_L_0100
-     * @tc.name       : testMuslWctypeIswspaceL001
-     * @tc.desc       : test iswspacel
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswspaceL001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWSPACE_L_0100
+     * @tc.desc   test iswspacel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswspaceL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = '\v'
@@ -790,12 +790,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWSPACE_L_0200
-     * @tc.name       : testMuslWctypeIswspaceL002
-     * @tc.desc       : test iswspacel
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswspaceL002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWSPACE_L_0200
+     * @tc.desc   test iswspacel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswspaceL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'v'
@@ -806,12 +806,12 @@ export default function wctypeNdkTest() {
 
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWUPPER_L_0100
-     * @tc.name       : testMuslWctypeIswupperL001
-     * @tc.desc       : test iswupperl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswupperL001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWUPPER_L_0100
+     * @tc.desc   test iswupperl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswupperL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'A'
@@ -820,12 +820,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWUPPER_L_0200
-     * @tc.name       : testMuslWctypeIswupperL002
-     * @tc.desc       : test iswupperl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswupperL002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWUPPER_L_0200
+     * @tc.desc   test iswupperl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswupperL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'a'
@@ -835,12 +835,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWUPPER_0100
-     * @tc.name       : testMuslWctypeIswupper001
-     * @tc.desc       : test iswupper
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswupper001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWUPPER_0100
+     * @tc.desc   test iswupper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswupper001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'A'
@@ -849,12 +849,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWUPPER_0200
-     * @tc.name       : testMuslWctypeIswupper002
-     * @tc.desc       : test iswupper
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswupper002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWUPPER_0200
+     * @tc.desc   test iswupper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswupper002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'a'
@@ -864,12 +864,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWCTYPE_0100
-     * @tc.name       : testMuslWctypeIswctype001
-     * @tc.desc       : test iswctype
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswctype001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWCTYPE_0100
+     * @tc.desc   test iswctype
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswctype001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'A'
@@ -879,12 +879,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWCTYPE_0200
-     * @tc.name       : testMuslWctypeIswctype002
-     * @tc.desc       : test iswctype
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswctype002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWCTYPE_0200
+     * @tc.desc   test iswctype
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswctype002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'a'
@@ -894,12 +894,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWCTYPE_L_0100
-     * @tc.name       : testMuslWctypeIswctypeL001
-     * @tc.desc       : test iswctype_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswctypeL001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWCTYPE_L_0100
+     * @tc.desc   test iswctype_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswctypeL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'A'
@@ -909,12 +909,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWCTYPE_L_0200
-     * @tc.name       : testMuslWctypeIswctypeL002
-     * @tc.desc       : test iswctype_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswctypeL002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWCTYPE_L_0200
+     * @tc.desc   test iswctype_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswctypeL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'a'
@@ -925,12 +925,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWXDIGIT_0100
-     * @tc.name       : testMuslWctypeIswxdigit001
-     * @tc.desc       : test iswxdigit
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswxdigit001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWXDIGIT_0100
+     * @tc.desc   test iswxdigit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswxdigit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = '6'
@@ -939,12 +939,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWXDIGIT_0200
-     * @tc.name       : testMuslWctypeIswxdigit002
-     * @tc.desc       : test iswxdigit
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswxdigit002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWXDIGIT_0200
+     * @tc.desc   test iswxdigit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswxdigit002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'L'
@@ -954,12 +954,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWXDIGIT_L_0100
-     * @tc.name       : testMuslWctypeIswxdigitL001
-     * @tc.desc       : test iswxdigitl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswxdigitL001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWXDIGIT_L_0100
+     * @tc.desc   test iswxdigitl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswxdigitL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = '6'
@@ -968,12 +968,12 @@ export default function wctypeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_ISWXDIGIT_L_0200
-     * @tc.name       : testMuslWctypeIswxdigitL002
-     * @tc.desc       : test iswxdigitl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeIswxdigitL002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_ISWXDIGIT_L_0200
+     * @tc.desc   test iswxdigitl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeIswxdigitL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let b = 'L'
@@ -983,12 +983,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_TOWCTRANS_0100
-     * @tc.name       : testMuslWctypeTowctrans001
-     * @tc.desc       : test towctrans
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslWctypeTowctrans001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_TOWCTRANS_0100
+     * @tc.desc   test towctrans
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeTowctrans001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0;
@@ -999,12 +999,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_TOWCTRANS_0200
-     * @tc.name       : testMuslWctypeTowctrans002
-     * @tc.desc       : test towctrans
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslWctypeTowctrans002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_TOWCTRANS_0200
+     * @tc.desc   test towctrans
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeTowctrans002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 1;
@@ -1015,12 +1015,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_TOWCTRANS_0300
-     * @tc.name       : testMuslWctypeTowctrans003
-     * @tc.desc       : test towctrans
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslWctypeTowctrans003
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_TOWCTRANS_0300
+     * @tc.desc   test towctrans
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeTowctrans003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -1;
@@ -1031,12 +1031,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_TOWCTRANSL_0100
-     * @tc.name       : testMuslWctypeTowctransL001
-     * @tc.desc       : test towctrans_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslWctypeTowctransL001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_TOWCTRANSL_0100
+     * @tc.desc   test towctrans_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeTowctransL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0;
@@ -1047,12 +1047,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_TOWCTRANSL_0200
-     * @tc.name       : testMuslWctypeTowctransL002
-     * @tc.desc       : test towctrans_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslWctypeTowctransL002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_TOWCTRANSL_0200
+     * @tc.desc   test towctrans_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeTowctransL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 1;
@@ -1063,12 +1063,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_TOWCTRANSL_0300
-     * @tc.name       : testMuslWctypeTowctransL003
-     * @tc.desc       : test towctrans_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslWctypeTowctransL003
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_TOWCTRANSL_0300
+     * @tc.desc   test towctrans_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeTowctransL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -1;
@@ -1080,12 +1080,12 @@ export default function wctypeNdkTest() {
 
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_TOWLOWERL_0100
-     * @tc.name       : testMuslWctypeTowlowerL001
-     * @tc.desc       : test towlower_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslWctypeTowlowerL001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_TOWLOWERL_0100
+     * @tc.desc   test towlower_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeTowlowerL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0;
@@ -1096,12 +1096,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_TOWLOWERL_0200
-     * @tc.name       : testMuslWctypeTowlowerL002
-     * @tc.desc       : test towlower_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslWctypeTowlowerL002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_TOWLOWERL_0200
+     * @tc.desc   test towlower_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeTowlowerL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 1;
@@ -1112,12 +1112,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_TOWLOWERL_0300
-     * @tc.name       : testMuslWctypeTowlowerL003
-     * @tc.desc       : test towlower_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslWctypeTowlowerL003
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_TOWLOWERL_0300
+     * @tc.desc   test towlower_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeTowlowerL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 2;
@@ -1128,12 +1128,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_TOWLOWERL_0400
-     * @tc.name       : testMuslWctypeTowlowerL004
-     * @tc.desc       : test towlower_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslWctypeTowlowerL004
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_TOWLOWERL_0400
+     * @tc.desc   test towlower_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeTowlowerL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -1;
@@ -1144,12 +1144,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_TOWUPPERL_0100
-     * @tc.name       : testMuslWctypeTowupperL001
-     * @tc.desc       : test towupper_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslWctypeTowupperL001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_TOWUPPERL_0100
+     * @tc.desc   test towupper_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeTowupperL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0;
@@ -1160,12 +1160,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_TOWUPPERL_0200
-     * @tc.name       : testMuslWctypeTowupperL002
-     * @tc.desc       : test towupper_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslWctypeTowupperL002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_TOWUPPERL_0200
+     * @tc.desc   test towupper_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeTowupperL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 1;
@@ -1176,12 +1176,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_TOWUPPERL_0300
-     * @tc.name       : testMuslWctypeTowupperL003
-     * @tc.desc       : test towupper_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslWctypeTowupperL003
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_TOWUPPERL_0300
+     * @tc.desc   test towupper_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeTowupperL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 2;
@@ -1192,12 +1192,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_TOWUPPERL_0400
-     * @tc.name       : testMuslWctypeTowupperL004
-     * @tc.desc       : test towupper_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslWctypeTowupperL004
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_TOWUPPERL_0400
+     * @tc.desc   test towupper_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeTowupperL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -1;
@@ -1208,12 +1208,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_WCTRANS_0100
-     * @tc.name       : testMuslWctypeWctrans001
-     * @tc.desc       : test wctrans
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslWctypeWctrans001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_WCTRANS_0100
+     * @tc.desc   test wctrans
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeWctrans001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0;
@@ -1224,12 +1224,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_WCTRANS_0200
-     * @tc.name       : testMuslWctypeWctrans002
-     * @tc.desc       : test wctrans
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslWctypeWctrans002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_WCTRANS_0200
+     * @tc.desc   test wctrans
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeWctrans002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -1;
@@ -1240,12 +1240,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_WCTRANSL_0100
-     * @tc.name       : testMuslWctypeWctransL001
-     * @tc.desc       : test wctrans_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslWctypeWctransL001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_WCTRANSL_0100
+     * @tc.desc   test wctrans_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeWctransL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0;
@@ -1256,12 +1256,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_WCTRANSL_0200
-     * @tc.name       : testMuslWctypeWctransL002
-     * @tc.desc       : test wctrans_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslWctypeWctransL002
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_WCTRANSL_0200
+     * @tc.desc   test wctrans_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeWctransL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -1;
@@ -1272,12 +1272,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_WCTYPE_0100
-     * @tc.name       : testMuslWctypeWctype001
-     * @tc.desc       : test wctype
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeWctype001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_WCTYPE_0100
+     * @tc.desc   test wctype
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeWctype001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0;
@@ -1288,12 +1288,12 @@ export default function wctypeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCTYPE_WCTYPEL_0100
-     * @tc.name       : testMuslWctypeWctypeL001
-     * @tc.desc       : test wctype_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWctypeWctypeL001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCTYPE_WCTYPEL_0100
+     * @tc.desc   test wctype_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWctypeWctypeL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0;

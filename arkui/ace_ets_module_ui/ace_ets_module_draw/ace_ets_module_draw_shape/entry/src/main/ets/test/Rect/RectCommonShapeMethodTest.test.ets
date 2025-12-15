@@ -45,12 +45,12 @@ export default function RectCommonShapeMethodTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_RectCommonShapeMethodTest_0010
-     * @tc.name: RectCommonShapeMethodTest_0010
-     * @tc.desc: RectAPI 
-     * @tc.level: Level 0
-     * @tc.type : Rect
-     * @tc.size : RectTest
+     * @tc.name   RectCommonShapeMethodTest_0010
+     * @tc.number SUB_ARKUI_API_RectCommonShapeMethodTest_0010
+     * @tc.desc   RectAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RectCommonShapeMethodTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('[RectCommonShapeMethodTest_0010] START');

@@ -26,52 +26,52 @@ export default function listListDirectionTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_LISTDIRECTION_0100
-     * @tc.name       : testListListDirection001
-     * @tc.desc       : testing listDirection for list with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListListDirection001
+     * @tc.number SUB_ARKUI_CAPI_LIST_LISTDIRECTION_0100
+     * @tc.desc   testing listDirection for list with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListListDirection001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListListDirection001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_LISTDIRECTION_0200
-     * @tc.name       : testListListDirection002
-     * @tc.desc       : testing listDirection for list with ARKUI_AXIS_HORIZONTAL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListListDirection002
+     * @tc.number SUB_ARKUI_CAPI_LIST_LISTDIRECTION_0200
+     * @tc.desc   testing listDirection for list with ARKUI_AXIS_HORIZONTAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListListDirection002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListListDirection002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_LISTDIRECTION_0300
-     * @tc.name       : testListListDirection003
-     * @tc.desc       : testing listDirection for list with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testListListDirection003
+     * @tc.number SUB_ARKUI_CAPI_LIST_LISTDIRECTION_0300
+     * @tc.desc   testing listDirection for list with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListListDirection003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListListDirection003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_LISTDIRECTION_0400
-     * @tc.name       : testListListDirection004
-     * @tc.desc       : testing listDirection for list with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testListListDirection004
+     * @tc.number SUB_ARKUI_CAPI_LIST_LISTDIRECTION_0400
+     * @tc.desc   testing listDirection for list with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListListDirection004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListListDirection004()).assertEqual(0)

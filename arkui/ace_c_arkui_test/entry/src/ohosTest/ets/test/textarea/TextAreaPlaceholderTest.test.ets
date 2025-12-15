@@ -26,13 +26,13 @@ export default function textAreaPlaceholderTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_PLACEHOLDER_0100
-     * @tc.name: testTextAreaPlaceholder001
-     * @tc.desc: testing PlaceHolder for textArea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaPlaceholder001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_PLACEHOLDER_0100
+     * @tc.desc   testing PlaceHolder for textArea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaPlaceholder001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaPlaceholder001()).assertEqual(0)

@@ -47,12 +47,12 @@ export default function LongPressGestureLongClickTest() {
     });
 
     /**
-     * @tc.number
-     * @tc.name      LongPressGestureLongClickTest_0010
-     * @tc.desc      api test TapGesture
-     * @tc.level:    Level
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   LongPressGestureLongClickTest_0010
+     * @tc.number LongPressGestureLongClickTest_0010
+     * @tc.desc   api test TapGesture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LongPressGestureLongClickTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('LongPressGestureLongClickTest_0010 START');

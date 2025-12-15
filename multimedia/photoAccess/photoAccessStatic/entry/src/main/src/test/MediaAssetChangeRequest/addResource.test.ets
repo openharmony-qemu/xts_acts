@@ -29,12 +29,12 @@ export default function addResource() {
   describe("addResource", (): void => {
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_STATIC_0000
-      * @tc.name    add_resource_change_request_static_000
-      * @tc.desc    add resource by ArrayBuffer
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   add_resource_change_request_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_STATIC_0000
+     * @tc.desc   add resource by ArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("add_resource_change_request_static_000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -66,12 +66,12 @@ export default function addResource() {
       })
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_STATIC_0100
-      * @tc.name    add_resource_change_request_static_001
-      * @tc.desc    add resource by invalid fileUri
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   add_resource_change_request_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_STATIC_0100
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("add_resource_change_request_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -97,12 +97,12 @@ export default function addResource() {
       })
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_STATIC_0200
-      * @tc.name    add_resource_change_request_static_002
-      * @tc.desc    add VIDEO resource by IMAGE_RESOURCE,error code is 13900002 or 401
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   add_resource_change_request_static_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_STATIC_0200
+     * @tc.desc   add VIDEO resource by IMAGE_RESOURCE,error code is 13900002 or 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('add_resource_change_request_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

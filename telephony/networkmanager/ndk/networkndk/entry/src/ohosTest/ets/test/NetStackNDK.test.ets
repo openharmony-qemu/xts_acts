@@ -111,12 +111,12 @@ export default function NetStackNDKTest() {
     })
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHNETSTACKCERTVERIFICATION_0100
-     * @tc.name   ：TestOHNetStackCertVerification_0100
+     * @tc.name   testOHNetStackCertVerification_0100
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCERTVERIFICATION_0100
      * @tc.desc   ：Certificate chain verification interface.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHNetStackCertVerification_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHNetStackCertVerification(CASE_INDEX_1, pemPath, derPath);
@@ -124,12 +124,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHNETSTACKCERTVERIFICATION_0200
-     * @tc.name   ：TestOHNetStackCertVerification_0200
+     * @tc.name   testOHNetStackCertVerification_0200
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCERTVERIFICATION_0200
      * @tc.desc   ：Certificate chain verification interface.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHNetStackCertVerification_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result : number = wsAPI.OHNetStackCertVerification(CASE_INDEX_2, pemPath, derPath);
@@ -137,12 +137,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHNETSTACKCERTVERIFICATION_0300
-     * @tc.name   ：TestOHNetStackCertVerification_0300
+     * @tc.name   testOHNetStackCertVerification_0300
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCERTVERIFICATION_0300
      * @tc.desc   ：Certificate chain verification interface.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHNetStackCertVerification_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHNetStackCertVerification(CASE_INDEX_3, pemPath, derPath);
@@ -150,12 +150,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHNETSTACKCERTVERIFICATION_0400
-     * @tc.name   ：TestOHNetStackCertVerification_0400
+     * @tc.name   testOHNetStackCertVerification_0400
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCERTVERIFICATION_0400
      * @tc.desc   ：Certificate chain verification interface.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHNetStackCertVerification_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHNetStackCertVerification(CASE_INDEX_4, pemPath, derPath);
@@ -163,12 +163,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHNETSTACKCERTVERIFICATION_0500
-     * @tc.name   ：TestOHNetStackCertVerification_0500
+     * @tc.name   testOHNetStackCertVerification_0500
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCERTVERIFICATION_0500
      * @tc.desc   ：Certificate chain verification interface.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHNetStackCertVerification_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHNetStackCertVerification(CASE_INDEX_5, pemPath, derPath);
@@ -176,12 +176,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHNETSTACKCERTVERIFICATION_0600
-     * @tc.name   ：TestOHNetStackCertVerification_0600
+     * @tc.name   testOHNetStackCertVerification_0600
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCERTVERIFICATION_0600
      * @tc.desc   ：Certificate chain verification interface.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHNetStackCertVerification_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHNetStackCertVerification(CASE_INDEX_6, pemPath, derPath);
@@ -189,12 +189,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHNETSTACKCERTVERIFICATION_0700
-     * @tc.name   ：TestOHNetStackCertVerification_0700
+     * @tc.name   testOHNetStackCertVerification_0700
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCERTVERIFICATION_0700
      * @tc.desc   ：Certificate chain verification interface.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHNetStackCertVerification_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHNetStackCertVerification(CASE_INDEX_7, pemPath, derPath);
@@ -202,12 +202,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHNETSTACKCERTVERIFICATION_0800
-     * @tc.name   ：TestOHNetStackCertVerification_0800
+     * @tc.name   testOHNetStackCertVerification_0800
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCERTVERIFICATION_0800
      * @tc.desc   ：Certificate chain verification interface.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHNetStackCertVerification_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHNetStackCertVerification(CASE_INDEX_8, pemPath, derPath);
@@ -215,12 +215,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHNETSTACKCERTVERIFICATION_0900
-     * @tc.name   ：TestOHNetStackCertVerification_0900
+     * @tc.name   testOHNetStackCertVerification_0900
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCERTVERIFICATION_0900
      * @tc.desc   ：Certificate chain verification interface.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHNetStackCertVerification_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHNetStackCertVerification(CASE_INDEX_9, pemPath, derPath);
@@ -228,12 +228,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHNETSTACKCERTVERIFICATION_1000
-     * @tc.name   ：TestOHNetStackCertVerification_1000
+     * @tc.name   testOHNetStackCertVerification_1000
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCERTVERIFICATION_1000
      * @tc.desc   ：Certificate chain verification interface.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHNetStackCertVerification_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHNetStackCertVerification(CASE_INDEX_10, pemPath, derPath);
@@ -241,12 +241,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHNETSTACKCERTVERIFICATION_1100
-     * @tc.name   ：TestOHNetStackCertVerification_1100
+     * @tc.name   testOHNetStackCertVerification_1100
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCERTVERIFICATION_1100
      * @tc.desc   ：Certificate chain verification interface.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHNetStackCertVerification_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHNetStackCertVerification(CASE_INDEX_11, pemPath, derPath);
@@ -254,12 +254,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHNETSTACKGETPINSETFORHOSTNAME_0100
-     * @tc.name   : testOHNetStackGetPinSetForHostName_0100
+     * @tc.name   testOHNetStackGetPinSetForHostName_0100
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKGETPINSETFORHOSTNAME_0100
      * @tc.desc   ：Get certificate interface.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHNetStackGetPinSetForHostName_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result : number = wsAPI.OHNetStackGetPinSetForHostName(CASE_INDEX_1, "www.example.com".toString());
@@ -267,12 +267,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHNETSTACKGETPINSETFORHOSTNAME_0200
-     * @tc.name   : testOHNetStackGetPinSetForHostName_0200
+     * @tc.name   testOHNetStackGetPinSetForHostName_0200
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKGETPINSETFORHOSTNAME_0200
      * @tc.desc   ：Get certificate interface.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHNetStackGetPinSetForHostName_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHNetStackGetPinSetForHostName(CASE_INDEX_2, "www.example.com".toString());
@@ -280,12 +280,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHNETSTACKGETPINSETFORHOSTNAME_0300
-     * @tc.name   : testOHNetStackGetPinSetForHostName_0300
+     * @tc.name   testOHNetStackGetPinSetForHostName_0300
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKGETPINSETFORHOSTNAME_0300
      * @tc.desc   ：Get certificate interface.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHNetStackGetPinSetForHostName_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHNetStackGetPinSetForHostName(CASE_INDEX_3, "www.example.com".toString());
@@ -293,12 +293,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHNETSTACKGETPINSETFORHOSTNAME_0400
-     * @tc.name   : testOHNetStackGetPinSetForHostName_0400
+     * @tc.name   testOHNetStackGetPinSetForHostName_0400
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKGETPINSETFORHOSTNAME_0400
      * @tc.desc   ：Get certificate interface.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHNetStackGetPinSetForHostName_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHNetStackGetPinSetForHostName(CASE_INDEX_4, "www.example.com".toString());
@@ -306,12 +306,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHNETSTACKGETPINSETFORHOSTNAME_0500
-     * @tc.name   : testOHNetStackGetPinSetForHostName_0500
+     * @tc.name   testOHNetStackGetPinSetForHostName_0500
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKGETPINSETFORHOSTNAME_0500
      * @tc.desc   ：Get certificate interface.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHNetStackGetPinSetForHostName_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : string = wsAPI.OHNetStackGetPinSetForHostName2("notexit.com".toString());
@@ -319,12 +319,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHNETSTACKGETPINSETFORHOSTNAME_0600
-     * @tc.name   : testOHNetStackGetPinSetForHostName_0600
+     * @tc.name   testOHNetStackGetPinSetForHostName_0600
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKGETPINSETFORHOSTNAME_0600
      * @tc.desc   ：Get certificate interface.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHNetStackGetPinSetForHostName_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : string = wsAPI.OHNetStackGetPinSetForHostName2("getonepin.com".toString());
@@ -332,12 +332,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHNETSTACKGETPINSETFORHOSTNAME_0700
-     * @tc.name   : testOHNetStackGetPinSetForHostName_0700
+     * @tc.name   testOHNetStackGetPinSetForHostName_0700
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKGETPINSETFORHOSTNAME_0700
      * @tc.desc   ：Get certificate interface.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHNetStackGetPinSetForHostName_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : string = wsAPI.OHNetStackGetPinSetForHostName2("getmultipin.com".toString());
@@ -345,12 +345,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHNETSTACKGETPINSETFORHOSTNAME_0800
-     * @tc.name   : testOHNetStackGetPinSetForHostName_0800
+     * @tc.name   testOHNetStackGetPinSetForHostName_0800
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKGETPINSETFORHOSTNAME_0800
      * @tc.desc   ：Get certificate interface.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHNetStackGetPinSetForHostName_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : string = wsAPI.OHNetStackGetPinSetForHostName2("getoverduepin.com".toString());
@@ -358,12 +358,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHNETSTACKGETCERTIFICATESFORHOSTNAME_0100
-     * @tc.name   : testOHNetStackGetCertificatesForHostName_0100
+     * @tc.name   testOHNetStackGetCertificatesForHostName_0100
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKGETCERTIFICATESFORHOSTNAME_0100
      * @tc.desc   ：Get certificate interface.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHNetStackGetCertificatesForHostName_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHNetStackGetCertificatesForHostName(CASE_INDEX_1, "www.example.com".toString());
@@ -371,12 +371,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHNETSTACKGETCERTIFICATESFORHOSTNAME_0200
-     * @tc.name   : testOHNetStackGetCertificatesForHostName_0200
+     * @tc.name   testOHNetStackGetCertificatesForHostName_0200
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKGETCERTIFICATESFORHOSTNAME_0200
      * @tc.desc   ：Get certificate interface.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHNetStackGetCertificatesForHostName_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHNetStackGetCertificatesForHostName(CASE_INDEX_2, "www.example.com".toString());
@@ -384,12 +384,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHNETSTACKGETCERTIFICATESFORHOSTNAME_0300
-     * @tc.name   : testOHNetStackGetCertificatesForHostName_0300
+     * @tc.name   testOHNetStackGetCertificatesForHostName_0300
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKGETCERTIFICATESFORHOSTNAME_0300
      * @tc.desc   ：Get certificate interface.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHNetStackGetCertificatesForHostName_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result : number = wsAPI.OHNetStackGetCertificatesForHostName(CASE_INDEX_3, "www.example.com".toString());
@@ -397,12 +397,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHNETSTACKGETCERTIFICATESFORHOSTNAME_0400
-     * @tc.name   : testOHNetStackGetCertificatesForHostName_0400
+     * @tc.name   testOHNetStackGetCertificatesForHostName_0400
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKGETCERTIFICATESFORHOSTNAME_0400
      * @tc.desc   ：Get certificate interface.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHNetStackGetCertificatesForHostName_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHNetStackGetCertificatesForHostName(CASE_INDEX_4, "www.example.com".toString());
@@ -410,12 +410,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHNETSTACKGETCERTIFICATESFORHOSTNAME_0500
-     * @tc.name   : testOHNetStackGetCertificatesForHostName_0500
+     * @tc.name   testOHNetStackGetCertificatesForHostName_0500
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKGETCERTIFICATESFORHOSTNAME_0500
      * @tc.desc   ：Get certificate interface.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHNetStackGetCertificatesForHostName_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : Array<string> = wsAPI.OHNetStackGetCertificatesForHostName2("notexit.com".toString());
@@ -423,12 +423,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHNETSTACKGETCERTIFICATESFORHOSTNAME_0600
-     * @tc.name   : testOHNetStackGetCertificatesForHostName_0600
+     * @tc.name   testOHNetStackGetCertificatesForHostName_0600
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKGETCERTIFICATESFORHOSTNAME_0600
      * @tc.desc   ：Get certificate interface.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHNetStackGetCertificatesForHostName_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : Array<string> = wsAPI.OHNetStackGetCertificatesForHostName2("getonecert.com".toString());
@@ -436,12 +436,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHNETSTACKGETCERTIFICATESFORHOSTNAME_0700
-     * @tc.name   : testOHNetStackGetCertificatesForHostName_0700
+     * @tc.name   testOHNetStackGetCertificatesForHostName_0700
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKGETCERTIFICATESFORHOSTNAME_0700
      * @tc.desc   ：Get certificate interface.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHNetStackGetCertificatesForHostName_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result : Array<string> = wsAPI.OHNetStackGetCertificatesForHostName2("getmulticert.com".toString());
@@ -449,24 +449,24 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHNETSTACKDESTROYCERTIFICATESCONTENT_0100
-     * @tc.name   : testOHNetStackDestroyCertificatesContent_0100
+     * @tc.name   testOHNetStackDestroyCertificatesContent_0100
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKDESTROYCERTIFICATESCONTENT_0100
      * @tc.desc   ：Get certificate interface.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHNetStackDestroyCertificatesContent_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       wsAPI.OHNetStackDestroyCertificatesContent();
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTCONSTRUCT_0100
-     * @tc.name   ：TestOHWebSocketClientConstruct_0100
+     * @tc.name   testOHWebSocketClientConstruct_0100
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTCONSTRUCT_0100
      * @tc.desc   ：The constructor for the Websocket client.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientConstruct_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHWebSocketClientConstruct(CASE_INDEX_1);
@@ -474,12 +474,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTCONSTRUCT_0200
-     * @tc.name   ：TestOHWebSocketClientConstruct_0200
+     * @tc.name   testOHWebSocketClientConstruct_0200
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTCONSTRUCT_0200
      * @tc.desc   ：The constructor for the Websocket client.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientConstruct_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHWebSocketClientConstruct(CASE_INDEX_2);
@@ -487,12 +487,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTCONSTRUCT_0300
-     * @tc.name   ：TestOHWebSocketClientConstruct_0300
+     * @tc.name   testOHWebSocketClientConstruct_0300
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTCONSTRUCT_0300
      * @tc.desc   ：The constructor for the Websocket client.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientConstruct_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHWebSocketClientConstruct(CASE_INDEX_3);
@@ -500,12 +500,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTCONSTRUCT_0400
-     * @tc.name   ：TestOHWebSocketClientConstruct_0400
+     * @tc.name   testOHWebSocketClientConstruct_0400
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTCONSTRUCT_0400
      * @tc.desc   ：The constructor for the Websocket client.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientConstruct_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHWebSocketClientConstruct(CASE_INDEX_4);
@@ -513,12 +513,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTCONSTRUCT_0500
-     * @tc.name   ：TestOHWebSocketClientConstruct_0500
+     * @tc.name   testOHWebSocketClientConstruct_0500
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTCONSTRUCT_0500
      * @tc.desc   ：The constructor for the Websocket client.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientConstruct_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHWebSocketClientConstruct(CASE_INDEX_5);
@@ -527,12 +527,12 @@ export default function NetStackNDKTest() {
 
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTADDHEADER_0100
-     * @tc.name   ：TestOHWebSocketClientAddHeader_0100
+     * @tc.name   testOHWebSocketClientAddHeader_0100
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTADDHEADER_0100
      * @tc.desc   ：Add the header information to the client client request.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientAddHeader_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number  = wsAPI.OHWebSocketClientAddHeader(CASE_INDEX_1);
@@ -540,12 +540,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTADDHEADER_0200
-     * @tc.name   ：TestOHWebSocketClientConstruct_0200
+     * @tc.name   testOHWebSocketClientAddHeader_0200
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTADDHEADER_0200
      * @tc.desc   ：Add the header information to the client client request.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientAddHeader_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number  = wsAPI.OHWebSocketClientAddHeader(CASE_INDEX_2);
@@ -553,12 +553,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTADDHEADER_0300
-     * @tc.name   ：TestOHWebSocketClientAddHeader_0300
+     * @tc.name   testOHWebSocketClientAddHeader_0300
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTADDHEADER_0300
      * @tc.desc   ：Add the header information to the client client request.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientAddHeader_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number  = wsAPI.OHWebSocketClientAddHeader(CASE_INDEX_3);
@@ -567,12 +567,12 @@ export default function NetStackNDKTest() {
 
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTCONNECT_0100
-     * @tc.name   ：TestOHWebSocketClientConnect_0100
+     * @tc.name   testOHWebSocketClientConnect_0100
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTCONNECT_0100
      * @tc.desc   ：Connect the client to the server.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientConnect_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHWebSocketClientConnect(CASE_INDEX_1);
@@ -580,12 +580,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTCONNECT_0200
-     * @tc.name   ：TestOHWebSocketClientConnect_0200
+     * @tc.name   testOHWebSocketClientConnect_0200
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTCONNECT_0200
      * @tc.desc   ：Connect the client to the server.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientConnect_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHWebSocketClientConnect(CASE_INDEX_2);
@@ -593,12 +593,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTCONNECT_0300
-     * @tc.name   ：TestOHWebSocketClientConnect_0300
+     * @tc.name   testOHWebSocketClientConnect_0300
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTCONNECT_0300
      * @tc.desc   ：Connect the client to the server.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientConnect_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHWebSocketClientConnect(CASE_INDEX_3);
@@ -606,12 +606,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTCONNECT_0400
-     * @tc.name   ：TestOHWebSocketClientConnect_0400
+     * @tc.name   testOHWebSocketClientConnect_0400
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTCONNECT_0400
      * @tc.desc   ：Connect the client to the server.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientConnect_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHWebSocketClientConnect(CASE_INDEX_4);
@@ -620,12 +620,12 @@ export default function NetStackNDKTest() {
 
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTSEND_0100
-     * @tc.name   ：TestOHWebSocketClientSend_0100
+     * @tc.name   testOHWebSocketClientSend_0100
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTSEND_0100
      * @tc.desc   ：The client sends data to the server.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientSend_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHWebSocketClientSend(CASE_INDEX_1);
@@ -633,12 +633,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTSEND_0200
-     * @tc.name   ：TestOHWebSocketClientSend_0200
+     * @tc.name   testOHWebSocketClientSend_0200
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTSEND_0200
      * @tc.desc   ：The client sends data to the server.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientSend_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHWebSocketClientSend(CASE_INDEX_2);
@@ -646,12 +646,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTSEND_0300
-     * @tc.name   ：TestOHWebSocketClientSend_0300
+     * @tc.name   testOHWebSocketClientSend_0300
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTSEND_0300
      * @tc.desc   ：The client sends data to the server.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientSend_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHWebSocketClientSend(CASE_INDEX_3);
@@ -659,12 +659,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTSEND_0400
-     * @tc.name   ：TestOHWebSocketClientSend_0400
+     * @tc.name   testOHWebSocketClientSend_0400
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTSEND_0400
      * @tc.desc   ：The client sends data to the server.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientSend_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHWebSocketClientSend(CASE_INDEX_4);
@@ -673,38 +673,38 @@ export default function NetStackNDKTest() {
 
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTCLOSE_0100
-     * @tc.name   ：TestOHWebSocketClientClose_0100
+     * @tc.name   testOHWebSocketClientClose_0100
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTCLOSE_0100
      * @tc.desc   ：The client actively closes the websocket connection.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientClose_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHWebSocketClientClose(CASE_INDEX_1);
       expect(result).assertEqual(WEBSOCKET_OK);
     });
-    /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTCLOSE_0200
-     * @tc.name   ：TestOHWebSocketClientClose_0200
-     * @tc.desc   ：The client actively closes the websocket connection.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
-     */
 
+    /**
+     * @tc.name   testOHWebSocketClientClose_0200
+     * @tc.number testOHWebSocketClientClose_0200
+     * @tc.desc   testOHWebSocketClientClose_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHWebSocketClientClose_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHWebSocketClientClose(CASE_INDEX_2);
       expect(result).assertEqual(WEBSOCKET_OK);
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTCLOSE_0300
-     * @tc.name   ：TestOHWebSocketClientClose_0300
+     * @tc.name   testOHWebSocketClientClose_0300
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTCLOSE_0300
      * @tc.desc   ：The client actively closes the websocket connection.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientClose_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHWebSocketClientClose(CASE_INDEX_3);
@@ -712,12 +712,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTCLOSE_0400
-     * @tc.name   ：TestOHWebSocketClientClose_0400
+     * @tc.name   testOHWebSocketClientClose_0400
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTCLOSE_0400
      * @tc.desc   ：The client actively closes the websocket connection.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientClose_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHWebSocketClientClose(CASE_INDEX_4);
@@ -725,12 +725,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTCLOSE_0500
-     * @tc.name   ：TestOHWebSocketClientClose_0500
+     * @tc.name   testOHWebSocketClientClose_0500
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTCLOSE_0500
      * @tc.desc   ：The client actively closes the websocket connection.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHWebSocketClientClose_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result : number = wsAPI.OHWebSocketClientClose(CASE_INDEX_5);
@@ -739,12 +739,12 @@ export default function NetStackNDKTest() {
 
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTDESTROY_0100
-     * @tc.name   ：TestOHWebSocketClientDestroy_0100
+     * @tc.name   testOHWebSocketClientDestroy_0100
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTDESTROY_0100
      * @tc.desc   ：Release websocket connection context and resources.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientDestroy_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHWebSocketClientDestroy(CASE_INDEX_1);
@@ -752,12 +752,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTDESTROY_0200
-     * @tc.name   ：TestOHWebSocketClientDestroy_0200
+     * @tc.name   testOHWebSocketClientDestroy_0200
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTDESTROY_0200
      * @tc.desc   ：Release websocket connection context and resources.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientDestroy_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHWebSocketClientDestroy(CASE_INDEX_2);
@@ -765,12 +765,12 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTDESTROY_0300
-     * @tc.name   ：TestOHWebSocketClientDestroy_0300
+     * @tc.name   testOHWebSocketClientDestroy_0300
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTDESTROY_0300
      * @tc.desc   ：Release websocket connection context and resources.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientDestroy_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHWebSocketClientDestroy(CASE_INDEX_3);
@@ -778,27 +778,27 @@ export default function NetStackNDKTest() {
     });
 
     /**
-     * @tc.number : SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTDESTROY_0400
-     * @tc.name   ：TestOHWebSocketClientDestroy_0400
+     * @tc.name   testOHWebSocketClientDestroy_0400
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHWEBSOCKETCLIENTDESTROY_0400
      * @tc.desc   ：Release websocket connection context and resources.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientDestroy_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result : number = wsAPI.OHWebSocketClientDestroy(CASE_INDEX_4);
       expect(result).assertEqual(WEBSOCKET_OK);
     });
     
-    /**
-     * @tc.number : SUB_NetStack_IsCleartextPermitted_0100
-     * @tc.name   ：testNetStackIsCleartextPermitted_0100
-     * @tc.desc   ：test NetStackIsCleartextPermitted is true
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
-     */
 
+    /**
+     * @tc.name   testNetStackIsCleartextPermitted_0100
+     * @tc.number testNetStackIsCleartextPermitted_0100
+     * @tc.desc   testNetStackIsCleartextPermitted_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetStackIsCleartextPermitted_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(`testNetStackIsCleartextPermitted_0100 start`);
       let re: number = wsAPI.OHNetStackIsCleartextPermitted();
@@ -807,12 +807,12 @@ export default function NetStackNDKTest() {
     });
     
     /**
-     * @tc.number : SUB_NetStack_IsCleartextPermittedByHostName_0100
-     * @tc.name   ：testNetStackIsCleartextPermittedByHostName_0100
+     * @tc.name   testNetStackIsCleartextPermittedByHostName_0100
+     * @tc.number SUB_NetStack_IsCleartextPermittedByHostName_0100
      * @tc.desc   ：test NetStackIsCleartextPermittedByHostName is true.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetStackIsCleartextPermittedByHostName_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const hostname: string = "test.com";

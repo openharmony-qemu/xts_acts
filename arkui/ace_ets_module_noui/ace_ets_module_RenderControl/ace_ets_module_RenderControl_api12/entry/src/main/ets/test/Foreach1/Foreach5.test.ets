@@ -59,12 +59,12 @@ export default function Foreach5() {
     });
 
     /**
+     * @tc.name   foreach5_001
      * @tc.number foreach5_001
-     * @tc.name foreach5_001
-     * @tc.desc Display data in foreach component.
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Display data in foreach component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('foreach5_001', Level.LEVEL0, async (done: Function) => {
       console.info('[foreach5_001] START');

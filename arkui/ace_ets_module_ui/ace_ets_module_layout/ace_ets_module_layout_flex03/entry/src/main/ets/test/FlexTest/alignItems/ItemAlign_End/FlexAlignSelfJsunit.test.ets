@@ -47,9 +47,12 @@ export default function flexAlignSelf_EndJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignEndSetAlignSelf
      * @tc.number SUB_ACE_FLEXALIGNITEMS_END_1300
-     * @tc.name testFlexItemAlignEndSetAlignSelf
-     * @tc.desc The first subcomponent set AlignSelf attribute.
+     * @tc.desc   The first subcomponent set AlignSelf attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignEndSetAlignSelf',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignEndSetAlignSelf START');

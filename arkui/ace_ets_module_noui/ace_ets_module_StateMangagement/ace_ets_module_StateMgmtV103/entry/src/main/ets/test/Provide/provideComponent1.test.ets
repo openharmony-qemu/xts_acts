@@ -56,12 +56,12 @@ export default function provideComponent1() {
     });
 
     /**
+     * @tc.name   provideComponentOneTest_0100
      * @tc.number SUB_ACE_provideComponent1_0100
-     * @tc.name provideComponent1_0100
-     * @tc.desc set api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('provideComponentOneTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('provideComponentOneTest_0100 START');

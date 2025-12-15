@@ -40,12 +40,12 @@ export default function getAfterRemove() {
       done();
     });
     /**
-     * @tc.number    getAfterRemove_0100
-     * @tc.name      getAfterRemove_0100
-     * @tc.desc      frameNode: getPreviousAfterRemove
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getAfterRemove_0100
+     * @tc.number getAfterRemove_0100
+     * @tc.desc   frameNode: getPreviousAfterRemove
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAfterRemove_0100', Level.LEVEL0, async (done: Function) => {
       console.info('getPosition_0100 START');
@@ -62,12 +62,12 @@ export default function getAfterRemove() {
       done();
     });
     /**
-     * @tc.number    getAfterRemove_0200
-     * @tc.name      getAfterRemove_0200
-     * @tc.desc      frameNode: getNextAfterRemove
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getAfterRemove_0200
+     * @tc.number getAfterRemove_0200
+     * @tc.desc   frameNode: getNextAfterRemove
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAfterRemove_0200', Level.LEVEL0, async (done: Function) => {
       console.info('getAfterRemove_0200 START');
@@ -84,12 +84,12 @@ export default function getAfterRemove() {
       done();
     });
     /**
-     * @tc.number    getAfterRemove_0300
-     * @tc.name      getAfterRemove_0300
-     * @tc.desc      frameNode: getParentAfterRemove
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getAfterRemove_0300
+     * @tc.number getAfterRemove_0300
+     * @tc.desc   frameNode: getParentAfterRemove
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAfterRemove_0300', Level.LEVEL0, async (done: Function) => {
       console.info('getAfterRemove_0300 START');

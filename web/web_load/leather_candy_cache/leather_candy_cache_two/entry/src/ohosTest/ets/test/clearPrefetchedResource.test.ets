@@ -56,14 +56,14 @@ export default function clearPrefetchedResourceTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_CLEARPREFETCHEDRESOURCES_0100
-    * @tc.name       : testClearPrefetchedResource001
-    * @tc.desc       : test clearPrefetchedResource
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testClearPrefetchedResource001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CLEARPREFETCHEDRESOURCES_0100
+     * @tc.desc   test clearPrefetchedResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testClearPrefetchedResource001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testClearPrefetchedResource001", 148301);
       Utils.registerBaseEvent("testClearPrefetchedResource001", true, 148300, done,
@@ -72,14 +72,14 @@ export default function clearPrefetchedResourceTest() {
         });
       Utils.waitAndClickComponent('clearPrefetchedResourceTestButton',driver);
     })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_CLEARPREFETCHEDRESOURCES_0200
-    * @tc.name       : testClearPrefetchedResource002
-    * @tc.desc       : test clearPrefetchedResource
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testClearPrefetchedResource002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CLEARPREFETCHEDRESOURCES_0200
+     * @tc.desc   test clearPrefetchedResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testClearPrefetchedResource002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testClearPrefetchedResource002", 148301);
       Utils.registerBaseEvent("testClearPrefetchedResource002", '401', 148310, done,
@@ -88,14 +88,14 @@ export default function clearPrefetchedResourceTest() {
         });
       Utils.waitAndClickComponent('clearPrefetchedResourceTestButton',driver);
     })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_CLEARPREFETCHEDRESOURCES_0300
-    * @tc.name       : testClearPrefetchedResource003
-    * @tc.desc       : test clearPrefetchedResource
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testClearPrefetchedResource003
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CLEARPREFETCHEDRESOURCES_0300
+     * @tc.desc   test clearPrefetchedResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testClearPrefetchedResource003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testClearPrefetchedResource003", 148301);
       Utils.registerBaseEvent("testClearPrefetchedResource003", '401', 148320, done,
@@ -104,14 +104,14 @@ export default function clearPrefetchedResourceTest() {
         });
       Utils.waitAndClickComponent('clearPrefetchedResourceTestButton',driver);
     })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_CLEARPREFETCHEDRESOURCES_0400
-    * @tc.name       : testClearPrefetchedResource004
-    * @tc.desc       : test clearPrefetchedResource
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testClearPrefetchedResource004
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CLEARPREFETCHEDRESOURCES_0400
+     * @tc.desc   test clearPrefetchedResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testClearPrefetchedResource004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testClearPrefetchedResource004", 148301);
       Utils.registerBaseEvent("testClearPrefetchedResource004", '401', 148330, done,
@@ -120,14 +120,14 @@ export default function clearPrefetchedResourceTest() {
         });
       Utils.waitAndClickComponent('clearPrefetchedResourceTestButton',driver);
     })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_CLEARPREFETCHEDRESOURCES_0500
-    * @tc.name       : testClearPrefetchedResource005
-    * @tc.desc       : test clearPrefetchedResource
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testClearPrefetchedResource005
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CLEARPREFETCHEDRESOURCES_0500
+     * @tc.desc   test clearPrefetchedResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testClearPrefetchedResource005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testClearPrefetchedResource005", 148301);
       Utils.registerBaseEvent("testClearPrefetchedResource005", '401', 148340, done,
@@ -136,14 +136,14 @@ export default function clearPrefetchedResourceTest() {
         });
       Utils.waitAndClickComponent('clearPrefetchedResourceTestButton',driver);
     })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_CUSTOMIZESCHEMES_0600
-    * @tc.name       : testCustomizeSchemes001
-    * @tc.desc       : test customizeSchemes
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCustomizeSchemes001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CUSTOMIZESCHEMES_0600
+     * @tc.desc   test customizeSchemes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCustomizeSchemes001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testCustomizeSchemes001", 148301);
       Utils.registerBaseEvent("testCustomizeSchemes001", '17100020', 148350, done,

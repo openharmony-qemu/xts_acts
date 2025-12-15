@@ -47,12 +47,12 @@ export default function postFrameCallbackTest() {
     });
 
     /**
-     * @tc.number    postFrameCallbackTest_0100
-     * @tc.name      postFrameCallbackTest_0100
-     * @tc.desc      post FrameCallback Test
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   postFrameCallbackTest_0100
+     * @tc.number postFrameCallbackTest_0100
+     * @tc.desc   post FrameCallback Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('postFrameCallbackTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('postFrameCallbackTest_0100 START');

@@ -193,5 +193,19 @@
  */
 const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
 
+#define ASSERT_EQ(result, expect)                                                                                      \
+    do {                                                                                                               \
+        if ((result) != (expect)) {                                                                                    \
+            std::string assertStr = "assert equal failed, expect is " + std::to_string(expect) + " and result is " +   \
+                                    std::to_string(result);                                                            \
+            char assertChars[assertStr.size() + PARAM_1];                                                              \
+            strcpy(assertChars, assertStr.c_str());                                                                    \
+            napi_throw_error((env), nullptr, assertChars);                                                             \
+            napi_value errorResult = nullptr;                                                                          \
+            napi_create_int32(env, PARAM_NEGATIVE_1, &errorResult);                                                    \
+            return errorResult;                                                                                        \
+        }                                                                                                              \
+    } while (0)
+
 napi_property_descriptor XL(char* functionName, napi_callback func);
 #endif // NATIVE_XCOMPONENT_COMMON_H

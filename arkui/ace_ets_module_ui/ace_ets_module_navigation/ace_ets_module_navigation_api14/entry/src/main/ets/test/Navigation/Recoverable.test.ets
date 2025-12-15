@@ -49,10 +49,12 @@ export default function Recoverable() {
 
 
     /**
-     * @tc.number    Recoverable_0100
-     * @tc.name      Recoverable_0100
-     * @tc.desc      Test Recoverable
-     * @tc.level     Level 2
+     * @tc.name   Recoverable_0100
+     * @tc.number Recoverable_0100
+     * @tc.desc   Test Recoverable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Recoverable_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('Recoverable_0100 START');
@@ -73,10 +75,12 @@ export default function Recoverable() {
     });
 
     /**
-     * @tc.number    Recoverable_0200
-     * @tc.name      Recoverable_0200
-     * @tc.desc      Test Recoverable
-     * @tc.level     Level 2
+     * @tc.name   Recoverable_0200
+     * @tc.number Recoverable_0200
+     * @tc.desc   Test Recoverable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Recoverable_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('Recoverable_0200 START');
@@ -102,10 +106,12 @@ export default function Recoverable() {
     });
 
     /**
-     * @tc.number    Recoverable_0300
-     * @tc.name      Recoverable_0300
-     * @tc.desc      Test Recoverable
-     * @tc.level     Level 2
+     * @tc.name   Recoverable_0300
+     * @tc.number Recoverable_0300
+     * @tc.desc   Test Recoverable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Recoverable_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('Recoverable_0300 START');
@@ -117,10 +123,12 @@ export default function Recoverable() {
     });
 
     /**
-     * @tc.number    Recoverable_0400
-     * @tc.name      Recoverable_0400
-     * @tc.desc      Test Recoverable
-     * @tc.level     Level 2
+     * @tc.name   Recoverable_0400
+     * @tc.number Recoverable_0400
+     * @tc.desc   Test Recoverable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Recoverable_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('Recoverable_0400 START');

@@ -40,12 +40,12 @@ export default function HoverScale_APITest() {
       done();
     });
     /**
-     * @tc.number    HoverScale
-     * @tc.name      HoverScale_APITest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   HoverScale_APITest_0100
+     * @tc.number HoverScale
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('HoverScale_APITest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('HoverScale_APITest_0100 START');

@@ -46,12 +46,12 @@ export default function RepeatTest0030() {
     });
 
     /**
+     * @tc.name   RepeatTest0030_001
      * @tc.number RepeatTest0030_001
-     * @tc.name RepeatTest0030_001
-     * @tc.desc Frequently updating and modifying the values of parent components
-     * @tc.level Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RepeatTest0030_001', Level.LEVEL3, async (done: Function) => {
       console.info('[RepeatTest0030_001] START');

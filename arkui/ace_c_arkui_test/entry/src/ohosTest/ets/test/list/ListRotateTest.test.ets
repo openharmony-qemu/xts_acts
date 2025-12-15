@@ -26,65 +26,65 @@ export default function listRotateTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ROTATE_0100
-     * @tc.name       : testListRotate001
-     * @tc.desc       : testing rotate for list with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListRotate001
+     * @tc.number SUB_ARKUI_CAPI_LIST_ROTATE_0100
+     * @tc.desc   testing rotate for list with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListRotate001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListRotate001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ROTATE_0200
-     * @tc.name       : testListRotate002
-     * @tc.desc       : testing rotate for list with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListRotate002
+     * @tc.number SUB_ARKUI_CAPI_LIST_ROTATE_0200
+     * @tc.desc   testing rotate for list with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListRotate002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListRotate002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ROTATE_0300
-     * @tc.name       : testListRotate003
-     * @tc.desc       : testing rotate for list with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListRotate003
+     * @tc.number SUB_ARKUI_CAPI_LIST_ROTATE_0300
+     * @tc.desc   testing rotate for list with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListRotate003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListRotate003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ROTATE_0400
-     * @tc.name       : testListRotate004
-     * @tc.desc       : testing rotate for list with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListRotate004
+     * @tc.number SUB_ARKUI_CAPI_LIST_ROTATE_0400
+     * @tc.desc   testing rotate for list with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListRotate004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListRotate004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ROTATE_0500
-     * @tc.name       : testListRotate005
-     * @tc.desc       : testing rotate for list with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListRotate005
+     * @tc.number SUB_ARKUI_CAPI_LIST_ROTATE_0500
+     * @tc.desc   testing rotate for list with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListRotate005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListRotate005()).assertEqual(0)

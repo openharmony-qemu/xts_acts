@@ -41,12 +41,12 @@ export default function priCertJsAPINoPermissionTestUnit() {
     })
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_NoPermission_Func_static_0100
      * @tc.number Security_CertManager_PriCertJsApi_NoPermission_Func_static_0100
-     * @tc.name Security_CertManager_PriCertJsApi_NoPermission_Func_static_0100
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_CertManager_PriCertJsApi_NoPermission_Func_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let keystore: Uint8Array = priRsaCredData;
@@ -63,12 +63,12 @@ export default function priCertJsAPINoPermissionTestUnit() {
     })
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_NoPermission_Func_static_0200
      * @tc.number Security_CertManager_PriCertJsApi_NoPermission_Func_static_0200
-     * @tc.name Security_CertManager_PriCertJsApi_NoPermission_Func_static_0200
-     * @tc.desc use asynccallback type
-     * @tc.size SmallTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use asynccallback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_CertManager_PriCertJsApi_NoPermission_Func_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let keystore: Uint8Array = priEccCredData;
@@ -93,12 +93,12 @@ export default function priCertJsAPINoPermissionTestUnit() {
     })
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_NoPermission_Func_static_0300
      * @tc.number Security_CertManager_PriCertJsApi_NoPermission_Func_static_0300
-     * @tc.name Security_CertManager_PriCertJsApi_NoPermission_Func_static_0300
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_CertManager_PriCertJsApi_NoPermission_Func_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -112,12 +112,12 @@ export default function priCertJsAPINoPermissionTestUnit() {
     })
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_NoPermission_Func_static_0400
      * @tc.number Security_CertManager_PriCertJsApi_NoPermission_Func_static_0400
-     * @tc.name Security_CertManager_PriCertJsApi_NoPermission_Func_static_0400
-     * @tc.desc use asynccallback type
-     * @tc.size SmallTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use asynccallback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_CertManager_PriCertJsApi_NoPermission_Func_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -139,12 +139,12 @@ export default function priCertJsAPINoPermissionTestUnit() {
     })
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_NoPermission_Func_static_0500
      * @tc.number Security_CertManager_PriCertJsApi_NoPermission_Func_static_0500
-     * @tc.name Security_CertManager_PriCertJsApi_NoPermission_Func_static_0500
-     * @tc.desc use asynccallback type
-     * @tc.size SmallTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use asynccallback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_CertManager_PriCertJsApi_NoPermission_Func_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let signSpec: certManager.CMSignatureSpec = {
@@ -169,12 +169,12 @@ export default function priCertJsAPINoPermissionTestUnit() {
     })
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_NoPermission_Func_static_0600
      * @tc.number Security_CertManager_PriCertJsApi_NoPermission_Func_static_0600
-     * @tc.name Security_CertManager_PriCertJsApi_NoPermission_Func_static_0600
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_CertManager_PriCertJsApi_NoPermission_Func_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let signSpec: certManager.CMSignatureSpec = {
@@ -191,12 +191,12 @@ export default function priCertJsAPINoPermissionTestUnit() {
     })
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_NoPermission_Func_static_0700
      * @tc.number Security_CertManager_PriCertJsApi_NoPermission_Func_static_0700
-     * @tc.name Security_CertManager_PriCertJsApi_NoPermission_Func_static_0700
-     * @tc.desc use asynccallback type
-     * @tc.size SmallTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use asynccallback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_CertManager_PriCertJsApi_NoPermission_Func_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let keyStore: Uint8Array = priEccCredData;
@@ -220,12 +220,12 @@ export default function priCertJsAPINoPermissionTestUnit() {
     })
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_NoPermission_Func_static_0800
      * @tc.number Security_CertManager_PriCertJsApi_NoPermission_Func_static_0800
-     * @tc.name Security_CertManager_PriCertJsApi_NoPermission_Func_static_0800
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_CertManager_PriCertJsApi_NoPermission_Func_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let keyStore: Uint8Array = priEccCredData;
@@ -241,12 +241,12 @@ export default function priCertJsAPINoPermissionTestUnit() {
     })
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_NoPermission_Func_static_0900
      * @tc.number Security_CertManager_PriCertJsApi_NoPermission_Func_static_0900
-     * @tc.name Security_CertManager_PriCertJsApi_NoPermission_Func_static_0900
-     * @tc.desc use asynccallback type
-     * @tc.size SmallTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use asynccallback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_CertManager_PriCertJsApi_NoPermission_Func_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let keyStore: Uint8Array = priEccCredData;
@@ -285,12 +285,12 @@ export default function priCertJsAPINoPermissionTestUnit() {
     })
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_NoPermission_Func_static_1000
      * @tc.number Security_CertManager_PriCertJsApi_NoPermission_Func_static_1000
-     * @tc.name Security_CertManager_PriCertJsApi_NoPermission_Func_static_1000
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_CertManager_PriCertJsApi_NoPermission_Func_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let keyStore: Uint8Array = priEccCredData;
@@ -306,12 +306,12 @@ export default function priCertJsAPINoPermissionTestUnit() {
     })
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_NoPermission_Func_static_1100
      * @tc.number Security_CertManager_PriCertJsApi_NoPermission_Func_static_1100
-     * @tc.name Security_CertManager_PriCertJsApi_NoPermission_Func_static_1100
-     * @tc.desc use asynccallback type
-     * @tc.size SmallTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use asynccallback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_CertManager_PriCertJsApi_NoPermission_Func_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let handle: Uint8Array = new Uint8Array([0X00]);
@@ -334,12 +334,12 @@ export default function priCertJsAPINoPermissionTestUnit() {
     })
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_NoPermission_Func_static_1200
      * @tc.number Security_CertManager_PriCertJsApi_NoPermission_Func_static_1200
-     * @tc.name Security_CertManager_PriCertJsApi_NoPermission_Func_static_1200
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_CertManager_PriCertJsApi_NoPermission_Func_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let handle: Uint8Array = new Uint8Array([0X00]);
@@ -354,12 +354,12 @@ export default function priCertJsAPINoPermissionTestUnit() {
     })
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_NoPermission_Func_static_1300
      * @tc.number Security_CertManager_PriCertJsApi_NoPermission_Func_static_1300
-     * @tc.name Security_CertManager_PriCertJsApi_NoPermission_Func_static_1300
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_CertManager_PriCertJsApi_NoPermission_Func_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -373,12 +373,12 @@ export default function priCertJsAPINoPermissionTestUnit() {
     })
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_NoPermission_Func_static_1400
      * @tc.number Security_CertManager_PriCertJsApi_NoPermission_Func_static_1400
-     * @tc.name Security_CertManager_PriCertJsApi_NoPermission_Func_static_1400
-     * @tc.desc use asynccallback type
-     * @tc.size SmallTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use asynccallback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_CertManager_PriCertJsApi_NoPermission_Func_static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -400,12 +400,12 @@ export default function priCertJsAPINoPermissionTestUnit() {
     })
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_NoPermission_Func_static_1500
      * @tc.number Security_CertManager_PriCertJsApi_NoPermission_Func_static_1500
-     * @tc.name Security_CertManager_PriCertJsApi_NoPermission_Func_static_1500
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_CertManager_PriCertJsApi_NoPermission_Func_static_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -419,12 +419,12 @@ export default function priCertJsAPINoPermissionTestUnit() {
     })
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_NoPermission_Func_static_1600
      * @tc.number Security_CertManager_PriCertJsApi_NoPermission_Func_static_1600
-     * @tc.name Security_CertManager_PriCertJsApi_NoPermission_Func_static_1600
-     * @tc.desc use asynccallback type
-     * @tc.size SmallTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use asynccallback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_CertManager_PriCertJsApi_NoPermission_Func_static_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {

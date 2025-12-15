@@ -21,12 +21,12 @@ export default function DisplayManagerTest() {
   describe('DisplayManagerTest', () => {
 
     /**
-     * @tc.number  : SUB_OH_ArkuiAiAnalysisFinish_3300
-     * @tc.name    : SUB_OH_ArkuiAiAnalysisFinish_3300
-     * @tc.desc    : Test ArkuiAiAnalysisFinish
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_ArkuiAiAnalysisFinish_3300
+     * @tc.number SUB_OH_ArkuiAiAnalysisFinish_3300
+     * @tc.desc   Test ArkuiAiAnalysisFinish
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_ArkuiAiAnalysisFinish_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -43,12 +43,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_ArkuiAiAnalysisDisabled_3400
-     * @tc.name    : SUB_OH_ArkuiAiAnalysisDisabled_3400
-     * @tc.desc    : Test ArkuiAiAnalysisDisabled
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_ArkuiAiAnalysisDisabled_3400
+     * @tc.number SUB_OH_ArkuiAiAnalysisDisabled_3400
+     * @tc.desc   Test ArkuiAiAnalysisDisabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_ArkuiAiAnalysisDisabled_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -65,12 +65,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_ArkuiAiAnalysisUnsupported_3500
-     * @tc.name    : SUB_OH_ArkuiAiAnalysisUnsupported_3500
-     * @tc.desc    : Test ArkuiAiAnalysisUnsupported
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_ArkuiAiAnalysisUnsupported_3500
+     * @tc.number SUB_OH_ArkuiAiAnalysisUnsupported_3500
+     * @tc.desc   Test ArkuiAiAnalysisUnsupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_ArkuiAiAnalysisUnsupported_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -87,12 +87,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_ArkuiAiAnalysisOngoing_3600
-     * @tc.name    : SUB_OH_ArkuiAiAnalysisOngoing_3600
-     * @tc.desc    : Test ArkuiAiAnalysisOngoing
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_ArkuiAiAnalysisOngoing_3600
+     * @tc.number SUB_OH_ArkuiAiAnalysisOngoing_3600
+     * @tc.desc   Test ArkuiAiAnalysisOngoing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_ArkuiAiAnalysisOngoing_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -109,12 +109,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_ArkuiAiAnalysisStopped_3700
-     * @tc.name    : SUB_OH_ArkuiAiAnalysisStopped_3700
-     * @tc.desc    : Test ArkuiAiAnalysisStopped
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_ArkuiAiAnalysisStopped_3700
+     * @tc.number SUB_OH_ArkuiAiAnalysisStopped_3700
+     * @tc.desc   Test ArkuiAiAnalysisStopped
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_ArkuiAiAnalysisStopped_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -131,12 +131,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_ArkuiNodeUndefined_3800
-     * @tc.name    : SUB_OH_ArkuiNodeUndefined_3800
-     * @tc.desc    : Test ArkuiNodeUndefined
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_ArkuiNodeUndefined_3800
+     * @tc.number SUB_OH_ArkuiNodeUndefined_3800
+     * @tc.desc   Test ArkuiNodeUndefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_ArkuiNodeUndefined_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

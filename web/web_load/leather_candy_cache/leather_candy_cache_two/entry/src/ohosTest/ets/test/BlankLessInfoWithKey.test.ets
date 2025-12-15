@@ -43,14 +43,14 @@ export default function blankLessInfoWithKeyTest() {
       }
       done()
     });
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_BLANKLESSINFOWITHKEYTEST_0100
-    * @tc.name       : testblankLessInfoWithKey001
-    * @tc.desc       : test blankLessInfoWithKey
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testblankLessInfoWithKey001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_BLANKLESSINFOWITHKEYTEST_0100
+     * @tc.desc   test blankLessInfoWithKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testblankLessInfoWithKey001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testblankLessInfoWithKey001", 148001)
       Utils.registerBaseEvent("testblankLessInfoWithKey001", 0, 148010, done,
@@ -60,14 +60,14 @@ export default function blankLessInfoWithKeyTest() {
       Utils.waitAndClickComponent('blankLessInfoWithKeyTestButton', driver)
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_BLANKLESSINFOWITHKEYTEST_0200
-    * @tc.name       : testblankLessInfoWithKey002
-    * @tc.desc       : test blankLessInfoWithKey
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testblankLessInfoWithKey002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_BLANKLESSINFOWITHKEYTEST_0200
+     * @tc.desc   test blankLessInfoWithKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testblankLessInfoWithKey002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testblankLessInfoWithKey002", 148001)
       Utils.registerBaseEvent("testblankLessInfoWithKey002", -2, 148020, done,
@@ -76,14 +76,14 @@ export default function blankLessInfoWithKeyTest() {
         });
       Utils.waitAndClickComponent('blankLessInfoWithKeyTestButton', driver)
     })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_BLANKLESSINFOWITHKEYTEST_0300
-    * @tc.name       : testblankLessInfoWithKey003
-    * @tc.desc       : test blankLessInfoWithKey
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testblankLessInfoWithKey003
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_BLANKLESSINFOWITHKEYTEST_0300
+     * @tc.desc   test blankLessInfoWithKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testblankLessInfoWithKey003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testblankLessInfoWithKey003", 148001);
       Utils.registerBaseEvent("testblankLessInfoWithKey003", -3, 148030, done,
@@ -93,14 +93,14 @@ export default function blankLessInfoWithKeyTest() {
       Utils.waitAndClickComponent('blankLessInfoWithKeyTestButton', driver);
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_BLANKLESSINFOWITHKEYTEST_0400
-    * @tc.name       : testblankLessInfoWithKey004
-    * @tc.desc       : test blankLessInfoWithKey
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testblankLessInfoWithKey004
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_BLANKLESSINFOWITHKEYTEST_0400
+     * @tc.desc   test blankLessInfoWithKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testblankLessInfoWithKey004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testblankLessInfoWithKey004", 148001);
       Utils.registerBaseEvent("testblankLessInfoWithKey004", 401, 148040, done,
@@ -109,14 +109,14 @@ export default function blankLessInfoWithKeyTest() {
         });
       Utils.waitAndClickComponent('blankLessInfoWithKeyTestButton', driver)
     })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_BLANKLESSINFOWITHKEYTEST_0500
-    * @tc.name       : testblankLessInfoWithKey005
-    * @tc.desc       : test blankLessInfoWithKey
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testblankLessInfoWithKey005
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_BLANKLESSINFOWITHKEYTEST_0500
+     * @tc.desc   test blankLessInfoWithKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testblankLessInfoWithKey005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testblankLessInfoWithKey005", 148001);
       Utils.registerBaseEvent("testblankLessInfoWithKey005", -4, 148050, done,
@@ -125,14 +125,14 @@ export default function blankLessInfoWithKeyTest() {
         });
       Utils.waitAndClickComponent('blankLessInfoWithKeyTestButton', driver);
     })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_BLANKLESSINFOWITHKEYTEST_0600
-    * @tc.name       : testblankLessInfoWithKey006
-    * @tc.desc       : test blankLessInfoWithKey
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testblankLessInfoWithKey006
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_BLANKLESSINFOWITHKEYTEST_0600
+     * @tc.desc   test blankLessInfoWithKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testblankLessInfoWithKey006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testblankLessInfoWithKey006", 148001);
       Utils.registerBaseEvent("testblankLessInfoWithKey006", -5, 148060, done,
@@ -141,14 +141,14 @@ export default function blankLessInfoWithKeyTest() {
         });
       Utils.waitAndClickComponent('blankLessInfoWithKeyTestButton', driver);
     })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_BLANKLESSINFOWITHKEYTEST_0700
-    * @tc.name       : testblankLessInfoWithKey007
-    * @tc.desc       : test blankLessInfoWithKey
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testblankLessInfoWithKey007
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_BLANKLESSINFOWITHKEYTEST_0700
+     * @tc.desc   test blankLessInfoWithKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testblankLessInfoWithKey007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testblankLessInfoWithKey007", 148001);
       Utils.registerBaseEvent("testblankLessInfoWithKey007", 401, 148070, done,
@@ -157,14 +157,14 @@ export default function blankLessInfoWithKeyTest() {
         });
       Utils.waitAndClickComponent('blankLessInfoWithKeyTestButton', driver);
     })
-    /*
-  * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_BLANKLESSINFOWITHKEYTEST_0800
-  * @tc.name       : testblankLessInfoWithKey008
-  * @tc.desc       : test blankLessInfoWithKey
-  * @tc.size       : MediumTest
-  * @tc.type       : Function
-  * @tc.level      : Level 1
-  */
+    /**
+     * @tc.name   testblankLessInfoWithKey008
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_BLANKLESSINFOWITHKEYTEST_0800
+     * @tc.desc   test blankLessInfoWithKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testblankLessInfoWithKey008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testblankLessInfoWithKey008", 148001);
       Utils.registerBaseEvent("testblankLessInfoWithKey008", 401, 148080, done,

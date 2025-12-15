@@ -24,7 +24,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testuidna_openUTS46_0100
      * @tc.number SUB_GLOBAL_uidna_openUTS46_NDK_0100
      * @tc.desc   uidna_openUTS46 with null
@@ -38,7 +37,6 @@ export default function abilityTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testuidna_close_0100
      * @tc.number SUB_GLOBAL_uidna_close_NDK_0100
      * @tc.desc   uidna_close with null
@@ -52,7 +50,6 @@ export default function abilityTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testuidna_labelToASCII_0100
      * @tc.number SUB_GLOBAL_uidna_labelToASCII_NDK_0100
      * @tc.desc   uidna_labelToASCII with null
@@ -66,7 +63,6 @@ export default function abilityTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testuidna_labelToUnicode_0100
      * @tc.number SUB_GLOBAL_uidna_labelToUnicode_NDK_0100
      * @tc.desc   uidna_labelToUnicode with null
@@ -80,7 +76,6 @@ export default function abilityTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testuidna_nameToASCII_0100
      * @tc.number SUB_GLOBAL_uidna_nameToASCII_NDK_0100
      * @tc.desc   uidna_nameToASCII with null
@@ -94,7 +89,6 @@ export default function abilityTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testuidna_nameToUnicode_0100
      * @tc.number SUB_GLOBAL_uidna_nameToASCII_NDK_0100
      * @tc.desc   uidna_nameToASCII with null
@@ -108,7 +102,6 @@ export default function abilityTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testuidna_labelToASCLL_UTF8_0100
      * @tc.number SUB_GLOBAL_uidna_labelToASCLL_UTF8_NDK_0100
      * @tc.desc   uidna_labelToASCLL_UTF8 with null
@@ -122,7 +115,6 @@ export default function abilityTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testuidna_labelToUnicodeUTF8_0100
      * @tc.number SUB_GLOBAL_uidna_labelToUnicodeUTF8_NDK_0100
      * @tc.desc   uidna_labelToUnicodeUTF8 with null
@@ -136,7 +128,6 @@ export default function abilityTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testuidna_nameToASCII_UTF8_0100
      * @tc.number SUB_GLOBAL_uidna_nameToASCII_UTF8_NDK_0100
      * @tc.desc   uidna_nameToASCII_UTF8 with null
@@ -150,7 +141,6 @@ export default function abilityTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   testuidna_nameToUnicodeUTF8_0100
      * @tc.number SUB_GLOBAL_uidna_nameToUnicodeUTF8_NDK_0100
      * @tc.desc   uidna_nameToUnicodeUTF8 with null

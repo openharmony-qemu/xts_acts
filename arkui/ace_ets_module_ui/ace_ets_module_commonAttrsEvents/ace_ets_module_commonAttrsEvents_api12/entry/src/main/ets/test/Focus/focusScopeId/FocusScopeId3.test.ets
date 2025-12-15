@@ -48,10 +48,12 @@ export default function FocusScopeId3() {
     });
 
     /**
+     * @tc.name   FocusScopeId3_0100
      * @tc.number FocusScopeId3_0100
-     * @tc.name FocusScopeId3_0100
-     * @tc.desc Test support for directional key focus group penetration ability
-     * @tc.level Level 2
+     * @tc.desc   Test support for directional key focus group penetration ability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FocusScopeId3_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[FocusScopeId3_0100] START');

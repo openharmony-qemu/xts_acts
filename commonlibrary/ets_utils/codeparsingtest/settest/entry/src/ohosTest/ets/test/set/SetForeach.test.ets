@@ -84,7 +84,7 @@ export default function SetForeachTest() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      await sleep(30);
+      await sleep(50);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -100,12 +100,12 @@ export default function SetForeachTest() {
     })
 
     /**
+     * @tc.name   SetForEachTest001
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_0100
-     * @tc.name SetForEachTest001
-     * @tc.desc Traverse non-empty Set with strings, verify callback call count and parameters
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Traverse non-empty Set with strings, verify callback call count and parameters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetForEachTest001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set(['a', 'b', 'c']);
@@ -131,24 +131,24 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest002
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_0200
-     * @tc.name SetForEachTest002
-     * @tc.desc Verify forEach() returns undefined
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach() returns undefined
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetForEachTest002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       expect(SetForEachTest002()).assertEqual(true);
     });
 
     /**
+     * @tc.name   SetForEachTest003
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_0300
-     * @tc.name SetForEachTest003
-     * @tc.desc Traverse empty Set, verify callback is not called
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Traverse empty Set, verify callback is not called
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetForEachTest003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set<number>();
@@ -162,12 +162,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest004
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_0400
-     * @tc.name SetForEachTest004
-     * @tc.desc Traverse Set with number values, verify parameter correctness
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Traverse Set with number values, verify parameter correctness
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetForEachTest004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([10, 20, 30]);
@@ -185,12 +185,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest005
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_0500
-     * @tc.name SetForEachTest005
-     * @tc.desc Traverse Set with boolean values, verify callback parameters
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Traverse Set with boolean values, verify callback parameters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetForEachTest005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([true, false, true]);
@@ -213,12 +213,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest006
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_0600
-     * @tc.name SetForEachTest006
-     * @tc.desc Traverse Set with null and undefined, verify callback execution
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Traverse Set with null and undefined, verify callback execution
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetForEachTest006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([null, undefined, null]);
@@ -233,12 +233,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest007
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_0700
-     * @tc.name SetForEachTest007
-     * @tc.desc Verify callback receives the original Set as third parameter
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify callback receives the original Set as third parameter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetForEachTest007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([1]);
@@ -253,12 +253,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest008
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_0800
-     * @tc.name SetForEachTest008
-     * @tc.desc Traverse Set with single element, verify callback is called once
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Traverse Set with single element, verify callback is called once
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetForEachTest008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set(['only-element']);
@@ -272,12 +272,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest009
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_0900
-     * @tc.name SetForEachTest009
-     * @tc.desc Callback with no parameters (still executes normally)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Callback with no parameters (still executes normally)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetForEachTest009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([1, 2]);
@@ -291,12 +291,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest010
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_1000
-     * @tc.name SetForEachTest010
-     * @tc.desc Traverse Set with duplicate values (only unique values are processed)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Traverse Set with duplicate values (only unique values are processed)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetForEachTest010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([1, 1, 2, 2, 3]);
@@ -311,12 +311,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest011
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_1100
-     * @tc.name SetForEachTest011
-     * @tc.desc Use thisArg to bind this in callback
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Use thisArg to bind this in callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetForEachTest011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([10, 20]);
@@ -326,24 +326,24 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest012
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_1200
-     * @tc.name SetForEachTest012
-     * @tc.desc No thisArg: this is undefined in callback (strict mode)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   No thisArg: this is undefined in callback (strict mode)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetForEachTest012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       expect(SetForEachTest012()).assertEqual(undefined);
     });
 
     /**
+     * @tc.name   SetForEachTest013
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_1300
-     * @tc.name SetForEachTest013
-     * @tc.desc Add new element during traversal (new element is visited)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add new element during traversal (new element is visited)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetForEachTest013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([1, 2]);
@@ -361,12 +361,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest014
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_1400
-     * @tc.name SetForEachTest014
-     * @tc.desc Delete element during traversal (deleted element is not visited)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Delete element during traversal (deleted element is not visited)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetForEachTest014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([1, 2, 3]);
@@ -384,12 +384,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest015
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_1500
-     * @tc.name SetForEachTest015
-     * @tc.desc Delete and re-add element during traversal (element is visited twice)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Delete and re-add element during traversal (element is visited twice)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetForEachTest015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([1, 2]);
@@ -409,12 +409,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest016
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_1600
-     * @tc.name SetForEachTest016
-     * @tc.desc Traverse Set with NaN (treated as equal to itself)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Traverse Set with NaN (treated as equal to itself)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetForEachTest016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([NaN, 1, NaN]);
@@ -430,12 +430,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest017
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_1700
-     * @tc.name SetForEachTest017
-     * @tc.desc Traverse Set with 0 and -0 (treated as equal)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Traverse Set with 0 and -0 (treated as equal)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetForEachTest017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([0, -0, 100]);
@@ -450,12 +450,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest018
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_1800
-     * @tc.name SetForEachTest018
-     * @tc.type Function
-     * @tc.desc Traverse Set with Symbol values (unique symbols are processed)
-     * @tc.size SmallTest
-     * @tc.level Level 2
+     * @tc.desc   Traverse Set with Symbol values (unique symbols are processed)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetForEachTest018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const result = SetForEachTest018();
@@ -466,12 +466,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest019
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_1900
-     * @tc.name SetForEachTest019
-     * @tc.desc Traverse Set with BigInt values (same value is processed once)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Traverse Set with BigInt values (same value is processed once)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetForEachTest019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const big1 = 123n;
@@ -488,12 +488,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest020
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_2000
-     * @tc.name SetForEachTest020
-     * @tc.desc thisArg is primitive value (converted to object in non-strict mode)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   thisArg is primitive value (converted to object in non-strict mode)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetForEachTest020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const result = SetForEachTest020() as (boolean | number)[];
@@ -503,12 +503,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest021
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_2100
-     * @tc.name SetForEachTest021
-     * @tc.desc Callback throws error (traversal is interrupted)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback throws error (traversal is interrupted)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetForEachTest021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -533,12 +533,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest022
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_2200
-     * @tc.name SetForEachTest022
-     * @tc.desc Traverse Set with object references (modify object in callback)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Traverse Set with object references (modify object in callback)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetForEachTest022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -559,12 +559,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest023
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_2300
-     * @tc.name SetForEachTest023
-     * @tc.desc Call forEach() on non-Set instance (array via call)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Call forEach() on non-Set instance (array via call)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetForEachTest023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const visited = SetForEachTest023() as number[];
@@ -574,12 +574,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest024
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_2400
-     * @tc.name SetForEachTest024
-     * @tc.desc Traverse large Set (1000 elements), verify traversal completeness
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Traverse large Set (1000 elements), verify traversal completeness
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('SetForEachTest024', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const set = new Set<number>();
@@ -599,12 +599,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest025
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_2500
-     * @tc.name SetForEachTest025
-     * @tc.desc Callback is arrow function (this is not bound by thisArg)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback is arrow function (this is not bound by thisArg)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetForEachTest025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetForEachTest025();
@@ -614,12 +614,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest026
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_2600
-     * @tc.name SetForEachTest026
-     * @tc.desc Traverse Set with Date objects (reference comparison)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Traverse Set with Date objects (reference comparison)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetForEachTest026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const date = new Date('2024-01-01');
@@ -637,12 +637,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest027
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_2700
-     * @tc.name SetForEachTest027
-     * @tc.desc Traverse Set with RegExp objects (reference comparison)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Traverse Set with RegExp objects (reference comparison)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetForEachTest027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const regex = /test/;
@@ -658,12 +658,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest028
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_2800
-     * @tc.name SetForEachTest028
-     * @tc.desc Traverse frozen Set (still iterable, no error)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Traverse frozen Set (still iterable, no error)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetForEachTest028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -679,12 +679,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest029
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_2900
-     * @tc.name SetForEachTest029
-     * @tc.desc Callback is non-function (throws TypeError)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback is non-function (throws TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetForEachTest029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2]);
@@ -692,12 +692,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest030
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_3000
-     * @tc.name SetForEachTest030
-     * @tc.desc Comprehensive test: mixed types + dynamic modification + thisArg
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Comprehensive test: mixed types + dynamic modification + thisArg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetForEachTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result = SetForEachTest030();
@@ -709,12 +709,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest031
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_3100
-     * @tc.name SetForEachTest031
-     * @tc.desc Traverse Set with nested objects (reference comparison)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Traverse Set with nested objects (reference comparison)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetForEachTest031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -740,12 +740,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest032
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_3200
-     * @tc.name SetForEachTest032
-     * @tc.desc Callback modifies the Set's elements (not the Set itself)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback modifies the Set's elements (not the Set itself)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetForEachTest032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -763,12 +763,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest033
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_3300
-     * @tc.name SetForEachTest033
-     * @tc.desc forEach() on Set with elements added via spread operator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   forEach() on Set with elements added via spread operator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetForEachTest033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const original = [1, 2, 3];
@@ -781,12 +781,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest034
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_3400
-     * @tc.name SetForEachTest034
-     * @tc.desc Callback uses all three parameters correctly
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses all three parameters correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetForEachTest034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set(['test']);
@@ -802,12 +802,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest035
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_3500
-     * @tc.name SetForEachTest035
-     * @tc.desc Traverse Set with function values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Traverse Set with function values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetForEachTest035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const func1 = () => 'a';
@@ -821,12 +821,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest036
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_3600
-     * @tc.name SetForEachTest036
-     * @tc.desc forEach() with callback that returns a value (ignored)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   forEach() with callback that returns a value (ignored)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetForEachTest036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2]);
@@ -841,12 +841,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest037
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_3700
-     * @tc.name SetForEachTest037
-     * @tc.desc Large values in Set (Number.MAX_SAFE_INTEGER)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Large values in Set (Number.MAX_SAFE_INTEGER)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetForEachTest037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const safeInt = Number.MAX_SAFE_INTEGER;
@@ -859,12 +859,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest038
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_3800
-     * @tc.name SetForEachTest038
-     * @tc.desc forEach() on Set created from another Set
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   forEach() on Set created from another Set
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetForEachTest038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const original = new Set(['a', 'b']);
@@ -878,12 +878,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest039
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_3900
-     * @tc.name SetForEachTest039
-     * @tc.desc Callback uses third parameter to modify Set during traversal
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback uses third parameter to modify Set during traversal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetForEachTest039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2]);
@@ -900,12 +900,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest040
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_4000
-     * @tc.name SetForEachTest040
-     * @tc.desc forEach() with thisArg as null
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   forEach() with thisArg as null
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetForEachTest040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1]);
@@ -914,12 +914,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest041
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_4100
-     * @tc.name SetForEachTest041
-     * @tc.desc Traverse Set with elements that are Sets themselves
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Traverse Set with elements that are Sets themselves
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const innerSet1 = new Set([1]);
@@ -935,12 +935,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest042
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_4200
-     * @tc.name SetForEachTest042
-     * @tc.desc forEach() on Set with sparse array elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() on Set with sparse array elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const sparseArr = [1, , 3];
@@ -953,12 +953,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest043
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_4300
-     * @tc.name SetForEachTest043
-     * @tc.desc Callback is an async function (does not await)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Callback is an async function (does not await)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const set = new Set([1, 2]);
@@ -975,12 +975,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest044
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_4400
-     * @tc.name SetForEachTest044
-     * @tc.desc forEach() on a Set that's been cleared during traversal
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() on a Set that's been cleared during traversal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const set = new Set([1, 2, 3, 4]);
@@ -998,12 +998,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest045
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_4500
-     * @tc.name SetForEachTest045
-     * @tc.desc Traverse Set with Symbol.iterator modified
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Traverse Set with Symbol.iterator modified
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const set = new Set([1, 2]);
@@ -1018,12 +1018,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest046
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_4600
-     * @tc.name SetForEachTest046
-     * @tc.desc forEach() with thisArg as a proxy object
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() with thisArg as a proxy object
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest046', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const set = new Set([10]);
@@ -1031,12 +1031,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest047
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_4700
-     * @tc.name SetForEachTest047
-     * @tc.desc Very long string values in Set
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Very long string values in Set
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest047', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const longStr = 'a'.repeat(10000);
@@ -1051,12 +1051,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest048
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_4800
-     * @tc.name SetForEachTest048
-     * @tc.desc forEach() on a subclass of Set
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() on a subclass of Set
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest048', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const result = SetForEachTest048() as (number[] | boolean | string)[];
@@ -1067,12 +1067,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest049
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_4900
-     * @tc.name SetForEachTest049
-     * @tc.desc Callback modifies its own source during execution
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Callback modifies its own source during execution
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const result = SetForEachTest049() as (number | boolean)[];
@@ -1082,12 +1082,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest050
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_5000
-     * @tc.name SetForEachTest050
-     * @tc.desc forEach() with thisArg as a primitive string
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() with thisArg as a primitive string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest050', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const result = SetForEachTest050() as (boolean | string)[];
@@ -1097,12 +1097,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest051
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_5100
-     * @tc.name SetForEachTest051
-     * @tc.desc Traverse Set with elements that are Maps
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Traverse Set with elements that are Maps
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest051', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const map1 = new Map([['a', 1]]);
@@ -1118,12 +1118,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest052
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_5200
-     * @tc.name SetForEachTest052
-     * @tc.desc forEach() called multiple times on the same Set
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() called multiple times on the same Set
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest052', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const set = new Set([1, 2]);
@@ -1143,12 +1143,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest053
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_5300
-     * @tc.name SetForEachTest053
-     * @tc.desc Callback uses closure to modify external variable
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Callback uses closure to modify external variable
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest053', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const set = new Set([1, 2, 3]);
@@ -1162,12 +1162,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest054
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_5400
-     * @tc.name SetForEachTest054
-     * @tc.desc forEach() on Set with elements added in different ways
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() on Set with elements added in different ways
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest054', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const set = new Set<string>();
@@ -1184,12 +1184,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest055
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_5500
-     * @tc.name SetForEachTest055
-     * @tc.desc Traverse Set containing the Set itself
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Traverse Set containing the Set itself
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest055', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       type selfSet = Set<number | selfSet>
@@ -1206,24 +1206,24 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest056
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_5600
-     * @tc.name SetForEachTest056
-     * @tc.desc forEach() with callback that's a bound function
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() with callback that's a bound function
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest056', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(SetForEachTest056()).assertDeepEquals([30, 60]);
     });
 
     /**
+     * @tc.name   SetForEachTest057
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_5700
-     * @tc.name SetForEachTest057
-     * @tc.desc Set with elements that are promises
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Set with elements that are promises
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest057', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const promise1 = Promise.resolve(1);
@@ -1244,12 +1244,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest058
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_5800
-     * @tc.name SetForEachTest058
-     * @tc.desc forEach() on a Set with a modified 'size' property
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() on a Set with a modified 'size' property
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest058', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const set = new Set([1, 2]);
@@ -1263,12 +1263,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest059
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_5900
-     * @tc.name SetForEachTest059
-     * @tc.desc Callback that removes itself from an external array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Callback that removes itself from an external array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest059', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const set = new Set([1, 2]);
@@ -1291,12 +1291,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest060
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_6000
-     * @tc.name SetForEachTest060
-     * @tc.desc forEach() with thisArg as a boolean primitive
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() with thisArg as a boolean primitive
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest060', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const result = SetForEachTest060();
@@ -1306,12 +1306,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest061
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_6100
-     * @tc.name SetForEachTest061
-     * @tc.desc Set containing Symbol.asyncIterator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Set containing Symbol.asyncIterator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest061', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const result = SetForEachTest061();
@@ -1322,12 +1322,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest062
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_6200
-     * @tc.name SetForEachTest062
-     * @tc.desc forEach() called on a Set in a detached iframe
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() called on a Set in a detached iframe
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async () => {
       const set = new Set([1, 2]);
@@ -1339,12 +1339,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest063
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_6300
-     * @tc.name SetForEachTest063
-     * @tc.desc Callback that throws and catches its own error
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Callback that throws and catches its own error
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest063', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const set = new Set([1, 2, 3]);
@@ -1370,36 +1370,36 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest064
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_6400
-     * @tc.name SetForEachTest064
-     * @tc.desc Set with elements that are revoked proxies
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Set with elements that are revoked proxies
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest064', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(SetForEachTest064()).assertEqual(false);
     });
 
     /**
+     * @tc.name   SetForEachTest065
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_6500
-     * @tc.name SetForEachTest065
-     * @tc.desc forEach() with a very large thisArg object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() with a very large thisArg object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async () => {
       expect(SetForEachTest065()).assertEqual(25);
     });
 
     /**
+     * @tc.name   SetForEachTest066
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_6600
-     * @tc.name SetForEachTest066
-     * @tc.desc Traverse Set during concurrent modification in another function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Traverse Set during concurrent modification in another function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async () => {
       const set = new Set([1, 2, 3, 4, 5]);
@@ -1426,36 +1426,36 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest067
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_6700
-     * @tc.name SetForEachTest067
-     * @tc.desc Callback that is a generator function
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Callback that is a generator function
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest067', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(SetForEachTest067()).assertDeepEquals([2, 4]);
     });
 
     /**
+     * @tc.name   SetForEachTest068
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_6800
-     * @tc.name SetForEachTest068
-     * @tc.desc forEach() on a Set with prototype modified
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() on a Set with prototype modified
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest068', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(SetForEachTest068()).assertDeepEquals([2, 4]);
     });
 
     /**
+     * @tc.name   SetForEachTest069
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_6900
-     * @tc.name SetForEachTest069
-     * @tc.desc Set containing non-primitive values with custom toString
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Set containing non-primitive values with custom toString
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest069', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI {
@@ -1482,24 +1482,24 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest070
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_7000
-     * @tc.name SetForEachTest070
-     * @tc.desc forEach() with thisArg as a null prototype object
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() with thisArg as a null prototype object
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest070', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(SetForEachTest070()).assertEqual(15);
     });
 
     /**
+     * @tc.name   SetForEachTest071
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_7100
-     * @tc.name SetForEachTest071
-     * @tc.desc Set with elements that are weak references
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Set with elements that are weak references
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest071', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       if (typeof WeakRef === 'undefined') {
@@ -1520,12 +1520,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest072
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_7200
-     * @tc.name SetForEachTest072
-     * @tc.desc forEach() called with Reflect.apply
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() called with Reflect.apply
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest072', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const set = new Set([1, 2]);
@@ -1538,12 +1538,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest073
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_7300
-     * @tc.name SetForEachTest073
-     * @tc.desc Callback that recursively calls forEach on the same Set
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Callback that recursively calls forEach on the same Set
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest073', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const set = new Set([1]);
@@ -1565,12 +1565,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest074
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_7400
-     * @tc.name SetForEachTest074
-     * @tc.desc Set with elements that are all the same object reference
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Set with elements that are all the same object reference
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest074', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI {
@@ -1588,12 +1588,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest075
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_7500
-     * @tc.name SetForEachTest075
-     * @tc.desc forEach() with a callback that's a class constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() with a callback that's a class constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest075', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const result = SetForEachTest075() as number[];
@@ -1604,12 +1604,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest077
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_7700
-     * @tc.name SetForEachTest077
-     * @tc.desc forEach() on a Set that's been made non-extensible
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() on a Set that's been made non-extensible
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest077', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const set = new Set([1, 2]);
@@ -1623,24 +1623,24 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest078
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_7800
-     * @tc.name SetForEachTest078
-     * @tc.desc Callback that modifies the Set's prototype during traversal
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Callback that modifies the Set's prototype during traversal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest078', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(SetForEachTest078()).assertDeepEquals([1, 2, 3]);
     });
 
     /**
+     * @tc.name   SetForEachTest079
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_7900
-     * @tc.name SetForEachTest079
-     * @tc.desc Set with elements that are DataView objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Set with elements that are DataView objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest079', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const buffer1 = new ArrayBuffer(4);
@@ -1661,24 +1661,24 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest080
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_8000
-     * @tc.name SetForEachTest080
-     * @tc.desc forEach() with thisArg as a Symbol
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() with thisArg as a Symbol
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest080', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(SetForEachTest080()).assertEqual(true);
     });
 
     /**
+     * @tc.name   SetForEachTest081
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_8100
-     * @tc.name SetForEachTest081
-     * @tc.desc Set containing SharedArrayBuffer objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Set containing SharedArrayBuffer objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest081', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       if (typeof SharedArrayBuffer === 'undefined') {
@@ -1697,36 +1697,36 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest082
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_8200
-     * @tc.name SetForEachTest082
-     * @tc.desc forEach() called in a Web Worker-like context
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() called in a Web Worker-like context
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest082', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(SetForEachTest082()).assertDeepEquals([1, 2]);
     });
 
     /**
+     * @tc.name   SetForEachTest083
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_8300
-     * @tc.name SetForEachTest083
-     * @tc.desc Callback that uses eval() to modify behavior
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Callback that uses eval() to modify behavior
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest083', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(SetForEachTest083()).assertDeepEquals([1, 4]);
     });
 
     /**
+     * @tc.name   SetForEachTest084
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_8400
-     * @tc.name SetForEachTest084
-     * @tc.desc Set with elements that are error objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Set with elements that are error objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest084', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const error1 = new Error('Error 1');
@@ -1740,24 +1740,24 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest085
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_8500
-     * @tc.name SetForEachTest085
-     * @tc.desc forEach() with callback that's a Proxy to a function
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() with callback that's a Proxy to a function
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest085', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(SetForEachTest085()).assertDeepEquals([2, 4]);
     });
 
     /**
+     * @tc.name   SetForEachTest086
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_8600
-     * @tc.name SetForEachTest086
-     * @tc.desc Set containing both NaN and other numeric values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Set containing both NaN and other numeric values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest086', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const set = new Set([NaN, 1, NaN, 2, NaN]);
@@ -1772,24 +1772,24 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest087
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_8700
-     * @tc.name SetForEachTest087
-     * @tc.desc forEach() called on a Set with overridden forEach method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() called on a Set with overridden forEach method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest087', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(SetForEachTest087()).assertDeepEquals([99]);
     });
 
     /**
+     * @tc.name   SetForEachTest088
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_8800
-     * @tc.name SetForEachTest088
-     * @tc.desc Callback that uses the 'arguments' object
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Callback that uses the 'arguments' object
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest088', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const set = new Set(['a']);
@@ -1802,12 +1802,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest089
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_8900
-     * @tc.name SetForEachTest089
-     * @tc.desc Set with elements that are DOM element-like objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Set with elements that are DOM element-like objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest089', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI {
@@ -1828,12 +1828,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest090
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_9000
-     * @tc.name SetForEachTest090
-     * @tc.desc forEach() with thisArg as a BigInt primitive
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() with thisArg as a BigInt primitive
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest090', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const set = new Set([2n]);
@@ -1841,12 +1841,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest091
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_9100
-     * @tc.name SetForEachTest091
-     * @tc.desc Set containing Int32Array views of the same buffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Set containing Int32Array views of the same buffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest091', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const buffer = new ArrayBuffer(8);
@@ -1865,12 +1865,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest092
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_9200
-     * @tc.name SetForEachTest092
-     * @tc.desc forEach() in a strict mode function
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() in a strict mode function
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest092', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       'use strict';
@@ -1888,12 +1888,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest093
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_9300
-     * @tc.name SetForEachTest093
-     * @tc.desc Callback that modifies a closed-over variable in outer scope
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Callback that modifies a closed-over variable in outer scope
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest093', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const set = new Set([1, 2, 3]);
@@ -1911,12 +1911,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest094
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_9400
-     * @tc.name SetForEachTest094
-     * @tc.desc Set with elements that are regex objects with same pattern
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Set with elements that are regex objects with same pattern
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest094', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const regex1 = /pattern/;
@@ -1931,12 +1931,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest095
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_9500
-     * @tc.name SetForEachTest095
-     * @tc.desc forEach() with callback that's a bound function with arguments
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() with callback that's a bound function with arguments
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest095', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const set = new Set([10, 20]);
@@ -1947,12 +1947,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest096
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_9600
-     * @tc.name SetForEachTest096
-     * @tc.desc Set containing both primitives and their object wrappers
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Set containing both primitives and their object wrappers
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest096', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const numPrimitive = 123;
@@ -1981,12 +1981,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest097
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_9700
-     * @tc.name SetForEachTest097
-     * @tc.desc forEach() called on a Set with a modified 'add' method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() called on a Set with a modified 'add' method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest097', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const set = new Set<number>();
@@ -1994,36 +1994,36 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest098
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_9800
-     * @tc.name SetForEachTest098
-     * @tc.desc Callback that uses 'this' from multiple nested functions
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Callback that uses 'this' from multiple nested functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest098', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(SetForEachTest098()).assertEqual(10);
     });
 
     /**
+     * @tc.name   SetForEachTest099
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_9900
-     * @tc.name SetForEachTest099
-     * @tc.desc Set with elements that are generator objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Set with elements that are generator objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest099', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(SetForEachTest099()).assertDeepEquals([1, 2]);
     });
 
     /**
+     * @tc.name   SetForEachTest100
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_10000
-     * @tc.name SetForEachTest100
-     * @tc.desc Comprehensive final test with mixed scenarios
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Comprehensive final test with mixed scenarios
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest100', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL4, async () => {
       const result = SetForEachTest100();
@@ -2037,12 +2037,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest101
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_10100
-     * @tc.name SetForEachTest101
-     * @tc.desc Traverse Set with elements that are WeakMap instances
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Traverse Set with elements that are WeakMap instances
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest101', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI {}
@@ -2070,24 +2070,24 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest102
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_10200
-     * @tc.name SetForEachTest102
-     * @tc.desc forEach() with callback that uses Function.prototype.call to change 'this'
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() with callback that uses Function.prototype.call to change 'this'
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest102', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(SetForEachTest102()).assertDeepEquals([30, 60]);
     });
 
     /**
+     * @tc.name   SetForEachTest103
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_10300
-     * @tc.name SetForEachTest103
-     * @tc.desc Set containing objects with custom valueOf methods
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Set containing objects with custom valueOf methods
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest103', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI {
@@ -2118,12 +2118,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest104
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_10400
-     * @tc.name SetForEachTest104
-     * @tc.desc forEach() called on a Set with a modified 'delete' method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() called on a Set with a modified 'delete' method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest104', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const result = SetForEachTest104();
@@ -2132,12 +2132,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest106
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_10600
-     * @tc.name SetForEachTest106
-     * @tc.desc Callback that uses Promise within forEach (no await)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Callback that uses Promise within forEach (no await)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest106', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const set = new Set([1, 2]);
@@ -2159,12 +2159,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest107
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_10700
-     * @tc.name SetForEachTest107
-     * @tc.desc Set containing objects with circular references
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Set containing objects with circular references
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest107', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI {
@@ -2185,12 +2185,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest108
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_10800
-     * @tc.name SetForEachTest108
-     * @tc.desc forEach() with callback that is a class method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() with callback that is a class method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest108', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       class Processor {
@@ -2216,12 +2216,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest109
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_10900
-     * @tc.name SetForEachTest109
-     * @tc.desc Traverse Set with elements that are ArrayBuffer views of different types
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Traverse Set with elements that are ArrayBuffer views of different types
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest109', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const buffer = new ArrayBuffer(4);
@@ -2243,24 +2243,24 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest110
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_11000
-     * @tc.name SetForEachTest110
-     * @tc.desc forEach() with thisArg as a frozen object
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() with thisArg as a frozen object
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest110', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(SetForEachTest110()).assertDeepEquals([12, 20]);
     });
 
     /**
+     * @tc.name   SetForEachTest111
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_11100
-     * @tc.name SetForEachTest111
-     * @tc.desc forEach() with callback that uses optional chaining on elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() with callback that uses optional chaining on elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest111', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI {
@@ -2278,12 +2278,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest112
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_11200
-     * @tc.name SetForEachTest112
-     * @tc.desc Traverse Set with elements that are class instances
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Traverse Set with elements that are class instances
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest112', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       class Item {
@@ -2309,12 +2309,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest113
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_11300
-     * @tc.name SetForEachTest113
-     * @tc.desc forEach() with callback that uses nullish coalescing
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() with callback that uses nullish coalescing
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest113', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const set = new Set([0, '', null, undefined, 42, 'hello']);
@@ -2328,24 +2328,24 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest114
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_11400
-     * @tc.name SetForEachTest114
-     * @tc.desc Set containing elements with Symbol properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Set containing elements with Symbol properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest114', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(SetForEachTest114()).assertDeepEquals(['value1', 'value2']);
     });
 
     /**
+     * @tc.name   SetForEachTest115
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_11500
-     * @tc.name SetForEachTest115
-     * @tc.desc forEach() with async callback using await
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() with async callback using await
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest115', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const set = new Set([1, 2, 3]);
@@ -2368,12 +2368,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest116
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_11600
-     * @tc.name SetForEachTest116
-     * @tc.desc Set with elements that are WeakSet instances
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Set with elements that are WeakSet instances
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest116', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI {}
@@ -2396,12 +2396,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest117
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_11700
-     * @tc.name SetForEachTest117
-     * @tc.desc forEach() with callback that uses logical assignment operators
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() with callback that uses logical assignment operators
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest117', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const set = new Set(['a', 'b', 'a', 'c']);
@@ -2416,48 +2416,48 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest118
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_11800
-     * @tc.name SetForEachTest118
-     * @tc.desc Traverse Set with elements that are generator functions
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Traverse Set with elements that are generator functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest118', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(SetForEachTest118()).assertDeepEquals([[1, 2], [3, 4]]);
     });
 
     /**
+     * @tc.name   SetForEachTest119
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_11900
-     * @tc.name SetForEachTest119
-     * @tc.desc forEach() on Set with elements that are proxies
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() on Set with elements that are proxies
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest119', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(SetForEachTest119()).assertDeepEquals([20, 40]);
     });
 
     /**
+     * @tc.name   SetForEachTest120
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_12000
-     * @tc.name SetForEachTest120
-     * @tc.desc Set containing elements with custom [Symbol.iterator]
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Set containing elements with custom [Symbol.iterator]
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest120', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       expect(SetForEachTest120()).assertDeepEquals([[1, 2], [3, 4]]);
     });
 
     /**
+     * @tc.name   SetForEachTest121
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_12100
-     * @tc.name SetForEachTest121
-     * @tc.desc forEach() with callback that uses dynamic import()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() with callback that uses dynamic import()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async () => {
       interface BaseI {
@@ -2483,12 +2483,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest124
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_12400
-     * @tc.name SetForEachTest124
-     * @tc.desc Set containing elements with custom inspect methods
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Set containing elements with custom inspect methods
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest124', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       interface BaseI {
@@ -2516,12 +2516,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest127
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_12700
-     * @tc.name SetForEachTest127
-     * @tc.desc forEach() with callback that uses String.prototype.replaceAll()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() with callback that uses String.prototype.replaceAll()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest127', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const set = new Set(['a.b.c', 'x.y.z', '1.2.3']);
@@ -2535,12 +2535,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest129
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_12900
-     * @tc.name SetForEachTest129
-     * @tc.desc forEach() on Set with elements that are Map instances with same entries
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   forEach() on Set with elements that are Map instances with same entries
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest129', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const map1 = new Map([['key', 'value1']]);
@@ -2555,12 +2555,12 @@ export default function SetForeachTest() {
     });
 
     /**
+     * @tc.name   SetForEachTest130
      * @tc.number SUB_BUILTINS_SET_FOREACH_TEST_13000
-     * @tc.name SetForEachTest130
-     * @tc.desc Set with elements that are different TypedArray views of same buffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 4
+     * @tc.desc   Set with elements that are different TypedArray views of same buffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL4
      */
     it('SetForEachTest130', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
       const buffer = new ArrayBuffer(8);

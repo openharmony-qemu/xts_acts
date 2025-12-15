@@ -21,6 +21,11 @@
 #include <multimedia/image_framework/image_pixel_map_mdk.h>
 #include <multimedia/image_framework/image/picture_native.h>
 #include "ImageEffectSuppTest.h"
+#include "render_texture.h"
+#include <native_color_space_manager/native_color_space_manager.h>
+#include <native_window/external_window.h>
+#include <string>
+#include <multimedia/image_effect/image_effect_errors.h>
 #define MY_LOG_DOMAIN 0x0000
 #define MY_LOG_TAG "ImageEffectNDK"
 #define LOG(fmt, ...) (void)OH_LOG_Print(LOG_APP, LOG_DEBUG, MY_LOG_DOMAIN, MY_LOG_TAG, fmt, ##__VA_ARGS__)
@@ -237,5 +242,252 @@ napi_value OHImageEffectReplaceFilterSupp(napi_env env, napi_callback_info info)
     }
     napi_value ret;
     napi_create_int32(env, status, &ret);
+    return ret;
+}
+
+napi_value OHImageEffectReplaceFilterByFilterSupp(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    OH_ImageEffect *imageEffect = OH_ImageEffect_Create(IMAGE_EFFECT_NAME);
+    OH_ImageEffect_AddFilter(imageEffect, OH_EFFECT_CONTRAST_FILTER);
+    OH_EffectFilter *filter = OH_EffectFilter_Create(OH_EFFECT_BRIGHTNESS_FILTER);
+    ImageEffect_ErrorCode errorCode = ImageEffect_ErrorCode::EFFECT_SUCCESS;
+    switch (index) {
+    case CASE_INDEX_1:
+        OH_ImageEffect_AddFilter(imageEffect, OH_EFFECT_CONTRAST_FILTER);
+        errorCode = OH_ImageEffect_ReplaceFilterByFilter(imageEffect, 0, filter);
+        break;
+    case CASE_INDEX_2:
+        errorCode = OH_ImageEffect_ReplaceFilterByFilter(nullptr, 0, filter);
+        break;
+    case CASE_INDEX_3:
+        errorCode = OH_ImageEffect_ReplaceFilterByFilter(imageEffect, -1, filter);
+        break;
+    case CASE_INDEX_4:
+        errorCode = OH_ImageEffect_ReplaceFilterByFilter(imageEffect, 0, nullptr);
+        break;
+    default:
+        break;
+    }
+    OH_EffectFilter_Release(filter);
+    OH_ImageEffect_Release(imageEffect);
+    napi_value ret;
+    napi_create_int32(env, errorCode, &ret);
+    return ret;
+}
+
+napi_value OHImageEffectAddFilterByFilterSupp(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    OH_ImageEffect *imageEffect = OH_ImageEffect_Create(IMAGE_EFFECT_NAME);
+    ImageEffect_ErrorCode errorCode = ImageEffect_ErrorCode::EFFECT_SUCCESS;
+    OH_EffectFilter *filter = OH_EffectFilter_Create(OH_EFFECT_BRIGHTNESS_FILTER);
+    switch (index) {
+    case CASE_INDEX_1:
+        errorCode = OH_ImageEffect_AddFilterByFilter(imageEffect, filter);
+        break;
+    case CASE_INDEX_2:
+        errorCode = OH_ImageEffect_AddFilterByFilter(nullptr, filter);
+        break;
+    case CASE_INDEX_3:
+        errorCode = OH_ImageEffect_AddFilterByFilter(imageEffect, nullptr);
+        break;
+    default:
+        break;
+    }
+    OH_EffectFilter_Release(filter);
+    OH_ImageEffect_Release(imageEffect);
+    napi_value ret;
+    napi_create_int32(env, errorCode, &ret);
+    return ret;
+}
+
+napi_value OHImageEffectInsertFilterByFilterSupp(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    OH_ImageEffect *imageEffect = OH_ImageEffect_Create(IMAGE_EFFECT_NAME);
+    OH_EffectFilter *filter = OH_EffectFilter_Create(OH_EFFECT_BRIGHTNESS_FILTER);
+    ImageEffect_ErrorCode errorCode = ImageEffect_ErrorCode::EFFECT_SUCCESS;
+    switch (index) {
+    case CASE_INDEX_1:
+        errorCode = OH_ImageEffect_InsertFilterByFilter(imageEffect, 1, filter);
+        break;
+    case CASE_INDEX_2:
+        errorCode = OH_ImageEffect_InsertFilterByFilter(nullptr, 0, filter);
+        break;
+    case CASE_INDEX_3:
+        errorCode = OH_ImageEffect_InsertFilterByFilter(imageEffect, -1, filter);
+        break;
+    case CASE_INDEX_4:
+        errorCode = OH_ImageEffect_InsertFilterByFilter(imageEffect, 0, nullptr);
+        break;
+    default:
+        break;
+    }
+    OH_EffectFilter_Release(filter);
+    OH_ImageEffect_Release(imageEffect);
+    napi_value ret;
+    napi_create_int32(env, errorCode, &ret);
+    return ret;
+}
+
+napi_value OHImageEffectRemoveFilterByIndexSupp(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    OH_ImageEffect *imageEffect = OH_ImageEffect_Create(IMAGE_EFFECT_NAME);
+    int32_t errorCode = ImageEffect_ErrorCode::EFFECT_SUCCESS;
+    OH_EffectFilter *brightnessFilter = OH_EffectFilter_Create(OH_EFFECT_BRIGHTNESS_FILTER);
+    switch (index) {
+    case CASE_INDEX_1:
+        OH_ImageEffect_AddFilterByFilter(imageEffect, brightnessFilter);
+        errorCode = OH_ImageEffect_RemoveFilterByIndex(imageEffect, 0);
+        break;
+    case CASE_INDEX_2:
+        OH_ImageEffect_AddFilter(imageEffect, OH_EFFECT_CONTRAST_FILTER);
+        OH_ImageEffect_AddFilterByFilter(imageEffect, brightnessFilter);
+        errorCode = OH_ImageEffect_RemoveFilterByIndex(imageEffect, 1);
+        errorCode |= OH_ImageEffect_RemoveFilterByIndex(imageEffect, 0);
+        break;
+    case CASE_INDEX_3:
+        errorCode = OH_ImageEffect_RemoveFilterByIndex(imageEffect, 0);
+        break;
+    default:
+        break;
+    }
+    OH_EffectFilter_Release(brightnessFilter);
+    OH_ImageEffect_Release(imageEffect);
+    napi_value ret;
+    napi_create_int32(env, errorCode, &ret);
+    return ret;
+}
+
+napi_value OHImageEffectGetFilterSupp(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    OH_ImageEffect *imageEffect = OH_ImageEffect_Create(IMAGE_EFFECT_NAME);
+    OH_ImageEffect_AddFilter(imageEffect, OH_EFFECT_BRIGHTNESS_FILTER);
+    int32_t getFilterIndex;
+    switch (index) {
+    case CASE_INDEX_1:
+        getFilterIndex = 0;
+        break;
+    case CASE_INDEX_2:
+        getFilterIndex = 1;
+        break;
+    default:
+        break;
+    }
+    OH_EffectFilter *getFilter = OH_ImageEffect_GetFilter(imageEffect, getFilterIndex);
+    OH_ImageEffect_Release(imageEffect);
+    int status = IMAGE_EFFECT_CODE_401;
+    if (getFilter != nullptr) {
+        status = 0;
+    }
+    napi_value ret;
+    napi_create_int32(env, status, &ret);
+    return ret;
+}
+
+napi_value OHImageEffectSetInputPictureSupp(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    OH_ImageEffect *imageEffect = OH_ImageEffect_Create(IMAGE_EFFECT_NAME);
+    OH_EffectFilter *filter = OH_ImageEffect_AddFilter(imageEffect, OH_EFFECT_BRIGHTNESS_FILTER);
+    ImageEffect_ErrorCode errorCode = ImageEffect_ErrorCode::EFFECT_SUCCESS;
+    OH_PictureNative  *nativePicture = nullptr;
+    switch (index) {
+    case CASE_INDEX_1:
+        errorCode = OH_ImageEffect_SetInputPicture(imageEffect, nativePicture);
+        break;
+    case CASE_INDEX_2:
+        errorCode = OH_ImageEffect_SetInputPicture(nullptr, nativePicture);
+        break;
+    case CASE_INDEX_3:
+        errorCode = OH_ImageEffect_SetInputPicture(imageEffect, nullptr);
+        break;
+    default:
+        break;
+    }
+    napi_value ret;
+    napi_create_int32(env, errorCode, &ret);
+    return ret;
+}
+
+napi_value OHImageEffectSetOutputPictureSupp(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    OH_ImageEffect *imageEffect = OH_ImageEffect_Create(IMAGE_EFFECT_NAME);
+    OH_EffectFilter *filter = OH_ImageEffect_AddFilter(imageEffect, OH_EFFECT_BRIGHTNESS_FILTER);
+    OH_PictureNative *outNativePicture = nullptr;
+    ImageEffect_ErrorCode errorCode = ImageEffect_ErrorCode::EFFECT_SUCCESS;
+    switch (index) {
+    case CASE_INDEX_1:
+        errorCode = OH_ImageEffect_SetOutputPicture(imageEffect, outNativePicture);
+        break;
+    case CASE_INDEX_2:
+        errorCode = OH_ImageEffect_SetOutputPicture(nullptr, outNativePicture);
+        break;
+    case CASE_INDEX_3:
+        errorCode = OH_ImageEffect_SetOutputPicture(imageEffect, nullptr);
+        break;
+    default:
+        break;
+    }
+    napi_value ret;
+    napi_create_int32(env, errorCode, &ret);
+    return ret;
+}
+
+napi_value OHImageEffectReleaseSupp(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    OH_ImageEffect *imageEffect = nullptr;
+    ImageEffect_ErrorCode code;
+    switch (index) {
+    case CASE_INDEX_1:
+        imageEffect = OH_ImageEffect_Create(IMAGE_EFFECT_NAME);
+        code = OH_ImageEffect_Release(imageEffect);
+        break;
+    case CASE_INDEX_2:
+        imageEffect = nullptr;
+        code = OH_ImageEffect_Release(imageEffect);
+        break;
+    default:
+        break;
+    }
+    napi_value ret;
+    napi_create_int32(env, code, &ret);
     return ret;
 }

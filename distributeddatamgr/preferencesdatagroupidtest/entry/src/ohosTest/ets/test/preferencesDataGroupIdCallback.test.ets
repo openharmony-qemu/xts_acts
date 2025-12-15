@@ -34,7 +34,6 @@ export default function preferencesDataGroupIdCallback() {
       dataGroupId: null | undefined
      }
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DDM_Preferences_DataGroupId_Callback_0100
      * @tc.number SUB_DDM_Preferences_DataGroupId_Callback_0100
      * @tc.desc   SUB_DDM_Preferences_DataGroupId_Callback_0100
@@ -65,7 +64,6 @@ export default function preferencesDataGroupIdCallback() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DDM_Preferences_DataGroupId_Callback_0200
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_0400
      * @tc.desc   preferences getPreferences dataGroupId undefined callback test
@@ -95,7 +93,6 @@ export default function preferencesDataGroupIdCallback() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DDM_Preferences_DataGroupId_Callback_0300
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_0800
      * @tc.desc   preferences getPreferences dataGroupId callback test
@@ -127,7 +124,6 @@ export default function preferencesDataGroupIdCallback() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DDM_Preferences_DataGroupId_Callback_0400
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_1200
      * @tc.desc   preferences deletePreferences dataGroupId callback test
@@ -163,7 +159,6 @@ export default function preferencesDataGroupIdCallback() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DDM_Preferences_DataGroupId_Callback_0500
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_0200
      * @tc.desc   preferences getPreferences dataGroupId null callback test
@@ -194,7 +189,6 @@ export default function preferencesDataGroupIdCallback() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DDM_Preferences_DataGroupId_Callback_0600
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_0500
      * @tc.desc   preferences removePreferencesFromCache dataGroupId undefined callback test
@@ -224,7 +218,6 @@ export default function preferencesDataGroupIdCallback() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DDM_Preferences_DataGroupId_Callback_0700
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_0900
      * @tc.desc   preferences removePreferencesFromCache dataGroupId callback test
@@ -256,7 +249,6 @@ export default function preferencesDataGroupIdCallback() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DDM_Preferences_DataGroupId_Callback_0800
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_1300
      * @tc.desc   preferences removePreferencesFromCache dataGroupId callback test

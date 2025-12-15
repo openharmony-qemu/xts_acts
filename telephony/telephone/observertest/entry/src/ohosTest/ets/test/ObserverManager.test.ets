@@ -62,14 +62,14 @@ export default function observerManagerTest() {
     });
 
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_NetworkStateChangeOn_0300
-    * @tc.name  : testTelephonyObserverNetworkStateChangeOn0300
-    * @tc.desc  : Subscribe to network state change events.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 2
-    */
+    /**
+     * @tc.name   testTelephonyObserverNetworkStateChangeOn0300
+     * @tc.number SUB_Telephony_Observer_NetworkStateChangeOn_0300
+     * @tc.desc   Subscribe to network state change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testTelephonyObserverNetworkStateChangeOn0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverNetworkStateChangeOn0300';
       console.info(`${caseName} test start `);
@@ -87,13 +87,13 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-     * @tc.number: SUB_Telephony_Observer_NetworkStateChangeOnId_0500
-     * @tc.name  : testTelephonyObserverNetworkStateChangeOnId0500
-     * @tc.desc  : Subscribe to network state change events.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+    /**
+     * @tc.name   testTelephonyObserverNetworkStateChangeOnId0500
+     * @tc.number SUB_Telephony_Observer_NetworkStateChangeOnId_0500
+     * @tc.desc   Subscribe to network state change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelephonyObserverNetworkStateChangeOnId0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverNetworkStateChangeOnId0500';
@@ -114,13 +114,13 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-     * @tc.number: SUB_Telephony_Observer_NetworkStateChangeOnId_0600
-     * @tc.name  : testTelephonyObserverNetworkStateChangeOnId0600
-     * @tc.desc  : Subscribe to network state change events.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testTelephonyObserverNetworkStateChangeOnId0600
+     * @tc.number SUB_Telephony_Observer_NetworkStateChangeOnId_0600
+     * @tc.desc   Subscribe to network state change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelephonyObserverNetworkStateChangeOnId0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverNetworkStateChangeOnId0600';
@@ -141,13 +141,13 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-     * @tc.number: SUB_Telephony_Observer_NetworkStateChangeOnId_0700
-     * @tc.name  : testTelephonyObserverNetworkStateChangeOnId0700
-     * @tc.desc  : Subscribe to network state change events.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testTelephonyObserverNetworkStateChangeOnId0700
+     * @tc.number SUB_Telephony_Observer_NetworkStateChangeOnId_0700
+     * @tc.desc   Subscribe to network state change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyObserverNetworkStateChangeOnId0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverNetworkStateChangeOnId0700';
@@ -168,14 +168,14 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_NetworkStateChangeOff_0100
-    * @tc.name  : testTelephonyObserverNetworkStateChangeOff0100
-    * @tc.desc  : Unsubscribe to network state change events.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testTelephonyObserverNetworkStateChangeOff0100
+     * @tc.number SUB_Telephony_Observer_NetworkStateChangeOff_0100
+     * @tc.desc   Unsubscribe to network state change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testTelephonyObserverNetworkStateChangeOff0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverNetworkStateChangeOff0100';
       console.info(`${caseName} test start `);
@@ -196,13 +196,13 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-     * @tc.number: SUB_Telephony_Observer_NetworkStateChangeOff_0200
-     * @tc.name  : testTelephonyObserverNetworkStateChangeOff0200
-     * @tc.desc  : Unsubscribe to network state change events.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testTelephonyObserverNetworkStateChangeOff0200
+     * @tc.number SUB_Telephony_Observer_NetworkStateChangeOff_0200
+     * @tc.desc   Unsubscribe to network state change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyObserverNetworkStateChangeOff0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverNetworkStateChangeOff0200';
@@ -226,14 +226,14 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_NetworkStateChangeOff_0300
-    * @tc.name  : testTelephonyObserverNetworkStateChangeOff0300
-    * @tc.desc  : Unsubscribe to network state change events
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 2
-    */
+    /**
+     * @tc.name   testTelephonyObserverNetworkStateChangeOff0300
+     * @tc.number SUB_Telephony_Observer_NetworkStateChangeOff_0300
+     * @tc.desc   Unsubscribe to network state change events
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testTelephonyObserverNetworkStateChangeOff0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverNetworkStateChangeOff0300';
       console.info(`${caseName} test start `);
@@ -253,14 +253,14 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_NetworkStateChangeOff_0400
-    * @tc.name  : testTelephonyObserverNetworkStateChangeOff0400
-    * @tc.desc  : Unsubscribe to network state change events.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testTelephonyObserverNetworkStateChangeOff0400
+     * @tc.number SUB_Telephony_Observer_NetworkStateChangeOff_0400
+     * @tc.desc   Unsubscribe to network state change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testTelephonyObserverNetworkStateChangeOff0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverNetworkStateChangeOff0400';
       console.info(`${caseName} test start `);
@@ -284,14 +284,14 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_CallStateChangeOn_0500
-    * @tc.name  : testTelephonyObserverCallStateChangeOn0500
-    * @tc.desc  : Subscribe to call status change event.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testTelephonyObserverCallStateChangeOn0500
+     * @tc.number SUB_Telephony_Observer_CallStateChangeOn_0500
+     * @tc.desc   Subscribe to call status change event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testTelephonyObserverCallStateChangeOn0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCallStateChangeOn0500';
       console.info(`${caseName} test start `);
@@ -313,14 +313,14 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_CallStateChangeOnId_0300
-    * @tc.name  : testTelephonyObserverCallStateChangeOnId0300
-    * @tc.desc  : Subscribe to call status change event.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testTelephonyObserverCallStateChangeOnId0300
+     * @tc.number SUB_Telephony_Observer_CallStateChangeOnId_0300
+     * @tc.desc   Subscribe to call status change event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testTelephonyObserverCallStateChangeOnId0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCallStateChangeOnId0300';
       console.info(`${caseName} test start `);
@@ -344,14 +344,14 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-      * @tc.number: SUB_Telephony_Observer_CallStateChangeOnId_0600
-      * @tc.name  : testTelephonyObserverCallStateChangeOnId0600
-      * @tc.desc  : Subscribe to call status change event.
-      * @tc.size  : MediumTest
-      * @tc.type  : Function
-      * @tc.level : level 3
-      */
+    /**
+     * @tc.name   testTelephonyObserverCallStateChangeOnId0600
+     * @tc.number SUB_Telephony_Observer_CallStateChangeOnId_0600
+     * @tc.desc   Subscribe to call status change event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testTelephonyObserverCallStateChangeOnId0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCallStateChangeOnId0600';
       console.info(`${caseName} test start `);
@@ -381,13 +381,13 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-     * @tc.number: SUB_Telephony_Observer_CallStateChangeOnId_0700
-     * @tc.name  : testTelephonyObserverCallStateChangeOnId0700
-     * @tc.desc  : Subscribe to call status change event.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testTelephonyObserverCallStateChangeOnId0700
+     * @tc.number SUB_Telephony_Observer_CallStateChangeOnId_0700
+     * @tc.desc   Subscribe to call status change event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyObserverCallStateChangeOnId0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCallStateChangeOnId0700';
@@ -412,13 +412,13 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-     * @tc.number: SUB_Telephony_Observer_CallStateChangeOff_0300
-     * @tc.name  : testTelephonyObserverCallStateChangeOff0300
-     * @tc.desc  : Unsubscribe to call status change event.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testTelephonyObserverCallStateChangeOff0300
+     * @tc.number SUB_Telephony_Observer_CallStateChangeOff_0300
+     * @tc.desc   Unsubscribe to call status change event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyObserverCallStateChangeOff0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCallStateChangeOff0300';
@@ -447,14 +447,14 @@ export default function observerManagerTest() {
     });
 
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_CellularDataConnectionStateChangeOn_0500
-    * @tc.name  : testTelephonyObserverCellularDataConnectionStateChangeOn0500
-    * @tc.desc  : Subscribe to cellular data link connection status.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testTelephonyObserverCellularDataConnectionStateChangeOn0500
+     * @tc.number SUB_Telephony_Observer_CellularDataConnectionStateChangeOn_0500
+     * @tc.desc   Subscribe to cellular data link connection status.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyObserverCellularDataConnectionStateChangeOn0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCellularDataConnectionStateChangeOn0500';
       console.info(`${caseName} test start `);
@@ -473,13 +473,13 @@ export default function observerManagerTest() {
     });
 
 
-    /* *
-     * @tc.number: SUB_Telephony_Observer_CellularDataConnectionStateChangeOnId_0500
-     * @tc.name  : testTelephonyObserverCellularDataConnectionStateChangeOnId0500
-     * @tc.desc  : Subscribe to the cellular data link connection status of the specified card slot.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testTelephonyObserverCellularDataConnectionStateChangeOnId0500
+     * @tc.number SUB_Telephony_Observer_CellularDataConnectionStateChangeOnId_0500
+     * @tc.desc   Subscribe to the cellular data link connection status of the specified card slot.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyObserverCellularDataConnectionStateChangeOnId0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCellularDataConnectionStateChangeOnId0500';
@@ -506,13 +506,13 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-     * @tc.number: SUB_Telephony_Observer_CellularDataConnectionStateChangeOnId_0600
-     * @tc.name  : testTelephonyObserverCellularDataConnectionStateChangeOnId0600
-     * @tc.desc  : Subscribe to the cellular data link connection status of the specified card slot.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testTelephonyObserverCellularDataConnectionStateChangeOnId0600
+     * @tc.number SUB_Telephony_Observer_CellularDataConnectionStateChangeOnId_0600
+     * @tc.desc   Subscribe to the cellular data link connection status of the specified card slot.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyObserverCellularDataConnectionStateChangeOnId0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCellularDataConnectionStateChangeOnId0600';
@@ -539,13 +539,13 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-     * @tc.number: SUB_Telephony_Observer_CellularDataConnectionStateChangeOnId_0700
-     * @tc.name  : testTelephonyObserverCellularDataConnectionStateChangeOnId0700
-     * @tc.desc  : Subscribe to the cellular data link connection status of the specified card slot.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testTelephonyObserverCellularDataConnectionStateChangeOnId0700
+     * @tc.number SUB_Telephony_Observer_CellularDataConnectionStateChangeOnId_0700
+     * @tc.desc   Subscribe to the cellular data link connection status of the specified card slot.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyObserverCellularDataConnectionStateChangeOnId0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCellularDataConnectionStateChangeOnId0700';
@@ -572,14 +572,14 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_CellularDataConnectionStateChangeOff_0100
-    * @tc.name  : testTelephonyObserverCellularDataConnectionStateChangeOff0100
-    * @tc.desc  : Remove subscription cellular data link connection status.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testTelephonyObserverCellularDataConnectionStateChangeOff
+     * @tc.number SUB_Telephony_Observer_CellularDataConnectionStateChangeOff_0100
+     * @tc.desc   Remove subscription cellular data link connection status.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyObserverCellularDataConnectionStateChangeOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCellularDataConnectionStateChangeOff';
       console.info(`${caseName} test start `);
@@ -605,13 +605,13 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-     * @tc.number: SUB_Telephony_Observer_CellularDataConnectionStateChangeOff_0200
-     * @tc.name  : testTelephonyObserverCellularDataConnectionStateChangeOff0200
-     * @tc.desc  : Remove subscription cellular data link connection status.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testTelephonyObserverCellularDataConnectionStateChangeOff0200
+     * @tc.number SUB_Telephony_Observer_CellularDataConnectionStateChangeOff_0200
+     * @tc.desc   Remove subscription cellular data link connection status.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyObserverCellularDataConnectionStateChangeOff0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCellularDataConnectionStateChangeOff0200';
@@ -640,14 +640,14 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_CellularDataConnectionStateChangeOff_0300
-    * @tc.name  : testTelephonyObserverCellularDataConnectionStateChangeOff0300
-    * @tc.desc  : Remove subscription cellular data link connection status
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testTelephonyObserverCellularDataConnectionStateChangeOff0300
+     * @tc.number SUB_Telephony_Observer_CellularDataConnectionStateChangeOff_0300
+     * @tc.desc   Remove subscription cellular data link connection status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyObserverCellularDataConnectionStateChangeOff0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCellularDataConnectionStateChangeOff0300';
       console.info(`${caseName} test start `);
@@ -671,14 +671,14 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_CellularDataConnectionStateChangeOff_0400
-    * @tc.name  : testTelephonyObserverCellularDataConnectionStateChangeOff0400
-    * @tc.desc  : Remove subscription cellular data link connection status.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testTelephonyObserverCellularDataConnectionStateChangeOff0400
+     * @tc.number SUB_Telephony_Observer_CellularDataConnectionStateChangeOff_0400
+     * @tc.desc   Remove subscription cellular data link connection status.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyObserverCellularDataConnectionStateChangeOff0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCellularDataConnectionStateChangeOff0400';
       console.info(`${caseName} test start `);
@@ -707,13 +707,13 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-     * @tc.number: SUB_Telephony_Observer_CellularDataFlowChangeOn_0300
-     * @tc.name  : testTelephonyObserverCellularDataFlowChangeOn0300
-     * @tc.desc  : Subscribe to the uplink and downlink data flow status of cellular data services.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testTelephonyObserverCellularDataFlowChangeOn0300
+     * @tc.number SUB_Telephony_Observer_CellularDataFlowChangeOn_0300
+     * @tc.desc   Subscribe to the uplink and downlink data flow status of cellular data services.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyObserverCellularDataFlowChangeOn0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCellularDataFlowChangeOn0300';
@@ -734,14 +734,14 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-     * @tc.number: SUB_Telephony_Observer_CellularDataFlowChangeOnId_0100
-     * @tc.name  : testTelephonyObserverCellularDataFlowChangeOnId0100
-     * @tc.desc  : Subscribe to the uplink and downlink data flow status of cellular data services with specified card slots.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
-   */
+    /**
+     * @tc.name   testTelephonyObserverCellularDataFlowChangeOnId0100
+     * @tc.number SUB_Telephony_Observer_CellularDataFlowChangeOnId_0100
+     * @tc.desc   Subscribe to the uplink and downlink data flow status of cellular data services with specified card slots.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyObserverCellularDataFlowChangeOnId0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCellularDataFlowChangeOnId0100';
       console.info(`${caseName} test start `);
@@ -764,14 +764,14 @@ export default function observerManagerTest() {
     });
 
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_CellularDataFlowChangeOnId_0300
-    * @tc.name  : testTelephonyObserverCellularDataFlowChangeOnId0300
-    * @tc.desc  : Subscribe to the uplink and downlink data flow status of cellular data services with specified card slots.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 2
-  */
+    /**
+     * @tc.name   testTelephonyObserverCellularDataFlowChangeOnId0300
+     * @tc.number SUB_Telephony_Observer_CellularDataFlowChangeOnId_0300
+     * @tc.desc   Subscribe to the uplink and downlink data flow status of cellular data services with specified card slots.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyObserverCellularDataFlowChangeOnId0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCellularDataFlowChangeOnId0300';
       console.info(`${caseName} test start `);
@@ -791,14 +791,14 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_CellularDataFlowChangeOnId_0400
-    * @tc.name  : testTelephonyObserverCellularDataFlowChangeOnId0400
-    * @tc.desc  : Subscribe to the uplink and downlink data flow status of cellular data services with specified card slots.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-  */
+    /**
+     * @tc.name   testTelephonyObserverCellularDataFlowChangeOnId0400
+     * @tc.number SUB_Telephony_Observer_CellularDataFlowChangeOnId_0400
+     * @tc.desc   Subscribe to the uplink and downlink data flow status of cellular data services with specified card slots.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyObserverCellularDataFlowChangeOnId0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCellularDataFlowChangeOnId0400';
       console.info(`${caseName} test start `);
@@ -818,14 +818,14 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_CellularDataFlowChangeOnId_0500
-    * @tc.name  : testTelephonyObserverCellularDataFlowChangeOnId0500
-    * @tc.desc  :Subscribe to the uplink and downlink data flow status of cellular data services with specified card slots.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testTelephonyObserverCellularDataFlowChangeOnId0500
+     * @tc.number SUB_Telephony_Observer_CellularDataFlowChangeOnId_0500
+     * @tc.desc   Subscribe to the uplink and downlink data flow status of cellular data services with specified card slots.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyObserverCellularDataFlowChangeOnId0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCellularDataFlowChangeOnId0500';
       console.info(`${caseName} test start `);
@@ -845,14 +845,14 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-   * @tc.number: SUB_Telephony_Observer_CellularDataFlowChangeOff_0100
-   * @tc.name  : testTelephonyObserverCellularDataFlowChangeOff0100
-   * @tc.desc  : Remove the uplink and downlink data flow status of subscribed cellular data services.
-   * @tc.size  : MediumTest
-   * @tc.type  : Function
-   * @tc.level : level 3
-   */
+    /**
+     * @tc.name   testTelephony_Observer_CellularDataFlowChangeOff0100
+     * @tc.number SUB_Telephony_Observer_CellularDataFlowChangeOff_0100
+     * @tc.desc   Remove the uplink and downlink data flow status of subscribed cellular data services.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephony_Observer_CellularDataFlowChangeOff0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephony_Observer_CellularDataFlowChangeOff0100';
       console.info(`${caseName} test start `);
@@ -873,14 +873,14 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-   * @tc.number: SUB_Telephony_Observer_CellularDataFlowChangeOff_0200
-   * @tc.name  : testTelephonyObserverCellularDataFlowChangeOff0200
-   * @tc.desc  : Remove the uplink and downlink data flow status of subscribed cellular data services.
-   * @tc.size  : MediumTest
-   * @tc.type  : Function
-   * @tc.level : level 3
-   */
+    /**
+     * @tc.name   testTelephony_Observer_CellularDataFlowChangeOff0200
+     * @tc.number SUB_Telephony_Observer_CellularDataFlowChangeOff_0200
+     * @tc.desc   Remove the uplink and downlink data flow status of subscribed cellular data services.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephony_Observer_CellularDataFlowChangeOff0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephony_Observer_CellularDataFlowChangeOff0200';
       console.info(`${caseName} test start `);
@@ -900,14 +900,14 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_CellularDataFlowChangeOff_0300
-    * @tc.name  : testTelephonyObserverCellularDataFlowChangeOff0300
-    * @tc.desc  : Remove the uplink and downlink data flow status of subscribed cellular data services.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testTelephonyObserverCellularDataFlowChangeOff0300
+     * @tc.number SUB_Telephony_Observer_CellularDataFlowChangeOff_0300
+     * @tc.desc   Remove the uplink and downlink data flow status of subscribed cellular data services.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyObserverCellularDataFlowChangeOff0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCellularDataFlowChangeOff0300';
       console.info(`${caseName} test start `);
@@ -926,14 +926,14 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_CellularDataFlowChangeOff_0400
-    * @tc.name  : testTelephonyObserverCellularDataFlowChangeOff0400
-    * @tc.desc  : Remove the uplink and downlink data flow status of subscribed cellular data services.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testTelephonyObserverCellularDataFlowChangeOff0400
+     * @tc.number SUB_Telephony_Observer_CellularDataFlowChangeOff_0400
+     * @tc.desc   Remove the uplink and downlink data flow status of subscribed cellular data services.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyObserverCellularDataFlowChangeOff0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverCellularDataFlowChangeOff0400';
       console.info(`${caseName} test start `);
@@ -956,14 +956,14 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_SignalInfoChangeOn_0100
-    * @tc.name  : testTelephonyObserverSignalInfoChangeOn0100
-    * @tc.desc  : Subscribe signal status change event.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testTelephonyObserverSignalInfoChangeOn0100
+     * @tc.number SUB_Telephony_Observer_SignalInfoChangeOn_0100
+     * @tc.desc   Subscribe signal status change event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyObserverSignalInfoChangeOn0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverSignalInfoChangeOn0100';
       console.info(`${caseName} test start `);
@@ -996,14 +996,14 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_SignalInfoChangeOn_0300
-    * @tc.name  : testTelephonyObserverSignalInfoChangeOn0300
-    * @tc.desc  : Subscribe signal status change event.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testTelephonyObserverSignalInfoChangeOn0300
+     * @tc.number SUB_Telephony_Observer_SignalInfoChangeOn_0300
+     * @tc.desc   Subscribe signal status change event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyObserverSignalInfoChangeOn0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverSignalInfoChangeOn0300';
       console.info(`${caseName} test start `);
@@ -1021,13 +1021,13 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-     * @tc.number: SUB_Telephony_Observer_SignalInfoChangeOnId_0100
-     * @tc.name  : testTelephonyObserverSignalInfoChangeOnId0100
-     * @tc.desc  : Subscribe signal status change event.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testTelephonyObserverSignalInfoChangeOnId0100
+     * @tc.number SUB_Telephony_Observer_SignalInfoChangeOnId_0100
+     * @tc.desc   Subscribe signal status change event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyObserverSignalInfoChangeOnId0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverSignalInfoChangeOnId0100';
@@ -1048,13 +1048,13 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-     * @tc.number: SUB_Telephony_Observer_SignalInfoChangeOnId_0300
-     * @tc.name  : testTelephonyObserverSignalInfoChangeOnId0300
-     * @tc.desc  : Subscribe to the signal state change event of the specified card slot.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testTelephonyObserverSignalInfoChangeOnId0300
+     * @tc.number SUB_Telephony_Observer_SignalInfoChangeOnId_0300
+     * @tc.desc   Subscribe to the signal state change event of the specified card slot.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyObserverSignalInfoChangeOnId0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverSignalInfoChangeOnId0300';
@@ -1075,14 +1075,14 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_SignalInfoChangeOn_0400
-    * @tc.name  : testTelephonyObserverSignalInfoChangeOn0400
-    * @tc.desc  : Subscribe to the signal state change event of the specified card slot.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testTelephonyObserverSignalInfoChangeOn0400
+     * @tc.number SUB_Telephony_Observer_SignalInfoChangeOn_0400
+     * @tc.desc   Subscribe to the signal state change event of the specified card slot.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyObserverSignalInfoChangeOn0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverSignalInfoChangeOn0400';
       console.info(`${caseName} test start `);
@@ -1102,14 +1102,14 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_SignalInfoChangeOn_0500
-    * @tc.name  : testTelephonyObserverSignalInfoChangeOn0500
-    * @tc.desc  : Subscribe to the signal state change event of the specified card slot.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testTelephonyObserverSignalInfoChangeOn0500
+     * @tc.number SUB_Telephony_Observer_SignalInfoChangeOn_0500
+     * @tc.desc   Subscribe to the signal state change event of the specified card slot.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyObserverSignalInfoChangeOn0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverSignalInfoChangeOn0500';
       console.info(`${caseName} test start `);
@@ -1129,14 +1129,14 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_SignalInfoChangeOff_0100
-    * @tc.name  : testTelephonyObserverSignalInfoChangeOff0100
-    * @tc.desc  : Unsubscribe signal status change event.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testTelephonyObserverSignalInfoChangeOff0100
+     * @tc.number SUB_Telephony_Observer_SignalInfoChangeOff_0100
+     * @tc.desc   Unsubscribe signal status change event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyObserverSignalInfoChangeOff0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverSignalInfoChangeOff0100';
       console.info(`${caseName} test start `);
@@ -1156,13 +1156,13 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-     * @tc.number: SUB_Telephony_Observer_SignalInfoChangeOff_0200
-     * @tc.name  : testTelephonyObserverSignalInfoChangeOff0200
-     * @tc.desc  : Unsubscribe signal status change event
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testTelephonyObserverSignalInfoChangeOff0200
+     * @tc.number SUB_Telephony_Observer_SignalInfoChangeOff_0200
+     * @tc.desc   Unsubscribe signal status change event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyObserverSignalInfoChangeOff0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverSignalInfoChangeOff0200';
@@ -1184,14 +1184,14 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_SignalInfoChangeOff_0300
-    * @tc.name  : testTelephonyObserverSignalInfoChangeOff0300
-    * @tc.desc  : Unsubscribe signal status change event.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testTelephonyObserverSignalInfoChangeOff0300
+     * @tc.number SUB_Telephony_Observer_SignalInfoChangeOff_0300
+     * @tc.desc   Unsubscribe signal status change event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyObserverSignalInfoChangeOff0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverSignalInfoChangeOff0300';
       console.info(`${caseName} test start `);
@@ -1211,14 +1211,14 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_SignalInfoChangeOff_0400
-    * @tc.name  : testTelephonyObserverSignalInfoChangeOff0400
-    * @tc.desc  : Unsubscribe signal status change event
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testTelephonyObserverSignalInfoChangeOff0400
+     * @tc.number SUB_Telephony_Observer_SignalInfoChangeOff_0400
+     * @tc.desc   Unsubscribe signal status change event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyObserverSignalInfoChangeOff0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverSignalInfoChangeOff0400';
       console.info(`${caseName} test start `);
@@ -1240,14 +1240,14 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_IccAccountInfoChangeOn_0100
-    * @tc.name  : testTelephonyObserverIccAccountInfoChangeOn0100
-    * @tc.desc  : Subscribe to accountInfo of icc change events.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testTelephonyObserverIccAccountInfoChangeOn0100
+     * @tc.number SUB_Telephony_Observer_IccAccountInfoChangeOn_0100
+     * @tc.desc   Subscribe to accountInfo of icc change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyObserverIccAccountInfoChangeOn0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverIccAccountInfoChangeOn0100';
       let simState = await sim.getSimStateSync(0);
@@ -1274,14 +1274,14 @@ export default function observerManagerTest() {
       }
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_IccAccountInfoChangeOn_0900
-    * @tc.name  : testTelephonyObserverIccAccountInfoChangeOn0900
-    * @tc.desc  : Subscribe to accountInfo of icc change events.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testTelephonyObserverIccAccountInfoChangeOn0900
+     * @tc.number SUB_Telephony_Observer_IccAccountInfoChangeOn_0900
+     * @tc.desc   Subscribe to accountInfo of icc change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyObserverIccAccountInfoChangeOn0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverIccAccountInfoChangeOn0900';
       console.info(`${caseName} test start`);
@@ -1301,14 +1301,14 @@ export default function observerManagerTest() {
 
 
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_IccAccountInfoChangeOff_0400
-    * @tc.name  : testTelephonyObserverIccAccountInfoChangeOff0400
-    * @tc.desc  : Unsubscribe to accountInfo of icc change events.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testTelephonyObserverIccAccountInfoChangeOff0400
+     * @tc.number SUB_Telephony_Observer_IccAccountInfoChangeOff_0400
+     * @tc.desc   Unsubscribe to accountInfo of icc change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyObserverIccAccountInfoChangeOff0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverIccAccountInfoChangeOff0400';
       console.info(`${caseName} test start`);
@@ -1328,14 +1328,14 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end`);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_IccAccountInfoChangeOff_0500
-    * @tc.name  : testTelephonyObserverIccAccountInfoChangeOff0500
-    * @tc.desc  : Unsubscribe to accountInfo of icc change events.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testTelephonyObserverIccAccountInfoChangeOff0500
+     * @tc.number SUB_Telephony_Observer_IccAccountInfoChangeOff_0500
+     * @tc.desc   Unsubscribe to accountInfo of icc change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyObserverIccAccountInfoChangeOff0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverIccAccountInfoChangeOff0500';
       console.info(`${caseName} test start`);

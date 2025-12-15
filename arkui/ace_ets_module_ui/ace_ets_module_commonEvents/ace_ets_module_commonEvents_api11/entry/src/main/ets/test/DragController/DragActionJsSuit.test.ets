@@ -53,15 +53,15 @@ done();
       done()
     });
 
-    /**
-     * @tc.number	 SUB_ACE_TS_COMPONENT_DragAction_01
-     * @tc.name 	 DragActionJsunit_0100
-     * @tc.desc 	 Confirm if there is a callback
-	 * @tc.level     Level 2
-     * @tc.type :
-     * @tc.size :
-     */
 
+    /**
+     * @tc.name   DragActionJsunit_0100
+     * @tc.number DragActionJsunit_0100
+     * @tc.desc   DragActionJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('DragActionJsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[DragActionJsunit_0100] START');
       await CommonFunc.sleep(1000);

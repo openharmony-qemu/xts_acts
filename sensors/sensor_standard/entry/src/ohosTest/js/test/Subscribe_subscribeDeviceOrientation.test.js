@@ -58,13 +58,13 @@ describe("SensorJsTest_sensor_27", function () {
     const SERVICE_EXCEPTION_MSG = "Service exception.Possible causes:" +
         "1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception."
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeDeviceOrientation_JSTest_0010
-     * @tc.name:subscribeDeviceOrientation_SensorJsTest001
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeDeviceOrientation_SensorJsTest001
+     * @tc.number SUB_SensorsSystem_SubscribeDeviceOrientation_JSTest_0010
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeDeviceOrientation_SensorJsTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeDeviceOrientation_SensorJsTest001---------------------------');
@@ -102,13 +102,13 @@ describe("SensorJsTest_sensor_27", function () {
         }
     })
 
-   /*
-     * @tc.number:SUB_SensorsSystem_SubscribeDeviceOrientation_JSTest_0020
-     * @tc.name:subscribeDeviceOrientation_SensorJsTest002
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeDeviceOrientation_SensorJsTest002
+     * @tc.number SUB_SensorsSystem_SubscribeDeviceOrientation_JSTest_0020
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeDeviceOrientation_SensorJsTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeDeviceOrientation_SensorJsTest002---------------------------');
@@ -147,13 +147,13 @@ describe("SensorJsTest_sensor_27", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeDeviceOrientation_JSTest_0030
-     * @tc.name:subscribeDeviceOrientation_SensorJsTest003
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeDeviceOrientation_SensorJsTest003
+     * @tc.number SUB_SensorsSystem_SubscribeDeviceOrientation_JSTest_0030
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeDeviceOrientation_SensorJsTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeDeviceOrientation_SensorJsTest003---------------------------');
@@ -191,13 +191,13 @@ describe("SensorJsTest_sensor_27", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeDeviceOrientation_JSTest_0040
-     * @tc.name:subscribeDeviceOrientation_SensorJsTest004
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeDeviceOrientation_SensorJsTest004
+     * @tc.number SUB_SensorsSystem_SubscribeDeviceOrientation_JSTest_0040
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeDeviceOrientation_SensorJsTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeDeviceOrientation_SensorJsTest004---------------------------');
@@ -249,13 +249,13 @@ describe("SensorJsTest_sensor_27", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeDeviceOrientation_JSTest_0050
-     * @tc.name:subscribeDeviceOrientation_SensorJsTest005
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeDeviceOrientation_SensorJsTest005
+     * @tc.number SUB_SensorsSystem_SubscribeDeviceOrientation_JSTest_0050
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeDeviceOrientation_SensorJsTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeDeviceOrientation_SensorJsTest005---------------------------');
@@ -289,13 +289,13 @@ describe("SensorJsTest_sensor_27", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeDeviceOrientation_JSTest_0060
-     * @tc.name:subscribeDeviceOrientation_SensorJsTest006
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   subscribeDeviceOrientation_SensorJsTest006
+     * @tc.number SUB_SensorsSystem_SubscribeDeviceOrientation_JSTest_0060
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeDeviceOrientation_SensorJsTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeDeviceOrientation_SensorJsTest006---------------------------');

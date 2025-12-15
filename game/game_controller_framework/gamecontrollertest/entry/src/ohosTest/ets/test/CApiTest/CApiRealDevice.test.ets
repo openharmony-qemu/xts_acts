@@ -30,7 +30,6 @@ function wait(ms: number): Promise<void> {
 export default function CApiRealDeviceTest() {
   describe('CApiRealDeviceTest', () => {
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   ActsRealDevice_Test
      * @tc.number ActsRealDevice_Test
      * @tc.desc   test for real device

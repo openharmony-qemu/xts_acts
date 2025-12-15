@@ -45,9 +45,12 @@ export default function RelativeContainerStartApi() {
     });
 
     /**
+     * @tc.name   RelativeContainerStartApi_0100
      * @tc.number RelativeContainerStartApi_0100
-     * @tc.name   testFocus
-     * @tc.desc
+     * @tc.desc   RelativeContainerStartApi_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RelativeContainerStartApi_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('RelativeContainerStartApi_0100 START');

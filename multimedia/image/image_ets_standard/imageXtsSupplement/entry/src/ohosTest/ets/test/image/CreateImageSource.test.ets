@@ -68,12 +68,12 @@ export default function CreateImageSourceSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0001
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0001
-     * @tc.desc      : Test createImageSource with UNKNOWN pixel format on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0001
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0001
+     * @tc.desc   Test createImageSource with UNKNOWN pixel format on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0001';
@@ -88,12 +88,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0002
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0002
-     * @tc.desc      : Test createImageSource with ARGB_8888 pixel format on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0002
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0002
+     * @tc.desc   Test createImageSource with ARGB_8888 pixel format on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0002';
@@ -108,12 +108,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0003
-     * @tc.name      : createImageSource with RGB_565 format
-     * @tc.desc      : Test createImageSource with RGB_565 pixel format on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0003
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0003
+     * @tc.desc   Test createImageSource with RGB_565 pixel format on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0003';
@@ -128,12 +128,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0004
-     * @tc.name      : createImageSource with RGBA_8888 format
-     * @tc.desc      : Test createImageSource with RGBA_8888 pixel format on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0004
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0004
+     * @tc.desc   Test createImageSource with RGBA_8888 pixel format on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0004', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0004';
@@ -148,12 +148,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0005
-     * @tc.name      : createImageSource with BGRA_8888 format
-     * @tc.desc      : Test createImageSource with BGRA_8888 pixel format on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0005
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0005
+     * @tc.desc   Test createImageSource with BGRA_8888 pixel format on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0005', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0005';
@@ -168,12 +168,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0006
-     * @tc.name      : createImageSource with RGB_888 format
-     * @tc.desc      : Test createImageSource with RGB_888 pixel format
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0006
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0006
+     * @tc.desc   Test createImageSource with RGB_888 pixel format
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0006', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0006';
@@ -188,12 +188,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0007
-     * @tc.name      : createImageSource with RGBA_F16 format
-     * @tc.desc      : Test createImageSource with RGBA_F16 pixel format on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0007
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0007
+     * @tc.desc   Test createImageSource with RGBA_F16 pixel format on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0007', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0007';
@@ -208,12 +208,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0008
-     * @tc.name      : createImageSource with NV21 format
-     * @tc.desc      : Test createImageSource with NV21 pixel format on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0008
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0008
+     * @tc.desc   Test createImageSource with NV21 pixel format on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0008', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0008';
@@ -228,12 +228,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0009
-     * @tc.name      : createImageSource with NV12 format
-     * @tc.desc      : Test createImageSource with NV12 pixel format on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0009
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0009
+     * @tc.desc   Test createImageSource with NV12 pixel format on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0009', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0009';
@@ -248,12 +248,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0010
-     * @tc.name      : createImageSource with RGBA_1010102 format
-     * @tc.desc      : Test createImageSource with RGBA_1010102 pixel format on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0010
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0010
+     * @tc.desc   Test createImageSource with RGBA_1010102 pixel format on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0010', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0010';
@@ -268,12 +268,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0011
-     * @tc.name      : createImageSource with YCBCR_P010 format
-     * @tc.desc      : Test createImageSource with YCBCR_P010 pixel format on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0011
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0011
+     * @tc.desc   Test createImageSource with YCBCR_P010 pixel format on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0011', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0011';
@@ -288,12 +288,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0012
-     * @tc.name      : createImageSource with YCRCB_P010 format
-     * @tc.desc      : Test createImageSource with YCRCB_P010 pixel format on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0012
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0012
+     * @tc.desc   Test createImageSource with YCRCB_P010 pixel format on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0012', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0012';
@@ -308,12 +308,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0013
-     * @tc.name      : createImageSource with ASTC_4x4 format
-     * @tc.desc      : Test createImageSource with ASTC_4x4 pixel format on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0013
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0013
+     * @tc.desc   Test createImageSource with ASTC_4x4 pixel format on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0013', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0013';
@@ -328,12 +328,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0014
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0014
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0014
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0014
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0014', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0014';
@@ -351,12 +351,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0015
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0015
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0015
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0015
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0015', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0015';
@@ -375,12 +375,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0016
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0016
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0016
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0016
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0016', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0016';
@@ -399,12 +399,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0017
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0017
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0017
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0017
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0017', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0017';
@@ -423,12 +423,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0018
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0018
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0018
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0018
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0018', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0018';
@@ -447,12 +447,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0019
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0019
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0019
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0019
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0019', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0019';
@@ -471,12 +471,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0020
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0020
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0020
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0020
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0020', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0020';
@@ -495,12 +495,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0021
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0021
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0021
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0021
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0021', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0021';
@@ -519,12 +519,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0022
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0022
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0022
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0022
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0022', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0022';
@@ -543,12 +543,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0023
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0023
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0023
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0023
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0023', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0023';
@@ -567,12 +567,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0024
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0024
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0024
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0024
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0024', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0024';
@@ -591,12 +591,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0025
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0025
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0025
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0025
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0025', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0025';
@@ -615,12 +615,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0026
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0026
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0026
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0026
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0026', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0026';
@@ -639,12 +639,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0027
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0027
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0027
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0027
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0027', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0027';
@@ -664,12 +664,12 @@ export default function CreateImageSourceSuppTest() {
 
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0028
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0028
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0028
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0028
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0028', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0028';
@@ -684,12 +684,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0029
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0029
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0029
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0029
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0029', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0029';
@@ -704,12 +704,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0030
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0030
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0030
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0030
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0030', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0030';
@@ -724,12 +724,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0031
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0031
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0031
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0031
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0031', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0031';
@@ -744,12 +744,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0032
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0032
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0032
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0032
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0032', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0032';
@@ -764,12 +764,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0033
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0033
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0033
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0033
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0033', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0033';
@@ -784,12 +784,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0034
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0034
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0034
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0034
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0034', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0034';
@@ -804,12 +804,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0035
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0035
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0035
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0035
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0035', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0035';
@@ -827,12 +827,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0036
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0036
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0036
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0036
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0036', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0036';
@@ -850,12 +850,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0037
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0037
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0037
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0037
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0037', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0037';
@@ -873,12 +873,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0038
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0038
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0038
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0038
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0038', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0038';
@@ -896,12 +896,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0039
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0039
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0039
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0039
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0039', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0039';
@@ -920,12 +920,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0040
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0040
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0040
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0040
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0040', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0040';
@@ -944,12 +944,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0041
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0041
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0041
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0041
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0041', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0041';
@@ -967,12 +967,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0042
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0042
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0042
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0042
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0042', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0042';
@@ -990,12 +990,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0043
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0043
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0043
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0043
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0043', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0043';
@@ -1013,12 +1013,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0044
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0044
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0044
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0044
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0044', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0044';
@@ -1036,12 +1036,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0045
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0045
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0045
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0045
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0045', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0045';
@@ -1060,12 +1060,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0046
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0046
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0046
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0046
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0046', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0046';
@@ -1084,12 +1084,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0047
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0047
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0047
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0047
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0047', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0047';
@@ -1108,12 +1108,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0048
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0048
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0048
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0048
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0048', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0048';
@@ -1132,12 +1132,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0049
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0049
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0049
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0049
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0049', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0049';
@@ -1156,12 +1156,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0050
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0050
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0050
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0050
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0050', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0050';
@@ -1180,12 +1180,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0051
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0051
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0051
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0051
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0051', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0051';
@@ -1199,12 +1199,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0052
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0052
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0052
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0052
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0052', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0052';
@@ -1218,12 +1218,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0053
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0053
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0053
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0053
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0053', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0053';
@@ -1237,12 +1237,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0054
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0054
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0054
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0054
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0054', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0054';
@@ -1256,12 +1256,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0055
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0055
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0055
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0055
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0055', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0055';
@@ -1275,12 +1275,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0056
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0056
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0056
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0056
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0056', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0056';
@@ -1295,12 +1295,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0057
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0057
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0057
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0057
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0057', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0057';
@@ -1319,12 +1319,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0058
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0058
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0058
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0058
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0058', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0058';
@@ -1342,12 +1342,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0059
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0059
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0059
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0059
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0059', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0059';
@@ -1362,12 +1362,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0060
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0060
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0060
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0060
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0060', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0060';
@@ -1383,12 +1383,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0100
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0100
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0100
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0100
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0100', Level.LEVEL0, async (done: Function) => {
       const testName: string = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0100';
@@ -1405,12 +1405,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0200
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0200
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0200
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0200
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0200', Level.LEVEL0, async (done: Function) => {
       const testName: string = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0200';
@@ -1427,12 +1427,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0300
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0300
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0300
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0300
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0300', Level.LEVEL0, async (done: Function) => {
       const testName: string = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0300';
@@ -1449,12 +1449,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0400
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0400
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0400
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0400
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0400', Level.LEVEL0, async (done: Function) => {
       const testName: string = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0400';
@@ -1471,12 +1471,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0500
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0500
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0500
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0500
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0500', Level.LEVEL0, async (done: Function) => {
       const testName: string = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0500';
@@ -1493,12 +1493,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0600
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0600
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0600
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0600
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0600', Level.LEVEL0, async (done: Function) => {
       const testName: string = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0600';
@@ -1515,12 +1515,12 @@ export default function CreateImageSourceSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0700
-     * @tc.name      : SUB_SENDABLE_CREATE_IMAGE_SOURCE_0700
-     * @tc.desc      : Test createImageSource with Size on .jpg file
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_SENDABLE_CREATE_IMAGE_SOURCE_0700
+     * @tc.number SUB_SENDABLE_CREATE_IMAGE_SOURCE_0700
+     * @tc.desc   Test createImageSource with Size on .jpg file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0700', Level.LEVEL0, async (done: Function) => {
       const testName: string = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0700';

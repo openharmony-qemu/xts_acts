@@ -63,12 +63,12 @@ function fnFour(val: Any, callback: (err: Error | null, ...value: FixedArray<Any
 export default function UtilTest() {
   describe('UtilTest', (): void => {
     /**
+     * @tc.name   testUtilGetHash001
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_HASH_001
-     * @tc.name testUtilGetHash001
-     * @tc.desc Get the hash value of an object.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Get the hash value of an object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGetHash001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let person: Person = {
@@ -81,12 +81,12 @@ export default function UtilTest() {
     })
 
     /**
+     * @tc.name   testUtilGetHash002
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_HASH_002
-     * @tc.name testUtilGetHash002
-     * @tc.desc Get the hash value of an object.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Get the hash value of an object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGetHash002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let numbers = [1, 2, 3, 4, 5];
@@ -96,12 +96,12 @@ export default function UtilTest() {
     })
 
     /**
+     * @tc.name   testUtilGetHash003
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_HASH_003
-     * @tc.name testUtilGetHash003
-     * @tc.desc Get the hash value of an object.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Get the hash value of an object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGetHash003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let myCar = new Car("Toyota", "Corolla");
@@ -111,12 +111,12 @@ export default function UtilTest() {
     })
 
     /**
+     * @tc.name   testUtilGetHash004
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_HASH_004
-     * @tc.name testUtilGetHash004
-     * @tc.desc Get the hash value of an object.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Get the hash value of an object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGetHash004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let now = new Date();
@@ -126,12 +126,12 @@ export default function UtilTest() {
     })
 
     /**
+     * @tc.name   testUtilGetHash005
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_HASH_005
-     * @tc.name testUtilGetHash005
-     * @tc.desc Get the hash value of an object.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Get the hash value of an object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGetHash005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let regex = new RegExp("abc");
@@ -141,12 +141,12 @@ export default function UtilTest() {
     })
 
     /**
+     * @tc.name   testUtilGetHash006
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_HASH_006
-     * @tc.name testUtilGetHash006
-     * @tc.desc Get the hash value of an object.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Get the hash value of an object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGetHash006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let mathObject: Math = new Math();
@@ -156,12 +156,12 @@ export default function UtilTest() {
     })
 
     /**
+     * @tc.name   testUtilgenerateRandomBinaryUUID001
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERATE_RANDOM_BINARY_UUID_001
-     * @tc.name testUtilgenerateRandomBinaryUUID001
-     * @tc.desc Generate a random RFC 4122 version 4 UUID.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Generate a random RFC 4122 version 4 UUID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilgenerateRandomBinaryUUID001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -170,12 +170,12 @@ export default function UtilTest() {
       })
 
     /**
+     * @tc.name   testUtilgenerateRandomBinaryUUID002
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERATE_RANDOM_BINARY_UUID_002
-     * @tc.name testUtilgenerateRandomBinaryUUID002
-     * @tc.desc Generate a random RFC 4122 version 4 UUID.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Generate a random RFC 4122 version 4 UUID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilgenerateRandomBinaryUUID002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -184,12 +184,12 @@ export default function UtilTest() {
       })
 
     /**
+     * @tc.name   testUtilParseUUID001
      * @tc.number SUB_COMMONLIBRARY_UTIL_PARSE_UUID_001
-     * @tc.name testUtilParseUUID001
-     * @tc.desc Generate a random RFC 4122 version 4 UUID.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Generate a random RFC 4122 version 4 UUID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilParseUUID001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const result = util.parseUUID('84bdf796-66cc-4655-9b89-d6218d100f9c');
@@ -197,12 +197,12 @@ export default function UtilTest() {
     })
 
     /**
+     * @tc.name   testUtilParseUUID002
      * @tc.number SUB_COMMONLIBRARY_UTIL_PARSE_UUID_002
-     * @tc.name testUtilParseUUID002
-     * @tc.desc Generate a random RFC 4122 version 4 UUID.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Generate a random RFC 4122 version 4 UUID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilParseUUID002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       try {
@@ -213,12 +213,12 @@ export default function UtilTest() {
     })
 
     /**
+     * @tc.name   testUtilParseUUID003
      * @tc.number SUB_COMMONLIBRARY_UTIL_PARSE_UUID_003
-     * @tc.name testUtilParseUUID003
-     * @tc.desc Generate a random RFC 4122 version 4 UUID.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Generate a random RFC 4122 version 4 UUID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilParseUUID003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       try {
@@ -229,13 +229,12 @@ export default function UtilTest() {
     })
 
     /**
+     * @tc.name   testUtilPromisify_new_001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TEXTENCODER_TEXTDECODER_0011
-     * @tc.name testUtilPromisify_new_001
-     * @tc.desc Takes a function following the common error-first callback style,
-     * taking an callback as the last argument, and return a function that returns promises.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Takes a function following the common error-first callback style,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilPromisify_new_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let value = util.promisify(fnOne);
@@ -244,13 +243,12 @@ export default function UtilTest() {
     })
 
     /**
+     * @tc.name   testUtilPromisify_new_002
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TEXTENCODER_TEXTDECODER_0012
-     * @tc.name testUtilPromisify_new_002
-     * @tc.desc Takes a function following the common error-first callback style,
-     * taking an callback as the last argument, and return a function that returns promises.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Takes a function following the common error-first callback style,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilPromisify_new_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -268,13 +266,12 @@ export default function UtilTest() {
       })
 
     /**
+     * @tc.name   testUtilPromisify_new_003
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TEXTENCODER_TEXTDECODER_0013
-     * @tc.name testUtilPromisify_new_003
-     * @tc.desc Takes a function following the common error-first callback style,
-     * taking an callback as the last argument, and return a function that returns promises.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Takes a function following the common error-first callback style,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilPromisify_new_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const value = util.promisify(fnTwo);
@@ -283,13 +280,12 @@ export default function UtilTest() {
     })
 
     /**
+     * @tc.name   testUtilPromisify_new_004
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TEXTENCODER_TEXTDECODER_0014
-     * @tc.name testUtilPromisify_new_004
-     * @tc.desc Takes a function following the common error-first callback style,
-     * taking an callback as the last argument, and return a function that returns promises.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Takes a function following the common error-first callback style,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilPromisify_new_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const value = util.promisify(fnThree);
@@ -297,13 +293,12 @@ export default function UtilTest() {
     })
 
     /**
+     * @tc.name   testUtilPromisify_new_005
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TEXTENCODER_TEXTDECODER_0015
-     * @tc.name testUtilPromisify_new_005
-     * @tc.desc Takes a function following the common error-first callback style,
-     * taking an callback as the last argument, and return a function that returns promises.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Takes a function following the common error-first callback style,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilPromisify_new_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const value = util.promisify(fnFour);

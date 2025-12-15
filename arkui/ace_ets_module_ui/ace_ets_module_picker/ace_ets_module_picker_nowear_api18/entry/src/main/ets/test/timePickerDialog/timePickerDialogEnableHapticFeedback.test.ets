@@ -42,15 +42,15 @@ export default function TimePickerDialogEnableHapticFeedbackTest() {
       done();
     });
 
-    /**
-     * @tc.number: timepickerDialog_enableHapticFeedback_001
-     * @tc.name  : timepickerDialog_enableHapticFeedback_001
-     * @tc.desc  : Test the feedback of the enableHaptic interface of the timepickerDialog component when a custom normal value is passed in
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
-    */
 
+     /**
+      * @tc.name   TimePickerDialog_EnableHapticFeedback_001
+      * @tc.number TimePickerDialog_EnableHapticFeedback_001
+      * @tc.desc   TimePickerDialog_EnableHapticFeedback_001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('TimePickerDialog_EnableHapticFeedback_001', Level.LEVEL1, async (done: Function) => {
       let tagName = 'TimePickerDialog_EnableHapticFeedback_001';
       console.info('[' + tagName + '] START============================');
@@ -69,15 +69,15 @@ export default function TimePickerDialogEnableHapticFeedbackTest() {
       done();
     });
 
-    /**
-     * @tc.number: timepickerDialog_enableHapticFeedback_002
-     * @tc.name  : timepickerDialog_enableHapticFeedback_002
-     * @tc.desc  : Test the feedback of the enableHaptic interface of the timepickerDialog component when a custom normal value is passed in
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
-    */
 
+    /**
+     * @tc.name   TimePickerDialog_EnableHapticFeedback_002
+     * @tc.number TimePickerDialog_EnableHapticFeedback_002
+     * @tc.desc   TimePickerDialog_EnableHapticFeedback_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TimePickerDialog_EnableHapticFeedback_002', Level.LEVEL1, async (done: Function) => {
       let tagName = 'TimePickerDialog_EnableHapticFeedback_002';
       console.info('[' + tagName + '] START============================');
@@ -96,15 +96,15 @@ export default function TimePickerDialogEnableHapticFeedbackTest() {
       done();
     });
 
-    /**
-     * @tc.number: timepickerDialog_enableHapticFeedback_003
-     * @tc.name  : timepickerDialog_enableHapticFeedback_003
-     * @tc.desc  : Test the feedback of the enableHaptic interface of the timepickerDialog component when a custom normal value is passed in
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
-    */
 
+    /**
+     * @tc.name   TimePickerDialog_EnableHapticFeedback_003
+     * @tc.number TimePickerDialog_EnableHapticFeedback_003
+     * @tc.desc   TimePickerDialog_EnableHapticFeedback_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TimePickerDialog_EnableHapticFeedback_003', Level.LEVEL1, async (done: Function) => {
       let tagName = 'TimePickerDialog_EnableHapticFeedback_003';
       console.info('[' + tagName + '] START============================');
@@ -123,15 +123,15 @@ export default function TimePickerDialogEnableHapticFeedbackTest() {
       done();
     });
 
-    /**
-     * @tc.number: timepickerDialog_enableHapticFeedback_004
-     * @tc.name  : timepickerDialog_enableHapticFeedback_004
-     * @tc.desc  : Test the feedback of the enableHaptic interface of the timepickerDialog component when a custom normal value is passed in
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
-    */
 
+    /**
+     * @tc.name   TimePickerDialog_EnableHapticFeedback_004
+     * @tc.number TimePickerDialog_EnableHapticFeedback_004
+     * @tc.desc   TimePickerDialog_EnableHapticFeedback_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TimePickerDialog_EnableHapticFeedback_004', Level.LEVEL1, async (done: Function) => {
       let tagName = 'TimePickerDialog_EnableHapticFeedback_004';
       console.info('[' + tagName + '] START============================');

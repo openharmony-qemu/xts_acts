@@ -40,12 +40,12 @@ export default function typeNodeLoadingProgressTest() {
       done();
     });
     /**
-     * @tc.number    LoadingProgressTest_0100
-     * @tc.name      LoadingProgressTest_0100
-     * @tc.desc      TypedFrameNode: LoadingProgress
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   LoadingProgressTest_0100
+     * @tc.number LoadingProgressTest_0100
+     * @tc.desc   TypedFrameNode: LoadingProgress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LoadingProgressTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('LoadingProgressTest_0100 START');

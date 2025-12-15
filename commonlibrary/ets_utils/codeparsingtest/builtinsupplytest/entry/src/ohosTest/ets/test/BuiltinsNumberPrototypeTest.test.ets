@@ -40,12 +40,12 @@ export default function BuiltinsNumberPrototypeTest() {
     })
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest0100
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_0100
-     * @tc.name builtinsNumberPrototypeTest0100
-     * @tc.desc toExponential
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toExponential
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -61,12 +61,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest0200
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_0200
-     * @tc.name builtinsNumberPrototypeTest0200
-     * @tc.desc toExponential
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toExponential
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -82,12 +82,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest0300
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_0300
-     * @tc.name builtinsNumberPrototypeTest0300
-     * @tc.desc toExponential
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toExponential
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -102,12 +102,12 @@ export default function BuiltinsNumberPrototypeTest() {
       })
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest0400
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_0400
-     * @tc.name builtinsNumberPrototypeTest0400
-     * @tc.desc toExponential
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toExponential
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -123,12 +123,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest0500
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_0500
-     * @tc.name builtinsNumberPrototypeTest0500
-     * @tc.desc toFixed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toFixed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -144,12 +144,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest0600
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_0600
-     * @tc.name builtinsNumberPrototypeTest0600
-     * @tc.desc toFixed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toFixed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -165,12 +165,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest0700
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_0700
-     * @tc.name builtinsNumberPrototypeTest0700
-     * @tc.desc toFixed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toFixed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -186,12 +186,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest0800
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_0800
-     * @tc.name builtinsNumberPrototypeTest0800
-     * @tc.desc toFixed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toFixed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -207,12 +207,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest0900
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_0900
-     * @tc.name builtinsNumberPrototypeTest0900
-     * @tc.desc toFixed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toFixed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -228,12 +228,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest1000
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_1000
-     * @tc.name builtinsNumberPrototypeTest1000
-     * @tc.desc toFixed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toFixed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -249,12 +249,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest1100
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_1100
-     * @tc.name builtinsNumberPrototypeTest1100
-     * @tc.desc toFixed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toFixed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -270,12 +270,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest1200
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_1200
-     * @tc.name builtinsNumberPrototypeTest1200
-     * @tc.desc toFixed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toFixed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -291,12 +291,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest1300
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_1300
-     * @tc.name builtinsNumberPrototypeTest1300
-     * @tc.desc toFixed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toFixed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -312,12 +312,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest1400
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_1400
-     * @tc.name builtinsNumberPrototypeTest1400
-     * @tc.desc toFixed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toFixed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -333,12 +333,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest1500
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_1500
-     * @tc.name builtinsNumberPrototypeTest1500
-     * @tc.desc toFixed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toFixed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -354,12 +354,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest1600
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_1600
-     * @tc.name builtinsNumberPrototypeTest1600
-     * @tc.desc toLocaleString
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toLocaleString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -375,12 +375,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest1700
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_1700
-     * @tc.name builtinsNumberPrototypeTest1700
-     * @tc.desc toLocaleString
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toLocaleString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -396,12 +396,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest1800
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_1800
-     * @tc.name builtinsNumberPrototypeTest1800
-     * @tc.desc toLocaleString
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toLocaleString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -417,12 +417,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest1900
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_1900
-     * @tc.name builtinsNumberPrototypeTest1900
-     * @tc.desc toLocaleString
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toLocaleString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -438,12 +438,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest2000
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_2000
-     * @tc.name builtinsNumberPrototypeTest2000
-     * @tc.desc toLocaleString
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toLocaleString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -459,12 +459,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest2100
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_2100
-     * @tc.name builtinsNumberPrototypeTest2100
-     * @tc.desc toLocaleString
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toLocaleString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -482,12 +482,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest2200
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_2200
-     * @tc.name builtinsNumberPrototypeTest2200
-     * @tc.desc toLocaleString
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toLocaleString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -505,12 +505,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest2300
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_2300
-     * @tc.name builtinsNumberPrototypeTest2300
-     * @tc.desc toLocaleString
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toLocaleString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -528,12 +528,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest2400
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_2400
-     * @tc.name builtinsNumberPrototypeTest2400
-     * @tc.desc toPrecision
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toPrecision
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -549,12 +549,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest2500
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_2500
-     * @tc.name builtinsNumberPrototypeTest2500
-     * @tc.desc toPrecision
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toPrecision
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -570,12 +570,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest2600
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_2600
-     * @tc.name builtinsNumberPrototypeTest2600
-     * @tc.desc toPrecision
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toPrecision
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -591,12 +591,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest2700
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_2700
-     * @tc.name builtinsNumberPrototypeTest2700
-     * @tc.desc toPrecision
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toPrecision
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -612,12 +612,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest2800
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_2800
-     * @tc.name builtinsNumberPrototypeTest2800
-     * @tc.desc toPrecision
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toPrecision
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -632,12 +632,12 @@ export default function BuiltinsNumberPrototypeTest() {
       })
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest2900
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_2900
-     * @tc.name builtinsNumberPrototypeTest2900
-     * @tc.desc toPrecision
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toPrecision
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -652,12 +652,12 @@ export default function BuiltinsNumberPrototypeTest() {
       })
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest3000
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_3000
-     * @tc.name builtinsNumberPrototypeTest3000
-     * @tc.desc toPrecision
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toPrecision
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -673,12 +673,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest3100
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_3100
-     * @tc.name builtinsNumberPrototypeTest3100
-     * @tc.desc toPrecision
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toPrecision
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -694,12 +694,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest3200
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_3200
-     * @tc.name builtinsNumberPrototypeTest3200
-     * @tc.desc toString
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -715,12 +715,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest3300
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_3300
-     * @tc.name builtinsNumberPrototypeTest3300
-     * @tc.desc toString
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -736,12 +736,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest3400
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_3400
-     * @tc.name builtinsNumberPrototypeTest3400
-     * @tc.desc toString
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -756,12 +756,12 @@ export default function BuiltinsNumberPrototypeTest() {
       })
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest3500
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_3500
-     * @tc.name builtinsNumberPrototypeTest3500
-     * @tc.desc toString
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -777,12 +777,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest3600
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_3600
-     * @tc.name builtinsNumberPrototypeTest3600
-     * @tc.desc toString
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -802,12 +802,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest3700
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_3700
-     * @tc.name builtinsNumberPrototypeTest3700
-     * @tc.desc toString
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -827,12 +827,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest3800
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_3800
-     * @tc.name builtinsNumberPrototypeTest3800
-     * @tc.desc toString
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -847,12 +847,12 @@ export default function BuiltinsNumberPrototypeTest() {
       })
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest3900
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_3900
-     * @tc.name builtinsNumberPrototypeTest3900
-     * @tc.desc toString
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -868,12 +868,12 @@ export default function BuiltinsNumberPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest4000
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_4000
-     * @tc.name builtinsNumberPrototypeTest4000
-     * @tc.desc toString
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -888,12 +888,12 @@ export default function BuiltinsNumberPrototypeTest() {
       })
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest4100
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_4100
-     * @tc.name builtinsNumberPrototypeTest4100
-     * @tc.desc toString
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   toString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -908,12 +908,12 @@ export default function BuiltinsNumberPrototypeTest() {
       })
 
     /**
+     * @tc.name   builtinsNumberPrototypeTest4200
      * @tc.number SUB_BUILTINS_NUMBER_PROTOTYPE_TEST_4200
-     * @tc.name builtinsNumberPrototypeTest4200
-     * @tc.desc valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberPrototypeTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {

@@ -285,14 +285,12 @@ export default function ImageColorSpaceTransferTest() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_PROMISE_STATIC_0100
-      * @tc.desc    createPixelmap_promise_001
-      *               : 1.create imagesource
-      *               : 2.create pixelmap
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_PROMISE_STATIC_0100
+     * @tc.desc   createPixelmap_promise_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_PROMISE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let checkColorSpace = (colorSpaceName:colorSpaceManager.ColorSpace)=> {
@@ -303,14 +301,12 @@ export default function ImageColorSpaceTransferTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_PROMISE_STATIC_0200
-      * @tc.desc    createPixelmap_promise_002
-      *               : 1.create imagesource
-      *               : 2.create pixelmap
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_PROMISE_STATIC_0200
+     * @tc.desc   createPixelmap_promise_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_PROMISE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let checkColorSpace = (colorSpaceName:colorSpaceManager.ColorSpace)=> {
@@ -321,14 +317,12 @@ export default function ImageColorSpaceTransferTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_PROMISE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_PROMISE_STATIC_0300
-      * @tc.desc    createPixelmap_promise_003
-      *               : 1.create imagesource
-      *               : 2.create pixelmap
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_PROMISE_STATIC_0300
+     * @tc.desc   createPixelmap_promise_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_PROMISE_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let checkColorSpace = (colorSpaceName:colorSpaceManager.ColorSpace)=> {
@@ -339,14 +333,12 @@ export default function ImageColorSpaceTransferTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_PROMISE_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_PROMISE_STATIC_0400
-      * @tc.desc    createPixelmap_promise_004
-      *               : 1.create imagesource
-      *               : 2.create pixelmap
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_PROMISE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_PROMISE_STATIC_0400
+     * @tc.desc   createPixelmap_promise_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_PROMISE_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let checkColorSpace = (colorSpaceName:colorSpaceManager.ColorSpace)=> {
@@ -357,14 +349,12 @@ export default function ImageColorSpaceTransferTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_PROMISE_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_PROMISE_STATIC_0500
-      * @tc.desc    createPixelmap_promise_005
-      *               : 1.create imagesource
-      *               : 2.create pixelmap
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_PROMISE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_PROMISE_STATIC_0500
+     * @tc.desc   createPixelmap_promise_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_PROMISE_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let bt2020: colorSpaceManager.ColorSpacePrimaries = {
@@ -386,14 +376,12 @@ export default function ImageColorSpaceTransferTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_CALLBACK_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_CALLBACK_STATIC_0100
-      * @tc.desc    createPixelmap_callback_001
-      *               : 1.create imagesource
-      *               : 2.create pixelmap
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_CALLBACK_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_CALLBACK_STATIC_0100
+     * @tc.desc   createPixelmap_callback_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_CALLBACK_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let checkColorSpace = (colorSpaceName:colorSpaceManager.ColorSpace)=> {
@@ -404,14 +392,12 @@ export default function ImageColorSpaceTransferTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_CALLBACK_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_CALLBACK_STATIC_0200
-      * @tc.desc    createPixelmap_callback_002
-      *               : 1.create imagesource
-      *               : 2.create pixelmap
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_CALLBACK_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_CALLBACK_STATIC_0200
+     * @tc.desc   createPixelmap_callback_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_CALLBACK_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let checkColorSpace = (colorSpaceName:colorSpaceManager.ColorSpace)=> {
@@ -422,14 +408,12 @@ export default function ImageColorSpaceTransferTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_CALLBACK_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_CALLBACK_STATIC_0300
-      * @tc.desc    createPixelmap_callback_003
-      *               : 1.create imagesource
-      *               : 2.create pixelmap
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_CALLBACK_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_CALLBACK_STATIC_0300
+     * @tc.desc   createPixelmap_callback_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_CALLBACK_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let checkColorSpace = (colorSpaceName:colorSpaceManager.ColorSpace)=> {
@@ -440,14 +424,12 @@ export default function ImageColorSpaceTransferTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_CALLBACK_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_CALLBACK_STATIC_0400
-      * @tc.desc    createPixelmap_callback_004
-      *               : 1.create imagesource
-      *               : 2.create pixelmap
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_CALLBACK_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_CALLBACK_STATIC_0400
+     * @tc.desc   createPixelmap_callback_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_CALLBACK_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let checkColorSpace = (colorSpaceName:colorSpaceManager.ColorSpace)=> {
@@ -458,14 +440,12 @@ export default function ImageColorSpaceTransferTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_CALLBACK_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_CALLBACK_STATIC_0500
-      * @tc.desc    createPixelmap_callback_005
-      *               : 1.create imagesource
-      *               : 2.create pixelmap
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_CALLBACK_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_CALLBACK_STATIC_0500
+     * @tc.desc   createPixelmap_callback_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_DECODE_CALLBACK_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let bt2020: colorSpaceManager.ColorSpacePrimaries = {
@@ -487,15 +467,12 @@ export default function ImageColorSpaceTransferTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_PROMISE_STATIC_0100
-      * @tc.desc    applyColorSpace_promise_001
-      *               : 1.create imagesource
-      *               : 2.create pixelmap
-      *               : 3.applyColorSpace
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_PROMISE_STATIC_0100
+     * @tc.desc   applyColorSpace_promise_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_PROMISE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let checkColorSpace = (colorSpaceName:colorSpaceManager.ColorSpace)=> {
@@ -506,15 +483,12 @@ export default function ImageColorSpaceTransferTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_PROMISE_STATIC_0200
-      * @tc.desc    applyColorSpace_promise_002
-      *               : 1.create imagesource
-      *               : 2.create pixelmap
-      *               : 3.applyColorSpace
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_PROMISE_STATIC_0200
+     * @tc.desc   applyColorSpace_promise_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_PROMISE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let checkColorSpace = (colorSpaceName:colorSpaceManager.ColorSpace)=> {
@@ -525,15 +499,12 @@ export default function ImageColorSpaceTransferTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_PROMISE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_PROMISE_STATIC_0300
-      * @tc.desc    applyColorSpace_promise_003
-      *               : 1.create imagesource
-      *               : 2.create pixelmap
-      *               : 3.applyColorSpace
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_PROMISE_STATIC_0300
+     * @tc.desc   applyColorSpace_promise_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_PROMISE_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let checkColorSpace = (colorSpaceName:colorSpaceManager.ColorSpace)=> {
@@ -544,15 +515,12 @@ export default function ImageColorSpaceTransferTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_PROMISE_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_PROMISE_STATIC_0400
-      * @tc.desc    applyColorSpace_promise_004
-      *               : 1.create imagesource
-      *               : 2.create pixelmap
-      *               : 3.applyColorSpace
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_PROMISE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_PROMISE_STATIC_0400
+     * @tc.desc   applyColorSpace_promise_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_PROMISE_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let checkColorSpace = (colorSpaceName:colorSpaceManager.ColorSpace)=> {
@@ -563,15 +531,12 @@ export default function ImageColorSpaceTransferTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_PROMISE_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_PROMISE_STATIC_0500
-      * @tc.desc    applyColorSpace_promise_005
-      *               : 1.create imagesource
-      *               : 2.create pixelmap
-      *               : 3.applyColorSpace
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_PROMISE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_PROMISE_STATIC_0500
+     * @tc.desc   applyColorSpace_promise_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_PROMISE_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let bt2020: colorSpaceManager.ColorSpacePrimaries = {
@@ -593,15 +558,12 @@ export default function ImageColorSpaceTransferTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_CALLBACK_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_CALLBACK_STATIC_0100
-      * @tc.desc    applyColorSpace_callback_001
-      *               : 1.create imagesource
-      *               : 2.create pixelmap
-      *               : 3.applyColorSpace
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_CALLBACK_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_CALLBACK_STATIC_0100
+     * @tc.desc   applyColorSpace_callback_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_CALLBACK_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let checkColorSpace = (colorSpaceName:colorSpaceManager.ColorSpace)=> {
@@ -612,15 +574,12 @@ export default function ImageColorSpaceTransferTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_CALLBACK_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_CALLBACK_STATIC_0200
-      * @tc.desc    applyColorSpace_callback_002
-      *               : 1.create imagesource
-      *               : 2.create pixelmap
-      *               : 3.applyColorSpace
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_CALLBACK_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_CALLBACK_STATIC_0200
+     * @tc.desc   applyColorSpace_callback_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_CALLBACK_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let checkColorSpace = (colorSpaceName:colorSpaceManager.ColorSpace)=> {
@@ -631,15 +590,12 @@ export default function ImageColorSpaceTransferTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_CALLBACK_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_CALLBACK_STATIC_0300
-      * @tc.desc    applyColorSpace_callback_003
-      *               : 1.create imagesource
-      *               : 2.create pixelmap
-      *               : 3.applyColorSpace
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_CALLBACK_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_CALLBACK_STATIC_0300
+     * @tc.desc   applyColorSpace_callback_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_CALLBACK_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let checkColorSpace = (colorSpaceName:colorSpaceManager.ColorSpace)=> {
@@ -650,15 +606,12 @@ export default function ImageColorSpaceTransferTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_CALLBACK_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_CALLBACK_STATIC_0400
-      * @tc.desc    applyColorSpace_callback_004
-      *               : 1.create imagesource
-      *               : 2.create pixelmap
-      *               : 3.applyColorSpace
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_CALLBACK_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_CALLBACK_STATIC_0400
+     * @tc.desc   applyColorSpace_callback_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_CALLBACK_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let checkColorSpace = (colorSpaceName:colorSpaceManager.ColorSpace)=> {
@@ -669,15 +622,12 @@ export default function ImageColorSpaceTransferTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_CALLBACK_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_CALLBACK_STATIC_0500
-      * @tc.desc    applyColorSpace_callback_005
-      *               : 1.create imagesource
-      *               : 2.create pixelmap
-      *               : 3.applyColorSpace
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_CALLBACK_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_CALLBACK_STATIC_0500
+     * @tc.desc   applyColorSpace_callback_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_TRANSFER_CALLBACK_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let bt2020: colorSpaceManager.ColorSpacePrimaries = {

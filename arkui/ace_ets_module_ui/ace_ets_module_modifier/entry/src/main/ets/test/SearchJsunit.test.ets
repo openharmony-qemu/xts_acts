@@ -41,12 +41,12 @@ export default function searchJsunit() {
     });
 
     /**
+     * @tc.name   searchTest_002
      * @tc.number searchTest_002
-     * @tc.name Test the properties of components
-     * @tc.desc Set copyOption values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set copyOption values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('searchTest_002', Level.LEVEL0, async (done: Function) => {
       console.info('searchTest_002 START');
@@ -59,12 +59,12 @@ export default function searchJsunit() {
     });
 
     /**
+     * @tc.name   searchTest_003
      * @tc.number searchTest_003
-     * @tc.name Test the properties of components
-     * @tc.desc Set fontColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set fontColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('searchTest_003', Level.LEVEL0, async (done: Function) => {
       console.info('searchTest_003 START');
@@ -77,12 +77,12 @@ export default function searchJsunit() {
     });
 
     /**
+     * @tc.name   searchTest_004
      * @tc.number searchTest_004
-     * @tc.name Test the properties of components
-     * @tc.desc Set placeholderColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set placeholderColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('searchTest_004', Level.LEVEL0, async (done: Function) => {
       console.info('searchTest_004 START');
@@ -95,12 +95,12 @@ export default function searchJsunit() {
     });
 
     /**
+     * @tc.name   searchTest_005
      * @tc.number searchTest_005
-     * @tc.name Test the properties of components
-     * @tc.desc Set placeholderFont values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set placeholderFont values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('searchTest_005', Level.LEVEL0, async (done: Function) => {
       console.info('searchTest_005 START');
@@ -115,12 +115,12 @@ export default function searchJsunit() {
     });
 
     /**
+     * @tc.name   searchTest_006
      * @tc.number searchTest_006
-     * @tc.name Test the properties of components
-     * @tc.desc Set textFont values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set textFont values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('searchTest_006', Level.LEVEL0, async (done: Function) => {
       console.info('searchTest_006 START');
@@ -135,12 +135,12 @@ export default function searchJsunit() {
     });
 
     /**
+     * @tc.name   searchTest_007
      * @tc.number searchTest_007
-     * @tc.name Test the properties of components
-     * @tc.desc Set textAlign values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set textAlign values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('searchTest_007', Level.LEVEL0, async (done: Function) => {
       console.info('searchTest_007 START');
@@ -153,12 +153,12 @@ export default function searchJsunit() {
     });
 
     /**
+     * @tc.name   searchTest_008
      * @tc.number searchTest_008
-     * @tc.name Test the properties of components
-     * @tc.desc Set enableKeyboardOnFocus values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set enableKeyboardOnFocus values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('searchTest_008', Level.LEVEL0, async (done: Function) => {
       console.info('searchTest_008 START');
@@ -171,12 +171,12 @@ export default function searchJsunit() {
     });
 
     /**
+     * @tc.name   searchTest_009
      * @tc.number searchTest_009
-     * @tc.name Test the properties of components
-     * @tc.desc Set selectionMenuHidden values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set selectionMenuHidden values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('searchTest_009', Level.LEVEL0, async (done: Function) => {
       console.info('searchTest_009 START');
@@ -189,12 +189,12 @@ export default function searchJsunit() {
     });
 
     /**
+     * @tc.name   searchTest_010
      * @tc.number searchTest_010
-     * @tc.name Test the properties of components
-     * @tc.desc Set caretStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set caretStyle values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('searchTest_010', Level.LEVEL0, async (done: Function) => {
       console.info('searchTest_010 START');
@@ -208,12 +208,12 @@ export default function searchJsunit() {
     });
 
     /**
+     * @tc.name   searchTest_011
      * @tc.number searchTest_011
-     * @tc.name Test the properties of components
-     * @tc.desc Set searchIcon values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set searchIcon values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('searchTest_011', Level.LEVEL0, async (done: Function) => {
       console.info('searchTest_011 START');
@@ -226,12 +226,12 @@ export default function searchJsunit() {
     });
 
     /**
+     * @tc.name   searchTest_012
      * @tc.number searchTest_012
-     * @tc.name Test the properties of components
-     * @tc.desc Set searchButton values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set searchButton values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('searchTest_012', Level.LEVEL0, async (done: Function) => {
       console.info('searchTest_012 START');
@@ -244,12 +244,12 @@ export default function searchJsunit() {
     });
 
     /**
+     * @tc.name   searchTest_013
      * @tc.number searchTest_013
-     * @tc.name Test the properties of components
-     * @tc.desc Set cancelButton values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set cancelButton values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('searchTest_013', Level.LEVEL0, async (done: Function) => {
       console.info('searchTest_013 START');
@@ -262,12 +262,12 @@ export default function searchJsunit() {
     });
 
     /**
+     * @tc.name   searchTest_001
      * @tc.number searchTest_001
-     * @tc.name Test the properties of components
-     * @tc.desc Change copyOption values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change copyOption values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('searchTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('searchTest_001 START');

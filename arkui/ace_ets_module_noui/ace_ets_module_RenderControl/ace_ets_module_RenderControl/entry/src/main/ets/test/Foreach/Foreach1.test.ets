@@ -59,12 +59,12 @@ export default function Foreach1() {
     });
 
     /**
+     * @tc.name   foreach1_001
      * @tc.number foreach1_001
-     * @tc.name foreach1_001
-     * @tc.desc Modify the data in the foreach component and check whether the modification is successful
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Modify the data in the foreach component and check whether the modification is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('foreach1_001', Level.LEVEL0, async (done: Function) => {
       console.info('[foreach1_001] START');
@@ -83,12 +83,12 @@ export default function Foreach1() {
     });
 
     /**
+     * @tc.name   foreach1_002
      * @tc.number foreach1_002
-     * @tc.name foreach1_002
-     * @tc.desc add a new item to the foreach component and check whether the new item is added successfully
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   add a new item to the foreach component and check whether the new item is added successfully
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('foreach1_002', Level.LEVEL0, async (done: Function) => {
       console.info('[foreach1_002] START');
@@ -110,12 +110,12 @@ export default function Foreach1() {
     });
 
     /**
+     * @tc.name   foreach1_003
      * @tc.number foreach1_003
-     * @tc.name foreach1_003
-     * @tc.desc exhange the order of the items in the foreach component and check whether the order is changed successfully
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   exhange the order of the items in the foreach component and check whether the order is changed successfully
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('foreach1_003', Level.LEVEL0, async (done: Function) => {
       console.info('[foreach1_003] START');
@@ -143,12 +143,12 @@ export default function Foreach1() {
     });
 
     /**
+     * @tc.name   foreach1_004
      * @tc.number foreach1_004
-     * @tc.name foreach1_004
-     * @tc.desc add a new item to the foreach component and check whether the new item is added successfully.
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   add a new item to the foreach component and check whether the new item is added successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('foreach1_004', Level.LEVEL0, async (done: Function) => {
       console.info('[foreach1_004] START');
@@ -170,12 +170,12 @@ export default function Foreach1() {
     });
 
     /**
+     * @tc.name   foreach1_005
      * @tc.number foreach1_005
-     * @tc.name foreach1_005
-     * @tc.desc delete an item from the foreach component and check whether the item is deleted successfully
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   delete an item from the foreach component and check whether the item is deleted successfully
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('foreach1_005', Level.LEVEL0, async (done: Function) => {
       console.info('[foreach1_005] START');

@@ -67,12 +67,12 @@ export default function getBurstAssetsTest() {
     });
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_001
-     * @tc.name      : getBurstAssets_image_001
-     * @tc.desc      : burstKey not exist
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getBurstAssets_image_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_001
+     * @tc.desc   burstKey not exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getBurstAssets_image_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getBurstAssets_image_001';
@@ -82,12 +82,12 @@ export default function getBurstAssetsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_001
-     * @tc.name      : getBurstAssets_image_abnormal_001
-     * @tc.desc      : burstKey->undefined -> error_code: 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getBurstAssets_image_abnormal_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_001
+     * @tc.desc   burstKey->undefined -> error_code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getBurstAssets_image_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getBurstAssets_image_abnormal_001';
@@ -98,12 +98,12 @@ export default function getBurstAssetsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_001
-     * @tc.name      : getBurstAssets_image_abnormal_002
-     * @tc.desc      : burstKey->number -> error_code: 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getBurstAssets_image_abnormal_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_001
+     * @tc.desc   burstKey->number -> error_code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getBurstAssets_image_abnormal_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'getBurstAssets_image_abnormal_002';
@@ -113,12 +113,12 @@ export default function getBurstAssetsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_001
-     * @tc.name      : getBurstAssets_image_abnormal_003
-     * @tc.desc      : options->undefined -> error_code: 14000011
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getBurstAssets_image_abnormal_003
+     * @tc.number PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_001
+     * @tc.desc   options->undefined -> error_code: 14000011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getBurstAssets_image_abnormal_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'getBurstAssets_image_abnormal_003';

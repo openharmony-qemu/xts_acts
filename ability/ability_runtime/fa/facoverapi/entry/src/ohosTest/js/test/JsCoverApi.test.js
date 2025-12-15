@@ -19,11 +19,13 @@ import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level 
 export default function CoverApiTest() {
 describe('CoverApiTest', function () {
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_CoverApi_0500
-     * @tc.name    whether the system is under stability test
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_CoverApi_0500
+     * @tc.number SUB_AA_OpenHarmony_CoverApi_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_CoverApi_0500', Level.LEVEL0, async function (done) {
         console.log("------------start SUB_AA_OpenHarmony_CoverApi_0500-------------");

@@ -26,66 +26,66 @@ export default function SliderTest() {
       done();
     });
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_ENABLEHAPTICFEEDBACK_0100
-    * @tc.name: testSliderEnableHpaticFeedback001
-    * @tc.desc: testing EnableHpaticFeedback for slider with default value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testSliderEnableHpaticFeedback001
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_ENABLEHAPTICFEEDBACK_0100
+     * @tc.desc   testing EnableHpaticFeedback for slider with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSliderEnableHpaticFeedback001',  Level.LEVEL0, async (done: Function) => {
       expect(nativeFunc.testSliderEnableHpaticFeedback001()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_ENABLEHAPTICFEEDBACK_0200
-    * @tc.name: testSliderEnableHpaticFeedback002
-    * @tc.desc: testing EnableHpaticFeedback for slider with true
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testSliderEnableHpaticFeedback002
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_ENABLEHAPTICFEEDBACK_0200
+     * @tc.desc   testing EnableHpaticFeedback for slider with true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSliderEnableHpaticFeedback002',  Level.LEVEL0, async (done: Function) => {
       expect(nativeFunc.testSliderEnableHpaticFeedback002()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_ENABLEHAPTICFEEDBACK_0300
-    * @tc.name: testSliderEnableHpaticFeedback003
-    * @tc.desc: testing EnableHpaticFeedback for slider with false
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testSliderEnableHpaticFeedback003
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_ENABLEHAPTICFEEDBACK_0300
+     * @tc.desc   testing EnableHpaticFeedback for slider with false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSliderEnableHpaticFeedback003',  Level.LEVEL0, async (done: Function) => {
       expect(nativeFunc.testSliderEnableHpaticFeedback003()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_ENABLEHAPTICFEEDBACK_0400
-    * @tc.name: testSliderSEnableHpaticFeedback004
-    * @tc.desc: testing EnableHpaticFeedback for slider with negative value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 2
-    */
+    /**
+     * @tc.name   testSliderEnableHpaticFeedback004
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_ENABLEHAPTICFEEDBACK_0400
+     * @tc.desc   testing EnableHpaticFeedback for slider with negative value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSliderEnableHpaticFeedback004',  Level.LEVEL0, async (done: Function) => {
       expect(nativeFunc.testSliderEnableHpaticFeedback004()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_ENABLEHAPTICFEEDBACK_0500
-    * @tc.name: testSliderEnableHpaticFeedback005
-    * @tc.desc: testing EnableHpaticFeedback for slider with zero value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testSliderEnableHpaticFeedback005
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_ENABLEHAPTICFEEDBACK_0500
+     * @tc.desc   testing EnableHpaticFeedback for slider with zero value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSliderEnableHpaticFeedback005',  Level.LEVEL0, async (done: Function) => {
       expect(nativeFunc.testSliderEnableHpaticFeedback005()).assertEqual(0)
       done()

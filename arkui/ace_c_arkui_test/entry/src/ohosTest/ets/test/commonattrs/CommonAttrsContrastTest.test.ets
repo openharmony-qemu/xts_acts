@@ -26,78 +26,78 @@ export default function commonAttrsContrastTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_CONTRAST_0100
-     * @tc.name       : testCommonAttrsContrast001
-     * @tc.desc       : testing contrast for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsContrast001
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_CONTRAST_0100
+     * @tc.desc   testing contrast for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsContrast001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsContrast001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_CONTRAST_0200
-     * @tc.name       : testCommonAttrsContrast002
-     * @tc.desc       : testing contrast for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsContrast002
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_CONTRAST_0200
+     * @tc.desc   testing contrast for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsContrast002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsContrast002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_CONTRAST_0300
-     * @tc.name       : testCommonAttrsContrast003
-     * @tc.desc       : testing contrast for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsContrast003
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_CONTRAST_0300
+     * @tc.desc   testing contrast for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsContrast003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsContrast003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_CONTRAST_0400
-     * @tc.name       : testCommonAttrsContrast004
-     * @tc.desc       : testing contrast for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsContrast004
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_CONTRAST_0400
+     * @tc.desc   testing contrast for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsContrast004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsContrast004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_CONTRAST_0500
-     * @tc.name       : testCommonAttrsContrast005
-     * @tc.desc       : testing contrast for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCommonAttrsContrast005
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_CONTRAST_0500
+     * @tc.desc   testing contrast for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsContrast005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsContrast005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_CONTRAST_0600
-     * @tc.name       : testCommonAttrsContrast006
-     * @tc.desc       : testing contrast for stack with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCommonAttrsContrast006
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_CONTRAST_0600
+     * @tc.desc   testing contrast for stack with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsContrast006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsContrast006()).assertEqual(0)

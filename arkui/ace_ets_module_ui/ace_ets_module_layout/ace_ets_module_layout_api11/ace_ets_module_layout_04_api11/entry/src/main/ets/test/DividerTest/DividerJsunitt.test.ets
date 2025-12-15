@@ -44,6 +44,14 @@ export default function dividerJsunitt() {
       console.info("divider after each called");
     });
 
+    /**
+     * @tc.name   dividerTest_0100
+     * @tc.number dividerTest_0100
+     * @tc.desc   dividerTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('dividerTest_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('dividerTest_0100 START');
       let strJson = getInspectorByKey('Divider');
@@ -55,6 +63,14 @@ export default function dividerJsunitt() {
       done();
     });
 
+    /**
+     * @tc.name   dividerTest_0200
+     * @tc.number dividerTest_0200
+     * @tc.desc   dividerTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('dividerTest_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('dividerTest_0200 START');
       let strJson = getInspectorByKey('Divider');
@@ -66,6 +82,14 @@ export default function dividerJsunitt() {
       done();
     });
 
+    /**
+     * @tc.name   dividerTest_0300
+     * @tc.number dividerTest_0300
+     * @tc.desc   dividerTest_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('dividerTest_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('dividerTest_0300 START');
       try {

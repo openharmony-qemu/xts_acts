@@ -42,12 +42,12 @@ export default function TextClockLongJsunit() {
     });
 
     /**
+     * @tc.name   TextClockLongJsunit_0100
      * @tc.number TextClockLongJsunit_0100
-     * @tc.name scenario testing
-     * @tc.desc Does the onDateChange stop when testing pauses.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Does the onDateChange stop when testing pauses.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextClockLongJsunit_0100', Level.LEVEL2, async (done: Function) => {
       // Test stop
@@ -74,12 +74,12 @@ export default function TextClockLongJsunit() {
     });
     
     /**
+     * @tc.name   TextClockLongJsunit_0200
      * @tc.number TextClockLongJsunit_0200
-     * @tc.name scenario testing
-     * @tc.desc Does the onDateChange Visible when testing pauses.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Does the onDateChange Visible when testing pauses.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextClockLongJsunit_0200', Level.LEVEL2, async (done: Function) => {
       // Test Visible
@@ -100,12 +100,12 @@ export default function TextClockLongJsunit() {
     });
 
     /**
+     * @tc.name   TextClockLongJsunit_0300
      * @tc.number TextClockLongJsunit_0200
-     * @tc.name scenario testing
-     * @tc.desc Test whether the onDateChange stops when sliding out of the field of view.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test whether the onDateChange stops when sliding out of the field of view.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextClockLongJsunit_0300', Level.LEVEL2, async (done: Function) => {
       // Test sliding out screen

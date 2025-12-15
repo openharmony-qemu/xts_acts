@@ -23,12 +23,12 @@ export default function graphicImagePixelMapAPI22() {
     })
 
     /**
-     * @tc.number     graphicImagePixelMapAPI22_0100
-     * @tc.name       graphicImagePixelMapAPI22_0100
-     * @tc.desc       image pixelMap newAPI22
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   graphicImagePixelMapAPI22_0100
+     * @tc.number graphicImagePixelMapAPI22_0100
+     * @tc.desc   image pixelMap newAPI22
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("graphicImagePixelMapAPI22_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
@@ -64,12 +64,12 @@ export default function graphicImagePixelMapAPI22() {
     });
 
     /**
-     * @tc.number     graphicImagePixelMapAPI22_0200
-     * @tc.name       graphicImagePixelMapAPI22_0200
-     * @tc.desc       image pixelMap newAPI22
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   graphicImagePixelMapAPI22_0200
+     * @tc.number graphicImagePixelMapAPI22_0200
+     * @tc.desc   image pixelMap newAPI22
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("graphicImagePixelMapAPI22_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
@@ -117,12 +117,12 @@ export default function graphicImagePixelMapAPI22() {
     });
 
     /**
-     * @tc.number     graphicImagePixelMapAPI22_0300
-     * @tc.name       graphicImagePixelMapAPI22_0300
-     * @tc.desc       image pixelMap newAPI22
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   graphicImagePixelMapAPI22_0300
+     * @tc.number graphicImagePixelMapAPI22_0300
+     * @tc.desc   image pixelMap newAPI22
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("graphicImagePixelMapAPI22_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
@@ -143,12 +143,12 @@ export default function graphicImagePixelMapAPI22() {
     });
 
     /**
-     * @tc.number     graphicImagePixelMapAPI22_0400
-     * @tc.name       graphicImagePixelMapAPI22_0400
-     * @tc.desc       image pixelMap newAPI22
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   graphicImagePixelMapAPI22_0400
+     * @tc.number graphicImagePixelMapAPI22_0400
+     * @tc.desc   image pixelMap newAPI22
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("graphicImagePixelMapAPI22_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
@@ -170,12 +170,12 @@ export default function graphicImagePixelMapAPI22() {
     });
 
     /**
-     * @tc.number     graphicImagePixelMapAPI22_0500
-     * @tc.name       graphicImagePixelMapAPI22_0500
-     * @tc.desc       image pixelMap newAPI22
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   graphicImagePixelMapAPI22_0500
+     * @tc.number graphicImagePixelMapAPI22_0500
+     * @tc.desc   image pixelMap newAPI22
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("graphicImagePixelMapAPI22_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
@@ -196,12 +196,12 @@ export default function graphicImagePixelMapAPI22() {
     });
 
     /**
-     * @tc.number     graphicImagePixelMapAPI22_0600
-     * @tc.name       graphicImagePixelMapAPI22_0600
-     * @tc.desc       image pixelMap newAPI22
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   graphicImagePixelMapAPI22_0600
+     * @tc.number graphicImagePixelMapAPI22_0600
+     * @tc.desc   image pixelMap newAPI22
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("graphicImagePixelMapAPI22_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
@@ -244,12 +244,12 @@ export default function graphicImagePixelMapAPI22() {
     });
 
     /**
-     * @tc.number     graphicImagePixelMapAPI22_0700
-     * @tc.name       graphicImagePixelMapAPI22_0700
-     * @tc.desc       image pixelMap newAPI22
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   graphicImagePixelMapAPI22_0700
+     * @tc.number graphicImagePixelMapAPI22_0700
+     * @tc.desc   image pixelMap newAPI22
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("graphicImagePixelMapAPI22_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
@@ -269,12 +269,12 @@ export default function graphicImagePixelMapAPI22() {
     });
 
     /**
-     * @tc.number     graphicImagePixelMapAPI22_0800
-     * @tc.name       graphicImagePixelMapAPI22_0800
-     * @tc.desc       image pixelMap newAPI22
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   graphicImagePixelMapAPI22_0800
+     * @tc.number graphicImagePixelMapAPI22_0800
+     * @tc.desc   image pixelMap newAPI22
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("graphicImagePixelMapAPI22_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
@@ -299,12 +299,12 @@ export default function graphicImagePixelMapAPI22() {
     });
 
     /**
-     * @tc.number     graphicImagePixelMapAPI22_0900
-     * @tc.name       graphicImagePixelMapAPI22_0900
-     * @tc.desc       image pixelMap newAPI22
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   graphicImagePixelMapAPI22_0900
+     * @tc.number graphicImagePixelMapAPI22_0900
+     * @tc.desc   image pixelMap newAPI22
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("graphicImagePixelMapAPI22_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);

@@ -42,12 +42,12 @@ export default function PhotoAccessHelperLoadMovingPhoto() {
     });
 
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_001
-     * @tc.name      : MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_001
-     * @tc.desc      : loadMovingPhoto
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_001
+     * @tc.number MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_001
+     * @tc.desc   loadMovingPhoto
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_001', Level.LEVEL0, async (done: Function, videoPahUri: string, imagePathUri: string) => {
       try {
@@ -62,12 +62,12 @@ export default function PhotoAccessHelperLoadMovingPhoto() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_002
-     * @tc.name      : MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_002
-     * @tc.desc      : loadMovingPhoto
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_002
+     * @tc.number MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_002
+     * @tc.desc   loadMovingPhoto
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_002', Level.LEVEL0, async (done: Function) => {
       try {
@@ -82,12 +82,12 @@ export default function PhotoAccessHelperLoadMovingPhoto() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_003
-     * @tc.name      : MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_003
-     * @tc.desc      : loadMovingPhoto
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_003
+     * @tc.number MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_003
+     * @tc.desc   loadMovingPhoto
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_003', Level.LEVEL0, async (done: Function) => {
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -103,12 +103,12 @@ export default function PhotoAccessHelperLoadMovingPhoto() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_004
-     * @tc.name      : MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_004
-     * @tc.desc      : loadMovingPhoto
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_004
+     * @tc.number MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_004
+     * @tc.desc   loadMovingPhoto
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_004', Level.LEVEL0, async (done: Function, imagePathUri: string) => {
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -127,12 +127,12 @@ export default function PhotoAccessHelperLoadMovingPhoto() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_005
-     * @tc.name      : MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_005
-     * @tc.desc      : loadMovingPhoto
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_005
+     * @tc.number MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_005
+     * @tc.desc   loadMovingPhoto
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_005', Level.LEVEL0, async (done: Function, imagePathUri: string) => {
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -149,12 +149,12 @@ export default function PhotoAccessHelperLoadMovingPhoto() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_006
-     * @tc.name      : MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_006
-     * @tc.desc      : loadMovingPhoto
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_006
+     * @tc.number MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_006
+     * @tc.desc   loadMovingPhoto
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_006', Level.LEVEL0, async (done: Function, imagePathUri: string) => {
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -171,12 +171,12 @@ export default function PhotoAccessHelperLoadMovingPhoto() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_007
-     * @tc.name      : MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_007
-     * @tc.desc      : loadMovingPhoto
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_007
+     * @tc.number MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_007
+     * @tc.desc   loadMovingPhoto
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_007', Level.LEVEL0, async (done: Function,videoPahUri: string, imagePathUri: string,) => {
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -195,12 +195,12 @@ export default function PhotoAccessHelperLoadMovingPhoto() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_008
-     * @tc.name      : MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_008
-     * @tc.desc      : loadMovingPhoto
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_008
+     * @tc.number MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_008
+     * @tc.desc   loadMovingPhoto
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_008', Level.LEVEL0, async (done: Function,videoPahUri: string, imagePathUri: string,) => {
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -217,12 +217,12 @@ export default function PhotoAccessHelperLoadMovingPhoto() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_009
-     * @tc.name      : MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_009
-     * @tc.desc      : loadMovingPhoto
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_009
+     * @tc.number MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_009
+     * @tc.desc   loadMovingPhoto
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_009', Level.LEVEL0, async (done: Function,videoPahUri: string, imagePathUri: string,) => {
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -239,12 +239,12 @@ export default function PhotoAccessHelperLoadMovingPhoto() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_0010
-     * @tc.name      : MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_0010
-     * @tc.desc      : loadMovingPhoto
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_0010
+     * @tc.number MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_0010
+     * @tc.desc   loadMovingPhoto
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_0010', Level.LEVEL0, async (done: Function) => {
       try {
@@ -259,12 +259,12 @@ export default function PhotoAccessHelperLoadMovingPhoto() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_0011
-     * @tc.name      : MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_0011
-     * @tc.desc      : loadMovingPhoto
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_0011
+     * @tc.number MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_0011
+     * @tc.desc   loadMovingPhoto
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_0011', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_0011';
@@ -281,12 +281,12 @@ export default function PhotoAccessHelperLoadMovingPhoto() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_0012
-     * @tc.name      : MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_0012
-     * @tc.desc      : loadMovingPhoto
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_0012
+     * @tc.number MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_0012
+     * @tc.desc   loadMovingPhoto
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_0012', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_0012';
@@ -303,12 +303,12 @@ export default function PhotoAccessHelperLoadMovingPhoto() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_0013
-     * @tc.name      : MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_0013
-     * @tc.desc      : loadMovingPhoto
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_0013
+     * @tc.number MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_0013
+     * @tc.desc   loadMovingPhoto
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_ERROR_0013', Level.LEVEL0, async (done: Function) => {
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;

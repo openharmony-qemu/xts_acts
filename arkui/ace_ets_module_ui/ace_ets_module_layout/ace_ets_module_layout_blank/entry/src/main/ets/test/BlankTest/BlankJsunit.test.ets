@@ -54,9 +54,12 @@ export default function blankJsunit() {
     });
 
     /**
+     * @tc.name   BlankGetInspectorByKey
      * @tc.number SUB_ACE_BASIC_ETS_API_0630
-     * @tc.name testBlankGetInspectorByKey010
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BlankGetInspectorByKey',  Level.LEVEL0, async (done: Function) => {
       let strJson = getInspectorByKey('BlankTest_blank');

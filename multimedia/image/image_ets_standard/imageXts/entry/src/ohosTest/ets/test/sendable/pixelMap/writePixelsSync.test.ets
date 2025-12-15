@@ -61,12 +61,12 @@ export default function sendableWritePixelsSyncTest() {
     });
 
     /**
-     * @tc.number    : PIXEL_MAP_WRITE_PIXELS_SYNC_001
-     * @tc.name      : writePixelsSync_sendable_promise_001
-     * @tc.desc      : writePixelsSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   writePixelsSync_sendable_promise_001
+     * @tc.number PIXEL_MAP_WRITE_PIXELS_SYNC_001
+     * @tc.desc   writePixelsSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('writePixelsSync_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'writePixelsSync_sendable_promise_001';
@@ -80,12 +80,12 @@ export default function sendableWritePixelsSyncTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_WRITE_PIXELS_SYNC_002 //TODO 传入错误的参数 不会报错 但是在writePixels中会报错 但是返回的格式不对
-     * @tc.name      : writePixelsSync_sendable_promise_002
-     * @tc.desc      : writePixelsSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   writePixelsSync_sendable_promise_002
+     * @tc.number PIXEL_MAP_WRITE_PIXELS_SYNC_002 //TODO 传入错误的参数 不会报错 但是在writePixels中会报错 但是返回的格式不对
+     * @tc.desc   writePixelsSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('writePixelsSync_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'writePixelsSync_sendable_promise_002';
@@ -99,12 +99,12 @@ export default function sendableWritePixelsSyncTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_WRITE_PIXELS_SYNC_003 //TODO 传入错误的参数 不会报错 但是在writePixels中会报错 但是返回的格式不对
-     * @tc.name      : writePixelsSync_sendable_promise_003
-     * @tc.desc      : writePixelsSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   writePixelsSync_sendable_promise_003
+     * @tc.number PIXEL_MAP_WRITE_PIXELS_SYNC_003 //TODO 传入错误的参数 不会报错 但是在writePixels中会报错 但是返回的格式不对
+     * @tc.desc   writePixelsSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('writePixelsSync_sendable_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'writePixelsSync_sendable_promise_003';
@@ -118,12 +118,12 @@ export default function sendableWritePixelsSyncTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_WRITE_PIXELS_SYNC_004 //TODO 传入错误的参数 不会报错 但是在writePixels中会报错 但是返回的格式不对
-     * @tc.name      : writePixelsSync_sendable_promise_004
-     * @tc.desc      : writePixelsSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   writePixelsSync_sendable_promise_004
+     * @tc.number PIXEL_MAP_WRITE_PIXELS_SYNC_004 //TODO 传入错误的参数 不会报错 但是在writePixels中会报错 但是返回的格式不对
+     * @tc.desc   writePixelsSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('writePixelsSync_sendable_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'writePixelsSync_sendable_promise_004';
@@ -137,12 +137,12 @@ export default function sendableWritePixelsSyncTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_WRITE_PIXELS_SYNC_005 //TODO 传入错误的参数 不会报错 但是在writePixels中会报错 但是返回的格式不对
-     * @tc.name      : writePixelsSync_sendable_promise_005
-     * @tc.desc      : writePixelsSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   writePixelsSync_sendable_promise_005
+     * @tc.number PIXEL_MAP_WRITE_PIXELS_SYNC_005 //TODO 传入错误的参数 不会报错 但是在writePixels中会报错 但是返回的格式不对
+     * @tc.desc   writePixelsSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('writePixelsSync_sendable_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'writePixelsSync_sendable_promise_005';

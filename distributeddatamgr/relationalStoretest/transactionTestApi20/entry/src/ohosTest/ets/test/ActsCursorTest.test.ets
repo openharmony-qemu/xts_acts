@@ -19,7 +19,6 @@ import testNapi from 'libentry.so'
 export default function ActsCursorTest() {
   describe('ActsCursorTest', () => {
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Cursor_GetFloatVectorCount_0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Cursor_GetFloatVectorCount_0100
      * @tc.desc   Fault scenario for testing illegal parameters of OH_Cursor_GetFloatVectorCount interface.
@@ -45,7 +44,6 @@ export default function ActsCursorTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Cursor_GetFloatVectorCount_0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Cursor_GetFloatVectorCount_0200
      * @tc.desc   Test the fault scenario of the common abnormal error code of the OH_Cursor_GetFloatVectorCount interface.
@@ -71,7 +69,6 @@ export default function ActsCursorTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Cursor_GetFloatVector_0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Cursor_GetFloatVector_0300
      * @tc.desc   Fault scenario for testing illegal parameters of OH_Cursor_GetFloatVector interface.
@@ -95,7 +92,6 @@ export default function ActsCursorTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Cursor_GetFloatVector_0400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Cursor_GetFloatVector_0400
      * @tc.desc   Test the fault scenario of the common abnormal error code of the OH_Cursor_GetFloatVector interface.

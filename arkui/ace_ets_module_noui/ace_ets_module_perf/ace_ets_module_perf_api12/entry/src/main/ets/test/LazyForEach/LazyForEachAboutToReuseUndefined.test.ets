@@ -59,9 +59,12 @@ export default function LazyForEachAboutToReuseUndefined() {
     });
 
     /**
+     * @tc.name   LazyForEachAboutToReuseUndefined_001
      * @tc.number LazyForEachAboutToReuseUndefined_001
-     * @tc.name LazyForEachAboutToReuseUndefined_001
-     * @tc.desc Test LazyForEachAboutToReuseUndefined
+     * @tc.desc   Test LazyForEachAboutToReuseUndefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('LazyForEachAboutToReuseUndefined_001', Level.LEVEL1, async (done: Function) => {
       console.info('[LazyForEachAboutToReuseUndefined_001] START');      

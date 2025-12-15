@@ -71,12 +71,12 @@ export default function getAssetChangeRequestTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_ASSET_CHANGE_REQUEST_0000
-     * @tc.name      : get_asset_change_request_000
-     * @tc.desc      : get asset in MediaAssetChangeRequest
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   get_asset_change_request_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_ASSET_CHANGE_REQUEST_0000
+     * @tc.desc   get asset in MediaAssetChangeRequest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('get_asset_change_request_000', Level.LEVEL0, async (done: Function) => {
       let testNum = 'get_asset_change_request_000';
@@ -98,12 +98,12 @@ export default function getAssetChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_GET_ASSET_CHANGE_REQUEST_0100
-     * @tc.name      : get_asset_change_request_001
-     * @tc.desc      : get asset before/after applyChanges
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_asset_change_request_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_ASSET_CHANGE_REQUEST_0100
+     * @tc.desc   get asset before/after applyChanges
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_asset_change_request_001', Level.LEVEL2, async (done: Function) => {
       let testNum = 'get_asset_change_request_001';
@@ -129,12 +129,12 @@ export default function getAssetChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : Sub_MediaLibrary_getAsset_By_MediaSuffix_001
-     * @tc.name      : get_asset_by_mediaSuffix_jpg_001
-     * @tc.desc      : get asset by jpg suffix
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_asset_by_mediaSuffix_jpg_001
+     * @tc.number Sub_MediaLibrary_getAsset_By_MediaSuffix_001
+     * @tc.desc   get asset by jpg suffix
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("get_asset_by_mediaSuffix_jpg_001", Level.LEVEL2, async (done: Function) => {
       const testNum: string = "get_asset_by_mediaSuffix_jpg_001";
@@ -155,12 +155,12 @@ export default function getAssetChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : Sub_MediaLibrary_getAsset_By_MediaSuffix_002
-     * @tc.name      : get_asset_by_mediaSuffix_mp4_001
-     * @tc.desc      : get asset by mp4 suffix
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_asset_by_mediaSuffix_mp4_001
+     * @tc.number Sub_MediaLibrary_getAsset_By_MediaSuffix_002
+     * @tc.desc   get asset by mp4 suffix
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("get_asset_by_mediaSuffix_mp4_001", Level.LEVEL2, async (done: Function) => {
       const testNum: string = "get_asset_by_mediaSuffix_mp4_001";
@@ -188,12 +188,12 @@ export default function getAssetChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : Sub_MediaLibrary_getAsset_By_MediaSuffix_003
-     * @tc.name      : getAsset_allTypes_imageAndVideo_test_001
-     * @tc.desc      : get allType asset mediaSuffix
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAsset_allTypes_imageAndVideo_test_001
+     * @tc.number Sub_MediaLibrary_getAsset_By_MediaSuffix_003
+     * @tc.desc   get allType asset mediaSuffix
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("getAsset_allTypes_imageAndVideo_test_001", Level.LEVEL0, async (done: Function) => {
       let testNum: string = "getAsset_allTypes_imageAndVideo_test_001";
@@ -231,12 +231,12 @@ export default function getAssetChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : Sub_MediaLibrary_getAsset_By_MediaSuffix_004
-     * @tc.name      : getAsset_orderByMediaSuffixAsc_test_001
-     * @tc.desc      : get allType image orderBy mediaSuffix Asc
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAsset_orderByMediaSuffixAsc_test_001
+     * @tc.number Sub_MediaLibrary_getAsset_By_MediaSuffix_004
+     * @tc.desc   get allType image orderBy mediaSuffix Asc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("getAsset_orderByMediaSuffixAsc_test_001", Level.LEVEL0, async (done: Function) => {
       let testNum: string = "getAsset_orderByMediaSuffixAsc_test_001";
@@ -272,12 +272,12 @@ export default function getAssetChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : Sub_MediaLibrary_getAsset_By_MediaSuffix_005
-     * @tc.name      : getAsset_orderByMediaSuffixDesc_test_002
-     * @tc.desc      : get allType image orderBy mediaSuffix Desc
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAsset_orderByMediaSuffixDesc_test_002
+     * @tc.number Sub_MediaLibrary_getAsset_By_MediaSuffix_005
+     * @tc.desc   get allType image orderBy mediaSuffix Desc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("getAsset_orderByMediaSuffixDesc_test_002", Level.LEVEL0, async (done: Function) => {
       let testNum: string = "getAsset_orderByMediaSuffixDesc_test_002";
@@ -314,12 +314,12 @@ export default function getAssetChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : Sub_MediaLibrary_getAsset_By_MediaSuffix_006
-     * @tc.name      : getAsset_orderByMediaSuffixAsc_test_003
-     * @tc.desc      : get allType video orderBy mediaSuffix Asc
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAsset_orderByMediaSuffixAsc_test_003
+     * @tc.number Sub_MediaLibrary_getAsset_By_MediaSuffix_006
+     * @tc.desc   get allType video orderBy mediaSuffix Asc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("getAsset_orderByMediaSuffixAsc_test_003", Level.LEVEL0, async (done: Function) => {
       let testNum: string = "getAsset_orderByMediaSuffixAsc_test_003";
@@ -355,12 +355,12 @@ export default function getAssetChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : Sub_MediaLibrary_getAsset_By_MediaSuffix_007
-     * @tc.name      : getAsset_orderByMediaSuffixDesc_test_004
-     * @tc.desc      : get allType video orderBy mediaSuffix Desc
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAsset_orderByMediaSuffixDesc_test_004
+     * @tc.number Sub_MediaLibrary_getAsset_By_MediaSuffix_007
+     * @tc.desc   get allType video orderBy mediaSuffix Desc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("getAsset_orderByMediaSuffixDesc_test_004", Level.LEVEL0, async (done: Function) => {
       let testNum: string = "getAsset_orderByMediaSuffixDesc_test_004";
@@ -397,12 +397,12 @@ export default function getAssetChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : Sub_MediaLibrary_getAsset_By_MediaSuffix_008
-     * @tc.name      : getAsset_orderByMediaSuffixAsc_test_005
-     * @tc.desc      : get allType image & video orderBy mediaSuffix Asc
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAsset_orderByMediaSuffixAsc_test_005
+     * @tc.number Sub_MediaLibrary_getAsset_By_MediaSuffix_008
+     * @tc.desc   get allType image & video orderBy mediaSuffix Asc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("getAsset_orderByMediaSuffixAsc_test_005", Level.LEVEL0, async (done: Function) => {
       let testNum: string = "getAsset_orderByMediaSuffixAsc_test_005";
@@ -440,12 +440,12 @@ export default function getAssetChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : Sub_MediaLibrary_getAsset_By_MediaSuffix_009
-     * @tc.name      : getAsset_orderByMediaSuffixDesc_test_006
-     * @tc.desc      : get allType image & video orderBy mediaSuffix Desc
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAsset_orderByMediaSuffixDesc_test_006
+     * @tc.number Sub_MediaLibrary_getAsset_By_MediaSuffix_009
+     * @tc.desc   get allType image & video orderBy mediaSuffix Desc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("getAsset_orderByMediaSuffixDesc_test_006", Level.LEVEL0, async (done: Function) => {
       let testNum: string = "getAsset_orderByMediaSuffixDesc_test_006";

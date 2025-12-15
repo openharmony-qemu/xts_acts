@@ -47,9 +47,12 @@ export default function webgl2_transform() {
             hilog.info(0x0000, 'testTag', '%{public}s', 'webgl1_test_01 end');
         });
         /**
+         * @tc.name   webgl2_test_createTransformFeedback
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TRANSFORM_0001
-         * @tc.name webgl2_test_createTransformFeedback
-         * @tc.desc Test createTransformFeedback.
+         * @tc.desc   Test createTransformFeedback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_createTransformFeedback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -68,9 +71,12 @@ export default function webgl2_transform() {
             finish();
         }
         /**
+         * @tc.name   webgl2_test_deleteTransformFeedback
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TRANSFORM_0002
-         * @tc.name webgl2_test_deleteTransformFeedback
-         * @tc.desc Test deleteTransformFeedback.
+         * @tc.desc   Test deleteTransformFeedback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_deleteTransformFeedback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -87,9 +93,12 @@ export default function webgl2_transform() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_deleteTransformFeedback_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TRANSFORM_0003
-         * @tc.name webgl2_test_deleteTransformFeedback_1
-         * @tc.desc Test deleteTransformFeedback.
+         * @tc.desc   Test deleteTransformFeedback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_deleteTransformFeedback_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -102,9 +111,12 @@ export default function webgl2_transform() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_deleteTransformFeedback_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TRANSFORM_0004
-         * @tc.name webgl2_test_deleteTransformFeedback_2
-         * @tc.desc Test deleteTransformFeedback.
+         * @tc.desc   Test deleteTransformFeedback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_deleteTransformFeedback_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -124,9 +136,12 @@ export default function webgl2_transform() {
             finish();
         }
         /**
+         * @tc.name   webgl2_test_isTransformFeedback
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TRANSFORM_0005
-         * @tc.name webgl2_test_isTransformFeedback
-         * @tc.desc Test isTransformFeedback.
+         * @tc.desc   Test isTransformFeedback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_isTransformFeedback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -141,9 +156,12 @@ export default function webgl2_transform() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_isTransformFeedback_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TRANSFORM_0006
-         * @tc.name webgl2_test_isTransformFeedback_1
-         * @tc.desc Test isTransformFeedback.
+         * @tc.desc   Test isTransformFeedback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_isTransformFeedback_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -156,9 +174,12 @@ export default function webgl2_transform() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_isTransformFeedback_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TRANSFORM_0007
-         * @tc.name webgl2_test_isTransformFeedback_2
-         * @tc.desc Test isTransformFeedback.
+         * @tc.desc   Test isTransformFeedback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_isTransformFeedback_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -177,9 +198,12 @@ export default function webgl2_transform() {
             finish();
         }
         /**
+         * @tc.name   webgl2_test_bindTransformFeedback
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TRANSFORM_0008
-         * @tc.name webgl2_test_bindTransformFeedback
-         * @tc.desc Test bindTransformFeedback.
+         * @tc.desc   Test bindTransformFeedback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bindTransformFeedback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -194,9 +218,12 @@ export default function webgl2_transform() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bindTransformFeedback_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TRANSFORM_0009
-         * @tc.name webgl2_test_bindTransformFeedback_1
-         * @tc.desc Test bindTransformFeedback.
+         * @tc.desc   Test bindTransformFeedback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bindTransformFeedback_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -209,9 +236,12 @@ export default function webgl2_transform() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bindTransformFeedback_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TRANSFORM_0010
-         * @tc.name webgl2_test_bindTransformFeedback_2
-         * @tc.desc Test bindTransformFeedback.
+         * @tc.desc   Test bindTransformFeedback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bindTransformFeedback_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -224,9 +254,12 @@ export default function webgl2_transform() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bindTransformFeedback_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TRANSFORM_0011
-         * @tc.name webgl2_test_bindTransformFeedback_3
-         * @tc.desc Test bindTransformFeedback.
+         * @tc.desc   Test bindTransformFeedback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bindTransformFeedback_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -239,9 +272,12 @@ export default function webgl2_transform() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bindTransformFeedback_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TRANSFORM_0012
-         * @tc.name webgl2_test_bindTransformFeedback_4
-         * @tc.desc Test bindTransformFeedback.
+         * @tc.desc   Test bindTransformFeedback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bindTransformFeedback_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -309,9 +345,12 @@ export default function webgl2_transform() {
             finish();
         }
         /**
+         * @tc.name   webgl2_test_beginTransformFeedback
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TRANSFORM_0013
-         * @tc.name webgl2_test_beginTransformFeedback
-         * @tc.desc Test beginTransformFeedback.
+         * @tc.desc   Test beginTransformFeedback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_beginTransformFeedback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -392,9 +431,12 @@ export default function webgl2_transform() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_beginTransformFeedback_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TRANSFORM_0014
-         * @tc.name webgl2_test_beginTransformFeedback_1
-         * @tc.desc Test beginTransformFeedback.
+         * @tc.desc   Test beginTransformFeedback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_beginTransformFeedback_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -407,9 +449,12 @@ export default function webgl2_transform() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_beginTransformFeedback_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TRANSFORM_0015
-         * @tc.name webgl2_test_beginTransformFeedback_2
-         * @tc.desc Test beginTransformFeedback.
+         * @tc.desc   Test beginTransformFeedback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_beginTransformFeedback_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -422,9 +467,12 @@ export default function webgl2_transform() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_beginTransformFeedback_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TRANSFORM_0016
-         * @tc.name webgl2_test_beginTransformFeedback_3
-         * @tc.desc Test beginTransformFeedback.
+         * @tc.desc   Test beginTransformFeedback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_beginTransformFeedback_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -437,9 +485,12 @@ export default function webgl2_transform() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_beginTransformFeedback_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TRANSFORM_0017
-         * @tc.name webgl2_test_beginTransformFeedback_4
-         * @tc.desc Test beginTransformFeedback.
+         * @tc.desc   Test beginTransformFeedback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_beginTransformFeedback_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -452,9 +503,12 @@ export default function webgl2_transform() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_beginTransformFeedback_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TRANSFORM_0018
-         * @tc.name webgl2_test_beginTransformFeedback_5
-         * @tc.desc Test beginTransformFeedback.
+         * @tc.desc   Test beginTransformFeedback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_beginTransformFeedback_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -467,9 +521,12 @@ export default function webgl2_transform() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_beginTransformFeedback_6
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TRANSFORM_0019
-         * @tc.name webgl2_test_beginTransformFeedback_6
-         * @tc.desc Test beginTransformFeedback.
+         * @tc.desc   Test beginTransformFeedback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_beginTransformFeedback_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -482,9 +539,12 @@ export default function webgl2_transform() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_endTransformFeedback
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TRANSFORM_0020
-         * @tc.name webgl2_test_endTransformFeedback
-         * @tc.desc Test endTransformFeedback.
+         * @tc.desc   Test endTransformFeedback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_endTransformFeedback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -622,9 +682,12 @@ export default function webgl2_transform() {
             checkError(gl);
         }
         /**
+         * @tc.name   webgl2_test_transformFeedbackVaryings
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TRANSFORM_0021
-         * @tc.name webgl2_test_transformFeedbackVaryings
-         * @tc.desc Test transformFeedbackVaryings.
+         * @tc.desc   Test transformFeedbackVaryings.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_transformFeedbackVaryings', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -703,9 +766,12 @@ export default function webgl2_transform() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_transformFeedbackVaryings_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TRANSFORM_0022
-         * @tc.name webgl2_test_transformFeedbackVaryings_1
-         * @tc.desc Test transformFeedbackVaryings.
+         * @tc.desc   Test transformFeedbackVaryings.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_transformFeedbackVaryings_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -719,9 +785,12 @@ export default function webgl2_transform() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_transformFeedbackVaryings_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TRANSFORM_0023
-         * @tc.name webgl2_test_transformFeedbackVaryings_2
-         * @tc.desc Test transformFeedbackVaryings.
+         * @tc.desc   Test transformFeedbackVaryings.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_transformFeedbackVaryings_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -791,9 +860,12 @@ export default function webgl2_transform() {
             finish();
         }
         /**
+         * @tc.name   webgl2_test_getTransformFeedbackVarying
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TRANSFORM_0024
-         * @tc.name webgl2_test_getTransformFeedbackVarying
-         * @tc.desc Test getTransformFeedbackVarying.
+         * @tc.desc   Test getTransformFeedbackVarying.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getTransformFeedbackVarying', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -873,9 +945,12 @@ export default function webgl2_transform() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getTransformFeedbackVarying_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TRANSFORM_0025
-         * @tc.name webgl2_test_getTransformFeedbackVarying_1
-         * @tc.desc Test getTransformFeedbackVarying.
+         * @tc.desc   Test getTransformFeedbackVarying.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getTransformFeedbackVarying_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -888,9 +963,12 @@ export default function webgl2_transform() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getTransformFeedbackVarying_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TRANSFORM_0026
-         * @tc.name webgl2_test_getTransformFeedbackVarying_2
-         * @tc.desc Test getTransformFeedbackVarying.
+         * @tc.desc   Test getTransformFeedbackVarying.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getTransformFeedbackVarying_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -903,9 +981,12 @@ export default function webgl2_transform() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_pauseTransformFeedback
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TRANSFORM_0027
-         * @tc.name webgl2_test_pauseTransformFeedback
-         * @tc.desc Test pauseTransformFeedback.
+         * @tc.desc   Test pauseTransformFeedback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_pauseTransformFeedback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -985,9 +1066,12 @@ export default function webgl2_transform() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_resumeTransformFeedback
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TRANSFORM_0028
-         * @tc.name webgl2_test_resumeTransformFeedback
-         * @tc.desc Test resumeTransformFeedback.
+         * @tc.desc   Test resumeTransformFeedback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_resumeTransformFeedback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {

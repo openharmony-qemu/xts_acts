@@ -19,12 +19,12 @@ export default function XmlDynamicSerializerTest() {
 describe('XmlDynamicSerializerTest', function () {
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_00100
-     * @tc.name: testSetDeclaration001
-     * @tc.desc: Writes xml declaration with encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetDeclaration001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_00100
+     * @tc.desc   Writes xml declaration with encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetDeclaration001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer('utf-8');
@@ -40,12 +40,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_00200
-     * @tc.name: testSetDeclaration002
-     * @tc.desc: Writes xml declaration with encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetDeclaration002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_00200
+     * @tc.desc   Writes xml declaration with encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetDeclaration002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer('utf-8');
@@ -63,12 +63,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_00300
-     * @tc.name: testSetDeclaration003
-     * @tc.desc: Writes xml declaration with encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetDeclaration003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_00300
+     * @tc.desc   Writes xml declaration with encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetDeclaration003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer('utf-8');
@@ -87,12 +87,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_00400
-     * @tc.name: testSetDeclaration004
-     * @tc.desc: Writes xml declaration with encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetDeclaration004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_00400
+     * @tc.desc   Writes xml declaration with encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetDeclaration004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer('utf-8');
@@ -109,12 +109,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_00500
-     * @tc.name: testSetDeclaration005
-     * @tc.desc: Writes xml declaration with encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetDeclaration005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_00500
+     * @tc.desc   Writes xml declaration with encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetDeclaration005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer('utf-8');
@@ -131,12 +131,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_00600
-     * @tc.name: testStartElement001
-     * @tc.desc: Writes an elemnet start tag with the given name.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStartElement001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_00600
+     * @tc.desc   Writes an elemnet start tag with the given name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStartElement001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -153,12 +153,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_00700
-     * @tc.name: testStartElement002
-     * @tc.desc: Writes an elemnet start tag with the given name.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStartElement002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_00700
+     * @tc.desc   Writes an elemnet start tag with the given name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStartElement002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -177,12 +177,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_00800
-     * @tc.name: testStartElement003
-     * @tc.desc: Writes an elemnet start tag with the given name.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStartElement003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_00800
+     * @tc.desc   Writes an elemnet start tag with the given name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStartElement003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -201,12 +201,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_00900
-     * @tc.name: testStartElement004
-     * @tc.desc: Writes an elemnet start tag with the given name.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStartElement004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_00900
+     * @tc.desc   Writes an elemnet start tag with the given name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStartElement004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -227,12 +227,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01000
-     * @tc.name: testStartElement005
-     * @tc.desc: Writes an elemnet start tag with the given name.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStartElement005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01000
+     * @tc.desc   Writes an elemnet start tag with the given name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStartElement005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -253,12 +253,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01100
-     * @tc.name: testSetAttributes001
-     * @tc.desc: Write an attribute.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetAttributes001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01100
+     * @tc.desc   Write an attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetAttributes001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -276,12 +276,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01200
-     * @tc.name: testSetAttributes002
-     * @tc.desc: Write an attribute.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetAttributes002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01200
+     * @tc.desc   Write an attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetAttributes002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -301,12 +301,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01300
-     * @tc.name: testSetAttributes003
-     * @tc.desc: Write an attribute.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetAttributes003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01300
+     * @tc.desc   Write an attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetAttributes003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -325,12 +325,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01400
-     * @tc.name: testSetAttributes004
-     * @tc.desc: Write an attribute.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetAttributes004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01400
+     * @tc.desc   Write an attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetAttributes004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -350,12 +350,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01500
-     * @tc.name: testSetAttributes005
-     * @tc.desc: Write an attribute.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetAttributes005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01500
+     * @tc.desc   Write an attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetAttributes005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -376,12 +376,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01600
-     * @tc.name: testAddEmptyElement001
-     * @tc.desc: Add an empty element.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testAddEmptyElement001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01600
+     * @tc.desc   Add an empty element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAddEmptyElement001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -399,12 +399,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01700
-     * @tc.name: testAddEmptyElement002
-     * @tc.desc: Add an empty element.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testAddEmptyElement002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01700
+     * @tc.desc   Add an empty element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAddEmptyElement002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -422,12 +422,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01800
-     * @tc.name: testAddEmptyElement003
-     * @tc.desc: Add an empty element.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testAddEmptyElement003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01800
+     * @tc.desc   Add an empty element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAddEmptyElement003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -445,12 +445,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01900
-     * @tc.name: testAddEmptyElement004
-     * @tc.desc: Add an empty element.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testAddEmptyElement004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01900
+     * @tc.desc   Add an empty element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAddEmptyElement004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -466,12 +466,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02000
-     * @tc.name: testAddEmptyElement005
-     * @tc.desc: Add an empty element.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testAddEmptyElement005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02000
+     * @tc.desc   Add an empty element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAddEmptyElement005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -490,12 +490,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02100
-     * @tc.name: testSetNamespace001
-     * @tc.desc: Writes the namespace of the current element tag.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetNamespace001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02100
+     * @tc.desc   Writes the namespace of the current element tag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetNamespace001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -514,12 +514,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02200
-     * @tc.name: testSetNamespace002
-     * @tc.desc: Writes the namespace of the current element tag.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetNamespace002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02200
+     * @tc.desc   Writes the namespace of the current element tag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetNamespace002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -539,12 +539,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02300
-     * @tc.name: testSetNamespace003
-     * @tc.desc: Writes the namespace of the current element tag.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetNamespace003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02300
+     * @tc.desc   Writes the namespace of the current element tag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetNamespace003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -565,12 +565,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02400
-     * @tc.name: testSetNamespace004
-     * @tc.desc: Writes the namespace of the current element tag.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetNamespace004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02400
+     * @tc.desc   Writes the namespace of the current element tag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetNamespace004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -592,12 +592,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02500
-     * @tc.name: testSetNamespace005
-     * @tc.desc: Writes the namespace of the current element tag.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetNamespace005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02500
+     * @tc.desc   Writes the namespace of the current element tag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetNamespace005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -616,12 +616,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02600
-     * @tc.name: testSetComment001
-     * @tc.desc: Writes the comment.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetComment001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02600
+     * @tc.desc   Writes the comment.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetComment001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -639,12 +639,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02700
-     * @tc.name: testSetComment002
-     * @tc.desc: Writes the comment.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetComment002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02700
+     * @tc.desc   Writes the comment.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetComment002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -664,12 +664,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02800
-     * @tc.name: testSetComment003
-     * @tc.desc: Writes the comment.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetComment003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02800
+     * @tc.desc   Writes the comment.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetComment003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -685,12 +685,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02900
-     * @tc.name: testSetComment004
-     * @tc.desc: Writes the comment.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetComment004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02900
+     * @tc.desc   Writes the comment.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetComment004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -708,12 +708,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03000
-     * @tc.name: testSetComment005
-     * @tc.desc: Writes the comment.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetComment005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03000
+     * @tc.desc   Writes the comment.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetComment005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -730,12 +730,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03100
-     * @tc.name: testSetDocType001
-     * @tc.desc: Writes the DOCTYPE.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetDocType001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03100
+     * @tc.desc   Writes the DOCTYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetDocType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -751,12 +751,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03200
-     * @tc.name: testSetDocType002
-     * @tc.desc: Writes the DOCTYPE.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetDocType002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03200
+     * @tc.desc   Writes the DOCTYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetDocType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -774,12 +774,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03300
-     * @tc.name: testSetDocType003
-     * @tc.desc: Writes the DOCTYPE.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetDocType003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03300
+     * @tc.desc   Writes the DOCTYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetDocType003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -797,12 +797,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03400
-     * @tc.name: testSetDocType004
-     * @tc.desc: Writes the DOCTYPE.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetDocType004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03400
+     * @tc.desc   Writes the DOCTYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetDocType004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -820,12 +820,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03500
-     * @tc.name: testSetDocType005
-     * @tc.desc: Writes the DOCTYPE.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetDocType005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03500
+     * @tc.desc   Writes the DOCTYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetDocType005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -844,12 +844,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03600
-     * @tc.name: testsetCdata001
-     * @tc.desc: Writes the CDATA.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testsetCdata001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03600
+     * @tc.desc   Writes the CDATA.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testsetCdata001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -865,12 +865,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03700
-     * @tc.name: testsetCdata002
-     * @tc.desc: Writes the CDATA.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testsetCdata002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03700
+     * @tc.desc   Writes the CDATA.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testsetCdata002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -888,12 +888,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03800
-     * @tc.name: testsetCdata003
-     * @tc.desc: Writes the CDATA.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testsetCdata003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03800
+     * @tc.desc   Writes the CDATA.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testsetCdata003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -911,12 +911,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03900
-     * @tc.name: testsetCdata004
-     * @tc.desc: Writes the CDATA.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testsetCdata004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03900
+     * @tc.desc   Writes the CDATA.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testsetCdata004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -934,12 +934,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04000
-     * @tc.name: testsetCdata005
-     * @tc.desc: Writes the CDATA.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testsetCdata005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04000
+     * @tc.desc   Writes the CDATA.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testsetCdata005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -958,12 +958,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04100
-     * @tc.name: testSetText001
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetText001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04100
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetText001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -981,12 +981,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04200
-     * @tc.name: testSetText002
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetText002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04200
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetText002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -1005,12 +1005,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04300
-     * @tc.name: testSetText003
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetText003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04300
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetText003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -1030,12 +1030,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04400
-     * @tc.name: testSetText004
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetText004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04400
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetText004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -1054,12 +1054,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04500
-     * @tc.name: testSetText005
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSetText005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04500
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetText005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -1078,12 +1078,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04600
-     * @tc.name: testXMLBoundaryValue001
-     * @tc.desc: set xml length with 0 and check serializer string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXMLBoundaryValue001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04600
+     * @tc.desc   set xml length with 0 and check serializer string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXMLBoundaryValue001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -1098,12 +1098,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04700
-     * @tc.name: testXMLBoundaryValue002
-     * @tc.desc: set xml length with max length and check serializer string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXMLBoundaryValue002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04700
+     * @tc.desc   set xml length with max length and check serializer string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXMLBoundaryValue002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -1132,12 +1132,12 @@ describe('XmlDynamicSerializerTest', function () {
 
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04800
-     * @tc.name: testXMLBoundaryValue003
-     * @tc.desc:set xml length over max length then check error code.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXMLBoundaryValue003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04800
+     * @tc.desc   set xml length over max length then check error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXMLBoundaryValue003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -1158,12 +1158,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04900
-     * @tc.name: testXmlBusinessError001
-     * @tc.desc: the start element and the end element not match.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlBusinessError001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04900
+     * @tc.desc   the start element and the end element not match.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlBusinessError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -1180,12 +1180,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_05000
-     * @tc.name: testXmlBusinessError002
-     * @tc.desc: the illegal position to set attributes.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlBusinessError002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_05000
+     * @tc.desc   the illegal position to set attributes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlBusinessError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -1202,12 +1202,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_05100
-     * @tc.name: testXmlBusinessError003
-     * @tc.desc: set empty name to attributes.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlBusinessError003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_05100
+     * @tc.desc   set empty name to attributes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlBusinessError003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let thatSer = new xml.XmlDynamicSerializer();
@@ -1224,12 +1224,12 @@ describe('XmlDynamicSerializerTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_05200
-     * @tc.name: testXmlBusinessError004
-     * @tc.desc: set error encode to xml.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlBusinessError004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_05200
+     * @tc.desc   set error encode to xml.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlBusinessError004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let value = 10200066;

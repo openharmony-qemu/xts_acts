@@ -31,14 +31,12 @@ export default function fileIOSymlink() {
     hilog.info(domain, tag, '%{public}s', 'fileIO_fs_symlink start');
 
     /**
+     * @tc.name   fileIO_test_symlink_sync_static_000
      * @tc.number SUB_DF_FILEIO_SYMLINK_SYNC_0000
-     * @tc.name fileIO_test_symlink_sync_static_000
-     * @tc.desc Test symlinkSync() interfaces.
-     * Create a symbolic link to verify normal function.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test symlinkSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_symlink_sync_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_sync_static_000 start');
@@ -55,14 +53,12 @@ export default function fileIOSymlink() {
     });
 
     /**
+     * @tc.name   fileIO_test_symlink_async_static_001
      * @tc.number SUB_DF_FILEIO_SYMLINK_ASYNC_0100
-     * @tc.name fileIO_test_symlink_async_static_001
-     * @tc.desc Test SymlinkAsync interfaces. await Promise.
-     * Create a symbolic link to verify normal function.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SymlinkAsync interfaces. await Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_symlink_async_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_async_static_001 start');
@@ -80,14 +76,12 @@ export default function fileIOSymlink() {
     });
 
     /**
+     * @tc.name   fileIO_test_symlink_async_static_002
      * @tc.number SUB_DF_FILEIO_SYMLINK_ASYNC_0200
-     * @tc.name fileIO_test_symlink_async_static_002
-     * @tc.desc Test SymlinkAsync interfaces.
-     * Create a symbolic link to verify normal function.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SymlinkAsync interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_symlink_async_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_symlink_async_static_002');

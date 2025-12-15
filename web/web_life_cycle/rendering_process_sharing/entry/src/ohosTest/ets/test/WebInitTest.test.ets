@@ -62,13 +62,13 @@ export default function webInitTest() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_GETAndSetRENDERPROCESSMODE_API_0003
-     *@tc.name testWebViewGetRenderProcessModeMultiple
-     *@tc.desc test getRenderProcessMode MULTIPLE 1
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewGetRenderProcessModeMultiple
+     * @tc.number SUB_ACE_WEB_GETAndSetRENDERPROCESSMODE_API_0003
+     * @tc.desc   test getRenderProcessMode MULTIPLE 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewGetRenderProcessModeMultiple', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -77,13 +77,13 @@ export default function webInitTest() {
         sendEventByKey('WebInitTestButton', 10, '');
       })
 
-    /*
-     *@tc.number SUB_ACE_WEB_GETAndSetRENDERPROCESSMODE_API_0004
-     *@tc.name testWebViewSetRenderProcessNull
-     *@tc.desc test setRenderProcessMode null
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewSetRenderProcessNull
+     * @tc.number SUB_ACE_WEB_GETAndSetRENDERPROCESSMODE_API_0004
+     * @tc.desc   test setRenderProcessMode null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSetRenderProcessNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -92,14 +92,14 @@ export default function webInitTest() {
         sendEventByKey('WebInitTestButton', 10, '');
       })
 
-    /*
-    * @tc.number      : SUB_ACE_WEB_OnRenderProcessResponding_API_GROUP_0001
-    * @tc.name        : testWebViewOnRenderProcessRespondingGroup
-    * @tc.desc        : OnRenderProcessResponding
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebViewOnRenderProcessRespondingGroup
+     * @tc.number SUB_ACE_WEB_OnRenderProcessResponding_API_GROUP_0001
+     * @tc.desc   OnRenderProcessResponding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewOnRenderProcessRespondingGroup', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         Utils.emitEvent('emitWebViewOnRenderProcessResponding', 138500);
@@ -110,14 +110,14 @@ export default function webInitTest() {
         sendEventByKey('WebInitTestButton', 10, '');
       })
 
-    /*
-    * @tc.number      : SUB_ACE_WEB_NotRespondingReason_NAVIGATION_COMMIT_TIMEOUT_API_GROUP_0002
-    * @tc.name        : testWebViewNotRespondingReasonGroup_NAVIGATION_COMMIT_TIMEOUT
-    * @tc.desc        : NotRespondingReason_NAVIGATION_COMMIT_TIMEOUT
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebViewNotRespondingReasonGroup_NAVIGATION_COMMIT_TIMEOUT
+     * @tc.number SUB_ACE_WEB_NotRespondingReason_NAVIGATION_COMMIT_TIMEOUT_API_GROUP_0002
+     * @tc.desc   NotRespondingReason_NAVIGATION_COMMIT_TIMEOUT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewNotRespondingReasonGroup_NAVIGATION_COMMIT_TIMEOUT',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         Utils.emitEvent('emitWebViewNotRespondingReason_NAVIGATION_COMMIT_TIMEOUT', 138500);

@@ -45,12 +45,12 @@ export default function RemoveStylesTest() {
       console.info("removeStyles after each called");
     });
     /**
-     * @tc.number    removeStyles_0100
-     * @tc.name      removeStyles_0100
-     * @tc.desc      A button removeString掉6,5
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   removeStyles_0100
+     * @tc.number removeStyles_0100
+     * @tc.desc   A button removeString掉6,5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('removeStyles_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[removeStyles_0100] START');

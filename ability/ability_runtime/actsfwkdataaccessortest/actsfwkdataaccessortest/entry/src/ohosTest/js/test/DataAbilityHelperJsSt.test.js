@@ -60,11 +60,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     }
 
-    /*
-    * @tc.number: ACTS_AcquireDataAbilityHelper_0100
-    * @tc.name: GetDataAbilityHelper : Connects an ability to a Service ability
-    * @tc.desc: Check the return value of the interface ()
-    */
+    /**
+     * @tc.name   ACTS_AcquireDataAbilityHelper_0100
+     * @tc.number ACTS_AcquireDataAbilityHelper_0100
+     * @tc.desc   Check the return value of the interface ()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_AcquireDataAbilityHelper_0100', Level.LEVEL0, async function (done) {
         console.log('ACTS_AcquireDataAbilityHelper_0100====<begin');
         console.debug("=ACTS_AcquireDataAbilityHelper_0100 dataAbilityUri====>" + dataAbilityUri)
@@ -84,11 +87,14 @@ describe('ActsDataAbilityHelperTest', function () {
         console.log('ACTS_AcquireDataAbilityHelper_0100====<end')
     })
 
-    /*
-    * @tc.number: ACTS_AcquireDataAbilityHelper_0200
-    * @tc.name: GetDataAbilityHelper : Connects an ability to a Service ability
-    * @tc.desc: Check the return value of the interface ()
-    */
+    /**
+     * @tc.name   ACTS_AcquireDataAbilityHelper_0200
+     * @tc.number ACTS_AcquireDataAbilityHelper_0200
+     * @tc.desc   Check the return value of the interface ()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_AcquireDataAbilityHelper_0200', Level.LEVEL0, async function (done) {
         console.log('ACTS_AcquireDataAbilityHelper_0200====<begin');
         try {
@@ -104,11 +110,14 @@ describe('ActsDataAbilityHelperTest', function () {
         console.log('ACTS_AcquireDataAbilityHelper_0200====<end')
     })
 
-    /*
-    * @tc.number: ACTS_AcquireDataAbilityHelper_0300
-    * @tc.name: GetDataAbilityHelper : Connects an ability to a Service ability
-    * @tc.desc: Check the return value of the interface ()
-    */
+    /**
+     * @tc.name   ACTS_AcquireDataAbilityHelper_0300
+     * @tc.number ACTS_AcquireDataAbilityHelper_0300
+     * @tc.desc   Check the return value of the interface ()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_AcquireDataAbilityHelper_0300', Level.LEVEL0, async function (done) {
         console.log('ACTS_AcquireDataAbilityHelper_0300====<begin');
         try {
@@ -124,11 +133,14 @@ describe('ActsDataAbilityHelperTest', function () {
         console.log('ACTS_AcquireDataAbilityHelper_0300====<end')
     })
 
-    /*
-    * @tc.number: ACTS_AcquireDataAbilityHelper_0400
-    * @tc.name: GetDataAbilityHelper : Connects an ability to a Service ability
-    * @tc.desc: Check the return value of the interface ()
-    */
+    /**
+     * @tc.name   ACTS_AcquireDataAbilityHelper_0400
+     * @tc.number ACTS_AcquireDataAbilityHelper_0400
+     * @tc.desc   Check the return value of the interface ()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_AcquireDataAbilityHelper_0400', Level.LEVEL0, async function (done) {
         console.log('ACTS_AcquireDataAbilityHelper_0400====<begin');
         try {
@@ -144,11 +156,14 @@ describe('ActsDataAbilityHelperTest', function () {
         console.log('ACTS_AcquireDataAbilityHelper_0400====<end')
     })
 
-    /*
-    * @tc.number: ACTS_AcquireDataAbilityHelper_0500
-    * @tc.name: GetDataAbilityHelper : Connects an ability to a Service ability
-    * @tc.desc: Check the return value of the interface ()
-    */
+    /**
+     * @tc.name   ACTS_AcquireDataAbilityHelper_0500
+     * @tc.number ACTS_AcquireDataAbilityHelper_0500
+     * @tc.desc   Check the return value of the interface ()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_AcquireDataAbilityHelper_0500', Level.LEVEL0, async function (done) {
         console.log('ACTS_AcquireDataAbilityHelper_0500====<begin');
         try {
@@ -164,11 +179,14 @@ describe('ActsDataAbilityHelperTest', function () {
         console.log('ACTS_AcquireDataAbilityHelper_0500====<end')
     })
 
-    /*
-    * @tc.number: ACTS_Insert_0100
-    * @tc.name: Insert : Indicates the path of the data to operate
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_Insert_0100
+     * @tc.number ACTS_Insert_0100
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Insert_0100', Level.LEVEL0, async function (done) {
         console.log('ACTS_Insert_0100====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -197,11 +215,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Insert_0200
-    * @tc.name: Insert : Indicates the path of the data to operate
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Insert_0200
+     * @tc.number ACTS_Insert_0200
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Insert_0200', Level.LEVEL0, async function (done) {
         console.log('ACTS_Insert_0200====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -225,11 +246,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Insert_0300
-    * @tc.name: Insert : Indicates the path of the data to operate
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_Insert_0300
+     * @tc.number ACTS_Insert_0300
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Insert_0300', Level.LEVEL0, async function (done) {
         console.log('ACTS_Insert_0300====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -257,11 +281,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Insert_0400
-    * @tc.name: Insert : Indicates the path of the data to operate
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Insert_0400
+     * @tc.number ACTS_Insert_0400
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Insert_0400', Level.LEVEL0, async function (done) {
         console.log('ACTS_Insert_0400====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -284,11 +311,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Insert_0500
-    * @tc.name: Insert : Indicates the path of the data to operate
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_Insert_0500
+     * @tc.number ACTS_Insert_0500
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Insert_0500', Level.LEVEL0, async function (done) {
         console.log('ACTS_Insert_0500====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -316,11 +346,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Insert_0600
-    * @tc.name: Insert : Indicates the path of the data to operate
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Insert_0600
+     * @tc.number ACTS_Insert_0600
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Insert_0600', Level.LEVEL0, async function (done) {
         console.log('ACTS_Insert_0600====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -344,11 +377,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Insert_0700
-    * @tc.name: Insert : Indicates the path of the data to operate
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_Insert_0700
+     * @tc.number ACTS_Insert_0700
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Insert_0700', Level.LEVEL0, async function (done) {
         console.log('ACTS_Insert_0700====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -380,11 +416,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Insert_0800
-    * @tc.name: Insert : Indicates the path of the data to operate
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Insert_0800
+     * @tc.number ACTS_Insert_0800
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Insert_0800', Level.LEVEL0, async function (done) {
         console.log('ACTS_Insert_0800====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -411,11 +450,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Insert_0900
-    * @tc.name: Insert : Indicates the path of the data to operate
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_Insert_0900
+     * @tc.number ACTS_Insert_0900
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Insert_0900', Level.LEVEL0, async function (done) {
         console.log('ACTS_Insert_0900====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -443,11 +485,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Insert_1000
-    * @tc.name: Insert : Indicates the path of the data to operate
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Insert_1000
+     * @tc.number ACTS_Insert_1000
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Insert_1000', Level.LEVEL0, async function (done) {
         console.log('ACTS_Insert_1000====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -471,11 +516,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Insert_1100
-    * @tc.name: Insert : Indicates the path of the data to operate
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_Insert_1100
+     * @tc.number ACTS_Insert_1100
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Insert_1100', Level.LEVEL0, async function (done) {
         console.log('ACTS_Insert_1100====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -503,11 +551,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Insert_1200
-    * @tc.name: Insert : Indicates the path of the data to operate
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Insert_1200
+     * @tc.number ACTS_Insert_1200
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Insert_1200', Level.LEVEL0, async function (done) {
         console.log('ACTS_Insert_1200====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -530,11 +581,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Insert_1300
-    * @tc.name: Insert : Indicates the path of the data to operate
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_Insert_1300
+     * @tc.number ACTS_Insert_1300
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Insert_1300', Level.LEVEL0, async function (done) {
         console.log('ACTS_Insert_1300====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -562,11 +616,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Insert_1400
-    * @tc.name: Insert : Indicates the path of the data to operate
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Insert_1400
+     * @tc.number ACTS_Insert_1400
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Insert_1400', Level.LEVEL0, async function (done) {
         console.log('ACTS_Insert_1400====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -589,11 +646,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Insert_1500
-    * @tc.name: Insert : Indicates the path of the data to operate
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_Insert_1500
+     * @tc.number ACTS_Insert_1500
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Insert_1500', Level.LEVEL0, async function (done) {
         console.log('ACTS_Insert_1500====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -622,11 +682,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Insert_1600
-    * @tc.name: Insert : Indicates the path of the data to operate
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Insert_1600
+     * @tc.number ACTS_Insert_1600
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Insert_1600', Level.LEVEL0, async function (done) {
         console.log('ACTS_Insert_1600====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -650,11 +713,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_BatchInsert_0100
-    * @tc.name: Inserts multiple data records into the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_BatchInsert_0100
+     * @tc.number ACTS_BatchInsert_0100
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_BatchInsert_0100', Level.LEVEL0, async function (done) {
         console.log('ACTS_BatchInsert_0100====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -685,11 +751,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_BatchInsert_0200
-    * @tc.name: Inserts multiple data records into the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_BatchInsert_0200
+     * @tc.number ACTS_BatchInsert_0200
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_BatchInsert_0200', Level.LEVEL0, async function (done) {
         console.log('ACTS_BatchInsert_0200====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -715,11 +784,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_BatchInsert_0300
-    * @tc.name: Inserts multiple data records into the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_BatchInsert_0300
+     * @tc.number ACTS_BatchInsert_0300
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_BatchInsert_0300', Level.LEVEL0, async function (done) {
         console.log('ACTS_BatchInsert_0300====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -750,11 +822,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_BatchInsert_0400
-    * @tc.name: Inserts multiple data records into the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_BatchInsert_0400
+     * @tc.number ACTS_BatchInsert_0400
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_BatchInsert_0400', Level.LEVEL0, async function (done) {
         console.log('ACTS_BatchInsert_0400====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -780,11 +855,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-* @tc.number: ACTS_BatchInsert_0500
-* @tc.name: Inserts multiple data records into the database
-* @tc.desc: Check the return value of the interface (by Promise)
-*/
+    /**
+     * @tc.name   ACTS_BatchInsert_0500
+     * @tc.number ACTS_BatchInsert_0500
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_BatchInsert_0500', Level.LEVEL0, async function (done) {
         console.log('ACTS_BatchInsert_0500====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -818,11 +896,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_BatchInsert_0600
-    * @tc.name: Inserts multiple data records into the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_BatchInsert_0600
+     * @tc.number ACTS_BatchInsert_0600
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_BatchInsert_0600', Level.LEVEL0, async function (done) {
         console.log('ACTS_BatchInsert_0600====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -850,11 +931,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-* @tc.number: ACTS_BatchInsert_0700
-* @tc.name: Inserts multiple data records into the database
-* @tc.desc: Check the return value of the interface (by Promise)
-*/
+    /**
+     * @tc.name   ACTS_BatchInsert_0700
+     * @tc.number ACTS_BatchInsert_0700
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_BatchInsert_0700', Level.LEVEL0, async function (done) {
         console.log('ACTS_BatchInsert_0700====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -888,11 +972,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_BatchInsert_0800
-    * @tc.name: Inserts multiple data records into the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_BatchInsert_0800
+     * @tc.number ACTS_BatchInsert_0800
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_BatchInsert_0800', Level.LEVEL0, async function (done) {
         console.log('ACTS_BatchInsert_0800====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -920,11 +1007,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-* @tc.number: ACTS_BatchInsert_0900
-* @tc.name: Inserts multiple data records into the database
-* @tc.desc: Check the return value of the interface (by Promise)
-*/
+    /**
+     * @tc.name   ACTS_BatchInsert_0900
+     * @tc.number ACTS_BatchInsert_0900
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_BatchInsert_0900', Level.LEVEL0, async function (done) {
         console.log('ACTS_BatchInsert_0900====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -958,11 +1048,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_BatchInsert_1000
-    * @tc.name: Inserts multiple data records into the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_BatchInsert_1000
+     * @tc.number ACTS_BatchInsert_1000
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_BatchInsert_1000', Level.LEVEL0, async function (done) {
         console.log('ACTS_BatchInsert_1000====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -990,11 +1083,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-* @tc.number: ACTS_BatchInsert_1100
-* @tc.name: Inserts multiple data records into the database
-* @tc.desc: Check the return value of the interface (by Promise)
-*/
+    /**
+     * @tc.name   ACTS_BatchInsert_1100
+     * @tc.number ACTS_BatchInsert_1100
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_BatchInsert_1100', Level.LEVEL0, async function (done) {
         console.log('ACTS_BatchInsert_1100====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -1028,11 +1124,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_BatchInsert_1200
-    * @tc.name: Inserts multiple data records into the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_BatchInsert_1200
+     * @tc.number ACTS_BatchInsert_1200
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_BatchInsert_1200', Level.LEVEL0, async function (done) {
         console.log('ACTS_BatchInsert_1200====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -1060,11 +1159,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-* @tc.number: ACTS_BatchInsert_1300
-* @tc.name: Inserts multiple data records into the database
-* @tc.desc: Check the return value of the interface (by Promise)
-*/
+    /**
+     * @tc.name   ACTS_BatchInsert_1300
+     * @tc.number ACTS_BatchInsert_1300
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_BatchInsert_1300', Level.LEVEL0, async function (done) {
         console.log('ACTS_BatchInsert_1300====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -1098,11 +1200,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_BatchInsert_1400
-    * @tc.name: Inserts multiple data records into the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_BatchInsert_1400
+     * @tc.number ACTS_BatchInsert_1400
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_BatchInsert_1400', Level.LEVEL0, async function (done) {
         console.log('ACTS_BatchInsert_1400====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -1130,11 +1235,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-* @tc.number: ACTS_BatchInsert_1500
-* @tc.name: Inserts multiple data records into the database
-* @tc.desc: Check the return value of the interface (by Promise)
-*/
+    /**
+     * @tc.name   ACTS_BatchInsert_1500
+     * @tc.number ACTS_BatchInsert_1500
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_BatchInsert_1500', Level.LEVEL0, async function (done) {
         console.log('ACTS_BatchInsert_1500====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -1164,11 +1272,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_BatchInsert_1600
-    * @tc.name: Inserts multiple data records into the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_BatchInsert_1600
+     * @tc.number ACTS_BatchInsert_1600
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_BatchInsert_1600', Level.LEVEL0, async function (done) {
         console.log('ACTS_BatchInsert_1600====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -1193,11 +1304,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Query_0100
-    * @tc.name: Queries one or more data records in the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_Query_0100
+     * @tc.number ACTS_Query_0100
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Query_0100', Level.LEVEL0, async function (done) {
         console.log('ACTS_Query_0100====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -1222,11 +1336,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Query_0200
-    * @tc.name: Queries one or more data records in the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Query_0200
+     * @tc.number ACTS_Query_0200
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Query_0200', Level.LEVEL0, async function (done) {
         console.log('ACTS_Query_0200====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -1253,11 +1370,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Query_0300
-    * @tc.name: Queries one or more data records in the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_Query_0300
+     * @tc.number ACTS_Query_0300
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Query_0300', Level.LEVEL0, async function (done) {
         console.log('ACTS_Query_0300====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -1286,11 +1406,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Query_0400
-    * @tc.name: Queries one or more data records in the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Query_0400
+     * @tc.number ACTS_Query_0400
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Query_0400', Level.LEVEL0, async function (done) {
         console.log('ACTS_Query_0400====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -1321,11 +1444,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Query_0500
-    * @tc.name: Queries one or more data records in the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_Query_0500
+     * @tc.number ACTS_Query_0500
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Query_0500', Level.LEVEL0, async function (done) {
         console.log('ACTS_Query_0500====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -1354,11 +1480,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Query_0600
-    * @tc.name: Queries one or more data records in the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Query_0600
+     * @tc.number ACTS_Query_0600
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Query_0600', Level.LEVEL0, async function (done) {
         console.log('ACTS_Query_0600====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -1389,11 +1518,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Query_0700
-    * @tc.name: Queries one or more data records in the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_Query_0700
+     * @tc.number ACTS_Query_0700
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Query_0700', Level.LEVEL0, async function (done) {
         console.log('ACTS_Query_0700====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -1422,11 +1554,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Query_0800
-    * @tc.name: Queries one or more data records in the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Query_0800
+     * @tc.number ACTS_Query_0800
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Query_0800', Level.LEVEL0, async function (done) {
         console.log('ACTS_Query_0800====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -1457,11 +1592,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Query_0900
-    * @tc.name: Queries one or more data records in the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_Query_0900
+     * @tc.number ACTS_Query_0900
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Query_0900', Level.LEVEL0, async function (done) {
         console.log('ACTS_Query_0900====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -1490,11 +1628,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Query_1000
-    * @tc.name: Queries one or more data records in the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Query_1000
+     * @tc.number ACTS_Query_1000
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Query_1000', Level.LEVEL0, async function (done) {
         console.log('ACTS_Query_1000====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -1525,11 +1666,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Query_1100
-    * @tc.name: Queries one or more data records in the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_Query_1100
+     * @tc.number ACTS_Query_1100
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Query_1100', Level.LEVEL0, async function (done) {
         console.log('ACTS_Query_1100====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -1558,11 +1702,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Query_1200
-    * @tc.name: Queries one or more data records in the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Query_1200
+     * @tc.number ACTS_Query_1200
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Query_1200', Level.LEVEL0, async function (done) {
         console.log('ACTS_Query_1200====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -1593,11 +1740,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Query_1300
-    * @tc.name: Queries one or more data records in the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_Query_1300
+     * @tc.number ACTS_Query_1300
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Query_1300', Level.LEVEL0, async function (done) {
         console.log('ACTS_Query_1300====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -1626,11 +1776,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Query_1400
-    * @tc.name: Queries one or more data records in the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Query_1400
+     * @tc.number ACTS_Query_1400
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Query_1400', Level.LEVEL0, async function (done) {
         console.log('ACTS_Query_1400====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -1661,11 +1814,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Query_1500
-    * @tc.name: Queries one or more data records in the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_Query_1500
+     * @tc.number ACTS_Query_1500
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Query_1500', Level.LEVEL0, async function (done) {
       console.log('ACTS_Query_1500====<begin');
       expect(typeof (DAHelper)).assertEqual("object");
@@ -1686,11 +1842,14 @@ describe('ActsDataAbilityHelperTest', function () {
       }
   })
   
-    /*
-    * @tc.number: ACTS_Update_0100
-    * @tc.name: Updates one or more data records in the database.
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_Update_0100
+     * @tc.number ACTS_Update_0100
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Update_0100', Level.LEVEL0, async function (done) {
         console.log('ACTS_Update_0100====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -1725,11 +1884,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Update_0200
-    * @tc.name: Updates one or more data records in the database.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Update_0200
+     * @tc.number ACTS_Update_0200
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Update_0200', Level.LEVEL0, async function (done) {
         console.log('ACTS_Update_0200====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -1758,11 +1920,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Update_0300
-    * @tc.name: Updates one or more data records in the database.
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_Update_0300
+     * @tc.number ACTS_Update_0300
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Update_0300', Level.LEVEL0, async function (done) {
         console.log('ACTS_Update_0300====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -1800,11 +1965,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Update_0400
-    * @tc.name: Updates one or more data records in the database.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Update_0400
+     * @tc.number ACTS_Update_0400
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Update_0400', Level.LEVEL0, async function (done) {
         console.log('ACTS_Update_0400====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -1837,11 +2005,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Update_0500
-    * @tc.name: Updates one or more data records in the database.
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_Update_0500
+     * @tc.number ACTS_Update_0500
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Update_0500', Level.LEVEL0, async function (done) {
         console.log('ACTS_Update_0500====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -1879,11 +2050,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Update_0600
-    * @tc.name: Updates one or more data records in the database.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Update_0600
+     * @tc.number ACTS_Update_0600
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Update_0600', Level.LEVEL0, async function (done) {
         console.log('ACTS_Update_0600====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -1917,11 +2091,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Update_0700
-    * @tc.name: Updates one or more data records in the database.
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_Update_0700
+     * @tc.number ACTS_Update_0700
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Update_0700', Level.LEVEL0, async function (done) {
         console.log('ACTS_Update_0700====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -1962,11 +2139,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Update_0800
-    * @tc.name: Updates one or more data records in the database.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Update_0800
+     * @tc.number ACTS_Update_0800
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Update_0800', Level.LEVEL0, async function (done) {
         console.log('ACTS_Update_0800====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -2002,11 +2182,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Update_0900
-    * @tc.name: Updates one or more data records in the database.
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_Update_0900
+     * @tc.number ACTS_Update_0900
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Update_0900', Level.LEVEL0, async function (done) {
         console.log('ACTS_Update_0900====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -2044,11 +2227,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Update_1000
-    * @tc.name: Updates one or more data records in the database.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Update_1000
+     * @tc.number ACTS_Update_1000
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Update_1000', Level.LEVEL0, async function (done) {
         console.log('ACTS_Update_1000====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -2082,10 +2268,13 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-     * @tc.number: ACTS_Update_1100
-     * @tc.name: Updates one or more data records in the database.
-     * @tc.desc: Check the return value of the interface (by Promise)
+    /**
+     * @tc.name   ACTS_Update_1100
+     * @tc.number ACTS_Update_1100
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_Update_1100', Level.LEVEL0, async function (done) {
         console.log('ACTS_Update_1100====<begin');
@@ -2124,11 +2313,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Update_1200
-    * @tc.name: Updates one or more data records in the database.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Update_1200
+     * @tc.number ACTS_Update_1200
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Update_1200', Level.LEVEL0, async function (done) {
         console.log('ACTS_Update_1200====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -2161,10 +2353,13 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-     * @tc.number: ACTS_Update_1300
-     * @tc.name: Updates one or more data records in the database.
-     * @tc.desc: Check the return value of the interface (by Promise)
+    /**
+     * @tc.name   ACTS_Update_1300
+     * @tc.number ACTS_Update_1300
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_Update_1300', Level.LEVEL0, async function (done) {
         console.log('ACTS_Update_1300====<begin');
@@ -2203,11 +2398,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Update_1400
-    * @tc.name: Updates one or more data records in the database.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Update_1400
+     * @tc.number ACTS_Update_1400
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Update_1400', Level.LEVEL0, async function (done) {
         console.log('ACTS_Update_1400====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -2240,11 +2438,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-     /*
-    * @tc.number: ACTS_Update_1500
-    * @tc.name: Updates one or more data records in the database.
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+     /**
+      * @tc.name   ACTS_Update_1500
+      * @tc.number ACTS_Update_1500
+      * @tc.desc   Check the return value of the interface (by Promise)
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('ACTS_Update_1500', Level.LEVEL0, async function (done) {
       console.log('ACTS_Update_1500====<begin');
       expect(typeof (DAHelper)).assertEqual("object");
@@ -2277,11 +2478,14 @@ describe('ActsDataAbilityHelperTest', function () {
       }
   })
 
-    /*
-    * @tc.number: ACTS_Delete_0100
-    * @tc.name: Deletes one or more data records. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_Delete_0100
+     * @tc.number ACTS_Delete_0100
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Delete_0100', Level.LEVEL0, async function (done) {
         console.log('ACTS_Delete_0100====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -2314,11 +2518,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Delete_0200
-    * @tc.name: Deletes one or more data records. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Delete_0200
+     * @tc.number ACTS_Delete_0200
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Delete_0200', Level.LEVEL0, async function (done) {
         console.log('ACTS_Delete_0200====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -2346,11 +2553,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Delete_0300
-    * @tc.name: Deletes one or more data records. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_Delete_0300
+     * @tc.number ACTS_Delete_0300
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Delete_0300', Level.LEVEL0, async function (done) {
         console.log('ACTS_Delete_0300====<begin');
         try {
@@ -2385,11 +2595,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Delete_0400
-    * @tc.name: Deletes one or more data records. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Delete_0400
+     * @tc.number ACTS_Delete_0400
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Delete_0400', Level.LEVEL0, async function (done) {
         console.log('ACTS_Delete_0400====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -2420,10 +2633,13 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-     * @tc.number: ACTS_Delete_0500
-     * @tc.name: Deletes one or more data records. This method should be implemented by a Data ability.
-     * @tc.desc: Check the return value of the interface (by Promise)
+    /**
+     * @tc.name   ACTS_Delete_0500
+     * @tc.number ACTS_Delete_0500
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_Delete_0500', Level.LEVEL0, async function (done) {
         console.log('ACTS_Delete_0500====<begin');
@@ -2459,11 +2675,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Delete_0600
-    * @tc.name: Deletes one or more data records. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Delete_0600
+     * @tc.number ACTS_Delete_0600
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Delete_0600', Level.LEVEL0, async function (done) {
         console.log('ACTS_Delete_0600====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -2495,11 +2714,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Delete_0700
-    * @tc.name: Deletes one or more data records. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_Delete_0700
+     * @tc.number ACTS_Delete_0700
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Delete_0700', Level.LEVEL0, async function (done) {
         console.log('ACTS_Delete_0700====<begin');
         var currentAlertTimeout;
@@ -2537,11 +2759,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Delete_0800
-    * @tc.name: Deletes one or more data records. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Delete_0800
+     * @tc.number ACTS_Delete_0800
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Delete_0800', Level.LEVEL0, async function (done) {
         console.log('ACTS_Delete_0800====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -2575,10 +2800,13 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-     * @tc.number: ACTS_Delete_0900
-     * @tc.name: Deletes one or more data records. This method should be implemented by a Data ability.
-     * @tc.desc: Check the return value of the interface (by Promise)
+    /**
+     * @tc.name   ACTS_Delete_0900
+     * @tc.number ACTS_Delete_0900
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_Delete_0900', Level.LEVEL0, async function (done) {
         console.log('ACTS_Delete_0900====<begin');
@@ -2614,11 +2842,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Delete_1000
-    * @tc.name: Deletes one or more data records. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Delete_1000
+     * @tc.number ACTS_Delete_1000
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Delete_1000', Level.LEVEL0, async function (done) {
         console.log('ACTS_Delete_1000====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -2649,10 +2880,13 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-     * @tc.number: ACTS_Delete_1100
-     * @tc.name: Deletes one or more data records. This method should be implemented by a Data ability.
-     * @tc.desc: Check the return value of the interface (by Promise)
+    /**
+     * @tc.name   ACTS_Delete_1100
+     * @tc.number ACTS_Delete_1100
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_Delete_1100', Level.LEVEL0, async function (done) {
         console.log('ACTS_Delete_1100====<begin');
@@ -2688,11 +2922,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Delete_1200
-    * @tc.name: Deletes one or more data records. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Delete_1200
+     * @tc.number ACTS_Delete_1200
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Delete_1200', Level.LEVEL0, async function (done) {
         console.log('ACTS_Delete_1200====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -2723,10 +2960,13 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-     * @tc.number: ACTS_Delete_1300
-     * @tc.name: Deletes one or more data records. This method should be implemented by a Data ability.
-     * @tc.desc: Check the return value of the interface (by Promise)
+    /**
+     * @tc.name   ACTS_Delete_1300
+     * @tc.number ACTS_Delete_1300
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_Delete_1300', Level.LEVEL0, async function (done) {
         console.log('ACTS_Delete_1300====<begin');
@@ -2762,11 +3002,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Delete_1400
-    * @tc.name: Deletes one or more data records. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_Delete_1400
+     * @tc.number ACTS_Delete_1400
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Delete_1400', Level.LEVEL0, async function (done) {
         console.log('ACTS_Delete_1400====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -2797,11 +3040,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-         /*
-    * @tc.number: ACTS_Delete_1500
-    * @tc.name: Deletes one or more data records. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+         /**
+          * @tc.name   ACTS_Delete_1500
+          * @tc.number ACTS_Delete_1500
+          * @tc.desc   Check the return value of the interface (by Promise)
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL0
+          */
          it('ACTS_Delete_1500', Level.LEVEL0, async function (done) {
           console.log('ACTS_Delete_1500====<begin');
           expect(typeof (DAHelper)).assertEqual("object");
@@ -2831,11 +3077,14 @@ describe('ActsDataAbilityHelperTest', function () {
               done();
           }
       })
-    /*
-    * @tc.number: ACTS_GetFileTypes_0100
-    * @tc.name: Obtains the MIME type of files.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_GetFileTypes_0100
+     * @tc.number ACTS_GetFileTypes_0100
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetFileTypes_0100', Level.LEVEL0, async function (done) {
         console.log('ACTS_GetFileTypes_0100====<begin');
         let mimeTypeFilter = '*/*'
@@ -2877,11 +3126,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_GetFileTypes_0200
-    * @tc.name: Obtains the MIME type of files.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_GetFileTypes_0200
+     * @tc.number ACTS_GetFileTypes_0200
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetFileTypes_0200', Level.LEVEL0, async function (done) {
         console.log('ACTS_GetFileTypes_0200====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -2920,11 +3172,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_GetFileTypes_0300
-    * @tc.name: Obtains the MIME type of files.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_GetFileTypes_0300
+     * @tc.number ACTS_GetFileTypes_0300
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetFileTypes_0300', Level.LEVEL0, async function (done) {
         console.log('ACTS_GetFileTypes_0300====<begin');
         let mimeTypeFilter = 'image/*'
@@ -2963,11 +3218,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_GetFileTypes_0400
-    * @tc.name: Obtains the MIME type of files.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_GetFileTypes_0400
+     * @tc.number ACTS_GetFileTypes_0400
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetFileTypes_0400', Level.LEVEL0, async function (done) {
         console.log('ACTS_GetFileTypes_0400====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -3002,11 +3260,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_GetFileTypes_0500
-    * @tc.name: Obtains the MIME type of files.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_GetFileTypes_0500
+     * @tc.number ACTS_GetFileTypes_0500
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetFileTypes_0500', Level.LEVEL0, async function (done) {
         console.log('ACTS_GetFileTypes_0500====<begin');
         let mimeTypeFilter = '*/jpg'
@@ -3044,11 +3305,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_GetFileTypes_0600
-    * @tc.name: Obtains the MIME type of files.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_GetFileTypes_0600
+     * @tc.number ACTS_GetFileTypes_0600
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetFileTypes_0600', Level.LEVEL0, async function (done) {
         console.log('ACTS_GetFileTypes_0600====<begin');
         let ret = false;
@@ -3082,11 +3346,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_GetFileTypes_0700
-    * @tc.name: Obtains the MIME type of files.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_GetFileTypes_0700
+     * @tc.number ACTS_GetFileTypes_0700
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetFileTypes_0700', Level.LEVEL0, async function (done) {
         console.log('ACTS_GetFileTypes_0700====<begin');
         let mimeTypeFilter = '*/*'
@@ -3117,11 +3384,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_GetFileTypes_0800
-    * @tc.name: Obtains the MIME type of files.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_GetFileTypes_0800
+     * @tc.number ACTS_GetFileTypes_0800
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetFileTypes_0800', Level.LEVEL0, async function (done) {
         console.log('ACTS_GetFileTypes_0800====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -3148,11 +3418,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_GetFileTypes_0900
-    * @tc.name: Obtains the MIME type of files.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_GetFileTypes_0900
+     * @tc.number ACTS_GetFileTypes_0900
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetFileTypes_0900', Level.LEVEL0, async function (done) {
         console.log('ACTS_GetFileTypes_0900====<begin');
         try {
@@ -3188,11 +3461,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_GetFileTypes_1000
-    * @tc.name: Obtains the MIME type of files.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_GetFileTypes_1000
+     * @tc.number ACTS_GetFileTypes_1000
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetFileTypes_1000', Level.LEVEL0, async function (done) {
         console.log('ACTS_GetFileTypes_1000====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -3225,11 +3501,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_GetFileTypes_1100
-    * @tc.name: Obtains the MIME type of files.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_GetFileTypes_1100
+     * @tc.number ACTS_GetFileTypes_1100
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetFileTypes_1100', Level.LEVEL0, async function (done) {
         console.log('ACTS_GetFileTypes_1100====<begin');
         let mimeTypeFilter = '*/*'
@@ -3260,11 +3539,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_GetFileTypes_1200
-    * @tc.name: Obtains the MIME type of files.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_GetFileTypes_1200
+     * @tc.number ACTS_GetFileTypes_1200
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetFileTypes_1200', Level.LEVEL0, async function (done) {
         console.log('ACTS_GetFileTypes_1200====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -3291,11 +3573,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_GetFileTypes_1300
-    * @tc.name: Obtains the MIME type of files.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_GetFileTypes_1300
+     * @tc.number ACTS_GetFileTypes_1300
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetFileTypes_1300', Level.LEVEL0, async function (done) {
         console.log('ACTS_GetFileTypes_1300====<begin');
         let mimeTypeFilter = '*/*'
@@ -3326,11 +3611,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_GetFileTypes_1400
-    * @tc.name: Obtains the MIME type of files.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_GetFileTypes_1400
+     * @tc.number ACTS_GetFileTypes_1400
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetFileTypes_1400', Level.LEVEL0, async function (done) {
         console.log('ACTS_GetFileTypes_1400====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -3357,11 +3645,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_GetFileTypes_1500
-    * @tc.name: Obtains the MIME type of files.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_GetFileTypes_1500
+     * @tc.number ACTS_GetFileTypes_1500
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetFileTypes_1500', Level.LEVEL0, async function (done) {
         console.log('ACTS_GetFileTypes_1500====<begin');
         let mimeTypeFilter = 'asdfasdEDF)(#@*7fasdf546546a1ds3v16a4sd6v54@*(e7';
@@ -3392,11 +3683,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_GetFileTypes_1600
-    * @tc.name: Obtains the MIME type of files.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_GetFileTypes_1600
+     * @tc.number ACTS_GetFileTypes_1600
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetFileTypes_1600', Level.LEVEL0, async function (done) {
         console.log('ACTS_GetFileTypes_1600====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -3423,11 +3717,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_GetFileTypes_1700
-    * @tc.name: Obtains the MIME type of files.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_GetFileTypes_1700
+     * @tc.number ACTS_GetFileTypes_1700
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetFileTypes_1700', Level.LEVEL0, async function (done) {
         console.log('ACTS_GetFileTypes_1700====<begin');
         let mimeTypeFilter = 'returnUndefined';
@@ -3458,11 +3755,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_GetFileTypes_1800
-    * @tc.name: Obtains the MIME type of files.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_GetFileTypes_1800
+     * @tc.number ACTS_GetFileTypes_1800
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetFileTypes_1800', Level.LEVEL0, async function (done) {
         console.log('ACTS_GetFileTypes_1800====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -3489,11 +3789,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_GetType_0100
-    * @tc.name: Obtains the MIME type matching the data specified by the URI of the Data ability.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_GetType_0100
+     * @tc.number ACTS_GetType_0100
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetType_0100', Level.LEVEL0, async function (done) {
         console.log('ACTS_GetType_0100====<begin');
         try {
@@ -3521,11 +3824,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_GetType_0200
-    * @tc.name: Obtains the MIME type matching the data specified by the URI of the Data ability.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_GetType_0200
+     * @tc.number ACTS_GetType_0200
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetType_0200', Level.LEVEL0, async function (done) {
         console.log('ACTS_GetType_0200====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -3549,11 +3855,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-* @tc.number: ACTS_GetType_0300
-* @tc.name: Obtains the MIME type matching the data specified by the URI of the Data ability.
-* @tc.desc: Check the return value of the interface (by promise)
-*/
+    /**
+     * @tc.name   ACTS_GetType_0300
+     * @tc.number ACTS_GetType_0300
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetType_0300', Level.LEVEL0, async function (done) {
         console.log('ACTS_GetType_0300====<begin');
         try {
@@ -3581,11 +3890,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_GetType_0400
-    * @tc.name: Obtains the MIME type matching the data specified by the URI of the Data ability.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_GetType_0400
+     * @tc.number ACTS_GetType_0400
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetType_0400', Level.LEVEL0, async function (done) {
         console.log('ACTS_GetType_0400====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -3609,11 +3921,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-* @tc.number: ACTS_GetType_0500
-* @tc.name: Obtains the MIME type matching the data specified by the URI of the Data ability.
-* @tc.desc: Check the return value of the interface (by promise)
-*/
+    /**
+     * @tc.name   ACTS_GetType_0500
+     * @tc.number ACTS_GetType_0500
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetType_0500', Level.LEVEL0, async function (done) {
         console.log('ACTS_GetType_0500====<begin');
         try {
@@ -3641,11 +3956,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_GetType_0600
-    * @tc.name: Obtains the MIME type matching the data specified by the URI of the Data ability.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_GetType_0600
+     * @tc.number ACTS_GetType_0600
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetType_0600', Level.LEVEL0, async function (done) {
         console.log('ACTS_GetType_0600====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -3669,11 +3987,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_GetType_0700
-    * @tc.name: Obtains the MIME type matching the data specified by the URI of the Data ability.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_GetType_0700
+     * @tc.number ACTS_GetType_0700
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetType_0700', Level.LEVEL0, async function (done) {
         console.log('ACTS_GetType_0700====<begin');
         try {
@@ -3701,11 +4022,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_GetType_0800
-    * @tc.name: Obtains the MIME type matching the data specified by the URI of the Data ability.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_GetType_0800
+     * @tc.number ACTS_GetType_0800
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetType_0800', Level.LEVEL0, async function (done) {
         console.log('ACTS_GetType_0800====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -3729,11 +4053,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_GetType_0900
-    * @tc.name: Obtains the MIME type matching the data specified by the URI of the Data ability.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_GetType_0900
+     * @tc.number ACTS_GetType_0900
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetType_0900', Level.LEVEL0, async function (done) {
         console.log('ACTS_GetType_0900====<begin');
         try {
@@ -3761,11 +4088,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_GetType_1000
-    * @tc.name: Obtains the MIME type matching the data specified by the URI of the Data ability.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_GetType_1000
+     * @tc.number ACTS_GetType_1000
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetType_1000', Level.LEVEL0, async function (done) {
         console.log('ACTS_GetType_1000====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -3789,11 +4119,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_OpenFile_0100
-    * @tc.name: Opens a file. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_OpenFile_0100
+     * @tc.number ACTS_OpenFile_0100
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OpenFile_0100', Level.LEVEL0, async function (done) {
         console.log('ACTS_OpenFile_0100====<begin');
         let ret = false;
@@ -3827,11 +4160,14 @@ describe('ActsDataAbilityHelperTest', function () {
         console.log('ACTS_OpenFile_0100====<end');
     })
 
-    /*
-    * @tc.number: ACTS_OpenFile_0200
-    * @tc.name: Opens a file. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_OpenFile_0200
+     * @tc.number ACTS_OpenFile_0200
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OpenFile_0200', Level.LEVEL0, async function (done) {
         console.log('ACTS_OpenFile_0200====<begin');
         let ret = false;
@@ -3865,11 +4201,14 @@ describe('ActsDataAbilityHelperTest', function () {
         console.log('ACTS_OpenFile_0200====<end');
     })
 
-    /*
-    * @tc.number: ACTS_OpenFile_0300
-    * @tc.name: Opens a file. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_OpenFile_0300
+     * @tc.number ACTS_OpenFile_0300
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OpenFile_0300', Level.LEVEL0, async function (done) {
         console.log('ACTS_OpenFile_0300====<begin');
         let ret = false;
@@ -3904,11 +4243,14 @@ describe('ActsDataAbilityHelperTest', function () {
         console.log('ACTS_OpenFile_0300====<end');
     })
 
-    /*
-    * @tc.number: ACTS_OpenFile_0400
-    * @tc.name: Opens a file. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_OpenFile_0400
+     * @tc.number ACTS_OpenFile_0400
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OpenFile_0400', Level.LEVEL0, async function (done) {
         console.log('ACTS_OpenFile_0400====<begin');
         let ret = false;
@@ -3943,11 +4285,14 @@ describe('ActsDataAbilityHelperTest', function () {
         console.log('ACTS_OpenFile_0400====<end');
     })
 
-    /*
-    * @tc.number: ACTS_OpenFile_0500
-    * @tc.name: Opens a file. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_OpenFile_0500
+     * @tc.number ACTS_OpenFile_0500
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OpenFile_0500', Level.LEVEL0, async function (done) {
         console.log('ACTS_OpenFile_0500====<begin');
         let ret = false;
@@ -3982,11 +4327,14 @@ describe('ActsDataAbilityHelperTest', function () {
         console.log('ACTS_OpenFile_0500====<end');
     })
 
-    /*
-    * @tc.number: ACTS_OpenFile_0600
-    * @tc.name: Opens a file. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_OpenFile_0600
+     * @tc.number ACTS_OpenFile_0600
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OpenFile_0600', Level.LEVEL0, async function (done) {
         console.log('ACTS_OpenFile_0600====<begin');
         let ret = false;
@@ -4021,11 +4369,14 @@ describe('ActsDataAbilityHelperTest', function () {
         console.log('ACTS_OpenFile_0600====<end');
     })
 
-    /*
-    * @tc.number: ACTS_OpenFile_0700
-    * @tc.name: Opens a file. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_OpenFile_0700
+     * @tc.number ACTS_OpenFile_0700
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OpenFile_0700', Level.LEVEL0, async function (done) {
         console.log('ACTS_OpenFile_0700====<begin');
         let ret = false;
@@ -4058,11 +4409,14 @@ describe('ActsDataAbilityHelperTest', function () {
         console.log('ACTS_OpenFile_0700====<end');
     })
 
-    /*
-    * @tc.number: ACTS_OpenFile_0800
-    * @tc.name: Opens a file. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_OpenFile_0800
+     * @tc.number ACTS_OpenFile_0800
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OpenFile_0800', Level.LEVEL0, async function (done) {
         console.log('ACTS_OpenFile_0800====<begin');
         let ret = false;
@@ -4095,11 +4449,14 @@ describe('ActsDataAbilityHelperTest', function () {
         console.log('ACTS_OpenFile_0800====<end');
     })
 
-    /*
-    * @tc.number: ACTS_OpenFile_0900
-    * @tc.name: Opens a file. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_OpenFile_0900
+     * @tc.number ACTS_OpenFile_0900
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OpenFile_0900', Level.LEVEL0, async function (done) {
         console.log('ACTS_OpenFile_0900====<begin');
         let ret = false;
@@ -4132,11 +4489,14 @@ describe('ActsDataAbilityHelperTest', function () {
         console.log('ACTS_OpenFile_0900====<end');
     })
 
-    /*
-    * @tc.number: ACTS_OpenFile_1000
-    * @tc.name: Opens a file. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_OpenFile_1000
+     * @tc.number ACTS_OpenFile_1000
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OpenFile_1000', Level.LEVEL0, async function (done) {
         console.log('ACTS_OpenFile_1000====<begin');
         let ret = false;
@@ -4169,11 +4529,14 @@ describe('ActsDataAbilityHelperTest', function () {
         console.log('ACTS_OpenFile_1000====<end');
     })
 
-    /*
-    * @tc.number: ACTS_OpenFile_1100
-    * @tc.name: Opens a file. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_OpenFile_1100
+     * @tc.number ACTS_OpenFile_1100
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OpenFile_1100', Level.LEVEL0, async function (done) {
         console.log('ACTS_OpenFile_1100====<begin');
         let ret = false;
@@ -4204,11 +4567,14 @@ describe('ActsDataAbilityHelperTest', function () {
         console.log('ACTS_OpenFile_1100====<end');
     })
 
-    /*
-    * @tc.number: ACTS_OpenFile_1200
-    * @tc.name: Opens a file. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_OpenFile_1200
+     * @tc.number ACTS_OpenFile_1200
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OpenFile_1200', Level.LEVEL0, async function (done) {
         console.log('ACTS_OpenFile_1200====<begin');
         let ret = false;
@@ -4239,11 +4605,14 @@ describe('ActsDataAbilityHelperTest', function () {
         console.log('ACTS_OpenFile_1200====<end');
     })
 
-    /*
-    * @tc.number: ACTS_OpenFile_1300
-    * @tc.name: Opens a file. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_OpenFile_1300
+     * @tc.number ACTS_OpenFile_1300
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OpenFile_1300', Level.LEVEL0, async function (done) {
         console.log('ACTS_OpenFile_1300====<begin');
         let ret = false;
@@ -4277,11 +4646,14 @@ describe('ActsDataAbilityHelperTest', function () {
         console.log('ACTS_OpenFile_1300====<end');
     })
 
-    /*
-* @tc.number: ACTS_OpenFile_1400
-* @tc.name: Opens a file. This method should be implemented by a Data ability.
-* @tc.desc: Check the return value of the interface (by AsyncCallback)
-*/
+    /**
+     * @tc.name   ACTS_OpenFile_1400
+     * @tc.number ACTS_OpenFile_1400
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OpenFile_1400', Level.LEVEL0, async function (done) {
         console.log('ACTS_OpenFile_1400====<begin');
         let ret = false;
@@ -4312,11 +4684,14 @@ describe('ActsDataAbilityHelperTest', function () {
         console.log('ACTS_OpenFile_1400====<end');
     })
 
-    /*
-    * @tc.number: ACTS_OpenFile_1500
-    * @tc.name: Opens a file. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_OpenFile_1500
+     * @tc.number ACTS_OpenFile_1500
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OpenFile_1500', Level.LEVEL0, async function (done) {
         console.log('ACTS_OpenFile_1500====<begin');
         try {
@@ -4344,11 +4719,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_OpenFile_1600
-    * @tc.name: Opens a file. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_OpenFile_1600
+     * @tc.number ACTS_OpenFile_1600
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OpenFile_1600', Level.LEVEL0, async function (done) {
         console.log('ACTS_OpenFile_1600====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -4373,11 +4751,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_OpenFile_1700
-    * @tc.name: Opens a file. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_OpenFile_1700
+     * @tc.number ACTS_OpenFile_1700
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OpenFile_1700', Level.LEVEL0, async function (done) {
         console.log('ACTS_OpenFile_1700====<begin');
         var mode = "A1@k#4%$,.<>)(oioiu*((*&(&*giIGT^%&^Ug;sdfk;losd*7873iug8%&^$&%]ERFUy&^%&&R7";
@@ -4406,11 +4787,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_OpenFile_1800
-    * @tc.name: Opens a file. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_OpenFile_1800
+     * @tc.number ACTS_OpenFile_1800
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OpenFile_1800', Level.LEVEL0, async function (done) {
         console.log('ACTS_OpenFile_1800====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -4436,11 +4820,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_OpenFile_1900
-    * @tc.name: Opens a file. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_OpenFile_1900
+     * @tc.number ACTS_OpenFile_1900
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OpenFile_1900', Level.LEVEL0, async function (done) {
         console.log('ACTS_OpenFile_1900====<begin');
         var mode = "rwt";
@@ -4469,11 +4856,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_OpenFile_2000
-    * @tc.name: Opens a file. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_OpenFile_2000
+     * @tc.number ACTS_OpenFile_2000
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OpenFile_2000', Level.LEVEL0, async function (done) {
         console.log('ACTS_OpenFile_2000====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -4499,11 +4889,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_NormalizeUri_0100
-    * @tc.name: Converts the given uri that refer to the Data ability into a normalized URI.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_NormalizeUri_0100
+     * @tc.number ACTS_NormalizeUri_0100
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_NormalizeUri_0100', Level.LEVEL0, async function (done) {
         console.log('ACTS_NormalizeUri_0100====<begin');
         let ret = false;
@@ -4534,11 +4927,14 @@ describe('ActsDataAbilityHelperTest', function () {
     })
 
 
-    /*
-   * @tc.number: ACTS_NormalizeUri_0200
-   * @tc.name: Converts the given uri that refer to the Data ability into a normalized URI.
-   * @tc.desc: Check the return value of the interface (by AsyncCallback)
-   */
+    /**
+     * @tc.name   ACTS_NormalizeUri_0200
+     * @tc.number ACTS_NormalizeUri_0200
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_NormalizeUri_0200', Level.LEVEL0, async function (done) {
         console.log('ACTS_NormalizeUri_0200====<begin');
         let ret = false;
@@ -4564,11 +4960,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_NormalizeUri_0300
-    * @tc.name: Converts the given uri that refer to the Data ability into a normalized URI.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_NormalizeUri_0300
+     * @tc.number ACTS_NormalizeUri_0300
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_NormalizeUri_0300', Level.LEVEL0, async function (done) {
         console.log('ACTS_NormalizeUri_0300====<begin');
         let ret = false;
@@ -4599,11 +4998,14 @@ describe('ActsDataAbilityHelperTest', function () {
     })
 
 
-    /*
-   * @tc.number: ACTS_NormalizeUri_0400
-   * @tc.name: Converts the given uri that refer to the Data ability into a normalized URI.
-   * @tc.desc: Check the return value of the interface (by AsyncCallback)
-   */
+    /**
+     * @tc.name   ACTS_NormalizeUri_0400
+     * @tc.number ACTS_NormalizeUri_0400
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_NormalizeUri_0400', Level.LEVEL0, async function (done) {
         console.log('ACTS_NormalizeUri_0400====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -4627,11 +5029,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_NormalizeUri_0500
-    * @tc.name: Converts the given uri that refer to the Data ability into a normalized URI.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_NormalizeUri_0500
+     * @tc.number ACTS_NormalizeUri_0500
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_NormalizeUri_0500', Level.LEVEL0, async function (done) {
         console.log('ACTS_NormalizeUri_0500====<begin');
         let ret = false;
@@ -4662,11 +5067,14 @@ describe('ActsDataAbilityHelperTest', function () {
     })
 
 
-    /*
-   * @tc.number: ACTS_NormalizeUri_0600
-   * @tc.name: Converts the given uri that refer to the Data ability into a normalized URI.
-   * @tc.desc: Check the return value of the interface (by AsyncCallback)
-   */
+    /**
+     * @tc.name   ACTS_NormalizeUri_0600
+     * @tc.number ACTS_NormalizeUri_0600
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_NormalizeUri_0600', Level.LEVEL0, async function (done) {
         console.log('ACTS_NormalizeUri_0600====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -4690,11 +5098,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_NormalizeUri_0700
-    * @tc.name: Converts the given uri that refer to the Data ability into a normalized URI.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_NormalizeUri_0700
+     * @tc.number ACTS_NormalizeUri_0700
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_NormalizeUri_0700', Level.LEVEL0, async function (done) {
         console.log('ACTS_NormalizeUri_0700====<begin');
         let ret = false;
@@ -4724,11 +5135,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-   * @tc.number: ACTS_NormalizeUri_0800
-   * @tc.name: Converts the given uri that refer to the Data ability into a normalized URI.
-   * @tc.desc: Check the return value of the interface (by AsyncCallback)
-   */
+    /**
+     * @tc.name   ACTS_NormalizeUri_0800
+     * @tc.number ACTS_NormalizeUri_0800
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_NormalizeUri_0800', Level.LEVEL0, async function (done) {
         console.log('ACTS_NormalizeUri_0800====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -4752,11 +5166,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_NormalizeUri_0900
-    * @tc.name: Converts the given uri that refer to the Data ability into a normalized URI.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_NormalizeUri_0900
+     * @tc.number ACTS_NormalizeUri_0900
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_NormalizeUri_0900', Level.LEVEL0, async function (done) {
         console.log('ACTS_NormalizeUri_0900====<begin');
         let ret = false;
@@ -4786,11 +5203,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-   * @tc.number: ACTS_NormalizeUri_1000
-   * @tc.name: Converts the given uri that refer to the Data ability into a normalized URI.
-   * @tc.desc: Check the return value of the interface (by AsyncCallback)
-   */
+    /**
+     * @tc.name   ACTS_NormalizeUri_1000
+     * @tc.number ACTS_NormalizeUri_1000
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_NormalizeUri_1000', Level.LEVEL0, async function (done) {
         console.log('ACTS_NormalizeUri_1000====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -4814,11 +5234,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_DenormalizeUri_0100
-    * @tc.name: Converts the given normalized uri generated by normalizeUri into a denormalized one.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_DenormalizeUri_0100
+     * @tc.number ACTS_DenormalizeUri_0100
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DenormalizeUri_0100', Level.LEVEL0, async function (done) {
         console.log('ACTS_DenormalizeUri_0100====<begin');
         let ret = false;
@@ -4848,11 +5271,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_DenormalizeUri_0200
-    * @tc.name: Converts the given normalized uri generated by normalizeUri into a denormalized one.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_DenormalizeUri_0200
+     * @tc.number ACTS_DenormalizeUri_0200
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DenormalizeUri_0200', Level.LEVEL0, async function (done) {
         console.log('ACTS_DenormalizeUri_0200====<begin');
         let ret = false;
@@ -4877,10 +5303,13 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-     * @tc.number: ACTS_DenormalizeUri_0300
-     * @tc.name: Converts the given normalized uri generated by normalizeUri into a denormalized one.
-     * @tc.desc: Check the return value of the interface (by promise)
+    /**
+     * @tc.name   ACTS_DenormalizeUri_0300
+     * @tc.number ACTS_DenormalizeUri_0300
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_DenormalizeUri_0300', Level.LEVEL0, async function (done) {
         console.log('ACTS_DenormalizeUri_0300====<begin');
@@ -4910,11 +5339,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_DenormalizeUri_0400
-    * @tc.name: Converts the given normalized uri generated by normalizeUri into a denormalized one.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_DenormalizeUri_0400
+     * @tc.number ACTS_DenormalizeUri_0400
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DenormalizeUri_0400', Level.LEVEL0, async function (done) {
         console.log('ACTS_DenormalizeUri_0400====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -4938,10 +5370,13 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-     * @tc.number: ACTS_DenormalizeUri_0500
-     * @tc.name: Converts the given normalized uri generated by normalizeUri into a denormalized one.
-     * @tc.desc: Check the return value of the interface (by promise)
+    /**
+     * @tc.name   ACTS_DenormalizeUri_0500
+     * @tc.number ACTS_DenormalizeUri_0500
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_DenormalizeUri_0500', Level.LEVEL0, async function (done) {
         console.log('ACTS_DenormalizeUri_0500====<begin');
@@ -4971,11 +5406,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_DenormalizeUri_0600
-    * @tc.name: Converts the given normalized uri generated by normalizeUri into a denormalized one.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_DenormalizeUri_0600
+     * @tc.number ACTS_DenormalizeUri_0600
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DenormalizeUri_0600', Level.LEVEL0, async function (done) {
         console.log('ACTS_DenormalizeUri_0600====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -4999,10 +5437,13 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-     * @tc.number: ACTS_DenormalizeUri_0700
-     * @tc.name: Converts the given normalized uri generated by normalizeUri into a denormalized one.
-     * @tc.desc: Check the return value of the interface (by promise)
+    /**
+     * @tc.name   ACTS_DenormalizeUri_0700
+     * @tc.number ACTS_DenormalizeUri_0700
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_DenormalizeUri_0700', Level.LEVEL0, async function (done) {
         console.log('ACTS_DenormalizeUri_0700====<begin');
@@ -5032,11 +5473,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_DenormalizeUri_0800
-    * @tc.name: Converts the given normalized uri generated by normalizeUri into a denormalized one.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_DenormalizeUri_0800
+     * @tc.number ACTS_DenormalizeUri_0800
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DenormalizeUri_0800', Level.LEVEL0, async function (done) {
         console.log('ACTS_DenormalizeUri_0800====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -5060,11 +5504,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_DenormalizeUri_0900
-    * @tc.name: Converts the given normalized uri generated by normalizeUri into a denormalized one.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_DenormalizeUri_0900
+     * @tc.number ACTS_DenormalizeUri_0900
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DenormalizeUri_0900', Level.LEVEL0, async function (done) {
         console.log('ACTS_DenormalizeUri_0900====<begin');
         let ret = false;
@@ -5094,11 +5541,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_DenormalizeUri_1000
-    * @tc.name: Converts the given normalized uri generated by normalizeUri into a denormalized one.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_DenormalizeUri_1000
+     * @tc.number ACTS_DenormalizeUri_1000
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DenormalizeUri_1000', Level.LEVEL0, async function (done) {
         console.log('ACTS_DenormalizeUri_1000====<begin');
         let ret = false;
@@ -5123,11 +5573,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_OnOff_0100
-    * @tc.name: On/Off : Registers an observer to observe data specified by the given Uri
-    * @tc.desc: Check the return value of the interface ()
-    */
+    /**
+     * @tc.name   ACTS_OnOff_0100
+     * @tc.number ACTS_OnOff_0100
+     * @tc.desc   Check the return value of the interface ()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OnOff_0100', Level.LEVEL0, async function (done) {
         console.log('ACTS_OnOff_0100====<begin');
         gSetTimeout = 2000;
@@ -5165,11 +5618,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_OnOff_0200
-    * @tc.name: On/Off : Registers an observer to observe data specified by the given Uri
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_OnOff_0200
+     * @tc.number ACTS_OnOff_0200
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OnOff_0200', Level.LEVEL0, async function (done) {
         console.log('ACTS_OnOff_0200====<begin');
         gSetTimeout = 2000;
@@ -5216,11 +5672,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_OnOff_0300
-    * @tc.name: On/Off : Registers an observer to observe data specified by the given Uri
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_OnOff_0300
+     * @tc.number ACTS_OnOff_0300
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OnOff_0300', Level.LEVEL0, async function (done) {
         console.log('ACTS_OnOff_0300====<begin');
         var currentAlertTimeout;
@@ -5288,11 +5747,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_OnOff_0400
-    * @tc.name: On/Off : Registers an observer to observe data specified by the given Uri
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_OnOff_0400
+     * @tc.number ACTS_OnOff_0400
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OnOff_0400', Level.LEVEL0, async function (done) {
         console.log('ACTS_OnOff_0400====<begin');
         var currentAlertTimeout;
@@ -5354,11 +5816,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_OnOff_0500
-    * @tc.name: On/Off : Registers an observer to observe data specified by the given Uri
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_OnOff_0500
+     * @tc.number ACTS_OnOff_0500
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OnOff_0500', Level.LEVEL0, async function (done) {
         console.log('ACTS_OnOff_0500====<begin');
         var currentAlertTimeout;
@@ -5437,10 +5902,13 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-     * @tc.number: ACTS_OnOff_0600
-     * @tc.name: On/Off : Registers an observer to observe data specified by the given Uri
-     * @tc.desc: Check the return value of the interface ()
+    /**
+     * @tc.name   ACTS_OnOff_0600
+     * @tc.number ACTS_OnOff_0600
+     * @tc.desc   Check the return value of the interface ()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_OnOff_0600', Level.LEVEL0, async function (done) {
         console.log('ACTS_OnOff_0600====<begin');
@@ -5513,10 +5981,13 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-     * @tc.number: ACTS_OnOff_0700
-     * @tc.name: On/Off : Registers an observer to observe data specified by the given Uri
-     * @tc.desc: Check the return value of the interface ()
+    /**
+     * @tc.name   ACTS_OnOff_0700
+     * @tc.number ACTS_OnOff_0700
+     * @tc.desc   Check the return value of the interface ()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_OnOff_0700', Level.LEVEL0, async function (done) {
         console.log('ACTS_OnOff_0700====<begin');
@@ -5572,11 +6043,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_OnOff_0800
-    * @tc.name: On/Off : Registers an observer to observe data specified by the given Uri
-    * @tc.desc: Check the return value of the interface ()
-    */
+    /**
+     * @tc.name   ACTS_OnOff_0800
+     * @tc.number ACTS_OnOff_0800
+     * @tc.desc   Check the return value of the interface ()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OnOff_0800', Level.LEVEL0, async function (done) {
         console.log('ACTS_OnOff_0800====<begin');
         try {
@@ -5609,11 +6083,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_OnOff_0900
-    * @tc.name: On/Off : Registers an observer to observe data specified by the given Uri
-    * @tc.desc: Check the return value of the interface ()
-    */
+    /**
+     * @tc.name   ACTS_OnOff_0900
+     * @tc.number ACTS_OnOff_0900
+     * @tc.desc   Check the return value of the interface ()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OnOff_0900', Level.LEVEL0, async function (done) {
         console.log('ACTS_OnOff_0900====<begin');
         try {
@@ -5660,10 +6137,13 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-     * @tc.number: ACTS_OnOff_1000
-     * @tc.name: On/Off : Registers an observer to observe data specified by the given Uri
-     * @tc.desc: Check the return value of the interface ()
+    /**
+     * @tc.name   ACTS_OnOff_1000
+     * @tc.number ACTS_OnOff_1000
+     * @tc.desc   Check the return value of the interface ()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_OnOff_1000', Level.LEVEL0, async function (done) {
         console.log('ACTS_OnOff_1000====<begin');
@@ -5700,11 +6180,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_OnOff_1100
-    * @tc.name: On/Off : Registers an observer to observe data specified by the given Uri
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_OnOff_1100
+     * @tc.number ACTS_OnOff_1100
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OnOff_1100', Level.LEVEL0, async function (done) {
         console.log('ACTS_OnOff_1100====<begin');
         try {
@@ -5752,11 +6235,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_OnOff_1200
-    * @tc.name: On/Off : Registers an observer to observe data specified by the given Uri
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_OnOff_1200
+     * @tc.number ACTS_OnOff_1200
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OnOff_1200', Level.LEVEL0, async function (done) {
         console.log('ACTS_OnOff_1200====<begin');
         try {
@@ -5802,10 +6288,13 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-     * @tc.number: ACTS_OnOff_1300
-     * @tc.name: On/Off : Registers an observer to observe data specified by the given Uri
-     * @tc.desc: Check the return value of the interface (by AsyncCallback)
+    /**
+     * @tc.name   ACTS_OnOff_1300
+     * @tc.number ACTS_OnOff_1300
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_OnOff_1300', Level.LEVEL0, async function (done) {
         console.log('ACTS_OnOff_1300====<begin');
@@ -5833,11 +6322,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_OnOff_1400
-    * @tc.name: On/Off : Registers an observer to observe data specified by the given Uri
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_OnOff_1400
+     * @tc.number ACTS_OnOff_1400
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OnOff_1400', Level.LEVEL0, async function (done) {
         console.log('ACTS_OnOff_1400====<begin');
         try {
@@ -5872,11 +6364,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_OnOff_1500
-    * @tc.name: On/Off : Registers an observer to observe data specified by the given Uri
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_OnOff_1500
+     * @tc.number ACTS_OnOff_1500
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OnOff_1500', Level.LEVEL0, async function (done) {
         console.log('ACTS_OnOff_1500====<begin');
         try {
@@ -5910,10 +6405,13 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-     * @tc.number: ACTS_OnOff_1600
-     * @tc.name: On/Off : Registers an observer to observe data specified by the given Uri
-     * @tc.desc: Check the return value of the interface (by AsyncCallback)
+    /**
+     * @tc.name   ACTS_OnOff_1600
+     * @tc.number ACTS_OnOff_1600
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_OnOff_1600', Level.LEVEL0, async function (done) {
         console.log('ACTS_OnOff_1600====<begin');
@@ -5962,10 +6460,13 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-     * @tc.number: ACTS_OnOff_1700
-     * @tc.name: On/Off : Registers an observer to observe data specified by the given Uri
-     * @tc.desc: Check the return value of the interface ()
+    /**
+     * @tc.name   ACTS_OnOff_1700
+     * @tc.number ACTS_OnOff_1700
+     * @tc.desc   Check the return value of the interface ()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_OnOff_1700', Level.LEVEL0, async function (done) {
         console.log('ACTS_OnOff_1700====<begin');
@@ -6017,11 +6518,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_OnOff_1800
-    * @tc.name: On/Off : Registers an observer to observe data specified by the given Uri
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_OnOff_1800
+     * @tc.number ACTS_OnOff_1800
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OnOff_1800', Level.LEVEL0, async function (done) {
         console.log('ACTS_OnOff_1800====<begin');
         gSetTimeout = 2000;
@@ -6069,11 +6573,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_Insert_0100
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_Insert_0100
+     * @tc.number ACTS_ExecuteBatch_Insert_0100
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_Insert_0100', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_Insert_0100====<begin');
         try {
@@ -6112,11 +6619,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_Insert_0200
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_Insert_0200
+     * @tc.number ACTS_ExecuteBatch_Insert_0200
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_Insert_0200', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_Insert_0200====<begin');
         try {
@@ -6164,11 +6674,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_Insert_0300
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_Insert_0300
+     * @tc.number ACTS_ExecuteBatch_Insert_0300
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_Insert_0300', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_Insert_0300====<begin');
         try {
@@ -6216,11 +6729,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_Insert_0400
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_Insert_0400
+     * @tc.number ACTS_ExecuteBatch_Insert_0400
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_Insert_0400', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_Insert_0400====<begin');
         try {
@@ -6257,11 +6773,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_Insert_0500
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_Insert_0500
+     * @tc.number ACTS_ExecuteBatch_Insert_0500
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_Insert_0500', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_Insert_0500====<begin');
         try {
@@ -6306,11 +6825,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_Insert_0600
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_Insert_0600
+     * @tc.number ACTS_ExecuteBatch_Insert_0600
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_Insert_0600', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_Insert_0600====<begin');
         try {
@@ -6354,11 +6876,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_Update_0100
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_Update_0100
+     * @tc.number ACTS_ExecuteBatch_Update_0100
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_Update_0100', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_Update_0100====<begin');
         try {
@@ -6412,11 +6937,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_Update_0200
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_Update_0200
+     * @tc.number ACTS_ExecuteBatch_Update_0200
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_Update_0200', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_Update_0200====<begin');
         try {
@@ -6478,11 +7006,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_Update_0300
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_Update_0300
+     * @tc.number ACTS_ExecuteBatch_Update_0300
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_Update_0300', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_Update_0300====<begin');
         try {
@@ -6545,11 +7076,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_Update_0400
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_Update_0400
+     * @tc.number ACTS_ExecuteBatch_Update_0400
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_Update_0400', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_Update_0400====<begin');
         try {
@@ -6599,11 +7133,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_Update_0500
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_Update_0500
+     * @tc.number ACTS_ExecuteBatch_Update_0500
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_Update_0500', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_Update_0500====<begin');
         try {
@@ -6661,11 +7198,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_Update_0600
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_Update_0600
+     * @tc.number ACTS_ExecuteBatch_Update_0600
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_Update_0600', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_Update_0600====<begin');
         try {
@@ -6723,11 +7263,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_Assert_0100
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_Assert_0100
+     * @tc.number ACTS_ExecuteBatch_Assert_0100
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_Assert_0100', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_Assert_0100====<begin');
         try {
@@ -6772,11 +7315,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_Assert_0200
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_Assert_0200
+     * @tc.number ACTS_ExecuteBatch_Assert_0200
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_Assert_0200', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_Assert_0200====<begin');
         try {
@@ -6830,11 +7376,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_Assert_0300
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_Assert_0300
+     * @tc.number ACTS_ExecuteBatch_Assert_0300
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_Assert_0300', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_Assert_0300====<begin');
         try {
@@ -6897,11 +7446,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_Assert_0400
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_Assert_0400
+     * @tc.number ACTS_ExecuteBatch_Assert_0400
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_Assert_0400', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_Assert_0400====<begin');
         try {
@@ -6943,11 +7495,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_Assert_0500
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_Assert_0500
+     * @tc.number ACTS_ExecuteBatch_Assert_0500
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_Assert_0500', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_Assert_0500====<begin');
         try {
@@ -6997,11 +7552,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_Assert_0600
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_Assert_0600
+     * @tc.number ACTS_ExecuteBatch_Assert_0600
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_Assert_0600', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_Assert_0600====<begin');
         try {
@@ -7059,11 +7617,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_Delete_0100
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_Delete_0100
+     * @tc.number ACTS_ExecuteBatch_Delete_0100
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_Delete_0100', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_Delete_0100====<begin');
         try {
@@ -7116,11 +7677,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_Delete_0200
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_Delete_0200
+     * @tc.number ACTS_ExecuteBatch_Delete_0200
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_Delete_0200', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_Delete_0200====<begin');
         try {
@@ -7182,11 +7746,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_Delete_0300
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_Delete_0300
+     * @tc.number ACTS_ExecuteBatch_Delete_0300
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_Delete_0300', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_Delete_0300====<begin');
         try {
@@ -7248,11 +7815,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_Delete_0400
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_Delete_0400
+     * @tc.number ACTS_ExecuteBatch_Delete_0400
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_Delete_0400', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_Delete_0400====<begin');
         try {
@@ -7302,11 +7872,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_Delete_0500
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_Delete_0500
+     * @tc.number ACTS_ExecuteBatch_Delete_0500
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_Delete_0500', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_Delete_0500====<begin');
         try {
@@ -7364,11 +7937,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_Delete_0600
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_Delete_0600
+     * @tc.number ACTS_ExecuteBatch_Delete_0600
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_Delete_0600', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_Delete_0600====<begin');
         try {
@@ -7426,11 +8002,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_0100
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_0100
+     * @tc.number ACTS_ExecuteBatch_0100
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_0100', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_0100====<begin');
         try {
@@ -7509,11 +8088,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_0200
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_0200
+     * @tc.number ACTS_ExecuteBatch_0200
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_0200', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_0200====<begin');
         try {
@@ -7588,11 +8170,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_0300
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_0300
+     * @tc.number ACTS_ExecuteBatch_0300
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_0300', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_0300====<begin');
         try {
@@ -7712,11 +8297,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_0400
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_0400
+     * @tc.number ACTS_ExecuteBatch_0400
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_0400', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_0400====<begin');
         try {
@@ -7832,11 +8420,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_0500
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_0500
+     * @tc.number ACTS_ExecuteBatch_0500
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_0500', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_0500====<begin');
         try {
@@ -7908,11 +8499,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_0600
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_0600
+     * @tc.number ACTS_ExecuteBatch_0600
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_0600', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_0600====<begin');
         try {
@@ -7980,11 +8574,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_0700
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_0700
+     * @tc.number ACTS_ExecuteBatch_0700
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_0700', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_0700====<begin');
         try {
@@ -8056,11 +8653,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_0800
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_0800
+     * @tc.number ACTS_ExecuteBatch_0800
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_0800', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_0800====<begin');
         try {
@@ -8128,11 +8728,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_0900
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_0900
+     * @tc.number ACTS_ExecuteBatch_0900
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_0900', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_0900====<begin');
         try {
@@ -8204,11 +8807,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_1000
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_1000
+     * @tc.number ACTS_ExecuteBatch_1000
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_1000', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_1000====<begin');
         try {
@@ -8276,11 +8882,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_1100
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_1100
+     * @tc.number ACTS_ExecuteBatch_1100
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_1100', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_1100====<begin');
         try {
@@ -8352,11 +8961,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_ExecuteBatch_1200
-    * @tc.name: ExecuteBatch : Preforms batch operations on the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_ExecuteBatch_1200
+     * @tc.number ACTS_ExecuteBatch_1200
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_ExecuteBatch_1200', Level.LEVEL0, async function (done) {
         console.debug('ACTS_ExecuteBatch_1200====<begin');
         try {

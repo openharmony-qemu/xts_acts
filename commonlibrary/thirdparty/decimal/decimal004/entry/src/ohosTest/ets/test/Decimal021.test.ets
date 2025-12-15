@@ -39,12 +39,12 @@ export default function DecimalTest021() {
     });
         console.info("start################################start");
     /**
-     * @tc.number    : DECIMAL_TEST_001
-     * @tc.name      : Decimal_pow_Func_001
-     * @tc.desc      : Test pow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_pow_Func_001
+     * @tc.number DECIMAL_TEST_001
+     * @tc.desc   Test pow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_pow_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
@@ -166,13 +166,13 @@ export default function DecimalTest021() {
         test_pow_001('0.9999999999999999999999999999999899999999999999994403269002375809806554775739676251993670310626872684', '-1.49181945463118148622657269735650603014891811120124843379694396257337810020127409048127397077199569e+271', 'Infinity', 100, 1);
         expect(true).assertEqual(true);
     });
-   /**
-     * @tc.number    : DECIMAL_TEST_002
-     * @tc.name      : Decimal_pow_Func_002
-     * @tc.desc      : Test pow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+    /**
+     * @tc.name   Decimal_pow_Func_002
+     * @tc.number DECIMAL_TEST_002
+     * @tc.desc   Test pow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_pow_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({

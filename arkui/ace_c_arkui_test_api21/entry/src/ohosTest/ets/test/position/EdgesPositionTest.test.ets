@@ -17,6 +17,7 @@ import { expect, describe, it, beforeEach, afterEach, Level  } from '@ohos/hypiu
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import Utils from '../common/Utils';
 import router from '@ohos.router';
+import native from 'libnativerender.so'
 
 export default function EdgesPositionTest() {
   describe('EdgesPositionTest', () => {
@@ -48,12 +49,12 @@ export default function EdgesPositionTest() {
     });
 
     /**
-     * @tc.number     EdgesPositionTest_0100
-     * @tc.name       EdgesPositionTest_0100
-     * @tc.desc       Test EdgesPosition: set single value.
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   EdgesPositionTest_0100
+     * @tc.number EdgesPositionTest_0100
+     * @tc.desc   Test EdgesPosition: set single value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('EdgesPositionTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[EdgesPositionTest_0100] START');
@@ -173,12 +174,12 @@ export default function EdgesPositionTest() {
     });
 
     /**
-     * @tc.number     EdgesPositionTest_0200
-     * @tc.name       EdgesPositionTest_0200
-     * @tc.desc       Test EdgesPosition: set single value, the value is negative.
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   EdgesPositionTest_0200
+     * @tc.number EdgesPositionTest_0200
+     * @tc.desc   Test EdgesPosition: set single value, the value is negative.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('EdgesPositionTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[EdgesPositionTest_0200] START');
@@ -231,7 +232,7 @@ export default function EdgesPositionTest() {
       // get left
       button = await driver.findComponent(ON.id('EdgesPositionPage_GetPosition_Btn'));
       await button.click();
-      console.info("[EdgesPositionTest_0800] click EdgesPositionPage_GetPosition_Btn.");
+      console.info("[EdgesPositionTest_0200] click EdgesPositionPage_GetPosition_Btn.");
       await Utils.sleep(1000);
 
       strJson = getInspectorByKey('EdgesPositionPage_position_content');
@@ -296,5 +297,176 @@ export default function EdgesPositionTest() {
       console.info('[EdgesPositionTest_0200] END');
       done();
     });
+
+    /**
+     * @tc.number     EdgesPositionTest_0300
+     * @tc.name       EdgesPositionTest_0300
+     * @tc.desc       Test OH_ArkUI_PositionEdges_GetTop ErrorCode: ARKUI_ERROR_CODE_NO_ERROR.
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('EdgesPositionTest_0300', Level.LEVEL1, async (done: Function) => {
+      console.info('[EdgesPositionTest_0300] START');
+
+      expect(native.TestPositionEdgesGetTopErrorCode_001()).assertEqual(0)
+
+      console.info('[EdgesPositionTest_0300] END');
+      done();
+    });
+
+    /**
+     * @tc.number     EdgesPositionTest_0400
+     * @tc.name       EdgesPositionTest_0400
+     * @tc.desc       Test OH_ArkUI_PositionEdges_GetTop ErrorCode: ARKUI_ERROR_CODE_PARAM_INVALID.
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('EdgesPositionTest_0400', Level.LEVEL1, async (done: Function) => {
+      console.info('[EdgesPositionTest_0400] START');
+
+      expect(native.TestPositionEdgesGetTopErrorCode_002()).assertEqual(0)
+
+      console.info('[EdgesPositionTest_0400] END');
+      done();
+    });
+
+    /**
+     * @tc.number     EdgesPositionTest_0500
+     * @tc.name       EdgesPositionTest_0500
+     * @tc.desc       Test OH_ArkUI_PositionEdges_Left ErrorCode: ARKUI_ERROR_CODE_NO_ERROR.
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('EdgesPositionTest_0500', Level.LEVEL1, async (done: Function) => {
+      console.info('[EdgesPositionTest_0500] START');
+
+      expect(native.TestPositionEdgesGetLeftErrorCode_001()).assertEqual(0)
+
+      console.info('[EdgesPositionTest_0500] END');
+      done();
+    });
+
+    /**
+     * @tc.number     EdgesPositionTest_0600
+     * @tc.name       EdgesPositionTest_0600
+     * @tc.desc       Test OH_ArkUI_PositionEdges_Left ErrorCode: ARKUI_ERROR_CODE_PARAM_INVALID.
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('EdgesPositionTest_0600', Level.LEVEL1, async (done: Function) => {
+      console.info('[EdgesPositionTest_0600] START');
+
+      expect(native.TestPositionEdgesGetLeftErrorCode_002()).assertEqual(0)
+
+      console.info('[EdgesPositionTest_0600] END');
+      done();
+    });
+
+    /**
+     * @tc.number     EdgesPositionTest_0700
+     * @tc.name       EdgesPositionTest_0700
+     * @tc.desc       Test OH_ArkUI_PositionEdges_Bottom ErrorCode: ARKUI_ERROR_CODE_NO_ERROR.
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('EdgesPositionTest_0700', Level.LEVEL1, async (done: Function) => {
+      console.info('[EdgesPositionTest_0700] START');
+
+      expect(native.TestPositionEdgesGetBottomErrorCode_001()).assertEqual(0)
+
+      console.info('[EdgesPositionTest_0700] END');
+      done();
+    });
+
+    /**
+     * @tc.number     EdgesPositionTest_0800
+     * @tc.name       EdgesPositionTest_0800
+     * @tc.desc       Test OH_ArkUI_PositionEdges_Bottom ErrorCode: ARKUI_ERROR_CODE_PARAM_INVALID.
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('EdgesPositionTest_0800', Level.LEVEL1, async (done: Function) => {
+      console.info('[EdgesPositionTest_0800] START');
+
+      expect(native.TestPositionEdgesGetBottomErrorCode_002()).assertEqual(0)
+
+      console.info('[EdgesPositionTest_0800] END');
+      done();
+    });
+
+    /**
+     * @tc.number     EdgesPositionTest_0900
+     * @tc.name       EdgesPositionTest_0900
+     * @tc.desc       Test OH_ArkUI_PositionEdges_Right ErrorCode: ARKUI_ERROR_CODE_NO_ERROR.
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('EdgesPositionTest_0900', Level.LEVEL1, async (done: Function) => {
+      console.info('[EdgesPositionTest_0900] START');
+
+      expect(native.TestPositionEdgesGetRightErrorCode_001()).assertEqual(0)
+
+      console.info('[EdgesPositionTest_0900] END');
+      done();
+    });
+
+    /**
+     * @tc.number     EdgesPositionTest_1000
+     * @tc.name       EdgesPositionTest_1000
+     * @tc.desc       Test OH_ArkUI_PositionEdges_Right ErrorCode: ARKUI_ERROR_CODE_PARAM_INVALID.
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('EdgesPositionTest_1000', Level.LEVEL1, async (done: Function) => {
+      console.info('[EdgesPositionTest_1000] START');
+
+      expect(native.TestPositionEdgesGetRightErrorCode_002()).assertEqual(0)
+
+      console.info('[EdgesPositionTest_1000] END');
+      done();
+    });
+
+    /**
+     * @tc.number     EdgesPositionTest_1100
+     * @tc.name       EdgesPositionTest_1100
+     * @tc.desc       Test OH_ArkUI_PositionEdges_Copy return nullptr.
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('EdgesPositionTest_1100', Level.LEVEL1, async (done: Function) => {
+      console.info('[EdgesPositionTest_1100] START');
+
+      expect(native.TestPositionEdgesCopyReturnNullptr()).assertEqual(0)
+
+      console.info('[EdgesPositionTest_1100] END');
+      done();
+    });
+
+    /**
+     * @tc.number     EdgesPositionTest_1200
+     * @tc.name       EdgesPositionTest_1200
+     * @tc.desc       Test OH_ArkUI_PositionEdges_Create return Non-nullptr.
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('EdgesPositionTest_1200', Level.LEVEL1, async (done: Function) => {
+      console.info('[EdgesPositionTest_1200] START');
+
+      expect(native.TestPositionEdgesCreateReturnNoNullptr()).assertEqual(0)
+
+      console.info('[EdgesPositionTest_1200] END');
+      done();
+    });
+
   })
 }

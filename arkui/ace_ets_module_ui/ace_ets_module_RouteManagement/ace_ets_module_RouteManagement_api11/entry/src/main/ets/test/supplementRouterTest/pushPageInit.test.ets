@@ -56,12 +56,12 @@ export default function pushPageInit() {
     });
 
     /**
+     * @tc.name   pushPageInit_0100
      * @tc.number SUB_ACE_BASICABILITY_ROUTERPAGE_002
-     * @tc.name pushPageInit_0100
-     * @tc.desc set api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('pushPageInit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('pushPageInit_0100 START');

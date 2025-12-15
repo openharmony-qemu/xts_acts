@@ -98,12 +98,12 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
     })
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_Func_0100
      * @tc.number Security_CertManager_PriCertJsApi_Func_0100
-     * @tc.name test enumerated value
-     * @tc.desc test enumerated value
-     * @tc.size SmallTest
-     * @tc.level Level0
-     * @tc.type Function
+     * @tc.desc   test enumerated value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Security_CertManager_PriCertJsApi_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       expect(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION).assertEqual(201);
@@ -115,6 +115,9 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
       expect(certManager.CMErrorCode.CM_ERROR_MAX_CERT_COUNT_REACHED).assertEqual(17500004);
       expect(certManager.CMErrorCode.CM_ERROR_NO_AUTHORIZATION).assertEqual(17500005);
       expect(certManager.CMErrorCode.CM_ERROR_DEVICE_ENTER_ADVSECMODE).assertEqual(17500007);
+      expect(certManager.CMErrorCode.CM_ERROR_STORE_PATH_NOT_SUPPORTED).assertEqual(17500009);
+      expect(certManager.CMErrorCode.CM_ERROR_ACCESS_UKEY_SERVICE_FAILED).assertEqual(17500010);
+      expect(certManager.CMErrorCode.CM_ERROR_PARAMETER_VALIDATION_FAILED).assertEqual(17500011);
       expect(certManager.CmKeyPadding.CM_PADDING_NONE).assertEqual(0);
       expect(certManager.CmKeyPadding.CM_PADDING_PSS).assertEqual(1);
       expect(certManager.CmKeyPadding.CM_PADDING_PKCS1_V1_5).assertEqual(2);
@@ -130,16 +133,20 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
       expect(certManager.AuthStorageLevel.EL1).assertEqual(1);
       expect(certManager.AuthStorageLevel.EL2).assertEqual(2);
       expect(certManager.AuthStorageLevel.EL4).assertEqual(4);
+      expect(certManager.CertificatePurpose.PURPOSE_DEFAULT).assertEqual(0);
+      expect(certManager.CertificatePurpose.PURPOSE_ALL).assertEqual(1);
+      expect(certManager.CertificatePurpose.PURPOSE_SIGN).assertEqual(2);
+      expect(certManager.CertificatePurpose.PURPOSE_ENCRYPT).assertEqual(3);
       done();
     });
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_Func_0200
      * @tc.number Security_CertManager_PriCertJsApi_Func_0200
-     * @tc.name test installPrivateCertificate and uninstallPrivateCertificate with normal parameters one
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Security_CertManager_PriCertJsApi_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let keystore: Uint8Array = commonParameter.priRsaCredData;
@@ -170,12 +177,12 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_Func_0300
      * @tc.number Security_CertManager_PriCertJsApi_Func_0300
-     * @tc.name test installPrivateCertificate and uninstallPrivateCertificate with normal parameters two
-     * @tc.desc use asyncCallback type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   use asyncCallback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Security_CertManager_PriCertJsApi_Func_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let keystore: Uint8Array = commonParameter.priEccCredData;
@@ -219,12 +226,12 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_Func_0400
      * @tc.number Security_CertManager_PriCertJsApi_Func_0400
-     * @tc.name test getPrivateCertificate with normal parameters one
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_CertManager_PriCertJsApi_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await certManager.getPrivateCertificate(gAppKeyUri1).then((CMResult: certManager.CMResult) => {
@@ -245,12 +252,12 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_Func_0500
      * @tc.number Security_CertManager_PriCertJsApi_Func_0500
-     * @tc.name test getPrivateCertificate with normal parameters two
-     * @tc.desc use asyncCallback type
-     * @tc.size SmallTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use asyncCallback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_CertManager_PriCertJsApi_Func_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let cmResult2: certManager.CMResult;
@@ -282,12 +289,12 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_Func_0600
      * @tc.number Security_CertManager_PriCertJsApi_Func_0600
-     * @tc.name test init->update->finish interface with normal parameters one
-     * @tc.desc use asyncCallback type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   use asyncCallback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Security_CertManager_PriCertJsApi_Func_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let keyStore: Uint8Array = commonParameter.priRsaCredData;
@@ -307,12 +314,12 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_Func_0700
      * @tc.number Security_CertManager_PriCertJsApi_Func_0700
-     * @tc.name test init->update->finish interface with normal parameters two
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Security_CertManager_PriCertJsApi_Func_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let keyStore: Uint8Array = commonParameter.priEccCredData;
@@ -332,12 +339,12 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_Func_0800
      * @tc.number Security_CertManager_PriCertJsApi_Func_0800
-     * @tc.name test abort interface with normal parameters one
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Security_CertManager_PriCertJsApi_Func_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let keyStore: Uint8Array = commonParameter.priEccCredData;
@@ -353,12 +360,12 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_Func_0900
      * @tc.number Security_CertManager_PriCertJsApi_Func_0900
-     * @tc.name test abort interface with normal parameters two
-     * @tc.desc use asyncCallback type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   use asyncCallback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Security_CertManager_PriCertJsApi_Func_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let keyStore: Uint8Array = commonParameter.priRsaCredData;
@@ -374,12 +381,12 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_Func_1000
      * @tc.number Security_CertManager_PriCertJsApi_Func_1000
-     * @tc.name test abort interface with normal parameters three
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Security_CertManager_PriCertJsApi_Func_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let keyStore: Uint8Array = commonParameter.priEccCredData;
@@ -395,12 +402,12 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_Func_1100
      * @tc.number Security_CertManager_PriCertJsApi_Func_1100
-     * @tc.name test abort interface with normal parameters four
-     * @tc.desc use asyncCallback type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   use asyncCallback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Security_CertManager_PriCertJsApi_Func_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let keyStore: Uint8Array = commonParameter.priRsaCredData;
@@ -416,12 +423,12 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_Func_1200
      * @tc.number Security_CertManager_PriCertJsApi_Func_1200
-     * @tc.name test max length of privateCredential list
-     * @tc.desc test max length of privateCredential list
-     * @tc.size SmallTest
-     * @tc.level Level4
-     * @tc.type Function
+     * @tc.desc   test max length of privateCredential list
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('Security_CertManager_PriCertJsApi_Func_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       try {
@@ -437,12 +444,12 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_Func_1300
      * @tc.number Security_CertManager_PriCertJsApi_Func_1300
-     * @tc.name test getAllAppPrivateCertificates interface with normal parameters one
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_CertManager_PriCertJsApi_Func_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -466,12 +473,12 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_Func_1400
      * @tc.number Security_CertManager_PriCertJsApi_Func_1400
-     * @tc.name test getAllAppPrivateCertificates interface with normal parameters two
-     * @tc.desc use asyncCallback type
-     * @tc.size SmallTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use asyncCallback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_CertManager_PriCertJsApi_Func_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -505,12 +512,12 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_Func_1500
      * @tc.number Security_CertManager_PriCertJsApi_Func_1500
-     * @tc.name test init->update->finish interface with padding and digest one
-     * @tc.desc use asyncCallback type
-     * @tc.size SmallTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use asyncCallback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_CertManager_PriCertJsApi_Func_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let keyStore: Uint8Array = commonParameter.priRsaCredData;
@@ -540,12 +547,12 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_Func_1600
      * @tc.number Security_CertManager_PriCertJsApi_Func_1600
-     * @tc.name test init->update->finish interface with padding and digest two
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_CertManager_PriCertJsApi_Func_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let keyStore: Uint8Array = commonParameter.priEccCredData;
@@ -573,12 +580,12 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_Func_1700
      * @tc.number Security_CertManager_PriCertJsApi_Func_1700
-     * @tc.name test init->update->finish interface with padding and digest three
-     * @tc.desc use asyncCallback type
-     * @tc.size SmallTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use asyncCallback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_CertManager_PriCertJsApi_Func_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let keyStore: Uint8Array = commonParameter.priRsaCredData;
@@ -608,12 +615,12 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_Func_1800
      * @tc.number Security_CertManager_PriCertJsApi_Func_1800
-     * @tc.name test init->update->finish interface with padding and digest four
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_CertManager_PriCertJsApi_Func_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let keyStore: Uint8Array = commonParameter.priEccCredData;
@@ -642,12 +649,12 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
 
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_Func_1900
      * @tc.number Security_CertManager_PriCertJsApi_Func_1900
-     * @tc.name test init->update->finish interface with padding and digest five
-     * @tc.desc use asyncCallback type
-     * @tc.size SmallTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   use asyncCallback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_CertManager_PriCertJsApi_Func_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let keyStore: Uint8Array = commonParameter.priRsaCredData;
@@ -677,12 +684,12 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_Func_2000
      * @tc.number Security_CertManager_PriCertJsApi_Func_2000
-     * @tc.name test init->update->finish interface with padding and digest six
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Security_CertManager_PriCertJsApi_Func_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let keyStore: Uint8Array = commonParameter.priEccCredData;
@@ -706,12 +713,12 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CertManager_PriCertJsApi_Func_2100
      * @tc.number Security_CertManager_PriCertJsApi_Func_2100
-     * @tc.name test init->update->finish interface with padding and digest seven
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Security_CertManager_PriCertJsApi_Func_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let keyStore: crypt.DataBlob;

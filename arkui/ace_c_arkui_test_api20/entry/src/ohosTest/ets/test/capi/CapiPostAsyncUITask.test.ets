@@ -60,16 +60,18 @@ export default function CapiPostAsyncUITask() {
     });
 
     /**
+     * @tc.name   ArkUIPostAsyncUITask_001
      * @tc.number ArkUIPostAsyncUITask_001
-     * @tc.name ArkUIPostAsyncUITask_001
-     * @tc.desc Test ArkUIPostAsyncUITask
-     * @tc.level: Level 1
+     * @tc.desc   Test ArkUIPostAsyncUITask
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIPostAsyncUITask_001', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUIPostAsyncUITask_001] START'); 
       await Utils.sleep(3000);
       let driver: Driver = Driver.create();
-      let view = await driver.findComponent(ON.text('测试文本1'));
+      let view = await driver.findComponent(ON.id('text'));
       expect(view != null).assertTrue();
       console.info('[ArkUIPostAsyncUITask_001] END');
       done();

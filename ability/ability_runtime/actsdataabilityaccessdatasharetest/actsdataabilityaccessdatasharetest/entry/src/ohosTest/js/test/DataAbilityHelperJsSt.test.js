@@ -56,11 +56,14 @@ describe('ActsDataAbilityHelperTest', function () {
         done();
     })
 
-    /*
-    * @tc.number: ACTS_DataAbilityAccessDataShare_Inset_0100
-    * @tc.name: insert : insert data to DataShare by DataAbilityHelper
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_DataAbilityAccessDataShare_Inset_0100
+     * @tc.number ACTS_DataAbilityAccessDataShare_Inset_0100
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DataAbilityAccessDataShare_Inset_0100', Level.LEVEL0, async function (done) {
         TAG = 'ACTS_DataAbilityAccessDataShare_Inset_0100';
         console.log(TAG + '====<begin');
@@ -84,11 +87,14 @@ describe('ActsDataAbilityHelperTest', function () {
         console.log(TAG + '====<end');
     })
 
-    /*
-    * @tc.number: ACTS_DataAbilityAccessDataShare_Inset_0200
-    * @tc.name: insert : insert data to DataShare by DataAbilityHelper
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_DataAbilityAccessDataShare_Inset_0200
+     * @tc.number ACTS_DataAbilityAccessDataShare_Inset_0200
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DataAbilityAccessDataShare_Inset_0200', Level.LEVEL0, async function (done) {
         TAG = 'ACTS_DataAbilityAccessDataShare_Inset_0200';
         console.log(TAG + '====<begin');
@@ -117,11 +123,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_DataAbilityAccessDataShare_Query_0100
-    * @tc.name: Queries one or more data records in the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_DataAbilityAccessDataShare_Query_0100
+     * @tc.number ACTS_DataAbilityAccessDataShare_Query_0100
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DataAbilityAccessDataShare_Query_0100', Level.LEVEL0, async function (done) {
         TAG = 'ACTS_DataAbilityAccessDataShare_Query_0100';
         console.log(TAG + '====<begin');
@@ -148,11 +157,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_DataAbilityAccessDataShare_Query_0200
-    * @tc.name: Updates one or more data records in the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_DataAbilityAccessDataShare_Query_0200
+     * @tc.number ACTS_DataAbilityAccessDataShare_Query_0200
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DataAbilityAccessDataShare_Query_0200', Level.LEVEL0, async function (done) {
         TAG = 'ACTS_DataAbilityAccessDataShare_Query_0200';
         console.log(TAG + '====<begin');
@@ -178,11 +190,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_DataAbilityAccessDataShare_Update_0100
-    * @tc.name: Updates one or more data records in the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_DataAbilityAccessDataShare_Update_0100
+     * @tc.number ACTS_DataAbilityAccessDataShare_Update_0100
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DataAbilityAccessDataShare_Update_0100', Level.LEVEL0, async function (done) {
         TAG = 'ACTS_DataAbilityAccessDataShare_Update_0100';
         console.log(TAG + '====<begin');
@@ -213,11 +228,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_DataAbilityAccessDataShare_Update_0200
-    * @tc.name: Queries one or more data records in the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_DataAbilityAccessDataShare_Update_0200
+     * @tc.number ACTS_DataAbilityAccessDataShare_Update_0200
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DataAbilityAccessDataShare_Update_0200', Level.LEVEL0, async function (done) {
         TAG = 'ACTS_DataAbilityAccessDataShare_Update_0200';
         console.log(TAG + '====<begin');
@@ -254,11 +272,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_DataAbilityAccessDataShare_Delete_0100
-    * @tc.name: Deletes one or more data records in the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_DataAbilityAccessDataShare_Delete_0100
+     * @tc.number ACTS_DataAbilityAccessDataShare_Delete_0100
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DataAbilityAccessDataShare_Delete_0100', Level.LEVEL0, async function (done) {
         TAG = 'ACTS_DataAbilityAccessDataShare_Delete_0100';
         console.log(TAG + '====<begin');
@@ -284,11 +305,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_DataAbilityAccessDataShare_Delete_0200
-    * @tc.name: Deletes one or more data records in the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_DataAbilityAccessDataShare_Delete_0200
+     * @tc.number ACTS_DataAbilityAccessDataShare_Delete_0200
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DataAbilityAccessDataShare_Delete_0200', Level.LEVEL0, async function (done) {
         TAG = 'ACTS_DataAbilityAccessDataShare_Delete_0200';
         console.log(TAG + '====<begin');
@@ -320,11 +344,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_DataAbilityAccessDataShare_BatchInsert_0100
-    * @tc.name: Insert one or more data records to the database
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_DataAbilityAccessDataShare_BatchInsert_0100
+     * @tc.number ACTS_DataAbilityAccessDataShare_BatchInsert_0100
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DataAbilityAccessDataShare_BatchInsert_0100', Level.LEVEL0, async function (done) {
         TAG = 'ACTS_DataAbilityAccessDataShare_BatchInsert_0100';
         console.log(TAG + '====<begin');
@@ -350,11 +377,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_DataAbilityAccessDataShare_BatchInsert_0200
-    * @tc.name: Insert one or more data records to the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_DataAbilityAccessDataShare_BatchInsert_0200
+     * @tc.number ACTS_DataAbilityAccessDataShare_BatchInsert_0200
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DataAbilityAccessDataShare_BatchInsert_0200', Level.LEVEL0, async function (done) {
         TAG = 'ACTS_DataAbilityAccessDataShare_BatchInsert_0200';
         console.log(TAG + '====<begin');
@@ -386,11 +416,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_DataAbilityAccessDataShare_OnOff_0100
-    * @tc.name: On/Off : Registers an observer to observe data specified by the given Uri
-    * @tc.desc: Check the return value of the interface ()
-    */
+    /**
+     * @tc.name   ACTS_DataAbilityAccessDataShare_OnOff_0100
+     * @tc.number ACTS_DataAbilityAccessDataShare_OnOff_0100
+     * @tc.desc   Check the return value of the interface ()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DataAbilityAccessDataShare_OnOff_0100', Level.LEVEL0, async function (done) {
         TAG = 'ACTS_DataAbilityAccessDataShare_OnOff_0100';
         console.log(TAG + '====<begin');
@@ -429,11 +462,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_DataAbilityAccessDataShare_OnOff_0200
-    * @tc.name: On/Off : Registers an observer to observe data specified by the given Uri
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_DataAbilityAccessDataShare_OnOff_0200
+     * @tc.number ACTS_DataAbilityAccessDataShare_OnOff_0200
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DataAbilityAccessDataShare_OnOff_0200', Level.LEVEL0, async function (done) {
         TAG = 'ACTS_DataAbilityAccessDataShare_OnOff_0200';
         console.log(TAG + '====<begin');
@@ -480,11 +516,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_DataAbilityAccessDataShare_GetType_0100
-    * @tc.name: Obtains the MIME type matching the data specified by the URI of the Data ability.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_DataAbilityAccessDataShare_GetType_0100
+     * @tc.number ACTS_DataAbilityAccessDataShare_GetType_0100
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DataAbilityAccessDataShare_GetType_0100', Level.LEVEL0, async function (done) {
         TAG = 'ACTS_DataAbilityAccessDataShare_GetType_0100';
         console.log(TAG + '====<begin');
@@ -509,11 +548,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_DataAbilityAccessDataShare_GetType_0200
-    * @tc.name: Obtains the MIME type matching the data specified by the URI of the Data ability.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_DataAbilityAccessDataShare_GetType_0200
+     * @tc.number ACTS_DataAbilityAccessDataShare_GetType_0200
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DataAbilityAccessDataShare_GetType_0200', Level.LEVEL0, async function (done) {
         TAG = 'ACTS_DataAbilityAccessDataShare_GetType_0200';
         console.log(TAG + '====<begin');
@@ -543,12 +585,15 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_DataAbilityAccessDataShare_GetFileTypes_0100
-    * @tc.name: Obtains the MIME type of files.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
 
+    /**
+     * @tc.name   ACTS_DataAbilityAccessDataShare_GetFileTypes_0100
+     * @tc.number ACTS_DataAbilityAccessDataShare_GetFileTypes_0100
+     * @tc.desc   ACTS_DataAbilityAccessDataShare_GetFileTypes_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DataAbilityAccessDataShare_GetFileTypes_0100', Level.LEVEL0, async function (done) {
         TAG = 'ACTS_DataAbilityAccessDataShare_GetFileTypes_0100';
         console.log(TAG + '====<begin');
@@ -587,12 +632,15 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-   /*
-    * @tc.number: ACTS_DataAbilityAccessDataShare_GetFileTypes_0200
-    * @tc.name: Obtains the MIME type of files.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
 
+    /**
+     * @tc.name   ACTS_DataAbilityAccessDataShare_GetFileTypes_0200
+     * @tc.number ACTS_DataAbilityAccessDataShare_GetFileTypes_0200
+     * @tc.desc   ACTS_DataAbilityAccessDataShare_GetFileTypes_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DataAbilityAccessDataShare_GetFileTypes_0200', Level.LEVEL0, async function (done) {
         TAG = 'ACTS_DataAbilityAccessDataShare_GetFileTypes_0200';
         console.log(TAG + '====<begin');
@@ -635,11 +683,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-   * @tc.number: ACTS_DataAbilityAccessDataShare_NormalizeUri_0100
-   * @tc.name: Converts the given uri that refer to the Data ability into a normalized URI.
-   * @tc.desc: Check the return value of the interface (by AsyncCallback)
-   */
+    /**
+     * @tc.name   ACTS_DataAbilityAccessDataShare_NormalizeUri_0100
+     * @tc.number ACTS_DataAbilityAccessDataShare_NormalizeUri_0100
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DataAbilityAccessDataShare_NormalizeUri_0100', Level.LEVEL0, async function (done) {
         TAG = 'ACTS_DataAbilityAccessDataShare_NormalizeUri_0100';
         console.log(TAG + '====<begin');
@@ -665,11 +716,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_DataAbilityAccessDataShare_NormalizeUri_0200
-    * @tc.name: Converts the given uri that refer to the Data ability into a normalized URI.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_DataAbilityAccessDataShare_NormalizeUri_0200
+     * @tc.number ACTS_DataAbilityAccessDataShare_NormalizeUri_0200
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DataAbilityAccessDataShare_NormalizeUri_0200', Level.LEVEL0, async function (done) {
         TAG = 'ACTS_DataAbilityAccessDataShare_NormalizeUri_0200';
         console.log(TAG + '====<begin');
@@ -699,11 +753,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_DataAbilityAccessDataShare_DenormalizeUri_0100
-    * @tc.name: Converts the given normalized uri generated by normalizeUri into a denormalized one.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_DataAbilityAccessDataShare_DenormalizeUri_0100
+     * @tc.number ACTS_DataAbilityAccessDataShare_DenormalizeUri_0100
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DataAbilityAccessDataShare_DenormalizeUri_0100', Level.LEVEL0, async function (done) {
         TAG = 'ACTS_DataAbilityAccessDataShare_DenormalizeUri_0100';
         console.log(TAG + '====<begin');
@@ -728,11 +785,14 @@ describe('ActsDataAbilityHelperTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_DataAbilityAccessDataShare_DenormalizeUri_0200
-    * @tc.name: Converts the given normalized uri generated by normalizeUri into a denormalized one.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_DataAbilityAccessDataShare_DenormalizeUri_0200
+     * @tc.number ACTS_DataAbilityAccessDataShare_DenormalizeUri_0200
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DataAbilityAccessDataShare_DenormalizeUri_0200', Level.LEVEL0, async function (done) {
         TAG = 'ACTS_DataAbilityAccessDataShare_DenormalizeUri_0200';
         console.log(TAG + '====<begin');

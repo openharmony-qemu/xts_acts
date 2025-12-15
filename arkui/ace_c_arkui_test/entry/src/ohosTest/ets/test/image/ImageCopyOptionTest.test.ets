@@ -26,65 +26,65 @@ export default function imageCopyOptionTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_COPYOPTION_0100
-     * @tc.name       : testImageCopyOption001
-     * @tc.desc       : testing imageCopyOption for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageCopyOption001
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_COPYOPTION_0100
+     * @tc.desc   testing imageCopyOption for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageCopyOption001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageCopyOption001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_COPYOPTION_0200
-     * @tc.name       : testImageCopyOption002
-     * @tc.desc       : testing imageCopyOption for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageCopyOption002
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_COPYOPTION_0200
+     * @tc.desc   testing imageCopyOption for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageCopyOption002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageCopyOption002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_COPYOPTION_0300
-     * @tc.name       : testImageCopyOption003
-     * @tc.desc       : testing imageCopyOption for image with illegal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageCopyOption003
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_COPYOPTION_0300
+     * @tc.desc   testing imageCopyOption for image with illegal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageCopyOption003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageCopyOption003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_COPYOPTION_0400
-     * @tc.name       : testImageCopyOption004
-     * @tc.desc       : testing imageCopyOption for image with set/get attribute
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageCopyOption004
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_COPYOPTION_0400
+     * @tc.desc   testing imageCopyOption for image with set/get attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageCopyOption004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageCopyOption004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_COPYOPTION_0500
-     * @tc.name       : testImageCopyOption005
-     * @tc.desc       : testing imageCopyOption for image with set/get/reset attribute
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageCopyOption005
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_COPYOPTION_0500
+     * @tc.desc   testing imageCopyOption for image with set/get/reset attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageCopyOption005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageCopyOption005()).assertEqual(0)

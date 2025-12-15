@@ -20,11 +20,12 @@ export default function abilityTest() {
   let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator | undefined = AppStorage.get<AbilityDelegatorRegistry.AbilityDelegator>("abilityDelegator");
   describe('AACommandPrintTest', () => {
     /**
-     * @tc.number: ACTS_AACommand_printSync_01_0100
-     * @tc.name: The -b, -p, -s, -w and other parameters of the test command are valid,
-     *           The printSync information includes Chinese, special characters, etc.
-     * @tc.desc: Verify that the test framework can be started normally and the logs can be output normally through
-     *           the test command.
+     * @tc.name   ACTS_AACommand_printSync_01_0100
+     * @tc.number ACTS_AACommand_printSync_01_0100
+     * @tc.desc   Verify that the test framework can be started normally and the logs can be output normally through
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AACommand_printSync_01_0100', Level.LEVEL0, async (done: Function) => {
       done();
@@ -40,11 +41,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AACommand_printSync_01_0200
-     * @tc.name: The -b, -p, -s, -w and other parameters of the test command are valid,
-     *           The length of the printSync message is 1000 characters.
-     * @tc.desc: Verify that the test framework can be started normally and the logs can be output normally through
-     *           the test command.
+     * @tc.name   ACTS_AACommand_printSync_01_0200
+     * @tc.number ACTS_AACommand_printSync_01_0200
+     * @tc.desc   Verify that the test framework can be started normally and the logs can be output normally through
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AACommand_printSync_01_0200', Level.LEVEL0, async (done: Function) => {
       done();
@@ -68,11 +70,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AACommand_printSync_01_0300
-     * @tc.name: The -b, -p, -s, -w and other parameters of the test command are valid
-     *           The length of the printSync message is greater than 1000 characters.
-     * @tc.desc: Verify that the test framework can be started normally and the logs can be output normally through
-     *           the test command.
+     * @tc.name   ACTS_AACommand_printSync_01_0300
+     * @tc.number ACTS_AACommand_printSync_01_0300
+     * @tc.desc   Verify that the test framework can be started normally and the logs can be output normally through
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AACommand_printSync_01_0300', Level.LEVEL0, async (done: Function) => {
       done();
@@ -97,11 +100,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AACommand_printSync_01_0400
-     * @tc.name: The -b, -p, -s, -w and other parameters of the test command are valid,
-     *           printSync information is null.
-     * @tc.desc: Verify that the test framework can be started normally and the logs can be output normally through
-     *           the test command.
+     * @tc.name   ACTS_AACommand_printSync_01_0400
+     * @tc.number ACTS_AACommand_printSync_01_0400
+     * @tc.desc   Verify that the test framework can be started normally and the logs can be output normally through
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AACommand_printSync_01_0400', Level.LEVEL0, async (done: Function) => {
       done();

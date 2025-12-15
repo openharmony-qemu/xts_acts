@@ -136,13 +136,13 @@ describe("SensorJsTest_sensor_17", function () {
         console.info('afterEach called')
     })
 
-     /*
-     * @tc.number:SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0010
-     * @tc.name:PedometerDetection_SensorJsTest001
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   PedometerDetection_SensorJsTest001
+     * @tc.number SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0010
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("PedometerDetection_SensorJsTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------PedometerDetection_SensorJsTest001---------------------------');
@@ -172,13 +172,13 @@ describe("SensorJsTest_sensor_17", function () {
             }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0020
-     * @tc.name:PedometerDetection_SensorJsTest002
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   PedometerDetection_SensorJsTest002
+     * @tc.number SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0020
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("PedometerDetection_SensorJsTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------PedometerDetection_SensorJsTest002---------------------------');
@@ -205,13 +205,13 @@ describe("SensorJsTest_sensor_17", function () {
             }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0030
-     * @tc.name:PedometerDetection_SensorJsTest003
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   PedometerDetection_SensorJsTest003
+     * @tc.number SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0030
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("PedometerDetection_SensorJsTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------PedometerDetection_SensorJsTest003---------------------------');
@@ -241,13 +241,13 @@ describe("SensorJsTest_sensor_17", function () {
             }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0040
-     * @tc.name:PedometerDetection_SensorJsTest004
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   PedometerDetection_SensorJsTest004
+     * @tc.number SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0040
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("PedometerDetection_SensorJsTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------PedometerDetection_SensorJsTest004---------------------------');
@@ -277,13 +277,13 @@ describe("SensorJsTest_sensor_17", function () {
             }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0050
-     * @tc.name:PedometerDetection_SensorJsTest005
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   PedometerDetection_SensorJsTest005
+     * @tc.number SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0050
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("PedometerDetection_SensorJsTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------PedometerDetection_SensorJsTest005---------------------------');
@@ -310,13 +310,13 @@ describe("SensorJsTest_sensor_17", function () {
             }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0060
-     * @tc.name:PedometerDetection_SensorJsTest006
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   PedometerDetection_SensorJsTest006
+     * @tc.number SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0060
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("PedometerDetection_SensorJsTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------PedometerDetection_SensorJsTest006---------------------------');
@@ -341,13 +341,13 @@ describe("SensorJsTest_sensor_17", function () {
             }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0070
-     * @tc.name:PedometerDetection_SensorJsTest007
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   PedometerDetection_SensorJsTest007
+     * @tc.number SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0070
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("PedometerDetection_SensorJsTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------PedometerDetection_SensorJsTest007---------------------------');
@@ -378,13 +378,13 @@ describe("SensorJsTest_sensor_17", function () {
             }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0080
-     * @tc.name:PedometerDetection_SensorJsTest008
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   PedometerDetection_SensorJsTest008
+     * @tc.number SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0080
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("PedometerDetection_SensorJsTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------PedometerDetection_SensorJsTest008---------------------------');
@@ -418,13 +418,13 @@ describe("SensorJsTest_sensor_17", function () {
             }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0090
-     * @tc.name:PedometerDetection_SensorJsTest009
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   PedometerDetection_SensorJsTest009
+     * @tc.number SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0090
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("PedometerDetection_SensorJsTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------PedometerDetection_SensorJsTest009---------------------------');
@@ -455,13 +455,13 @@ describe("SensorJsTest_sensor_17", function () {
             }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0100
-     * @tc.name:PedometerDetection_SensorJsTest010
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   PedometerDetection_SensorJsTest010
+     * @tc.number SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0100
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("PedometerDetection_SensorJsTest010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------PedometerDetection_SensorJsTest010---------------------------');
@@ -491,13 +491,13 @@ describe("SensorJsTest_sensor_17", function () {
         }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0110
-     * @tc.name:PedometerDetection_SensorJsTest011
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   PedometerDetection_SensorJsTest011
+     * @tc.number SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0110
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("PedometerDetection_SensorJsTest011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------PedometerDetection_SensorJsTest011--------');
@@ -536,13 +536,13 @@ describe("SensorJsTest_sensor_17", function () {
             }
     })
 
-     /*
-     * @tc.number:SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0120
-     * @tc.name:PedometerDetection_SensorJsTest012
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   PedometerDetection_SensorJsTest012
+     * @tc.number SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0120
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("PedometerDetection_SensorJsTest012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------PedometerDetection_SensorJsTest012--------');
@@ -572,13 +572,13 @@ describe("SensorJsTest_sensor_17", function () {
             }
     })
 
-     /*
-     * @tc.number:SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0130
-     * @tc.name:PedometerDetection_SensorJsTest013
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   PedometerDetection_SensorJsTest013
+     * @tc.number SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0130
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("PedometerDetection_SensorJsTest013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------PedometerDetection_SensorJsTest013--------');
@@ -608,13 +608,13 @@ describe("SensorJsTest_sensor_17", function () {
             }
     })
 
-     /*
-     * @tc.number:SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0140
-     * @tc.name:PedometerDetection_SensorJsTest014
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   PedometerDetection_SensorJsTest014
+     * @tc.number SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0140
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("PedometerDetection_SensorJsTest014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------PedometerDetection_SensorJsTest014--------');
@@ -648,14 +648,14 @@ describe("SensorJsTest_sensor_17", function () {
             }
     })
 
-     /*
-     * @tc.number:SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0150
-     * @tc.name:PedometerDetection_SensorJsTest015
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
-     */
+     /**
+      * @tc.name   PedometerDetection_SensorJsTest015
+      * @tc.number SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0150
+      * @tc.desc   Verification results of the incorrect parameters of the test interface
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it("PedometerDetection_SensorJsTest015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------PedometerDetection_SensorJsTest015---------------------------');
             try {
@@ -681,13 +681,13 @@ describe("SensorJsTest_sensor_17", function () {
             }
     })
 
-     /*
-     * @tc.number:SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0160
-     * @tc.name:PedometerDetection_SensorJsTest016
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   PedometerDetection_SensorJsTest016
+     * @tc.number SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0160
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("PedometerDetection_SensorJsTest016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------PedometerDetection_SensorJsTest016--------');
@@ -727,13 +727,13 @@ describe("SensorJsTest_sensor_17", function () {
             }
     })
 
-     /*
-     * @tc.number:SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0170
-     * @tc.name:PedometerDetection_SensorJsTest017
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   PedometerDetection_SensorJsTest017
+     * @tc.number SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0170
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("PedometerDetection_SensorJsTest017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------PedometerDetection_SensorJsTest017--------');
@@ -764,13 +764,13 @@ describe("SensorJsTest_sensor_17", function () {
             }
     })
 
-     /*
-     * @tc.number:SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0180
-     * @tc.name:PedometerDetection_SensorJsTest018
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   PedometerDetection_SensorJsTest018
+     * @tc.number SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0180
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("PedometerDetection_SensorJsTest018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('----------------------PedometerDetection_SensorJsTest018---------------------------');
@@ -800,13 +800,13 @@ describe("SensorJsTest_sensor_17", function () {
             }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0190
-     * @tc.name:PedometerDetection_SensorJsTest019
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   PedometerDetection_SensorJsTest019
+     * @tc.number SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0190
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("PedometerDetection_SensorJsTest019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------PedometerDetection_SensorJsTest019---------------------------');
@@ -837,13 +837,13 @@ describe("SensorJsTest_sensor_17", function () {
             }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0200
-     * @tc.name:PedometerDetection_SensorJsTest020
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   PedometerDetection_SensorJsTest020
+     * @tc.number SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0200
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("PedometerDetection_SensorJsTest020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------PedometerDetection_SensorJsTest020---------------------------');
@@ -877,13 +877,13 @@ describe("SensorJsTest_sensor_17", function () {
             }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0210
-     * @tc.name:PedometerDetection_SensorJsTest021
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   PedometerDetection_SensorJsTest021
+     * @tc.number SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0210
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("PedometerDetection_SensorJsTest021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------PedometerDetection_SensorJsTest021---------------------------');
@@ -918,13 +918,13 @@ describe("SensorJsTest_sensor_17", function () {
             }
     })
 
-    /*
-     * @tc.number: SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0220
-     * @tc.name:PedometerDetection_SensorJsTest022
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   PedometerDetection_SensorJsTest022
+     * @tc.number SUB_SensorsSystem_PEDOMETER_DETECTION_JSTest_0220
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("PedometerDetection_SensorJsTest022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             try {

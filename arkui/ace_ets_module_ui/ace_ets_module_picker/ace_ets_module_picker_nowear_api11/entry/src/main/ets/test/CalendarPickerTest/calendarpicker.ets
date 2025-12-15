@@ -39,10 +39,13 @@ export default function calendarpicker() {
       done();
     })
 
-    /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_textStyle_0100     
-     * @tc.name         Tests the textStyle property of the CalendarCalendarPicker component
-     * @tc.desc         get the default value
+    /**
+     * @tc.name   ArkUI_Stage_CalendarPicker_textStyle_0100
+     * @tc.number ArkUI_Stage_CalendarPicker_textStyle_0100
+     * @tc.desc   get the default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_CalendarPicker_textStyle_0100', Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('CalendarPicker');
@@ -54,10 +57,13 @@ export default function calendarpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_textStyle_0200
-     * @tc.name         Tests the textStyle property of the CalendarPicker component
-     * @tc.desc         set textStyle then get the value
+    /**
+     * @tc.name   ArkUI_Stage_CalendarPicker_textStyle_0200
+     * @tc.number ArkUI_Stage_CalendarPicker_textStyle_0200
+     * @tc.desc   set textStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_CalendarPicker_textStyle_0200', Level.LEVEL1, async (done: Function) => {  
       let value: CalendarPickerTextStyle = {color:'#ff0000',font:{size:'1px',weight:'700'}}    
@@ -86,10 +92,13 @@ export default function calendarpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_textStyle_0300
-     * @tc.name         Tests the textStyle property of the CalendarPicker component
-     * @tc.desc         set textStyle then get the value
+    /**
+     * @tc.name   ArkUI_Stage_CalendarPicker_textStyle_0300
+     * @tc.number ArkUI_Stage_CalendarPicker_textStyle_0300
+     * @tc.desc   set textStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_CalendarPicker_textStyle_0300', Level.LEVEL1, async (done: Function) => { 
       let value: CalendarPickerTextStyle = {color:Color.Green,font:{size:30,weight:450}}         
@@ -118,10 +127,13 @@ export default function calendarpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_textStyle_0400
-     * @tc.name         Tests the textStyle property of the CalendarPicker component
-     * @tc.desc         set textStyle then get the value
+    /**
+     * @tc.name   ArkUI_Stage_CalendarPicker_textStyle_0400
+     * @tc.number ArkUI_Stage_CalendarPicker_textStyle_0400
+     * @tc.desc   set textStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_CalendarPicker_textStyle_0400', Level.LEVEL1, async (done: Function) => {   
       let value: CalendarPickerTextStyle = {color:'#80808g',font:{size:-1,weight:1000}}      
@@ -154,10 +166,13 @@ export default function calendarpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_textStyle_0500
-     * @tc.name         Tests the textStyle property of the CalendarPicker component
-     * @tc.desc         set textStyle then get the value
+    /**
+     * @tc.name   ArkUI_Stage_CalendarPicker_textStyle_0500
+     * @tc.number ArkUI_Stage_CalendarPicker_textStyle_0500
+     * @tc.desc   set textStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_CalendarPicker_textStyle_0500', Level.LEVEL1, async (done: Function) => {   
       let value: CalendarPickerTextStyle = {color:'xxx',font:{size:'xxx',weight:FontWeight.Bold}}       
@@ -190,10 +205,13 @@ export default function calendarpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_textStyle_0600
-     * @tc.name         Tests the textStyle property of the CalendarPicker component
-     * @tc.desc         set textStyle then get the value
+    /**
+     * @tc.name   ArkUI_Stage_CalendarPicker_textStyle_0600
+     * @tc.number ArkUI_Stage_CalendarPicker_textStyle_0600
+     * @tc.desc   set textStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_CalendarPicker_textStyle_0600', Level.LEVEL1, async (done: Function) => { 
       let value: CalendarPickerTextStyle = {color:'rgb(138,43,226)',font:{size:'20vp',weight:900}} 
@@ -221,10 +239,13 @@ export default function calendarpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_textStyle_0700
-     * @tc.name         Tests the textStyle property of the CalendarPicker component
-     * @tc.desc         set textStyle then get the value
+    /**
+     * @tc.name   ArkUI_Stage_CalendarPicker_textStyle_0700
+     * @tc.number ArkUI_Stage_CalendarPicker_textStyle_0700
+     * @tc.desc   set textStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_CalendarPicker_textStyle_0700', Level.LEVEL1, async (done: Function) => { 
       let value: CalendarPickerTextStyle = {color:'rgb(138,43,226)',font:{size:'15lpx',weight:90}} 
@@ -252,10 +273,13 @@ export default function calendarpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_EdgeAlign_0100
-     * @tc.name         Tests the EdgeAlign of the CalendarPicker component
-     * @tc.desc         set EdgeAlign then get the value
+    /**
+     * @tc.name   ArkUI_Stage_CalendarPicker_EdgeAlign_0100
+     * @tc.number ArkUI_Stage_CalendarPicker_EdgeAlign_0100
+     * @tc.desc   set EdgeAlign then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_CalendarPicker_EdgeAlign_0100', Level.LEVEL1, async (done: Function) => { 
       let strJson = getInspectorByKey('CalendarPicker');
@@ -266,10 +290,13 @@ export default function calendarpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_EdgeAlign_0200
-     * @tc.name         Tests the EdgeAlign property of the CalendarPicker component
-     * @tc.desc         set EdgeAlign then get the value
+    /**
+     * @tc.name   ArkUI_Stage_CalendarPicker_EdgeAlign_0200
+     * @tc.number ArkUI_Stage_CalendarPicker_EdgeAlign_0200
+     * @tc.desc   set EdgeAlign then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_CalendarPicker_EdgeAlign_0200', Level.LEVEL1, async (done: Function) => {    
       try {
@@ -297,10 +324,13 @@ export default function calendarpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_EdgeAlign_0300
-     * @tc.name         Tests the EdgeAlign property of the CalendarPicker component
-     * @tc.desc         set EdgeAlign then get the value
+    /**
+     * @tc.name   ArkUI_Stage_CalendarPicker_EdgeAlign_0300
+     * @tc.number ArkUI_Stage_CalendarPicker_EdgeAlign_0300
+     * @tc.desc   set EdgeAlign then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_CalendarPicker_EdgeAlign_0300', Level.LEVEL1, async (done: Function) => { 
       try {
@@ -327,10 +357,13 @@ export default function calendarpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_EdgeAlign_0400
-     * @tc.name         Tests the EdgeAlign property of the CalendarPicker component
-     * @tc.desc         set EdgeAlign then get the value
+    /**
+     * @tc.name   ArkUI_Stage_CalendarPicker_EdgeAlign_0400
+     * @tc.number ArkUI_Stage_CalendarPicker_EdgeAlign_0400
+     * @tc.desc   set EdgeAlign then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_CalendarPicker_EdgeAlign_0400', Level.LEVEL1, async (done: Function) => { 
       try {
@@ -357,10 +390,13 @@ export default function calendarpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_EdgeAlign_0500
-     * @tc.name         Tests the EdgeAlign property of the CalendarPicker component
-     * @tc.desc         set EdgeAlign then get the value
+    /**
+     * @tc.name   ArkUI_Stage_CalendarPicker_EdgeAlign_0500
+     * @tc.number ArkUI_Stage_CalendarPicker_EdgeAlign_0500
+     * @tc.desc   set EdgeAlign then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_CalendarPicker_EdgeAlign_0500', Level.LEVEL1, async (done: Function) => { 
       try {
@@ -385,10 +421,13 @@ export default function calendarpicker() {
       done();
     }); 
 
-    /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_EdgeAlign_0600
-     * @tc.name         Tests the EdgeAlign property of the CalendarPicker component
-     * @tc.desc         set EdgeAlign then get the value
+    /**
+     * @tc.name   ArkUI_Stage_CalendarPicker_EdgeAlign_0600
+     * @tc.number ArkUI_Stage_CalendarPicker_EdgeAlign_0600
+     * @tc.desc   set EdgeAlign then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_CalendarPicker_EdgeAlign_0600', Level.LEVEL1, async (done: Function) => { 
       let strJson = getInspectorByKey('CalendarPicker1');
@@ -401,10 +440,13 @@ export default function calendarpicker() {
       done();
     });    
 
-    /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_EdgeAlign_0700
-     * @tc.name         Tests the EdgeAlign property of the CalendarPicker component
-     * @tc.desc         set EdgeAlign then get the value
+    /**
+     * @tc.name   ArkUI_Stage_CalendarPicker_EdgeAlign_0700
+     * @tc.number ArkUI_Stage_CalendarPicker_EdgeAlign_0700
+     * @tc.desc   set EdgeAlign then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_CalendarPicker_EdgeAlign_0700', Level.LEVEL1, async (done: Function) => { 
       let strJson = getInspectorByKey('CalendarPicker2');
@@ -417,10 +459,13 @@ export default function calendarpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_EdgeAlign_0800
-     * @tc.name         Tests the EdgeAlign property of the CalendarPicker component
-     * @tc.desc         set EdgeAlign then get the value
+    /**
+     * @tc.name   ArkUI_Stage_CalendarPicker_EdgeAlign_0800
+     * @tc.number ArkUI_Stage_CalendarPicker_EdgeAlign_0800
+     * @tc.desc   set EdgeAlign then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_CalendarPicker_EdgeAlign_0800', Level.LEVEL1, async (done: Function) => { 
       let strJson = getInspectorByKey('CalendarPicker3');
@@ -433,11 +478,14 @@ export default function calendarpicker() {
       done();
     });
     
-    /*
-     * @tc.number       ArkUI_Stage_CalendarPicker_hintRadius_0100
-     * @tc.name         Tests the hintRadius property of the CalendarPicker component
-     * @tc.desc         get the property of the hintRadius
-     */
+   /**
+    * @tc.name   ArkUI_Stage_CalendarPicker_hintRadius_0100
+    * @tc.number ArkUI_Stage_CalendarPicker_hintRadius_0100
+    * @tc.desc   get the property of the hintRadius
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
 	  it('ArkUI_Stage_CalendarPicker_hintRadius_0100', Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('CalendarPicker');
       let obj: Record<string, ESObject> = JSON.parse(strJson);

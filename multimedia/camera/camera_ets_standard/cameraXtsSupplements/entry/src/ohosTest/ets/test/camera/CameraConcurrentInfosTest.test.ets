@@ -172,12 +172,12 @@ export function CameraConcurrentTest() {
 
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_001
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_001
-     * @tc.desc       check camerainput open by concurrent cameraPosition -1
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_001
+     * @tc.desc   check camerainput open by concurrent cameraPosition -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_001', Level.LEVEL0, async (done: Function) => {
       if (mCameraNum == 0) {
@@ -205,12 +205,12 @@ export function CameraConcurrentTest() {
       done();
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_002
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_002
-     * @tc.desc       check camerainput open by concurrent cameraPosition 4
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_002
+     * @tc.number SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_002
+     * @tc.desc   check camerainput open by concurrent cameraPosition 4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_002', Level.LEVEL0, async (done: Function) => {
       if (mCameraNum == 0) {
@@ -240,12 +240,12 @@ export function CameraConcurrentTest() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_003
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_003
-     * @tc.desc       check camerainput open by concurrent cameraType 5
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_003
+     * @tc.number SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_003
+     * @tc.desc   check camerainput open by concurrent cameraType 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_003', Level.LEVEL0, async (done: Function) => {
       if (mCameraNum == 0) {
@@ -274,12 +274,12 @@ export function CameraConcurrentTest() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_004
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_004
-     * @tc.desc       check camerainput open by concurrent cameraType -1
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_004
+     * @tc.number SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_004
+     * @tc.desc   check camerainput open by concurrent cameraType -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_004', Level.LEVEL0, async (done: Function) => {
       if (mCameraNum == 0) {
@@ -308,12 +308,12 @@ export function CameraConcurrentTest() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_005
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_005
-     * @tc.desc       check camerainput open by concurrent cameraOrientation -1
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_005
+     * @tc.number SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_005
+     * @tc.desc   check camerainput open by concurrent cameraOrientation -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_005', Level.LEVEL0, async (done: Function) => {
       if (mCameraNum == 0) {
@@ -340,12 +340,12 @@ export function CameraConcurrentTest() {
       done();
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_006
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_006
-     * @tc.desc       check camerainput open by concurrent cameraOrientation 361
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_006
+     * @tc.number SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_006
+     * @tc.desc   check camerainput open by concurrent cameraOrientation 361
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_006', Level.LEVEL0, async (done: Function) => {
       if (mCameraNum == 0) {
@@ -374,12 +374,12 @@ export function CameraConcurrentTest() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_007
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_007
-     * @tc.desc       check camerainput open by concurrent ConnectionType 3
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_007
+     * @tc.number SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_007
+     * @tc.desc   check camerainput open by concurrent ConnectionType 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_007', Level.LEVEL0, async (done: Function) => {
       if (mCameraNum == 0) {
@@ -408,12 +408,12 @@ export function CameraConcurrentTest() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_008
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_008
-     * @tc.desc       check camerainput open by concurrent ConnectionType -1
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_008
+     * @tc.number SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_008
+     * @tc.desc   check camerainput open by concurrent ConnectionType -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_008', Level.LEVEL0, async (done: Function) => {
       if (mCameraNum == 0) {
@@ -440,12 +440,12 @@ export function CameraConcurrentTest() {
       done();
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_009
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_009
-     * @tc.desc       check camerainput open by concurrent hostDeviceName empty
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_009
+     * @tc.number SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_009
+     * @tc.desc   check camerainput open by concurrent hostDeviceName empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_009', Level.LEVEL0, async (done: Function) => {
       if (mCameraNum == 0) {
@@ -473,12 +473,12 @@ export function CameraConcurrentTest() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_010
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_010
-     * @tc.desc       check camerainput open by concurrent hostDeviceType -1
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_010
+     * @tc.number SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_010
+     * @tc.desc   check camerainput open by concurrent hostDeviceType -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_010', Level.LEVEL0, async (done: Function) => {
       if (mCameraNum == 0) {
@@ -506,12 +506,12 @@ export function CameraConcurrentTest() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_011
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_011
-     * @tc.desc       check camerainput open by concurrent hostDeviceType  0x12
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_011
+     * @tc.number SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_011
+     * @tc.desc   check camerainput open by concurrent hostDeviceType  0x12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_011', Level.LEVEL0, async (done: Function) => {
       if (mCameraNum == 0) {
@@ -539,12 +539,12 @@ export function CameraConcurrentTest() {
       done();
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_012
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_012
-     * @tc.desc       check camerainput open by concurrent CameraConcurrentInfos empty
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_012
+     * @tc.number SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_012
+     * @tc.desc   check camerainput open by concurrent CameraConcurrentInfos empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_012', Level.LEVEL0, async (done: Function) => {
       if (mCameraNum == 0) {
@@ -565,12 +565,12 @@ export function CameraConcurrentTest() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_013
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_013
-     * @tc.desc       check camerainput open by concurrent CameraConcurrentInfos null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_013
+     * @tc.number SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_013
+     * @tc.desc   check camerainput open by concurrent CameraConcurrentInfos null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_013', Level.LEVEL0, async (done: Function) => {
       if (mCameraNum == 0) {
@@ -590,12 +590,12 @@ export function CameraConcurrentTest() {
       done();
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_014
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_014
-     * @tc.desc       check camerainput open by concurrent CameraConcurrentInfos undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_014
+     * @tc.number SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_014
+     * @tc.desc   check camerainput open by concurrent CameraConcurrentInfos undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_ERROR_014', Level.LEVEL0, async (done: Function) => {
       if (mCameraNum == 0) {

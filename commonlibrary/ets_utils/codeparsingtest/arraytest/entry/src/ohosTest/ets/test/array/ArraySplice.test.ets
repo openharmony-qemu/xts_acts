@@ -49,12 +49,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0001
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0001
-     * @tc.name testArraySplice0001
-     * @tc.desc Verify splice removes a single element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes a single element
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -64,12 +64,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0002
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0002
-     * @tc.name testArraySplice0002
-     * @tc.desc Verify splice inserts a single element without removal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice inserts a single element without removal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -78,12 +78,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0003
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0003
-     * @tc.name testArraySplice0003
-     * @tc.desc Verify splice inserts multiple elements without removal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice inserts multiple elements without removal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -92,12 +92,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0004
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0004
-     * @tc.name testArraySplice0004
-     * @tc.desc Verify splice removes multiple elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes multiple elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4, 5];
@@ -107,12 +107,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0005
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0005
-     * @tc.name testArraySplice0005
-     * @tc.desc Verify splice with negative start index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice with negative start index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4, 5];
@@ -122,12 +122,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0006
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0006
-     * @tc.name testArraySplice0006
-     * @tc.desc Verify splice removes zero elements when deleteCount is 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes zero elements when deleteCount is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -137,12 +137,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0007
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0007
-     * @tc.name testArraySplice0007
-     * @tc.desc Verify splice with start index greater than array length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice with start index greater than array length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -152,12 +152,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0008
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0008
-     * @tc.name testArraySplice0008
-     * @tc.desc Verify splice removes all elements if deleteCount exceeds length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes all elements if deleteCount exceeds length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -167,12 +167,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0009
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0009
-     * @tc.name testArraySplice0009
-     * @tc.desc Verify splice on array of strings
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice on array of strings
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['a', 'b', 'c', 'd'];
@@ -182,12 +182,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0010
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0010
-     * @tc.name testArraySplice0010
-     * @tc.desc Verify splice inserts objects into array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice inserts objects into array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Obj { a: number }
@@ -199,12 +199,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0011
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0011
-     * @tc.name testArraySplice0011
-     * @tc.desc Verify splice on array of nested arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice on array of nested arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1, 2], [3, 4], [5, 6]];
@@ -216,12 +216,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0012
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0012
-     * @tc.name testArraySplice0012
-     * @tc.desc Verify splice with start index 0 and deleteCount 0 inserts elements at beginning
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice with start index 0 and deleteCount 0 inserts elements at beginning
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [2, 3, 4];
@@ -230,12 +230,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0013
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0013
-     * @tc.name testArraySplice0013
-     * @tc.desc Verify splice removes and inserts multiple object elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes and inserts multiple object elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Obj { x: number; }
@@ -247,12 +247,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0014
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0014
-     * @tc.name testArraySplice0014
-     * @tc.desc Verify splice removes element from array of strings
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes element from array of strings
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['a', 'b', 'c'];
@@ -262,12 +262,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0015
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0015
-     * @tc.name testArraySplice0015
-     * @tc.desc Verify splice inserts class instances into array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice inserts class instances into array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -284,12 +284,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0016
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0016
-     * @tc.name testArraySplice0016
-     * @tc.desc Verify splice with negative start index inserts element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice with negative start index inserts element
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -298,12 +298,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0017
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0017
-     * @tc.name testArraySplice0017
-     * @tc.desc Verify splice removes zero elements when deleteCount is 0 at end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes zero elements when deleteCount is 0 at end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -313,12 +313,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0018
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0018
-     * @tc.name testArraySplice0018
-     * @tc.desc Verify splice removes all elements if deleteCount exceeds array length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes all elements if deleteCount exceeds array length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -328,12 +328,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0019
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0019
-     * @tc.name testArraySplice0019
-     * @tc.desc Verify splice inserts multiple nested arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice inserts multiple nested arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number[] | number[][])[] = [[1, 2], [3, 4]];
@@ -342,12 +342,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0020
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0020
-     * @tc.name testArraySplice0020
-     * @tc.desc Verify splice on array of optional objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice on array of optional objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { x?: number }
@@ -359,12 +359,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0021
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0021
-     * @tc.name testArraySplice0021
-     * @tc.desc Verify splice removes elements from array after push
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes elements from array after push
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -375,12 +375,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0022
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0022
-     * @tc.name testArraySplice0022
-     * @tc.desc Verify splice replaces elements with class instances
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice replaces elements with class instances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -398,12 +398,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0023
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0023
-     * @tc.name testArraySplice0023
-     * @tc.desc Verify splice with negative start index removes and inserts elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice with negative start index removes and inserts elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -413,12 +413,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0024
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0024
-     * @tc.name testArraySplice0024
-     * @tc.desc Verify splice inserts elements at the end of the array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice inserts elements at the end of the array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -427,12 +427,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0025
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0025
-     * @tc.name testArraySplice0025
-     * @tc.desc Verify splice removes all elements when deleteCount equals array length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes all elements when deleteCount equals array length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -442,12 +442,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0026
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0026
-     * @tc.name testArraySplice0026
-     * @tc.desc Verify splice on array of strings removes and inserts elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice on array of strings removes and inserts elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['a', 'b', 'c', 'd'];
@@ -457,12 +457,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0027
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0027
-     * @tc.name testArraySplice0027
-     * @tc.desc Verify splice removes no elements if deleteCount is 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes no elements if deleteCount is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -472,12 +472,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0028
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0028
-     * @tc.name testArraySplice0028
-     * @tc.desc Verify splice inserts elements of different types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice inserts elements of different types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | string)[] = [1, 'a', 2];
@@ -486,12 +486,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0029
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0029
-     * @tc.name testArraySplice0029
-     * @tc.desc Verify splice removes elements from an array of optional objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes elements from an array of optional objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { a?: number }
@@ -503,12 +503,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0030
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0030
-     * @tc.name testArraySplice0030
-     * @tc.desc Verify splice on array of class instances removes and inserts
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice on array of class instances removes and inserts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -526,12 +526,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0031
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0031
-     * @tc.name testArraySplice0031
-     * @tc.desc Verify splice with negative start index and deleteCount exceeding array length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice with negative start index and deleteCount exceeding array length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -541,12 +541,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0032
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0032
-     * @tc.name testArraySplice0032
-     * @tc.desc Verify splice inserts multiple nested arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice inserts multiple nested arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number[] | number[][])[] = [[1, 2], [3, 4]];
@@ -555,12 +555,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0033
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0033
-     * @tc.name testArraySplice0033
-     * @tc.desc Verify splice on array of optional objects with insertion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice on array of optional objects with insertion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { a?: number }
@@ -572,12 +572,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0034
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0034
-     * @tc.name testArraySplice0034
-     * @tc.desc Verify splice removes elements from class instance array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes elements from class instance array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -595,12 +595,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0035
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0035
-     * @tc.name testArraySplice0035
-     * @tc.desc Verify splice inserts elements at the end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice inserts elements at the end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -609,12 +609,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0036
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0036
-     * @tc.name testArraySplice0036
-     * @tc.desc Verify splice removes elements from mixed type array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes elements from mixed type array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | string)[] = [1, 'a', 2, 'b'];
@@ -624,12 +624,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0037
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0037
-     * @tc.name testArraySplice0037
-     * @tc.desc Verify splice with zero deleteCount inserts elements without removal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice with zero deleteCount inserts elements without removal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -639,12 +639,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0038
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0038
-     * @tc.name testArraySplice0038
-     * @tc.desc Verify splice removes all elements when deleteCount equals array length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes all elements when deleteCount equals array length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -654,12 +654,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0039
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0039
-     * @tc.name testArraySplice0039
-     * @tc.desc Verify splice removes elements after push
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes elements after push
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2];
@@ -670,12 +670,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0040
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0040
-     * @tc.name testArraySplice0040
-     * @tc.desc Verify splice inserts elements into array of class instances
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice inserts elements into array of class instances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -692,12 +692,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0041
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0041
-     * @tc.name testArraySplice0041
-     * @tc.desc Verify splice removes elements using negative start index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes elements using negative start index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4, 5];
@@ -707,12 +707,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0042
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0042
-     * @tc.name testArraySplice0042
-     * @tc.desc Verify splice inserts elements at start using negative index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice inserts elements at start using negative index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [3, 4, 5];
@@ -721,12 +721,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0043
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0043
-     * @tc.name testArraySplice0043
-     * @tc.desc Verify splice removes no elements if start index exceeds array length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes no elements if start index exceeds array length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -736,12 +736,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0044
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0044
-     * @tc.name testArraySplice0044
-     * @tc.desc Verify splice removes middle element from string array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes middle element from string array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['a', 'b', 'c', 'd'];
@@ -751,12 +751,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0045
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0045
-     * @tc.name testArraySplice0045
-     * @tc.desc Verify splice inserts object elements into array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice inserts object elements into array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Obj { x: number }
@@ -767,12 +767,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0046
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0046
-     * @tc.name testArraySplice0046
-     * @tc.desc Verify splice removes all elements and inserts new ones
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes all elements and inserts new ones
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -782,12 +782,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0047
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0047
-     * @tc.name testArraySplice0047
-     * @tc.desc Verify splice on array of optional objects with multiple insertions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice on array of optional objects with multiple insertions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { a?: number }
@@ -799,12 +799,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0048
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0048
-     * @tc.name testArraySplice0048
-     * @tc.desc Verify splice removes from nested arrays and inserts new arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes from nested arrays and inserts new arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number[] | number[][])[] = [[1, 2], [3, 4], [5, 6]];
@@ -814,12 +814,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0049
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0049
-     * @tc.name testArraySplice0049
-     * @tc.desc Verify splice removes elements and returns correct removed array for mixed types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes elements and returns correct removed array for mixed types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | string)[] = [1, 'a', 2, 'b'];
@@ -829,12 +829,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0050
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0050
-     * @tc.name testArraySplice0050
-     * @tc.desc Verify splice inserts class instances and removes existing elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice inserts class instances and removes existing elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -852,12 +852,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0051
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0051
-     * @tc.name testArraySplice0051
-     * @tc.desc Verify splice after push inserts elements at specific position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice after push inserts elements at specific position
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2];
@@ -868,12 +868,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0052
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0052
-     * @tc.name testArraySplice0052
-     * @tc.desc Verify splice combined with slice preserves array immutability
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice combined with slice preserves array immutability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -885,12 +885,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0053
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0053
-     * @tc.name testArraySplice0053
-     * @tc.desc Verify splice with nested array elements and negative start index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice with nested array elements and negative start index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number[] | number[][])[] = [[1, 2], [3, 4], [5, 6]];
@@ -900,12 +900,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0054
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0054
-     * @tc.name testArraySplice0054
-     * @tc.desc Verify splice removes elements and returns correct array for optional objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes elements and returns correct array for optional objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { a?: number }
@@ -917,12 +917,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0055
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0055
-     * @tc.name testArraySplice0055
-     * @tc.desc Verify splice inserts elements into array of class instances and then pop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice inserts elements into array of class instances and then pop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -941,12 +941,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0056
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0056
-     * @tc.name testArraySplice0056
-     * @tc.desc Verify splice combined with push and slice on mixed type array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice combined with push and slice on mixed type array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | string)[] = [1, 'a', 2, 'b'];
@@ -959,12 +959,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0057
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0057
-     * @tc.name testArraySplice0057
-     * @tc.desc Verify splice removes from array of nested arrays and inserts multiple arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes from array of nested arrays and inserts multiple arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number[] | number[][])[] = [[1, 2], [3, 4], [5, 6]];
@@ -974,12 +974,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0058
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0058
-     * @tc.name testArraySplice0058
-     * @tc.desc Verify splice removes no elements if deleteCount is 0 and inserts at negative index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes no elements if deleteCount is 0 and inserts at negative index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -989,12 +989,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0059
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0059
-     * @tc.name testArraySplice0059
-     * @tc.desc Verify splice removes elements equal to deleteCount and inserts multiple types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes elements equal to deleteCount and inserts multiple types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | string)[] = [1, 'a', 2, 'b', 3];
@@ -1004,12 +1004,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0060
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0060
-     * @tc.name testArraySplice0060
-     * @tc.desc Verify splice on array of class instances with multiple insertions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice on array of class instances with multiple insertions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -1027,12 +1027,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0061
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0061
-     * @tc.name testArraySplice0061
-     * @tc.desc Verify splice combined with pop returns correct popped element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice combined with pop returns correct popped element
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -1043,12 +1043,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0062
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0062
-     * @tc.name testArraySplice0062
-     * @tc.desc Verify splice combined with slice on nested arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice combined with slice on nested arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number[] | number[][])[] = [[1, 2], [3, 4], [5, 6]];
@@ -1060,12 +1060,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0063
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0063
-     * @tc.name testArraySplice0063
-     * @tc.desc Verify splice removes first element from string array and inserts new elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes first element from string array and inserts new elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['a', 'b', 'c', 'd'];
@@ -1075,12 +1075,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0064
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0064
-     * @tc.name testArraySplice0064
-     * @tc.desc Verify splice inserts optional objects into array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice inserts optional objects into array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { a?: number }
@@ -1091,12 +1091,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0065
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0065
-     * @tc.name testArraySplice0065
-     * @tc.desc Verify splice removes all elements when start=0 and deleteCount exceeds length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes all elements when start=0 and deleteCount exceeds length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -1106,12 +1106,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0066
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0066
-     * @tc.name testArraySplice0066
-     * @tc.desc Verify splice inserts elements at end using start greater than length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice inserts elements at end using start greater than length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2];
@@ -1120,12 +1120,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0067
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0067
-     * @tc.name testArraySplice0067
-     * @tc.desc Verify splice removes elements from end using negative start
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes elements from end using negative start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -1135,12 +1135,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0068
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0068
-     * @tc.name testArraySplice0068
-     * @tc.desc Verify splice inserts elements into empty array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice inserts elements into empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [];
@@ -1150,12 +1150,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0070
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0070
-     * @tc.name testArraySplice0070
-     * @tc.desc Verify splice combined with multiple pop operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice combined with multiple pop operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -1168,12 +1168,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0071
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0071
-     * @tc.name testArraySplice0071
-     * @tc.desc Verify splice removes elements and returns correct array for mixed nested arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes elements and returns correct array for mixed nested arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number[] | string[])[] = [[1, 2], ['a', 'b'], [3, 4]];
@@ -1183,12 +1183,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0072
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0072
-     * @tc.name testArraySplice0072
-     * @tc.desc Verify splice combined with multiple pop operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice combined with multiple pop operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -1201,12 +1201,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0073
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0073
-     * @tc.name testArraySplice0073
-     * @tc.desc Verify splice with negative start index and deleteCount
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice with negative start index and deleteCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -1216,12 +1216,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0074
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0074
-     * @tc.name testArraySplice0074
-     * @tc.desc Verify splice with negative start index and insert elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice with negative start index and insert elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -1230,12 +1230,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0075
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0075
-     * @tc.name testArraySplice0075
-     * @tc.desc Verify splice with deleteCount of 0 and insert elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice with deleteCount of 0 and insert elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -1244,12 +1244,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0076
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0076
-     * @tc.name testArraySplice0076
-     * @tc.desc Verify splice with deleteCount greater than array length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice with deleteCount greater than array length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -1259,12 +1259,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0077
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0077
-     * @tc.name testArraySplice0077
-     * @tc.desc Verify splice with deleteCount of 0 and insert elements at end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice with deleteCount of 0 and insert elements at end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2];
@@ -1273,12 +1273,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0078
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0078
-     * @tc.name testArraySplice0078
-     * @tc.desc Verify splice with deleteCount of 0 and insert elements at start
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice with deleteCount of 0 and insert elements at start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2];
@@ -1287,12 +1287,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0079
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0079
-     * @tc.name testArraySplice0079
-     * @tc.desc Verify splice with deleteCount of 0 and insert elements at negative index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice with deleteCount of 0 and insert elements at negative index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2];
@@ -1301,12 +1301,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0080
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0080
-     * @tc.name testArraySplice0080
-     * @tc.desc Verify splice with deleteCount of 0 and insert multiple elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice with deleteCount of 0 and insert multiple elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2];
@@ -1315,12 +1315,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0081
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0081
-     * @tc.name testArraySplice0081
-     * @tc.desc Verify splice works correctly on sparse arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice works correctly on sparse arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [1, , 3, , 5];
@@ -1331,24 +1331,24 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0082
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0082
-     * @tc.name testArraySplice0082
-     * @tc.desc Verify splice can be applied to array-like objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice can be applied to array-like objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArraySpliceJs0082()).assertDeepEquals([1, 99, 3, 3]);
     });
 
     /**
+     * @tc.name   testArraySplice0083
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0083
-     * @tc.name testArraySplice0083
-     * @tc.desc Verify splice combined with map on array of numbers
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice combined with map on array of numbers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -1358,12 +1358,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0084
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0084
-     * @tc.name testArraySplice0084
-     * @tc.desc Verify splice combined with filter to remove specific elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice combined with filter to remove specific elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4, 5];
@@ -1373,12 +1373,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0085
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0085
-     * @tc.name testArraySplice0085
-     * @tc.desc Verify splice combined with reduce to sum array elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice combined with reduce to sum array elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -1388,12 +1388,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0086
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0086
-     * @tc.name testArraySplice0086
-     * @tc.desc Verify splice on sparse array combined with map and filter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice on sparse array combined with map and filter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [1, , 3, , 5];
@@ -1404,24 +1404,24 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0087
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0087
-     * @tc.name testArraySplice0087
-     * @tc.desc Verify splice on array-like object combined with map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice on array-like object combined with map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArraySpliceJs0087()).assertDeepEquals([2, 198, 6]);
     });
 
     /**
+     * @tc.name   testArraySplice0088
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0088
-     * @tc.name testArraySplice0088
-     * @tc.desc Verify splice inserts elements and concatenates with another array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice inserts elements and concatenates with another array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -1431,12 +1431,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0089
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0089
-     * @tc.name testArraySplice0089
-     * @tc.desc Verify splice removes elements and then reverses array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes elements and then reverses array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -1446,12 +1446,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0090
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0090
-     * @tc.name testArraySplice0090
-     * @tc.desc Verify splice removes and inserts elements in combination with sort
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes and inserts elements in combination with sort
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [5, 2, 4, 3];
@@ -1461,12 +1461,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0091
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0091
-     * @tc.name testArraySplice0091
-     * @tc.desc Verify splice removes objects from array of interfaces and inserts new ones
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes objects from array of interfaces and inserts new ones
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Item {
@@ -1481,12 +1481,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0092
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0092
-     * @tc.name testArraySplice0092
-     * @tc.desc Verify splice on nested arrays combined with map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice on nested arrays combined with map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number[] | number[][])[] = [[1, 2], [3, 4], [5, 6]];
@@ -1498,12 +1498,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0093
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0093
-     * @tc.name testArraySplice0093
-     * @tc.desc Verify splice on class instances array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice on class instances array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -1521,12 +1521,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0094
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0094
-     * @tc.name testArraySplice0094
-     * @tc.desc Verify splice combined with reduce on numbers array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice combined with reduce on numbers array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4, 5];
@@ -1536,12 +1536,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0095
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0095
-     * @tc.name testArraySplice0095
-     * @tc.desc Verify splice with negative start combined with filter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice with negative start combined with filter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4, 5];
@@ -1551,12 +1551,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0096
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0096
-     * @tc.name testArraySplice0096
-     * @tc.desc Verify splice removes from array and concatenates with another array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes from array and concatenates with another array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -1568,12 +1568,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0097
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0097
-     * @tc.name testArraySplice0097
-     * @tc.desc Verify splice inserts multiple class instances and map their values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice inserts multiple class instances and map their values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -1590,12 +1590,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0098
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0098
-     * @tc.name testArraySplice0098
-     * @tc.desc Verify splice on sparse array with negative deleteCount is treated as zero
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice on sparse array with negative deleteCount is treated as zero
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [1, , 3, 4];
@@ -1606,12 +1606,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0099
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0099
-     * @tc.name testArraySplice0099
-     * @tc.desc Verify splice combined with flat on nested arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice combined with flat on nested arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number[] | number)[] = [1, [2, 3], [4, 5]];
@@ -1621,12 +1621,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0100
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0100
-     * @tc.name testArraySplice0100
-     * @tc.desc Verify splice with zero deleteCount combined with sort
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice with zero deleteCount combined with sort
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [5, 2, 4, 3];
@@ -1636,12 +1636,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0101
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0101
-     * @tc.name testArraySplice0101
-     * @tc.desc Verify splice removes last element and map values in reverse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes last element and map values in reverse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -1651,12 +1651,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0102
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0102
-     * @tc.name testArraySplice0102
-     * @tc.desc Verify splice inserts objects into array and filter based on property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice inserts objects into array and filter based on property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface I { val: number }
@@ -1668,24 +1668,24 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0103
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0103
-     * @tc.name testArraySplice0103
-     * @tc.desc Verify splice on array-like object with negative start index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice on array-like object with negative start index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArraySpliceJs0103()).assertDeepEquals([1, 99, 3, 3]);
     });
 
     /**
+     * @tc.name   testArraySplice0104
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0104
-     * @tc.name testArraySplice0104
-     * @tc.desc Verify splice combined with reduce and class instances
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice combined with reduce and class instances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -1703,12 +1703,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0105
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0105
-     * @tc.name testArraySplice0105
-     * @tc.desc Verify splice removes elements and flattens nested arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes elements and flattens nested arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number[] | number)[] = [1, [2, 3], 4];
@@ -1719,12 +1719,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0106
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0106
-     * @tc.name testArraySplice0106
-     * @tc.desc Verify splice inserts into sparse array and map non-empty elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice inserts into sparse array and map non-empty elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [1, , 3, , 5];
@@ -1736,12 +1736,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0107
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0107
-     * @tc.name testArraySplice0107
-     * @tc.desc Verify splice removes last element of nested array and reverse flatten
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice removes last element of nested array and reverse flatten
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1, 2], [3, 4], [5, 6]];
@@ -1752,12 +1752,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0108
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0108
-     * @tc.name testArraySplice0108
-     * @tc.desc Verify splice combined with object array sort by property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice combined with object array sort by property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface I { val: number }
@@ -1769,24 +1769,24 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testArraySplice0109
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0109
-     * @tc.name testArraySplice0109
-     * @tc.desc Verify splice on array-like object with multiple inserts
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice on array-like object with multiple inserts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArraySpliceJs0109()).assertDeepEquals([1, 99, 100, 2, 4]);
     });
 
     /**
+     * @tc.name   testArraySplice0110
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Splice_0110
-     * @tc.name testArraySplice0110
-     * @tc.desc Verify splice combined with reduce on sparse array and negative start
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify splice combined with reduce on sparse array and negative start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArraySplice0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [1, , 3, 4];
@@ -1796,12 +1796,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testSparseArray0001
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Sparse_0001
-     * @tc.name testSparseArray0001
-     * @tc.desc Verify sparse array processed by map then filter preserves non-empty values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify sparse array processed by map then filter preserves non-empty values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSparseArray0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [1, , 3, , 5];
@@ -1811,12 +1811,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testSparseArray0002
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Sparse_0002
-     * @tc.name testSparseArray0002
-     * @tc.desc Verify sparse array after splice and reduce sums correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify sparse array after splice and reduce sums correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSparseArray0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [, 2, , 4,];
@@ -1826,12 +1826,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testSparseArray0003
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Sparse_0003
-     * @tc.name testSparseArray0003
-     * @tc.desc Verify sparse array concat with normal array fills undefined as empty slots
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify sparse array concat with normal array fills undefined as empty slots
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSparseArray0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [1, , 3];
@@ -1841,12 +1841,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testSparseArray0004
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Sparse_0004
-     * @tc.name testSparseArray0004
-     * @tc.desc Verify sparse array reversed keeps undefined positions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify sparse array reversed keeps undefined positions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSparseArray0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [1, , 3, 4];
@@ -1855,12 +1855,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testSparseArray0005
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Sparse_0005
-     * @tc.name testSparseArray0005
-     * @tc.desc Verify sparse array sort moves undefined to end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify sparse array sort moves undefined to end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSparseArray0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [, 3, 1, , 2];
@@ -1870,12 +1870,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testSparseArray0006
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Sparse_0006
-     * @tc.name testSparseArray0006
-     * @tc.desc Verify sparse array mapped then flat removes nested arrays but keeps undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify sparse array mapped then flat removes nested arrays but keeps undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSparseArray0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number[] | undefined)[] = [[1, 2], , [3]];
@@ -1884,12 +1884,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testSparseArray0007
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Sparse_0007
-     * @tc.name testSparseArray0007
-     * @tc.desc Verify sparse array filter then splice behaves correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify sparse array filter then splice behaves correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSparseArray0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: (number | undefined)[] = [, 1, , 2, 3];
@@ -1899,12 +1899,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testSparseArray0008
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Sparse_0008
-     * @tc.name testSparseArray0008
-     * @tc.desc Verify sparse array reduceRight sums correctly from right to left
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify sparse array reduceRight sums correctly from right to left
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSparseArray0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [1, , 2, 3];
@@ -1913,12 +1913,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testSparseArray0009
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Sparse_0009
-     * @tc.name testSparseArray0009
-     * @tc.desc Verify sparse array joined into string treats undefined as empty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify sparse array joined into string treats undefined as empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSparseArray0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [1, , 2];
@@ -1927,12 +1927,12 @@ export default function ArraySpliceTest() {
     });
 
     /**
+     * @tc.name   testSparseArray0010
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Sparse_0010
-     * @tc.name testSparseArray0010
-     * @tc.desc Verify sparse array with fill replaces undefined correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify sparse array with fill replaces undefined correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSparseArray0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [, , 3];

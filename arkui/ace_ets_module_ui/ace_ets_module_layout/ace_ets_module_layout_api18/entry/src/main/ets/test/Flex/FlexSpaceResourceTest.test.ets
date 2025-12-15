@@ -46,12 +46,12 @@ export default function FlexSpaceResourceTest() {
     });
 
     /**
-     * @tc.number    FlexSpaceResourceTest_0010
-     * @tc.name      FlexSpaceResourceTest_0010
-     * @tc.desc      test Flex space: set main axle space is 10.9
-     * @tc.level:    Level 1
-     * @tc.type :    ColumnSpaceResource
-     * @tc.size :
+     * @tc.name   FlexSpaceResourceTest_0010
+     * @tc.number FlexSpaceResourceTest_0010
+     * @tc.desc   test Flex space: set main axle space is 10.9
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FlexSpaceResourceTest_0010', Level.LEVEL1, async (done: Function) => {
       console.info('[FlexSpaceResourceTest_0010] START');
@@ -86,12 +86,12 @@ export default function FlexSpaceResourceTest() {
     });
 
     /**
-     * @tc.number    FlexSpaceResourceTest_0020
-     * @tc.name      FlexSpaceResourceTest_0020
-     * @tc.desc      test Flex space: cross axle space is 10
-     * @tc.level:    Level 1
-     * @tc.type :    ColumnSpaceResource
-     * @tc.size :
+     * @tc.name   FlexSpaceResourceTest_0020
+     * @tc.number FlexSpaceResourceTest_0020
+     * @tc.desc   test Flex space: cross axle space is 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FlexSpaceResourceTest_0020', Level.LEVEL1, async (done: Function) => {
       console.info('[FlexSpaceResourceTest_0020] START');
@@ -127,12 +127,12 @@ export default function FlexSpaceResourceTest() {
     });
 
     /**
-     * @tc.number    FlexSpaceResourceTest_0030
-     * @tc.name      FlexSpaceResourceTest_0030
-     * @tc.desc      test Flex space: set main axle space is 10vp, cross axle space is 10px
-     * @tc.level:    Level 1
-     * @tc.type :    ColumnSpaceResource
-     * @tc.size :
+     * @tc.name   FlexSpaceResourceTest_0030
+     * @tc.number FlexSpaceResourceTest_0030
+     * @tc.desc   test Flex space: set main axle space is 10vp, cross axle space is 10px
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FlexSpaceResourceTest_0030', Level.LEVEL1, async (done: Function) => {
       console.info('[FlexSpaceResourceTest_0030] START');

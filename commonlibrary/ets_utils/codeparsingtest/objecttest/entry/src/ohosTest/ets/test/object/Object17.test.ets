@@ -145,12 +145,12 @@ export default function Object17Test() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   Object17Test001
      * @tc.number SUB_BUILTINS_Object17_TEST_0100
-     * @tc.name Object17Test001
-     * @tc.desc test object create (direct and inherited property)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create (direct and inherited property)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn01_testDefaultObjectExtensible();
@@ -158,12 +158,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test002
      * @tc.number SUB_BUILTINS_Object17_TEST_0200
-     * @tc.name Object17Test002
-     * @tc.desc test object create (null prototype)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create (null prototype)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn02_testPreventedObjectExtensible();
@@ -172,12 +172,12 @@ export default function Object17Test() {
 
 
     /**
+     * @tc.name   Object17Test004
      * @tc.number SUB_BUILTINS_Object17_TEST_0400
-     * @tc.name Object17Test004
-     * @tc.desc test null prototype object extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test null prototype object extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn04_testNullPrototypeObjectExtensible();
@@ -185,12 +185,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test006
      * @tc.number SUB_BUILTINS_Object17_TEST_0600
-     * @tc.name Object17Test006
-     * @tc.desc test default array extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test default array extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn06_testDefaultArrayExtensible();
@@ -198,12 +198,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test007
      * @tc.number SUB_BUILTINS_Object17_TEST_0700
-     * @tc.name Object17Test007
-     * @tc.desc test prevented array extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prevented array extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn07_testPreventedArrayExtensible();
@@ -211,12 +211,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test008
      * @tc.number SUB_BUILTINS_Object17_TEST_0800
-     * @tc.name Object17Test008
-     * @tc.desc test modify array after prevent extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test modify array after prevent extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       //是问题 node上为true
@@ -225,12 +225,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test009
      * @tc.number SUB_BUILTINS_Object17_TEST_0900
-     * @tc.name Object17Test009
-     * @tc.desc test default date extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test default date extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       //是问题 node上为true
@@ -239,12 +239,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test010
      * @tc.number SUB_BUILTINS_Object17_TEST_1000
-     * @tc.name Object17Test010
-     * @tc.desc test prevented date extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prevented date extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn10_testPreventedDateExtensible();
@@ -252,12 +252,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test011
      * @tc.number SUB_BUILTINS_Object17_TEST_1100
-     * @tc.name Object17Test011
-     * @tc.desc test default regexp extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test default regexp extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn11_testDefaultRegExpExtensible();
@@ -265,12 +265,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test012
      * @tc.number SUB_BUILTINS_Object17_TEST_1200
-     * @tc.name Object17Test012
-     * @tc.desc test prevented regexp extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prevented regexp extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn12_testPreventedRegExpExtensible();
@@ -278,12 +278,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test014
      * @tc.number SUB_BUILTINS_Object17_TEST_1400
-     * @tc.name Object17Test014
-     * @tc.desc test undefined parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn14_testUndefinedParameter();
@@ -291,12 +291,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test015
      * @tc.number SUB_BUILTINS_Object17_TEST_1500
-     * @tc.name Object17Test015
-     * @tc.desc test null parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test null parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn15_testNullParameter();
@@ -304,12 +304,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test016
      * @tc.number SUB_BUILTINS_Object17_TEST_1600
-     * @tc.name Object17Test016
-     * @tc.desc test frozen object extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test frozen object extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn16_testFrozenObjectExtensible();
@@ -317,12 +317,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test017
      * @tc.number SUB_BUILTINS_Object17_TEST_1700
-     * @tc.name Object17Test017
-     * @tc.desc test sealed object extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test sealed object extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn17_testSealedObjectExtensible();
@@ -330,12 +330,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test018
      * @tc.number SUB_BUILTINS_Object17_TEST_1800
-     * @tc.name Object17Test018
-     * @tc.desc test delete property after prevent extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test delete property after prevent extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn18_testDeletePropAfterPreventExtensible();
@@ -343,12 +343,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test019
      * @tc.number SUB_BUILTINS_Object17_TEST_1900
-     * @tc.name Object17Test019
-     * @tc.desc test nested object extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test nested object extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn19_testNestedObjectExtensible();
@@ -356,12 +356,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test020
      * @tc.number SUB_BUILTINS_Object17_TEST_2000
-     * @tc.name Object17Test020
-     * @tc.desc test class instance extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test class instance extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn20_testClassInstanceExtensible();
@@ -369,12 +369,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test022
      * @tc.number SUB_BUILTINS_Object17_TEST_2200
-     * @tc.name Object17Test022
-     * @tc.desc test default map extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test default map extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn22_testDefaultMapExtensible();
@@ -382,12 +382,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test023
      * @tc.number SUB_BUILTINS_Object17_TEST_2300
-     * @tc.name Object17Test023
-     * @tc.desc test prevented map extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prevented map extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn23_testPreventedMapExtensible();
@@ -395,12 +395,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test024
      * @tc.number SUB_BUILTINS_Object17_TEST_2400
-     * @tc.name Object17Test024
-     * @tc.desc test default set extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test default set extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn24_testDefaultSetExtensible();
@@ -408,12 +408,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test025
      * @tc.number SUB_BUILTINS_Object17_TEST_2500
-     * @tc.name Object17Test025
-     * @tc.desc test prevented set extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prevented set extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn25_testPreventedSetExtensible();
@@ -421,12 +421,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test026
      * @tc.number SUB_BUILTINS_Object17_TEST_2600
-     * @tc.name Object17Test026
-     * @tc.desc test default weakmap extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test default weakmap extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn26_testDefaultWeakMapExtensible();
@@ -434,12 +434,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test027
      * @tc.number SUB_BUILTINS_Object17_TEST_2700
-     * @tc.name Object17Test027
-     * @tc.desc test prevented weakmap extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prevented weakmap extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn27_testPreventedWeakMapExtensible();
@@ -447,12 +447,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test028
      * @tc.number SUB_BUILTINS_Object17_TEST_2800
-     * @tc.name Object17Test028
-     * @tc.desc test default weakset extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test default weakset extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn28_testDefaultWeakSetExtensible();
@@ -460,12 +460,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test029
      * @tc.number SUB_BUILTINS_Object17_TEST_2900
-     * @tc.name Object17Test029
-     * @tc.desc test prevented weakset extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prevented weakset extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn29_testPreventedWeakSetExtensible();
@@ -473,24 +473,24 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test030
      * @tc.number SUB_BUILTINS_Object17_TEST_3000
-     * @tc.name Object17Test030
-     * @tc.desc test default function extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test default function extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn30_testDefaultFunctionExtensible();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object17Test031
      * @tc.number SUB_BUILTINS_Object17_TEST_3100
-     * @tc.name Object17Test031
-     * @tc.desc test prevented function extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prevented function extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn31_testPreventedFunctionExtensible();
@@ -498,12 +498,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test032
      * @tc.number SUB_BUILTINS_Object17_TEST_3200
-     * @tc.name Object17Test032
-     * @tc.desc test default arrow function extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test default arrow function extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn32_testDefaultArrowFuncExtensible();
@@ -511,12 +511,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test033
      * @tc.number SUB_BUILTINS_Object17_TEST_3300
-     * @tc.name Object17Test033
-     * @tc.desc test prevented arrow function extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prevented arrow function extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn33_testPreventedArrowFuncExtensible();
@@ -524,12 +524,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test034
      * @tc.number SUB_BUILTINS_Object17_TEST_3400
-     * @tc.name Object17Test034
-     * @tc.desc test default promise extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test default promise extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn34_testDefaultPromiseExtensible();
@@ -537,12 +537,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test035
      * @tc.number SUB_BUILTINS_Object17_TEST_3500
-     * @tc.name Object17Test035
-     * @tc.desc test prevented promise extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prevented promise extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn35_testPreventedPromiseExtensible();
@@ -550,12 +550,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test036
      * @tc.number SUB_BUILTINS_Object17_TEST_3600
-     * @tc.name Object17Test036
-     * @tc.desc test default generator extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test default generator extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn36_testDefaultGeneratorExtensible();
@@ -563,12 +563,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test037
      * @tc.number SUB_BUILTINS_Object17_TEST_3700
-     * @tc.name Object17Test037
-     * @tc.desc test prevented generator extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prevented generator extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn37_testPreventedGeneratorExtensible();
@@ -576,12 +576,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test038
      * @tc.number SUB_BUILTINS_Object17_TEST_3800
-     * @tc.name Object17Test038
-     * @tc.desc test default typed array extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test default typed array extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn38_testDefaultTypedArrayExtensible();
@@ -589,12 +589,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test039
      * @tc.number SUB_BUILTINS_Object17_TEST_3900
-     * @tc.name Object17Test039
-     * @tc.desc test prevented typed array extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prevented typed array extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn39_testPreventedTypedArrayExtensible();
@@ -602,12 +602,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test044
      * @tc.number SUB_BUILTINS_Object17_TEST_4400
-     * @tc.name Object17Test044
-     * @tc.desc test inherited from non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test inherited from non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn44_testInheritedFromNonExtensibleObj();
@@ -615,12 +615,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test045
      * @tc.number SUB_BUILTINS_Object17_TEST_4500
-     * @tc.name Object17Test045
-     * @tc.desc test child prevent extensible affect parent
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test child prevent extensible affect parent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn45_testChildPreventExtensibleAffectParent();
@@ -628,12 +628,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test046
      * @tc.number SUB_BUILTINS_Object17_TEST_4600
-     * @tc.name Object17Test046
-     * @tc.desc test define property after prevent extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test define property after prevent extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn46_testDefinePropAfterPreventExtensible();
@@ -641,12 +641,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test047
      * @tc.number SUB_BUILTINS_Object17_TEST_4700
-     * @tc.name Object17Test047
-     * @tc.desc test default class prototype extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test default class prototype extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn47_testDefaultClassProtoExtensible();
@@ -654,12 +654,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test048
      * @tc.number SUB_BUILTINS_Object17_TEST_4800
-     * @tc.name Object17Test048
-     * @tc.desc test prevented class prototype extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prevented class prototype extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn48_testPreventedClassProtoExtensible();
@@ -667,12 +667,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test049
      * @tc.number SUB_BUILTINS_Object17_TEST_4900
-     * @tc.name Object17Test049
-     * @tc.desc test extended built-in class instance extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test extended built-in class instance extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn49_testExtendedBuiltInClassInstanceExtensible();
@@ -680,12 +680,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test050
      * @tc.number SUB_BUILTINS_Object17_TEST_5000
-     * @tc.name Object17Test050
-     * @tc.desc test prevented extended built-in class instance extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prevented extended built-in class instance extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn50_testPreventedExtendedBuiltInClassInstanceExtensible();
@@ -693,12 +693,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test055
      * @tc.number SUB_BUILTINS_Object17_TEST_5500
-     * @tc.name Object17Test055
-     * @tc.desc test default array buffer extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test default array buffer extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn55_testDefaultArrayBufferExtensible();
@@ -706,12 +706,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test056
      * @tc.number SUB_BUILTINS_Object17_TEST_5600
-     * @tc.name Object17Test056
-     * @tc.desc test prevented array buffer extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prevented array buffer extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn56_testPreventedArrayBufferExtensible();
@@ -719,12 +719,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test057
      * @tc.number SUB_BUILTINS_Object17_TEST_5700
-     * @tc.name Object17Test057
-     * @tc.desc test default data view extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test default data view extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn57_testDefaultDataViewExtensible();
@@ -732,12 +732,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test058
      * @tc.number SUB_BUILTINS_Object17_TEST_5800
-     * @tc.name Object17Test058
-     * @tc.desc test prevented data view extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prevented data view extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn58_testPreventedDataViewExtensible();
@@ -745,12 +745,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test066
      * @tc.number SUB_BUILTINS_Object17_TEST_6600
-     * @tc.name Object17Test066
-     * @tc.desc test add accessor property on non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test add accessor property on non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn66_testAddAccessorPropOnNonExtensibleObj();
@@ -758,12 +758,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test067
      * @tc.number SUB_BUILTINS_Object17_TEST_6700
-     * @tc.name Object17Test067
-     * @tc.desc test default class static extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test default class static extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn67_testDefaultClassStaticExtensible();
@@ -771,12 +771,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test068
      * @tc.number SUB_BUILTINS_Object17_TEST_6800
-     * @tc.name Object17Test068
-     * @tc.desc test prevented class static extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prevented class static extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn68_testPreventedClassStaticExtensible();
@@ -784,12 +784,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test070
      * @tc.number SUB_BUILTINS_Object17_TEST_7000
-     * @tc.name Object17Test070
-     * @tc.desc test default proxy extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test default proxy extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn70_testDefaultProxyExtensible();
@@ -797,12 +797,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test071
      * @tc.number SUB_BUILTINS_Object17_TEST_7100
-     * @tc.name Object17Test071
-     * @tc.desc test prevented proxy extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prevented proxy extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn71_testPreventedProxyExtensible();
@@ -810,12 +810,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test072
      * @tc.number SUB_BUILTINS_Object17_TEST_7200
-     * @tc.name Object17Test072
-     * @tc.desc test proxy target non-extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test proxy target non-extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn72_testProxyTargetNonExtensible();
@@ -823,12 +823,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test076
      * @tc.number SUB_BUILTINS_Object17_TEST_7600
-     * @tc.name Object17Test076
-     * @tc.desc test add map entry after prevent extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test add map entry after prevent extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn76_testAddMapEntryAfterPreventExtensible();
@@ -836,12 +836,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test077
      * @tc.number SUB_BUILTINS_Object17_TEST_7700
-     * @tc.name Object17Test077
-     * @tc.desc test add set element after prevent extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test add set element after prevent extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn77_testAddSetElementAfterPreventExtensible();
@@ -849,12 +849,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test078
      * @tc.number SUB_BUILTINS_Object17_TEST_7800
-     * @tc.name Object17Test078
-     * @tc.desc test non-extensible child with extensible prototype
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test non-extensible child with extensible prototype
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn78_testNonExtensibleChildWithExtensibleProto();
@@ -862,12 +862,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test079
      * @tc.number SUB_BUILTINS_Object17_TEST_7900
-     * @tc.name Object17Test079
-     * @tc.desc test get property descriptors on non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test get property descriptors on non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn79_testGetPropDescriptorsOnNonExtensibleObj();
@@ -875,12 +875,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test080
      * @tc.number SUB_BUILTINS_Object17_TEST_8000
-     * @tc.name Object17Test080
-     * @tc.desc test cross global object extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test cross global object extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn80_testCrossGlobalObjectExtensible();
@@ -888,12 +888,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test085
      * @tc.number SUB_BUILTINS_Object17_TEST_8500
-     * @tc.name Object17Test085
-     * @tc.desc test object keys on non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object keys on non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn85_testObjectKeysOnNonExtensibleObj();
@@ -901,12 +901,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test086
      * @tc.number SUB_BUILTINS_Object17_TEST_8600
-     * @tc.name Object17Test086
-     * @tc.desc test object values on non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object values on non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn86_testObjectValuesOnNonExtensibleObj();
@@ -914,12 +914,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test087
      * @tc.number SUB_BUILTINS_Object17_TEST_8700
-     * @tc.name Object17Test087
-     * @tc.desc test object entries on non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries on non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn87_testObjectEntriesOnNonExtensibleObj();
@@ -927,12 +927,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test088
      * @tc.number SUB_BUILTINS_Object17_TEST_8800
-     * @tc.name Object17Test088
-     * @tc.desc test non-extensible child with non-extensible prototype
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test non-extensible child with non-extensible prototype
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn88_testNonExtensibleChildWithNonExtensibleProto();
@@ -940,12 +940,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test091
      * @tc.number SUB_BUILTINS_Object17_TEST_9100
-     * @tc.name Object17Test091
-     * @tc.desc test spread non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test spread non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn91_testSpreadNonExtensibleObj();
@@ -953,12 +953,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test092
      * @tc.number SUB_BUILTINS_Object17_TEST_9200
-     * @tc.name Object17Test092
-     * @tc.desc test assign non-extensible and extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test assign non-extensible and extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn92_testAssignNonExtensibleAndExtensible();
@@ -966,12 +966,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test093
      * @tc.number SUB_BUILTINS_Object17_TEST_9300
-     * @tc.name Object17Test093
-     * @tc.desc test has own property on non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test has own property on non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn93_testHasOwnPropertyOnNonExtensibleObj();
@@ -979,12 +979,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test094
      * @tc.number SUB_BUILTINS_Object17_TEST_9400
-     * @tc.name Object17Test094
-     * @tc.desc test is prototype of on non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test is prototype of on non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn94_testIsPrototypeOfOnNonExtensibleObj();
@@ -992,12 +992,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test095
      * @tc.number SUB_BUILTINS_Object17_TEST_9500
-     * @tc.name Object17Test095
-     * @tc.desc test for-in loop on non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test for-in loop on non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn95_testForInLoopOnNonExtensibleObj();
@@ -1005,12 +1005,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test096
      * @tc.number SUB_BUILTINS_Object17_TEST_9600
-     * @tc.name Object17Test096
-     * @tc.desc test get prototype of on non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test get prototype of on non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn96_testGetPrototypeOfOnNonExtensibleObj();
@@ -1018,12 +1018,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test098
      * @tc.number SUB_BUILTINS_Object17_TEST_9800
-     * @tc.name Object17Test098
-     * @tc.desc test to string on non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test to string on non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn98_testToStringOnNonExtensibleObj();
@@ -1031,12 +1031,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test099
      * @tc.number SUB_BUILTINS_Object17_TEST_9900
-     * @tc.name Object17Test099
-     * @tc.desc test value of on non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test value of on non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn99_testValueOfOnNonExtensibleObj();
@@ -1044,12 +1044,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test100
      * @tc.number SUB_BUILTINS_Object17_TEST_10000
-     * @tc.name Object17Test100
-     * @tc.desc test multiple prevent extensions on object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test multiple prevent extensions on object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn100_testMultiplePreventExtensionsOnObj();
@@ -1057,12 +1057,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test103
      * @tc.number SUB_BUILTINS_Object17_TEST_10300
-     * @tc.name Object17Test103
-     * @tc.desc test default image data extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test default image data extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn103_testDefaultImageDataExtensible();
@@ -1070,12 +1070,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test104
      * @tc.number SUB_BUILTINS_Object17_TEST_10400
-     * @tc.name Object17Test104
-     * @tc.desc test prevented image data extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prevented image data extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn104_testPreventedImageDataExtensible();
@@ -1083,12 +1083,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test105
      * @tc.number SUB_BUILTINS_Object17_TEST_10500
-     * @tc.name Object17Test105
-     * @tc.desc test object has own on non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object has own on non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn105_testObjectHasOwnOnNonExtensibleObj();
@@ -1096,12 +1096,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test106
      * @tc.number SUB_BUILTINS_Object17_TEST_10600
-     * @tc.name Object17Test106
-     * @tc.desc test default offscreen canvas extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test default offscreen canvas extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn106_testDefaultOffscreenCanvasExtensible();
@@ -1109,12 +1109,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test107
      * @tc.number SUB_BUILTINS_Object17_TEST_10700
-     * @tc.name Object17Test107
-     * @tc.desc test prevented offscreen canvas extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prevented offscreen canvas extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn107_testPreventedOffscreenCanvasExtensible();
@@ -1122,12 +1122,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test108
      * @tc.number SUB_BUILTINS_Object17_TEST_10800
-     * @tc.name Object17Test108
-     * @tc.desc test add enumerable property to non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test add enumerable property to non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn108_testAddEnumerablePropToNonExtensibleObj();
@@ -1135,12 +1135,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test111
      * @tc.number SUB_BUILTINS_Object17_TEST_11100
-     * @tc.name Object17Test111
-     * @tc.desc test modify property config on non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test modify property config on non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn111_testModifyPropConfigOnNonExtensibleObj();
@@ -1148,12 +1148,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test114
      * @tc.number SUB_BUILTINS_Object17_TEST_11400
-     * @tc.name Object17Test114
-     * @tc.desc test json stringify non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test json stringify non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn114_testJsonStringifyNonExtensibleObj();
@@ -1161,12 +1161,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test117
      * @tc.number SUB_BUILTINS_Object17_TEST_11700
-     * @tc.name Object17Test117
-     * @tc.desc test call inherited method on non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test call inherited method on non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn117_testCallInheritedMethodOnNonExtensibleObj();
@@ -1174,12 +1174,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test120
      * @tc.number SUB_BUILTINS_Object17_TEST_12000
-     * @tc.name Object17Test120
-     * @tc.desc test non-extensible object as function parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test non-extensible object as function parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn120_testNonExtensibleObjAsFuncParam();
@@ -1187,12 +1187,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test123
      * @tc.number SUB_BUILTINS_Object17_TEST_12300
-     * @tc.name Object17Test123
-     * @tc.desc test get own property names on non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test get own property names on non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn123_testGetOwnPropertyNamesOnNonExtensibleObj();
@@ -1200,12 +1200,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test126
      * @tc.number SUB_BUILTINS_Object17_TEST_12600
-     * @tc.name Object17Test126
-     * @tc.desc test add non-enumerable property to non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test add non-enumerable property to non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn126_testAddNonEnumerablePropToNonExtensibleObj();
@@ -1213,12 +1213,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test132
      * @tc.number SUB_BUILTINS_Object17_TEST_13200
-     * @tc.name Object17Test132
-     * @tc.desc test isFrozen on non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test isFrozen on non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn132_testIsFrozenOnNonExtensibleObj();
@@ -1226,12 +1226,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test135
      * @tc.number SUB_BUILTINS_Object17_TEST_13500
-     * @tc.name Object17Test135
-     * @tc.desc test isSealed on non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test isSealed on non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn135_testIsSealedOnNonExtensibleObj();
@@ -1239,12 +1239,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test138
      * @tc.number SUB_BUILTINS_Object17_TEST_13800
-     * @tc.name Object17Test138
-     * @tc.desc test non-extensible object as Map key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test non-extensible object as Map key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn138_testNonExtensibleObjAsMapKey();
@@ -1252,12 +1252,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test143
      * @tc.number SUB_BUILTINS_Object17_TEST_14300
-     * @tc.name Object17Test143
-     * @tc.desc test get own property symbols on non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test get own property symbols on non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn143_testGetOwnPropertySymbolsOnNonExtensibleObj();
@@ -1265,12 +1265,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test146
      * @tc.number SUB_BUILTINS_Object17_TEST_14600
-     * @tc.name Object17Test146
-     * @tc.desc test add getter to non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test add getter to non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn146_testAddGetterToNonExtensibleObj();
@@ -1278,12 +1278,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test147
      * @tc.number SUB_BUILTINS_Object17_TEST_14700
-     * @tc.name Object17Test147
-     * @tc.desc test default ShareDataContainer extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test default ShareDataContainer extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn147_testDefaultShareDataContainerExtensible();
@@ -1291,12 +1291,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test148
      * @tc.number SUB_BUILTINS_Object17_TEST_14800
-     * @tc.name Object17Test148
-     * @tc.desc test prevented ShareDataContainer extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prevented ShareDataContainer extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn148_testPreventedShareDataContainerExtensible();
@@ -1304,12 +1304,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test149
      * @tc.number SUB_BUILTINS_Object17_TEST_14900
-     * @tc.name Object17Test149
-     * @tc.desc test non-extensible object as Set element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test non-extensible object as Set element
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn149_testNonExtensibleObjAsSetElement();
@@ -1317,12 +1317,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test152
      * @tc.number SUB_BUILTINS_Object17_TEST_15200
-     * @tc.name Object17Test152
-     * @tc.desc test Reflect.isExtensible on non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Reflect.isExtensible on non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn152_testReflectIsExtensibleOnNonExtensibleObj();
@@ -1330,12 +1330,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test155
      * @tc.number SUB_BUILTINS_Object17_TEST_15500
-     * @tc.name Object17Test155
-     * @tc.desc test delete property on non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test delete property on non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn155_testDeletePropOnNonExtensibleObj();
@@ -1343,12 +1343,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test156
      * @tc.number SUB_BUILTINS_Object17_TEST_15600
-     * @tc.name Object17Test156
-     * @tc.desc test default GeolocationPosition extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test default GeolocationPosition extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn156_testDefaultGeolocationPositionExtensible();
@@ -1356,12 +1356,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test157
      * @tc.number SUB_BUILTINS_Object17_TEST_15700
-     * @tc.name Object17Test157
-     * @tc.desc test prevented GeolocationPosition extensible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test prevented GeolocationPosition extensible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn157_testPreventedGeolocationPositionExtensible();
@@ -1369,12 +1369,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test158
      * @tc.number SUB_BUILTINS_Object17_TEST_15800
-     * @tc.name Object17Test158
-     * @tc.desc test modify nested property on non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test modify nested property on non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn158_testModifyNestedPropOnNonExtensibleObj();
@@ -1382,12 +1382,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test163
      * @tc.number SUB_BUILTINS_Object17_TEST_16300
-     * @tc.name Object17Test163
-     * @tc.desc test assign self property on non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test assign self property on non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn163_testAssignSelfPropOnNonExtensibleObj();
@@ -1395,12 +1395,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test166
      * @tc.number SUB_BUILTINS_Object17_TEST_16600
-     * @tc.name Object17Test166
-     * @tc.desc test add setter to non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test add setter to non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn166_testAddSetterToNonExtensibleObj();
@@ -1408,12 +1408,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test169
      * @tc.number SUB_BUILTINS_Object17_TEST_16900
-     * @tc.name Object17Test169
-     * @tc.desc test non-extensible object as WeakMap key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test non-extensible object as WeakMap key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn169_testNonExtensibleObjAsWeakMapKey();
@@ -1421,12 +1421,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test172
      * @tc.number SUB_BUILTINS_Object17_TEST_17200
-     * @tc.name Object17Test172
-     * @tc.desc test Reflect.preventExtensions on non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Reflect.preventExtensions on non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn172_testReflectPreventExtensionsOnNonExtensibleObj();
@@ -1434,12 +1434,12 @@ export default function Object17Test() {
     });
 
     /**
+     * @tc.name   Object17Test175
      * @tc.number SUB_BUILTINS_Object17_TEST_17500
-     * @tc.name Object17Test175
-     * @tc.desc test add property to prototype chain of non-extensible object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test add property to prototype chain of non-extensible object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object17Test175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn175_testAddPropToProtoChainOfNonExtensibleObj();

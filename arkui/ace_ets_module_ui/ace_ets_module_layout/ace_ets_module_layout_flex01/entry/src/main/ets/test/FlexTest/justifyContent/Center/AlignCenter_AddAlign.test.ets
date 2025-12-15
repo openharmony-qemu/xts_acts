@@ -47,9 +47,12 @@ export default function AlignCenter_AddAlign() {
     });
 
     /**
+     * @tc.name   testFlexAlignCenterAlignBottomEnd
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_CENTER_TEST_0800
-     * @tc.name testFlexAlignCenterAlignBottomEnd
-     * @tc.desc Setting generic properties does not take effect, and owned properties take precedence
+     * @tc.desc   Setting generic properties does not take effect, and owned properties take precedence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignCenterAlignBottomEnd',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignCenterAlignBottomEnd] START');

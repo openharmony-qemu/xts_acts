@@ -26,13 +26,13 @@ export default function swiperSwipeToIndexTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SWIPER_TO_INDEX_0600
-     * @tc.name: testSwiperChangeIndex006
-     * @tc.desc: testing onChange for swiper
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSwiperChangeIndex006
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_TO_INDEX_0600
+     * @tc.desc   testing onChange for swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperChangeIndex006', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'SwiperSwipeToIndexTest';

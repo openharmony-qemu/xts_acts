@@ -40,12 +40,12 @@ export default function TimerClearIntervalTest() {
     })
 
     /**
+     * @tc.name   TimerClearIntervalTest0100
      * @tc.number SUB_TIMER_CLEARINTERVAL_TEST_0100
-     * @tc.name TimerClearIntervalTest0100
-     * @tc.desc test ClearInterval
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test ClearInterval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimerClearIntervalTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
       let count: number = 0;
@@ -60,12 +60,12 @@ export default function TimerClearIntervalTest() {
 
 
     /**
+     * @tc.name   TimerClearIntervalTest0200
      * @tc.number SUB_TIMER_CLEARINTERVAL_TEST_0200
-     * @tc.name TimerClearIntervalTest0200
-     * @tc.desc test ClearInterval
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test ClearInterval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimerClearIntervalTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
       let a = 0
@@ -80,12 +80,12 @@ export default function TimerClearIntervalTest() {
 
 
     /**
+     * @tc.name   TimerClearIntervalTest0300
      * @tc.number SUB_TIMER_CLEARINTERVAL_TEST_0300
-     * @tc.name TimerClearIntervalTest0300
-     * @tc.desc test ClearInterval
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test ClearInterval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimerClearIntervalTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let a = 0
@@ -100,12 +100,12 @@ export default function TimerClearIntervalTest() {
 
 
     /**
+     * @tc.name   TimerClearIntervalTest0400
      * @tc.number SUB_TIMER_CLEARINTERVAL_TEST_0400
-     * @tc.name TimerClearIntervalTest0400
-     * @tc.desc test ClearInterval
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test ClearInterval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimerClearIntervalTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const timeoutID = 9999;
@@ -117,12 +117,12 @@ export default function TimerClearIntervalTest() {
 
 
     /**
+     * @tc.name   TimerClearIntervalTest0500
      * @tc.number SUB_TIMER_CLEARINTERVAL_TEST_0500
-     * @tc.name TimerClearIntervalTest0500
-     * @tc.desc test ClearInterval
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test ClearInterval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimerClearIntervalTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const timeoutID = clearInterval();
@@ -134,12 +134,12 @@ export default function TimerClearIntervalTest() {
 
 
     /**
+     * @tc.name   TimerClearIntervalTest0600
      * @tc.number SUB_TIMER_CLEARINTERVAL_TEST_0600
-     * @tc.name TimerClearIntervalTest0600
-     * @tc.desc test ClearInterval
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test ClearInterval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimerClearIntervalTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const timeoutID = clearInterval(null);
@@ -151,12 +151,12 @@ export default function TimerClearIntervalTest() {
 
 
     /**
+     * @tc.name   TimerClearIntervalTest0700
      * @tc.number SUB_TIMER_CLEARINTERVAL_TEST_0700
-     * @tc.name TimerClearIntervalTest0700
-     * @tc.desc test ClearInterval
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test ClearInterval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimerClearIntervalTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const timeoutID = clearInterval(undefined);
@@ -168,12 +168,12 @@ export default function TimerClearIntervalTest() {
 
 
     /**
+     * @tc.name   TimerClearIntervalTest0800
      * @tc.number SUB_TIMER_CLEARINTERVAL_TEST_0800
-     * @tc.name TimerClearIntervalTest0800
-     * @tc.desc test ClearInterval
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test ClearInterval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimerClearIntervalTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const timeoutID = clearInterval(-1);
@@ -185,12 +185,12 @@ export default function TimerClearIntervalTest() {
 
 
     /**
+     * @tc.name   TimerClearIntervalTest0900
      * @tc.number SUB_TIMER_CLEARINTERVAL_TEST_0900
-     * @tc.name TimerClearIntervalTest0900
-     * @tc.desc test ClearInterval
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test ClearInterval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimerClearIntervalTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const timeoutID = clearInterval(0);
@@ -202,12 +202,12 @@ export default function TimerClearIntervalTest() {
 
 
     /**
+     * @tc.name   TimerClearIntervalTest1000
      * @tc.number SUB_TIMER_CLEARINTERVAL_TEST_1000
-     * @tc.name TimerClearIntervalTest1000
-     * @tc.desc test ClearInterval
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test ClearInterval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimerClearIntervalTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const timeoutID = clearInterval(1.1);
@@ -219,12 +219,12 @@ export default function TimerClearIntervalTest() {
 
 
     /**
+     * @tc.name   TimerClearIntervalTest1100
      * @tc.number SUB_TIMER_CLEARINTERVAL_TEST_1100
-     * @tc.name TimerClearIntervalTest1100
-     * @tc.desc test ClearInterval
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test ClearInterval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimerClearIntervalTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let count: number = 0

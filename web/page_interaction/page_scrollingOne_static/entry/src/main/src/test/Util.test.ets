@@ -17,7 +17,6 @@ import emitter from '@ohos.events.emitter';
 import { expect } from "../../../hypium/index";
 import { ComponentInfo, RectInfo } from './Interfaces';
 import { Driver, ON, PointerMatrix, Component } from '@ohos.UiTest';
-import { getInspectorByKey } from '@internal.full.global';
 import inspector from '@ohos.arkui.inspector';
 import systemDateTime from '@ohos.systemDateTime';
 import { RecordData } from '@ohos.base';

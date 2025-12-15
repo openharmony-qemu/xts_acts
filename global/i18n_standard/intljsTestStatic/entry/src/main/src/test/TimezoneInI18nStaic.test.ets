@@ -55,7 +55,6 @@ export default function TimezoneInI18nTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_0100
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_0100
      * @tc.desc   get the getTimeZone value
@@ -72,7 +71,6 @@ export default function TimezoneInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_0400
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_0400
      * @tc.desc   get the getDisplayName value, test getDisplayName method with true param
@@ -89,7 +87,6 @@ export default function TimezoneInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_0600
      * @tc.number timezone_test_static_0600
      * @tc.desc   test getRawOffset method get the getRawOffset value
@@ -106,7 +103,6 @@ export default function TimezoneInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_0700
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_0700
      * @tc.desc   get the getOffset value, test getOffset method
@@ -123,7 +119,6 @@ export default function TimezoneInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_0800
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_0800
      * @tc.desc   get the getOffset value, test getOffset method with date param
@@ -140,7 +135,6 @@ export default function TimezoneInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_0900
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_0900
      * @tc.desc   get the getID value, test getID
@@ -157,7 +151,6 @@ export default function TimezoneInI18nTest() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_1000
      * @tc.number timezone_test_static_1000
      * @tc.desc   test getDisplayName with timezone id,get the getID value
@@ -174,7 +167,6 @@ export default function TimezoneInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_1300
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_1300
      * @tc.desc   get the getID value, test getDisplayName with en-US and true param
@@ -191,7 +183,6 @@ export default function TimezoneInI18nTest() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_1400
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_1400
      * @tc.desc   get the getID value, test getDisplayName with zh-CN and false param
@@ -208,7 +199,6 @@ export default function TimezoneInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_1100
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1100
      * @tc.desc   get the getID value ,test getDisplayName with locale
@@ -225,7 +215,6 @@ export default function TimezoneInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_1200
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1200
      * @tc.desc   test getDisplayName with locale get the getID value
@@ -243,7 +232,6 @@ export default function TimezoneInI18nTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_1500
      * @tc.number timezone_test_static_1500
      * @tc.desc   test getRawOffset method with timezone id get the getRawOffset value
@@ -260,7 +248,6 @@ export default function TimezoneInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_1600
      * @tc.number timezone_test_static_1600
      * @tc.desc   test getOffset method with timezone id, get the getOffset value
@@ -277,7 +264,6 @@ export default function TimezoneInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_1700
      * @tc.number timezone_test_static_1700
      * @tc.desc   test getOffset method with date and timezone id param, get the getOffset value
@@ -295,7 +281,6 @@ export default function TimezoneInI18nTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_1800
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_1800
      * @tc.desc   test getAvailableIDs method get the getAvailableIDs value
@@ -311,7 +296,6 @@ export default function TimezoneInI18nTest() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_1900
      * @tc.number timezone_test_static_1900
      * @tc.desc   test getAvailableZoneCityIDs method, get the getAvailableZoneCityIDs value
@@ -326,7 +310,6 @@ export default function TimezoneInI18nTest() {
       expect(value.length > 0).assertEqual(true);
     }) 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_2040
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2040
      * @tc.desc   test getCityDisplayName method with not exist cityid,get the getCityDisplayName value
@@ -342,7 +325,6 @@ export default function TimezoneInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_2060
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2060
      * @tc.desc   test getCityDisplayName method with not exist locale, get the getCityDisplayName value
@@ -358,7 +340,6 @@ export default function TimezoneInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_2100
      * @tc.number timezone_test_static_2100
      * @tc.desc   test getTimezoneFromCity method , get the getTimezoneFromCity value
@@ -374,7 +355,6 @@ export default function TimezoneInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_2120
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_2120
      * @tc.desc   test getTimezoneFromCity method with not exist cityid, get the getTimezoneFromCity value
@@ -390,7 +370,6 @@ export default function TimezoneInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_2200
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_2200
      * @tc.desc   get the getTimezonesByLocation value
@@ -413,7 +392,6 @@ export default function TimezoneInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_2300
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_2300
      * @tc.desc   get the getTimezonesByLocation value
@@ -438,7 +416,6 @@ export default function TimezoneInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_2400
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_2400
      * @tc.desc   get the getTimezonesByLocation value
@@ -461,7 +438,6 @@ export default function TimezoneInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_2500
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_2500
      * @tc.desc   get the getTimezonesByLocation value
@@ -484,7 +460,6 @@ export default function TimezoneInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_2600
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_2600
      * @tc.desc   get the getTimezonesByLocation value
@@ -507,7 +482,6 @@ export default function TimezoneInI18nTest() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_2700
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_2700
      * @tc.desc   get the getTimezonesByLocation value, test getTimezonesByLocation method
@@ -530,7 +504,6 @@ export default function TimezoneInI18nTest() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_2800
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_2800
      * @tc.desc   get the getTimezonesByLocation value, test getTimezonesByLocation method
@@ -553,7 +526,6 @@ export default function TimezoneInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_2900
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_2900
      * @tc.desc   get the getTimezonesByLocation value,test getTimezonesByLocation method
@@ -576,7 +548,6 @@ export default function TimezoneInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_3000
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_3000
      * @tc.desc   get the getTimezonesByLocation value,test getTimezonesByLocation method
@@ -599,7 +570,6 @@ export default function TimezoneInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_3100
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_3100
      * @tc.desc   get the getTimezonesByLocation value, test getTimezonesByLocation method
@@ -622,7 +592,6 @@ export default function TimezoneInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   timezone_test_static_3200
      * @tc.number SUB_GLOBAL_I18N_JS_TIMEZONE_static_3200
      * @tc.desc   get the getTimezonesByLocation value, test getTimezonesByLocation method

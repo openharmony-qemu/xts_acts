@@ -118,11 +118,12 @@ export default function requestUploadJSUnit() {
     };
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Create_Upload_Callback_0010
-     * @tc.desc      Starts a upload session.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_Misc_REQUEST_Create_Upload_Callback_0010
+     * @tc.number SUB_Misc_REQUEST_Create_Upload_Callback_0010
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Misc_REQUEST_Create_Upload_Callback_0010', Level.LEVEL0, async (done: Function) => {
       console.info("-----------------------SUB_Misc_REQUEST_Create_Upload_Callback_0010 is starting-----------------------");
@@ -148,11 +149,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Create_Upload_Promise_0010
-     * @tc.desc      Starts a upload session.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_Misc_REQUEST_Create_Upload_Promise_0010
+     * @tc.number SUB_Misc_REQUEST_Create_Upload_Promise_0010
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Misc_REQUEST_Create_Upload_Promise_0010', Level.LEVEL0, async (done: Function) => {
       console.info("-----------------------SUB_Misc_REQUEST_Create_Upload_Promise_0010 is starting-----------------------");
@@ -176,11 +178,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
+     * @tc.name   SUB_Misc_REQUEST_Remove_Upload_Callback_0010
      * @tc.number SUB_Misc_REQUEST_Remove_Upload_Callback_0010
-     * @tc.desc Delete the upload task.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Delete the upload task.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Remove_Upload_Callback_0010', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_Remove_Upload_Callback_0010 is starting-----------------------");
@@ -210,11 +213,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
+     * @tc.name   SUB_Misc_REQUEST_Remove_Upload_Promise_0010
      * @tc.number SUB_Misc_REQUEST_Remove_Upload_Promise_0010
-     * @tc.desc Delete the upload task.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Delete the upload task.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Remove_Upload_Promise_0010', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_Remove_Upload_Promise_0010 is starting-----------------------");
@@ -233,11 +237,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
+     * @tc.name   SUB_Misc_REQUEST_Start_Upload_Callback_0010
      * @tc.number SUB_Misc_REQUEST_Start_Upload_Callback_0010
-     * @tc.desc Suspend the upload task
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Suspend the upload task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Start_Upload_Callback_0010', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_Start_Upload_Callback_0010 is starting-----------------------");
@@ -263,11 +268,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
+     * @tc.name   SUB_Misc_REQUEST_Start_Upload_Promise_0010
      * @tc.number SUB_Misc_REQUEST_Start_Upload_Promise_0010
-     * @tc.desc Suspend the upload task
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Suspend the upload task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Start_Upload_Promise_0010', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_Start_Upload_Promise_0010 is starting-----------------------");
@@ -287,11 +293,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
+     * @tc.name   SUB_Misc_REQUEST_Pause_Upload_Callback_0010
      * @tc.number SUB_Misc_REQUEST_Pause_Upload_Callback_0010
-     * @tc.desc Restore the upload task
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Restore the upload task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Pause_Upload_Callback_0010', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_Pause_Upload_Callback_0010 is starting-----------------------");
@@ -320,11 +327,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
+     * @tc.name   SUB_Misc_REQUEST_Pause_Upload_Promise_0010
      * @tc.number SUB_Misc_REQUEST_Pause_Upload_Promise_0010
-     * @tc.desc Restore the upload task
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Restore the upload task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Pause_Upload_Promise_0010', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_Pause_Upload_Promise_0010 is starting-----------------------");
@@ -347,11 +355,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
+     * @tc.name   SUB_Misc_REQUEST_Resume_Upload_Callback_0010
      * @tc.number SUB_Misc_REQUEST_Resume_Upload_Callback_0010
-     * @tc.desc Get the upload task info
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Get the upload task info
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Resume_Upload_Callback_0010', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_Resume_Upload_Callback_0010 is starting-----------------------");
@@ -383,11 +392,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
+     * @tc.name   SUB_Misc_REQUEST_Resume_Upload_Promise_0010
      * @tc.number SUB_Misc_REQUEST_Resume_Upload_Promise_0010
-     * @tc.desc Get the upload task info
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Get the upload task info
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Resume_Upload_Promise_0010', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_Resume_Upload_Promise_0010 is starting-----------------------");
@@ -413,11 +423,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
+     * @tc.name   SUB_Misc_REQUEST_Stop_Upload_Callback_0010
      * @tc.number SUB_Misc_REQUEST_Stop_Upload_Callback_0010
-     * @tc.desc Get the upload task info
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.desc   Get the upload task info
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Misc_REQUEST_Stop_Upload_Callback_0010', Level.LEVEL1, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_Stop_Upload_Callback_0010 is starting-----------------------");
@@ -446,11 +457,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
+     * @tc.name   SUB_Misc_REQUEST_Stop_Upload_Promise_0010
      * @tc.number SUB_Misc_REQUEST_Stop_Upload_Promise_0010
-     * @tc.desc Get the upload task info
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.desc   Get the upload task info
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Misc_REQUEST_Stop_Upload_Promise_0010', Level.LEVEL1, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_Stop_Upload_Promise_0010 is starting-----------------------");
@@ -471,14 +483,14 @@ export default function requestUploadJSUnit() {
       })
     });
 
-    /*
-    * @tc.number: SUB_REQUEST_Agent_UploadConfig_1700
-    * @tc.name: SUB_REQUEST_Agent_UploadConfig_1700
-    * @tc.desc: different upload path or upload file name of config
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 2
-    */
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadConfig_1700
+     * @tc.number SUB_REQUEST_Agent_UploadConfig_1700
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_REQUEST_Agent_UploadConfig_1700', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_Agent_UploadConfig_1700 is starting-----------------------");
       let value: ESObject = {
@@ -513,12 +525,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
+     * @tc.name   SUB_REQUEST_Upload_broadcastEvent_0100
      * @tc.number SUB_REQUEST_Upload_broadcastEvent_0100
-     * @tc.name SUB_REQUEST_Upload_broadcastEvent_0100
-     * @tc.desc monitor complete task.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   monitor complete task.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Upload_broadcastEvent_0100', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_Upload_broadcastEvent_0100 is starting-----------------------");

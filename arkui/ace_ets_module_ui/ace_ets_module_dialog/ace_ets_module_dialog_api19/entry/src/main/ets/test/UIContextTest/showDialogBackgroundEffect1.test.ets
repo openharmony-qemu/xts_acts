@@ -37,12 +37,12 @@ export default function UIShowDialogBackgroundEffectTest() {
     });
 
     /**
-     * @tc.number    UIShowDialogBackgroundEffectTest_0100
-     * @tc.name      UIShowDialogBackgroundEffectTest_0100
-     * @tc.desc      createShowDialogModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UIShowDialogBackgroundEffectTest_0100
+     * @tc.number UIShowDialogBackgroundEffectTest_0100
+     * @tc.desc   createShowDialogModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('UIShowDialogBackgroundEffectTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'UIShowDialogBackgroundEffectTest_0100';
@@ -85,12 +85,12 @@ export default function UIShowDialogBackgroundEffectTest() {
     });
 
     /**
-     * @tc.number    UIShowDialogBackgroundEffectTest_0200
-     * @tc.name      UIShowDialogBackgroundEffectTest_0200
-     * @tc.desc      createShowDialogModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UIShowDialogBackgroundEffectTest_0200
+     * @tc.number UIShowDialogBackgroundEffectTest_0200
+     * @tc.desc   createShowDialogModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('UIShowDialogBackgroundEffectTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'UIShowDialogBackgroundEffectTest_0200';
@@ -120,12 +120,12 @@ export default function UIShowDialogBackgroundEffectTest() {
     });
 
     /**
-     * @tc.number    UIShowDialogBackgroundEffectTest_0300
-     * @tc.name      UIShowDialogBackgroundEffectTest_0300
-     * @tc.desc      createShowDialogModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UIShowDialogBackgroundEffectTest_0300
+     * @tc.number UIShowDialogBackgroundEffectTest_0300
+     * @tc.desc   createShowDialogModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('UIShowDialogBackgroundEffectTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'UIShowDialogBackgroundEffectTest_0300';

@@ -58,7 +58,7 @@ export default function SetHasTest() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      await sleep(30);
+      await sleep(50);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -73,12 +73,12 @@ export default function SetHasTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   SetHasTest001
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_0100
-     * @tc.name SetHasTest001
-     * @tc.desc Check existing string value, return true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check existing string value, return true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetHasTest001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set(['apple', 'banana', 'cherry']);
@@ -88,12 +88,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest002
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_0200
-     * @tc.name SetHasTest002
-     * @tc.desc Check non-existing string value, return false
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check non-existing string value, return false
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetHasTest002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set(['apple', 'banana']);
@@ -103,12 +103,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest003
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_0300
-     * @tc.name SetHasTest003
-     * @tc.desc Check existing number value, return true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check existing number value, return true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetHasTest003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([10, 20, 30]);
@@ -118,12 +118,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest004
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_0400
-     * @tc.name SetHasTest004
-     * @tc.desc Check non-existing number value, return false
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check non-existing number value, return false
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetHasTest004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([10, 20]);
@@ -133,12 +133,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest005
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_0500
-     * @tc.name SetHasTest005
-     * @tc.desc Check existing boolean value, return true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check existing boolean value, return true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetHasTest005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([true, false, true]);
@@ -148,12 +148,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest006
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_0600
-     * @tc.name SetHasTest006
-     * @tc.desc Check empty Set for any value, return false
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check empty Set for any value, return false
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetHasTest006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       interface BaseI{}
@@ -168,12 +168,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest007
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_0700
-     * @tc.name SetHasTest007
-     * @tc.desc Check the only element in Set, return true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check the only element in Set, return true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetHasTest007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set(['only-element']);
@@ -183,12 +183,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest008
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_0800
-     * @tc.name SetHasTest008
-     * @tc.desc Check null value in Set, return true if exists
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check null value in Set, return true if exists
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetHasTest008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([null, 1, 2]);
@@ -198,12 +198,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest009
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_0900
-     * @tc.name SetHasTest009
-     * @tc.desc Check undefined value in Set, return true if exists
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check undefined value in Set, return true if exists
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetHasTest009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([undefined, 'a', 'b']);
@@ -213,12 +213,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest010
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_1000
-     * @tc.name SetHasTest010
-     * @tc.desc Check multiple values in Set, verify results
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check multiple values in Set, verify results
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetHasTest010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set<number | string | boolean | null | undefined>([1, '2', true, null]);
@@ -248,12 +248,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest011
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_1100
-     * @tc.name SetHasTest011
-     * @tc.desc Check NaN (treated as equal to itself), return true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check NaN (treated as equal to itself), return true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([NaN, 1, 2]);
@@ -265,12 +265,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest012
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_1200
-     * @tc.name SetHasTest012
-     * @tc.desc Check 0 and -0 (treated as equal), return true for both
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check 0 and -0 (treated as equal), return true for both
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([0, 100]);
@@ -282,12 +282,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest013
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_1300
-     * @tc.name SetHasTest013
-     * @tc.desc Check Symbol (unique instances are different), return false for different instance
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check Symbol (unique instances are different), return false for different instance
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const result = SetHasTest013();
@@ -297,12 +297,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest014
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_1400
-     * @tc.name SetHasTest014
-     * @tc.desc Check BigInt (same value is equal), return true for same value
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check BigInt (same value is equal), return true for same value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const big1 = 123n;
@@ -318,12 +318,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest015
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_1500
-     * @tc.name SetHasTest015
-     * @tc.desc Check object by same reference, return true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check object by same reference, return true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       interface BaseI{
@@ -339,12 +339,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest017
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_1700
-     * @tc.name SetHasTest017
-     * @tc.desc Check Date object by same reference, return true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check Date object by same reference, return true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const date = new Date('2024-01-01');
@@ -357,12 +357,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest018
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_1800
-     * @tc.name SetHasTest018
-     * @tc.desc Check RegExp object by same reference, return true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check RegExp object by same reference, return true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const regex = /test/;
@@ -375,12 +375,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest019
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_1900
-     * @tc.name SetHasTest019
-     * @tc.desc Check function by same reference, return true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check function by same reference, return true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const func = () => {};
@@ -393,12 +393,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest020
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_2000
-     * @tc.name SetHasTest020
-     * @tc.desc Check string and number with same value (different types), return false
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check string and number with same value (different types), return false
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<string | boolean | number>(['123', true]);
@@ -410,12 +410,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest021
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_2100
-     * @tc.name SetHasTest021
-     * @tc.desc Check value after modifying object properties (reference unchanged), return true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check value after modifying object properties (reference unchanged), return true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -432,12 +432,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest022
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_2200
-     * @tc.name SetHasTest022
-     * @tc.desc Check value after adding to Set, return true immediately
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check value after adding to Set, return true immediately
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set<string>();
@@ -448,12 +448,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest023
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_2300
-     * @tc.name SetHasTest023
-     * @tc.desc Check value after deleting from Set, return false immediately
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check value after deleting from Set, return false immediately
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set(['value']);
@@ -464,12 +464,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest024
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_2400
-     * @tc.name SetHasTest024
-     * @tc.desc Check large Set (1000 elements), verify has() correctness
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check large Set (1000 elements), verify has() correctness
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest024', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const set = new Set<number>();
@@ -487,12 +487,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest025
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_2500
-     * @tc.name SetHasTest025
-     * @tc.desc Call has() on non-Set instance (array via call), verify behavior
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Call has() on non-Set instance (array via call), verify behavior
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetHasTest025() as boolean[];
@@ -501,12 +501,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest026
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_2600
-     * @tc.name SetHasTest026
-     * @tc.desc Pass multiple parameters to has() (only first is used)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Pass multiple parameters to has() (only first is used)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2]);
@@ -516,12 +516,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest027
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_2700
-     * @tc.name SetHasTest027
-     * @tc.desc Check frozen Set for existing value, return true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check frozen Set for existing value, return true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetHasTest027();
@@ -531,12 +531,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest028
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_2800
-     * @tc.name SetHasTest028
-     * @tc.desc Check Set with circular reference object, return true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check Set with circular reference object, return true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -553,12 +553,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest029
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_2900
-     * @tc.name SetHasTest029
-     * @tc.desc Check Set with nested objects (reference comparison), return true for same reference
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check Set with nested objects (reference comparison), return true for same reference
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -577,12 +577,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest030
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_3000
-     * @tc.name SetHasTest030
-     * @tc.desc Comprehensive test: mixed types + dynamic modification + edge values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Comprehensive test: mixed types + dynamic modification + edge values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result = SetHasTest030();
@@ -602,12 +602,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest031
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_3100
-     * @tc.name SetHasTest031
-     * @tc.desc Check inherited properties in object, same reference
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check inherited properties in object, same reference
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetHasTest031();
@@ -616,12 +616,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest032
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_3200
-     * @tc.name SetHasTest032
-     * @tc.desc Check Proxy object reference comparison
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check Proxy object reference comparison
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{}
@@ -636,12 +636,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest033
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_3300
-     * @tc.name SetHasTest033
-     * @tc.desc Check has() after clearing the Set
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() after clearing the Set
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -652,12 +652,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest034
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_3400
-     * @tc.name SetHasTest034
-     * @tc.desc Check very large numbers (beyond safe integer)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check very large numbers (beyond safe integer)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const largeNum = Number.MAX_SAFE_INTEGER + 1;
@@ -668,12 +668,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest035
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_3500
-     * @tc.name SetHasTest035
-     * @tc.desc Check has() with same string values but different encodings
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with same string values but different encodings
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const str1 = 'café';
@@ -685,12 +685,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest036
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_3600
-     * @tc.name SetHasTest036
-     * @tc.desc Check has() with empty string and whitespace
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with empty string and whitespace
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set(['', ' ', '\t', '\n']);
@@ -703,12 +703,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest037
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_3700
-     * @tc.name SetHasTest037
-     * @tc.desc Check has() with boxed primitives
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with boxed primitives
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const numObj = new Number(123);
@@ -720,12 +720,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest038
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_3800
-     * @tc.name SetHasTest038
-     * @tc.desc Check has() with typed array instances
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with typed array instances
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = new Uint8Array([1, 2, 3]);
@@ -736,12 +736,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest039
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_3900
-     * @tc.name SetHasTest039
-     * @tc.desc Check has() with Map instances
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with Map instances
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const map = new Map([['a', 1]]);
@@ -752,12 +752,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest040
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_4000
-     * @tc.name SetHasTest040
-     * @tc.desc Check has() with Set instances
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with Set instances
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const innerSet = new Set([1, 2]);
@@ -768,12 +768,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest041
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_4100
-     * @tc.name SetHasTest041
-     * @tc.desc Check has() with different Unicode characters
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with different Unicode characters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set(['a', 'A', 'α', 'β', 'あ', 'ア']);
@@ -786,12 +786,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest042
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_4200
-     * @tc.name SetHasTest042
-     * @tc.desc Check has() with different function types
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with different function types
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const result = SetHasTest042();
@@ -803,12 +803,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest043
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_4300
-     * @tc.name SetHasTest043
-     * @tc.desc Check has() with regex flags
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with regex flags
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const regex1 = /test/;
@@ -822,12 +822,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest044
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_4400
-     * @tc.name SetHasTest044
-     * @tc.desc Check has() with date objects of same time value
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with date objects of same time value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const date1 = new Date(2024, 0, 1);
@@ -839,12 +839,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest045
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_4500
-     * @tc.name SetHasTest045
-     * @tc.desc Check has() with NaN in various forms
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with NaN in various forms
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([NaN]);
@@ -856,12 +856,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest046
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_4600
-     * @tc.name SetHasTest046
-     * @tc.desc Check has() with different BigInt values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with different BigInt values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest046', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<bigint | number>([123n, 456n]);
@@ -873,12 +873,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest047
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_4700
-     * @tc.name SetHasTest047
-     * @tc.desc Check has() with Symbol.for()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with Symbol.for()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest047', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const result = SetHasTest047();
@@ -889,12 +889,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest048
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_4800
-     * @tc.name SetHasTest048
-     * @tc.desc Check has() with null vs undefined
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with null vs undefined
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest048', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([null, undefined]);
@@ -904,12 +904,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest049
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_4900
-     * @tc.name SetHasTest049
-     * @tc.desc Check has() with positive and negative infinity
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with positive and negative infinity
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([Infinity, -Infinity]);
@@ -922,12 +922,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest050
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_5000
-     * @tc.name SetHasTest050
-     * @tc.desc Check has() with various numeric types
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with various numeric types
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest050', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([123, 123.45, 0x7B, 0o173, 0b1111011]);
@@ -942,12 +942,12 @@ export default function SetHasTest() {
 
 
     /**
+     * @tc.name   SetHasTest052
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_5200
-     * @tc.name SetHasTest052
-     * @tc.desc Check has() with objects after Object.seal()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with objects after Object.seal()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest052', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -962,12 +962,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest053
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_5300
-     * @tc.name SetHasTest053
-     * @tc.desc Check has() with objects after Object.freeze()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with objects after Object.freeze()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest053', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -981,12 +981,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest054
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_5400
-     * @tc.name SetHasTest054
-     * @tc.desc Check has() with prototype chain modifications
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with prototype chain modifications
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest054', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{}
@@ -999,12 +999,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest055
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_5500
-     * @tc.name SetHasTest055
-     * @tc.desc Check has() with very large string values
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with very large string values
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest055', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const largeStr = 'a'.repeat(1024 * 1024);
@@ -1015,12 +1015,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest056
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_5600
-     * @tc.name SetHasTest056
-     * @tc.desc Check has() with Symbol properties in objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with Symbol properties in objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest056', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetHasTest056();
@@ -1030,12 +1030,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest057
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_5700
-     * @tc.name SetHasTest057
-     * @tc.desc Check has() with WeakMap instances
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with WeakMap instances
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest057', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{}
@@ -1049,12 +1049,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest058
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_5800
-     * @tc.name SetHasTest058
-     * @tc.desc Check has() with WeakSet instances
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with WeakSet instances
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest058', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{}
@@ -1068,12 +1068,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest059
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_5900
-     * @tc.name SetHasTest059
-     * @tc.desc Check has() with generator functions
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with generator functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest059', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetHasTest059();
@@ -1084,12 +1084,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest060
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_6000
-     * @tc.name SetHasTest060
-     * @tc.desc Check has() with promises
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with promises
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest060', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const promise = Promise.resolve();
@@ -1100,12 +1100,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest061
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_6100
-     * @tc.name SetHasTest061
-     * @tc.desc Check has() with boolean true and false
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check has() with boolean true and false
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetHasTest061', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set<boolean | number>([true, false]);
@@ -1117,12 +1117,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest062
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_6200
-     * @tc.name SetHasTest062
-     * @tc.desc Check has() with single character strings
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check has() with single character strings
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetHasTest062', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set(['a', 'b', 'c']);
@@ -1133,12 +1133,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest063
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_6300
-     * @tc.name SetHasTest063
-     * @tc.desc Check has() with multi-line strings
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check has() with multi-line strings
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetHasTest063', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const str = 'line1\nline2\nline3';
@@ -1149,12 +1149,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest064
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_6400
-     * @tc.name SetHasTest064
-     * @tc.desc Check has() with negative numbers
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check has() with negative numbers
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetHasTest064', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([-1, -2, -3]);
@@ -1165,12 +1165,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest065
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_6500
-     * @tc.name SetHasTest065
-     * @tc.desc Check has() with floating point numbers
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check has() with floating point numbers
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetHasTest065', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([1.5, 2.5, 3.5]);
@@ -1181,12 +1181,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest066
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_6600
-     * @tc.name SetHasTest066
-     * @tc.desc Check has() after multiple add operations
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check has() after multiple add operations
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetHasTest066', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set<string>();
@@ -1201,12 +1201,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest067
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_6700
-     * @tc.name SetHasTest067
-     * @tc.desc Check has() after add and delete operations
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check has() after add and delete operations
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetHasTest067', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set(['a', 'b', 'c']);
@@ -1219,12 +1219,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest068
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_6800
-     * @tc.name SetHasTest068
-     * @tc.desc Check has() with mixed case strings
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check has() with mixed case strings
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetHasTest068', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set(['Apple', 'Banana', 'Cherry']);
@@ -1235,12 +1235,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest069
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_6900
-     * @tc.name SetHasTest069
-     * @tc.desc Check has() with zero and positive numbers
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check has() with zero and positive numbers
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetHasTest069', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([0, 1, 2, 3]);
@@ -1251,12 +1251,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest070
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_7000
-     * @tc.name SetHasTest070
-     * @tc.desc Check has() with various falsy values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check has() with various falsy values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetHasTest070', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([false, 0, '', null, undefined, NaN]);
@@ -1270,12 +1270,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest071
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_7100
-     * @tc.name SetHasTest071
-     * @tc.desc Check has() with string vs number comparison
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with string vs number comparison
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest071', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<string | number>(['123']);
@@ -1285,12 +1285,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest072
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_7200
-     * @tc.name SetHasTest072
-     * @tc.desc Check has() with boolean vs number comparison
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with boolean vs number comparison
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest072', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<boolean | number>([true, false]);
@@ -1302,12 +1302,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest073
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_7300
-     * @tc.name SetHasTest073
-     * @tc.desc Check has() with number vs BigInt comparison
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with number vs BigInt comparison
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest073', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([123, 456n]);
@@ -1319,12 +1319,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest074
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_7400
-     * @tc.name SetHasTest074
-     * @tc.desc Check has() with object vs primitive comparison
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with object vs primitive comparison
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest074', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       interface BaseI{
@@ -1337,12 +1337,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest075
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_7500
-     * @tc.name SetHasTest075
-     * @tc.desc Check has() with array vs string comparison
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with array vs string comparison
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest075', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([['a', 'b'], 'ab']);
@@ -1352,12 +1352,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest076
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_7600
-     * @tc.name SetHasTest076
-     * @tc.desc Check has() with regex vs string comparison
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with regex vs string comparison
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest076', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([/test/, 'test']);
@@ -1367,12 +1367,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest077
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_7700
-     * @tc.name SetHasTest077
-     * @tc.desc Check has() with date vs number comparison
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with date vs number comparison
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest077', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const date = new Date(2024, 0, 1);
@@ -1385,12 +1385,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest078
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_7800
-     * @tc.name SetHasTest078
-     * @tc.desc Check has() with Symbol vs string comparison
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with Symbol vs string comparison
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest078', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const result = SetHasTest078();
@@ -1401,12 +1401,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest079
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_7900
-     * @tc.name SetHasTest079
-     * @tc.desc Check has() with null vs undefined comparison
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with null vs undefined comparison
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest079', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([null, undefined]);
@@ -1416,12 +1416,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest080
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_8000
-     * @tc.name SetHasTest080
-     * @tc.desc Check has() with NaN vs other falsy values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with NaN vs other falsy values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest080', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([NaN, 0, '', false, null, undefined]);
@@ -1435,12 +1435,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest081
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_8100
-     * @tc.name SetHasTest081
-     * @tc.desc Check has() with objects that have valueOf overridden
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with objects that have valueOf overridden
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest081', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetHasTest081();
@@ -1450,12 +1450,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest082
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_8200
-     * @tc.name SetHasTest082
-     * @tc.desc Check has() with objects that have toString overridden
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with objects that have toString overridden
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest082', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetHasTest082();
@@ -1465,12 +1465,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest083
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_8300
-     * @tc.name SetHasTest083
-     * @tc.desc Check has() with class instances
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with class instances
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest083', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       class MyClass {
@@ -1489,12 +1489,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest084
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_8400
-     * @tc.name SetHasTest084
-     * @tc.desc Check has() with singleton pattern instances
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with singleton pattern instances
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest084', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       class Singleton {
@@ -1516,36 +1516,36 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest085
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_8500
-     * @tc.name SetHasTest085
-     * @tc.desc Check has() with dynamic property addition to objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with dynamic property addition to objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest085', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(SetHasTest085()).assertEqual(true);
     });
 
     /**
+     * @tc.name   SetHasTest086
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_8600
-     * @tc.name SetHasTest086
-     * @tc.desc Check has() with property deletion from objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with property deletion from objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest086', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(SetHasTest086()).assertEqual(true);
     });
 
     /**
+     * @tc.name   SetHasTest087
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_8700
-     * @tc.name SetHasTest087
-     * @tc.desc Check has() with objects in different scopes
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with objects in different scopes
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest087', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -1558,12 +1558,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest088
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_8800
-     * @tc.name SetHasTest088
-     * @tc.desc Check has() with objects after JSON serialization/deserialization
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with objects after JSON serialization/deserialization
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest088', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -1581,12 +1581,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest089
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_8900
-     * @tc.name SetHasTest089
-     * @tc.desc Check has() with objects using Object.create(null)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with objects using Object.create(null)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest089', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetHasTest089();
@@ -1596,12 +1596,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest090
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_9000
-     * @tc.name SetHasTest090
-     * @tc.desc Check has() with proxied objects that override get
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with proxied objects that override get
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest090', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetHasTest090();
@@ -1611,12 +1611,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest091
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_9100
-     * @tc.name SetHasTest091
-     * @tc.desc Check has() performance with 10,000 elements
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() performance with 10,000 elements
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest091', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const set = new Set<number>();
@@ -1635,12 +1635,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest092
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_9200
-     * @tc.name SetHasTest092
-     * @tc.desc Check has() with 1000 unique strings
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with 1000 unique strings
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest092', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const set = new Set<string>();
@@ -1658,12 +1658,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest093
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_9300
-     * @tc.name SetHasTest093
-     * @tc.desc Check has() with many similar objects
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with many similar objects
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest093', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -1686,12 +1686,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest094
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_9400
-     * @tc.name SetHasTest094
-     * @tc.desc Check has() with mixed types in large Set
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with mixed types in large Set
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest094', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const result = SetHasTest094();
@@ -1709,12 +1709,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest095
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_9500
-     * @tc.name SetHasTest095
-     * @tc.desc Check has() after many add/delete operations
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() after many add/delete operations
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest095', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const set = new Set<number>();
@@ -1734,12 +1734,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest096
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_9600
-     * @tc.name SetHasTest096
-     * @tc.desc Check has() with large numbers of Symbols
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with large numbers of Symbols
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest096', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const result = SetHasTest096();
@@ -1749,12 +1749,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest097
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_9700
-     * @tc.name SetHasTest097
-     * @tc.desc Check has() with large numbers of BigInts
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with large numbers of BigInts
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest097', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const set = new Set<bigint>();
@@ -1770,12 +1770,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest098
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_9800
-     * @tc.name SetHasTest098
-     * @tc.desc Check has() with pre-sized Set constructor
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with pre-sized Set constructor
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest098', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const result = SetHasTest098();
@@ -1785,12 +1785,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest099
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_9900
-     * @tc.name SetHasTest099
-     * @tc.desc Check has() with many repeated add attempts
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with many repeated add attempts
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest099', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const set = new Set<string>();
@@ -1805,12 +1805,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest100
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_10000
-     * @tc.name SetHasTest100
-     * @tc.desc Check has() with concurrent modifications
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with concurrent modifications
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest100', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const set = new Set<number | string>();
@@ -1834,12 +1834,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest101
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_10100
-     * @tc.name SetHasTest101
-     * @tc.desc Check has() with various whitespace characters
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with various whitespace characters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest101', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([' ', '\t', '\n', '\r', '\f', '\v', '\u00A0']);
@@ -1851,12 +1851,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest102
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_10200
-     * @tc.name SetHasTest102
-     * @tc.desc Check has() with control characters
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with control characters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest102', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([
@@ -1873,12 +1873,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest103
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_10300
-     * @tc.name SetHasTest103
-     * @tc.desc Check has() with Unicode emojis
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with Unicode emojis
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest103', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set(['😊', '❤️', '👍', '🔥', '🇺🇸']);
@@ -1889,12 +1889,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest104
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_10400
-     * @tc.name SetHasTest104
-     * @tc.desc Check has() with Unicode combining characters
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with Unicode combining characters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest104', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set(['é', 'e\u0301', 'café', 'cafe\u0301']);
@@ -1906,12 +1906,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest105
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_10500
-     * @tc.name SetHasTest105
-     * @tc.desc Check has() with zero-width characters
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with zero-width characters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest105', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set(['\u200B', '\u200C', '\u200D', '\uFEFF']);
@@ -1922,12 +1922,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest106
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_10600
-     * @tc.name SetHasTest106
-     * @tc.desc Check has() with various number formats
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with various number formats
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest106', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([123, 123.0, 123e0, 0.123e3]);
@@ -1937,12 +1937,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest107
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_10700
-     * @tc.name SetHasTest107
-     * @tc.desc Check has() with special number values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with special number values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest107', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([Infinity, -Infinity, NaN, 0, -0]);
@@ -1956,12 +1956,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest108
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_10800
-     * @tc.name SetHasTest108
-     * @tc.desc Check has() with Symbol.iterator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with Symbol.iterator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest108', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const result = SetHasTest108();
@@ -1973,12 +1973,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest109
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_10900
-     * @tc.name SetHasTest109
-     * @tc.desc Check has() with global symbols
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with global symbols
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest109', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const result = SetHasTest109();
@@ -1989,12 +1989,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest110
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_11000
-     * @tc.name SetHasTest110
-     * @tc.desc Check has() with null prototype objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check has() with null prototype objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetHasTest110', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const result = SetHasTest110();
@@ -2004,12 +2004,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest111
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_11100
-     * @tc.name SetHasTest111
-     * @tc.desc Check has() with objects used as Map keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with objects used as Map keys
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest111', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -2025,12 +2025,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest112
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_11200
-     * @tc.name SetHasTest112
-     * @tc.desc Check has() with objects in WeakMap
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with objects in WeakMap
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest112', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -2045,12 +2045,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest113
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_11300
-     * @tc.name SetHasTest113
-     * @tc.desc Check has() with objects in WeakSet
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with objects in WeakSet
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest113', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -2065,12 +2065,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest114
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_11400
-     * @tc.name SetHasTest114
-     * @tc.desc Check has() with DOM elements (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with DOM elements (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest114', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -2086,12 +2086,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest115
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_11500
-     * @tc.name SetHasTest115
-     * @tc.desc Check has() with objects that override Symbol.hasInstance
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with objects that override Symbol.hasInstance
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest115', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetHasTest115();
@@ -2101,12 +2101,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest116
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_11600
-     * @tc.name SetHasTest116
-     * @tc.desc Check has() with objects that override Symbol.toPrimitive
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with objects that override Symbol.toPrimitive
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest116', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetHasTest116();
@@ -2117,12 +2117,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest117
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_11700
-     * @tc.name SetHasTest117
-     * @tc.desc Check has() with recursive objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with recursive objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest117', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -2147,12 +2147,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest118
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_11800
-     * @tc.name SetHasTest118
-     * @tc.desc Check has() with objects after structured cloning
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with objects after structured cloning
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest118', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -2172,12 +2172,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest119
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_11900
-     * @tc.name SetHasTest119
-     * @tc.desc Check has() with objects in different realms (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with objects in different realms (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest119', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -2194,12 +2194,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest120
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_12000
-     * @tc.name SetHasTest120
-     * @tc.desc Check has() with revoked proxies
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with revoked proxies
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest120', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetHasTest120();
@@ -2209,12 +2209,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest121
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_12100
-     * @tc.name SetHasTest121
-     * @tc.desc Check has() called with no arguments
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() called with no arguments
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest121', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([undefined, null, 1]);
@@ -2222,12 +2222,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest122
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_12200
-     * @tc.name SetHasTest122
-     * @tc.desc Check has() called with too many arguments
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() called with too many arguments
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest122', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -2237,12 +2237,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest123
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_12300
-     * @tc.name SetHasTest123
-     * @tc.desc Check has() on non-Set objects with Set-like properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() on non-Set objects with Set-like properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest123', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetHasTest123() as boolean[];
@@ -2252,12 +2252,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest124
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_12400
-     * @tc.name SetHasTest124
-     * @tc.desc Check has() with thisArg in call/apply
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with thisArg in call/apply
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest124', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetHasTest124() as boolean[];
@@ -2267,12 +2267,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest125
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_12500
-     * @tc.name SetHasTest125
-     * @tc.desc Check has() on a frozen Set instance
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() on a frozen Set instance
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest125', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -2283,12 +2283,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest126
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_12600
-     * @tc.name SetHasTest126
-     * @tc.desc Check has() on a sealed Set instance
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() on a sealed Set instance
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest126', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -2299,12 +2299,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest127
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_12700
-     * @tc.name SetHasTest127
-     * @tc.desc Check has() with modified Set.prototype
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with modified Set.prototype
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest127', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetHasTest127();
@@ -2316,12 +2316,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest128
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_12800
-     * @tc.name SetHasTest128
-     * @tc.desc Check has() with prototype chain pollution
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with prototype chain pollution
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest128', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetHasTest128();
@@ -2333,12 +2333,12 @@ export default function SetHasTest() {
     });
 
     /**
+     * @tc.name   SetHasTest129
      * @tc.number SUB_BUILTINS_SET_HAS_TEST_12900
-     * @tc.name SetHasTest129
-     * @tc.desc Check has() with symbol properties in Set
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Check has() with symbol properties in Set
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetHasTest129', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetHasTest129() as  boolean[];

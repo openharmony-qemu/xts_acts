@@ -43,6 +43,14 @@ export default function textEnabledJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textEnabledJsunit_0100
+     * @tc.number textEnabledJsunit_0100
+     * @tc.desc   textEnabledJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textEnabledJsunit_0100', Level.LEVEL1, async (done: Function) => {
       console.info('textEnabledJsunit_0100 START');
       let driver = await UiDriver.create()
@@ -58,6 +66,14 @@ export default function textEnabledJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textEnabledJsunit_0200
+     * @tc.number textEnabledJsunit_0200
+     * @tc.desc   textEnabledJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textEnabledJsunit_0200', Level.LEVEL1, async (done: Function) => {
       console.info('textEnabledJsunit_0200 START');
       let driver = await UiDriver.create()
@@ -73,6 +89,14 @@ export default function textEnabledJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textEnabledJsunit_0300
+     * @tc.number textEnabledJsunit_0300
+     * @tc.desc   textEnabledJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textEnabledJsunit_0300', Level.LEVEL1, async (done: Function) => {
       console.info('textEnabledJsunit_0300 START');
       let driver = await UiDriver.create()
@@ -88,6 +112,14 @@ export default function textEnabledJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textEnabledJsunit_0400
+     * @tc.number textEnabledJsunit_0400
+     * @tc.desc   textEnabledJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textEnabledJsunit_0400', Level.LEVEL1, async (done: Function) => {
       console.info('textEnabledJsunit_0400 START');
       let driver = await UiDriver.create()
@@ -103,6 +135,14 @@ export default function textEnabledJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textEnabledJsunit_0500
+     * @tc.number textEnabledJsunit_0500
+     * @tc.desc   textEnabledJsunit_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textEnabledJsunit_0500', Level.LEVEL1, async (done: Function) => {
       console.info('textEnabledJsunit_0500 START');
       let driver = await UiDriver.create()
@@ -118,6 +158,14 @@ export default function textEnabledJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textEnabledJsunit_0600
+     * @tc.number textEnabledJsunit_0600
+     * @tc.desc   textEnabledJsunit_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textEnabledJsunit_0600', Level.LEVEL1, async (done: Function) => {
       console.info('textEnabledJsunit_0600 START');
       let driver = await UiDriver.create()

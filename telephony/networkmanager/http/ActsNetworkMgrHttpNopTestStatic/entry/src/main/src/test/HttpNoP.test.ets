@@ -41,14 +41,14 @@ export default function httpNoPTest() {
   describe("HttpNoPTest", (): void => {
 
     hilog.info(domain, tag, '%{public}s', 'describe start');
-    /*
-      * @tc.number:SUB_NetMgr_Http_Request_Nop_0100
-      * @tc.name: testNetMgrHttpRequestNop_static__0100
-      * @tc.desc: Using the request (callback) method without permission
-      * @tc.level: Level 1
-      * @tc.type: Function
-      * @tc.size: MEDIUMTEST
-      */
+    /**
+     * @tc.name   testNetMgrHttpRequestNop_static__0100
+     * @tc.number SUB_NetMgr_Http_Request_Nop_0100
+     * @tc.desc   Using the request (callback) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testNetMgrHttpRequestNop_static__0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetMgrHttpRequestNop_static__0100';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -74,14 +74,14 @@ export default function httpNoPTest() {
       }
     })
 
-    /*
-      * @tc.number:SUB_NetMgr_Http_Request_Nop_0200
-      * @tc.name: testNetMgrHttpRequestNop_static__0200
-      * @tc.desc: Using the request (callback) method without permission
-      * @tc.level: Level 1
-      * @tc.type: Function
-      * @tc.size: MEDIUMTEST
-      */
+    /**
+     * @tc.name   testNetMgrHttpRequestNop_static__0200
+     * @tc.number SUB_NetMgr_Http_Request_Nop_0200
+     * @tc.desc   Using the request (callback) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testNetMgrHttpRequestNop_static__0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetMgrHttpRequestNop_static__0200';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -109,14 +109,14 @@ export default function httpNoPTest() {
       }
     })
 
-    /*
-      * @tc.number:SUB_NetMgr_Http_Request_Nop_0300
-      * @tc.name: testNetMgrHttpRequestNop_static__0300
-      * @tc.desc: Using the Request (promise) method without permission
-      * @tc.level: Level 1
-      * @tc.type: Function
-      * @tc.size: MEDIUMTEST
-      */
+    /**
+     * @tc.name   testNetMgrHttpRequestNop_static__0300
+     * @tc.number SUB_NetMgr_Http_Request_Nop_0300
+     * @tc.desc   Using the Request (promise) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testNetMgrHttpRequestNop_static__0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetMgrHttpRequestNop_static__0300';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -143,14 +143,14 @@ export default function httpNoPTest() {
       }
     })
 
-    /*
-      * @tc.number:SUB_NetMgr_Http_Request_Nop_0400
-      * @tc.name: testNetMgrHttpRequestNop_static__0400
-      * @tc.desc: Using the Request (promise) method without permission
-      * @tc.level: Level 1
-      * @tc.type: Function
-      * @tc.size: MEDIUMTEST
-      */
+    /**
+     * @tc.name   testNetMgrHttpRequestNop_static__0400
+     * @tc.number SUB_NetMgr_Http_Request_Nop_0400
+     * @tc.desc   Using the Request (promise) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testNetMgrHttpRequestNop_static__0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetMgrHttpRequestNop_static__0400';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');

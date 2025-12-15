@@ -282,12 +282,12 @@ export default function OhCapturerTest() {
       done();
     });
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERCREATE_0100
-     * @tc.name   ：testOHAudioStreamBuilderCreate001
+     * @tc.name   testOHAudioStreamBuilderCreate001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERCREATE_0100
      * @tc.desc   ：Create an audio stream constructor of input or output type.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderCreate001', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderCreate001 test start `);
@@ -298,12 +298,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERCREATE_0200
-     * @tc.name   ：testOHAudioStreamBuilderCreate002
+     * @tc.name   testOHAudioStreamBuilderCreate002
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERCREATE_0200
      * @tc.desc   ：Create an audio stream constructor of input or output type.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderCreate002', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderCreate002 test start `);
@@ -314,12 +314,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERGENERATERENDERER_0100
-     * @tc.name   ：testOHAudioStreamBuilderGenerateRenderer001
+     * @tc.name   testOHAudioStreamBuilderGenerateRenderer001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERGENERATERENDERER_0100
      * @tc.desc   ：Create an output audio stream instance.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderGenerateRenderer001', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderGenerateRenderer001 test start `);
@@ -330,12 +330,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERGENERATECAPTURER_0100
-     * @tc.name   ：testOHAudioStreamBuilderGenerateCapturer001
+     * @tc.name   testOHAudioStreamBuilderGenerateCapturer001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERGENERATECAPTURER_0100
      * @tc.desc   ：Create an input audio stream instance.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderGenerateCapturer001', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderGenerateCapturer001 test start `);
@@ -346,12 +346,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETCAPTURERCALLBACK_0100
-     * @tc.name   ：testOHAudioStreamBuilderSetCapturerCallback001
+     * @tc.name   testOHAudioStreamBuilderSetCapturerCallback001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETCAPTURERCALLBACK_0100
      * @tc.desc   ：Set the callback for the input audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetCapturerCallback001', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetCapturerCallback001 test start `);
@@ -362,12 +362,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETCHANNELCOUNT_0100
-     * @tc.name   ：testOHAudioStreamBuilderSetChannelCount001
+     * @tc.name   testOHAudioStreamBuilderSetChannelCount001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETCHANNELCOUNT_0100
      * @tc.desc   ：Set the channel count property of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetChannelCount001', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetChannelCount001 test start `);
@@ -378,12 +378,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETCHANNELCOUNT_0200
-     * @tc.name   ：testOHAudioStreamBuilderSetChannelCount002
+     * @tc.name   testOHAudioStreamBuilderSetChannelCount002
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETCHANNELCOUNT_0200
      * @tc.desc   ：Set the channel count property of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetChannelCount002', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetChannelCount002 test start `);
@@ -394,12 +394,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETCHANNELCOUNT_0300
-     * @tc.name   ：testOHAudioStreamBuilderSetChannelCount003
+     * @tc.name   testOHAudioStreamBuilderSetChannelCount003
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETCHANNELCOUNT_0300
      * @tc.desc   ：Set the channel count property of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetChannelCount003', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetChannelCount003 test start `);
@@ -410,12 +410,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETCHANNELCOUNT_0400
-     * @tc.name   ：testOHAudioStreamBuilderSetChannelCount004
+     * @tc.name   testOHAudioStreamBuilderSetChannelCount004
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETCHANNELCOUNT_0400
      * @tc.desc   ：Set the channel count property of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetChannelCount004', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetChannelCount004 test start `);
@@ -426,12 +426,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETCHANNELCOUNT_0500
-     * @tc.name   ：testOHAudioStreamBuilderSetChannelCount005
+     * @tc.name   testOHAudioStreamBuilderSetChannelCount005
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETCHANNELCOUNT_0500
      * @tc.desc   ：Set the channel count property of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetChannelCount005', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetChannelCount005 test start `);
@@ -442,12 +442,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETCHANNELCOUNT_0600
-     * @tc.name   ：testOHAudioStreamBuilderSetChannelCount006
+     * @tc.name   testOHAudioStreamBuilderSetChannelCount006
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETCHANNELCOUNT_0600
      * @tc.desc   ：Set the channel count property of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetChannelCount006', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetChannelCount006 test start `);
@@ -459,12 +459,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETCHANNELCOUNT_0700
-     * @tc.name   ：testOHAudioStreamBuilderSetChannelCount007
+     * @tc.name   testOHAudioStreamBuilderSetChannelCount007
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETCHANNELCOUNT_0700
      * @tc.desc   ：Set the channel count property of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetChannelCount007', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetChannelCount007 test start `);
@@ -475,12 +475,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETENCODINGTYPE_0100
-     * @tc.name   ：testOHAudioStreamBuilderSetEncodingType001
+     * @tc.name   testOHAudioStreamBuilderSetEncodingType001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETENCODINGTYPE_0100
      * @tc.desc   ：Set the channel count property of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetEncodingType001', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetEncodingType001 test start `);
@@ -491,12 +491,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETENCODINGTYPE_0200
-     * @tc.name   ：testOHAudioStreamBuilderSetEncodingType002
+     * @tc.name   testOHAudioStreamBuilderSetEncodingType002
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETENCODINGTYPE_0200
      * @tc.desc   ：Set the channel count property of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetEncodingType002', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetEncodingType002 test start `);
@@ -507,12 +507,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETENCODINGTYPE_0300
-     * @tc.name   ：testOHAudioStreamBuilderSetEncodingType003
+     * @tc.name   testOHAudioStreamBuilderSetEncodingType003
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETENCODINGTYPE_0300
      * @tc.desc   ：Set the channel count property of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetEncodingType003', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetEncodingType003 test start `);
@@ -523,12 +523,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETENCODINGTYPE_0400
-     * @tc.name   ：testOHAudioStreamBuilderSetEncodingType004
+     * @tc.name   testOHAudioStreamBuilderSetEncodingType004
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETENCODINGTYPE_0400
      * @tc.desc   ：Set the channel count property of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetEncodingType004', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetEncodingType004 test start `);
@@ -539,12 +539,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETENCODINGTYPE_0500
-     * @tc.name   ：testOHAudioStreamBuilderSetEncodingType005
+     * @tc.name   testOHAudioStreamBuilderSetEncodingType005
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETENCODINGTYPE_0500
      * @tc.desc   ：Set the channel count property of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetEncodingType005', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetEncodingType005 test start `);
@@ -555,12 +555,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETFRAMESIZEINCALLBACK_0100
-     * @tc.name   ：testOHAudioStreamBuilderSetFrameSizeInCallback001
+     * @tc.name   testOHAudioStreamBuilderSetFrameSizeInCallback001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETFRAMESIZEINCALLBACK_0100
      * @tc.desc   ：Set the frame length for each callback, which should be at least the size of the data processed by the audio hardware once and less than half of the internal buffer capacity.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetFrameSizeInCallback001', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetFrameSizeInCallback001 test start `);
@@ -571,12 +571,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETFRAMESIZEINCALLBACK_0200
-     * @tc.name   ：testOHAudioStreamBuilderSetFrameSizeInCallback002
+     * @tc.name   testOHAudioStreamBuilderSetFrameSizeInCallback002
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETFRAMESIZEINCALLBACK_0200
      * @tc.desc   ：Set the frame length for each callback, which should be at least the size of the data processed by the audio hardware once and less than half of the internal buffer capacity.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetFrameSizeInCallback002', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetFrameSizeInCallback002 test start `);
@@ -587,12 +587,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETFRAMESIZEINCALLBACK_0300
-     * @tc.name   ：testOHAudioStreamBuilderSetFrameSizeInCallback003
+     * @tc.name   testOHAudioStreamBuilderSetFrameSizeInCallback003
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETFRAMESIZEINCALLBACK_0300
      * @tc.desc   ：Set the frame length for each callback, which should be at least the size of the data processed by the audio hardware once and less than half of the internal buffer capacity.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetFrameSizeInCallback003', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetFrameSizeInCallback003 test start `);
@@ -603,12 +603,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETFRAMESIZEINCALLBACK_0400
-     * @tc.name   ：testOHAudioStreamBuilderSetFrameSizeInCallback004
+     * @tc.name   testOHAudioStreamBuilderSetFrameSizeInCallback004
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETFRAMESIZEINCALLBACK_0400
      * @tc.desc   ：Set the frame length for each callback, which should be at least the size of the data processed by the audio hardware once and less than half of the internal buffer capacity.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetFrameSizeInCallback004', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetFrameSizeInCallback004 test start `);
@@ -619,12 +619,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETFRAMESIZEINCALLBACK_0500
-     * @tc.name   ：testOHAudioStreamBuilderSetFrameSizeInCallback005
+     * @tc.name   testOHAudioStreamBuilderSetFrameSizeInCallback005
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETFRAMESIZEINCALLBACK_0500
      * @tc.desc   ：Set the frame length for each callback, which should be at least the size of the data processed by the audio hardware once and less than half of the internal buffer capacity.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetFrameSizeInCallback005', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetFrameSizeInCallback005 test start `);
@@ -635,12 +635,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETFRAMESIZEINCALLBACK_0600
-     * @tc.name   ：testOHAudioStreamBuilderSetFrameSizeInCallback006
+     * @tc.name   testOHAudioStreamBuilderSetFrameSizeInCallback006
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETFRAMESIZEINCALLBACK_0600
      * @tc.desc   ：Set the frame length for each callback, which should be at least the size of the data processed by the audio hardware once and less than half of the internal buffer capacity.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetFrameSizeInCallback006', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetFrameSizeInCallback006 test start `);
@@ -651,12 +651,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETFRAMESIZEINCALLBACK_0700
-     * @tc.name   ：testOHAudioStreamBuilderSetFrameSizeInCallback007
+     * @tc.name   testOHAudioStreamBuilderSetFrameSizeInCallback007
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETFRAMESIZEINCALLBACK_0700
      * @tc.desc   ：Set the frame length for each callback, which should be at least the size of the data processed by the audio hardware once and less than half of the internal buffer capacity.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetFrameSizeInCallback007', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetFrameSizeInCallback007 test start `);
@@ -667,12 +667,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETFRAMESIZEINCALLBACK_0800
-     * @tc.name   ：testOHAudioStreamBuilderSetFrameSizeInCallback008
+     * @tc.name   testOHAudioStreamBuilderSetFrameSizeInCallback008
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETFRAMESIZEINCALLBACK_0800
      * @tc.desc   ：Set the frame length for each callback, which should be at least the size of the data processed by the audio hardware once and less than half of the internal buffer capacity.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetFrameSizeInCallback008', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetFrameSizeInCallback008 test start `);
@@ -683,12 +683,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETFRAMESIZEINCALLBACK_0900
-     * @tc.name   ：testOHAudioStreamBuilderSetFrameSizeInCallback009
+     * @tc.name   testOHAudioStreamBuilderSetFrameSizeInCallback009
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETFRAMESIZEINCALLBACK_0900
      * @tc.desc   ：Set the frame length for each callback, which should be at least the size of the data processed by the audio hardware once and less than half of the internal buffer capacity.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetFrameSizeInCallback009', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetFrameSizeInCallback009 test start `);
@@ -699,12 +699,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETLATENCYMODE_0100
-     * @tc.name   ：testOHAudioStreamBuilderSetLatencyMode001
+     * @tc.name   testOHAudioStreamBuilderSetLatencyMode001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETLATENCYMODE_0100
      * @tc.desc   ：Set the delay mode for the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetLatencyMode001', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetLatencyMode001 test start `);
@@ -715,12 +715,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETLATENCYMODE_0200
-     * @tc.name   ：testOHAudioStreamBuilderSetLatencyMode002
+     * @tc.name   testOHAudioStreamBuilderSetLatencyMode002
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETLATENCYMODE_0200
      * @tc.desc   ：Set the delay mode for the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetLatencyMode002', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetLatencyMode002 test start `);
@@ -731,12 +731,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETLATENCYMODE_0300
-     * @tc.name   ：testOHAudioStreamBuilderSetLatencyMode003
+     * @tc.name   testOHAudioStreamBuilderSetLatencyMode003
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETLATENCYMODE_0300
      * @tc.desc   ：Set the delay mode for the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetLatencyMode003', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetLatencyMode003 test start `);
@@ -747,12 +747,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETLATENCYMODE_0400
-     * @tc.name   ：testOHAudioStreamBuilderSetLatencyMode004
+     * @tc.name   testOHAudioStreamBuilderSetLatencyMode004
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETLATENCYMODE_0400
      * @tc.desc   ：Set the delay mode for the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetLatencyMode004', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetLatencyMode004 test start `);
@@ -763,12 +763,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETLATENCYMODE_0500
-     * @tc.name   ：testOHAudioStreamBuilderSetLatencyMode005
+     * @tc.name   testOHAudioStreamBuilderSetLatencyMode005
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETLATENCYMODE_0500
      * @tc.desc   ：Set the delay mode for the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetLatencyMode005', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetLatencyMode005 test start `);
@@ -779,12 +779,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETRENDERERCALLBACK_0100
-     * @tc.name   ：testOHAudioStreamBuilderSetRendererCallback001
+     * @tc.name   testOHAudioStreamBuilderSetRendererCallback001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETRENDERERCALLBACK_0100
      * @tc.desc   ：Set the callback for outputting audio streams.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetRendererCallback001', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetRendererCallback001 test start `);
@@ -795,12 +795,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLEFORMAT_0100
-     * @tc.name   ：testOHAudioStreamBuilderSetSampleFormat001
+     * @tc.name   testOHAudioStreamBuilderSetSampleFormat001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLEFORMAT_0100
      * @tc.desc   ：Set the sampling format properties of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetSampleFormat001', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetSampleFormat001 test start `);
@@ -811,12 +811,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLEFORMAT_0200
-     * @tc.name   ：testOHAudioStreamBuilderSetSampleFormat002
+     * @tc.name   testOHAudioStreamBuilderSetSampleFormat002
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLEFORMAT_0200
      * @tc.desc   ：Set the sampling format properties of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetSampleFormat002', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetSampleFormat002 test start `);
@@ -827,12 +827,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLEFORMAT_0300
-     * @tc.name   ：testOHAudioStreamBuilderSetSampleFormat003
+     * @tc.name   testOHAudioStreamBuilderSetSampleFormat003
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLEFORMAT_0300
      * @tc.desc   ：Set the sampling format properties of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetSampleFormat003', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetSampleFormat003 test start `);
@@ -843,12 +843,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLEFORMAT_0400
-     * @tc.name   ：testOHAudioStreamBuilderSetSampleFormat004
+     * @tc.name   testOHAudioStreamBuilderSetSampleFormat004
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLEFORMAT_0400
      * @tc.desc   ：Set the sampling format properties of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetSampleFormat004', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetSampleFormat004 test start `);
@@ -859,12 +859,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLEFORMAT_0500
-     * @tc.name   ：testOHAudioStreamBuilderSetSampleFormat005
+     * @tc.name   testOHAudioStreamBuilderSetSampleFormat005
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLEFORMAT_0500
      * @tc.desc   ：Set the sampling format properties of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetSampleFormat005', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetSampleFormat005 test start `);
@@ -875,12 +875,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLEFORMAT_0600
-     * @tc.name   ：testOHAudioStreamBuilderSetSampleFormat006
+     * @tc.name   testOHAudioStreamBuilderSetSampleFormat006
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLEFORMAT_0600
      * @tc.desc   ：Set the sampling format properties of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetSampleFormat006', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetSampleFormat006 test start `);
@@ -891,12 +891,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLEFORMAT_0700
-     * @tc.name   ：testOHAudioStreamBuilderSetSampleFormat007
+     * @tc.name   testOHAudioStreamBuilderSetSampleFormat007
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLEFORMAT_0700
      * @tc.desc   ：Set the sampling format properties of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetSampleFormat007', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetSampleFormat007 test start `);
@@ -907,12 +907,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLEFORMAT_0800
-     * @tc.name   ：testOHAudioStreamBuilderSetSampleFormat008
+     * @tc.name   testOHAudioStreamBuilderSetSampleFormat008
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLEFORMAT_0800
      * @tc.desc   ：Set the sampling format properties of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetSampleFormat008', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetSampleFormat008 test start `);
@@ -923,12 +923,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLEFORMAT_0900
-     * @tc.name   ：testOHAudioStreamBuilderSetSampleFormat009
+     * @tc.name   testOHAudioStreamBuilderSetSampleFormat009
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLEFORMAT_0900
      * @tc.desc   ：Set the sampling format properties of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetSampleFormat009', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetSampleFormat009 test start `);
@@ -939,12 +939,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLINGRATE_0100
-     * @tc.name   ：testOHAudioStreamBuilderSetSamplingRate001
+     * @tc.name   testOHAudioStreamBuilderSetSamplingRate001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLINGRATE_0100
      * @tc.desc   ：Set the sampling rate property of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetSamplingRate001', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetSamplingRate001 test start `);
@@ -955,12 +955,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLINGRATE_0200
-     * @tc.name   ：testOHAudioStreamBuilderSetSamplingRate002
+     * @tc.name   testOHAudioStreamBuilderSetSamplingRate002
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLINGRATE_0200
      * @tc.desc   ：Set the sampling rate property of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetSamplingRate002', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetSamplingRate002 test start `);
@@ -971,12 +971,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLINGRATE_0300
-     * @tc.name   ：testOHAudioStreamBuilderSetSamplingRate003
+     * @tc.name   testOHAudioStreamBuilderSetSamplingRate003
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLINGRATE_0300
      * @tc.desc   ：Set the sampling rate property of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetSamplingRate003', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetSamplingRate003 test start `);
@@ -987,12 +987,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLINGRATE_0400
-     * @tc.name   ：testOHAudioStreamBuilderSetSamplingRate004
+     * @tc.name   testOHAudioStreamBuilderSetSamplingRate004
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLINGRATE_0400
      * @tc.desc   ：Set the sampling rate property of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetSamplingRate004', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetSamplingRate004 test start `);
@@ -1003,12 +1003,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLINGRATE_0500
-     * @tc.name   ：testOHAudioStreamBuilderSetSamplingRate005
+     * @tc.name   testOHAudioStreamBuilderSetSamplingRate005
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLINGRATE_0500
      * @tc.desc   ：Set the sampling rate property of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetSamplingRate005', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetSamplingRate005 test start `);
@@ -1019,12 +1019,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETRENDEREROUTPUTDEVICECHANGECALLBACK_0100
-     * @tc.name   ：testOHAudioStreamBuilderSetRendererOutputDeviceChangeCallback001
+     * @tc.name   testOHAudioStreamBuilderSetRendererOutputDeviceChangeCallback001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETRENDEREROUTPUTDEVICECHANGECALLBACK_0100
      * @tc.desc   ：Set input stream device callback function.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetRendererOutputDeviceChangeCallback001', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetRendererOutputDeviceChangeCallback001 test start `);
@@ -1035,12 +1035,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETCAPTURERINFO_0200
-     * @tc.name   ：testOHAudioStreamBuilderSetCapturerInfo002
+     * @tc.name   testOHAudioStreamBuilderSetCapturerInfo002
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETCAPTURERINFO_0200
      * @tc.desc   ：Set the working scenario for the input audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetCapturerInfo002', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetCapturerInfo002 test start `);
@@ -1051,12 +1051,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETCAPTURERINFO_0300
-     * @tc.name   ：testOHAudioStreamBuilderSetCapturerInfo003
+     * @tc.name   testOHAudioStreamBuilderSetCapturerInfo003
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETCAPTURERINFO_0300
      * @tc.desc   ：Set the working scenario for the input audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetCapturerInfo003', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetCapturerInfo003 test start `);
@@ -1067,12 +1067,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETCAPTURERINFO_0400
-     * @tc.name   ：testOHAudioStreamBuilderSetCapturerInfo004
+     * @tc.name   testOHAudioStreamBuilderSetCapturerInfo004
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETCAPTURERINFO_0400
      * @tc.desc   ：Set the working scenario for the input audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetCapturerInfo004', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetCapturerInfo004 test start `);
@@ -1083,12 +1083,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETCAPTURERINFO_0500
-     * @tc.name   ：testOHAudioStreamBuilderSetCapturerInfo005
+     * @tc.name   testOHAudioStreamBuilderSetCapturerInfo005
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETCAPTURERINFO_0500
      * @tc.desc   ：Set the working scenario for the input audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetCapturerInfo005', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetCapturerInfo005 test start `);
@@ -1099,12 +1099,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETCAPTURERINFO_0600
-     * @tc.name   ：testOHAudioStreamBuilderSetCapturerInfo006
+     * @tc.name   testOHAudioStreamBuilderSetCapturerInfo006
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETCAPTURERINFO_0600
      * @tc.desc   ：Set the working scenario for the input audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetCapturerInfo006', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetCapturerInfo006 test start `);
@@ -1115,12 +1115,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETCAPTURERINFO_0100
-     * @tc.name   ：testOHAudioStreamBuilderSetCapturerInfo001
+     * @tc.name   testOHAudioStreamBuilderSetCapturerInfo001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETCAPTURERINFO_0100
      * @tc.desc   ：Set the working scenario for the input audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetCapturerInfo001', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetCapturerInfo001 test start `);
@@ -1130,12 +1130,12 @@ export default function OhCapturerTest() {
       done();
     });
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETENCODINGTYPE_0600
-     * @tc.name   ：testOHAudioStreamBuilderSetEncodingType006
+     * @tc.name   testOHAudioStreamBuilderSetEncodingType006
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETENCODINGTYPE_0600
      * @tc.desc   ：Set the channel count property of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetEncodingType006', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetEncodingType006 test start `);
@@ -1146,12 +1146,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETLATENCYMODE_0600
-     * @tc.name   ：testOHAudioStreamBuilderSetLatencyMode006
+     * @tc.name   testOHAudioStreamBuilderSetLatencyMode006
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETLATENCYMODE_0600
      * @tc.desc   ：Set the delay mode for the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetLatencyMode006', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetLatencyMode006 test start `);
@@ -1162,12 +1162,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLEFORMAT_1000
-     * @tc.name   ：testOHAudioStreamBuilderSetSampleFormat010
+     * @tc.name   testOHAudioStreamBuilderSetSampleFormat010
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLEFORMAT_1000
      * @tc.desc   ：Set the sampling format properties of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetSampleFormat010', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetSampleFormat010 test start `);
@@ -1178,12 +1178,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLINGRATE_0600
-     * @tc.name   ：testOHAudioStreamBuilderSetSamplingRate006
+     * @tc.name   testOHAudioStreamBuilderSetSamplingRate006
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOSTREAMBUILDERSETSAMPLINGRATE_0600
      * @tc.desc   ：Set the sampling rate property of the audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioStreamBuilderSetSamplingRate006', 0, async (done: Function) => {
       console.log(`testOHAudioStreamBuilderSetSamplingRate006 test start `);
@@ -1215,12 +1215,12 @@ export default function OhCapturerTest() {
       done();
     });
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETCURRENTSTATE_0100
-     * @tc.name   ：testOHAudioCapturerGetCurrentState001
+     * @tc.name   testOHAudioCapturerGetCurrentState001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETCURRENTSTATE_0100
      * @tc.desc   ：Query the current audio stream status.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioCapturerGetCurrentState001', 0, async (done: Function) => {
       console.log(`testOHAudioCapturerGetCurrentState001 test start `);
@@ -1233,12 +1233,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERSTART_0100
-     * @tc.name   ：testOHAudioCapturerStart001
+     * @tc.name   testOHAudioCapturerStart001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERSTART_0100
      * @tc.desc   ：Start obtaining audio data.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioCapturerStart001', 0, async (done: Function) => {
       console.log(`testOHAudioCapturerStart001 test start `);
@@ -1249,12 +1249,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETCURRENTSTATE_0200
-     * @tc.name   ：testOHAudioCapturerGetCurrentState002
+     * @tc.name   testOHAudioCapturerGetCurrentState002
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETCURRENTSTATE_0200
      * @tc.desc   ：Query the current audio stream status.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioCapturerGetCurrentState002', 0, async (done: Function) => {
       console.log(`testOHAudioCapturerGetCurrentState002 test start `);
@@ -1265,12 +1265,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETSAMPLEFORMAT_0100
-     * @tc.name   ：testOHAudioCapturerGetSampleFormat001
+     * @tc.name   testOHAudioCapturerGetSampleFormat001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETSAMPLEFORMAT_0100
      * @tc.desc   ：Query the current input audio stream sampling format.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioCapturerGetSampleFormat001', 0, async (done: Function) => {
       console.log(`testOHAudioCapturerGetSampleFormat001 test start `);
@@ -1281,12 +1281,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERPAUSE_0100
-     * @tc.name   ：testOHAudioCapturerPause001
+     * @tc.name   testOHAudioCapturerPause001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERPAUSE_0100
      * @tc.desc   ：Pause input audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioCapturerPause001', 0, async (done: Function) => {
       console.log(`testOHAudioCapturerPause001 test start `);
@@ -1297,12 +1297,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETCURRENTSTATE_0300
-     * @tc.name   ：testOHAudioCapturerGetCurrentState003
+     * @tc.name   testOHAudioCapturerGetCurrentState003
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETCURRENTSTATE_0300
      * @tc.desc   ：Query the current audio stream status.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioCapturerGetCurrentState003', 0, async (done: Function) => {
       console.log(`testOHAudioCapturerGetCurrentState003 test start `);
@@ -1313,12 +1313,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETCHANNELCOUNT_0100
-     * @tc.name   ：testOHAudioCapturerGetChannelCount001
+     * @tc.name   testOHAudioCapturerGetChannelCount001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETCHANNELCOUNT_0100
      * @tc.desc   ：Query the current number of audio channels.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioCapturerGetChannelCount001', 0, async (done: Function) => {
       console.log(`testOHAudioCapturerGetChannelCount001 test start `);
@@ -1329,12 +1329,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETCAPTURERINFO_0100
-     * @tc.name   ：testOHAudioCapturerGetCapturerInfo001
+     * @tc.name   testOHAudioCapturerGetCapturerInfo001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETCAPTURERINFO_0100
      * @tc.desc   ：Query the current audio streaming workspace type.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioCapturerGetCapturerInfo001', 0, async (done: Function) => {
       console.log(`testOHAudioCapturerGetCapturerInfo001 test start `);
@@ -1345,12 +1345,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETENCODINGTYPE_0100
-     * @tc.name   ：testOHAudioCapturerGetEncodingType001
+     * @tc.name   testOHAudioCapturerGetEncodingType001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETENCODINGTYPE_0100
      * @tc.desc   ：Query the current audio stream encoding type.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioCapturerGetEncodingType001', 0, async (done: Function) => {
       console.log(`testOHAudioCapturerGetEncodingType001 test start `);
@@ -1361,12 +1361,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETFRAMESIZEINCALLBACK_0100
-     * @tc.name   ：testOHAudioCapturerGetFrameSizeInCallback001
+     * @tc.name   testOHAudioCapturerGetFrameSizeInCallback001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETFRAMESIZEINCALLBACK_0100
      * @tc.desc   ：Query the frame size in the callback, which is the fixed length of the buffer returned by each callback.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioCapturerGetFrameSizeInCallback001', 0, async (done: Function) => {
       console.log(`testOHAudioCapturerGetFrameSizeInCallback001 test start `);
@@ -1377,12 +1377,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETFRAMESREAD_0100
-     * @tc.name   ：testOHAudioCapturerGetFramesRead001
+     * @tc.name   testOHAudioCapturerGetFramesRead001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETFRAMESREAD_0100
      * @tc.desc   ：Query the number of frames read since self created streaming.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioCapturerGetFramesRead001', 0, async (done: Function) => {
       console.log(`testOHAudioCapturerGetFramesRead001 test start `);
@@ -1393,12 +1393,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETLATENCYMODE_0200
-     * @tc.name   ：testOHAudioCapturerGetLatencyMode002
+     * @tc.name   testOHAudioCapturerGetLatencyMode002
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETLATENCYMODE_0200
      * @tc.desc   ：Query the current audio stream delay mode.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioCapturerGetLatencyMode002', 0, async (done: Function) => {
       console.log(`testOHAudioCapturerGetLatencyMode002 test start `);
@@ -1408,12 +1408,12 @@ export default function OhCapturerTest() {
       done();
     });
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETSAMPLINGRATE_0100
-     * @tc.name   ：testOHAudioCapturerGetSamplingRate001
+     * @tc.name   testOHAudioCapturerGetSamplingRate001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETSAMPLINGRATE_0100
      * @tc.desc   ：Query the current input audio stream sampling rate.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioCapturerGetSamplingRate001', 0, async (done: Function) => {
       console.log(`testOHAudioCapturerGetSamplingRate001 test start `);
@@ -1424,12 +1424,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETSTREAMID_0100
-     * @tc.name   ：testOHAudioCapturerGetStreamId001
+     * @tc.name   testOHAudioCapturerGetStreamId001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETSTREAMID_0100
      * @tc.desc   ：Query the current input audio stream ID.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioCapturerGetStreamId001', 0, async (done: Function) => {
       console.log(`testOHAudioCapturerGetStreamId001 test start `);
@@ -1440,12 +1440,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETTIMESTAMP_0100
-     * @tc.name   ：testOHAudioCapturerGetTimestamp001
+     * @tc.name   testOHAudioCapturerGetTimestamp001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETTIMESTAMP_0100
      * @tc.desc   ：Obtain input audio stream timestamp and location information.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioCapturerGetTimestamp001', 0, async (done: Function) => {
       console.log(`testOHAudioCapturerGetTimestamp001 test start `);
@@ -1456,12 +1456,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETFRAMEPOSITION_0100
-     * @tc.name   ：testOHAudioCapturerGetFramePosition001
+     * @tc.name   testOHAudioCapturerGetFramePosition001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETFRAMEPOSITION_0100
      * @tc.desc   ：Obtain input audio stream timestamp and location information.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioCapturerGetFramePosition001', 0, async (done: Function) => {
       console.log(`testOHAudioCapturerGetFramePosition001 test start `);
@@ -1472,12 +1472,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERSTOP_0100
-     * @tc.name   ：testOHAudioCapturerStop001
+     * @tc.name   testOHAudioCapturerStop001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERSTOP_0100
      * @tc.desc   ：Stop input audio stream.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioCapturerStop001', 0, async (done: Function) => {
       console.log(`testOHAudioCapturerStop001 test start `);
@@ -1488,12 +1488,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETLATENCYMODE_0100
-     * @tc.name   ：testOHAudioCapturerGetLatencyMode001
+     * @tc.name   testOHAudioCapturerGetLatencyMode001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETLATENCYMODE_0100
      * @tc.desc   ：Query the current audio stream delay mode.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioCapturerGetLatencyMode001', 0, async (done: Function) => {
       console.log(`testOHAudioCapturerGetLatencyMode001 test start `);
@@ -1504,12 +1504,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETCURRENTSTATE_0400
-     * @tc.name   ：testOHAudioCapturerGetCurrentState004
+     * @tc.name   testOHAudioCapturerGetCurrentState004
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETCURRENTSTATE_0400
      * @tc.desc   ：Query the current audio stream status.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioCapturerGetCurrentState004', 0, async (done: Function) => {
       console.log(`testOHAudioCapturerGetCurrentState004 test start `);
@@ -1520,12 +1520,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETCURRENTSTATE_0500
-     * @tc.name   ：testOHAudioCapturerGetCurrentState005
+     * @tc.name   testOHAudioCapturerGetCurrentState005
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETCURRENTSTATE_0500
      * @tc.desc   ：Query the current audio stream status.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioCapturerGetCurrentState005', 0, async (done: Function) => {
       console.log(`testOHAudioCapturerGetCurrentState005 test start `);
@@ -1537,12 +1537,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERFLUSH_0100
-     * @tc.name   ：testOHAudioCapturerFlush001
+     * @tc.name   testOHAudioCapturerFlush001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERFLUSH_0100
      * @tc.desc   ：Discard the obtained audio data.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioCapturerFlush001', 0, async (done: Function) => {
       console.log(`testOHAudioCapturerFlush001 test start `);
@@ -1553,12 +1553,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETCURRENTSTATE_0600
-     * @tc.name   ：testOHAudioCapturerGetCurrentState006
+     * @tc.name   testOHAudioCapturerGetCurrentState006
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOCAPTURERGETCURRENTSTATE_0600
      * @tc.desc   ：Query the current audio stream status.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testOHAudioCapturerGetCurrentState006', 0, async (done: Function) => {
       console.log(`testOHAudioCapturerGetCurrentState006 test start `);
@@ -1590,13 +1590,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * start - stop - release
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_CREATEAUDIOCAPTURERRECORDER_0100
-     * @tc.name   ：testCreateAudioCapturerRecorder001
+     * @tc.name   testCreateAudioCapturerRecorder001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CREATEAUDIOCAPTURERRECORDER_0100
      * @tc.desc   ：Input streaming initialization method.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testCreateAudioCapturerRecorder001', 0, async (done: Function) => {
       console.log(`testCreateAudioCapturerRecorder001 test start `);
@@ -1628,13 +1627,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * start- pause - release
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_CREATEAUDIOCAPTURERRECORDER_0200
-     * @tc.name   ：testCreateAudioCapturerRecorder002
+     * @tc.name   testCreateAudioCapturerRecorder002
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CREATEAUDIOCAPTURERRECORDER_0200
      * @tc.desc   ：Input streaming initialization method.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testCreateAudioCapturerRecorder002', 0, async (done: Function) => {
       console.log(`testCreateAudioCapturerRecorder002 test start `);
@@ -1665,13 +1663,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * start- release
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_CREATEAUDIOCAPTURERRECORDER_0300
-     * @tc.name   ：testCreateAudioCapturerRecorder003
+     * @tc.name   testCreateAudioCapturerRecorder003
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CREATEAUDIOCAPTURERRECORDER_0300
      * @tc.desc   ：Input streaming initialization method.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testCreateAudioCapturerRecorder003', 0, async (done: Function) => {
       console.log(`testCreateAudioCapturerRecorder003 test start `);
@@ -1701,13 +1698,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * release
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_CREATEAUDIOCAPTURERRECORDER_0400
-     * @tc.name   ：testCreateAudioCapturerRecorder004
+     * @tc.name   testCreateAudioCapturerRecorder004
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CREATEAUDIOCAPTURERRECORDER_0400
      * @tc.desc   ：Input streaming initialization method.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testCreateAudioCapturerRecorder004', 0, async (done: Function) => {
       console.log(`testCreateAudioCapturerRecorder004 test start `);
@@ -1728,13 +1724,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * start - pause - stop - release
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_CREATEAUDIOCAPTURERRECORDER_0500
-     * @tc.name   ：testCreateAudioCapturerRecorder005
+     * @tc.name   testCreateAudioCapturerRecorder005
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CREATEAUDIOCAPTURERRECORDER_0500
      * @tc.desc   ：Input streaming initialization method.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testCreateAudioCapturerRecorder005', 0, async (done: Function) => {
       console.log(`testCreateAudioCapturerRecorder005 test start `);
@@ -1772,13 +1767,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * start - stop - start - release
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_CREATEAUDIOCAPTURERRECORDER_0600
-     * @tc.name   ：testCreateAudioCapturerRecorder006
+     * @tc.name   testCreateAudioCapturerRecorder006
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CREATEAUDIOCAPTURERRECORDER_0600
      * @tc.desc   ：Input streaming initialization method.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testCreateAudioCapturerRecorder006', 0, async (done: Function) => {
       console.log(`testCreateAudioCapturerRecorder006 test start `);
@@ -1815,13 +1809,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * start - pause - start - release
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_CREATEAUDIOCAPTURERRECORDER_0700
-     * @tc.name   ：testCreateAudioCapturerRecorder007
+     * @tc.name   testCreateAudioCapturerRecorder007
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CREATEAUDIOCAPTURERRECORDER_0700
      * @tc.desc   ：Input streaming initialization method.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testCreateAudioCapturerRecorder007', 0, async (done: Function) => {
       console.log(`testCreateAudioCapturerRecorder007 test start `);
@@ -1859,13 +1852,12 @@ export default function OhCapturerTest() {
       done();
     });
     /**
-     * start - pause - stop - start - release
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_CREATEAUDIOCAPTURERRECORDER_0800
-     * @tc.name   ：testCreateAudioCapturerRecorder008
+     * @tc.name   testCreateAudioCapturerRecorder008
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CREATEAUDIOCAPTURERRECORDER_0800
      * @tc.desc   ：Input streaming initialization method.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testCreateAudioCapturerRecorder008', 0, async (done: Function) => {
       console.log(`testCreateAudioCapturerRecorder008 test start `);
@@ -1908,13 +1900,12 @@ export default function OhCapturerTest() {
       done();
     });
     /**
-     * start - pause - start - stop - start - release
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_CREATEAUDIOCAPTURERRECORDER_0900
-     * @tc.name   ：testCreateAudioCapturerRecorder009
+     * @tc.name   testCreateAudioCapturerRecorder009
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CREATEAUDIOCAPTURERRECORDER_0900
      * @tc.desc   ：Input streaming initialization method.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testCreateAudioCapturerRecorder009', 0, async (done: Function) => {
       console.log(`testCreateAudioCapturerRecorder009 test start `);
@@ -1964,13 +1955,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * start - stop - start - pause - stop - release
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_CREATEAUDIOCAPTURERRECORDER_1000
-     * @tc.name   ：testCreateAudioCapturerRecorder010
+     * @tc.name   testCreateAudioCapturerRecorder010
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CREATEAUDIOCAPTURERRECORDER_1000
      * @tc.desc   ：Input streaming initialization method.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testCreateAudioCapturerRecorder010', 0, async (done: Function) => {
       console.log(`testCreateAudioCapturerRecorder010 test start `);
@@ -2023,13 +2013,12 @@ export default function OhCapturerTest() {
       done();
     });
     /**
-     * start - pause - stop - release
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_CREATEAUDIOCAPTURERRECORDER_1100
-     * @tc.name   ：testCreateAudioCapturerRecorder011
+     * @tc.name   testCreateAudioCapturerRecorder011
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CREATEAUDIOCAPTURERRECORDER_1100
      * @tc.desc   ：Input streaming initialization method.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testCreateAudioCapturerRecorder011', 0, async (done: Function) => {
       console.log(`testCreateAudioCapturerRecorder011 test start `);
@@ -2067,13 +2056,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * start - stop - pause - release
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_ABNOMALOPRATIONCAPTURER_0100
-     * @tc.name   ：testAbnormalOperationCapturer001
+     * @tc.name   testAbnormalOperationCapturer001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ABNOMALOPRATIONCAPTURER_0100
      * @tc.desc   ：Input streaming initialization method.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testAbnormalOperationCapturer001', 0, async (done: Function) => {
       console.log(`testAbnormalOperationCapturer001 test start `);
@@ -2109,13 +2097,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * stop - release
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_ABNOMALOPRATIONCAPTURER_0200
-     * @tc.name   ：testAbnormalOperationCapturer002
+     * @tc.name   testAbnormalOperationCapturer002
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ABNOMALOPRATIONCAPTURER_0200
      * @tc.desc   ：Input streaming initialization method.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testAbnormalOperationCapturer002', 0, async (done: Function) => {
       console.log(`testAbnormalOperationCapturer002 test start `);
@@ -2139,13 +2126,12 @@ export default function OhCapturerTest() {
       done();
     });
     /**
-     * pause - release
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_ABNOMALOPRATIONCAPTURER_0300
-     * @tc.name   ：testAbnormalOperationCapturer003
+     * @tc.name   testAbnormalOperationCapturer003
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ABNOMALOPRATIONCAPTURER_0300
      * @tc.desc   ：Input streaming initialization method.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testAbnormalOperationCapturer003', 0, async (done: Function) => {
       console.log(`testAbnormalOperationCapturer003 test start `);
@@ -2170,13 +2156,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * release - release
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_ABNOMALOPRATIONCAPTURER_0400
-     * @tc.name   ：testAbnormalOperationCapturer004
+     * @tc.name   testAbnormalOperationCapturer004
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ABNOMALOPRATIONCAPTURER_0400
      * @tc.desc   ：Input streaming initialization method.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testAbnormalOperationCapturer004', 0, async (done: Function) => {
       console.log(`testAbnormalOperationCapturer004 test start `);
@@ -2200,13 +2185,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * pause - pause
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_ABNOMALOPRATIONCAPTURER_0500
-     * @tc.name   ：testAbnormalOperationCapturer005
+     * @tc.name   testAbnormalOperationCapturer005
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ABNOMALOPRATIONCAPTURER_0500
      * @tc.desc   ：Input streaming initialization method.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testAbnormalOperationCapturer005', 0, async (done: Function) => {
       console.log(`testAbnormalOperationCapturer005 test start `);
@@ -2234,13 +2218,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * start - start
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_ABNOMALOPRATIONCAPTURER_0600
-     * @tc.name   ：testAbnormalOperationCapturer006
+     * @tc.name   testAbnormalOperationCapturer006
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ABNOMALOPRATIONCAPTURER_0600
      * @tc.desc   ：Input streaming initialization method.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testAbnormalOperationCapturer006', 0, async (done: Function) => {
       console.log(`testAbnormalOperationCapturer006 test start `);
@@ -2267,13 +2250,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * stop - stop
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_ABNOMALOPRATIONCAPTURER_0700
-     * @tc.name   ：testAbnormalOperationCapturer007
+     * @tc.name   testAbnormalOperationCapturer007
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ABNOMALOPRATIONCAPTURER_0700
      * @tc.desc   ：Input streaming initialization method.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testAbnormalOperationCapturer007', 0, async (done: Function) => {
       console.log(`testAbnormalOperationCapturer007 test start `);
@@ -2306,13 +2288,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * Capturer attribute get test
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_CAPTURERRECORDERATTRIBUYE_0100
-     * @tc.name   ：testCapturerRecorderAttribute001
+     * @tc.name   testCapturerRecorderAttribute001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURERRECORDERATTRIBUYE_0100
      * @tc.desc   ：Input streaming initialization method.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testCapturerRecorderAttribute001', 0, async (done: Function) => {
       console.log(`testCapturerRecorderAttribute001 test start `);
@@ -2360,13 +2341,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * Capturer properties verification  test
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_CAPTURERRECORDERATTRIBUYE_0200
-     * @tc.name   ：testCapturerRecorderAttribute002
+     * @tc.name   testCapturerRecorderAttribute002
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURERRECORDERATTRIBUYE_0200
      * @tc.desc   ：Input streaming initialization method.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testCapturerRecorderAttribute002', 0, async (done: Function) => {
       console.log(`testCapturerRecorderAttribute002 test start `);
@@ -2413,13 +2393,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * Capturer properties verification  test latencyMode = 1
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_CAPTURERRECORDERATTRIBUYE_0300
-     * @tc.name   ：testCapturerRecorderAttribute003
+     * @tc.name   testCapturerRecorderAttribute003
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURERRECORDERATTRIBUYE_0300
      * @tc.desc   ：Input streaming initialization method.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testCapturerRecorderAttribute003', 0, async (done: Function) => {
       console.log(`testCapturerRecorderAttribute003 test start `);
@@ -2466,13 +2445,12 @@ export default function OhCapturerTest() {
     });
 
     /**
-     * Capturer properties verification  test frameSizeValue = 240
-     * @tc.number : SUB_MULTIMEDIA_AUDIO_CAPTURERRECORDERATTRIBUYE_0400
-     * @tc.name   ：testCapturerRecorderAttribute004
+     * @tc.name   testCapturerRecorderAttribute004
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURERRECORDERATTRIBUYE_0400
      * @tc.desc   ：Input streaming initialization method.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('testCapturerRecorderAttribute004', 0, async (done: Function) => {
       console.log(`testCapturerRecorderAttribute004 test start `);

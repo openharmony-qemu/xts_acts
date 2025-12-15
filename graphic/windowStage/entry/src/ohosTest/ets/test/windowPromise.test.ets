@@ -73,12 +73,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
         console.info(` Succeeded in getWindowAvoidArea1. Data: ${JSON.stringify(avoidArea1)}`);
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0760
-     * @tc.name      : testListener_Sys_AvoidAreaChange_Promise
-     * @tc.desc      : Verify whether the change monitoring of avoidance area can be started normally.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testListener_Sys_AvoidAreaChange_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0760
+     * @tc.desc   Verify whether the change monitoring of avoidance area can be started normally.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testListener_Sys_AvoidAreaChange_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       await sleep(800)
@@ -147,12 +147,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0770
-     * @tc.name      : testListener_windowSizeChange
-     * @tc.desc      : Verify that the window size avoidance area changes and monitor whether it can be opened normally.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testListener_windowSizeChange
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0770
+     * @tc.desc   Verify that the window size avoidance area changes and monitor whether it can be opened normally.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testListener_windowSizeChange', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       await sleep(900)
@@ -191,12 +191,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       console.log(msgStr + 'tempWnd.resetSize(' + resizeValue + ', ' + resizeValue + ') success');
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0740
-     * @tc.name      : testListener_SystemAvoidAreaChange_Off
-     * @tc.desc      : Verify whether the change monitoring of avoidance area can be started normally.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testListener_SystemAvoidAreaChange_Off
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0740
+     * @tc.desc   Verify whether the change monitoring of avoidance area can be started normally.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testListener_SystemAvoidAreaChange_Off', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       await sleep(800)
@@ -260,12 +260,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0780
-     * @tc.name      : testListener_windowSizeChange_Off
-     * @tc.desc      : Verify whether the window size change monitoring can be closed normally.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testListener_windowSizeChange_Off
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0780
+     * @tc.desc   Verify whether the window size change monitoring can be closed normally.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testListener_windowSizeChange_Off', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       await sleep(900)
@@ -308,12 +308,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       await sleep(800)
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1310
-     * @tc.name      : testSetSystemBarEnable_ShowStatusBar_HideNavBar_Promise
-     * @tc.desc      : Verify that the scene shows the status bar and hides the navigation bar
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testSetSystemBarEnable_ShowStatusBar_HideNavBar_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1310
+     * @tc.desc   Verify that the scene shows the status bar and hides the navigation bar
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetSystemBarEnable_ShowStatusBar_HideNavBar_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testSetSystemBarEnable_ShowStatusBar_HideNavBar_Promise';
@@ -344,12 +344,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       done();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1240
-     * @tc.name      : testSetSystemBarEnable_HideStatusBar_ShowNavBar_Promise
-     * @tc.desc      : Verify that the scene hides the status bar and displays the navigation bar
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetSystemBarEnable_HideStatusBar_ShowNavBar_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1240
+     * @tc.desc   Verify that the scene hides the status bar and displays the navigation bar
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetSystemBarEnable_HideStatusBar_ShowNavBar_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSetSystemBarEnable_HideStatusBar_ShowNavBar_Promise';
@@ -381,12 +381,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1330
-     * @tc.name      : testSetSystemBarEnable_Show_StatusBarAndNavBar_Promise
-     * @tc.desc      : Verify that the scene displays both the status bar and the navigation bar
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetSystemBarEnable_Show_StatusBarAndNavBar_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1330
+     * @tc.desc   Verify that the scene displays both the status bar and the navigation bar
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetSystemBarEnable_Show_StatusBarAndNavBar_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSetSystemBarEnable_Show_StatusBarAndNavBar_Promise';
@@ -418,12 +418,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1260
-     * @tc.name      : testSetSystemBarEnable_Hide_StatusBarAndNavBar_Promise
-     * @tc.desc      : Verify that the scene hides both the status bar and the navigation bar
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetSystemBarEnable_Hide_StatusBarAndNavBar_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1260
+     * @tc.desc   Verify that the scene hides both the status bar and the navigation bar
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetSystemBarEnable_Hide_StatusBarAndNavBar_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSetSystemBarEnable_Hide_StatusBarAndNavBar_Promise';
@@ -455,12 +455,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1280
-     * @tc.name      : testSetSystemBarEnable_Invalid_Parameter_Promise
-     * @tc.desc      : Verify the scene where illegal values are entered when the status bar and navigation bar are displayed
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetSystemBarEnable_Invalid_Parameter_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1280
+     * @tc.desc   Verify the scene where illegal values are entered when the status bar and navigation bar are displayed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetSystemBarEnable_Invalid_Parameter_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSetSystemBarEnable_Invalid_Parameter_Promise';
@@ -494,12 +494,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1390
-     * @tc.name      : testSetSystemBarProperties_RGB_Promise
-     * @tc.desc      : Verify the scene where the colors of the status bar and navigation bar are set in RGB
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetSystemBarProperties_RGB_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1390
+     * @tc.desc   Verify the scene where the colors of the status bar and navigation bar are set in RGB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetSystemBarProperties_RGB_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSetSystemBarProperties_RGB_Promise';
@@ -548,12 +548,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1370
-     * @tc.name      : testSetSystemBarProperties_KeywordForm_Promise
-     * @tc.desc      : Verify the scene where the status bar and navigation bar colors are set in hexadecimal form
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetSystemBarProperties_KeywordForm_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1370
+     * @tc.desc   Verify the scene where the status bar and navigation bar colors are set in hexadecimal form
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetSystemBarProperties_KeywordForm_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSetSystemBarProperties_KeywordForm_Promise';
@@ -602,12 +602,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1350
-     * @tc.name      : testSetSystemBarProperties_Hexadecimal_Promise
-     * @tc.desc      : Verify the scene where the status bar and navigation bar colors are set as keywords
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetSystemBarProperties_Hexadecimal_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1350
+     * @tc.desc   Verify the scene where the status bar and navigation bar colors are set as keywords
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetSystemBarProperties_Hexadecimal_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSetSystemBarProperties_Hexadecimal_Promise';
@@ -656,12 +656,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0180
-     * @tc.name      : testCreate_App_Type_Win_Promise
-     * @tc.desc      : Verify the scenario of creating the application type window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testCreate_App_Type_Win_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0180
+     * @tc.desc   Verify the scenario of creating the application type window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCreate_App_Type_Win_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testCreate_App_Type_Win_Promise';
@@ -680,12 +680,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0260
-     * @tc.name      : testCreate_Sys_Type_Win_Promise
-     * @tc.desc      : Verify the scenario of creating the system type window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testCreate_Sys_Type_Win_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0260
+     * @tc.desc   Verify the scenario of creating the system type window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCreate_Sys_Type_Win_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testCreate_Sys_Type_Win_Promise';
@@ -716,12 +716,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       done();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0220
-     * @tc.name      : testCreate_Not_Exist_Win_Promise
-     * @tc.desc      : Verify the scenario of creating a window of a type that does not exist
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCreate_Not_Exist_Win_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0220
+     * @tc.desc   Verify the scenario of creating a window of a type that does not exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCreate_Not_Exist_Win_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testCreate_Not_Exist_Win_Promise';
@@ -737,12 +737,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0240
-     * @tc.name      : testCreate_Repeate_Id_Win_Promise
-     * @tc.desc      : Verify the scenario of creating a window with duplicate IDs
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCreate_Repeate_Id_Win_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0240
+     * @tc.desc   Verify the scenario of creating a window with duplicate IDs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCreate_Repeate_Id_Win_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testCreate_Repeate_Id_Win_Promise';
@@ -764,12 +764,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       })
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0800
-     * @tc.name      : testLoadContent_Exist_Create_SysWin_Promise
-     * @tc.desc      : Verify the scenario of loading an existing page
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testLoadContent_Exist_Create_SysWin_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0800
+     * @tc.desc   Verify the scenario of loading an existing page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLoadContent_Exist_Create_SysWin_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testLoadContent_Exist_Create_SysWin_Promise';
@@ -799,12 +799,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0880
-     * @tc.name      : testLoadContent_Para_Is_Null_Create_SysWin_Promise
-     * @tc.desc      : Verify the scene of loading the page with illegal values
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testLoadContent_Para_Is_Null_Create_SysWin_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0880
+     * @tc.desc   Verify the scene of loading the page with illegal values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLoadContent_Para_Is_Null_Create_SysWin_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testLoadContent_Para_Is_Null_Create_SysWin_Promise';
@@ -844,12 +844,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0840
-     * @tc.name      : testLoadContent_Exist_Input_Para_Path_Promise
-     * @tc.desc      : Verify the scenario of loading an existing page
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testLoadContent_Exist_Input_Para_Path_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0840
+     * @tc.desc   Verify the scenario of loading an existing page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLoadContent_Exist_Input_Para_Path_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testLoadContent_Exist_Input_Para_Path_Promise';
@@ -865,12 +865,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       done();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0860
-     * @tc.name      : testLoadContent_Input_Para_Is_Null_Promise
-     * @tc.desc      : Verify the scenario of loading an existing page
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testLoadContent_Input_Para_Is_Null_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0860
+     * @tc.desc   Verify the scenario of loading an existing page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLoadContent_Input_Para_Is_Null_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testLoadContent_Input_Para_Is_Null_Promise';
@@ -888,12 +888,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       done();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0820
-     * @tc.name      : testLoadContent_Exist_Input_Para_PathAndStorage_Promise
-     * @tc.desc      : Verify the scenario of loading an existing page
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testLoadContent_Exist_Input_Para_PathAndStorage_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0820
+     * @tc.desc   Verify the scenario of loading an existing page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLoadContent_Exist_Input_Para_PathAndStorage_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testLoadContent_Exist_Input_Para_PathAndStorage_Promise';
@@ -911,12 +911,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       done();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0900
-     * @tc.name      : testLoadContent_Para_PathAndStorage_Is_Null_Promise
-     * @tc.desc      : Verify the scenario of loading an existing page
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testLoadContent_Para_PathAndStorage_Is_Null_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0900
+     * @tc.desc   Verify the scenario of loading an existing page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLoadContent_Para_PathAndStorage_Is_Null_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testLoadContent_Para_PathAndStorage_Is_Null_Promise';
@@ -931,12 +931,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       done();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0050
-     * @tc.name      : testCreateSubWindow_WinName_IsNot_Empty_Promise
-     * @tc.desc      : Verify the scenario of creating an auxiliary window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCreateSubWindow_WinName_IsNot_Empty_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0050
+     * @tc.desc   Verify the scenario of creating an auxiliary window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCreateSubWindow_WinName_IsNot_Empty_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testCreateSubWindow_WinName_IsNot_Empty_Promise';
@@ -954,12 +954,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       done();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0070
-     * @tc.name      : testCreateSubWindow_WinName_Is_Null_Promise
-     * @tc.desc      : Verify the scene of entering illegal values to create an auxiliary window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCreateSubWindow_WinName_Is_Null_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0070
+     * @tc.desc   Verify the scene of entering illegal values to create an auxiliary window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCreateSubWindow_WinName_Is_Null_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testCreateSubWindow_WinName_Is_Null_Promise';
@@ -977,12 +977,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       done();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0590
-     * @tc.name      : testGetSubWindow_Promise
-     * @tc.desc      : Verify the scene of obtaining all auxiliary sub windows
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testGetSubWindow_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0590
+     * @tc.desc   Verify the scene of obtaining all auxiliary sub windows
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetSubWindow_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testGetSubWindow_Promise';
@@ -998,12 +998,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1200
-     * @tc.name      : testSetPrivacyMode_SppSubWin_Promise
-     * @tc.desc      : Verify the scene where the application sub window is set as a security layer
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testSetPrivacyMode_SppSubWin_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1200
+     * @tc.desc   Verify the scene where the application sub window is set as a security layer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetPrivacyMode_SppSubWin_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testSetPrivacyMode_SppSubWin_Promise';
@@ -1054,12 +1054,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       done();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1180
-     * @tc.name      : testSetPreferredOrientation_Promise
-     * @tc.desc      : Sets the display direction property of the window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testSetPreferredOrientation_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1180
+     * @tc.desc   Sets the display direction property of the window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetPreferredOrientation_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testSetPreferredOrientation_Promise';
@@ -1097,12 +1097,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1120
-     * @tc.name      : testSetForbidSplitMove_Promise
-     * @tc.desc      : Sets whether Windows are forbidden to move in split screen mode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testSetForbidSplitMove_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1120
+     * @tc.desc   Sets whether Windows are forbidden to move in split screen mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetForbidSplitMove_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testSetForbidSplitMove_Promise';
@@ -1127,12 +1127,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       done();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2160
-     * @tc.name      : testSnapshotTest_Promise_Form
-     * @tc.desc      : Scenario of screenshot of verification window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testSnapshotTest_Promise_Form
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2160
+     * @tc.desc   Scenario of screenshot of verification window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSnapshotTest_Promise_Form', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       await sleep(900);
@@ -1166,12 +1166,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       })
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0330
-     * @tc.name      : testDialogTargetTouch_Promise
-     * @tc.desc      : Verify the scenario of opening modal window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testDialogTargetTouch_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0330
+     * @tc.desc   Verify the scenario of opening modal window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDialogTargetTouch_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testDialogTargetTouch_Promise';
@@ -1198,12 +1198,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1080
-     * @tc.name      : testSetAspectRatio_Cancel_Upon_Success_Promise
-     * @tc.desc      : Validate the scenario cancelled after setting the proportion of the content layout of the main window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetAspectRatio_Cancel_Upon_Success_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1080
+     * @tc.desc   Validate the scenario cancelled after setting the proportion of the content layout of the main window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetAspectRatio_Cancel_Upon_Success_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSetAspectRatio_Cancel_Upon_Success_Promise';
@@ -1236,12 +1236,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       done();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2340
-     * @tc.name      : testSetAspectRatio_Invalid_Params_Promise
-     * @tc.desc      : Validate the scenario where the content layout proportion of the main window is abnormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetAspectRatio_Invalid_Params_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2340
+     * @tc.desc   Validate the scenario where the content layout proportion of the main window is abnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetAspectRatio_Invalid_Params_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSetAspectRatio_Invalid_Params_Promise';
@@ -1267,12 +1267,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2320
-     * @tc.name      : testWindowEventType_Enum
-     * @tc.desc      : Test the enumeration value of WindowEventType
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testWindowEventType_Enum
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2320
+     * @tc.desc   Test the enumeration value of WindowEventType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWindowEventType_Enum', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testWindowEventType_Enum';
@@ -1299,12 +1299,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0100
-     * @tc.name      : testSetSpecificSystemBarEnabled_Function_Promise
-     * @tc.desc      : Test the function of setSpecificSystemBarEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testSetSpecificSystemBarEnabled_Function_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0100
+     * @tc.desc   Test the function of setSpecificSystemBarEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetSpecificSystemBarEnabled_Function_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let msgStr: string = 'testSetSpecificSystemBarEnabled';
@@ -1331,12 +1331,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0200
-     * @tc.name      : testSetSpecificSystemBarEnabled_2_Function_Promise
-     * @tc.desc      : Test the function of setSpecificSystemBarEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testSetSpecificSystemBarEnabled_2_Function_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0200
+     * @tc.desc   Test the function of setSpecificSystemBarEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetSpecificSystemBarEnabled_2_Function_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let msgStr = 'testSetSpecificSystemBarEnabled_2';
@@ -1361,12 +1361,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1220
-     * @tc.name      : testSetWindowDecorVisible
-     * @tc.desc      : test the function of SetWindowDecorVisible
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testSetWindowDecorVisible
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1220
+     * @tc.desc   test the function of SetWindowDecorVisible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testSetWindowDecorVisible', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
       let msgStr: string = 'testSetWindowDecorVisible';
@@ -1398,12 +1398,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1230
-     * @tc.name      : testSetWindowDecorHeight
-     * @tc.desc      : test the function of SetWindowDecorHeight
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testSetWindowDecorHeight
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1230
+     * @tc.desc   test the function of SetWindowDecorHeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetWindowDecorHeight', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let msgStr: string = 'testSetWindowDecorHeight';
@@ -1432,12 +1432,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       })
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1240
-     * @tc.name      : testGetWindowDecorHeight
-     * @tc.desc      : test the function of GetWindowDecorHeight
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testGetWindowDecorHeight
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1240
+     * @tc.desc   test the function of GetWindowDecorHeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testGetWindowDecorHeight', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
       let caseName: string = 'www data';
@@ -1468,12 +1468,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1250
-     * @tc.name      : testSubWindowOptions
-     * @tc.desc      : test the function of SubWindowOptions
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testSubWindowOptions
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1250
+     * @tc.desc   test the function of SubWindowOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSubWindowOptions', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let msgStr: string = 'testSubWindowOptions';
@@ -1514,12 +1514,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1260
-     * @tc.name      : testKeepKeyboardOnFocus
-     * @tc.desc      : test the function of KeepKeyboardOnFocus
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testKeepKeyboardOnFocus
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1260
+     * @tc.desc   test the function of KeepKeyboardOnFocus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testKeepKeyboardOnFocus', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let msgStr = 'testKeepKeyboardOnFocus';
@@ -1544,12 +1544,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       })
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0100
-     * @tc.name      : testShiftAppWindowFocus_Function_Promise
-     * @tc.desc      : Test the function value of shiftAppWindowFocus
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testShiftAppWindowFocus_Function_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0100
+     * @tc.desc   Test the function value of shiftAppWindowFocus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShiftAppWindowFocus_Function_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let msgStr: string = 'testShiftAppWindowFocus_Function_Promise';
@@ -1580,12 +1580,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3910
-     * @tc.name      : testCreateSubWindowWithOptions_Function_Promise
-     * @tc.desc      : Test the function value of createSubWindowWithOptions
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testCreateSubWindowWithOptions_Function_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3910
+     * @tc.desc   Test the function value of createSubWindowWithOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testCreateSubWindowWithOptions_Function_Promise", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let msgStr = "testCreateSubWindowWithOptions_Function_Promise";
@@ -1617,12 +1617,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
         });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3920
-     * @tc.name      : testGetWindowSystemBarProperties_Function
-     * @tc.desc      : Test the function value of getWindowSystemBarProperties
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testGetWindowSystemBarProperties_Function
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3920
+     * @tc.desc   Test the function value of getWindowSystemBarProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testGetWindowSystemBarProperties_Function", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let msgStr = "testGetWindowSystemBarProperties_Function";
@@ -1644,12 +1644,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WULTMNDOW_GET_WINDOWSYSTEMBARPROPERTIES_0100
-     * @tc.name      : test_FullSereen_SetWindowSystemBarProperties_and_GetWindowSystemBarProperties
-     * @tc.desc      : test_FullSereen_SetWindowSystemBarProperties_and_GetWindowSystemBarProperties
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_FullSereen_SetWindowSystemBarProperties_and_GetWindowSystemBarProperties
+     * @tc.number SUB_BASIC_WMS_WULTMNDOW_GET_WINDOWSYSTEMBARPROPERTIES_0100
+     * @tc.desc   test_FullSereen_SetWindowSystemBarProperties_and_GetWindowSystemBarProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FullSereen_SetWindowSystemBarProperties_and_GetWindowSystemBarProperties", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let msgStr = "test_FullSereen_SetWindowSystemBarProperties_and_GetWindowSystemBarProperties";
@@ -1688,12 +1688,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WULTMNDOW_GET_WINDOWSYSTEMBARPROPERTIES_0200
-     * @tc.name      : test_subWindow_GetWindowSystemBarProperties_1300004
-     * @tc.desc      : test_subWindow_GetWindowSystemBarProperties_1300004
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_subWindow_GetWindowSystemBarProperties_1300004
+     * @tc.number SUB_BASIC_WMS_WULTMNDOW_GET_WINDOWSYSTEMBARPROPERTIES_0200
+     * @tc.desc   test_subWindow_GetWindowSystemBarProperties_1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_subWindow_GetWindowSystemBarProperties_1300004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let msgStr = "test_subWindow_GetWindowSystemBarProperties_1300004";
@@ -1719,12 +1719,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WULTMNDOW_SET_WINDOWSYSTEMBARPROPERTIES_0100
-     * @tc.name      : test_subWindow_SetWindowSystemBarProperties
-     * @tc.desc      : test_subWindow_GetWindowSystemBarProperties
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_subWindow_SetWindowSystemBarProperties
+     * @tc.number SUB_BASIC_WMS_WULTMNDOW_SET_WINDOWSYSTEMBARPROPERTIES_0100
+     * @tc.desc   test_subWindow_GetWindowSystemBarProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_subWindow_SetWindowSystemBarProperties", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async () => {
       let msgStr = "test_subWindow_GetWindowSystemBarProperties_1300004";
@@ -1757,12 +1757,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1180
-     * @tc.name      : testSetWindowLimits_Function_Promise
-     * @tc.desc      : test the function of setWindowLimits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testSetWindowLimits_Function_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1180
+     * @tc.desc   test the function of setWindowLimits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetWindowLimits_Function_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let tag = 'setWindowLimits_Function_Promise '
@@ -1800,12 +1800,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4000
-     * @tc.name      : testEnableLandscapeMultiWindow_Function
-     * @tc.desc      : Test the function value of EnableLandscapeMultiWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testEnableLandscapeMultiWindow_Function
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4000
+     * @tc.desc   Test the function value of EnableLandscapeMultiWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testEnableLandscapeMultiWindow_Function", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let msgStr = "testEnableLandscapeMultiWindow_Function";
@@ -1832,12 +1832,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       })
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4010
-     * @tc.name      : testDisableLandscapeMultiWindow_Function
-     * @tc.desc      : Test the function value of DisableLandscapeMultiWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testDisableLandscapeMultiWindow_Function
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4010
+     * @tc.desc   Test the function value of DisableLandscapeMultiWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testDisableLandscapeMultiWindow_Function", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let msgStr = "testDisableLandscapeMultiWindow_Function";
@@ -1864,12 +1864,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       })
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3930
-     * @tc.name      : testSetWindowMask_Function_Promise
-     * @tc.desc      : Test the function value of setWindowMask
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowMask_Function_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3930
+     * @tc.desc   Test the function value of setWindowMask
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testSetWindowMask_Function_Promise", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let msgStr = "testSetWindowMask_Function_Promise";

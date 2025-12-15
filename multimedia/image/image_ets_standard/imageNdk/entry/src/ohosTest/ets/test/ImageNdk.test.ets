@@ -1610,14 +1610,32 @@ export default function imageNdkTest() {
           done();
       }
     }
+    
+    const testGetImagePropertyAllKey = async (TAG: string, imageSourceApi: image.ImageSource, key: string, compareValue: string | undefined) => {
+      let result = true
+      const imagePropertyRes: String | number = ndkTest.GetImageProperty(imageSourceApi, key)
+      if(typeof imagePropertyRes === "string"){
+        hilog.info(0x0000, 'scaleTest', '%{public}s', TAG+`image info success: ${imagePropertyRes}`)
+        if(imagePropertyRes === compareValue){
+          result = true
+        }else{
+          hilog.info(0x0000, 'scaleTest', '%{public}s', TAG+`compare value error, getValue: ${imagePropertyRes}, compareValue: ${compareValue}`)
+          result = false
+        }
+      }else{
+        hilog.info(0x0000, 'scaleTest', '%{public}s', TAG+`image info fail: ${imagePropertyRes}`)
+        result = false
+      }
+      return result
+    }
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PIXELMAPCAPI_InitializationOptions_0100
-     * @tc.name      : testInitializationOptions
-     * @tc.desc      : 1.testInitializationOptions
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PIXELMAPCAPI_InitializationOptions_0100
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_InitializationOptions_0100
+     * @tc.desc   1.testInitializationOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PIXELMAPCAPI_InitializationOptions_0100', Level.LEVEL0, (done: Function) => {
       let result: number = ndkTest.testInitializationOptions(6, 4, 3, 0)
@@ -1625,13 +1643,13 @@ export default function imageNdkTest() {
       done();
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PIXELMAPCAPI_InitializationOptions_0200
-     * @tc.name      : testInitializationOptions
-     * @tc.desc      : 1.testInitializationOptions
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PIXELMAPCAPI_InitializationOptions_0200
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_InitializationOptions_0200
+     * @tc.desc   1.testInitializationOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PIXELMAPCAPI_InitializationOptions_0200', Level.LEVEL0, (done: Function) => {
       let result: number = ndkTest.testInitializationOptions(6, 4, 3, 1)
@@ -1639,13 +1657,13 @@ export default function imageNdkTest() {
       done();
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PIXELMAPCAPI_InitializationOptions_0300
-     * @tc.name      : testInitializationOptions
-     * @tc.desc      : 1.testInitializationOptions
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PIXELMAPCAPI_InitializationOptions_0300
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_InitializationOptions_0300
+     * @tc.desc   1.testInitializationOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PIXELMAPCAPI_InitializationOptions_0300', Level.LEVEL0, (done: Function) => {
       let result: number = ndkTest.testInitializationOptions(6, 4, 3, 2)
@@ -1653,13 +1671,13 @@ export default function imageNdkTest() {
       done();
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PIXELMAPCAPI_InitializationOptions_0400
-     * @tc.name      : testInitializationOptions
-     * @tc.desc      : 1.testInitializationOptions
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PIXELMAPCAPI_InitializationOptions_0400
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_InitializationOptions_0400
+     * @tc.desc   1.testInitializationOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PIXELMAPCAPI_InitializationOptions_0400', Level.LEVEL0, (done: Function) => {
       let result: number = ndkTest.testInitializationOptions(6, 4, 3, 3)
@@ -1667,13 +1685,13 @@ export default function imageNdkTest() {
       done();
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0100
-     * @tc.name      : testCreatePixelmap
-     * @tc.desc      : 1.testCreatePixelmap
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0100
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0100
+     * @tc.desc   1.testCreatePixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0100', Level.LEVEL0, (done: Function) => {
       let result: number = ndkTest.testCreatePixelmap(6, 4, 3, 0)
@@ -1681,13 +1699,13 @@ export default function imageNdkTest() {
       done();
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0200
-     * @tc.name      : testCreatePixelmap
-     * @tc.desc      : 1.testCreatePixelmap
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0200
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0200
+     * @tc.desc   1.testCreatePixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0200', Level.LEVEL0, (done: Function) => {
       let result: number = ndkTest.testCreatePixelmap(6, 4, 3, 1)
@@ -1695,13 +1713,13 @@ export default function imageNdkTest() {
       done();
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0300
-     * @tc.name      : testCreatePixelmap
-     * @tc.desc      : 1.testCreatePixelmap
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0300
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0300
+     * @tc.desc   1.testCreatePixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0300', Level.LEVEL0, (done: Function) => {
       let result: number = ndkTest.testCreatePixelmap(6, 4, 3, 2)
@@ -1709,13 +1727,13 @@ export default function imageNdkTest() {
       done();
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0400
-     * @tc.name      : testCreatePixelmap
-     * @tc.desc      : 1.testCreatePixelmap
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0400
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0400
+     * @tc.desc   1.testCreatePixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0400', Level.LEVEL0, (done: Function) => {
       let result: number = ndkTest.testCreatePixelmap(6, 4, 3, 3)
@@ -1723,13 +1741,13 @@ export default function imageNdkTest() {
       done();
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0500
-     * @tc.name      : testCreatePixelmap
-     * @tc.desc      : 1.testCreatePixelmap
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0500
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0500
+     * @tc.desc   1.testCreatePixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0500', Level.LEVEL0, (done: Function) => {
       let result: number = ndkTest.testCreatePixelmap(6, 4, 4, 0)
@@ -1737,13 +1755,13 @@ export default function imageNdkTest() {
       done();
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0600
-     * @tc.name      : testCreatePixelmap
-     * @tc.desc      : 1.testCreatePixelmap
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0600
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0600
+     * @tc.desc   1.testCreatePixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0600', Level.LEVEL0, (done: Function) => {
       let result: number = ndkTest.testCreatePixelmap(6, 4, 4, 1)
@@ -1751,13 +1769,13 @@ export default function imageNdkTest() {
       done();
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0700
-     * @tc.name      : testICreatePixelmap
-     * @tc.desc      : 1.testCreatePixelmap
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0700
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0700
+     * @tc.desc   1.testCreatePixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0700', Level.LEVEL0, (done: Function) => {
       let result: number = ndkTest.testCreatePixelmap(6, 4, 4, 2)
@@ -1765,13 +1783,13 @@ export default function imageNdkTest() {
       done();
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0800
-     * @tc.name      : testICreatePixelmap
-     * @tc.desc      : 1.testCreatePixelmap
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0800
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0800
+     * @tc.desc   1.testCreatePixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PIXELMAPCAPI_CreatePixelmap_0800', Level.LEVEL0, (done: Function) => {
       let result: number = ndkTest.testCreatePixelmap(6, 4, 4, 3)
@@ -1779,13 +1797,13 @@ export default function imageNdkTest() {
       done();
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PIXELMAPCAPI_ReadPixels_0100
-     * @tc.name      : testReadPixels
-     * @tc.desc      : 1.testReadPixels
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PIXELMAPCAPI_ReadPixels_0100
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_ReadPixels_0100
+     * @tc.desc   1.testReadPixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PIXELMAPCAPI_ReadPixels_0100', Level.LEVEL0, (done: Function) => {
       let pixelmapResult: number = ndkTest.testCreatePixelmap(6, 4, 3, 1)
@@ -1796,13 +1814,13 @@ export default function imageNdkTest() {
       done();
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PIXELMAPCAPI_WritePixels_0100
-     * @tc.name      : testWritePixels
-     * @tc.desc      : 1.testWritePixels
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PIXELMAPCAPI_WritePixels_0100
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_WritePixels_0100
+     * @tc.desc   1.testWritePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PIXELMAPCAPI_WritePixels_0100', Level.LEVEL0, (done: Function) => {
       let resultPixelmap: number = ndkTest.testCreatePixelmap(6, 4, 3, 1)
@@ -1817,13 +1835,13 @@ export default function imageNdkTest() {
       done();
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PIXELMAPCAPI_GetImageInfo_0100
-     * @tc.name      : testGetImageInfo
-     * @tc.desc      : 1.testGetImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PIXELMAPCAPI_GetImageInfo_0100
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_GetImageInfo_0100
+     * @tc.desc   1.testGetImageInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PIXELMAPCAPI_GetImageInfo_0100', Level.LEVEL0, (done: Function) => {
       let resultPixelmap: number = ndkTest.testCreatePixelmap(6, 4, 3, 1)
@@ -1834,13 +1852,13 @@ export default function imageNdkTest() {
       done();
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PIXELMAPCAPI_Opacity_0100
-     * @tc.name      : testOpacity
-     * @tc.desc      : 1.testOpacity
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PIXELMAPCAPI_Opacity_0100
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_Opacity_0100
+     * @tc.desc   1.testOpacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PIXELMAPCAPI_Opacity_0100', Level.LEVEL0, (done: Function) => {
       let resultPixelmap: number = ndkTest.testCreatePixelmap(6, 4, 3, 1)
@@ -1850,14 +1868,14 @@ export default function imageNdkTest() {
       done();
     })
 
-    /*
-    * @tc.number    : SUB_MULTIMEDIA_PIXELMAPCAPI_Scale_0100
-    * @tc.name      : testScale
-    * @tc.desc      : 1.testScale
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PIXELMAPCAPI_Scale_0100
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_Scale_0100
+     * @tc.desc   1.testScale
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PIXELMAPCAPI_Scale_0100', Level.LEVEL0, (done: Function) => {
       let resultPixelmap: number = ndkTest.testCreatePixelmap(6, 4, 3, 1)
       expect(resultPixelmap).assertEqual(0)
@@ -1866,14 +1884,14 @@ export default function imageNdkTest() {
       done();
     })
 
-    /*
-    * @tc.number    : SUB_MULTIMEDIA_PIXELMAPCAPI_Translate_0100
-    * @tc.name      : testTranslate
-    * @tc.desc      : 1.testTranslate
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PIXELMAPCAPI_Translate_0100
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_Translate_0100
+     * @tc.desc   1.testTranslate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PIXELMAPCAPI_Translate_0100', Level.LEVEL0, (done: Function) => {
       let resultPixelmap: number = ndkTest.testCreatePixelmap(6, 4, 3, 1)
       expect(resultPixelmap).assertEqual(0)
@@ -1882,14 +1900,14 @@ export default function imageNdkTest() {
       done();
     })
 
-    /*
-    * @tc.number    : SUB_MULTIMEDIA_PIXELMAPCAPI_Rotate_0100
-    * @tc.name      : testRotate
-    * @tc.desc      : 1.testRotate
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PIXELMAPCAPI_Rotate_0100
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_Rotate_0100
+     * @tc.desc   1.testRotate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PIXELMAPCAPI_Rotate_0100', Level.LEVEL0, (done: Function) => {
       let resultPixelmap: number = ndkTest.testCreatePixelmap(6, 4, 3, 1)
       expect(resultPixelmap).assertEqual(0)
@@ -1898,13 +1916,13 @@ export default function imageNdkTest() {
       done();
     })
 
-    /*
-     * @tc.number    : SUB_MULTIMEDIA_PIXELMAPCAPI_Flip_0100
-     * @tc.name      : testFlip
-     * @tc.desc      : 1.testFlip
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PIXELMAPCAPI_Flip_0100
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_Flip_0100
+     * @tc.desc   1.testFlip
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PIXELMAPCAPI_Flip_0100', Level.LEVEL0, (done: Function) => {
       let resultPixelmap: number = ndkTest.testCreatePixelmap(6, 4, 3, 1)
@@ -1914,14 +1932,14 @@ export default function imageNdkTest() {
       done();
     })
 
-    /*
-   * @tc.number    : SUB_MULTIMEDIA_PIXELMAPCAPI_Crop_0100
-   * @tc.name      : testCrop
-   * @tc.desc      : 1.testCrop
-   * @tc.size      : MediumTest
-   * @tc.type      : Function
-   * @tc.level     : Level 3
-   */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PIXELMAPCAPI_Crop_0100
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_Crop_0100
+     * @tc.desc   1.testCrop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PIXELMAPCAPI_Crop_0100', Level.LEVEL0, (done: Function) => {
       let resultPixelmap: number = ndkTest.testCreatePixelmap(6, 4, 3, 1)
       expect(resultPixelmap).assertEqual(0)
@@ -1931,13 +1949,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0100
-     * @tc.name      : createImageSourceFromUri
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromUri
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0100
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0100"
@@ -1951,13 +1968,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0200
-     * @tc.name      : createImageSourceFromUri
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromUri
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0200
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0200", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0200'
@@ -1971,13 +1987,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0300
-     * @tc.name      : createImageSourceFromUri
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromUri
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0300
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0300", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0300'
@@ -1991,13 +2006,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0400
-     * @tc.name      : createImageSourceFromUri
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromUri
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0400
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0400", Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0400"
@@ -2011,13 +2025,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0500
-     * @tc.name      : createImageSourceFromUri
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromUri
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0500
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0500", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0500'
@@ -2031,13 +2044,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0600
-     * @tc.name      : createImageSourceFromUri
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromUri
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0600
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0600", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0600'
@@ -2051,13 +2063,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0700
-     * @tc.name      : createImageSourceFromUri
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromUri
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0700
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0700", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0700'
@@ -2071,13 +2082,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0800
-     * @tc.name      : createImageSourceFromUri
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromUri
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0800
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0800", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_URI_0800'
@@ -2091,13 +2101,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0100
-     * @tc.name      : createImageSourceFromFd
-     * @tc.desc      : 1.get image fileFd
-     *                 2.createImageSourceFromFd
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0100
+     * @tc.desc   1.get image fileFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0100'
@@ -2111,13 +2120,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0200
-     * @tc.name      : createImageSourceFromFd
-     * @tc.desc      : 1.get image fileFd
-     *                 2.createImageSourceFromFd
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0200
+     * @tc.desc   1.get image fileFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0200", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0200'
@@ -2131,13 +2139,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0300
-     * @tc.name      : createImageSourceFromFd
-     * @tc.desc      : 1.get image fileFd
-     *                 2.createImageSourceFromFd
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0300
+     * @tc.desc   1.get image fileFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0300", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0300'
@@ -2151,13 +2158,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0400
-     * @tc.name      : createImageSourceFromFd
-     * @tc.desc      : 1.get image fileFd
-     *                 2.createImageSourceFromFd
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0400
+     * @tc.desc   1.get image fileFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0400", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0400'
@@ -2171,13 +2177,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0500
-     * @tc.name      : createImageSourceFromFd
-     * @tc.desc      : 1.get image fileFd
-     *                 2.createImageSourceFromFd
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0500
+     * @tc.desc   1.get image fileFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0500", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0500'
@@ -2191,13 +2196,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0600
-     * @tc.name      : createImageSourceFromFd
-     * @tc.desc      : 1.get image fileFd
-     *                 2.createImageSourceFromFd
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0600
+     * @tc.desc   1.get image fileFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0600", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0600'
@@ -2211,13 +2215,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0700
-     * @tc.name      : createImageSourceFromFd
-     * @tc.desc      : 1.get image fileFd
-     *                 2.createImageSourceFromFd
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0700
+     * @tc.desc   1.get image fileFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0700", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0700'
@@ -2232,13 +2235,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0800
-     * @tc.name      : createImageSourceFromFd
-     * @tc.desc      : 1.get image fileFd
-     *                 2.createImageSourceFromFd
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0800
+     * @tc.desc   1.get image fileFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0800", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_FD_0800'
@@ -2252,13 +2254,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0100
-     * @tc.name      : createImageSourceFromBuffer
-     * @tc.desc      : 1.get testPng.buffer
-     *                 2.createImageSourceFromBuffer
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0100
+     * @tc.desc   1.get testPng.buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0100'
@@ -2272,13 +2273,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0200
-     * @tc.name      : createImageSourceFromBuffer
-     * @tc.desc      : 1.get testPng.buffer
-     *                 2.createImageSourceFromBuffer
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0200
+     * @tc.desc   1.get testPng.buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0200", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0200'
@@ -2292,13 +2292,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0300
-     * @tc.name      : createImageSourceFromBuffer
-     * @tc.desc      : 1.get testPng.buffer
-     *                 2.createImageSourceFromBuffer
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0300
+     * @tc.desc   1.get testPng.buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0300", Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0300"
@@ -2312,13 +2311,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0400
-     * @tc.name      : createImageSourceFromBuffer
-     * @tc.desc      : 1.get testPng.buffer
-     *                 2.createImageSourceFromBuffer
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0400
+     * @tc.desc   1.get testPng.buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0400", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0400'
@@ -2332,13 +2330,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0500
-     * @tc.name      : createImageSourceFromBuffer
-     * @tc.desc      : 1.get testPng.buffer
-     *                 2.createImageSourceFromBuffer
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0500
+     * @tc.desc   1.get testPng.buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0500", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0500'
@@ -2352,13 +2349,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0600
-     * @tc.name      : createImageSourceFromBuffer
-     * @tc.desc      : 1.get testPng.buffer
-     *                 2.createImageSourceFromBuffer
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0600
+     * @tc.desc   1.get testPng.buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0600", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0600'
@@ -2372,13 +2368,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0700
-     * @tc.name      : createImageSourceFromBuffer
-     * @tc.desc      : 1.get testPng.buffer
-     *                 2.createImageSourceFromBuffer
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0700
+     * @tc.desc   1.get testPng.buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0700", Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0700"
@@ -2392,13 +2387,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0800
-     * @tc.name      : createImageSourceFromBuffer
-     * @tc.desc      : 1.get testPng.buffer
-     *                 2.createImageSourceFromBuffer
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0800
+     * @tc.desc   1.get testPng.buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0800", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_BUFFER_0800'
@@ -2412,13 +2406,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_WITH_USER_BUFFER_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_WITH_USER_BUFFER_0100
-     * @tc.desc      : 1.get testPng.buffer
-     *                 2.createImageSourceWithUserBuffer
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_WITH_USER_BUFFER_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_WITH_USER_BUFFER_0100
+     * @tc.desc   1.get testPng.buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_WITH_USER_BUFFER_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_WITH_USER_BUFFER_0100'
@@ -2432,14 +2425,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0100
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromUri,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0100
+     * @tc.desc   1.getimagepath,2.createImageSourceFromUri,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUNDK_SOURCENDK_CREATE_BYURI_0100'
@@ -2454,14 +2445,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0200
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromUri,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0200
+     * @tc.desc   1.getimagepath,2.createImageSourceFromUri,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0200", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUNDK_SOURCENDK_CREATE_BYURI_0200'
@@ -2476,14 +2465,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0300
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromUri,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0300
+     * @tc.desc   1.getimagepath,2.createImageSourceFromUri,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0300", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUNDK_SOURCENDK_CREATE_BYURI_0300'
@@ -2498,14 +2485,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0400
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromUri,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0400
+     * @tc.desc   1.getimagepath,2.createImageSourceFromUri,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0400", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUNDK_SOURCENDK_CREATE_BYURI_0400'
@@ -2520,14 +2505,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0500
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromUri,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0500
+     * @tc.desc   1.getimagepath,2.createImageSourceFromUri,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0500", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUNDK_SOURCENDK_CREATE_BYURI_0500'
@@ -2542,14 +2525,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0600
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromUri,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0600
+     * @tc.desc   1.getimagepath,2.createImageSourceFromUri,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0600", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUNDK_SOURCENDK_CREATE_BYURI_0600'
@@ -2564,14 +2545,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0700
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromUri,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0700
+     * @tc.desc   1.getimagepath,2.createImageSourceFromUri,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0700", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUNDK_SOURCENDK_CREATE_BYURI_0700'
@@ -2586,14 +2565,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0800
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromUri,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0800
+     * @tc.desc   1.getimagepath,2.createImageSourceFromUri,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0800", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUNDK_SOURCENDK_CREATE_BYURI_0800'
@@ -2608,38 +2585,36 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0900
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromUri,3.CreatePixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0900
+     * @tc.desc   1.getimagepath,2.createImageSourceFromUri,3.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0900", Level.LEVEL0, async (done: Function) => {
       await NDK_CreatePixelMap('SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_0900', "uri", "test5.jpg", 480, 360, done);
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_1000
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromUri,3.CreatePixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_1000
+     * @tc.desc   1.getimagepath,2.createImageSourceFromUri,3.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_1000", Level.LEVEL0, async (done: Function) => {
       await NDK_CreatePixelMap('SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYURI_1000', "uri", "test7.png", 550, 550, done);
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0100
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0100
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUNDK_SOURCENDK_CREATE_BYFD_0100'
@@ -2654,14 +2629,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0200
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0200
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0200", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUNDK_SOURCENDK_CREATE_BYFD_0200'
@@ -2676,14 +2649,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0300
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0300
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0300", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUNDK_SOURCENDK_CREATE_BYFD_0300'
@@ -2698,14 +2669,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0400
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0400
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0400", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUNDK_SOURCENDK_CREATE_BYFD_0400'
@@ -2720,14 +2689,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0500
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0500
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0500", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUNDK_SOURCENDK_CREATE_BYFD_0500'
@@ -2742,14 +2709,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0600
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0600
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0600", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUNDK_SOURCENDK_CREATE_BYFD_0600'
@@ -2764,14 +2729,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0700
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0700
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0700", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUNDK_SOURCENDK_CREATE_BYFD_0700'
@@ -2786,14 +2749,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0800
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0800
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0800", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUNDK_SOURCENDK_CREATE_BYFD_0800'
@@ -2808,38 +2769,36 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0900
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromFd,3.CreatePixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0900
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0900", Level.LEVEL0, async (done: Function) => {
       await NDK_CreatePixelMap('SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_0900', "Fd", "test6.gif", 480, 270, done);
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_1000
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromFd,3.CreatePixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_1000
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_1000", Level.LEVEL0, async (done: Function) => {
       await NDK_CreatePixelMap('SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYFD_1000', "Fd", "test8.bmp", 959, 959, done);
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0100
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromData,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0100
+     * @tc.desc   1.getimagepath,2.createImageSourceFromData,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUNDK_SOURCENDK_CREATE_BYDATA_0100'
@@ -2854,14 +2813,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0200
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromData,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0200
+     * @tc.desc   1.getimagepath,2.createImageSourceFromData,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0200", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUNDK_SOURCENDK_CREATE_BYDATA_0200'
@@ -2876,14 +2833,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0300
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromData,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0300
+     * @tc.desc   1.getimagepath,2.createImageSourceFromData,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0300", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUNDK_SOURCENDK_CREATE_BYDATA_0300'
@@ -2898,14 +2853,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0400
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromData,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0400
+     * @tc.desc   1.getimagepath,2.createImageSourceFromData,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0400", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUNDK_SOURCENDK_CREATE_BYDATA_0400'
@@ -2920,14 +2873,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0500
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromData,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0500
+     * @tc.desc   1.getimagepath,2.createImageSourceFromData,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0500", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUNDK_SOURCENDK_CREATE_BYDATA_0500'
@@ -2942,14 +2893,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0600
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromData,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0600
+     * @tc.desc   1.getimagepath,2.createImageSourceFromData,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0600", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUNDK_SOURCENDK_CREATE_BYDATA_0600'
@@ -2964,14 +2913,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0700
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromData,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0700
+     * @tc.desc   1.getimagepath,2.createImageSourceFromData,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0700", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUNDK_SOURCENDK_CREATE_BYDATA_0700'
@@ -2986,14 +2933,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0800
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromData,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0800
+     * @tc.desc   1.getimagepath,2.createImageSourceFromData,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0800", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUNDK_SOURCENDK_CREATE_BYDATA_0800'
@@ -3008,38 +2953,36 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0900
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromData,3.CreatePixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0900
+     * @tc.desc   1.getimagepath,2.createImageSourceFromData,3.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0900", Level.LEVEL0, async (done: Function) => {
       await NDK_CreatePixelMap('SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_0900', "Buffer", "test.webp", 1212, 681, done);
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_1000
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromData,3.CreatePixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_1000
+     * @tc.desc   1.getimagepath,2.createImageSourceFromData,3.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_1000", Level.LEVEL0, async (done: Function) => {
       await NDK_CreatePixelMap('SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BYDATA_1000', "Buffer", "test.arw", 3074, 2728, done);
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_GIF_CREATE_RGBA8888LIST_BYURI_0100
-     * @tc.name      : CreatePixelMapList
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromUri,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMapList
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_GIF_CREATE_RGBA8888LIST_BYURI_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_GIF_CREATE_RGBA8888LIST_BYURI_0100
+     * @tc.desc   1.getimagepath,2.createImageSourceFromUri,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_GIF_CREATE_RGBA8888LIST_BYURI_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = 'GIF_CREATE_RGBA8888LIST_BYURI_0100'
@@ -3054,14 +2997,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_WEBP_CREATE_RGBA8888LIST_BYURI_0100
-     * @tc.name      : CreatePixelMapList
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromUri,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMapList
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_WEBP_CREATE_RGBA8888LIST_BYURI_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_WEBP_CREATE_RGBA8888LIST_BYURI_0100
+     * @tc.desc   1.getimagepath,2.createImageSourceFromUri,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_WEBP_CREATE_RGBA8888LIST_BYURI_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = 'WEBP_CREATE_RGBA8888LIST_BYURI_0100'
@@ -3076,14 +3017,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_GIF_CREATE_RGBA8888LIST_BYFD_0100
-     * @tc.name      : CreatePixelMapList
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMapList
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_GIF_CREATE_RGBA8888LIST_BYFD_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_GIF_CREATE_RGBA8888LIST_BYFD_0100
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_GIF_CREATE_RGBA8888LIST_BYFD_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = 'GIF_CREATE_RGBA8888LIST_BYFD_0100'
@@ -3098,14 +3037,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_WEBP_CREATE_RGBA8888LIST_BYFD_0100
-     * @tc.name      : CreatePixelMapList
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMapList
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_WEBP_CREATE_RGBA8888LIST_BYFD_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_WEBP_CREATE_RGBA8888LIST_BYFD_0100
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_WEBP_CREATE_RGBA8888LIST_BYFD_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = 'WEBP_CREATE_RGBA8888LIST_BYFD_0100'
@@ -3120,14 +3057,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_GIF_CREATE_RGBA8888LIST_BYDATA_0100
-     * @tc.name      : CreatePixelMapList
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromData,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMapList
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_GIF_CREATE_RGBA8888LIST_BYDATA_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_GIF_CREATE_RGBA8888LIST_BYDATA_0100
+     * @tc.desc   1.getimagepath,2.createImageSourceFromData,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_GIF_CREATE_RGBA8888LIST_BYDATA_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = 'GIF_CREATE_RGBA8888LIST_BYDATA_0100'
@@ -3142,14 +3077,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_WEBP_CREATE_RGBA8888LIST_BYDATA_0100
-     * @tc.name      : CreatePixelMapList
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromData,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMapList
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_WEBP_CREATE_RGBA8888LIST_BYDATA_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_WEBP_CREATE_RGBA8888LIST_BYDATA_0100
+     * @tc.desc   1.getimagepath,2.createImageSourceFromData,3.CreateDecodingOptions,4.DecodingOptionsSetFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_WEBP_CREATE_RGBA8888LIST_BYDATA_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = 'WEBP_CREATE_RGBA8888LIST_BYDATA_0100'
@@ -3164,14 +3097,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_DELAY_TIME_0100
-     * @tc.name      : GetDelayTime
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromUri
-     *                 3.GetDelayTime
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_DELAY_TIME_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_DELAY_TIME_0100
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_DELAY_TIME_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_DELAY_TIME_0100'
@@ -3185,14 +3116,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_DELAY_TIME_0200
-     * @tc.name      : GetDelayTime
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromFd
-     *                 3.GetDelayTime
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_DELAY_TIME_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_DELAY_TIME_0200
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_DELAY_TIME_0200", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_DELAY_TIME_0200'
@@ -3206,14 +3135,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_DELAY_TIME_0300
-     * @tc.name      : GetDelayTime
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromData
-     *                 3.GetDelayTime
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_DELAY_TIME_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_DELAY_TIME_0300
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_DELAY_TIME_0300", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_DELAY_TIME_0300'
@@ -3227,14 +3154,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0100
-     * @tc.name      : GetImageInfo
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromUri
-     *                 3.GetImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0100
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0100'
@@ -3248,14 +3173,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0200
-     * @tc.name      : GetImageInfo
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromUri
-     *                 3.GetImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0200
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0200", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0200'
@@ -3269,14 +3192,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0300
-     * @tc.name      : GetImageInfo
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromUri
-     *                 3.GetImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0300
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0300", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0300'
@@ -3290,14 +3211,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0400
-     * @tc.name      : GetImageInfo
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromUri
-     *                 3.GetImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0400
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0400", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0400'
@@ -3311,14 +3230,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0500
-     * @tc.name      : GetImageInfo
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromUri
-     *                 3.GetImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0500
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0500", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0500'
@@ -3332,14 +3249,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0600
-     * @tc.name      : GetImageInfo
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromUri
-     *                 3.GetImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0600
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0600", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0600'
@@ -3353,14 +3268,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0700
-     * @tc.name      : GetImageInfo
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromUri
-     *                 3.GetImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0700
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0700", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0700'
@@ -3374,14 +3287,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0800
-     * @tc.name      : GetImageInfo
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromUri
-     *                 3.GetImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0800
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0800", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_URI_0800'
@@ -3395,14 +3306,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0100
-     * @tc.name      : GetImageInfo
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromFd
-     *                 3.GetImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0100
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0100'
@@ -3416,14 +3325,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0200
-     * @tc.name      : GetImageInfo
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromFd
-     *                 3.GetImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0200
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0200", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0200'
@@ -3437,14 +3344,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0300
-     * @tc.name      : GetImageInfo
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromFd
-     *                 3.GetImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0300
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0300", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0300'
@@ -3458,14 +3363,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0400
-     * @tc.name      : GetImageInfo
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromFd
-     *                 3.GetImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0400
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0400", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0400'
@@ -3479,14 +3382,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0500
-     * @tc.name      : GetImageInfo
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromFd
-     *                 3.GetImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0500
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0500", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0500'
@@ -3500,14 +3401,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0600
-     * @tc.name      : GetImageInfo
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromFd
-     *                 3.GetImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0600
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0600", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0600'
@@ -3521,14 +3420,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0700
-     * @tc.name      : GetImageInfo
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromFd
-     *                 3.GetImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0700
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0700", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0700'
@@ -3542,14 +3439,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0800
-     * @tc.name      : GetImageInfo
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromFd
-     *                 3.GetImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0800
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0800", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_FD_0800'
@@ -3563,14 +3458,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0100
-     * @tc.name      : GetImageInfo
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromData
-     *                 3.GetImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0100
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0100'
@@ -3584,14 +3477,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0200
-     * @tc.name      : GetImageInfo
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromData
-     *                 3.GetImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0200
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0200", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0200'
@@ -3605,14 +3496,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0300
-     * @tc.name      : GetImageInfo
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromData
-     *                 3.GetImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0300
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0300", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0300'
@@ -3626,14 +3515,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0400
-     * @tc.name      : GetImageInfo
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromData
-     *                 3.GetImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0400
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0400", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0400'
@@ -3647,14 +3534,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0500
-     * @tc.name      : GetImageInfo
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromData
-     *                 3.GetImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0500
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0500", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0500'
@@ -3668,14 +3553,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0600
-     * @tc.name      : GetImageInfo
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromData
-     *                 3.GetImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0600
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0600", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0600'
@@ -3689,14 +3572,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0700
-     * @tc.name      : GetImageInfo
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromData
-     *                 3.GetImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0700
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0700", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0700'
@@ -3710,14 +3591,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0800
-     * @tc.name      : GetImageInfo
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromData
-     *                 3.GetImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0800
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0800", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_INFO_DATA_0800'
@@ -3731,14 +3610,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0100
-     * @tc.name      : GetImageProperty
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromUri
-     *                 3.GetImageProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0100
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0100'
@@ -3752,14 +3629,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0200
-     * @tc.name      : GetImageProperty
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromFd
-     *                 3.GetImageProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0200
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0200", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0200'
@@ -3773,14 +3648,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_URI_0100
-     * @tc.name      : GetImageProperty
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromUri
-     *                 3.ModifyImageProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_URI_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_URI_0100
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_URI_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = 'MODIFY_IMAGE_PROPERTY_URI_0100'
@@ -3794,14 +3667,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_FD_0100
-     * @tc.name      : GetImageProperty
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromFd
-     *                 3.ModifyImageProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_FD_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_FD_0100
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_FD_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = 'MODIFY_IMAGE_PROPERTY_FD_0100'
@@ -3815,14 +3686,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_FRAME_COUNT_0100
-     * @tc.name      : GetFrameCount
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromUri
-     *                 3.GetFrameCount
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_FRAME_COUNT_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_FRAME_COUNT_0100
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_FRAME_COUNT_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_FRAME_COUNT_0100'
@@ -3836,14 +3705,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_FRAME_COUNT_0200
-     * @tc.name      : GetFrameCount
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromFd
-     *                 3.GetFrameCount
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_FRAME_COUNT_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_FRAME_COUNT_0200
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GET_FRAME_COUNT_0200", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_FRAME_COUNT_0200'
@@ -3857,14 +3724,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCERELEASE_0100
-     * @tc.name      : SourceRelease
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromuri
-     *                 3.SourceRelease
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCERELEASE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCERELEASE_0100
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCERELEASE_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCERELEASE_0100'
@@ -3878,14 +3743,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCERELEASE_0200
-     * @tc.name      : SourceRelease
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromFd
-     *                 3.SourceRelease
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCERELEASE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCERELEASE_0200
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCERELEASE_0200", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCERELEASE_0200'
@@ -3899,14 +3762,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCERELEASE_0300
-     * @tc.name      : SourceRelease
-     * @tc.desc      : 1.get image path
-     *                 2.createImageSourceFromData
-     *                 3.SourceRelease
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCERELEASE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCERELEASE_0300
+     * @tc.desc   1.get image path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCERELEASE_0300", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCERELEASE_0300'
@@ -3920,15 +3781,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GETIMAGEINFOBYOPTION_TO_RGBA8888_0100
-     * @tc.name      : NDK_GetImageInfoByOption
-     * @tc.desc      : 1.CreateDecodingOptions,2.DecodingOptionsSetPixelFormat,3.DecodingOptionsSetIndex,
-     *                 4.DecodingOptionsSetRotate,5.DecodingOptionsSetDesiredSize,6.DecodingOptionsSetDesiredRegion,
-     *                 7.DecodingOptionsGetPixelFormat,8.DecodingOptionsGetIndex9.DecodingOptionsGetRotate,
-     *                 10.DecodingOptionsGetDesiredSize,11.DecodingOptionsGetDesiredRegion
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GETIMAGEINFOBYOPTION_TO_RGBA8888_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GETIMAGEINFOBYOPTION_TO_RGBA8888_0100
+     * @tc.desc   1.CreateDecodingOptions,2.DecodingOptionsSetPixelFormat,3.DecodingOptionsSetIndex,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_GETIMAGEINFOBYOPTION_TO_RGBA8888_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GETIMAGEINFOBYOPTION_TO_RGBA8888_0100'
@@ -3943,12 +3801,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_PACKING_CREATE_0100
-     * @tc.name      : sub_multimedia_image_imagepackendk_packing
-     * @tc.desc      : 1.ndkTest.Create
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_PACKING_CREATE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_PACKING_CREATE_0100
+     * @tc.desc   1.ndkTest.Create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_PACKING_CREATE_0100', Level.LEVEL0, async (done: Function) => {
       try {
@@ -3967,13 +3825,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_PACKING_RELEASE_0100
-     * @tc.name      : sub_multimedia_image_imagepackendk_packing
-     * @tc.desc      : 1.ndkTest.Create
-     2.ndkTest.Release
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_PACKING_RELEASE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_PACKING_RELEASE_0100
+     * @tc.desc   1.ndkTest.Create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_PACKING_RELEASE_0100', Level.LEVEL0, async (done: Function) => {
       try {
@@ -4000,12 +3857,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0100
-     * @tc.name      : sub_multimedia_image_imagepackendk_packing
-     * @tc.desc      : 1.packingtestndke
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0100
+     * @tc.desc   1.packingtestndke
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0100', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0100"
@@ -4020,12 +3877,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0200
-     * @tc.name      : sub_multimedia_image_imagepackendk_packing
-     * @tc.desc      : 1.packingtestndk
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0200
+     * @tc.desc   1.packingtestndk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0200', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0200"
@@ -4040,12 +3897,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0300
-     * @tc.name      : sub_multimedia_image_imagepackendk_packing
-     * @tc.desc      : 1.packingtestndk create
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0300
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0300', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0300"
@@ -4061,12 +3918,12 @@ export default function imageNdkTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0400
-     * @tc.name      : sub_multimedia_image_imagepackendk_packing
-     * @tc.desc      : 1.packingtestndk
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0400
+     * @tc.desc   1.packingtestndk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0400', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0400"
@@ -4080,12 +3937,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0500
-     * @tc.name      : sub_multimedia_image_imagepackendk_packing
-     * @tc.desc      : 1.packingtestndk create
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0500
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0500', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0500"
@@ -4099,12 +3956,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0600
-     * @tc.name      : sub_multimedia_image_imagepackendk_packing
-     * @tc.desc      : 1.packingtestndk create
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0600
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0600', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0600"
@@ -4120,12 +3977,12 @@ export default function imageNdkTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0700
-     * @tc.name      : sub_multimedia_image_imagepackendk_packing
-     * @tc.desc      : 1.packingtestndk create
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0700
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0700', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0700"
@@ -4141,12 +3998,12 @@ export default function imageNdkTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0800
-     * @tc.name      : sub_multimedia_image_imagepackendk_packing
-     * @tc.desc      : 1.packingtestndk
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0800
+     * @tc.desc   1.packingtestndk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0800', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0800"
@@ -4161,12 +4018,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0900
-     * @tc.name      : sub_multimedia_image_imagepackendk_packing
-     * @tc.desc      : 1.packingtestndk create
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0900
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0900', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_0900"
@@ -4181,12 +4038,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_01000
-     * @tc.name      : sub_multimedia_image_imagepackendk_packing
-     * @tc.desc      : 1.packingtestndk create
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_01000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_01000
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_01000', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_01000"
@@ -4201,12 +4058,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_01100
-     * @tc.name      : sub_multimedia_image_imagepackendk_packing
-     * @tc.desc      : 1.packingtestndk
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_01100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_01100
+     * @tc.desc   1.packingtestndk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_01100', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_01100"
@@ -4221,12 +4078,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_01200
-     * @tc.name      : sub_multimedia_image_imagepackendk_packing
-     * @tc.desc      : 1.packingtestndk create
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_01200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_01200
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_01200', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_PACKING_JPG_01200"
@@ -4242,12 +4099,12 @@ export default function imageNdkTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0100
-     * @tc.name      : sub_multimedia_image_imagepackendk_packing
-     * @tc.desc      : 1.packingtestndk
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0100
+     * @tc.desc   1.packingtestndk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0100', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0100"
@@ -4262,12 +4119,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0200
-     * @tc.name      : sub_multimedia_image_imagepackendk_packing
-     * @tc.desc      : 1.packingtestndk
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0200
+     * @tc.desc   1.packingtestndk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0200', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0200"
@@ -4283,12 +4140,12 @@ export default function imageNdkTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0300
-     * @tc.name      : sub_multimedia_image_imagepackendk_packing
-     * @tc.desc      : 1.packingtestndk
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0300
+     * @tc.desc   1.packingtestndk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0300', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0300"
@@ -4303,12 +4160,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0400
-     * @tc.name      : sub_multimedia_image_imagepackendk_packing
-     * @tc.desc      : 1.packingtestndk
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0400
+     * @tc.desc   1.packingtestndk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0400', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0400"
@@ -4324,12 +4181,12 @@ export default function imageNdkTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0500
-     * @tc.name      : sub_multimedia_image_imagepackendk_packing
-     * @tc.desc      : 1.packingtestndk create
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0500
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0500', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0500"
@@ -4344,12 +4201,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0600
-     * @tc.name      : sub_multimedia_image_imagepackendk_packing
-     * @tc.desc      : 1.packingtestndk create
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0600
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0600', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0600"
@@ -4364,12 +4221,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0700
-     * @tc.name      : sub_multimedia_image_imagepackendk_packing
-     * @tc.desc      : 1.packingtestndk create
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0700
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0700', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0700"
@@ -4384,12 +4241,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0800
-     * @tc.name      : sub_multimedia_image_imagepackendk_packing
-     * @tc.desc      : 1.packingtestndk create
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0800
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0800', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0800"
@@ -4404,12 +4261,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0900
-     * @tc.name      : sub_multimedia_image_imagepackendk_packing
-     * @tc.desc      : 1.packingtestndk create
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0900
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0900', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_0900"
@@ -4424,12 +4281,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_01000
-     * @tc.name      : sub_multimedia_image_imagepackendk_packing
-     * @tc.desc      : 1.packingtestndk create
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_01000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_01000
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_01000', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_01000"
@@ -4444,12 +4301,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_01100
-     * @tc.name      : sub_multimedia_image_imagepackendk_packing
-     * @tc.desc      : 1.packingtestndk create
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_01100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_01100
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_01100', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_01100"
@@ -4464,12 +4321,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_01200
-     * @tc.name      : sub_multimedia_image_imagepackendk_packing
-     * @tc.desc      : 1.packingtestndk create
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_01200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_01200
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_01200', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_PACK_TO_FILE_JPG_01200"
@@ -4484,13 +4341,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0100
-     * @tc.name      : createImageSourceFromRawFile
-     * @tc.desc      : 1.get testPng.buffer
-     *                 2.createImageSourceFromRawFile
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0100
+     * @tc.desc   1.get testPng.buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0100'
@@ -4504,13 +4360,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0200
-     * @tc.name      : createImageSourceFromRawFile
-     * @tc.desc      : 1.get testPng.buffer
-     *                 2.createImageSourceFromRawFile
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0200
+     * @tc.desc   1.get testPng.buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0200", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0200'
@@ -4524,13 +4379,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0300
-     * @tc.name      : createImageSourceFromRawFile
-     * @tc.desc      : 1.get testPng.buffer
-     *                 2.createImageSourceFromRawFile
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0300
+     * @tc.desc   1.get testPng.buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0300", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0300'
@@ -4544,13 +4398,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0400
-     * @tc.name      : createImageSourceFromRawFile
-     * @tc.desc      : 1.get testPng.buffer
-     *                 2.createImageSourceFromRawFile
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0400
+     * @tc.desc   1.get testPng.buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0400", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0400'
@@ -4564,13 +4417,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0500
-     * @tc.name      : createImageSourceFromRawFile
-     * @tc.desc      : 1.get testPng.buffer
-     *                 2.createImageSourceFromRawFile
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0500
+     * @tc.desc   1.get testPng.buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0500", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0500'
@@ -4584,13 +4436,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0600
-     * @tc.name      : createImageSourceFromRawFile
-     * @tc.desc      : 1.get testPng.buffer
-     *                 2.createImageSourceFromRawFile
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0600
+     * @tc.desc   1.get testPng.buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0600", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0600'
@@ -4604,13 +4455,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0700
-     * @tc.name      : createImageSourceFromRawFile
-     * @tc.desc      : 1.get testPng.buffer
-     *                 2.createImageSourceFromRawFile
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0700
+     * @tc.desc   1.get testPng.buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0700", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0700'
@@ -4624,13 +4474,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0800
-     * @tc.name      : createImageSourceFromRawFile
-     * @tc.desc      : 1.get testPng.buffer
-     *                 2.createImageSourceFromRawFile
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0800
+     * @tc.desc   1.get testPng.buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0800", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_BY_RAWFILE_0800'
@@ -4644,14 +4493,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0100
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromRawFile,3.CreateDecodingOptions,4.DecodingOptionsSetPixelFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0100
+     * @tc.desc   1.getimagepath,2.createImageSourceFromRawFile,3.CreateDecodingOptions,4.DecodingOptionsSetPixelFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0100"
@@ -4665,14 +4512,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0200
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromRawFile,3.CreateDecodingOptions,4.DecodingOptionsSetPixelFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0200
+     * @tc.desc   1.getimagepath,2.createImageSourceFromRawFile,3.CreateDecodingOptions,4.DecodingOptionsSetPixelFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0200", Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0200"
@@ -4686,14 +4531,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0300
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromRawFile,3.CreateDecodingOptions,4.DecodingOptionsSetPixelFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0300
+     * @tc.desc   1.getimagepath,2.createImageSourceFromRawFile,3.CreateDecodingOptions,4.DecodingOptionsSetPixelFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0300", Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0300"
@@ -4707,14 +4550,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0400
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromRawFile,3.CreateDecodingOptions,4.DecodingOptionsSetPixelFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0400
+     * @tc.desc   1.getimagepath,2.createImageSourceFromRawFile,3.CreateDecodingOptions,4.DecodingOptionsSetPixelFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0400", Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0400"
@@ -4728,14 +4569,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0500
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromRawFile,3.CreateDecodingOptions,4.DecodingOptionsSetPixelFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0500
+     * @tc.desc   1.getimagepath,2.createImageSourceFromRawFile,3.CreateDecodingOptions,4.DecodingOptionsSetPixelFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0500", Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0500"
@@ -4749,14 +4588,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0600
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromRawFile,3.CreateDecodingOptions,4.DecodingOptionsSetPixelFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0600
+     * @tc.desc   1.getimagepath,2.createImageSourceFromRawFile,3.CreateDecodingOptions,4.DecodingOptionsSetPixelFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0600", Level.LEVEL0, async (done: Function) => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0600"
@@ -4770,14 +4607,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0700
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromRawFile,3.CreateDecodingOptions,4.DecodingOptionsSetPixelFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0700
+     * @tc.desc   1.getimagepath,2.createImageSourceFromRawFile,3.CreateDecodingOptions,4.DecodingOptionsSetPixelFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0700", Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0700"
@@ -4791,14 +4626,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0800
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromRawFile,3.CreateDecodingOptions,4.DecodingOptionsSetPixelFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0800
+     * @tc.desc   1.getimagepath,2.createImageSourceFromRawFile,3.CreateDecodingOptions,4.DecodingOptionsSetPixelFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0800", Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0800"
@@ -4812,38 +4645,36 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0900
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromRawFile,3.CreatePixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0900
+     * @tc.desc   1.getimagepath,2.createImageSourceFromRawFile,3.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0900", Level.LEVEL0, async (done: Function) => {
       await NDK_CreatePixelMap('SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_0900', "RawFile", "docx.ico", 512, 512, done);
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_1000
-     * @tc.name      : CreatePixelMap
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromRawFile,3.CreatePixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_1000
+     * @tc.desc   1.getimagepath,2.createImageSourceFromRawFile,3.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_1000", Level.LEVEL0, async (done: Function) => {
       await NDK_CreatePixelMap('SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_CREATE_RAWFILE_1000', "RawFile", "SVG.svg", 1593, 1594, done);
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_GIF_CREATE_RGBA8888LIST_BYRAWFILE_0100
-     * @tc.name      : CreatePixelMapList
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromRawFile,3.CreateDecodingOptions,4.DecodingOptionsSetPixelFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMapList
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_GIF_CREATE_RGBA8888LIST_BYRAWFILE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_GIF_CREATE_RGBA8888LIST_BYRAWFILE_0100
+     * @tc.desc   1.getimagepath,2.createImageSourceFromRawFile,3.CreateDecodingOptions,4.DecodingOptionsSetPixelFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_GIF_CREATE_RGBA8888LIST_BYRAWFILE_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_GIF_CREATE_RGBA8888LIST_BYRAWFILE_0100"
@@ -4857,14 +4688,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_WEBP_CREATE_RGBA8888LIST_BYRAWFILE_0100
-     * @tc.name      : CreatePixelMapList
-     * @tc.desc      : 1.getimagepath,2.createImageSourceFromRawFile,3.CreateDecodingOptions,4.DecodingOptionsSetPixelFormat，
-     *                 5.DecodingOptionsSetIndex,6.DecodingOptionsSetRotate,7.DecodingOptionsSetDesiredSize,
-     *                 8.DecodingOptionsSetDesiredRegion,9.CreatePixelMapList
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_WEBP_CREATE_RGBA8888LIST_BYRAWFILE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_WEBP_CREATE_RGBA8888LIST_BYRAWFILE_0100
+     * @tc.desc   1.getimagepath,2.createImageSourceFromRawFile,3.CreateDecodingOptions,4.DecodingOptionsSetPixelFormat，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_WEBP_CREATE_RGBA8888LIST_BYRAWFILE_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NDK_SOURCENDK_WEBP_CREATE_RGBA8888LIST_BYRAWFILE_0100"
@@ -4878,12 +4707,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_HDR_0100
-     * @tc.name      : sub_multimedia_image_create_hdr
-     * @tc.desc      : 1.hdr pixelMap create
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_HDR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_HDR_0100
+     * @tc.desc   1.hdr pixelMap create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_HDR_0100', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_CREATE_HDR_0100"
@@ -4897,12 +4726,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_PIXELMAP_TOSDR_0100
-     * @tc.name      : sub_multimedia_pixelmap_tosdr
-     * @tc.desc      : 1.hdr pixelMap create
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_PIXELMAP_TOSDR_0100
+     * @tc.number SUB_MULTIMEDIA_PIXELMAP_TOSDR_0100
+     * @tc.desc   1.hdr pixelMap create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PIXELMAP_TOSDR_0100', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_PIXELMAP_TOSDR_0100"
@@ -4916,12 +4745,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_DECODINGOPTIONS_DYNAMICRANGE_0100
-     * @tc.name      : sub_multimedia_image_get_decoding_dynamicrange_options
-     * @tc.desc      : 1.decodingOptions dynamicrange
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GET_DECODINGOPTIONS_DYNAMICRANGE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GET_DECODINGOPTIONS_DYNAMICRANGE_0100
+     * @tc.desc   1.decodingOptions dynamicrange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GET_DECODINGOPTIONS_DYNAMICRANGE_0100', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_GET_DECODINGOPTIONS_DYNAMICRANGE_0100"
@@ -4935,12 +4764,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_PACKINGOPTIONS_DYNAMICRANGE_0100
-     * @tc.name      : sub_multimedia_image_get_packing_dynamicrange_options
-     * @tc.desc      : 1.packingOptions dynamicrange
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GET_PACKINGOPTIONS_DYNAMICRANGE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GET_PACKINGOPTIONS_DYNAMICRANGE_0100
+     * @tc.desc   1.packingOptions dynamicrange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GET_PACKINGOPTIONS_DYNAMICRANGE_0100', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_GET_PACKINGOPTIONS_DYNAMICRANGE_0100"
@@ -4954,12 +4783,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CHECK_IMAGESOURCE_DYNAMICRANGE_0100
-     * @tc.name      : sub_multimedia_image_check_imagesource_dynamicrange
-     * @tc.desc      : 1.imagesource_dynamicrange
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CHECK_IMAGESOURCE_DYNAMICRANGE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CHECK_IMAGESOURCE_DYNAMICRANGE_0100
+     * @tc.desc   1.imagesource_dynamicrange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CHECK_IMAGESOURCE_DYNAMICRANGE_0100', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_CHECK_IMAGESOURCE_DYNAMICRANGE_0100"
@@ -4973,12 +4802,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_PACKINGOPTIONS_NEEDSPACKPROPERTIES_0100
-     * @tc.name      : sub_multimedia_image_get_packing_needs_pack_properties_options
-     * @tc.desc      : 1.packingOptions needsPackProperties
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GET_PACKINGOPTIONS_NEEDSPACKPROPERTIES_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GET_PACKINGOPTIONS_NEEDSPACKPROPERTIES_0100
+     * @tc.desc   1.packingOptions needsPackProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GET_PACKINGOPTIONS_NEEDSPACKPROPERTIES_0100', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_GET_PACKINGOPTIONS_NEEDSPACKPROPERTIES_0100"
@@ -4992,13 +4821,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NATIVE_REGIONDECODE_0100
-     * @tc.name     : CreatePixelMap
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize,
-                      5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_REGIONDECODE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_REGIONDECODE_0100
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it("SUB_MULTIMEDIA_IMAGE_NATIVE_REGIONDECODE_0100", 0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NATIVE_REGIONDECODE_0100'
@@ -5016,13 +4844,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NATIVE_REGIONDECODE_0200
-     * @tc.name     : CreatePixelMap
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize,
-                      5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_REGIONDECODE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_REGIONDECODE_0200
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it("SUB_MULTIMEDIA_IMAGE_NATIVE_REGIONDECODE_0200", 0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NATIVE_REGIONDECODE_0200'
@@ -5041,13 +4868,12 @@ export default function imageNdkTest() {
 
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NATIVE_REGIONDECODE_0300
-     * @tc.name     : CreatePixelMap
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize,
-                      5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_REGIONDECODE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_REGIONDECODE_0300
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it("SUB_MULTIMEDIA_IMAGE_NATIVE_REGIONDECODE_0300", 0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NATIVE_REGIONDECODE_0300'
@@ -5065,13 +4891,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NATIVE_SET_AND_GET_CROP_REGION_0100
-     * @tc.name     : CreatePixelMap
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetCropRegion,
-                      5.DecodingOptionsGetCropRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_SET_CROP_REGION_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_SET_AND_GET_CROP_REGION_0100
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetCropRegion,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NATIVE_SET_CROP_REGION_0100", Level.LEVEL0, async (done: Function) => {
       const TAG = 'SUB_MULTIMEDIA_IMAGE_NATIVE_SET_CROP_REGION_0100'
@@ -5119,12 +4944,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NATIVE_GET_PROPERTY_WITH_NULL_0100
-     * @tc.name     : GetPropertyWithNull
-     * @tc.desc     : 1.check getproperty equal to setProperty
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_GET_PROPERTY_WITH_NULL_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_GET_PROPERTY_WITH_NULL_0100
+     * @tc.desc   1.check getproperty equal to setProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NATIVE_GET_PROPERTY_WITH_NULL_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NATIVE_GET_PROPERTY_WITH_NULL_0100';
@@ -5135,12 +4960,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NATIVE_GET_MIMETYPE_WITH_NULL_0100
-     * @tc.name     : GetMimeTypeWithNull
-     * @tc.desc     : 1.check getMimeType equal to setMimeType
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_GET_MIMETYPE_WITH_NULL_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_GET_MIMETYPE_WITH_NULL_0100
+     * @tc.desc   1.check getMimeType equal to setMimeType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NATIVE_GET_MIMETYPE_WITH_NULL_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NATIVE_GET_MIMETYPE_WITH_NULL_0100';
@@ -5151,12 +4976,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NATIVE_GET_IMAGE_PROPERTY_WITH_NULL_0100
-     * @tc.name     : GetImagePropertyWithNull
-     * @tc.desc     : 1.check GetImageProperty equal to picture's exif
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_GET_IMAGE_PROPERTY_WITH_NULL_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_GET_IMAGE_PROPERTY_WITH_NULL_0100
+     * @tc.desc   1.check GetImageProperty equal to picture's exif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_NATIVE_GET_IMAGE_PROPERTY_WITH_NULL_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NATIVE_GET_IMAGE_PROPERTY_WITH_NULL_0100';
@@ -5168,12 +4993,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_DECODE_SUPPORTEDFORMATS_NATIVE_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GET_DECODE_SUPPORTEDFORMATS_NATIVE_0100
-     * @tc.desc      : 1.test Image getDecodeSupportedFormats
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GET_DECODE_SUPPORTEDFORMATS_NATIVE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GET_DECODE_SUPPORTEDFORMATS_NATIVE_0100
+     * @tc.desc   1.test Image getDecodeSupportedFormats
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GET_DECODE_SUPPORTEDFORMATS_NATIVE_0100', Level.LEVEL0, async (done: Function) => {
       let testTag = "SUB_MULTIMEDIA_IMAGE_GET_DECODE_SUPPORTEDFORMATS_NATIVE_0100";
@@ -5188,12 +5013,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_ENCODE_SUPPORTEDFORMATS_NATIVE_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GET_ENCODE_SUPPORTEDFORMATS_NATIVE_0100
-     * @tc.desc      : 1.test Image getEncodeSupportedFormats
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GET_ENCODE_SUPPORTEDFORMATS_NATIVE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GET_ENCODE_SUPPORTEDFORMATS_NATIVE_0100
+     * @tc.desc   1.test Image getEncodeSupportedFormats
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GET_ENCODE_SUPPORTEDFORMATS_NATIVE_0100', Level.LEVEL0, async (done: Function) => {
       let testTag = "SUB_MULTIMEDIA_IMAGE_GET_ENCODE_SUPPORTEDFORMATS_NATIVE_0100";
@@ -5208,12 +5033,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_DECODE_SUPPORTEDFORMATS_NATIVE_ERROR_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GET_DECODE_SUPPORTEDFORMATS_NATIVE_ERROR_0100
-     * @tc.desc      : 1.test Image getDecodeSupportedFormats
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GET_DECODE_SUPPORTEDFORMATS_NATIVE_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GET_DECODE_SUPPORTEDFORMATS_NATIVE_ERROR_0100
+     * @tc.desc   1.test Image getDecodeSupportedFormats
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GET_DECODE_SUPPORTEDFORMATS_NATIVE_ERROR_0100', Level.LEVEL0, async (done: Function) => {
       let testTag = "SUB_MULTIMEDIA_IMAGE_GET_DECODE_SUPPORTEDFORMATS_NATIVE_ERROR_0100";
@@ -5225,12 +5050,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_DECODE_SUPPORTEDFORMATS_NATIVE_ERROR_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GET_DECODE_SUPPORTEDFORMATS_NATIVE_ERROR_0200
-     * @tc.desc      : 1.test Image getDecodeSupportedFormats
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GET_DECODE_SUPPORTEDFORMATS_NATIVE_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GET_DECODE_SUPPORTEDFORMATS_NATIVE_ERROR_0200
+     * @tc.desc   1.test Image getDecodeSupportedFormats
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GET_DECODE_SUPPORTEDFORMATS_NATIVE_ERROR_0200', Level.LEVEL0, async (done: Function) => {
       let testTag = "SUB_MULTIMEDIA_IMAGE_GET_DECODE_SUPPORTEDFORMATS_NATIVE_ERROR_0200";
@@ -5242,12 +5067,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_ENCODE_SUPPORTEDFORMATS_NATIVE_ERROR_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GET_ENCODE_SUPPORTEDFORMATS_NATIVE_ERROR_0100
-     * @tc.desc      : 1.test Image getEncodeSupportedFormats
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GET_ENCODE_SUPPORTEDFORMATS_NATIVE_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GET_ENCODE_SUPPORTEDFORMATS_NATIVE_ERROR_0100
+     * @tc.desc   1.test Image getEncodeSupportedFormats
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GET_ENCODE_SUPPORTEDFORMATS_NATIVE_ERROR_0100', Level.LEVEL0, async (done: Function) => {
       let testTag = "SUB_MULTIMEDIA_IMAGE_GET_ENCODE_SUPPORTEDFORMATS_NATIVE_ERROR_0100";
@@ -5259,12 +5084,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_ENCODE_SUPPORTEDFORMATS_NATIVE_ERROR_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GET_ENCODE_SUPPORTEDFORMATS_NATIVE_ERROR_0200
-     * @tc.desc      : 1.test Image getEncodeSupportedFormats
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GET_ENCODE_SUPPORTEDFORMATS_NATIVE_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GET_ENCODE_SUPPORTEDFORMATS_NATIVE_ERROR_0200
+     * @tc.desc   1.test Image getEncodeSupportedFormats
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GET_ENCODE_SUPPORTEDFORMATS_NATIVE_ERROR_0200', Level.LEVEL0, async (done: Function) => {
       let testTag = "SUB_MULTIMEDIA_IMAGE_GET_ENCODE_SUPPORTEDFORMATS_NATIVE_ERROR_0200";
@@ -5276,12 +5101,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0100
-     * @tc.desc      : 1.test Image getQuality
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0100
+     * @tc.desc   1.test Image getQuality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0100', Level.LEVEL0, async (done: Function) => {
       let testTag = "SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0100";
@@ -5308,12 +5133,12 @@ export default function imageNdkTest() {
     })
     
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0200
-     * @tc.desc      : 1.test Image getQuality
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0200
+     * @tc.desc   1.test Image getQuality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0200', Level.LEVEL0, async (done: Function) => {
       let testTag = "SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0200";
@@ -5340,12 +5165,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0300
-     * @tc.desc      : 1.test Image getQuality
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0300
+     * @tc.desc   1.test Image getQuality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0300', Level.LEVEL0, async (done: Function) => {
       let testTag = "SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0300";
@@ -5372,12 +5197,12 @@ export default function imageNdkTest() {
     })
     
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0400
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0400
-     * @tc.desc      : 1.test Image getQuality
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0400
+     * @tc.desc   1.test Image getQuality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0400', Level.LEVEL0, async (done: Function) => {
       let testTag = "SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0400";
@@ -5404,12 +5229,12 @@ export default function imageNdkTest() {
     })
     
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0500
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0500
-     * @tc.desc      : 1.test Image getQuality
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0500
+     * @tc.desc   1.test Image getQuality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0500', Level.LEVEL0, async (done: Function) => {
       let testTag = "SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0500";
@@ -5436,12 +5261,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0600
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0600
-     * @tc.desc      : 1.test Image getQuality
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0600
+     * @tc.desc   1.test Image getQuality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0600', Level.LEVEL0, async (done: Function) => {
       let testTag = "SUB_MULTIMEDIA_IMAGE_GET_QUALITY_0600";
@@ -5468,14 +5293,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0100
-     * @tc.desc      : 1.createImageSource（by Fd/Uri）
-     *                 2.getImageProperty
-     *				         3.compare value
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0100
+     * @tc.desc   1.createImageSource（by Fd/Uri）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0100', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0100';
@@ -5504,14 +5327,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0200
-     * @tc.desc      : 1.createImageSource（by Fd/Uri）
-     *                 2.getImageProperty
-     *				         3.compare value
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0200
+     * @tc.desc   1.createImageSource（by Fd/Uri）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0200', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0200';
@@ -5537,14 +5358,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0300
-     * @tc.desc      : 1.createImageSource（by Fd/Uri）
-     *                 2.getImageProperty
-     *				         3.compare value
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0300
+     * @tc.desc   1.createImageSource（by Fd/Uri）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0300', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0300';
@@ -5586,14 +5405,12 @@ export default function imageNdkTest() {
     })
     
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0400
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0400
-     * @tc.desc      : 1.createImageSource（by Fd/Uri）
-     *                 2.getImageProperty
-     *				         3.compare value
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0400
+     * @tc.desc   1.createImageSource（by Fd/Uri）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0400', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0400';
@@ -5632,14 +5449,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0500
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0500
-     * @tc.desc      : 1.createImageSource（by Fd/Uri）
-     *                 2.getImageProperty
-     *				         3.compare value
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0500
+     * @tc.desc   1.createImageSource（by Fd/Uri）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0500', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0500';
@@ -5668,14 +5483,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0600
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0600
-     * @tc.desc      : 1.createImageSource（by Fd/Uri）
-     *                 2.getImageProperty
-     *				         3.compare value
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0600
+     * @tc.desc   1.createImageSource（by Fd/Uri）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0600', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0600';
@@ -5701,14 +5514,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0700
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0700
-     * @tc.desc      : 1.createImageSource（by Fd/Uri）
-     *                 2.getImageProperty
-     *				         3.compare value
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0700
+     * @tc.desc   1.createImageSource（by Fd/Uri）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0700', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0700';
@@ -5737,14 +5548,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0800
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0800
-     * @tc.desc      : 1.createImageSource（by Fd/Uri）
-     *                 2.getImageProperty
-     *				         3.compare value
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0800
+     * @tc.desc   1.createImageSource（by Fd/Uri）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0800', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0800';
@@ -5770,14 +5579,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0900
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0900
-     * @tc.desc      : 1.createImageSource（by Fd/Uri）
-     *                 2.getImageProperty
-     *				         3.compare value
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0900
+     * @tc.desc   1.createImageSource（by Fd/Uri）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0900', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0900';
@@ -5806,14 +5613,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_1000
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_1000
-     * @tc.desc      : 1.createImageSource（by Fd/Uri）
-     *                 2.getImageProperty
-     *				         3.compare value
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_1000
+     * @tc.desc   1.createImageSource（by Fd/Uri）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_1000', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_1000';
@@ -5839,14 +5644,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_1100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_1100
-     * @tc.desc      : 1.createImageSource（by Fd/Uri）
-     *                 2.getImageProperty
-     *				         3.compare value
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_1100
+     * @tc.desc   1.createImageSource（by Fd/Uri）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_1100', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_1100';
@@ -5875,14 +5678,103 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0100
-     * @tc.desc      : 1.createImageSource（by Fd/Uri）
-     *                 2.modify ImageProperty
-     *				         3.compare value
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GET_IMAGE_PROPERTY_WEBP_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GET_IMAGE_PROPERTY_WEBP_0100
+     * @tc.desc   1.createImageSource（by Fd/Uri）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_GET_IMAGE_PROPERTY_WEBP_0100', Level.LEVEL0, async (done: Function) => {
+      const testTag = 'SUB_MULTIMEDIA_IMAGE_GET_IMAGE_PROPERTY_WEBP_0100';
+      const filename = 'test_exif_v2.webp'
+      const filename1 = 'test_webp_exif.webp'
+      let imageSourceApi: image.ImageSource = await getImageSource(filename, 'Fd')
+      let imageSourceApi1: image.ImageSource = await getImageSource(filename1, 'Fd')
+      let testData: string | undefined;
+      let imageSource: image.ImageSource;
+      try {
+        for(let j = 0; j < Data.length; j++){
+          if(Data[j].webpData){
+            testData = Data[j].webpData
+            imageSource = imageSourceApi
+          }else{
+            testData = Data[j].webpData0
+            imageSource = imageSourceApi1
+          }
+          const checkResult = await testGetImagePropertyAllKey(testTag, imageSource, Data[j].key, testData);
+          if(!checkResult){
+            closeFile(fileFd)
+            ndkTest.SourceRelease(imageSourceApi)
+            ndkTest.SourceRelease(imageSourceApi1)
+            expect().assertFail()
+            done()
+            return
+          }
+        }
+        closeFile(fileFd)
+        ndkTest.SourceRelease(imageSourceApi)
+        ndkTest.SourceRelease(imageSourceApi1)
+        done()
+      } catch (e) {
+        closeFile(fileFd)
+        hilog.info(0x0000, testTag, `createImageSource error ` + e);
+        expect().assertFail();
+        done();
+      }
+    })
+    
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GET_IMAGE_PROPERTY_WEBP_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GET_IMAGE_PROPERTY_WEBP_0200
+     * @tc.desc   1.createImageSource（by Fd/Uri）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_GET_IMAGE_PROPERTY_WEBP_0200', Level.LEVEL0, async (done: Function) => {
+      const testTag = 'SUB_MULTIMEDIA_IMAGE_GET_IMAGE_PROPERTY_WEBP_0200';
+      const filename = 'test_exif_v2.webp'
+      const filename1 = 'test_webp_exif.webp'
+      let imageSourceApi: image.ImageSource = await getImageSource(filename, 'Uri')
+      let imageSourceApi1: image.ImageSource = await getImageSource(filename1, 'Uri')
+      let testData: string | undefined;
+      let imageSource: image.ImageSource;
+      try {
+        for(let j = 0; j < Data.length; j++){
+          if(Data[j].webpData){
+            testData = Data[j].webpData
+            imageSource = imageSourceApi
+          }else{
+            testData = Data[j].webpData0
+            imageSource = imageSourceApi1
+          }
+          const checkResult = await testGetImagePropertyAllKey(testTag, imageSource, Data[j].key, testData);
+          if(!checkResult){
+            ndkTest.SourceRelease(imageSourceApi)
+            ndkTest.SourceRelease(imageSourceApi1)
+            expect().assertFail()
+            done()
+            return
+          }
+        }
+        ndkTest.SourceRelease(imageSourceApi)
+        ndkTest.SourceRelease(imageSourceApi1)
+        done()
+      } catch (e) {
+        hilog.info(0x0000, testTag, `createImageSource error ` + e);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0100
+     * @tc.desc   1.createImageSource（by Fd/Uri）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0100', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0100';
@@ -5911,14 +5803,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0300
-     * @tc.desc      : 1.createImageSource（by Fd/Uri）
-     *                 2.modify ImageProperty
-     *				         3.compare value
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0300
+     * @tc.desc   1.createImageSource（by Fd/Uri）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0300', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0300';
@@ -5947,14 +5837,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0400
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0400
-     * @tc.desc      : 1.createImageSource（by Fd/Uri）
-     *                 2.modify ImageProperty
-     *				         3.compare value
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0400
+     * @tc.desc   1.createImageSource（by Fd/Uri）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0400', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0400';
@@ -5983,14 +5871,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0500
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0500
-     * @tc.desc      : 1.createImageSource（by Fd/Uri）
-     *                 2.modify ImageProperty
-     *				         3.compare value
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0500
+     * @tc.desc   1.createImageSource（by Fd/Uri）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0500', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0500';
@@ -6019,14 +5905,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0600
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0600
-     * @tc.desc      : 1.createImageSource（by Fd/Uri）
-     *                 2.modify ImageProperty
-     *				         3.compare value
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0600
+     * @tc.desc   1.createImageSource（by Fd/Uri）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0600', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0600';
@@ -6052,14 +5936,46 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_ERR_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_ERR_0100
-     * @tc.desc      : 1.createImageSource（by Fd/Uri）
-     *                 2.modify ImageProperty
-     *				         3.compare value
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFY_IMAGE_PROPERTY_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFY_IMAGE_PROPERTY_0700
+     * @tc.desc   1.createImageSource（by Fd/Uri）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_MODIFY_IMAGE_PROPERTY_0700', Level.LEVEL0, async (done: Function) => {
+      const testTag = 'SUB_MULTIMEDIA_IMAGE_MODIFY_IMAGE_PROPERTY_0700';
+      const filename = 'test_exif_v3.webp'
+      let imageSourceApi: image.ImageSource = await getImageSource(filename, 'Fd')
+      try {
+        for(let j = 0; j < ModifyData.length; j++){
+            const checkResult = await NewModifyImageProperty(testTag, imageSourceApi, ModifyData[j].key, ModifyData[j].modifyData, ModifyData[j].compareData);
+            if(!checkResult){
+              closeFile(fileFd)
+              ndkTest.SourceRelease(imageSourceApi)
+              expect().assertFail()
+              done()
+              return
+            }
+        }
+        closeFile(fileFd)
+        ndkTest.SourceRelease(imageSourceApi)
+        done()
+      } catch (e) {
+        closeFile(fileFd)
+        hilog.info(0x0000, testTag, `createImageSource error ` + e);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_ERR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_ERR_0100
+     * @tc.desc   1.createImageSource（by Fd/Uri）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_ERR_0100', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_ERR_0100';
@@ -6090,14 +6006,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_ERR_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_ERR_0200
-     * @tc.desc      : 1.createImageSource（by Fd/Uri）
-     *                 2.modify ImageProperty
-     *				         3.compare value
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_ERR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_ERR_0200
+     * @tc.desc   1.createImageSource（by Fd/Uri）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_ERR_0200', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_ERR_0200';
@@ -6125,14 +6039,12 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GET_MIMETYPE_WITH_NULL_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GET_MIMETYPE_WITH_NULL_0100
-     * @tc.desc     : 1.create packingOptions
-     * 				  2.setMimeType
-     * 				  3.check getMimeType is equal to setMimeType
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GET_MIMETYPE_WITH_NULL_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GET_MIMETYPE_WITH_NULL_0100
+     * @tc.desc   1.create packingOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GET_MIMETYPE_WITH_NULL_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GET_MIMETYPE_WITH_NULL_0100';
@@ -6147,14 +6059,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GET_MIMETYPE_WITH_NULL_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GET_MIMETYPE_WITH_NULL_0200
-     * @tc.desc     : 1.create packingOptions
-     * 				  2.setMimeType
-     * 				  3.check getMimeType is equal to setMimeType
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GET_MIMETYPE_WITH_NULL_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GET_MIMETYPE_WITH_NULL_0200
+     * @tc.desc   1.create packingOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GET_MIMETYPE_WITH_NULL_0200", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GET_MIMETYPE_WITH_NULL_0200';
@@ -6169,14 +6079,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GET_MIMETYPE_WITH_NULL_0300
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GET_MIMETYPE_WITH_NULL_0300
-     * @tc.desc     : 1.create packingOptions
-     * 				  2.setMimeType
-     * 				  3.check getMimeType is equal to setMimeType
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GET_MIMETYPE_WITH_NULL_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GET_MIMETYPE_WITH_NULL_0300
+     * @tc.desc   1.create packingOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GET_MIMETYPE_WITH_NULL_0300", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GET_MIMETYPE_WITH_NULL_0300';
@@ -6191,13 +6099,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SET_MIMETYPE_ERROR_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SET_MIMETYPE_ERROR_0100
-     * @tc.desc     : 1.create packingOptions
-     * 				        2.setMimeType null
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SET_MIMETYPE_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SET_MIMETYPE_ERROR_0100
+     * @tc.desc   1.create packingOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SET_MIMETYPE_ERROR_0100", Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SET_MIMETYPE_ERROR_0100';
@@ -6220,12 +6127,12 @@ export default function imageNdkTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_DECODINGOPTIONS_DYNAMICRANGE_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GET_DECODINGOPTIONS_DYNAMICRANGE_0200
-     * @tc.desc      : 1.decodingOptions get dynamicRange
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GET_DECODINGOPTIONS_DYNAMICRANGE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GET_DECODINGOPTIONS_DYNAMICRANGE_0200
+     * @tc.desc   1.decodingOptions get dynamicRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GET_DECODINGOPTIONS_DYNAMICRANGE_0200', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_GET_DECODINGOPTIONS_DYNAMICRANGE_0200"
@@ -6238,13 +6145,13 @@ export default function imageNdkTest() {
       }
     })
 	
-	  /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_DECODINGOPTIONS_DYNAMICRANGE_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GET_DECODINGOPTIONS_DYNAMICRANGE_0300
-     * @tc.desc      : 1.decodingOptions get dynamicRange
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GET_DECODINGOPTIONS_DYNAMICRANGE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GET_DECODINGOPTIONS_DYNAMICRANGE_0300
+     * @tc.desc   1.decodingOptions get dynamicRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GET_DECODINGOPTIONS_DYNAMICRANGE_0300', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_GET_DECODINGOPTIONS_DYNAMICRANGE_0300"
@@ -6257,13 +6164,13 @@ export default function imageNdkTest() {
       }
     })
 	
-	  /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_PACKINGOPTIONS_DYNAMICRANGE_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GET_PACKINGOPTIONS_DYNAMICRANGE_0200
-     * @tc.desc      : 1.packingOptions get dynamicRange
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GET_PACKINGOPTIONS_DYNAMICRANGE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GET_PACKINGOPTIONS_DYNAMICRANGE_0200
+     * @tc.desc   1.packingOptions get dynamicRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GET_PACKINGOPTIONS_DYNAMICRANGE_0200', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_GET_PACKINGOPTIONS_DYNAMICRANGE_0200"
@@ -6276,13 +6183,13 @@ export default function imageNdkTest() {
       }
     })
 	
-	  /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GET_PACKINGOPTIONS_DYNAMICRANGE_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GET_PACKINGOPTIONS_DYNAMICRANGE_0300
-     * @tc.desc      : 1.packingOptions get dynamicRange
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GET_PACKINGOPTIONS_DYNAMICRANGE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GET_PACKINGOPTIONS_DYNAMICRANGE_0300
+     * @tc.desc   1.packingOptions get dynamicRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GET_PACKINGOPTIONS_DYNAMICRANGE_0300', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_GET_PACKINGOPTIONS_DYNAMICRANGE_0300"

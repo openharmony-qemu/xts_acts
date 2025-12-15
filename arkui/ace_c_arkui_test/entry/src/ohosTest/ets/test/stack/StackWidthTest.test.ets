@@ -26,39 +26,39 @@ export default function stackWidthTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_WIDTH_0100
-     * @tc.name       : testStackWidth001
-     * @tc.desc       : testing width for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackWidth001
+     * @tc.number SUB_ARKUI_CAPI_STACK_WIDTH_0100
+     * @tc.desc   testing width for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackWidth001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackWidth001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_WIDTH_0200
-     * @tc.name       : testStackWidth002
-     * @tc.desc       : testing width for stack with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testStackWidth002
+     * @tc.number SUB_ARKUI_CAPI_STACK_WIDTH_0200
+     * @tc.desc   testing width for stack with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackWidth002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackWidth002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_WIDTH_0300
-     * @tc.name       : testStackWidth003
-     * @tc.desc       : testing width for stack with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackWidth003
+     * @tc.number SUB_ARKUI_CAPI_STACK_WIDTH_0300
+     * @tc.desc   testing width for stack with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackWidth003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackWidth003()).assertEqual(0)

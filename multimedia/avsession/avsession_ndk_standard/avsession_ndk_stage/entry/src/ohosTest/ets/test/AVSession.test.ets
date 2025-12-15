@@ -34,12 +34,13 @@ export default function builderAbilityTest() {
     })
 
     /**
-    * @tc.number     : SUB_MULTIMEIDA_AVSESSION_CREAT_0100
-    * @tc.name       : CreateAVSessionTest001
-    * @tc.desc       : Create NDKAVSession.
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+     * @tc.name   SUB_MULTIMEIDA_AVSESSION_CREAT_0100
+     * @tc.number SUB_MULTIMEIDA_AVSESSION_CREAT_0100
+     * @tc.desc   Create NDKAVSession.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEIDA_AVSESSION_CREAT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info("test SetPlaybackState ---------------");
       let ret = avSes.runTest('CreateAVSessionTest', [1, '123', '456', '789']);
@@ -50,12 +51,13 @@ export default function builderAbilityTest() {
     })
 
     /**
-    * @tc.number     : SUB_MULTIMEIDA_AVSESSION_SETPLAYBACKSTAGE_0100
-    * @tc.name       : SetPlaybackState001
-    * @tc.desc       : NDKAVSession SetPlaybackState.
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+     * @tc.name   SUB_MULTIMEIDA_AVSESSION_SETPLAYBACKSTAGE_0100
+     * @tc.number SUB_MULTIMEIDA_AVSESSION_SETPLAYBACKSTAGE_0100
+     * @tc.desc   NDKAVSession SetPlaybackState.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEIDA_AVSESSION_SETPLAYBACKSTAGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info("test SetPlaybackState ---------------");
       let ret = avSes.runTest('SetPlaybackState', [1]);
@@ -64,12 +66,13 @@ export default function builderAbilityTest() {
     })
 
     /**
-    * @tc.number     : SUB_MULTIMEIDA_AVSESSION_SETLOOPMODE_0100
-    * @tc.name       : SetLoopMode
-    * @tc.desc       : NDKAVSession SetLoopMode.
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+     * @tc.name   SUB_MULTIMEIDA_AVSESSION_SETLOOPMODE_0100
+     * @tc.number SUB_MULTIMEIDA_AVSESSION_SETLOOPMODE_0100
+     * @tc.desc   NDKAVSession SetLoopMode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEIDA_AVSESSION_SETLOOPMODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info("test SetLoopMode ---------------");
       let ret = avSes.runTest('SetLoopMode', [0]);
@@ -78,12 +81,13 @@ export default function builderAbilityTest() {
     })
 
     /**
-    * @tc.number     : SUB_MULTIMEIDA_AVSESSION_SETPLAYBACKPOSITION_0100
-    * @tc.name       : SetPlaybackPosition
-    * @tc.desc       : NDKAVSession SetPlaybackPosition.
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+     * @tc.name   SUB_MULTIMEIDA_AVSESSION_SETPLAYBACKPOSITION_0100
+     * @tc.number SUB_MULTIMEIDA_AVSESSION_SETPLAYBACKPOSITION_0100
+     * @tc.desc   NDKAVSession SetPlaybackPosition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEIDA_AVSESSION_SETPLAYBACKPOSITION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info("test SetPlaybackPosition ---------------");
       let ret = avSes.runTest('SetPlaybackPosition', [123, 456]);
@@ -92,12 +96,13 @@ export default function builderAbilityTest() {
     })
 
     /**
-    * @tc.number     : SUB_MULTIMEIDA_AVSESSION_SETAVMETADATA_0100
-    * @tc.name       : SetAVMetaData
-    * @tc.desc       : NDKAVSession SetAVMetaData.
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+     * @tc.name   SUB_MULTIMEIDA_AVSESSION_SETAVMETADATA_0100
+     * @tc.number SUB_MULTIMEIDA_AVSESSION_SETAVMETADATA_0100
+     * @tc.desc   NDKAVSession SetAVMetaData.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEIDA_AVSESSION_SETAVMETADATA_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info("test SetAVMetaData ---------------");
       let ret = avSes.runTest('SetAVMetaData', ['title', 'artist', 'author', 'album', 'writer',
@@ -107,12 +112,13 @@ export default function builderAbilityTest() {
     })
 
     /**
-    * @tc.number     : SUB_MULTIMEIDA_AVSESSION_TestAllPara_0100
-    * @tc.name       : setBuilderTitle
-    * @tc.desc       : NDKAVSession setBuilderTitle.
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+     * @tc.name   SUB_MULTIMEIDA_AVSESSION_TESTAllPARA_0100
+     * @tc.number SUB_MULTIMEIDA_AVSESSION_TestAllPara_0100
+     * @tc.desc   NDKAVSession setBuilderTitle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEIDA_AVSESSION_TESTAllPARA_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info("test setBuilderTitle ---------------");
       let ret = avSes.runTest('TestAll', [1, 'sessionTag', 'sessionTag', 'abilityName',
@@ -124,12 +130,13 @@ export default function builderAbilityTest() {
     })
 
     /**
-    * @tc.number     : SUB_MULTIMEIDA_AVSESSION_ACTIVATE_0100
-    * @tc.name       : OHAVSessionActivate
-    * @tc.desc       : NDKAVSession OHAVSessionActivate.
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+     * @tc.name   SUB_MULTIMEIDA_AVSESSION_ACTIVATE_0100
+     * @tc.number SUB_MULTIMEIDA_AVSESSION_ACTIVATE_0100
+     * @tc.desc   NDKAVSession OHAVSessionActivate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_MULTIMEIDA_AVSESSION_ACTIVATE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("test OHAVSessionActivate ---------------");
@@ -142,12 +149,13 @@ export default function builderAbilityTest() {
     })
 
     /**
-    * @tc.number     : SUB_MULTIMEIDA_AVSESSION_DEACTIVATE_0100
-    * @tc.name       : OHAVSessionDeactivate
-    * @tc.desc       : NDKAVSession OHAVSessionDeactivate.
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+     * @tc.name   SUB_MULTIMEIDA_AVSESSION_DEACTIVATE_0100
+     * @tc.number SUB_MULTIMEIDA_AVSESSION_DEACTIVATE_0100
+     * @tc.desc   NDKAVSession OHAVSessionDeactivate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_MULTIMEIDA_AVSESSION_DEACTIVATE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("test OHAVSessionDeactivate ---------------");
@@ -160,12 +168,13 @@ export default function builderAbilityTest() {
     })
 
     /**
-    * @tc.number     : SUB_MULTIMEIDA_AVSESSION_GETSESSIONID_0100
-    * @tc.name       : AVSessionGetSessionId
-    * @tc.desc       : NDKAVSession AVSessionGetSessionId.
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+     * @tc.name   SUB_MULTIMEIDA_AVSESSION_GETSESSIONID_0100
+     * @tc.number SUB_MULTIMEIDA_AVSESSION_GETSESSIONID_0100
+     * @tc.desc   NDKAVSession AVSessionGetSessionId.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_MULTIMEIDA_AVSESSION_GETSESSIONID_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("test AVSessionGetSessionId ---------------");
@@ -178,12 +187,13 @@ export default function builderAbilityTest() {
     })
 
     /**
-    * @tc.number     : SUB_MULTIMEIDA_AVSESSION_GETSESSIONTYPE_0100
-    * @tc.name       : AVSessionGetSessionType
-    * @tc.desc       : NDKAVSession AVSessionGetSessionType.
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+     * @tc.name   SUB_MULTIMEIDA_AVSESSION_GETSESSIONTYPE_0100
+     * @tc.number SUB_MULTIMEIDA_AVSESSION_GETSESSIONTYPE_0100
+     * @tc.desc   NDKAVSession AVSessionGetSessionType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_MULTIMEIDA_AVSESSION_GETSESSIONTYPE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("test AVSessionGetSessionType ---------------");

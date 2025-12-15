@@ -26,39 +26,39 @@ export default function listBorderColorTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_BORDERCOLOR_0100
-     * @tc.name       : testListBorderColor001
-     * @tc.desc       : testing borderColor for list with unify the border width of the four edges
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListBorderColor001
+     * @tc.number SUB_ARKUI_CAPI_LIST_BORDERCOLOR_0100
+     * @tc.desc   testing borderColor for list with unify the border width of the four edges
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListBorderColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListBorderColor001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_BORDERCOLOR_0200
-     * @tc.name       : testListBorderColor002
-     * @tc.desc       : testing borderColor for list with set the width of the borders on each side separately
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListBorderColor002
+     * @tc.number SUB_ARKUI_CAPI_LIST_BORDERCOLOR_0200
+     * @tc.desc   testing borderColor for list with set the width of the borders on each side separately
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListBorderColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListBorderColor002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_BORDERCOLOR_0300
-     * @tc.name       : testListBorderColor003
-     * @tc.desc       : testing borderColor for list with set the width of the borders on each side, with three values of 0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListBorderColor003
+     * @tc.number SUB_ARKUI_CAPI_LIST_BORDERCOLOR_0300
+     * @tc.desc   testing borderColor for list with set the width of the borders on each side, with three values of 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListBorderColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListBorderColor003()).assertEqual(0)

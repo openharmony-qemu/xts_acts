@@ -26,78 +26,78 @@ export default function customComponentSepiaTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_SEPIA_0100
-     * @tc.name       : testCustomComponentSepia001
-     * @tc.desc       : testing sepia for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentSepia001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_SEPIA_0100
+     * @tc.desc   testing sepia for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentSepia001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentSepia001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_SEPIA_0200
-     * @tc.name       : testCustomComponentSepia002
-     * @tc.desc       : testing sepia for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentSepia002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_SEPIA_0200
+     * @tc.desc   testing sepia for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentSepia002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentSepia002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_SEPIA_0300
-     * @tc.name       : testCustomComponentSepia003
-     * @tc.desc       : testing sepia for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentSepia003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_SEPIA_0300
+     * @tc.desc   testing sepia for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentSepia003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentSepia003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_SEPIA_0400
-     * @tc.name       : testCustomComponentSepia004
-     * @tc.desc       : testing sepia for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentSepia004
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_SEPIA_0400
+     * @tc.desc   testing sepia for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentSepia004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentSepia004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_SEPIA_0500
-     * @tc.name       : testCustomComponentSepia005
-     * @tc.desc       : testing sepia for stack with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCustomComponentSepia005
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_SEPIA_0500
+     * @tc.desc   testing sepia for stack with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentSepia005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentSepia005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_SEPIA_0600
-     * @tc.name       : testCustomComponentSepia006
-     * @tc.desc       : testing sepia for stack with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCustomComponentSepia006
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_SEPIA_0600
+     * @tc.desc   testing sepia for stack with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentSepia006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentSepia006()).assertEqual(0)

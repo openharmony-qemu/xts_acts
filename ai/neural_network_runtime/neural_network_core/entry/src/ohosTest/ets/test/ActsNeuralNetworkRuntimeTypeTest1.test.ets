@@ -25,12 +25,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
   describe('ActsNeuralNetworkRuntimeTypeTest1', () => {
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_RETURNCODEDYNAMICSHAPE_0100
-     * @tc.name    : NnrtReturnCodeDynamicShape001
-     * @tc.desc    : test OH_NN_DYNAMIC_SHAPE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtReturnCodeDynamicShape001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_RETURNCODEDYNAMICSHAPE_0100
+     * @tc.desc   test OH_NN_DYNAMIC_SHAPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtReturnCodeDynamicShape001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -45,12 +45,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_FUSETYPEFUSEDRELU_0100
-     * @tc.name    : NnrtFuseTypeFusedRelu001
-     * @tc.desc    : test OH_NN_FUSED_RELU
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtFuseTypeFusedRelu001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_FUSETYPEFUSEDRELU_0100
+     * @tc.desc   test OH_NN_FUSED_RELU
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtFuseTypeFusedRelu001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -65,12 +65,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_FUSETYPEFUSEDRELU6_0100
-     * @tc.name    : NnrtFuseTypeFusedRelu6001
-     * @tc.desc    : test OH_NN_FUSED_RELU6
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtFuseTypeFusedRelu6001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_FUSETYPEFUSEDRELU6_0100
+     * @tc.desc   test OH_NN_FUSED_RELU6
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtFuseTypeFusedRelu6001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -85,12 +85,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_DEVICETYPECPU_0100
-     * @tc.name    : NnrtDeviceTypeCPU001
-     * @tc.desc    : test OH_NN_CPU
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtDeviceTypeCPU001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_DEVICETYPECPU_0100
+     * @tc.desc   test OH_NN_CPU
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtDeviceTypeCPU001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -105,12 +105,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_DEVICETYPEGPU_0100
-     * @tc.name    : NnrtDeviceTypeGPU001
-     * @tc.desc    : test OH_NN_GPU
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtDeviceTypeGPU001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_DEVICETYPEGPU_0100
+     * @tc.desc   test OH_NN_GPU
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtDeviceTypeGPU001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -125,12 +125,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_DEVICETYPEACCELERATOR_0100
-     * @tc.name    : NnrtDeviceTypeAccelerator001
-     * @tc.desc    : test OH_NN_ACCELERATOR
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtDeviceTypeAccelerator001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_DEVICETYPEACCELERATOR_0100
+     * @tc.desc   test OH_NN_ACCELERATOR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtDeviceTypeAccelerator001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -145,12 +145,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_DATATYPEINT16_0100
-     * @tc.name    : NnrtDataTypeInt16001
-     * @tc.desc    : test OH_NN_INT16
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtDataTypeInt16001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_DATATYPEINT16_0100
+     * @tc.desc   test OH_NN_INT16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtDataTypeInt16001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -165,12 +165,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_DATATYPEINT16_0200
-     * @tc.name    : NnrtDataTypeInt16002
-     * @tc.desc    : test OH_NN_INT16
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtDataTypeInt16002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_DATATYPEINT16_0200
+     * @tc.desc   test OH_NN_INT16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtDataTypeInt16002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -185,12 +185,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_DATATYPEINT64_0100
-     * @tc.name    : NnrtDataTypeInt64001
-     * @tc.desc    : test OH_NN_INT64
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtDataTypeInt64001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_DATATYPEINT64_0100
+     * @tc.desc   test OH_NN_INT64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtDataTypeInt64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -205,12 +205,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_DATATYPEINT64_0200
-     * @tc.name    : NnrtDataTypeInt64002
-     * @tc.desc    : test OH_NN_INT64
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtDataTypeInt64002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_DATATYPEINT64_0200
+     * @tc.desc   test OH_NN_INT64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtDataTypeInt64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -225,12 +225,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_DATATYPEUINT8_0100
-     * @tc.name    : NnrtDataTypeUint8001
-     * @tc.desc    : test OH_NN_UINT8
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtDataTypeUint8001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_DATATYPEUINT8_0100
+     * @tc.desc   test OH_NN_UINT8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtDataTypeUint8001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -245,12 +245,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_DATATYPEUINT8_0200
-     * @tc.name    : NnrtDataTypeUint8002
-     * @tc.desc    : test OH_NN_UINT8
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtDataTypeUint8002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_DATATYPEUINT8_0200
+     * @tc.desc   test OH_NN_UINT8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtDataTypeUint8002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -265,12 +265,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_DATATYPEUINT16_0100
-     * @tc.name    : NnrtDataTypeUint16001
-     * @tc.desc    : test OH_NN_UINT16
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtDataTypeUint16001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_DATATYPEUINT16_0100
+     * @tc.desc   test OH_NN_UINT16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtDataTypeUint16001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -285,12 +285,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_DATATYPEUINT16_0200
-     * @tc.name    : NnrtDataTypeUint16002
-     * @tc.desc    : test OH_NN_UINT16
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtDataTypeUint16002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_DATATYPEUINT16_0200
+     * @tc.desc   test OH_NN_UINT16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtDataTypeUint16002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -305,12 +305,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_DATATYPEUINT32_0100
-     * @tc.name    : NnrtDataTypeUint32001
-     * @tc.desc    : test OH_NN_UINT32
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtDataTypeUint32001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_DATATYPEUINT32_0100
+     * @tc.desc   test OH_NN_UINT32
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtDataTypeUint32001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -325,12 +325,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_DATATYPEUINT32_0200
-     * @tc.name    : NnrtDataTypeUint32002
-     * @tc.desc    : test OH_NN_UINT32
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtDataTypeUint32002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_DATATYPEUINT32_0200
+     * @tc.desc   test OH_NN_UINT32
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtDataTypeUint32002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -345,12 +345,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_DATATYPEUINT64_0100
-     * @tc.name    : NnrtDataTypeUint64001
-     * @tc.desc    : test OH_NN_UINT64
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtDataTypeUint64001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_DATATYPEUINT64_0100
+     * @tc.desc   test OH_NN_UINT64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtDataTypeUint64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -365,12 +365,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_DATATYPEUINT64_0200
-     * @tc.name    : NnrtDataTypeUint64002
-     * @tc.desc    : test OH_NN_UINT64
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtDataTypeUint64002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_DATATYPEUINT64_0200
+     * @tc.desc   test OH_NN_UINT64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtDataTypeUint64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -385,12 +385,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_DATATYPEFLOAT16_0100
-     * @tc.name    : NnrtDataTypeFloat16001
-     * @tc.desc    : ensure OH_NN_FLOAT16 equals 10
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtDataTypeFloat16001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_DATATYPEFLOAT16_0100
+     * @tc.desc   ensure OH_NN_FLOAT16 equals 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtDataTypeFloat16001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -405,12 +405,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_DATATYPEFLOAT16_0200
-     * @tc.name    : NnrtDataTypeFloat16002
-     * @tc.desc    : test OH_NN_FLOAT16
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtDataTypeFloat16002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_DATATYPEFLOAT16_0200
+     * @tc.desc   test OH_NN_FLOAT16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtDataTypeFloat16002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -425,12 +425,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSAVGPOOL_0100
-     * @tc.name    : NnrtOpTypeOpsAvgPool001
-     * @tc.desc    : test OH_NN_OPS_AVG_POOL
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeOpsAvgPool001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSAVGPOOL_0100
+     * @tc.desc   test OH_NN_OPS_AVG_POOL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeOpsAvgPool001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -445,12 +445,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSAVGPOOL_0200
-     * @tc.name    : NnrtOpTypeOpsAvgPool002
-     * @tc.desc    : test OH_NN_OPS_AVG_POOL
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeOpsAvgPool002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSAVGPOOL_0200
+     * @tc.desc   test OH_NN_OPS_AVG_POOL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeOpsAvgPool002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -465,12 +465,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSBATCHNORM_0100
-     * @tc.name    : NnrtOpTypeOpsBatchNorm001
-     * @tc.desc    : test OH_NN_OPS_BATCH_NORM
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeOpsBatchNorm001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSBATCHNORM_0100
+     * @tc.desc   test OH_NN_OPS_BATCH_NORM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeOpsBatchNorm001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -485,12 +485,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSBATCHNORM_0200
-     * @tc.name    : NnrtOpTypeOpsBatchNorm002
-     * @tc.desc    : test OH_NN_OPS_BATCH_NORM
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeOpsBatchNorm002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSBATCHNORM_0200
+     * @tc.desc   test OH_NN_OPS_BATCH_NORM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeOpsBatchNorm002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -505,12 +505,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSBATCHTOSPACEND_0100
-     * @tc.name    : NnrtOpTypeOpsBatchToSpaceND001
-     * @tc.desc    : test OH_NN_OPS_BATCH_TO_SPACE_ND
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeOpsBatchToSpaceND001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSBATCHTOSPACEND_0100
+     * @tc.desc   test OH_NN_OPS_BATCH_TO_SPACE_ND
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeOpsBatchToSpaceND001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -525,12 +525,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSBATCHTOSPACEND_0200
-     * @tc.name    : NnrtOpTypeOpsBatchToSpaceND002
-     * @tc.desc    : test OH_NN_OPS_BATCH_TO_SPACE_ND
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeOpsBatchToSpaceND002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSBATCHTOSPACEND_0200
+     * @tc.desc   test OH_NN_OPS_BATCH_TO_SPACE_ND
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeOpsBatchToSpaceND002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -545,12 +545,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSBIASADD_0100
-     * @tc.name    : NnrtOpTypeOpsBiasAdd001
-     * @tc.desc    : test OH_NN_OPS_BIAS_ADD
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeOpsBiasAdd001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSBIASADD_0100
+     * @tc.desc   test OH_NN_OPS_BIAS_ADD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeOpsBiasAdd001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -565,12 +565,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSBIASADD_0200
-     * @tc.name    : NnrtOpTypeOpsBiasAdd002
-     * @tc.desc    : test OH_NN_OPS_BIAS_ADD
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeOpsBiasAdd002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSBIASADD_0200
+     * @tc.desc   test OH_NN_OPS_BIAS_ADD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeOpsBiasAdd002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -585,12 +585,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSCAST_0100
-     * @tc.name    : NnrtOpTypeOpsCast001
-     * @tc.desc    : test OH_NN_OPS_CAST
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeOpsCast001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSCAST_0100
+     * @tc.desc   test OH_NN_OPS_CAST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeOpsCast001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -605,12 +605,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSCAST_0200
-     * @tc.name    : NnrtOpTypeOpsCast002
-     * @tc.desc    : test OH_NN_OPS_CAST
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeOpsCast002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSCAST_0200
+     * @tc.desc   test OH_NN_OPS_CAST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeOpsCast002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -625,12 +625,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSCONCAT_0100
-     * @tc.name    : NnrtOpTypeOpsConcat001
-     * @tc.desc    : test OH_NN_OPS_CONCAT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeOpsConcat001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSCONCAT_0100
+     * @tc.desc   test OH_NN_OPS_CONCAT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeOpsConcat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -645,12 +645,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSCONCAT_0200
-     * @tc.name    : NnrtOpTypeOpsConcat002
-     * @tc.desc    : test OH_NN_OPS_CONCAT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeOpsConcat002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSCONCAT_0200
+     * @tc.desc   test OH_NN_OPS_CONCAT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeOpsConcat002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -665,12 +665,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSCONV2D_0100
-     * @tc.name    : NnrtOpTypeOpsConv2D001
-     * @tc.desc    : test OH_NN_OPS_CONV2D
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeOpsConv2D001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSCONV2D_0100
+     * @tc.desc   test OH_NN_OPS_CONV2D
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeOpsConv2D001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -685,12 +685,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSCONV2D_0200
-     * @tc.name    : NnrtOpTypeOpsConv2D002
-     * @tc.desc    : test OH_NN_OPS_CONV2D
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeOpsConv2D002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSCONV2D_0200
+     * @tc.desc   test OH_NN_OPS_CONV2D
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeOpsConv2D002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -705,12 +705,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSCONV2DTRANSPOSE_0100
-     * @tc.name    : NnrtOpTypeOpsConv2DTranspose001
-     * @tc.desc    : test OH_NN_OPS_CONV2D_TRANSPOSE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeOpsConv2DTranspose001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSCONV2DTRANSPOSE_0100
+     * @tc.desc   test OH_NN_OPS_CONV2D_TRANSPOSE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeOpsConv2DTranspose001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
        async (done: Function) => {
@@ -726,12 +726,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSCONV2DTRANSPOSE_0200
-     * @tc.name    : NnrtOpTypeOpsConv2DTranspose002
-     * @tc.desc    : test OH_NN_OPS_CONV2D_TRANSPOSE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeOpsConv2DTranspose002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSCONV2DTRANSPOSE_0200
+     * @tc.desc   test OH_NN_OPS_CONV2D_TRANSPOSE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeOpsConv2DTranspose002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
        async (done: Function) => {
@@ -747,12 +747,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSDEPTHWISECONV2DNATIVE_0100
-     * @tc.name    : NnrtOpTypeOpsDepthwiseConv2DNative001
-     * @tc.desc    : test OH_NN_OPS_DEPTHWISE_CONV2D_NATIVE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeOpsDepthwiseConv2DNative001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSDEPTHWISECONV2DNATIVE_0100
+     * @tc.desc   test OH_NN_OPS_DEPTHWISE_CONV2D_NATIVE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeOpsDepthwiseConv2DNative001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
        async (done: Function) => {
@@ -769,12 +769,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSDEPTHWISECONV2DNATIVE_0200
-     * @tc.name    : NnrtOpTypeOpsDepthwiseConv2DNative002
-     * @tc.desc    : test OH_NN_OPS_DEPTHWISE_CONV2D_NATIVE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeOpsDepthwiseConv2DNative002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSDEPTHWISECONV2DNATIVE_0200
+     * @tc.desc   test OH_NN_OPS_DEPTHWISE_CONV2D_NATIVE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeOpsDepthwiseConv2DNative002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
        async (done: Function) => {
@@ -791,12 +791,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSDIV_0100
-     * @tc.name    : NnrtOpTypeOpsDiv001
-     * @tc.desc    : test OH_NN_OPS_DIV
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeOpsDiv001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSDIV_0100
+     * @tc.desc   test OH_NN_OPS_DIV
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeOpsDiv001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -811,12 +811,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSDIV_0200
-     * @tc.name    : NnrtOpTypeOpsDiv002
-     * @tc.desc    : test OH_NN_OPS_DIV
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeOpsDiv002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSDIV_0200
+     * @tc.desc   test OH_NN_OPS_DIV
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeOpsDiv002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -831,12 +831,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSELTWISE_0100
-     * @tc.name    : NnrtOpTypeEltwise001
-     * @tc.desc    : test OH_NN_OPS_ELTWISE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeEltwise001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSELTWISE_0100
+     * @tc.desc   test OH_NN_OPS_ELTWISE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeEltwise001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -851,12 +851,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSELTWISE_0200
-     * @tc.name    : NnrtOpTypeEltwise002
-     * @tc.desc    : test OH_NN_OPS_ELTWISE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeEltwise002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSELTWISE_0200
+     * @tc.desc   test OH_NN_OPS_ELTWISE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeEltwise002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -871,12 +871,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSEXPANDDIMS_0100
-     * @tc.name    : NnrtOpTypeExpandDims001
-     * @tc.desc    : test OH_NN_OPS_EXPAND_DIMS
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeExpandDims001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSEXPANDDIMS_0100
+     * @tc.desc   test OH_NN_OPS_EXPAND_DIMS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeExpandDims001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -891,12 +891,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSEXPANDDIMS_0200
-     * @tc.name    : NnrtOpTypeExpandDims002
-     * @tc.desc    : test OH_NN_OPS_EXPAND_DIMS
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeExpandDims002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSEXPANDDIMS_0200
+     * @tc.desc   test OH_NN_OPS_EXPAND_DIMS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeExpandDims002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -911,12 +911,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSFILL_0100
-     * @tc.name    : NnrtOpTypeFill001
-     * @tc.desc    : test OH_NN_OPS_FILL
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeFill001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSFILL_0100
+     * @tc.desc   test OH_NN_OPS_FILL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeFill001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -931,12 +931,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSFILL_0200
-     * @tc.name    : NnrtOpTypeFill002
-     * @tc.desc    : test OH_NN_OPS_FILL
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeFill002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSFILL_0200
+     * @tc.desc   test OH_NN_OPS_FILL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeFill002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -951,12 +951,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSFULLCONNECTION_0100
-     * @tc.name    : NnrtOpTypeFullConnection001
-     * @tc.desc    : test OH_NN_OPS_FULL_CONNECTION
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeFullConnection001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSFULLCONNECTION_0100
+     * @tc.desc   test OH_NN_OPS_FULL_CONNECTION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeFullConnection001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -971,12 +971,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSFULLCONNECTION_0200
-     * @tc.name    : NnrtOpTypeFullConnection002
-     * @tc.desc    : test OH_NN_OPS_FULL_CONNECTION
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeFullConnection002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSFULLCONNECTION_0200
+     * @tc.desc   test OH_NN_OPS_FULL_CONNECTION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeFullConnection002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -991,12 +991,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSGATHER_0100
-     * @tc.name    : NnrtOpTypeGather001
-     * @tc.desc    : test OH_NN_OPS_GATHER
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeGather001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSGATHER_0100
+     * @tc.desc   test OH_NN_OPS_GATHER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeGather001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1011,12 +1011,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSGATHER_0200
-     * @tc.name    : NnrtOpTypeGather002
-     * @tc.desc    : test OH_NN_OPS_GATHER
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeGather002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSGATHER_0200
+     * @tc.desc   test OH_NN_OPS_GATHER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeGather002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1031,12 +1031,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSHSWISH_0100
-     * @tc.name    : NnrtOpTypeHswish001
-     * @tc.desc    : test OH_NN_OPS_HSWISH
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeHswish001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSHSWISH_0100
+     * @tc.desc   test OH_NN_OPS_HSWISH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeHswish001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1051,12 +1051,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSHSWISH_0200
-     * @tc.name    : NnrtOpTypeHswish002
-     * @tc.desc    : test OH_NN_OPS_HSWISH
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeHswish002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSHSWISH_0200
+     * @tc.desc   test OH_NN_OPS_HSWISH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeHswish002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1071,12 +1071,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSLESSEQUAL_0100
-     * @tc.name    : NnrtOpTypeLessEqual001
-     * @tc.desc    : test OH_NN_OPS_LESS_EQUAL
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeLessEqual001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSLESSEQUAL_0100
+     * @tc.desc   test OH_NN_OPS_LESS_EQUAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeLessEqual001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1091,12 +1091,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSLESSEQUAL_0200
-     * @tc.name    : NnrtOpTypeLessEqual002
-     * @tc.desc    : test OH_NN_OPS_LESS_EQUAL
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeLessEqual002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSLESSEQUAL_0200
+     * @tc.desc   test OH_NN_OPS_LESS_EQUAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeLessEqual002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1111,12 +1111,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSMATMUL_0100
-     * @tc.name    : NnrtOpTypeMatmul001
-     * @tc.desc    : test OH_NN_OPS_MATMUL
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeMatmul001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSMATMUL_0100
+     * @tc.desc   test OH_NN_OPS_MATMUL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeMatmul001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1131,12 +1131,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSMATMUL_0200
-     * @tc.name    : NnrtOpTypeMatmul002
-     * @tc.desc    : test OH_NN_OPS_MATMUL
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeMatmul002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSMATMUL_0200
+     * @tc.desc   test OH_NN_OPS_MATMUL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeMatmul002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1151,12 +1151,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSMAXIMUM_0100
-     * @tc.name    : NnrtOpTypeMaximum001
-     * @tc.desc    : test OH_NN_OPS_MAXIMUM
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeMaximum001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSMAXIMUM_0100
+     * @tc.desc   test OH_NN_OPS_MAXIMUM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeMaximum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1171,12 +1171,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSMAXIMUM_0200
-     * @tc.name    : NnrtOpTypeMaximum002
-     * @tc.desc    : test OH_NN_OPS_MAXIMUM
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeMaximum002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSMAXIMUM_0200
+     * @tc.desc   test OH_NN_OPS_MAXIMUM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeMaximum002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1191,12 +1191,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSMAXPOOL_0100
-     * @tc.name    : NnrtOpTypeMaxpool001
-     * @tc.desc    : test OH_NN_OPS_MAX_POOL
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeMaxpool001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSMAXPOOL_0100
+     * @tc.desc   test OH_NN_OPS_MAX_POOL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeMaxpool001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1211,12 +1211,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSMAXPOOL_0200
-     * @tc.name    : NnrtOpTypeMaxpool002
-     * @tc.desc    : test OH_NN_OPS_MAX_POOL
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeMaxpool002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSMAXPOOL_0200
+     * @tc.desc   test OH_NN_OPS_MAX_POOL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeMaxpool002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1231,12 +1231,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSMUL_0100
-     * @tc.name    : NnrtOpTypeMul001
-     * @tc.desc    : test OH_NN_OPS_MUL
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeMul001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSMUL_0100
+     * @tc.desc   test OH_NN_OPS_MUL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeMul001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1251,12 +1251,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSMUL_0200
-     * @tc.name    : NnrtOpTypeMul002
-     * @tc.desc    : test OH_NN_OPS_MUL
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeMul002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSMUL_0200
+     * @tc.desc   test OH_NN_OPS_MUL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeMul002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1271,12 +1271,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSONEHOT_0100
-     * @tc.name    : NnrtOpTypeOneHot001
-     * @tc.desc    : test OH_NN_OPS_ONE_HOT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeOneHot001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSONEHOT_0100
+     * @tc.desc   test OH_NN_OPS_ONE_HOT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeOneHot001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1291,12 +1291,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSONEHOT_0200
-     * @tc.name    : NnrtOpTypeOneHot002
-     * @tc.desc    : test OH_NN_OPS_ONE_HOT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeOneHot002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSONEHOT_0200
+     * @tc.desc   test OH_NN_OPS_ONE_HOT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeOneHot002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1311,12 +1311,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSPAD_0100
-     * @tc.name    : NnrtOpTypePad001
-     * @tc.desc    : test OH_NN_OPS_PAD
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypePad001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSPAD_0100
+     * @tc.desc   test OH_NN_OPS_PAD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypePad001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1331,12 +1331,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSPAD_0200
-     * @tc.name    : NnrtOpTypePad002
-     * @tc.desc    : test OH_NN_OPS_PAD
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypePad002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSPAD_0200
+     * @tc.desc   test OH_NN_OPS_PAD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypePad002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1351,12 +1351,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSPOW_0100
-     * @tc.name    : NnrtOpTypePow001
-     * @tc.desc    : test OH_NN_OPS_POW
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypePow001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSPOW_0100
+     * @tc.desc   test OH_NN_OPS_POW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypePow001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1371,12 +1371,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSPOW_0200
-     * @tc.name    : NnrtOpTypePow002
-     * @tc.desc    : test OH_NN_OPS_POW
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypePow002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSPOW_0200
+     * @tc.desc   test OH_NN_OPS_POW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypePow002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1391,12 +1391,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSCALE_0100
-     * @tc.name    : NnrtOpTypeScale001
-     * @tc.desc    : test OH_NN_OPS_SCALE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeScale001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSCALE_0100
+     * @tc.desc   test OH_NN_OPS_SCALE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeScale001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1411,12 +1411,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSCALE_0200
-     * @tc.name    : NnrtOpTypeScale002
-     * @tc.desc    : test OH_NN_OPS_SCALE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeScale002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSCALE_0200
+     * @tc.desc   test OH_NN_OPS_SCALE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeScale002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1431,12 +1431,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSHAPE_0100
-     * @tc.name    : NnrtOpTypeShape001
-     * @tc.desc    : test OH_NN_OPS_SHAPE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeShape001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSHAPE_0100
+     * @tc.desc   test OH_NN_OPS_SHAPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeShape001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1451,12 +1451,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSHAPE_0200
-     * @tc.name    : NnrtOpTypeShape002
-     * @tc.desc    : test OH_NN_OPS_SHAPE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeShape002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSHAPE_0200
+     * @tc.desc   test OH_NN_OPS_SHAPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeShape002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1471,12 +1471,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSIGMOID_0100
-     * @tc.name    : NnrtOpTypeSigmoid001
-     * @tc.desc    : test OH_NN_OPS_SIGMOID
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeSigmoid001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSIGMOID_0100
+     * @tc.desc   test OH_NN_OPS_SIGMOID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeSigmoid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1491,12 +1491,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSIGMOID_0200
-     * @tc.name    : NnrtOpTypeSigmoid002
-     * @tc.desc    : test OH_NN_OPS_SIGMOID
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeSigmoid002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSIGMOID_0200
+     * @tc.desc   test OH_NN_OPS_SIGMOID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeSigmoid002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1511,12 +1511,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSLICE_0100
-     * @tc.name    : NnrtOpTypeSlice001
-     * @tc.desc    : test OH_NN_OPS_SLICE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeSlice001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSLICE_0100
+     * @tc.desc   test OH_NN_OPS_SLICE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeSlice001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1531,12 +1531,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSLICE_0200
-     * @tc.name    : NnrtOpTypeSlice002
-     * @tc.desc    : test OH_NN_OPS_SLICE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeSlice002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSLICE_0200
+     * @tc.desc   test OH_NN_OPS_SLICE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeSlice002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1551,12 +1551,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSOFTMAX_0100
-     * @tc.name    : NnrtOpTypeSoftmax001
-     * @tc.desc    : test OH_NN_OPS_SOFTMAX
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeSoftmax001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSOFTMAX_0100
+     * @tc.desc   test OH_NN_OPS_SOFTMAX
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeSoftmax001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1571,12 +1571,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSOFTMAX_0200
-     * @tc.name    : NnrtOpTypeSoftmax002
-     * @tc.desc    : test OH_NN_OPS_SOFTMAX
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeSoftmax002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSOFTMAX_0200
+     * @tc.desc   test OH_NN_OPS_SOFTMAX
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeSoftmax002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1591,12 +1591,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSPACETOBATCHND_0100
-     * @tc.name    : NnrtOpTypeSpaceToBatchND001
-     * @tc.desc    : test OH_NN_OPS_SPACE_TO_BATCH_ND
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeSpaceToBatchND001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSPACETOBATCHND_0100
+     * @tc.desc   test OH_NN_OPS_SPACE_TO_BATCH_ND
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeSpaceToBatchND001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1611,12 +1611,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSPACETOBATCHND_0200
-     * @tc.name    : NnrtOpTypeSpaceToBatchND002
-     * @tc.desc    : test OH_NN_OPS_SPACE_TO_BATCH_ND
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeSpaceToBatchND002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSPACETOBATCHND_0200
+     * @tc.desc   test OH_NN_OPS_SPACE_TO_BATCH_ND
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeSpaceToBatchND002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1631,12 +1631,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSPLIT_0100
-     * @tc.name    : NnrtOpTypeSplit001
-     * @tc.desc    : test OH_NN_OPS_SPLIT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeSplit001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSPLIT_0100
+     * @tc.desc   test OH_NN_OPS_SPLIT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeSplit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1651,12 +1651,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSPLIT_0200
-     * @tc.name    : NnrtOpTypeSplit002
-     * @tc.desc    : test OH_NN_OPS_SPLIT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeSplit002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSPLIT_0200
+     * @tc.desc   test OH_NN_OPS_SPLIT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeSplit002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1671,12 +1671,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSQRT_0100
-     * @tc.name    : NnrtOpTypeSqrt001
-     * @tc.desc    : test OH_NN_OPS_SQRT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeSqrt001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSQRT_0100
+     * @tc.desc   test OH_NN_OPS_SQRT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeSqrt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1691,12 +1691,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSQRT_0200
-     * @tc.name    : NnrtOpTypeSqrt002
-     * @tc.desc    : test OH_NN_OPS_SQRT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeSqrt002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSQRT_0200
+     * @tc.desc   test OH_NN_OPS_SQRT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeSqrt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1711,12 +1711,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSQUAREDDIFFERENCE_0100
-     * @tc.name    : NnrtOpTypeSquaredDifference001
-     * @tc.desc    : test OH_NN_OPS_SQUARED_DIFFERENCE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeSquaredDifference001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSQUAREDDIFFERENCE_0100
+     * @tc.desc   test OH_NN_OPS_SQUARED_DIFFERENCE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeSquaredDifference001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1731,12 +1731,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSQUAREDDIFFERENCE_0200
-     * @tc.name    : NnrtOpTypeSquaredDifference002
-     * @tc.desc    : test OH_NN_OPS_SQUARED_DIFFERENCE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeSquaredDifference002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSQUAREDDIFFERENCE_0200
+     * @tc.desc   test OH_NN_OPS_SQUARED_DIFFERENCE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeSquaredDifference002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1751,12 +1751,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSQUEEZE_0100
-     * @tc.name    : NnrtOpTypeSqueeze001
-     * @tc.desc    : test OH_NN_OPS_SQUEEZE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeSqueeze001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSQUEEZE_0100
+     * @tc.desc   test OH_NN_OPS_SQUEEZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeSqueeze001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1771,12 +1771,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSQUEEZE_0200
-     * @tc.name    : NnrtOpTypeSqueeze002
-     * @tc.desc    : test OH_NN_OPS_SQUEEZE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeSqueeze002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSQUEEZE_0200
+     * @tc.desc   test OH_NN_OPS_SQUEEZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeSqueeze002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1791,12 +1791,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSTACK_0100
-     * @tc.name    : NnrtOpTypeStack001
-     * @tc.desc    : test OH_NN_OPS_STACK
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeStack001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSTACK_0100
+     * @tc.desc   test OH_NN_OPS_STACK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeStack001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1811,12 +1811,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSTACK_0200
-     * @tc.name    : NnrtOpTypeStack002
-     * @tc.desc    : test OH_NN_OPS_STACK
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeStack002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSTACK_0200
+     * @tc.desc   test OH_NN_OPS_STACK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeStack002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1831,12 +1831,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSTRIDEDSLICE_0100
-     * @tc.name    : NnrtOpTypeStridedSlice001
-     * @tc.desc    : test OH_NN_OPS_STRIDED_SLICE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeStridedSlice001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSTRIDEDSLICE_0100
+     * @tc.desc   test OH_NN_OPS_STRIDED_SLICE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeStridedSlice001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1851,12 +1851,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSTRIDEDSLICE_0200
-     * @tc.name    : NnrtOpTypeStridedSlice002
-     * @tc.desc    : test OH_NN_OPS_STRIDED_SLICE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeStridedSlice002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSTRIDEDSLICE_0200
+     * @tc.desc   test OH_NN_OPS_STRIDED_SLICE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeStridedSlice002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1871,12 +1871,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSUB_0100
-     * @tc.name    : NnrtOpTypeSub001
-     * @tc.desc    : test OH_NN_OPS_SUB
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeSub001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSUB_0100
+     * @tc.desc   test OH_NN_OPS_SUB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeSub001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1891,12 +1891,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSUB_0200
-     * @tc.name    : NnrtOpTypeSub002
-     * @tc.desc    : test OH_NN_OPS_SUB
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeSub002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSSUB_0200
+     * @tc.desc   test OH_NN_OPS_SUB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeSub002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1911,12 +1911,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSTANH_0100
-     * @tc.name    : NnrtOpTypeTanh001
-     * @tc.desc    : test OH_NN_OPS_TANH
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeTanh001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSTANH_0100
+     * @tc.desc   test OH_NN_OPS_TANH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeTanh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1931,12 +1931,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSTANH_0200
-     * @tc.name    : NnrtOpTypeTanh002
-     * @tc.desc    : test OH_NN_OPS_TANH
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeTanh002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSTANH_0200
+     * @tc.desc   test OH_NN_OPS_TANH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeTanh002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1951,12 +1951,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSTILE_0100
-     * @tc.name    : NnrtOpTypeTile001
-     * @tc.desc    : test OH_NN_OPS_TILE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeTile001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSTILE_0100
+     * @tc.desc   test OH_NN_OPS_TILE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeTile001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1971,12 +1971,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSTILE_0200
-     * @tc.name    : NnrtOpTypeTile002
-     * @tc.desc    : test OH_NN_OPS_TILE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeTile002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSTILE_0200
+     * @tc.desc   test OH_NN_OPS_TILE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeTile002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1991,12 +1991,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSTRANSPOSE_0100
-     * @tc.name    : NnrtOpTypeTranspose001
-     * @tc.desc    : test OH_NN_OPS_TRANSPOSE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeTranspose001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSTRANSPOSE_0100
+     * @tc.desc   test OH_NN_OPS_TRANSPOSE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeTranspose001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2011,12 +2011,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSTRANSPOSE_0200
-     * @tc.name    : NnrtOpTypeTranspose002
-     * @tc.desc    : test OH_NN_OPS_TRANSPOSE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeTranspose002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSTRANSPOSE_0200
+     * @tc.desc   test OH_NN_OPS_TRANSPOSE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeTranspose002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2031,12 +2031,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSREDUCEMEAN_0100
-     * @tc.name    : NnrtOpTypeReduceMean001
-     * @tc.desc    : test OH_NN_OPS_REDUCE_MEAN
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeReduceMean001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSREDUCEMEAN_0100
+     * @tc.desc   test OH_NN_OPS_REDUCE_MEAN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeReduceMean001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2051,12 +2051,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSREDUCEMEAN_0200
-     * @tc.name    : NnrtOpTypeReduceMean002
-     * @tc.desc    : test OH_NN_OPS_REDUCE_MEAN
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeReduceMean002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSREDUCEMEAN_0200
+     * @tc.desc   test OH_NN_OPS_REDUCE_MEAN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeReduceMean002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2071,12 +2071,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSRESIZEBILINEAR_0100
-     * @tc.name    : NnrtOpTypeResizeBilinear001
-     * @tc.desc    : test OH_NN_OPS_RESIZE_BILINEAR
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeResizeBilinear001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSRESIZEBILINEAR_0100
+     * @tc.desc   test OH_NN_OPS_RESIZE_BILINEAR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeResizeBilinear001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2091,12 +2091,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSRESIZEBILINEAR_0200
-     * @tc.name    : NnrtOpTypeResizeBilinear002
-     * @tc.desc    : test OH_NN_OPS_RESIZE_BILINEAR
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeResizeBilinear002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSRESIZEBILINEAR_0200
+     * @tc.desc   test OH_NN_OPS_RESIZE_BILINEAR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeResizeBilinear002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2111,12 +2111,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSRSQRT_0100
-     * @tc.name    : NnrtOpTypeRsqrt001
-     * @tc.desc    : test OH_NN_OPS_RSQRT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeRsqrt001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSRSQRT_0100
+     * @tc.desc   test OH_NN_OPS_RSQRT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeRsqrt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2131,12 +2131,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSRSQRT_0200
-     * @tc.name    : NnrtOpTypeRsqrt002
-     * @tc.desc    : test OH_NN_OPS_RSQRT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeRsqrt002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSRSQRT_0200
+     * @tc.desc   test OH_NN_OPS_RSQRT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeRsqrt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2151,12 +2151,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSRESHAPE_0100
-     * @tc.name    : NnrtOpTypeReshape001
-     * @tc.desc    : test OH_NN_OPS_RESHAPE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeReshape001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSRESHAPE_0100
+     * @tc.desc   test OH_NN_OPS_RESHAPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeReshape001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2171,12 +2171,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSRESHAPE_0200
-     * @tc.name    : NnrtOpTypeReshape002
-     * @tc.desc    : test OH_NN_OPS_RESHAPE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeReshape002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSRESHAPE_0200
+     * @tc.desc   test OH_NN_OPS_RESHAPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeReshape002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2191,12 +2191,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSPRELU_0100
-     * @tc.name    : NnrtOpTypePrelu001
-     * @tc.desc    : test OH_NN_OPS_PRELU
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypePrelu001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSPRELU_0100
+     * @tc.desc   test OH_NN_OPS_PRELU
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypePrelu001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2211,12 +2211,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSPRELU_0200
-     * @tc.name    : NnrtOpTypePrelu002
-     * @tc.desc    : test OH_NN_OPS_PRELU
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypePrelu002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSPRELU_0200
+     * @tc.desc   test OH_NN_OPS_PRELU
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypePrelu002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2232,12 +2232,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
 
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSRELU_0100
-     * @tc.name    : NnrtOpTypeRelu001
-     * @tc.desc    : test OH_NN_OPS_RELU
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeRelu001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSRELU_0100
+     * @tc.desc   test OH_NN_OPS_RELU
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeRelu001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2252,12 +2252,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSRELU_0200
-     * @tc.name    : NnrtOpTypeRelu002
-     * @tc.desc    : test OH_NN_OPS_RELU
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeRelu002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSRELU_0200
+     * @tc.desc   test OH_NN_OPS_RELU
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeRelu002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2272,12 +2272,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSRELU6_0100
-     * @tc.name    : NnrtOpTypeRelu6001
-     * @tc.desc    : test OH_NN_OPS_RELU6
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeRelu6001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSRELU6_0100
+     * @tc.desc   test OH_NN_OPS_RELU6
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeRelu6001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2292,12 +2292,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSRELU6_0200
-     * @tc.name    : NnrtOpTypeRelu6002
-     * @tc.desc    : test OH_NN_OPS_RELU6
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeRelu6002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSRELU6_0200
+     * @tc.desc   test OH_NN_OPS_RELU6
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeRelu6002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2312,12 +2312,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSLAYERNORM_0100
-     * @tc.name    : NnrtOpTypeLayerNorm001
-     * @tc.desc    : test OH_NN_OPS_LAYER_NORM
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeLayerNorm001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSLAYERNORM_0100
+     * @tc.desc   test OH_NN_OPS_LAYER_NORM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeLayerNorm001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2332,12 +2332,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSLAYERNORM_0200
-     * @tc.name    : NnrtOpTypeLayerNorm002
-     * @tc.desc    : test OH_NN_OPS_LAYER_NORM
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeLayerNorm002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSLAYERNORM_0200
+     * @tc.desc   test OH_NN_OPS_LAYER_NORM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeLayerNorm002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2352,12 +2352,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSREDUCEPROD_0100
-     * @tc.name    : NnrtOpTypeReduceProd001
-     * @tc.desc    : test OH_NN_OPS_REDUCE_PROD
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeReduceProd001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSREDUCEPROD_0100
+     * @tc.desc   test OH_NN_OPS_REDUCE_PROD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeReduceProd001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2372,12 +2372,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSREDUCEPROD_0200
-     * @tc.name    : NnrtOpTypeReduceProd002
-     * @tc.desc    : test OH_NN_OPS_REDUCE_PROD
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeReduceProd002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSREDUCEPROD_0200
+     * @tc.desc   test OH_NN_OPS_REDUCE_PROD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeReduceProd002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2392,12 +2392,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSREDUCEALL_0100
-     * @tc.name    : NnrtOpTypeReduceAll001
-     * @tc.desc    : test OH_NN_OPS_REDUCE_ALL
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeReduceAll001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSREDUCEALL_0100
+     * @tc.desc   test OH_NN_OPS_REDUCE_ALL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeReduceAll001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2412,12 +2412,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSREDUCEALL_0200
-     * @tc.name    : NnrtOpTypeReduceAll002
-     * @tc.desc    : test OH_NN_OPS_REDUCE_ALL
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeReduceAll002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSREDUCEALL_0200
+     * @tc.desc   test OH_NN_OPS_REDUCE_ALL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeReduceAll002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2432,12 +2432,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSQUANTDTYPECAST_0100
-     * @tc.name    : NnrtOpTypeQuantDTypeCast001
-     * @tc.desc    : test OH_NN_OPS_QUANT_DTYPE_CAST
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeQuantDTypeCast001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSQUANTDTYPECAST_0100
+     * @tc.desc   test OH_NN_OPS_QUANT_DTYPE_CAST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeQuantDTypeCast001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2452,12 +2452,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSQUANTDTYPECAST_0200
-     * @tc.name    : NnrtOpTypeQuantDTypeCast002
-     * @tc.desc    : test OH_NN_OPS_QUANT_DTYPE_CAST
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeQuantDTypeCast002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSQUANTDTYPECAST_0200
+     * @tc.desc   test OH_NN_OPS_QUANT_DTYPE_CAST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeQuantDTypeCast002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -2472,12 +2472,12 @@ export default function ActsNeuralNetworkRuntimeTypeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSTOPK_0100
-     * @tc.name    : NnrtOpTypeTopK001
-     * @tc.desc    : test OH_NN_OPS_TOP_K
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtOpTypeTopK001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_OPERATIONTYPEOPSTOPK_0100
+     * @tc.desc   test OH_NN_OPS_TOP_K
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtOpTypeTopK001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {

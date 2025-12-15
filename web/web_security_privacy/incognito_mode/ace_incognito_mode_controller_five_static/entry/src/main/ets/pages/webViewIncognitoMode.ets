@@ -255,6 +255,25 @@ struct webViewIncognitoMode {
               }
               break;
             }
+
+            case 'emitWebViewIncognitoMode01': {
+              try {
+                this.controller.loadUrl('https://m.weibo.cn');
+                setTimeout(() => {
+                  let result = this.controller.isIncognitoMode();
+                  if (result === true) {
+                    Utils.emitEvent('success', 8019);
+                  } else {
+                    Utils.emitEvent('fail', 8019);
+                  }
+                }, 2000)
+
+              } catch (error) {
+                hilog.info(0X0000,"testTag",`ErrorCode: ` + error );
+              }
+              break;
+            }
+
           }
         })
       }

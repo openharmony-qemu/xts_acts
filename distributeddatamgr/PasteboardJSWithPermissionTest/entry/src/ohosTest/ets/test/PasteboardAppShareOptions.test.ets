@@ -33,7 +33,6 @@ export default function PasteboardAppShareOptions() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0100
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0100
      * @tc.desc   PasteData setAppShareOptions inapp removeAppShareOption.
@@ -63,7 +62,6 @@ export default function PasteboardAppShareOptions() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0200
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0200
      * @tc.desc   PasteData setAppShareOptions localDevice removeAppShareOption.
@@ -94,7 +92,6 @@ export default function PasteboardAppShareOptions() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0300
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0300
      * @tc.desc   PasteData setAppShareOptions localDevice removeAppShareOption.
@@ -125,7 +122,6 @@ export default function PasteboardAppShareOptions() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0400
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0400
      * @tc.desc   PasteData setAppShareOptions param undefined.
@@ -156,7 +152,6 @@ export default function PasteboardAppShareOptions() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0600
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0600
      * @tc.desc   PasteData setAppShareOptions inApp and crossDevice and remove
@@ -195,7 +190,6 @@ export default function PasteboardAppShareOptions() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0800
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0800
      * @tc.desc   PasteData setAppShareOptions crossDevice and remove setAppShareOptions inApp and remove
@@ -228,7 +222,6 @@ export default function PasteboardAppShareOptions() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0900
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0900
      * @tc.desc   PasteData setAppShareOptions localDevice and remove twice
@@ -260,7 +253,6 @@ export default function PasteboardAppShareOptions() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1000
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1000
      * @tc.desc   PasteData setAppShareOptions inApp twice
@@ -291,7 +283,6 @@ export default function PasteboardAppShareOptions() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1100
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1100
      * @tc.desc   PasteData removeAppShareOptions twice

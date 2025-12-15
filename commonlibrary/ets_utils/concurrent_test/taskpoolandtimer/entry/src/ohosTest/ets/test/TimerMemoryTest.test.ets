@@ -41,12 +41,12 @@ export default function TimerMemoryTest() {
 
 
     /**
+     * @tc.name   TimerMemoryTest0100
      * @tc.number SUB_TIMER_MEMORY_TEST_0100
-     * @tc.name TimerMemoryTest0100
-     * @tc.desc test Memory
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Memory
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimerMemoryTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
       interface MemoryInfo {
@@ -88,12 +88,12 @@ export default function TimerMemoryTest() {
 
 
     /**
+     * @tc.name   TimerMemoryTest0200
      * @tc.number SUB_TIMER_MEMORY_TEST_0200
-     * @tc.name TimerMemoryTest0200
-     * @tc.desc test Memory
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Memory
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimerMemoryTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       interface PerformanceLike {
@@ -129,12 +129,12 @@ export default function TimerMemoryTest() {
 
 
     /**
+     * @tc.name   TimerMemoryTest0300
      * @tc.number SUB_TIMER_MEMORY_TEST_0300
-     * @tc.name TimerMemoryTest0300
-     * @tc.desc test Memory
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Memory
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimerMemoryTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let totalCount = 0;
@@ -165,12 +165,12 @@ export default function TimerMemoryTest() {
     });
 
     /**
+     * @tc.name   TimerMemoryTest0400
      * @tc.number SUB_TIMER_MEMORY_TEST_0400
-     * @tc.name TimerMemoryTest0400
-     * @tc.desc test Memory
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Memory
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimerMemoryTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let executionCount = 0;
@@ -202,12 +202,12 @@ export default function TimerMemoryTest() {
 
 
     /**
+     * @tc.name   TimerMemoryTest0500
      * @tc.number SUB_TIMER_MEMORY_TEST_0500
-     * @tc.name TimerMemoryTest0500
-     * @tc.desc test Memory
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Memory
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimerMemoryTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       interface A {
@@ -264,12 +264,12 @@ export default function TimerMemoryTest() {
 
 
     /**
+     * @tc.name   TimerMemoryTest0600
      * @tc.number SUB_TIMER_MEMORY_TEST_0600
-     * @tc.name TimerMemoryTest0600
-     * @tc.desc test Memory
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Memory
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimerMemoryTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       interface A {

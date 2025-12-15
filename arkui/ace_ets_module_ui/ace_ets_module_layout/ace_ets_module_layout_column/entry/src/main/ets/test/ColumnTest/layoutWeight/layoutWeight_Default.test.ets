@@ -46,9 +46,12 @@ export default function layoutWeight_Default() {
       console.info("layoutWeight_Default after each called")
     });
     /**
+     * @tc.name   SUB_ACE_layoutWeight_Default_TEST_0100
      * @tc.number SUB_ACE_layoutWeight_Default_TEST_0100
-     * @tc.name testLayoutWeight
-     * @tc.desc colum1 set layoutWeight(undefined),column1, column2, and column3 are displayed according to their own height
+     * @tc.desc   colum1 set layoutWeight(undefined),column1, column2, and column3 are displayed according to their own height
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_layoutWeight_Default_TEST_0100',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_layoutWeight_Default_TEST_0100] START');
@@ -98,9 +101,12 @@ export default function layoutWeight_Default() {
       console.info('[SUB_ACE_layoutWeight_Default_TEST_0100] END');
     });
     /**
+     * @tc.name   SUB_ACE_layoutWeight_Default_TEST_0200
      * @tc.number SUB_ACE_layoutWeight_Default_TEST_0200
-     * @tc.name testLayoutWeight
-     * @tc.desc colum1 set layoutWeight(null),column1, column2, and column3 are displayed according to their own height
+     * @tc.desc   colum1 set layoutWeight(null),column1, column2, and column3 are displayed according to their own height
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_layoutWeight_Default_TEST_0200',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_layoutWeight_Default_TEST_0200] START');
@@ -151,9 +157,12 @@ export default function layoutWeight_Default() {
     });
 
     /**
+     * @tc.name   SUB_ACE_layoutWeight_Default_TEST_0300
      * @tc.number SUB_ACE_layoutWeight_Default_TEST_0300
-     * @tc.name testLayoutWeight
-     * @tc.desc colum1 set layoutWeight(-10),column1, column2, and column3 are displayed according to their own height
+     * @tc.desc   colum1 set layoutWeight(-10),column1, column2, and column3 are displayed according to their own height
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_layoutWeight_Default_TEST_0300',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_layoutWeight_Default_TEST_0300] START');
@@ -203,9 +212,12 @@ export default function layoutWeight_Default() {
       console.info('[SUB_ACE_layoutWeight_Default_TEST_0300] END');
     });
     /**
+     * @tc.name   SUB_ACE_layoutWeight_Default_TEST_0400
      * @tc.number SUB_ACE_layoutWeight_Default_TEST_0400
-     * @tc.name testLayoutWeight
-     * @tc.desc colum1 set layoutWeight('aaa'),column1, column2, and column3 are displayed according to their own height
+     * @tc.desc   colum1 set layoutWeight('aaa'),column1, column2, and column3 are displayed according to their own height
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_layoutWeight_Default_TEST_0400',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_layoutWeight_Default_TEST_0400] START');

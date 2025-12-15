@@ -22,14 +22,12 @@ import { TestType, Size, Level } from '@ohos/hypium';
   describe('fileIO_fs_truncate', function () {
 
   /**
+   * @tc.name   fileIO_truncate_async_000
    * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_0000
-   * @tc.name fileIO_truncate_async_000
-   * @tc.desc Test the truncate() interface. Promise.
-   * Truncate the file with path and truncateLen = 5.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test the truncate() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_truncate_async_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_truncate_async_000');
@@ -52,14 +50,12 @@ import { TestType, Size, Level } from '@ohos/hypium';
   });
 
   /**
+   * @tc.name   fileIO_truncate_async_001
    * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_0100
-   * @tc.name fileIO_truncate_async_001
-   * @tc.desc Test the truncate() interface. Callback.
-   * Truncate the file with fd and truncateLen = 5.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the truncate() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_truncate_async_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_truncate_async_001');
@@ -87,14 +83,12 @@ import { TestType, Size, Level } from '@ohos/hypium';
   });
 
   /**
+   * @tc.name   fileIO_truncate_async_002
    * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_0200
-   * @tc.name fileIO_truncate_async_002
-   * @tc.desc Test the truncate() interface. Promise.then().catch
-   * Truncate the file with path and truncateLen = 2.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the truncate() interface. Promise.then().catch
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_truncate_async_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_truncate_async_002');
@@ -121,14 +115,12 @@ import { TestType, Size, Level } from '@ohos/hypium';
   });
 
   /**
+   * @tc.name   fileIO_truncate_async_003
    * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_0300
-   * @tc.name fileIO_truncate_async_003
-   * @tc.desc Test the truncate() interface. Promise.then().catch
-   * Truncate the file with fd and truncateLen = 2.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the truncate() interface. Promise.then().catch
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_truncate_async_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_truncate_async_003');
@@ -155,14 +147,12 @@ import { TestType, Size, Level } from '@ohos/hypium';
   });
 
   /**
+   * @tc.name   fileIO_truncate_async_004
    * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_0400
-   * @tc.name fileIO_truncate_async_004
-   * @tc.desc Test the truncate() interface. Callback.
-   * The path point to nothing, no such file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the truncate() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_truncate_async_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_truncate_async_004');
@@ -183,14 +173,12 @@ import { TestType, Size, Level } from '@ohos/hypium';
   });
 
   /**
+   * @tc.name   fileIO_truncate_async_005
    * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_0500
-   * @tc.name fileIO_truncate_async_005
-   * @tc.desc Test the truncate() interface. Promise.
-   * The path point to nothing, no such file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the truncate() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_truncate_async_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_truncate_async_005');
@@ -207,14 +195,12 @@ import { TestType, Size, Level } from '@ohos/hypium';
   });
 
   /**
+   * @tc.name   fileIO_truncate_async_006
    * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_0600
-   * @tc.name fileIO_truncate_async_006
-   * @tc.desc Test the truncate() interface. Callback.
-   * Truncate the file with fd and truncateLen = 0.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the truncate() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_truncate_async_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_truncate_async_006');
@@ -241,14 +227,12 @@ import { TestType, Size, Level } from '@ohos/hypium';
   });
 
   /**
+   * @tc.name   fileIO_truncate_async_007
    * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_0700
-   * @tc.name fileIO_truncate_async_007
-   * @tc.desc Test the truncate() interface. Callback.
-   * Truncate the file with fd and truncateLen = 0.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the truncate() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_truncate_async_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_truncate_async_007');
@@ -275,14 +259,12 @@ import { TestType, Size, Level } from '@ohos/hypium';
   });
 
   /**
+   * @tc.name   fileIO_truncate_async_008
    * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_0800
-   * @tc.name fileIO_truncate_async_008
-   * @tc.desc Test the truncate() interface. Promise.
-   * Use default truncateLen = 0.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the truncate() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_truncate_async_008', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileIO_truncate_async_008');
@@ -304,14 +286,12 @@ import { TestType, Size, Level } from '@ohos/hypium';
   });
 
   /**
+   * @tc.name   fileIO_truncate_async_009
    * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_0900
-   * @tc.name fileIO_truncate_async_009
-   * @tc.desc Test the truncate() interface. Callback.
-   * Use default truncateLen = 0.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the truncate() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_truncate_async_009', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileIO_truncate_async_009');
@@ -338,14 +318,12 @@ import { TestType, Size, Level } from '@ohos/hypium';
   });
 
   /**
+   * @tc.name   fileIO_truncate_async_010
    * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_1000
-   * @tc.name fileIO_truncate_async_010
-   * @tc.desc Test the truncate() interface. Promise.
-   * Bad file descriptor.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test the truncate() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_truncate_async_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_truncate_async_010');
@@ -366,14 +344,12 @@ import { TestType, Size, Level } from '@ohos/hypium';
   });
 
   /**
+   * @tc.name   fileIO_truncate_async_011
    * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_1100
-   * @tc.name fileIO_truncate_async_011
-   * @tc.desc Test the truncate() interface. Callback.
-   * Bad file descriptor.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the truncate() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_truncate_async_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_truncate_async_011');
@@ -399,14 +375,12 @@ import { TestType, Size, Level } from '@ohos/hypium';
   });
 
   /**
+   * @tc.name   fileIO_truncate_async_012
    * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_1200
-   * @tc.name fileIO_truncate_async_012
-   * @tc.desc Test the truncate() interface. Promise.
-   * Is a directory.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test the truncate() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_truncate_async_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_truncate_async_012');
@@ -423,14 +397,12 @@ import { TestType, Size, Level } from '@ohos/hypium';
   });
 
   /**
+   * @tc.name   fileIO_truncate_async_013
    * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_1300
-   * @tc.name fileIO_truncate_async_013
-   * @tc.desc Test the truncate() interface. Callback.
-   * Is a directory.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the truncate() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_truncate_async_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_truncate_async_013');
@@ -451,14 +423,12 @@ import { TestType, Size, Level } from '@ohos/hypium';
   });
 
   /**
+   * @tc.name   fileIO_truncate_async_014
    * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_1400
-   * @tc.name fileIO_truncate_async_014
-   * @tc.desc Test the truncate() interface. Promise.
-   * Invalid argument.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test the truncate() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_truncate_async_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 
@@ -473,14 +443,12 @@ import { TestType, Size, Level } from '@ohos/hypium';
   });
 
   /**
+   * @tc.name   fileIO_truncate_async_015
    * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_1500
-   * @tc.name fileIO_truncate_async_015
-   * @tc.desc Test the truncate() interface. Callback.
-   * Invalid argument.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the truncate() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_truncate_async_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 
@@ -499,14 +467,12 @@ import { TestType, Size, Level } from '@ohos/hypium';
   });
 
   /**
+   * @tc.name   fileIO_test_truncate_sync_000
    * @tc.number SUB_DF_FILEIO_TRUNCATE_SYNC_0000
-   * @tc.name fileIO_test_truncate_sync_000
-   * @tc.desc Test the truncateSync() interface.
-   * Truncate the file with path.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the truncateSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_truncate_sync_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_truncate_sync_000');
@@ -523,14 +489,12 @@ import { TestType, Size, Level } from '@ohos/hypium';
   });
 
   /**
+   * @tc.name   fileIO_test_truncate_sync_001
    * @tc.number SUB_DF_FILEIO_TRUNCATE_SYNC_0100
-   * @tc.name fileIO_test_truncate_sync_001
-   * @tc.desc Test the truncateSync() interface.
-   * Truncate the file with fd and truncateLen = 5.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the truncateSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_truncate_sync_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_truncate_sync_001');
@@ -552,14 +516,12 @@ import { TestType, Size, Level } from '@ohos/hypium';
   });
 
   /**
+   * @tc.name   fileIO_test_truncate_sync_002
    * @tc.number SUB_DF_FILEIO_TRUNCATE_SYNC_0200
-   * @tc.name fileIO_test_truncate_sync_002
-   * @tc.desc Test the truncateSync() interface.
-   * The path point to nothing, no such file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the truncateSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_truncate_sync_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_truncate_sync_002');
@@ -574,13 +536,12 @@ import { TestType, Size, Level } from '@ohos/hypium';
   });
 
   /**
+   * @tc.name   fileIO_test_truncate_sync_003
    * @tc.number SUB_DF_FILEIO_TRUNCATE_SYNC_0300
-   * @tc.name fileIO_test_truncate_sync_003
-   * @tc.desc Test the truncateSync() interface. Invalid parameter.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the truncateSync() interface. Invalid parameter.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_truncate_sync_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let truncateLen = 2;
@@ -595,13 +556,12 @@ import { TestType, Size, Level } from '@ohos/hypium';
   });
 
   /**
+   * @tc.name   fileIO_test_truncate_sync_004
    * @tc.number SUB_DF_FILEIO_TRUNCATE_SYNC_0400
-   * @tc.name fileIO_test_truncate_sync_004
-   * @tc.desc Test truncateSync() interfaces. Missing parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test truncateSync() interfaces. Missing parameters.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_truncate_sync_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
 
@@ -615,14 +575,12 @@ import { TestType, Size, Level } from '@ohos/hypium';
   });
 
   /**
+   * @tc.name   fileIO_test_truncate_sync_005
    * @tc.number SUB_DF_FILEIO_TRUNCATE_SYNC_0500
-   * @tc.name fileIO_test_truncate_sync_005
-   * @tc.desc Test truncateSync() interfaces.
-   * Use default truncateLen = 0.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test truncateSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_truncate_sync_005', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_truncate_sync_005');
@@ -643,14 +601,12 @@ import { TestType, Size, Level } from '@ohos/hypium';
   });
 
   /**
+   * @tc.name   fileIO_test_truncate_sync_006
    * @tc.number SUB_DF_FILEIO_TRUNCATE_SYNC_0600
-   * @tc.name fileIO_test_truncate_sync_006
-   * @tc.desc Test the truncateSync() interface.
-   * Bad file descriptor.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the truncateSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_truncate_sync_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_truncate_sync_006');
@@ -670,14 +626,12 @@ import { TestType, Size, Level } from '@ohos/hypium';
   });
 
   /**
+   * @tc.name   fileIO_test_truncate_sync_007
    * @tc.number SUB_DF_FILEIO_TRUNCATE_SYNC_0700
-   * @tc.name fileIO_test_truncate_sync_007
-   * @tc.desc Test the truncateSync() interface.
-   * 	fileIO_test_truncate_sync_007.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the truncateSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_truncate_sync_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_truncate_sync_007');

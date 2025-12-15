@@ -46,12 +46,12 @@ export default function RowSpaceResourceTest() {
     });
 
     /**
-     * @tc.number    RowSpaceResourceTest_0100
-     * @tc.name      RowSpaceResourceTest_0100
-     * @tc.desc      test type of space is Resource (string)
-     * @tc.level:    Level 1
-     * @tc.type :    RowSpaceResource
-     * @tc.size :
+     * @tc.name   RowSpaceResourceTest_0100
+     * @tc.number RowSpaceResourceTest_0100
+     * @tc.desc   test type of space is Resource (string)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RowSpaceResourceTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[RowSpaceResourceTest_0100] START');
@@ -78,12 +78,12 @@ export default function RowSpaceResourceTest() {
     });
 
     /**
-     * @tc.number    RowSpaceResourceTest_0200
-     * @tc.name      RowSpaceResourceTest_0200
-     * @tc.desc      test type of space is Resource (integer)
-     * @tc.level:    Level 1
-     * @tc.type :    RowSpaceResource
-     * @tc.size :
+     * @tc.name   RowSpaceResourceTest_0200
+     * @tc.number RowSpaceResourceTest_0200
+     * @tc.desc   test type of space is Resource (integer)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RowSpaceResourceTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[RowSpaceResourceTest_0200] START');
@@ -110,12 +110,12 @@ export default function RowSpaceResourceTest() {
     });
 
     /**
-     * @tc.number    RowSpaceResourceTest_0300
-     * @tc.name      RowSpaceResourceTest_0300
-     * @tc.desc      test type of space is Resource (float)
-     * @tc.level:    Level 1
-     * @tc.type :    RowSpaceResource
-     * @tc.size :
+     * @tc.name   RowSpaceResourceTest_0300
+     * @tc.number RowSpaceResourceTest_0300
+     * @tc.desc   test type of space is Resource (float)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RowSpaceResourceTest_0300', Level.LEVEL1, async (done: Function) => {
       console.info('[RowSpaceResourceTest_0300] START');

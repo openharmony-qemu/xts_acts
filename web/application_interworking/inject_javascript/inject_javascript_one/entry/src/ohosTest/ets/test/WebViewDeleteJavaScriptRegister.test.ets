@@ -61,12 +61,12 @@ export default function ActsAceDeleteJavaScriptRegister() {
 
 
     /**
+     * @tc.name   testWebView_deleteJavaScriptRegister_0001
      * @tc.number SUB_ACE_WEB_deleteJavaScriptRegister_SDK_0001
-     * @tc.name testWebView_deleteJavaScriptRegister_0001
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_deleteJavaScriptRegister_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.registerBaseEvent("testWebView_deleteJavaScriptRegister_0001", '"success"', 10072, done,
@@ -81,12 +81,12 @@ export default function ActsAceDeleteJavaScriptRegister() {
     });
 
     /**
+     * @tc.name   testWebView_deleteJavaScriptRegister_0002
      * @tc.number SUB_ACE_WEB_deleteJavaScriptRegister_SDK_0002
-     * @tc.name testWebView_deleteJavaScriptRegister_0002
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_deleteJavaScriptRegister_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.registerBaseEvent("testWebView_deleteJavaScriptRegister_0002",
@@ -104,12 +104,12 @@ export default function ActsAceDeleteJavaScriptRegister() {
 
 
     /**
+     * @tc.name   testWebView_deleteJavaScriptRegister_0003
      * @tc.number SUB_ACE_WEB_deleteJavaScriptRegister_SDK_0003
-     * @tc.name testWebView_deleteJavaScriptRegister_0003
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_deleteJavaScriptRegister_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       Utils.registerBaseEvent("testWebView_deleteJavaScriptRegister_0003",
@@ -122,12 +122,12 @@ export default function ActsAceDeleteJavaScriptRegister() {
 
 
     /**
+     * @tc.name   testWebView_deleteJavaScriptRegister_0004
      * @tc.number SUB_ACE_WEB_deleteJavaScriptRegister_SDK_0004
-     * @tc.name testWebView_deleteJavaScriptRegister_0004
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_deleteJavaScriptRegister_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       Utils.registerBaseEvent("testWebView_deleteJavaScriptRegister_0004",

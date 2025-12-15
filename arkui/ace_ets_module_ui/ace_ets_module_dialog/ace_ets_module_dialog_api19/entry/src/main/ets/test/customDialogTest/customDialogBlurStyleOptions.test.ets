@@ -37,12 +37,12 @@ export default function customDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    customDialogBlurStyleOptions_0100
-     * @tc.name      customDialogBlurStyleOptions_0100
-     * @tc.desc      createCustomDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   customDialogBlurStyleOptions_0100
+     * @tc.number customDialogBlurStyleOptions_0100
+     * @tc.desc   createCustomDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('customDialogBlurStyleOptions_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'customDialogBlurStyleOptions';
@@ -79,12 +79,12 @@ export default function customDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    customDialogBlurStyleOptions_0200
-     * @tc.name      customDialogBlurStyleOptions_0200
-     * @tc.desc      createCustomDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   customDialogBlurStyleOptions_0200
+     * @tc.number customDialogBlurStyleOptions_0200
+     * @tc.desc   createCustomDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('customDialogBlurStyleOptions_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'customDialogBlurStyleOptions_0200';

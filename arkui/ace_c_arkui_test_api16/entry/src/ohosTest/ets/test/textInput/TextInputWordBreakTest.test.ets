@@ -26,73 +26,73 @@ export default function textInputWordBreakTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_WORD_BREAK_0001
-     * @tc.name: testTextInputWordBreak001
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputWordBreak001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_WORD_BREAK_0001
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputWordBreak001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputWordBreak001()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_WORD_BREAK_0002
-     * @tc.name: testTextInputWordBreak002
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputWordBreak002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_WORD_BREAK_0002
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputWordBreak002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputWordBreak002()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_WORD_BREAK_0003
-     * @tc.name: testTextInputWordBreak003
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputWordBreak003
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_WORD_BREAK_0003
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputWordBreak003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputWordBreak003()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_WORD_BREAK_0004
-     * @tc.name: testTextInputWordBreak004
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputWordBreak004
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_WORD_BREAK_0004
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputWordBreak004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputWordBreak004()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_WORD_BREAK_0005
-     * @tc.name: testTextInputWordBreak005
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputWordBreak005
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_WORD_BREAK_0005
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputWordBreak005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputWordBreak005()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_WORD_BREAK_0006
-     * @tc.name: testTextInputWordBreak006
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputWordBreak006
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_WORD_BREAK_0006
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputWordBreak006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputWordBreak006()).assertEqual(0)

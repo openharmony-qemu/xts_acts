@@ -145,7 +145,6 @@ export default function schemaStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsToJsonString001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_2100
      * @tc.desc   Test Js Api Schema.ToJsonString() testcase 001
@@ -181,7 +180,6 @@ export default function schemaStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsToJsonString002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_2200
      * @tc.desc   Test Js Api Schema.ToJsonString() testcase 002
@@ -221,7 +219,6 @@ export default function schemaStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsToJsonString003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_2300
      * @tc.desc   Test Js Api Schema.ToJsonString() testcase 003
@@ -270,7 +267,6 @@ export default function schemaStageTest(){
     })
 
       /**
-       * @generated.time 2025-11-09 20:49:49
        * @tc.name   testEtsToJsonString004
        * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_2000
        * @tc.desc   Test Js Api Schema.ToJsonString() testcase 004
@@ -315,7 +311,6 @@ export default function schemaStageTest(){
         done();
       })
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsroot001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_1800
      * @tc.desc   Test Js Api Schema.root testcase 001
@@ -338,7 +333,6 @@ export default function schemaStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsindexes001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_1500
      * @tc.desc   Test Js Api Schema.indexes testcase 001
@@ -360,7 +354,6 @@ export default function schemaStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsmode001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_1700
      * @tc.desc   Test Js Api Schema.mode testcase 001
@@ -383,7 +376,6 @@ export default function schemaStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsmode002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_1600
      * @tc.desc   Test Js Api Schema.mode testcase 002
@@ -406,7 +398,6 @@ export default function schemaStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsskip001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_1900
      * @tc.desc   Test Js Api Schema.skip testcase 001

@@ -45,12 +45,12 @@ export default function polyLineNewTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testPolyLineNew0001
-     * @tc.name: testPolyLineNew0001
-     * @tc.desc: PolylineAPI 
-     * @tc.level: Level 0
-     * @tc.type : Polyline
-     * @tc.size : PolylineTest
+     * @tc.name   testPolyLineNew0001
+     * @tc.number SUB_ARKUI_API_testPolyLineNew0001
+     * @tc.desc   PolylineAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPolyLineNew0001', Level.LEVEL0, async () => {
       console.info('polyLineNe testpolyLineNe0001 START');
@@ -65,12 +65,12 @@ export default function polyLineNewTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testPolyLineNew0002
-     * @tc.name: testPolyLineNew0002
-     * @tc.desc: PolylineAPI 
-     * @tc.level: Level 0
-     * @tc.type : Polyline
-     * @tc.size : PolylineTest
+     * @tc.name   testPolyLineNew0002
+     * @tc.number SUB_ARKUI_API_testPolyLineNew0002
+     * @tc.desc   PolylineAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPolyLineNew0002', Level.LEVEL0, async () => {
       console.info('polyLineNe testpolyLineNe0002 START');

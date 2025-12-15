@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,15 +36,8 @@ export class OpenHarmonyTestRunner implements TestRunner {
     hilog.info(0x0000, tag, '%{public}s', 'OpenHarmonyTestRunner onRun');
     abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
     abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-    hilog.info(0x0000, tag, '%{public}s', 'OpenHarmonyTestRunner executeShellCommand');
-    abilityDelegator.executeShellCommand(`aa start -b ${abilityDelegatorArguments.bundleName} -a EntryAbility`,
-      (err: BusinessError<void> | null, data: abilityDelegatorRegistry.ShellCmdResult | undefined): void => {
-        hilog.info(0x0000, tag, '====>OpenHarmonyTestRunner executeShellCommand data: ' + JSON.stringify(data));
-        hilog.info(0x0000, tag, '====>OpenHarmonyTestRunner executeShellCommand err: ' + JSON.stringify(err));
-        Utils.msSleep(2000).then(() => {
-          hilog.info(0x0000, 'testTag', '%{public}s', '====>start run testcase!!!');
-          Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
-        });
-    });
+    hilog.info(0x0000, tag, '%{public}s', 'start run Hypium hypiumTest!!!');
+    Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
+    hilog.info(0x0000, tag, '%{public}s', 'OpenHarmonyTestRunner onRun end');
   }
 }

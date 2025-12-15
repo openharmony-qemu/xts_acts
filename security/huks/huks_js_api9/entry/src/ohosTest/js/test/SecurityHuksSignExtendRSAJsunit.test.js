@@ -272,9 +272,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_0100
          * @tc.number Security_HUKS_RSA_SignExtend_0100
-         * @tc.name No Padding and Sign Verify with RSA.
-         * @tc.desc No Padding and Sign Verify with RSA.
+         * @tc.desc   No Padding and Sign Verify with RSA.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAliesGen = "Security_HUKS_RSA_SignExtend_0100_Gen";
@@ -324,9 +327,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_0200
          * @tc.number Security_HUKS_RSA_SignExtend_0200
-         * @tc.name No Digest and Sign Verify with RSA.
-         * @tc.desc No Digest and Sign Verify with RSA.
+         * @tc.desc   No Digest and Sign Verify with RSA.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAliesGen = "Security_HUKS_RSA_SignExtend_0200";
@@ -376,9 +382,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_0300
          * @tc.number Security_HUKS_RSA_SignExtend_0300
-         * @tc.name Alg, Purpose and length filled and Sign Verify with RSA.
-         * @tc.desc Alg, Purpose and length filled and Sign Verify with RSA.
+         * @tc.desc   Alg, Purpose and length filled and Sign Verify with RSA.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAliesGen = "Security_HUKS_RSA_SignExtend_0300";
@@ -427,9 +436,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_0400
          * @tc.number Security_HUKS_RSA_SignExtend_0400
-         * @tc.name DigestNONE and Sign Verify with hashed plain test.
-         * @tc.desc DigestNONE and Sign Verify with hashed plain test.
+         * @tc.desc   DigestNONE and Sign Verify with hashed plain test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAliesGen = "Security_HUKS_RSA_SignExtend_0400";
@@ -480,9 +492,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_0500
          * @tc.number Security_HUKS_RSA_SignExtend_0500
-         * @tc.name No Padding while Sign Verify.
-         * @tc.desc No Padding while Sign Verify.
+         * @tc.desc   No Padding while Sign Verify.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_0500";
@@ -512,9 +527,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_0600
          * @tc.number Security_HUKS_RSA_SignExtend_0600
-         * @tc.name No Digest while Sign Verify.
-         * @tc.desc No Digest while Sign Verify.
+         * @tc.desc   No Digest while Sign Verify.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_0600";
@@ -544,9 +562,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_0700
          * @tc.number Security_HUKS_RSA_SignExtend_0700
-         * @tc.name Alg, Purpose and length only while Sign Verify.
-         * @tc.desc Alg, Purpose and length only while Sign Verify.
+         * @tc.desc   Alg, Purpose and length only while Sign Verify.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_0700";
@@ -575,9 +596,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_0800
          * @tc.number Security_HUKS_RSA_SignExtend_0800
-         * @tc.name use plain text while Sign Verify.
-         * @tc.desc use plain text while Sign Verify.
+         * @tc.desc   use plain text while Sign Verify.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_0800";
@@ -608,9 +632,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_0900
          * @tc.number Security_HUKS_RSA_SignExtend_0900
-         * @tc.name AES not GCM,no BlockMode while generate.
-         * @tc.desc AES not GCM,no BlockMode while generate.
+         * @tc.desc   AES not GCM,no BlockMode while generate.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_0900";
@@ -669,9 +696,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_1000
          * @tc.number Security_HUKS_RSA_SignExtend_1000
-         * @tc.name AES not GCM,no digest while generate.
-         * @tc.desc AES not GCM,no digest while generate.
+         * @tc.desc   AES not GCM,no digest while generate.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_1000";
@@ -730,9 +760,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_1100
          * @tc.number Security_HUKS_RSA_SignExtend_1100
-         * @tc.name AES not GCM,no padding while generate.
-         * @tc.desc AES not GCM,no padding while generate.
+         * @tc.desc   AES not GCM,no padding while generate.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_1100";
@@ -791,9 +824,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_1200
          * @tc.number Security_HUKS_RSA_SignExtend_1200
-         * @tc.name AES not GCM,no IV while generate.
-         * @tc.desc AES not GCM,no IV while generate.
+         * @tc.desc   AES not GCM,no IV while generate.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_1200";
@@ -849,9 +885,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_1300
          * @tc.number Security_HUKS_RSA_SignExtend_1300
-         * @tc.name AES not GCM,no blockmode,digest,padding,IV while generate.
-         * @tc.desc AES not GCM,no blockmode,digest,padding,IV while generate.
+         * @tc.desc   AES not GCM,no blockmode,digest,padding,IV while generate.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_1300";
@@ -904,9 +943,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_1400
          * @tc.number Security_HUKS_RSA_SignExtend_1400
-         * @tc.name AES GCM,no blockmode while generate.
-         * @tc.desc AES GCM,no blockmode while generate.
+         * @tc.desc   AES GCM,no blockmode while generate.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_1400";
@@ -989,9 +1031,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_1500
          * @tc.number Security_HUKS_RSA_SignExtend_1500
-         * @tc.name AES GCM,no digest while generate.
-         * @tc.desc AES GCM,no digest while generate.
+         * @tc.desc   AES GCM,no digest while generate.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_1500";
@@ -1074,9 +1119,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_1600
          * @tc.number Security_HUKS_RSA_SignExtend_1600
-         * @tc.name AES GCM,no padding while generate.
-         * @tc.desc AES GCM,no padding while generate.
+         * @tc.desc   AES GCM,no padding while generate.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_1600";
@@ -1159,9 +1207,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_1700
          * @tc.number Security_HUKS_RSA_SignExtend_1700
-         * @tc.name AES GCM,no blockmode,digest,padding while generate.
-         * @tc.desc AES GCM,no blockmode,digest,padding while generate.
+         * @tc.desc   AES GCM,no blockmode,digest,padding while generate.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_1700";
@@ -1242,9 +1293,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_1800
          * @tc.number Security_HUKS_RSA_SignExtend_1800
-         * @tc.name AES GCM,no digest while generate,use wrong digest (SHA256)
-         * @tc.desc AES GCM,no digest while generate,use wrong digest (SHA256)
+         * @tc.desc   AES GCM,no digest while generate,use wrong digest (SHA256)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_1800";
@@ -1283,9 +1337,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_1900
          * @tc.number Security_HUKS_RSA_SignExtend_1900
-         * @tc.name RSA Cipher,no blockMode while generate.
-         * @tc.desc RSA Cipher,no blockMode while generate.
+         * @tc.desc   RSA Cipher,no blockMode while generate.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_1900";
@@ -1333,9 +1390,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_2000
          * @tc.number Security_HUKS_RSA_SignExtend_2000
-         * @tc.name RSA Cipher,no digest while generate.
-         * @tc.desc RSA Cipher,no digest while generate.
+         * @tc.desc   RSA Cipher,no digest while generate.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_2000";
@@ -1383,9 +1443,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_2100
          * @tc.number Security_HUKS_RSA_SignExtend_2100
-         * @tc.name RSA Cipher,no padding while generate.
-         * @tc.desc RSA Cipher,no padding while generate.
+         * @tc.desc   RSA Cipher,no padding while generate.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_2100";
@@ -1433,9 +1496,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_2200
          * @tc.number Security_HUKS_RSA_SignExtend_2200
-         * @tc.name RSA Cipher,no blockmode,digest,padding while generate.
-         * @tc.desc RSA Cipher,no blockmode,digest,padding while generate.
+         * @tc.desc   RSA Cipher,no blockmode,digest,padding while generate.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_2200";
@@ -1481,9 +1547,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_2300
          * @tc.number Security_HUKS_RSA_SignExtend_2300
-         * @tc.name RSA Cipher,wrong blockmode
-         * @tc.desc RSA Cipher,wrong blockmode
+         * @tc.desc   RSA Cipher,wrong blockmode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_2300";
@@ -1514,9 +1583,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_2400
          * @tc.number Security_HUKS_RSA_SignExtend_2400
-         * @tc.name SM4 Cipher,no blockmode while generate
-         * @tc.desc SM4 Cipher,no blockmode while generate
+         * @tc.desc   SM4 Cipher,no blockmode while generate
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_2400";
@@ -1572,9 +1644,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_2600
          * @tc.number Security_HUKS_RSA_SignExtend_2600
-         * @tc.name SM4 Cipher,no padding while generate
-         * @tc.desc SM4 Cipher,no padding while generate
+         * @tc.desc   SM4 Cipher,no padding while generate
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_2600";
@@ -1630,9 +1705,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_2700
          * @tc.number Security_HUKS_RSA_SignExtend_2700
-         * @tc.name SM4 Cipher,no IV while generate
-         * @tc.desc SM4 Cipher,no IV while generate
+         * @tc.desc   SM4 Cipher,no IV while generate
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_2700";
@@ -1685,9 +1763,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_2800
          * @tc.number Security_HUKS_RSA_SignExtend_2800
-         * @tc.name SM4 Cipher,no blockMode,padding,IV while generate
-         * @tc.desc SM4 Cipher,no blockMode,padding,IV while generate
+         * @tc.desc   SM4 Cipher,no blockMode,padding,IV while generate
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_2800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_2800";
@@ -1738,9 +1819,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_2900
          * @tc.number Security_HUKS_RSA_SignExtend_2900
-         * @tc.name SM4 Cipher,wrong padding while generate
-         * @tc.desc SM4 Cipher,wrong padding while generate
+         * @tc.desc   SM4 Cipher,wrong padding while generate
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_2900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_2900";
@@ -1778,9 +1862,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_3000
          * @tc.number Security_HUKS_RSA_SignExtend_3000
-         * @tc.name RSA SignVreify,hash mode doesn't suite for the hashed data
-         * @tc.desc RSA SignVreify,hash mode doesn't suite for the hashed data
+         * @tc.desc   RSA SignVreify,hash mode doesn't suite for the hashed data
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_3000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_3000";
@@ -1814,9 +1901,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_3100
          * @tc.number Security_HUKS_RSA_SignExtend_3100
-         * @tc.name DSA SignVerify,no digest while generate(TEE Not support)
-         * @tc.desc DSA SignVerify,no digest while generate(TEE Not support)
+         * @tc.desc   DSA SignVerify,no digest while generate(TEE Not support)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_3100";
@@ -1864,9 +1954,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_3200
          * @tc.number Security_HUKS_RSA_SignExtend_3200
-         * @tc.name ECC SignVerify,no Hash Support
-         * @tc.desc ECC SignVerify,no Hash Support
+         * @tc.desc   ECC SignVerify,no Hash Support
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_3200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_3200";
@@ -1913,9 +2006,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_3300
          * @tc.number Security_HUKS_RSA_SignExtend_3300
-         * @tc.name ECC SignVerify,hash mode doesn't suite for the hashed data
-         * @tc.desc ECC SignVerify,hash mode doesn't suite for the hashed data
+         * @tc.desc   ECC SignVerify,hash mode doesn't suite for the hashed data
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_3300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_3300";
@@ -1944,9 +2040,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_3400
          * @tc.number Security_HUKS_RSA_SignExtend_3400
-         * @tc.name ECC SignVerify,no digest while generate
-         * @tc.desc ECC SignVerify,no digest while generate
+         * @tc.desc   ECC SignVerify,no digest while generate
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_3400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_3400";
@@ -1992,9 +2091,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_3500
          * @tc.number Security_HUKS_RSA_SignExtend_3500
-         * @tc.name ED25519 SignVerify,no digest while generate
-         * @tc.desc ED25519 SignVerify,no digest while generate
+         * @tc.desc   ED25519 SignVerify,no digest while generate
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_3500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_3500";
@@ -2040,9 +2142,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_3600
          * @tc.number Security_HUKS_RSA_SignExtend_3600
-         * @tc.name SM2 SignVerify,no hash support
-         * @tc.desc SM2 SignVerify,no hash support
+         * @tc.desc   SM2 SignVerify,no hash support
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_3600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_3600";
@@ -2089,9 +2194,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_3700
          * @tc.number Security_HUKS_RSA_SignExtend_3700
-         * @tc.name SM2 SignVerify,hash mode doesn't suite for the hashed data
-         * @tc.desc SM2 SignVerify,hash mode doesn't suite for the hashed data
+         * @tc.desc   SM2 SignVerify,hash mode doesn't suite for the hashed data
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_3700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_3700";
@@ -2120,9 +2228,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_3800
          * @tc.number Security_HUKS_RSA_SignExtend_3800
-         * @tc.name SM2 SignVerify,no digest while generate
-         * @tc.desc SM2 SignVerify,no digest while generate
+         * @tc.desc   SM2 SignVerify,no digest while generate
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_3800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_3800";
@@ -2169,9 +2280,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_3900
          * @tc.number Security_HUKS_RSA_SignExtend_3900
-         * @tc.name ECDH Agree,no blockMode while generate
-         * @tc.desc ECDH Agree,no blockMode while generate
+         * @tc.desc   ECDH Agree,no blockMode while generate
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_3900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_3900";
@@ -2238,9 +2352,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_4000
          * @tc.number Security_HUKS_RSA_SignExtend_4000
-         * @tc.name ECDH Agree,no digest while generate
-         * @tc.desc ECDH Agree,no digest while generate
+         * @tc.desc   ECDH Agree,no digest while generate
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_4000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_4000";
@@ -2307,9 +2424,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_4100
          * @tc.number Security_HUKS_RSA_SignExtend_4100
-         * @tc.name ECDH Agree,no padding while generate
-         * @tc.desc ECDH Agree,no padding while generate
+         * @tc.desc   ECDH Agree,no padding while generate
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_4100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_4100";
@@ -2376,9 +2496,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_4200
          * @tc.number Security_HUKS_RSA_SignExtend_4200
-         * @tc.name ECDH Agree,no padding,blockmode,digest while generate
-         * @tc.desc ECDH Agree,no padding,blockmode,digest while generate
+         * @tc.desc   ECDH Agree,no padding,blockmode,digest while generate
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_4200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_4200";
@@ -2443,9 +2566,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_4300
          * @tc.number Security_HUKS_RSA_SignExtend_4300
-         * @tc.name HKDF Derive,no digest while generate
-         * @tc.desc HKDF Derive,no digest while generate
+         * @tc.desc   HKDF Derive,no digest while generate
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_4300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_4300";
@@ -2500,9 +2626,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_4400
          * @tc.number Security_HUKS_RSA_SignExtend_4400
-         * @tc.name HKDF Derive,no IV while generate
-         * @tc.desc HKDF Derive,no IV while generate
+         * @tc.desc   HKDF Derive,no IV while generate
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_4400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_4400";
@@ -2554,9 +2683,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_4500
          * @tc.number Security_HUKS_RSA_SignExtend_4500
-         * @tc.name HKDF Derive,no digest,IV while generate
-         * @tc.desc HKDF Derive,no digest,IV while generate
+         * @tc.desc   HKDF Derive,no digest,IV while generate
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_4500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_4500";
@@ -2607,9 +2739,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_4600
          * @tc.number Security_HUKS_RSA_SignExtend_4600
-         * @tc.name HKDF Derive,IV length err
-         * @tc.desc HKDF Derive,IV length err
+         * @tc.desc   HKDF Derive,IV length err
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_4600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_4600";
@@ -2641,9 +2776,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_4700
          * @tc.number Security_HUKS_RSA_SignExtend_4700
-         * @tc.name HKDF Derive,IV format err
-         * @tc.desc HKDF Derive,IV format err
+         * @tc.desc   HKDF Derive,IV format err
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_4700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_4700";
@@ -2686,9 +2824,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_4800
          * @tc.number Security_HUKS_RSA_SignExtend_4800
-         * @tc.name PBKDF Derive,no digest while generate
-         * @tc.desc PBKDF Derive,no digest while generate
+         * @tc.desc   PBKDF Derive,no digest while generate
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_4800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_4800";
@@ -2739,9 +2880,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_RSA_SignExtend_4900
          * @tc.number Security_HUKS_RSA_SignExtend_4900
-         * @tc.name HMAC ,no digest while ...
-         * @tc.desc HMAC ,no digest while ...
+         * @tc.desc   HMAC ,no digest while ...
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_RSA_SignExtend_4900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_RSA_SignExtend_4900";
@@ -2771,12 +2915,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_Cipher_AnonAttestation_0010
          * @tc.number Security_HUKS_Cipher_AnonAttestation_0010
-         * @tc.name Test AnonAttestation with RSA, process is success ...
-         * @tc.desc generateKeyItem with RSA ...
-         * @tc.level Level3
-         * @tc.type Func
-         * @tc.size Medium
+         * @tc.desc   generateKeyItem with RSA ...
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_Cipher_AnonAttestation_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_Cipher_AnonAttestation_0010";
@@ -2823,12 +2967,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_Cipher_AnonAttestation_0012
          * @tc.number Security_HUKS_Cipher_AnonAttestation_0012
-         * @tc.name Test AnonAttestation with SM2, process is success ...
-         * @tc.desc generateKeyItem with SM2, Callback...
-         * @tc.level Level3
-         * @tc.type Func
-         * @tc.size Medium
+         * @tc.desc   generateKeyItem with SM2, Callback...
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_Cipher_AnonAttestation_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_Cipher_AnonAttestation_0012";
@@ -2904,12 +3048,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_Cipher_AnonAttestation_0013
          * @tc.number Security_HUKS_Cipher_AnonAttestation_0013
-         * @tc.name Test AnonAttestation with ECC, process is success ...
-         * @tc.desc generateKeyItem with ECC ...
-         * @tc.level Level3
-         * @tc.type Func
-         * @tc.size Medium
+         * @tc.desc   generateKeyItem with ECC ...
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_Cipher_AnonAttestation_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_Cipher_AnonAttestation_0013";
@@ -2975,12 +3119,12 @@ export default function SecurityHuksSignExtendRSAJsunit() {
         })
 
         /**
+         * @tc.name   Security_HUKS_Cipher_AnonAttestation_0014
          * @tc.number Security_HUKS_Cipher_AnonAttestation_0014
-         * @tc.name Test AnonAttestation with error AES, process is fail ...
-         * @tc.desc generateKeyItem with AES ...
-         * @tc.level Level3
-         * @tc.type Func
-         * @tc.size Medium
+         * @tc.desc   generateKeyItem with AES ...
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("Security_HUKS_Cipher_AnonAttestation_0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlies = "Security_HUKS_Cipher_AnonAttestation_0014";

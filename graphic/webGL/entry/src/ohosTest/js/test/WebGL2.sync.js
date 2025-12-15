@@ -54,9 +54,12 @@ export default function webgl2_sync() {
             gl.deleteSync(sync);
         }
         /**
+         * @tc.name   webgl2_test_fenceSync
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0001
-         * @tc.name webgl2_test_fenceSync
-         * @tc.desc Test fenceSync.
+         * @tc.desc   Test fenceSync.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_fenceSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_fenceSync] fenceSync");
@@ -72,9 +75,12 @@ export default function webgl2_sync() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_fenceSync_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0002
-         * @tc.name webgl2_test_fenceSync_1
-         * @tc.desc Test fenceSync.
+         * @tc.desc   Test fenceSync.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_fenceSync_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_fenceSync] fenceSync");
@@ -87,9 +93,12 @@ export default function webgl2_sync() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_fenceSync_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0003
-         * @tc.name webgl2_test_fenceSync_2
-         * @tc.desc Test fenceSync.
+         * @tc.desc   Test fenceSync.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_fenceSync_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_fenceSync] fenceSync");
@@ -102,9 +111,12 @@ export default function webgl2_sync() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_fenceSync_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0004
-         * @tc.name webgl2_test_fenceSync_3
-         * @tc.desc Test fenceSync.
+         * @tc.desc   Test fenceSync.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_fenceSync_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_fenceSync] fenceSync");
@@ -117,9 +129,12 @@ export default function webgl2_sync() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_fenceSync_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0005
-         * @tc.name webgl2_test_fenceSync_4
-         * @tc.desc Test fenceSync.
+         * @tc.desc   Test fenceSync.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_fenceSync_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_fenceSync] fenceSync");
@@ -139,9 +154,12 @@ export default function webgl2_sync() {
             gl.deleteSync(sync);
         }
         /**
+         * @tc.name   webgl2_test_isSync
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0006
-         * @tc.name webgl2_test_isSync
-         * @tc.desc Test isSync.
+         * @tc.desc   Test isSync.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_isSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_isSync] isSync");
@@ -157,9 +175,12 @@ export default function webgl2_sync() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_isSync_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0007
-         * @tc.name webgl2_test_isSync_1
-         * @tc.desc Test isSync.
+         * @tc.desc   Test isSync.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_isSync_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_isSync] isSync");
@@ -172,9 +193,12 @@ export default function webgl2_sync() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_isSync_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0008
-         * @tc.name webgl2_test_isSync_2
-         * @tc.desc Test isSync.
+         * @tc.desc   Test isSync.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_isSync_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_isSync] isSync");
@@ -193,9 +217,12 @@ export default function webgl2_sync() {
             finish(gl.isSync(sync));
         }
         /**
+         * @tc.name   webgl2_test_deleteSync
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0009
-         * @tc.name webgl2_test_deleteSync
-         * @tc.desc Test deleteSync.
+         * @tc.desc   Test deleteSync.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_deleteSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_deleteSync] deleteSync");
@@ -211,9 +238,12 @@ export default function webgl2_sync() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_deleteSync_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0010
-         * @tc.name webgl2_test_deleteSync_1
-         * @tc.desc Test deleteSync.
+         * @tc.desc   Test deleteSync.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_deleteSync_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_deleteSync] deleteSync");
@@ -226,9 +256,12 @@ export default function webgl2_sync() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_deleteSync_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0011
-         * @tc.name webgl2_test_deleteSync_2
-         * @tc.desc Test deleteSync.
+         * @tc.desc   Test deleteSync.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_deleteSync_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_deleteSync] deleteSync");
@@ -249,9 +282,12 @@ export default function webgl2_sync() {
             gl.deleteSync(sync);
         }
         /**
+         * @tc.name   webgl2_test_clientWaitSync
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0012
-         * @tc.name webgl2_test_clientWaitSync
-         * @tc.desc Test clientWaitSync.
+         * @tc.desc   Test clientWaitSync.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_clientWaitSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_clientWaitSync] clientWaitSync");
@@ -269,9 +305,12 @@ export default function webgl2_sync() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_clientWaitSync_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0013
-         * @tc.name webgl2_test_clientWaitSync_1
-         * @tc.desc Test clientWaitSync.
+         * @tc.desc   Test clientWaitSync.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_clientWaitSync_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_clientWaitSync] clientWaitSync");
@@ -284,9 +323,12 @@ export default function webgl2_sync() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_clientWaitSync_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0014
-         * @tc.name webgl2_test_clientWaitSync_2
-         * @tc.desc Test clientWaitSync.
+         * @tc.desc   Test clientWaitSync.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_clientWaitSync_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_clientWaitSync] clientWaitSync");
@@ -299,9 +341,12 @@ export default function webgl2_sync() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_clientWaitSync_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0015
-         * @tc.name webgl2_test_clientWaitSync_3
-         * @tc.desc Test clientWaitSync.
+         * @tc.desc   Test clientWaitSync.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_clientWaitSync_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_clientWaitSync] clientWaitSync");
@@ -314,9 +359,12 @@ export default function webgl2_sync() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_clientWaitSync_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0016
-         * @tc.name webgl2_test_clientWaitSync_4
-         * @tc.desc Test clientWaitSync.
+         * @tc.desc   Test clientWaitSync.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_clientWaitSync_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_clientWaitSync] clientWaitSync");
@@ -329,9 +377,12 @@ export default function webgl2_sync() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_clientWaitSync_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0017
-         * @tc.name webgl2_test_clientWaitSync_5
-         * @tc.desc Test clientWaitSync.
+         * @tc.desc   Test clientWaitSync.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_clientWaitSync_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_clientWaitSync] clientWaitSync");
@@ -344,9 +395,12 @@ export default function webgl2_sync() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_clientWaitSync_6
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0018
-         * @tc.name webgl2_test_clientWaitSync_6
-         * @tc.desc Test clientWaitSync.
+         * @tc.desc   Test clientWaitSync.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_clientWaitSync_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_clientWaitSync] clientWaitSync");
@@ -359,9 +413,12 @@ export default function webgl2_sync() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_clientWaitSync_7
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0019
-         * @tc.name webgl2_test_clientWaitSync_7
-         * @tc.desc Test clientWaitSync.
+         * @tc.desc   Test clientWaitSync.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_clientWaitSync_7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_clientWaitSync] clientWaitSync");
@@ -374,9 +431,12 @@ export default function webgl2_sync() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_clientWaitSync_8
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0020
-         * @tc.name webgl2_test_clientWaitSync_8
-         * @tc.desc Test clientWaitSync.
+         * @tc.desc   Test clientWaitSync.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_clientWaitSync_8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_clientWaitSync] clientWaitSync");
@@ -389,9 +449,12 @@ export default function webgl2_sync() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_clientWaitSync_9
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0021
-         * @tc.name webgl2_test_clientWaitSync_9
-         * @tc.desc Test clientWaitSync.
+         * @tc.desc   Test clientWaitSync.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_clientWaitSync_9', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_clientWaitSync] clientWaitSync");
@@ -411,9 +474,12 @@ export default function webgl2_sync() {
             gl.deleteSync(sync);
         }
         /**
+         * @tc.name   webgl2_test_waitSync
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0022
-         * @tc.name webgl2_test_waitSync
-         * @tc.desc Test waitSync.
+         * @tc.desc   Test waitSync.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_waitSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_waitSync] waitSync");
@@ -429,9 +495,12 @@ export default function webgl2_sync() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_waitSync_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0023
-         * @tc.name webgl2_test_waitSync_1
-         * @tc.desc Test waitSync.
+         * @tc.desc   Test waitSync.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_waitSync_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_waitSync] waitSync");
@@ -444,9 +513,12 @@ export default function webgl2_sync() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_waitSync_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0024
-         * @tc.name webgl2_test_waitSync_2
-         * @tc.desc Test waitSync.
+         * @tc.desc   Test waitSync.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_waitSync_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_waitSync] waitSync");
@@ -459,9 +531,12 @@ export default function webgl2_sync() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_waitSync_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0025
-         * @tc.name webgl2_test_waitSync_3
-         * @tc.desc Test waitSync.
+         * @tc.desc   Test waitSync.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_waitSync_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_waitSync] waitSync");
@@ -474,9 +549,12 @@ export default function webgl2_sync() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_waitSync_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0026
-         * @tc.name webgl2_test_waitSync_4
-         * @tc.desc Test waitSync.
+         * @tc.desc   Test waitSync.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_waitSync_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_waitSync] waitSync");
@@ -497,9 +575,12 @@ export default function webgl2_sync() {
             gl.deleteSync(sync);
         }
         /**
+         * @tc.name   webgl2_test_getSyncParameter
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0027
-         * @tc.name webgl2_test_getSyncParameter
-         * @tc.desc Test getSyncParameter.
+         * @tc.desc   Test getSyncParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getSyncParameter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_getSyncParameter] getSyncParameter");
@@ -516,9 +597,12 @@ export default function webgl2_sync() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getSyncParameter_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0028
-         * @tc.name webgl2_test_getSyncParameter_1
-         * @tc.desc Test getSyncParameter.
+         * @tc.desc   Test getSyncParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getSyncParameter_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -532,9 +616,12 @@ export default function webgl2_sync() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getSyncParameter_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0029
-         * @tc.name webgl2_test_getSyncParameter_2
-         * @tc.desc Test getSyncParameter.
+         * @tc.desc   Test getSyncParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getSyncParameter_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -548,9 +635,12 @@ export default function webgl2_sync() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getSyncParameter_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0030
-         * @tc.name webgl2_test_getSyncParameter_3
-         * @tc.desc Test getSyncParameter.
+         * @tc.desc   Test getSyncParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getSyncParameter_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -564,9 +654,12 @@ export default function webgl2_sync() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getSyncParameter_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SYNC_0031
-         * @tc.name webgl2_test_getSyncParameter_4
-         * @tc.desc Test getSyncParameter.
+         * @tc.desc   Test getSyncParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getSyncParameter_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {

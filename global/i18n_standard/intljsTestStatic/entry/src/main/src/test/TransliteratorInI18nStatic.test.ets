@@ -55,7 +55,6 @@ export default function TransliteratorIni18nTest() {
       console.info("afterAll case");
     });
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   transliterator_test_static_0100
      * @tc.number SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0100
      * @tc.desc   test getAvailableIDs,get the ID value
@@ -78,7 +77,6 @@ export default function TransliteratorIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   transliterator_test_static_0200
      * @tc.number SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0200
      * @tc.desc   test getInstance with a param,get the instance value
@@ -93,7 +91,6 @@ export default function TransliteratorIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   transliterator_test_static_0300
      * @tc.number SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0300
      * @tc.desc   test transform with 中国 param get the transform value
@@ -110,7 +107,6 @@ export default function TransliteratorIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   transliterator_test_static_0400
      * @tc.number SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0400
      * @tc.desc   test transform with Any-Latn param,get the transform value
@@ -127,7 +123,6 @@ export default function TransliteratorIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   transliterator_test_static_0500
      * @tc.number SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0500
      * @tc.desc   get the transform value,test transform with Any-Thai param
@@ -144,7 +139,6 @@ export default function TransliteratorIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   transliterator_test_static_0600
      * @tc.number SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0600
      * @tc.desc   test transform with Any-zh param,get the transform value
@@ -161,7 +155,6 @@ export default function TransliteratorIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   transliterator_test_static_0700
      * @tc.number SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0700
      * @tc.desc   test transform with Any-Hant param,get the transform value
@@ -178,7 +171,6 @@ export default function TransliteratorIni18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   transliterator_test_static_0800
      * @tc.number SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0800
      * @tc.desc   test transform with Any-Kannada param,get the transform value

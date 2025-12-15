@@ -47,9 +47,12 @@ export default function flexBase_StretchJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignStretch
      * @tc.number SUB_ACE_FLEXALIGNITEMS_STRETCH_0100
-     * @tc.name testFlexItemAlignStretch
-     * @tc.desc The subcomponent is inside the parent component.
+     * @tc.desc   The subcomponent is inside the parent component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignStretch',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignStretch START');
@@ -90,9 +93,12 @@ export default function flexBase_StretchJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignStretchExceed
      * @tc.number SUB_ACE_FLEXALIGNITEMS_STRETCH_0200
-     * @tc.name testFlexItemAlignStretchExceed
-     * @tc.desc The subcomponent exceeds the parent component.
+     * @tc.desc   The subcomponent exceeds the parent component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignStretchExceed',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignStretchExceed START');

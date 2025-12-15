@@ -72,9 +72,12 @@ protected:
 #ifndef TOKEN_PERSIST_TEST
 
 /**
- * @tc.name : TestReadAuthServerInfo
- * @tc.desc : test case of OEMReadAuthServerInfo api.
-              no assert for this case, comiple ok means test pass.
+ * @tc.name   TestReadAuthServerInfo
+ * @tc.number TestReadAuthServerInfo
+ * @tc.desc   test case of OEMReadAuthServerInfo api.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(OEMAPITEST, TestReadAuthServerInfo, TestSize.Level0) {
 
@@ -93,8 +96,12 @@ HWTEST_F(OEMAPITEST, TestReadAuthServerInfo, TestSize.Level0) {
     }
 }
 /**
- * @tc.name : TestLoadKitInfos
- * @tc.desc : test that string return from OEMLoadKitInfos is a valid json string
+ * @tc.name   TestLoadKitInfos
+ * @tc.number TestLoadKitInfos
+ * @tc.desc   test that string return from OEMLoadKitInfos is a valid json string
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(OEMAPITEST, TestLoadKitInfos, TestSize.Level0) {
     LOG("----- OEMLoadKitInfos api test start -----");
@@ -114,8 +121,12 @@ HWTEST_F(OEMAPITEST, TestLoadKitInfos, TestSize.Level0) {
     cJSON_Delete(root);
 }
 /**
- * @tc.name : TestIsOverTemperatureLimit
- * @tc.desc : test case of temperature api.
+ * @tc.name   TestIsOverTemperatureLimit
+ * @tc.number TestIsOverTemperatureLimit
+ * @tc.desc   test case of temperature api.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(OEMAPITEST, TestIsOverTemperatureLimit, TestSize.Level0) {
     LOG("----- temperature api test start -----");
@@ -123,8 +134,12 @@ HWTEST_F(OEMAPITEST, TestIsOverTemperatureLimit, TestSize.Level0) {
     ASSERT_EQ(0, results) << "OEMIsOverTemperatureLimit should fail in normal state" << "\n";
 }
 /**
- * @tc.name: TestResetFlagApi
- * @tc.desc: test case of the reset flag related api: create, check
+ * @tc.name   TestResetFlagApi
+ * @tc.number TestResetFlagApi
+ * @tc.desc   test case of the reset flag related api: create, check
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(OEMAPITEST, TestResetFlagApi, TestSize.Level0) {
     LOG("----- reset flag api test start -----");
@@ -144,8 +159,12 @@ HWTEST_F(OEMAPITEST, TestResetFlagApi, TestSize.Level0) {
 }
 
 /**
- * @tc.name: TestAuthStatusApi
- * @tc.desc: test case of the authStatus related api: read, write, delete, check
+ * @tc.name   TestAuthStatusApi
+ * @tc.number TestAuthStatusApi
+ * @tc.desc   test case of the authStatus related api: read, write, delete, check
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(OEMAPITEST, TestAuthStatusApi, TestSize.Level0) {
     LOG("----- auth status api test start -----");
@@ -193,8 +212,12 @@ HWTEST_F(OEMAPITEST, TestAuthStatusApi, TestSize.Level0) {
 }
 
 /**
- * @tc.name: TestTicketApi
- * @tc.desc: test case of the ticket related api: read, write, delete, check
+ * @tc.name   TestTicketApi
+ * @tc.number TestTicketApi
+ * @tc.desc   test case of the ticket related api: read, write, delete, check
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(OEMAPITEST, TestTicketApi, TestSize.Level0) {
     LOG("----- ticket api test start -----");
@@ -241,8 +264,12 @@ HWTEST_F(OEMAPITEST, TestTicketApi, TestSize.Level0) {
 }
 
 /**
- * @tc.name: TestTokenApi
- * @tc.desc: test case of the token related api: read, write
+ * @tc.name   TestTokenApi
+ * @tc.number TestTokenApi
+ * @tc.desc   test case of the token related api: read, write
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(OEMAPITEST, TestTokenApi, TestSize.Level0) {
     LOG("----- token api test start -----");
@@ -283,8 +310,12 @@ HWTEST_F(OEMAPITEST, TestTokenApi, TestSize.Level0) {
     free(tokenRead);
 }
 /**
- * @tc.name: TestGetAckeyApi
- * @tc.desc: Check whether the Ackey can be obtained.
+ * @tc.name   TestGetAckeyApi
+ * @tc.number TestGetAckeyApi
+ * @tc.desc   Check whether the Ackey can be obtained.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(OEMAPITEST, TestGetAckeyApi, TestSize.Level0)
 {
@@ -296,8 +327,12 @@ HWTEST_F(OEMAPITEST, TestGetAckeyApi, TestSize.Level0)
 }
 
 /**
- * @tc.name: TestGetProdIdApi
- * @tc.desc: Check whether the ProdId can be obtained.
+ * @tc.name   TestGetProdIdApi
+ * @tc.number TestGetProdIdApi
+ * @tc.desc   Check whether the ProdId can be obtained.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(OEMAPITEST, TestGetProdIdApi, TestSize.Level0)
 {
@@ -308,8 +343,12 @@ HWTEST_F(OEMAPITEST, TestGetProdIdApi, TestSize.Level0)
 }
 
 /**
- * @tc.name: TestGetProdKeyApi
- * @tc.desc: Check whether the Prodkey can be obtained.
+ * @tc.name   TestGetProdKeyApi
+ * @tc.number TestGetProdKeyApi
+ * @tc.desc   Check whether the Prodkey can be obtained.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(OEMAPITEST, TestGetProdKeyApi, TestSize.Level0)
 {
@@ -322,8 +361,12 @@ HWTEST_F(OEMAPITEST, TestGetProdKeyApi, TestSize.Level0)
 #else  // defined TOKEN_PERSIST_TEST
 
 /**
- * @tc.name: TestIfTokenPersist
- * @tc.desc: test case of the token related api: read, write
+ * @tc.name   TestIfTokenPersist
+ * @tc.number TestIfTokenPersist
+ * @tc.desc   test case of the token related api: read, write
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(OEMAPITEST, TestIfTokenPersist, TestSize.Level0){
     LOG("----- token api test start -----");

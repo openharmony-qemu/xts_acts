@@ -40,12 +40,12 @@ export default function Role_APITest() {
       done();
     });
     /**
-     * @tc.number    Role
-     * @tc.name      Role_APITest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   Role_APITest_0100
+     * @tc.number Role
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Role_APITest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('Role_APITest_0100 START');

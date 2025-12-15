@@ -26,91 +26,91 @@ export default function swiperBackgroundImageTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_BACKGROUNDIMAGE_0100
-     * @tc.name       : testSwiperBackgroundImage001
-     * @tc.desc       : testing backgroundImage for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperBackgroundImage001
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_BACKGROUNDIMAGE_0100
+     * @tc.desc   testing backgroundImage for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperBackgroundImage001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperBackgroundImage001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_BACKGROUNDIMAGE_0200
-     * @tc.name       : testSwiperBackgroundImage002
-     * @tc.desc       : testing backgroundImage for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperBackgroundImage002
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_BACKGROUNDIMAGE_0200
+     * @tc.desc   testing backgroundImage for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperBackgroundImage002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperBackgroundImage002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_BACKGROUNDIMAGE_0300
-     * @tc.name       : testSwiperBackgroundImage003
-     * @tc.desc       : testing backgroundImage for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperBackgroundImage003
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_BACKGROUNDIMAGE_0300
+     * @tc.desc   testing backgroundImage for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperBackgroundImage003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperBackgroundImage003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_BACKGROUNDIMAGE_0400
-     * @tc.name       : testSwiperBackgroundImage004
-     * @tc.desc       : testing backgroundImage for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperBackgroundImage004
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_BACKGROUNDIMAGE_0400
+     * @tc.desc   testing backgroundImage for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperBackgroundImage004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperBackgroundImage004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_BACKGROUNDIMAGE_0500
-     * @tc.name       : testSwiperBackgroundImage005
-     * @tc.desc       : testing backgroundImage for swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testSwiperBackgroundImage005
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_BACKGROUNDIMAGE_0500
+     * @tc.desc   testing backgroundImage for swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperBackgroundImage005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperBackgroundImage005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_BACKGROUNDIMAGE_0600
-     * @tc.name       : testSwiperBackgroundImage006
-     * @tc.desc       : testing backgroundImage for swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testSwiperBackgroundImage006
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_BACKGROUNDIMAGE_0600
+     * @tc.desc   testing backgroundImage for swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperBackgroundImage006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperBackgroundImage006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_BACKGROUNDIMAGE_0700
-     * @tc.name       : testSwiperBackgroundImage007
-     * @tc.desc       : testing default values of backgroundImage property of the swiper
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperBackgroundImage007
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_BACKGROUNDIMAGE_0700
+     * @tc.desc   testing default values of backgroundImage property of the swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperBackgroundImage007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperBackgroundImage007()).assertEqual(0)

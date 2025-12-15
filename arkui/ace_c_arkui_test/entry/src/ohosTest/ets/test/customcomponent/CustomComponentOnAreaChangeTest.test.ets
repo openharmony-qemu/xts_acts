@@ -26,14 +26,14 @@ export default function customComponentOnAreaChangeTest() {
       await Utils.pushPage(`customcomponent/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ONAREACHANGE_0100
-    * @tc.name       : testCustomComponentOnAreaChange001
-    * @tc.desc       : test onAreaChange event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCustomComponentOnAreaChange001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ONAREACHANGE_0100
+     * @tc.desc   test onAreaChange event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCustomComponentOnAreaChange001', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnAreaChangeTestCustomComponentSize')
       await Utils.sleep(2000)
@@ -42,14 +42,14 @@ export default function customComponentOnAreaChangeTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ONAREACHANGE_0200
-    * @tc.name       : testCustomComponentOnAreaChange002
-    * @tc.desc       : test onAreaChange event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCustomComponentOnAreaChange002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ONAREACHANGE_0200
+     * @tc.desc   test onAreaChange event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCustomComponentOnAreaChange002', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnAreaChangeTestCustomComponentMoveCompare')
       await Utils.sleep(2000)
@@ -58,14 +58,14 @@ export default function customComponentOnAreaChangeTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ONAREACHANGE_0300
-    * @tc.name       : testCustomComponentOnAreaChange003
-    * @tc.desc       : test onAreaChange event not callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCustomComponentOnAreaChange003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ONAREACHANGE_0300
+     * @tc.desc   test onAreaChange event not callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCustomComponentOnAreaChange003', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnAreaChangeTestCustomComponentOffset')
       await Utils.sleep(2000)

@@ -49,10 +49,12 @@ export default function StepperModifierPage() {
 
 
     /**
-     * @tc.number    StepperModifierPage_0100
-     * @tc.name      StepperModifierPage_0100
-     * @tc.desc      Test onSkip
-     * @tc.level     Level 0
+     * @tc.name   StepperModifierPage_0100
+     * @tc.number StepperModifierPage_0100
+     * @tc.desc   Test onSkip
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('StepperModifierPage_0100', Level.LEVEL0, async (done: Function) => {
       console.info('StepperModifierPage_0100 START');
@@ -80,10 +82,12 @@ export default function StepperModifierPage() {
     });
 
     /**
-     * @tc.number    StepperModifierPage_0200
-     * @tc.name      StepperModifierPage_0200
-     * @tc.desc      Test onFinish
-     * @tc.level     Level 0
+     * @tc.name   StepperModifierPage_0200
+     * @tc.number StepperModifierPage_0200
+     * @tc.desc   Test onFinish
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('StepperModifierPage_0200', Level.LEVEL0, async (done: Function) => {
       console.info('StepperModifierPage_0200 START');
@@ -106,10 +110,12 @@ export default function StepperModifierPage() {
     });
 
     /**
-     * @tc.number    StepperModifierPage_0300
-     * @tc.name      StepperModifierPage_0300
-     * @tc.desc      Test next onchange
-     * @tc.level     Level 0
+     * @tc.name   StepperModifierPage_0300
+     * @tc.number StepperModifierPage_0300
+     * @tc.desc   Test next onchange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('StepperModifierPage_0300', Level.LEVEL0, async (done: Function) => {
       console.info('StepperModifierPage_0300 START');
@@ -142,10 +148,12 @@ export default function StepperModifierPage() {
     });
 
     /**
-     * @tc.number    StepperModifierPage_0400
-     * @tc.name      StepperModifierPage_0400
-     * @tc.desc      Test Previous
-     * @tc.level     Level 0
+     * @tc.name   StepperModifierPage_0400
+     * @tc.number StepperModifierPage_0400
+     * @tc.desc   Test Previous
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('StepperModifierPage_0400', Level.LEVEL0, async (done: Function) => {
       console.info('StepperModifierPage_0400 START');

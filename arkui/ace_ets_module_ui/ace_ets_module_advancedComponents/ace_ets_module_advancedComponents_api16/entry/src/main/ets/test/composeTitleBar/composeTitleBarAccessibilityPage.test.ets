@@ -51,12 +51,12 @@ export default function composeTitleBarAccessibilityTest() {
     })
 
     /**
-     * @tc.number composeTitleBarAccessibilityPage
      * @tc.name   composeTitleBarAccessibilityPage_0100
+     * @tc.number composeTitleBarAccessibilityPage
      * @tc.desc   Test composeTitleBarAccessibilityPage
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('composeTitleBarAccessibilityPage_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

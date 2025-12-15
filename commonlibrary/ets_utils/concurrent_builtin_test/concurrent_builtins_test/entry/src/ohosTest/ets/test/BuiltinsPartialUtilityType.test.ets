@@ -57,12 +57,12 @@ export default function BuiltinsPartialUtilityType() {
     })
 
     /**
-     * @tc.number    : SUB_PARTIAL_UTILITYTYPE_TEST_0100
-     * @tc.name      : BuiltinsPartialUtilityTypeTest0100
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BuiltinsPartialUtilityTypeTest0100
+     * @tc.number SUB_PARTIAL_UTILITYTYPE_TEST_0100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('BuiltinsPartialUtilityTypeTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -91,12 +91,12 @@ export default function BuiltinsPartialUtilityType() {
       });
 
     /**
-     * @tc.number    : SUB_PARTIAL_UTILITYTYPE_TEST_0101
-     * @tc.name      : builtinsProxyTest0100
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   builtinsProxyTest0100
+     * @tc.number SUB_PARTIAL_UTILITYTYPE_TEST_0101
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsProxyTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -125,12 +125,12 @@ export default function BuiltinsPartialUtilityType() {
       });
 
     /**
-     * @tc.number    : SUB_PARTIAL_UTILITYTYPE_TEST_0200
-     * @tc.name      : BuiltinsPrivateFieldsUtilityTypeTest0100
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest0100
+     * @tc.number SUB_PARTIAL_UTILITYTYPE_TEST_0200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -160,12 +160,12 @@ export default function BuiltinsPartialUtilityType() {
 
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_BIGINT_0300
-     * @tc.name      : BuiltinsReadonlyUtilityTypeTest0100
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BIGINT_0300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('BuiltinsReadonlyUtilityTypeTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -194,12 +194,12 @@ export default function BuiltinsPartialUtilityType() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_BIGINT_0400
-     * @tc.name      : BuiltinsRecordUtilityTypeTest0100
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BuiltinsRecordUtilityTypeTest0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BIGINT_0400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('BuiltinsRecordUtilityTypeTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

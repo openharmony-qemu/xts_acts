@@ -48,80 +48,104 @@ export default function webJsunitTwo() {
       done()
     });
 
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_013                                                                                                                                                           
-     *tc.name RegisterJavaScriptProxy                                                                                                                                                                                                               
-     *tc.desic register proxy with a specific name
+    /**
+     * @tc.name   RegisterJavaScriptProxy
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_013
+     * @tc.desc   RegisterJavaScriptProxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RegisterJavaScriptProxy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitRegisterJavaScriptProxy", 172610);
       Utils.registerEvent("RegisterJavaScriptProxy", 'Web', 172620, done);
       await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_014                                                                                                                                                           
-     *tc.name DeleteJavaScriptRegister                                                                                                                                                                                                               
-     *tc.desic delet specific proxy
+    /**
+     * @tc.name   DeleteJavaScriptRegister
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_014
+     * @tc.desc   DeleteJavaScriptRegister
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DeleteJavaScriptRegister', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitDeleteJavaScriptRegister", 172610);
       Utils.registerEvent("DeleteJavaScriptRegister", "17100008", 172630, done);
       await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_039                                                                                                                                                           
-     *tc.name JsMessExtGetString                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   JsMessExtGetString
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_039
+     * @tc.desc   JsMessExtGetString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsMessExtGetString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitJsMessExtGetString", 172610);
       Utils.registerEvent("JsMessExtGetString", "result type:string", 172640, done);
       await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_040                                                                                                                                                           
-     *tc.name JsMessExtGetNum                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   JsMessExtGetNum
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_040
+     * @tc.desc   JsMessExtGetNum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsMessExtGetNum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitJsMessExtGetNum", 172610);
       Utils.registerEvent("JsMessExtGetNum", "result type:number", 172650, done);
       await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_041                                                                                                                                                          
-     *tc.name JsMessExtGetBoo                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   JsMessExtGetBoo
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_041
+     * @tc.desc   JsMessExtGetBoo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsMessExtGetBoo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitJsMessExtGetBoo", 172610);
       Utils.registerEvent("JsMessExtGetBoo", "result type:boolean", 172660, done);
       await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_042                                                                                                                                                          
-     *tc.name JsMessExtGetArrayBuffer                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   JsMessExtGetArrayBuffer
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_042
+     * @tc.desc   JsMessExtGetArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsMessExtGetArrayBuffer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitJsMessExtGetArrayBuffer", 172610);
       Utils.registerEvent("JsMessExtGetArrayBuffer", "result type:object", 172670, done);
       await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_043                                                                                                                                                         
-     *tc.name JsMessExtGetArray                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   JsMessExtGetArray
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_043
+     * @tc.desc   JsMessExtGetArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsMessExtGetArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitJsMessExtGetArray", 172610);
       Utils.registerEvent("JsMessExtGetArray", "result type:object0", 172680, done);
       await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_044                                                                                                                                                         
-     *tc.name WebMessExtSetString                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   WebMessExtSetString
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_044
+     * @tc.desc   WebMessExtSetString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('WebMessExtSetString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebMessExtSetString", 172610);
@@ -129,20 +153,26 @@ export default function webJsunitTwo() {
       Utils.registerEvent("WebMessExtSetString", JSON.stringify(result), 172700, done);
       await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_045                                                                                                                                                        
-     *tc.name WebMessExtGetString                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   WebMessExtGetString
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_045
+     * @tc.desc   WebMessExtGetString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('WebMessExtGetString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebMessExtGetString", 172610);
       Utils.registerEvent("WebMessExtGetString", "result type:string", 172690, done);
       await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_046                                                                                                                                                        
-     *tc.name WebMessExtSetNumber                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   WebMessExtSetNumber
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_046
+     * @tc.desc   WebMessExtSetNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('WebMessExtSetNumber', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebMessExtSetNumber", 172610);
@@ -150,20 +180,26 @@ export default function webJsunitTwo() {
       Utils.registerEvent("WebMessExtSetNumber", JSON.stringify(result), 172710, done);
       await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_047                                                                                                                                                  
-     *tc.name WebMessExtGetNumber                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   WebMessExtGetNumber
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_047
+     * @tc.desc   WebMessExtGetNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('WebMessExtGetNumber', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebMessExtGetNumber", 172610);
       Utils.registerEvent("WebMessExtGetNumber", "result type:number0", 172720, done);
       await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_048                                                                                                                                                  
-     *tc.name WebMessExtSetBoolean                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   WebMessExtSetBoolean
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_048
+     * @tc.desc   WebMessExtSetBoolean
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('WebMessExtSetBoolean', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebMessExtSetBoolean", 172610);
@@ -171,20 +207,26 @@ export default function webJsunitTwo() {
       Utils.registerEvent("WebMessExtSetBoolean", JSON.stringify(result), 172730, done);
       await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_049                                                                                                                                                 
-     *tc.name WebMessExtGetBoolean                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   WebMessExtGetBoolean
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_049
+     * @tc.desc   WebMessExtGetBoolean
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('WebMessExtGetBoolean', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebMessExtGetBoolean", 172610);
       Utils.registerEvent("WebMessExtGetBoolean", "result type:boolean", 172740, done);
       await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_050                                                                                                                                                 
-     *tc.name WebMessExtSetArray                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   WebMessExtSetArray
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_050
+     * @tc.desc   WebMessExtSetArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('WebMessExtSetArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebMessExtSetArray", 172610);
@@ -192,20 +234,26 @@ export default function webJsunitTwo() {
       Utils.registerEvent("WebMessExtSetArray", JSON.stringify(result), 172750, done);
       await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_051                                                                                                                                                 
-     *tc.name WebMessExtGetArray                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   WebMessExtGetArray
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_051
+     * @tc.desc   WebMessExtGetArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('WebMessExtGetArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebMessExtGetArray", 172610);
       Utils.registerEvent("WebMessExtGetArray", "result type:object", 172760, done);
       await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_052                                                                                                                                                 
-     *tc.name WebMessExtSetArrayBuffer                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   WebMessExtSetArrayBuffer
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_052
+     * @tc.desc   WebMessExtSetArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('WebMessExtSetArrayBuffer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebMessExtSetArrayBuffer", 172610);
@@ -213,20 +261,26 @@ export default function webJsunitTwo() {
       Utils.registerEvent("WebMessExtSetArrayBuffer", JSON.stringify(result), 172770, done);
       await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_053                                                                                                                                                 
-     *tc.name WebMessExtGetArrayBuffer                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   WebMessExtGetArrayBuffer
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_053
+     * @tc.desc   WebMessExtGetArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('WebMessExtGetArrayBuffer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebMessExtGetArrayBuffer", 172610);
       Utils.registerEvent("WebMessExtGetArrayBuffer", "result getArrayBuffer byteLength:8", 172780, done);
       await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_054                                                                                                                                                 
-     *tc.name WebMessExtSetError                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   WebMessExtSetError
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_054
+     * @tc.desc   WebMessExtSetError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('WebMessExtSetError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebMessExtSetError", 172610);
@@ -234,10 +288,13 @@ export default function webJsunitTwo() {
       Utils.registerEvent("WebMessExtSetError", JSON.stringify(result), 172790, done);
       await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_055                                                                                                                                                
-     *tc.name WebMessExtGetError                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   WebMessExtGetError
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_055
+     * @tc.desc   WebMessExtGetError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('WebMessExtGetError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebMessExtGetError", 172610);

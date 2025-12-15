@@ -37,12 +37,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0100
-         * @tc.name       : GzipDecompressionAbilityTest_0100
-         * @tc.desc       : test gzputc correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0100
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0100
+         * @tc.desc   test gzputc correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0100 Start=====");
@@ -61,12 +61,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0200
-         * @tc.name       : GzipDecompressionAbilityTest_0200
-         * @tc.desc       : test gzputc error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0200
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0200
+         * @tc.desc   test gzputc error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0200 Start=====");
@@ -85,12 +85,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0300
-         * @tc.name       : GzipDecompressionAbilityTest_0300
-         * @tc.desc       : test gzputc error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0300
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0300
+         * @tc.desc   test gzputc error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0300 Start=====");
@@ -109,12 +109,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0400
-         * @tc.name       : GzipDecompressionAbilityTest_0400
-         * @tc.desc       : test gzputc error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0400
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0400
+         * @tc.desc   test gzputc error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0400 Start=====");
@@ -133,12 +133,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0500
-         * @tc.name       : GzipDecompressionAbilityTest_0500
-         * @tc.desc       : test gzputc error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0500
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0500
+         * @tc.desc   test gzputc error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0500 Start=====");
@@ -157,12 +157,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0600
-         * @tc.name       : GzipDecompressionAbilityTest_0600
-         * @tc.desc       : test gzputc error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0600
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0600
+         * @tc.desc   test gzputc error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0600 Start=====");
@@ -181,12 +181,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0700
-         * @tc.name       : GzipDecompressionAbilityTest_0700
-         * @tc.desc       : test gzputs correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0700
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0700
+         * @tc.desc   test gzputs correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0700 Start=====");
@@ -205,12 +205,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0800
-         * @tc.name       : GzipDecompressionAbilityTest_0800
-         * @tc.desc       : test gzputs error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0800
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0800
+         * @tc.desc   test gzputs error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0800 Start=====");
@@ -229,12 +229,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0900
-         * @tc.name       : GzipDecompressionAbilityTest_0900
-         * @tc.desc       : test gzputs error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0900
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0900
+         * @tc.desc   test gzputs error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_0900 Start=====");
@@ -253,12 +253,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1000
-         * @tc.name       : GzipDecompressionAbilityTest_1000
-         * @tc.desc       : test gzputs error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1000
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1000
+         * @tc.desc   test gzputs error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1000 Start=====");
@@ -277,12 +277,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1100
-         * @tc.name       : GzipDecompressionAbilityTest_1100
-         * @tc.desc       : test gzputs error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1100
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1100
+         * @tc.desc   test gzputs error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1100 Start=====");
@@ -301,12 +301,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1200
-         * @tc.name       : GzipDecompressionAbilityTest_1200
-         * @tc.desc       : test gzwrite correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1200
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1200
+         * @tc.desc   test gzwrite correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1200 Start=====");
@@ -330,12 +330,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1300
-         * @tc.name       : GzipDecompressionAbilityTest_1300
-         * @tc.desc       : test gzwrite error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1300
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1300
+         * @tc.desc   test gzwrite error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1300 Start=====");
@@ -355,12 +355,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1400
-         * @tc.name       : GzipDecompressionAbilityTest_1400
-         * @tc.desc       : test gzwrite error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1400
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1400
+         * @tc.desc   test gzwrite error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1400 Start=====");
@@ -380,12 +380,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1500
-         * @tc.name       : GzipDecompressionAbilityTest_1500
-         * @tc.desc       : test gzwrite error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1500
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1500
+         * @tc.desc   test gzwrite error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1500 Start=====");
@@ -417,12 +417,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1600
-         * @tc.name       : GzipDecompressionAbilityTest_1600
-         * @tc.desc       : test gzwrite error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1600
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1600
+         * @tc.desc   test gzwrite error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1600 Start=====");
@@ -454,12 +454,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1700
-         * @tc.name       : GzipDecompressionAbilityTest_1700
-         * @tc.desc       : test gzwrite error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1700
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1700
+         * @tc.desc   test gzwrite error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1700 Start=====");
@@ -483,12 +483,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1800
-         * @tc.name       : GzipDecompressionAbilityTest_1800
-         * @tc.desc       : test gzwrite error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1800
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1800
+         * @tc.desc   test gzwrite error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1800 Start=====");
@@ -513,12 +513,12 @@ export default function ActsGzipDecompressionTest() {
 
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1900
-         * @tc.name       : GzipDecompressionAbilityTest_1900
-         * @tc.desc       : test gzfwrite correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1900
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1900
+         * @tc.desc   test gzfwrite correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_1900 Start=====");
@@ -542,12 +542,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2000
-         * @tc.name       : GzipDecompressionAbilityTest_2000
-         * @tc.desc       : test gzfwrite error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2000
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2000
+         * @tc.desc   test gzfwrite error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2000 Start=====");
@@ -567,12 +567,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2100
-         * @tc.name       : GzipDecompressionAbilityTest_2100
-         * @tc.desc       : test gzfwrite error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2100
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2100
+         * @tc.desc   test gzfwrite error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2100 Start=====");
@@ -604,12 +604,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2200
-         * @tc.name       : GzipDecompressionAbilityTest_2200
-         * @tc.desc       : test gzfwrite error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2200
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2200
+         * @tc.desc   test gzfwrite error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2200 Start=====");
@@ -649,12 +649,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2300
-         * @tc.name       : GzipDecompressionAbilityTest_2300
-         * @tc.desc       : test gzfwrite error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2300
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2300
+         * @tc.desc   test gzfwrite error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2300 Start=====");
@@ -694,12 +694,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2400
-         * @tc.name       : GzipDecompressionAbilityTest_2400
-         * @tc.desc       : test gzfwrite error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2400
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2400
+         * @tc.desc   test gzfwrite error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2400 Start=====");
@@ -731,12 +731,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2500
-         * @tc.name       : GzipDecompressionAbilityTest_2500
-         * @tc.desc       : test gzfwrite error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2500
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2500
+         * @tc.desc   test gzfwrite error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2500 Start=====");
@@ -761,12 +761,12 @@ export default function ActsGzipDecompressionTest() {
 
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2600
-         * @tc.name       : GzipDecompressionAbilityTest_2600
-         * @tc.desc       : test gzread correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2600
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2600
+         * @tc.desc   test gzread correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2600 Start=====");
@@ -794,12 +794,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2700
-         * @tc.name       : GzipDecompressionAbilityTest_2700
-         * @tc.desc       : test gzread error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2700
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2700
+         * @tc.desc   test gzread error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2700 Start=====");
@@ -819,12 +819,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2800
-         * @tc.name       : GzipDecompressionAbilityTest_2800
-         * @tc.desc       : test gzread error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2800
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2800
+         * @tc.desc   test gzread error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2800 Start=====");
@@ -843,12 +843,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2900
-         * @tc.name       : GzipDecompressionAbilityTest_2900
-         * @tc.desc       : test gzread error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2900
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2900
+         * @tc.desc   test gzread error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_2900 Start=====");
@@ -867,12 +867,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3000
-         * @tc.name       : GzipDecompressionAbilityTest_3000
-         * @tc.desc       : test gzread error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3000
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3000
+         * @tc.desc   test gzread error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3000 Start=====");
@@ -893,12 +893,12 @@ export default function ActsGzipDecompressionTest() {
 
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3100
-         * @tc.name       : GzipDecompressionAbilityTest_3100
-         * @tc.desc       : test gzfread correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3100
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3100
+         * @tc.desc   test gzfread correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3100 Start=====");
@@ -926,12 +926,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3200
-         * @tc.name       : GzipDecompressionAbilityTest_3200
-         * @tc.desc       : test gzfread error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3200
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3200
+         * @tc.desc   test gzfread error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3200 Start=====");
@@ -951,12 +951,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3300
-         * @tc.name       : GzipDecompressionAbilityTest_3300
-         * @tc.desc       : test gzfread error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3300
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3300
+         * @tc.desc   test gzfread error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3300 Start=====");
@@ -984,12 +984,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3400
-         * @tc.name       : GzipDecompressionAbilityTest_3400
-         * @tc.desc       : test gzfread error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3400
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3400
+         * @tc.desc   test gzfread error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3400 Start=====");
@@ -1025,12 +1025,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3500
-         * @tc.name       : GzipDecompressionAbilityTest_3500
-         * @tc.desc       : test gzfread error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3500
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3500
+         * @tc.desc   test gzfread error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3500 Start=====");
@@ -1066,12 +1066,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3600
-         * @tc.name       : GzipDecompressionAbilityTest_3600
-         * @tc.desc       : test gzfread error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3600
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3600
+         * @tc.desc   test gzfread error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3600 Start=====");
@@ -1099,12 +1099,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3700
-         * @tc.name       : GzipDecompressionAbilityTest_3700
-         * @tc.desc       : test gzfread error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3700
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3700
+         * @tc.desc   test gzfread error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3700 Start=====");
@@ -1124,12 +1124,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3800
-         * @tc.name       : GzipDecompressionAbilityTest_3800
-         * @tc.desc       : test gztell correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3800
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3800
+         * @tc.desc   test gztell correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3800 Start=====");
@@ -1148,12 +1148,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3900
-         * @tc.name       : GzipDecompressionAbilityTest_3900
-         * @tc.desc       : test gztell error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3900
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3900
+         * @tc.desc   test gztell error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_3900 Start=====");
@@ -1170,12 +1170,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4000
-         * @tc.name       : GzipDecompressionAbilityTest_4000
-         * @tc.desc       : test gzsetparams correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4000
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4000
+         * @tc.desc   test gzsetparams correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4000 Start=====");
@@ -1211,12 +1211,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4100
-         * @tc.name       : GzipDecompressionAbilityTest_4100
-         * @tc.desc       : test gzsetparams error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4100
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4100
+         * @tc.desc   test gzsetparams error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4100 Start=====");
@@ -1243,12 +1243,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4200
-         * @tc.name       : GzipDecompressionAbilityTest_4200
-         * @tc.desc       : test gzsetparams error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4200
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4200
+         * @tc.desc   test gzsetparams error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4200 Start=====");
@@ -1275,12 +1275,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4300
-         * @tc.name       : GzipDecompressionAbilityTest_4300
-         * @tc.desc       : test gzsetparams error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4300
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4300
+         * @tc.desc   test gzsetparams error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4300 Start=====");
@@ -1300,12 +1300,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4400
-         * @tc.name       : GzipDecompressionAbilityTest_4400
-         * @tc.desc       : test gzprintf correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4400
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4400
+         * @tc.desc   test gzprintf correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4400 Start=====");
@@ -1324,12 +1324,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4500
-         * @tc.name       : GzipDecompressionAbilityTest_4500
-         * @tc.desc       : test gzprintf error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4500
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4500
+         * @tc.desc   test gzprintf error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4500 Start=====");
@@ -1380,12 +1380,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4600
-         * @tc.name       : GzipDecompressionAbilityTest_4600
-         * @tc.desc       : test gzprintf error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4600
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4600
+         * @tc.desc   test gzprintf error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4600 Start=====");
@@ -1428,12 +1428,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4700
-         * @tc.name       : GzipDecompressionAbilityTest_4700
-         * @tc.desc       : test gzprintf error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4700
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4700
+         * @tc.desc   test gzprintf error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4700 Start=====");
@@ -1460,12 +1460,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4800
-         * @tc.name       : GzipDecompressionAbilityTest_4800
-         * @tc.desc       : test gzprintf error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4800
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4800
+         * @tc.desc   test gzprintf error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4800 Start=====");
@@ -1484,12 +1484,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4900
-         * @tc.name       : GzipDecompressionAbilityTest_4900
-         * @tc.desc       : test gzopen correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4900
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4900
+         * @tc.desc   test gzopen correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4900 Start=====");
@@ -1505,12 +1505,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5000
-         * @tc.name       : GzipDecompressionAbilityTest_5000
-         * @tc.desc       : test gzopen error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5000
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5000
+         * @tc.desc   test gzopen error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5000 Start=====");
@@ -1535,12 +1535,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5100
-         * @tc.name       : GzipDecompressionAbilityTest_5100
-         * @tc.desc       : test gzopen error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5100
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5100
+         * @tc.desc   test gzopen error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5100 Start=====");
@@ -1565,12 +1565,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5200
-         * @tc.name       : GzipDecompressionAbilityTest_5200
-         * @tc.desc       : test gzopen error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5200
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5200
+         * @tc.desc   test gzopen error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5200 Start=====");
@@ -1595,12 +1595,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5300
-         * @tc.name       : GzipDecompressionAbilityTest_5300
-         * @tc.desc       : test gzopen error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5300
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5300
+         * @tc.desc   test gzopen error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5300 Start=====");
@@ -1617,12 +1617,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5400
-         * @tc.name       : GzipDecompressionAbilityTest_5400
-         * @tc.desc       : test gzopen error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5400
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5400
+         * @tc.desc   test gzopen error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5400 Start=====");
@@ -1639,12 +1639,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5500
-         * @tc.name       : GzipDecompressionAbilityTest_5500
-         * @tc.desc       : test gzclose correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5500
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5500
+         * @tc.desc   test gzclose correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5500 Start=====");
@@ -1662,12 +1662,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5600
-         * @tc.name       : GzipDecompressionAbilityTest_5600
-         * @tc.desc       : test gzcloser correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5600
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5600
+         * @tc.desc   test gzcloser correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5600 Start=====");
@@ -1685,12 +1685,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5700
-         * @tc.name       : GzipDecompressionAbilityTest_5700
-         * @tc.desc       : test gzcloser error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5700
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5700
+         * @tc.desc   test gzcloser error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5700 Start=====");
@@ -1709,12 +1709,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5800
-         * @tc.name       : GzipDecompressionAbilityTest_5800
-         * @tc.desc       : test gzgets correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5800
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5800
+         * @tc.desc   test gzgets correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5800 Start=====");
@@ -1737,12 +1737,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5900
-         * @tc.name       : GzipDecompressionAbilityTest_5900
-         * @tc.desc       : test gzgets error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5900
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5900
+         * @tc.desc   test gzgets error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5900 Start=====");
@@ -1761,12 +1761,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6000
-         * @tc.name       : GzipDecompressionAbilityTest_6000
-         * @tc.desc       : test gzgets error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6000
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6000
+         * @tc.desc   test gzgets error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6000 Start=====");
@@ -1785,12 +1785,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6100
-         * @tc.name       : GzipDecompressionAbilityTest_6100
-         * @tc.desc       : test gzgets error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6100
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6100
+         * @tc.desc   test gzgets error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6100 Start=====");
@@ -1810,12 +1810,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6200
-         * @tc.name       : GzipDecompressionAbilityTest_6200
-         * @tc.desc       : test gzgets error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6200
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6200
+         * @tc.desc   test gzgets error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6200 Start=====");
@@ -1835,12 +1835,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6300
-         * @tc.name       : GzipDecompressionAbilityTest_6300
-         * @tc.desc       : test gzgetc correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6300
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6300
+         * @tc.desc   test gzgetc correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6300 Start=====");
@@ -1862,12 +1862,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6400
-         * @tc.name       : GzipDecompressionAbilityTest_6400
-         * @tc.desc       : test gzgetc error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6400
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6400
+         * @tc.desc   test gzgetc error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6400 Start=====");
@@ -1888,12 +1888,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6500
-         * @tc.name       : GzipDecompressionAbilityTest_6500
-         * @tc.desc       : test gzgetc error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6500
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6500
+         * @tc.desc   test gzgetc error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6500 Start=====");
@@ -1912,12 +1912,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6600
-         * @tc.name       : GzipDecompressionAbilityTest_6600
-         * @tc.desc       : test gzrewind correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6600
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6600
+         * @tc.desc   test gzrewind correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6600 Start=====");
@@ -1936,12 +1936,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6700
-         * @tc.name       : GzipDecompressionAbilityTest_6700
-         * @tc.desc       : test gzrewind error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6700
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6700
+         * @tc.desc   test gzrewind error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6700 Start=====");
@@ -1960,12 +1960,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6800
-         * @tc.name       : GzipDecompressionAbilityTest_6800
-         * @tc.desc       : test gzseek correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6800
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6800
+         * @tc.desc   test gzseek correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6800 Start=====");
@@ -1984,12 +1984,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6900
-         * @tc.name       : GzipDecompressionAbilityTest_6900
-         * @tc.desc       : test gzseek correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6900
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6900
+         * @tc.desc   test gzseek correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6900 Start=====");
@@ -2011,12 +2011,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7000
-         * @tc.name       : GzipDecompressionAbilityTest_7000
-         * @tc.desc       : test gzseek error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7000
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7000
+         * @tc.desc   test gzseek error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7000 Start=====");
@@ -2043,12 +2043,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7100
-         * @tc.name       : GzipDecompressionAbilityTest_7100
-         * @tc.desc       : test gzseek error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7100
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7100
+         * @tc.desc   test gzseek error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7100 Start=====");
@@ -2075,12 +2075,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7200
-         * @tc.name       : GzipDecompressionAbilityTest_7200
-         * @tc.desc       : test gzseek error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7200
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7200
+         * @tc.desc   test gzseek error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7200 Start=====");
@@ -2097,12 +2097,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7300
-         * @tc.name       : GzipDecompressionAbilityTest_7300
-         * @tc.desc       : test gzoffset correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7300
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7300
+         * @tc.desc   test gzoffset correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7300 Start=====");
@@ -2121,12 +2121,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7400
-         * @tc.name       : GzipDecompressionAbilityTest_7400
-         * @tc.desc       : test gzoffset error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7400
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7400
+         * @tc.desc   test gzoffset error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7400 Start=====");
@@ -2143,12 +2143,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7500
-         * @tc.name       : GzipDecompressionAbilityTest_7500
-         * @tc.desc       : test gzungetc correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7500
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7500
+         * @tc.desc   test gzungetc correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7500 Start=====");
@@ -2168,12 +2168,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7600
-         * @tc.name       : GzipDecompressionAbilityTest_7600
-         * @tc.desc       : test gzungetc error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7600
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7600
+         * @tc.desc   test gzungetc error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7600 Start=====");
@@ -2192,12 +2192,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7700
-         * @tc.name       : GzipDecompressionAbilityTest_7700
-         * @tc.desc       : test gzungetc error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7700
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7700
+         * @tc.desc   test gzungetc error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7700 Start=====");
@@ -2216,12 +2216,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7800
-         * @tc.name       : GzipDecompressionAbilityTest_7800
-         * @tc.desc       : test gzungetc error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7800
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7800
+         * @tc.desc   test gzungetc error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7800 Start=====");
@@ -2240,12 +2240,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7900
-         * @tc.name       : GzipDecompressionAbilityTest_7900
-         * @tc.desc       : test gzungetc error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7900
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7900
+         * @tc.desc   test gzungetc error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_7900 Start=====");
@@ -2264,12 +2264,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8000
-         * @tc.name       : GzipDecompressionAbilityTest_8000
-         * @tc.desc       : test gzungetc error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8000
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8000
+         * @tc.desc   test gzungetc error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8000 Start=====");
@@ -2288,12 +2288,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8100
-         * @tc.name       : GzipDecompressionAbilityTest_8100
-         * @tc.desc       : test gzeof correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8100
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8100
+         * @tc.desc   test gzeof correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8100 Start=====");
@@ -2312,12 +2312,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8200
-         * @tc.name       : GzipDecompressionAbilityTest_8200
-         * @tc.desc       : test gzeof correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8200
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8200
+         * @tc.desc   test gzeof correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8200 Start=====");
@@ -2343,12 +2343,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8300
-         * @tc.name       : GzipDecompressionAbilityTest_8300
-         * @tc.desc       : test gzeof correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8300
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8300
+         * @tc.desc   test gzeof correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8300 Start=====");
@@ -2374,12 +2374,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8400
-         * @tc.name       : GzipDecompressionAbilityTest_8400
-         * @tc.desc       : test gzeof correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8400
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8400
+         * @tc.desc   test gzeof correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8400 Start=====");
@@ -2406,12 +2406,12 @@ export default function ActsGzipDecompressionTest() {
 
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8500
-         * @tc.name       : GzipDecompressionAbilityTest_8500
-         * @tc.desc       : test gzclearerr correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8500
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8500
+         * @tc.desc   test gzclearerr correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8500 Start=====");
@@ -2442,12 +2442,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8600
-         * @tc.name       : GzipDecompressionAbilityTest_8600
-         * @tc.desc       : test gzdirect correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8600
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8600
+         * @tc.desc   test gzdirect correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8600 Start=====");
@@ -2466,12 +2466,12 @@ export default function ActsGzipDecompressionTest() {
         });
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8700
-         * @tc.name       : GzipDecompressionAbilityTest_8700
-         * @tc.desc       : test gzdirect correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8700
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8700
+         * @tc.desc   test gzdirect correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8700 Start=====");
@@ -2490,12 +2490,12 @@ export default function ActsGzipDecompressionTest() {
         });
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8800
-         * @tc.name       : GzipDecompressionAbilityTest_8800
-         * @tc.desc       : test gzerror correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8800
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8800
+         * @tc.desc   test gzerror correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8800 Start=====");
@@ -2525,12 +2525,12 @@ export default function ActsGzipDecompressionTest() {
         });
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8900
-         * @tc.name       : GzipDecompressionAbilityTest_8900
-         * @tc.desc       : test gzflush correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8900
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8900
+         * @tc.desc   test gzflush correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_8900 Start=====");
@@ -2561,12 +2561,12 @@ export default function ActsGzipDecompressionTest() {
         });
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9000
-         * @tc.name       : GzipDecompressionAbilityTest_9000
-         * @tc.desc       : test gzflush error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9000
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9000
+         * @tc.desc   test gzflush error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9000 Start=====");
@@ -2585,12 +2585,12 @@ export default function ActsGzipDecompressionTest() {
         });
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9100
-         * @tc.name       : GzipDecompressionAbilityTest_9100
-         * @tc.desc       : test gzflush error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9100
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9100
+         * @tc.desc   test gzflush error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9100 Start=====");
@@ -2609,12 +2609,12 @@ export default function ActsGzipDecompressionTest() {
         });
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9200
-         * @tc.name       : GzipDecompressionAbilityTest_9200
-         * @tc.desc       : test gzflush error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9200
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9200
+         * @tc.desc   test gzflush error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9200 Start=====");
@@ -2633,12 +2633,12 @@ export default function ActsGzipDecompressionTest() {
         });
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9300
-         * @tc.name       : GzipDecompressionAbilityTest_9300
-         * @tc.desc       : test gzflush error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9300
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9300
+         * @tc.desc   test gzflush error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9300 Start=====");
@@ -2657,12 +2657,12 @@ export default function ActsGzipDecompressionTest() {
         });
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9400
-         * @tc.name       : GzipDecompressionAbilityTest_9400
-         * @tc.desc       : test gzflush error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9400
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9400
+         * @tc.desc   test gzflush error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9400 Start=====");
@@ -2681,12 +2681,12 @@ export default function ActsGzipDecompressionTest() {
         });
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9500
-         * @tc.name       : GzipDecompressionAbilityTest_9500
-         * @tc.desc       : test gzbuffer correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9500
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9500
+         * @tc.desc   test gzbuffer correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9500 Start=====");
@@ -2705,12 +2705,12 @@ export default function ActsGzipDecompressionTest() {
         });
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9600
-         * @tc.name       : GzipDecompressionAbilityTest_9600
-         * @tc.desc       : test gzbuffer error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9600
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9600
+         * @tc.desc   test gzbuffer error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9600 Start=====");
@@ -2729,12 +2729,12 @@ export default function ActsGzipDecompressionTest() {
         });
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9700
-         * @tc.name       : GzipDecompressionAbilityTest_9700
-         * @tc.desc       : test gzbuffer error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9700
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9700
+         * @tc.desc   test gzbuffer error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9700 Start=====");
@@ -2753,12 +2753,12 @@ export default function ActsGzipDecompressionTest() {
         });
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9800
-         * @tc.name       : GzipDecompressionAbilityTest_9800
-         * @tc.desc       : test gzdopen error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9800
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9800
+         * @tc.desc   test gzdopen error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9800 Start=====");
@@ -2775,12 +2775,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9900
-         * @tc.name       : GzipDecompressionAbilityTest_9900
-         * @tc.desc       : test gzdopen correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9900
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9900
+         * @tc.desc   test gzdopen correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_9900 Start=====");
@@ -2796,12 +2796,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10000
-         * @tc.name       : GzipDecompressionAbilityTest_10000
-         * @tc.desc       : test gzerror error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10000
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10000
+         * @tc.desc   test gzerror error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10000 Start=====");
@@ -2818,12 +2818,12 @@ export default function ActsGzipDecompressionTest() {
         });
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10100
-         * @tc.name       : GzipDecompressionAbilityTest_10100
-         * @tc.desc       : test gzclosew correct return value
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10100
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10100
+         * @tc.desc   test gzclosew correct return value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10100 Start=====");
@@ -2841,12 +2841,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10200
-         * @tc.name       : GzipDecompressionAbilityTest_10200
-         * @tc.desc       : test gzclosew error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10200
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10200
+         * @tc.desc   test gzclosew error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10200 Start=====");
@@ -2865,12 +2865,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10300
-         * @tc.name       : GzipDecompressionAbilityTest_10300
-         * @tc.desc       : test gzclose error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10300
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10300
+         * @tc.desc   test gzclose error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10300 Start=====");
@@ -2887,12 +2887,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10400
-         * @tc.name       : GzipDecompressionAbilityTest_10400
-         * @tc.desc       : test gzdopen error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10400
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10400
+         * @tc.desc   test gzdopen error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10400 Start=====");
@@ -2917,12 +2917,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10500
-         * @tc.name       : GzipDecompressionAbilityTest_10500
-         * @tc.desc       : test gzdopen error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10500
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10500
+         * @tc.desc   test gzdopen error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10500 Start=====");
@@ -2950,12 +2950,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10600
-         * @tc.name       : GzipDecompressionAbilityTest_10600
-         * @tc.desc       : test gzdopen error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10600
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10600
+         * @tc.desc   test gzdopen error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10600 Start=====");
@@ -2973,12 +2973,12 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10700
-         * @tc.name       : GzipDecompressionAbilityTest_10700
-         * @tc.desc       : test gzbuffer error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10700
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10700
+         * @tc.desc   test gzbuffer error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10700 Start=====");
@@ -3004,12 +3004,12 @@ export default function ActsGzipDecompressionTest() {
         });
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10800
-         * @tc.name       : GzipDecompressionAbilityTest_10800
-         * @tc.desc       : test gzsetparams error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10800
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10800
+         * @tc.desc   test gzsetparams error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10800 Start=====");
@@ -3034,12 +3034,12 @@ export default function ActsGzipDecompressionTest() {
         });
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10900
-         * @tc.name       : GzipDecompressionAbilityTest_10900
-         * @tc.desc       : test gzsetparams error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10900
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10900
+         * @tc.desc   test gzsetparams error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_10900 Start=====");
@@ -3064,12 +3064,12 @@ export default function ActsGzipDecompressionTest() {
         });
 
         /**
-         * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_11000
-         * @tc.name       : GzipDecompressionAbilityTest_11000
-         * @tc.desc       : test gzseek error code
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_11000
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_11000
+         * @tc.desc   test gzseek error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_11000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_11000 Start=====");

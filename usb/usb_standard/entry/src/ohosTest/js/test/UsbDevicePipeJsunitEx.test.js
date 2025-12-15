@@ -193,7 +193,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   }
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testBulkTransfer006
    * @tc.number SUB_USB_HostManager_JS_TranCompatibility_0700
    * @tc.desc   Negative test: bulk transfer, send data, error outEndpoint.address = 123
@@ -234,7 +233,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testBulkTransfer007
    * @tc.number SUB_USB_HostManager_JS_TranCompatibility_0800
    * @tc.desc   Negative test: bulk transfer, send data, error outEndpoint.number = 123
@@ -275,7 +273,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testBulkTransfer008
    * @tc.number SUB_USB_HostManager_JS_TranCompatibility_0900
    * @tc.desc   Negative test: bulk transfer, send data, error outEndpoint.type = 123
@@ -316,7 +313,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testBulkTransfer009
    * @tc.number SUB_USB_HostManager_JS_ErrCode_0900
    * @tc.desc   Negative test: bulk transfer, parameter number exception, input a parameter
@@ -352,7 +348,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testBulkTransfer010
    * @tc.number SUB_USB_HostManager_JS_ErrCode_3600
    * @tc.desc   Negative test: bulk transfer, parameter number exception, input two parameter
@@ -388,7 +383,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testBulkTransfer011
    * @tc.number SUB_USB_HostManager_JS_ErrCode_2400
    * @tc.desc   Negative test: bulk transfer, parameter number exception, necessary parameters not input
@@ -415,7 +409,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testBulkTransfer012
    * @tc.number SUB_USB_HostManager_JS_ErrCode_3000
    * @tc.desc   Negative test: bulk transfer, parameter pipe type error
@@ -457,7 +450,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testBulkTransfer013
    * @tc.number SUB_USB_HostManager_JS_ErrCode_3700
    * @tc.desc   Negative test: bulk transfer, parameter endpoint type error
@@ -498,7 +490,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testBulkTransfer014
    * @tc.number SUB_USB_HostManager_JS_ErrCode_3800
    * @tc.desc   Negative test: bulk transfer, parameter Uint8Array type error
@@ -537,7 +528,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testBulkTransfer015
    * @tc.number SUB_USB_HostManager_JS_ErrCode_4100
    * @tc.desc   Negative test: bulk transfer, parameter timeout type error
@@ -576,7 +566,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testClaimInterface006
    * @tc.number SUB_USB_HostManager_JS_Compatibility_2400
    * @tc.desc   Negative test: Get interface, USBInterface afferent error id
@@ -612,7 +601,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testClaimInterface007
    * @tc.number SUB_USB_HostManager_JS_Compatibility_2500
    * @tc.desc   Negative test: Get interface, USBInterface afferent error protocol
@@ -648,7 +636,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testClaimInterface008
    * @tc.number SUB_USB_HostManager_JS_Compatibility_2600
    * @tc.desc   Negative test: Get interface, USBInterface afferent error clazz
@@ -684,7 +671,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testClaimInterface009
    * @tc.number SUB_USB_HostManager_JS_Compatibility_2700
    * @tc.desc   Negative test: Get interface, USBInterface afferent error name
@@ -720,7 +706,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testClaimInterface010
    * @tc.number SUB_USB_HostManager_JS_Compatibility_2800
    * @tc.desc   Negative test: Get interface, USBInterface afferent error subClass
@@ -756,7 +741,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testClaimInterface011
    * @tc.number SUB_USB_HostManager_JS_ErrCode_1000
    * @tc.desc   Negative test: Get interface, parameter number exception, input a parameter
@@ -787,7 +771,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testClaimInterface012
    * @tc.number SUB_USB_HostManager_JS_ErrCode_2500
    * @tc.desc   Negative test: Get interface, parameter number exception, necessary parameters not input
@@ -818,7 +801,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testClaimInterface013
    * @tc.number SUB_USB_HostManager_JS_ErrCode_3100
    * @tc.desc   Negative test: Get interface, parameter pipe type error
@@ -854,7 +836,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testClaimInterface014
    * @tc.number SUB_USB_HostManager_JS_ErrCode_3900
    * @tc.desc   Negative test: Get interface, parameter iface type error
@@ -881,7 +862,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testReleaseInterface001
    * @tc.number SUB_USB_HostManager_JS_Compatibility_1600
    * @tc.desc   Negative test: release Interface, error Interface id
@@ -923,7 +903,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testReleaseInterface002
    * @tc.number SUB_USB_HostManager_JS_Compatibility_1700
    * @tc.desc   Negative test: release Interface, error Interface name
@@ -962,7 +941,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testReleaseInterface003
    * @tc.number SUB_USB_HostManager_JS_Compatibility_1800
    * @tc.desc   Negative test: release Interface, error Interface clazz
@@ -1000,7 +978,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testReleaseInterface004
    * @tc.number SUB_USB_HostManager_JS_Compatibility_1900
    * @tc.desc   Negative test: release Interface, error Interface protocol
@@ -1038,7 +1015,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testReleaseInterface005
    * @tc.number SUB_USB_HostManager_JS_Compatibility_2000
    * @tc.desc   Negative test: release Interface, error Interface subClass
@@ -1076,7 +1052,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testReleaseInterface006
    * @tc.number SUB_USB_HostManager_JS_ErrCode_1400
    * @tc.desc   Negative test: release Interface, parameter number exception, input a parameter
@@ -1102,7 +1077,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testReleaseInterface007
    * @tc.number SUB_USB_HostManager_JS_ErrCode_2600
    * @tc.desc   Negative test: release Interface, parameter number exception, necessary parameters not input
@@ -1128,7 +1102,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testReleaseInterface008
    * @tc.number SUB_USB_HostManager_JS_ErrCode_3300
    * @tc.desc   Negative test: release Interface, parameter pipe type error
@@ -1163,7 +1136,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testReleaseInterface009
    * @tc.number SUB_USB_HostManager_JS_ErrCode_1500
    * @tc.desc   Negative test: release Interface, parameter iface type error
@@ -1190,7 +1162,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testSetInterface003
    * @tc.number SUB_USB_HostManager_JS_Compatibility_4200
    * @tc.desc   Negative test: Set device interface, Interface protocol error
@@ -1224,7 +1195,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testSetInterface004
    * @tc.number SUB_USB_HostManager_JS_Compatibility_4300
    * @tc.desc   Negative test: Set device interface, Interface clazz error
@@ -1258,7 +1228,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testSetInterface005
    * @tc.number SUB_USB_HostManager_JS_Compatibility_4400
    * @tc.desc   Negative test: Set device interface, Interface subClass error
@@ -1292,7 +1261,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testSetInterface006
    * @tc.number SUB_USB_HostManager_JS_Compatibility_4500
    * @tc.desc   Negative test: Set device interface, Interface name error
@@ -1326,7 +1294,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testSetInterface007
    * @tc.number SUB_USB_HostManager_JS_ErrCode_1200
    * @tc.desc   Negative test: Set device interface, parameter number exception, input a parameter
@@ -1352,7 +1319,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testSetInterface008
    * @tc.number SUB_USB_HostManager_JS_ErrCode_2700
    * @tc.desc   Negative test: Set device interface, parameter number exception, necessary parameters not input
@@ -1378,7 +1344,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testSetInterface009
    * @tc.number SUB_USB_HostManager_JS_ErrCode_3400
    * @tc.desc   Negative test: Set device interface, parameter pipe type error
@@ -1413,7 +1378,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testSetInterface010
    * @tc.number SUB_USB_HostManager_JS_ErrCode_4300
    * @tc.desc   Negative test: Set device interface, parameter iface type error
@@ -1440,7 +1404,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testSetConfiguration003
    * @tc.number SUB_USB_HostManager_JS_Compatibility_3700
    * @tc.desc   Negative test: Set Device Configuration, USBConfig name error
@@ -1465,7 +1428,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testSetConfiguration004
    * @tc.number SUB_USB_HostManager_JS_Compatibility_3800
    * @tc.desc   Negative test: Set Device Configuration, USBConfig name, id error
@@ -1491,7 +1453,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testSetConfiguration005
    * @tc.number SUB_USB_HostManager_JS_Compatibility_3900
    * @tc.desc   Negative test: Set Device Configuration, USBConfig attributes error
@@ -1516,7 +1477,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testSetConfiguration006
    * @tc.number SUB_USB_HostManager_JS_Compatibility_4000
    * @tc.desc   Negative test: Set Device Configuration, USBConfig name interval(1-16) error
@@ -1547,7 +1507,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testSetConfiguration007
    * @tc.number SUB_USB_HostManager_JS_ErrCode_1100
    * @tc.desc   Negative test: Set Device Configuration, parameter number exception, input a parameter
@@ -1573,7 +1532,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testSetConfiguration008
    * @tc.number SUB_USB_HostManager_JS_ErrCode_2800
    * @tc.desc   Negative test: Set Device Configuration, parameter number exception, necessary parameters not input
@@ -1599,7 +1557,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testSetConfiguration009
    * @tc.number SUB_USB_HostManager_JS_ErrCode_3500
    * @tc.desc   Negative test: Set Device Configuration, parameter pipe type error
@@ -1629,7 +1586,6 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testSetConfiguration010
    * @tc.number SUB_USB_HostManager_JS_ErrCode_4200
    * @tc.desc   Negative test: Set Device Configuration, parameter config type error

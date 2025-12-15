@@ -72,7 +72,6 @@ export default function newSEServicetest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_secureElement_js_0100
          * @tc.number SUB_Communication_NFC_secureElement_js_0100
          * @tc.desc   Check whether the SE service is connected.
@@ -92,7 +91,6 @@ export default function newSEServicetest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_secureElement_js_0200
          * @tc.number SUB_Communication_NFC_secureElement_js_0200
          * @tc.desc   Returns the version number of the OMA specification.
@@ -112,7 +110,6 @@ export default function newSEServicetest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_secureElement_js_0300
          * @tc.number SUB_Communication_NFC_secureElement_js_0300
          * @tc.desc   Returns the name of this reader.
@@ -147,7 +144,6 @@ export default function newSEServicetest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_secureElement_js_0400
          * @tc.number SUB_Communication_NFC_secureElement_js_0400
          * @tc.desc   Indicates whether the corresponding secure element is available.
@@ -219,7 +215,6 @@ export default function newSEServicetest() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_secureElement_js_0500
          * @tc.number SUB_Communication_NFC_secureElement_js_0500
          * @tc.desc   Release all SE resources allocated to the service.
