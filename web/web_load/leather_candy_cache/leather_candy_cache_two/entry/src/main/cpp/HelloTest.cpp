@@ -280,7 +280,7 @@ static napi_value Doblankless_INVALID_ARGS_SET_ZERO(napi_env env, napi_callback_
                  "Doblankless_INVALID_ARGS_SET_ZERO similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
                  blanklessInfo.loadingTime, blanklessInfo.errCode);
     ArkWeb_BlanklessErrorCode blanklessInfo_set =
-        OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessINVALID_ARGS, true);
+        OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessINVALID_ARGS_LENGTH1, true);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
                  "Doblankless_INVALID_ARGS_SET_ZERO ,errCode:%{public}d", blanklessInfo_set);
     if (blanklessInfo_set == ARKWEB_BLANKLESS_ERR_INVALID_ARGS) {
