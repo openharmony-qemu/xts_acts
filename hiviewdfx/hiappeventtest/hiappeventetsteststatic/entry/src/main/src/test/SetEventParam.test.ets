@@ -193,7 +193,8 @@ export default function setEventParamTest() {
             {domain: hiAppEvent.domain.OS,
               names: [hiAppEvent.event.APP_LAUNCH, hiAppEvent.event.SCROLL_JANK, hiAppEvent.event.CPU_USAGE_HIGH,
                 hiAppEvent.event.BATTERY_USAGE, hiAppEvent.event.RESOURCE_OVERLIMIT, hiAppEvent.event.ADDRESS_SANITIZER,
-                hiAppEvent.event.MAIN_THREAD_JANK]}
+                hiAppEvent.event.MAIN_THREAD_JANK, hiAppEvent.event.APP_KILLED, hiAppEvent.event.APP_HICOLLIE,
+                hiAppEvent.event.AUDIO_JANK_FRAME]}
           ],
           onTrigger: (curRow: int, curSize: int, holder: hiAppEvent.AppEventPackageHolder) => {
             expect(holder != null).assertTrue();
@@ -754,6 +755,57 @@ export default function setEventParamTest() {
       }
     })
 
+    /**
+     * @tc.name   testHiAppEventSetPam22
+     * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_2200
+     * @tc.desc   验证setEventParam接口在关闭打点功能后,返回错误码11100001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testHiAppEventSetPam22', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info('testHiAppEventSetPam22 start');
+      hiAppEvent.configure({disable: true});
+      try {
+        let eventParams: Record<string, hiAppEvent.ParamType> = {
+          "test_param": true,
+        };
+        hiAppEvent.setEventParam(eventParams, hiAppEvent.domain.OS).then(() => {
+          console.log('testHiAppEventSetPam22 Event parameters set successfully.');
+      }).catch((err: Error) => {
+          const bErr = err as BusinessError;
+          console.error('testHiAppEventSetPam22 Error:', bErr.message, 'testHiAppEventSetPam22 Code:', bErr.code);
+          expect(bErr.code == 11100001).assertTrue()
+          done();
+        });
+      } catch (error: BusinessError) {
+        console.error(`testHiAppEventSetPam22 > error code: ${error.code}, error msg: ${error.message}`);
+        expect(false).assertTrue()
+        done();
+      }
+      hiAppEvent.configure({disable: false});
+      done();
+    })
+
+    /**
+     * @tc.name   testHiAppEventSetPam23
+     * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_2300
+     * @tc.desc   验证setEventParam接口可设置事件关联自定义参数，并通过onTrigger回调获取
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHiAppEventSetPam23', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(logDomain, tag, 'testHiAppEventSetPam23 start');
+      let holder = hiAppEvent.addWatcher({
+        name: "watcher1",
+      });
+      hiAppEvent.removeWatcher({name:"watcher1"})
+      let eventPkg = holder.takeNext();
+      console.log('testHiAppEventSetPam23 done');
+      expect(eventPkg).assertNull()
+      done();
+    });
   })
   hilog.info(logDomain, tag, 'setEventParamTest end');
 }
