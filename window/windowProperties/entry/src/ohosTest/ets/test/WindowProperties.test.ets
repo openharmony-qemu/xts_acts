@@ -251,7 +251,7 @@ export default function windowPropertiesTest() {
       it('testSetWatermarkImageForAppWindowswithMainWindowandSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         let caseName = 'testSetWatermarkImageForAppWindowswithMainWindowandSubWindow';
         let subWindowClass = await windowStage.createSubWindow('testSetWatermarkImageForAppWindowswithMainWindowandSubWindow');
-        let driver: Driver = await Driver.create();
+        let driver: Driver = Driver.create();
         await sleep(200)
         try {
           let windowLimits = subWindowClass.getWindowLimits();
@@ -309,7 +309,7 @@ export default function windowPropertiesTest() {
       it('testSetWatermarkImageForAppWindowswithMainWindowandSystemWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         let caseName = 'testSetWatermarkImageForAppWindowswithMainWindowandSystemWindow';
         let subWindowClass: window.Window | undefined;
-        let driver: Driver = await Driver.create();
+        let driver: Driver = Driver.create();
         await sleep(200)
         let config: window.Configuration = {
           name: "testSetWatermarkImageForAppWindowswithMainWindowandSystemWindow",
@@ -7775,7 +7775,63 @@ export default function windowPropertiesTest() {
 
       })
 
+      /**
+       * @tc.name   testOnFrameMetricsMeasuredwithSetBackgroundColor
+       * @tc.number SUB_BASIC_WMS_FUNCTION_FRAMEMETRIC_MEASURED_0600
+       * @tc.desc   testOnFrameMetricsMeasuredwithSetBackgroundColor
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+      it('testOnFrameMetricsMeasuredwithSetBackgroundColor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let caseName = 'testOnFrameMetricsMeasuredwithSetBackgroundColor';
+        let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+        console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+        let windowClass = windowStage.getMainWindowSync()
+        try {
+          let callbackIndex = 0;
+          const callback1 = async (res: window.FrameMetrics) => {
+            console.log(`${caseName} callback1 res: ${JSON.stringify(res)}`);
+            callbackIndex = callbackIndex + 1;
+            console.log(`${caseName} callback1 callbackIndex: ${JSON.stringify(callbackIndex)}`);
+            expect(res.firstDrawFrame).assertEqual(false);
+            expect(res.vsyncTimestamp).assertLarger(0);
+            expect(res.inputHandlingDuration).assertLarger(0);
+          }
+          windowClass.on('frameMetricsMeasured', callback1);
+          windowClass.setBackgroundColor("#008000");
+          await sleep(3000);
+          console.log(`${caseName}  callbackIndex 1: ${JSON.stringify(callbackIndex)}`);
+          expect(callbackIndex).assertLarger(0)
+          callbackIndex = 0;
+          windowStage.setCustomDensity(2.0);
+          await sleep(3000);
+          console.log(`${caseName}  callbackIndex 2: ${JSON.stringify(callbackIndex)}`);
+          expect(callbackIndex).assertLarger(0)
+          callbackIndex = 0;
+          windowClass?.off('frameMetricsMeasured');
+          windowClass.setBackgroundColor("#FEFEFE");
+          await sleep(1000);
+          console.log(`${caseName}  callbackIndex 3: ${JSON.stringify(callbackIndex)}`);
+          expect(callbackIndex).assertEqual(0)
+          windowStage.setCustomDensity(-1.0);
+          await sleep(1000);
+          console.log(`${caseName}  callbackIndex 4: ${JSON.stringify(callbackIndex)}`);
+          expect(callbackIndex).assertEqual(0)
+          await windowClass?.destroyWindow()
+          done();
+        } catch (exception) {
+          console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+          await windowClass?.destroyWindow()
+          if(!canIUseRes){
+            expect(exception.code).assertEqual(801)
+          }else {
+            expect().assertFail();
+          }
+          done();
+        }
 
+      })
       /**
        * @tc.name   testOnFrameMetricsMeasuredCallbackwithDialogWindow
        * @tc.number SUB_BASIC_WMS_FUNCTION_FRAMEMETRIC_MEASURED_0400
@@ -7833,7 +7889,6 @@ export default function windowPropertiesTest() {
           }
           done();
         }
-
       })
 
       /**
@@ -7904,64 +7959,6 @@ export default function windowPropertiesTest() {
 
       })
 
-
-      /**
-       * @tc.name   testOnFrameMetricsMeasuredwithSetBackgroundColor
-       * @tc.number SUB_BASIC_WMS_FUNCTION_FRAMEMETRIC_MEASURED_0600
-       * @tc.desc   testOnFrameMetricsMeasuredwithSetBackgroundColor
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL0
-       */
-      it('testOnFrameMetricsMeasuredwithSetBackgroundColor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        let caseName = 'testOnFrameMetricsMeasuredwithSetBackgroundColor';
-        let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
-        console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
-        let windowClass = windowStage.getMainWindowSync()
-        try {
-          let callbackIndex = 0;
-          const callback1 = async (res: window.FrameMetrics) => {
-            console.log(`${caseName} callback1 res: ${JSON.stringify(res)}`);
-            callbackIndex = callbackIndex + 1;
-            console.log(`${caseName} callback1 callbackIndex: ${JSON.stringify(callbackIndex)}`);
-            expect(res.firstDrawFrame).assertEqual(false);
-            expect(res.vsyncTimestamp).assertLarger(0);
-            expect(res.inputHandlingDuration).assertLarger(0);
-          }
-          windowClass.on('frameMetricsMeasured', callback1);
-          windowClass.setBackgroundColor("#008000");
-          await sleep(3000);
-          console.log(`${caseName}  callbackIndex 1: ${JSON.stringify(callbackIndex)}`);
-          expect(callbackIndex).assertLarger(0)
-          callbackIndex = 0;
-          windowStage.setCustomDensity(2.0);
-          await sleep(3000);
-          console.log(`${caseName}  callbackIndex 2: ${JSON.stringify(callbackIndex)}`);
-          expect(callbackIndex).assertLarger(0)
-          callbackIndex = 0;
-          windowClass?.off('frameMetricsMeasured');
-          windowClass.setBackgroundColor("#FEFEFE");
-          await sleep(1000);
-          console.log(`${caseName}  callbackIndex 3: ${JSON.stringify(callbackIndex)}`);
-          expect(callbackIndex).assertEqual(0)
-          windowStage.setCustomDensity(-1.0);
-          await sleep(1000);
-          console.log(`${caseName}  callbackIndex 4: ${JSON.stringify(callbackIndex)}`);
-          expect(callbackIndex).assertEqual(0)
-          await windowClass?.destroyWindow()
-          done();
-        } catch (exception) {
-          console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
-          await windowClass?.destroyWindow()
-          if(!canIUseRes){
-            expect(exception.code).assertEqual(801)
-          }else {
-            expect().assertFail();
-          }
-          done();
-        }
-
-      })
 
     })
 }
