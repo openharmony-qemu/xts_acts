@@ -82,7 +82,7 @@ import MediaAssetChangeRequestConstructorTest from './photoAccessHelper/MediaAss
 import provisionResourcesTest from './provisionResources.test';
 import getAlbumIdByLPathTest from './photoAccessHelper/photoAccessHelper/getAlbumIdByLPath.test';
 import getAlbumsBySourceAlbumTest from './photoAccessHelper/photoAccessHelper/getAlbumsBySourceAlbum.test';
-
+import onSinglePhotoChangeTest from './photoAccessHelper/photoAccessHelper/onSinglePhotoChange.test';
 export default function testsuite() {
   provisionResourcesTest();
   // MediaAlbumChangeRequestSetAlbumNameTest();
@@ -160,4 +160,5 @@ export default function testsuite() {
   MediaAssetChangeRequestDeleteAssetsTest();
   getAlbumIdByLPathTest();
   getAlbumsBySourceAlbumTest();
+  onSinglePhotoChangeTest();
 }
