@@ -576,7 +576,7 @@ napi_value OHNativeBufferReadFromParcelAbnnormal(napi_env env, napi_callback_inf
         return result;
     }
     ret = OH_NativeBuffer_ReadFromParcel(parcel, &nativeBuffer);
-    if (ret != NUMBER_40001000) {
+    if (ret != NUMBER_50002000) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
