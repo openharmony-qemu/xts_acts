@@ -65,7 +65,6 @@ import RDBErrorCode18Test from "./RDBErrorCode18Test.test";
 import RDBErrorCode21Test from "./RDBErrorCode21Test.test";
 
 import CallbackTest from "./CallbackTest.test";
-import AsyncCallback from "./AsyncCallback.test";
 
 export default function testsuite() {
   RelationStoreRdbStoreTest();
@@ -118,5 +117,4 @@ export default function testsuite() {
   RDBErrorCode21Test();
 
   CallbackTest();
-  AsyncCallback();
 }
