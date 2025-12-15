@@ -20,4 +20,3 @@ export const gLUniformMatrixARBTest: () => number;
 export const glLineStippleHalfEmpty: () => number;
 export const glLineStippleMaxFactor: () => number;
 export const glLineStippleDottedPattern: () => number;
-export const isSupportGL: () => number;
