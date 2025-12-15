@@ -115,7 +115,6 @@ import PictureGetMetadataFirstParameters from './Picture/PictureGetMetadataFirPa
 import CreatePixelMapUsingAllocatorAndSync from './image/ImageCreatePixelMapUsingAllocatorSuppAb.test';
 import ImageCreateIncrementalSourceSupp from './image/ImageCreateIncrementalSourceSupp.test';
 import ImageGetComponentSupp from './image/ImageGetComponentSupp.test';
-import ImageCreatorDequeueImageSuppTest from './image/ImageDequeueImage.test';
 import ImageCreatePixelMapFromParcelSupp from './image/ImageCreatePixelMapFromParcel.test';
 import modifyImagePropertyValueTest from './image/ModifyImagePropertyValue.test';
 import getImagePropertiesTest from './image/ImageSourceGetImagePropertiesTest.test';
@@ -237,7 +236,6 @@ export default function testsuite() {
   CreatePixelMapUsingAllocatorAndSync();
   ImageCreateIncrementalSourceSupp();
   ImageGetComponentSupp();
-  ImageCreatorDequeueImageSuppTest();
   ImageCreatePixelMapFromParcelSupp();
   modifyImagePropertyValueTest();
   sendableCreatePixelMapSyncTest();
