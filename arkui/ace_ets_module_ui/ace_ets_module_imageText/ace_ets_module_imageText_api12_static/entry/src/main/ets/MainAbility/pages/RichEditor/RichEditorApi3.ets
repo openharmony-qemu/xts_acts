@@ -80,7 +80,7 @@ build() {
       Button('获取linebreak属性值').onClick((e: ClickEvent) => {
         this.spanParagraphs = this.controller!.getParagraphs({ start: -1, end: -1 }) as RichEditorParagraphResult[]
         this.spanParagraphs!.forEach((item: RichEditorParagraphResult) => {
-          if(typeof(item as RichEditorParagraphResult)?.style !== 'undefined'){
+          if((item as RichEditorParagraphResult)?.style ){
             console.info('lineBreakStrategy:'+ `${item?.style?.lineBreakStrategy}`)
             this.attributeValue = `${item?.style?.lineBreakStrategy}`
           }

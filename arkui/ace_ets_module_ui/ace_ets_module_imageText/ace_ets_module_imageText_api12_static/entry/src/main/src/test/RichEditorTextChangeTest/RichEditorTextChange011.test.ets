@@ -49,9 +49,7 @@ export default function RichEditorTextChange011() {
   describe('RichEditorTextChange011', () => {
     beforeAll(() => {
       console.info("RichEditorTextChange011 beforeEach start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
         beforeEach(async (): Promise<void> => {
       const defaultRouter = AppStorage.get<Router>("router") as Router
@@ -76,13 +74,14 @@ export default function RichEditorTextChange011() {
     });
 
     
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_static_0006
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_static_0006
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_static_0006
-     * @tc.level   Level.LEVEL0
+     * @tc.level    Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_static_0006', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_static_0006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_TEXTCHANGE_static_0006 START');
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('rich_struct')) as Promise<Component>);

@@ -92,11 +92,11 @@ build() {
           start: 0,
           end: 6
         })!.forEach(item => {
-          if (typeof (item as RichEditorTextSpanResult)?.textStyle != 'undefined') {
+          if ((item as RichEditorTextSpanResult)?.textStyle) {
             let span = item as RichEditorTextSpanResult
-            let spanPosition = JSON.stringify(span.spanPosition);
-            let value = JSON.stringify(span.value);
-            let textStyle = JSON.stringify(span.textStyle);
+            let spanPosition = JSON.stringify(span?.spanPosition);
+            let value = JSON.stringify(span?.value);
+            let textStyle = JSON.stringify(span?.textStyle);
             this.style += 'spanPosition:' + spanPosition + ',';
             this.style += 'value:' + value + ',';
             this.style += 'textStyle:' + textStyle + ',';

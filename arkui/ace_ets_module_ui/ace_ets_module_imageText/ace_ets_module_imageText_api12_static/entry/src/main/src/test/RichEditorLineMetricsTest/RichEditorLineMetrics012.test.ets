@@ -51,9 +51,7 @@ export default function RichEditorLineMetrics012() {
   describe('RichEditorLineMetrics012', () => {
     beforeAll(() => {
        console.info("RichEditorOnWillChange001 beforeEach start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       const defaultRouter = AppStorage.get<Router>("router") as Router
@@ -78,13 +76,14 @@ export default function RichEditorLineMetrics012() {
     });
 
     
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0017
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0017
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0017
-     * @tc.level   Level.LEVEL0
+     * @tc.level    Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0017', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0017', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0017 START');
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorLineMetrics012')) as Promise<Component>);
@@ -118,8 +117,7 @@ export default function RichEditorLineMetrics012() {
       await CommonFunc.sleep(500);
       lineMetrics2Text = await lineMetrics2.getText();
       await CommonFunc.sleep(500);
-      expect(lineMetrics2Text).assertContain('lineMetrics(1):{"startIndex"');
-      expect(lineMetrics2Text).assertContain('"endIndex"');
+      expect(lineMetrics2Text).assertEqual('lineMetrics(1):{"left":10,"width":218.63937377929688,"ascent":22.27199935913086,"height":28,"descent":5.855999946594238,"baseline":60.14400100708008,"endIndex":38,"topHeight":38,"lineNumber":1,"runMetrics":{},"startIndex":21}');
       done();
     });
 

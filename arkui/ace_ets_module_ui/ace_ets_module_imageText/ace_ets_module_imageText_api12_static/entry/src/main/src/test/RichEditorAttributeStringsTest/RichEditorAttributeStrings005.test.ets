@@ -51,9 +51,7 @@ export default function RichEditorAttributeStrings005() {
   describe('RichEditorAttributeStrings005', () => {
     beforeAll(() => {
        console.info("RichEditorOnWillChange001 beforeEach start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       const defaultRouter = AppStorage.get<Router>("router") as Router

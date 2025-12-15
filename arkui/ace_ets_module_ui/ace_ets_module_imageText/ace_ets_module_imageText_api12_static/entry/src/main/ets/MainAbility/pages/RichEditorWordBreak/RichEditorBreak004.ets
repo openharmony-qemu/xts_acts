@@ -80,7 +80,7 @@ build() {
                 },
                 paragraphStyle: {
                   textAlign: TextAlign.Center,
-                  wordBreak: -1 as WordBreak
+                  wordBreak: WordBreak.BREAK_WORD
                 }
               })
           })

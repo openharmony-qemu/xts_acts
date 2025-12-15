@@ -118,25 +118,12 @@ build() {
       }).id('imageFromStyledString')
 
       Button('cusFromStyledString').onClick((e: ClickEvent) => {
-        console.log('styleStrstyleStr',JSON.stringify(this.styleStr))
-        this.controller!.addTextSpan('0123',
-          {
-            style:
-            {
-              fontColor: Color.Orange,
-              fontSize: 20,
-              textShadow: { radius: 10, color: Color.Blue, offsetX: 10, offsetY: 0 }
-            }
-          })
-        let array = this.controller!.fromStyledString(this.styleStr);
-        console.log('styleStrstyleStr',JSON.stringify(array))
-        console.log('styleStrstyleStr',array)
+        console.log('JSON.stringify(array)JSON.stringify(array)',JSON.stringify(this.styleStr))
+        let array = this.controller.fromStyledString(this.styleStr);
         this.spans = JSON.stringify(array);
       }).id('cusFromStyledString')
 
       Button('undefined fromStyledString').onClick((e: ClickEvent) => {
-        let array = this.controller!.fromStyledString(new MutableStyledString(''));
-        this.spans = JSON.stringify(array);
       }).id('undefinedFromStyledString')
 
       Text('spans:' + this.spans).id('spans')

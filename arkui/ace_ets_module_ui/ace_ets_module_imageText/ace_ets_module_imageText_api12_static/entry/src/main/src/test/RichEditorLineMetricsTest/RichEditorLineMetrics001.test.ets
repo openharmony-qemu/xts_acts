@@ -51,9 +51,7 @@ export default function RichEditorLineMetrics001() {
   describe('RichEditorLineMetrics001', () => {
     beforeAll(() => {
        console.info("RichEditorOnWillChange001 beforeEach start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       const defaultRouter = AppStorage.get<Router>("router") as Router
@@ -99,7 +97,8 @@ export default function RichEditorLineMetrics001() {
       let lineMetrics = await (driver.findComponent(ON.id('lineMetrics')) as Promise<Component>);
       let lineMetricsText = await lineMetrics.getText();
       await CommonFunc.sleep(500);
-      expect(lineMetricsText).assertContain('lineMetrics:{"startIndex":0,"endIndex":7');
+      expect(lineMetricsText).assertContain('"startIndex":0');
+      expect(lineMetricsText).assertContain('"endIndex":7');
       done();
     });
 

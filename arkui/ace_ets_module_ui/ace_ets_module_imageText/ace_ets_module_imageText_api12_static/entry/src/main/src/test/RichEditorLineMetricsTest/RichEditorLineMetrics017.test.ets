@@ -51,9 +51,7 @@ export default function RichEditorLineMetrics017() {
   describe('RichEditorLineMetrics017', () => {
     beforeAll(() => {
        console.info("RichEditorOnWillChange001 beforeEach start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       const defaultRouter = AppStorage.get<Router>("router") as Router
@@ -78,13 +76,14 @@ export default function RichEditorLineMetrics017() {
     });
 
     
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0022
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0022
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0022
-     * @tc.level   Level.LEVEL0
+     * @tc.level    Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0022', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0022', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0022 START');
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorLineMetrics017')) as Promise<Component>);
@@ -98,13 +97,12 @@ export default function RichEditorLineMetrics017() {
 
       let lineMetrics1 = await (driver.findComponent(ON.id('lineMetrics1')) as Promise<Component>);
       let lineMetrics1Text = await lineMetrics1.getText();
-      expect(lineMetrics1Text).assertContain('lineMetrics(0):{"startIndex":0,"endIndex":3');
+      expect(lineMetrics1Text).assertEqual('lineMetrics(0):{"left":24,"width":39.50389099121094,"ascent":22.27199935913086,"height":28,"descent":5.855999946594238,"baseline":34.14400100708008,"endIndex":3,"topHeight":12,"lineNumber":0,"runMetrics":{},"startIndex":0}');
       await CommonFunc.sleep(500);
       let lineMetrics2 = await (driver.findComponent(ON.id('lineMetrics2')) as Promise<Component>);
       let lineMetrics2Text = await lineMetrics2.getText();
       await CommonFunc.sleep(500);
-      expect(lineMetrics2Text).assertContain('"startIndex":4,"endIndex":4');
-      expect(lineMetrics2Text).assertContain('"height":0,"width":0');
+      expect(lineMetrics2Text).assertEqual('lineMetrics(1):{"left":24,"width":0,"ascent":0,"height":0,"descent":0,"baseline":40,"endIndex":4,"topHeight":40,"lineNumber":1,"runMetrics":{},"startIndex":4}');
       done();
     });
 

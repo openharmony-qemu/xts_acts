@@ -58,7 +58,7 @@ struct imageAddApi2 {
 
   build() {
     Column() {
-      Image(this.imagePixelMap, this.options)
+      Image($r('app.media.icon'), this.options)
         .enableAnalyzer(true)
         .width(200)
         .height(200)

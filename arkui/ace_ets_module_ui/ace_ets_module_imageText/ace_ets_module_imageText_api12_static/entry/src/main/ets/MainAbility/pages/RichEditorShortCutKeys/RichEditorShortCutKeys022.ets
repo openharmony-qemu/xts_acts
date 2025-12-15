@@ -91,7 +91,7 @@ build() {
         let selection = this.controller!.getSelection()!;
         let spans = selection.spans;
         spans!.forEach(item => {
-          if (typeof (item as RichEditorTextSpanResult)?.textStyle != 'undefined') {
+          if ( (item as RichEditorTextSpanResult)?.textStyle) {
             let span = item as RichEditorTextSpanResult
             let spanPosition = JSON.stringify(span.spanPosition);
             let value = JSON.stringify(span.value);

@@ -51,9 +51,7 @@ export default function RichEditorLineMetrics014() {
   describe('RichEditorLineMetrics014', () => {
     beforeAll(() => {
        console.info("RichEditorOnWillChange001 beforeEach start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       const defaultRouter = AppStorage.get<Router>("router") as Router
@@ -78,13 +76,14 @@ export default function RichEditorLineMetrics014() {
     });
 
     
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0019
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0019
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0019
-     * @tc.level   Level.LEVEL0
+     * @tc.level    Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0019', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0019', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0019 START');
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorLineMetrics014')) as Promise<Component>);
@@ -99,7 +98,7 @@ export default function RichEditorLineMetrics014() {
       let lineMetrics = await (driver.findComponent(ON.id('lineMetrics')) as Promise<Component>);
       let lineMetricsText = await lineMetrics.getText();
       await CommonFunc.sleep(500);
-      expect(lineMetricsText).assertContain('lineMetrics:{"startIndex":0,"endIndex":17');
+      expect(lineMetricsText).assertEqual('lineMetrics:{"left":25,"width":183.33543395996094,"ascent":22.27199935913086,"height":28,"descent":5.855999946594238,"baseline":35.14400100708008,"endIndex":17,"topHeight":13,"lineNumber":0,"runMetrics":{},"startIndex":0}');
       done();
     });
 

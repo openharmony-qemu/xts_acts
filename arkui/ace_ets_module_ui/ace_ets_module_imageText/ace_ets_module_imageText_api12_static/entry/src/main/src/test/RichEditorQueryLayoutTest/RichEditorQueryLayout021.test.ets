@@ -49,9 +49,7 @@ export default function RichEditorQueryLayout021() {
   describe('RichEditorQueryLayout021', () => {
     beforeAll(() => {
       console.info("RichEditorQueryLayout021 beforeEach start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       const defaultRouter = AppStorage.get<Router>("router") as Router

@@ -50,9 +50,7 @@ export default function RichEditorShortCutKeys012() {
   describe('RichEditorShortCutKeys012', () => {
     beforeAll(() => {
       console.info("RichEditorShortCutKeys012 beforeEach start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       const defaultRouter = AppStorage.get<Router>("router") as Router
