@@ -18,6 +18,7 @@ import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
 import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export type CallbackWithReturn = (data: BasePageConfig) => Promise<void> ;
 
@@ -98,6 +99,11 @@ export default class CommonTest {
               } else {
                 //If there is only an assertion function, automatically modify the status value
                 console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
+                AppStorage.setOrCreate<number>('_flexShrink',  data.testValue.setValue.flexShrink!)
+                AppStorage.setOrCreate<number>('_parentWidth',  data.testValue.setValue.parentWidth!)
+                AppStorage.setOrCreate<number>('_parentHeight',  data.testValue.setValue.parentHeight!)
+                AppStorage.setOrCreate<number>('_compareFlexShrink',  data.testValue.setValue.compareFlexShrink!)
+                AppStorage.setOrCreate<number>('_standardFlexShrink',  data.testValue.setValue.standardFlexShrink!)
                 await Utils.sleep(1000);
               }
 
@@ -130,14 +136,14 @@ export default class CommonTest {
     if (sharePage) {
       if (currentIndex == lastIndex) {
         console.info('[' + caseTag + ']' + ' last case, close page.');
-        //await Utils.back();
+        await Utils.back();
       } else {
         console.info('[' + caseTag + ']' + ' share page.');
         await Utils.sleep(1000);
       }
     } else {
       console.info('[' + caseTag + ']' + ' close page.');
-      //await Utils.back();
+      await Utils.back();
     }
   }
 

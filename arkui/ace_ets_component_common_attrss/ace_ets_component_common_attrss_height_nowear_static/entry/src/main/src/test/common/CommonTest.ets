@@ -15,8 +15,10 @@
  */
 
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
+import {Length} from '@ohos.arkui.component'
 import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export type CallbackWithReturn = (data: BasePageConfig) => Promise<void> ;
 
@@ -76,7 +78,7 @@ export default class CommonTest {
             pageConfig.containerView = containerView;
             pageConfig.testValue = testValue;
             await Utils.pushPage(pageConfig);
-            //try {
+            try {
               //If there is no call back functions, do nothing.
               if (functions.length === 0) {
                 done();
@@ -96,6 +98,7 @@ export default class CommonTest {
                 testValue: testValue,
               }
               console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
+              AppStorage.setOrCreate<Length>('_height', data.testValue.setValue.height)
               await Utils.sleep(1000);
               //Check test result
               let strJson = inspector.getInspectorByKey(pageConfig.componentKey);
@@ -103,15 +106,15 @@ export default class CommonTest {
               data.viewObj = JSON.parseJsonElement(strJson);
               await (functions[functions.length - 1] as CallbackWithReturn)(data);
 
-            // } catch (err: Error) {
-            //   let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
-            //   console.error(msg);
-            //   console.error(err.stack);
-            //   if (err.name != 'AssertException') {
-            //     await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
-            //     expect().assertFail();
-            //   }
-            // }
+            } catch (err: Error) {
+              let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
+              console.error(msg);
+              console.error(err.stack);
+              if (err.name != 'AssertException') {
+                await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
+                expect().assertFail();
+              }
+            }
 
             await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
 
@@ -127,14 +130,14 @@ export default class CommonTest {
     if (sharePage) {
       if (currentIndex == lastIndex) {
         console.info('[' + caseTag + ']' + ' last case, close page.');
-        //await Utils.back();
+        await Utils.back();
       } else {
         console.info('[' + caseTag + ']' + ' share page.');
         await Utils.sleep(1000);
       }
     } else {
       console.info('[' + caseTag + ']' + ' close page.');
-      //await Utils.back();
+      await Utils.back();
     }
   }
 

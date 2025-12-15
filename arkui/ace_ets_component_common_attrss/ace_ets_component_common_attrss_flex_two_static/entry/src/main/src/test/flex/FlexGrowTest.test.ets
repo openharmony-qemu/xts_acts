@@ -73,7 +73,6 @@ export default function flexGrowTest() {
     'RelativeContainer',
     'Navigator',
     'TextTimer',
-    //    'Flex', 1.1ע�
     'Progress',
     'QRCode',
     'Radio',
@@ -133,7 +132,7 @@ export default function flexGrowTest() {
     beforeAll(() => {
       console.info("flexGrowTest beforeAll start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.two.test.static", "EntryAbility")
-    
+      await UtilsTest.msSleep(4000)
     });
 
     CommonTest.initTestByContainerView(pageConfig, containerView, supportView, testValues, async (data: BasePageConfig): Promise<void> => {

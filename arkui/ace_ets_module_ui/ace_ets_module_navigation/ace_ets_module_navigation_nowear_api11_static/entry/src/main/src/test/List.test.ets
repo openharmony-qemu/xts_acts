@@ -43,29 +43,29 @@ import stepperUIJsunit from './stepperTest/stepperUIJsunit.test'
 
 export default function testsuite() {
 
-  StepperJsunit11() // 5 pass
-  stepperInterface006() // 1 pass
-  SideBarContainer_AttributeTest() // 4 pass
-  SideBarContainerDivider() // 2 pass
-  SideBarContainerTypeTest() // 7 pass  8 注释
-  SideBarContainerType_DefaultValue1() // 2 pass
-  SideBarContainerType_DefaultValue2() // 2 pass
-  SideBarContainerType_DefaultValue3() // 2 pass
-  sidebar() // pass 14
-  sidebarIconsJsunit() // 1 pass
-  stepperAction001() // 1 pass
-  stepperAction027() // 1 pass
-  stepperInterface001() //1 pass
-  stepperInterface002() // 1 pass
-  stepperInterface003() // 1 pass
-  stepperInterface004() // 1 pass
-  stepperInterface005() // 1 pass
-  stepperInterface009() // 1 pass
-  stepperLayout001() // 1 pass
-  stepperLayout002() // 1 pass
-  stepperLayout003() // 1 pass
-  stepperLayout004() // 1 pass
-  stepperItemDisabledJsunit() // 1 pass
-  stepperJsunit1() // 1 pass
-  stepperUIJsunit() // 8 pass
+  StepperJsunit11() 
+  stepperInterface006() 
+  SideBarContainer_AttributeTest()
+  SideBarContainerDivider() 
+  SideBarContainerTypeTest()
+  SideBarContainerType_DefaultValue1()
+  SideBarContainerType_DefaultValue2()
+  SideBarContainerType_DefaultValue3()
+  sidebar()
+  sidebarIconsJsunit()
+  stepperAction001()
+  stepperAction027() 
+  stepperInterface001() 
+  stepperInterface002() 
+  stepperInterface003() 
+  stepperInterface004() 
+  stepperInterface005() 
+  stepperInterface009() 
+  stepperLayout001() 
+  stepperLayout002() 
+  stepperLayout003() 
+  stepperLayout004() 
+  stepperItemDisabledJsunit() 
+  stepperJsunit1() 
+  stepperUIJsunit() 
 }

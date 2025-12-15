@@ -30,7 +30,7 @@ export default function APICanvasSizeTest() {
       console.info("APICanvasSizeTest beforeEach start");
 
 
-      await startAbility("com.arkui.ace.drawAPI12.static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.drawAPI12.static", "EntryAbility")
 
 
     });

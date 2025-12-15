@@ -65,7 +65,7 @@ export struct StepperItemView {
 
   build() {
     Stepper({
-      index: this.currentIndex as Int
+      index: this.currentIndex
     }) {
       // First step page
       StepperItem() {

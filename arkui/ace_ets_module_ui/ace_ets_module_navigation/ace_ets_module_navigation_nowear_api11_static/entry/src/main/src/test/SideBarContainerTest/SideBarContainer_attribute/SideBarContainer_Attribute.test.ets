@@ -123,7 +123,7 @@ export default function SideBarContainer_AttributeTest() {
 
       console.log("assert width")
       console.log("SideBar_01.right - SideBar_01.left" + (SideBar_01.right - SideBar_01.left))
-      console.log("Math.round(AppStorage.get<UIContext>('uiContext')!.vp2px(300))" + Math.round(AppStorage.get<UIContext>('uiContext')!.vp2px(300)))
+      console.log("AppStorage.get<UIContext>('uiContext')!.vp2px(200) " + AppStorage.get<UIContext>('uiContext')!.vp2px(200))
       expect(Math.round(SideBar_01.right - SideBar_01.left)).assertEqual(Math.round(AppStorage.get<UIContext>('uiContext')!.vp2px(300)));
       console.log("SideBar_01.right - SideBar_01.left" + (SideBar_01.right - SideBar_01.left))
 

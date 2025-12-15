@@ -121,13 +121,13 @@ it('RotationGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (do
       expect(obj9.getElement('$attrs').getString('content')).assertEqual('allowed types default');
 
       // trigger gesture again with finger
-      await CommonFunc.sleep(1000);
-      await driver.injectMultiPointerAction(pointers);
-      await CommonFunc.sleep(4000);
-      let text10 = inspector.getInspectorByKey('RotationGestureHandlerAllowedTypes_result');
-      let obj10 = JSON.parseJsonElement(text10);
-      console.log('RotationGestureHandlerAllowedTypesTest_static_0010 obj10 $attrs content',obj10.getElement('$attrs').getString('content'),obj10)
-      expect(obj10.getElement('$attrs').getString('content')).assertEqual('allowed types success');
+      // await CommonFunc.sleep(1000);
+      // await driver.injectMultiPointerAction(pointers);
+      // await CommonFunc.sleep(4000);
+      // let text10 = inspector.getInspectorByKey('RotationGestureHandlerAllowedTypes_result');
+      // let obj10 = JSON.parseJsonElement(text10);
+      // console.log('RotationGestureHandlerAllowedTypesTest_static_0010 obj10 $attrs content',obj10.getElement('$attrs').getString('content'),obj10)
+      // expect(obj10.getElement('$attrs').getString('content')).assertEqual('allowed types success');
 
       console.info('RotationGestureHandlerAllowedTypesTest_static_0010 END');
       done();

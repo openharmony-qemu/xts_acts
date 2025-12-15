@@ -47,11 +47,7 @@ export default function DrawModifier() {
 
     beforeAll(() => {
       console.info("DrawModifier beforeEach start");
-
-
-      await startAbility("com.arkui.ace.drawAPI12.static", "EntryAbility")
-
-
+      await UtilsTest.startAbility("com.arkui.ace.drawAPI12.static", "EntryAbility")
     });
 
     beforeEach(async (): Promise<void> => {

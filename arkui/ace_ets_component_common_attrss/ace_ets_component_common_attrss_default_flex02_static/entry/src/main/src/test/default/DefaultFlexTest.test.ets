@@ -105,7 +105,7 @@ export default function defaultFlexTest() {
     beforeAll(() => {
       console.info("defaultFlexTest beforeAll start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.flex2.test.static", "EntryAbility")
-    
+      await UtilsTest.msSleep(4000)
     });
     CommonTest.initTestByContainerView(pageConfig, containerView, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       if (data.testValue.describe == 'FlexBasis') {

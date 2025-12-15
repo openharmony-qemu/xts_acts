@@ -45,14 +45,14 @@ export default function RichEditorApi1() {
         url: 'MainAbility/pages/RichEditor/RichEditorApi1',
       }
       try {
-        const router = AppStorage.get<Router>("router") as Router
-        router.clear();
-        let pages = router.getState();
+        const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
+        let pages = routerInstance.getState();
         console.info("get RichEditorApi1 state pages:" + JSON.stringify(pages));
         if (!("List_SpaceChange" == pages.name)) {
           console.info("get RichEditorApi1 pages.name:" + JSON.stringify(pages.name));
           // let result = await router.pushUrl(options);
-          router.pushUrl(options);
+          routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
           //console.info("push RichEditorApi1 page result:" + JSON.stringify(result));
         }

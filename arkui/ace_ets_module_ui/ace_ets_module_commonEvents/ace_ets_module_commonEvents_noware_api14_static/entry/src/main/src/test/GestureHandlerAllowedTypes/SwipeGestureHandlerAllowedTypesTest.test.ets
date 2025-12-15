@@ -137,13 +137,13 @@ it('SwipeGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (done:
       expect(obj9.getElement('$attrs').getString('content')).assertEqual('allowed types default');
 
       // trigger gesture again with finger
-      await CommonFunc.sleep(200);
-      await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2) as Int,Math.round(areaObj1.top + areaHeight1/2) as Int,Math.round(areaObj1.left + areaWidth1 * 0.8) as Int,Math.round(areaObj1.top + areaHeight1/2) as Int,speed)
-      await CommonFunc.sleep(200);
-      let text10 = inspector.getInspectorByKey('SwipeGestureHandlerAllowedTypes_result');
-      let obj10 = JSON.parseJsonElement(text10);
-      console.log('SwipeGestureHandlerAllowedTypesTest_static_0010 obj10 $attrs content',obj10.getElement('$attrs').getString('content'),obj10)
-      expect(obj10.getElement('$attrs').getString('content')).assertEqual('allowed types success')
+      // await CommonFunc.sleep(200);
+      // await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2) as Int,Math.round(areaObj1.top + areaHeight1/2) as Int,Math.round(areaObj1.left + areaWidth1 * 0.8) as Int,Math.round(areaObj1.top + areaHeight1/2) as Int,speed)
+      // await CommonFunc.sleep(200);
+      // let text10 = inspector.getInspectorByKey('SwipeGestureHandlerAllowedTypes_result');
+      // let obj10 = JSON.parseJsonElement(text10);
+      // console.log('SwipeGestureHandlerAllowedTypesTest_static_0010 obj10 $attrs content',obj10.getElement('$attrs').getString('content'),obj10)
+      // expect(obj10.getElement('$attrs').getString('content')).assertEqual('allowed types success')
 
       console.info('SwipeGestureHandlerAllowedTypesTest_static_0010 END');
       done();

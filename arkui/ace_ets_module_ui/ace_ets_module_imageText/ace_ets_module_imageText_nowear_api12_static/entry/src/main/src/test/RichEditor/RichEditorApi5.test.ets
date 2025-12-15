@@ -53,7 +53,7 @@ export default function RichEditorApi5() {
         router.clear();
         let pages = router.getState();
         console.info("get RichEditorApi5 state pages:" + JSON.stringify(pages));
-        if (!("List_SpaceChange" == pages.name)) {
+        if (!("RichEditorApi5" == pages.name)) {
           console.info("get RichEditorApi5 pages.name:" + JSON.stringify(pages.name));
           // let result = await router.pushUrl(options);
           router.pushUrl(options);

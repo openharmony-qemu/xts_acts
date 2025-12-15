@@ -94,6 +94,7 @@ struct DragControllerPage {
               }
               this.createDrag = 'success'
               this.dragAction?.onStatusChange((dragAndDropInfo)=>{
+                console.log("====================== dragAction?.onStatusChange")
                 if (dragAndDropInfo.status == dragController.DragStatus.STARTED) {
                   console.log("drag has start");
                   this.start = 'STARTED'

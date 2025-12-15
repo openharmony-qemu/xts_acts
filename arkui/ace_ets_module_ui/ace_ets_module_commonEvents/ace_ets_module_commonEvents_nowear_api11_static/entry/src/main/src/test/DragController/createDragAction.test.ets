@@ -34,7 +34,6 @@ export default function createDragAction() {
   describe('createDragAction', () => {
     beforeAll(() => {
       console.info("assemblyCallbackTest beforeAll start");
-
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.nowear.api11.static", "EntryAbility")
 
     });
@@ -47,7 +46,7 @@ export default function createDragAction() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get createDragAction state pages: " + JSON.stringify(pages));
-        if (!("createDragAction" == pages.name)) {
+        if (!("MainAbility/pages/DragController/createDragAction" == pages.name)) {
           console.info("get createDragAction state pages.name: " + JSON.stringify(pages.name));
           // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
@@ -98,8 +97,9 @@ it('createDragAction_static_0200', Level.LEVEL0, async (done: () => void): Promi
       let driver: Driver = Driver.create();
       let button: Component|null = await driver.findComponent(ON.id('dragParent'));
       let text: Component|null = await driver.findComponent(ON.id('createDrag_id'));
-      button?.dragTo(text!);
       await CommonFunc.sleep(1000);
+      button?.dragTo(text!);
+      await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('start_id');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[createDragAction_static_0200] component obj is: " + JSON.stringify(obj));
@@ -124,7 +124,7 @@ it('createDragAction_static_0300', Level.LEVEL0, async (done: () => void): Promi
       let text: Component|null = await driver.findComponent(ON.id('createDrag_id'));
       await CommonFunc.sleep(1000);
       button?.dragTo(text!);
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('end_id');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[createDragAction_static_0300] component obj is: " + JSON.stringify(obj));
