@@ -27,7 +27,7 @@
 #include <native_window/external_window.h>
 #include <string>
 #include "render_texture.h"
-#include "ImageEffectFilterSupp.h"
+#include "ImageEffectFilterSuppTest.h"
 
 #define MY_LOG_DOMAIN 0x0000
 #define MY_LOG_TAG "ImageEffectNDK"

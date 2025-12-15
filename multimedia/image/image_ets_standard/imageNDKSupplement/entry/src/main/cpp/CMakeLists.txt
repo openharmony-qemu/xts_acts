@@ -19,15 +19,13 @@ add_library(imageEffect SHARED
     utils/CommonUtilsTest.cpp
     utils/PixelmapHelperTest.cpp
     utils/GlUtilsTest.cpp
-    ImageEffectSuppTest.cpp
     OHEffectBufferInfoSetTimestampTest.cpp
     OHEffectBufferInfoGetTimestampTest.cpp
     OHEffectBufferInfoSetTextureIdTest.cpp
     OHEffectBufferInfoGetTextureIdTest.cpp
     OHEffectFilterInfoSupplementTest.cpp
-    ImageEffectFilterSupp.cpp
+    ImageEffectFilterSuppTest.cpp
     OHImageErrorSuppTest.cpp
-    OHEffectFilterInfoSupplementTest.cpp
     ImageEffectSuppTest.cpp
     InitNativePixelMapTest.cpp
     ImagePackerCreateTest.cpp

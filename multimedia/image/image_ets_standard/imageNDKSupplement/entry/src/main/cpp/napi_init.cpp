@@ -22,7 +22,7 @@
 #include "OHEffectBufferInfoGetTimestampTest.h"
 #include "OHEffectBufferInfoSetTextureIdTest.h"
 #include "OHEffectBufferInfoGetTextureIdTest.h"
-#include "ImageEffectFilterSupp.h"
+#include "ImageEffectFilterSuppTest.h"
 #include "OHImageErrorSuppTest.h"
 #include "OHEffectFilterInfoSupplementTest.h"
 #include "ImagePackerCreateTest.h"
