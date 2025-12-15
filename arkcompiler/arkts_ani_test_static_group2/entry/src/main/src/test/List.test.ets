@@ -23,6 +23,8 @@ import exceptionTest from "./ActsException.test"
 import fixedArrayTest from "./ActsFixedArray.test"
 import promiseTest from "./ActsPromise.test"
 import weakGlobalReferencesTest from "./ActsWeakGlobalReferences.test"
+import classOperationsTest from "./ActsClassOperations.test";
+import objectOperationsTest from "./ActsObjectOperations.test"
 
 export default function testsuite() {
     moduleSupportTest();
@@ -35,4 +37,6 @@ export default function testsuite() {
     promiseTest();
     exceptionTest();
     weakGlobalReferencesTest();
+    classOperationsTest();
+    objectOperationsTest();
 }
